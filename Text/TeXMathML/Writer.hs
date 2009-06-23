@@ -1,7 +1,6 @@
 module Text.TeXMathML.Writer (toMathML, DisplayType(..), showExp)
 where
 
-import Control.Monad
 import qualified Data.Map as M
 import Text.XML.Light
 import Text.TeXMathML.Parser
@@ -46,6 +45,7 @@ showSymbol s =
     Pun   x  -> setSpacing "0" "0.167em" False $ unode "mo" x
 -}
 
+showSymbol :: TeXSymbol -> Element
 showSymbol s =
   case s of
     Ord   x  -> unode "mo" x
@@ -56,15 +56,18 @@ showSymbol s =
     Close x  -> unode "mo" x
     Pun   x  -> unode "mo" x
 
+unaryOps :: M.Map String String
 unaryOps = M.fromList
   [ ("sqrt", "msqrt")
   ]
 
+showUnary :: String -> Exp -> Element
 showUnary c x =
   case M.lookup c unaryOps of
        Just c'  -> unode c' (showExp x)
        Nothing  -> error $ "Unknown unary op: " ++ c
 
+binaryOps :: M.Map String String
 binaryOps = M.fromList
   [ ("_", "msub")
   , ("^", "msup")
@@ -73,11 +76,13 @@ binaryOps = M.fromList
   , ("stack", "mover")
   ]
 
+showBinary :: String -> Exp -> Exp -> Element
 showBinary c x y =
   case M.lookup c binaryOps of
        Just c'  -> unode c' [showExp x, showExp y]
        Nothing  -> error $ "Unknown binary op: " ++ c
 
+showExp :: Exp -> Element
 showExp e =
  case e of
    EInteger x   -> unode "mn" $ show x
