@@ -57,7 +57,7 @@ formula = do
   eof
   return f
 
-expr = infixOp <|> expr1
+expr = supersubscripted <|> expr1
 
 inbraces = liftM EGrouped (braces $ many expr)
 
@@ -66,19 +66,11 @@ number = try (liftM EFloat float)
 
 variable = liftM EVariable identifier
 
-infixOp = superscripted <|> subscripted
-
-subscripted = try $ do
+supersubscripted = try $ do
   a <- expr1
-  char '_'
+  c <- oneOf "^_"
   b <- expr
-  return $ EBinary "^" a b
-
-superscripted = try $ do
-  a <- expr1
-  char '^'
-  b <- expr
-  return $ EBinary "_" a b
+  return $ EBinary [c] a b
 
 command = try $ char '\\' >> identifier
 
@@ -105,7 +97,42 @@ symbols = M.fromList [
              ("+", Bin "+")
            , ("-", Bin "-")
            , ("times", Bin "\x00D7")
-           , ("pi", Ord "π")
+           , ("alpha",      Ord "\x03B1")
+           , ("beta",       Ord "\x03B2")
+           , ("chi",        Ord "\x03C7")
+           , ("delta",      Ord "\x03B4")
+           , ("Delta",      Op "\x0394")
+           , ("epsi",       Ord "\x03B5")
+           , ("varepsilon", Ord "\x025B")
+           , ("eta",        Ord "\x03B7")
+           , ("gamma",      Ord "\x03B3")
+           , ("Gamma",      Op "\x0393") 
+           , ("iota",       Ord "\x03B9")
+           , ("kappa",      Ord "\x03BA")
+           , ("lambda",     Ord "\x03BB")
+           , ("Lambda",     Op "\x039B") 
+           , ("mu",         Ord "\x03BC")
+           , ("nu",         Ord "\x03BD")
+           , ("omega",      Ord "\x03C9")
+           , ("Omega",      Op "\x03A9")
+           , ("phi",        Ord "\x03C6")
+           , ("varphi",     Ord "\x03D5")
+           , ("Phi",        Op "\x03A6") 
+           , ("pi",         Ord "\x03C0")
+           , ("Pi",         Op "\x03A0") 
+           , ("psi",        Ord "\x03C8")
+           , ("Psi",        Ord "\x03A8")
+           , ("rho",        Ord "\x03C1")
+           , ("sigma",      Ord "\x03C3")
+           , ("Sigma",      Op "\x03A3") 
+           , ("tau",        Ord "\x03C4")
+           , ("theta",      Ord "\x03B8")
+           , ("vartheta",   Ord "\x03D1")
+           , ("Theta",      Op "\x0398") 
+           , ("upsilon",    Ord "\x03C5")
+           , ("xi",         Ord "\x03BE")
+           , ("Xi",         Op "\x039E") 
+           , ("zeta",       Ord "\x03B6")
            ] 
 
 texSymbol = try $ do
