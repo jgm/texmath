@@ -36,7 +36,7 @@ texMathDef = LanguageDef
    , identStart     = letter
    , identLetter    = alphaNum <|> oneOf "'"
    , opStart        = opLetter texMathDef
-   , opLetter       = oneOf ":_+/=^-"
+   , opLetter       = oneOf ":_+/=^-(),;.?"
    , reservedOpNames= []
    , reservedNames  = []
    , caseSensitive  = True
@@ -49,9 +49,11 @@ expr1 =  choice [
   , variable
   , number
   , unary
+  , root 
   , binary
   , texSymbol
   , escaped
+  , function       -- will catch things like \sin, and also unknown commands 
   ]
 
 formula = do
@@ -64,6 +66,8 @@ formula = do
 expr = supersubscripted <|> expr1
 
 inbraces = liftM EGrouped (braces $ many expr)
+
+inbrackets = liftM EGrouped (brackets $ many expr)
 
 number = try (liftM EFloat float)
       <|> liftM EInteger decimal 
@@ -78,6 +82,8 @@ supersubscripted = try $ do
 
 escaped = try $ char '\\' >> liftM (ESymbol . Ord . (:[])) (satisfy $ not . isAlphaNum)
 
+function = liftM EIdentifier command
+
 command = try $ char '\\' >> identifier
 
 unaryOps = ["sqrt"] 
@@ -89,7 +95,14 @@ unary = try $ do
   a <- inbraces
   return $ EUnary c a
 
-binaryOps = ["frac", "root", "stackrel"] 
+-- note: sqrt can be unary, \sqrt{2}, or binary, \sqrt[3]{2}
+root = try $ do
+  string "\\sqrt"
+  a <- inbrackets
+  b <- inbraces
+  return $ EBinary "root" b a
+
+binaryOps = ["frac", "stackrel"] 
 
 binary = try $ do
   c <- command
@@ -102,6 +115,17 @@ binary = try $ do
 symbols = M.fromList [
              ("+", Bin "+")
            , ("-", Bin "-")
+           , ("(", Open "(")
+           , (")", Close ")")
+           , ("[", Open "[")
+           , ("]", Close "]")
+           , ("{", Open "{")
+           , ("}", Close "}")
+           , (",", Pun ",")
+           , (".", Pun ".")
+           , (";", Pun ";")
+           , (":", Pun ":")
+           , ("?", Pun "?")
            , ("times", Bin "\x00D7")
            , ("alpha", Ord "\x03B1")
            , ("beta", Ord "\x03B2")

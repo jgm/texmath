@@ -24,6 +24,28 @@ math = add_attr (Attr (unqual "xmlns") "http://www.w3.org/1998/Math/MathML") . u
 mrow :: [Element] -> Element
 mrow = unode "mrow"
 
+{- Firefox seems to set spacing based on its own dictionary,
+-  so I believe this is unnecessary.
+ 
+setSpacing :: String -> String -> Bool -> Element -> Element
+setSpacing left right stretchy elt =
+  add_attr (Attr (unqual "lspace") left) $
+  add_attr (Attr (unqual "rspace") right) $
+  if stretchy
+     then add_attr (Attr (unqual "stretchy") "true") elt
+     else elt
+
+showSymbol s =
+  case s of
+    Ord   x  -> unode "mo" x
+    Op    x  -> setSpacing "0" "0.167em" True $ unode "mo" x
+    Bin   x  -> setSpacing "0.222em" "0.222em" False $ unode "mo" x
+    Rel   x  -> setSpacing "0.278em" "0.278em" False $ unode "mo" x
+    Open  x  -> setSpacing "0" "0" True $ unode "mo" x
+    Close x  -> setSpacing "0" "0" True $ unode "mo" x
+    Pun   x  -> setSpacing "0" "0.167em" False $ unode "mo" x
+-}
+
 showSymbol s =
   case s of
     Ord   x  -> unode "mo" x
