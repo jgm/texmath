@@ -28,6 +28,7 @@ data Exp =
   | EUnary String Exp
   deriving (Show, Read, Eq)
 
+texMathDef :: LanguageDef st
 texMathDef = LanguageDef 
    { commentStart   = ""
    , commentEnd     = ""
@@ -44,6 +45,7 @@ texMathDef = LanguageDef
 
 -- The parser
 
+expr1 :: GenParser Char st Exp
 expr1 =  choice [
     inbraces
   , variable
@@ -56,6 +58,7 @@ expr1 =  choice [
   , function       -- will catch things like \sin, and also unknown commands 
   ]
 
+formula :: GenParser Char st [Exp]
 formula = do
   f <- many $ do e <- expr
                  whiteSpace
@@ -63,31 +66,42 @@ formula = do
   eof
   return f
 
+expr :: GenParser Char st Exp
 expr = supersubscripted <|> expr1
 
+inbraces :: GenParser Char st Exp
 inbraces = liftM EGrouped (braces $ many expr)
 
+inbrackets :: GenParser Char st Exp
 inbrackets = liftM EGrouped (brackets $ many expr)
 
+number :: GenParser Char st Exp
 number = try (liftM EFloat float)
       <|> liftM EInteger decimal 
 
+variable :: GenParser Char st Exp
 variable = liftM EIdentifier identifier
 
+supersubscripted :: GenParser Char st Exp
 supersubscripted = try $ do
   a <- expr1
   c <- oneOf "^_"
   b <- expr
   return $ EBinary [c] a b
 
+escaped :: GenParser Char st Exp
 escaped = try $ char '\\' >> liftM (ESymbol . Ord . (:[])) (satisfy $ not . isAlphaNum)
 
+function :: GenParser Char st Exp
 function = liftM EIdentifier command
 
+command :: GenParser Char st String
 command = try $ char '\\' >> identifier
 
+unaryOps :: [String]
 unaryOps = ["sqrt"] 
 
+unary :: GenParser Char st Exp
 unary = try $ do
   c <- command
   unless (c `elem` unaryOps) $
@@ -96,14 +110,17 @@ unary = try $ do
   return $ EUnary c a
 
 -- note: sqrt can be unary, \sqrt{2}, or binary, \sqrt[3]{2}
+root :: GenParser Char st Exp
 root = try $ do
   string "\\sqrt"
   a <- inbrackets
   b <- inbraces
   return $ EBinary "root" b a
 
+binaryOps :: [String]
 binaryOps = ["frac", "stackrel"] 
 
+binary :: GenParser Char st Exp
 binary = try $ do
   c <- command
   unless (c `elem` binaryOps) $
@@ -112,6 +129,7 @@ binary = try $ do
   b <- inbraces
   return $ EBinary c a b
 
+symbols :: M.Map [Char] TeXSymbol
 symbols = M.fromList [
              ("+", Bin "+")
            , ("-", Bin "-")
@@ -286,6 +304,7 @@ symbols = M.fromList [
            , ("longmapsto", Rel "\x21A6")
            ] 
 
+texSymbol :: GenParser Char st Exp
 texSymbol = try $ do
   sym <- operator <|> command
   c <- case M.lookup sym symbols of
@@ -294,17 +313,33 @@ texSymbol = try $ do
   return $ ESymbol c
 
 -- The lexer
-lexer       = P.makeTokenParser texMathDef
+lexer :: P.TokenParser st
+lexer = P.makeTokenParser texMathDef
     
-lexeme         = P.lexeme lexer
-whiteSpace     = P.whiteSpace lexer
-identifier     = lexeme (P.identifier lexer)
-operator       = lexeme (P.operator lexer)
-decimal        = lexeme (P.decimal lexer)
-float          = lexeme (P.float lexer)
-symbol p       = lexeme (P.symbol lexer p)
-braces p       = lexeme (P.braces lexer p)
-angles p       = lexeme (P.angles lexer p)
-brackets p     = lexeme (P.brackets lexer p)
-squares p      = lexeme (P.squares lexer p)
+lexeme :: CharParser st a -> CharParser st a
+lexeme = P.lexeme lexer
+
+whiteSpace :: CharParser st () 
+whiteSpace = P.whiteSpace lexer
+
+identifier :: CharParser st String
+identifier = lexeme (P.identifier lexer)
+
+operator :: CharParser st String
+operator = lexeme (P.operator lexer)
+
+decimal :: CharParser st Integer
+decimal = lexeme (P.decimal lexer)
+
+float :: CharParser st Double
+float = lexeme (P.float lexer)
+
+-- symbol :: String -> CharParser st String
+-- symbol p = lexeme (P.symbol lexer p)
+
+braces :: CharParser st a -> CharParser st a 
+braces p = lexeme (P.braces lexer p)
+
+brackets :: CharParser st a -> CharParser st a
+brackets p = lexeme (P.brackets lexer p)
 
