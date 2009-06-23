@@ -112,7 +112,7 @@ unary = try $ do
 -- note: sqrt can be unary, \sqrt{2}, or binary, \sqrt[3]{2}
 root :: GenParser Char st Exp
 root = try $ do
-  string "\\sqrt"
+  symbol "\\sqrt"
   a <- inbrackets
   b <- inbraces
   return $ EBinary "root" b a
@@ -334,8 +334,8 @@ decimal = lexeme (P.decimal lexer)
 float :: CharParser st Double
 float = lexeme (P.float lexer)
 
--- symbol :: String -> CharParser st String
--- symbol p = lexeme (P.symbol lexer p)
+symbol :: String -> CharParser st String
+symbol p = lexeme (P.symbol lexer p)
 
 braces :: CharParser st a -> CharParser st a 
 braces p = lexeme (P.braces lexer p)
