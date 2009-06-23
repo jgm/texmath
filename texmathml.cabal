@@ -1,0 +1,33 @@
+Name:                texmathml
+Version:             0.0
+Cabal-version:       >= 1.2
+Build-type:          Simple
+Synopsis:            Conversion of LaTeX math formulas to presentation MathML.
+Description:         The texmathml library provides functions to convert LaTeX
+                     math formulas to presentation MathML.
+Category:            Text
+Stability:           Experimental
+License:             BSD3
+License-File:        LICENSE
+Author:              John MacFarlane
+Maintainer:          jgm@berkeley.edu
+Homepage:
+
+-- Commented out until Cabal 1.6 becomes common.
+-- Source-repository head
+--    Type:            darcs
+--    Location:        http://johnmacfarlane.net/repos/filestore
+
+Library
+    Build-depends:       base >= 4, xml, parsec >= 2 && < 3, containers
+
+    Exposed-modules:     Text.TeXMathML, Text.TeXMathML.Parser, Text.TeXMathML.Writer
+
+    Ghc-Options:         -Wall
+    Ghc-Prof-Options:    -auto-all
+
+Executable testTeXMathML
+    Main-is:             testTeXMathML.hs
+    Ghc-Options:         -Wall
+    Ghc-Prof-Options:    -auto-all
+
