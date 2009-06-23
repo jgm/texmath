@@ -50,10 +50,13 @@ expr1 =  choice [
   , unary
   , binary
   , texSymbol
+  , escaped
   ]
 
 formula = do
-  f <- many expr
+  f <- many $ do e <- expr
+                 whiteSpace
+                 return e
   eof
   return f
 
@@ -71,6 +74,8 @@ supersubscripted = try $ do
   c <- oneOf "^_"
   b <- expr
   return $ EBinary [c] a b
+
+escaped = try $ char '\\' >> liftM (ESymbol . Ord . (:[])) anyChar
 
 command = try $ char '\\' >> identifier
 
