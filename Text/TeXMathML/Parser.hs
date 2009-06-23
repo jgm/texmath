@@ -191,6 +191,7 @@ symbols = M.fromList [
            , ("rhd", Bin "\x22B3")
            , ("unlhd", Bin "\x22B4")
            , ("unrhd", Bin "\x22B5")
+           , ("=", Rel "=")
            , (":=", Rel ":=")
            , ("lt", Rel "<")
            , ("gt", Rel ">")
