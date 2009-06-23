@@ -61,7 +61,7 @@ showExp e =
    EInteger x   -> unode "mn" $ show x
    EFloat   x   -> unode "mn" $ show x
    EGrouped xs  -> mrow $ map showExp xs
-   EVariable x  -> unode "mi" x
+   EIdentifier x -> unode "mi" x
    ESymbol x    -> showSymbol x
    EBinary c x y  -> showBinary c x y
    EUnary c x     -> showUnary c x

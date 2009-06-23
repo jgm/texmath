@@ -22,7 +22,7 @@ data Exp =
     EInteger Integer
   | EFloat   Double 
   | EGrouped [Exp]
-  | EVariable String
+  | EIdentifier String
   | ESymbol TeXSymbol
   | EBinary String Exp Exp
   | EUnary String Exp
@@ -68,7 +68,7 @@ inbraces = liftM EGrouped (braces $ many expr)
 number = try (liftM EFloat float)
       <|> liftM EInteger decimal 
 
-variable = liftM EVariable identifier
+variable = liftM EIdentifier identifier
 
 supersubscripted = try $ do
   a <- expr1
