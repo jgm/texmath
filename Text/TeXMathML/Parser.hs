@@ -1,4 +1,4 @@
-module Text.TeXMathML.Parser (expr, formula, Exp(..), Op(..))
+module Text.TeXMathML.Parser (expr, formula, Exp(..), TeXSymbol(..))
 where
 
 import Control.Monad
@@ -7,10 +7,14 @@ import Text.ParserCombinators.Parsec
 import qualified Text.ParserCombinators.Parsec.Token as P
 import Text.ParserCombinators.Parsec.Language
 
-data Op =
-    OPlus
-  | OMinus
-  | OTimes
+data TeXSymbol =
+    Ord   String
+  | Op    String
+  | Bin   String
+  | Rel   String
+  | Open  String
+  | Close String
+  | Pun String
   deriving (Show, Read, Eq)
 
 data Exp =
@@ -19,7 +23,7 @@ data Exp =
   | EParenthesized [Exp]
   | EGrouped [Exp]
   | EVariable String
-  | EOperator Op
+  | ESymbol TeXSymbol
   | EFraction Exp Exp
   | ESubscripted Exp Exp
   | ESuperscripted Exp Exp
@@ -47,7 +51,7 @@ expr1 =  choice [
   , fraction
   , variable
   , number
-  , texOperator
+  , texSymbol
   ]
 
 formula = do
@@ -88,17 +92,19 @@ fraction = try $ do
   b <- inbraces
   return $ EFraction a b
 
-ops = M.fromList [ ("+", OPlus)
-                 , ("-", OMinus)
-                 , ("times", OTimes)
-                 ] 
+symbols = M.fromList [
+             ("+", Bin "+")
+           , ("-", Bin "-")
+           , ("times", Bin "\x00D7")
+           , ("pi", Ord "π")
+           ] 
 
-texOperator = try $ do
-  op <- operator <|> command
-  c <- case M.lookup op ops of
-            Just opc   -> return opc
-            Nothing    -> fail $ "Unknown operator " ++ op
-  return $ EOperator c
+texSymbol = try $ do
+  sym <- operator <|> command
+  c <- case M.lookup sym symbols of
+            Just s   -> return s
+            Nothing  -> fail $ "Unknown symbol: " ++ sym
+  return $ ESymbol c
 
 -- The lexer
 lexer       = P.makeTokenParser texMathDef

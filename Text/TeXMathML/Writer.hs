@@ -23,11 +23,15 @@ math = add_attr (Attr (unqual "xmlns") "http://www.w3.org/1998/Math/MathML") . u
 mrow :: [Element] -> Element
 mrow = unode "mrow"
 
-showOp op = unode "mo" $
-  case op of
-    OPlus      -> "+"
-    OMinus     -> "-"
-    OTimes     -> "\x00D7"
+showSymbol s =
+  case s of
+    Ord   x  -> unode "mo" x
+    Op    x  -> unode "mo" x
+    Bin   x  -> unode "mo" x
+    Rel   x  -> unode "mo" x
+    Open  x  -> unode "mo" x
+    Close x  -> unode "mo" x
+    Pun   x  -> unode "mo" x
 
 showExp e =
  case e of
@@ -36,7 +40,7 @@ showExp e =
    EParenthesized xs -> mrow $ unode "mo" "(" : map showExp xs ++ [unode "mo" ")"]
    EGrouped xs  -> mrow $ map showExp xs
    EVariable x  -> unode "mi" x
-   EOperator x  -> showOp x
+   ESymbol x    -> showSymbol x
    EFraction x y -> unode "mfrac" [showExp x, showExp y]
    ESuperscripted x y -> unode "msup" [showExp x, showExp y]
    ESubscripted x y -> unode "msub" [showExp x, showExp y]
