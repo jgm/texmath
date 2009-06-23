@@ -2,6 +2,7 @@ module Text.TeXMathML.Writer (toMathML, DisplayType(..), showExp)
 where
 
 import Control.Monad
+import qualified Data.Map as M
 import Text.XML.Light
 import Text.TeXMathML.Parser
 
@@ -33,15 +34,35 @@ showSymbol s =
     Close x  -> unode "mo" x
     Pun   x  -> unode "mo" x
 
+unaryOps = M.fromList
+  [ ("sqrt", "msqrt")
+  ]
+
+showUnary c x =
+  case M.lookup c unaryOps of
+       Just c'  -> unode c' (showExp x)
+       Nothing  -> error $ "Unknown unary op: " ++ c
+
+binaryOps = M.fromList
+  [ ("_", "msub")
+  , ("^", "msup")
+  , ("frac", "mfrac")
+  , ("root", "mroot")
+  , ("stack", "mover")
+  ]
+
+showBinary c x y =
+  case M.lookup c binaryOps of
+       Just c'  -> unode c' [showExp x, showExp y]
+       Nothing  -> error $ "Unknown binary op: " ++ c
+
 showExp e =
  case e of
    EInteger x   -> unode "mn" $ show x
    EFloat   x   -> unode "mn" $ show x
-   EParenthesized xs -> mrow $ unode "mo" "(" : map showExp xs ++ [unode "mo" ")"]
    EGrouped xs  -> mrow $ map showExp xs
    EVariable x  -> unode "mi" x
    ESymbol x    -> showSymbol x
-   EFraction x y -> unode "mfrac" [showExp x, showExp y]
-   ESuperscripted x y -> unode "msup" [showExp x, showExp y]
-   ESubscripted x y -> unode "msub" [showExp x, showExp y]
+   EBinary c x y  -> showBinary c x y
+   EUnary c x     -> showUnary c x
 

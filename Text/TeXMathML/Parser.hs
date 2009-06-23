@@ -20,13 +20,11 @@ data TeXSymbol =
 data Exp =
     EInteger Integer
   | EFloat   Double 
-  | EParenthesized [Exp]
   | EGrouped [Exp]
   | EVariable String
   | ESymbol TeXSymbol
-  | EFraction Exp Exp
-  | ESubscripted Exp Exp
-  | ESuperscripted Exp Exp
+  | EBinary String Exp Exp
+  | EUnary String Exp
   deriving (Show, Read, Eq)
 
 texMathDef = LanguageDef 
@@ -47,10 +45,10 @@ texMathDef = LanguageDef
 
 expr1 =  choice [
     inbraces
-  , inparens
-  , fraction
   , variable
   , number
+  , unary
+  , binary
   , texSymbol
   ]
 
@@ -59,11 +57,7 @@ formula = do
   eof
   return f
 
-expr =   superscripted
-     <|> subscripted
-     <|> expr1
-
-inparens = liftM EParenthesized (parens $ many expr)
+expr = infixOp <|> expr1
 
 inbraces = liftM EGrouped (braces $ many expr)
 
@@ -72,25 +66,40 @@ number = try (liftM EFloat float)
 
 variable = liftM EVariable identifier
 
+infixOp = superscripted <|> subscripted
+
 subscripted = try $ do
   a <- expr1
   char '_'
   b <- expr
-  return $ ESubscripted a b
+  return $ EBinary "^" a b
 
 superscripted = try $ do
   a <- expr1
   char '^'
   b <- expr
-  return $ ESuperscripted a b
+  return $ EBinary "_" a b
 
 command = try $ char '\\' >> identifier
 
-fraction = try $ do
-  string "\\frac"
+unaryOps = ["sqrt"] 
+
+unary = try $ do
+  c <- command
+  unless (c `elem` unaryOps) $
+    fail $ "Unknown unary op: " ++ c
+  a <- inbraces
+  return $ EUnary c a
+
+binaryOps = ["frac", "root", "stackrel"] 
+
+binary = try $ do
+  c <- command
+  unless (c `elem` binaryOps) $
+    fail $ "Unknown binary op: " ++ c
   a <- inbraces
   b <- inbraces
-  return $ EFraction a b
+  return $ EBinary c a b
 
 symbols = M.fromList [
              ("+", Bin "+")
@@ -116,7 +125,6 @@ operator       = lexeme (P.operator lexer)
 decimal        = lexeme (P.decimal lexer)
 float          = lexeme (P.float lexer)
 symbol p       = lexeme (P.symbol lexer p)
-parens p       = lexeme (P.parens lexer p)
 braces p       = lexeme (P.braces lexer p)
 angles p       = lexeme (P.angles lexer p)
 brackets p     = lexeme (P.brackets lexer p)
