@@ -69,9 +69,7 @@ showUnary c x =
 
 binaryOps :: M.Map String String
 binaryOps = M.fromList
-  [ ("_", "msub")
-  , ("^", "msup")
-  , ("frac", "mfrac")
+  [ ("frac", "mfrac")
   , ("root", "mroot")
   , ("stack", "mover")
   ]
@@ -85,11 +83,14 @@ showBinary c x y =
 showExp :: Exp -> Element
 showExp e =
  case e of
-   EInteger x   -> unode "mn" $ show x
-   EFloat   x   -> unode "mn" $ show x
-   EGrouped xs  -> mrow $ map showExp xs
-   EIdentifier x -> unode "mi" x
-   ESymbol x    -> showSymbol x
+   EInteger x     -> unode "mn" $ show x
+   EFloat   x     -> unode "mn" $ show x
+   EGrouped xs    -> mrow $ map showExp xs
+   EIdentifier x  -> unode "mi" x
+   ESymbol x      -> showSymbol x
    EBinary c x y  -> showBinary c x y
+   ESub x y       -> unode "msub" $ map showExp [x, y]
+   ESuper x y     -> unode "msup" $ map showExp [x, y]
+   ESubsup x y z  -> unode "msubsup" $ map showExp [x, y, z]
    EUnary c x     -> showUnary c x
 

@@ -25,6 +25,9 @@ data Exp =
   | EIdentifier String
   | ESymbol TeXSymbol
   | EBinary String Exp Exp
+  | ESub Exp Exp
+  | ESuper Exp Exp
+  | ESubsup Exp Exp Exp
   | EUnary String Exp
   deriving (Show, Read, Eq)
 
@@ -67,7 +70,7 @@ formula = do
   return f
 
 expr :: GenParser Char st Exp
-expr = supersubscripted <|> expr1
+expr = subSup <|> superOrSubscripted <|> expr1
 
 inbraces :: GenParser Char st Exp
 inbraces = liftM EGrouped (braces $ many expr)
@@ -82,12 +85,24 @@ number = try (liftM EFloat float)
 variable :: GenParser Char st Exp
 variable = liftM (EIdentifier . (:[])) letter
 
-supersubscripted :: GenParser Char st Exp
-supersubscripted = try $ do
+subSup :: GenParser Char st Exp
+subSup = try $ do
+  a <- expr1
+  char '_'
+  b <- expr1
+  char '^'
+  c <- expr
+  return $ ESubsup a b c 
+
+superOrSubscripted :: GenParser Char st Exp
+superOrSubscripted = try $ do
   a <- expr1
   c <- oneOf "^_"
   b <- expr
-  return $ EBinary [c] a b
+  case c of
+       '^' -> return $ ESuper a b
+       '_' -> return $ ESub a b
+       _   -> fail "expecting ^ or _"
 
 escaped :: GenParser Char st Exp
 escaped = try $ char '\\' >> liftM (ESymbol . Ord . (:[])) (satisfy $ not . isAlphaNum)
@@ -302,6 +317,21 @@ symbols = M.fromList [
            , ("Longrightarrow", Rel "\x21D2")
            , ("Longleftrightarrow", Rel "\x21D4")
            , ("longmapsto", Rel "\x21A6")
+           , ("sum", Op "\x2211")
+           , ("prod", Op "\x220F")
+           , ("bigcap", Op "\x22C2")
+           , ("bigcup", Op "\x22C3")
+           , ("bigwedge", Op "\x22C0")
+           , ("bigvee", Op "\x22C1")
+           , ("bigsqcap", Op "\x2A05")
+           , ("bigsqcup", Op "\x2A06")
+           , ("coprod", Op "\x2210")
+           , ("bigoplus", Op "\x2A01")
+           , ("bigotimes", Op "\x2A02")
+           , ("bigodot", Op "\x2A00")
+           , ("biguplus", Op "\x2A04")
+           , ("int", Op "\x222B")
+           , ("oint", Op "\x222E")
            ] 
 
 texSymbol :: GenParser Char st Exp
