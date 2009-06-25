@@ -1,4 +1,4 @@
-module Text.TeXMathML.Parser (expr, formula, Exp(..), TeXSymbol(..))
+module Text.TeXMath.Parser (expr, formula, Exp(..), TeXSymbol(..))
 where
 
 import Control.Monad

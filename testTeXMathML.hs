@@ -1,6 +1,6 @@
 module Main where
 
-import Text.TeXMathML
+import Text.TeXMath
 import Text.XML.Light
 
 main :: IO ()

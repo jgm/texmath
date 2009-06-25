@@ -1,10 +1,10 @@
-Name:                texmathml
+Name:                texmath
 Version:             0.0
 Cabal-version:       >= 1.2
 Build-type:          Simple
-Synopsis:            Conversion of LaTeX math formulas to presentation MathML.
+Synopsis:            Conversion of LaTeX math formulas to other formats.
 Description:         The texmathml library provides functions to convert LaTeX
-                     math formulas to presentation MathML.
+                     math formulas to presentation MathML and other formats.
 Category:            Text
 Stability:           Experimental
 License:             BSD3
@@ -21,7 +21,7 @@ Homepage:
 Library
     Build-depends:       base >= 4, xml, parsec >= 2 && < 3, containers
 
-    Exposed-modules:     Text.TeXMathML, Text.TeXMathML.Parser, Text.TeXMathML.Writer
+    Exposed-modules:     Text.TeXMath, Text.TeXMath.Parser, Text.TeXMath.MathMLWriter
 
     Ghc-Options:         -Wall
     Ghc-Prof-Options:    -auto-all

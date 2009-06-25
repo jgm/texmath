@@ -1,9 +1,9 @@
-module Text.TeXMathML.Writer (toMathML, DisplayType(..), showExp)
+module Text.TeXMath.MathMLWriter (toMathML, DisplayType(..), showExp)
 where
 
 import qualified Data.Map as M
 import Text.XML.Light
-import Text.TeXMathML.Parser
+import Text.TeXMath.Parser
 
 data DisplayType = DisplayBlock
                  | DisplayInline

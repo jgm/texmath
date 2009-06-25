@@ -1,7 +1,7 @@
-module Text.TeXMathML ( texMathToMathML, DisplayType(..) )
+module Text.TeXMath ( texMathToMathML, DisplayType(..) )
 where
-import Text.TeXMathML.Parser
-import Text.TeXMathML.Writer
+import Text.TeXMath.Parser
+import Text.TeXMath.MathMLWriter
 import Text.XML.Light
 import Text.ParserCombinators.Parsec (parse)
 
