@@ -80,7 +80,7 @@ number = try (liftM EFloat float)
       <|> liftM EInteger decimal 
 
 variable :: GenParser Char st Exp
-variable = liftM EIdentifier identifier
+variable = liftM (EIdentifier . (:[])) letter
 
 supersubscripted :: GenParser Char st Exp
 supersubscripted = try $ do
