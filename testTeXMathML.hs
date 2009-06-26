@@ -6,4 +6,4 @@ import Text.XML.Light
 main :: IO ()
 main = do
   inp <- getContents
-  putStrLn . ppTopElement . texMathToMathML DisplayBlock $! inp
+  putStr . ppTopElement . texMathToMathML DisplayBlock $! inp
