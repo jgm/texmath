@@ -38,9 +38,9 @@ texMathDef = LanguageDef
    , commentLine    = "%"
    , nestedComments = False
    , identStart     = letter
-   , identLetter    = alphaNum <|> oneOf "'"
+   , identLetter    = alphaNum
    , opStart        = opLetter texMathDef
-   , opLetter       = oneOf ":_+/=^-(),;.?"
+   , opLetter       = oneOf ":_+/=^-(),;.?'"
    , reservedOpNames= []
    , reservedNames  = []
    , caseSensitive  = True
@@ -159,6 +159,10 @@ symbols = M.fromList [
            , (";", Pun ";")
            , (":", Pun ":")
            , ("?", Pun "?")
+           , ("'", Ord "\x02B9")
+           , ("''", Ord "\x02BA")
+           , ("'''", Ord "\x2034")
+           , ("''''", Ord "\x2057")
            , ("times", Bin "\x00D7")
            , ("alpha", Ord "\x03B1")
            , ("beta", Ord "\x03B2")
@@ -332,6 +336,35 @@ symbols = M.fromList [
            , ("biguplus", Op "\x2A04")
            , ("int", Op "\x222B")
            , ("oint", Op "\x222E")
+           , ("prime", Ord "\x2032")
+           , ("ldots", Ord "\x2026")
+           , ("cdots", Ord "\x22EF")
+           , ("vdots", Ord "\x22EE")
+           , ("ddots", Ord "\x22F1")
+           , ("forall", Op "\x2200")
+           , ("exists", Op "\x2203")
+           , ("Re", Ord "\x211C")
+           , ("Im", Ord "\x2111")
+           , ("aleph", Ord "\x2135")
+           , ("hbar", Ord "\x210F")
+           , ("ell", Ord "\x2113")
+           , ("wp", Ord "\x2118")
+           , ("emptyset", Ord "\x2205")
+           , ("infty", Ord "\x221E")
+           , ("partial", Ord "\x2202")
+           , ("nabla", Ord "\x2207")
+           , ("triangle", Ord "\x25B3")
+           , ("therefore", Pun "\x2234")
+           , ("angle", Ord "\x2220")
+           , ("diamond", Op "\x22C4")
+           , ("Diamond", Op "\x25C7")
+           , ("neg", Op "\x00AC")
+           , ("lnot", Ord "\x00AC")
+           , ("bot", Ord "\x22A5")
+           , ("top", Ord "\x22A4")
+           , ("square", Ord "\x25AB")
+           , ("Box", Op "\x25A1")
+           , ("wr", Ord "\x2240")
            ] 
 
 texSymbol :: GenParser Char st Exp
