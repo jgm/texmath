@@ -52,7 +52,6 @@ expr1 =  choice [
   , binary
   , texSymbol
   , escaped
-  , function       -- will catch things like \sin, and also unknown commands 
   ]
 
 formula :: GenParser Char st [Exp]
@@ -100,9 +99,6 @@ superOrSubscripted = try $ do
 
 escaped :: GenParser Char st Exp
 escaped = try $ char '\\' >> liftM (ESymbol Ord . (:[])) (satisfy $ not . isAlphaNum)
-
-function :: GenParser Char st Exp
-function = liftM EIdentifier $ try $ char '\\' >> identifier
 
 command :: GenParser Char st String
 command = try $ char '\\' >> liftM ('\\':) (identifier <|> count 1 anyChar)
@@ -367,6 +363,38 @@ symbols = M.fromList [
            , ("~", ESpace "0.333em")
            , ("\\quad", ESpace "1em")
            , ("\\qquad", ESpace "2em")
+           , ("\\arccos", EIdentifier "arccos")
+           , ("\\arcsin", EIdentifier "arcsin")
+           , ("\\arctan", EIdentifier "arctan")
+           , ("\\arg", EIdentifier "arg")
+           , ("\\cos", EIdentifier "cos")
+           , ("\\cosh", EIdentifier "cosh")
+           , ("\\cot", EIdentifier "cot")
+           , ("\\coth", EIdentifier "coth")
+           , ("\\csc", EIdentifier "csc")
+           , ("\\deg", EIdentifier "deg")
+           , ("\\det", EIdentifier "det")
+           , ("\\dim", EIdentifier "dim")
+           , ("\\exp", EIdentifier "exp")
+           , ("\\gcd", EIdentifier "gcd")
+           , ("\\hom", EIdentifier "hom")
+           , ("\\inf", EIdentifier "inf")
+           , ("\\ker", EIdentifier "ker")
+           , ("\\lg", EIdentifier "lg")
+           , ("\\lim", EIdentifier "lim")
+           , ("\\liminf", EIdentifier "liminf")
+           , ("\\limsup", EIdentifier "limsup")
+           , ("\\ln", EIdentifier "ln")
+           , ("\\log", EIdentifier "log")
+           , ("\\max", EIdentifier "max")
+           , ("\\min", EIdentifier "min")
+           , ("\\Pr", EIdentifier "Pr")
+           , ("\\sec", EIdentifier "sec")
+           , ("\\sin", EIdentifier "sin")
+           , ("\\sinh", EIdentifier "sinh")
+           , ("\\sup", EIdentifier "sup")
+           , ("\\tan", EIdentifier "tan")
+           , ("\\tanh", EIdentifier "tanh")
            ] 
 
 texSymbol :: GenParser Char st Exp
