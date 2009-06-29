@@ -102,7 +102,7 @@ escaped :: GenParser Char st Exp
 escaped = try $ char '\\' >> liftM (ESymbol Ord . (:[])) (satisfy $ not . isAlphaNum)
 
 function :: GenParser Char st Exp
-function = liftM EIdentifier command
+function = liftM EIdentifier $ try $ char '\\' >> identifier
 
 command :: GenParser Char st String
 command = try $ char '\\' >> liftM ('\\':) (identifier <|> count 1 anyChar)
