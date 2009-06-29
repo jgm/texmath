@@ -80,6 +80,10 @@ showBinary c x y =
        Just c'  -> unode c' [showExp x, showExp y]
        Nothing  -> error $ "Unknown binary op: " ++ c
 
+spaceWidth :: String -> Element
+spaceWidth w =
+  add_attr (Attr (unqual "width") w) $ unode "mspace" ()
+
 showExp :: Exp -> Element
 showExp e =
  case e of
@@ -88,6 +92,7 @@ showExp e =
    EGrouped xs    -> mrow $ map showExp xs
    EIdentifier x  -> unode "mi" x
    ESymbol x      -> showSymbol x
+   ESpace x       -> spaceWidth x
    EBinary c x y  -> showBinary c x y
    ESub x y       -> unode "msub" $ map showExp [x, y]
    ESuper x y     -> unode "msup" $ map showExp [x, y]

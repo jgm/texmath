@@ -24,6 +24,7 @@ data Exp =
   | EGrouped [Exp]
   | EIdentifier String
   | ESymbol TeXSymbol
+  | ESpace String
   | EBinary String Exp Exp
   | ESub Exp Exp
   | ESuper Exp Exp
