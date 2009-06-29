@@ -34,7 +34,7 @@ texMathDef = LanguageDef
    , identStart     = letter
    , identLetter    = alphaNum
    , opStart        = opLetter texMathDef
-   , opLetter       = oneOf ":_+/=^-(),;.?'"
+   , opLetter       = oneOf ":_+/=^-(),;.?'~"
    , reservedOpNames= []
    , reservedNames  = []
    , caseSensitive  = True
