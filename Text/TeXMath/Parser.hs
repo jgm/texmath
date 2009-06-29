@@ -104,7 +104,7 @@ command :: GenParser Char st String
 command = try $ char '\\' >> liftM ('\\':) (identifier <|> count 1 anyChar)
 
 unaryOps :: [String]
-unaryOps = ["\\sqrt"] 
+unaryOps = ["\\sqrt", "\\surd"]
 
 unary :: GenParser Char st Exp
 unary = try $ do
@@ -117,7 +117,7 @@ unary = try $ do
 -- note: sqrt can be unary, \sqrt{2}, or binary, \sqrt[3]{2}
 root :: GenParser Char st Exp
 root = try $ do
-  symbol "\\sqrt"
+  try (symbol "\\sqrt") <|> symbol "\\surd"
   a <- inbrackets
   b <- inbraces
   return $ EBinary "\\sqrt" b a

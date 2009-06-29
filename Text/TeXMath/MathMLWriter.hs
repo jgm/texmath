@@ -48,6 +48,7 @@ showSymbol (ESymbol s x) =
 unaryOps :: M.Map String String
 unaryOps = M.fromList
   [ ("\\sqrt", "msqrt")
+  , ("\\surd", "msqrt")
   ]
 
 showUnary :: String -> Exp -> Element
