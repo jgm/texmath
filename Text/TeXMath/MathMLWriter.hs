@@ -58,7 +58,7 @@ showSymbol s =
 
 unaryOps :: M.Map String String
 unaryOps = M.fromList
-  [ ("sqrt", "msqrt")
+  [ ("\\sqrt", "msqrt")
   ]
 
 showUnary :: String -> Exp -> Element
@@ -69,9 +69,9 @@ showUnary c x =
 
 binaryOps :: M.Map String String
 binaryOps = M.fromList
-  [ ("frac", "mfrac")
-  , ("root", "mroot")
-  , ("stack", "mover")
+  [ ("\\frac", "mfrac")
+  , ("\\root", "mroot")
+  , ("\\stack", "mover")
   ]
 
 showBinary :: String -> Exp -> Exp -> Element
