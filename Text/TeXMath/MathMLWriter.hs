@@ -34,7 +34,7 @@ setSpacing left right stretchy elt =
      then add_attr (Attr (unqual "stretchy") "true") elt
      else elt
 
-showSymbol s =
+showSymbol (ESymbol s x) =
   case s of
     Ord   x  -> unode "mo" x
     Op    x  -> setSpacing "0" "0.167em" True $ unode "mo" x
@@ -44,17 +44,6 @@ showSymbol s =
     Close x  -> setSpacing "0" "0" True $ unode "mo" x
     Pun   x  -> setSpacing "0" "0.167em" False $ unode "mo" x
 -}
-
-showSymbol :: TeXSymbol -> Element
-showSymbol s =
-  case s of
-    Ord   x  -> unode "mo" x
-    Op    x  -> unode "mo" x
-    Bin   x  -> unode "mo" x
-    Rel   x  -> unode "mo" x
-    Open  x  -> unode "mo" x
-    Close x  -> unode "mo" x
-    Pun   x  -> unode "mo" x
 
 unaryOps :: M.Map String String
 unaryOps = M.fromList
@@ -70,7 +59,7 @@ showUnary c x =
 binaryOps :: M.Map String String
 binaryOps = M.fromList
   [ ("\\frac", "mfrac")
-  , ("\\root", "mroot")
+  , ("\\sqrt", "mroot")
   , ("\\stack", "mover")
   ]
 
@@ -91,7 +80,7 @@ showExp e =
    EFloat   x     -> unode "mn" $ show x
    EGrouped xs    -> mrow $ map showExp xs
    EIdentifier x  -> unode "mi" x
-   ESymbol x      -> showSymbol x
+   ESymbol _ x    -> unode "mo" x
    ESpace x       -> spaceWidth x
    EBinary c x y  -> showBinary c x y
    ESub x y       -> unode "msub" $ map showExp [x, y]
