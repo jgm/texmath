@@ -23,6 +23,8 @@ data Exp =
   | ESuper Exp Exp
   | ESubsup Exp Exp Exp
   | EUnary String Exp
+  | EScaled String Exp
+  | EStretchy Exp
   deriving (Show, Read, Eq)
 
 texMathDef :: LanguageDef st
@@ -47,6 +49,7 @@ expr1 =  choice [
     inbraces
   , variable
   , number
+  , enclosure
   , unary
   , root 
   , binary
@@ -74,6 +77,35 @@ inbrackets = liftM EGrouped (brackets $ many expr)
 number :: GenParser Char st Exp
 number = try (liftM EFloat float)
       <|> liftM EInteger decimal 
+
+enclosure :: GenParser Char st Exp
+enclosure = basicEnclosure <|> left <|> right <|> scaledEnclosure
+
+basicEnclosure :: GenParser Char st Exp
+basicEnclosure = choice $
+  map (\(s, r) -> try $ symbol s >> return r) enclosures
+
+left :: GenParser Char st Exp
+left = try $ do
+  symbol "\\left"
+  enc <- enclosure <|> (symbol "." >> return (ESymbol Open "\x200B"))
+  case enc of
+       ESymbol Open x  -> return $ EStretchy $ ESymbol Open x
+       _               -> fail "expecting open brace"
+
+right :: GenParser Char st Exp
+right = try $ do
+  symbol "\\right"
+  enc <- enclosure <|> (symbol "." >> return (ESymbol Close "\x200B"))
+  case enc of
+       ESymbol Close x  -> return $ EStretchy $ ESymbol Close x
+       _                -> fail "expecting closing brace"
+
+scaledEnclosure :: GenParser Char st Exp
+scaledEnclosure = try $ do
+  scaler <- choice $ map (\(s, r) -> try $ symbol s >> return r) scalers
+  enc <- basicEnclosure 
+  return $ EScaled scaler $ EStretchy enc
 
 variable :: GenParser Char st Exp
 variable = liftM (EIdentifier . (:[])) letter
@@ -134,17 +166,45 @@ binary = try $ do
   b <- inbraces
   return $ EBinary c a b
 
-symbols :: M.Map [Char] Exp
+scalers :: [(String, String)]
+scalers = [ ("\\bigg", "2.2")
+          , ("\\Bigg", "2.9")
+          , ("\\big", "1.2")
+          , ("\\Big", "1.6")
+          ]
+
+enclosures :: [(String, Exp)]
+enclosures = [ ("(", ESymbol Open "(")
+             , (")", ESymbol Close ")")
+             , ("\\[", ESymbol Open "[")
+             , ("\\]", ESymbol Close "]")
+             , ("\\{", ESymbol Open "{")
+             , ("\\}", ESymbol Close "}")
+             , ("\\lbrack", ESymbol Open "[")
+             , ("\\lbrace", ESymbol Open "{")
+             , ("\\rbrack", ESymbol Close "]")
+             , ("\\rbrace", ESymbol Close "}")
+             , ("\\langle", ESymbol Open "\x3009")
+             , ("\\rangle", ESymbol Close "\x300A")
+             , ("\\lfloor", ESymbol Open "\x230A")
+             , ("\\rfloor", ESymbol Close "\x230B")
+             , ("\\lceil", ESymbol Open "\x2308")
+             , ("\\rceil", ESymbol Close "\x2309")
+             , ("|", ESymbol Open "\x2223")
+             , ("|", ESymbol Close "\x2223")
+             , ("\\|", ESymbol Open "\x2225")
+             , ("\\|", ESymbol Close "\x2225")
+             , ("\\vert", ESymbol Open "\x2223")
+             , ("\\vert", ESymbol Close "\x2223")
+             , ("\\Vert", ESymbol Open "\x2225")
+             , ("\\Vert", ESymbol Close "\x2225")
+             ]
+
+symbols :: M.Map String Exp
 symbols = M.fromList [
              ("+", ESymbol Bin "+")
            , ("-", ESymbol Bin "-")
-           , ("(", ESymbol Open "(")
-           , (")", ESymbol Close ")")
-           , ("\\[", ESymbol Open "[")
-           , ("\\]", ESymbol Close "]")
-           , ("\\{", ESymbol Open "{")
-           , ("\\}", ESymbol Close "}")
-           , (", ESymbol", ESymbol Pun ", ESymbol")
+           , (",", ESymbol Pun ",")
            , (".", ESymbol Pun ".")
            , (";", ESymbol Pun ";")
            , (":", ESymbol Pun ":")
@@ -153,6 +213,11 @@ symbols = M.fromList [
            , ("''", ESymbol Ord "\x02BA")
            , ("'''", ESymbol Ord "\x2034")
            , ("''''", ESymbol Ord "\x2057")
+           , ("\\mid", ESymbol Bin "\x2223")
+           , ("\\parallel", ESymbol Rel "\x2225")
+           , ("\\backslash", ESymbol Bin "\x2216")
+           , ("/", ESymbol Bin "/")
+           , ("\\setminus",	ESymbol Bin "\\")
            , ("\\times", ESymbol Bin "\x00D7")
            , ("\\alpha", ESymbol Ord "\x03B1")
            , ("\\beta", ESymbol Ord "\x03B2")

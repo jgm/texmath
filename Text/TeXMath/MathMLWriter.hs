@@ -74,6 +74,13 @@ spaceWidth :: String -> Element
 spaceWidth w =
   add_attr (Attr (unqual "width") w) $ unode "mspace" ()
 
+makeStretchy :: Element -> Element
+makeStretchy = add_attr (Attr (unqual "stretchy") "true")
+
+makeScaled :: String -> Element -> Element
+makeScaled s = add_attr (Attr (unqual "minsize") s) .
+               add_attr (Attr (unqual "maxsize") s) 
+
 showExp :: Exp -> Element
 showExp e =
  case e of
@@ -88,4 +95,5 @@ showExp e =
    ESuper x y     -> unode "msup" $ map showExp [x, y]
    ESubsup x y z  -> unode "msubsup" $ map showExp [x, y, z]
    EUnary c x     -> showUnary c x
-
+   EStretchy x    -> makeStretchy $ showExp x
+   EScaled s x    -> makeScaled s $ showExp x
