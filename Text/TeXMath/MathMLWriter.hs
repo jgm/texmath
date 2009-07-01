@@ -84,16 +84,20 @@ makeScaled s = add_attr (Attr (unqual "minsize") s) .
 showExp :: Exp -> Element
 showExp e =
  case e of
-   EInteger x     -> unode "mn" $ show x
-   EFloat   x     -> unode "mn" $ show x
-   EGrouped xs    -> mrow $ map showExp xs
-   EIdentifier x  -> unode "mi" x
-   ESymbol _ x    -> unode "mo" x
-   ESpace x       -> spaceWidth x
-   EBinary c x y  -> showBinary c x y
-   ESub x y       -> unode "msub" $ map showExp [x, y]
-   ESuper x y     -> unode "msup" $ map showExp [x, y]
-   ESubsup x y z  -> unode "msubsup" $ map showExp [x, y, z]
-   EUnary c x     -> showUnary c x
-   EStretchy x    -> makeStretchy $ showExp x
-   EScaled s x    -> makeScaled s $ showExp x
+   EInteger x       -> unode "mn" $ show x
+   EFloat   x       -> unode "mn" $ show x
+   EGrouped xs      -> mrow $ map showExp xs
+   EIdentifier x    -> unode "mi" x
+   ESymbol _ x      -> unode "mo" x
+   ESpace x         -> spaceWidth x
+   EBinary c x y    -> showBinary c x y
+   ESub x y         -> unode "msub" $ map showExp [x, y]
+   ESuper x y       -> unode "msup" $ map showExp [x, y]
+   ESubsup x y z    -> unode "msubsup" $ map showExp [x, y, z]
+   EUnder x y       -> unode "munder" $ map showExp [x, y]
+   EOver x y        -> unode "mover" $ map showExp [x, y]
+   EUnderover x y z -> unode "munderover" $ map showExp [x, y, z]
+   EUnary c x       -> showUnary c x
+   EStretchy x      -> makeStretchy $ showExp x
+   EScaled s x      -> makeScaled s $ showExp x
+

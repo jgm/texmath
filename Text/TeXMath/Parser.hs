@@ -22,6 +22,9 @@ data Exp =
   | ESub Exp Exp
   | ESuper Exp Exp
   | ESubsup Exp Exp Exp
+  | EOver Exp Exp
+  | EUnder Exp Exp
+  | EUnderover Exp Exp Exp
   | EUnary String Exp
   | EScaled String Exp
   | EStretchy Exp
@@ -50,6 +53,7 @@ expr1 =  choice [
   , variable
   , number
   , enclosure
+  , diacritical
   , unary
   , root 
   , binary
@@ -79,33 +83,33 @@ number = try (liftM EFloat float)
       <|> liftM EInteger decimal 
 
 enclosure :: GenParser Char st Exp
-enclosure = basicEnclosure <|> left <|> right <|> scaledEnclosure
+enclosure = basicEnclosure <|> leftright <|> scaledEnclosure
 
 basicEnclosure :: GenParser Char st Exp
-basicEnclosure = choice $
-  map (\(s, r) -> try $ symbol s >> return r) enclosures
+basicEnclosure = try $ do
+  cmd <- command <|> operator
+  case M.lookup cmd enclosures of
+       Just r  -> return r
+       Nothing -> fail "not an enclosure"
 
-left :: GenParser Char st Exp
-left = try $ do
-  symbol "\\left"
-  enc <- enclosure <|> (symbol "." >> return (ESymbol Open "\xFEFF"))
+leftright :: GenParser Char st Exp
+leftright = try $ do
+  cmd <- command
+  typ <- case cmd of
+              "\\left"    -> return Open
+              "\\right"   -> return Close
+              _           -> fail "not left or right"
+  enc <- enclosure <|> (symbol "." >> return (ESymbol typ "\xFEFF"))
   case enc of
-       ESymbol Open x  -> return $ EStretchy $ ESymbol Open x
-       _               -> fail "expecting open brace"
-
-right :: GenParser Char st Exp
-right = try $ do
-  symbol "\\right"
-  enc <- enclosure <|> (symbol "." >> return (ESymbol Close "\xFEFF"))
-  case enc of
-       ESymbol Close x  -> return $ EStretchy $ ESymbol Close x
-       _                -> fail "expecting closing brace"
+       ESymbol t x | t == typ -> return $ EStretchy $ ESymbol t x
+       _                      -> fail $ "expecting " ++ show typ ++ " brace"
 
 scaledEnclosure :: GenParser Char st Exp
 scaledEnclosure = try $ do
-  scaler <- choice $ map (\(s, r) -> try $ symbol s >> return r) scalers
-  enc <- basicEnclosure 
-  return $ EScaled scaler $ EStretchy enc
+  cmd <- command
+  case M.lookup cmd scalers of
+       Just  r -> liftM (EScaled r . EStretchy) basicEnclosure
+       Nothing -> fail "expecting scaler"
 
 variable :: GenParser Char st Exp
 variable = liftM (EIdentifier . (:[])) letter
@@ -138,6 +142,42 @@ command = try $ char '\\' >> liftM ('\\':) (identifier <|> count 1 anyChar)
 unaryOps :: [String]
 unaryOps = ["\\sqrt", "\\surd"]
 
+diacritical :: GenParser Char st Exp
+diacritical = fail "x" 
+
+{-
+diacriticals :: 
+{input:"\\acute",	tag:"mover",  output:"\u00B4", ttype:UNARY, acc:true},
+//{input:"\\acute",	  tag:"mover",  output:"\u0317", ttype:UNARY, acc:true},
+//{input:"\\acute",	  tag:"mover",  output:"\u0301", ttype:UNARY, acc:true},
+//{input:"\\grave",	  tag:"mover",  output:"\u0300", ttype:UNARY, acc:true},
+//{input:"\\grave",	  tag:"mover",  output:"\u0316", ttype:UNARY, acc:true},
+{input:"\\grave",	tag:"mover",  output:"\u0060", ttype:UNARY, acc:true},
+{input:"\\breve",	tag:"mover",  output:"\u02D8", ttype:UNARY, acc:true},
+{input:"\\check",	tag:"mover",  output:"\u02C7", ttype:UNARY, acc:true},
+{input:"\\dot",		tag:"mover",  output:".",      ttype:UNARY, acc:true},
+{input:"\\ddot",	tag:"mover",  output:"..",     ttype:UNARY, acc:true},
+//{input:"\\ddot",	  tag:"mover",  output:"\u00A8", ttype:UNARY, acc:true},
+{input:"\\mathring",	tag:"mover",  output:"\u00B0", ttype:UNARY, acc:true},
+{input:"\\vec",		tag:"mover",  output:"\u20D7", ttype:UNARY, acc:true},
+{input:"\\overrightarrow",tag:"mover",output:"\u20D7", ttype:UNARY, acc:true},
+{input:"\\overleftarrow",tag:"mover", output:"\u20D6", ttype:UNARY, acc:true},
+{input:"\\hat",		tag:"mover",  output:"\u005E", ttype:UNARY, acc:true},
+{input:"\\widehat",	tag:"mover",  output:"\u0302", ttype:UNARY, acc:true},
+{input:"\\tilde",	tag:"mover",  output:"~",      ttype:UNARY, acc:true},
+//{input:"\\tilde",	  tag:"mover",  output:"\u0303", ttype:UNARY, acc:true},
+{input:"\\widetilde",	tag:"mover",  output:"\u02DC", ttype:UNARY, acc:true},
+{input:"\\bar",		tag:"mover",  output:"\u203E", ttype:UNARY, acc:true},
+{input:"\\overbrace",	tag:"mover",  output:"\uFE37", ttype:UNARY, acc:true}, //Changed unicode overbrace
+{input:"\\overbracket", tag:"mover",  output:"\u23B4", ttype:UNARY, acc:true}, //old overbrace = overbracket
+{input:"\\overline",	tag:"mover",  output:"\u00AF", ttype:UNARY, acc:true},
+{input:"\\underbrace",  tag:"munder", output:"\uFE38", ttype:UNARY, acc:true}, //Changed unicode underbrace
+{input:"\\underbracket",tag:"munder", output:"\u23B5", ttype:UNARY, acc:true}, //old underbrace = underbracket
+{input:"\\underline",	tag:"munder", output:"\u00AF", ttype:UNARY, acc:true},
+//{input:"underline",	tag:"munder", output:"\u0332", ttype:UNARY, acc:true},
+-}
+   
+
 unary :: GenParser Char st Exp
 unary = try $ do
   c <- command
@@ -154,9 +194,6 @@ root = try $ do
   b <- inbraces
   return $ EBinary "\\sqrt" b a
 
-binaryOps :: [String]
-binaryOps = ["\\frac", "\\stackrel"] 
-
 binary :: GenParser Char st Exp
 binary = try $ do
   c <- command
@@ -166,15 +203,58 @@ binary = try $ do
   b <- inbraces
   return $ EBinary c a b
 
-scalers :: [(String, String)]
-scalers = [ ("\\bigg", "2.2")
+texSymbol :: GenParser Char st Exp
+texSymbol = try $ do
+  sym <- operator <|> command
+  case M.lookup sym symbols of
+       Just s   -> return s
+       Nothing  -> fail $ "Unknown symbol: " ++ sym
+
+-- The lexer
+lexer :: P.TokenParser st
+lexer = P.makeTokenParser texMathDef
+    
+lexeme :: CharParser st a -> CharParser st a
+lexeme = P.lexeme lexer
+
+whiteSpace :: CharParser st () 
+whiteSpace = P.whiteSpace lexer
+
+identifier :: CharParser st String
+identifier = lexeme (P.identifier lexer)
+
+operator :: CharParser st String
+operator = lexeme (P.operator lexer)
+
+decimal :: CharParser st Integer
+decimal = lexeme (P.decimal lexer)
+
+float :: CharParser st Double
+float = lexeme (P.float lexer)
+
+symbol :: String -> CharParser st String
+symbol p = lexeme (P.symbol lexer p)
+
+braces :: CharParser st a -> CharParser st a 
+braces p = lexeme (P.braces lexer p)
+
+brackets :: CharParser st a -> CharParser st a
+brackets p = lexeme (P.brackets lexer p)
+
+binaryOps :: [String]
+binaryOps = ["\\frac", "\\stackrel"] 
+
+scalers :: M.Map String String
+scalers = M.fromList
+          [ ("\\bigg", "2.2")
           , ("\\Bigg", "2.9")
           , ("\\big", "1.2")
           , ("\\Big", "1.6")
           ]
 
-enclosures :: [(String, Exp)]
-enclosures = [ ("(", ESymbol Open "(")
+enclosures :: M.Map String Exp
+enclosures = M.fromList
+             [ ("(", ESymbol Open "(")
              , (")", ESymbol Close ")")
              , ("\\[", ESymbol Open "[")
              , ("\\]", ESymbol Close "]")
@@ -461,42 +541,4 @@ symbols = M.fromList [
            , ("\\tan", EIdentifier "tan")
            , ("\\tanh", EIdentifier "tanh")
            ] 
-
-texSymbol :: GenParser Char st Exp
-texSymbol = try $ do
-  sym <- operator <|> command
-  case M.lookup sym symbols of
-       Just s   -> return s
-       Nothing  -> fail $ "Unknown symbol: " ++ sym
-
--- The lexer
-lexer :: P.TokenParser st
-lexer = P.makeTokenParser texMathDef
-    
-lexeme :: CharParser st a -> CharParser st a
-lexeme = P.lexeme lexer
-
-whiteSpace :: CharParser st () 
-whiteSpace = P.whiteSpace lexer
-
-identifier :: CharParser st String
-identifier = lexeme (P.identifier lexer)
-
-operator :: CharParser st String
-operator = lexeme (P.operator lexer)
-
-decimal :: CharParser st Integer
-decimal = lexeme (P.decimal lexer)
-
-float :: CharParser st Double
-float = lexeme (P.float lexer)
-
-symbol :: String -> CharParser st String
-symbol p = lexeme (P.symbol lexer p)
-
-braces :: CharParser st a -> CharParser st a 
-braces p = lexeme (P.braces lexer p)
-
-brackets :: CharParser st a -> CharParser st a
-brackets p = lexeme (P.brackets lexer p)
 
