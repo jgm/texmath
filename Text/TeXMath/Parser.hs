@@ -238,7 +238,7 @@ brackets :: CharParser st a -> CharParser st a
 brackets p = lexeme (P.brackets lexer p)
 
 binaryOps :: [String]
-binaryOps = ["\\frac", "\\stackrel"] 
+binaryOps = ["\\frac", "\\stackrel", "\\overset", "\\underset"]
 
 scalers :: M.Map String String
 scalers = M.fromList

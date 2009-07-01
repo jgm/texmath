@@ -61,7 +61,9 @@ binaryOps :: M.Map String String
 binaryOps = M.fromList
   [ ("\\frac", "mfrac")
   , ("\\sqrt", "mroot")
-  , ("\\stack", "mover")
+  , ("\\stackrel", "mover")
+  , ("\\overset", "mover")
+  , ("\\underset", "munder")
   ]
 
 showBinary :: String -> Exp -> Exp -> Element
