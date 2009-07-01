@@ -18,7 +18,7 @@ toMathML dt exprs =
                       DisplayInline -> "inline"
 
 math :: [Element] -> Element
-math = add_attr (Attr (unqual "xmlns") "http://www.w3.org/1998/Math/MathML") . unode "math"
+math = add_attr (Attr (unqual "xmlns") "http://www.w3.org/1998/Math/MathML") . unode "math" . unode "mrow"
 
 mrow :: [Element] -> Element
 mrow = unode "mrow"
