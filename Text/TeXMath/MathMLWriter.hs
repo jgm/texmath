@@ -81,13 +81,19 @@ makeScaled :: String -> Element -> Element
 makeScaled s = add_attr (Attr (unqual "minsize") s) .
                add_attr (Attr (unqual "maxsize") s) 
 
+accent :: String -> Element
+accent s = add_attr (Attr (unqual "accent") "true") $
+           unode "mo" s
+
 showExp :: Exp -> Element
 showExp e =
  case e of
    EInteger x       -> unode "mn" $ show x
    EFloat   x       -> unode "mn" $ show x
+   EGrouped [x]     -> showExp x
    EGrouped xs      -> mrow $ map showExp xs
    EIdentifier x    -> unode "mi" x
+   ESymbol Accent x -> accent x
    ESymbol _ x      -> unode "mo" x
    ESpace x         -> spaceWidth x
    EBinary c x y    -> showBinary c x y

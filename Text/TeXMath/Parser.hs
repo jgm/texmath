@@ -8,7 +8,7 @@ import Text.ParserCombinators.Parsec
 import qualified Text.ParserCombinators.Parsec.Token as P
 import Text.ParserCombinators.Parsec.Language
 
-data TeXSymbolType = Ord | Op | Bin | Rel | Open | Close | Pun
+data TeXSymbolType = Ord | Op | Bin | Rel | Open | Close | Pun | Accent
                      deriving (Show, Read, Eq)
 
 data Exp =
@@ -143,40 +143,36 @@ unaryOps :: [String]
 unaryOps = ["\\sqrt", "\\surd"]
 
 diacritical :: GenParser Char st Exp
-diacritical = fail "x" 
+diacritical = try $ do
+  c <- command
+  case M.lookup c diacriticals of
+       Just r  -> liftM r inbraces
+       Nothing -> fail "expecting diacritical"
 
-{-
-diacriticals :: 
-{input:"\\acute",	tag:"mover",  output:"\u00B4", ttype:UNARY, acc:true},
-//{input:"\\acute",	  tag:"mover",  output:"\u0317", ttype:UNARY, acc:true},
-//{input:"\\acute",	  tag:"mover",  output:"\u0301", ttype:UNARY, acc:true},
-//{input:"\\grave",	  tag:"mover",  output:"\u0300", ttype:UNARY, acc:true},
-//{input:"\\grave",	  tag:"mover",  output:"\u0316", ttype:UNARY, acc:true},
-{input:"\\grave",	tag:"mover",  output:"\u0060", ttype:UNARY, acc:true},
-{input:"\\breve",	tag:"mover",  output:"\u02D8", ttype:UNARY, acc:true},
-{input:"\\check",	tag:"mover",  output:"\u02C7", ttype:UNARY, acc:true},
-{input:"\\dot",		tag:"mover",  output:".",      ttype:UNARY, acc:true},
-{input:"\\ddot",	tag:"mover",  output:"..",     ttype:UNARY, acc:true},
-//{input:"\\ddot",	  tag:"mover",  output:"\u00A8", ttype:UNARY, acc:true},
-{input:"\\mathring",	tag:"mover",  output:"\u00B0", ttype:UNARY, acc:true},
-{input:"\\vec",		tag:"mover",  output:"\u20D7", ttype:UNARY, acc:true},
-{input:"\\overrightarrow",tag:"mover",output:"\u20D7", ttype:UNARY, acc:true},
-{input:"\\overleftarrow",tag:"mover", output:"\u20D6", ttype:UNARY, acc:true},
-{input:"\\hat",		tag:"mover",  output:"\u005E", ttype:UNARY, acc:true},
-{input:"\\widehat",	tag:"mover",  output:"\u0302", ttype:UNARY, acc:true},
-{input:"\\tilde",	tag:"mover",  output:"~",      ttype:UNARY, acc:true},
-//{input:"\\tilde",	  tag:"mover",  output:"\u0303", ttype:UNARY, acc:true},
-{input:"\\widetilde",	tag:"mover",  output:"\u02DC", ttype:UNARY, acc:true},
-{input:"\\bar",		tag:"mover",  output:"\u203E", ttype:UNARY, acc:true},
-{input:"\\overbrace",	tag:"mover",  output:"\uFE37", ttype:UNARY, acc:true}, //Changed unicode overbrace
-{input:"\\overbracket", tag:"mover",  output:"\u23B4", ttype:UNARY, acc:true}, //old overbrace = overbracket
-{input:"\\overline",	tag:"mover",  output:"\u00AF", ttype:UNARY, acc:true},
-{input:"\\underbrace",  tag:"munder", output:"\uFE38", ttype:UNARY, acc:true}, //Changed unicode underbrace
-{input:"\\underbracket",tag:"munder", output:"\u23B5", ttype:UNARY, acc:true}, //old underbrace = underbracket
-{input:"\\underline",	tag:"munder", output:"\u00AF", ttype:UNARY, acc:true},
-//{input:"underline",	tag:"munder", output:"\u0332", ttype:UNARY, acc:true},
--}
-   
+diacriticals :: M.Map String (Exp -> Exp)
+diacriticals = M.fromList
+               [ ("\\acute", \e -> EOver e (ESymbol Accent "\x00B4"))
+               , ("\\grave", \e -> EOver e (ESymbol Accent "\x0060"))
+               , ("\\breve", \e -> EOver e (ESymbol Accent "\x02D8"))
+               , ("\\check", \e -> EOver e (ESymbol Accent "\x02C7"))
+               , ("\\dot", \e -> EOver e (ESymbol Accent "."))
+               , ("\\ddot", \e -> EOver e (ESymbol Accent ".."))
+               , ("\\mathring", \e -> EOver e (ESymbol Accent "\x00B0"))
+               , ("\\vec", \e -> EOver e (ESymbol Accent "\x20D7"))
+               , ("\\overrightarrow", \e -> EOver e (ESymbol Accent "\x20D7"))
+               , ("\\overleftarrow", \e -> EOver e (ESymbol Accent "\x20D6"))
+               , ("\\hat", \e -> EOver e (ESymbol Accent "\x005E"))
+               , ("\\widehat", \e -> EOver e (ESymbol Accent "\x0302"))
+               , ("\\tilde", \e -> EOver e (ESymbol Accent "~"))
+               , ("\\widetilde", \e -> EOver e (ESymbol Accent "\x02DC"))
+               , ("\\bar", \e -> EOver e (ESymbol Accent "\x203E"))
+               , ("\\overbrace", \e -> EOver e (ESymbol Accent "\xFE37"))
+               , ("\\overbracket", \e -> EOver e (ESymbol Accent "\x23B4"))
+               , ("\\overline", \e -> EOver e (ESymbol Accent "\x00AF"))
+               , ("\\underbrace", \e -> EUnder e (ESymbol Accent "\xFE38"))
+               , ("\\underbracket", \e -> EUnder e (ESymbol Accent "\x23B5"))
+               , ("\\underline", \e -> EUnder e (ESymbol Accent "\x00AF"))
+               ]
 
 unary :: GenParser Char st Exp
 unary = try $ do
