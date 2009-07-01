@@ -88,7 +88,7 @@ basicEnclosure = choice $
 left :: GenParser Char st Exp
 left = try $ do
   symbol "\\left"
-  enc <- enclosure <|> (symbol "." >> return (ESymbol Open "\x200B"))
+  enc <- enclosure <|> (symbol "." >> return (ESymbol Open "\xFEFF"))
   case enc of
        ESymbol Open x  -> return $ EStretchy $ ESymbol Open x
        _               -> fail "expecting open brace"
@@ -96,7 +96,7 @@ left = try $ do
 right :: GenParser Char st Exp
 right = try $ do
   symbol "\\right"
-  enc <- enclosure <|> (symbol "." >> return (ESymbol Close "\x200B"))
+  enc <- enclosure <|> (symbol "." >> return (ESymbol Close "\xFEFF"))
   case enc of
        ESymbol Close x  -> return $ EStretchy $ ESymbol Close x
        _                -> fail "expecting closing brace"
