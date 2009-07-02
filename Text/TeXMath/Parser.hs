@@ -11,6 +11,11 @@ import Text.ParserCombinators.Parsec.Language
 data TeXSymbolType = Ord | Op | Bin | Rel | Open | Close | Pun | Accent
                      deriving (Show, Read, Eq)
 
+data Alignment = AlignLeft | AlignCenter | AlignRight | AlignDefault
+                 deriving (Show, Read, Eq)
+
+data ArrayLine = ArrayLine [[Exp]] deriving (Show, Read, Eq)
+
 data Exp =
     EInteger Integer
   | EFloat   Double 
@@ -28,6 +33,7 @@ data Exp =
   | EUnary String Exp
   | EScaled String Exp
   | EStretchy Exp
+  | EArray [Alignment] [ArrayLine]
   deriving (Show, Read, Eq)
 
 texMathDef :: LanguageDef st
@@ -58,6 +64,7 @@ expr1 =  choice [
   , root 
   , binary
   , texSymbol
+  , array
   , escaped
   ]
 
@@ -110,6 +117,33 @@ scaledEnclosure = try $ do
   case M.lookup cmd scalers of
        Just  r -> liftM (EScaled r . EStretchy) basicEnclosure
        Nothing -> fail "expecting scaler"
+
+arrayLine :: GenParser Char st ArrayLine
+arrayLine = try $ do
+  cells <- sepBy1 (notFollowedBy (try $ char '\\' >> char '\\') >> (many expr)) (symbol "&")
+  return $ ArrayLine cells
+
+array :: GenParser Char st Exp
+array = inEnvironment "array" $ do
+  aligns <- arrayAlignments 
+  lns <- many arrayLine
+  return $ EArray aligns lns
+
+arrayAlignments :: GenParser Char st [Alignment]
+arrayAlignments = return []
+
+inEnvironment :: String
+              -> GenParser Char st Exp
+              -> GenParser Char st Exp
+inEnvironment envType p = try $ do
+  char '\\'
+  symbol "begin"
+  braces $ symbol envType
+  result <- p
+  char '\\'
+  symbol "end"
+  braces $ symbol envType
+  return result 
 
 variable :: GenParser Char st Exp
 variable = liftM (EIdentifier . (:[])) letter
