@@ -46,7 +46,7 @@ texMathDef = LanguageDef
    , identStart     = letter
    , identLetter    = alphaNum
    , opStart        = opLetter texMathDef
-   , opLetter       = oneOf ":_+/=^-(),;.?'~"
+   , opLetter       = oneOf ":_+/=^-(),;.?'~[]"
    , reservedOpNames= []
    , reservedNames  = []
    , caseSensitive  = True
@@ -279,7 +279,8 @@ identifier :: CharParser st String
 identifier = lexeme (P.identifier lexer)
 
 operator :: CharParser st String
-operator = lexeme (P.operator lexer)
+operator = lexeme $ (liftM (:[]) $ opLetter texMathDef)
+                 <|> many1 (char '\'')
 
 decimal :: CharParser st Integer
 decimal = lexeme (P.decimal lexer)
@@ -311,8 +312,8 @@ enclosures :: M.Map String Exp
 enclosures = M.fromList
              [ ("(", ESymbol Open "(")
              , (")", ESymbol Close ")")
-             , ("\\[", ESymbol Open "[")
-             , ("\\]", ESymbol Close "]")
+             , ("[", ESymbol Open "[")
+             , ("]", ESymbol Close "]")
              , ("\\{", ESymbol Open "{")
              , ("\\}", ESymbol Close "}")
              , ("\\lbrack", ESymbol Open "[")
@@ -348,6 +349,8 @@ symbols = M.fromList [
            , ("''", ESymbol Ord "\x02BA")
            , ("'''", ESymbol Ord "\x2034")
            , ("''''", ESymbol Ord "\x2057")
+           , ("=", ESymbol Rel "=")
+           , (":=", ESymbol Rel ":=")
            , ("\\mid", ESymbol Bin "\x2223")
            , ("\\parallel", ESymbol Rel "\x2225")
            , ("\\backslash", ESymbol Bin "\x2216")
@@ -442,8 +445,6 @@ symbols = M.fromList [
            , ("\\rhd", ESymbol Bin "\x22B3")
            , ("\\unlhd", ESymbol Bin "\x22B4")
            , ("\\unrhd", ESymbol Bin "\x22B5")
-           , ("=", ESymbol Rel "=")
-           , (":=", ESymbol Rel ":=")
            , ("\\lt", ESymbol Rel "<")
            , ("\\gt", ESymbol Rel ">")
            , ("\\ne", ESymbol Rel "\x2260")
