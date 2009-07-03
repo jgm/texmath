@@ -89,6 +89,10 @@ makeText a s = if trailingSp
         s' = withAttribute "mathvariant" a $ unode "mtext" s
         trailingSp = not (null s) && last s `elem` " \t"
 
+makeArray :: [Alignment] -> [ArrayLine] -> Element
+makeArray _as ls = unode "mtable" $
+  map (unode "mtr" . map (unode "mtd". map showExp)) ls
+
 withAttribute :: String -> String -> Element -> Element
 withAttribute a v = add_attr (Attr (unqual a) v)
 
@@ -117,5 +121,6 @@ showExp e =
    EUnary c x       -> showUnary c x
    EStretchy x      -> makeStretchy $ showExp x
    EScaled s x      -> makeScaled s $ showExp x
+   EArray as ls     -> makeArray as ls
    EText a s        -> makeText a s
 

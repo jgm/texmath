@@ -1,4 +1,4 @@
-module Text.TeXMath.Parser (expr, formula, Exp(..), TeXSymbolType(..))
+module Text.TeXMath.Parser (expr, formula, Exp(..), TeXSymbolType(..), ArrayLine, Alignment)
 where
 
 import Control.Monad
@@ -14,7 +14,7 @@ data TeXSymbolType = Ord | Op | Bin | Rel | Open | Close | Pun | Accent
 data Alignment = AlignLeft | AlignCenter | AlignRight | AlignDefault
                  deriving (Show, Read, Eq)
 
-data ArrayLine = ArrayLine [[Exp]] deriving (Show, Read, Eq)
+type ArrayLine = [[Exp]]
 
 data Exp =
     EInteger Integer
@@ -121,15 +121,13 @@ scaledEnclosure = try $ do
        Nothing -> fail "expecting scaler"
 
 arrayLine :: GenParser Char st ArrayLine
-arrayLine = try $ do
-  cells <- sepBy1 (notFollowedBy (try $ char '\\' >> char '\\') >> (many expr)) (symbol "&")
-  return $ ArrayLine cells
+arrayLine = notFollowedBy (char '\\' >> symbol "end" >> braces (symbol "array") >> return '\n') >>
+  sepBy1 (many (notFollowedBy (try $ char '\\' >> char '\\') >> expr)) (symbol "&")
 
 array :: GenParser Char st Exp
 array = inEnvironment "array" $ do
   aligns <- arrayAlignments 
-  lns <- many arrayLine
-  return $ EArray aligns lns
+  liftM (EArray aligns) $ sepEndBy1 arrayLine (try $ symbol "\\\\")
 
 arrayAlignments :: GenParser Char st [Alignment]
 arrayAlignments = return []
@@ -148,7 +146,10 @@ inEnvironment envType p = try $ do
   return result 
 
 variable :: GenParser Char st Exp
-variable = liftM (EIdentifier . (:[])) letter
+variable = do
+  v <- letter
+  spaces
+  return $ EIdentifier [v]
 
 subSup :: GenParser Char st Exp
 subSup = try $ do
