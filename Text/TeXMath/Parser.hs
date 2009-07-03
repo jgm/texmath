@@ -34,6 +34,7 @@ data Exp =
   | EScaled String Exp
   | EStretchy Exp
   | EArray [Alignment] [ArrayLine]
+  | EText String String
   deriving (Show, Read, Eq)
 
 texMathDef :: LanguageDef st
@@ -61,6 +62,7 @@ expr1 =  choice [
   , enclosure
   , diacritical
   , unary
+  , text
   , root 
   , binary
   , texSymbol
@@ -176,6 +178,21 @@ command = try $ char '\\' >> liftM ('\\':) (identifier <|> count 1 anyChar)
 unaryOps :: [String]
 unaryOps = ["\\sqrt", "\\surd"]
 
+textOps :: M.Map String (String -> Exp)
+textOps = M.fromList
+          [ ("\\textrm", EText "normal")
+          , ("\\mathbf", EText "bold")
+          , ("\\textbf", EText "bold")
+          , ("\\mathit", EText "italic")
+          , ("\\textit", EText "italic")
+          , ("\\mathtt", EText "monospace")
+          , ("\\texttt", EText "monospace")
+          , ("\\mathsf", EText "sans-serif")
+          , ("\\mathbb", EText "double-struck")
+          , ("\\mathcal", EText "script")
+          , ("\\mathfrak", EText "fraktur")
+          ]
+
 diacritical :: GenParser Char st Exp
 diacritical = try $ do
   c <- command
@@ -212,9 +229,16 @@ unary :: GenParser Char st Exp
 unary = try $ do
   c <- command
   unless (c `elem` unaryOps) $
-    fail $ "Unknown unary op: " ++ c
+    fail "expecting unary operator"
   a <- inbraces
   return $ EUnary c a
+
+text :: GenParser Char st Exp
+text = try $ do
+  c <- command
+  case M.lookup c textOps of
+       Just f   -> liftM f $ braces (many (noneOf "}" <|> (char '\\' >> char '}')))
+       Nothing  -> fail "expecting text command"
 
 -- note: sqrt can be unary, \sqrt{2}, or binary, \sqrt[3]{2}
 root :: GenParser Char st Exp

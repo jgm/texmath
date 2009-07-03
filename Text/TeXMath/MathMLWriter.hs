@@ -73,15 +73,24 @@ showBinary c x y =
        Nothing  -> error $ "Unknown binary op: " ++ c
 
 spaceWidth :: String -> Element
-spaceWidth w =
-  add_attr (Attr (unqual "width") w) $ unode "mspace" ()
+spaceWidth w = withAttribute "width" w $ unode "mspace" ()
 
 makeStretchy :: Element -> Element
-makeStretchy = add_attr (Attr (unqual "stretchy") "true")
+makeStretchy = withAttribute "stretchy" "true"
 
 makeScaled :: String -> Element -> Element
-makeScaled s = add_attr (Attr (unqual "minsize") s) .
-               add_attr (Attr (unqual "maxsize") s) 
+makeScaled s = withAttribute "minsize" s . withAttribute "maxsize" s
+
+makeText :: String -> String -> Element
+makeText a s = if trailingSp
+                  then mrow [s', sp]
+                  else s'
+  where sp = spaceWidth "0.333em"
+        s' = withAttribute "mathvariant" a $ unode "mtext" s
+        trailingSp = not (null s) && last s `elem` " \t"
+
+withAttribute :: String -> String -> Element -> Element
+withAttribute a v = add_attr (Attr (unqual a) v)
 
 accent :: String -> Element
 accent s = add_attr (Attr (unqual "accent") "true") $
@@ -108,4 +117,5 @@ showExp e =
    EUnary c x       -> showUnary c x
    EStretchy x      -> makeStretchy $ showExp x
    EScaled s x      -> makeScaled s $ showExp x
+   EText a s        -> makeText a s
 
