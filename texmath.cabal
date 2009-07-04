@@ -13,11 +13,6 @@ Author:              John MacFarlane
 Maintainer:          jgm@berkeley.edu
 Homepage:
 
--- Commented out until Cabal 1.6 becomes common.
--- Source-repository head
---    Type:            darcs
---    Location:        http://johnmacfarlane.net/repos/filestore
-
 Library
     Build-depends:       base >= 4, xml, parsec >= 2 && < 3, containers
 
@@ -31,3 +26,8 @@ Executable testTeXMathML
     Ghc-Options:         -Wall
     Ghc-Prof-Options:    -auto-all
 
+Executable texmath-cgi
+    Main-is:             cgi/texmath-cgi.hs
+    Build-depends:       cgi
+    Ghc-Options:         -Wall
+    Ghc-Prof-Options:    -auto-all
