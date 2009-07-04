@@ -99,7 +99,7 @@ basicEnclosure = try $ do
   cmd <- command <|> operator
   case M.lookup cmd enclosures of
        Just r  -> return r
-       Nothing -> fail "not an enclosure"
+       Nothing -> pzero
 
 leftright :: GenParser Char st Exp
 leftright = try $ do
@@ -107,18 +107,18 @@ leftright = try $ do
   typ <- case cmd of
               "\\left"    -> return Open
               "\\right"   -> return Close
-              _           -> fail "not left or right"
+              _           -> pzero 
   enc <- enclosure <|> (symbol "." >> return (ESymbol typ "\xFEFF"))
   case enc of
        ESymbol t x | t == typ -> return $ EStretchy $ ESymbol t x
-       _                      -> fail $ "expecting " ++ show typ ++ " brace"
+       _                      -> pzero 
 
 scaledEnclosure :: GenParser Char st Exp
 scaledEnclosure = try $ do
   cmd <- command
   case M.lookup cmd scalers of
        Just  r -> liftM (EScaled r . EStretchy) basicEnclosure
-       Nothing -> fail "expecting scaler"
+       Nothing -> pzero 
 
 arrayLine :: GenParser Char st ArrayLine
 arrayLine = notFollowedBy (char '\\' >> symbol "end" >> return '\n') >>
@@ -182,7 +182,7 @@ superOrSubscripted = try $ do
   case c of
        '^' -> return $ ESuper a b
        '_' -> return $ ESub a b
-       _   -> fail "expecting ^ or _"
+       _   -> pzero 
 
 escaped :: GenParser Char st Exp
 escaped = try $ char '\\' >> liftM (ESymbol Ord . (:[])) (satisfy $ not . isAlphaNum)
@@ -213,7 +213,7 @@ diacritical = try $ do
   c <- command
   case M.lookup c diacriticals of
        Just r  -> liftM r inbraces
-       Nothing -> fail "expecting diacritical"
+       Nothing -> pzero 
 
 diacriticals :: M.Map String (Exp -> Exp)
 diacriticals = M.fromList
@@ -243,8 +243,7 @@ diacriticals = M.fromList
 unary :: GenParser Char st Exp
 unary = try $ do
   c <- command
-  unless (c `elem` unaryOps) $
-    fail "expecting unary operator"
+  unless (c `elem` unaryOps) $ pzero 
   a <- inbraces
   return $ EUnary c a
 
@@ -253,7 +252,7 @@ text = try $ do
   c <- command
   case M.lookup c textOps of
        Just f   -> liftM f $ braces (many (noneOf "}" <|> (char '\\' >> char '}')))
-       Nothing  -> fail "expecting text command"
+       Nothing  -> pzero 
 
 -- note: sqrt can be unary, \sqrt{2}, or binary, \sqrt[3]{2}
 root :: GenParser Char st Exp
@@ -266,8 +265,7 @@ root = try $ do
 binary :: GenParser Char st Exp
 binary = try $ do
   c <- command
-  unless (c `elem` binaryOps) $
-    fail $ "Unknown binary op: " ++ c
+  unless (c `elem` binaryOps) $ pzero 
   a <- inbraces
   b <- inbraces
   return $ EBinary c a b
@@ -277,7 +275,7 @@ texSymbol = try $ do
   sym <- operator <|> command
   case M.lookup sym symbols of
        Just s   -> return s
-       Nothing  -> fail $ "Unknown symbol: " ++ sym
+       Nothing  -> pzero 
 
 -- The lexer
 lexer :: P.TokenParser st
