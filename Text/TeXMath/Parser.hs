@@ -94,11 +94,7 @@ enclosure :: GenParser Char st Exp
 enclosure = basicEnclosure <|> leftright <|> scaledEnclosure
 
 basicEnclosure :: GenParser Char st Exp
-basicEnclosure = try $ do
-  cmd <- command <|> operator
-  case M.lookup cmd enclosures of
-       Just r  -> return r
-       Nothing -> pzero
+basicEnclosure = choice $ map (\(s, v) -> try (symbol s) >> return v) enclosures
 
 leftright :: GenParser Char st Exp
 leftright = try $ do
@@ -319,9 +315,8 @@ scalers = M.fromList
           , ("\\Big", "1.6")
           ]
 
-enclosures :: M.Map String Exp
-enclosures = M.fromList
-             [ ("(", ESymbol Open "(")
+enclosures :: [(String, Exp)]
+enclosures = [ ("(", ESymbol Open "(")
              , (")", ESymbol Close ")")
              , ("[", ESymbol Open "[")
              , ("]", ESymbol Close "]")
