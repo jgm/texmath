@@ -1,4 +1,4 @@
-module Text.TeXMath.Parser (expr, formula, Exp(..), TeXSymbolType(..), ArrayLine, Alignment)
+module Text.TeXMath.Parser (expr, formula, Exp(..), TeXSymbolType(..), ArrayLine, Alignment(..))
 where
 
 import Control.Monad
@@ -130,7 +130,13 @@ array = inEnvironment "array" $ do
   liftM (EArray aligns) $ sepEndBy1 arrayLine (try $ symbol "\\\\")
 
 arrayAlignments :: GenParser Char st [Alignment]
-arrayAlignments = return []
+arrayAlignments = do
+  as <- braces (many letter)
+  let letterToAlignment 'l' = AlignLeft
+      letterToAlignment 'c' = AlignCenter
+      letterToAlignment 'r' = AlignRight
+      letterToAlignment _   = AlignDefault
+  return $ map letterToAlignment as
 
 inEnvironment :: String
               -> GenParser Char st Exp

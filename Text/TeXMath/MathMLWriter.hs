@@ -90,8 +90,13 @@ makeText a s = if trailingSp
         trailingSp = not (null s) && last s `elem` " \t"
 
 makeArray :: [Alignment] -> [ArrayLine] -> Element
-makeArray _as ls = unode "mtable" $
-  map (unode "mtr" . map (unode "mtd". map showExp)) ls
+makeArray as ls = unode "mtable" $
+  map (unode "mtr" .
+    zipWith (\a c -> setAlignment a .  unode "mtd". map showExp $ c) as) ls
+   where setAlignment AlignLeft    = withAttribute "columnalign" "left"
+         setAlignment AlignRight   = withAttribute "columnalign" "right"
+         setAlignment AlignCenter  = withAttribute "columnalign" "center"
+         setAlignment AlignDefault = id 
 
 withAttribute :: String -> String -> Element -> Element
 withAttribute a v = add_attr (Attr (unqual a) v)
