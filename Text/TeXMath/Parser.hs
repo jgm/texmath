@@ -121,13 +121,21 @@ scaledEnclosure = try $ do
        Nothing -> fail "expecting scaler"
 
 arrayLine :: GenParser Char st ArrayLine
-arrayLine = notFollowedBy (char '\\' >> symbol "end" >> braces (symbol "array") >> return '\n') >>
+arrayLine = notFollowedBy (char '\\' >> symbol "end" >> return '\n') >>
   sepBy1 (many (notFollowedBy (try $ char '\\' >> char '\\') >> expr)) (symbol "&")
 
 array :: GenParser Char st Exp
-array = inEnvironment "array" $ do
+array = stdarray <|> eqnarray
+
+stdarray :: GenParser Char st Exp
+stdarray = inEnvironment "array" $ do
   aligns <- arrayAlignments 
   liftM (EArray aligns) $ sepEndBy1 arrayLine (try $ symbol "\\\\")
+
+eqnarray :: GenParser Char st Exp
+eqnarray = inEnvironment "eqnarray" $
+  liftM (EArray [AlignRight, AlignCenter, AlignLeft]) $
+    sepEndBy1 arrayLine (try $ symbol "\\\\")
 
 arrayAlignments :: GenParser Char st [Alignment]
 arrayAlignments = do
@@ -144,11 +152,11 @@ inEnvironment :: String
 inEnvironment envType p = try $ do
   char '\\'
   symbol "begin"
-  braces $ symbol envType
+  braces $ symbol envType >> optional (symbol "*")
   result <- p
   char '\\'
   symbol "end"
-  braces $ symbol envType
+  braces $ symbol envType >> optional (symbol "*")
   return result 
 
 variable :: GenParser Char st Exp
