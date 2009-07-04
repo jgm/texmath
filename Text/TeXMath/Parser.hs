@@ -128,7 +128,7 @@ array = stdarray <|> eqnarray
 
 stdarray :: GenParser Char st Exp
 stdarray = inEnvironment "array" $ do
-  aligns <- arrayAlignments 
+  aligns <- option [] arrayAlignments
   liftM (EArray aligns) $ sepEndBy1 arrayLine (try $ symbol "\\\\")
 
 eqnarray :: GenParser Char st Exp
@@ -137,7 +137,7 @@ eqnarray = inEnvironment "eqnarray" $
     sepEndBy1 arrayLine (try $ symbol "\\\\")
 
 arrayAlignments :: GenParser Char st [Alignment]
-arrayAlignments = do
+arrayAlignments = try $ do
   as <- braces (many letter)
   let letterToAlignment 'l' = AlignLeft
       letterToAlignment 'c' = AlignCenter
