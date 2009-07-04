@@ -72,9 +72,8 @@ expr1 =  choice [
 
 formula :: GenParser Char st [Exp]
 formula = do
-  f <- many $ do e <- expr
-                 whiteSpace
-                 return e
+  whiteSpace
+  f <- many expr
   eof
   return f
 
