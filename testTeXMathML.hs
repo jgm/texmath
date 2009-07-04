@@ -16,4 +16,6 @@ inHtml x =
 main :: IO ()
 main = do
   inp <- getContents
-  putStr . ppTopElement . inHtml . texMathToMathML DisplayBlock $! inp
+  case (texMathToMathML DisplayBlock $! inp) of
+       Left err         -> putStrLn err
+       Right v          -> putStr . ppTopElement . inHtml $ v
