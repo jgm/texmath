@@ -98,11 +98,8 @@ basicEnclosure = choice $ map (\(s, v) -> try (symbol s) >> return v) enclosures
 
 leftright :: GenParser Char st Exp
 leftright = try $ do
-  cmd <- command
-  typ <- case cmd of
-              "\\left"    -> return Open
-              "\\right"   -> return Close
-              _           -> pzero 
+  typ <- (try (symbol "\\left") >> return Open)
+      <|> (symbol "\\right" >> return Close)
   enc <- enclosure <|> (symbol "." >> return (ESymbol typ "\xFEFF"))
   case enc of
        ESymbol t x | t == typ -> return $ EStretchy $ ESymbol t x
