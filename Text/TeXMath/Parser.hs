@@ -543,6 +543,7 @@ symbols = M.fromList [
            , ("\\int", ESymbol Op "\x222B")
            , ("\\oint", ESymbol Op "\x222E")
            , ("\\prime", ESymbol Ord "\x2032")
+           , ("\\dots", ESymbol Ord "\x2026")
            , ("\\ldots", ESymbol Ord "\x2026")
            , ("\\cdots", ESymbol Ord "\x22EF")
            , ("\\vdots", ESymbol Ord "\x22EE")
