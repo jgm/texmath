@@ -1,0 +1,45 @@
+<?xml version='1.0' ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="application/xhtml+xml; charset=UTF-8" http-equiv="Content-Type" />
+    <style type="text/css">
+      <![CDATA[
+      div#result { width : 31em; }
+      div#result math { font-size: medium; border: 1px solid red; padding: 1em; margin: 1em; }
+      pre#xml { font-size: small; color: blue; }
+      ]]>
+    </style>
+    <script type="text/javascript" src="/scripts/jquery.js"></script>
+    <script type="text/javascript">
+      <![CDATA[
+      $(document).ready(function(){
+        $('#convert').click(function() {
+          $.getJSON("/cgi-bin/texmath-cgi", { 'latexFormula' : $('#latexFormula').val() },
+            function(result){
+                   if (result.success) {
+                     $('#result').html(result.mathml);
+                     $('#xml').text(result.mathml); 
+                     } else {
+                     $('#result').html('');
+                     $('#xml').text(result.error);
+                     };
+                   })
+          });
+        });
+  ]]>
+  </script>
+  </head>
+  <body>
+  <label for="latexFormula">LaTeX formula:</label><br/>
+  <textarea name="latexFormula" rows="10" cols="60" id="latexFormula">\phi_n(\kappa) =
+ \frac{1}{4\pi^2\kappa^2} \int_0^\infty
+ \frac{\sin(\kappa R)}{\kappa R}
+ \frac{\partial}{\partial R}
+ \left[R^2\frac{\partial D_n(R)}{\partial R}\right]\,dR
+  </textarea><br/>
+  <input type="submit" id="convert" value="Convert" /> using
+  <a href="http://github.com/jgm/texmath/tree/master">texmath</a>
+  <div id="result"></div>
+  <pre id="xml"></pre>
+  </body>
+</html>
