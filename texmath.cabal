@@ -13,6 +13,7 @@ License-File:        LICENSE
 Author:              John MacFarlane
 Maintainer:          jgm@berkeley.edu
 Homepage:            http://github.com/jgm/texmath
+Data-Files:          cgi/texmath.xhtml, examples
 
 Flag cgi
   description:       Compile cgi executable.
