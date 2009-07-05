@@ -46,7 +46,7 @@ texMathDef = LanguageDef
    , identStart     = letter
    , identLetter    = alphaNum
    , opStart        = opLetter texMathDef
-   , opLetter       = oneOf ":_+/=^-(),;.?'~[]<>"
+   , opLetter       = oneOf ":_+/=^-(),;.?'~[]<>!"
    , reservedOpNames= []
    , reservedNames  = []
    , caseSensitive  = True
@@ -312,7 +312,7 @@ brackets :: CharParser st a -> CharParser st a
 brackets p = lexeme (P.brackets lexer p)
 
 binaryOps :: [String]
-binaryOps = ["\\frac", "\\stackrel", "\\overset", "\\underset"]
+binaryOps = ["\\frac", "\\tfrac", "\\dfrac", "\\stackrel", "\\overset", "\\underset"]
 
 scalers :: M.Map String String
 scalers = M.fromList
@@ -360,6 +360,7 @@ symbols = M.fromList [
            , ("?", ESymbol Pun "?")
            , (">", ESymbol Rel ">")
            , ("<", ESymbol Rel "<")
+           , ("!", ESymbol Ord "!")
            , ("'", ESymbol Ord "\x02B9")
            , ("''", ESymbol Ord "\x02BA")
            , ("'''", ESymbol Ord "\x2034")

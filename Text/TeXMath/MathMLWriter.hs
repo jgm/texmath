@@ -57,19 +57,23 @@ showUnary c x =
        Just c'  -> unode c' (showExp x)
        Nothing  -> error $ "Unknown unary op: " ++ c
 
-binaryOps :: M.Map String String
+binaryOps :: Node a => M.Map String (a -> Element)
 binaryOps = M.fromList
-  [ ("\\frac", "mfrac")
-  , ("\\sqrt", "mroot")
-  , ("\\stackrel", "mover")
-  , ("\\overset", "mover")
-  , ("\\underset", "munder")
+  [ ("\\frac", unode "mfrac")
+  , ("\\tfrac", withAttribute "displaystyle" "false" .
+                  unode "mstyle" . unode "mfrac")
+  , ("\\dfrac", withAttribute "displaystyle" "true" .
+                  unode "mstyle" . unode "mfrac")
+  , ("\\sqrt", unode "mroot")
+  , ("\\stackrel", unode "mover")
+  , ("\\overset", unode "mover")
+  , ("\\underset", unode "munder")
   ]
 
 showBinary :: String -> Exp -> Exp -> Element
 showBinary c x y =
   case M.lookup c binaryOps of
-       Just c'  -> unode c' [showExp x, showExp y]
+       Just f   -> f [showExp x, showExp y]
        Nothing  -> error $ "Unknown binary op: " ++ c
 
 spaceWidth :: String -> Element
