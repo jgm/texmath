@@ -191,6 +191,7 @@ unaryOps = ["\\sqrt", "\\surd"]
 textOps :: M.Map String (String -> Exp)
 textOps = M.fromList
           [ ("\\textrm", EText "normal")
+          , ("\\text",   EText "normal")
           , ("\\mathbf", EText "bold")
           , ("\\textbf", EText "bold")
           , ("\\mathit", EText "italic")
