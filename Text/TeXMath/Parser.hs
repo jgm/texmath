@@ -116,11 +116,11 @@ scaledEnclosure = try $ do
        Nothing -> pzero 
 
 arrayLine :: GenParser Char st ArrayLine
-arrayLine = notFollowedBy (char '\\' >> symbol "end" >> return '\n') >>
+arrayLine = notFollowedBy (try $ char '\\' >> symbol "end" >> return '\n') >>
   sepBy1 (many (notFollowedBy (try $ char '\\' >> char '\\') >> expr)) (symbol "&")
 
 array :: GenParser Char st Exp
-array = stdarray <|> eqnarray
+array = stdarray <|> eqnarray <|> cases
 
 stdarray :: GenParser Char st Exp
 stdarray = inEnvironment "array" $ do
@@ -131,6 +131,11 @@ eqnarray :: GenParser Char st Exp
 eqnarray = inEnvironment "eqnarray" $
   liftM (EArray [AlignRight, AlignCenter, AlignLeft]) $
     sepEndBy1 arrayLine (try $ symbol "\\\\")
+
+cases :: GenParser Char st Exp
+cases = inEnvironment "cases" $ do
+  rs <- sepEndBy1 arrayLine (try $ symbol "\\\\")
+  return $ EGrouped [EStretchy (ESymbol Open "{"), EArray [] rs]
 
 arrayAlignments :: GenParser Char st [Alignment]
 arrayAlignments = try $ do
@@ -192,6 +197,7 @@ textOps :: M.Map String (String -> Exp)
 textOps = M.fromList
           [ ("\\textrm", EText "normal")
           , ("\\text",   EText "normal")
+          , ("\\mbox",   EText "normal")
           , ("\\mathbf", EText "bold")
           , ("\\textbf", EText "bold")
           , ("\\mathit", EText "italic")
