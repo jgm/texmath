@@ -185,7 +185,9 @@ superOrSubscripted = try $ do
        _   -> pzero 
 
 escaped :: GenParser Char st Exp
-escaped = try $ char '\\' >> liftM (ESymbol Ord . (:[])) (satisfy $ not . isAlphaNum)
+escaped = lexeme $ try $ 
+          char '\\' >>
+          liftM (ESymbol Ord . (:[])) (satisfy $ not . isAlphaNum)
 
 command :: GenParser Char st String
 command = try $ char '\\' >> liftM ('\\':) (identifier <|> count 1 anyChar)
