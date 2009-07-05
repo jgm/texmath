@@ -14,6 +14,14 @@ Author:              John MacFarlane
 Maintainer:          jgm@berkeley.edu
 Homepage:            http://github.com/jgm/texmath
 
+Flag cgi
+  description:       Compile cgi executable.
+  default:           True
+
+Flag test
+  description:       Compile test executable.
+  default:           True
+
 Library
     Build-depends:       base >= 4, xml, parsec >= 2 && < 3, containers
 
@@ -26,9 +34,17 @@ Executable testTeXMathML
     Main-is:             testTeXMathML.hs
     Ghc-Options:         -Wall
     Ghc-Prof-Options:    -auto-all
+    if flag(test)
+      Buildable:         True
+    else
+      Buildable:         False
 
 Executable texmath-cgi
     Main-is:             cgi/texmath-cgi.hs
-    Build-depends:       cgi
+    Build-depends:       cgi, json
     Ghc-Options:         -Wall
     Ghc-Prof-Options:    -auto-all
+    if flag(cgi)
+      Buildable:         True
+    else
+      Buildable:         False
