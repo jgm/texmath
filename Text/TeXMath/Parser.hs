@@ -46,7 +46,7 @@ texMathDef = LanguageDef
    , identStart     = letter
    , identLetter    = alphaNum
    , opStart        = opLetter texMathDef
-   , opLetter       = oneOf ":_+/=^-(),;.?'~[]"
+   , opLetter       = oneOf ":_+/=^-(),;.?'~[]<>"
    , reservedOpNames= []
    , reservedNames  = []
    , caseSensitive  = True
@@ -352,6 +352,8 @@ symbols = M.fromList [
            , (";", ESymbol Pun ";")
            , (":", ESymbol Pun ":")
            , ("?", ESymbol Pun "?")
+           , (">", ESymbol Rel ">")
+           , ("<", ESymbol Rel "<")
            , ("'", ESymbol Ord "\x02B9")
            , ("''", ESymbol Ord "\x02BA")
            , ("'''", ESymbol Ord "\x2034")
