@@ -17,14 +17,18 @@
           $.getJSON("/cgi-bin/texmath-cgi", { 'latexFormula' : $('#latexFormula').val() },
             function(result){
                    if (result.success) {
-                     $('#result').html(result.mathml);
+                     if ($.browser.mozilla) {
+                       $('#result').html(result.mathml);
+                       } else {
+                       $('#result').html('<p>Use Firefox to see the rendered MathML</p>');
+                       };
                      $('#xml').text(result.mathml); 
                      } else {
                      $('#result').html('');
                      $('#xml').text(result.error);
                      };
                    })
-          });
+            });
         });
   ]]>
   </script>
