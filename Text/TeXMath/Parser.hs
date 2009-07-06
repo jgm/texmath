@@ -59,14 +59,14 @@ expr1 =  choice [
     inbraces
   , variable
   , number
-  , enclosure
-  , diacritical
-  , unary
+  , texSymbol
   , text
   , root 
+  , unary
   , binary
-  , texSymbol
+  , enclosure
   , array
+  , diacritical
   , escaped
   ]
 
