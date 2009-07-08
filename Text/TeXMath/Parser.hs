@@ -102,10 +102,10 @@ expr :: GenParser Char st Exp
 expr = subSup <|> superOrSubscripted <|> expr1
 
 inbraces :: GenParser Char st Exp
-inbraces = liftM EGrouped (braces $ many expr)
+inbraces = liftM EGrouped (braces $ many $ notFollowedBy (char '}') >> expr)
 
 inbrackets :: GenParser Char st Exp
-inbrackets = liftM EGrouped (brackets $ many expr)
+inbrackets = liftM EGrouped (brackets $ many $ notFollowedBy (char ']') >> expr)
 
 number :: GenParser Char st Exp
 number = try (liftM EFloat float)
