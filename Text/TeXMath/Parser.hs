@@ -265,7 +265,7 @@ diacriticals = M.fromList
 unary :: GenParser Char st Exp
 unary = try $ do
   c <- command
-  unless (c `elem` unaryOps) $ pzero 
+  unless (c `elem` unaryOps) pzero 
   a <- inbraces
   return $ EUnary c a
 
@@ -287,7 +287,7 @@ root = try $ do
 binary :: GenParser Char st Exp
 binary = try $ do
   c <- command
-  unless (c `elem` binaryOps) $ pzero 
+  unless (c `elem` binaryOps) pzero 
   a <- inbraces
   b <- inbraces
   return $ EBinary c a b
@@ -313,7 +313,7 @@ identifier :: CharParser st String
 identifier = lexeme (P.identifier lexer)
 
 operator :: CharParser st String
-operator = lexeme $ (liftM (:[]) $ opLetter texMathDef)
+operator = lexeme $ liftM (:[]) (opLetter texMathDef)
                  <|> many1 (char '\'')
 
 decimal :: CharParser st Integer
@@ -323,13 +323,13 @@ float :: CharParser st Double
 float = lexeme (P.float lexer)
 
 symbol :: String -> CharParser st String
-symbol p = lexeme (P.symbol lexer p)
+symbol = lexeme . P.symbol lexer
 
 braces :: CharParser st a -> CharParser st a 
-braces p = lexeme (P.braces lexer p)
+braces = lexeme . P.braces lexer
 
 brackets :: CharParser st a -> CharParser st a
-brackets p = lexeme (P.brackets lexer p)
+brackets = lexeme . P.brackets lexer
 
 binaryOps :: [String]
 binaryOps = ["\\frac", "\\tfrac", "\\dfrac", "\\stackrel", "\\overset", "\\underset"]
