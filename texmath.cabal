@@ -1,5 +1,5 @@
 Name:                texmath
-Version:             0.1
+Version:             0.1.0.1
 Cabal-version:       >= 1.2
 Build-type:          Simple
 Synopsis:            Conversion of LaTeX math formulas to MathML.
@@ -24,7 +24,7 @@ Flag test
   default:           True
 
 Library
-    Build-depends:       base >= 4, xml, parsec >= 2 && < 3, containers
+    Build-depends:       base >= 4 && < 5, xml, parsec >= 2 && < 3, containers
 
     Exposed-modules:     Text.TeXMath, Text.TeXMath.Parser, Text.TeXMath.MathMLWriter
 
