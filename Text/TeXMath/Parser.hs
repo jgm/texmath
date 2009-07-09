@@ -167,10 +167,10 @@ arrayAlignments = try $ do
 inEnvironment :: String
               -> GenParser Char st Exp
               -> GenParser Char st Exp
-inEnvironment envType p = try $ do
-  char '\\'
-  symbol "begin"
-  braces $ symbol envType >> optional (symbol "*")
+inEnvironment envType p = do
+  try $ do char '\\'
+           symbol "begin"
+           braces $ symbol envType >> optional (symbol "*")
   result <- p
   char '\\'
   symbol "end"
@@ -353,6 +353,8 @@ enclosures = [ ("(", ESymbol Open "(")
              , ("\\lbrace", ESymbol Open "{")
              , ("\\rbrack", ESymbol Close "]")
              , ("\\rbrace", ESymbol Close "}")
+             , ("\\llbracket", ESymbol Open "\x27E6")
+             , ("\\rrbracket", ESymbol Close "\x230B")
              , ("\\langle", ESymbol Open "\x3009")
              , ("\\rangle", ESymbol Close "\x300A")
              , ("\\lfloor", ESymbol Open "\x230A")
