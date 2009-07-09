@@ -3,6 +3,8 @@ module Main where
 import Text.TeXMath
 import Text.XML.Light
 
+import System.IO
+
 inHtml :: Element -> Element
 inHtml x =
   add_attr (Attr (unqual "xmlns") "http://www.w3.org/1999/xhtml") $
@@ -17,5 +19,5 @@ main :: IO ()
 main = do
   inp <- getContents
   case (texMathToMathML DisplayBlock $! inp) of
-       Left err         -> putStrLn err
+       Left err         -> hPutStrLn stderr err
        Right v          -> putStr . ppTopElement . inHtml $ v
