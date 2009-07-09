@@ -208,7 +208,7 @@ escaped = lexeme $ try $
           liftM (ESymbol Ord . (:[])) (satisfy $ not . isAlphaNum)
 
 command :: GenParser Char st String
-command = try $ char '\\' >> liftM ('\\':) (identifier <|> count 1 anyChar)
+command = try $ char '\\' >> liftM ('\\':) (identifier <|> lexeme (count 1 anyChar))
 
 unaryOps :: [String]
 unaryOps = ["\\sqrt", "\\surd"]
