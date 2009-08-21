@@ -1,5 +1,5 @@
 Name:                texmath
-Version:             0.1.0.3
+Version:             0.1.0.4
 Cabal-version:       >= 1.2
 Build-type:          Simple
 Synopsis:            Conversion of LaTeX math formulas to MathML.
@@ -13,7 +13,26 @@ License-File:        LICENSE
 Author:              John MacFarlane
 Maintainer:          jgm@berkeley.edu
 Homepage:            http://github.com/jgm/texmath
-Data-Files:          cgi/texmath.xhtml, examples
+Data-Files:          cgi/texmath.xhtml,
+                     tests/runtests.sh,
+                     tests/01.tex, tests/01.xhtml,
+                     tests/02.tex, tests/02.xhtml,
+                     tests/03.tex, tests/03.xhtml,
+                     tests/04.tex, tests/04.xhtml,
+                     tests/05.tex, tests/05.xhtml,
+                     tests/06.tex, tests/06.xhtml,
+                     tests/07.tex, tests/07.xhtml,
+                     tests/08.tex, tests/08.xhtml,
+                     tests/09.tex, tests/09.xhtml,
+                     tests/10.tex, tests/10.xhtml,
+                     tests/11.tex, tests/11.xhtml,
+                     tests/12.tex, tests/12.xhtml,
+                     tests/13.tex, tests/13.xhtml,
+                     tests/14.tex, tests/14.xhtml,
+                     tests/15.tex, tests/15.xhtml,
+                     tests/16.tex, tests/16.xhtml,
+                     tests/17.tex, tests/17.xhtml,
+                     tests/18.tex, tests/18.xhtml
 
 Flag cgi
   description:       Compile cgi executable.
