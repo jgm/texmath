@@ -66,7 +66,7 @@ texMathDef = LanguageDef
    , identStart     = letter
    , identLetter    = letter
    , opStart        = opLetter texMathDef
-   , opLetter       = oneOf ":_+/=^-(),;.?'~[]<>!"
+   , opLetter       = oneOf ":_+*/=^-(),;.?'~[]<>!"
    , reservedOpNames= []
    , reservedNames  = []
    , caseSensitive  = True
@@ -375,6 +375,7 @@ symbols :: M.Map String Exp
 symbols = M.fromList [
              ("+", ESymbol Bin "+")
            , ("-", ESymbol Bin "-")
+           , ("*", ESymbol Bin "*")
            , (",", ESymbol Pun ",")
            , (".", ESymbol Pun ".")
            , (";", ESymbol Pun ";")
