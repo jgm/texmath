@@ -107,15 +107,7 @@ inbrackets :: GenParser Char st Exp
 inbrackets = liftM EGrouped (brackets $ many $ notFollowedBy (char ']') >> expr)
 
 number :: GenParser Char st Exp
-number = do
-  int <- lexeme $ many digit
-  frac <- if null int
-             then fractional
-             else option "" fractional
-  return $ ENumber (int ++ frac)
-
-fractional :: GenParser Char st String
-fractional = char '.' >> liftM ('.':) (many1 digit)
+number = lexeme $ liftM ENumber $ many1 digit
 
 enclosure :: GenParser Char st Exp
 enclosure = basicEnclosure <|> leftright <|> scaledEnclosure
