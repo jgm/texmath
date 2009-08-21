@@ -65,7 +65,7 @@ texMathDef = LanguageDef
    , commentLine    = "%"
    , nestedComments = False
    , identStart     = letter
-   , identLetter    = alphaNum
+   , identLetter    = letter
    , opStart        = opLetter texMathDef
    , opLetter       = oneOf ":_+/=^-(),;.?'~[]<>!"
    , reservedOpNames= []
