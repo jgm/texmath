@@ -134,8 +134,7 @@ accent = add_attr (Attr (unqual "accent") "true") .
 showExp :: Exp -> Element
 showExp e =
  case e of
-   EInteger x       -> unode "mn" $ show x
-   EFloat   x       -> unode "mn" $ show x
+   ENumber x        -> unode "mn" x
    EGrouped [x]     -> showExp x
    EGrouped xs      -> mrow $ map showExp xs
    EIdentifier x    -> unode "mi" x

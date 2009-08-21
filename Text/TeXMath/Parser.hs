@@ -38,8 +38,7 @@ data Alignment = AlignLeft | AlignCenter | AlignRight | AlignDefault
 type ArrayLine = [[Exp]]
 
 data Exp =
-    EInteger Integer
-  | EFloat   Double 
+    ENumber String
   | EGrouped [Exp]
   | EIdentifier String
   | ESymbol TeXSymbolType String
@@ -108,8 +107,15 @@ inbrackets :: GenParser Char st Exp
 inbrackets = liftM EGrouped (brackets $ many $ notFollowedBy (char ']') >> expr)
 
 number :: GenParser Char st Exp
-number = try (liftM EFloat float)
-      <|> liftM EInteger decimal 
+number = do
+  int <- lexeme $ many digit
+  frac <- if null int
+             then fractional
+             else option "" fractional
+  return $ ENumber (int ++ frac)
+
+fractional :: GenParser Char st String
+fractional = char '.' >> liftM ('.':) (many1 digit)
 
 enclosure :: GenParser Char st Exp
 enclosure = basicEnclosure <|> leftright <|> scaledEnclosure
@@ -315,12 +321,6 @@ identifier = lexeme (P.identifier lexer)
 operator :: CharParser st String
 operator = lexeme $ liftM (:[]) (opLetter texMathDef)
                  <|> many1 (char '\'')
-
-decimal :: CharParser st Integer
-decimal = lexeme (P.decimal lexer)
-
-float :: CharParser st Double
-float = lexeme (P.float lexer)
 
 symbol :: String -> CharParser st String
 symbol = lexeme . P.symbol lexer
