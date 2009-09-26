@@ -136,7 +136,23 @@ arrayLine = notFollowedBy (try $ char '\\' >> symbol "end" >> return '\n') >>
   sepBy1 (many (notFollowedBy (try $ char '\\' >> char '\\') >> expr)) (symbol "&")
 
 array :: GenParser Char st Exp
-array = stdarray <|> eqnarray <|> cases
+array = stdarray <|> eqnarray <|> cases <|> matrix
+
+matrix :: GenParser Char st Exp
+matrix =  matrixWith "pmatrix" "(" ")"
+      <|> matrixWith "bmatrix" "[" "]"
+      <|> matrixWith "Bmatrix" "{" "}"
+      <|> matrixWith "vmatrix" "\x2223" "\x2223"
+      <|> matrixWith "Vmatrix" "\x2225" "\x2225"
+
+matrixWith :: String -> String -> String -> GenParser Char st Exp
+matrixWith keywd opendelim closedelim =
+  inEnvironment keywd $ do
+    aligns <- option [] arrayAlignments
+    lines' <- sepEndBy1 arrayLine (try $ symbol "\\\\")
+    return $ EGrouped [ ESymbol Open opendelim
+                      , EArray aligns lines'
+                      , ESymbol Close closedelim]
 
 stdarray :: GenParser Char st Exp
 stdarray = inEnvironment "array" $ do
