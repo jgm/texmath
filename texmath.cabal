@@ -32,7 +32,8 @@ Data-Files:          cgi/texmath.xhtml,
                      tests/15.tex, tests/15.xhtml,
                      tests/16.tex, tests/16.xhtml,
                      tests/17.tex, tests/17.xhtml,
-                     tests/18.tex, tests/18.xhtml
+                     tests/18.tex, tests/18.xhtml,
+                     tests/19.tex, tests/19.xhtml
 
 Flag cgi
   description:       Compile cgi executable.
