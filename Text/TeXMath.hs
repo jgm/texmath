@@ -19,12 +19,28 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 {- | Functions for converting LaTeX math formulas to MathML.
 -}
 
-module Text.TeXMath ( texMathToMathML, DisplayType(..) )
+module Text.TeXMath ( addNamespace, texMathToMathML, DisplayType(..) )
 where
 import Text.TeXMath.Parser
 import Text.TeXMath.MathMLWriter
 import Text.XML.Light
 import Text.ParserCombinators.Parsec (parse)
+
+addNamespace :: String -> Element -> Element
+addNamespace ns elt = case addNamespace' ns (Elem elt) of
+                           Elem elt' -> elt' 
+                           _         -> elt  -- just return original if error
+
+addNamespace' :: String -> Content -> Content 
+addNamespace' ns (Elem elt) = Elem newelem
+  where newelem = elt{ elName = oldname{ qPrefix = Just ns }
+                     , elAttribs = map (addAttrNs ns) $ elAttribs elt
+                     , elContent = map (addNamespace' ns) $ elContent elt
+                     , elLine = elLine elt }
+        oldname = elName elt
+        addAttrNs n attr = let k = attrKey attr
+                           in  attr{ attrKey = k{ qPrefix = Just n} } 
+addNamespace' _ x = x
 
 texMathToMathML :: DisplayType -> String -> Either String Element
 texMathToMathML dt inp = inp `seq`
