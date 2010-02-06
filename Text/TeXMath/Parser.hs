@@ -111,19 +111,36 @@ number :: GenParser Char st Exp
 number = lexeme $ liftM ENumber $ many1 digit
 
 enclosure :: GenParser Char st Exp
-enclosure = basicEnclosure <|> leftright <|> scaledEnclosure
+enclosure = basicEnclosure <|> left <|> right <|> scaledEnclosure
 
 basicEnclosure :: GenParser Char st Exp
 basicEnclosure = choice $ map (\(s, v) -> try (symbol s) >> return v) enclosures
 
-leftright :: GenParser Char st Exp
-leftright = try $ do
-  typ <- (try (symbol "\\left") >> return Open)
-      <|> (symbol "\\right" >> return Close)
-  enc <- enclosure <|> (symbol "." >> return (ESymbol typ "\xFEFF"))
+left :: GenParser Char st Exp
+left = try $ do
+  try (symbol "\\left")
+  enc <- basicEnclosure <|> (symbol "." >> return (ESymbol Open "\xFEFF"))
   case enc of
-       ESymbol t x | t == typ -> return $ EStretchy $ ESymbol t x
-       _                      -> pzero 
+    (ESymbol Open _) -> tilRight enc <|> return (EStretchy enc)
+    _ -> pzero
+
+right :: GenParser Char st Exp
+right = try $ do
+  try (symbol "\\right")
+  enc <- basicEnclosure <|> (symbol "." >> return (ESymbol Open "\xFEFF"))
+  case enc of
+    (ESymbol Close x) -> return (EStretchy $ ESymbol Open x)
+    _ -> pzero
+
+-- We want stuff between \left( and \right) to be in an mrow,
+-- so that the scaling is based just on this unit, and not the
+-- whole containing formula.
+tilRight :: Exp -> GenParser Char st Exp
+tilRight start = try $ do
+  contents <- manyTill expr
+               (try $ symbol "\\right" >> lookAhead basicEnclosure)
+  end <- basicEnclosure
+  return $ EGrouped $ EStretchy start : (contents ++ [EStretchy end])
 
 scaledEnclosure :: GenParser Char st Exp
 scaledEnclosure = try $ do
