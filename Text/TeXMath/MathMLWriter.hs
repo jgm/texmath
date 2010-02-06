@@ -32,7 +32,7 @@ data DisplayType = DisplayBlock
 
 toMathML :: DisplayType -> [Exp] -> Element
 toMathML dt exprs =
-  add_attr dtattr $ math $ map showExp exprs
+  add_attr dtattr $ math $ map (showExp . expandMathOp dt) exprs
     where dtattr = Attr (unqual "display") dt'
           dt' =  case dt of
                       DisplayBlock  -> "block"
@@ -78,7 +78,7 @@ showUnary c x =
        Just c'  -> unode c' (showExp x)
        Nothing  -> error $ "Unknown unary op: " ++ c
 
-binaryOps :: Node a => M.Map String (a -> Element)
+binaryOps :: M.Map String ([Element] -> Element)
 binaryOps = M.fromList
   [ ("\\frac", unode "mfrac")
   , ("\\tfrac", withAttribute "displaystyle" "false" .
@@ -89,7 +89,14 @@ binaryOps = M.fromList
   , ("\\stackrel", unode "mover")
   , ("\\overset", unode "mover")
   , ("\\underset", unode "munder")
+  , ("\\binom", showBinom)
   ]
+
+showBinom :: [Element] -> Element
+showBinom lst = mrow [ (withAttribute "stretchy" "true" $ unode "mo" "(")
+                     , unode "mtable" $ map (unode "mtr" . unode "mtd") lst
+                     , (withAttribute "stretchy" "true" $ unode "mo" ")")
+                     ]
 
 showBinary :: String -> Exp -> Exp -> Element
 showBinary c x y =
@@ -131,6 +138,14 @@ accent :: String -> Element
 accent = add_attr (Attr (unqual "accent") "true") .
            unode "mo"
 
+expandMathOp :: DisplayType -> Exp -> Exp
+expandMathOp DisplayInline (EMathOperator x)               = EIdentifier x
+expandMathOp DisplayInline x                               = x
+expandMathOp DisplayBlock  (ESub (EMathOperator x) y)      = EUnder (EIdentifier x) y
+expandMathOp DisplayBlock  (ESubsup (EMathOperator x) y z) = EUnder (ESuper (EIdentifier x) z) y
+expandMathOp DisplayBlock  (EMathOperator x)               = EIdentifier x
+expandMathOp DisplayBlock  x                               = x
+
 showExp :: Exp -> Element
 showExp e =
  case e of
@@ -138,7 +153,12 @@ showExp e =
    EGrouped [x]     -> showExp x
    EGrouped xs      -> mrow $ map showExp xs
    EIdentifier x    -> unode "mi" x
+   EMathOperator x  -> unode "mi" x --in case expandMathOp is not used
    ESymbol Accent x -> accent x
+   EStretchy (ESymbol Open x)  -> makeStretchy $ unode "mo" x
+   EStretchy (ESymbol Close x) -> makeStretchy $ unode "mo" x
+   ESymbol Open x   -> withAttribute "stretchy" "false" $ unode "mo" x
+   ESymbol Close x  -> withAttribute "stretchy" "false" $ unode "mo" x
    ESymbol _ x      -> unode "mo" x
    ESpace x         -> spaceWidth x
    EBinary c x y    -> showBinary c x y

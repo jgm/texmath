@@ -41,6 +41,7 @@ data Exp =
     ENumber String
   | EGrouped [Exp]
   | EIdentifier String
+  | EMathOperator String
   | ESymbol TeXSymbolType String
   | ESpace String
   | EBinary String Exp Exp
@@ -340,7 +341,7 @@ brackets :: CharParser st a -> CharParser st a
 brackets = lexeme . P.brackets lexer
 
 binaryOps :: [String]
-binaryOps = ["\\frac", "\\tfrac", "\\dfrac", "\\stackrel", "\\overset", "\\underset"]
+binaryOps = ["\\frac", "\\tfrac", "\\dfrac", "\\stackrel", "\\overset", "\\underset", "\\binom"]
 
 scalers :: M.Map String String
 scalers = M.fromList
@@ -612,37 +613,37 @@ symbols = M.fromList [
            , ("~", ESpace "0.333em")
            , ("\\quad", ESpace "1em")
            , ("\\qquad", ESpace "2em")
-           , ("\\arccos", EIdentifier "arccos")
-           , ("\\arcsin", EIdentifier "arcsin")
-           , ("\\arctan", EIdentifier "arctan")
-           , ("\\arg", EIdentifier "arg")
-           , ("\\cos", EIdentifier "cos")
-           , ("\\cosh", EIdentifier "cosh")
-           , ("\\cot", EIdentifier "cot")
-           , ("\\coth", EIdentifier "coth")
-           , ("\\csc", EIdentifier "csc")
-           , ("\\deg", EIdentifier "deg")
-           , ("\\det", EIdentifier "det")
-           , ("\\dim", EIdentifier "dim")
-           , ("\\exp", EIdentifier "exp")
-           , ("\\gcd", EIdentifier "gcd")
-           , ("\\hom", EIdentifier "hom")
-           , ("\\inf", EIdentifier "inf")
-           , ("\\ker", EIdentifier "ker")
-           , ("\\lg", EIdentifier "lg")
-           , ("\\lim", EIdentifier "lim")
-           , ("\\liminf", EIdentifier "liminf")
-           , ("\\limsup", EIdentifier "limsup")
-           , ("\\ln", EIdentifier "ln")
-           , ("\\log", EIdentifier "log")
-           , ("\\max", EIdentifier "max")
-           , ("\\min", EIdentifier "min")
-           , ("\\Pr", EIdentifier "Pr")
-           , ("\\sec", EIdentifier "sec")
-           , ("\\sin", EIdentifier "sin")
-           , ("\\sinh", EIdentifier "sinh")
-           , ("\\sup", EIdentifier "sup")
-           , ("\\tan", EIdentifier "tan")
-           , ("\\tanh", EIdentifier "tanh")
+           , ("\\arccos", EMathOperator "arccos")
+           , ("\\arcsin", EMathOperator "arcsin")
+           , ("\\arctan", EMathOperator "arctan")
+           , ("\\arg", EMathOperator "arg")
+           , ("\\cos", EMathOperator "cos")
+           , ("\\cosh", EMathOperator "cosh")
+           , ("\\cot", EMathOperator "cot")
+           , ("\\coth", EMathOperator "coth")
+           , ("\\csc", EMathOperator "csc")
+           , ("\\deg", EMathOperator "deg")
+           , ("\\det", EMathOperator "det")
+           , ("\\dim", EMathOperator "dim")
+           , ("\\exp", EMathOperator "exp")
+           , ("\\gcd", EMathOperator "gcd")
+           , ("\\hom", EMathOperator "hom")
+           , ("\\inf", EMathOperator "inf")
+           , ("\\ker", EMathOperator "ker")
+           , ("\\lg", EMathOperator "lg")
+           , ("\\lim", EMathOperator "lim")
+           , ("\\liminf", EMathOperator "liminf")
+           , ("\\limsup", EMathOperator "limsup")
+           , ("\\ln", EMathOperator "ln")
+           , ("\\log", EMathOperator "log")
+           , ("\\max", EMathOperator "max")
+           , ("\\min", EMathOperator "min")
+           , ("\\Pr", EMathOperator "Pr")
+           , ("\\sec", EMathOperator "sec")
+           , ("\\sin", EMathOperator "sin")
+           , ("\\sinh", EMathOperator "sinh")
+           , ("\\sup", EMathOperator "sup")
+           , ("\\tan", EMathOperator "tan")
+           , ("\\tanh", EMathOperator "tanh")
            ] 
 
