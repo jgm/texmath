@@ -37,22 +37,22 @@ Data-Files:          cgi/texmath.xhtml,
 
 Flag cgi
   description:       Compile cgi executable.
-  default:           True
+  default:           False
 
 Flag test
   description:       Compile test executable.
-  default:           True
+  default:           False
 
 Library
-    Build-depends:       xml, parsec >= 2 && < 3, containers, base >= 3 && < 5
+    Build-depends:       xml, parsec >= 2, containers, base >= 3 && < 5
     Exposed-modules:     Text.TeXMath, Text.TeXMath.Parser, Text.TeXMath.MathMLWriter
 
-    Ghc-Options:         -Wall
+    Ghc-Options:         -Wall -fno-warn-unused-do-bind
     Ghc-Prof-Options:    -auto-all
 
 Executable testTeXMathML
     Main-is:             testTeXMathML.hs
-    Ghc-Options:         -Wall
+    Ghc-Options:         -Wall -fno-warn-unused-do-bind
     Ghc-Prof-Options:    -auto-all
     if flag(test)
       Buildable:         True
@@ -61,10 +61,10 @@ Executable testTeXMathML
 
 Executable texmath-cgi
     Main-is:             cgi/texmath-cgi.hs
-    Build-depends:       cgi, json
-    Ghc-Options:         -Wall
+    Ghc-Options:         -Wall -fno-warn-unused-do-bind
     Ghc-Prof-Options:    -auto-all
     if flag(cgi)
       Buildable:         True
+      Build-depends:     cgi, json
     else
       Buildable:         False
