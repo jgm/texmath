@@ -168,9 +168,9 @@ matrixWith keywd opendelim closedelim =
   inEnvironment keywd $ do
     aligns <- option [] arrayAlignments
     lines' <- sepEndBy1 arrayLine (try $ symbol "\\\\")
-    return $ EGrouped [ ESymbol Open opendelim
+    return $ EGrouped [ EStretchy (ESymbol Open opendelim)
                       , EArray aligns lines'
-                      , ESymbol Close closedelim]
+                      , EStretchy (ESymbol Close closedelim)]
 
 stdarray :: GenParser Char st Exp
 stdarray = inEnvironment "array" $ do
