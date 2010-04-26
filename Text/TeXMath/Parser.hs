@@ -99,7 +99,10 @@ formula = do
   return f
 
 expr :: GenParser Char st Exp
-expr = subSup <|> superOrSubscripted <|> expr1
+expr = do
+  a <- expr1
+  limits <- option False (try $ symbol "\\limits" >> return True)
+  subSup limits a <|> superOrSubscripted limits a <|> return a
 
 inbraces :: GenParser Char st Exp
 inbraces = liftM EGrouped (braces $ many $ notFollowedBy (char '}') >> expr)
@@ -154,7 +157,7 @@ arrayLine = notFollowedBy (try $ char '\\' >> symbol "end" >> return '\n') >>
   sepBy1 (many (notFollowedBy (try $ char '\\' >> char '\\') >> expr)) (symbol "&")
 
 array :: GenParser Char st Exp
-array = stdarray <|> eqnarray <|> cases <|> matrix
+array = stdarray <|> eqnarray <|> align <|> cases <|> matrix
 
 matrix :: GenParser Char st Exp
 matrix =  matrixWith "pmatrix" "(" ")"
@@ -180,6 +183,11 @@ stdarray = inEnvironment "array" $ do
 eqnarray :: GenParser Char st Exp
 eqnarray = inEnvironment "eqnarray" $
   liftM (EArray [AlignRight, AlignCenter, AlignLeft]) $
+    sepEndBy1 arrayLine (try $ symbol "\\\\")
+
+align :: GenParser Char st Exp
+align = inEnvironment "align" $
+  liftM (EArray [AlignRight, AlignLeft]) $
     sepEndBy1 arrayLine (try $ symbol "\\\\")
 
 cases :: GenParser Char st Exp
@@ -215,23 +223,27 @@ variable = do
   spaces
   return $ EIdentifier [v]
 
-subSup :: GenParser Char st Exp
-subSup = try $ do
-  a <- expr1
+subSup :: Bool -> Exp -> GenParser Char st Exp
+subSup limits a = try $ do
   char '_'
   b <- expr1
   char '^'
   c <- expr
-  return $ ESubsup a b c 
+  return $ if limits
+              then EUnderover a b c
+              else ESubsup a b c 
 
-superOrSubscripted :: GenParser Char st Exp
-superOrSubscripted = try $ do
-  a <- expr1
+superOrSubscripted :: Bool -> Exp -> GenParser Char st Exp
+superOrSubscripted limits a = try $ do
   c <- oneOf "^_"
   b <- expr
   case c of
-       '^' -> return $ ESuper a b
-       '_' -> return $ ESub a b
+       '^' -> return $ if limits
+                          then EOver a b
+                          else ESuper a b
+       '_' -> return $ if limits
+                          then EUnder a b
+                          else ESub a b
        _   -> pzero 
 
 escaped :: GenParser Char st Exp
@@ -592,6 +604,8 @@ symbols = M.fromList [
            , ("\\bigodot", ESymbol Op "\x2A00")
            , ("\\biguplus", ESymbol Op "\x2A04")
            , ("\\int", ESymbol Op "\x222B")
+           , ("\\iint", ESymbol Op "\x222C")
+           , ("\\iiint", ESymbol Op "\x222D")
            , ("\\oint", ESymbol Op "\x222E")
            , ("\\prime", ESymbol Ord "\x2032")
            , ("\\dots", ESymbol Ord "\x2026")
