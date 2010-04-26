@@ -41,7 +41,7 @@ Flag cgi
 
 Flag test
   description:       Compile test executable.
-  default:           False
+  default:           True
 
 Library
     Build-depends:       xml, parsec >= 2, containers, base >= 3 && < 5
