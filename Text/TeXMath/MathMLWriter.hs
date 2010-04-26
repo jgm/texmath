@@ -93,10 +93,7 @@ binaryOps = M.fromList
   ]
 
 showBinom :: [Element] -> Element
-showBinom lst = mrow [ (withAttribute "stretchy" "true" $ unode "mo" "(")
-                     , unode "mtable" $ map (unode "mtr" . unode "mtd") lst
-                     , (withAttribute "stretchy" "true" $ unode "mo" ")")
-                     ]
+showBinom lst = unode "mfenced" $ withAttribute "linethickness" "0" $ unode "mfrac" lst
 
 showBinary :: String -> Exp -> Exp -> Element
 showBinary c x y =
