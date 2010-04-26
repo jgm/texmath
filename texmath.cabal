@@ -1,7 +1,7 @@
 Name:                texmath
 Version:             0.2.0.3
 Cabal-version:       >= 1.2
-Build-type:          Simple
+Build-type:          Custom
 Synopsis:            Conversion of LaTeX math formulas to MathML.
 Description:         The texmathml library provides functions to convert LaTeX
                      math formulas to presentation MathML. It supports
