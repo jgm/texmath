@@ -23,7 +23,7 @@ module Text.TeXMath.Parser (expr, formula, Exp(..), TeXSymbolType(..), ArrayLine
 where
 
 import Control.Monad
-import Data.Char (isAlphaNum)
+import Data.Char (isAlphaNum, isDigit)
 import qualified Data.Map as M
 import Text.ParserCombinators.Parsec
 import qualified Text.ParserCombinators.Parsec.Token as P
@@ -106,6 +106,14 @@ expr = do
 
 inbraces :: GenParser Char st Exp
 inbraces = liftM EGrouped (braces $ many $ notFollowedBy (char '}') >> expr)
+
+texToken :: GenParser Char st Exp
+texToken = inbraces <|> inbrackets <|>
+             do c <- anyChar
+                spaces
+                return $ if isDigit c
+                            then (ENumber [c])
+                            else (EIdentifier [c])
 
 inbrackets :: GenParser Char st Exp
 inbrackets = liftM EGrouped (brackets $ many $ notFollowedBy (char ']') >> expr)
@@ -279,7 +287,7 @@ diacritical :: GenParser Char st Exp
 diacritical = try $ do
   c <- command
   case M.lookup c diacriticals of
-       Just r  -> liftM r inbraces
+       Just r  -> liftM r texToken
        Nothing -> pzero 
 
 diacriticals :: M.Map String (Exp -> Exp)
@@ -311,7 +319,7 @@ unary :: GenParser Char st Exp
 unary = try $ do
   c <- command
   unless (c `elem` unaryOps) pzero 
-  a <- inbraces
+  a <- texToken
   return $ EUnary c a
 
 text :: GenParser Char st Exp
@@ -326,15 +334,15 @@ root :: GenParser Char st Exp
 root = try $ do
   try (symbol "\\sqrt") <|> symbol "\\surd"
   a <- inbrackets
-  b <- inbraces
+  b <- texToken
   return $ EBinary "\\sqrt" b a
 
 binary :: GenParser Char st Exp
 binary = try $ do
   c <- command
   unless (c `elem` binaryOps) pzero 
-  a <- inbraces
-  b <- inbraces
+  a <- texToken
+  b <- texToken
   return $ EBinary c a b
 
 texSymbol :: GenParser Char st Exp
