@@ -387,6 +387,14 @@ scalers = M.fromList
           , ("\\Bigg", "2.9")
           , ("\\big", "1.2")
           , ("\\Big", "1.6")
+          , ("\\biggr", "2.2")
+          , ("\\Biggr", "2.9")
+          , ("\\bigr", "1.2")
+          , ("\\Bigr", "1.6")
+          , ("\\biggl", "2.2")
+          , ("\\Biggl", "2.9")
+          , ("\\bigl", "1.2")
+          , ("\\Bigl", "1.6")
           ]
 
 enclosures :: [(String, Exp)]
