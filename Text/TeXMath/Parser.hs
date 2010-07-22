@@ -23,7 +23,7 @@ module Text.TeXMath.Parser (expr, formula, Exp(..), TeXSymbolType(..), ArrayLine
 where
 
 import Control.Monad
-import Data.Char (isAlphaNum, isDigit)
+import Data.Char (isAlphaNum, isDigit, isAscii)
 import qualified Data.Map as M
 import Text.ParserCombinators.Parsec
 import qualified Text.ParserCombinators.Parsec.Token as P
@@ -89,6 +89,7 @@ expr1 =  choice [
   , array
   , diacritical
   , escaped
+  , unicode
   ]
 
 formula :: GenParser Char st [Exp]
@@ -264,6 +265,9 @@ escaped :: GenParser Char st Exp
 escaped = lexeme $ try $ 
           char '\\' >>
           liftM (ESymbol Ord . (:[])) (satisfy $ not . isAlphaNum)
+
+unicode :: GenParser Char st Exp
+unicode = lexeme $ liftM (ESymbol Ord . (:[])) $ satisfy (not . isAscii)
 
 command :: GenParser Char st String
 command = try $ char '\\' >> liftM ('\\':) (identifier <|> lexeme (count 1 anyChar))
