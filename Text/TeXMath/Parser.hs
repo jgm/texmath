@@ -160,9 +160,15 @@ scaledEnclosure = try $ do
        Just  r -> liftM (EScaled r . EStretchy) basicEnclosure
        Nothing -> pzero 
 
+endLine :: GenParser Char st Char
+endLine = try $ do
+  symbol "\\\\"
+  optional inbrackets  -- can contain e.g. [1.0in] for a line height, not yet supported
+  return '\n'
+
 arrayLine :: GenParser Char st ArrayLine
 arrayLine = notFollowedBy (try $ char '\\' >> symbol "end" >> return '\n') >>
-  sepBy1 (many (notFollowedBy (try $ char '\\' >> char '\\') >> expr)) (symbol "&")
+  sepBy1 (many (notFollowedBy endLine >> expr)) (symbol "&")
 
 array :: GenParser Char st Exp
 array = stdarray <|> eqnarray <|> align <|> cases <|> matrix
@@ -178,7 +184,7 @@ matrixWith :: String -> String -> String -> GenParser Char st Exp
 matrixWith keywd opendelim closedelim =
   inEnvironment keywd $ do
     aligns <- option [] arrayAlignments
-    lines' <- sepEndBy1 arrayLine (try $ symbol "\\\\")
+    lines' <- sepEndBy1 arrayLine endLine
     return $ EGrouped [ EStretchy (ESymbol Open opendelim)
                       , EArray aligns lines'
                       , EStretchy (ESymbol Close closedelim)]
@@ -186,21 +192,21 @@ matrixWith keywd opendelim closedelim =
 stdarray :: GenParser Char st Exp
 stdarray = inEnvironment "array" $ do
   aligns <- option [] arrayAlignments
-  liftM (EArray aligns) $ sepEndBy1 arrayLine (try $ symbol "\\\\")
+  liftM (EArray aligns) $ sepEndBy1 arrayLine endLine
 
 eqnarray :: GenParser Char st Exp
 eqnarray = inEnvironment "eqnarray" $
   liftM (EArray [AlignRight, AlignCenter, AlignLeft]) $
-    sepEndBy1 arrayLine (try $ symbol "\\\\")
+    sepEndBy1 arrayLine endLine
 
 align :: GenParser Char st Exp
 align = inEnvironment "align" $
   liftM (EArray [AlignRight, AlignLeft]) $
-    sepEndBy1 arrayLine (try $ symbol "\\\\")
+    sepEndBy1 arrayLine endLine
 
 cases :: GenParser Char st Exp
 cases = inEnvironment "cases" $ do
-  rs <- sepEndBy1 arrayLine (try $ symbol "\\\\")
+  rs <- sepEndBy1 arrayLine endLine
   return $ EGrouped [EStretchy (ESymbol Open "{"), EArray [] rs]
 
 arrayAlignments :: GenParser Char st [Alignment]
