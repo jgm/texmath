@@ -33,7 +33,18 @@ Data-Files:          cgi/texmath.xhtml,
                      tests/16.tex, tests/16.xhtml,
                      tests/17.tex, tests/17.xhtml,
                      tests/18.tex, tests/18.xhtml,
-                     tests/19.tex, tests/19.xhtml
+                     tests/19.tex, tests/19.xhtml,
+                     tests/axiom_of_power_set.tex, tests/axiom_of_power_set.xhtml,
+                     tests/binomial_coefficient.tex, tests/binomial_coefficient.xhtml,
+                     tests/complex_number.tex, tests/complex_number.xhtml,
+                     tests/deMorgans_law.tex, tests/deMorgans_law.xhtml,
+                     tests/differentiable_manifold.tex, tests/differentiable_manifold.xhtml,
+                     tests/divergence.tex, tests/divergence.xhtml,
+                     tests/moore_determinant,tex, tests/moore_determinant.xhtml,
+                     tests/quadratic_formula.tex, tests/quadratic_formula.xhtml,
+                     tests/schwinger_dyson.tex, tests/schwinger_dyson.xhtml,
+                     tests/sophomores_dream.tex, tests/sophomores_dream.xhtml,
+                     tests/sphere_volume.tex, tests/sphere_volume.xhtml
 
 Flag cgi
   description:       Compile cgi executable.
