@@ -129,16 +129,16 @@ basicEnclosure = choice $ map (\(s, v) -> try (symbol s) >> return v) enclosures
 
 left :: GenParser Char st Exp
 left = try $ do
-  try (symbol "\\left")
-  enc <- basicEnclosure <|> (symbol "." >> return (ESymbol Open "\xFEFF"))
+  symbol "\\left"
+  enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Open "\xFEFF"))
   case enc of
     (ESymbol Open _) -> tilRight enc <|> return (EStretchy enc)
     _ -> pzero
 
 right :: GenParser Char st Exp
 right = try $ do
-  try (symbol "\\right")
-  enc <- basicEnclosure <|> (symbol "." >> return (ESymbol Open "\xFEFF"))
+  symbol "\\right"
+  enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Close "\xFEFF"))
   case enc of
     (ESymbol Close x) -> return (EStretchy $ ESymbol Open x)
     _ -> pzero
