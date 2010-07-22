@@ -1,3 +1,4 @@
+{-# LANGUAGE DeriveDataTypeable #-}
 {-
 Copyright (C) 2009 John MacFarlane <jgm@berkeley.edu>
 
@@ -28,12 +29,13 @@ import qualified Data.Map as M
 import Text.ParserCombinators.Parsec
 import qualified Text.ParserCombinators.Parsec.Token as P
 import Text.ParserCombinators.Parsec.Language
+import Data.Generics
 
 data TeXSymbolType = Ord | Op | Bin | Rel | Open | Close | Pun | Accent
-                     deriving (Show, Read, Eq)
+                     deriving (Show, Read, Eq, Data, Typeable)
 
 data Alignment = AlignLeft | AlignCenter | AlignRight | AlignDefault
-                 deriving (Show, Read, Eq)
+                 deriving (Show, Read, Eq, Data, Typeable)
 
 type ArrayLine = [[Exp]]
 
@@ -51,12 +53,15 @@ data Exp =
   | EOver Exp Exp
   | EUnder Exp Exp
   | EUnderover Exp Exp Exp
+  | EUp Exp Exp
+  | EDown Exp Exp
+  | EDownup Exp Exp Exp
   | EUnary String Exp
   | EScaled String Exp
   | EStretchy Exp
   | EArray [Alignment] [ArrayLine]
   | EText String String
-  deriving (Show, Read, Eq)
+  deriving (Show, Read, Eq, Data, Typeable)
 
 texMathDef :: LanguageDef st
 texMathDef = LanguageDef 
@@ -102,8 +107,14 @@ formula = do
 expr :: GenParser Char st Exp
 expr = do
   a <- expr1
-  limits <- option False (try $ symbol "\\limits" >> return True)
+  limits <- limitsIndicator
   subSup limits a <|> superOrSubscripted limits a <|> return a
+
+limitsIndicator :: GenParser Char st (Maybe Bool)
+limitsIndicator =
+   try (symbol "\\limits" >> return (Just True))
+  <|> try (symbol "\\nolimits" >> return (Just False))
+  <|> return Nothing
 
 inbraces :: GenParser Char st Exp
 inbraces = liftM EGrouped (braces $ many $ notFollowedBy (char '}') >> expr)
@@ -238,28 +249,45 @@ variable = do
   spaces
   return $ EIdentifier [v]
 
-subSup :: Bool -> Exp -> GenParser Char st Exp
+isConvertible :: Exp -> Bool
+isConvertible (EMathOperator x) = x `elem` convertibleOps
+  where convertibleOps = ["lim","liminf","limsup","inf","sup"]
+isConvertible (ESymbol Rel _) = True
+isConvertible (ESymbol Bin _) = True
+isConvertible (EUnder _ _)    = True
+isConvertible (EOver _ _)     = True
+isConvertible (EUnderover _ _ _) = True
+isConvertible (ESymbol Op x) = x `elem` convertibleSyms
+  where convertibleSyms = ["\x2211","\x220F","\x22C2",
+           "\x22C3","\x22C0","\x22C1","\x2A05","\x2A06",
+           "\x2210","\x2A01","\x2A02","\x2A00","\x2A04"]
+isConvertible _ = False
+
+subSup :: Maybe Bool -> Exp -> GenParser Char st Exp
 subSup limits a = try $ do
   char '_'
   b <- expr1
   char '^'
   c <- expr
-  return $ if limits
-              then EUnderover a b c
-              else ESubsup a b c 
+  return $ case limits of
+            Just True  -> EUnderover a b c
+            Nothing | isConvertible a -> EDownup a b c
+            _          -> ESubsup a b c
 
-superOrSubscripted :: Bool -> Exp -> GenParser Char st Exp
+superOrSubscripted :: Maybe Bool -> Exp -> GenParser Char st Exp
 superOrSubscripted limits a = try $ do
   c <- oneOf "^_"
   b <- expr
   case c of
-       '^' -> return $ if limits
-                          then EOver a b
-                          else ESuper a b
-       '_' -> return $ if limits
-                          then EUnder a b
-                          else ESub a b
-       _   -> pzero 
+       '^' -> return $ case limits of
+                        Just True  -> EOver a b
+                        Nothing | isConvertible a -> EUp a b
+                        _          -> ESuper a b
+       '_' -> return $ case limits of
+                        Just True  -> EUnder a b
+                        Nothing | isConvertible a -> EDown a b
+                        _          -> ESub a b
+       _   -> pzero
 
 escaped :: GenParser Char st Exp
 escaped = lexeme $ try $ 

@@ -25,6 +25,7 @@ where
 import qualified Data.Map as M
 import Text.XML.Light
 import Text.TeXMath.Parser
+import Data.Generics (everywhere, mkT)
 
 data DisplayType = DisplayBlock
                  | DisplayInline
@@ -32,7 +33,7 @@ data DisplayType = DisplayBlock
 
 toMathML :: DisplayType -> [Exp] -> Element
 toMathML dt exprs =
-  add_attr dtattr $ math $ map (showExp . expandMathOp dt) exprs
+  add_attr dtattr $ math $ map showExp $ everywhere (mkT $ handleDownup dt) exprs
     where dtattr = Attr (unqual "display") dt'
           dt' =  case dt of
                       DisplayBlock  -> "block"
@@ -135,11 +136,14 @@ accent :: String -> Element
 accent = add_attr (Attr (unqual "accent") "true") .
            unode "mo"
 
-expandMathOp :: DisplayType -> Exp -> Exp
-expandMathOp DisplayInline x                               = x
-expandMathOp DisplayBlock  (ESub (EMathOperator x) y)      = EUnder (EMathOperator x) y
-expandMathOp DisplayBlock  (ESubsup (EMathOperator x) y z) = EUnderover (EMathOperator x) y z
-expandMathOp DisplayBlock  x                               = x
+handleDownup :: DisplayType -> Exp -> Exp
+handleDownup DisplayInline (EDown x y)     = ESub x y
+handleDownup DisplayBlock  (EDown x y)     = EUnder x y
+handleDownup DisplayInline (EUp x y)       = ESuper x y
+handleDownup DisplayBlock  (EUp x y)       = EOver x y
+handleDownup DisplayInline (EDownup x y z) = ESubsup x y z
+handleDownup DisplayBlock  (EDownup x y z) = EUnderover x y z
+handleDownup _             x               = x
 
 showExp :: Exp -> Element
 showExp e =
@@ -168,4 +172,6 @@ showExp e =
    EScaled s x      -> makeScaled s $ showExp x
    EArray as ls     -> makeArray as ls
    EText a s        -> makeText a s
+   x                -> error $ "showExp encountered " ++ show x
+                       -- note: EUp, EDown, EDownup should be removed by handleDownup
 
