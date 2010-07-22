@@ -136,11 +136,9 @@ accent = add_attr (Attr (unqual "accent") "true") .
            unode "mo"
 
 expandMathOp :: DisplayType -> Exp -> Exp
-expandMathOp DisplayInline (EMathOperator x)               = EIdentifier x
 expandMathOp DisplayInline x                               = x
-expandMathOp DisplayBlock  (ESub (EMathOperator x) y)      = EUnder (EIdentifier x) y
-expandMathOp DisplayBlock  (ESubsup (EMathOperator x) y z) = EUnder (ESuper (EIdentifier x) z) y
-expandMathOp DisplayBlock  (EMathOperator x)               = EIdentifier x
+expandMathOp DisplayBlock  (ESub (EMathOperator x) y)      = EUnder (EMathOperator x) y
+expandMathOp DisplayBlock  (ESubsup (EMathOperator x) y z) = EUnderover (EMathOperator x) y z
 expandMathOp DisplayBlock  x                               = x
 
 showExp :: Exp -> Element
@@ -150,7 +148,7 @@ showExp e =
    EGrouped [x]     -> showExp x
    EGrouped xs      -> mrow $ map showExp xs
    EIdentifier x    -> unode "mi" x
-   EMathOperator x  -> unode "mi" x --in case expandMathOp is not used
+   EMathOperator x  -> unode "mi" x
    ESymbol Accent x -> accent x
    EStretchy (ESymbol Open x)  -> makeStretchy $ unode "mo" x
    EStretchy (ESymbol Close x) -> makeStretchy $ unode "mo" x
