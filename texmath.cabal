@@ -77,11 +77,10 @@ Executable testTeXMathML
 
 Executable texmath-cgi
     Main-is:             cgi/texmath-cgi.hs
-    Build-depends:       utf8-string
     Ghc-Options:         -Wall -fno-warn-unused-do-bind
     Ghc-Prof-Options:    -auto-all
     if flag(cgi)
       Buildable:         True
-      Build-depends:     cgi, json
+      Build-depends:     cgi, json, utf8-string
     else
       Buildable:         False
