@@ -8,6 +8,8 @@ MathML.  It is used by [pandoc] and [gitit].
 [gitit]: http://gitit.net
 
 You can [try it out online here](http://johnmacfarlane.net/texmath.html).
+(Note that the math it produces will be rendered correctly only
+if your browser supports MathML. Firefox does; Safari and Chrome do not.)
 
 By default, only the Haskell library is installed.  To install a
 test program, `testTeXMathML`, use the `test` Cabal flag:
