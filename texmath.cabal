@@ -63,13 +63,19 @@ Library
       Build-depends: base >= 3 && < 4
     Exposed-modules:     Text.TeXMath, Text.TeXMath.Parser, Text.TeXMath.MathMLWriter
 
-    Ghc-Options:         -Wall -fno-warn-unused-do-bind
-    Ghc-Prof-Options:    -auto-all
+    if impl(ghc >= 6.12)
+      Ghc-Options:     -Wall -fno-warn-unused-do-bind
+    else
+      Ghc-Options:     -Wall
+    Ghc-Prof-Options:  -auto-all -caf-all
 
 Executable testTeXMathML
     Main-is:             testTeXMathML.hs
-    Ghc-Options:         -Wall -fno-warn-unused-do-bind
-    Ghc-Prof-Options:    -auto-all
+    if impl(ghc >= 6.12)
+      Ghc-Options:     -Wall -fno-warn-unused-do-bind
+    else
+      Ghc-Options:     -Wall
+    Ghc-Prof-Options:  -auto-all -caf-all
     if flag(test)
       Buildable:         True
     else
@@ -77,8 +83,11 @@ Executable testTeXMathML
 
 Executable texmath-cgi
     Main-is:             cgi/texmath-cgi.hs
-    Ghc-Options:         -Wall -fno-warn-unused-do-bind
-    Ghc-Prof-Options:    -auto-all
+    if impl(ghc >= 6.12)
+      Ghc-Options:     -Wall -fno-warn-unused-do-bind
+    else
+      Ghc-Options:     -Wall
+    Ghc-Prof-Options:  -auto-all -caf-all
     if flag(cgi)
       Buildable:         True
       Build-depends:     cgi, json, utf8-string
