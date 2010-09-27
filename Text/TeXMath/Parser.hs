@@ -494,7 +494,7 @@ symbols = M.fromList [
            , ("\\chi", ESymbol Ord "\x03C7")
            , ("\\delta", ESymbol Ord "\x03B4")
            , ("\\Delta", ESymbol Op "\x0394")
-           , ("\\epsi", ESymbol Ord "\x03B5")
+           , ("\\epsilon", ESymbol Ord "\x03B5")
            , ("\\varepsilon", ESymbol Ord "\x025B")
            , ("\\eta", ESymbol Ord "\x03B7")
            , ("\\gamma", ESymbol Ord "\x03B3")
