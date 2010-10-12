@@ -4,4 +4,4 @@ import System.Exit
 
 main = defaultMainWithHooks $ simpleUserHooks { runTests  = runTestSuite }
 
-runTestSuite _ _ _ _ = system "cd tests && ./runtests.sh" >>= exitWith
+runTestSuite _ _ _ _ = system "cd tests && sh runtests.sh" >>= exitWith
