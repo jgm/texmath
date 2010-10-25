@@ -95,6 +95,7 @@ expr1 =  choice [
   , diacritical
   , escaped
   , unicode
+  , ensuremath
   ]
 
 formula :: GenParser Char st [Exp]
@@ -296,6 +297,10 @@ escaped = lexeme $ try $
 
 unicode :: GenParser Char st Exp
 unicode = lexeme $ liftM (ESymbol Ord . (:[])) $ satisfy (not . isAscii)
+
+ensuremath :: GenParser Char st Exp
+ensuremath = lexeme $ try $
+             string "\\ensuremath" >> inbraces
 
 command :: GenParser Char st String
 command = try $ char '\\' >> liftM ('\\':) (identifier <|> lexeme (count 1 anyChar))
