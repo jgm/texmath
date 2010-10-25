@@ -2,7 +2,8 @@ module Main where
 
 import Text.TeXMath
 import Text.XML.Light
-
+import Text.TeXMath.Macros
+import Text.ParserCombinators.Parsec
 import System.IO
 
 inHtml :: Element -> Element
@@ -15,9 +16,18 @@ inHtml x =
         unode "meta" ()
     , unode "body" x ]
 
+stripMacroDefs :: Parser ([Macro], String)
+stripMacroDefs = do
+  macros <- many (try $ spaces >> pMacroDefinition)
+  rest <- getInput
+  return (macros, rest)
+
 main :: IO ()
 main = do
   inp <- getContents
-  case (texMathToMathML DisplayBlock $! inp) of
-       Left err         -> hPutStrLn stderr err
-       Right v          -> putStr . ppTopElement . inHtml $ v
+  case parse stripMacroDefs "stdin" inp of
+       Left err -> error $ show err
+       Right (ms, rest)->
+          case (texMathToMathML DisplayBlock $! applyMacros ms rest) of
+               Left err         -> hPutStrLn stderr err
+               Right v          -> putStr . ppTopElement . inHtml $ v
