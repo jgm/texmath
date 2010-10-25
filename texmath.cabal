@@ -46,6 +46,7 @@ Data-Files:          cgi/texmath.xhtml,
                      tests/sophomores_dream.tex, tests/sophomores_dream.xhtml,
                      tests/sphere_volume.tex, tests/sphere_volume.xhtml,
                      tests/unicode.tex, tests/unicode.xhtml
+                     tests/ensuremath.tex, tests/ensuremath.xhtml
 
 Flag cgi
   description:       Compile cgi executable.
