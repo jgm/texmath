@@ -35,7 +35,8 @@ pMacroDefinition :: Parser Macro
 pMacroDefinition = newcommand {- <|> newenvironment -}
 
 applyMacros :: [Macro] -> String -> String
-applyMacros ms = iterateToFixedPoint (2 * length ms) (applyMacrosOnce ms)
+applyMacros [] = id
+applyMacros ms = iterateToFixedPoint ((2 * length ms) + 1) (applyMacrosOnce ms)
 
 -- end of API
 
