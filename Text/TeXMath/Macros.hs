@@ -27,7 +27,7 @@ module Text.TeXMath.Macros ( Macro(..)
                            )
 where
 
-import Data.Char (isDigit)
+import Data.Char (isDigit, isLetter)
 import Control.Monad
 import Text.ParserCombinators.Parsec
 
@@ -103,6 +103,8 @@ newcommand = try $ do
   return $ Macro $ try $ do
     char '\\'
     string name'
+    when (all isLetter name') $
+      notFollowedBy letter
     opt <- case optarg of
                 Nothing  -> return Nothing
                 Just _   -> liftM (`mplus` optarg) optArg
