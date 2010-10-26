@@ -12,15 +12,17 @@ You can [try it out online here](http://johnmacfarlane.net/texmath.html).
 if your browser supports MathML. Firefox does; Safari and Chrome do not.)
 
 By default, only the Haskell library is installed.  To install a
-test program, `testTeXMathML`, use the `test` Cabal flag:
+test program, `texmath`, use the `test` Cabal flag:
 
     cabal install -ftest
 
-`testTeXMathML` reads a LaTeX formula from stdin and writes a
+`texmath` reads a LaTeX formula from stdin and writes a
 standalone xhtml file to stdout.  You can run the test suite thus:
 
     cd tests
     sh runtests.sh
+
+Macro definitions may be included before the formula.
 
 The `cgi` Cabal flag will cause a CGI binary, `texmath-cgi`, to be
 produced:
