@@ -20,7 +20,11 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  to LateX expressions.
 -}
 
-module Text.TeXMath.Macros (Macro(..), pMacroDefinition, applyMacros)
+module Text.TeXMath.Macros ( Macro(..)
+                           , pMacroDefinition
+                           , pSkipSpaceComments
+                           , applyMacros
+                           )
 where
 
 import Data.Char (isDigit)
@@ -33,6 +37,10 @@ newtype Macro = Macro { macroParser :: Parser String }
 -- returns a 'Macro'.
 pMacroDefinition :: Parser Macro
 pMacroDefinition = newcommand
+
+-- | Skip whitespace and comments.
+pSkipSpaceComments :: Parser ()
+pSkipSpaceComments = spaces >> skipMany (comment >> spaces)
 
 -- | Applies a list of macros to a string recursively until a fixed
 -- point is reached.  If there are several macros in the list with the
@@ -77,19 +85,19 @@ newcommand = try $ do
   char '\\'
   optional $ try $ string "re"
   string "newcommand"
-  skipCS
+  pSkipSpaceComments
   name <- inbraces
   guard (take 1 name == "\\")
   let name' = drop 1 name
   numargs <- numArgs
-  skipCS
+  pSkipSpaceComments
   optarg <- if numargs > 0
                then optArg
                else return Nothing
   let numargs' = case optarg of
                    Just _  -> numargs - 1
                    Nothing -> numargs
-  skipCS
+  pSkipSpaceComments
   body <- inbraces
   return $ Macro $ try $ do
     char '\\'
@@ -113,9 +121,6 @@ apply args ('\\':'#':xs) = '\\':'#' : apply args xs
 apply args (x:xs) = x : apply args xs
 apply _ "" = ""
 
-skipCS :: Parser ()
-skipCS = spaces >> skipMany (comment >> spaces)
-
 skipComment :: Parser ()
 skipComment = skipMany comment
 
@@ -128,11 +133,11 @@ comment = do
 
 numArgs :: Parser Int
 numArgs = option 0 $ do
-  skipCS
+  pSkipSpaceComments
   char '['
-  skipCS
+  pSkipSpaceComments
   n <- digit
-  skipCS
+  pSkipSpaceComments
   char ']'
   return $ read [n]
 
@@ -145,9 +150,9 @@ escaped xs = try $ char '\\' >> oneOf xs >>= \x -> return ['\\',x]
 inBrackets :: Parser String
 inBrackets = try $ do
   char '['
-  skipCS
+  pSkipSpaceComments
   res <- manyTill (skipComment >> (escaped "[]" <|> count 1 anyChar))
-          (try $ skipCS >> char ']')
+          (try $ pSkipSpaceComments >> char ']')
   return $ concat res
 
 inbraces :: Parser String
