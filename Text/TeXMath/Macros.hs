@@ -89,6 +89,7 @@ newcommand = try $ do
   name <- inbraces
   guard (take 1 name == "\\")
   let name' = drop 1 name
+  pSkipSpaceComments
   numargs <- numArgs
   pSkipSpaceComments
   optarg <- if numargs > 0
