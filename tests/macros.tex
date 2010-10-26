@@ -1,3 +1,7 @@
+\newcommand{\abc}{5}
+\newcommand{\def}[2][x]{%
+#1 + #2%
+}
 \renewcommand{%
 \phi%
 }{%
@@ -9,3 +13,6 @@
 \newcommand{\b}[1]{#1}
 
 \phi
+\abc
+\def[y]{3}
+\def{3}
