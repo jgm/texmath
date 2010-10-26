@@ -21,7 +21,7 @@ cgiMain = do
   latexFormula <- liftM (decodeString . fromMaybe "") $ getInput "latexFormula"
   rawMacros <- liftM (decodeString . fromMaybe "") $ getInput "macros"
   output . encodeStrict $
-    case parse pMacros "macros" rawMacros of
+    case parse pMacros "macros" (rawMacros ++ "\n") of
          Left err  -> toJSObject [("success", JSBool False)
                                  ,("error", JSString $ toJSString (show err))]
          Right ms  -> case texMathToMathML DisplayBlock (applyMacros ms latexFormula) of
