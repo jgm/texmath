@@ -24,7 +24,8 @@ cgiMain = do
     case parse pMacros "macros" (rawMacros ++ "\n") of
          Left err  -> toJSObject [("success", JSBool False)
                                  ,("error", JSString $ toJSString (show err))]
-         Right ms  -> case texMathToMathML DisplayBlock (applyMacros ms latexFormula) of
+         Right ms  -> case texMathToMathML DisplayBlock
+                               (applyMacros (reverse ms) latexFormula) of
                        Left e  -> toJSObject [("success", JSBool False)
                                              , ("error", JSString $ toJSString e)]
                        Right v -> toJSObject [("success", JSBool True)

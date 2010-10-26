@@ -20,7 +20,7 @@ stripMacroDefs :: Parser ([Macro], String)
 stripMacroDefs = do
   macros <- many (try $ pSkipSpaceComments >> pMacroDefinition)
   rest <- getInput
-  return (macros, rest)
+  return (reverse macros, rest)  -- reversed so later ones will shadow earlier
 
 main :: IO ()
 main = do

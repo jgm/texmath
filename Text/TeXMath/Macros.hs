@@ -44,15 +44,12 @@ pSkipSpaceComments = spaces >> skipMany (comment >> spaces)
 
 -- | Applies a list of macros to a string recursively until a fixed
 -- point is reached.  If there are several macros in the list with the
--- same name, later ones will shadow earlier ones.
+-- same name, earlier ones will shadow later ones.
 applyMacros :: [Macro] -> String -> String
 applyMacros [] = id
-applyMacros ms = iterateToFixedPoint ((2 * length ms) + 1) $
-                  applyMacrosOnce $ reverse ms -- we reverse so that the most recently
-                                               -- defined macros will be applied first
-                                               -- and shadow others with the same name
+applyMacros ms = iterateToFixedPoint ((2 * length ms) + 1) $ applyMacrosOnce ms
 
-------------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 
 iterateToFixedPoint :: Eq a => Int -> (a -> a) -> a -> a
 iterateToFixedPoint 0     _ _ = error $
