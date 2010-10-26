@@ -27,18 +27,19 @@ import Data.Char (isDigit)
 import Control.Monad
 import Text.ParserCombinators.Parsec
 
--- API here:
-
 newtype Macro = Macro { macroParser :: Parser String }
 
 pMacroDefinition :: Parser Macro
-pMacroDefinition = newcommand {- <|> newenvironment -}
+pMacroDefinition = newcommand
 
 applyMacros :: [Macro] -> String -> String
 applyMacros [] = id
-applyMacros ms = iterateToFixedPoint ((2 * length ms) + 1) (applyMacrosOnce ms)
+applyMacros ms = iterateToFixedPoint ((2 * length ms) + 1) $
+                  applyMacrosOnce $ reverse ms -- we reverse so that the most recently
+                                               -- defined macros will be applied first
+                                               -- and shadow others with the same name
 
--- end of API
+------------------------------------------------------------------------------------
 
 iterateToFixedPoint :: Eq a => Int -> (a -> a) -> a -> a
 iterateToFixedPoint 0     _ _ = error $
