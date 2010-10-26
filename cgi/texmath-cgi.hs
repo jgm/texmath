@@ -7,14 +7,19 @@ import Data.Maybe (fromMaybe)
 import Control.Monad
 import Text.JSON
 import Codec.Binary.UTF8.String (decodeString)
-import Text.ParserCombinators.Parsec (parse, many, try)
+import Text.ParserCombinators.Parsec (Parser, parse, many, try, eof)
+
+pMacros :: Parser [Macro]
+pMacros = do
+  macros <- many (try $ pSkipSpaceComments >> pMacroDefinition)
+  pSkipSpaceComments >> eof
+  return macros
 
 cgiMain :: CGI CGIResult
 cgiMain = do
   setHeader "Content-type" "text/xhtml; charset=UTF-8"
   latexFormula <- liftM (decodeString . fromMaybe "") $ getInput "latexFormula"
   rawMacros <- liftM (decodeString . fromMaybe "") $ getInput "macros"
-  let pMacros = many (try $ pSkipSpaceComments >> pMacroDefinition)
   output . encodeStrict $
     case parse pMacros "input" rawMacros of
          Left err  -> toJSObject [("success", JSBool False)

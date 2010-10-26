@@ -11,7 +11,8 @@
     <script type="text/javascript">
       $(document).ready(function(){
         $('#convert').click(function() {
-          $.getJSON("/cgi-bin/texmath-cgi", { 'latexFormula' : $('#latexFormula').val() },
+          $.getJSON("/cgi-bin/texmath-cgi", { 'latexFormula' : $('#latexFormula').val()
+                                            , 'macros' : $('#macros').val() },
             function(result){
                    if (result.success) {
                      $('#result').html(result.mathml);
