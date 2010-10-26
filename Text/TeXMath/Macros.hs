@@ -76,6 +76,7 @@ newcommand = try $ do
   guard (take 1 name == "\\")
   let name' = drop 1 name
   numargs <- numArgs
+  skipCS
   optarg <- if numargs > 0
                then optArg
                else return Nothing
@@ -97,34 +98,40 @@ newcommand = try $ do
     return $ apply args' body
 
 apply :: [String] -> String -> String
-apply args ('#':d:xs) | isDigit d = args !! (read [d] - 1) ++
-  apply args xs
+apply args ('#':d:xs) | isDigit d =
+  let argnum = read [d]
+  in  if length args >= argnum
+         then args !! (argnum - 1) ++ apply args xs
+         else '#' : d : apply args xs
 apply args ('\\':'#':xs) = '\\':'#' : apply args xs
 apply args (x:xs) = x : apply args xs
 apply _ "" = ""
 
-endofline :: Parser ()
-endofline = (newline >> return ()) <|> eof
-
 skipCS :: Parser ()
-skipCS = skipMany (spaces >> comment) >> spaces 
+skipCS = spaces >> skipMany (comment >> spaces)
 
 skipComment :: Parser ()
 skipComment = skipMany comment
 
 comment :: Parser ()
-comment = char '%' >> manyTill anyChar endofline >> return ()
+comment = do
+  char '%'
+  skipMany (notFollowedBy newline >> anyChar)
+  newline
+  return ()
 
 numArgs :: Parser Int
 numArgs = option 0 $ do
   skipCS
   char '['
+  skipCS
   n <- digit
+  skipCS
   char ']'
   return $ read [n]
 
 optArg :: Parser (Maybe String)
-optArg = option Nothing $ (liftM Just $ skipCS >> inBrackets)
+optArg = option Nothing $ (liftM Just $ inBrackets)
 
 escaped :: String -> Parser String
 escaped xs = try $ char '\\' >> oneOf xs >>= \x -> return ['\\',x]
@@ -132,8 +139,9 @@ escaped xs = try $ char '\\' >> oneOf xs >>= \x -> return ['\\',x]
 inBrackets :: Parser String
 inBrackets = try $ do
   char '['
+  skipCS
   res <- manyTill (skipComment >> (escaped "[]" <|> count 1 anyChar))
-          (try $ skipComment >> char ']')
+          (try $ skipCS >> char ']')
   return $ concat res
 
 inbraces :: Parser String

@@ -16,9 +16,17 @@ inHtml x =
         unode "meta" ()
     , unode "body" x ]
 
+skipSpaceAndComments :: Parser ()
+skipSpaceAndComments = do
+  spaces
+  skipMany $ do
+    char '%' >> skipMany (notFollowedBy newline >> anyChar) >> newline
+    spaces
+  return ()
+
 stripMacroDefs :: Parser ([Macro], String)
 stripMacroDefs = do
-  macros <- many (try $ spaces >> pMacroDefinition)
+  macros <- many (try $ skipSpaceAndComments >> pMacroDefinition)
   rest <- getInput
   return (macros, rest)
 
