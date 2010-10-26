@@ -17,7 +17,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 -}
 
 {- | Functions for parsing LaTeX macro definitions and applying macros
- - to LateX expressions.
+ to LateX expressions.
 -}
 
 module Text.TeXMath.Macros (Macro(..), pMacroDefinition, applyMacros)
@@ -29,9 +29,14 @@ import Text.ParserCombinators.Parsec
 
 newtype Macro = Macro { macroParser :: Parser String }
 
+-- | Parses a @\\newcommand@ or @\\renewcommand@ macro definition and
+-- returns a 'Macro'.
 pMacroDefinition :: Parser Macro
 pMacroDefinition = newcommand
 
+-- | Applies a list of macros to a string recursively until a fixed
+-- point is reached.  If there are several macros in the list with the
+-- same name, later ones will shadow earlier ones.
 applyMacros :: [Macro] -> String -> String
 applyMacros [] = id
 applyMacros ms = iterateToFixedPoint ((2 * length ms) + 1) $
