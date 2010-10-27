@@ -1,3 +1,4 @@
+{-# LANGUAGE RankNTypes #-}
 {-
 Copyright (C) 2010 John MacFarlane <jgm@berkeley.edu>
 
@@ -31,7 +32,11 @@ import Data.Char (isDigit, isLetter)
 import Control.Monad
 import Text.ParserCombinators.Parsec
 
-newtype Macro = Macro { macroParser :: Parser String }
+data Macro = Macro { macroDefinition :: String
+                   , macroParser :: forall st . GenParser Char st String }
+
+instance Show Macro where
+  show m = "Macro " ++ show (macroDefinition m)
 
 -- | Parses a @\\newcommand@ or @\\renewcommand@ macro definition and
 -- returns a 'Macro'.
