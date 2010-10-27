@@ -102,7 +102,11 @@ newcommand = try $ do
                    Nothing -> numargs
   pSkipSpaceComments
   body <- inbraces
-  return $ Macro $ try $ do
+  let defn = "\\newcommand{" ++ name ++ "}" ++
+             (if numargs > 0 then ("[" ++ show numargs ++ "]") else "") ++
+             case optarg of { Nothing -> ""; Just x -> "[" ++ x ++ "]"} ++
+             "{" ++ body ++ "}"
+  return $ Macro defn $ try $ do
     char '\\'
     string name'
     when (all isLetter name') $
