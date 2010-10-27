@@ -40,11 +40,11 @@ instance Show Macro where
 
 -- | Parses a @\\newcommand@ or @\\renewcommand@ macro definition and
 -- returns a 'Macro'.
-pMacroDefinition :: Parser Macro
+pMacroDefinition :: GenParser Char st Macro
 pMacroDefinition = newcommand
 
 -- | Skip whitespace and comments.
-pSkipSpaceComments :: Parser ()
+pSkipSpaceComments :: GenParser Char st ()
 pSkipSpaceComments = spaces >> skipMany (comment >> spaces)
 
 -- | Applies a list of macros to a string recursively until a fixed
@@ -82,7 +82,7 @@ applyMacrosOnce ms s =
                     res <- many1 letter <|> count 1 anyChar
                     return $ '\\' : res
 
-newcommand :: Parser Macro
+newcommand :: GenParser Char st Macro
 newcommand = try $ do
   char '\\'
   optional $ try $ string "re"
@@ -126,17 +126,17 @@ apply args ('\\':'#':xs) = '\\':'#' : apply args xs
 apply args (x:xs) = x : apply args xs
 apply _ "" = ""
 
-skipComment :: Parser ()
+skipComment :: GenParser Char st ()
 skipComment = skipMany comment
 
-comment :: Parser ()
+comment :: GenParser Char st ()
 comment = do
   char '%'
   skipMany (notFollowedBy newline >> anyChar)
   newline
   return ()
 
-numArgs :: Parser Int
+numArgs :: GenParser Char st Int
 numArgs = option 0 $ do
   pSkipSpaceComments
   char '['
@@ -146,13 +146,13 @@ numArgs = option 0 $ do
   char ']'
   return $ read [n]
 
-optArg :: Parser (Maybe String)
+optArg :: GenParser Char st (Maybe String)
 optArg = option Nothing $ (liftM Just $ inBrackets)
 
-escaped :: String -> Parser String
+escaped :: String -> GenParser Char st String
 escaped xs = try $ char '\\' >> oneOf xs >>= \x -> return ['\\',x]
 
-inBrackets :: Parser String
+inBrackets :: GenParser Char st String
 inBrackets = try $ do
   char '['
   pSkipSpaceComments
@@ -160,14 +160,14 @@ inBrackets = try $ do
           (try $ pSkipSpaceComments >> char ']')
   return $ concat res
 
-inbraces :: Parser String
+inbraces :: GenParser Char st String
 inbraces = try $ do
   char '{'
   res <- manyTill (skipComment >> (inbraces' <|> count 1 anyChar <|> escaped "{}"))
     (try $ skipComment >> char '}')
   return $ concat res
 
-inbraces' :: Parser String
+inbraces' :: GenParser Char st String
 inbraces' = do
   res <- inbraces
   return $ '{' : (res ++ "}")
