@@ -3,7 +3,6 @@ module Main where
 import Text.TeXMath
 import Text.XML.Light
 import Text.TeXMath.Macros
-import Text.ParserCombinators.Parsec
 import System.IO
 
 inHtml :: Element -> Element
