@@ -22,7 +22,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 module Text.TeXMath ( texMathToMathML, DisplayType(..) )
 where
 import Text.TeXMath.Parser
-import Text.TeXMath.MathMLWriter
+import Text.TeXMath.MathML
 import Text.XML.Light
 
 texMathToMathML :: DisplayType -> String -> Either String Element

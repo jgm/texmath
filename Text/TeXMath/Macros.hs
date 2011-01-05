@@ -21,7 +21,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  to LateX expressions.
 -}
 
-module Text.TeXMath.Macros ( Macro(..)
+module Text.TeXMath.Macros ( Macro
                            , parseMacroDefinitions
                            , applyMacros
                            )
@@ -32,11 +32,15 @@ import Control.Monad
 import Text.ParserCombinators.Parsec
 
 data Macro = Macro { macroDefinition :: String
-                   , macroParser :: forall st . GenParser Char st String }
+                   , macroParser     :: forall st . GenParser Char st String }
 
 instance Show Macro where
   show m = "Macro " ++ show (macroDefinition m)
 
+-- | Parses a string for a list of macro definitions, optionally
+-- separated and ended by spaces and TeX comments.  Returns
+-- the list of macros (which may be empty) and the unparsed
+-- portion of the input string.
 parseMacroDefinitions :: String -> ([Macro], String)
 parseMacroDefinitions s =
   case parse pMacroDefinitions "input" s of

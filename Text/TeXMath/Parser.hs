@@ -1,4 +1,3 @@
-{-# LANGUAGE DeriveDataTypeable #-}
 {-
 Copyright (C) 2009 John MacFarlane <jgm@berkeley.edu>
 
@@ -20,7 +19,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 {- | Functions for parsing a LaTeX formula to a Haskell representation.
 -}
 
-module Text.TeXMath.Parser (parseFormula, Exp(..), TeXSymbolType(..), ArrayLine, Alignment(..))
+module Text.TeXMath.Parser (parseFormula)
 where
 
 import Control.Monad
@@ -29,39 +28,7 @@ import qualified Data.Map as M
 import Text.ParserCombinators.Parsec
 import qualified Text.ParserCombinators.Parsec.Token as P
 import Text.ParserCombinators.Parsec.Language
-import Data.Generics
-
-data TeXSymbolType = Ord | Op | Bin | Rel | Open | Close | Pun | Accent
-                     deriving (Show, Read, Eq, Data, Typeable)
-
-data Alignment = AlignLeft | AlignCenter | AlignRight | AlignDefault
-                 deriving (Show, Read, Eq, Data, Typeable)
-
-type ArrayLine = [[Exp]]
-
-data Exp =
-    ENumber String
-  | EGrouped [Exp]
-  | EIdentifier String
-  | EMathOperator String
-  | ESymbol TeXSymbolType String
-  | ESpace String
-  | EBinary String Exp Exp
-  | ESub Exp Exp
-  | ESuper Exp Exp
-  | ESubsup Exp Exp Exp
-  | EOver Exp Exp
-  | EUnder Exp Exp
-  | EUnderover Exp Exp Exp
-  | EUp Exp Exp
-  | EDown Exp Exp
-  | EDownup Exp Exp Exp
-  | EUnary String Exp
-  | EScaled String Exp
-  | EStretchy Exp
-  | EArray [Alignment] [ArrayLine]
-  | EText String String
-  deriving (Show, Read, Eq, Data, Typeable)
+import Text.TeXMath.Types
 
 texMathDef :: LanguageDef st
 texMathDef = LanguageDef 

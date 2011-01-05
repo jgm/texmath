@@ -19,12 +19,12 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 {- | Functions for writing a parsed formula as MathML.
 -}
 
-module Text.TeXMath.MathMLWriter (toMathML, DisplayType(..), showExp)
+module Text.TeXMath.MathML (toMathML, DisplayType(..), showExp)
 where
 
 import qualified Data.Map as M
 import Text.XML.Light
-import Text.TeXMath.Parser
+import Text.TeXMath.Types
 import Data.Generics (everywhere, mkT)
 
 data DisplayType = DisplayBlock
