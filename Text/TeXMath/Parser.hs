@@ -20,7 +20,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 {- | Functions for parsing a LaTeX formula to a Haskell representation.
 -}
 
-module Text.TeXMath.Parser (expr, formula, Exp(..), TeXSymbolType(..), ArrayLine, Alignment(..))
+module Text.TeXMath.Parser (parseFormula, Exp(..), TeXSymbolType(..), ArrayLine, Alignment(..))
 where
 
 import Control.Monad
@@ -97,6 +97,11 @@ expr1 =  choice [
   , unicode
   , ensuremath
   ]
+
+-- | Parse a formula, returning a list of 'Exp'.
+parseFormula :: String -> Either String [Exp]
+parseFormula inp =
+  either (Left . show) (Right . id) $ parse formula "formula" inp
 
 formula :: GenParser Char st [Exp]
 formula = do

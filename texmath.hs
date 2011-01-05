@@ -16,18 +16,10 @@ inHtml x =
         unode "meta" ()
     , unode "body" x ]
 
-stripMacroDefs :: Parser ([Macro], String)
-stripMacroDefs = do
-  macros <- many (try $ pSkipSpaceComments >> pMacroDefinition)
-  rest <- getInput
-  return (reverse macros, rest)  -- reversed so later ones will shadow earlier
-
 main :: IO ()
 main = do
   inp <- getContents
-  case parse stripMacroDefs "stdin" inp of
-       Left err -> error $ show err
-       Right (ms, rest)->
-          case (texMathToMathML DisplayBlock $! applyMacros ms rest) of
-               Left err         -> hPutStrLn stderr err
-               Right v          -> putStr . ppTopElement . inHtml $ v
+  let (ms, rest) = parseMacroDefinitions inp
+  case (texMathToMathML DisplayBlock $! applyMacros ms rest) of
+        Left err         -> hPutStrLn stderr err
+        Right v          -> putStr . ppTopElement . inHtml $ v

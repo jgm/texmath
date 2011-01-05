@@ -22,8 +22,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 -}
 
 module Text.TeXMath.Macros ( Macro(..)
-                           , pMacroDefinition
-                           , pSkipSpaceComments
+                           , parseMacroDefinitions
                            , applyMacros
                            )
 where
@@ -37,6 +36,20 @@ data Macro = Macro { macroDefinition :: String
 
 instance Show Macro where
   show m = "Macro " ++ show (macroDefinition m)
+
+parseMacroDefinitions :: String -> ([Macro], String)
+parseMacroDefinitions s =
+  case parse pMacroDefinitions "input" s of
+       Left _       -> ([], s)
+       Right res    -> res
+
+-- | Parses one or more macro definitions separated by comments & space.
+-- Return list of macros parsed + remainder of string.
+pMacroDefinitions :: GenParser Char st ([Macro], String)
+pMacroDefinitions = do
+  defs <- sepEndBy pMacroDefinition pSkipSpaceComments
+  rest <- getInput
+  return (reverse defs, rest)  -- reversed so later macros shadow earlier
 
 -- | Parses a @\\newcommand@ or @\\renewcommand@ macro definition and
 -- returns a 'Macro'.
