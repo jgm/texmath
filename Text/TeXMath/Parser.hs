@@ -282,14 +282,14 @@ unaryOps = ["\\sqrt", "\\surd"]
 
 textOps :: M.Map String (String -> Exp)
 textOps = M.fromList
-          [ ("\\textrm", EText "normal")
+          [ ("\\textrm", EText "normal" . parseText)
           , ("\\mathrm", EText "normal")
-          , ("\\text",   EText "normal")
+          , ("\\text",   EText "normal" . parseText)
           , ("\\mbox",   EText "normal")
           , ("\\mathbf", EText "bold")
-          , ("\\textbf", EText "bold")
+          , ("\\textbf", EText "bold" . parseText)
           , ("\\mathit", EText "italic")
-          , ("\\textit", EText "italic")
+          , ("\\textit", EText "italic" . parseText)
           , ("\\mathtt", EText "monospace")
           , ("\\texttt", EText "monospace")
           , ("\\mathsf", EText "sans-serif")
@@ -297,6 +297,17 @@ textOps = M.fromList
           , ("\\mathcal", \e -> maybe (EText "script" e) (ESymbol Pun) (M.lookup e mathcal))
           , ("\\mathfrak", EText "fraktur")
           ]
+
+parseText :: String -> String
+parseText ('`':'`':xs) = '\x201C' : parseText xs
+parseText ('\'':'\'':xs) = '\x201D' : parseText xs
+parseText ('\'':xs) = '\x2019' : parseText xs
+parseText ('-':'-':'-':xs) = '\x2014' : parseText xs
+parseText ('-':'-':xs) = '\x2013' : parseText xs
+parseText ('\\':'l':'d':'o':'t':'s':xs) = '\x2026' : parseText xs
+parseText ('~':xs) = '\xA0' : parseText xs
+parseText (x:xs) = x : parseText xs
+parseText [] = []
 
 diacritical :: GenParser Char st Exp
 diacritical = try $ do
