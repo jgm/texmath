@@ -452,6 +452,8 @@ enclosures = [ ("(", ESymbol Open "(")
              , ("\\lVert", ESymbol Open "\x2225")
              , ("\\rVert", ESymbol Close "\x2225")
              , ("\\Vert", ESymbol Close "\x2016")
+             , ("\\ulcorner", ESymbol Open "\x231C")
+             , ("\\urcorner", ESymbol Close "\x231D")
              ]
 
 symbols :: M.Map String Exp
