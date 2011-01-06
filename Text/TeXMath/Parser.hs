@@ -676,6 +676,7 @@ symbols = M.fromList [
            , ("\\angle", ESymbol Ord "\x2220")
            , ("\\diamond", ESymbol Op "\x22C4")
            , ("\\Diamond", ESymbol Op "\x25C7")
+           , ("\\lozenge", ESymbol Op "\x25CA")
            , ("\\neg", ESymbol Op "\x00AC")
            , ("\\lnot", ESymbol Ord "\x00AC")
            , ("\\bot", ESymbol Ord "\x22A5")
