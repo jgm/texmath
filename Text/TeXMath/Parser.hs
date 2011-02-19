@@ -392,8 +392,8 @@ identifier :: CharParser st String
 identifier = lexeme (P.identifier lexer)
 
 operator :: CharParser st String
-operator = lexeme $ liftM (:[]) (opLetter texMathDef)
-                 <|> many1 (char '\'')
+operator = lexeme $ many1 (char '\'')
+                 <|> liftM (:[]) (opLetter texMathDef)
 
 symbol :: String -> CharParser st String
 symbol = lexeme . P.symbol lexer
