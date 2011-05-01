@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP #-}
 module Main where
 
 import Text.TeXMath
@@ -15,9 +16,17 @@ inHtml x =
         unode "meta" ()
     , unode "body" x ]
 
+getUTF8Contents :: IO String
+getUTF8Contents =
+#if MIN_VERSION_base(4,2,0)
+       hSetEncoding stdin utf8 >> hGetContents stdin
+#else
+       hGetContents stdin
+#endif
+
 main :: IO ()
 main = do
-  inp <- getContents
+  inp <- getUTF8Contents
   let (ms, rest) = parseMacroDefinitions inp
   case (texMathToMathML DisplayBlock $! applyMacros ms rest) of
         Left err         -> hPutStrLn stderr err
