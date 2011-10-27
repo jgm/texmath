@@ -459,7 +459,7 @@ enclosures = [ ("(", ESymbol Open "(")
 symbols :: M.Map String Exp
 symbols = M.fromList [
              ("+", ESymbol Bin "+")
-           , ("-", ESymbol Bin "-")
+           , ("-", ESymbol Bin "\x2212")
            , ("*", ESymbol Bin "*")
            , (",", ESymbol Pun ",")
            , (".", ESymbol Pun ".")
