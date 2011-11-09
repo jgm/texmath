@@ -1,6 +1,6 @@
 Name:                texmath
 Version:             0.5.0.3
-Cabal-version:       >= 1.2
+Cabal-Version:       >= 1.6
 Build-type:          Custom
 Synopsis:            Conversion of LaTeX math formulas to MathML.
 Description:         The texmathml library provides functions to convert LaTeX
@@ -57,6 +57,10 @@ Data-Files:          cgi/texmath.xhtml,
                      tests/unicode.tex, tests/unicode.xhtml
                      tests/ensuremath.tex, tests/ensuremath.xhtml
                      tests/macros.tex, tests/macros.xhtml
+
+Source-repository head
+  type:              git
+  location:          git://github.com/jgm/texmath.git
 
 Flag cgi
   description:       Compile cgi executable.
