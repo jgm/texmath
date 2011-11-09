@@ -6,6 +6,7 @@
 # Exit status is number of failed tests.
 TESTPROG=../dist/build/texmath/texmath
 failures=0
+passes=0
 if [ -f $TESTPROG ]; then
     for t in *.tex; do
         $TESTPROG <$t >tmp
@@ -13,12 +14,14 @@ if [ -f $TESTPROG ]; then
         if [ "$?" -ne "0" ]; then
             echo "Test ${t%.tex} FAILED (< expected, > actual):"
             cat tmpdiff
-            let "failures=$failures+1"
+            failures=`expr $failures + 1`
         else
             echo "Test ${t%.tex} PASSED"
+            passes=`expr $passes + 1`
         fi
     done
 else
     echo "Test executable not built. NOT running tests."
 fi
+echo "$passes tests passed, $failures tests failed."
 exit $failures
