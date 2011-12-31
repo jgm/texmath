@@ -156,7 +156,7 @@ arrayLine = notFollowedBy (try $ char '\\' >> symbol "end" >> return '\n') >>
   sepBy1 (many (notFollowedBy endLine >> expr)) (symbol "&")
 
 array :: GenParser Char st Exp
-array = stdarray <|> eqnarray <|> align <|> cases <|> matrix
+array = stdarray <|> eqnarray <|> align <|> cases <|> matrix <|> split
 
 matrix :: GenParser Char st Exp
 matrix =  matrixWith "pmatrix" "(" ")"
@@ -193,6 +193,12 @@ cases :: GenParser Char st Exp
 cases = inEnvironment "cases" $ do
   rs <- sepEndBy1 arrayLine endLine
   return $ EGrouped [EStretchy (ESymbol Open "{"), EArray [] rs]
+
+split :: GenParser Char st Exp
+split = inEnvironment "split" $ do
+  rs <- sepEndBy1 arrayLine endLine
+  let numcells = maximum $ map length rs
+  return $ EArray (replicate numcells AlignLeft) rs
 
 arrayAlignments :: GenParser Char st [Alignment]
 arrayAlignments = try $ do
