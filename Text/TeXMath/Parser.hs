@@ -197,8 +197,7 @@ cases = inEnvironment "cases" $ do
 split :: GenParser Char st Exp
 split = inEnvironment "split" $ do
   rs <- sepEndBy1 arrayLine endLine
-  let numcells = maximum $ map length rs
-  return $ EArray (replicate numcells AlignLeft) rs
+  return $ EArray [AlignRight, AlignLeft] rs
 
 arrayAlignments :: GenParser Char st [Alignment]
 arrayAlignments = try $ do
