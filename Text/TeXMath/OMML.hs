@@ -29,10 +29,12 @@ import Data.Generics (everywhere, mkT)
 
 toOMML :: DisplayType -> [Exp] -> Element
 toOMML dt exprs =
-  doc . dt' $ map showExp $ everywhere (mkT $ handleDownup dt) exprs
-    where dt' = case dt of
-                  DisplayBlock  -> mnode "oMathPara" . mnode "oMath"
-                  DisplayInline -> mnode "oMath"
+  doc . container $ map showExp $ everywhere (mkT $ handleDownup dt) exprs
+    where container = case dt of
+                  DisplayBlock  -> mnode "oMathPara" . mathnode
+                  DisplayInline -> mathnode
+          mathnode x = mnode "oMath" (mathstyle:x)
+          mathstyle = mnode "mathPr" $ mnodeAttr "mathFont" [("val","Cambria Math")] ()
 
 doc :: Element -> Element
 doc = add_attr (Attr (QName "m" Nothing (Just "xmlns")) "http://schemas.openxmlformats.org/officeDocument/2006/math") .
@@ -42,15 +44,15 @@ doc = add_attr (Attr (QName "m" Nothing (Just "xmlns")) "http://schemas.openxmlf
 mnode :: Node t => String -> t -> Element
 mnode s = node (QName s Nothing (Just "m"))
 
+mnodeAttr :: Node t => String -> [(String,String)] -> t -> Element
+mnodeAttr s [] = mnode s
+mnodeAttr s ((k,v):rest) = add_attr (Attr (QName k Nothing (Just "m")) v) . mnodeAttr s rest
+
 wnode :: Node t => String -> t -> Element
 wnode s = node (QName s Nothing (Just "w"))
 
 str :: String -> Element
-str s = wnode "r" [ wnode "rPr" (add_attr (Attr (QName "ascii" Nothing (Just "w")) "Cambria Math") .
-                                 add_attr (Attr (QName "hAnsi" Nothing (Just "w")) "Cambria Math") $
-                                 wnode "rFonts" ())
-                  , mnode "t" s
-                  ]
+str = wnode "r" . wnode "t"
 
 {- Firefox seems to set spacing based on its own dictionary,
 -  so I believe this is unnecessary.
