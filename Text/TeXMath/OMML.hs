@@ -84,28 +84,36 @@ showUnary c x =
        Just c'  -> mnode c' (showExp x)
        Nothing  -> error $ "Unknown unary op: " ++ c
 
+-}
+
+tofrac :: [Element] -> Element
+tofrac [num,den] = mnode "f" [mnode "num" num, mnode "den" den]
+tofrac _ = error "tofrac requires two arguments"
+
 binaryOps :: M.Map String ([Element] -> Element)
 binaryOps = M.fromList
-  [ ("\\frac", mnode "mfrac")
-  , ("\\tfrac", withAttribute "displaystyle" "false" .
-                  mnode "mstyle" . mnode "mfrac")
-  , ("\\dfrac", withAttribute "displaystyle" "true" .
-                  mnode "mstyle" . mnode "mfrac")
-  , ("\\sqrt", mnode "mroot")
-  , ("\\stackrel", mnode "mover")
-  , ("\\overset", mnode "mover")
-  , ("\\underset", mnode "munder")
-  , ("\\binom", showBinom)
+  [ ("\\frac", tofrac)
+--  , ("\\tfrac", withAttribute "displaystyle" "false" .
+--                  mnode "mstyle" . mnode "mfrac")
+--  , ("\\dfrac", withAttribute "displaystyle" "true" .
+--                  mnode "mstyle" . mnode "mfrac")
+--  , ("\\sqrt", mnode "mroot")
+--  , ("\\stackrel", mnode "mover")
+--  , ("\\overset", mnode "mover")
+--  , ("\\underset", mnode "munder")
+--  , ("\\binom", showBinom)
   ]
 
-showBinom :: [Element] -> Element
-showBinom lst = mnode "mfenced" $ withAttribute "linethickness" "0" $ mnode "mfrac" lst
+-- showBinom :: [Element] -> Element
+-- showBinom lst = mnode "mfenced" $ withAttribute "linethickness" "0" $ mnode "mfrac" lst
 
 showBinary :: String -> Exp -> Exp -> Element
 showBinary c x y =
   case M.lookup c binaryOps of
        Just f   -> f [showExp x, showExp y]
        Nothing  -> error $ "Unknown binary op: " ++ c
+
+{-
 
 spaceWidth :: String -> Element
 spaceWidth w = withAttribute "width" w $ mnode "mspace" ()
@@ -167,7 +175,7 @@ showExp e =
 --   ESymbol Close x  -> withAttribute "stretchy" "false" $ mnode "mo" x
 --   ESymbol _ x      -> mnode "mo" x
 --   ESpace x         -> spaceWidth x
---   EBinary c x y    -> showBinary c x y
+   EBinary c x y    -> showBinary c x y
 --   ESub x y         -> mnode "msub" $ map showExp [x, y]
 --   ESuper x y       -> mnode "msup" $ map showExp [x, y]
 --   ESubsup x y z    -> mnode "msubsup" $ map showExp [x, y, z]
