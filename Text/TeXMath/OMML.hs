@@ -29,40 +29,51 @@ import Data.Generics (everywhere, mkT)
 
 toOMML :: DisplayType -> [Exp] -> Element
 toOMML dt exprs =
-  add_attr dtattr $ math $ map showExp $ everywhere (mkT $ handleDownup dt) exprs
-    where dtattr = Attr (unqual "display") dt'
-          dt' =  case dt of
-                      DisplayBlock  -> "block"
-                      DisplayInline -> "inline"
+  doc . dt' $ map showExp $ everywhere (mkT $ handleDownup dt) exprs
+    where dt' = case dt of
+                  DisplayBlock  -> mnode "oMathPara" . mnode "oMath"
+                  DisplayInline -> mnode "oMath"
 
-math :: [Element] -> Element
-math = add_attr (Attr (unqual "xmlns") "http://www.w3.org/1998/Math/OMML") . unode "math" . unode "mrow"
+doc :: Element -> Element
+doc = add_attr (Attr (QName "m" Nothing (Just "xmlns")) "http://schemas.openxmlformats.org/officeDocument/2006/math") .
+       add_attr (Attr (QName "m" Nothing (Just "xmlns")) "http://schemas.openxmlformats.org/wordprocessingml/2006/main") .
+       wnode "document"
 
-mrow :: [Element] -> Element
-mrow = unode "mrow"
+mnode :: Node t => String -> t -> Element
+mnode s = node (QName s Nothing (Just "m"))
+
+wnode :: Node t => String -> t -> Element
+wnode s = node (QName s Nothing (Just "w"))
+
+str :: String -> Element
+str s = wnode "r" [ wnode "rPr" (add_attr (Attr (QName "ascii" Nothing (Just "w")) "Cambria Math") .
+                                 add_attr (Attr (QName "hAnsi" Nothing (Just "w")) "Cambria Math") $
+                                 wnode "rFonts" ())
+                  , mnode "t" s
+                  ]
 
 {- Firefox seems to set spacing based on its own dictionary,
 -  so I believe this is unnecessary.
  
 setSpacing :: String -> String -> Bool -> Element -> Element
 setSpacing left right stretchy elt =
-  add_attr (Attr (unqual "lspace") left) $
-  add_attr (Attr (unqual "rspace") right) $
+  add_attr (Attr (name "lspace") left) $
+  add_attr (Attr (name "rspace") right) $
   if stretchy
-     then add_attr (Attr (unqual "stretchy") "true") elt
+     then add_attr (Attr (name "stretchy") "true") elt
      else elt
 
 showSymbol (ESymbol s x) =
   case s of
-    Ord   x  -> unode "mo" x
-    Op    x  -> setSpacing "0" "0.167em" True $ unode "mo" x
-    Bin   x  -> setSpacing "0.222em" "0.222em" False $ unode "mo" x
-    Rel   x  -> setSpacing "0.278em" "0.278em" False $ unode "mo" x
-    Open  x  -> setSpacing "0" "0" True $ unode "mo" x
-    Close x  -> setSpacing "0" "0" True $ unode "mo" x
-    Pun   x  -> setSpacing "0" "0.167em" False $ unode "mo" x
+    Ord   x  -> mnode "mo" x
+    Op    x  -> setSpacing "0" "0.167em" True $ mnode "mo" x
+    Bin   x  -> setSpacing "0.222em" "0.222em" False $ mnode "mo" x
+    Rel   x  -> setSpacing "0.278em" "0.278em" False $ mnode "mo" x
+    Open  x  -> setSpacing "0" "0" True $ mnode "mo" x
+    Close x  -> setSpacing "0" "0" True $ mnode "mo" x
+    Pun   x  -> setSpacing "0" "0.167em" False $ mnode "mo" x
 -}
-
+{-
 unaryOps :: M.Map String String
 unaryOps = M.fromList
   [ ("\\sqrt", "msqrt")
@@ -72,25 +83,25 @@ unaryOps = M.fromList
 showUnary :: String -> Exp -> Element
 showUnary c x =
   case M.lookup c unaryOps of
-       Just c'  -> unode c' (showExp x)
+       Just c'  -> mnode c' (showExp x)
        Nothing  -> error $ "Unknown unary op: " ++ c
 
 binaryOps :: M.Map String ([Element] -> Element)
 binaryOps = M.fromList
-  [ ("\\frac", unode "mfrac")
+  [ ("\\frac", mnode "mfrac")
   , ("\\tfrac", withAttribute "displaystyle" "false" .
-                  unode "mstyle" . unode "mfrac")
+                  mnode "mstyle" . mnode "mfrac")
   , ("\\dfrac", withAttribute "displaystyle" "true" .
-                  unode "mstyle" . unode "mfrac")
-  , ("\\sqrt", unode "mroot")
-  , ("\\stackrel", unode "mover")
-  , ("\\overset", unode "mover")
-  , ("\\underset", unode "munder")
+                  mnode "mstyle" . mnode "mfrac")
+  , ("\\sqrt", mnode "mroot")
+  , ("\\stackrel", mnode "mover")
+  , ("\\overset", mnode "mover")
+  , ("\\underset", mnode "munder")
   , ("\\binom", showBinom)
   ]
 
 showBinom :: [Element] -> Element
-showBinom lst = unode "mfenced" $ withAttribute "linethickness" "0" $ unode "mfrac" lst
+showBinom lst = mnode "mfenced" $ withAttribute "linethickness" "0" $ mnode "mfrac" lst
 
 showBinary :: String -> Exp -> Exp -> Element
 showBinary c x y =
@@ -99,7 +110,7 @@ showBinary c x y =
        Nothing  -> error $ "Unknown binary op: " ++ c
 
 spaceWidth :: String -> Element
-spaceWidth w = withAttribute "width" w $ unode "mspace" ()
+spaceWidth w = withAttribute "width" w $ mnode "mspace" ()
 
 makeStretchy :: Element -> Element
 makeStretchy = withAttribute "stretchy" "true"
@@ -112,13 +123,13 @@ makeText a s = if trailingSp
                   then mrow [s', sp]
                   else s'
   where sp = spaceWidth "0.333em"
-        s' = withAttribute "mathvariant" a $ unode "mtext" s
+        s' = withAttribute "mathvariant" a $ mnode "mtext" s
         trailingSp = not (null s) && last s `elem` " \t"
 
 makeArray :: [Alignment] -> [ArrayLine] -> Element
-makeArray as ls = unode "mtable" $
-  map (unode "mtr" .
-    zipWith (\a -> setAlignment a .  unode "mtd". map showExp) as') ls
+makeArray as ls = mnode "mtable" $
+  map (mnode "mtr" .
+    zipWith (\a -> setAlignment a .  mnode "mtd". map showExp) as') ls
    where setAlignment AlignLeft    = withAttribute "columnalign" "left"
          setAlignment AlignRight   = withAttribute "columnalign" "right"
          setAlignment AlignCenter  = withAttribute "columnalign" "center"
@@ -126,11 +137,13 @@ makeArray as ls = unode "mtable" $
          as'                       = as ++ cycle [AlignDefault]
 
 withAttribute :: String -> String -> Element -> Element
-withAttribute a = add_attr . Attr (unqual a)
+withAttribute a = add_attr . Attr (name a)
 
 accent :: String -> Element
-accent = add_attr (Attr (unqual "accent") "true") .
-           unode "mo"
+accent = add_attr (Attr (name "accent") "true") .
+           mnode "mo"
+
+-}
 
 handleDownup :: DisplayType -> Exp -> Exp
 handleDownup DisplayInline (EDown x y)     = ESub x y
@@ -144,30 +157,30 @@ handleDownup _             x               = x
 showExp :: Exp -> Element
 showExp e =
  case e of
-   ENumber x        -> unode "mn" x
+   ENumber x        -> str x
    EGrouped [x]     -> showExp x
-   EGrouped xs      -> mrow $ map showExp xs
-   EIdentifier x    -> unode "mi" x
-   EMathOperator x  -> unode "mi" x
-   ESymbol Accent x -> accent x
-   EStretchy (ESymbol Open x)  -> makeStretchy $ unode "mo" x
-   EStretchy (ESymbol Close x) -> makeStretchy $ unode "mo" x
-   ESymbol Open x   -> withAttribute "stretchy" "false" $ unode "mo" x
-   ESymbol Close x  -> withAttribute "stretchy" "false" $ unode "mo" x
-   ESymbol _ x      -> unode "mo" x
-   ESpace x         -> spaceWidth x
-   EBinary c x y    -> showBinary c x y
-   ESub x y         -> unode "msub" $ map showExp [x, y]
-   ESuper x y       -> unode "msup" $ map showExp [x, y]
-   ESubsup x y z    -> unode "msubsup" $ map showExp [x, y, z]
-   EUnder x y       -> unode "munder" $ map showExp [x, y]
-   EOver x y        -> unode "mover" $ map showExp [x, y]
-   EUnderover x y z -> unode "munderover" $ map showExp [x, y, z]
-   EUnary c x       -> showUnary c x
-   EStretchy x      -> makeStretchy $ showExp x
-   EScaled s x      -> makeScaled s $ showExp x
-   EArray as ls     -> makeArray as ls
-   EText a s        -> makeText a s
+--   EGrouped xs      -> mrow $ map showExp xs
+--   EIdentifier x    -> mnode "mi" x
+--   EMathOperator x  -> mnode "mi" x
+--   ESymbol Accent x -> accent x
+--   EStretchy (ESymbol Open x)  -> makeStretchy $ mnode "mo" x
+--   EStretchy (ESymbol Close x) -> makeStretchy $ mnode "mo" x
+--   ESymbol Open x   -> withAttribute "stretchy" "false" $ mnode "mo" x
+--   ESymbol Close x  -> withAttribute "stretchy" "false" $ mnode "mo" x
+--   ESymbol _ x      -> mnode "mo" x
+--   ESpace x         -> spaceWidth x
+--   EBinary c x y    -> showBinary c x y
+--   ESub x y         -> mnode "msub" $ map showExp [x, y]
+--   ESuper x y       -> mnode "msup" $ map showExp [x, y]
+--   ESubsup x y z    -> mnode "msubsup" $ map showExp [x, y, z]
+--   EUnder x y       -> mnode "munder" $ map showExp [x, y]
+--   EOver x y        -> mnode "mover" $ map showExp [x, y]
+--   EUnderover x y z -> mnode "munderover" $ map showExp [x, y, z]
+--   EUnary c x       -> showUnary c x
+--   EStretchy x      -> makeStretchy $ showExp x
+--   EScaled s x      -> makeScaled s $ showExp x
+--   EArray as ls     -> makeArray as ls
+--   EText a s        -> makeText a s
    x                -> error $ "showExp encountered " ++ show x
                        -- note: EUp, EDown, EDownup should be removed by handleDownup
 

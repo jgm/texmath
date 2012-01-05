@@ -7,8 +7,9 @@ import Text.TeXMath.Macros
 import System.IO
 import System.Environment
 
-inHtml :: Element -> Element
-inHtml x =
+inHtml :: Either String Element -> Either String Element
+inHtml (Left x) = Left x
+inHtml (Right x) = Right $
   add_attr (Attr (unqual "xmlns") "http://www.w3.org/1999/xhtml") $
   unode "html"
     [ unode "head" $
@@ -30,9 +31,9 @@ main = do
   args <- getArgs
   let converter = if "--omml" `elem` args
                      then texMathToOMML DisplayBlock
-                     else texMathToMathML DisplayBlock
+                     else inHtml . texMathToMathML DisplayBlock
   inp <- getUTF8Contents
   let (ms, rest) = parseMacroDefinitions inp
   case (converter $! applyMacros ms rest) of
         Left err         -> hPutStrLn stderr err
-        Right v          -> putStr . ppTopElement . inHtml $ v
+        Right v          -> putStr . ppTopElement $ v
