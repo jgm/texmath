@@ -1,5 +1,5 @@
 {-
-Copyright (C) 2009 John MacFarlane <jgm@berkeley.edu>
+Copyright (C) 2012 John MacFarlane <jgm@berkeley.edu>
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -16,10 +16,10 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 -}
 
-{- | Functions for writing a parsed formula as MathML.
+{- | Functions for writing a parsed formula as OMML.
 -}
 
-module Text.TeXMath.MathML (toMathML, showExp)
+module Text.TeXMath.OMML (toOMML, showExp)
 where
 
 import qualified Data.Map as M
@@ -27,8 +27,8 @@ import Text.XML.Light
 import Text.TeXMath.Types
 import Data.Generics (everywhere, mkT)
 
-toMathML :: DisplayType -> [Exp] -> Element
-toMathML dt exprs =
+toOMML :: DisplayType -> [Exp] -> Element
+toOMML dt exprs =
   add_attr dtattr $ math $ map showExp $ everywhere (mkT $ handleDownup dt) exprs
     where dtattr = Attr (unqual "display") dt'
           dt' =  case dt of
@@ -36,7 +36,7 @@ toMathML dt exprs =
                       DisplayInline -> "inline"
 
 math :: [Element] -> Element
-math = add_attr (Attr (unqual "xmlns") "http://www.w3.org/1998/Math/MathML") . unode "math" . unode "mrow"
+math = add_attr (Attr (unqual "xmlns") "http://www.w3.org/1998/Math/OMML") . unode "math" . unode "mrow"
 
 mrow :: [Element] -> Element
 mrow = unode "mrow"

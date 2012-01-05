@@ -2,9 +2,9 @@ Name:                texmath
 Version:             0.5.0.4
 Cabal-Version:       >= 1.6
 Build-type:          Custom
-Synopsis:            Conversion of LaTeX math formulas to MathML.
+Synopsis:            Conversion of LaTeX math formulas to MathML or OMML.
 Description:         The texmathml library provides functions to convert LaTeX
-                     math formulas to presentation MathML. It supports
+                     math formulas to presentation MathML or OMML. It supports
                      basic LaTeX and AMS extensions, and it can parse and
                      apply LaTeX macros.
                      .
@@ -80,6 +80,7 @@ Library
                          Text.TeXMath.Types
                          Text.TeXMath.Parser
                          Text.TeXMath.MathML
+                         Text.TeXMath.OMML
                          Text.TeXMath.Macros
 
     if impl(ghc >= 6.12)

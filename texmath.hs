@@ -5,6 +5,7 @@ import Text.TeXMath
 import Text.XML.Light
 import Text.TeXMath.Macros
 import System.IO
+import System.Environment
 
 inHtml :: Element -> Element
 inHtml x =
@@ -26,8 +27,12 @@ getUTF8Contents =
 
 main :: IO ()
 main = do
+  args <- getArgs
+  let converter = if "--omml" `elem` args
+                     then texMathToOMML DisplayBlock
+                     else texMathToMathML DisplayBlock
   inp <- getUTF8Contents
   let (ms, rest) = parseMacroDefinitions inp
-  case (texMathToMathML DisplayBlock $! applyMacros ms rest) of
+  case (converter $! applyMacros ms rest) of
         Left err         -> hPutStrLn stderr err
         Right v          -> putStr . ppTopElement . inHtml $ v

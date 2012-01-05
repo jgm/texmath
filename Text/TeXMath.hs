@@ -1,5 +1,5 @@
 {-
-Copyright (C) 2009 John MacFarlane <jgm@berkeley.edu>
+Copyright (C) 2009-2012 John MacFarlane <jgm@berkeley.edu>
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -19,12 +19,18 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 {- | Functions for converting LaTeX math formulas to MathML.
 -}
 
-module Text.TeXMath ( texMathToMathML, DisplayType(..) )
+module Text.TeXMath ( texMathToMathML, texMathToOMML, DisplayType(..) )
 where
 import Text.TeXMath.Parser
 import Text.TeXMath.MathML
+import Text.TeXMath.OMML
+import Text.TeXMath.Types
 import Text.XML.Light
 
 texMathToMathML :: DisplayType -> String -> Either String Element
 texMathToMathML dt inp = inp `seq`
   either Left (Right . toMathML dt) $ parseFormula inp
+
+texMathToOMML :: DisplayType -> String -> Either String Element
+texMathToOMML dt inp = inp `seq`
+  either Left (Right . toOMML dt) $ parseFormula inp

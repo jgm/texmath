@@ -20,7 +20,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 {- | Types for representing a structured formula.
 -}
 
-module Text.TeXMath.Types (Exp(..), TeXSymbolType(..), ArrayLine, Alignment(..))
+module Text.TeXMath.Types (Exp(..), TeXSymbolType(..), ArrayLine,
+                           Alignment(..), DisplayType(..))
 where
 
 import Data.Generics
@@ -56,3 +57,8 @@ data Exp =
   | EArray [Alignment] [ArrayLine]
   | EText String String
   deriving (Show, Read, Eq, Data, Typeable)
+
+data DisplayType = DisplayBlock
+                 | DisplayInline
+                 deriving Show
+
