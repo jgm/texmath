@@ -27,19 +27,15 @@ import Text.XML.Light
 import Text.TeXMath.Types
 import Data.Generics (everywhere, mkT)
 
+-- Namespaces: w: is used for ordinary OpenXML, m: for OMML.
 toOMML :: DisplayType -> [Exp] -> Element
 toOMML dt exprs =
-  doc . container $ map showExp $ everywhere (mkT $ handleDownup dt) exprs
+  container $ map showExp $ everywhere (mkT $ handleDownup dt) exprs
     where container = case dt of
                   DisplayBlock  -> mnode "oMathPara" . mathnode
                   DisplayInline -> mathnode
           mathnode x = mnode "oMath" (mathstyle:x)
           mathstyle = mnode "mathPr" $ mnodeAttr "mathFont" [("val","Cambria Math")] ()
-
-doc :: Element -> Element
-doc = add_attr (Attr (QName "m" Nothing (Just "xmlns")) "http://schemas.openxmlformats.org/officeDocument/2006/math") .
-       add_attr (Attr (QName "m" Nothing (Just "xmlns")) "http://schemas.openxmlformats.org/wordprocessingml/2006/main") .
-       wnode "document"
 
 mnode :: Node t => String -> t -> Element
 mnode s = node (QName s Nothing (Just "m"))
