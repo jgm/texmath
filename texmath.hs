@@ -30,7 +30,7 @@ main :: IO ()
 main = do
   args <- getArgs
   let converter = if "--omml" `elem` args
-                     then texMathToOMML DisplayBlock
+                     then texMathToOMML DisplayInline
                      else inHtml . texMathToMathML DisplayBlock
   inp <- getUTF8Contents
   let (ms, rest) = parseMacroDefinitions inp
