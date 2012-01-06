@@ -159,21 +159,25 @@ showExp e =
 --   ESymbol _ x      -> mnode "mo" x
 --   ESpace x         -> spaceWidth x
    EBinary c x y    -> showBinary c x y
---   ESub x y         -> mnode "msub" $ map showExp [x, y]
---   ESuper x y       -> mnode "msup" $ map showExp [x, y]
---   ESubsup x y z    -> mnode "msubsup" $ map showExp [x, y, z]
+   ESub x y         -> mnode "mSub" [ mnode "e" $ showExp x
+                                    , mnode "sub" $ showExp y ]
+   ESuper x y       -> mnode "mSup" [ mnode "e" $ showExp x
+                                    , mnode "sup" $ showExp y ]
+   ESubsup x y z    -> mnode "mSubSup" [ mnode "e" $ showExp x
+                                       , mnode "sub" $ showExp y
+                                       , mnode "sup" $ showExp z ]
 --   EUnder x y       -> mnode "munder" $ map showExp [x, y]
 --   EOver x y        -> mnode "mover" $ map showExp [x, y]
 --   EUnderover x y z -> mnode "munderover" $ map showExp [x, y, z]
    EUnary "\\sqrt" x  -> mnode "rad" [ mnode "radPr" $ mnodeAttr "degHide" [("val","on")] ()
                                      , mnode "deg" ()
-                                     , mnode "e" $ showExp x
-                                     ]
+                                     , mnode "e" $ showExp x ]
    EUnary "\\surd" x  -> showExp $ EUnary "\\sqrt" x
 --   EStretchy x      -> makeStretchy $ showExp x
 --   EScaled s x      -> makeScaled s $ showExp x
 --   EArray as ls     -> makeArray as ls
 --   EText a s        -> makeText a s
+--   -- a is normal, bold, italic, monospace, fraktur, double-struck, script, sans-serif
    x                -> error $ "showExp encountered " ++ show x
                        -- note: EUp, EDown, EDownup should be removed by handleDownup
 
