@@ -42,8 +42,10 @@ mnodeAttr :: Node t => String -> [(String,String)] -> t -> Element
 mnodeAttr s [] = mnode s
 mnodeAttr s ((k,v):rest) = add_attr (Attr (QName k Nothing (Just "m")) v) . mnodeAttr s rest
 
-str :: String -> Element
-str = mnode "r" . mnode "t"
+str :: [Element] -> String -> Element
+str props s = mnode "r" [ mnode "rPr" props
+                        , mnode "t" s
+                        ]
 
 {- Firefox seems to set spacing based on its own dictionary,
 -  so I believe this is unnecessary.
@@ -65,20 +67,6 @@ showSymbol (ESymbol s x) =
     Open  x  -> setSpacing "0" "0" True $ mnode "mo" x
     Close x  -> setSpacing "0" "0" True $ mnode "mo" x
     Pun   x  -> setSpacing "0" "0.167em" False $ mnode "mo" x
--}
-{-
-unaryOps :: M.Map String String
-unaryOps = M.fromList
-  [ ("\\sqrt", "msqrt")
-  , ("\\surd", "msqrt")
-  ]
-
-showUnary :: String -> Exp -> Element
-showUnary c x =
-  case M.lookup c unaryOps of
-       Just c'  -> mnode c' (showExp x)
-       Nothing  -> error $ "Unknown unary op: " ++ c
-
 -}
 
 tofrac :: [Element] -> Element
@@ -158,11 +146,11 @@ handleDownup _             x               = x
 showExp :: Exp -> Element
 showExp e =
  case e of
-   ENumber x        -> str x
+   ENumber x        -> str [] x
    EGrouped [x]     -> showExp x
 --   EGrouped xs      -> mnode "r" $ map showExp xs
-   EIdentifier x    -> str x
-   EMathOperator x  -> str x
+   EIdentifier x    -> str [] x
+   EMathOperator x  -> str [] x
 --   ESymbol Accent x -> accent x
 --   EStretchy (ESymbol Open x)  -> makeStretchy $ mnode "mo" x
 --   EStretchy (ESymbol Close x) -> makeStretchy $ mnode "mo" x
@@ -177,7 +165,11 @@ showExp e =
 --   EUnder x y       -> mnode "munder" $ map showExp [x, y]
 --   EOver x y        -> mnode "mover" $ map showExp [x, y]
 --   EUnderover x y z -> mnode "munderover" $ map showExp [x, y, z]
---   EUnary c x       -> showUnary c x
+   EUnary "\\sqrt" x  -> mnode "rad" [ mnode "radPr" $ mnodeAttr "degHide" [("val","on")] ()
+                                     , mnode "deg" ()
+                                     , mnode "e" $ showExp x
+                                     ]
+   EUnary "\\surd" x  -> showExp $ EUnary "\\sqrt" x
 --   EStretchy x      -> makeStretchy $ showExp x
 --   EScaled s x      -> makeScaled s $ showExp x
 --   EArray as ls     -> makeArray as ls
