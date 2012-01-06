@@ -125,10 +125,6 @@ makeArray as ls = mnode "mtable" $
 withAttribute :: String -> String -> Element -> Element
 withAttribute a = add_attr . Attr (name a)
 
-accent :: String -> Element
-accent = add_attr (Attr (name "accent") "true") .
-           mnode "mo"
-
 -}
 
 handleDownup :: DisplayType -> Exp -> Exp
@@ -147,7 +143,6 @@ showExp e =
    EGrouped xs      -> concatMap showExp xs
    EIdentifier x    -> [str [] x]
    EMathOperator x  -> [str [] x]
---   ESymbol Accent x -> accent x
 --   EStretchy (ESymbol Open x)  -> makeStretchy $ mnode "mo" x
 --   EStretchy (ESymbol Close x) -> makeStretchy $ mnode "mo" x
 --   ESymbol Open x   -> withAttribute "stretchy" "false" $ mnode "mo" x
@@ -162,9 +157,11 @@ showExp e =
    ESubsup x y z    -> [mnode "sSubSup" [ mnode "e" $ showExp x
                                         , mnode "sub" $ showExp y
                                         , mnode "sup" $ showExp z]]
---   EUnder x y       -> mnode "munder" $ map showExp [x, y]
---   EOver x y        -> mnode "mover" $ map showExp [x, y]
---   EUnderover x y z -> mnode "munderover" $ map showExp [x, y, z]
+   EUnder x y       -> [mnode "limLow" [ mnode "e" $ showExp x
+                                       , mnode "lim" $ showExp y]]
+   EOver x y        -> [mnode "limUpp" [ mnode "e" $ showExp x
+                                       , mnode "lim" $ showExp y]]
+   EUnderover x y z -> showExp (EUnder x (EOver y z))
    EUnary "\\sqrt" x  -> [mnode "rad" [ mnode "radPr" $ mnodeAttr "degHide" [("val","on")] ()
                                       , mnode "deg" ()
                                       , mnode "e" $ showExp x]]
