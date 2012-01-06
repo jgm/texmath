@@ -20,9 +20,9 @@ for format in xhtml omml; do
             echo "Test ${t%.tex} FAILED"
             failures=`expr $failures + 1`
           else
-            diff ${t%.tex}.${format} tmp >tmpdiff
+            diff -u ${t%.tex}.${format} tmp >tmpdiff
             if [ "$?" -ne "0" ]; then
-                echo "Test ${t%.tex} FAILED (< expected, > actual):"
+                echo "Test ${t%.tex} FAILED (- expected, + actual):"
                 cat tmpdiff
                 failures=`expr $failures + 1`
             else
