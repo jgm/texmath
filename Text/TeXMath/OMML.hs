@@ -165,9 +165,9 @@ showExp e =
  case e of
    ENumber x        -> str x
    EGrouped [x]     -> showExp x
---   EGrouped xs      -> mrow $ map showExp xs
---   EIdentifier x    -> mnode "mi" x
---   EMathOperator x  -> mnode "mi" x
+--   EGrouped xs      -> mnode "r" $ map showExp xs
+   EIdentifier x    -> str x
+   EMathOperator x  -> str x
 --   ESymbol Accent x -> accent x
 --   EStretchy (ESymbol Open x)  -> makeStretchy $ mnode "mo" x
 --   EStretchy (ESymbol Close x) -> makeStretchy $ mnode "mo" x
