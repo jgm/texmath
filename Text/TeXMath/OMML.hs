@@ -104,13 +104,6 @@ makeStretchy = withAttribute "stretchy" "true"
 makeScaled :: String -> Element -> Element
 makeScaled s = withAttribute "minsize" s . withAttribute "maxsize" s
 
-makeText :: String -> String -> Element
-makeText a s = if trailingSp
-                  then mrow [s', sp]
-                  else s'
-  where sp = spaceWidth "0.333em"
-        s' = withAttribute "mathvariant" a $ mnode "mtext" s
-        trailingSp = not (null s) && last s `elem` " \t"
 
 makeArray :: [Alignment] -> [ArrayLine] -> Element
 makeArray as ls = mnode "mtable" $
@@ -126,6 +119,24 @@ withAttribute :: String -> String -> Element -> Element
 withAttribute a = add_attr . Attr (name a)
 
 -}
+
+spaceWidth _ = mnode "r" $ mnode "t" () -- TODO
+
+makeText :: TextType -> String -> [Element]
+makeText a s = if trailingSp
+                  then [str attrs s, sp]
+                  else [str attrs s]
+  where sp = spaceWidth "0.333em"
+        trailingSp = not (null s) && last s `elem` " \t"
+        attrs = case a of
+                     TextNormal       -> []
+                     TextBold         -> [mnodeAttr "sty" [("val","i")] ()]
+                     TextItalic       -> [mnodeAttr "sty" [("val","i")] ()]
+                     TextMonospace    -> [] -- TODO
+                     TextSansSerif    -> [] -- TODO
+                     TextDoubleStruck -> [] -- TODO?
+                     TextScript       -> [] -- TODO?
+                     TextFraktur      -> [] -- TODO?
 
 handleDownup :: DisplayType -> Exp -> Exp
 handleDownup DisplayInline (EDown x y)     = ESub x y
@@ -169,8 +180,7 @@ showExp e =
 --   EStretchy x      -> makeStretchy $ showExp x
 --   EScaled s x      -> makeScaled s $ showExp x
 --   EArray as ls     -> makeArray as ls
---   EText a s        -> makeText a s
---   -- a is normal, bold, italic, monospace, fraktur, double-struck, script, sans-serif
+   EText a s        -> makeText a s
    x                -> error $ "showExp encountered " ++ show x
                        -- note: EUp, EDown, EDownup should be removed by handleDownup
 
