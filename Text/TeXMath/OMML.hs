@@ -29,7 +29,9 @@ import Data.Generics (everywhere, mkT)
 -- Namespaces: w: is used for ordinary OpenXML, m: for OMML.
 toOMML :: DisplayType -> [Exp] -> Element
 toOMML dt exprs =
-  container $ map showExp $ everywhere (mkT $ handleDownup dt) exprs
+  container $ map showExp
+            $ everywhere (mkT $ handleDownup dt)
+            $ everywhere (mkT $ concatMap removeGroups) exprs
     where container = case dt of
                   DisplayBlock  -> mnode "oMathPara" . mnode "oMath"
                   DisplayInline -> mnode "oMath"
@@ -43,8 +45,7 @@ mnodeAttr s ((k,v):rest) = add_attr (Attr (QName k Nothing (Just "m")) v) . mnod
 
 str :: [Element] -> String -> Element
 str props s = mnode "r" [ mnode "rPr" props
-                        , mnode "t" s
-                        ]
+                        , mnode "t" s ]
 
 {- Firefox seems to set spacing based on its own dictionary,
 -  so I believe this is unnecessary.
@@ -74,10 +75,13 @@ showSymbol (ESymbol s x) =
 showBinary :: String -> Exp -> Exp -> Element
 showBinary c x y =
   case c of
-       "\\frac" -> mnode "f" [mnode "num" x', mnode "den" y']
+       "\\frac" -> mnode "f" [ mnode "fPr" $
+                                 mnodeAttr "type" [("val","bar")] ()
+                             , mnode "num" x'
+                             , mnode "den" y' ]
        _ -> error $ "Unknown binary operator " ++ c
-   where x' = showExp x
-         y' = showExp y
+    where x' = showExp x
+          y' = showExp y
 
 --  , ("\\tfrac", withAttribute "displaystyle" "false" .
 --                  mnode "mstyle" . mnode "mfrac")
@@ -126,6 +130,10 @@ accent = add_attr (Attr (name "accent") "true") .
 
 -}
 
+removeGroups :: Exp -> [Exp]
+removeGroups (EGrouped ys) = ys
+removeGroups x             = [x]
+
 handleDownup :: DisplayType -> Exp -> Exp
 handleDownup DisplayInline (EDown x y)     = ESub x y
 handleDownup DisplayBlock  (EDown x y)     = EUnder x y
@@ -139,8 +147,8 @@ showExp :: Exp -> Element
 showExp e =
  case e of
    ENumber x        -> str [] x
-   EGrouped [x]     -> showExp x
---   EGrouped xs      -> mnode "r" $ map showExp xs
+   -- EGrouped should be removed by removeGroups
+   EGrouped _       -> error "Encountered EGrouped in OMML"
    EIdentifier x    -> str [] x
    EMathOperator x  -> str [] x
 --   ESymbol Accent x -> accent x
@@ -148,14 +156,14 @@ showExp e =
 --   EStretchy (ESymbol Close x) -> makeStretchy $ mnode "mo" x
 --   ESymbol Open x   -> withAttribute "stretchy" "false" $ mnode "mo" x
 --   ESymbol Close x  -> withAttribute "stretchy" "false" $ mnode "mo" x
---   ESymbol _ x      -> mnode "mo" x
+   ESymbol _ x      -> str [] x
 --   ESpace x         -> spaceWidth x
    EBinary c x y    -> showBinary c x y
-   ESub x y         -> mnode "mSub" [ mnode "e" $ showExp x
+   ESub x y         -> mnode "sSub" [ mnode "e" $ showExp x
                                     , mnode "sub" $ showExp y ]
-   ESuper x y       -> mnode "mSup" [ mnode "e" $ showExp x
+   ESuper x y       -> mnode "sSup" [ mnode "e" $ showExp x
                                     , mnode "sup" $ showExp y ]
-   ESubsup x y z    -> mnode "mSubSup" [ mnode "e" $ showExp x
+   ESubsup x y z    -> mnode "sSubSup" [ mnode "e" $ showExp x
                                        , mnode "sub" $ showExp y
                                        , mnode "sup" $ showExp z ]
 --   EUnder x y       -> mnode "munder" $ map showExp [x, y]
