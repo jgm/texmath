@@ -32,10 +32,8 @@ toOMML :: DisplayType -> [Exp] -> Element
 toOMML dt exprs =
   container $ map showExp $ everywhere (mkT $ handleDownup dt) exprs
     where container = case dt of
-                  DisplayBlock  -> mnode "oMathPara" . mathnode
-                  DisplayInline -> mathnode
-          mathnode x = mnode "oMath" (mathstyle:x)
-          mathstyle = mnode "mathPr" $ mnodeAttr "mathFont" [("val","Cambria Math")] ()
+                  DisplayBlock  -> mnode "oMathPara" . mnode "oMath"
+                  DisplayInline -> mnode "oMath"
 
 mnode :: Node t => String -> t -> Element
 mnode s = node (QName s Nothing (Just "m"))
@@ -44,11 +42,8 @@ mnodeAttr :: Node t => String -> [(String,String)] -> t -> Element
 mnodeAttr s [] = mnode s
 mnodeAttr s ((k,v):rest) = add_attr (Attr (QName k Nothing (Just "m")) v) . mnodeAttr s rest
 
-wnode :: Node t => String -> t -> Element
-wnode s = node (QName s Nothing (Just "w"))
-
 str :: String -> Element
-str = wnode "r" . wnode "t"
+str = mnode "r" . mnode "t"
 
 {- Firefox seems to set spacing based on its own dictionary,
 -  so I believe this is unnecessary.
