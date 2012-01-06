@@ -26,12 +26,9 @@ import Text.XML.Light
 import Text.TeXMath.Types
 import Data.Generics (everywhere, mkT)
 
--- Namespaces: w: is used for ordinary OpenXML, m: for OMML.
 toOMML :: DisplayType -> [Exp] -> Element
-toOMML dt exprs =
-  container $ map showExp
-            $ everywhere (mkT $ handleDownup dt)
-            $ everywhere (mkT $ concatMap removeGroups) exprs
+toOMML dt = container . concatMap showExp
+            . everywhere (mkT $ handleDownup dt)
     where container = case dt of
                   DisplayBlock  -> mnode "oMathPara" . mnode "oMath"
                   DisplayInline -> mnode "oMath"
@@ -72,22 +69,26 @@ showSymbol (ESymbol s x) =
 -- showBinom :: [Element] -> Element
 -- showBinom lst = mnode "mfenced" $ withAttribute "linethickness" "0" $ mnode "mfrac" lst
 
-showBinary :: String -> Exp -> Exp -> Element
+showBinary :: String -> Exp -> Exp -> [Element]
 showBinary c x y =
   case c of
-       "\\frac" -> mnode "f" [ mnode "fPr" $
+       "\\frac" -> [mnode "f" [ mnode "fPr" $
                                  mnodeAttr "type" [("val","bar")] ()
-                             , mnode "num" x'
-                             , mnode "den" y' ]
+                              , mnode "num" x'
+                              , mnode "den" y']]
+       "\\dfrac" -> showBinary "\\frac" x y
+       "\\tfrac" -> [mnode "f" [ mnode "fPr" $
+                                  mnodeAttr "type" [("val","lin")] ()
+                               , mnode "num" x'
+                               , mnode "den" y']]
+       "\\sqrt"  -> [mnode "rad" [ mnode "radPr" $
+                                    mnodeAttr "degHide" [("val","on")] ()
+                                , mnode "deg" $ showExp y
+                                , mnode "e" $ showExp x]]
        _ -> error $ "Unknown binary operator " ++ c
     where x' = showExp x
           y' = showExp y
 
---  , ("\\tfrac", withAttribute "displaystyle" "false" .
---                  mnode "mstyle" . mnode "mfrac")
---  , ("\\dfrac", withAttribute "displaystyle" "true" .
---                  mnode "mstyle" . mnode "mfrac")
---  , ("\\sqrt", mnode "mroot")
 --  , ("\\stackrel", mnode "mover")
 --  , ("\\overset", mnode "mover")
 --  , ("\\underset", mnode "munder")
@@ -130,10 +131,6 @@ accent = add_attr (Attr (name "accent") "true") .
 
 -}
 
-removeGroups :: Exp -> [Exp]
-removeGroups (EGrouped ys) = ys
-removeGroups x             = [x]
-
 handleDownup :: DisplayType -> Exp -> Exp
 handleDownup DisplayInline (EDown x y)     = ESub x y
 handleDownup DisplayBlock  (EDown x y)     = EUnder x y
@@ -143,35 +140,34 @@ handleDownup DisplayInline (EDownup x y z) = ESubsup x y z
 handleDownup DisplayBlock  (EDownup x y z) = EUnderover x y z
 handleDownup _             x               = x
 
-showExp :: Exp -> Element
+showExp :: Exp -> [Element]
 showExp e =
  case e of
-   ENumber x        -> str [] x
-   -- EGrouped should be removed by removeGroups
-   EGrouped _       -> error "Encountered EGrouped in OMML"
-   EIdentifier x    -> str [] x
-   EMathOperator x  -> str [] x
+   ENumber x        -> [str [] x]
+   EGrouped xs      -> concatMap showExp xs
+   EIdentifier x    -> [str [] x]
+   EMathOperator x  -> [str [] x]
 --   ESymbol Accent x -> accent x
 --   EStretchy (ESymbol Open x)  -> makeStretchy $ mnode "mo" x
 --   EStretchy (ESymbol Close x) -> makeStretchy $ mnode "mo" x
 --   ESymbol Open x   -> withAttribute "stretchy" "false" $ mnode "mo" x
 --   ESymbol Close x  -> withAttribute "stretchy" "false" $ mnode "mo" x
-   ESymbol _ x      -> str [] x
+   ESymbol _ x      -> [str [] x]
 --   ESpace x         -> spaceWidth x
    EBinary c x y    -> showBinary c x y
-   ESub x y         -> mnode "sSub" [ mnode "e" $ showExp x
-                                    , mnode "sub" $ showExp y ]
-   ESuper x y       -> mnode "sSup" [ mnode "e" $ showExp x
-                                    , mnode "sup" $ showExp y ]
-   ESubsup x y z    -> mnode "sSubSup" [ mnode "e" $ showExp x
-                                       , mnode "sub" $ showExp y
-                                       , mnode "sup" $ showExp z ]
+   ESub x y         -> [mnode "sSub" [ mnode "e" $ showExp x
+                                     , mnode "sub" $ showExp y]]
+   ESuper x y       -> [mnode "sSup" [ mnode "e" $ showExp x
+                                     , mnode "sup" $ showExp y]]
+   ESubsup x y z    -> [mnode "sSubSup" [ mnode "e" $ showExp x
+                                        , mnode "sub" $ showExp y
+                                        , mnode "sup" $ showExp z]]
 --   EUnder x y       -> mnode "munder" $ map showExp [x, y]
 --   EOver x y        -> mnode "mover" $ map showExp [x, y]
 --   EUnderover x y z -> mnode "munderover" $ map showExp [x, y, z]
-   EUnary "\\sqrt" x  -> mnode "rad" [ mnode "radPr" $ mnodeAttr "degHide" [("val","on")] ()
-                                     , mnode "deg" ()
-                                     , mnode "e" $ showExp x ]
+   EUnary "\\sqrt" x  -> [mnode "rad" [ mnode "radPr" $ mnodeAttr "degHide" [("val","on")] ()
+                                      , mnode "deg" ()
+                                      , mnode "e" $ showExp x]]
    EUnary "\\surd" x  -> showExp $ EUnary "\\sqrt" x
 --   EStretchy x      -> makeStretchy $ showExp x
 --   EScaled s x      -> makeScaled s $ showExp x
