@@ -21,7 +21,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 -}
 
 module Text.TeXMath.Types (Exp(..), TeXSymbolType(..), ArrayLine,
-                           Alignment(..), DisplayType(..))
+                           TextType(..), Alignment(..), DisplayType(..))
 where
 
 import Data.Generics
@@ -55,10 +55,19 @@ data Exp =
   | EScaled String Exp
   | EStretchy Exp
   | EArray [Alignment] [ArrayLine]
-  | EText String String
+  | EText TextType String
   deriving (Show, Read, Eq, Data, Typeable)
 
 data DisplayType = DisplayBlock
                  | DisplayInline
                  deriving Show
 
+data TextType = TextNormal
+              | TextBold
+              | TextItalic
+              | TextMonospace
+              | TextSansSerif
+              | TextDoubleStruck
+              | TextScript
+              | TextFraktur
+              deriving (Show, Read, Eq, Data, Typeable)

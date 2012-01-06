@@ -107,13 +107,22 @@ makeStretchy = withAttribute "stretchy" "true"
 makeScaled :: String -> Element -> Element
 makeScaled s = withAttribute "minsize" s . withAttribute "maxsize" s
 
-makeText :: String -> String -> Element
+makeText :: TextType -> String -> Element
 makeText a s = if trailingSp
                   then mrow [s', sp]
                   else s'
   where sp = spaceWidth "0.333em"
-        s' = withAttribute "mathvariant" a $ unode "mtext" s
+        s' = withAttribute "mathvariant" attr $ unode "mtext" s
         trailingSp = not (null s) && last s `elem` " \t"
+        attr = case a of
+                    TextNormal       -> "normal"
+                    TextBold         -> "bold"
+                    TextItalic       -> "italic"
+                    TextMonospace    -> "monospace"
+                    TextSansSerif    -> "sans-serif"
+                    TextDoubleStruck -> "double-struck"
+                    TextScript       -> "script"
+                    TextFraktur      -> "fraktur"
 
 makeArray :: [Alignment] -> [ArrayLine] -> Element
 makeArray as ls = unode "mtable" $
