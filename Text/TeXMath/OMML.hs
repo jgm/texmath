@@ -22,7 +22,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 module Text.TeXMath.OMML (toOMML, showExp)
 where
 
-import qualified Data.Map as M
 import Text.XML.Light
 import Text.TeXMath.Types
 import Data.Generics (everywhere, mkT)
@@ -69,13 +68,17 @@ showSymbol (ESymbol s x) =
     Pun   x  -> setSpacing "0" "0.167em" False $ mnode "mo" x
 -}
 
-tofrac :: [Element] -> Element
-tofrac [num,den] = mnode "f" [mnode "num" num, mnode "den" den]
-tofrac _ = error "tofrac requires two arguments"
+-- showBinom :: [Element] -> Element
+-- showBinom lst = mnode "mfenced" $ withAttribute "linethickness" "0" $ mnode "mfrac" lst
 
-binaryOps :: M.Map String ([Element] -> Element)
-binaryOps = M.fromList
-  [ ("\\frac", tofrac)
+showBinary :: String -> Exp -> Exp -> Element
+showBinary c x y =
+  case c of
+       "\\frac" -> mnode "f" [mnode "num" x', mnode "den" y']
+       _ -> error $ "Unknown binary operator " ++ c
+   where x' = showExp x
+         y' = showExp y
+
 --  , ("\\tfrac", withAttribute "displaystyle" "false" .
 --                  mnode "mstyle" . mnode "mfrac")
 --  , ("\\dfrac", withAttribute "displaystyle" "true" .
@@ -85,17 +88,6 @@ binaryOps = M.fromList
 --  , ("\\overset", mnode "mover")
 --  , ("\\underset", mnode "munder")
 --  , ("\\binom", showBinom)
-  ]
-
--- showBinom :: [Element] -> Element
--- showBinom lst = mnode "mfenced" $ withAttribute "linethickness" "0" $ mnode "mfrac" lst
-
-showBinary :: String -> Exp -> Exp -> Element
-showBinary c x y =
-  case M.lookup c binaryOps of
-       Just f   -> f [showExp x, showExp y]
-       Nothing  -> error $ "Unknown binary op: " ++ c
-
 {-
 
 spaceWidth :: String -> Element
