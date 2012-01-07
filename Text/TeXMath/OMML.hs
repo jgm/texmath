@@ -44,71 +44,39 @@ str :: [Element] -> String -> Element
 str props s = mnode "r" [ mnode "rPr" props
                         , mnode "t" s ]
 
-{- Firefox seems to set spacing based on its own dictionary,
--  so I believe this is unnecessary.
- 
-setSpacing :: String -> String -> Bool -> Element -> Element
-setSpacing left right stretchy elt =
-  add_attr (Attr (name "lspace") left) $
-  add_attr (Attr (name "rspace") right) $
-  if stretchy
-     then add_attr (Attr (name "stretchy") "true") elt
-     else elt
-
-showSymbol (ESymbol s x) =
-  case s of
-    Ord   x  -> mnode "mo" x
-    Op    x  -> setSpacing "0" "0.167em" True $ mnode "mo" x
-    Bin   x  -> setSpacing "0.222em" "0.222em" False $ mnode "mo" x
-    Rel   x  -> setSpacing "0.278em" "0.278em" False $ mnode "mo" x
-    Open  x  -> setSpacing "0" "0" True $ mnode "mo" x
-    Close x  -> setSpacing "0" "0" True $ mnode "mo" x
-    Pun   x  -> setSpacing "0" "0.167em" False $ mnode "mo" x
--}
-
--- showBinom :: [Element] -> Element
--- showBinom lst = mnode "mfenced" $ withAttribute "linethickness" "0" $ mnode "mfrac" lst
-
-showBinary :: String -> Exp -> Exp -> [Element]
+showBinary :: String -> Exp -> Exp -> Element
 showBinary c x y =
   case c of
-       "\\frac" -> [mnode "f" [ mnode "fPr" $
-                                 mnodeAttr "type" [("val","bar")] ()
-                              , mnode "num" x'
-                              , mnode "den" y']]
+       "\\frac" -> mnode "f" [ mnode "fPr" $
+                                mnodeAttr "type" [("val","bar")] ()
+                             , mnode "num" x'
+                             , mnode "den" y']
        "\\dfrac" -> showBinary "\\frac" x y
-       "\\tfrac" -> [mnode "f" [ mnode "fPr" $
-                                  mnodeAttr "type" [("val","lin")] ()
-                               , mnode "num" x'
-                               , mnode "den" y']]
-       "\\sqrt"  -> [mnode "rad" [ mnode "radPr" $
-                                    mnodeAttr "degHide" [("val","on")] ()
-                                , mnode "deg" $ showExp y
-                                , mnode "e" $ showExp x]]
+       "\\tfrac" -> mnode "f" [ mnode "fPr" $
+                                 mnodeAttr "type" [("val","lin")] ()
+                              , mnode "num" x'
+                              , mnode "den" y']
+       "\\sqrt"  -> mnode "rad" [ mnode "radPr" $
+                                   mnodeAttr "degHide" [("val","on")] ()
+                                , mnode "deg" y'
+                                , mnode "e" x']
+       "\\stackrel" -> mnode "limUpp" [ mnode "e" x'
+                                       , mnode "lim" y']
+       "\\overset" -> mnode "limUpp" [ mnode "e" x'
+                                     , mnode "lim" y' ]
+       "\\underset" -> mnode "limLow" [ mnode "e" x'
+                                      , mnode "lim" y' ]
+       "\\binom"    -> mnode "d" [ mnode "dPr" $
+                                     mnodeAttr "sepChr" [("val",",")] ()
+                                 , mnode "e" $
+                                     mnode "f" [ mnode "fPr" $
+                                                   mnodeAttr "type"
+                                                     [("val","noBar")] ()
+                                               , mnode "num" x'
+                                               , mnode "den" y' ]] 
        _ -> error $ "Unknown binary operator " ++ c
     where x' = showExp x
           y' = showExp y
-
---  , ("\\stackrel", mnode "mover")
---  , ("\\overset", mnode "mover")
---  , ("\\underset", mnode "munder")
---  , ("\\binom", showBinom)
-{-
-
-spaceWidth :: String -> Element
-spaceWidth w = withAttribute "width" w $ mnode "mspace" ()
-
-makeStretchy :: Element -> Element
-makeStretchy = withAttribute "stretchy" "true"
-
-makeScaled :: String -> Element -> Element
-makeScaled s = withAttribute "minsize" s . withAttribute "maxsize" s
-
-
-withAttribute :: String -> String -> Element -> Element
-withAttribute a = add_attr . Attr (name a)
-
--}
 
 makeArray :: [Alignment] -> [ArrayLine] -> Element
 makeArray as rs = mnode "m" $ mProps : map toMr rs
@@ -155,14 +123,11 @@ showExp e =
    EGrouped xs      -> concatMap showExp xs
    EIdentifier x    -> [str [] x]
    EMathOperator x  -> [str [] x]
---   EStretchy (ESymbol Open x)  -> makeStretchy $ mnode "mo" x
---   EStretchy (ESymbol Close x) -> makeStretchy $ mnode "mo" x
---   ESymbol Open x   -> withAttribute "stretchy" "false" $ mnode "mo" x
---   ESymbol Close x  -> withAttribute "stretchy" "false" $ mnode "mo" x
+   EStretchy x      -> showExp x  -- no support for stretchy in OMML
    ESymbol _ x      -> [str [] x]
    ESpace _         -> [] -- This seems to be how the stylesheet behaves
                           -- wouldn't it be better to use unicode space chars?
-   EBinary c x y    -> showBinary c x y
+   EBinary c x y    -> [showBinary c x y]
    ESub x y         -> [mnode "sSub" [ mnode "e" $ showExp x
                                      , mnode "sub" $ showExp y]]
    ESuper x y       -> [mnode "sSup" [ mnode "e" $ showExp x
@@ -179,8 +144,7 @@ showExp e =
                                       , mnode "deg" ()
                                       , mnode "e" $ showExp x]]
    EUnary "\\surd" x  -> showExp $ EUnary "\\sqrt" x
---   EStretchy x      -> makeStretchy $ showExp x
---   EScaled s x      -> makeScaled s $ showExp x
+   EScaled _ x      -> showExp x   -- no support for scaler?
    EArray as ls     -> [makeArray as ls]
    EText a s        -> [makeText a s]
    x                -> error $ "showExp encountered " ++ show x
