@@ -13,9 +13,14 @@ for format in xhtml omml; do
   echo "============="
   failures=0
   passes=0
+  if [ "$format" = "omml" ]; then
+    inline="--inline"
+  else
+    inline=""
+  fi
   if [ -f $TESTPROG ]; then
       for t in *.tex; do
-          $TESTPROG --${format} <$t >tmp
+          $TESTPROG --${format} ${inline} <$t >tmp
           if [ "$?" -ne "0" ]; then
             echo "Test ${t%.tex} FAILED"
             failures=`expr $failures + 1`
