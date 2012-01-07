@@ -121,6 +121,14 @@ showExp e =
  case e of
    ENumber x        -> [str [] x]
    EGrouped xs      -> concatMap showExp xs
+   EDelimited start end xs ->
+                       [mnode "d" [ mnode "dPr"
+                                    [ mnodeAttr "begChr" [("val",start)] ()
+                                    , mnodeAttr "endChr" [("val",end)] ()
+                                    , mnode "grow" () ]
+                                  , mnode "e" $ concatMap showExp xs
+                                  ] ]
+
    EIdentifier x    -> [str [] x]
    EMathOperator x  -> [str [] x]
    EStretchy x      -> showExp x  -- no support for stretchy in OMML
