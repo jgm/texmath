@@ -1,6 +1,33 @@
 <?xml version='1.0' ?>
-<m:oMath>
-  <m:r>
-    <m:t>x*4=4*x</m:t>
-  </m:r>
-</m:oMath>
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr />
+      <m:t>x</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>*</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>4</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>=</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>4</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>*</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>x</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

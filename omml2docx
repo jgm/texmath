@@ -1,0 +1,24 @@
+#!/bin/sh
+target=${1-math.docx}
+cp math-template.docx "$target"
+rm -rf tmp
+unzip -q -d tmp "$target"
+cd tmp
+cat >word/document.xml <<EOF
+<?xml version="1.0" encoding="utf-8" ?>
+<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math">
+<w:body>
+  <w:p>
+EOF
+# skip top line <?xml...
+sed -ne '2,$p' >>word/document.xml
+cat >>word/document.xml <<EOF
+</w:p>
+</w:body>
+</w:document>
+EOF
+zip -q -r ../"$target" word/document.xml
+cd ..
+rm -rf tmp
+echo "Created $target"

@@ -1,0 +1,3 @@
+#!/bin/sh
+# uses mml2omml.xsl to convert mathml to omml
+xsltproc mml2omml.xsl - | tidy -q -i -xml -utf8

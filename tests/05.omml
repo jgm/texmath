@@ -1,78 +1,165 @@
 <?xml version='1.0' ?>
-<m:oMath>
-  <m:nary>
-    <m:naryPr>
-      <m:chr m:val="∫" />
-      <m:limLoc m:val="subSup" />
-      <m:grow m:val="on" />
-      <m:subHide m:val="off" />
-      <m:supHide m:val="off" />
-    </m:naryPr>
-    <m:sub>
-      <m:r>
-        <m:t>a</m:t>
-      </m:r>
-    </m:sub>
-    <m:sup>
-      <m:r>
-        <m:t>x</m:t>
-      </m:r>
-    </m:sup>
-    <m:e />
-  </m:nary>
-  <m:nary>
-    <m:naryPr>
-      <m:chr m:val="∫" />
-      <m:limLoc m:val="subSup" />
-      <m:grow m:val="on" />
-      <m:subHide m:val="off" />
-      <m:supHide m:val="off" />
-    </m:naryPr>
-    <m:sub>
-      <m:r>
-        <m:t>a</m:t>
-      </m:r>
-    </m:sub>
-    <m:sup>
-      <m:r>
-        <m:t>s</m:t>
-      </m:r>
-    </m:sup>
-    <m:e />
-  </m:nary>
-  <m:r>
-    <m:t>f(y)</m:t>
-  </m:r>
-  <m:r>
-    <m:t>dy</m:t>
-  </m:r>
-  <m:r>
-    <m:t>ds=</m:t>
-  </m:r>
-  <m:nary>
-    <m:naryPr>
-      <m:chr m:val="∫" />
-      <m:limLoc m:val="subSup" />
-      <m:grow m:val="on" />
-      <m:subHide m:val="off" />
-      <m:supHide m:val="off" />
-    </m:naryPr>
-    <m:sub>
-      <m:r>
-        <m:t>a</m:t>
-      </m:r>
-    </m:sub>
-    <m:sup>
-      <m:r>
-        <m:t>x</m:t>
-      </m:r>
-    </m:sup>
-    <m:e />
-  </m:nary>
-  <m:r>
-    <m:t>f(y)(x−y)</m:t>
-  </m:r>
-  <m:r>
-    <m:t>dy</m:t>
-  </m:r>
-</m:oMath>
+<m:oMathPara>
+  <m:oMath>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="&#8747;" />
+        <m:limLoc m:val="subSup" />
+        <m:grow />
+        <m:supHide m:val="off" />
+        <m:supHide m:val="off" />
+      </m:naryPr>
+      <m:e />
+      <m:sub>
+        <m:r>
+          <m:rPr />
+          <m:t>a</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:rPr />
+          <m:t>x</m:t>
+        </m:r>
+      </m:sup>
+    </m:nary>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="&#8747;" />
+        <m:limLoc m:val="subSup" />
+        <m:grow />
+        <m:supHide m:val="off" />
+        <m:supHide m:val="off" />
+      </m:naryPr>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>f</m:t>
+        </m:r>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:rPr />
+          <m:t>a</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:rPr />
+          <m:t>s</m:t>
+        </m:r>
+      </m:sup>
+    </m:nary>
+    <m:r>
+      <m:rPr />
+      <m:t>(</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>y</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>)</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8201;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>d</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>y</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8201;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>d</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>s</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>=</m:t>
+    </m:r>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="&#8747;" />
+        <m:limLoc m:val="subSup" />
+        <m:grow />
+        <m:supHide m:val="off" />
+        <m:supHide m:val="off" />
+      </m:naryPr>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>f</m:t>
+        </m:r>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:rPr />
+          <m:t>a</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:rPr />
+          <m:t>x</m:t>
+        </m:r>
+      </m:sup>
+    </m:nary>
+    <m:r>
+      <m:rPr />
+      <m:t>(</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>y</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>)</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>(</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>x</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8722;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>y</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>)</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8201;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>d</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>y</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

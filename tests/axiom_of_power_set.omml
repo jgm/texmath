@@ -1,48 +1,113 @@
 <?xml version='1.0' ?>
-<m:oMath>
-  <m:r>
-    <m:rPr>
-      <m:sty m:val="p" />
-    </m:rPr>
-    <m:t>∀</m:t>
-  </m:r>
-  <m:r>
-    <m:t>A</m:t>
-  </m:r>
-  <m:r>
-    <m:rPr>
-      <m:sty m:val="p" />
-    </m:rPr>
-    <m:t>∃</m:t>
-  </m:r>
-  <m:r>
-    <m:t>P</m:t>
-  </m:r>
-  <m:r>
-    <m:rPr>
-      <m:sty m:val="p" />
-    </m:rPr>
-    <m:t>∀</m:t>
-  </m:r>
-  <m:r>
-    <m:t>B</m:t>
-  </m:r>
-  <m:r>
-    <m:rPr>
-      <m:sty m:val="p" />
-    </m:rPr>
-    <m:t>[</m:t>
-  </m:r>
-  <m:r>
-    <m:t>B∈P⇔∀C</m:t>
-  </m:r>
-  <m:r>
-    <m:rPr>
-      <m:sty m:val="p" />
-    </m:rPr>
-    <m:t>(</m:t>
-  </m:r>
-  <m:r>
-    <m:t>C∈B⇒C∈A)]</m:t>
-  </m:r>
-</m:oMath>
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8704;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>A</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8201;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8707;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>P</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8201;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8704;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>B</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8201;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>[</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>B</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8712;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>P</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8660;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8704;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>C</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8201;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>(</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>C</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8712;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>B</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8658;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>C</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8712;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>A</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>)</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>]</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

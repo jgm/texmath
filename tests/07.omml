@@ -1,9 +1,105 @@
 <?xml version='1.0' ?>
-<m:oMath>
-  <m:r>
-    <m:t>uʺ+p(x)uʹ+q(x)u=f(x),</m:t>
-  </m:r>
-  <m:r>
-    <m:t>x&gt;a</m:t>
-  </m:r>
-</m:oMath>
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <m:rPr />
+      <m:t>u</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&#698;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>+</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>p</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>(</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>x</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>)</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>u</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&#697;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>+</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>q</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>(</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>x</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>)</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>u</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>=</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>f</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>(</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>x</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>)</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>,</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8193;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>x</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>&gt;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>a</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

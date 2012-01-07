@@ -1,449 +1,457 @@
 <?xml version='1.0' ?>
-<m:oMath>
-  <m:r>
-    <m:rPr>
-      <m:sty m:val="p" />
-    </m:rPr>
-    <m:t>[</m:t>
-  </m:r>
-  <m:m>
-    <m:mPr>
-      <m:baseJc m:val="center" />
-      <m:plcHide m:val="on" />
-      <m:mcs>
-        <m:mc>
-          <m:mcPr>
-            <m:count m:val="2" />
-            <m:mcJc m:val="center" />
-          </m:mcPr>
-        </m:mc>
-      </m:mcs>
-    </m:mPr>
-    <m:mr>
+<m:oMathPara>
+  <m:oMath>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="[" />
+        <m:endChr m:val="]" />
+        <m:grow />
+      </m:dPr>
       <m:e>
-        <m:f>
-          <m:fPr>
-            <m:type m:val="bar" />
-          </m:fPr>
-          <m:num>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>∂</m:t>
-            </m:r>
-            <m:sSub>
-              <m:e>
-                <m:r>
-                  <m:t>x</m:t>
-                </m:r>
-              </m:e>
-              <m:sub>
-                <m:r>
-                  <m:rPr />
-                  <m:t>1</m:t>
-                </m:r>
-              </m:sub>
-            </m:sSub>
-          </m:num>
-          <m:den>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>∂</m:t>
-            </m:r>
-            <m:sSub>
-              <m:e>
-                <m:r>
-                  <m:t>y</m:t>
-                </m:r>
-              </m:e>
-              <m:sub>
-                <m:r>
-                  <m:rPr />
-                  <m:t>1</m:t>
-                </m:r>
-              </m:sub>
-            </m:sSub>
-          </m:den>
-        </m:f>
+        <m:m>
+          <m:mPr>
+            <m:baseJc m:val="center" />
+            <m:plcHide m:val="on" />
+            <m:mcs>
+              <m:mc>
+                <m:mcPr>
+                  <m:mcJc m:val="left" />
+                </m:mcPr>
+              </m:mc>
+              <m:mc>
+                <m:mcPr>
+                  <m:mcJc m:val="left" />
+                </m:mcPr>
+              </m:mc>
+              <m:mc>
+                <m:mcPr>
+                  <m:mcJc m:val="left" />
+                </m:mcPr>
+              </m:mc>
+            </m:mcs>
+          </m:mPr>
+          <m:mr>
+            <m:e>
+              <m:f>
+                <m:fPr>
+                  <m:type m:val="bar" />
+                </m:fPr>
+                <m:num>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>&#8706;</m:t>
+                  </m:r>
+                  <m:sSub>
+                    <m:e>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>x</m:t>
+                      </m:r>
+                    </m:e>
+                    <m:sub>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>1</m:t>
+                      </m:r>
+                    </m:sub>
+                  </m:sSub>
+                </m:num>
+                <m:den>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>&#8706;</m:t>
+                  </m:r>
+                  <m:sSub>
+                    <m:e>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>y</m:t>
+                      </m:r>
+                    </m:e>
+                    <m:sub>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>1</m:t>
+                      </m:r>
+                    </m:sub>
+                  </m:sSub>
+                </m:den>
+              </m:f>
+            </m:e>
+            <m:e>
+              <m:f>
+                <m:fPr>
+                  <m:type m:val="bar" />
+                </m:fPr>
+                <m:num>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>&#8706;</m:t>
+                  </m:r>
+                  <m:sSub>
+                    <m:e>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>x</m:t>
+                      </m:r>
+                    </m:e>
+                    <m:sub>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>2</m:t>
+                      </m:r>
+                    </m:sub>
+                  </m:sSub>
+                </m:num>
+                <m:den>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>&#8706;</m:t>
+                  </m:r>
+                  <m:sSub>
+                    <m:e>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>y</m:t>
+                      </m:r>
+                    </m:e>
+                    <m:sub>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>1</m:t>
+                      </m:r>
+                    </m:sub>
+                  </m:sSub>
+                </m:den>
+              </m:f>
+            </m:e>
+          </m:mr>
+          <m:mr>
+            <m:e>
+              <m:r>
+                <m:rPr />
+                <m:t>&#8196;</m:t>
+              </m:r>
+            </m:e>
+          </m:mr>
+          <m:mr>
+            <m:e>
+              <m:f>
+                <m:fPr>
+                  <m:type m:val="bar" />
+                </m:fPr>
+                <m:num>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>&#8706;</m:t>
+                  </m:r>
+                  <m:sSub>
+                    <m:e>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>x</m:t>
+                      </m:r>
+                    </m:e>
+                    <m:sub>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>1</m:t>
+                      </m:r>
+                    </m:sub>
+                  </m:sSub>
+                </m:num>
+                <m:den>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>&#8706;</m:t>
+                  </m:r>
+                  <m:sSub>
+                    <m:e>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>y</m:t>
+                      </m:r>
+                    </m:e>
+                    <m:sub>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>2</m:t>
+                      </m:r>
+                    </m:sub>
+                  </m:sSub>
+                </m:den>
+              </m:f>
+            </m:e>
+            <m:e>
+              <m:f>
+                <m:fPr>
+                  <m:type m:val="bar" />
+                </m:fPr>
+                <m:num>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>&#8706;</m:t>
+                  </m:r>
+                  <m:sSub>
+                    <m:e>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>x</m:t>
+                      </m:r>
+                    </m:e>
+                    <m:sub>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>2</m:t>
+                      </m:r>
+                    </m:sub>
+                  </m:sSub>
+                </m:num>
+                <m:den>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>&#8706;</m:t>
+                  </m:r>
+                  <m:sSub>
+                    <m:e>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>y</m:t>
+                      </m:r>
+                    </m:e>
+                    <m:sub>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>2</m:t>
+                      </m:r>
+                    </m:sub>
+                  </m:sSub>
+                </m:den>
+              </m:f>
+            </m:e>
+          </m:mr>
+        </m:m>
       </m:e>
+    </m:d>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="(" />
+        <m:endChr m:val=")" />
+        <m:grow />
+      </m:dPr>
       <m:e>
-        <m:f>
-          <m:fPr>
-            <m:type m:val="bar" />
-          </m:fPr>
-          <m:num>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>∂</m:t>
-            </m:r>
-            <m:sSub>
-              <m:e>
-                <m:r>
-                  <m:t>x</m:t>
-                </m:r>
-              </m:e>
-              <m:sub>
-                <m:r>
-                  <m:rPr />
-                  <m:t>2</m:t>
-                </m:r>
-              </m:sub>
-            </m:sSub>
-          </m:num>
-          <m:den>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>∂</m:t>
-            </m:r>
-            <m:sSub>
-              <m:e>
-                <m:r>
-                  <m:t>y</m:t>
-                </m:r>
-              </m:e>
-              <m:sub>
-                <m:r>
-                  <m:rPr />
-                  <m:t>1</m:t>
-                </m:r>
-              </m:sub>
-            </m:sSub>
-          </m:den>
-        </m:f>
+        <m:m>
+          <m:mPr>
+            <m:baseJc m:val="center" />
+            <m:plcHide m:val="on" />
+            <m:mcs>
+              <m:mc>
+                <m:mcPr>
+                  <m:mcJc m:val="left" />
+                </m:mcPr>
+              </m:mc>
+              <m:mc>
+                <m:mcPr>
+                  <m:mcJc m:val="left" />
+                </m:mcPr>
+              </m:mc>
+            </m:mcs>
+          </m:mPr>
+          <m:mr>
+            <m:e>
+              <m:r>
+                <m:rPr />
+                <m:t>1</m:t>
+              </m:r>
+            </m:e>
+            <m:e>
+              <m:r>
+                <m:rPr />
+                <m:t>2</m:t>
+              </m:r>
+            </m:e>
+          </m:mr>
+          <m:mr>
+            <m:e>
+              <m:r>
+                <m:rPr />
+                <m:t>3</m:t>
+              </m:r>
+            </m:e>
+            <m:e>
+              <m:r>
+                <m:rPr />
+                <m:t>4</m:t>
+              </m:r>
+            </m:e>
+          </m:mr>
+        </m:m>
       </m:e>
-    </m:mr>
-    <m:mr>
-      <m:e />
-      <m:e />
-    </m:mr>
-    <m:mr>
+    </m:d>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="{" />
+        <m:endChr m:val="}" />
+        <m:grow />
+      </m:dPr>
       <m:e>
-        <m:f>
-          <m:fPr>
-            <m:type m:val="bar" />
-          </m:fPr>
-          <m:num>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>∂</m:t>
-            </m:r>
-            <m:sSub>
-              <m:e>
-                <m:r>
-                  <m:t>x</m:t>
-                </m:r>
-              </m:e>
-              <m:sub>
-                <m:r>
-                  <m:rPr />
-                  <m:t>1</m:t>
-                </m:r>
-              </m:sub>
-            </m:sSub>
-          </m:num>
-          <m:den>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>∂</m:t>
-            </m:r>
-            <m:sSub>
-              <m:e>
-                <m:r>
-                  <m:t>y</m:t>
-                </m:r>
-              </m:e>
-              <m:sub>
-                <m:r>
-                  <m:rPr />
-                  <m:t>2</m:t>
-                </m:r>
-              </m:sub>
-            </m:sSub>
-          </m:den>
-        </m:f>
+        <m:m>
+          <m:mPr>
+            <m:baseJc m:val="center" />
+            <m:plcHide m:val="on" />
+            <m:mcs>
+              <m:mc>
+                <m:mcPr>
+                  <m:mcJc m:val="left" />
+                </m:mcPr>
+              </m:mc>
+              <m:mc>
+                <m:mcPr>
+                  <m:mcJc m:val="left" />
+                </m:mcPr>
+              </m:mc>
+            </m:mcs>
+          </m:mPr>
+          <m:mr>
+            <m:e>
+              <m:r>
+                <m:rPr />
+                <m:t>1</m:t>
+              </m:r>
+            </m:e>
+            <m:e>
+              <m:r>
+                <m:rPr />
+                <m:t>2</m:t>
+              </m:r>
+            </m:e>
+          </m:mr>
+          <m:mr>
+            <m:e>
+              <m:r>
+                <m:rPr />
+                <m:t>3</m:t>
+              </m:r>
+            </m:e>
+            <m:e>
+              <m:r>
+                <m:rPr />
+                <m:t>4</m:t>
+              </m:r>
+            </m:e>
+          </m:mr>
+        </m:m>
       </m:e>
+    </m:d>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="&#8739;" />
+        <m:endChr m:val="&#8739;" />
+        <m:grow />
+      </m:dPr>
       <m:e>
-        <m:f>
-          <m:fPr>
-            <m:type m:val="bar" />
-          </m:fPr>
-          <m:num>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>∂</m:t>
-            </m:r>
-            <m:sSub>
-              <m:e>
-                <m:r>
-                  <m:t>x</m:t>
-                </m:r>
-              </m:e>
-              <m:sub>
-                <m:r>
-                  <m:rPr />
-                  <m:t>2</m:t>
-                </m:r>
-              </m:sub>
-            </m:sSub>
-          </m:num>
-          <m:den>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>∂</m:t>
-            </m:r>
-            <m:sSub>
-              <m:e>
-                <m:r>
-                  <m:t>y</m:t>
-                </m:r>
-              </m:e>
-              <m:sub>
-                <m:r>
-                  <m:rPr />
-                  <m:t>2</m:t>
-                </m:r>
-              </m:sub>
-            </m:sSub>
-          </m:den>
-        </m:f>
+        <m:m>
+          <m:mPr>
+            <m:baseJc m:val="center" />
+            <m:plcHide m:val="on" />
+            <m:mcs>
+              <m:mc>
+                <m:mcPr>
+                  <m:mcJc m:val="left" />
+                </m:mcPr>
+              </m:mc>
+              <m:mc>
+                <m:mcPr>
+                  <m:mcJc m:val="left" />
+                </m:mcPr>
+              </m:mc>
+            </m:mcs>
+          </m:mPr>
+          <m:mr>
+            <m:e>
+              <m:r>
+                <m:rPr />
+                <m:t>1</m:t>
+              </m:r>
+            </m:e>
+            <m:e>
+              <m:r>
+                <m:rPr />
+                <m:t>2</m:t>
+              </m:r>
+            </m:e>
+          </m:mr>
+          <m:mr>
+            <m:e>
+              <m:r>
+                <m:rPr />
+                <m:t>3</m:t>
+              </m:r>
+            </m:e>
+            <m:e>
+              <m:r>
+                <m:rPr />
+                <m:t>4</m:t>
+              </m:r>
+            </m:e>
+          </m:mr>
+        </m:m>
       </m:e>
-    </m:mr>
-  </m:m>
-  <m:r>
-    <m:rPr>
-      <m:sty m:val="p" />
-    </m:rPr>
-    <m:t>]</m:t>
-  </m:r>
-  <m:r>
-    <m:rPr>
-      <m:sty m:val="p" />
-    </m:rPr>
-    <m:t>(</m:t>
-  </m:r>
-  <m:m>
-    <m:mPr>
-      <m:baseJc m:val="center" />
-      <m:plcHide m:val="on" />
-      <m:mcs>
-        <m:mc>
-          <m:mcPr>
-            <m:count m:val="2" />
-            <m:mcJc m:val="center" />
-          </m:mcPr>
-        </m:mc>
-      </m:mcs>
-    </m:mPr>
-    <m:mr>
+    </m:d>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="&#8741;" />
+        <m:endChr m:val="&#8741;" />
+        <m:grow />
+      </m:dPr>
       <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>1</m:t>
-        </m:r>
+        <m:m>
+          <m:mPr>
+            <m:baseJc m:val="center" />
+            <m:plcHide m:val="on" />
+            <m:mcs>
+              <m:mc>
+                <m:mcPr>
+                  <m:mcJc m:val="left" />
+                </m:mcPr>
+              </m:mc>
+              <m:mc>
+                <m:mcPr>
+                  <m:mcJc m:val="left" />
+                </m:mcPr>
+              </m:mc>
+            </m:mcs>
+          </m:mPr>
+          <m:mr>
+            <m:e>
+              <m:r>
+                <m:rPr />
+                <m:t>1</m:t>
+              </m:r>
+            </m:e>
+            <m:e>
+              <m:r>
+                <m:rPr />
+                <m:t>2</m:t>
+              </m:r>
+            </m:e>
+          </m:mr>
+          <m:mr>
+            <m:e>
+              <m:r>
+                <m:rPr />
+                <m:t>3</m:t>
+              </m:r>
+            </m:e>
+            <m:e>
+              <m:r>
+                <m:rPr />
+                <m:t>4</m:t>
+              </m:r>
+            </m:e>
+          </m:mr>
+        </m:m>
       </m:e>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>2</m:t>
-        </m:r>
-      </m:e>
-    </m:mr>
-    <m:mr>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>3</m:t>
-        </m:r>
-      </m:e>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>4</m:t>
-        </m:r>
-      </m:e>
-    </m:mr>
-  </m:m>
-  <m:r>
-    <m:rPr>
-      <m:sty m:val="p" />
-    </m:rPr>
-    <m:t>)</m:t>
-  </m:r>
-  <m:r>
-    <m:rPr>
-      <m:sty m:val="p" />
-    </m:rPr>
-    <m:t>{</m:t>
-  </m:r>
-  <m:m>
-    <m:mPr>
-      <m:baseJc m:val="center" />
-      <m:plcHide m:val="on" />
-      <m:mcs>
-        <m:mc>
-          <m:mcPr>
-            <m:count m:val="2" />
-            <m:mcJc m:val="center" />
-          </m:mcPr>
-        </m:mc>
-      </m:mcs>
-    </m:mPr>
-    <m:mr>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>1</m:t>
-        </m:r>
-      </m:e>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>2</m:t>
-        </m:r>
-      </m:e>
-    </m:mr>
-    <m:mr>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>3</m:t>
-        </m:r>
-      </m:e>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>4</m:t>
-        </m:r>
-      </m:e>
-    </m:mr>
-  </m:m>
-  <m:r>
-    <m:rPr>
-      <m:sty m:val="p" />
-    </m:rPr>
-    <m:t>}</m:t>
-  </m:r>
-  <m:r>
-    <m:rPr>
-      <m:sty m:val="p" />
-    </m:rPr>
-    <m:t>∣</m:t>
-  </m:r>
-  <m:m>
-    <m:mPr>
-      <m:baseJc m:val="center" />
-      <m:plcHide m:val="on" />
-      <m:mcs>
-        <m:mc>
-          <m:mcPr>
-            <m:count m:val="2" />
-            <m:mcJc m:val="center" />
-          </m:mcPr>
-        </m:mc>
-      </m:mcs>
-    </m:mPr>
-    <m:mr>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>1</m:t>
-        </m:r>
-      </m:e>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>2</m:t>
-        </m:r>
-      </m:e>
-    </m:mr>
-    <m:mr>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>3</m:t>
-        </m:r>
-      </m:e>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>4</m:t>
-        </m:r>
-      </m:e>
-    </m:mr>
-  </m:m>
-  <m:r>
-    <m:rPr>
-      <m:sty m:val="p" />
-    </m:rPr>
-    <m:t>∣</m:t>
-  </m:r>
-  <m:r>
-    <m:rPr>
-      <m:sty m:val="p" />
-    </m:rPr>
-    <m:t>∥</m:t>
-  </m:r>
-  <m:m>
-    <m:mPr>
-      <m:baseJc m:val="center" />
-      <m:plcHide m:val="on" />
-      <m:mcs>
-        <m:mc>
-          <m:mcPr>
-            <m:count m:val="2" />
-            <m:mcJc m:val="center" />
-          </m:mcPr>
-        </m:mc>
-      </m:mcs>
-    </m:mPr>
-    <m:mr>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>1</m:t>
-        </m:r>
-      </m:e>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>2</m:t>
-        </m:r>
-      </m:e>
-    </m:mr>
-    <m:mr>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>3</m:t>
-        </m:r>
-      </m:e>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>4</m:t>
-        </m:r>
-      </m:e>
-    </m:mr>
-  </m:m>
-  <m:r>
-    <m:rPr>
-      <m:sty m:val="p" />
-    </m:rPr>
-    <m:t>∥</m:t>
-  </m:r>
-</m:oMath>
+    </m:d>
+  </m:oMath>
+</m:oMathPara>

@@ -1,137 +1,169 @@
 <?xml version='1.0' ?>
-<m:oMath>
-  <m:nary>
-    <m:naryPr>
-      <m:chr m:val="∑" />
-      <m:limLoc m:val="undOvr" />
-      <m:grow m:val="on" />
-      <m:subHide m:val="off" />
-      <m:supHide m:val="off" />
-    </m:naryPr>
-    <m:sub>
-      <m:r>
-        <m:t>m=1</m:t>
-      </m:r>
-    </m:sub>
-    <m:sup>
-      <m:r>
-        <m:rPr>
-          <m:sty m:val="p" />
-        </m:rPr>
-        <m:t>∞</m:t>
-      </m:r>
-    </m:sup>
-    <m:e />
-  </m:nary>
-  <m:nary>
-    <m:naryPr>
-      <m:chr m:val="∑" />
-      <m:limLoc m:val="undOvr" />
-      <m:grow m:val="on" />
-      <m:subHide m:val="off" />
-      <m:supHide m:val="off" />
-    </m:naryPr>
-    <m:sub>
-      <m:r>
-        <m:t>n=1</m:t>
-      </m:r>
-    </m:sub>
-    <m:sup>
-      <m:r>
-        <m:rPr>
-          <m:sty m:val="p" />
-        </m:rPr>
-        <m:t>∞</m:t>
-      </m:r>
-    </m:sup>
-    <m:e />
-  </m:nary>
-  <m:f>
-    <m:fPr>
-      <m:type m:val="bar" />
-    </m:fPr>
-    <m:num>
-      <m:sSup>
-        <m:e>
-          <m:r>
-            <m:t>m</m:t>
-          </m:r>
-        </m:e>
-        <m:sup>
-          <m:r>
-            <m:rPr />
-            <m:t>2</m:t>
-          </m:r>
-        </m:sup>
-      </m:sSup>
-      <m:r>
-        <m:t>n</m:t>
-      </m:r>
-    </m:num>
-    <m:den>
-      <m:sSup>
-        <m:e>
-          <m:r>
-            <m:rPr />
-            <m:t>3</m:t>
-          </m:r>
-        </m:e>
-        <m:sup>
-          <m:r>
-            <m:t>m</m:t>
-          </m:r>
-        </m:sup>
-      </m:sSup>
-      <m:r>
-        <m:rPr>
-          <m:sty m:val="p" />
-        </m:rPr>
-        <m:t>(</m:t>
-      </m:r>
-      <m:r>
-        <m:t>m</m:t>
-      </m:r>
-      <m:sSup>
-        <m:e>
-          <m:r>
-            <m:rPr />
-            <m:t>3</m:t>
-          </m:r>
-        </m:e>
-        <m:sup>
-          <m:r>
-            <m:t>n</m:t>
-          </m:r>
-        </m:sup>
-      </m:sSup>
-      <m:r>
-        <m:rPr>
-          <m:sty m:val="p" />
-        </m:rPr>
-        <m:t>+</m:t>
-      </m:r>
-      <m:r>
-        <m:t>n</m:t>
-      </m:r>
-      <m:sSup>
-        <m:e>
-          <m:r>
-            <m:rPr />
-            <m:t>3</m:t>
-          </m:r>
-        </m:e>
-        <m:sup>
-          <m:r>
-            <m:t>m</m:t>
-          </m:r>
-        </m:sup>
-      </m:sSup>
-      <m:r>
-        <m:rPr>
-          <m:sty m:val="p" />
-        </m:rPr>
-        <m:t>)</m:t>
-      </m:r>
-    </m:den>
-  </m:f>
-</m:oMath>
+<m:oMathPara>
+  <m:oMath>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="&#8721;" />
+        <m:limLoc m:val="undOvr" />
+        <m:grow />
+        <m:supHide m:val="off" />
+        <m:supHide m:val="off" />
+      </m:naryPr>
+      <m:e>
+        <m:nary>
+          <m:naryPr>
+            <m:chr m:val="&#8721;" />
+            <m:limLoc m:val="undOvr" />
+            <m:grow />
+            <m:supHide m:val="off" />
+            <m:supHide m:val="off" />
+          </m:naryPr>
+          <m:e>
+            <m:f>
+              <m:fPr>
+                <m:type m:val="bar" />
+              </m:fPr>
+              <m:num>
+                <m:sSup>
+                  <m:e>
+                    <m:r>
+                      <m:rPr />
+                      <m:t>m</m:t>
+                    </m:r>
+                  </m:e>
+                  <m:sup>
+                    <m:r>
+                      <m:rPr />
+                      <m:t>2</m:t>
+                    </m:r>
+                  </m:sup>
+                </m:sSup>
+                <m:r>
+                  <m:rPr />
+                  <m:t>&#8201;</m:t>
+                </m:r>
+                <m:r>
+                  <m:rPr />
+                  <m:t>n</m:t>
+                </m:r>
+              </m:num>
+              <m:den>
+                <m:sSup>
+                  <m:e>
+                    <m:r>
+                      <m:rPr />
+                      <m:t>3</m:t>
+                    </m:r>
+                  </m:e>
+                  <m:sup>
+                    <m:r>
+                      <m:rPr />
+                      <m:t>m</m:t>
+                    </m:r>
+                  </m:sup>
+                </m:sSup>
+                <m:d>
+                  <m:dPr>
+                    <m:begChr m:val="(" />
+                    <m:endChr m:val=")" />
+                    <m:grow />
+                  </m:dPr>
+                  <m:e>
+                    <m:r>
+                      <m:rPr />
+                      <m:t>m</m:t>
+                    </m:r>
+                    <m:r>
+                      <m:rPr />
+                      <m:t>&#8201;</m:t>
+                    </m:r>
+                    <m:sSup>
+                      <m:e>
+                        <m:r>
+                          <m:rPr />
+                          <m:t>3</m:t>
+                        </m:r>
+                      </m:e>
+                      <m:sup>
+                        <m:r>
+                          <m:rPr />
+                          <m:t>n</m:t>
+                        </m:r>
+                      </m:sup>
+                    </m:sSup>
+                    <m:r>
+                      <m:rPr />
+                      <m:t>+</m:t>
+                    </m:r>
+                    <m:r>
+                      <m:rPr />
+                      <m:t>n</m:t>
+                    </m:r>
+                    <m:r>
+                      <m:rPr />
+                      <m:t>&#8201;</m:t>
+                    </m:r>
+                    <m:sSup>
+                      <m:e>
+                        <m:r>
+                          <m:rPr />
+                          <m:t>3</m:t>
+                        </m:r>
+                      </m:e>
+                      <m:sup>
+                        <m:r>
+                          <m:rPr />
+                          <m:t>m</m:t>
+                        </m:r>
+                      </m:sup>
+                    </m:sSup>
+                  </m:e>
+                </m:d>
+              </m:den>
+            </m:f>
+          </m:e>
+          <m:sub>
+            <m:r>
+              <m:rPr />
+              <m:t>n</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>=</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>1</m:t>
+            </m:r>
+          </m:sub>
+          <m:sup>
+            <m:r>
+              <m:rPr />
+              <m:t>&#8734;</m:t>
+            </m:r>
+          </m:sup>
+        </m:nary>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:rPr />
+          <m:t>m</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr />
+          <m:t>=</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr />
+          <m:t>1</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:rPr />
+          <m:t>&#8734;</m:t>
+        </m:r>
+      </m:sup>
+    </m:nary>
+  </m:oMath>
+</m:oMathPara>

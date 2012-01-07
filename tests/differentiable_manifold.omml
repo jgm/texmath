@@ -1,250 +1,325 @@
 <?xml version='1.0' ?>
-<m:oMath>
-  <m:sSub>
-    <m:e>
-      <m:r>
-        <m:t>γ</m:t>
-      </m:r>
-    </m:e>
-    <m:sub>
-      <m:r>
-        <m:rPr />
-        <m:t>1</m:t>
-      </m:r>
-    </m:sub>
-  </m:sSub>
-  <m:r>
-    <m:rPr>
-      <m:sty m:val="p" />
-    </m:rPr>
-    <m:t>≡</m:t>
-  </m:r>
-  <m:sSub>
-    <m:e>
-      <m:r>
-        <m:t>γ</m:t>
-      </m:r>
-    </m:e>
-    <m:sub>
-      <m:r>
-        <m:rPr />
-        <m:t>2</m:t>
-      </m:r>
-    </m:sub>
-  </m:sSub>
-  <m:r>
-    <m:rPr>
-      <m:sty m:val="p" />
-    </m:rPr>
-    <m:t>⇔{</m:t>
-  </m:r>
-  <m:m>
-    <m:mPr>
-      <m:baseJc m:val="center" />
-      <m:plcHide m:val="on" />
-      <m:mcs>
-        <m:mc>
-          <m:mcPr>
-            <m:count m:val="1" />
-            <m:mcJc m:val="center" />
-          </m:mcPr>
-        </m:mc>
-      </m:mcs>
-    </m:mPr>
-    <m:mr>
+<m:oMathPara>
+  <m:oMath>
+    <m:sSub>
       <m:e>
-        <m:sSub>
-          <m:e>
-            <m:r>
-              <m:t>γ</m:t>
-            </m:r>
-          </m:e>
-          <m:sub>
-            <m:r>
-              <m:rPr />
-              <m:t>1</m:t>
-            </m:r>
-          </m:sub>
-        </m:sSub>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>(0)=</m:t>
-        </m:r>
-        <m:sSub>
-          <m:e>
-            <m:r>
-              <m:t>γ</m:t>
-            </m:r>
-          </m:e>
-          <m:sub>
-            <m:r>
-              <m:rPr />
-              <m:t>2</m:t>
-            </m:r>
-          </m:sub>
-        </m:sSub>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>(0)=</m:t>
-        </m:r>
-        <m:r>
-          <m:t>p,</m:t>
-        </m:r>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>and</m:t>
+          <m:rPr />
+          <m:t>&#947;</m:t>
         </m:r>
       </m:e>
-    </m:mr>
-    <m:mr>
-      <m:e>
-        <m:sSub>
-          <m:e>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>﻿</m:t>
-            </m:r>
-            <m:f>
-              <m:fPr>
-                <m:type m:val="bar" />
-              </m:fPr>
-              <m:num>
-                <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
-                  <m:t>d</m:t>
-                </m:r>
-              </m:num>
-              <m:den>
-                <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
-                  <m:t>d</m:t>
-                </m:r>
-                <m:r>
-                  <m:t>t</m:t>
-                </m:r>
-              </m:den>
-            </m:f>
-            <m:r>
-              <m:t>φ∘</m:t>
-            </m:r>
-            <m:sSub>
-              <m:e>
-                <m:r>
-                  <m:t>γ</m:t>
-                </m:r>
-              </m:e>
-              <m:sub>
-                <m:r>
-                  <m:rPr />
-                  <m:t>1</m:t>
-                </m:r>
-              </m:sub>
-            </m:sSub>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>(</m:t>
-            </m:r>
-            <m:r>
-              <m:t>t)∣</m:t>
-            </m:r>
-          </m:e>
-          <m:sub>
-            <m:r>
-              <m:t>t=0</m:t>
-            </m:r>
-          </m:sub>
-        </m:sSub>
+      <m:sub>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>=</m:t>
+          <m:rPr />
+          <m:t>1</m:t>
         </m:r>
-        <m:sSub>
-          <m:e>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>﻿</m:t>
-            </m:r>
-            <m:f>
-              <m:fPr>
-                <m:type m:val="bar" />
-              </m:fPr>
-              <m:num>
-                <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
-                  <m:t>d</m:t>
-                </m:r>
-              </m:num>
-              <m:den>
-                <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
-                  <m:t>d</m:t>
-                </m:r>
-                <m:r>
-                  <m:t>t</m:t>
-                </m:r>
-              </m:den>
-            </m:f>
-            <m:r>
-              <m:t>φ∘</m:t>
-            </m:r>
-            <m:sSub>
-              <m:e>
-                <m:r>
-                  <m:t>γ</m:t>
-                </m:r>
-              </m:e>
-              <m:sub>
-                <m:r>
-                  <m:rPr />
-                  <m:t>2</m:t>
-                </m:r>
-              </m:sub>
-            </m:sSub>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>(</m:t>
-            </m:r>
-            <m:r>
-              <m:t>t)∣</m:t>
-            </m:r>
-          </m:e>
-          <m:sub>
-            <m:r>
-              <m:t>t=0</m:t>
-            </m:r>
-          </m:sub>
-        </m:sSub>
+      </m:sub>
+    </m:sSub>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8801;</m:t>
+    </m:r>
+    <m:sSub>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>&#947;</m:t>
+        </m:r>
       </m:e>
-    </m:mr>
-  </m:m>
-  <m:r>
-    <m:rPr>
-      <m:sty m:val="p" />
-    </m:rPr>
-    <m:t>﻿</m:t>
-  </m:r>
-</m:oMath>
+      <m:sub>
+        <m:r>
+          <m:rPr />
+          <m:t>2</m:t>
+        </m:r>
+      </m:sub>
+    </m:sSub>
+    <m:r>
+      <m:rPr />
+      <m:t>&#8660;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>{</m:t>
+    </m:r>
+    <m:m>
+      <m:mPr>
+        <m:baseJc m:val="center" />
+        <m:plcHide m:val="on" />
+        <m:mcs>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="left" />
+            </m:mcPr>
+          </m:mc>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="left" />
+            </m:mcPr>
+          </m:mc>
+        </m:mcs>
+      </m:mPr>
+      <m:mr>
+        <m:e>
+          <m:sSub>
+            <m:e>
+              <m:r>
+                <m:rPr />
+                <m:t>&#947;</m:t>
+              </m:r>
+            </m:e>
+            <m:sub>
+              <m:r>
+                <m:rPr />
+                <m:t>1</m:t>
+              </m:r>
+            </m:sub>
+          </m:sSub>
+          <m:r>
+            <m:rPr />
+            <m:t>(</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>0</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>)</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>=</m:t>
+          </m:r>
+          <m:sSub>
+            <m:e>
+              <m:r>
+                <m:rPr />
+                <m:t>&#947;</m:t>
+              </m:r>
+            </m:e>
+            <m:sub>
+              <m:r>
+                <m:rPr />
+                <m:t>2</m:t>
+              </m:r>
+            </m:sub>
+          </m:sSub>
+          <m:r>
+            <m:rPr />
+            <m:t>(</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>0</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>)</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>p</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>,</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>and </m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:sSub>
+            <m:e>
+              <m:d>
+                <m:dPr>
+                  <m:begChr m:val="&#65279;" />
+                  <m:endChr m:val="&#8739;" />
+                  <m:grow />
+                </m:dPr>
+                <m:e>
+                  <m:f>
+                    <m:fPr>
+                      <m:type m:val="bar" />
+                    </m:fPr>
+                    <m:num>
+                      <m:r>
+                        <m:rPr>
+                          <m:sty m:val="p" />
+                        </m:rPr>
+                        <m:t>d</m:t>
+                      </m:r>
+                    </m:num>
+                    <m:den>
+                      <m:r>
+                        <m:rPr>
+                          <m:sty m:val="p" />
+                        </m:rPr>
+                        <m:t>d</m:t>
+                      </m:r>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>t</m:t>
+                      </m:r>
+                    </m:den>
+                  </m:f>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>&#966;</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>&#8728;</m:t>
+                  </m:r>
+                  <m:sSub>
+                    <m:e>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>&#947;</m:t>
+                      </m:r>
+                    </m:e>
+                    <m:sub>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>1</m:t>
+                      </m:r>
+                    </m:sub>
+                  </m:sSub>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>(</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>t</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>)</m:t>
+                  </m:r>
+                </m:e>
+              </m:d>
+            </m:e>
+            <m:sub>
+              <m:r>
+                <m:rPr />
+                <m:t>t</m:t>
+              </m:r>
+              <m:r>
+                <m:rPr />
+                <m:t>=</m:t>
+              </m:r>
+              <m:r>
+                <m:rPr />
+                <m:t>0</m:t>
+              </m:r>
+            </m:sub>
+          </m:sSub>
+          <m:r>
+            <m:rPr />
+            <m:t>=</m:t>
+          </m:r>
+          <m:sSub>
+            <m:e>
+              <m:d>
+                <m:dPr>
+                  <m:begChr m:val="&#65279;" />
+                  <m:endChr m:val="&#8739;" />
+                  <m:grow />
+                </m:dPr>
+                <m:e>
+                  <m:f>
+                    <m:fPr>
+                      <m:type m:val="bar" />
+                    </m:fPr>
+                    <m:num>
+                      <m:r>
+                        <m:rPr>
+                          <m:sty m:val="p" />
+                        </m:rPr>
+                        <m:t>d</m:t>
+                      </m:r>
+                    </m:num>
+                    <m:den>
+                      <m:r>
+                        <m:rPr>
+                          <m:sty m:val="p" />
+                        </m:rPr>
+                        <m:t>d</m:t>
+                      </m:r>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>t</m:t>
+                      </m:r>
+                    </m:den>
+                  </m:f>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>&#966;</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>&#8728;</m:t>
+                  </m:r>
+                  <m:sSub>
+                    <m:e>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>&#947;</m:t>
+                      </m:r>
+                    </m:e>
+                    <m:sub>
+                      <m:r>
+                        <m:rPr />
+                        <m:t>2</m:t>
+                      </m:r>
+                    </m:sub>
+                  </m:sSub>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>(</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>t</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>)</m:t>
+                  </m:r>
+                </m:e>
+              </m:d>
+            </m:e>
+            <m:sub>
+              <m:r>
+                <m:rPr />
+                <m:t>t</m:t>
+              </m:r>
+              <m:r>
+                <m:rPr />
+                <m:t>=</m:t>
+              </m:r>
+              <m:r>
+                <m:rPr />
+                <m:t>0</m:t>
+              </m:r>
+            </m:sub>
+          </m:sSub>
+        </m:e>
+      </m:mr>
+    </m:m>
+    <m:r>
+      <m:rPr />
+      <m:t>&#65279;</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
