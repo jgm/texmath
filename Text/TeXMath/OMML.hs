@@ -105,30 +105,29 @@ makeScaled :: String -> Element -> Element
 makeScaled s = withAttribute "minsize" s . withAttribute "maxsize" s
 
 
-makeArray :: [Alignment] -> [ArrayLine] -> Element
-makeArray as ls = mnode "mtable" $
-  map (mnode "mtr" .
-    zipWith (\a -> setAlignment a .  mnode "mtd". map showExp) as') ls
-   where setAlignment AlignLeft    = withAttribute "columnalign" "left"
-         setAlignment AlignRight   = withAttribute "columnalign" "right"
-         setAlignment AlignCenter  = withAttribute "columnalign" "center"
-         setAlignment AlignDefault = id 
-         as'                       = as ++ cycle [AlignDefault]
-
 withAttribute :: String -> String -> Element -> Element
 withAttribute a = add_attr . Attr (name a)
 
 -}
 
-spaceWidth _ = mnode "r" $ mnode "t" () -- TODO
+makeArray :: [Alignment] -> [ArrayLine] -> Element
+makeArray as rs = mnode "m" $ mProps : map toMr rs
+  where mProps = mnode "mPr"
+                  [ mnodeAttr "baseJc" [("val","center")] ()
+                  , mnodeAttr "plcHide" [("val","on")] ()
+                  , mnode "mcs" $ map toMc as' ]
+        as'    = take (length rs) $ as ++ cycle [AlignDefault]
+        toMr r = mnode "mr" $ map (mnode "e" . concatMap showExp) r
+        toMc a = mnode "mc" $ mnode "mcPr"
+                            $ mnodeAttr "mcJc" [("val",toAlign a)] ()
+        toAlign AlignLeft    = "left"
+        toAlign AlignRight   = "right"
+        toAlign AlignCenter  = "center"
+        toAlign AlignDefault = "left"
 
-makeText :: TextType -> String -> [Element]
-makeText a s = if trailingSp
-                  then [str attrs s, sp]
-                  else [str attrs s]
-  where sp = spaceWidth "0.333em"
-        trailingSp = not (null s) && last s `elem` " \t"
-        attrs = case a of
+makeText :: TextType -> String -> Element
+makeText a s = str attrs s
+  where attrs = case a of
                      TextNormal       -> [sty "p"]
                      TextBold         -> [sty "b"]
                      TextItalic       -> [sty "i"]
@@ -161,7 +160,8 @@ showExp e =
 --   ESymbol Open x   -> withAttribute "stretchy" "false" $ mnode "mo" x
 --   ESymbol Close x  -> withAttribute "stretchy" "false" $ mnode "mo" x
    ESymbol _ x      -> [str [] x]
---   ESpace x         -> spaceWidth x
+   ESpace _         -> [] -- This seems to be how the stylesheet behaves
+                          -- wouldn't it be better to use unicode space chars?
    EBinary c x y    -> showBinary c x y
    ESub x y         -> [mnode "sSub" [ mnode "e" $ showExp x
                                      , mnode "sub" $ showExp y]]
@@ -181,8 +181,8 @@ showExp e =
    EUnary "\\surd" x  -> showExp $ EUnary "\\sqrt" x
 --   EStretchy x      -> makeStretchy $ showExp x
 --   EScaled s x      -> makeScaled s $ showExp x
---   EArray as ls     -> makeArray as ls
-   EText a s        -> makeText a s
+   EArray as ls     -> [makeArray as ls]
+   EText a s        -> [makeText a s]
    x                -> error $ "showExp encountered " ++ show x
-                       -- note: EUp, EDown, EDownup should be removed by handleDownup
+   -- note: EUp, EDown, EDownup should be removed by handleDownup
 
