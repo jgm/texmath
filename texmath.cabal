@@ -4,9 +4,10 @@ Cabal-Version:       >= 1.6
 Build-type:          Custom
 Synopsis:            Conversion of LaTeX math formulas to MathML or OMML.
 Description:         The texmathml library provides functions to convert LaTeX
-                     math formulas to presentation MathML or OMML. It supports
-                     basic LaTeX and AMS extensions, and it can parse and
-                     apply LaTeX macros.
+                     math formulas to presentation MathML (which can be used
+                     in HTML) or OMML (Office Math Markup Language, used in
+                     Microsoft Office). It supports basic LaTeX and AMS
+                     extensions, and it can parse and apply LaTeX macros.
                      .
                      Use the @test@ flag to install a standalone executable,
                      @texmath@, that reads a LaTeX formula from @stdin@ and
