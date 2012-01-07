@@ -125,8 +125,13 @@ showExp e =
    EMathOperator x  -> [str [] x]
    EStretchy x      -> showExp x  -- no support for stretchy in OMML
    ESymbol _ x      -> [str [] x]
-   ESpace _         -> [] -- This seems to be how the stylesheet behaves
-                          -- wouldn't it be better to use unicode space chars?
+   ESpace "0.167em" -> [str [] "\x2009"]
+   ESpace "0.222em" -> [str [] "\x2005"]
+   ESpace "0.278em" -> [str [] "\x2004"]
+   ESpace "0.333em" -> [str [] "\x2004"]
+   ESpace "1em"     -> [str [] "\x2001"]
+   ESpace "2em"     -> [str [] "\x2001\x2001"]
+   ESpace _         -> [] -- this is how the xslt sheet handles all spaces
    EBinary c x y    -> [showBinary c x y]
    ESub x y         -> [mnode "sSub" [ mnode "e" $ showExp x
                                      , mnode "sub" $ showExp y]]
