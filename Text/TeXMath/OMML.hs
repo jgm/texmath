@@ -129,14 +129,16 @@ makeText a s = if trailingSp
   where sp = spaceWidth "0.333em"
         trailingSp = not (null s) && last s `elem` " \t"
         attrs = case a of
-                     TextNormal       -> []
-                     TextBold         -> [mnodeAttr "sty" [("val","i")] ()]
-                     TextItalic       -> [mnodeAttr "sty" [("val","i")] ()]
-                     TextMonospace    -> [] -- TODO
-                     TextSansSerif    -> [] -- TODO
-                     TextDoubleStruck -> [] -- TODO?
-                     TextScript       -> [] -- TODO?
-                     TextFraktur      -> [] -- TODO?
+                     TextNormal       -> [sty "p"]
+                     TextBold         -> [sty "b"]
+                     TextItalic       -> [sty "i"]
+                     TextMonospace    -> [sty "p", scr "monospace"]
+                     TextSansSerif    -> [sty "p", scr "sans-serif"]
+                     TextDoubleStruck -> [sty "p", scr "double-struck"]
+                     TextScript       -> [sty "p", scr "script"]
+                     TextFraktur      -> [sty "p", scr "fraktur"]
+        sty x = mnodeAttr "sty" [("val",x)] ()
+        scr x = mnodeAttr "scr" [("val",x)] ()
 
 handleDownup :: DisplayType -> Exp -> Exp
 handleDownup DisplayInline (EDown x y)     = ESub x y
