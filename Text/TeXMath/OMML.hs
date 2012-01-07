@@ -133,6 +133,18 @@ showExp e =
    ESpace "2em"     -> [str [] "\x2001\x2001"]
    ESpace _         -> [] -- this is how the xslt sheet handles all spaces
    EBinary c x y    -> [showBinary c x y]
+   EUnder x (ESymbol Accent [c]) | isBarChar c ->
+                       [mnode "bar" [ mnode "barPr" $
+                                        mnodeAttr "pos" [("val","bot")] ()
+                                    , mnode "e" $ showExp x ]]
+   EOver x (ESymbol Accent [c]) | isBarChar c ->
+                       [mnode "bar" [ mnode "barPr" $
+                                        mnodeAttr "pos" [("val","top")] ()
+                                    , mnode "e" $ showExp x ]]
+   EOver x (ESymbol Accent y) ->
+                       [mnode "acc" [ mnode "accPr" $
+                                        mnodeAttr "chr" [("val",y)] ()
+                                    , mnode "e" $ showExp x ]]
    ESub x y         -> [mnode "sSub" [ mnode "e" $ showExp x
                                      , mnode "sub" $ showExp y]]
    ESuper x y       -> [mnode "sSup" [ mnode "e" $ showExp x
@@ -154,4 +166,7 @@ showExp e =
    EText a s        -> [makeText a s]
    x                -> error $ "showExp encountered " ++ show x
    -- note: EUp, EDown, EDownup should be removed by handleDownup
+
+isBarChar :: Char -> Bool
+isBarChar c = c == '\x203E' || c == '\x00AF'
 
