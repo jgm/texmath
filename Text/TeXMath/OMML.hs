@@ -36,9 +36,8 @@ toOMML dt = container . concatMap showExp
 mnode :: Node t => String -> t -> Element
 mnode s = node (QName s Nothing (Just "m"))
 
-mnodeAttr :: Node t => String -> [(String,String)] -> t -> Element
-mnodeAttr s [] = mnode s
-mnodeAttr s ((k,v):rest) = add_attr (Attr (QName k Nothing (Just "m")) v) . mnodeAttr s rest
+mnodeA :: Node t => String -> String -> t -> Element
+mnodeA s v = add_attr (Attr (QName "val" Nothing (Just "m")) v) . mnode s
 
 str :: [Element] -> String -> Element
 str props s = mnode "r" [ mnode "rPr" props
@@ -48,16 +47,16 @@ showBinary :: String -> Exp -> Exp -> Element
 showBinary c x y =
   case c of
        "\\frac" -> mnode "f" [ mnode "fPr" $
-                                mnodeAttr "type" [("val","bar")] ()
+                                mnodeA "type" "bar" ()
                              , mnode "num" x'
                              , mnode "den" y']
        "\\dfrac" -> showBinary "\\frac" x y
        "\\tfrac" -> mnode "f" [ mnode "fPr" $
-                                 mnodeAttr "type" [("val","lin")] ()
+                                 mnodeA "type" "lin" ()
                               , mnode "num" x'
                               , mnode "den" y']
        "\\sqrt"  -> mnode "rad" [ mnode "radPr" $
-                                   mnodeAttr "degHide" [("val","on")] ()
+                                   mnodeA "degHide" "on" ()
                                 , mnode "deg" y'
                                 , mnode "e" x']
        "\\stackrel" -> mnode "limUpp" [ mnode "e" x'
@@ -67,11 +66,11 @@ showBinary c x y =
        "\\underset" -> mnode "limLow" [ mnode "e" x'
                                       , mnode "lim" y' ]
        "\\binom"    -> mnode "d" [ mnode "dPr" $
-                                     mnodeAttr "sepChr" [("val",",")] ()
+                                     mnodeA "sepChr" "," ()
                                  , mnode "e" $
                                      mnode "f" [ mnode "fPr" $
-                                                   mnodeAttr "type"
-                                                     [("val","noBar")] ()
+                                                   mnodeA "type"
+                                                     "noBar" ()
                                                , mnode "num" x'
                                                , mnode "den" y' ]] 
        _ -> error $ "Unknown binary operator " ++ c
@@ -81,13 +80,13 @@ showBinary c x y =
 makeArray :: [Alignment] -> [ArrayLine] -> Element
 makeArray as rs = mnode "m" $ mProps : map toMr rs
   where mProps = mnode "mPr"
-                  [ mnodeAttr "baseJc" [("val","center")] ()
-                  , mnodeAttr "plcHide" [("val","on")] ()
+                  [ mnodeA "baseJc" "center" ()
+                  , mnodeA "plcHide" "on" ()
                   , mnode "mcs" $ map toMc as' ]
         as'    = take (length rs) $ as ++ cycle [AlignDefault]
         toMr r = mnode "mr" $ map (mnode "e" . concatMap showExp) r
         toMc a = mnode "mc" $ mnode "mcPr"
-                            $ mnodeAttr "mcJc" [("val",toAlign a)] ()
+                            $ mnodeA "mcJc" (toAlign a) ()
         toAlign AlignLeft    = "left"
         toAlign AlignRight   = "right"
         toAlign AlignCenter  = "center"
@@ -104,27 +103,43 @@ makeText a s = str attrs s
                      TextDoubleStruck -> [sty "p", scr "double-struck"]
                      TextScript       -> [sty "p", scr "script"]
                      TextFraktur      -> [sty "p", scr "fraktur"]
-        sty x = mnodeAttr "sty" [("val",x)] ()
-        scr x = mnodeAttr "scr" [("val",x)] ()
+        sty x = mnodeA "sty" x ()
+        scr x = mnodeA "scr" x ()
 
-handleDownup :: DisplayType -> Exp -> Exp
-handleDownup DisplayInline (EDown x y)     = ESub x y
-handleDownup DisplayBlock  (EDown x y)     = EUnder x y
-handleDownup DisplayInline (EUp x y)       = ESuper x y
-handleDownup DisplayBlock  (EUp x y)       = EOver x y
-handleDownup DisplayInline (EDownup x y z) = ESubsup x y z
-handleDownup DisplayBlock  (EDownup x y z) = EUnderover x y z
-handleDownup _             x               = x
+handleDownup :: DisplayType -> [Exp] -> [Exp]
+handleDownup dt (exp' : next : rest) =
+  case exp' of
+       EDown x y     -> EGrouped [constructor x y emptyGroup, next] : rest
+       EUp   x y     -> EGrouped [constructor x emptyGroup y, next] : rest
+       EDownup x y z -> EGrouped [constructor x y z, next] : rest
+       _             -> exp' : next : rest
+    where emptyGroup = EGrouped []
+          constructor = case dt of
+                             DisplayBlock  -> EDownup
+                             DisplayInline -> ESubsup
+handleDownup dt (exp' : []) =
+  case exp' of
+       EDown x y     -> EGrouped [constructor x y emptyGroup, emptyGroup] : []
+       EUp   x y     -> EGrouped [constructor x emptyGroup y, emptyGroup] : []
+       EDownup x y z -> EGrouped [constructor x y z, emptyGroup] : []
+       _             -> exp' : []
+    where emptyGroup = EGrouped []
+          constructor = case dt of
+                             DisplayBlock  -> EDownup
+                             DisplayInline -> ESubsup
+handleDownup _ []            = []
 
 showExp :: Exp -> [Element]
 showExp e =
  case e of
    ENumber x        -> [str [] x]
+   EGrouped [EDownup (ESymbol Op s) y z, w] -> [makeNary "undOvr" s y z w]
+   EGrouped [ESubsup (ESymbol Op s) y z, w] -> [makeNary "subSup" s y z w]
    EGrouped xs      -> concatMap showExp xs
    EDelimited start end xs ->
                        [mnode "d" [ mnode "dPr"
-                                    [ mnodeAttr "begChr" [("val",start)] ()
-                                    , mnodeAttr "endChr" [("val",end)] ()
+                                    [ mnodeA "begChr" start ()
+                                    , mnodeA "endChr" end ()
                                     , mnode "grow" () ]
                                   , mnode "e" $ concatMap showExp xs
                                   ] ]
@@ -143,15 +158,15 @@ showExp e =
    EBinary c x y    -> [showBinary c x y]
    EUnder x (ESymbol Accent [c]) | isBarChar c ->
                        [mnode "bar" [ mnode "barPr" $
-                                        mnodeAttr "pos" [("val","bot")] ()
+                                        mnodeA "pos" "bot" ()
                                     , mnode "e" $ showExp x ]]
    EOver x (ESymbol Accent [c]) | isBarChar c ->
                        [mnode "bar" [ mnode "barPr" $
-                                        mnodeAttr "pos" [("val","top")] ()
+                                        mnodeA "pos" "top" ()
                                     , mnode "e" $ showExp x ]]
    EOver x (ESymbol Accent y) ->
                        [mnode "acc" [ mnode "accPr" $
-                                        mnodeAttr "chr" [("val",y)] ()
+                                        mnodeA "chr" y ()
                                     , mnode "e" $ showExp x ]]
    ESub x y         -> [mnode "sSub" [ mnode "e" $ showExp x
                                      , mnode "sub" $ showExp y]]
@@ -165,7 +180,7 @@ showExp e =
    EOver x y        -> [mnode "limUpp" [ mnode "e" $ showExp x
                                        , mnode "lim" $ showExp y]]
    EUnderover x y z -> showExp (EUnder x (EOver y z))
-   EUnary "\\sqrt" x  -> [mnode "rad" [ mnode "radPr" $ mnodeAttr "degHide" [("val","on")] ()
+   EUnary "\\sqrt" x  -> [mnode "rad" [ mnode "radPr" $ mnodeA "degHide" "on" ()
                                       , mnode "deg" ()
                                       , mnode "e" $ showExp x]]
    EUnary "\\surd" x  -> showExp $ EUnary "\\sqrt" x
@@ -177,4 +192,19 @@ showExp e =
 
 isBarChar :: Char -> Bool
 isBarChar c = c == '\x203E' || c == '\x00AF'
+
+makeNary :: String -> String -> Exp -> Exp -> Exp -> Element
+makeNary t s y z w =
+  mnode "nary" [ mnode "naryPr"
+                 [ mnodeA "chr" s ()
+                 , mnodeA "limLoc" t ()
+                 , mnode "grow" ()
+                 , mnodeA "supHide"
+                    (if y == EGrouped [] then "on" else "off") ()
+                 , mnodeA "supHide"
+                    (if y == EGrouped [] then "on" else "off") ()
+                 ]
+               , mnode "e" $ showExp w
+               , mnode "sub" $ showExp y
+               , mnode "sup" $ showExp z ]
 
