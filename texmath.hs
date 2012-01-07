@@ -2,6 +2,7 @@
 module Main where
 
 import Text.TeXMath
+import Text.TeXMath.Parser (parseFormula)
 import Text.XML.Light
 import Text.TeXMath.Macros
 import System.IO
@@ -29,11 +30,16 @@ getUTF8Contents =
 main :: IO ()
 main = do
   args <- getArgs
+  let dt = if "--inline" `elem` args
+              then DisplayInline
+              else DisplayBlock
   let converter = if "--omml" `elem` args
-                     then texMathToOMML DisplayInline
-                     else inHtml . texMathToMathML DisplayBlock
+                     then fmap ppTopElement . texMathToOMML dt
+                     else if "--native" `elem` args
+                          then fmap show . parseFormula
+                          else fmap ppTopElement . inHtml . texMathToMathML dt
   inp <- getUTF8Contents
   let (ms, rest) = parseMacroDefinitions inp
   case (converter $! applyMacros ms rest) of
         Left err         -> hPutStrLn stderr err
-        Right v          -> putStr . ppTopElement $ v
+        Right v          -> putStr v
