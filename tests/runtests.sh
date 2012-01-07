@@ -8,25 +8,23 @@ TESTPROG=../dist/build/texmath/texmath
 totalfailures=0
 
 for format in xhtml omml; do
-  echo "============="
-  echo "Format ${format}"
-  echo "============="
   failures=0
   passes=0
   if [ -f $TESTPROG ]; then
       for t in *.tex; do
           $TESTPROG --${format} <$t >tmp
+          testname="Test ${t%.tex} ${format}"
           if [ "$?" -ne "0" ]; then
-            echo "Test ${t%.tex} FAILED"
+            echo "${testname} FAILED"
             failures=`expr $failures + 1`
           else
             diff -u ${t%.tex}.${format} tmp >tmpdiff
             if [ "$?" -ne "0" ]; then
-                echo "Test ${t%.tex} FAILED (- expected, + actual):"
+                echo "${testname} (- expected, + actual):"
                 cat tmpdiff
                 failures=`expr $failures + 1`
             else
-                echo "Test ${t%.tex} PASSED"
+                echo "${testname} PASSED"
                 passes=`expr $passes + 1`
             fi
           fi
@@ -34,10 +32,10 @@ for format in xhtml omml; do
   else
       echo "Test executable not built. NOT running tests."
   fi
-  echo "$passes tests passed, $failures tests failed."
+  echo "$format: $passes tests passed, $failures tests failed."
   totalfailures=`expr $totalfailures + $failures`
 done
-
+echo "$totalfailures tests failed total."
 exit $failures
 
 
