@@ -110,23 +110,32 @@ handleDownup :: DisplayType -> [Exp] -> [Exp]
 handleDownup dt (exp' : xs) =
   case exp' of
        EDown x y
-         | isNary x -> EGrouped [constructor x y emptyGroup, next] : rest
+         | isNary x  -> EGrouped [constructor x y emptyGroup, next] : rest
+         | otherwise -> case dt of
+                             DisplayBlock  -> EUnder x y : xs
+                             DisplayInline -> ESub x y : xs
        EUp   x y
-         | isNary x -> EGrouped [constructor x emptyGroup y, next] : rest
+         | isNary x  -> EGrouped [constructor x emptyGroup y, next] : rest
+         | otherwise -> case dt of
+                             DisplayBlock  -> EOver x y : xs
+                             DisplayInline -> ESuper x y : xs
        EDownup x y z
-         | isNary x -> EGrouped [constructor x y z, next] : rest
+         | isNary x  -> EGrouped [constructor x y z, next] : rest
+         | otherwise -> case dt of
+                             DisplayBlock  -> EUnderover x y z : xs
+                             DisplayInline -> ESubsup x y z : xs
        ESub x y
-         | isNary x -> EGrouped [ESubsup x y emptyGroup, next] : rest
+         | isNary x  -> EGrouped [ESubsup x y emptyGroup, next] : rest
        ESuper x y
-         | isNary x -> EGrouped [ESubsup x emptyGroup y, next] : rest
+         | isNary x  -> EGrouped [ESubsup x emptyGroup y, next] : rest
        ESubsup x y z
-         | isNary x -> EGrouped [ESubsup x y z, next] : rest
+         | isNary x  -> EGrouped [ESubsup x y z, next] : rest
        EOver x y
-         | isNary x -> EGrouped [EUnderover x y emptyGroup, next] : rest
+         | isNary x  -> EGrouped [EUnderover x y emptyGroup, next] : rest
        EUnder x y
-         | isNary x -> EGrouped [EUnderover x emptyGroup y, next] : rest
+         | isNary x  -> EGrouped [EUnderover x emptyGroup y, next] : rest
        EUnderover x y z
-         | isNary x -> EGrouped [EUnderover x y z, next] : rest
+         | isNary x  -> EGrouped [EUnderover x y z, next] : rest
        _             -> exp' : next : rest
     where (next, rest) = case xs of
                               (t:ts) -> (t,ts)
