@@ -37,6 +37,7 @@ type ArrayLine = [[Exp]]
 data Exp =
     ENumber String
   | EGrouped [Exp]
+  | EDelimited String String [Exp]
   | EIdentifier String
   | EMathOperator String
   | ESymbol TeXSymbolType String

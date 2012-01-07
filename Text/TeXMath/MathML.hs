@@ -156,6 +156,10 @@ showExp e =
    ENumber x        -> unode "mn" x
    EGrouped [x]     -> showExp x
    EGrouped xs      -> mrow $ map showExp xs
+   EDelimited start end xs -> mrow $
+                       [ makeStretchy (unode "mo" start) | not (null start) ] ++
+                       map showExp xs ++
+                       [ makeStretchy (unode "mo" end) | not (null end) ] 
    EIdentifier x    -> unode "mi" x
    EMathOperator x  -> unode "mi" x
    ESymbol Accent x -> accent x

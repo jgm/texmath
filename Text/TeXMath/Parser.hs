@@ -136,7 +136,13 @@ tilRight start = try $ do
   contents <- manyTill expr
                (try $ symbol "\\right" >> lookAhead basicEnclosure)
   end <- basicEnclosure
-  return $ EGrouped $ EStretchy start : (contents ++ [EStretchy end])
+  let startChar = case start of
+                     ESymbol _ c -> c
+                     _           -> ""
+  let endChar   = case end of
+                     ESymbol _ c -> c
+                     _           -> ""
+  return $ EDelimited startChar endChar contents
 
 scaledEnclosure :: GenParser Char st Exp
 scaledEnclosure = try $ do
@@ -170,9 +176,7 @@ matrixWith keywd opendelim closedelim =
   inEnvironment keywd $ do
     aligns <- option [] arrayAlignments
     lines' <- sepEndBy1 arrayLine endLine
-    return $ EGrouped [ EStretchy (ESymbol Open opendelim)
-                      , EArray aligns lines'
-                      , EStretchy (ESymbol Close closedelim)]
+    return $ EDelimited opendelim closedelim [EArray aligns lines']
 
 stdarray :: GenParser Char st Exp
 stdarray = inEnvironment "array" $ do
@@ -192,7 +196,7 @@ align = inEnvironment "align" $
 cases :: GenParser Char st Exp
 cases = inEnvironment "cases" $ do
   rs <- sepEndBy1 arrayLine endLine
-  return $ EGrouped [EStretchy (ESymbol Open "{"), EArray [] rs]
+  return $ EDelimited "{" "" [EArray [] rs]
 
 split :: GenParser Char st Exp
 split = inEnvironment "split" $ do
