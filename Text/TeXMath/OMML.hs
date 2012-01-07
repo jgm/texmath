@@ -107,25 +107,33 @@ makeText a s = str attrs s
         scr x = mnodeA "scr" x ()
 
 handleDownup :: DisplayType -> [Exp] -> [Exp]
-handleDownup dt (exp' : next : rest) =
+handleDownup dt (exp' : xs) =
   case exp' of
-       EDown x y     -> EGrouped [constructor x y emptyGroup, next] : rest
-       EUp   x y     -> EGrouped [constructor x emptyGroup y, next] : rest
-       EDownup x y z -> EGrouped [constructor x y z, next] : rest
+       EDown x y
+         | isNary x -> EGrouped [constructor x y emptyGroup, next] : rest
+       EUp   x y
+         | isNary x -> EGrouped [constructor x emptyGroup y, next] : rest
+       EDownup x y z
+         | isNary x -> EGrouped [constructor x y z, next] : rest
+       ESub x y
+         | isNary x -> EGrouped [ESubsup x y emptyGroup, next] : rest
+       ESuper x y
+         | isNary x -> EGrouped [ESubsup x emptyGroup y, next] : rest
+       ESubsup x y z
+         | isNary x -> EGrouped [ESubsup x y z, next] : rest
+       EOver x y
+         | isNary x -> EGrouped [EUnderover x y emptyGroup, next] : rest
+       EUnder x y
+         | isNary x -> EGrouped [EUnderover x emptyGroup y, next] : rest
+       EUnderover x y z
+         | isNary x -> EGrouped [EUnderover x y z, next] : rest
        _             -> exp' : next : rest
-    where emptyGroup = EGrouped []
+    where (next, rest) = case xs of
+                              (t:ts) -> (t,ts)
+                              []     -> (emptyGroup, [])
+          emptyGroup = EGrouped []
           constructor = case dt of
-                             DisplayBlock  -> EDownup
-                             DisplayInline -> ESubsup
-handleDownup dt (exp' : []) =
-  case exp' of
-       EDown x y     -> EGrouped [constructor x y emptyGroup, emptyGroup] : []
-       EUp   x y     -> EGrouped [constructor x emptyGroup y, emptyGroup] : []
-       EDownup x y z -> EGrouped [constructor x y z, emptyGroup] : []
-       _             -> exp' : []
-    where emptyGroup = EGrouped []
-          constructor = case dt of
-                             DisplayBlock  -> EDownup
+                             DisplayBlock  -> EUnderover
                              DisplayInline -> ESubsup
 handleDownup _ []            = []
 
@@ -133,7 +141,7 @@ showExp :: Exp -> [Element]
 showExp e =
  case e of
    ENumber x        -> [str [] x]
-   EGrouped [EDownup (ESymbol Op s) y z, w] -> [makeNary "undOvr" s y z w]
+   EGrouped [EUnderover (ESymbol Op s) y z, w] -> [makeNary "undOvr" s y z w]
    EGrouped [ESubsup (ESymbol Op s) y z, w] -> [makeNary "subSup" s y z w]
    EGrouped xs      -> concatMap showExp xs
    EDelimited start end xs ->
@@ -192,6 +200,10 @@ showExp e =
 
 isBarChar :: Char -> Bool
 isBarChar c = c == '\x203E' || c == '\x00AF'
+
+isNary :: Exp -> Bool
+isNary (ESymbol Op _) = True
+isNary _ = False
 
 makeNary :: String -> String -> Exp -> Exp -> Exp -> Element
 makeNary t s y z w =
