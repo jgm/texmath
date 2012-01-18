@@ -3,15 +3,15 @@
   <m:oMath>
     <m:r>
       <m:rPr />
-      <m:t>&#8711;</m:t>
+      <m:t>∇</m:t>
     </m:r>
     <m:r>
       <m:rPr />
-      <m:t>&#8901;</m:t>
+      <m:t>⋅</m:t>
     </m:r>
     <m:acc>
       <m:accPr>
-        <m:chr m:val="&#8407;" />
+        <m:chr m:val="⃗" />
       </m:accPr>
       <m:e>
         <m:r>
@@ -31,7 +31,7 @@
       <m:num>
         <m:r>
           <m:rPr />
-          <m:t>&#8706;</m:t>
+          <m:t>∂</m:t>
         </m:r>
         <m:sSub>
           <m:e>
@@ -51,7 +51,7 @@
       <m:den>
         <m:r>
           <m:rPr />
-          <m:t>&#8706;</m:t>
+          <m:t>∂</m:t>
         </m:r>
         <m:r>
           <m:rPr />
@@ -70,7 +70,7 @@
       <m:num>
         <m:r>
           <m:rPr />
-          <m:t>&#8706;</m:t>
+          <m:t>∂</m:t>
         </m:r>
         <m:sSub>
           <m:e>
@@ -90,7 +90,7 @@
       <m:den>
         <m:r>
           <m:rPr />
-          <m:t>&#8706;</m:t>
+          <m:t>∂</m:t>
         </m:r>
         <m:r>
           <m:rPr />
@@ -109,7 +109,7 @@
       <m:num>
         <m:r>
           <m:rPr />
-          <m:t>&#8706;</m:t>
+          <m:t>∂</m:t>
         </m:r>
         <m:sSub>
           <m:e>
@@ -129,7 +129,7 @@
       <m:den>
         <m:r>
           <m:rPr />
-          <m:t>&#8706;</m:t>
+          <m:t>∂</m:t>
         </m:r>
         <m:r>
           <m:rPr />

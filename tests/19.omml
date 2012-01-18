@@ -39,7 +39,7 @@
                 <m:num>
                   <m:r>
                     <m:rPr />
-                    <m:t>&#8706;</m:t>
+                    <m:t>∂</m:t>
                   </m:r>
                   <m:sSub>
                     <m:e>
@@ -59,7 +59,7 @@
                 <m:den>
                   <m:r>
                     <m:rPr />
-                    <m:t>&#8706;</m:t>
+                    <m:t>∂</m:t>
                   </m:r>
                   <m:sSub>
                     <m:e>
@@ -86,7 +86,7 @@
                 <m:num>
                   <m:r>
                     <m:rPr />
-                    <m:t>&#8706;</m:t>
+                    <m:t>∂</m:t>
                   </m:r>
                   <m:sSub>
                     <m:e>
@@ -106,7 +106,7 @@
                 <m:den>
                   <m:r>
                     <m:rPr />
-                    <m:t>&#8706;</m:t>
+                    <m:t>∂</m:t>
                   </m:r>
                   <m:sSub>
                     <m:e>
@@ -130,7 +130,7 @@
             <m:e>
               <m:r>
                 <m:rPr />
-                <m:t>&#8196;</m:t>
+                <m:t> </m:t>
               </m:r>
             </m:e>
           </m:mr>
@@ -143,7 +143,7 @@
                 <m:num>
                   <m:r>
                     <m:rPr />
-                    <m:t>&#8706;</m:t>
+                    <m:t>∂</m:t>
                   </m:r>
                   <m:sSub>
                     <m:e>
@@ -163,7 +163,7 @@
                 <m:den>
                   <m:r>
                     <m:rPr />
-                    <m:t>&#8706;</m:t>
+                    <m:t>∂</m:t>
                   </m:r>
                   <m:sSub>
                     <m:e>
@@ -190,7 +190,7 @@
                 <m:num>
                   <m:r>
                     <m:rPr />
-                    <m:t>&#8706;</m:t>
+                    <m:t>∂</m:t>
                   </m:r>
                   <m:sSub>
                     <m:e>
@@ -210,7 +210,7 @@
                 <m:den>
                   <m:r>
                     <m:rPr />
-                    <m:t>&#8706;</m:t>
+                    <m:t>∂</m:t>
                   </m:r>
                   <m:sSub>
                     <m:e>
@@ -345,8 +345,8 @@
     </m:d>
     <m:d>
       <m:dPr>
-        <m:begChr m:val="&#8739;" />
-        <m:endChr m:val="&#8739;" />
+        <m:begChr m:val="∣" />
+        <m:endChr m:val="∣" />
         <m:grow />
       </m:dPr>
       <m:e>
@@ -400,8 +400,8 @@
     </m:d>
     <m:d>
       <m:dPr>
-        <m:begChr m:val="&#8741;" />
-        <m:endChr m:val="&#8741;" />
+        <m:begChr m:val="∥" />
+        <m:endChr m:val="∥" />
         <m:grow />
       </m:dPr>
       <m:e>

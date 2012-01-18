@@ -3,7 +3,7 @@
   <m:oMath>
     <m:r>
       <m:rPr />
-      <m:t>&#172;</m:t>
+      <m:t>¬</m:t>
     </m:r>
     <m:r>
       <m:rPr />
@@ -15,7 +15,7 @@
     </m:r>
     <m:r>
       <m:rPr />
-      <m:t>&#8743;</m:t>
+      <m:t>∧</m:t>
     </m:r>
     <m:r>
       <m:rPr />
@@ -27,7 +27,7 @@
     </m:r>
     <m:r>
       <m:rPr />
-      <m:t>&#8660;</m:t>
+      <m:t>⇔</m:t>
     </m:r>
     <m:r>
       <m:rPr />
@@ -35,7 +35,7 @@
     </m:r>
     <m:r>
       <m:rPr />
-      <m:t>&#172;</m:t>
+      <m:t>¬</m:t>
     </m:r>
     <m:r>
       <m:rPr />
@@ -47,7 +47,7 @@
     </m:r>
     <m:r>
       <m:rPr />
-      <m:t>&#8744;</m:t>
+      <m:t>∨</m:t>
     </m:r>
     <m:r>
       <m:rPr />
@@ -55,7 +55,7 @@
     </m:r>
     <m:r>
       <m:rPr />
-      <m:t>&#172;</m:t>
+      <m:t>¬</m:t>
     </m:r>
     <m:r>
       <m:rPr />
@@ -72,7 +72,7 @@
       <m:e>
         <m:nary>
           <m:naryPr>
-            <m:chr m:val="&#8899;" />
+            <m:chr m:val="⋃" />
             <m:limLoc m:val="undOvr" />
             <m:grow />
             <m:supHide m:val="off" />
@@ -123,7 +123,7 @@
     </m:r>
     <m:nary>
       <m:naryPr>
-        <m:chr m:val="&#8898;" />
+        <m:chr m:val="⋂" />
         <m:limLoc m:val="undOvr" />
         <m:grow />
         <m:supHide m:val="off" />
