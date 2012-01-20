@@ -30,7 +30,10 @@ toOMML :: DisplayType -> [Exp] -> Element
 toOMML dt = container . concatMap showExp
             . everywhere (mkT $ handleDownup dt)
     where container = case dt of
-                  DisplayBlock  -> mnode "oMathPara" . mnode "oMath"
+                  DisplayBlock  -> \x -> mnode "oMathPara"
+                                    [ mnode "oMathParaPr"
+                                      $ mnodeA "jc" "center" ()
+                                    , mnode "oMath" x ]
                   DisplayInline -> mnode "oMath"
 
 mnode :: Node t => String -> t -> Element
