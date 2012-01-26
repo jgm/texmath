@@ -2,7 +2,8 @@ texmath
 =======
 
 texmath is a Haskell library for converting LaTeX math to
-MathML.  It is used by [pandoc] and [gitit].
+MathML and OMML (the math format used in Microsoft Office).
+It is used by [pandoc] and [gitit].
 
 [pandoc]: http://github.com/jgm/pandoc
 [gitit]: http://gitit.net
