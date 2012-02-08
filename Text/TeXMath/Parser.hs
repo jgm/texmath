@@ -247,9 +247,9 @@ isConvertible _ = False
 
 subSup :: Maybe Bool -> Exp -> GenParser Char st Exp
 subSup limits a = try $ do
-  char '_'
+  symbol "_"
   b <- expr1
-  char '^'
+  symbol "^"
   c <- expr
   return $ case limits of
             Just True  -> EUnderover a b c
@@ -259,6 +259,7 @@ subSup limits a = try $ do
 superOrSubscripted :: Maybe Bool -> Exp -> GenParser Char st Exp
 superOrSubscripted limits a = try $ do
   c <- oneOf "^_"
+  spaces
   b <- expr
   case c of
        '^' -> return $ case limits of
