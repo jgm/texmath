@@ -19,6 +19,13 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 {- | Functions for parsing a LaTeX formula to a Haskell representation.
 -}
 
+-- TODO:
+-- implement label{} (skip)
+--   this might require parsing to Seq Exp
+-- more math environments: see http://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics
+--   multiline gather flalign alignedat
+--   gathered alignedat
+
 module Text.TeXMath.Parser (parseFormula)
 where
 
@@ -65,7 +72,6 @@ expr1 =  choice [
   , escaped
   , unicode
   , ensuremath
-  -- , label
   ]
 
 -- | Parse a formula, returning a list of 'Exp'.
@@ -290,9 +296,6 @@ unicode = lexeme $ liftM (ESymbol Ord . (:[])) $ satisfy (not . isAscii)
 
 ensuremath :: TP Exp
 ensuremath = try $ lexeme (string "\\ensuremath") >> inbraces
-
--- label :: TP Exp
--- label = try $ lexeme (string "\\label") >> inbraces >> expr
 
 command :: TP String
 command = try $ char '\\' >> liftM ('\\':) (identifier <|> lexeme (count 1 anyChar))
