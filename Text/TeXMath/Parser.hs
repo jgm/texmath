@@ -162,7 +162,7 @@ arrayLine = notFollowedBy (try $ char '\\' >> symbol "end" >> return '\n') >>
   sepBy1 (many (notFollowedBy endLine >> expr)) (symbol "&")
 
 array :: GenParser Char st Exp
-array = stdarray <|> eqnarray <|> align <|> cases <|> matrix <|> split
+array = stdarray <|> eqnarray <|> align <|> aligned <|> cases <|> matrix <|> split
 
 matrix :: GenParser Char st Exp
 matrix =  matrixWith "pmatrix" "(" ")"
@@ -190,6 +190,11 @@ eqnarray = inEnvironment "eqnarray" $
 
 align :: GenParser Char st Exp
 align = inEnvironment "align" $
+  liftM (EArray [AlignRight, AlignLeft]) $
+    sepEndBy1 arrayLine endLine
+
+aligned :: GenParser Char st Exp
+aligned = inEnvironment "aligned" $
   liftM (EArray [AlignRight, AlignLeft]) $
     sepEndBy1 arrayLine endLine
 
