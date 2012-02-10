@@ -30,8 +30,10 @@ import qualified Text.ParserCombinators.Parsec.Token as P
 import Text.ParserCombinators.Parsec.Language
 import Text.TeXMath.Types
 
+type TP = GenParser Char ()
+
 texMathDef :: LanguageDef st
-texMathDef = LanguageDef 
+texMathDef = LanguageDef
    { commentStart   = ""
    , commentEnd     = ""
    , commentLine    = "%"
@@ -47,14 +49,14 @@ texMathDef = LanguageDef
 
 -- The parser
 
-expr1 :: GenParser Char st Exp
+expr1 :: TP Exp
 expr1 =  choice [
     inbraces
   , variable
   , number
   , texSymbol
   , text
-  , root 
+  , root
   , unary
   , binary
   , enclosure
@@ -63,6 +65,7 @@ expr1 =  choice [
   , escaped
   , unicode
   , ensuremath
+  -- , label
   ]
 
 -- | Parse a formula, returning a list of 'Exp'.
@@ -70,29 +73,29 @@ parseFormula :: String -> Either String [Exp]
 parseFormula inp =
   either (Left . show) (Right . id) $ parse formula "formula" inp
 
-formula :: GenParser Char st [Exp]
+formula :: TP [Exp]
 formula = do
   whiteSpace
   f <- many expr
   eof
   return f
 
-expr :: GenParser Char st Exp
+expr :: TP Exp
 expr = do
   a <- expr1
   limits <- limitsIndicator
   subSup limits a <|> superOrSubscripted limits a <|> return a
 
-limitsIndicator :: GenParser Char st (Maybe Bool)
+limitsIndicator :: TP (Maybe Bool)
 limitsIndicator =
    try (symbol "\\limits" >> return (Just True))
   <|> try (symbol "\\nolimits" >> return (Just False))
   <|> return Nothing
 
-inbraces :: GenParser Char st Exp
+inbraces :: TP Exp
 inbraces = liftM EGrouped (braces $ many $ notFollowedBy (char '}') >> expr)
 
-texToken :: GenParser Char st Exp
+texToken :: TP Exp
 texToken = inbraces <|> inbrackets <|>
              do c <- anyChar
                 spaces
@@ -100,19 +103,19 @@ texToken = inbraces <|> inbrackets <|>
                             then (ENumber [c])
                             else (EIdentifier [c])
 
-inbrackets :: GenParser Char st Exp
+inbrackets :: TP Exp
 inbrackets = liftM EGrouped (brackets $ many $ notFollowedBy (char ']') >> expr)
 
-number :: GenParser Char st Exp
+number :: TP Exp
 number = lexeme $ liftM ENumber $ many1 digit
 
-enclosure :: GenParser Char st Exp
+enclosure :: TP Exp
 enclosure = basicEnclosure <|> left <|> right <|> scaledEnclosure
 
-basicEnclosure :: GenParser Char st Exp
+basicEnclosure :: TP Exp
 basicEnclosure = choice $ map (\(s, v) -> try (symbol s) >> return v) enclosures
 
-left :: GenParser Char st Exp
+left :: TP Exp
 left = try $ do
   symbol "\\left"
   enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Open "\xFEFF"))
@@ -120,7 +123,7 @@ left = try $ do
     (ESymbol Open _) -> tilRight enc <|> return (EStretchy enc)
     _ -> pzero
 
-right :: GenParser Char st Exp
+right :: TP Exp
 right = try $ do
   symbol "\\right"
   enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Close "\xFEFF"))
@@ -131,7 +134,7 @@ right = try $ do
 -- We want stuff between \left( and \right) to be in an mrow,
 -- so that the scaling is based just on this unit, and not the
 -- whole containing formula.
-tilRight :: Exp -> GenParser Char st Exp
+tilRight :: Exp -> TP Exp
 tilRight start = try $ do
   contents <- manyTill expr
                (try $ symbol "\\right" >> lookAhead basicEnclosure)
@@ -144,71 +147,71 @@ tilRight start = try $ do
                      _           -> ""
   return $ EDelimited startChar endChar contents
 
-scaledEnclosure :: GenParser Char st Exp
+scaledEnclosure :: TP Exp
 scaledEnclosure = try $ do
   cmd <- command
   case M.lookup cmd scalers of
        Just  r -> liftM (EScaled r . EStretchy) basicEnclosure
-       Nothing -> pzero 
+       Nothing -> pzero
 
-endLine :: GenParser Char st Char
+endLine :: TP Char
 endLine = try $ do
   symbol "\\\\"
   optional inbrackets  -- can contain e.g. [1.0in] for a line height, not yet supported
   return '\n'
 
-arrayLine :: GenParser Char st ArrayLine
+arrayLine :: TP ArrayLine
 arrayLine = notFollowedBy (try $ char '\\' >> symbol "end" >> return '\n') >>
   sepBy1 (many (notFollowedBy endLine >> expr)) (symbol "&")
 
-array :: GenParser Char st Exp
+array :: TP Exp
 array = stdarray <|> eqnarray <|> align <|> aligned <|> cases <|> matrix <|> split
 
-matrix :: GenParser Char st Exp
+matrix :: TP Exp
 matrix =  matrixWith "pmatrix" "(" ")"
       <|> matrixWith "bmatrix" "[" "]"
       <|> matrixWith "Bmatrix" "{" "}"
       <|> matrixWith "vmatrix" "\x2223" "\x2223"
       <|> matrixWith "Vmatrix" "\x2225" "\x2225"
 
-matrixWith :: String -> String -> String -> GenParser Char st Exp
+matrixWith :: String -> String -> String -> TP Exp
 matrixWith keywd opendelim closedelim =
   inEnvironment keywd $ do
     aligns <- option [] arrayAlignments
     lines' <- sepEndBy1 arrayLine endLine
     return $ EDelimited opendelim closedelim [EArray aligns lines']
 
-stdarray :: GenParser Char st Exp
+stdarray :: TP Exp
 stdarray = inEnvironment "array" $ do
   aligns <- option [] arrayAlignments
   liftM (EArray aligns) $ sepEndBy1 arrayLine endLine
 
-eqnarray :: GenParser Char st Exp
+eqnarray :: TP Exp
 eqnarray = inEnvironment "eqnarray" $
   liftM (EArray [AlignRight, AlignCenter, AlignLeft]) $
     sepEndBy1 arrayLine endLine
 
-align :: GenParser Char st Exp
+align :: TP Exp
 align = inEnvironment "align" $
   liftM (EArray [AlignRight, AlignLeft]) $
     sepEndBy1 arrayLine endLine
 
-aligned :: GenParser Char st Exp
+aligned :: TP Exp
 aligned = inEnvironment "aligned" $
   liftM (EArray [AlignRight, AlignLeft]) $
     sepEndBy1 arrayLine endLine
 
-cases :: GenParser Char st Exp
+cases :: TP Exp
 cases = inEnvironment "cases" $ do
   rs <- sepEndBy1 arrayLine endLine
   return $ EDelimited "{" "" [EArray [] rs]
 
-split :: GenParser Char st Exp
+split :: TP Exp
 split = inEnvironment "split" $ do
   rs <- sepEndBy1 arrayLine endLine
   return $ EArray [AlignRight, AlignLeft] rs
 
-arrayAlignments :: GenParser Char st [Alignment]
+arrayAlignments :: TP [Alignment]
 arrayAlignments = try $ do
   as <- braces (many letter)
   let letterToAlignment 'l' = AlignLeft
@@ -218,8 +221,8 @@ arrayAlignments = try $ do
   return $ map letterToAlignment as
 
 inEnvironment :: String
-              -> GenParser Char st Exp
-              -> GenParser Char st Exp
+              -> TP Exp
+              -> TP Exp
 inEnvironment envType p = do
   try $ do char '\\'
            symbol "begin"
@@ -228,9 +231,9 @@ inEnvironment envType p = do
   char '\\'
   symbol "end"
   braces $ symbol envType >> optional (symbol "*")
-  return result 
+  return result
 
-variable :: GenParser Char st Exp
+variable :: TP Exp
 variable = do
   v <- letter
   spaces
@@ -250,7 +253,7 @@ isConvertible (ESymbol Op x) = x `elem` convertibleSyms
            "\x2210","\x2A01","\x2A02","\x2A00","\x2A04"]
 isConvertible _ = False
 
-subSup :: Maybe Bool -> Exp -> GenParser Char st Exp
+subSup :: Maybe Bool -> Exp -> TP Exp
 subSup limits a = try $ do
   symbol "_"
   b <- expr1
@@ -261,7 +264,7 @@ subSup limits a = try $ do
             Nothing | isConvertible a -> EDownup a b c
             _          -> ESubsup a b c
 
-superOrSubscripted :: Maybe Bool -> Exp -> GenParser Char st Exp
+superOrSubscripted :: Maybe Bool -> Exp -> TP Exp
 superOrSubscripted limits a = try $ do
   c <- oneOf "^_"
   spaces
@@ -277,19 +280,21 @@ superOrSubscripted limits a = try $ do
                         _          -> ESub a b
        _   -> pzero
 
-escaped :: GenParser Char st Exp
-escaped = lexeme $ try $ 
+escaped :: TP Exp
+escaped = lexeme $ try $
           char '\\' >>
           liftM (ESymbol Ord . (:[])) (satisfy $ not . isAlphaNum)
 
-unicode :: GenParser Char st Exp
+unicode :: TP Exp
 unicode = lexeme $ liftM (ESymbol Ord . (:[])) $ satisfy (not . isAscii)
 
-ensuremath :: GenParser Char st Exp
-ensuremath = lexeme $ try $
-             string "\\ensuremath" >> inbraces
+ensuremath :: TP Exp
+ensuremath = try $ lexeme (string "\\ensuremath") >> inbraces
 
-command :: GenParser Char st String
+-- label :: TP Exp
+-- label = try $ lexeme (string "\\label") >> inbraces >> expr
+
+command :: TP String
 command = try $ char '\\' >> liftM ('\\':) (identifier <|> lexeme (count 1 anyChar))
 
 unaryOps :: [String]
@@ -324,12 +329,12 @@ parseText ('~':xs) = '\xA0' : parseText xs
 parseText (x:xs) = x : parseText xs
 parseText [] = []
 
-diacritical :: GenParser Char st Exp
+diacritical :: TP Exp
 diacritical = try $ do
   c <- command
   case M.lookup c diacriticals of
        Just r  -> liftM r texToken
-       Nothing -> pzero 
+       Nothing -> pzero
 
 diacriticals :: M.Map String (Exp -> Exp)
 diacriticals = M.fromList
@@ -356,51 +361,51 @@ diacriticals = M.fromList
                , ("\\underline", \e -> EUnder e (ESymbol Accent "\x00AF"))
                ]
 
-unary :: GenParser Char st Exp
+unary :: TP Exp
 unary = try $ do
   c <- command
-  unless (c `elem` unaryOps) pzero 
+  unless (c `elem` unaryOps) pzero
   a <- texToken
   return $ EUnary c a
 
-text :: GenParser Char st Exp
+text :: TP Exp
 text = try $ do
   c <- command
   case M.lookup c textOps of
        Just f   -> liftM f $ braces (many (noneOf "}" <|> (char '\\' >> char '}')))
-       Nothing  -> pzero 
+       Nothing  -> pzero
 
 -- note: sqrt can be unary, \sqrt{2}, or binary, \sqrt[3]{2}
-root :: GenParser Char st Exp
+root :: TP Exp
 root = try $ do
   try (symbol "\\sqrt") <|> symbol "\\surd"
   a <- inbrackets
   b <- texToken
   return $ EBinary "\\sqrt" b a
 
-binary :: GenParser Char st Exp
+binary :: TP Exp
 binary = try $ do
   c <- command
-  unless (c `elem` binaryOps) pzero 
+  unless (c `elem` binaryOps) pzero
   a <- texToken
   b <- texToken
   return $ EBinary c a b
 
-texSymbol :: GenParser Char st Exp
+texSymbol :: TP Exp
 texSymbol = try $ do
   sym <- operator <|> command
   case M.lookup sym symbols of
        Just s   -> return s
-       Nothing  -> pzero 
+       Nothing  -> pzero
 
 -- The lexer
 lexer :: P.TokenParser st
 lexer = P.makeTokenParser texMathDef
-    
+
 lexeme :: CharParser st a -> CharParser st a
 lexeme = P.lexeme lexer
 
-whiteSpace :: CharParser st () 
+whiteSpace :: CharParser st ()
 whiteSpace = P.whiteSpace lexer
 
 identifier :: CharParser st String
@@ -413,7 +418,7 @@ operator = lexeme $ many1 (char '\'')
 symbol :: String -> CharParser st String
 symbol = lexeme . P.symbol lexer
 
-braces :: CharParser st a -> CharParser st a 
+braces :: CharParser st a -> CharParser st a
 braces = lexeme . P.braces lexer
 
 brackets :: CharParser st a -> CharParser st a
@@ -505,32 +510,32 @@ symbols = M.fromList [
            , ("\\varepsilon", EIdentifier "\x025B")
            , ("\\eta", EIdentifier "\x03B7")
            , ("\\gamma", EIdentifier "\x03B3")
-           , ("\\Gamma", ESymbol Op "\x0393") 
+           , ("\\Gamma", ESymbol Op "\x0393")
            , ("\\iota", EIdentifier "\x03B9")
            , ("\\kappa", EIdentifier "\x03BA")
            , ("\\lambda", EIdentifier "\x03BB")
-           , ("\\Lambda", ESymbol Op "\x039B") 
+           , ("\\Lambda", ESymbol Op "\x039B")
            , ("\\mu", EIdentifier "\x03BC")
            , ("\\nu", EIdentifier "\x03BD")
            , ("\\omega", EIdentifier "\x03C9")
            , ("\\Omega", ESymbol Op "\x03A9")
            , ("\\phi", EIdentifier "\x03C6")
            , ("\\varphi", EIdentifier "\x03D5")
-           , ("\\Phi", ESymbol Op "\x03A6") 
+           , ("\\Phi", ESymbol Op "\x03A6")
            , ("\\pi", EIdentifier "\x03C0")
-           , ("\\Pi", ESymbol Op "\x03A0") 
+           , ("\\Pi", ESymbol Op "\x03A0")
            , ("\\psi", EIdentifier "\x03C8")
            , ("\\Psi", ESymbol Ord "\x03A8")
            , ("\\rho", EIdentifier "\x03C1")
            , ("\\sigma", EIdentifier "\x03C3")
-           , ("\\Sigma", ESymbol Op "\x03A3") 
+           , ("\\Sigma", ESymbol Op "\x03A3")
            , ("\\tau", EIdentifier "\x03C4")
            , ("\\theta", EIdentifier "\x03B8")
            , ("\\vartheta", EIdentifier "\x03D1")
-           , ("\\Theta", ESymbol Op "\x0398") 
+           , ("\\Theta", ESymbol Op "\x0398")
            , ("\\upsilon", EIdentifier "\x03C5")
            , ("\\xi", EIdentifier "\x03BE")
-           , ("\\Xi", ESymbol Op "\x039E") 
+           , ("\\Xi", ESymbol Op "\x039E")
            , ("\\zeta", EIdentifier "\x03B6")
            , ("\\frac12", ESymbol Ord "\x00BD")
            , ("\\frac14", ESymbol Ord "\x00BC")
@@ -739,7 +744,7 @@ symbols = M.fromList [
            , ("\\sup", EMathOperator "sup")
            , ("\\tan", EMathOperator "tan")
            , ("\\tanh", EMathOperator "tanh")
-           ] 
+           ]
 
 -- MathML has a mathvariant attribute which is unimplemented in Firefox
 --    (see https://bugzilla.mozilla.org/show_bug.cgi?id=114365)
