@@ -19,13 +19,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 {- | Functions for parsing a LaTeX formula to a Haskell representation.
 -}
 
--- TODO:
--- implement label{} (skip)
---   this might require parsing to Seq Exp
--- more math environments: see http://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics
---   multiline gather flalign alignedat
---   gathered alignedat
-
 module Text.TeXMath.Parser (parseFormula)
 where
 
@@ -36,6 +29,7 @@ import Text.ParserCombinators.Parsec
 import qualified Text.ParserCombinators.Parsec.Token as P
 import Text.ParserCombinators.Parsec.Language
 import Text.TeXMath.Types
+import Control.Applicative ((<*), (*>), (<$>))
 
 type TP = GenParser Char ()
 
@@ -67,7 +61,7 @@ expr1 =  choice [
   , unary
   , binary
   , enclosure
-  , array
+  , environment
   , diacritical
   , escaped
   , unicode
@@ -170,53 +164,6 @@ arrayLine :: TP ArrayLine
 arrayLine = notFollowedBy (try $ char '\\' >> symbol "end" >> return '\n') >>
   sepBy1 (many (notFollowedBy endLine >> expr)) (symbol "&")
 
-array :: TP Exp
-array = stdarray <|> eqnarray <|> align <|> aligned <|> cases <|> matrix <|> split
-
-matrix :: TP Exp
-matrix =  matrixWith "pmatrix" "(" ")"
-      <|> matrixWith "bmatrix" "[" "]"
-      <|> matrixWith "Bmatrix" "{" "}"
-      <|> matrixWith "vmatrix" "\x2223" "\x2223"
-      <|> matrixWith "Vmatrix" "\x2225" "\x2225"
-
-matrixWith :: String -> String -> String -> TP Exp
-matrixWith keywd opendelim closedelim =
-  inEnvironment keywd $ do
-    aligns <- option [] arrayAlignments
-    lines' <- sepEndBy1 arrayLine endLine
-    return $ EDelimited opendelim closedelim [EArray aligns lines']
-
-stdarray :: TP Exp
-stdarray = inEnvironment "array" $ do
-  aligns <- option [] arrayAlignments
-  liftM (EArray aligns) $ sepEndBy1 arrayLine endLine
-
-eqnarray :: TP Exp
-eqnarray = inEnvironment "eqnarray" $
-  liftM (EArray [AlignRight, AlignCenter, AlignLeft]) $
-    sepEndBy1 arrayLine endLine
-
-align :: TP Exp
-align = inEnvironment "align" $
-  liftM (EArray [AlignRight, AlignLeft]) $
-    sepEndBy1 arrayLine endLine
-
-aligned :: TP Exp
-aligned = inEnvironment "aligned" $
-  liftM (EArray [AlignRight, AlignLeft]) $
-    sepEndBy1 arrayLine endLine
-
-cases :: TP Exp
-cases = inEnvironment "cases" $ do
-  rs <- sepEndBy1 arrayLine endLine
-  return $ EDelimited "{" "" [EArray [] rs]
-
-split :: TP Exp
-split = inEnvironment "split" $ do
-  rs <- sepEndBy1 arrayLine endLine
-  return $ EArray [AlignRight, AlignLeft] rs
-
 arrayAlignments :: TP [Alignment]
 arrayAlignments = try $ do
   as <- braces (many letter)
@@ -226,18 +173,70 @@ arrayAlignments = try $ do
       letterToAlignment _   = AlignDefault
   return $ map letterToAlignment as
 
-inEnvironment :: String
-              -> TP Exp
-              -> TP Exp
-inEnvironment envType p = do
-  try $ do char '\\'
-           symbol "begin"
-           braces $ symbol envType >> optional (symbol "*")
-  result <- p
+environment :: TP Exp
+environment = try $ do
   char '\\'
-  symbol "end"
-  braces $ symbol envType >> optional (symbol "*")
-  return result
+  symbol "begin"
+  name <- char '{' *> manyTill anyChar (char '}')
+  spaces
+  let name' = filter (/='*') name
+  case M.lookup name' environments of
+        Just env -> env <* spaces <* char '\\' <* symbol "end"
+                        <* braces (string name) <* spaces
+        Nothing  -> mzero
+
+environments :: M.Map String (TP Exp)
+environments = M.fromList
+  [ ("array", stdarray)
+  , ("eqnarray", eqnarray)
+  , ("align", align)
+  , ("aligned", align)
+  , ("alignat", inbraces *> spaces *> align)
+  , ("alignedat", inbraces *> spaces *> align)
+  , ("flalign", flalign)
+  , ("flaligned", flalign)
+  , ("cases", cases)
+  , ("pmatrix", matrixWith "(" ")")
+  , ("bmatrix", matrixWith "[" "]")
+  , ("Bmatrix", matrixWith "{" "}")
+  , ("vmatrix", matrixWith "\x2223" "\x2223")
+  , ("Vmatrix", matrixWith "\x2225" "\x2225")
+  , ("split", align)
+  , ("multiline", gather)
+  , ("gather", gather)
+  , ("gathered", gather)
+  ]
+
+matrixWith :: String -> String -> TP Exp
+matrixWith opendelim closedelim = do
+  aligns <- option [] arrayAlignments
+  lines' <- sepEndBy1 arrayLine endLine
+  return $ EDelimited opendelim closedelim [EArray aligns lines']
+
+stdarray :: TP Exp
+stdarray = do
+  aligns <- option [] arrayAlignments
+  (EArray aligns) <$> sepEndBy1 arrayLine endLine
+
+gather :: TP Exp
+gather = (EArray []) <$> sepEndBy arrayLine endLine
+
+eqnarray :: TP Exp
+eqnarray = (EArray [AlignRight, AlignCenter, AlignLeft]) <$>
+  sepEndBy1 arrayLine endLine
+
+align :: TP Exp
+align = (EArray [AlignRight, AlignLeft]) <$>
+  sepEndBy1 arrayLine endLine
+
+flalign :: TP Exp
+flalign = (EArray [AlignLeft, AlignRight]) <$>
+  sepEndBy1 arrayLine endLine
+
+cases :: TP Exp
+cases = do
+  rs <- sepEndBy1 arrayLine endLine
+  return $ EDelimited "{" "" [EArray [] rs]
 
 variable :: TP Exp
 variable = do
