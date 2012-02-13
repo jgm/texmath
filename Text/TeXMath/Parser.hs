@@ -23,7 +23,7 @@ module Text.TeXMath.Parser (parseFormula)
 where
 
 import Control.Monad
-import Data.Char (isAlphaNum, isDigit, isAscii)
+import Data.Char (isDigit, isAscii)
 import qualified Data.Map as M
 import Text.ParserCombinators.Parsec
 import qualified Text.ParserCombinators.Parsec.Token as P
@@ -82,6 +82,7 @@ formula = do
 
 expr :: TP Exp
 expr = do
+  optional (try $ symbol "\\displaystyle")
   a <- expr1
   limits <- limitsIndicator
   subSup limits a <|> superOrSubscripted limits a <|> return a
@@ -161,7 +162,7 @@ endLine = try $ do
   return '\n'
 
 arrayLine :: TP ArrayLine
-arrayLine = notFollowedBy (try $ char '\\' >> symbol "end" >> return '\n') >>
+arrayLine = notFollowedBy (try $ symbol "\\end" >> return '\n') >>
   sepBy1 (many (notFollowedBy endLine >> expr)) (symbol "&")
 
 arrayAlignments :: TP [Alignment]
@@ -175,13 +176,12 @@ arrayAlignments = try $ do
 
 environment :: TP Exp
 environment = try $ do
-  char '\\'
-  symbol "begin"
+  symbol "\\begin"
   name <- char '{' *> manyTill anyChar (char '}')
   spaces
   let name' = filter (/='*') name
   case M.lookup name' environments of
-        Just env -> env <* spaces <* char '\\' <* symbol "end"
+        Just env -> env <* spaces <* symbol "\\end"
                         <* braces (string name) <* spaces
         Nothing  -> mzero
 
@@ -288,7 +288,17 @@ superOrSubscripted limits a = try $ do
 escaped :: TP Exp
 escaped = lexeme $ try $
           char '\\' >>
-          liftM (ESymbol Ord . (:[])) (satisfy $ not . isAlphaNum)
+          liftM (ESymbol Ord . (:[])) (satisfy isEscapable)
+   where isEscapable '{' = True
+         isEscapable '}' = True
+         isEscapable '$' = True
+         isEscapable '%' = True
+         isEscapable '&' = True
+         isEscapable '_' = True
+         isEscapable '#' = True
+         isEscapable '^' = True  -- actually only if followed by {}
+         isEscapable ' ' = True
+         isEscapable _   = False
 
 unicode :: TP Exp
 unicode = lexeme $ liftM (ESymbol Ord . (:[])) $ satisfy (not . isAscii)
