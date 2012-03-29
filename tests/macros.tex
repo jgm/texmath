@@ -1,5 +1,5 @@
 \newcommand{\abc}{5}
-\newcommand{\def}[2][x]{%
+\newcommand{\xyz}[2][x]{%
 #1 + #2%
 }
 \renewcommand{%
@@ -8,11 +8,12 @@
 \theta%
 }
 % comment
-\newcommand{\a}{\b{2}}
-\renewcommand{\phi}{\a}
+\newcommand{\aaa}{\b{2}}
+\renewcommand{\phi}{\aaa}
 \newcommand{\b}[1]{#1}
 
 \phi
 \abc
-\def[y]{3}
-\def{3}
+\xyz[y] {3}
+\xyz 3
+\xyz \alpha

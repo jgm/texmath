@@ -90,14 +90,15 @@ applyMacrosOnce ms s =
        Left _  -> s  -- just return original on error
     where tok = try $ do
                   skipComment
-                  choice [ escaped "\\"
-                         , choice (map macroParser ms)
+                  choice [ choice (map macroParser ms)
                          , ctrlseq
                          , count 1 anyChar ]
-          ctrlseq = do
-                    char '\\'
-                    res <- many1 letter <|> count 1 anyChar
-                    return $ '\\' : res
+
+ctrlseq :: GenParser Char st String
+ctrlseq = do
+          char '\\'
+          res <- many1 letter <|> count 1 anyChar
+          return $ '\\' : res
 
 newcommand :: GenParser Char st Macro
 newcommand = try $ do
@@ -128,10 +129,12 @@ newcommand = try $ do
     string name'
     when (all isLetter name') $
       notFollowedBy letter
+    pSkipSpaceComments
     opt <- case optarg of
                 Nothing  -> return Nothing
                 Just _   -> liftM (`mplus` optarg) optArg
-    args <- count numargs' inbraces
+    args <- count numargs' (pSkipSpaceComments >>
+                  (inbraces <|> ctrlseq <|> count 1 anyChar))
     let args' = case opt of
                      Just x  -> x : args
                      Nothing -> args
