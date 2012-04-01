@@ -312,22 +312,34 @@ command = try $ char '\\' >> liftM ('\\':) (identifier <|> lexeme (count 1 anyCh
 unaryOps :: [String]
 unaryOps = ["\\sqrt", "\\surd"]
 
+-- Note: cal and scr are treated the same way, as unicode is lacking such two different sets for those.
 textOps :: M.Map String (String -> Exp)
 textOps = M.fromList
-          [ ("\\textrm", EText TextNormal . parseText)
-          , ("\\mathrm", EText TextNormal)
-          , ("\\text",   EText TextNormal . parseText)
-          , ("\\mbox",   EText TextNormal)
-          , ("\\mathbf", EText TextBold)
-          , ("\\textbf", EText TextBold . parseText)
-          , ("\\mathit", EText TextItalic)
-          , ("\\textit", EText TextItalic . parseText)
-          , ("\\mathtt", EText TextMonospace)
-          , ("\\texttt", EText TextMonospace)
-          , ("\\mathsf", EText TextSansSerif)
-          , ("\\mathbb", \e -> maybe (EText TextDoubleStruck e) (ESymbol Pun) (M.lookup e mathbb))
-          , ("\\mathcal", \e -> maybe (EText TextScript e) (ESymbol Pun) (M.lookup e mathcal))
-          , ("\\mathfrak", EText TextFraktur)
+          [ ("\\textrm",     EText TextNormal . parseText)
+          , ("\\mathrm",     EText TextNormal)
+          , ("\\mathup",     EText TextNormal)
+          , ("\\text",       EText TextNormal . parseText)
+          , ("\\mbox",       EText TextNormal)
+          , ("\\mathbf",     EText TextBold)
+          , ("\\mathbfup",   EText TextBold)
+          , ("\\textbf",     EText TextBold . parseText)
+          , ("\\mathit",     EText TextItalic)
+          , ("\\textit",     EText TextItalic . parseText)
+          , ("\\mathtt",     EText TextMonospace)
+          , ("\\texttt",     EText TextMonospace)
+          , ("\\mathsf",     EText TextSansSerif)
+          , ("\\mathsfup",   EText TextSansSerif)
+          , ("\\mathbb",     \e -> maybe (EText TextDoubleStruck e) (ESymbol Pun) (M.lookup e mathbb))
+          , ("\\mathcal",    \e -> maybe (EText TextScript e) (ESymbol Pun) (M.lookup e mathscr))
+          , ("\\mathscr",    \e -> maybe (EText TextScript e) (ESymbol Pun) (M.lookup e mathscr))
+          , ("\\mathfrak",   EText TextFraktur)
+          , ("\\mathbfit",   EText TextBoldItalic)
+          , ("\\mathbfsfup", EText TextBoldSansSerif)
+          , ("\\mathbfsfit", EText TextBoldSansSerifItalic)
+          , ("\\mathbfscr",  \e -> maybe (EText TextBoldScript e) (ESymbol Pun) (M.lookup e mathbfscr))
+          , ("\\mathbffrak", EText TextBoldFraktur)
+          , ("\\mathbfcal",  \e -> maybe (EText TextBoldScript e) (ESymbol Pun) (M.lookup e mathbfscr))
+          , ("\\mathsfit",   EText TextSansSerifItalic)
           ]
 
 parseText :: String -> String
@@ -762,8 +774,8 @@ symbols = M.fromList [
 --    (see https://bugzilla.mozilla.org/show_bug.cgi?id=114365)
 -- Therefore, we translate mathcal to unicode symbols directly.
 -- This list is from http://www.w3.org/TR/MathML2/script.html
-mathcal :: M.Map String String
-mathcal = M.fromList [
+mathscr :: M.Map String String
+mathscr = M.fromList [
              ("A", "\x1D49C")
            , ("B", "\x0212C")
            , ("C", "\x1D49E")
@@ -816,6 +828,63 @@ mathcal = M.fromList [
            , ("x", "\x1D4CD")
            , ("y", "\x1D4CE")
            , ("z", "\x1D4CF")
+           ]
+
+-- Bold variant of mathscr
+mathbfscr :: M.Map String String
+mathbfscr = M.fromList [
+             ("A", "\x1D4D0")
+           , ("B", "\x1D4D1")
+           , ("C", "\x1D4D2")
+           , ("D", "\x1D4D3")
+           , ("E", "\x1D4D4")
+           , ("F", "\x1D4D5")
+           , ("G", "\x1D4D6")
+           , ("H", "\x1D4D7")
+           , ("I", "\x1D4D8")
+           , ("J", "\x1D4D9")
+           , ("K", "\x1D4DA")
+           , ("L", "\x1D4DB")
+           , ("M", "\x1D4DC")
+           , ("N", "\x1D4DD")
+           , ("O", "\x1D4DE")
+           , ("P", "\x1D4DF")
+           , ("Q", "\x1D4E0")
+           , ("R", "\x1D4E1")
+           , ("S", "\x1D4E2")
+           , ("T", "\x1D4E3")
+           , ("U", "\x1D4E4")
+           , ("V", "\x1D4E5")
+           , ("W", "\x1D4E6")
+           , ("X", "\x1D4E7")
+           , ("Y", "\x1D4E8")
+           , ("Z", "\x1D4E9")
+           , ("a", "\x1D4EA")
+           , ("b", "\x1D4EB")
+           , ("c", "\x1D4EC")
+           , ("d", "\x1D4ED")
+           , ("e", "\x1D4EE")
+           , ("f", "\x1D4EF")
+           , ("g", "\x1D4F0")
+           , ("h", "\x1D4F1")
+           , ("i", "\x1D4F2")
+           , ("j", "\x1D4F3")
+           , ("k", "\x1D4F4")
+           , ("l", "\x1D4F5")
+           , ("m", "\x1D4F6")
+           , ("n", "\x1D4F7")
+           , ("o", "\x1D4F8")
+           , ("p", "\x1D4F9")
+           , ("q", "\x1D4FA")
+           , ("r", "\x1D4FB")
+           , ("s", "\x1D4FC")
+           , ("t", "\x1D4FD")
+           , ("u", "\x1D4FE")
+           , ("v", "\x1D4FF")
+           , ("w", "\x1D500")
+           , ("x", "\x1D501")
+           , ("y", "\x1D502")
+           , ("z", "\x1D503")
            ]
 
 -- Similar to mathcal above, we translate manually.
