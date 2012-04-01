@@ -71,4 +71,10 @@ data TextType = TextNormal
               | TextDoubleStruck
               | TextScript
               | TextFraktur
+              | TextBoldItalic
+              | TextBoldSansSerif
+              | TextBoldSansSerifItalic
+              | TextBoldScript
+              | TextBoldFraktur
+              | TextSansSerifItalic
               deriving (Show, Read, Eq, Data, Typeable)

@@ -123,6 +123,12 @@ makeText a s = if trailingSp
                     TextDoubleStruck -> "double-struck"
                     TextScript       -> "script"
                     TextFraktur      -> "fraktur"
+                    TextBoldItalic          -> "bold-italic"
+                    TextBoldSansSerif       -> "bold-sans-serif"
+                    TextBoldSansSerifItalic -> "sans-serif-bold-italic"
+                    TextBoldScript          -> "bold-script"
+                    TextBoldFraktur         -> "bold-fraktur"
+                    TextSansSerifItalic     -> "sans-serif-italic"
 
 makeArray :: [Alignment] -> [ArrayLine] -> Element
 makeArray as ls = unode "mtable" $
