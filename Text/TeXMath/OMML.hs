@@ -111,7 +111,7 @@ makeText a s = str attrs s
                      TextBoldScript    -> [sty "b", scr "script"]
                      TextBoldFraktur   -> [sty "b", scr "fraktur"]
                      TextSansSerifItalic -> [sty "i", scr "sans-serif"]
-                     TextBoldSansSerifItalic -> [sty "b", scr "sans-serif"] -- Should be both bold and italic, not sure how to do it.
+                     TextBoldSansSerifItalic -> [sty "bi", scr "sans-serif"]
         sty x = mnodeA "sty" x ()
         scr x = mnodeA "scr" x ()
 
