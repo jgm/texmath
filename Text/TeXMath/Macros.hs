@@ -106,7 +106,7 @@ newcommand = try $ do
   optional $ try $ string "re"
   string "newcommand"
   pSkipSpaceComments
-  name <- inbraces
+  name <- inbraces <|> ctrlseq
   guard (take 1 name == "\\")
   let name' = drop 1 name
   pSkipSpaceComments
@@ -119,7 +119,7 @@ newcommand = try $ do
                    Just _  -> numargs - 1
                    Nothing -> numargs
   pSkipSpaceComments
-  body <- inbraces
+  body <- inbraces <|> ctrlseq
   let defn = "\\newcommand{" ++ name ++ "}" ++
              (if numargs > 0 then ("[" ++ show numargs ++ "]") else "") ++
              case optarg of { Nothing -> ""; Just x -> "[" ++ x ++ "]"} ++
