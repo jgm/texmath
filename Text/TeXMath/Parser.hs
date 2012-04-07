@@ -260,10 +260,10 @@ isConvertible _ = False
 
 subSup :: Maybe Bool -> Exp -> TP Exp
 subSup limits a = try $ do
-  symbol "_"
-  b <- expr1
-  symbol "^"
-  c <- expr
+  let sub1 = symbol "_" >> expr1
+  let sup1 = symbol "^" >> expr1
+  (b,c) <- try (do {m <- sub1; n <- sup1; return (m,n)})
+       <|> (do {n <- sup1; m <- sub1; return (m,n)})
   return $ case limits of
             Just True  -> EUnderover a b c
             Nothing | isConvertible a -> EDownup a b c

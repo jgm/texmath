@@ -59,7 +59,8 @@ Data-Files:          cgi/texmath.xhtml,
                      tests/sphere_volume.tex, tests/sphere_volume.xhtml, tests/sphere_volume.omml,
                      tests/unicode.tex, tests/unicode.xhtml, tests/unicode.omml,
                      tests/ensuremath.tex, tests/ensuremath.xhtml, tests/ensuremath.omml,
-                     tests/macros.tex, tests/macros.xhtml, tests/macros.omml
+                     tests/macros.tex, tests/macros.xhtml, tests/macros.omml,
+                     tests/subsup.tex, tests/subsup.xhtml, tests/subsup.omml
 
 Source-repository head
   type:              git
