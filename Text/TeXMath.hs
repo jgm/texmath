@@ -19,9 +19,10 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 {- | Functions for converting LaTeX math formulas to MathML.
 -}
 
-module Text.TeXMath ( texMathToMathML, texMathToOMML, DisplayType(..) )
+module Text.TeXMath ( texMathToMathML, texMathToOMML, texMathToLaTeX, DisplayType(..) )
 where
 import Text.TeXMath.Parser
+import Text.TeXMath.LaTeX
 import Text.TeXMath.MathML
 import Text.TeXMath.OMML
 import Text.TeXMath.Types
@@ -34,3 +35,8 @@ texMathToMathML dt inp = inp `seq`
 texMathToOMML :: DisplayType -> String -> Either String Element
 texMathToOMML dt inp = inp `seq`
   either Left (Right . toOMML dt) $ parseFormula inp
+
+texMathToLaTeX :: DisplayType -> String -> Either String String
+texMathToLaTeX dt inp = inp `seq`
+  either Left (Right . toLaTeX dt) $ parseFormula inp
+
