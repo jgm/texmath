@@ -1,0 +1,40 @@
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:sSub>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>u</m:t>
+        </m:r>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:rPr />
+          <m:t>n</m:t>
+        </m:r>
+      </m:sub>
+    </m:sSub>
+    <m:limUpp>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>w</m:t>
+        </m:r>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:rPr />
+          <m:t>→</m:t>
+        </m:r>
+      </m:lim>
+    </m:limUpp>
+    <m:r>
+      <m:rPr />
+      <m:t>u</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

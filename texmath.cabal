@@ -60,7 +60,8 @@ Data-Files:          cgi/texmath.xhtml,
                      tests/unicode.tex, tests/unicode.xhtml, tests/unicode.omml,
                      tests/ensuremath.tex, tests/ensuremath.xhtml, tests/ensuremath.omml,
                      tests/macros.tex, tests/macros.xhtml, tests/macros.omml,
-                     tests/subsup.tex, tests/subsup.xhtml, tests/subsup.omml
+                     tests/subsup.tex, tests/subsup.xhtml, tests/subsup.omml,
+                     tests/stackrel.tex, tests/stackrel.xhtml, tests/stackrel.omml
 
 Source-repository head
   type:              git
