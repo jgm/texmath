@@ -246,7 +246,7 @@ variable = do
 
 isConvertible :: Exp -> Bool
 isConvertible (EMathOperator x) = x `elem` convertibleOps
-  where convertibleOps = ["lim","liminf","limsup","inf","sup"]
+  where convertibleOps = ["lim","liminf","limsup","inf","sup","min","max","Pr","det","gcd"]
 isConvertible (ESymbol Rel _) = True
 isConvertible (ESymbol Bin _) = True
 isConvertible (EUnder _ _)    = True
