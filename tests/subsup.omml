@@ -1,0 +1,311 @@
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:sSubSup>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:rPr />
+          <m:t>b</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:rPr />
+          <m:t>a</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSubSup>
+    <m:sSubSup>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:rPr />
+          <m:t>b</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:rPr />
+          <m:t>a</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSubSup>
+    <m:limLow>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>min</m:t>
+        </m:r>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:rPr />
+          <m:t>A</m:t>
+        </m:r>
+      </m:lim>
+    </m:limLow>
+    <m:limLow>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>max</m:t>
+        </m:r>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:rPr />
+          <m:t>B</m:t>
+        </m:r>
+      </m:lim>
+    </m:limLow>
+    <m:limLow>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>det</m:t>
+        </m:r>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:rPr />
+          <m:t>C</m:t>
+        </m:r>
+      </m:lim>
+    </m:limLow>
+    <m:limLow>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>Pr</m:t>
+        </m:r>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:rPr />
+          <m:t>A</m:t>
+        </m:r>
+      </m:lim>
+    </m:limLow>
+    <m:limLow>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>gcd</m:t>
+        </m:r>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:rPr />
+          <m:t>A</m:t>
+        </m:r>
+      </m:lim>
+    </m:limLow>
+    <m:sSup>
+      <m:e>
+        <m:acc>
+          <m:accPr>
+            <m:chr m:val="." />
+          </m:accPr>
+          <m:e>
+            <m:r>
+              <m:rPr />
+              <m:t>u</m:t>
+            </m:r>
+          </m:e>
+        </m:acc>
+      </m:e>
+      <m:sup>
+        <m:r>
+          <m:rPr />
+          <m:t>2</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSup>
+    <m:sSub>
+      <m:e>
+        <m:bar>
+          <m:barPr>
+            <m:pos m:val="top" />
+          </m:barPr>
+          <m:e>
+            <m:r>
+              <m:rPr />
+              <m:t>u</m:t>
+            </m:r>
+          </m:e>
+        </m:bar>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:rPr />
+          <m:t>ɛ</m:t>
+        </m:r>
+      </m:sub>
+    </m:sSub>
+    <m:sSubSup>
+      <m:e>
+        <m:bar>
+          <m:barPr>
+            <m:pos m:val="bot" />
+          </m:barPr>
+          <m:e>
+            <m:r>
+              <m:rPr />
+              <m:t>u</m:t>
+            </m:r>
+          </m:e>
+        </m:bar>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:rPr />
+          <m:t>b</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:rPr />
+          <m:t>a</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSubSup>
+    <m:limUpp>
+      <m:e>
+        <m:acc>
+          <m:accPr>
+            <m:chr m:val="︷" />
+          </m:accPr>
+          <m:e>
+            <m:r>
+              <m:rPr />
+              <m:t>a</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>+</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>b</m:t>
+            </m:r>
+          </m:e>
+        </m:acc>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>term</m:t>
+        </m:r>
+      </m:lim>
+    </m:limUpp>
+    <m:limUpp>
+      <m:e>
+        <m:acc>
+          <m:accPr>
+            <m:chr m:val="⎴" />
+          </m:accPr>
+          <m:e>
+            <m:r>
+              <m:rPr />
+              <m:t>a</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>+</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>b</m:t>
+            </m:r>
+          </m:e>
+        </m:acc>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:rPr />
+          <m:t>c</m:t>
+        </m:r>
+      </m:lim>
+    </m:limUpp>
+    <m:limLow>
+      <m:e>
+        <m:limLow>
+          <m:e>
+            <m:r>
+              <m:rPr />
+              <m:t>a</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>+</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>b</m:t>
+            </m:r>
+          </m:e>
+          <m:lim>
+            <m:r>
+              <m:rPr />
+              <m:t>︸</m:t>
+            </m:r>
+          </m:lim>
+        </m:limLow>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:rPr />
+          <m:t>c</m:t>
+        </m:r>
+      </m:lim>
+    </m:limLow>
+    <m:limLow>
+      <m:e>
+        <m:limLow>
+          <m:e>
+            <m:r>
+              <m:rPr />
+              <m:t>a</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>+</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>b</m:t>
+            </m:r>
+          </m:e>
+          <m:lim>
+            <m:r>
+              <m:rPr />
+              <m:t>⎵</m:t>
+            </m:r>
+          </m:lim>
+        </m:limLow>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:rPr />
+          <m:t>c</m:t>
+        </m:r>
+      </m:lim>
+    </m:limLow>
+  </m:oMath>
+</m:oMathPara>
