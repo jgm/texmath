@@ -246,17 +246,24 @@ variable = do
 
 isConvertible :: Exp -> Bool
 isConvertible (EMathOperator x) = x `elem` convertibleOps
-  where convertibleOps = ["lim","liminf","limsup","inf","sup"]
+  where convertibleOps = [ "lim","liminf","limsup","inf","sup"
+                         , "min","max","Pr","det","gcd"
+                         ]
 isConvertible (ESymbol Rel _) = True
 isConvertible (ESymbol Bin _) = True
-isConvertible (EUnder _ _)    = True
-isConvertible (EOver _ _)     = True
-isConvertible (EUnderover _ _ _) = True
 isConvertible (ESymbol Op x) = x `elem` convertibleSyms
   where convertibleSyms = ["\x2211","\x220F","\x22C2",
            "\x22C3","\x22C0","\x22C1","\x2A05","\x2A06",
            "\x2210","\x2A01","\x2A02","\x2A00","\x2A04"]
 isConvertible _ = False
+
+-- check if sub/superscripts should always be under and over the expression
+isUnderover :: Exp -> Bool
+isUnderover (EOver _ (ESymbol Accent "\xFE37")) = True   -- \overbrace
+isUnderover (EOver _ (ESymbol Accent "\x23B4")) = True   -- \overbracket
+isUnderover (EUnder _ (ESymbol Accent "\xFE38")) = True  -- \underbrace
+isUnderover (EUnder _ (ESymbol Accent "\x23B5")) = True  -- \underbracket
+isUnderover _ = False
 
 subSup :: Maybe Bool -> Exp -> TP Exp
 subSup limits a = try $ do
@@ -267,6 +274,7 @@ subSup limits a = try $ do
   return $ case limits of
             Just True  -> EUnderover a b c
             Nothing | isConvertible a -> EDownup a b c
+                    | isUnderover a -> EUnderover a b c
             _          -> ESubsup a b c
 
 superOrSubscripted :: Maybe Bool -> Exp -> TP Exp
@@ -278,10 +286,12 @@ superOrSubscripted limits a = try $ do
        '^' -> return $ case limits of
                         Just True  -> EOver a b
                         Nothing | isConvertible a -> EUp a b
+                                | isUnderover a -> EOver a b
                         _          -> ESuper a b
        '_' -> return $ case limits of
                         Just True  -> EUnder a b
                         Nothing | isConvertible a -> EDown a b
+                                | isUnderover a -> EUnder a b
                         _          -> ESub a b
        _   -> pzero
 
