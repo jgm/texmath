@@ -97,7 +97,7 @@ inbraces :: TP Exp
 inbraces = liftM EGrouped (braces $ many $ notFollowedBy (char '}') >> expr)
 
 texToken :: TP Exp
-texToken = inbraces <|> inbrackets <|>
+texToken = texSymbol <|> inbraces <|> inbrackets <|>
              do c <- anyChar
                 spaces
                 return $ if isDigit c
