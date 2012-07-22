@@ -23,8 +23,11 @@
           </m:dPr>
           <m:e>
             <m:r>
-              <m:rPr />
-              <m:t>𝒯</m:t>
+              <m:rPr>
+                <m:sty m:val="p" />
+                <m:scr m:val="script" />
+              </m:rPr>
+              <m:t>T</m:t>
             </m:r>
             <m:d>
               <m:dPr>
@@ -113,8 +116,11 @@
           </m:dPr>
           <m:e>
             <m:r>
-              <m:rPr />
-              <m:t>𝒯</m:t>
+              <m:rPr>
+                <m:sty m:val="p" />
+                <m:scr m:val="script" />
+              </m:rPr>
+              <m:t>T</m:t>
             </m:r>
             <m:d>
               <m:dPr>
