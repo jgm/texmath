@@ -106,6 +106,12 @@ makeText a s = str attrs s
                      TextDoubleStruck -> [sty "p", scr "double-struck"]
                      TextScript       -> [sty "p", scr "script"]
                      TextFraktur      -> [sty "p", scr "fraktur"]
+                     TextBoldItalic    -> [sty "i"]
+                     TextBoldSansSerif -> [sty "b", scr "sans-serif"]
+                     TextBoldScript    -> [sty "b", scr "script"]
+                     TextBoldFraktur   -> [sty "b", scr "fraktur"]
+                     TextSansSerifItalic -> [sty "i", scr "sans-serif"]
+                     TextBoldSansSerifItalic -> [sty "bi", scr "sans-serif"]
         sty x = mnodeA "sty" x ()
         scr x = mnodeA "scr" x ()
 

@@ -25,6 +25,7 @@ where
 import qualified Data.Map as M
 import Text.XML.Light
 import Text.TeXMath.Types
+import Text.TeXMath.ToUnicode
 import Data.Generics (everywhere, mkT)
 
 toMathML :: DisplayType -> [Exp] -> Element
@@ -107,12 +108,13 @@ makeStretchy = withAttribute "stretchy" "true"
 makeScaled :: String -> Element -> Element
 makeScaled s = withAttribute "minsize" s . withAttribute "maxsize" s
 
+-- Note: Converts strings to unicode directly, as few renderers support those mathvariants.
 makeText :: TextType -> String -> Element
 makeText a s = if trailingSp
                   then mrow [s', sp]
                   else s'
   where sp = spaceWidth "0.333em"
-        s' = withAttribute "mathvariant" attr $ unode "mtext" s
+        s' = withAttribute "mathvariant" attr $ unode "mtext" $ toUnicode a s 
         trailingSp = not (null s) && last s `elem` " \t"
         attr = case a of
                     TextNormal       -> "normal"
@@ -123,6 +125,12 @@ makeText a s = if trailingSp
                     TextDoubleStruck -> "double-struck"
                     TextScript       -> "script"
                     TextFraktur      -> "fraktur"
+                    TextBoldItalic          -> "bold-italic"
+                    TextBoldSansSerif       -> "bold-sans-serif"
+                    TextBoldSansSerifItalic -> "sans-serif-bold-italic"
+                    TextBoldScript          -> "bold-script"
+                    TextBoldFraktur         -> "bold-fraktur"
+                    TextSansSerifItalic     -> "sans-serif-italic"
 
 makeArray :: [Alignment] -> [ArrayLine] -> Element
 makeArray as ls = unode "mtable" $
