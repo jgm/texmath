@@ -1,5 +1,5 @@
 Name:                texmath
-Version:             0.6.1
+Version:             0.6.1.1
 Cabal-Version:       >= 1.6
 Build-type:          Custom
 Synopsis:            Conversion of LaTeX math formulas to MathML or OMML.
@@ -89,6 +89,7 @@ Library
                          Text.TeXMath.MathML
                          Text.TeXMath.OMML
                          Text.TeXMath.Macros
+                         Text.TeXMath.ToUnicode
 
     if impl(ghc >= 6.12)
       Ghc-Options:     -Wall -fno-warn-unused-do-bind
