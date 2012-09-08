@@ -62,7 +62,8 @@ Data-Files:          cgi/texmath.xhtml,
                      tests/ensuremath.tex, tests/ensuremath.xhtml, tests/ensuremath.omml,
                      tests/macros.tex, tests/macros.xhtml, tests/macros.omml,
                      tests/subsup.tex, tests/subsup.xhtml, tests/subsup.omml,
-                     tests/stackrel.tex, tests/stackrel.xhtml, tests/stackrel.omml
+                     tests/stackrel.tex, tests/stackrel.xhtml, tests/stackrel.omml,
+                     tests/labels.tex, tests/labels.xhtml, tests/labels.omml
 
 Source-repository head
   type:              git
