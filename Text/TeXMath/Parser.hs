@@ -35,8 +35,8 @@ type TP = GenParser Char ()
 
 texMathDef :: LanguageDef st
 texMathDef = LanguageDef
-   { commentStart   = ""
-   , commentEnd     = ""
+   { commentStart   = "\\label{"
+   , commentEnd     = "}"
    , commentLine    = "%"
    , nestedComments = False
    , identStart     = letter
