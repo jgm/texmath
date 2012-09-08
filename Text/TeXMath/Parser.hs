@@ -77,6 +77,7 @@ formula :: TP [Exp]
 formula = do
   whiteSpace
   f <- many expr
+  whiteSpace
   eof
   return f
 
