@@ -569,6 +569,7 @@ symbols = M.fromList [
            , ("\\vartheta", EIdentifier "\x03D1")
            , ("\\Theta", ESymbol Op "\x0398")
            , ("\\upsilon", EIdentifier "\x03C5")
+           , ("\\Upsilon", EIdentifier "\x03A5")
            , ("\\xi", EIdentifier "\x03BE")
            , ("\\Xi", ESymbol Op "\x039E")
            , ("\\zeta", EIdentifier "\x03B6")
