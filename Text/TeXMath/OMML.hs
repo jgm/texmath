@@ -171,7 +171,7 @@ showExp e =
                                   ] ]
 
    EIdentifier x    -> [str [] x]
-   EMathOperator x  -> [str [] x]
+   EMathOperator x  -> [makeText TextNormal x]
    EStretchy x      -> showExp x  -- no support for stretchy in OMML
    ESymbol _ x      -> [str [] x]
    ESpace "0.167em" -> [str [] "\x2009"]

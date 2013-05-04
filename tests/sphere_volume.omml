@@ -178,7 +178,9 @@
             </m:sup>
           </m:sSup>
           <m:r>
-            <m:rPr />
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
             <m:t>sin</m:t>
           </m:r>
           <m:r>
@@ -299,7 +301,9 @@
             </m:sup>
           </m:nary>
           <m:r>
-            <m:rPr />
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
             <m:t>sin</m:t>
           </m:r>
           <m:r>
@@ -420,7 +424,9 @@
             <m:t>−</m:t>
           </m:r>
           <m:r>
-            <m:rPr />
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
             <m:t>cos</m:t>
           </m:r>
           <m:r>

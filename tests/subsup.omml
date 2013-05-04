@@ -47,7 +47,9 @@
     <m:limLow>
       <m:e>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>min</m:t>
         </m:r>
       </m:e>
@@ -61,7 +63,9 @@
     <m:limLow>
       <m:e>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>max</m:t>
         </m:r>
       </m:e>
@@ -75,7 +79,9 @@
     <m:limLow>
       <m:e>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>det</m:t>
         </m:r>
       </m:e>
@@ -89,7 +95,9 @@
     <m:limLow>
       <m:e>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>Pr</m:t>
         </m:r>
       </m:e>
@@ -103,7 +111,9 @@
     <m:limLow>
       <m:e>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>gcd</m:t>
         </m:r>
       </m:e>
