@@ -62,12 +62,12 @@ showBinary c x y =
                                    mnodeA "degHide" "on" ()
                                 , mnode "deg" y'
                                 , mnode "e" x']
-       "\\stackrel" -> mnode "limUpp" [ mnode "e" x'
-                                       , mnode "lim" y']
-       "\\overset" -> mnode "limUpp" [ mnode "e" x'
-                                     , mnode "lim" y' ]
-       "\\underset" -> mnode "limLow" [ mnode "e" x'
-                                      , mnode "lim" y' ]
+       "\\stackrel" -> mnode "limUpp" [ mnode "e" y'
+                                       , mnode "lim" x']
+       "\\overset" -> mnode "limUpp" [ mnode "e" y'
+                                     , mnode "lim" x' ]
+       "\\underset" -> mnode "limLow" [ mnode "e" y'
+                                      , mnode "lim" x' ]
        "\\binom"    -> mnode "d" [ mnode "dPr" $
                                      mnodeA "sepChr" "," ()
                                  , mnode "e" $
