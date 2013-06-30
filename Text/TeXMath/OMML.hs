@@ -228,7 +228,6 @@ makeNary t s y z w =
   mnode "nary" [ mnode "naryPr"
                  [ mnodeA "chr" s ()
                  , mnodeA "limLoc" t ()
-                 , mnode "grow" ()
                  , mnodeA "supHide"
                     (if y == EGrouped [] then "on" else "off") ()
                  , mnodeA "supHide"
