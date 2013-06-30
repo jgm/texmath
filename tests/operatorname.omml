@@ -31,6 +31,11 @@
                   <m:mcJc m:val="left" />
                 </m:mcPr>
               </m:mc>
+              <m:mc>
+                <m:mcPr>
+                  <m:mcJc m:val="left" />
+                </m:mcPr>
+              </m:mc>
             </m:mcs>
           </m:mPr>
           <m:mr>
@@ -398,6 +403,58 @@
                   <m:sty m:val="p" />
                 </m:rPr>
                 <m:t>operatorname*:nolimits</m:t>
+              </m:r>
+            </m:e>
+          </m:mr>
+          <m:mr>
+            <m:e>
+              <m:sSub>
+                <m:e>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>curl</m:t>
+                  </m:r>
+                </m:e>
+                <m:sub>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>x</m:t>
+                  </m:r>
+                </m:sub>
+              </m:sSub>
+              <m:r>
+                <m:rPr />
+                <m:t>v</m:t>
+              </m:r>
+              <m:limLow>
+                <m:e>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>argmax</m:t>
+                  </m:r>
+                </m:e>
+                <m:lim>
+                  <m:r>
+                    <m:rPr />
+                    <m:t>K</m:t>
+                  </m:r>
+                </m:lim>
+              </m:limLow>
+              <m:r>
+                <m:rPr />
+                <m:t>u</m:t>
+              </m:r>
+            </m:e>
+            <m:e>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>DeclareMathOperator</m:t>
               </m:r>
             </m:e>
           </m:mr>
