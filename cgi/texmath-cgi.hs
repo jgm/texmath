@@ -6,7 +6,7 @@ import Text.TeXMath.Macros
 import Data.Maybe (fromMaybe)
 import Control.Monad
 import Text.JSON
-import Codec.Binary.UTF8.String (decodeString)
+import Codec.Binary.UTF8.String (decodeString, encodeString)
 
 cgiMain :: CGI CGIResult
 cgiMain = do
@@ -19,7 +19,7 @@ cgiMain = do
          Left e  -> toJSObject [("success", JSBool False)
                                , ("error", JSString $ toJSString e)]
          Right v -> toJSObject [("success", JSBool True)
-                               , ("mathml", JSString $ toJSString $
+                               , ("mathml", JSString $ toJSString $ encodeString $
                                      ppElement v)]
 
 main :: IO ()
