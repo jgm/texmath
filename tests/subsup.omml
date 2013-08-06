@@ -24,6 +24,10 @@
         </m:r>
       </m:sup>
     </m:sSubSup>
+    <m:r>
+      <m:rPr />
+      <m:t> </m:t>
+    </m:r>
     <m:sSubSup>
       <m:e>
         <m:r>
@@ -44,6 +48,10 @@
         </m:r>
       </m:sup>
     </m:sSubSup>
+    <m:r>
+      <m:rPr />
+      <m:t> </m:t>
+    </m:r>
     <m:limLow>
       <m:e>
         <m:r>
@@ -60,6 +68,10 @@
         </m:r>
       </m:lim>
     </m:limLow>
+    <m:r>
+      <m:rPr />
+      <m:t> </m:t>
+    </m:r>
     <m:limLow>
       <m:e>
         <m:r>
@@ -76,6 +88,10 @@
         </m:r>
       </m:lim>
     </m:limLow>
+    <m:r>
+      <m:rPr />
+      <m:t> </m:t>
+    </m:r>
     <m:limLow>
       <m:e>
         <m:r>
@@ -92,6 +108,10 @@
         </m:r>
       </m:lim>
     </m:limLow>
+    <m:r>
+      <m:rPr />
+      <m:t> </m:t>
+    </m:r>
     <m:limLow>
       <m:e>
         <m:r>
@@ -108,6 +128,10 @@
         </m:r>
       </m:lim>
     </m:limLow>
+    <m:r>
+      <m:rPr />
+      <m:t> </m:t>
+    </m:r>
     <m:limLow>
       <m:e>
         <m:r>
@@ -124,6 +148,10 @@
         </m:r>
       </m:lim>
     </m:limLow>
+    <m:r>
+      <m:rPr />
+      <m:t> </m:t>
+    </m:r>
     <m:sSup>
       <m:e>
         <m:acc>
@@ -145,6 +173,10 @@
         </m:r>
       </m:sup>
     </m:sSup>
+    <m:r>
+      <m:rPr />
+      <m:t> </m:t>
+    </m:r>
     <m:sSub>
       <m:e>
         <m:bar>
@@ -166,6 +198,10 @@
         </m:r>
       </m:sub>
     </m:sSub>
+    <m:r>
+      <m:rPr />
+      <m:t> </m:t>
+    </m:r>
     <m:sSubSup>
       <m:e>
         <m:bar>
@@ -193,6 +229,10 @@
         </m:r>
       </m:sup>
     </m:sSubSup>
+    <m:r>
+      <m:rPr />
+      <m:t> </m:t>
+    </m:r>
     <m:limUpp>
       <m:e>
         <m:acc>
@@ -224,6 +264,10 @@
         </m:r>
       </m:lim>
     </m:limUpp>
+    <m:r>
+      <m:rPr />
+      <m:t> </m:t>
+    </m:r>
     <m:limUpp>
       <m:e>
         <m:acc>
@@ -253,6 +297,10 @@
         </m:r>
       </m:lim>
     </m:limUpp>
+    <m:r>
+      <m:rPr />
+      <m:t> </m:t>
+    </m:r>
     <m:limLow>
       <m:e>
         <m:limLow>
@@ -285,6 +333,10 @@
         </m:r>
       </m:lim>
     </m:limLow>
+    <m:r>
+      <m:rPr />
+      <m:t> </m:t>
+    </m:r>
     <m:limLow>
       <m:e>
         <m:limLow>
@@ -317,5 +369,65 @@
         </m:r>
       </m:lim>
     </m:limLow>
+    <m:sSup>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t> </m:t>
+        </m:r>
+      </m:e>
+      <m:sup>
+        <m:r>
+          <m:rPr />
+          <m:t>H</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSup>
+    <m:r>
+      <m:rPr />
+      <m:t>e</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>3</m:t>
+    </m:r>
+    <m:sSub>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t> </m:t>
+        </m:r>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:rPr />
+          <m:t>x</m:t>
+        </m:r>
+      </m:sub>
+    </m:sSub>
+    <m:r>
+      <m:rPr />
+      <m:t>A</m:t>
+    </m:r>
+    <m:sSubSup>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t> </m:t>
+        </m:r>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:rPr />
+          <m:t>x</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:rPr />
+          <m:t>3</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSubSup>
   </m:oMath>
 </m:oMathPara>

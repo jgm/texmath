@@ -61,6 +61,7 @@ expr1 =  choice [
   , unary
   , binary
   , enclosure
+  , bareSubSup
   , environment
   , diacritical
   , escaped
@@ -87,6 +88,10 @@ expr = do
   a <- expr1
   limits <- limitsIndicator
   subSup limits a <|> superOrSubscripted limits a <|> return a
+
+bareSubSup :: TP Exp
+bareSubSup = subSup Nothing (EIdentifier "")
+  <|> superOrSubscripted Nothing (EIdentifier "")
 
 limitsIndicator :: TP (Maybe Bool)
 limitsIndicator =
