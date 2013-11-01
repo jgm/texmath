@@ -41,4 +41,5 @@ texMathToOMML dt inp = inp `seq`
 texMathToPandoc :: DisplayType -> String -> Either String [Inline]
 texMathToPandoc dt inp = inp `seq`
   either Left (Right . maybe fallback id . toPandoc dt) $ parseFormula inp
-  where fallback = [Str $ "$" ++ inp ++ "$"]
+  where fallback = [Str $ delim ++ inp ++ delim]
+        delim    = case dt of { DisplayInline -> "$"; DisplayBlock -> "$$" }
