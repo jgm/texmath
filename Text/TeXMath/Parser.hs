@@ -433,10 +433,21 @@ binary = try $ do
 
 texSymbol :: TP Exp
 texSymbol = try $ do
+  negated <- (symbol "\\not" >> return True) <|> return False
   sym <- operator <|> command
   case M.lookup sym symbols of
-       Just s   -> return s
+       Just s   -> if negated then neg s else return s
        Nothing  -> pzero
+
+neg :: Exp -> TP Exp
+neg (ESymbol Rel x) = ESymbol Rel `fmap`
+  case x of
+       "\x2282" -> return "\x2284"
+       "\x2283" -> return "\x2285"
+       "\x2286" -> return "\x2288"
+       "\x2287" -> return "\x2289"
+       _        -> pzero
+neg _ = pzero
 
 -- The lexer
 lexer :: P.TokenParser st
