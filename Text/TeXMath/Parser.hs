@@ -433,7 +433,7 @@ binary = try $ do
 
 texSymbol :: TP Exp
 texSymbol = try $ do
-  negated <- (symbol "\\not" >> return True) <|> return False
+  negated <- (try (symbol "\\not") >> return True) <|> return False
   sym <- operator <|> command
   case M.lookup sym symbols of
        Just s   -> if negated then neg s else return s
@@ -446,6 +446,7 @@ neg (ESymbol Rel x) = ESymbol Rel `fmap`
        "\x2283" -> return "\x2285"
        "\x2286" -> return "\x2288"
        "\x2287" -> return "\x2289"
+       "\x2208" -> return "\x2209"
        _        -> pzero
 neg _ = pzero
 

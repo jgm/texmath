@@ -1,5 +1,5 @@
 Name:                texmath
-Version:             0.6.5.1
+Version:             0.6.5.2
 Cabal-Version:       >= 1.6
 Build-type:          Custom
 Synopsis:            Conversion of LaTeX math formulas to MathML or OMML.
@@ -63,6 +63,7 @@ Data-Files:          cgi/texmath.xhtml,
                      tests/macros.tex, tests/macros.xhtml, tests/macros.omml,
                      tests/subsup.tex, tests/subsup.xhtml, tests/subsup.omml,
                      tests/stackrel.tex, tests/stackrel.xhtml, tests/stackrel.omml,
+                     tests/notin.tex, tests/notin.xhtml, tests/notin.omml,
                      tests/labels.tex, tests/labels.xhtml, tests/labels.omml
 
 Source-repository head
