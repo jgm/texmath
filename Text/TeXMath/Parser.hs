@@ -356,6 +356,7 @@ textOps = M.fromList
           , ("\\mathbffrak", EText TextBoldFraktur)
           , ("\\mathbfcal",  EText TextBoldScript)
           , ("\\mathsfit",   EText TextSansSerifItalic)
+          , ("\\bm",         EText TextBoldItalic)
           ]
 
 parseText :: String -> String

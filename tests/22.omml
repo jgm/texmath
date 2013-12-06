@@ -134,6 +134,11 @@
               <m:mcJc m:val="left" />
             </m:mcPr>
           </m:mc>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="left" />
+            </m:mcPr>
+          </m:mc>
         </m:mcs>
       </m:mPr>
       <m:mr>
@@ -620,6 +625,25 @@
             <m:rPr>
               <m:sty m:val="i" />
               <m:scr m:val="sans-serif" />
+            </m:rPr>
+            <m:t>ABCabc</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+              <m:scr m:val="monospace" />
+            </m:rPr>
+            <m:t>bm</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="i" />
             </m:rPr>
             <m:t>ABCabc</m:t>
           </m:r>
