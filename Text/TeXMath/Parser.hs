@@ -165,6 +165,7 @@ endLine :: TP Char
 endLine = try $ do
   symbol "\\\\"
   optional inbrackets  -- can contain e.g. [1.0in] for a line height, not yet supported
+  optional $ try $ symbol "\\hline"   -- we don't represent the line, but it shouldn't crash parsing
   return '\n'
 
 arrayLine :: TP ArrayLine
