@@ -85,7 +85,9 @@ formula = do
 expr :: TP Exp
 expr = do
   optional (try $ symbol "\\displaystyle")
-  (a, convertible) <- (expr1 >>= \e -> return (e, False)) <|> operatorname
+  (a, convertible) <- try (braces operatorname) -- needed because macros add {}
+                 <|> (expr1 >>= \e -> return (e, False))
+                 <|> operatorname
   limits <- limitsIndicator
   subSup limits convertible a <|> superOrSubscripted limits convertible a <|> return a
 
@@ -129,7 +131,7 @@ limitsIndicator =
   <|> return Nothing
 
 inbraces :: TP Exp
-inbraces = liftM EGrouped (braces $ many $ notFollowedBy (char '}') >> expr)
+inbraces = liftM EGrouped $ braces $ many $ notFollowedBy (char '}') >> expr
 
 texToken :: TP Exp
 texToken = texSymbol <|> inbraces <|> inbrackets <|>

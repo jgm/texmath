@@ -140,7 +140,7 @@ newcommand = try $ do
     let args' = case opt of
                      Just x  -> x : args
                      Nothing -> args
-    return $ apply args' body
+    return $ apply args' $ "{" ++ body ++ "}"
 
 -- | Parser for \DeclareMathOperator(*) command.
 declareMathOperator :: GenParser Char st Macro
