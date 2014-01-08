@@ -119,8 +119,8 @@ expToOperatorName e = case e of
                     _ -> Nothing
 
 bareSubSup :: TP Exp
-bareSubSup = subSup Nothing (EIdentifier "")
-  <|> superOrSubscripted Nothing (EIdentifier "")
+bareSubSup = subSup Nothing False (EIdentifier "")
+  <|> superOrSubscripted Nothing False (EIdentifier "")
 
 limitsIndicator :: TP (Maybe Bool)
 limitsIndicator =
