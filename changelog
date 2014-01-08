@@ -1,0 +1,8 @@
+texmath (0.6.6)
+
+  * Insert braces around macro expansions to prevent breakage (#7).
+  * Support \operatorname and \DeclareMathOperator (rekka) (#17).
+  * Support \providecommand (#15).
+  * Fixed spacing bugs in pandoc rendering (#24).
+  * Ignore \hline at end of array row instead of failing (#19).
+
