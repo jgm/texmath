@@ -23,7 +23,7 @@ License-File:        LICENSE
 Author:              John MacFarlane
 Maintainer:          jgm@berkeley.edu
 Homepage:            http://github.com/jgm/texmath
-Data-Files:          README.markdown,
+Extra-source-files:  README.markdown,
                      changelog,
                      cgi/texmath.xhtml,
                      tests/runtests.sh,
