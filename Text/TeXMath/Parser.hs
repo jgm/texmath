@@ -538,7 +538,7 @@ symbols = M.fromList [
            , (",", ESymbol Pun ",")
            , (".", ESymbol Ord ".")
            , (";", ESymbol Pun ";")
-           , (":", ESymbol Ord ":")
+           , (":", ESymbol Rel ":")
            , ("\\colon", ESymbol Pun ":")
            , ("?", ESymbol Ord "?")
            , (">", ESymbol Rel ">")
