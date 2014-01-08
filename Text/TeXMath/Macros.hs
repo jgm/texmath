@@ -103,8 +103,10 @@ ctrlseq = do
 newcommand :: GenParser Char st Macro
 newcommand = try $ do
   char '\\'
-  optional $ try $ string "re"
-  string "newcommand"
+  -- we ignore differences between these so far:
+  try (string "newcommand")
+    <|> try (string "renewcommand")
+    <|> string "providecommand"
   pSkipSpaceComments
   name <- inbraces <|> ctrlseq
   guard (take 1 name == "\\")
