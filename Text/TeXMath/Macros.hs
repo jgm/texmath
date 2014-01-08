@@ -58,7 +58,7 @@ pMacroDefinitions = do
 -- | Parses a @\\newcommand@ or @\\renewcommand@ macro definition and
 -- returns a 'Macro'.
 pMacroDefinition :: GenParser Char st Macro
-pMacroDefinition = newcommand
+pMacroDefinition = newcommand <|> declareMathOperator
 
 -- | Skip whitespace and comments.
 pSkipSpaceComments :: GenParser Char st ()
@@ -141,6 +141,29 @@ newcommand = try $ do
                      Just x  -> x : args
                      Nothing -> args
     return $ apply args' body
+
+-- | Parser for \DeclareMathOperator(*) command.
+declareMathOperator :: GenParser Char st Macro
+declareMathOperator = try $ do
+  string "\\DeclareMathOperator"
+  pSkipSpaceComments
+  star <- option "" (string "*")
+  pSkipSpaceComments
+  name <- inbraces <|> ctrlseq
+  guard (take 1 name == "\\")
+  let name' = drop 1 name
+  pSkipSpaceComments
+  body <- inbraces <|> ctrlseq
+  let defn = "\\DeclareMathOperator" ++ star ++ "{" ++ name ++ "}" ++
+             "{" ++ body ++ "}"
+  return $ Macro defn $ try $ do
+    char '\\'
+    string name'
+    when (all isLetter name') $
+      notFollowedBy letter
+    pSkipSpaceComments
+    return $ "\\operatorname" ++ star ++ "{" ++ body ++ "}"
+
 
 apply :: [String] -> String -> String
 apply args ('#':d:xs) | isDigit d =

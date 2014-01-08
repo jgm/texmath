@@ -85,9 +85,38 @@ formula = do
 expr :: TP Exp
 expr = do
   optional (try $ symbol "\\displaystyle")
-  a <- expr1
+  (a, convertible) <- (expr1 >>= \e -> return (e, False)) <|> operatorname
   limits <- limitsIndicator
-  subSup limits a <|> superOrSubscripted limits a <|> return a
+  subSup limits convertible a <|> superOrSubscripted limits convertible a <|> return a
+
+-- | Parser for \operatorname command.
+-- Returns a tuple of EMathOperator name and Bool depending on the flavor
+-- of the command:
+--
+--     - True for convertible operator (\operator*)
+--
+--     - False otherwise
+operatorname :: TP (Exp, Bool)
+operatorname = try $ do
+    symbol "\\operatorname"
+    convertible <- (char '*' >> spaces >> return True) <|> return False
+    op <- liftM expToOperatorName texToken
+    maybe pzero (\s -> return (EMathOperator s, convertible)) op
+
+-- | Converts identifiers, symbols and numbers to a flat string.
+-- Returns Nothing if the expression contains anything else.
+expToOperatorName :: Exp -> Maybe String
+expToOperatorName e = case e of
+            EGrouped xs ->  liftM concat $ mapM fl xs
+            _ -> fl e
+    where fl f = case f of
+                    EIdentifier s -> Just s
+                    -- handle special characters
+                    ESymbol _ "\x2212" -> Just "-"
+                    ESymbol _ "\x02B9" -> Just "'"
+                    ESymbol _ s -> Just s
+                    ENumber s -> Just s
+                    _ -> Nothing
 
 bareSubSup :: TP Exp
 bareSubSup = subSup Nothing (EIdentifier "")
@@ -272,32 +301,32 @@ isUnderover (EUnder _ (ESymbol Accent "\xFE38")) = True  -- \underbrace
 isUnderover (EUnder _ (ESymbol Accent "\x23B5")) = True  -- \underbracket
 isUnderover _ = False
 
-subSup :: Maybe Bool -> Exp -> TP Exp
-subSup limits a = try $ do
+subSup :: Maybe Bool -> Bool -> Exp -> TP Exp
+subSup limits convertible a = try $ do
   let sub1 = symbol "_" >> expr1
   let sup1 = symbol "^" >> expr1
   (b,c) <- try (do {m <- sub1; n <- sup1; return (m,n)})
        <|> (do {n <- sup1; m <- sub1; return (m,n)})
   return $ case limits of
             Just True  -> EUnderover a b c
-            Nothing | isConvertible a -> EDownup a b c
+            Nothing | convertible || isConvertible a -> EDownup a b c
                     | isUnderover a -> EUnderover a b c
             _          -> ESubsup a b c
 
-superOrSubscripted :: Maybe Bool -> Exp -> TP Exp
-superOrSubscripted limits a = try $ do
+superOrSubscripted :: Maybe Bool -> Bool -> Exp -> TP Exp
+superOrSubscripted limits convertible a = try $ do
   c <- oneOf "^_"
   spaces
   b <- expr
   case c of
        '^' -> return $ case limits of
                         Just True  -> EOver a b
-                        Nothing | isConvertible a -> EUp a b
+                        Nothing | convertible || isConvertible a -> EUp a b
                                 | isUnderover a -> EOver a b
                         _          -> ESuper a b
        '_' -> return $ case limits of
                         Just True  -> EUnder a b
-                        Nothing | isConvertible a -> EDown a b
+                        Nothing | convertible || isConvertible a -> EDown a b
                                 | isUnderover a -> EUnder a b
                         _          -> ESub a b
        _   -> pzero
