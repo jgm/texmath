@@ -24,9 +24,8 @@ module Text.TeXMath.UniMath(ltxCmdsToUnis)
 where 
 
 import Data.Char 
-import Data.String.Utils
 import qualified Data.Map as M
-import Text.Regex 
+import "regex-compat-tdfa" Text.Regex 
 
 -- symbol names: latin letters 
 ltnltrs = [ [x] | x <- ['A'..'Z'] ++ ['a'..'z']  ]
