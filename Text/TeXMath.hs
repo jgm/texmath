@@ -27,6 +27,7 @@ import Text.TeXMath.MathML
 import Text.TeXMath.OMML
 import Text.TeXMath.Pandoc
 import Text.TeXMath.Types
+import Text.TeXMath.UniMath 
 import Text.XML.Light
 import Text.Pandoc.Definition
 
