@@ -105,9 +105,9 @@ bbb_sym_map = zip bbb_ltr_nms bbb_glyphs
 
 -- Mathematical Scipt Fraktur
 
-mbfrak_ltn = toUChars [ 120172 .. 120223 ]
-mbfrak_ltr_nms = [ (++) "mbfrak" x | x <- ltnltrs ] 
-mbfrak_sym_map = zip mbfrak_ltr_nms mbfrak_ltn 
+mbffrak_ltn = toUChars [ 120172 .. 120223 ]
+mbffrak_ltr_nms = [ (++) "mbffrak" x | x <- ltnltrs ] 
+mbffrak_sym_map = zip mbffrak_ltr_nms mbffrak_ltn 
 
 -- Fraktur and Blackbold Symbols
 mscr_mfrak_bbb_sym_map = mscr_sym_map ++ mbfscr_sym_map ++ mfrak_sym_map  ++ bbb_sym_map ++ mbfrak_sym_map
