@@ -97,7 +97,7 @@ Library
                          Text.TeXMath.UniMath
 
     if impl(ghc >= 6.12)
-      Ghc-Options:     -Wall -fno-warn-unused-do-bind -XPackageImports
+      Ghc-Options:     -Wall -fno-warn-unused-do-bind 
     else
       Ghc-Options:     -Wall
     Ghc-Prof-Options:  -auto-all -caf-all
