@@ -240,7 +240,7 @@ environments = M.fromList
   , ("vmatrix", matrixWith "\x2223" "\x2223")
   , ("Vmatrix", matrixWith "\x2225" "\x2225")
   , ("split", align)
-  , ("multiline", gather)
+  , ("multline", gather)
   , ("gather", gather)
   , ("gathered", gather)
   ]
