@@ -1,3 +1,8 @@
+texmath (0.6.6.1)
+
+  * Support \multline (previously it was mispelled "multiline")
+  * Changed data-files to extra-source-files.
+
 texmath (0.6.6)
 
   * Insert braces around macro expansions to prevent breakage (#7).
