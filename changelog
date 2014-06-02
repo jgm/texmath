@@ -1,3 +1,8 @@
+texmath (0.6.6.2)
+
+  * Allow \left to be used with ), ], etc.  Ditto with \right.
+    Previously only (, [, etc. were allowed with \left.  Closes pandoc #1319.
+
 texmath (0.6.6.1)
 
   * Support \multline (previously it was mispelled "multiline")
