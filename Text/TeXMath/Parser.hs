@@ -158,7 +158,8 @@ left = try $ do
   symbol "\\left"
   enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Open "\xFEFF"))
   case enc of
-    (ESymbol Open _) -> tilRight enc <|> return (EStretchy enc)
+    (ESymbol Open _)  -> tilRight enc <|> return (EStretchy enc)
+    (ESymbol Close _) -> tilRight enc <|> return (EStretchy enc)
     _ -> pzero
 
 right :: TP Exp
@@ -167,6 +168,7 @@ right = try $ do
   enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Close "\xFEFF"))
   case enc of
     (ESymbol Close x) -> return (EStretchy $ ESymbol Open x)
+    (ESymbol Open x)  -> return (EStretchy $ ESymbol Open x)
     _ -> pzero
 
 -- We want stuff between \left( and \right) to be in an mrow,
