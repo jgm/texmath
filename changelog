@@ -1,3 +1,7 @@
+texmath (0.6.6.3)
+
+  * Use combining tilde accent for \tilde.  Closes pandoc #1324.
+
 texmath (0.6.6.2)
 
   * Allow \left to be used with ), ], etc.  Ditto with \right.
