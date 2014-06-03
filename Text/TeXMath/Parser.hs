@@ -424,7 +424,7 @@ diacriticals = M.fromList
                , ("\\overleftarrow", \e -> EOver e (ESymbol Accent "\x20D6"))
                , ("\\hat", \e -> EOver e (ESymbol Accent "\x005E"))
                , ("\\widehat", \e -> EOver e (ESymbol Accent "\x0302"))
-               , ("\\tilde", \e -> EOver e (ESymbol Accent "~"))
+               , ("\\tilde", \e -> EOver e (ESymbol Accent "\x0303"))
                , ("\\widetilde", \e -> EOver e (ESymbol Accent "\x02DC"))
                , ("\\bar", \e -> EOver e (ESymbol Accent "\x203E"))
                , ("\\overbrace", \e -> EOver e (ESymbol Accent "\xFE37"))
