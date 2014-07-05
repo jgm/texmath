@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable columnlines="solid" rowlines="solid">
+    <mtr>
+      <mtd></mtd> 
+      <mtd>
+        <mtext>ds=true</mtext> 
+      </mtd> 
+      <mtd>
+        <mtext>ds=false</mtext> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>stretch=t, large=t</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle fontsize="150%" displaystyle="true">
+          <mrow>
+            <mo stretchy="true" largeop="true">&#x222B;</mo> 
+            <mfrac>
+              <mi>x</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="true" largeop="true">&#x222B;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+      <mtd>
+        <mstyle fontsize="150%" displaystyle="false">
+          <mrow>
+            <mo stretchy="true" largeop="true">&#x222B;</mo> 
+            <mfrac>
+              <mi>x</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="true" largeop="true">&#x222B;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>stretch=f, large=t</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle fontsize="150%" displaystyle="true">
+          <mrow>
+            <mo stretchy="false" largeop="true">&#x222B;</mo> 
+            <mfrac>
+              <mi>x</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="false" largeop="true">&#x222B;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+      <mtd>
+        <mstyle fontsize="150%" displaystyle="false">
+          <mrow>
+            <mo stretchy="false" largeop="true">&#x222B;</mo> 
+            <mfrac>
+              <mi>x</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="false" largeop="true">&#x222B;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>stretch=t, large=f</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle fontsize="150%" displaystyle="true">
+          <mrow>
+            <mo stretchy="true" largeop="false">&#x222B;</mo> 
+            <mfrac>
+              <mi>x</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="true" largeop="false">&#x222B;</mo> 
+            <mfrac>
+              <mi>A</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="true" largeop="false">&#x222B;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+      <mtd>
+        <mstyle fontsize="150%" displaystyle="false">
+          <mrow>
+            <mo stretchy="true" largeop="false">&#x222B;</mo> 
+            <mfrac>
+              <mi>x</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="true" largeop="false">&#x222B;</mo> 
+            <mfrac>
+              <mi>A</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="true" largeop="false">&#x222B;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>stretch=f, large=f</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle fontsize="150%" displaystyle="true">
+          <mrow>
+            <mo stretchy="false" largeop="false">&#x222B;</mo> 
+            <mfrac>
+              <mi>x</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="false" largeop="false">&#x222B;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+      <mtd>
+        <mstyle fontsize="150%" displaystyle="false">
+          <mrow>
+            <mo stretchy="false" largeop="false">&#x222B;</mo> 
+            <mfrac>
+              <mi>x</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="false" largeop="false">&#x222B;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+  </mtable> </math>

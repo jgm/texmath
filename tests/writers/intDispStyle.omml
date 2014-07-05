@@ -1,0 +1,430 @@
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:m>
+      <m:mPr>
+        <m:baseJc m:val="center" />
+        <m:plcHide m:val="on" />
+        <m:mcs>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="left" />
+            </m:mcPr>
+          </m:mc>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="left" />
+            </m:mcPr>
+          </m:mc>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="left" />
+            </m:mcPr>
+          </m:mc>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="left" />
+            </m:mcPr>
+          </m:mc>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="left" />
+            </m:mcPr>
+          </m:mc>
+        </m:mcs>
+      </m:mPr>
+      <m:mr>
+        <m:e />
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ds=true</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ds=false</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>stretch=t, large=t</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr />
+            <m:t>∫</m:t>
+          </m:r>
+          <m:f>
+            <m:fPr>
+              <m:type m:val="bar" />
+            </m:fPr>
+            <m:num>
+              <m:r>
+                <m:rPr />
+                <m:t>x</m:t>
+              </m:r>
+            </m:num>
+            <m:den>
+              <m:r>
+                <m:rPr />
+                <m:t>5</m:t>
+              </m:r>
+            </m:den>
+          </m:f>
+          <m:r>
+            <m:rPr />
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>∫</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>x</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr />
+            <m:t>∫</m:t>
+          </m:r>
+          <m:f>
+            <m:fPr>
+              <m:type m:val="bar" />
+            </m:fPr>
+            <m:num>
+              <m:r>
+                <m:rPr />
+                <m:t>x</m:t>
+              </m:r>
+            </m:num>
+            <m:den>
+              <m:r>
+                <m:rPr />
+                <m:t>5</m:t>
+              </m:r>
+            </m:den>
+          </m:f>
+          <m:r>
+            <m:rPr />
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>∫</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>x</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>stretch=f, large=t</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr />
+            <m:t>∫</m:t>
+          </m:r>
+          <m:f>
+            <m:fPr>
+              <m:type m:val="bar" />
+            </m:fPr>
+            <m:num>
+              <m:r>
+                <m:rPr />
+                <m:t>x</m:t>
+              </m:r>
+            </m:num>
+            <m:den>
+              <m:r>
+                <m:rPr />
+                <m:t>5</m:t>
+              </m:r>
+            </m:den>
+          </m:f>
+          <m:r>
+            <m:rPr />
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>∫</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>x</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr />
+            <m:t>∫</m:t>
+          </m:r>
+          <m:f>
+            <m:fPr>
+              <m:type m:val="bar" />
+            </m:fPr>
+            <m:num>
+              <m:r>
+                <m:rPr />
+                <m:t>x</m:t>
+              </m:r>
+            </m:num>
+            <m:den>
+              <m:r>
+                <m:rPr />
+                <m:t>5</m:t>
+              </m:r>
+            </m:den>
+          </m:f>
+          <m:r>
+            <m:rPr />
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>∫</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>x</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>stretch=t, large=f</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr />
+            <m:t>∫</m:t>
+          </m:r>
+          <m:f>
+            <m:fPr>
+              <m:type m:val="bar" />
+            </m:fPr>
+            <m:num>
+              <m:r>
+                <m:rPr />
+                <m:t>x</m:t>
+              </m:r>
+            </m:num>
+            <m:den>
+              <m:r>
+                <m:rPr />
+                <m:t>5</m:t>
+              </m:r>
+            </m:den>
+          </m:f>
+          <m:r>
+            <m:rPr />
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>∫</m:t>
+          </m:r>
+          <m:f>
+            <m:fPr>
+              <m:type m:val="bar" />
+            </m:fPr>
+            <m:num>
+              <m:r>
+                <m:rPr />
+                <m:t>A</m:t>
+              </m:r>
+            </m:num>
+            <m:den>
+              <m:r>
+                <m:rPr />
+                <m:t>5</m:t>
+              </m:r>
+            </m:den>
+          </m:f>
+          <m:r>
+            <m:rPr />
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>∫</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>x</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr />
+            <m:t>∫</m:t>
+          </m:r>
+          <m:f>
+            <m:fPr>
+              <m:type m:val="bar" />
+            </m:fPr>
+            <m:num>
+              <m:r>
+                <m:rPr />
+                <m:t>x</m:t>
+              </m:r>
+            </m:num>
+            <m:den>
+              <m:r>
+                <m:rPr />
+                <m:t>5</m:t>
+              </m:r>
+            </m:den>
+          </m:f>
+          <m:r>
+            <m:rPr />
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>∫</m:t>
+          </m:r>
+          <m:f>
+            <m:fPr>
+              <m:type m:val="bar" />
+            </m:fPr>
+            <m:num>
+              <m:r>
+                <m:rPr />
+                <m:t>A</m:t>
+              </m:r>
+            </m:num>
+            <m:den>
+              <m:r>
+                <m:rPr />
+                <m:t>5</m:t>
+              </m:r>
+            </m:den>
+          </m:f>
+          <m:r>
+            <m:rPr />
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>∫</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>x</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>stretch=f, large=f</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr />
+            <m:t>∫</m:t>
+          </m:r>
+          <m:f>
+            <m:fPr>
+              <m:type m:val="bar" />
+            </m:fPr>
+            <m:num>
+              <m:r>
+                <m:rPr />
+                <m:t>x</m:t>
+              </m:r>
+            </m:num>
+            <m:den>
+              <m:r>
+                <m:rPr />
+                <m:t>5</m:t>
+              </m:r>
+            </m:den>
+          </m:f>
+          <m:r>
+            <m:rPr />
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>∫</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>x</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr />
+            <m:t>∫</m:t>
+          </m:r>
+          <m:f>
+            <m:fPr>
+              <m:type m:val="bar" />
+            </m:fPr>
+            <m:num>
+              <m:r>
+                <m:rPr />
+                <m:t>x</m:t>
+              </m:r>
+            </m:num>
+            <m:den>
+              <m:r>
+                <m:rPr />
+                <m:t>5</m:t>
+              </m:r>
+            </m:den>
+          </m:f>
+          <m:r>
+            <m:rPr />
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>∫</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr />
+            <m:t>x</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+    </m:m>
+  </m:oMath>
+</m:oMathPara>

@@ -1,0 +1,214 @@
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>And this shows a combination with a background image at a desired opacity </m:t>
+    </m:r>
+    <m:sSub>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>Z</m:t>
+        </m:r>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:rPr />
+          <m:t>α</m:t>
+        </m:r>
+      </m:sub>
+    </m:sSub>
+    <m:r>
+      <m:rPr />
+      <m:t>(</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>f</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>)</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>=</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:rPr />
+          <m:t>1</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:rPr />
+          <m:t>2</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr />
+          <m:t>i</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t> </m:t>
+        </m:r>
+        <m:r>
+          <m:rPr />
+          <m:t>cos</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr />
+          <m:t>(</m:t>
+        </m:r>
+        <m:f>
+          <m:fPr>
+            <m:type m:val="bar" />
+          </m:fPr>
+          <m:num>
+            <m:r>
+              <m:rPr />
+              <m:t>α</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>π</m:t>
+            </m:r>
+          </m:num>
+          <m:den>
+            <m:r>
+              <m:rPr />
+              <m:t>2</m:t>
+            </m:r>
+          </m:den>
+        </m:f>
+        <m:r>
+          <m:rPr />
+          <m:t>)</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="∫" />
+        <m:limLoc m:val="subSup" />
+        <m:supHide m:val="off" />
+        <m:supHide m:val="off" />
+      </m:naryPr>
+      <m:e>
+        <m:f>
+          <m:fPr>
+            <m:type m:val="bar" />
+          </m:fPr>
+          <m:num>
+            <m:r>
+              <m:rPr />
+              <m:t>f</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>(</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>i</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>z</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>)</m:t>
+            </m:r>
+            <m:sSup>
+              <m:e>
+                <m:r>
+                  <m:rPr />
+                  <m:t>(</m:t>
+                </m:r>
+                <m:r>
+                  <m:rPr />
+                  <m:t>-</m:t>
+                </m:r>
+                <m:r>
+                  <m:rPr />
+                  <m:t>z</m:t>
+                </m:r>
+                <m:r>
+                  <m:rPr />
+                  <m:t>)</m:t>
+                </m:r>
+              </m:e>
+              <m:sup>
+                <m:r>
+                  <m:rPr />
+                  <m:t>α</m:t>
+                </m:r>
+              </m:sup>
+            </m:sSup>
+          </m:num>
+          <m:den>
+            <m:sSup>
+              <m:e>
+                <m:r>
+                  <m:rPr />
+                  <m:t>e</m:t>
+                </m:r>
+              </m:e>
+              <m:sup>
+                <m:r>
+                  <m:rPr />
+                  <m:t>2</m:t>
+                </m:r>
+                <m:r>
+                  <m:rPr />
+                  <m:t>π</m:t>
+                </m:r>
+                <m:r>
+                  <m:rPr />
+                  <m:t>z</m:t>
+                </m:r>
+              </m:sup>
+            </m:sSup>
+            <m:r>
+              <m:rPr />
+              <m:t>-</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>1</m:t>
+            </m:r>
+          </m:den>
+        </m:f>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:rPr />
+          <m:t>C</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup />
+    </m:nary>
+    <m:r>
+      <m:rPr />
+      <m:t>ⅆ</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>z</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

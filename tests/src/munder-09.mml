@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mover>    <mrow>      <munder>        <mi mathvariant="normal">- middle -</mi>         <mi mathvariant="normal">bottom</mi>       </munder>     </mrow>     <mphantom>      <mi mathvariant="normal">fail</mi>
+    </mphantom>   </mover>   <mo>=</mo>   <munder>    <mrow>      <mover>        <mi mathvariant="normal">- middle -</mi>         <mphantom>          <mi mathvariant="normal">fail</mi>
+        </mphantom>       </mover>     </mrow>     <mi mathvariant="normal">bottom</mi>   </munder> </math>

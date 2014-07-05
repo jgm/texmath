@@ -1,0 +1,27 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <munder>
+        <mtext mathvariant="normal">BASE</mtext>
+        <mfrac linethickness="0">
+          <mtext mathvariant="normal">first under script</mtext>
+          <mtext mathvariant="normal">second one</mtext>
+        </mfrac>
+      </munder>
+      <mo>=</mo>
+      <munder>
+        <munder>
+          <mtext mathvariant="normal">BASE</mtext>
+          <mfrac linethickness="0">
+            <mtext mathvariant="normal">first under script</mtext>
+            <mtext mathvariant="normal">second one</mtext>
+          </mfrac>
+        </munder>
+        <mphantom>
+          <mtext mathvariant="normal">fail</mtext>
+        </mphantom>
+      </munder>
+    </mrow>
+  </mrow>
+</math>

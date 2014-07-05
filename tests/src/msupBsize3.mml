@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mo>&#x222B;</mo> 
+    <mn>1</mn> 
+  </msup> 
+  <mo>+</mo> 
+  <msup>
+    <mstyle mathbackground="green">
+      <mfrac>
+        <mi>x</mi> 
+        <mi>y</mi> 
+      </mfrac> 
+    </mstyle> 
+    <mi>a</mi> 
+  </msup> 
+  <mo>+</mo> 
+  <msup>
+    <mstyle mathbackground="green">
+      <mfrac>
+        <mi>x</mi> 
+        <mi>y</mi> 
+      </mfrac> 
+    </mstyle> 
+    <mn>1</mn> 
+  </msup> 
+  <mo>+</mo> 
+  <msup>
+    <mo>&#x222B;</mo> 
+    <mi>a</mi> 
+  </msup> 
+  <mo>+</mo> 
+  <mstyle displaystyle="true">
+    <msup>
+      <mo>&#x222B;</mo> 
+      <mi>a</mi> 
+    </msup> 
+  </mstyle> </math>

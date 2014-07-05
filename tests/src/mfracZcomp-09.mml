@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>Inline, text style, no line </mtext> 
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mrow>
+      <mstyle displaystyle="false" scriptlevel="0">
+        <mfrac linethickness="0">
+          <mrow>
+            <msup>
+              <mi>x</mi> 
+              <mn>2</mn> 
+            </msup> 
+            <mo form="infix">+</mo> 
+            <mn>1</mn> 
+          </mrow> 
+          <mi>x</mi> 
+        </mfrac> 
+      </mstyle> 
+    </mrow> 
+  </mstyle> 
+  <mtext> the end.</mtext> </math>

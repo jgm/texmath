@@ -26,46 +26,13 @@ Homepage:            http://github.com/jgm/texmath
 Extra-source-files:  README.markdown,
                      changelog,
                      cgi/texmath.xhtml,
-                     tests/01.tex, tests/01.xhtml, tests/01.omml,
-                     tests/02.tex, tests/02.xhtml, tests/02.omml,
-                     tests/03.tex, tests/03.xhtml, tests/03.omml,
-                     tests/04.tex, tests/04.xhtml, tests/04.omml,
-                     tests/05.tex, tests/05.xhtml, tests/05.omml,
-                     tests/06.tex, tests/06.xhtml, tests/06.omml,
-                     tests/07.tex, tests/07.xhtml, tests/07.omml,
-                     tests/08.tex, tests/08.xhtml, tests/08.omml,
-                     tests/09.tex, tests/09.xhtml, tests/09.omml,
-                     tests/10.tex, tests/10.xhtml, tests/10.omml,
-                     tests/11.tex, tests/11.xhtml, tests/11.omml,
-                     tests/12.tex, tests/12.xhtml, tests/12.omml,
-                     tests/13.tex, tests/13.xhtml, tests/13.omml,
-                     tests/14.tex, tests/14.xhtml, tests/14.omml,
-                     tests/15.tex, tests/15.xhtml, tests/15.omml,
-                     tests/16.tex, tests/16.xhtml, tests/16.omml,
-                     tests/17.tex, tests/17.xhtml, tests/17.omml,
-                     tests/18.tex, tests/18.xhtml, tests/18.omml,
-                     tests/19.tex, tests/19.xhtml, tests/19.omml,
-                     tests/20.tex, tests/20.xhtml, tests/20.omml,
-                     tests/21.tex, tests/21.xhtml, tests/21.omml,
-                     tests/22.tex, tests/22.xhtml, tests/22.omml,
-                     tests/axiom_of_power_set.tex, tests/axiom_of_power_set.xhtml, tests/axiom_of_power_set.omml,
-                     tests/binomial_coefficient.tex, tests/binomial_coefficient.xhtml, tests/binomial_coefficient.omml,
-                     tests/complex_number.tex, tests/complex_number.xhtml, tests/complex_number.omml,
-                     tests/deMorgans_law.tex, tests/deMorgans_law.xhtml, tests/deMorgans_law.omml,
-                     tests/differentiable_manifold.tex, tests/differentiable_manifold.xhtml, tests/differentiable_manifold.omml,
-                     tests/divergence.tex, tests/divergence.xhtml, tests/divergence.omml,
-                     tests/moore_determinant.tex, tests/moore_determinant.xhtml, tests/moore_determinant.omml,
-                     tests/quadratic_formula.tex, tests/quadratic_formula.xhtml, tests/quadratic_formula.omml,
-                     tests/schwinger_dyson.tex, tests/schwinger_dyson.xhtml, tests/schwinger_dyson.omml,
-                     tests/sophomores_dream.tex, tests/sophomores_dream.xhtml, tests/sophomores_dream.omml,
-                     tests/sphere_volume.tex, tests/sphere_volume.xhtml, tests/sphere_volume.omml,
-                     tests/unicode.tex, tests/unicode.xhtml, tests/unicode.omml,
-                     tests/ensuremath.tex, tests/ensuremath.xhtml, tests/ensuremath.omml,
-                     tests/macros.tex, tests/macros.xhtml, tests/macros.omml,
-                     tests/subsup.tex, tests/subsup.xhtml, tests/subsup.omml,
-                     tests/stackrel.tex, tests/stackrel.xhtml, tests/stackrel.omml,
-                     tests/notin.tex, tests/notin.xhtml, tests/notin.omml,
-                     tests/labels.tex, tests/labels.xhtml, tests/labels.omml
+                     tests/src/*.mml
+                     tests/src/*.tex
+                     tests/readers/mml/*.native
+                     tests/readers/tex/*.native
+                     tests/writers/*.xhtml
+                     tests/writers/*.tex
+                     tests/writers/*.omml
 
 Source-repository head
   type:              git

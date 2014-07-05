@@ -1,0 +1,17 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mtext mathvariant="normal">Inline, display style, normal line </mtext>
+      <mfrac>
+        <mrow>
+          <mi>ln</mi>
+          <mo>&#8289;</mo>
+          <mi>x</mi>
+        </mrow>
+        <mi>y</mi>
+      </mfrac>
+      <mtext mathvariant="normal">, numerator and denominator should render normal size.</mtext>
+    </mrow>
+  </mrow>
+</math>

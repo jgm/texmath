@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>Inline, text style, normal line </mtext> 
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mrow>
+      <mstyle displaystyle="false" scriptlevel="0">
+        <mfrac>
+          <mrow>
+            <mi mathcolor="gray">tan</mi> 
+            <mo rspace="verythinmathspace">&#x02061;</mo> 
+            <mi>&#x003B8;</mi> 
+          </mrow> 
+          <mn>67</mn> 
+        </mfrac> 
+      </mstyle> 
+    </mrow> 
+  </mstyle> 
+  <mtext>, numerator and denominator should render script size.</mtext> </math>

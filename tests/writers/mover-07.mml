@@ -1,0 +1,21 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mover>
+        <mtext mathvariant="normal">mover baseline</mtext>
+        <mtext mathvariant="normal">mover over script</mtext>
+      </mover>
+      <mo>=</mo>
+      <mover>
+        <mover>
+          <mtext mathvariant="normal">mover baseline</mtext>
+          <mtext mathvariant="normal">mover over script</mtext>
+        </mover>
+        <mphantom>
+          <mtext mathvariant="normal">fail</mtext>
+        </mphantom>
+      </mover>
+    </mrow>
+  </mrow>
+</math>

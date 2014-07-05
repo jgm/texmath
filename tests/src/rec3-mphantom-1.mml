@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mrow>
+      <mi>x</mi> 
+      <mo>+</mo> 
+      <mi>y</mi> 
+      <mo>+</mo> 
+      <mi>z</mi> 
+    </mrow> 
+    <mrow>
+      <mi>x</mi> 
+      <mphantom>
+        <mo form="infix">+</mo> 
+        <mi>y</mi> 
+      </mphantom> 
+      <mo>+</mo> 
+      <mi>z</mi> 
+    </mrow> 
+  </mfrac> </math>

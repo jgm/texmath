@@ -1,0 +1,1887 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtable>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nabla</mtext>
+        </mtd>
+        <mtd>
+          <mo>∇</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nacute</mtext>
+        </mtd>
+        <mtd>
+          <mi>ń</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Nacute</mtext>
+        </mtd>
+        <mtd>
+          <mi>Ń</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nang</mtext>
+        </mtd>
+        <mtd>
+          <mi>∠⃒</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nap</mtext>
+        </mtd>
+        <mtd>
+          <mo>≉</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">napE</mtext>
+        </mtd>
+        <mtd>
+          <mi>⩰̸</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">napid</mtext>
+        </mtd>
+        <mtd>
+          <mi>≋̸</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">napos</mtext>
+        </mtd>
+        <mtd>
+          <mi>ŉ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">napprox</mtext>
+        </mtd>
+        <mtd>
+          <mo>≉</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">natur</mtext>
+        </mtd>
+        <mtd>
+          <mo>♮</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">natural</mtext>
+        </mtd>
+        <mtd>
+          <mo>♮</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">naturals</mtext>
+        </mtd>
+        <mtd>
+          <mi>ℕ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nbsp</mtext>
+        </mtd>
+        <mtd>
+          <mi> </mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nbump</mtext>
+        </mtd>
+        <mtd>
+          <mo>≎̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nbumpe</mtext>
+        </mtd>
+        <mtd>
+          <mo>≏̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ncap</mtext>
+        </mtd>
+        <mtd>
+          <mo>⩃</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ncaron</mtext>
+        </mtd>
+        <mtd>
+          <mi>ň</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Ncaron</mtext>
+        </mtd>
+        <mtd>
+          <mi>Ň</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ncedil</mtext>
+        </mtd>
+        <mtd>
+          <mi>ņ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Ncedil</mtext>
+        </mtd>
+        <mtd>
+          <mi>Ņ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ncong</mtext>
+        </mtd>
+        <mtd>
+          <mo>≇</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ncongdot</mtext>
+        </mtd>
+        <mtd>
+          <mi>⩭̸</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ncup</mtext>
+        </mtd>
+        <mtd>
+          <mo>⩂</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ncy</mtext>
+        </mtd>
+        <mtd>
+          <mi>н</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Ncy</mtext>
+        </mtd>
+        <mtd>
+          <mi>Н</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ndash</mtext>
+        </mtd>
+        <mtd>
+          <mi>–</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ne</mtext>
+        </mtd>
+        <mtd>
+          <mo>≠</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nearhk</mtext>
+        </mtd>
+        <mtd>
+          <mo>⤤</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nearr</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">↗</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">neArr</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">⇗</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nearrow</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">↗</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nedot</mtext>
+        </mtd>
+        <mtd>
+          <mi>≐̸</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NegativeMediumSpace</mtext>
+        </mtd>
+        <mtd>
+          <mi>&#8203;</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NegativeThickSpace</mtext>
+        </mtd>
+        <mtd>
+          <mi>&#8203;</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NegativeThinSpace</mtext>
+        </mtd>
+        <mtd>
+          <mi>&#8203;</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NegativeVeryThinSpace</mtext>
+        </mtd>
+        <mtd>
+          <mi>&#8203;</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nequiv</mtext>
+        </mtd>
+        <mtd>
+          <mo>≢</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nesear</mtext>
+        </mtd>
+        <mtd>
+          <mo>⤨</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nesim</mtext>
+        </mtd>
+        <mtd>
+          <mo>≂̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NestedGreaterGreater</mtext>
+        </mtd>
+        <mtd>
+          <mo>≫</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NestedLessLess</mtext>
+        </mtd>
+        <mtd>
+          <mo>≪</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NewLine</mtext>
+        </mtd>
+        <mtd>
+          <mi></mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nexist</mtext>
+        </mtd>
+        <mtd>
+          <mo>∄</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nexists</mtext>
+        </mtd>
+        <mtd>
+          <mo>∄</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nfr</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝔫</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Nfr</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝔑</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nge</mtext>
+        </mtd>
+        <mtd>
+          <mo>≱</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ngE</mtext>
+        </mtd>
+        <mtd>
+          <mi>≧̸</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ngeq</mtext>
+        </mtd>
+        <mtd>
+          <mo>≱</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ngeqq</mtext>
+        </mtd>
+        <mtd>
+          <mi>≧̸</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ngeqslant</mtext>
+        </mtd>
+        <mtd>
+          <mo>⩾̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nges</mtext>
+        </mtd>
+        <mtd>
+          <mo>⩾̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nGg</mtext>
+        </mtd>
+        <mtd>
+          <mi>⋙̸</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ngsim</mtext>
+        </mtd>
+        <mtd>
+          <mo>≵</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ngt</mtext>
+        </mtd>
+        <mtd>
+          <mo>≯</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nGt</mtext>
+        </mtd>
+        <mtd>
+          <mi>≫⃒</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ngtr</mtext>
+        </mtd>
+        <mtd>
+          <mo>≯</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nGtv</mtext>
+        </mtd>
+        <mtd>
+          <mo>≫̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nharr</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">↮</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nhArr</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">⇎</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nhpar</mtext>
+        </mtd>
+        <mtd>
+          <mo>⫲</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ni</mtext>
+        </mtd>
+        <mtd>
+          <mo>∋</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nis</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋼</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nisd</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋺</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">niv</mtext>
+        </mtd>
+        <mtd>
+          <mo>∋</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">njcy</mtext>
+        </mtd>
+        <mtd>
+          <mi>њ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NJcy</mtext>
+        </mtd>
+        <mtd>
+          <mi>Њ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nlarr</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">↚</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nlArr</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">⇍</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nldr</mtext>
+        </mtd>
+        <mtd>
+          <mi>‥</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nle</mtext>
+        </mtd>
+        <mtd>
+          <mo>≰</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nlE</mtext>
+        </mtd>
+        <mtd>
+          <mo>≦̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nleftarrow</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">↚</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nLeftarrow</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">⇍</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nleftrightarrow</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">↮</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nLeftrightarrow</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">⇎</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nleq</mtext>
+        </mtd>
+        <mtd>
+          <mo>≰</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nleqq</mtext>
+        </mtd>
+        <mtd>
+          <mo>≦̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nleqslant</mtext>
+        </mtd>
+        <mtd>
+          <mo>⩽̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nles</mtext>
+        </mtd>
+        <mtd>
+          <mo>⩽̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nless</mtext>
+        </mtd>
+        <mtd>
+          <mo>≮</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nLl</mtext>
+        </mtd>
+        <mtd>
+          <mi>⋘̸</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nlsim</mtext>
+        </mtd>
+        <mtd>
+          <mo>≴</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nlt</mtext>
+        </mtd>
+        <mtd>
+          <mo>≮</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nLt</mtext>
+        </mtd>
+        <mtd>
+          <mi>≪⃒</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nltri</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋪</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nltrie</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋬</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nLtv</mtext>
+        </mtd>
+        <mtd>
+          <mo>≪̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nmid</mtext>
+        </mtd>
+        <mtd>
+          <mo>∤</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NoBreak</mtext>
+        </mtd>
+        <mtd>
+          <mi>&#8288;</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NonBreakingSpace</mtext>
+        </mtd>
+        <mtd>
+          <mi> </mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nopf</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝕟</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Nopf</mtext>
+        </mtd>
+        <mtd>
+          <mi>ℕ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">not</mtext>
+        </mtd>
+        <mtd>
+          <mo>¬</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Not</mtext>
+        </mtd>
+        <mtd>
+          <mo>⫬</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotCongruent</mtext>
+        </mtd>
+        <mtd>
+          <mo>≢</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotCupCap</mtext>
+        </mtd>
+        <mtd>
+          <mo>≭</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotDoubleVerticalBar</mtext>
+        </mtd>
+        <mtd>
+          <mo>∦</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotElement</mtext>
+        </mtd>
+        <mtd>
+          <mo>∉</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotEqual</mtext>
+        </mtd>
+        <mtd>
+          <mo>≠</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotEqualTilde</mtext>
+        </mtd>
+        <mtd>
+          <mo>≂̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotExists</mtext>
+        </mtd>
+        <mtd>
+          <mo>∄</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotGreater</mtext>
+        </mtd>
+        <mtd>
+          <mo>≯</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotGreaterEqual</mtext>
+        </mtd>
+        <mtd>
+          <mo>≱</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotGreaterFullEqual</mtext>
+        </mtd>
+        <mtd>
+          <mi>≧̸</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotGreaterGreater</mtext>
+        </mtd>
+        <mtd>
+          <mo>≫̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotGreaterLess</mtext>
+        </mtd>
+        <mtd>
+          <mo>≹</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotGreaterSlantEqual</mtext>
+        </mtd>
+        <mtd>
+          <mo>⩾̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotGreaterTilde</mtext>
+        </mtd>
+        <mtd>
+          <mo>≵</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotHumpDownHump</mtext>
+        </mtd>
+        <mtd>
+          <mo>≎̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotHumpEqual</mtext>
+        </mtd>
+        <mtd>
+          <mo>≏̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">notin</mtext>
+        </mtd>
+        <mtd>
+          <mo>∉</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">notindot</mtext>
+        </mtd>
+        <mtd>
+          <mi>⋵̸</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">notinE</mtext>
+        </mtd>
+        <mtd>
+          <mi>⋹̸</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">notinva</mtext>
+        </mtd>
+        <mtd>
+          <mo>∉</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">notinvb</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋷</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">notinvc</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋶</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotLeftTriangle</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋪</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotLeftTriangleBar</mtext>
+        </mtd>
+        <mtd>
+          <mo>⧏̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotLeftTriangleEqual</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋬</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotLess</mtext>
+        </mtd>
+        <mtd>
+          <mo>≮</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotLessEqual</mtext>
+        </mtd>
+        <mtd>
+          <mo>≰</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotLessGreater</mtext>
+        </mtd>
+        <mtd>
+          <mo>≸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotLessLess</mtext>
+        </mtd>
+        <mtd>
+          <mo>≪̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotLessSlantEqual</mtext>
+        </mtd>
+        <mtd>
+          <mo>⩽̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotLessTilde</mtext>
+        </mtd>
+        <mtd>
+          <mo>≴</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotNestedGreaterGreater</mtext>
+        </mtd>
+        <mtd>
+          <mo>⪢̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotNestedLessLess</mtext>
+        </mtd>
+        <mtd>
+          <mo>⪡̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">notni</mtext>
+        </mtd>
+        <mtd>
+          <mo>∌</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">notniva</mtext>
+        </mtd>
+        <mtd>
+          <mo>∌</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">notnivb</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋾</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">notnivc</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋽</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotPrecedes</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊀</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotPrecedesEqual</mtext>
+        </mtd>
+        <mtd>
+          <mo>⪯̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotPrecedesSlantEqual</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋠</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotReverseElement</mtext>
+        </mtd>
+        <mtd>
+          <mo>∌</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotRightTriangle</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋫</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotRightTriangleBar</mtext>
+        </mtd>
+        <mtd>
+          <mo>⧐̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotRightTriangleEqual</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋭</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotSquareSubset</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊏̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotSquareSubsetEqual</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋢</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotSquareSuperset</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊐̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotSquareSupersetEqual</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋣</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotSubset</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊂⃒</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotSubsetEqual</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊈</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotSucceeds</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊁</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotSucceedsEqual</mtext>
+        </mtd>
+        <mtd>
+          <mo>⪰̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotSucceedsSlantEqual</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋡</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotSucceedsTilde</mtext>
+        </mtd>
+        <mtd>
+          <mo>≿̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotSuperset</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊃⃒</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotSupersetEqual</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊉</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotTilde</mtext>
+        </mtd>
+        <mtd>
+          <mo>≁</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotTildeEqual</mtext>
+        </mtd>
+        <mtd>
+          <mo>≄</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotTildeFullEqual</mtext>
+        </mtd>
+        <mtd>
+          <mo>≇</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotTildeTilde</mtext>
+        </mtd>
+        <mtd>
+          <mo>≉</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">NotVerticalBar</mtext>
+        </mtd>
+        <mtd>
+          <mo>∤</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">npar</mtext>
+        </mtd>
+        <mtd>
+          <mo>∦</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nparallel</mtext>
+        </mtd>
+        <mtd>
+          <mo>∦</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nparsl</mtext>
+        </mtd>
+        <mtd>
+          <mi>⫽⃥</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">npart</mtext>
+        </mtd>
+        <mtd>
+          <mi>∂̸</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">npolint</mtext>
+        </mtd>
+        <mtd>
+          <mo>⨔</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">npr</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊀</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nprcue</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋠</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">npre</mtext>
+        </mtd>
+        <mtd>
+          <mo>⪯̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nprec</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊀</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">npreceq</mtext>
+        </mtd>
+        <mtd>
+          <mo>⪯̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nrarr</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">↛</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nrArr</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">⇏</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nrarrc</mtext>
+        </mtd>
+        <mtd>
+          <mi>⤳̸</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nrarrw</mtext>
+        </mtd>
+        <mtd>
+          <mi>↝̸</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nrightarrow</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">↛</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nRightarrow</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">⇏</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nrtri</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋫</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nrtrie</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋭</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsc</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊁</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsccue</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋡</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsce</mtext>
+        </mtd>
+        <mtd>
+          <mo>⪰̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nscr</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝓃</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Nscr</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝒩</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nshortmid</mtext>
+        </mtd>
+        <mtd>
+          <mo>∤</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nshortparallel</mtext>
+        </mtd>
+        <mtd>
+          <mo>∦</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsim</mtext>
+        </mtd>
+        <mtd>
+          <mo>≁</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsime</mtext>
+        </mtd>
+        <mtd>
+          <mo>≄</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsimeq</mtext>
+        </mtd>
+        <mtd>
+          <mo>≄</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsmid</mtext>
+        </mtd>
+        <mtd>
+          <mo>∤</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nspar</mtext>
+        </mtd>
+        <mtd>
+          <mo>∦</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsqsube</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋢</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsqsupe</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋣</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsub</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊄</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsube</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊈</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsubE</mtext>
+        </mtd>
+        <mtd>
+          <mi>⫅̸</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsubset</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊂⃒</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsubseteq</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊈</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsubseteqq</mtext>
+        </mtd>
+        <mtd>
+          <mi>⫅̸</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsucc</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊁</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsucceq</mtext>
+        </mtd>
+        <mtd>
+          <mo>⪰̸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsup</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊅</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsupe</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊉</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsupE</mtext>
+        </mtd>
+        <mtd>
+          <mi>⫆̸</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsupset</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊃⃒</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsupseteq</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊉</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nsupseteqq</mtext>
+        </mtd>
+        <mtd>
+          <mi>⫆̸</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ntgl</mtext>
+        </mtd>
+        <mtd>
+          <mo>≹</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ntilde</mtext>
+        </mtd>
+        <mtd>
+          <mi>ñ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Ntilde</mtext>
+        </mtd>
+        <mtd>
+          <mi>Ñ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ntlg</mtext>
+        </mtd>
+        <mtd>
+          <mo>≸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ntriangleleft</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋪</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ntrianglelefteq</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋬</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ntriangleright</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋫</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ntrianglerighteq</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋭</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nu</mtext>
+        </mtd>
+        <mtd>
+          <mi>ν</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">num</mtext>
+        </mtd>
+        <mtd>
+          <mi>#</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">numero</mtext>
+        </mtd>
+        <mtd>
+          <mi>№</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">numsp</mtext>
+        </mtd>
+        <mtd>
+          <mi> </mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nvap</mtext>
+        </mtd>
+        <mtd>
+          <mi>≍⃒</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nvdash</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊬</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nvDash</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊭</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nVdash</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊮</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nVDash</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊯</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nvge</mtext>
+        </mtd>
+        <mtd>
+          <mi>≥⃒</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nvgt</mtext>
+        </mtd>
+        <mtd>
+          <mi>&gt;⃒</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nvHarr</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">⤄</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nvinfin</mtext>
+        </mtd>
+        <mtd>
+          <mo>⧞</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nvlArr</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">⤂</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nvle</mtext>
+        </mtd>
+        <mtd>
+          <mi>≤⃒</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nvlt</mtext>
+        </mtd>
+        <mtd>
+          <mi>&lt;⃒</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nvltrie</mtext>
+        </mtd>
+        <mtd>
+          <mi>⊴⃒</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nvrArr</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">⤃</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nvrtrie</mtext>
+        </mtd>
+        <mtd>
+          <mi>⊵⃒</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nvsim</mtext>
+        </mtd>
+        <mtd>
+          <mi>∼⃒</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nwarhk</mtext>
+        </mtd>
+        <mtd>
+          <mo>⤣</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nwarr</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">↖</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nwArr</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">⇖</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nwarrow</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">↖</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">nwnear</mtext>
+        </mtd>
+        <mtd>
+          <mo>⤧</mo>
+        </mtd>
+      </mtr>
+    </mtable>
+  </mrow>
+</math>

@@ -1,0 +1,44 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <msubsup>
+        <mi>S</mi>
+        <msubsup>
+          <mi>Q</mi>
+          <mn>4</mn>
+          <mn>3</mn>
+        </msubsup>
+        <msubsup>
+          <mi>P</mi>
+          <mn>2</mn>
+          <mn>1</mn>
+        </msubsup>
+      </msubsup>
+      <mo>=</mo>
+      <msubsup>
+        <mi>S</mi>
+        <msubsup>
+          <mi>Q</mi>
+          <mrow>
+            <mn>4</mn>
+            <mphantom>
+              <mtext mathvariant="normal">z</mtext>
+            </mphantom>
+          </mrow>
+          <mn>3</mn>
+        </msubsup>
+        <msubsup>
+          <mi>P</mi>
+          <mn>2</mn>
+          <mrow>
+            <mn>1</mn>
+            <mphantom>
+              <mtext mathvariant="normal">z</mtext>
+            </mphantom>
+          </mrow>
+        </msubsup>
+      </msubsup>
+    </mrow>
+  </mrow>
+</math>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfenced open="{" separators=",.">
+    <mfrac>
+      <mn>1</mn> 
+      <mn>78</mn> 
+    </mfrac> 
+    <mrow>
+      <mo>sin</mo> 
+      <mi>x</mi> 
+    </mrow> 
+    <mi>y</mi> 
+  </mfenced> 
+  <mo>&#x00D7;</mo> 
+  <msup>
+    <mi>&#x1D51E;</mi> 
+    <mrow>
+      <mn>2</mn> 
+      <mi>x</mi> 
+    </mrow> 
+  </msup> 
+  <mo>+</mo> 
+  <msub>
+    <mn>2</mn> 
+    <mi>j</mi> 
+  </msub> 
+  <mi>x</mi> 
+  <mo>+</mo> 
+  <mfrac>
+    <mn>45</mn> 
+    <mfrac>
+      <mn>1</mn> 
+      <mn>78</mn> 
+    </mfrac> 
+  </mfrac> 
+  <mo>*</mo> 
+  <mstyle color="blue" mathbackground="red" fontsize="24pt">
+    <msubsup>
+      <mi>x</mi> 
+      <mn color="green">2</mn> 
+      <mn>3</mn> 
+    </msubsup> 
+  </mstyle> 
+  <mo>=</mo> 
+  <mstyle color="blue" mathbackground="#ADD8E6" fontsize="16pt">
+    <mroot>
+      <mfrac>
+        <mn>1</mn> 
+        <mrow>
+          <mn>23</mn> 
+          <mo>+</mo> 
+          <mn>&#x03B2;</mn> 
+        </mrow> 
+      </mfrac> 
+      <mn>3</mn> 
+    </mroot> 
+  </mstyle> 
+  <ms lquote="#" rquote="'">This is my string!</ms> </math>

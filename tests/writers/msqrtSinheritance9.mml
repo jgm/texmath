@@ -1,0 +1,38 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mfrac>
+        <msqrt>
+          <mrow>
+            <mi>x</mi>
+            <mo>-</mo>
+            <mn>3</mn>
+          </mrow>
+        </msqrt>
+        <msqrt>
+          <mrow>
+            <mn>3</mn>
+            <mi>x</mi>
+          </mrow>
+        </msqrt>
+      </mfrac>
+      <mfrac>
+        <msqrt>
+          <mrow>
+            <mn>2</mn>
+            <mi>x</mi>
+            <mo>-</mo>
+            <mn>3</mn>
+          </mrow>
+        </msqrt>
+        <msqrt>
+          <mrow>
+            <mn>3</mn>
+            <mi>x</mi>
+          </mrow>
+        </msqrt>
+      </mfrac>
+    </mrow>
+  </mrow>
+</math>

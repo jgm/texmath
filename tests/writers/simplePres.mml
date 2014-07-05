@@ -1,0 +1,63 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mrow>
+        <mo stretchy="true">{</mo>
+        <mfrac>
+          <mn>1</mn>
+          <mn>78</mn>
+        </mfrac>
+        <mo>,</mo>
+        <mrow>
+          <mi>sin</mi>
+          <mi>x</mi>
+        </mrow>
+        <mo>.</mo>
+        <mi>y</mi>
+        <mo stretchy="true">)</mo>
+      </mrow>
+      <mo>×</mo>
+      <msup>
+        <mi>𝔞</mi>
+        <mrow>
+          <mn>2</mn>
+          <mi>x</mi>
+        </mrow>
+      </msup>
+      <mo>+</mo>
+      <msub>
+        <mn>2</mn>
+        <mi>j</mi>
+      </msub>
+      <mi>x</mi>
+      <mo>+</mo>
+      <mfrac>
+        <mn>45</mn>
+        <mfrac>
+          <mn>1</mn>
+          <mn>78</mn>
+        </mfrac>
+      </mfrac>
+      <mo>*</mo>
+      <msubsup>
+        <mi>x</mi>
+        <mn>2</mn>
+        <mn>3</mn>
+      </msubsup>
+      <mo>=</mo>
+      <mroot>
+        <mn>3</mn>
+        <mfrac>
+          <mn>1</mn>
+          <mrow>
+            <mn>23</mn>
+            <mo>+</mo>
+            <mn>β</mn>
+          </mrow>
+        </mfrac>
+      </mroot>
+      <mtext mathvariant="normal">#This is my string!&#39;</mtext>
+    </mrow>
+  </mrow>
+</math>

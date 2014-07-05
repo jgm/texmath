@@ -1,0 +1,22 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <msub>
+        <mi>U</mi>
+        <mi>t</mi>
+      </msub>
+      <mo>=</mo>
+      <msub>
+        <mi>U</mi>
+        <mi>t</mi>
+      </msub>
+      <mphantom>
+        <mfrac>
+          <mi>test</mi>
+          <mi>failed</mi>
+        </mfrac>
+      </mphantom>
+    </mrow>
+  </mrow>
+</math>

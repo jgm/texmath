@@ -1,0 +1,485 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtable>
+      <mtr>
+        <mtd />
+        <mtd>
+          <mtext mathvariant="normal">1D43</mtext>
+        </mtd>
+        <mtd>
+          <mtext mathvariant="normal">1D44</mtext>
+        </mtd>
+        <mtd>
+          <mtext mathvariant="normal">1D45</mtext>
+        </mtd>
+        <mtd>
+          <mtext mathvariant="normal">1D46</mtext>
+        </mtd>
+        <mtd>
+          <mtext mathvariant="normal">1D6A</mtext>
+        </mtd>
+        <mtd>
+          <mtext mathvariant="normal">1D6E</mtext>
+        </mtd>
+        <mtd>
+          <mtext mathvariant="normal">1D6F</mtext>
+        </mtd>
+        <mtd>
+          <mtext mathvariant="normal">1D70</mtext>
+        </mtd>
+        <mtd>
+          <mtext mathvariant="normal">1D71</mtext>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">0</mtext>
+        </mtd>
+        <mtd />
+        <mtd>
+          <mi>𝑀</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑐</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑠</mi>
+        </mtd>
+        <mtd />
+        <mtd />
+        <mtd>
+          <mi>𝛰</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜀</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜐</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">1</mtext>
+        </mtd>
+        <mtd />
+        <mtd>
+          <mi>𝑁</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑑</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑡</mi>
+        </mtd>
+        <mtd />
+        <mtd />
+        <mtd>
+          <mi>𝛱</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜁</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜑</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">2</mtext>
+        </mtd>
+        <mtd />
+        <mtd>
+          <mi>𝑂</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑒</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑢</mi>
+        </mtd>
+        <mtd />
+        <mtd>
+          <mi>𝛢</mi>
+        </mtd>
+        <mtd>
+          <mi>𝛲</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜂</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜒</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">3</mtext>
+        </mtd>
+        <mtd />
+        <mtd>
+          <mi>𝑃</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑓</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑣</mi>
+        </mtd>
+        <mtd />
+        <mtd>
+          <mi>𝛣</mi>
+        </mtd>
+        <mtd>
+          <mi>𝛳</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜃</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜓</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">4</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝐴</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑄</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑔</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑤</mi>
+        </mtd>
+        <mtd>
+          <mi>𝚤</mi>
+        </mtd>
+        <mtd>
+          <mi>𝛤</mi>
+        </mtd>
+        <mtd>
+          <mi>𝛴</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜄</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜔</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">5</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝐵</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑅</mi>
+        </mtd>
+        <mtd>
+          <mo>@</mo>
+        </mtd>
+        <mtd>
+          <mi>𝑥</mi>
+        </mtd>
+        <mtd>
+          <mi>𝚥</mi>
+        </mtd>
+        <mtd>
+          <mi>𝛥</mi>
+        </mtd>
+        <mtd>
+          <mi>𝛵</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜅</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜕</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">6</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝐶</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑆</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑖</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑦</mi>
+        </mtd>
+        <mtd />
+        <mtd>
+          <mi>𝛦</mi>
+        </mtd>
+        <mtd>
+          <mi>𝛶</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜆</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜖</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">7</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝐷</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑇</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑗</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑧</mi>
+        </mtd>
+        <mtd />
+        <mtd>
+          <mi>𝛧</mi>
+        </mtd>
+        <mtd>
+          <mi>𝛷</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜇</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜗</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">8</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝐸</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑈</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑘</mi>
+        </mtd>
+        <mtd />
+        <mtd />
+        <mtd>
+          <mi>𝛨</mi>
+        </mtd>
+        <mtd>
+          <mi>𝛸</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜈</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜘</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">9</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝐹</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑉</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑙</mi>
+        </mtd>
+        <mtd />
+        <mtd />
+        <mtd>
+          <mi>𝛩</mi>
+        </mtd>
+        <mtd>
+          <mi>𝛹</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜉</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜙</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">A</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝐺</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑊</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑚</mi>
+        </mtd>
+        <mtd />
+        <mtd />
+        <mtd>
+          <mi>𝛪</mi>
+        </mtd>
+        <mtd>
+          <mi>𝛺</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜊</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜚</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">B</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝐻</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑋</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑛</mi>
+        </mtd>
+        <mtd />
+        <mtd />
+        <mtd>
+          <mi>𝛫</mi>
+        </mtd>
+        <mtd>
+          <mi>𝛻</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜋</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜛</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">C</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝐼</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑌</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑜</mi>
+        </mtd>
+        <mtd />
+        <mtd />
+        <mtd>
+          <mi>𝛬</mi>
+        </mtd>
+        <mtd>
+          <mi>𝛼</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜌</mi>
+        </mtd>
+        <mtd />
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">D</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝐽</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑍</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑝</mi>
+        </mtd>
+        <mtd />
+        <mtd />
+        <mtd>
+          <mi>𝛭</mi>
+        </mtd>
+        <mtd>
+          <mi>𝛽</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜍</mi>
+        </mtd>
+        <mtd />
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">E</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝐾</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑎</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑞</mi>
+        </mtd>
+        <mtd />
+        <mtd />
+        <mtd>
+          <mi>𝛮</mi>
+        </mtd>
+        <mtd>
+          <mi>𝛾</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜎</mi>
+        </mtd>
+        <mtd />
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">F</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝐿</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑏</mi>
+        </mtd>
+        <mtd>
+          <mi>𝑟</mi>
+        </mtd>
+        <mtd />
+        <mtd />
+        <mtd>
+          <mi>𝛯</mi>
+        </mtd>
+        <mtd>
+          <mi>𝛿</mi>
+        </mtd>
+        <mtd>
+          <mi>𝜏</mi>
+        </mtd>
+        <mtd />
+      </mtr>
+    </mtable>
+  </mrow>
+</math>

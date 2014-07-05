@@ -1,0 +1,19 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <munderover>
+        <mtext mathvariant="normal">_ baseline _</mtext>
+        <mtext mathvariant="normal">under script</mtext>
+        <mphantom>
+          <mtext mathvariant="normal">fail</mtext>
+        </mphantom>
+      </munderover>
+      <mo>=</mo>
+      <munder>
+        <mtext mathvariant="normal">_ baseline _</mtext>
+        <mtext mathvariant="normal">under script</mtext>
+      </munder>
+    </mrow>
+  </mrow>
+</math>

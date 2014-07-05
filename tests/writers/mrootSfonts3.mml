@@ -1,0 +1,36 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mfrac>
+        <mroot>
+          <mrow>
+            <mi>x</mi>
+            <mo>-</mo>
+            <mn>3</mn>
+          </mrow>
+          <mrow>
+            <mi>x</mi>
+            <mo>-</mo>
+            <mn>3</mn>
+          </mrow>
+        </mroot>
+        <mroot>
+          <mrow>
+            <mi>x</mi>
+            <mo>-</mo>
+            <mn>3</mn>
+          </mrow>
+          <mrow>
+            <mn>3</mn>
+            <mi>x</mi>
+          </mrow>
+        </mroot>
+      </mfrac>
+      <mroot>
+        <mi>x</mi>
+        <mn>3</mn>
+      </mroot>
+    </mrow>
+  </mrow>
+</math>

@@ -1,0 +1,83 @@
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:rPr />
+      <m:t>x</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>=</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:rPr />
+          <m:t>−</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr />
+          <m:t>b</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr />
+          <m:t>±</m:t>
+        </m:r>
+        <m:rad>
+          <m:radPr>
+            <m:degHide m:val="on" />
+          </m:radPr>
+          <m:deg />
+          <m:e>
+            <m:sSup>
+              <m:e>
+                <m:r>
+                  <m:rPr />
+                  <m:t>b</m:t>
+                </m:r>
+              </m:e>
+              <m:sup>
+                <m:r>
+                  <m:rPr />
+                  <m:t>2</m:t>
+                </m:r>
+              </m:sup>
+            </m:sSup>
+            <m:r>
+              <m:rPr />
+              <m:t>−</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>4</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>a</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>c</m:t>
+            </m:r>
+          </m:e>
+        </m:rad>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:rPr />
+          <m:t>2</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr />
+          <m:t>a</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+  </m:oMath>
+</m:oMathPara>

@@ -1,0 +1,44 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <msubsup>
+        <mi>A</mi>
+        <msubsup>
+          <mi>C</mi>
+          <mn>4</mn>
+          <mn>3</mn>
+        </msubsup>
+        <msubsup>
+          <mi>B</mi>
+          <mn>2</mn>
+          <mn>1</mn>
+        </msubsup>
+      </msubsup>
+      <mo>=</mo>
+      <msubsup>
+        <mi>A</mi>
+        <msubsup>
+          <mi>C</mi>
+          <msub>
+            <mn>4</mn>
+            <mphantom>
+              <mtext mathvariant="normal">l</mtext>
+            </mphantom>
+          </msub>
+          <mn>3</mn>
+        </msubsup>
+        <msubsup>
+          <mi>B</mi>
+          <mn>2</mn>
+          <msup>
+            <mn>1</mn>
+            <mphantom>
+              <mtext mathvariant="normal">s</mtext>
+            </mphantom>
+          </msup>
+        </msubsup>
+      </msubsup>
+    </mrow>
+  </mrow>
+</math>

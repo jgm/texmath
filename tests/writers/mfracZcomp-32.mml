@@ -1,0 +1,50 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mtext mathvariant="normal">And this is an example where the bevelled attribute is set inside the radical </mtext>
+      <mfrac>
+        <mrow>
+          <msup>
+            <mi>y</mi>
+            <mn>2</mn>
+          </msup>
+          <mo>-</mo>
+          <msup>
+            <mi>t</mi>
+            <mn>2</mn>
+          </msup>
+        </mrow>
+        <msqrt>
+          <mfrac>
+            <mn>1</mn>
+            <mrow>
+              <mo stretchy="true">(</mo>
+              <mn>1</mn>
+              <mo>+</mo>
+              <msup>
+                <mrow>
+                  <mo stretchy="true">|</mo>
+                  <mrow>
+                    <msup>
+                      <mi>y</mi>
+                      <mn>2</mn>
+                    </msup>
+                    <mo>-</mo>
+                    <msup>
+                      <mi>t</mi>
+                      <mn>2</mn>
+                    </msup>
+                  </mrow>
+                  <mo stretchy="true">|</mo>
+                </mrow>
+                <mn>2</mn>
+              </msup>
+              <mo stretchy="true">)</mo>
+            </mrow>
+          </mfrac>
+        </msqrt>
+      </mfrac>
+    </mrow>
+  </mrow>
+</math>

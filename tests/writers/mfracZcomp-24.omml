@@ -1,0 +1,139 @@
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>Inline fenced nested fractions </m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>[</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:rPr />
+          <m:t>∥</m:t>
+        </m:r>
+        <m:f>
+          <m:fPr>
+            <m:type m:val="bar" />
+          </m:fPr>
+          <m:num>
+            <m:r>
+              <m:rPr />
+              <m:t>sin</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>&#8289;</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>θ</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>+</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr />
+              <m:t>1</m:t>
+            </m:r>
+          </m:num>
+          <m:den>
+            <m:r>
+              <m:rPr />
+              <m:t>11</m:t>
+            </m:r>
+          </m:den>
+        </m:f>
+        <m:r>
+          <m:rPr />
+          <m:t>∥</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr />
+          <m:t>-</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr />
+          <m:t>x</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:f>
+          <m:fPr>
+            <m:type m:val="bar" />
+          </m:fPr>
+          <m:num>
+            <m:sSup>
+              <m:e>
+                <m:r>
+                  <m:rPr />
+                  <m:t>x</m:t>
+                </m:r>
+              </m:e>
+              <m:sup>
+                <m:r>
+                  <m:rPr />
+                  <m:t>2</m:t>
+                </m:r>
+              </m:sup>
+            </m:sSup>
+          </m:num>
+          <m:den>
+            <m:sSub>
+              <m:e>
+                <m:r>
+                  <m:rPr />
+                  <m:t>a</m:t>
+                </m:r>
+              </m:e>
+              <m:sub>
+                <m:r>
+                  <m:rPr />
+                  <m:t>1</m:t>
+                </m:r>
+              </m:sub>
+            </m:sSub>
+          </m:den>
+        </m:f>
+      </m:den>
+    </m:f>
+    <m:r>
+      <m:rPr />
+      <m:t>]</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>+</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>[</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>1.0</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>]</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t> etc.</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

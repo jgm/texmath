@@ -1,0 +1,60 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mtext mathvariant="normal">Displayed nested fractions are normal size at the first level, </mtext>
+      <mfrac>
+        <msup>
+          <mn>1</mn>
+          <msqrt>
+            <mn>6</mn>
+          </msqrt>
+        </msup>
+        <mrow>
+          <msqrt>
+            <mn>2</mn>
+          </msqrt>
+          <mo>+</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mrow>
+              <msqrt>
+                <mn>3</mn>
+              </msqrt>
+              <mo>+</mo>
+              <mfrac>
+                <mn>1</mn>
+                <mrow>
+                  <msqrt>
+                    <mn>4</mn>
+                  </msqrt>
+                  <mo>+</mo>
+                  <mfrac>
+                    <mn>1</mn>
+                    <mrow>
+                      <msqrt>
+                        <mn>5</mn>
+                      </msqrt>
+                      <mo>+</mo>
+                      <mfrac>
+                        <mn>1</mn>
+                        <mrow>
+                          <msqrt>
+                            <mn>6</mn>
+                          </msqrt>
+                          <mo>+</mo>
+                          <mi>…</mi>
+                        </mrow>
+                      </mfrac>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+              </mfrac>
+            </mrow>
+          </mfrac>
+        </mrow>
+      </mfrac>
+      <mtext mathvariant="normal"> script size at second level, and script-script size at all more nested levels.</mtext>
+    </mrow>
+  </mrow>
+</math>

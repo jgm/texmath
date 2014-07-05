@@ -1,0 +1,22 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtable>
+      <mtr>
+        <mtd columnalign="left">
+          <mtext mathvariant="monospace">0123456789</mtext>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="left">
+          <mtext mathvariant="monospace">ABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="left">
+          <mtext mathvariant="monospace">abcdefghijklmnopqrstuvwxyz</mtext>
+        </mtd>
+      </mtr>
+    </mtable>
+  </mrow>
+</math>

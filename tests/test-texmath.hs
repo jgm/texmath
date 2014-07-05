@@ -3,22 +3,32 @@ import System.FilePath
 import Text.XML.Light
 import System.IO
 import Text.TeXMath
-import Text.TeXMath.Macros
+import Text.TeXMath.Types
 import System.Exit
 import Control.Applicative
 import GHC.IO.Encoding (setLocaleEncoding)
+import Data.Maybe
 
 data Status = Pass
             | Fail FilePath FilePath String
             | Error FilePath FilePath String
             deriving (Eq, Show)
 
+type Ext = String
+
+readers :: [(Ext, String -> Either String [Exp])]
+readers = [(".tex", readTeXMath), (".mml", readMathML)]
+
+writers :: [(Ext, [Exp] -> String)]
+writers = [(".mml", ppTopElement . toMathML DisplayBlock), (".tex", toTeXMath DisplayBlock), (".omml", ppTopElement . toOMML DisplayBlock)]
+
 main :: IO ()
 main = do
   setLocaleEncoding utf8
   setCurrentDirectory "tests"
-  texs <- filter (\x -> takeExtension x == ".tex") <$> getDirectoryContents "."
-  statuses <- concat <$> mapM runTeXTests texs
+  readerTests <- concat <$> mapM (uncurry runReader) readers
+  writerTests <- concat <$> mapM (uncurry runWriter) writers
+  let statuses = readerTests ++ writerTests
   let passes = length $ filter (== Pass) statuses
   let failures = length statuses - passes
   putStrLn $ show passes ++ " tests passed, " ++ show failures ++ " failed."
@@ -43,36 +53,38 @@ printStatus (Fail inp out actual) = do
 printStatus (Error inp out msg) =
   putStrLn $ "ERROR:  " ++ inp ++ " ==> " ++ out ++ "\n" ++ msg
 
-runTeXTests :: FilePath -> IO [Status]
-runTeXTests path = do
-  xhtmlStatus <- runTest
-    (fmap (ppTopElement . inHtml) . texMathToMathML DisplayBlock . parseMacros)
-    path (replaceExtension path "xhtml")
-  ommlStatus <- runTest
-    (fmap ppTopElement . texMathToOMML DisplayBlock . parseMacros)
-    path (replaceExtension path "omml")
-  return [xhtmlStatus, ommlStatus]
+runReader :: String -> (String -> Either String [Exp]) -> IO [Status]
+runReader ext f = do
+  input <- filter (\x -> takeExtension x == ext) <$> getDirectoryContents "./src"
+  let input' = map ("src" </>) input
+  mapM (\inp -> runReaderTest (\x -> show <$> f x) inp (rename inp)) input'
+  where
+    rename x = replaceExtension (replaceDirectory x ("./readers" </> (tail ext))) "native"
 
-parseMacros :: String -> String
-parseMacros inp =
-  let (ms, rest) = parseMacroDefinitions inp
-  in  applyMacros ms rest
+runWriter ::  String -> ([Exp] -> String) -> IO [Status]
+runWriter ext f = do
+  let exts = map fst readers
+  input <- filter (\x -> takeExtension x `elem` exts) <$> getDirectoryContents "./src"
+  let input' = map ("src" </>) input
+  mapM (\inp -> runWriterTest f inp (rename inp)) input'
+  where
+    rename x = replaceExtension (replaceDirectory x "./writers") (tail ext)
 
-inHtml :: Element -> Element
-inHtml x =
-  add_attr (Attr (unqual "xmlns") "http://www.w3.org/1999/xhtml") $
-  unode "html"
-    [ unode "head" $
-        add_attr (Attr (unqual "content") "application/xhtml+xml; charset=UTF-8")
-        $ add_attr (Attr (unqual "http-equiv") "Content-Type")
-        $ unode "meta" ()
-    , unode "body" x ]
+runWriterTest :: ([Exp] -> String) -> FilePath -> FilePath -> IO Status
+runWriterTest f input output = do
+  expr <- (\fn -> (fromJust (lookup (takeExtension input) readers)) fn)
+              <$> readFile input
+  let r = f (either (const []) id expr)
+  out_t <- readFile output
+  if (r == out_t)
+    then return $ Pass
+    else return $ Fail input output r
 
-runTest :: (String -> Either String String)
+runReaderTest :: (String -> Either String String)
         -> FilePath
         -> FilePath
         -> IO Status
-runTest fn input output = do
+runReaderTest fn input output = do
   inp_t <- readFile input
   out_t <- readFile output
   case fn inp_t of

@@ -1,0 +1,67 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mtext mathvariant="normal">Here&#39;s a display </mtext>
+      <mrow>
+        <mrow>
+          <mi>F</mi>
+          <mo>&#8289;</mo>
+          <mrow>
+            <mo stretchy="true">(</mo>
+            <mrow>
+              <mi>t</mi>
+              <mo>,</mo>
+              <mi>y</mi>
+            </mrow>
+            <mo stretchy="true">)</mo>
+          </mrow>
+        </mrow>
+        <mo>=</mo>
+        <mfrac>
+          <mrow>
+            <mo stretchy="true">(</mo>
+            <mrow>
+              <mn>1</mn>
+              <mo>,</mo>
+              <mfrac>
+                <mrow>
+                  <mo>ⅆ</mo>
+                  <mi>y</mi>
+                </mrow>
+                <mrow>
+                  <mo>ⅆ</mo>
+                  <mi>t</mi>
+                </mrow>
+              </mfrac>
+            </mrow>
+            <mo stretchy="true">)</mo>
+          </mrow>
+          <mrow>
+            <mo stretchy="true">∥</mo>
+            <mrow>
+              <mo stretchy="true">(</mo>
+              <mrow>
+                <mn>1</mn>
+                <mo>,</mo>
+                <mfrac>
+                  <mrow>
+                    <mo>ⅆ</mo>
+                    <mi>y</mi>
+                  </mrow>
+                  <mrow>
+                    <mo>ⅆ</mo>
+                    <mi>t</mi>
+                  </mrow>
+                </mfrac>
+              </mrow>
+              <mo stretchy="true">)</mo>
+            </mrow>
+            <mo stretchy="true">∥</mo>
+          </mrow>
+        </mfrac>
+      </mrow>
+      <mtext mathvariant="normal"> with some real math in it.</mtext>
+    </mrow>
+  </mrow>
+</math>

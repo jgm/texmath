@@ -1,0 +1,37 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtable>
+      <mtr>
+        <mtd>
+          <mi>B</mi>
+        </mtd>
+        <mtd>
+          <mi>C</mi>
+        </mtd>
+        <mtd />
+        <mtd columnalign="center" />
+      </mtr>
+      <mtr>
+        <mtd />
+        <mtd />
+        <mtd />
+        <mtd columnalign="center" />
+      </mtr>
+      <mtr>
+        <mtd>
+          <mn>1</mn>
+        </mtd>
+        <mtd>
+          <mn>2</mn>
+        </mtd>
+        <mtd>
+          <mn>3</mn>
+        </mtd>
+        <mtd columnalign="center">
+          <mn>4</mn>
+        </mtd>
+      </mtr>
+    </mtable>
+  </mrow>
+</math>

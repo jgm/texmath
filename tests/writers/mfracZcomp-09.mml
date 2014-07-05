@@ -1,0 +1,20 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mtext mathvariant="normal">Inline, text style, no line </mtext>
+      <mfrac linethickness="0">
+        <mrow>
+          <msup>
+            <mi>x</mi>
+            <mn>2</mn>
+          </msup>
+          <mo>+</mo>
+          <mn>1</mn>
+        </mrow>
+        <mi>x</mi>
+      </mfrac>
+      <mtext mathvariant="normal"> the end.</mtext>
+    </mrow>
+  </mrow>
+</math>
