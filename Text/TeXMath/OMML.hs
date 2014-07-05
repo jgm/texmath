@@ -76,6 +76,11 @@ showBinary c x y =
                                                      "noBar" ()
                                                , mnode "num" x'
                                                , mnode "den" y' ]] 
+       "\\genfrac{}{}{0.0mm}{}" -> mnode "f" [ mnode "fPr" $
+                                              mnodeA "type" "noBar" ()
+                                             , mnode "num" x'
+                                             , mnode "den" y'
+                                             ]
        _ -> error $ "Unknown binary operator " ++ c
     where x' = showExp x
           y' = showExp y
@@ -210,6 +215,7 @@ showExp e =
                                       , mnode "deg" ()
                                       , mnode "e" $ showExp x]]
    EUnary "\\surd" x  -> showExp $ EUnary "\\sqrt" x
+   EUnary "\\phantom" _ -> [] -- To implement
    EScaled _ x      -> showExp x   -- no support for scaler?
    EArray as ls     -> [makeArray as ls]
    EText a s        -> [makeText a s]

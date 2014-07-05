@@ -27,6 +27,7 @@ import Text.XML.Light
 import Text.TeXMath.Types
 import Text.TeXMath.ToUnicode
 import Data.Generics (everywhere, mkT)
+import Text.TeXMath.Shared (getMMLType)
 
 toMathML :: DisplayType -> [Exp] -> Element
 toMathML dt exprs =
@@ -68,6 +69,7 @@ unaryOps :: M.Map String String
 unaryOps = M.fromList
   [ ("\\sqrt", "msqrt")
   , ("\\surd", "msqrt")
+  , ("\\phantom", "mphantom")
   ]
 
 showUnary :: String -> Exp -> Element
@@ -88,6 +90,8 @@ binaryOps = M.fromList
   , ("\\overset", unode "mover" . reverse)
   , ("\\underset", unode "munder" . reverse)
   , ("\\binom", showBinom)
+  , ("\\genfrac{}{}{0.0mm}{}", withAttribute "linethickness" "0" . 
+                                unode "mfrac")
   ]
 
 showBinom :: [Element] -> Element
@@ -116,21 +120,7 @@ makeText a s = if trailingSp
   where sp = spaceWidth "0.333em"
         s' = withAttribute "mathvariant" attr $ unode "mtext" $ toUnicode a s 
         trailingSp = not (null s) && last s `elem` " \t"
-        attr = case a of
-                    TextNormal       -> "normal"
-                    TextBold         -> "bold"
-                    TextItalic       -> "italic"
-                    TextMonospace    -> "monospace"
-                    TextSansSerif    -> "sans-serif"
-                    TextDoubleStruck -> "double-struck"
-                    TextScript       -> "script"
-                    TextFraktur      -> "fraktur"
-                    TextBoldItalic          -> "bold-italic"
-                    TextBoldSansSerif       -> "bold-sans-serif"
-                    TextBoldSansSerifItalic -> "sans-serif-bold-italic"
-                    TextBoldScript          -> "bold-script"
-                    TextBoldFraktur         -> "bold-fraktur"
-                    TextSansSerifItalic     -> "sans-serif-italic"
+        attr = getMMLType a  
 
 makeArray :: [Alignment] -> [ArrayLine] -> Element
 makeArray as ls = unode "mtable" $
