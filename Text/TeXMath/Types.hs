@@ -21,7 +21,9 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 -}
 
 module Text.TeXMath.Types (Exp(..), TeXSymbolType(..), ArrayLine,
-                           TextType(..), Alignment(..), DisplayType(..))
+                           TextType(..), Alignment(..), DisplayType(..),
+                           Operator(..), FormType(..), Record(..),
+                           Position(..) )
 where
 
 import Data.Generics
@@ -77,4 +79,40 @@ data TextType = TextNormal
               | TextBoldScript
               | TextBoldFraktur
               | TextSansSerifItalic
-              deriving (Show, Read, Eq, Data, Typeable)
+              deriving (Show, Ord, Read, Eq, Data, Typeable)
+
+data FormType = FPrefix | FPostfix | FInfix deriving (Show, Ord, Eq)
+
+type Property = String
+
+data Position = Under | Over
+
+-- | A record of the MathML dictionary as defined 
+-- <http://www.w3.org/TR/MathML3/appendixc.html in the specification>
+data Operator = Operator 
+                  { oper :: String -- ^ Operator
+                  , description :: String -- ^ Plain English Description
+                  , form :: FormType -- ^ Whether Prefix, Postfix or Infix
+                  , priority :: Int -- ^ Default priority for implicit
+                                    --   nesting
+                  , lspace :: Int -- ^ Default Left Spacing
+                  , rspace :: Int -- ^ Default Right Spacing
+                  , properties :: [Property] -- ^ List of MathML properties
+                  }
+                  deriving (Show)
+
+-- | A record of the Unicode to LaTeX lookup table
+-- a full descripton can be seen
+-- <http://milde.users.sourceforge.net/LUCR/Math/data/unimathsymbols.txt
+-- here>
+data Record = Record { point :: String -- ^ Hex value
+                     , uchar :: Char -- ^ Unicode Character
+                     , latex :: String -- ^ LaTeX command
+                     , unicodemath :: String -- ^ Unicode-Math package command
+                     , cls :: String -- ^ Unicode math character class
+                     , category :: String -- ^ TeX math category
+                     , requirements :: String -- ^ Required packages
+                     , comments :: String -- ^ Alternative commands and 
+                                          --   description
+                     } deriving (Show)
+                          
