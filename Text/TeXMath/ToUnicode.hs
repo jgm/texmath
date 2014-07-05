@@ -24,6 +24,8 @@ where
 
 import Text.TeXMath.Types
 import qualified Data.Map as M
+import Control.Applicative ((<$>), (<|>))
+import Data.Maybe (fromMaybe)
 
 -- | Replace all characters in the string A-Z, a-z with their corresponding mathvariant unicode character.
 -- | MathML has a mathvariant attribute which is unimplemented in Firefox
@@ -37,8 +39,26 @@ toUnicode TextBoldFraktur s  = map (mapChar mathbffrak) s
 toUnicode TextDoubleStruck s = map (mapChar mathbb) s
 toUnicode _ s = s
 
-mapChar :: M.Map Char Char -> Char -> Char
-mapChar m c = maybe c id (M.lookup c m)
+mapChar :: [(Char, Char)] -> Char -> Char
+mapChar m c = fromMaybe c (M.lookup c charMap)
+  where
+    charMap = M.fromList m
+
+fromUnicode :: Char -> Maybe (TextType, Char) 
+fromUnicode c = 
+  getTTChar c mathscr TextScript <|>
+  getTTChar c mathbfscr TextBoldScript <|>
+  getTTChar c mathfrak TextFraktur <|>
+  getTTChar c mathbffrak  TextBoldFraktur <|>
+  getTTChar c mathbb TextDoubleStruck  
+
+getTTChar :: Char -> [(Char, Char)] -> TextType -> Maybe (TextType, Char)
+getTTChar c m ttype = (,) ttype <$> M.lookup c charMap
+  where
+    charMap = M.fromList $ reverseKeys m
+
+reverseKeys :: [(a, b)] -> [(b, a)]
+reverseKeys = map (\(k,v) -> (v, k)) 
 
 -- This list is from http://www.w3.org/TR/MathML2/script.html
 mathscr :: M.Map Char Char
