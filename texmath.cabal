@@ -1,7 +1,7 @@
 Name:                texmath
 Version:             0.6.6.3
-Cabal-Version:       >= 1.6
-Build-type:          Custom
+Cabal-Version:       >= 1.10
+Build-type:          Simple
 Synopsis:            Conversion of LaTeX math formulas to MathML or OMML.
 Description:         The texmathml library provides functions to convert LaTeX
                      math formulas to presentation MathML (which can be used
@@ -83,7 +83,7 @@ Flag test
 Library
     Build-depends:       xml, parsec >= 3, containers, pandoc-types
     if impl(ghc >= 6.10)
-      Build-depends: base >= 4 && < 5, syb
+      Build-depends: base >= 4.5 && < 5, syb
     else
       Build-depends: base >= 3 && < 4
     Exposed-modules:     Text.TeXMath
@@ -100,8 +100,10 @@ Library
     else
       Ghc-Options:     -Wall
     Ghc-Prof-Options:  -auto-all -caf-all
+    Default-Language:    Haskell2010
 
 Executable texmath
+    Default-Language:    Haskell2010
     Main-is:             texmath.hs
     if impl(ghc >= 6.12)
       Ghc-Options:     -Wall -fno-warn-unused-do-bind
@@ -115,6 +117,7 @@ Executable texmath
 
 Executable texmath-cgi
     Main-is:             cgi/texmath-cgi.hs
+    Default-Language:    Haskell2010
     if impl(ghc >= 6.12)
       Ghc-Options:     -Wall -fno-warn-unused-do-bind
     else
@@ -125,3 +128,12 @@ Executable texmath-cgi
       Build-depends:     cgi, json, utf8-string
     else
       Buildable:         False
+
+Test-Suite test-texmath
+    Type:                exitcode-stdio-1.0
+    Main-Is:             test-texmath.hs
+    Hs-Source-Dirs:      tests
+    Build-Depends:       base >= 4.2 && < 5, process, directory, filepath,
+                         texmath, xml, utf8-string, bytestring
+    Default-Language:    Haskell2010
+    Ghc-Options:         -Wall
