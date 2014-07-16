@@ -9,7 +9,7 @@ Description:         The texmathml library provides functions to convert LaTeX
                      Microsoft Office). It supports basic LaTeX and AMS
                      extensions, and it can parse and apply LaTeX macros.
                      .
-                     Use the @test@ flag to install a standalone executable,
+                     Use the @executable@ flag to install a standalone executable,
                      @texmath@, that reads a LaTeX formula from @stdin@ and
                      writes MathML to @stdout@.
                      .
@@ -26,7 +26,6 @@ Homepage:            http://github.com/jgm/texmath
 Extra-source-files:  README.markdown,
                      changelog,
                      cgi/texmath.xhtml,
-                     tests/runtests.sh,
                      tests/01.tex, tests/01.xhtml, tests/01.omml,
                      tests/02.tex, tests/02.xhtml, tests/02.omml,
                      tests/03.tex, tests/03.xhtml, tests/03.omml,
@@ -76,7 +75,7 @@ Flag cgi
   description:       Compile cgi executable.
   default:           False
 
-Flag test
+Flag executable
   description:       Compile test executable.
   default:           False
 
@@ -110,7 +109,7 @@ Executable texmath
     else
       Ghc-Options:     -Wall
     Ghc-Prof-Options:  -auto-all -caf-all
-    if flag(test)
+    if flag(executable)
       Buildable:         True
     else
       Buildable:         False
