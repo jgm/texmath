@@ -43,15 +43,15 @@ mapChar :: [(Char, Char)] -> Char -> Char
 mapChar m c = fromMaybe c (M.lookup c charMap)
   where
     charMap = M.fromList m
--- | The inverse of toUnicode, returns the corresponding 
--- | A-Za-z character and 'TextType' of a unicode character. 
-fromUnicode :: Char -> Maybe (TextType, Char) 
-fromUnicode c = 
+-- | The inverse of toUnicode, returns the corresponding
+-- | A-Za-z character and 'TextType' of a unicode character.
+fromUnicode :: Char -> Maybe (TextType, Char)
+fromUnicode c =
   getTTChar c mathscr TextScript <|>
   getTTChar c mathbfscr TextBoldScript <|>
   getTTChar c mathfrak TextFraktur <|>
   getTTChar c mathbffrak  TextBoldFraktur <|>
-  getTTChar c mathbb TextDoubleStruck  
+  getTTChar c mathbb TextDoubleStruck
 
 getTTChar :: Char -> [(Char, Char)] -> TextType -> Maybe (TextType, Char)
 getTTChar c m ttype = (,) ttype <$> M.lookup c charMap
@@ -59,7 +59,7 @@ getTTChar c m ttype = (,) ttype <$> M.lookup c charMap
     charMap = M.fromList $ reverseKeys m
 
 reverseKeys :: [(a, b)] -> [(b, a)]
-reverseKeys = map (\(k,v) -> (v, k)) 
+reverseKeys = map (\(k,v) -> (v, k))
 
 -- This list is from http://www.w3.org/TR/MathML2/script.html
 mathscr :: [(Char, Char)]

@@ -75,7 +75,7 @@ showBinary c x y =
                                                    mnodeA "type"
                                                      "noBar" ()
                                                , mnode "num" x'
-                                               , mnode "den" y' ]] 
+                                               , mnode "den" y' ]]
        "\\genfrac{}{}{0.0mm}{}" -> mnode "f" [ mnode "fPr" $
                                               mnodeA "type" "noBar" ()
                                              , mnode "num" x'

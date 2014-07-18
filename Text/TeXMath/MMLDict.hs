@@ -16,8 +16,8 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 -}
-{- 
-Dictionary of operators to MathML attributes as specified by the MML standard 
+{-
+Dictionary of operators to MathML attributes as specified by the MML standard
 
 The original file can be downloaded from the following link.
 
@@ -32,16 +32,16 @@ import Data.Monoid (First(..), mconcat)
 dict :: M.Map (String, FormType) Operator
 dict = M.fromList (map (\o -> ((oper o, form o), o)) operators)
 
--- | Tries to find the 'Operator' record, returns a dummy record indicating a 
+-- | Tries to find the 'Operator' record, returns a dummy record indicating a
 -- math operator if none are found
 getOperator :: String -> FormType -> Operator
-getOperator s p = fromMaybe (Operator s "" p 0 0 0 ["mathoperator"]) ( 
+getOperator s p = fromMaybe (Operator s "" p 0 0 0 ["mathoperator"]) (
   getFirst $ mconcat $ map First (map (\x -> M.lookup (s, x) dict) lookupOrder))
   where
     lookupOrder = [p, FInfix, FPostfix, FPrefix]
 
 operators :: [Operator]
-operators = 
+operators =
   [ Operator {oper = "!", description = "EXCLAMATION MARK", form = FPostfix, priority = 810, lspace = 1, rspace = 0, properties = []}
   , Operator {oper = "!!", description = "MULTIPLE CHARACTER OPERATOR: !!", form = FPostfix, priority = 810, lspace = 1, rspace = 0, properties = []}
   , Operator {oper = "!=", description = "MULTIPLE CHARACTER OPERATOR: !=", form = FInfix, priority = 260, lspace = 4, rspace = 4, properties = []}

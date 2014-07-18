@@ -16,9 +16,9 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 -}
 
-{- 
+{-
 
-HTML entity definitions as provided by W3C. 
+HTML entity definitions as provided by W3C.
 
 The mapping matches the version from 10th April 2014.
 
@@ -36,8 +36,8 @@ import qualified Data.Map as M
 getUnicode :: String -> Maybe String
 getUnicode = flip M.lookup entityList
 
-entityList :: M.Map String String 
-entityList = M.fromList 
+entityList :: M.Map String String
+entityList = M.fromList
   [ ("AElig","\198")
   , ("AMP","&")
   , ("Aacute","\193")

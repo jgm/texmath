@@ -19,12 +19,12 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 {- | Functions for converting LaTeX math formulas to MathML.
 -}
 
-module Text.TeXMath ( texMathToMathML, 
-                      texMathToOMML, 
+module Text.TeXMath ( texMathToMathML,
+                      texMathToOMML,
                       texMathToPandoc,
                       mathMLToOMML,
                       mathMLToPandoc,
-                      mathMLToLaTeX, 
+                      mathMLToLaTeX,
                       readMathML,
                       readTeXMath,
                       toTeXMath,
@@ -33,7 +33,7 @@ module Text.TeXMath ( texMathToMathML,
                       DisplayType(..),
                       )
 where
-import Text.TeXMath.Parser 
+import Text.TeXMath.Parser
 import Text.TeXMath.MathMLParser
 import Text.TeXMath.MathML
 import Text.TeXMath.OMML
@@ -77,8 +77,8 @@ mathMLToPandoc dt inp = inp `seq`
 -- | Convert MathML to Pandoc Math Element
 mathMLToLaTeX :: DisplayType -> String -> Either String Inline
 mathMLToLaTeX dt inp = inp `seq`
-  rt . toTeXMath dt <$> readMathML inp 
-  where 
-    mathType = case dt of { DisplayInline -> InlineMath; 
-                            DisplayBlock -> DisplayMath } 
+  rt . toTeXMath dt <$> readMathML inp
+  where
+    mathType = case dt of { DisplayInline -> InlineMath;
+                            DisplayBlock -> DisplayMath }
     rt s = Math mathType s

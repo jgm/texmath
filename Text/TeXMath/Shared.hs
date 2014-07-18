@@ -16,7 +16,7 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 -}
-module Text.TeXMath.Shared 
+module Text.TeXMath.Shared
   ( getMMLType
   , getTextType
   , getSpaceCommand
@@ -31,7 +31,7 @@ module Text.TeXMath.Shared
 import Text.TeXMath.Types
 import qualified Data.Map as M
 import Data.Maybe (fromMaybe, listToMaybe)
-import Control.Applicative ((<$>), (<|>)) 
+import Control.Applicative ((<$>), (<|>))
 import Control.Monad (guard)
 
 -- | Maps TextType to the corresponding MathML mathvariant
@@ -53,28 +53,28 @@ lookupGE k m = let (_, v, g) = M.splitLookup k m in
                     (fmap ((,) k) (v <|> (fst <$> M.minView g)))
 
 -- | Maps a length in em to the nearest bigger LaTeX space command
-getSpaceCommand :: String -> String 
+getSpaceCommand :: String -> String
 getSpaceCommand width = snd $ fromMaybe (M.findMax spaceMap) (lookupGE (readSpace width) spaceMap)
-  where 
+  where
     spaceMap = M.fromList (map (\(k, ESpace s) -> (readSpace s, k)) spaceCommands)
     readSpace :: String -> Float
-    readSpace s = maybe 0 fst $ listToMaybe $ reads s 
+    readSpace s = maybe 0 fst $ listToMaybe $ reads s
 
--- | Maps a LaTeX scaling command to the percentage scaling 
+-- | Maps a LaTeX scaling command to the percentage scaling
 getScalerCommand :: String -> Maybe String
 getScalerCommand width = (M.lookup width scalerMap)
   where
     scalerMap = M.fromList (reverseKeys scalers)
 
 -- | Gets percentage scaling from LaTeX scaling command
-getScalerValue :: String -> Maybe String 
+getScalerValue :: String -> Maybe String
 getScalerValue command = M.lookup command scalerMap
-  where 
+  where
     scalerMap = M.fromList scalers
 
 -- | Returns the correct constructor given a LaTeX command
 getDiacriticalCons :: String -> Maybe (Exp -> Exp)
-getDiacriticalCons command = 
+getDiacriticalCons command =
     f <$> M.lookup command diaMap
   where
     diaMap = M.fromList (reverseKeys diacriticals)
@@ -84,7 +84,7 @@ getDiacriticalCons command =
 getDiacriticalCommand  :: Position -> String -> Maybe String
 getDiacriticalCommand pos symbol = do
   command <- M.lookup symbol diaMap
-  guard (not $ command `elem` unavailible) 
+  guard (not $ command `elem` unavailible)
   let below = command `elem` under
   case pos of
     Under -> if below then Just command else Nothing
@@ -93,10 +93,10 @@ getDiacriticalCommand pos symbol = do
     diaMap = M.fromList diacriticals
 
 reverseKeys :: [(a, b)] -> [(b, a)]
-reverseKeys = map (\(k,v) -> (v, k)) 
+reverseKeys = map (\(k,v) -> (v, k))
 
 spaceCommands :: [(String, Exp)]
-spaceCommands = 
+spaceCommands =
            [ ("\\!", ESpace "-0.167em")
            , (""   , ESpace "0.0em")
            , ("\\,", ESpace "0.167em")
@@ -110,7 +110,7 @@ spaceCommands =
 
 --TextType to (MathML, LaTeX)
 types :: [(TextType, (String, String))]
-types = 
+types =
   [ ( TextNormal       , ("normal", "\\mathrm"))
   , ( TextBold         , ("bold", "\\mathbf"))
   , ( TextItalic       , ("italic","\\mathit"))
@@ -128,7 +128,7 @@ types =
 
 
 scalers :: [(String, String)]
-scalers = 
+scalers =
           [ ("\\bigg", "2.2")
           , ("\\Bigg", "2.9")
           , ("\\big", "1.2")
@@ -151,7 +151,7 @@ unavailible = ["\\overbracket", "\\underbracket"]
 
 
 diacriticals :: [(String, String)]
-diacriticals = 
+diacriticals =
                [ ("\x00B4", "\\acute")
                , (("\x0060", "\\grave"))
                , (("\x02D8", "\\breve"))

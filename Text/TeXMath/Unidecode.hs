@@ -27,13 +27,13 @@ import qualified Data.Map as M
 import Data.Char (ord)
 import Data.Maybe (fromMaybe)
 
--- | Approximates a single unicode character as an ASCII string 
+-- | Approximates a single unicode character as an ASCII string
 --  (each character is between 0x00 and 0x7F).
-getASCII :: Char -> String 
+getASCII :: Char -> String
 getASCII u = fromMaybe "" (M.lookup (ord u) table)
 
 table :: M.Map Int String
-table = M.fromList   
+table = M.fromList
   [ ( 9, "\\t")
   , ( 10, "\\n")
   , ( 32, " ")

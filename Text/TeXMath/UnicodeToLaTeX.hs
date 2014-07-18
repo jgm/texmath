@@ -18,7 +18,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 -}
 {-
 
-This module is derived from the list of unicode to LaTeX mappings 
+This module is derived from the list of unicode to LaTeX mappings
 compiled by Günter Milde. All request for support should be sent to the
 current maintainer of this module and NOT the aforementioned original author.
 
@@ -29,13 +29,13 @@ webpage.
 
 http://milde.users.sourceforge.net/LUCR/Math/
 
-Changes to the work can be seen via the git commit history to this module. 
+Changes to the work can be seen via the git commit history to this module.
 
-Whilst distributed under the GPL in conformance with clause 10a, all 
+Whilst distributed under the GPL in conformance with clause 10a, all
 deriviations of this work must also conform with clause 6 of the the
 LaTeX Project Public License.
 
--} 
+-}
 
 module Text.TeXMath.UnicodeToLaTeX (escapeLaTeX, convertText, getLaTeX) where
 
@@ -61,7 +61,7 @@ escapeLaTeX '~' = "\\textasciitilde"
 escapeLaTeX '^' = "\\textasciicircum"
 escapeLaTeX '\\' = "\\textbackslash"
 escapeLaTeX c
-  | c `elem` "#$%&_{}" = "\\" ++ [c] 
+  | c `elem` "#$%&_{}" = "\\" ++ [c]
   | otherwise = [c]
 
 -- | Converts a string of unicode characters into an equivalent LaTeX
@@ -71,14 +71,14 @@ getLaTeX s = concatMap charToString s
 
 -- Guarenteed to return latex safe string
 charToString :: Char -> String
-charToString c = 
+charToString c =
   fromMaybe fallback
     (charToLaTeXString c <|> textConvert c)
   where
     a = getASCII c
     fallback = concatMap asciiToLaTeX a
     asciiToLaTeX ac = fromMaybe [ac] (charToLaTeXString ac)
-    
+
 
 -- Takes a single character and attempts to convert it to a latex string
 charToLaTeXString :: Char -> Maybe String
@@ -87,38 +87,38 @@ charToLaTeXString c = do
   -- Required packages for the command
   let required = filter (\z -> head z /= '-') $ (words . requirements) v
   let alts = getAlternatives (comments v)
-  latexCommand  <- if null required || any (`elem` required) env 
+  latexCommand  <- if null required || any (`elem` required) env
            then Just $ latex v
-           else 
-             listToMaybe $ catMaybes (map (flip lookup alts) env) 
+           else
+             listToMaybe $ catMaybes (map (flip lookup alts) env)
   -- Check if we need to append additional braces
-  let lc' = 
+  let lc' =
         case category v `elem` commands of
           True -> latexCommand ++ "{}"
           False -> latexCommand
   return $ padCommand lc'
 
--- Append space to a command in case it is followed by text 
-padCommand :: String -> String 
+-- Append space to a command in case it is followed by text
+padCommand :: String -> String
 padCommand s@('\\':_) = s ++ " "
-padCommand s = s 
+padCommand s = s
 
 
 -- Convert special unicode characters not in the standard mapping
 textConvert :: Char -> Maybe String
 textConvert c = do
-  (ttype, v) <- fromUnicode c 
+  (ttype, v) <- fromUnicode c
   return $ S.getLaTeXTextCommand ttype ++ ['{',v,'}']
 
--- | Converts a unicode sring in text environment to a LaTeX string using only 
+-- | Converts a unicode sring in text environment to a LaTeX string using only
 -- commands availible in that environment.
 convertText :: String -> String
-convertText = concatMap getSpaceLaTeX 
-        
-getSpaceLaTeX :: Char -> String 
-getSpaceLaTeX c =  
+convertText = concatMap getSpaceLaTeX
+
+getSpaceLaTeX :: Char -> String
+getSpaceLaTeX c =
   let cat = fromMaybe "" (cls <$> M.lookup c recordsMap) in
-  if ('S' `elem` cat) 
+  if ('S' `elem` cat)
     then getLaTeX [c]
     else
       concatMap escapeLaTeX (getASCII c)
@@ -127,33 +127,33 @@ getSpaceLaTeX c =
 -- Parses the comment field to find alternatives to commands
 getAlternatives :: String ->  [(String, String)]
 getAlternatives s = either (const []) id (parse parseComment "" s)
-        
+
 parseComment :: Parsec String () [(String, String)]
 parseComment  = catMaybes <$> sepBy command (char ',')
- 
+
 command :: Parsec String () (Maybe (String, String))
 command = do
   first <- anyChar
-  case first of 
+  case first of
     '='-> Just <$> cmd
     '#'-> Just <$> cmd
     'x'-> Nothing <$ skip
     't'-> Nothing <$ skip
-    _ -> Nothing <$ skip 
+    _ -> Nothing <$ skip
 
 cmd :: Parsec String () (String, String)
 cmd = do
   optional spaces
   alt <- many1 (noneOf " ,\t")
   optional spaces
-  package <- option "" (between (char '(') (char ')') 
+  package <- option "" (between (char '(') (char ')')
                 (many1 (satisfy (/= ')'))))
   optional spaces
   return (package, alt)
 
 skip :: Parsec String () ()
 skip = skipMany (satisfy (/= ','))
-     
+
 recordsMap :: M.Map Char Record
 recordsMap = M.fromList (map f records)
   where

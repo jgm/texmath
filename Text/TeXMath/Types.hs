@@ -87,9 +87,9 @@ type Property = String
 
 data Position = Under | Over
 
--- | A record of the MathML dictionary as defined 
+-- | A record of the MathML dictionary as defined
 -- <http://www.w3.org/TR/MathML3/appendixc.html in the specification>
-data Operator = Operator 
+data Operator = Operator
                   { oper :: String -- ^ Operator
                   , description :: String -- ^ Plain English Description
                   , form :: FormType -- ^ Whether Prefix, Postfix or Infix
@@ -112,7 +112,7 @@ data Record = Record { point :: String -- ^ Hex value
                      , cls :: String -- ^ Unicode math character class
                      , category :: String -- ^ TeX math category
                      , requirements :: String -- ^ Required packages
-                     , comments :: String -- ^ Alternative commands and 
+                     , comments :: String -- ^ Alternative commands and
                                           --   description
                      } deriving (Show)
-                          
+

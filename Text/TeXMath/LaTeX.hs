@@ -17,7 +17,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 -}
 
-module Text.TeXMath.LaTeX (toTeXMath) where 
+module Text.TeXMath.LaTeX (toTeXMath) where
 
 import Text.TeXMath.Types
 import Data.List (intersperse)
@@ -27,7 +27,7 @@ import Data.Maybe (fromMaybe)
 import Data.Generics (everywhere, mkT)
 
 toTeXMath :: DisplayType -> [Exp] -> String
-toTeXMath _ es = concatMap (writeExp . fixTree) es 
+toTeXMath _ es = concatMap (writeExp . fixTree) es
 
 square :: [String]
 square = ["\\sqrt"]
@@ -35,44 +35,44 @@ square = ["\\sqrt"]
 writeExp :: Exp -> String
 writeExp (ENumber s) = getLaTeX s
 writeExp (EGrouped es) = concatMap writeExp es
-writeExp (EDelimited open close es) = 
+writeExp (EDelimited open close es) =
   "\\left" ++
-  getLaTeX open ++ 
-  concatMap writeExp es ++ 
+  getLaTeX open ++
+  concatMap writeExp es ++
   "\\right" ++
   getLaTeX close
 writeExp (EIdentifier s) = inBraces $ getLaTeX s
-writeExp o@(EMathOperator s) = 
+writeExp o@(EMathOperator s) =
   fromMaybe ("\\operatorname" ++ (inBraces $ escapeSpace $ getLaTeX s)) (getOperator o)
 writeExp (ESymbol _ s) = getLaTeX s
-writeExp (ESpace width) = " " ++ S.getSpaceCommand width 
-writeExp (EBinary s e1 e2) 
+writeExp (ESpace width) = " " ++ S.getSpaceCommand width
+writeExp (EBinary s e1 e2)
   | s `elem` square = s ++ (evalInSquare e1) ++ (evalInBraces e2) ++ " "
   | otherwise = s ++ (evalInBraces e1) ++ (evalInBraces e2) ++ " "
-writeExp (ESub b e1) = under b e1 
-writeExp (ESuper b e1) = over b e1  
-writeExp (ESubsup b e1 e2) = underOver b e1 e2  
-writeExp (EOver b e1) = 
+writeExp (ESub b e1) = under b e1
+writeExp (ESuper b e1) = over b e1
+writeExp (ESubsup b e1 e2) = underOver b e1 e2
+writeExp (EOver b e1) =
   case b of
-    (EMathOperator _) -> over b e1 
+    (EMathOperator _) -> over b e1
     _ -> "\\overset" ++ evalInBraces e1 ++ evalInBraces b
-writeExp (EUnder b e1) = 
-  case b of   
-    (EMathOperator _) -> under b e1 
+writeExp (EUnder b e1) =
+  case b of
+    (EMathOperator _) -> under b e1
     _ -> "\\underset" ++ evalInBraces e1 ++ evalInBraces b
-writeExp (EUnderover b e1 e2) = 
-  case b of 
+writeExp (EUnderover b e1 e2) =
+  case b of
     (EMathOperator _) -> underOver b e1 e2
     _ -> writeExp $ EUnder (EOver b e2) e1
 writeExp (EUp b e1) = over b e1
-writeExp (EDown b e1) = under b e1 
+writeExp (EDown b e1) = under b e1
 writeExp (EDownup b e1 e2) = underOver b e1 e2
 writeExp (EUnary s e) = s ++ evalInBraces e
 writeExp (EScaled size e) = fromMaybe "" (S.getScalerCommand size) ++ evalInBraces e
-writeExp (EStretchy (ESymbol Open e)) = 
-  let e' = getLaTeX e in 
+writeExp (EStretchy (ESymbol Open e)) =
+  let e' = getLaTeX e in
     case e' of {"" -> ""; _ -> "\\left" ++  e' ++ " "}
-writeExp (EStretchy (ESymbol Close e)) = 
+writeExp (EStretchy (ESymbol Close e)) =
   let e' = getLaTeX e in
     case e' of {"" -> ""; _ -> "\\right" ++ e' ++ " "}
 writeExp (EStretchy e) = writeExp e
@@ -81,7 +81,7 @@ writeExp (EText ttype s) = getLaTeXTextCommand ttype ++ inBraces (escapeSpace $ 
 
 table :: [Alignment] -> [ArrayLine] -> String
 table as rows = "\\begin{array}" ++ inBraces columnAligns ++ "\n" ++ concatMap row rows ++ "\\end{array}"
-  where 
+  where
     columnAligns = map alignmentToLetter as
     alignmentToLetter AlignLeft = 'l'
     alignmentToLetter AlignCenter = 'c'
@@ -90,10 +90,10 @@ table as rows = "\\begin{array}" ++ inBraces columnAligns ++ "\n" ++ concatMap r
 
 row :: ArrayLine -> String
 row cells = (concat  (intersperse " & " (map cell cells))) ++ " \\\\\n"
-  where 
+  where
     cell es = concatMap writeExp es
 
--- Utility 
+-- Utility
 
 -- Text commands availible in amsmath
 formats :: [String]
@@ -104,14 +104,14 @@ alts = [ ("\\mathbfit", "\\mathbf"), ("\\mathbfsfup", "\\mathbf"), ("\\mathbfsfi
        , ("\\mathbfscr", "\\mathcal"), ("\\mathbffrak", "\\mathfrak"), ("\\mathsfit", "\\mathsf")]
 
 getLaTeXTextCommand :: TextType -> String
-getLaTeXTextCommand t 
+getLaTeXTextCommand t
   | cmd `elem` formats = cmd
   | otherwise = fromMaybe "\\mathrm" (lookup cmd alts)
   where
-    cmd = S.getLaTeXTextCommand t 
-  
-escapeSpace :: String -> String 
-escapeSpace = concatMap (\c -> if c == ' ' then "\\ " else [c]) 
+    cmd = S.getLaTeXTextCommand t
+
+escapeSpace :: String -> String
+escapeSpace = concatMap (\c -> if c == ' ' then "\\ " else [c])
 
 -- Constructors
 
@@ -137,7 +137,7 @@ around :: String -> String -> String -> String
 around o c s = o ++ s ++ c
 
 evalInSquare :: Exp -> String
-evalInSquare = around "[" "]" . writeExp 
+evalInSquare = around "[" "]" . writeExp
 
 -- Fix up
 
@@ -145,57 +145,57 @@ removeAccentStretch :: Exp -> Exp
 removeAccentStretch (EStretchy e@(ESymbol Accent _)) = e
 removeAccentStretch x = x
 
-reorderDiacritical' :: Position -> Exp -> Exp -> Exp 
-reorderDiacritical' p b e@(ESymbol Accent a) = 
+reorderDiacritical' :: Position -> Exp -> Exp -> Exp
+reorderDiacritical' p b e@(ESymbol Accent a) =
   case S.getDiacriticalCommand p a of
     Just accentCmd -> EUnary accentCmd b
     Nothing -> EBinary def e b
   where
-    def = case p of 
+    def = case p of
             Over -> "\\overset"
             Under -> "\\underset"
 reorderDiacritical' _ _ _ = error "Must be called with Accent"
 
 reorderDiacritical :: Exp -> Exp
-reorderDiacritical (EOver b e@(ESymbol Accent _)) = 
+reorderDiacritical (EOver b e@(ESymbol Accent _)) =
   reorderDiacritical' Over b e
-reorderDiacritical (EUnder b e@(ESymbol Accent _)) = 
+reorderDiacritical (EUnder b e@(ESymbol Accent _)) =
   reorderDiacritical' Under b e
-reorderDiacritical (EUnderover b e@(ESymbol Accent _) e1) = 
+reorderDiacritical (EUnderover b e@(ESymbol Accent _) e1) =
   reorderDiacritical' Under (EOver b e1) e
-reorderDiacritical (EUnderover b e1 e@(ESymbol Accent _)) = 
+reorderDiacritical (EUnderover b e1 e@(ESymbol Accent _)) =
   reorderDiacritical' Over (EUnder b e1) e
 reorderDiacritical x = x
 
 matchStretch' :: [Exp] -> Int
 matchStretch'  [] = 0
-matchStretch' ((EStretchy (ESymbol Open s)): xs) = 
-  let s' = getLaTeX s in 
+matchStretch' ((EStretchy (ESymbol Open s)): xs) =
+  let s' = getLaTeX s in
     case s' of {"" -> 0; _ -> 1} + (matchStretch' xs)
-matchStretch' ((EStretchy (ESymbol Close s)): xs) = 
+matchStretch' ((EStretchy (ESymbol Close s)): xs) =
   let s' = getLaTeX s in
     case s' of {"" -> 0; _ -> (-1)} + (matchStretch' xs)
 matchStretch' (_:xs) = matchStretch' xs
 
 -- Ensure that the lefts match the rights.
-matchStretch :: [Exp] -> [Exp] 
-matchStretch es 
+matchStretch :: [Exp] -> [Exp]
+matchStretch es
   | n < 0 = (replicate (0 - n) $ EStretchy (ESymbol Open ".")) ++ es
   | n > 0 = es ++ (replicate n $ EStretchy (ESymbol Close "."))
   | otherwise = es
-  where 
+  where
     n = matchStretch' es
 
 ms :: Exp -> Exp
 ms (EGrouped xs) = EGrouped (matchStretch xs)
-ms (EDelimited o c xs) = EDelimited o c (matchStretch xs) 
+ms (EDelimited o c xs) = EDelimited o c (matchStretch xs)
 ms (EArray as rs) = EArray as (map (map matchStretch) rs)
 ms x = x
 
 fixTree :: Exp -> Exp
-fixTree = everywhere 
-            ( mkT ms  
-            . mkT reorderDiacritical 
+fixTree = everywhere
+            ( mkT ms
+            . mkT reorderDiacritical
             . mkT removeAccentStretch )
 
 -- Operator Table
@@ -204,7 +204,7 @@ getOperator :: Exp -> Maybe String
 getOperator = flip lookup operators
 
 operators :: [(Exp, String)]
-operators = 
+operators =
            [ (EMathOperator "arccos", "\\arccos")
            , (EMathOperator "arcsin", "\\arcsin")
            , (EMathOperator "arctan", "\\arctan")
