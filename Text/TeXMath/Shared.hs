@@ -1,3 +1,4 @@
+{-# LANGUAGE CPP #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -30,7 +31,7 @@ module Text.TeXMath.Shared
 import Text.TeXMath.Types
 import qualified Data.Map as M
 import Data.Maybe (fromMaybe, listToMaybe)
-import Control.Applicative ((<$>)) 
+import Control.Applicative ((<$>), (<|>)) 
 import Control.Monad (guard)
 
 -- | Maps TextType to the corresponding MathML mathvariant
@@ -47,9 +48,13 @@ getTextType s = fromMaybe TextNormal (M.lookup s revTypes)
   where
     revTypes = M.fromList (map (\(k,v) -> (fst v,k)) types)
 
+lookupGE :: Ord k =>  k -> M.Map k v -> Maybe (k, v)
+lookupGE k m = let (_, v, g) = M.splitLookup k m in
+                    (fmap ((,) k) (v <|> (fst <$> M.minView g)))
+
 -- | Maps a length in em to the nearest bigger LaTeX space command
 getSpaceCommand :: String -> String 
-getSpaceCommand width = snd $ fromMaybe (M.findMax spaceMap) (M.lookupGE (readSpace width) spaceMap)
+getSpaceCommand width = snd $ fromMaybe (M.findMax spaceMap) (lookupGE (readSpace width) spaceMap)
   where 
     spaceMap = M.fromList (map (\(k, ESpace s) -> (readSpace s, k)) spaceCommands)
     readSpace :: String -> Float
