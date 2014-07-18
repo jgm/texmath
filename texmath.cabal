@@ -80,7 +80,7 @@ Flag executable
   default:           False
 
 Library
-    Build-depends:       xml, parsec >= 3, containers, pandoc-types
+    Build-depends:       xml, parsec >= 3, containers, pandoc-types, regex-compat-tdfa
     if impl(ghc >= 6.10)
       Build-depends: base >= 4.5 && < 5, syb
     else
@@ -93,9 +93,10 @@ Library
                          Text.TeXMath.Pandoc
                          Text.TeXMath.Macros
                          Text.TeXMath.ToUnicode
+                         Text.TeXMath.UniMath
 
     if impl(ghc >= 6.12)
-      Ghc-Options:     -Wall -fno-warn-unused-do-bind
+      Ghc-Options:     -Wall -fno-warn-unused-do-bind 
     else
       Ghc-Options:     -Wall
     Ghc-Prof-Options:  -auto-all -caf-all

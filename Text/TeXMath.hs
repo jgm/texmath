@@ -27,19 +27,20 @@ import Text.TeXMath.MathML
 import Text.TeXMath.OMML
 import Text.TeXMath.Pandoc
 import Text.TeXMath.Types
+import Text.TeXMath.UniMath 
 import Text.XML.Light
 import Text.Pandoc.Definition
 
 texMathToMathML :: DisplayType -> String -> Either String Element
 texMathToMathML dt inp = inp `seq`
-  either Left (Right . toMathML dt) $ parseFormula inp
+  either Left (Right . toMathML dt) $ parseFormula $ ltxCmdsToUnis inp
 
 texMathToOMML :: DisplayType -> String -> Either String Element
 texMathToOMML dt inp = inp `seq`
-  either Left (Right . toOMML dt) $ parseFormula inp
+  either Left (Right . toOMML dt) $ parseFormula $ ltxCmdsToUnis inp
 
 texMathToPandoc :: DisplayType -> String -> Either String [Inline]
 texMathToPandoc dt inp = inp `seq`
-  either Left (Right . maybe fallback id . toPandoc dt) $ parseFormula inp
+  either Left (Right . maybe fallback id . toPandoc dt) $ parseFormula $ ltxCmdsToUnis inp
   where fallback = [Str $ delim ++ inp ++ delim]
         delim    = case dt of { DisplayInline -> "$"; DisplayBlock -> "$$" }

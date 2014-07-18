@@ -26,6 +26,7 @@ import qualified Data.Map as M
 import Text.XML.Light
 import Text.TeXMath.Types
 import Text.TeXMath.ToUnicode
+import Text.TeXMath.UniMath
 import Data.Generics (everywhere, mkT)
 
 toMathML :: DisplayType -> [Exp] -> Element
