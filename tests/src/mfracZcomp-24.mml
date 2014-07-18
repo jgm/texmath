@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>Inline fenced nested fractions </mtext> 
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mrow>
+      <mrow>
+        <mo form="prefix" fence="true" stretchy="true" lspace="0em" rspace="0em">[</mo> 
+        <mfrac>
+          <mrow>
+            <mrow>
+              <mo form="prefix" fence="true" stretchy="true" lspace="0em" rspace="0em">&#x02225;</mo> 
+              <mfrac>
+                <mrow>
+                  <mrow>
+                    <mi mathcolor="gray">sin</mi> 
+                    <mo rspace="verythinmathspace">&#x02061;</mo> 
+                    <mi>&#x003B8;</mi> 
+                  </mrow> 
+                  <mo form="infix">+</mo> 
+                  <mn>1</mn> 
+                </mrow> 
+                <mn>11</mn> 
+              </mfrac> 
+              <mo form="postfix" fence="true" stretchy="true" lspace="0em" rspace="0em">&#x02225;</mo> 
+            </mrow> 
+            <mo form="infix">-</mo> 
+            <mi>x</mi> 
+          </mrow> 
+          <mfrac>
+            <msup>
+              <mi>x</mi> 
+              <mn>2</mn> 
+            </msup> 
+            <msub>
+              <mi>a</mi> 
+              <mn>1</mn> 
+            </msub> 
+          </mfrac> 
+        </mfrac> 
+        <mo form="postfix" fence="true" stretchy="true" lspace="0em" rspace="0em">]</mo> 
+      </mrow> 
+      <mo form="infix">+</mo> 
+      <mrow>
+        <mo form="prefix" fence="true" stretchy="false">[</mo> 
+        <mn>1.0</mn> 
+        <mo form="postfix" fence="true" stretchy="false">]</mo> 
+      </mrow> 
+    </mrow> 
+  </mstyle> 
+  <mtext> etc.</mtext> </math>

@@ -1,0 +1,53 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mtext mathvariant="normal">Inline fenced nested fractions </mtext>
+      <mrow>
+        <mrow>
+          <mo stretchy="true">[</mo>
+          <mfrac>
+            <mrow>
+              <mrow>
+                <mo stretchy="true">∥</mo>
+                <mfrac>
+                  <mrow>
+                    <mrow>
+                      <mi>sin</mi>
+                      <mo>&#8289;</mo>
+                      <mi>θ</mi>
+                    </mrow>
+                    <mo>+</mo>
+                    <mn>1</mn>
+                  </mrow>
+                  <mn>11</mn>
+                </mfrac>
+                <mo stretchy="true">∥</mo>
+              </mrow>
+              <mo>-</mo>
+              <mi>x</mi>
+            </mrow>
+            <mfrac>
+              <msup>
+                <mi>x</mi>
+                <mn>2</mn>
+              </msup>
+              <msub>
+                <mi>a</mi>
+                <mn>1</mn>
+              </msub>
+            </mfrac>
+          </mfrac>
+          <mo stretchy="true">]</mo>
+        </mrow>
+        <mo>+</mo>
+        <mrow>
+          <mo stretchy="false">[</mo>
+          <mn>1.0</mn>
+          <mo stretchy="false">]</mo>
+        </mrow>
+      </mrow>
+      <mtext mathvariant="normal"> etc.</mtext>
+    </mrow>
+  </mrow>
+</math>

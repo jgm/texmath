@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>Inline, auto, normal line </mtext> 
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mrow>
+      <mfrac>
+        <mrow>
+          <mi mathcolor="gray">sin</mi> 
+          <mo rspace="verythinmathspace">&#x02061;</mo> 
+          <mi>&#x003B8;</mi> 
+        </mrow> 
+        <mi>&#x003C0;</mi> 
+      </mfrac> 
+    </mrow> 
+  </mstyle> 
+  <mtext>, numerator and denominator should render script size.</mtext> </math>

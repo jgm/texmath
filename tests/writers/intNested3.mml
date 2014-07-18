@@ -1,0 +1,183 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtable>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">single integral</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo>∫</mo>
+            <mi>x</mi>
+          </mrow>
+          <mrow>
+            <mo>∫</mo>
+            <mi>M</mi>
+          </mrow>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mfrac>
+              <mi>x</mi>
+              <mi>o</mi>
+            </mfrac>
+          </mrow>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mfrac>
+              <mi>A</mi>
+              <mi>o</mi>
+            </mfrac>
+          </mrow>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mfrac>
+              <mi>x</mi>
+              <mi>A</mi>
+            </mfrac>
+          </mrow>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mfrac>
+              <mi>A</mi>
+              <mi>M</mi>
+            </mfrac>
+          </mrow>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mfrac>
+              <mi>.</mi>
+              <mi>&#39;&#39;</mi>
+            </mfrac>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">double integral</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mo stretchy="true">∫</mo>
+            <mi>x</mi>
+          </mrow>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mo stretchy="true">∫</mo>
+            <mi>M</mi>
+          </mrow>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mo stretchy="true">∫</mo>
+            <mfrac>
+              <mi>x</mi>
+              <mi>o</mi>
+            </mfrac>
+          </mrow>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mo stretchy="true">∫</mo>
+            <mfrac>
+              <mi>A</mi>
+              <mi>o</mi>
+            </mfrac>
+          </mrow>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mo stretchy="true">∫</mo>
+            <mfrac>
+              <mi>x</mi>
+              <mi>A</mi>
+            </mfrac>
+          </mrow>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mo stretchy="true">∫</mo>
+            <mfrac>
+              <mi>A</mi>
+              <mi>M</mi>
+            </mfrac>
+          </mrow>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mo stretchy="true">∫</mo>
+            <mfrac>
+              <mi>.</mi>
+              <mi>&#39;&#39;</mi>
+            </mfrac>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">double nested integral</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mrow>
+              <mo stretchy="true">∫</mo>
+              <mi>x</mi>
+            </mrow>
+          </mrow>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mo stretchy="true">∫</mo>
+            <mi>M</mi>
+          </mrow>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mrow>
+              <mo stretchy="true">∫</mo>
+              <mfrac>
+                <mi>x</mi>
+                <mi>o</mi>
+              </mfrac>
+            </mrow>
+          </mrow>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mrow>
+              <mo stretchy="true">∫</mo>
+              <mfrac>
+                <mi>A</mi>
+                <mi>o</mi>
+              </mfrac>
+            </mrow>
+          </mrow>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mrow>
+              <mo stretchy="true">∫</mo>
+              <mfrac>
+                <mi>x</mi>
+                <mi>A</mi>
+              </mfrac>
+            </mrow>
+          </mrow>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mrow>
+              <mo stretchy="true">∫</mo>
+              <mfrac>
+                <mi>A</mi>
+                <mi>M</mi>
+              </mfrac>
+            </mrow>
+          </mrow>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mrow>
+              <mo stretchy="true">∫</mo>
+              <mfrac>
+                <mi>.</mi>
+                <mi>&#39;&#39;</mi>
+              </mfrac>
+            </mrow>
+          </mrow>
+        </mtd>
+      </mtr>
+    </mtable>
+  </mrow>
+</math>

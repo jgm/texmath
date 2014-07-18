@@ -1,0 +1,75 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mrow>
+        <mi>HypergeomDist</mi>
+        <mo>&#8289;</mo>
+        <mrow>
+          <mo stretchy="true">(</mo>
+          <mrow>
+            <mi>x</mi>
+            <mo>;</mo>
+            <mrow>
+              <mi>M</mi>
+              <mo>,</mo>
+              <mi>K</mi>
+              <mo>,</mo>
+              <mi>n</mi>
+            </mrow>
+          </mrow>
+          <mo stretchy="true">)</mo>
+        </mrow>
+      </mrow>
+      <mo>=</mo>
+      <mrow>
+        <munderover stretchy="true">
+          <mo>∑</mo>
+          <mrow>
+            <mi>k</mi>
+            <mo>=</mo>
+            <mn>0</mn>
+          </mrow>
+          <mi>x</mi>
+        </munderover>
+        <mfrac>
+          <mrow>
+            <mrow>
+              <mo stretchy="true">(</mo>
+              <mfrac linethickness="0">
+                <mi>K</mi>
+                <mi>k</mi>
+              </mfrac>
+              <mo stretchy="true">)</mo>
+            </mrow>
+            <mo>&#8290;</mo>
+            <mrow>
+              <mo stretchy="true">(</mo>
+              <mfrac linethickness="0">
+                <mrow>
+                  <mi>M</mi>
+                  <mo>-</mo>
+                  <mi>K</mi>
+                </mrow>
+                <mrow>
+                  <mi>n</mi>
+                  <mo>-</mo>
+                  <mi>k</mi>
+                </mrow>
+              </mfrac>
+              <mo stretchy="true">)</mo>
+            </mrow>
+          </mrow>
+          <mrow>
+            <mo stretchy="true">(</mo>
+            <mfrac linethickness="0">
+              <mi>M</mi>
+              <mi>n</mi>
+            </mfrac>
+            <mo stretchy="true">)</mo>
+          </mrow>
+        </mfrac>
+      </mrow>
+    </mrow>
+  </mrow>
+</math>

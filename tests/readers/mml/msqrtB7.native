@@ -1,0 +1,1 @@
+[EGrouped [EGrouped [EUnary "\\sqrt" (EGrouped [EIdentifier "x",ESymbol Op "-",ENumber "3"]),ESymbol Op "+",EUnary "\\sqrt" (EGrouped [ENumber "3",EIdentifier "x"]),ESymbol Op "+",EUnary "\\sqrt" (EGrouped [EBinary "\\frac" (EUnary "\\sqrt" (EGrouped [ENumber "3",EIdentifier "x"])) (EGrouped [EIdentifier "x",ESymbol Op "-",ENumber "3"])])]]]

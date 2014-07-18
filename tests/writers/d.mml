@@ -1,0 +1,967 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtable>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dagger</mtext>
+        </mtd>
+        <mtd>
+          <mi>†</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dagger</mtext>
+        </mtd>
+        <mtd>
+          <mi>†</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Dagger</mtext>
+        </mtd>
+        <mtd>
+          <mi>‡</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Dagger</mtext>
+        </mtd>
+        <mtd>
+          <mi>‡</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">daleth</mtext>
+        </mtd>
+        <mtd>
+          <mi>ℸ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">darr</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">↓</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dArr</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">⇓</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Darr</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">↡</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dash</mtext>
+        </mtd>
+        <mtd>
+          <mi>‐</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dashv</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊣</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Dashv</mtext>
+        </mtd>
+        <mtd>
+          <mo>⫤</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dbkarow</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true" accent="true">⤏</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dblac</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">˝</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dcaron</mtext>
+        </mtd>
+        <mtd>
+          <mi>ď</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Dcaron</mtext>
+        </mtd>
+        <mtd>
+          <mi>Ď</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dcy</mtext>
+        </mtd>
+        <mtd>
+          <mi>д</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Dcy</mtext>
+        </mtd>
+        <mtd>
+          <mi>Д</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dd</mtext>
+        </mtd>
+        <mtd>
+          <mo>ⅆ</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DD</mtext>
+        </mtd>
+        <mtd>
+          <mo>ⅅ</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ddagger</mtext>
+        </mtd>
+        <mtd>
+          <mi>‡</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ddarr</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">⇊</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DDotrahd</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">⤑</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">ddotseq</mtext>
+        </mtd>
+        <mtd>
+          <mo>⩷</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">deg</mtext>
+        </mtd>
+        <mtd>
+          <mo>°</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Del</mtext>
+        </mtd>
+        <mtd>
+          <mo>∇</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">delta</mtext>
+        </mtd>
+        <mtd>
+          <mi>δ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Delta</mtext>
+        </mtd>
+        <mtd>
+          <mi>Δ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">demptyv</mtext>
+        </mtd>
+        <mtd>
+          <mo>⦱</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dfisht</mtext>
+        </mtd>
+        <mtd>
+          <mo>⥿</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dfr</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝔡</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Dfr</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝔇</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dHar</mtext>
+        </mtd>
+        <mtd>
+          <mo>⥥</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dharl</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">⇃</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dharr</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">⇂</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DiacriticalAcute</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">´</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DiacriticalDot</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">˙</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DiacriticalDoubleAcute</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">˝</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DiacriticalGrave</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">`</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DiacriticalTilde</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true" accent="true">˜</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">diam</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋄</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">diamond</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋄</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Diamond</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋄</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">diamondsuit</mtext>
+        </mtd>
+        <mtd>
+          <mi>♦</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">diams</mtext>
+        </mtd>
+        <mtd>
+          <mi>♦</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">die</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">¨</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DifferentialD</mtext>
+        </mtd>
+        <mtd>
+          <mo>ⅆ</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">digamma</mtext>
+        </mtd>
+        <mtd>
+          <mi>ϝ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">disin</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋲</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">div</mtext>
+        </mtd>
+        <mtd>
+          <mo>÷</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">divide</mtext>
+        </mtd>
+        <mtd>
+          <mo>÷</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">divideontimes</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋇</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">divonx</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋇</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">djcy</mtext>
+        </mtd>
+        <mtd>
+          <mi>ђ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DJcy</mtext>
+        </mtd>
+        <mtd>
+          <mi>Ђ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dlcorn</mtext>
+        </mtd>
+        <mtd>
+          <mi>⌞</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dlcrop</mtext>
+        </mtd>
+        <mtd>
+          <mi>⌍</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dollar</mtext>
+        </mtd>
+        <mtd>
+          <mi>$</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dopf</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝕕</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Dopf</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝔻</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dot</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">˙</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Dot</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">¨</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DotDot</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">⃜</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">doteq</mtext>
+        </mtd>
+        <mtd>
+          <mo>≐</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">doteqdot</mtext>
+        </mtd>
+        <mtd>
+          <mo>≑</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DotEqual</mtext>
+        </mtd>
+        <mtd>
+          <mo>≐</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dotminus</mtext>
+        </mtd>
+        <mtd>
+          <mo>∸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dotplus</mtext>
+        </mtd>
+        <mtd>
+          <mo>∔</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dotsquare</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊡</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">doublebarwedge</mtext>
+        </mtd>
+        <mtd>
+          <mi>⌆</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DoubleContourIntegral</mtext>
+        </mtd>
+        <mtd>
+          <mo>∯</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DoubleDot</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">¨</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DoubleDownArrow</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">⇓</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DoubleLeftArrow</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true" accent="true">⇐</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DoubleLeftRightArrow</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true" accent="true">⇔</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DoubleLeftTee</mtext>
+        </mtd>
+        <mtd>
+          <mo>⫤</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DoubleLongLeftArrow</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true" accent="true">⟸</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DoubleLongLeftRightArrow</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true" accent="true">⟺</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DoubleLongRightArrow</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true" accent="true">⟹</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DoubleRightArrow</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true" accent="true">⇒</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DoubleRightTee</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊨</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DoubleUpArrow</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">⇑</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DoubleUpDownArrow</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">⇕</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DoubleVerticalBar</mtext>
+        </mtd>
+        <mtd>
+          <mo>∥</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">downarrow</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">↓</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Downarrow</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">⇓</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DownArrow</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">↓</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DownArrowBar</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">⤓</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DownArrowUpArrow</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">⇵</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DownBreve</mtext>
+        </mtd>
+        <mtd>
+          <mo accent="true">̑</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">downdownarrows</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">⇊</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">downharpoonleft</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">⇃</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">downharpoonright</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">⇂</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DownLeftRightVector</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true" accent="true">⥐</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DownLeftTeeVector</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true" accent="true">⥞</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DownLeftVector</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true" accent="true">↽</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DownLeftVectorBar</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">⥖</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DownRightTeeVector</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true" accent="true">⥟</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DownRightVector</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true" accent="true">⇁</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DownRightVectorBar</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">⥗</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DownTee</mtext>
+        </mtd>
+        <mtd>
+          <mo>⊤</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DownTeeArrow</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">↧</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">drbkarow</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true" accent="true">⤐</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">drcorn</mtext>
+        </mtd>
+        <mtd>
+          <mi>⌟</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">drcrop</mtext>
+        </mtd>
+        <mtd>
+          <mi>⌌</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dscr</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝒹</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Dscr</mtext>
+        </mtd>
+        <mtd>
+          <mi>𝒟</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dscy</mtext>
+        </mtd>
+        <mtd>
+          <mi>ѕ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DScy</mtext>
+        </mtd>
+        <mtd>
+          <mi>Ѕ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dsol</mtext>
+        </mtd>
+        <mtd>
+          <mo>⧶</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dstrok</mtext>
+        </mtd>
+        <mtd>
+          <mi>đ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Dstrok</mtext>
+        </mtd>
+        <mtd>
+          <mi>Đ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dtdot</mtext>
+        </mtd>
+        <mtd>
+          <mo>⋱</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dtri</mtext>
+        </mtd>
+        <mtd>
+          <mo>▿</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dtrif</mtext>
+        </mtd>
+        <mtd>
+          <mo>▾</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">duarr</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">⇵</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">duhar</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true">⥯</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dwangle</mtext>
+        </mtd>
+        <mtd>
+          <mo>⦦</mo>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dzcy</mtext>
+        </mtd>
+        <mtd>
+          <mi>џ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">DZcy</mtext>
+        </mtd>
+        <mtd>
+          <mi>Џ</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">dzigrarr</mtext>
+        </mtd>
+        <mtd>
+          <mo stretchy="true" accent="true">⟿</mo>
+        </mtd>
+      </mtr>
+    </mtable>
+  </mrow>
+</math>

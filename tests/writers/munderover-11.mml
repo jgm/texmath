@@ -1,0 +1,34 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <munderover>
+        <mtext mathvariant="normal">BASE</mtext>
+        <mtext mathvariant="normal">s</mtext>
+        <mtext mathvariant="normal">t</mtext>
+      </munderover>
+      <mo>=</mo>
+      <munderover>
+        <mtext mathvariant="normal">BASE</mtext>
+        <mrow>
+          <mphantom>
+            <mn>1</mn>
+          </mphantom>
+          <mtext mathvariant="normal">s</mtext>
+          <mphantom>
+            <mn>1</mn>
+          </mphantom>
+        </mrow>
+        <mrow>
+          <mphantom>
+            <mn>1</mn>
+          </mphantom>
+          <mtext mathvariant="normal">t</mtext>
+          <mphantom>
+            <mn>1</mn>
+          </mphantom>
+        </mrow>
+      </munderover>
+    </mrow>
+  </mrow>
+</math>

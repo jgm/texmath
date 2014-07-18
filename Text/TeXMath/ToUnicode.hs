@@ -19,11 +19,13 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 {- | Function for replacing strings of characters with their respective mathvariant
 -}
 
-module Text.TeXMath.ToUnicode (toUnicode)
+module Text.TeXMath.ToUnicode (fromUnicode, toUnicode)
 where
 
 import Text.TeXMath.Types
 import qualified Data.Map as M
+import Control.Applicative ((<$>), (<|>))
+import Data.Maybe (fromMaybe)
 
 -- | Replace all characters in the string A-Z, a-z with their corresponding mathvariant unicode character.
 -- | MathML has a mathvariant attribute which is unimplemented in Firefox
@@ -37,12 +39,31 @@ toUnicode TextBoldFraktur s  = map (mapChar mathbffrak) s
 toUnicode TextDoubleStruck s = map (mapChar mathbb) s
 toUnicode _ s = s
 
-mapChar :: M.Map Char Char -> Char -> Char
-mapChar m c = maybe c id (M.lookup c m)
+mapChar :: [(Char, Char)] -> Char -> Char
+mapChar m c = fromMaybe c (M.lookup c charMap)
+  where
+    charMap = M.fromList m
+-- | The inverse of toUnicode, returns the corresponding
+-- | A-Za-z character and 'TextType' of a unicode character.
+fromUnicode :: Char -> Maybe (TextType, Char)
+fromUnicode c =
+  getTTChar c mathscr TextScript <|>
+  getTTChar c mathbfscr TextBoldScript <|>
+  getTTChar c mathfrak TextFraktur <|>
+  getTTChar c mathbffrak  TextBoldFraktur <|>
+  getTTChar c mathbb TextDoubleStruck
+
+getTTChar :: Char -> [(Char, Char)] -> TextType -> Maybe (TextType, Char)
+getTTChar c m ttype = (,) ttype <$> M.lookup c charMap
+  where
+    charMap = M.fromList $ reverseKeys m
+
+reverseKeys :: [(a, b)] -> [(b, a)]
+reverseKeys = map (\(k,v) -> (v, k))
 
 -- This list is from http://www.w3.org/TR/MathML2/script.html
-mathscr :: M.Map Char Char
-mathscr = M.fromList [
+mathscr :: [(Char, Char)]
+mathscr =  [
              ('A', '\x1D49C')
            , ('B', '\x0212C')
            , ('C', '\x1D49E')
@@ -98,8 +119,8 @@ mathscr = M.fromList [
            ]
 
 -- Bold variant of mathscr, taken from unicode.
-mathbfscr :: M.Map Char Char
-mathbfscr = M.fromList [
+mathbfscr :: [(Char, Char)]
+mathbfscr =  [
              ('A', '\x1D4D0')
            , ('B', '\x1D4D1')
            , ('C', '\x1D4D2')
@@ -156,8 +177,8 @@ mathbfscr = M.fromList [
 
 -- Similar to mathscr above, we translate manually.
 -- This list is from http://www.w3.org/TR/MathML2/double-struck.html
-mathbb :: M.Map Char Char
-mathbb = M.fromList [
+mathbb :: [(Char, Char)]
+mathbb =   [
              ('A', '\x1D538')
            , ('B', '\x1D539')
            , ('C', '\x02102')
@@ -223,8 +244,8 @@ mathbb = M.fromList [
            ]
 
 -- Fraktur fonts, taken from unicode.
-mathfrak :: M.Map Char Char
-mathfrak = M.fromList [
+mathfrak :: [(Char, Char)]
+mathfrak = [
           ('A','\x1D504')
         , ('B','\x1D505')
         , ('C','\x0212D')
@@ -280,8 +301,8 @@ mathfrak = M.fromList [
         ]
 
 -- Bold fraktur fonts, taken from unicode.
-mathbffrak :: M.Map Char Char
-mathbffrak = M.fromList [
+mathbffrak :: [(Char, Char)]
+mathbffrak = [
           ('A','\x1D56C')
         , ('B','\x1D56D')
         , ('C','\x1D56E')

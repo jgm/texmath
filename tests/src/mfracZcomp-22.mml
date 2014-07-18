@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>Inline, styles auto, display and text </mtext> 
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mrow>
+      <mfrac>
+        <mn>1</mn> 
+        <mn>2</mn> 
+      </mfrac> 
+      <mo form="infix">-</mo> 
+      <mrow>
+        <mstyle displaystyle="true" scriptlevel="0">
+          <mfrac>
+            <mn>1</mn> 
+            <mn>2</mn> 
+          </mfrac> 
+        </mstyle> 
+      </mrow> 
+      <mo form="infix">+</mo> 
+      <mrow>
+        <mstyle displaystyle="false" scriptlevel="0">
+          <mfrac>
+            <mn>1.23456</mn> 
+            <mn>7890</mn> 
+          </mfrac> 
+        </mstyle> 
+      </mrow> 
+    </mrow> 
+  </mstyle> 
+  <mtext>, the rendering should be script-size, normal-size and script-size in this example. Fraction lines should align vertically with the math axis.</mtext> </math>

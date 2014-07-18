@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>Inline, auto, thick line </mtext> 
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mrow>
+      <mfrac linethickness="1pt">
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>2</mn> 
+          </msup> 
+          <mo form="infix">+</mo> 
+          <mn>1</mn> 
+        </mrow> 
+        <mi>x</mi> 
+      </mfrac> 
+    </mrow> 
+  </mstyle> 
+  <mtext>, the superscripted 2 should be script-script size.</mtext> </math>

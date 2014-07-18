@@ -1,0 +1,29 @@
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>_ baseline _</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr />
+      <m:t>=</m:t>
+    </m:r>
+    <m:limLow>
+      <m:e>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>_ baseline _</m:t>
+        </m:r>
+      </m:e>
+      <m:lim />
+    </m:limLow>
+  </m:oMath>
+</m:oMathPara>

@@ -1,0 +1,24 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <munder>
+        <mtext mathvariant="normal">B</mtext>
+        <mtext mathvariant="normal">long under script</mtext>
+      </munder>
+      <mo>=</mo>
+      <munder>
+        <mrow>
+          <mphantom>
+            <mtext mathvariant="normal">x</mtext>
+          </mphantom>
+          <mtext mathvariant="normal">B</mtext>
+          <mphantom>
+            <mtext mathvariant="normal">x</mtext>
+          </mphantom>
+        </mrow>
+        <mtext mathvariant="normal">long under script</mtext>
+      </munder>
+    </mrow>
+  </mrow>
+</math>

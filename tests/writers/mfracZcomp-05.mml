@@ -1,0 +1,28 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mtext mathvariant="normal">Inline, display style, thick line </mtext>
+      <mfrac>
+        <mrow>
+          <mi>x</mi>
+          <mo>-</mo>
+          <mn>1</mn>
+        </mrow>
+        <mrow>
+          <mrow>
+            <mn>0.98</mn>
+            <mo>×</mo>
+            <msup>
+              <mn>10</mn>
+              <mn>2</mn>
+            </msup>
+          </mrow>
+          <mo>+</mo>
+          <mi>y</mi>
+        </mrow>
+      </mfrac>
+      <mtext mathvariant="normal">, the superscripted 2 should be script size.</mtext>
+    </mrow>
+  </mrow>
+</math>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mtable frame="solid">    <mtr>      <mtd>        <mphantom>          <mtext>fail</mtext>
+        </mphantom>         <munder>          <mi mathvariant="normal">HT</mi>           <mphantom>            <mtext>fail</mtext>
+          </mphantom>         </munder>       </mtd>       <mtd>        <mo>=</mo>       </mtd>       <mtd>        <mover>          <mi mathvariant="normal">TH</mi>           <mphantom>            <mtext>fail</mtext>
+          </mphantom>         </mover>         <mphantom>          <mtext>fail</mtext>
+        </mphantom>       </mtd>     </mtr>   </mtable> </math>

@@ -1,0 +1,317 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtable>
+      <mtr>
+        <mtd columnalign="left">
+          <mtext mathvariant="normal">default: (accent=true)</mtext>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="left">
+          <mrow>
+            <munder>
+              <mi>x</mi>
+              <mo accent="true">&#39;</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">^</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">_</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo accent="true">`</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">~</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo accent="true">¨</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">¯</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo accent="true">´</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo accent="true">¸</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">ˆ</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">ˇ</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo accent="true">˘</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo accent="true">˙</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo accent="true">˚</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">˜</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo accent="true">˝</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">̂</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo accent="true">̑</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">‾</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo accent="true">⃛</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo accent="true">⃜</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">←</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">→</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">↔</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">↼</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">↽</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">⇀</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">⇁</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">⎴</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">⎵</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">⏜</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">⏝</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">⏞</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">⏟</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">⥎</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true" accent="true">⥐</mo>
+            </munder>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="left">
+          <mtext mathvariant="normal">accent=false:</mtext>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="left">
+          <mrow>
+            <munder>
+              <mi>x</mi>
+              <mo>&#39;</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">^</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">_</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo>`</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">~</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo>¨</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">¯</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo>´</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo>¸</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">ˆ</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">ˇ</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo>˘</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo>˙</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo>˚</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">˜</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo>˝</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">̂</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo>̑</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">‾</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo>⃛</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo>⃜</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">←</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">→</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">↔</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">↼</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">↽</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">⇀</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">⇁</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">⎴</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">⎵</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">⏜</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">⏝</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">⏞</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">⏟</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">⥎</mo>
+            </munder>
+            <munder>
+              <mi>x</mi>
+              <mo stretchy="true">⥐</mo>
+            </munder>
+          </mrow>
+        </mtd>
+      </mtr>
+    </mtable>
+  </mrow>
+</math>

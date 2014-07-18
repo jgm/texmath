@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2</mn> 
+  <mo>+</mo> 
+  <msqrt>
+    <mi>x</mi> 
+    <mo>+</mo> 
+    <mn>1</mn> 
+  </msqrt> 
+  <mspace width="20px"></mspace> 
+  <mrow>
+    <mn>2</mn> 
+    <mo>+</mo> 
+    <msqrt>
+      <mrow>
+        <mi>x</mi> 
+        <mo>+</mo> 
+        <mn>1</mn> 
+      </mrow> 
+    </msqrt> 
+  </mrow> </math>

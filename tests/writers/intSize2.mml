@@ -1,0 +1,160 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtable>
+      <mtr>
+        <mtd />
+        <mtd />
+        <mtd>
+          <mtext mathvariant="normal">symm</mtext>
+        </mtd>
+        <mtd>
+          <mtext mathvariant="normal">stretch</mtext>
+        </mtd>
+        <mtd>
+          <mtext mathvariant="normal">symm/stretch</mtext>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">small op</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo>∫</mo>
+            <mi>x</mi>
+          </mrow>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo>∫</mo>
+            <mi>x</mi>
+          </mrow>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mi>x</mi>
+          </mrow>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mi>x</mi>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">large op</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo>∫</mo>
+            <mi>x</mi>
+          </mrow>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo>∫</mo>
+            <mi>x</mi>
+          </mrow>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mi>x</mi>
+          </mrow>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mi>x</mi>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">small op</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo>∫</mo>
+            <mfrac>
+              <mi>x</mi>
+              <mi>y</mi>
+            </mfrac>
+          </mrow>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo>∫</mo>
+            <mfrac>
+              <mi>x</mi>
+              <mi>y</mi>
+            </mfrac>
+          </mrow>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mfrac>
+              <mi>x</mi>
+              <mi>y</mi>
+            </mfrac>
+          </mrow>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mfrac>
+              <mi>x</mi>
+              <mi>y</mi>
+            </mfrac>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">large op</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo>∫</mo>
+            <mfrac>
+              <mi>x</mi>
+              <mi>y</mi>
+            </mfrac>
+          </mrow>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo>∫</mo>
+            <mfrac>
+              <mi>x</mi>
+              <mi>y</mi>
+            </mfrac>
+          </mrow>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mfrac>
+              <mi>x</mi>
+              <mi>y</mi>
+            </mfrac>
+          </mrow>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo stretchy="true">∫</mo>
+            <mfrac>
+              <mi>x</mi>
+              <mi>y</mi>
+            </mfrac>
+          </mrow>
+        </mtd>
+      </mtr>
+    </mtable>
+  </mrow>
+</math>

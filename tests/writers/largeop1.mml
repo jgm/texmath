@@ -1,0 +1,103 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtable>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">displaystyle: false largeop: false</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo>⋀</mo>
+            <mo>⋁</mo>
+            <mo>∫</mo>
+            <mo>∑</mo>
+            <mo>∏</mo>
+            <mo>⋃</mo>
+            <mo>⋂</mo>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">displaystyle: false largeop: true</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo>⋀</mo>
+            <mo>⋁</mo>
+            <mo>∫</mo>
+            <mo>∑</mo>
+            <mo>∏</mo>
+            <mo>⋃</mo>
+            <mo>⋂</mo>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">displaystyle: true largeop: false</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo>⋀</mo>
+            <mo>⋁</mo>
+            <mo>∫</mo>
+            <mo>∑</mo>
+            <mo>∏</mo>
+            <mo>⋃</mo>
+            <mo>⋂</mo>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">displaystyle: true largeop: true</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo>⋀</mo>
+            <mo>⋁</mo>
+            <mo>∫</mo>
+            <mo>∑</mo>
+            <mo>∏</mo>
+            <mo>⋃</mo>
+            <mo>⋂</mo>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">displaystyle: false largeop: default</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo>⋀</mo>
+            <mo>⋁</mo>
+            <mo>∫</mo>
+            <mo>∑</mo>
+            <mo>∏</mo>
+            <mo>⋃</mo>
+            <mo>⋂</mo>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">displaystyle: true largeop: default</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo>⋀</mo>
+            <mo>⋁</mo>
+            <mo>∫</mo>
+            <mo>∑</mo>
+            <mo>∏</mo>
+            <mo>⋃</mo>
+            <mo>⋂</mo>
+          </mrow>
+        </mtd>
+      </mtr>
+    </mtable>
+  </mrow>
+</math>

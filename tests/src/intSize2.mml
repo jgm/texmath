@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd></mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mtext>symm</mtext> 
+      </mtd> 
+      <mtd>
+        <mtext>stretch</mtext> 
+      </mtd> 
+      <mtd>
+        <mtext>symm/stretch</mtext> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>small op</mtext> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mo largeop="false" stretchy="false" symmetric="false">&#x222B;</mo> 
+          <mi>x</mi> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mo largeop="false" stretchy="false" symmetric="true">&#x222B;</mo> 
+          <mi>x</mi> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mo largeop="false" stretchy="true" symmetric="false">&#x222B;</mo> 
+          <mi>x</mi> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mo largeop="false" stretchy="true" symmetric="true">&#x222B;</mo> 
+          <mi>x</mi> 
+        </mrow> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>large op</mtext> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mo largeop="true" stretchy="false" symmetric="false">&#x222B;</mo> 
+          <mi>x</mi> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mo largeop="true" stretchy="false" symmetric="true">&#x222B;</mo> 
+          <mi>x</mi> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mo largeop="true" stretchy="true" symmetric="false">&#x222B;</mo> 
+          <mi>x</mi> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mo largeop="true" stretchy="true" symmetric="true">&#x222B;</mo> 
+          <mi>x</mi> 
+        </mrow> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>small op</mtext> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mo largeop="false" stretchy="false" symmetric="false">&#x222B;</mo> 
+          <mfrac>
+            <mi>x</mi> 
+            <mi>y</mi> 
+          </mfrac> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mo largeop="false" stretchy="false" symmetric="true">&#x222B;</mo> 
+          <mfrac>
+            <mi>x</mi> 
+            <mi>y</mi> 
+          </mfrac> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mo largeop="false" stretchy="true" symmetric="false">&#x222B;</mo> 
+          <mfrac>
+            <mi>x</mi> 
+            <mi>y</mi> 
+          </mfrac> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mo largeop="false" stretchy="true" symmetric="true">&#x222B;</mo> 
+          <mfrac>
+            <mi>x</mi> 
+            <mi>y</mi> 
+          </mfrac> 
+        </mrow> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>large op</mtext> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mo largeop="true" stretchy="false" symmetric="false">&#x222B;</mo> 
+          <mfrac>
+            <mi>x</mi> 
+            <mi>y</mi> 
+          </mfrac> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mo largeop="true" stretchy="false" symmetric="true">&#x222B;</mo> 
+          <mfrac>
+            <mi>x</mi> 
+            <mi>y</mi> 
+          </mfrac> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mo largeop="true" stretchy="true" symmetric="false">&#x222B;</mo> 
+          <mfrac>
+            <mi>x</mi> 
+            <mi>y</mi> 
+          </mfrac> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mo largeop="true" stretchy="true" symmetric="true">&#x222B;</mo> 
+          <mfrac>
+            <mi>x</mi> 
+            <mi>y</mi> 
+          </mfrac> 
+        </mrow> 
+      </mtd> 
+    </mtr> 
+  </mtable> </math>

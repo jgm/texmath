@@ -27,6 +27,7 @@ import Text.XML.Light
 import Text.TeXMath.Types
 import Text.TeXMath.ToUnicode
 import Data.Generics (everywhere, mkT)
+import Text.TeXMath.Shared (getMMLType)
 
 toMathML :: DisplayType -> [Exp] -> Element
 toMathML dt exprs =
@@ -44,7 +45,7 @@ mrow = unode "mrow"
 
 {- Firefox seems to set spacing based on its own dictionary,
 -  so I believe this is unnecessary.
- 
+
 setSpacing :: String -> String -> Bool -> Element -> Element
 setSpacing left right stretchy elt =
   add_attr (Attr (unqual "lspace") left) $
@@ -68,6 +69,7 @@ unaryOps :: M.Map String String
 unaryOps = M.fromList
   [ ("\\sqrt", "msqrt")
   , ("\\surd", "msqrt")
+  , ("\\phantom", "mphantom")
   ]
 
 showUnary :: String -> Exp -> Element
@@ -88,6 +90,8 @@ binaryOps = M.fromList
   , ("\\overset", unode "mover" . reverse)
   , ("\\underset", unode "munder" . reverse)
   , ("\\binom", showBinom)
+  , ("\\genfrac{}{}{0.0mm}{}", withAttribute "linethickness" "0" .
+                                unode "mfrac")
   ]
 
 showBinom :: [Element] -> Element
@@ -114,23 +118,9 @@ makeText a s = if trailingSp
                   then mrow [s', sp]
                   else s'
   where sp = spaceWidth "0.333em"
-        s' = withAttribute "mathvariant" attr $ unode "mtext" $ toUnicode a s 
+        s' = withAttribute "mathvariant" attr $ unode "mtext" $ toUnicode a s
         trailingSp = not (null s) && last s `elem` " \t"
-        attr = case a of
-                    TextNormal       -> "normal"
-                    TextBold         -> "bold"
-                    TextItalic       -> "italic"
-                    TextMonospace    -> "monospace"
-                    TextSansSerif    -> "sans-serif"
-                    TextDoubleStruck -> "double-struck"
-                    TextScript       -> "script"
-                    TextFraktur      -> "fraktur"
-                    TextBoldItalic          -> "bold-italic"
-                    TextBoldSansSerif       -> "bold-sans-serif"
-                    TextBoldSansSerifItalic -> "sans-serif-bold-italic"
-                    TextBoldScript          -> "bold-script"
-                    TextBoldFraktur         -> "bold-fraktur"
-                    TextSansSerifItalic     -> "sans-serif-italic"
+        attr = getMMLType a
 
 makeArray :: [Alignment] -> [ArrayLine] -> Element
 makeArray as ls = unode "mtable" $
@@ -139,7 +129,7 @@ makeArray as ls = unode "mtable" $
    where setAlignment AlignLeft    = withAttribute "columnalign" "left"
          setAlignment AlignRight   = withAttribute "columnalign" "right"
          setAlignment AlignCenter  = withAttribute "columnalign" "center"
-         setAlignment AlignDefault = id 
+         setAlignment AlignDefault = id
          as'                       = as ++ cycle [AlignDefault]
 
 withAttribute :: String -> String -> Element -> Element
@@ -167,7 +157,7 @@ showExp e =
    EDelimited start end xs -> mrow $
                        [ makeStretchy (unode "mo" start) | not (null start) ] ++
                        map showExp xs ++
-                       [ makeStretchy (unode "mo" end) | not (null end) ] 
+                       [ makeStretchy (unode "mo" end) | not (null end) ]
    EIdentifier x    -> unode "mi" x
    EMathOperator x  -> unode "mi" x
    ESymbol Accent x -> accent x

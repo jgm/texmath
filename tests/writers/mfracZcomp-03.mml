@@ -1,0 +1,17 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mtext mathvariant="normal">Inline, text style, normal line </mtext>
+      <mfrac>
+        <mrow>
+          <mi>tan</mi>
+          <mo>&#8289;</mo>
+          <mi>θ</mi>
+        </mrow>
+        <mn>67</mn>
+      </mfrac>
+      <mtext mathvariant="normal">, numerator and denominator should render script size.</mtext>
+    </mrow>
+  </mrow>
+</math>

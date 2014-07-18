@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>Inline updown arrows, text style, normal line </mtext> 
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mrow>
+      <mo form="prefix" fence="true" stretchy="true" lspace="0em" rspace="0em">&#x02195;</mo> 
+      <mrow>
+        <mstyle displaystyle="false" scriptlevel="0">
+          <mfrac>
+            <mrow>
+              <mi mathcolor="gray">sin</mi> 
+              <mo rspace="verythinmathspace">&#x02061;</mo> 
+              <mi>&#x003B8;</mi> 
+            </mrow> 
+            <mi>M</mi> 
+          </mfrac> 
+        </mstyle> 
+      </mrow> 
+      <mo form="postfix" fence="true" stretchy="true" lspace="0em" rspace="0em">&#x02195;</mo> 
+    </mrow> 
+  </mstyle> 
+  <mtext> the end.</mtext> </math>

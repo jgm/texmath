@@ -1,0 +1,38 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtable>
+      <mtr>
+        <mtd>
+          <mrow>
+            <mi>x</mi>
+            <mo>+</mo>
+            <mo stretchy="true">(</mo>
+            <mfrac>
+              <mn>2</mn>
+              <mn>3</mn>
+            </mfrac>
+            <mo stretchy="true">)</mo>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mrow>
+            <mi>x</mi>
+            <mo>+</mo>
+            <mover stretchy="true">
+              <mo stretchy="false">(</mo>
+              <mo>-</mo>
+            </mover>
+            <mfrac>
+              <mn>2</mn>
+              <mn>3</mn>
+            </mfrac>
+            <mo stretchy="true">)</mo>
+          </mrow>
+        </mtd>
+      </mtr>
+    </mtable>
+  </mrow>
+</math>

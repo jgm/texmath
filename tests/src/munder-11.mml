@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <munder>    <mi mathvariant="normal">BASE</mi>     <mi mathvariant="normal">x</mi>   </munder>   <mo>=</mo>   <munder>    <mi mathvariant="normal">BASE</mi>     <mrow>      <mphantom>        <mn>1</mn>
+      </mphantom>
+      <mi mathvariant="normal">x</mi>
+      <mphantom>
+        <mn>1</mn>
+      </mphantom>
+    </mrow>   </munder> </math>

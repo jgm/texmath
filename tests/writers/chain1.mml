@@ -1,0 +1,108 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <msubsup>
+        <mo>∫</mo>
+        <mn>0</mn>
+        <mn>1</mn>
+      </msubsup>
+      <mi>f</mi>
+      <mrow>
+        <mo stretchy="true">(</mo>
+        <mi>x</mi>
+        <mo stretchy="true">)</mo>
+      </mrow>
+      <mtext mathvariant="normal"> </mtext>
+      <mo>ⅆ</mo>
+      <mi>x</mi>
+      <mo>=</mo>
+      <munderover>
+        <mo>∑</mo>
+        <mrow>
+          <mi>i</mi>
+          <mo>=</mo>
+          <mn>0</mn>
+        </mrow>
+        <mi>∞</mi>
+      </munderover>
+      <msub>
+        <mi>x</mi>
+        <mi>i</mi>
+      </msub>
+      <mo>=</mo>
+      <munderover>
+        <mo>∏</mo>
+        <mrow>
+          <mi>i</mi>
+          <mo>=</mo>
+          <mn>0</mn>
+        </mrow>
+        <mi>∞</mi>
+      </munderover>
+      <msub>
+        <mi>x</mi>
+        <mi>i</mi>
+      </msub>
+      <mo>=</mo>
+      <munderover>
+        <mo>∐</mo>
+        <mrow>
+          <mi>i</mi>
+          <mo>=</mo>
+          <mn>0</mn>
+        </mrow>
+        <mi>∞</mi>
+      </munderover>
+      <msub>
+        <mi>x</mi>
+        <mi>i</mi>
+      </msub>
+      <mo>=</mo>
+      <msubsup>
+        <mo>∮</mo>
+        <mn>0</mn>
+        <mn>1</mn>
+      </msubsup>
+      <mi>f</mi>
+      <mrow>
+        <mo stretchy="true">(</mo>
+        <mi>x</mi>
+        <mo stretchy="true">)</mo>
+      </mrow>
+      <mtext mathvariant="normal"> </mtext>
+      <mo>ⅆ</mo>
+      <mi>x</mi>
+      <mo>=</mo>
+      <msubsup>
+        <mo>∬</mo>
+        <mn>0</mn>
+        <mn>1</mn>
+      </msubsup>
+      <mi>f</mi>
+      <mrow>
+        <mo stretchy="true">(</mo>
+        <mi>x</mi>
+        <mo stretchy="true">)</mo>
+      </mrow>
+      <mtext mathvariant="normal"> </mtext>
+      <mo>ⅆ</mo>
+      <mi>x</mi>
+      <mo>=</mo>
+      <msubsup>
+        <mo>∭</mo>
+        <mn>0</mn>
+        <mn>1</mn>
+      </msubsup>
+      <mi>f</mi>
+      <mrow>
+        <mo stretchy="true">(</mo>
+        <mi>x</mi>
+        <mo stretchy="true">)</mo>
+      </mrow>
+      <mtext mathvariant="normal"> </mtext>
+      <mo>ⅆ</mo>
+      <mi>x</mi>
+    </mrow>
+  </mrow>
+</math>

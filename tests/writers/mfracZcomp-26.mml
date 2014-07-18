@@ -1,0 +1,55 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mtext mathvariant="normal">LaTeX renders continued fractions </mtext>
+      <mfrac>
+        <mn>1</mn>
+        <mrow>
+          <msqrt>
+            <mn>2</mn>
+          </msqrt>
+          <mo>+</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mrow>
+              <msqrt>
+                <mn>3</mn>
+              </msqrt>
+              <mo>+</mo>
+              <mfrac>
+                <mn>1</mn>
+                <mrow>
+                  <msqrt>
+                    <mn>4</mn>
+                  </msqrt>
+                  <mo>+</mo>
+                  <mfrac>
+                    <mn>1</mn>
+                    <mrow>
+                      <msqrt>
+                        <mn>5</mn>
+                      </msqrt>
+                      <mo>+</mo>
+                      <mfrac>
+                        <mn>1</mn>
+                        <mrow>
+                          <msqrt>
+                            <mn>6</mn>
+                          </msqrt>
+                          <mo>+</mo>
+                          <mi>…</mi>
+                        </mrow>
+                      </mfrac>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+              </mfrac>
+            </mrow>
+          </mfrac>
+        </mrow>
+      </mfrac>
+      <mtext mathvariant="normal"> normal size at all levels in all contexts</mtext>
+    </mrow>
+  </mrow>
+</math>

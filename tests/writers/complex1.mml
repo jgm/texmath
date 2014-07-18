@@ -1,0 +1,1045 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtable>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Bernoulli Trials</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mrow>
+              <mi>P</mi>
+              <mo stretchy="false">(</mo>
+              <mi>E</mi>
+              <mo stretchy="false">)</mo>
+            </mrow>
+            <mo>=</mo>
+            <mrow>
+              <mo stretchy="true">(</mo>
+              <mfrac linethickness="0">
+                <mi>n</mi>
+                <mi>k</mi>
+              </mfrac>
+              <mo stretchy="true">)</mo>
+            </mrow>
+            <msubsup>
+              <mi>p</mi>
+              <mrow />
+              <mi>k</mi>
+            </msubsup>
+            <msubsup>
+              <mrow>
+                <mo stretchy="false">(</mo>
+                <mn>1</mn>
+                <mo>-</mo>
+                <mi>p</mi>
+                <mo stretchy="false">)</mo>
+              </mrow>
+              <mrow />
+              <mrow>
+                <mi>n</mi>
+                <mo>-</mo>
+                <mi>k</mi>
+              </mrow>
+            </msubsup>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Cauchy-Schwarz Inequality</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <msubsup>
+              <mrow>
+                <mo stretchy="true">(</mo>
+                <munderover>
+                  <mo>∑</mo>
+                  <mrow>
+                    <mi>k</mi>
+                    <mo>=</mo>
+                    <mn>1</mn>
+                  </mrow>
+                  <mi>n</mi>
+                </munderover>
+                <msubsup>
+                  <mi>a</mi>
+                  <mi>k</mi>
+                  <mrow />
+                </msubsup>
+                <msubsup>
+                  <mi>b</mi>
+                  <mi>k</mi>
+                  <mrow />
+                </msubsup>
+                <mo stretchy="true">)</mo>
+              </mrow>
+              <mrow />
+              <mn>2</mn>
+            </msubsup>
+            <mo>≤</mo>
+            <mrow>
+              <mo stretchy="true">(</mo>
+              <munderover>
+                <mo>∑</mo>
+                <mrow>
+                  <mi>k</mi>
+                  <mo>=</mo>
+                  <mn>1</mn>
+                </mrow>
+                <mi>n</mi>
+              </munderover>
+              <msubsup>
+                <mi>a</mi>
+                <mi>k</mi>
+                <mn>2</mn>
+              </msubsup>
+              <mo stretchy="true">)</mo>
+            </mrow>
+            <mrow>
+              <mo stretchy="true">(</mo>
+              <munderover>
+                <mo>∑</mo>
+                <mrow>
+                  <mi>k</mi>
+                  <mo>=</mo>
+                  <mn>1</mn>
+                </mrow>
+                <mi>n</mi>
+              </munderover>
+              <msubsup>
+                <mi>b</mi>
+                <mi>k</mi>
+                <mn>2</mn>
+              </msubsup>
+              <mo stretchy="true">)</mo>
+            </mrow>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Cauchy Formula</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mi>f</mi>
+            <mo stretchy="false">(</mo>
+            <mi>z</mi>
+            <mo stretchy="false">)</mo>
+            <mtext mathvariant="normal"> </mtext>
+            <mo>·</mo>
+            <msubsup>
+              <mi>Ind</mi>
+              <mi>γ</mi>
+              <mrow />
+            </msubsup>
+            <mo stretchy="false">(</mo>
+            <mi>z</mi>
+            <mo stretchy="false">)</mo>
+            <mo>=</mo>
+            <mfrac>
+              <mn>1</mn>
+              <mrow>
+                <mn>2</mn>
+                <mi>π</mi>
+                <mi>i</mi>
+              </mrow>
+            </mfrac>
+            <munderover>
+              <mo>∮</mo>
+              <mi>γ</mi>
+              <mrow />
+            </munderover>
+            <mfrac>
+              <mrow>
+                <mi>f</mi>
+                <mo stretchy="false">(</mo>
+                <mi>ξ</mi>
+                <mo stretchy="false">)</mo>
+              </mrow>
+              <mrow>
+                <mi>ξ</mi>
+                <mo>-</mo>
+                <mi>z</mi>
+              </mrow>
+            </mfrac>
+            <mtext mathvariant="normal"> </mtext>
+            <mi>d</mi>
+            <mi>ξ</mi>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Cross Product</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <msubsup>
+              <mi>V</mi>
+              <mn>1</mn>
+              <mrow />
+            </msubsup>
+            <mo>×</mo>
+            <msubsup>
+              <mi>V</mi>
+              <mn>2</mn>
+              <mrow />
+            </msubsup>
+            <mo>=</mo>
+            <mrow>
+              <mo stretchy="true">|</mo>
+              <mtable>
+                <mtr>
+                  <mtd>
+                    <mi>i</mi>
+                  </mtd>
+                  <mtd>
+                    <mi>j</mi>
+                  </mtd>
+                  <mtd>
+                    <mi>k</mi>
+                  </mtd>
+                </mtr>
+                <mtr>
+                  <mtd>
+                    <mfrac>
+                      <mrow>
+                        <mo>∂</mo>
+                        <mi>X</mi>
+                      </mrow>
+                      <mrow>
+                        <mo>∂</mo>
+                        <mi>u</mi>
+                      </mrow>
+                    </mfrac>
+                  </mtd>
+                  <mtd>
+                    <mfrac>
+                      <mrow>
+                        <mo>∂</mo>
+                        <mi>Y</mi>
+                      </mrow>
+                      <mrow>
+                        <mo>∂</mo>
+                        <mi>u</mi>
+                      </mrow>
+                    </mfrac>
+                  </mtd>
+                  <mtd>
+                    <mn>0</mn>
+                  </mtd>
+                </mtr>
+                <mtr>
+                  <mtd>
+                    <mfrac>
+                      <mrow>
+                        <mo>∂</mo>
+                        <mi>X</mi>
+                      </mrow>
+                      <mrow>
+                        <mo>∂</mo>
+                        <mi>v</mi>
+                      </mrow>
+                    </mfrac>
+                  </mtd>
+                  <mtd>
+                    <mfrac>
+                      <mrow>
+                        <mo>∂</mo>
+                        <mi>Y</mi>
+                      </mrow>
+                      <mrow>
+                        <mo>∂</mo>
+                        <mi>v</mi>
+                      </mrow>
+                    </mfrac>
+                  </mtd>
+                  <mtd>
+                    <mn>0</mn>
+                  </mtd>
+                </mtr>
+              </mtable>
+              <mo stretchy="true">|</mo>
+            </mrow>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Vandermonde Determinant</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mrow>
+              <mo stretchy="true">|</mo>
+              <mtable>
+                <mtr>
+                  <mtd>
+                    <mn>1</mn>
+                  </mtd>
+                  <mtd>
+                    <mn>1</mn>
+                  </mtd>
+                  <mtd>
+                    <mo>⋯</mo>
+                  </mtd>
+                  <mtd>
+                    <mn>1</mn>
+                  </mtd>
+                </mtr>
+                <mtr>
+                  <mtd>
+                    <msubsup>
+                      <mi>v</mi>
+                      <mn>1</mn>
+                      <mrow />
+                    </msubsup>
+                  </mtd>
+                  <mtd>
+                    <msubsup>
+                      <mi>v</mi>
+                      <mn>2</mn>
+                      <mrow />
+                    </msubsup>
+                  </mtd>
+                  <mtd>
+                    <mo>⋯</mo>
+                  </mtd>
+                  <mtd>
+                    <msubsup>
+                      <mi>v</mi>
+                      <mi>n</mi>
+                      <mrow />
+                    </msubsup>
+                  </mtd>
+                </mtr>
+                <mtr>
+                  <mtd>
+                    <msubsup>
+                      <mi>v</mi>
+                      <mn>1</mn>
+                      <mn>2</mn>
+                    </msubsup>
+                  </mtd>
+                  <mtd>
+                    <msubsup>
+                      <mi>v</mi>
+                      <mn>2</mn>
+                      <mn>2</mn>
+                    </msubsup>
+                  </mtd>
+                  <mtd>
+                    <mo>⋯</mo>
+                  </mtd>
+                  <mtd>
+                    <msubsup>
+                      <mi>v</mi>
+                      <mi>n</mi>
+                      <mn>2</mn>
+                    </msubsup>
+                  </mtd>
+                </mtr>
+                <mtr>
+                  <mtd>
+                    <mo>⋮</mo>
+                  </mtd>
+                  <mtd>
+                    <mo>⋮</mo>
+                  </mtd>
+                  <mtd>
+                    <mo>⋱</mo>
+                  </mtd>
+                  <mtd>
+                    <mo>⋮</mo>
+                  </mtd>
+                </mtr>
+                <mtr>
+                  <mtd>
+                    <msubsup>
+                      <mi>v</mi>
+                      <mn>1</mn>
+                      <mrow>
+                        <mi>n</mi>
+                        <mo>-</mo>
+                        <mn>1</mn>
+                      </mrow>
+                    </msubsup>
+                  </mtd>
+                  <mtd>
+                    <msubsup>
+                      <mi>v</mi>
+                      <mn>2</mn>
+                      <mrow>
+                        <mi>n</mi>
+                        <mo>-</mo>
+                        <mn>1</mn>
+                      </mrow>
+                    </msubsup>
+                  </mtd>
+                  <mtd>
+                    <mo>⋯</mo>
+                  </mtd>
+                  <mtd>
+                    <msubsup>
+                      <mi>v</mi>
+                      <mi>n</mi>
+                      <mrow>
+                        <mi>n</mi>
+                        <mo>-</mo>
+                        <mn>1</mn>
+                      </mrow>
+                    </msubsup>
+                  </mtd>
+                </mtr>
+              </mtable>
+              <mo stretchy="true">|</mo>
+            </mrow>
+            <mo>=</mo>
+            <munderover>
+              <mo>∏</mo>
+              <mrow>
+                <mn>1</mn>
+                <mo>≤</mo>
+                <mi>i</mi>
+                <mo>&lt;</mo>
+                <mi>j</mi>
+                <mo>≤</mo>
+                <mi>n</mi>
+              </mrow>
+              <mrow />
+            </munderover>
+            <mo stretchy="false">(</mo>
+            <msubsup>
+              <mi>v</mi>
+              <mi>j</mi>
+              <mrow />
+            </msubsup>
+            <mo>-</mo>
+            <msubsup>
+              <mi>v</mi>
+              <mi>i</mi>
+              <mrow />
+            </msubsup>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Lorenz Equations</mtext>
+        </mtd>
+        <mtd>
+          <mtable>
+            <mtr>
+              <mtd>
+                <munderover>
+                  <mi>x</mi>
+                  <mrow />
+                  <mo accent="true">˙</mo>
+                </munderover>
+              </mtd>
+              <mtd>
+                <mo>=</mo>
+              </mtd>
+              <mtd>
+                <mrow>
+                  <mi>σ</mi>
+                  <mo stretchy="false">(</mo>
+                  <mi>y</mi>
+                  <mo>-</mo>
+                  <mi>x</mi>
+                  <mo stretchy="false">)</mo>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <munderover>
+                  <mi>y</mi>
+                  <mrow />
+                  <mo accent="true">˙</mo>
+                </munderover>
+              </mtd>
+              <mtd>
+                <mo>=</mo>
+              </mtd>
+              <mtd>
+                <mrow>
+                  <mi>ρ</mi>
+                  <mi>x</mi>
+                  <mo>-</mo>
+                  <mi>y</mi>
+                  <mo>-</mo>
+                  <mi>x</mi>
+                  <mi>z</mi>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <munderover>
+                  <mi>z</mi>
+                  <mrow />
+                  <mo accent="true">˙</mo>
+                </munderover>
+              </mtd>
+              <mtd>
+                <mo>=</mo>
+              </mtd>
+              <mtd>
+                <mrow>
+                  <mo>-</mo>
+                  <mi>β</mi>
+                  <mi>z</mi>
+                  <mo>+</mo>
+                  <mi>x</mi>
+                  <mi>y</mi>
+                </mrow>
+              </mtd>
+            </mtr>
+          </mtable>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Maxwell&#39;s Equations</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mo stretchy="true">{</mo>
+            <mtable>
+              <mtr>
+                <mtd>
+                  <mrow>
+                    <mo>∇</mo>
+                    <mtext mathvariant="normal">&#8203;</mtext>
+                    <mo>×</mo>
+                    <munderover>
+                      <mi>B</mi>
+                      <mrow />
+                      <mo stretchy="true" accent="true">↼</mo>
+                    </munderover>
+                    <mo>-</mo>
+                    <mtext mathvariant="normal"> </mtext>
+                    <mfrac>
+                      <mn>1</mn>
+                      <mi>c</mi>
+                    </mfrac>
+                    <mtext mathvariant="normal"> </mtext>
+                    <mfrac>
+                      <mrow>
+                        <mo>∂</mo>
+                        <mtext mathvariant="normal">&#8203;</mtext>
+                        <munderover>
+                          <mi>E</mi>
+                          <mrow />
+                          <mo stretchy="true" accent="true">↼</mo>
+                        </munderover>
+                      </mrow>
+                      <mrow>
+                        <mo>∂</mo>
+                        <mtext mathvariant="normal">&#8203;</mtext>
+                        <mi>t</mi>
+                      </mrow>
+                    </mfrac>
+                  </mrow>
+                </mtd>
+                <mtd>
+                  <mo>=</mo>
+                </mtd>
+                <mtd>
+                  <mrow>
+                    <mfrac>
+                      <mrow>
+                        <mn>4</mn>
+                        <mi>π</mi>
+                      </mrow>
+                      <mi>c</mi>
+                    </mfrac>
+                    <mtext mathvariant="normal"> </mtext>
+                    <munderover>
+                      <mi>j</mi>
+                      <mrow />
+                      <mo stretchy="true" accent="true">↼</mo>
+                    </munderover>
+                  </mrow>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mrow>
+                    <mo>∇</mo>
+                    <mtext mathvariant="normal">&#8203;</mtext>
+                    <mo>·</mo>
+                    <munderover>
+                      <mi>E</mi>
+                      <mrow />
+                      <mo stretchy="true" accent="true">↼</mo>
+                    </munderover>
+                  </mrow>
+                </mtd>
+                <mtd>
+                  <mo>=</mo>
+                </mtd>
+                <mtd>
+                  <mrow>
+                    <mn>4</mn>
+                    <mi>π</mi>
+                    <mi>ρ</mi>
+                  </mrow>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mrow>
+                    <mo>∇</mo>
+                    <mtext mathvariant="normal">&#8203;</mtext>
+                    <mo>×</mo>
+                    <munderover>
+                      <mi>E</mi>
+                      <mrow />
+                      <mo stretchy="true" accent="true">↼</mo>
+                    </munderover>
+                    <mtext mathvariant="normal"> </mtext>
+                    <mo>+</mo>
+                    <mtext mathvariant="normal"> </mtext>
+                    <mfrac>
+                      <mn>1</mn>
+                      <mi>c</mi>
+                    </mfrac>
+                    <mtext mathvariant="normal"> </mtext>
+                    <mfrac>
+                      <mrow>
+                        <mo>∂</mo>
+                        <mtext mathvariant="normal">&#8203;</mtext>
+                        <munderover>
+                          <mi>B</mi>
+                          <mrow />
+                          <mo stretchy="true" accent="true">↼</mo>
+                        </munderover>
+                      </mrow>
+                      <mrow>
+                        <mo>∂</mo>
+                        <mtext mathvariant="normal">&#8203;</mtext>
+                        <mi>t</mi>
+                      </mrow>
+                    </mfrac>
+                  </mrow>
+                </mtd>
+                <mtd>
+                  <mo>=</mo>
+                </mtd>
+                <mtd>
+                  <munderover>
+                    <mn>0</mn>
+                    <mrow />
+                    <mo stretchy="true" accent="true">↼</mo>
+                  </munderover>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mrow>
+                    <mo>∇</mo>
+                    <mtext mathvariant="normal">&#8203;</mtext>
+                    <mo>·</mo>
+                    <munderover>
+                      <mi>B</mi>
+                      <mrow />
+                      <mo stretchy="true" accent="true">↼</mo>
+                    </munderover>
+                  </mrow>
+                </mtd>
+                <mtd>
+                  <mo>=</mo>
+                </mtd>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+              </mtr>
+            </mtable>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Einstein Field Equations</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <msubsup>
+              <mi>R</mi>
+              <mrow>
+                <mi>μ</mi>
+                <mi>ν</mi>
+              </mrow>
+              <mrow />
+            </msubsup>
+            <mo>-</mo>
+            <mfrac>
+              <mn>1</mn>
+              <mn>2</mn>
+            </mfrac>
+            <mtext mathvariant="normal"> </mtext>
+            <msubsup>
+              <mi>g</mi>
+              <mrow>
+                <mi>μ</mi>
+                <mi>ν</mi>
+              </mrow>
+              <mrow />
+            </msubsup>
+            <mtext mathvariant="normal"> </mtext>
+            <mi>R</mi>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <mn>8</mn>
+                <mi>π</mi>
+                <mi>G</mi>
+              </mrow>
+              <msubsup>
+                <mi>c</mi>
+                <mrow />
+                <mn>4</mn>
+              </msubsup>
+            </mfrac>
+            <mtext mathvariant="normal"> </mtext>
+            <msubsup>
+              <mi>T</mi>
+              <mrow>
+                <mi>μ</mi>
+                <mi>ν</mi>
+              </mrow>
+              <mrow />
+            </msubsup>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Ramanujan Identity</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mfrac>
+              <mn>1</mn>
+              <mrow>
+                <mo stretchy="false">(</mo>
+                <msqrt>
+                  <mrow>
+                    <mi>φ</mi>
+                    <msqrt>
+                      <mn>5</mn>
+                    </msqrt>
+                  </mrow>
+                </msqrt>
+                <mo>-</mo>
+                <mi>φ</mi>
+                <mo stretchy="false">)</mo>
+                <msubsup>
+                  <mi>e</mi>
+                  <mrow />
+                  <mfrac>
+                    <mn>25</mn>
+                    <mi>π</mi>
+                  </mfrac>
+                </msubsup>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mn>1</mn>
+            <mo>+</mo>
+            <mfrac>
+              <msubsup>
+                <mi>e</mi>
+                <mrow />
+                <mrow>
+                  <mo>-</mo>
+                  <mn>2</mn>
+                  <mi>π</mi>
+                </mrow>
+              </msubsup>
+              <mrow>
+                <mn>1</mn>
+                <mo>+</mo>
+                <mfrac>
+                  <msubsup>
+                    <mi>e</mi>
+                    <mrow />
+                    <mrow>
+                      <mo>-</mo>
+                      <mn>4</mn>
+                      <mi>π</mi>
+                    </mrow>
+                  </msubsup>
+                  <mrow>
+                    <mn>1</mn>
+                    <mo>+</mo>
+                    <mfrac>
+                      <msubsup>
+                        <mi>e</mi>
+                        <mrow />
+                        <mrow>
+                          <mo>-</mo>
+                          <mn>6</mn>
+                          <mi>π</mi>
+                        </mrow>
+                      </msubsup>
+                      <mrow>
+                        <mn>1</mn>
+                        <mo>+</mo>
+                        <mfrac>
+                          <msubsup>
+                            <mi>e</mi>
+                            <mrow />
+                            <mrow>
+                              <mo>-</mo>
+                              <mn>8</mn>
+                              <mi>π</mi>
+                            </mrow>
+                          </msubsup>
+                          <mrow>
+                            <mn>1</mn>
+                            <mo>+</mo>
+                            <mo>…</mo>
+                          </mrow>
+                        </mfrac>
+                      </mrow>
+                    </mfrac>
+                  </mrow>
+                </mfrac>
+              </mrow>
+            </mfrac>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Another Ramanujan identity</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <munderover>
+              <mo>∑</mo>
+              <mrow>
+                <mi>k</mi>
+                <mo>=</mo>
+                <mn>1</mn>
+              </mrow>
+              <mi>∞</mi>
+            </munderover>
+            <mfrac>
+              <mn>1</mn>
+              <msubsup>
+                <mn>2</mn>
+                <mrow />
+                <mrow>
+                  <mo stretchy="false">⌊</mo>
+                  <mi>k</mi>
+                  <mo>·</mo>
+                  <mtext mathvariant="normal">&#8203;</mtext>
+                  <mi>φ</mi>
+                  <mo stretchy="false">⌋</mo>
+                </mrow>
+              </msubsup>
+            </mfrac>
+            <mo>=</mo>
+            <mfrac>
+              <mn>1</mn>
+              <mrow>
+                <msubsup>
+                  <mn>2</mn>
+                  <mrow />
+                  <mn>0</mn>
+                </msubsup>
+                <mo>+</mo>
+                <mfrac>
+                  <mn>1</mn>
+                  <mrow>
+                    <msubsup>
+                      <mn>2</mn>
+                      <mrow />
+                      <mn>1</mn>
+                    </msubsup>
+                    <mo>+</mo>
+                    <mo>⋯</mo>
+                  </mrow>
+                </mfrac>
+              </mrow>
+            </mfrac>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Rogers-Ramanujan Identity</mtext>
+        </mtd>
+        <mtd>
+          <mrow>
+            <mn>1</mn>
+            <mo>+</mo>
+            <mrow>
+              <munderover>
+                <mo>∑</mo>
+                <mrow>
+                  <mi>k</mi>
+                  <mo>=</mo>
+                  <mn>1</mn>
+                </mrow>
+                <mi>∞</mi>
+              </munderover>
+              <mfrac>
+                <msubsup>
+                  <mi>q</mi>
+                  <mrow />
+                  <mrow>
+                    <msubsup>
+                      <mi>k</mi>
+                      <mrow />
+                      <mn>2</mn>
+                    </msubsup>
+                    <mo>+</mo>
+                    <mi>k</mi>
+                  </mrow>
+                </msubsup>
+                <mrow>
+                  <mo stretchy="false">(</mo>
+                  <mn>1</mn>
+                  <mo>-</mo>
+                  <mi>q</mi>
+                  <mo stretchy="false">)</mo>
+                  <mo stretchy="false">(</mo>
+                  <mn>1</mn>
+                  <mo>-</mo>
+                  <msubsup>
+                    <mi>q</mi>
+                    <mrow />
+                    <mn>2</mn>
+                  </msubsup>
+                  <mo stretchy="false">)</mo>
+                  <mo>⋯</mo>
+                  <mo stretchy="false">(</mo>
+                  <mn>1</mn>
+                  <mo>-</mo>
+                  <msubsup>
+                    <mi>q</mi>
+                    <mrow />
+                    <mi>k</mi>
+                  </msubsup>
+                  <mo stretchy="false">)</mo>
+                </mrow>
+              </mfrac>
+            </mrow>
+            <mo>=</mo>
+            <mrow>
+              <munderover>
+                <mo>∏</mo>
+                <mrow>
+                  <mi>j</mi>
+                  <mo>=</mo>
+                  <mn>0</mn>
+                </mrow>
+                <mi>∞</mi>
+              </munderover>
+              <mfrac>
+                <mn>1</mn>
+                <mrow>
+                  <mo stretchy="false">(</mo>
+                  <mn>1</mn>
+                  <mo>-</mo>
+                  <msubsup>
+                    <mi>q</mi>
+                    <mrow />
+                    <mrow>
+                      <mn>5</mn>
+                      <mi>j</mi>
+                      <mo>+</mo>
+                      <mn>2</mn>
+                    </mrow>
+                  </msubsup>
+                  <mo stretchy="false">)</mo>
+                  <mo stretchy="false">(</mo>
+                  <mn>1</mn>
+                  <mo>-</mo>
+                  <msubsup>
+                    <mi>q</mi>
+                    <mrow />
+                    <mrow>
+                      <mn>5</mn>
+                      <mi>j</mi>
+                      <mo>+</mo>
+                      <mn>3</mn>
+                    </mrow>
+                  </msubsup>
+                  <mo stretchy="false">)</mo>
+                </mrow>
+              </mfrac>
+            </mrow>
+            <mo>,</mo>
+            <mtext mathvariant="normal">  </mtext>
+            <mtext mathvariant="normal">  </mtext>
+            <mrow>
+              <mi>f</mi>
+              <mi>o</mi>
+              <mi>r</mi>
+            </mrow>
+            <mtext mathvariant="normal"> </mtext>
+            <mo>|</mo>
+            <mi>q</mi>
+            <mo>|</mo>
+            <mo>&lt;</mo>
+            <mn>1</mn>
+            <mi>.</mi>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">Commutative Diagram</mtext>
+        </mtd>
+        <mtd>
+          <mtable>
+            <mtr>
+              <mtd>
+                <mi>H</mi>
+              </mtd>
+              <mtd>
+                <mo stretchy="true" accent="true">←</mo>
+              </mtd>
+              <mtd>
+                <mi>K</mi>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo stretchy="true">↓</mo>
+              </mtd>
+              <mtd>
+                <mspace width="150px" />
+              </mtd>
+              <mtd>
+                <mo stretchy="true">↑</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mi>H</mi>
+              </mtd>
+              <mtd>
+                <mo stretchy="true" accent="true">→</mo>
+              </mtd>
+              <mtd>
+                <mi>K</mi>
+              </mtd>
+            </mtr>
+          </mtable>
+        </mtd>
+      </mtr>
+    </mtable>
+  </mrow>
+</math>

@@ -1,0 +1,33 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msqrt>
+      <mtable>
+        <mtr>
+          <mtd>
+            <mphantom>
+              <mi>A</mi>
+            </mphantom>
+          </mtd>
+          <mtd>
+            <mphantom>
+              <mi>A</mi>
+            </mphantom>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd>
+            <mphantom>
+              <mi>A</mi>
+            </mphantom>
+          </mtd>
+          <mtd>
+            <mphantom>
+              <mi>A</mi>
+            </mphantom>
+          </mtd>
+        </mtr>
+      </mtable>
+    </msqrt>
+  </mrow>
+</math>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mstyle displaystyle="true" scriptlevel="0">
+    <mrow>
+      <mi mathcolor="gray">HypergeomDist</mi> 
+      <mo>&#x02061;</mo> 
+      <mrow>
+        <mo form="prefix" fence="true" stretchy="true" lspace="0em" rspace="0em">(</mo> 
+        <mrow>
+          <mi>x</mi> 
+          <mo form="infix">;</mo> 
+          <mrow>
+            <mi>M</mi> 
+            <mo form="infix">,</mo> 
+            <mi>K</mi> 
+            <mo form="infix">,</mo> 
+            <mi>n</mi> 
+          </mrow> 
+        </mrow> 
+        <mo form="postfix" fence="true" stretchy="true" lspace="0em" rspace="0em">)</mo> 
+      </mrow> 
+    </mrow> 
+    <mo form="infix">=</mo> 
+    <mrow>
+      <munderover>
+        <mo form="prefix" movablelimits="false" largeop="false" stretchy="true" maxsize="1.4" minsize="1.4">&#x02211;</mo> 
+        <mrow>
+          <mi>k</mi> 
+          <mo form="infix">=</mo> 
+          <mn>0</mn> 
+        </mrow> 
+        <mi>x</mi> 
+      </munderover> 
+      <mfrac>
+        <mrow>
+          <mrow>
+            <mo form="prefix" fence="true" stretchy="true" lspace="0em" rspace="0em">(</mo> 
+            <mfrac linethickness="0">
+              <mi>K</mi> 
+              <mi>k</mi> 
+            </mfrac> 
+            <mo form="postfix" fence="true" stretchy="true" lspace="0em" rspace="0em">)</mo> 
+          </mrow> 
+          <mo>&#x02062;</mo> 
+          <mrow>
+            <mo form="prefix" fence="true" stretchy="true" lspace="0em" rspace="0em">(</mo> 
+            <mfrac linethickness="0">
+              <mrow>
+                <mi>M</mi> 
+                <mo form="infix">-</mo> 
+                <mi>K</mi> 
+              </mrow> 
+              <mrow>
+                <mi>n</mi> 
+                <mo form="infix">-</mo> 
+                <mi>k</mi> 
+              </mrow> 
+            </mfrac> 
+            <mo form="postfix" fence="true" stretchy="true" lspace="0em" rspace="0em">)</mo> 
+          </mrow> 
+        </mrow> 
+        <mrow>
+          <mo form="prefix" fence="true" stretchy="true" lspace="0em" rspace="0em">(</mo> 
+          <mfrac linethickness="0">
+            <mi>M</mi> 
+            <mi>n</mi> 
+          </mfrac> 
+          <mo form="postfix" fence="true" stretchy="true" lspace="0em" rspace="0em">)</mo> 
+        </mrow> 
+      </mfrac> 
+    </mrow> 
+  </mstyle> </math>

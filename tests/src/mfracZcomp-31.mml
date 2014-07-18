@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtext>Here's a display </mtext> 
+  <mstyle displaystyle="true" scriptlevel="0">
+    <mrow>
+      <mi>F</mi> 
+      <mo>&#x02061;</mo> 
+      <mrow>
+        <mo form="prefix" fence="true" stretchy="true" lspace="0em" rspace="0em">(</mo> 
+        <mrow>
+          <mi>t</mi> 
+          <mo form="infix">,</mo> 
+          <mi>y</mi> 
+        </mrow> 
+        <mo form="postfix" fence="true" stretchy="true" lspace="0em" rspace="0em">)</mo> 
+      </mrow> 
+    </mrow> 
+    <mo form="infix">=</mo> 
+    <mfrac>
+      <mrow>
+        <mo form="prefix" fence="true" stretchy="true" lspace="0em" rspace="0em">(</mo> 
+        <mrow>
+          <mn>1</mn> 
+          <mo form="infix">,</mo> 
+          <mfrac>
+            <mrow>
+              <mo form="prefix">&#x02146;</mo> 
+              <mi>y</mi> 
+            </mrow> 
+            <mrow>
+              <mo form="prefix">&#x02146;</mo> 
+              <mi>t</mi> 
+            </mrow> 
+          </mfrac> 
+        </mrow> 
+        <mo form="postfix" fence="true" stretchy="true" lspace="0em" rspace="0em">)</mo> 
+      </mrow> 
+      <mrow>
+        <mo form="prefix" fence="true" stretchy="true" lspace="0em" rspace="0em">&#x02225;</mo> 
+        <mrow>
+          <mo form="prefix" fence="true" stretchy="true" lspace="0em" rspace="0em">(</mo> 
+          <mrow>
+            <mn>1</mn> 
+            <mo form="infix">,</mo> 
+            <mfrac>
+              <mrow>
+                <mo form="prefix">&#x02146;</mo> 
+                <mi>y</mi> 
+              </mrow> 
+              <mrow>
+                <mo form="prefix">&#x02146;</mo> 
+                <mi>t</mi> 
+              </mrow> 
+            </mfrac> 
+          </mrow> 
+          <mo form="postfix" fence="true" stretchy="true" lspace="0em" rspace="0em">)</mo> 
+        </mrow> 
+        <mo form="postfix" fence="true" stretchy="true" lspace="0em" rspace="0em">&#x02225;</mo> 
+      </mrow> 
+    </mfrac> 
+  </mstyle> 
+  <mtext> with some real math in it.</mtext> </math>

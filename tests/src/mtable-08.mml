@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mtable frame="solid" columnalign="center">    <mtr>      <mtd>        <mrow>          <mphantom>            <mtext>fail</mtext>
+          </mphantom>
+          <mi mathvariant="normal">H</mi>
+          <mphantom>
+            <mtext>fail</mtext>
+          </mphantom>
+        </mrow>
+      </mtd>
+    </mtr>     <mtr>      <mtd>        <mi mathvariant="normal">T</mi>
+      </mtd>
+    </mtr>     <mtr>      <mtd>        <mi mathvariant="normal">U</mi>
+      </mtd>
+    </mtr>   </mtable>   <mo>=</mo>   <mtable frame="solid" columnalign="center">    <mtr>      <mtd>        <mi mathvariant="normal">H</mi>
+      </mtd>
+    </mtr>     <mtr>      <mtd>        <mi mathvariant="normal">T</mi>
+      </mtd>
+    </mtr>     <mtr>      <mtd>        <mrow>          <mphantom>            <mtext>fail</mtext>
+          </mphantom>
+          <mi mathvariant="normal">U</mi>
+          <mphantom>
+            <mtext>fail</mtext>
+          </mphantom>
+        </mrow>
+      </mtd>
+    </mtr>   </mtable> </math>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>Inline nested fracs </mtext> 
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mfrac>
+      <msup>
+        <mn>1</mn> 
+        <msqrt>
+          <mn>6</mn> 
+        </msqrt> 
+      </msup> 
+      <mrow>
+        <msqrt>
+          <mn>2</mn> 
+        </msqrt> 
+        <mo form="infix">+</mo> 
+        <mfrac>
+          <mn>1</mn> 
+          <mrow>
+            <msqrt>
+              <mn>3</mn> 
+            </msqrt> 
+            <mo form="infix">+</mo> 
+            <mfrac>
+              <mn>1</mn> 
+              <mrow>
+                <msqrt>
+                  <mn>4</mn> 
+                </msqrt> 
+                <mo form="infix">+</mo> 
+                <mfrac>
+                  <mn>1</mn> 
+                  <mrow>
+                    <msqrt>
+                      <mn>5</mn> 
+                    </msqrt> 
+                    <mo form="infix">+</mo> 
+                    <mfrac>
+                      <mn>1</mn> 
+                      <mrow>
+                        <msqrt>
+                          <mn>6</mn> 
+                        </msqrt> 
+                        <mo form="infix">+</mo> 
+                        <mi>&#x02026;</mi> 
+                      </mrow> 
+                    </mfrac> 
+                  </mrow> 
+                </mfrac> 
+              </mrow> 
+            </mfrac> 
+          </mrow> 
+        </mfrac> 
+      </mrow> 
+    </mfrac> 
+  </mstyle> 
+  <mtext> are script size at the first level and decrease to script script size for all more nested levels.</mtext> </math>

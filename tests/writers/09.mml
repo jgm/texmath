@@ -1,0 +1,28 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <munder>
+      <mi>lim</mi>
+      <mrow>
+        <mi>z</mi>
+        <mo>→</mo>
+        <msub>
+          <mi>z</mi>
+          <mn>0</mn>
+        </msub>
+      </mrow>
+    </munder>
+    <mi>f</mi>
+    <mo stretchy="false">(</mo>
+    <mi>z</mi>
+    <mo stretchy="false">)</mo>
+    <mo>=</mo>
+    <mi>f</mi>
+    <mo stretchy="false">(</mo>
+    <msub>
+      <mi>z</mi>
+      <mn>0</mn>
+    </msub>
+    <mo stretchy="false">)</mo>
+  </mrow>
+</math>

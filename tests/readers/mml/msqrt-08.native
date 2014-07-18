@@ -1,0 +1,1 @@
+[EGrouped [EUnary "\\sqrt" (EGrouped [EIdentifier "content"]),ESymbol Op "=",EUnary "\\sqrt" (EGrouped [ESub (EIdentifier "content") (EUnary "\\phantom" (EGrouped [EIdentifier "fail"]))]),ESymbol Op "=",EUnary "\\sqrt" (EGrouped [ESuper (EIdentifier "content") (EUnary "\\phantom" (EGrouped [EIdentifier "fail"]))])]]

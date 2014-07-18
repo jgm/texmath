@@ -1,0 +1,90 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mtable>
+        <mtr>
+          <mtd columnalign="right">
+            <mrow>
+              <mphantom>
+                <mtext mathvariant="normal">fail</mtext>
+              </mphantom>
+              <mtext mathvariant="normal">H</mtext>
+            </mrow>
+          </mtd>
+          <mtd columnalign="right">
+            <mtext mathvariant="normal">A</mtext>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd columnalign="right">
+            <mrow>
+              <mphantom>
+                <mtext mathvariant="normal">fail</mtext>
+              </mphantom>
+              <mtext mathvariant="normal">T</mtext>
+            </mrow>
+          </mtd>
+          <mtd columnalign="right">
+            <mtext mathvariant="normal">I</mtext>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd columnalign="right">
+            <mrow>
+              <mphantom>
+                <mtext mathvariant="normal">fail</mtext>
+              </mphantom>
+              <mtext mathvariant="normal">U</mtext>
+            </mrow>
+          </mtd>
+          <mtd columnalign="right">
+            <mtext mathvariant="normal">Y</mtext>
+          </mtd>
+        </mtr>
+      </mtable>
+      <mo>=</mo>
+      <mtable>
+        <mtr>
+          <mtd columnalign="left">
+            <mtext mathvariant="normal">A</mtext>
+          </mtd>
+          <mtd columnalign="left">
+            <mrow>
+              <mtext mathvariant="normal">H</mtext>
+              <mphantom>
+                <mtext mathvariant="normal">fail</mtext>
+              </mphantom>
+            </mrow>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd columnalign="left">
+            <mtext mathvariant="normal">I</mtext>
+          </mtd>
+          <mtd columnalign="left">
+            <mrow>
+              <mtext mathvariant="normal">T</mtext>
+              <mphantom>
+                <mtext mathvariant="normal">fail</mtext>
+              </mphantom>
+            </mrow>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd columnalign="left">
+            <mtext mathvariant="normal">Y</mtext>
+          </mtd>
+          <mtd columnalign="left">
+            <mrow>
+              <mtext mathvariant="normal">U</mtext>
+              <mphantom>
+                <mtext mathvariant="normal">fail</mtext>
+              </mphantom>
+            </mrow>
+          </mtd>
+        </mtr>
+      </mtable>
+    </mrow>
+  </mrow>
+</math>

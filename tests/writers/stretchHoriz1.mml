@@ -1,0 +1,84 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtable>
+      <mtr>
+        <mtd />
+        <mtd>
+          <mtext mathvariant="normal">Stetching in base</mtext>
+        </mtd>
+        <mtd>
+          <mtext mathvariant="normal">Stretching in script</mtext>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">no mrows</mtext>
+        </mtd>
+        <mtd>
+          <mover stretchy="true">
+            <mo accent="true">→</mo>
+            <mtext mathvariant="normal">maps to</mtext>
+          </mover>
+        </mtd>
+        <mtd>
+          <mover>
+            <mtext mathvariant="normal">maps to</mtext>
+            <mo stretchy="true" accent="true">→</mo>
+          </mover>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">all in row</mtext>
+        </mtd>
+        <mtd>
+          <mover stretchy="true">
+            <mo accent="true">→</mo>
+            <mtext mathvariant="normal">maps to</mtext>
+          </mover>
+        </mtd>
+        <mtd>
+          <mover>
+            <mtext mathvariant="normal">maps to</mtext>
+            <mo stretchy="true" accent="true">→</mo>
+          </mover>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">op in row</mtext>
+        </mtd>
+        <mtd>
+          <mover>
+            <mo stretchy="true" accent="true">→</mo>
+            <mtext mathvariant="normal">maps to</mtext>
+          </mover>
+        </mtd>
+        <mtd>
+          <mover>
+            <mtext mathvariant="normal">maps to</mtext>
+            <mo stretchy="true" accent="true">→</mo>
+          </mover>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mtext mathvariant="normal">text in row</mtext>
+        </mtd>
+        <mtd>
+          <mover>
+            <mo stretchy="true" accent="true">→</mo>
+            <mtext mathvariant="normal">maps to</mtext>
+          </mover>
+        </mtd>
+        <mtd>
+          <mover>
+            <mtext mathvariant="normal">maps to</mtext>
+            <mo stretchy="true" accent="true">→</mo>
+          </mover>
+        </mtd>
+      </mtr>
+    </mtable>
+  </mrow>
+</math>

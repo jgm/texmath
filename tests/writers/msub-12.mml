@@ -1,0 +1,24 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <msub>
+        <mi>P</mi>
+        <mn>0</mn>
+      </msub>
+      <mo>=</mo>
+      <munderover>
+        <msub>
+          <mi>P</mi>
+          <mn>0</mn>
+        </msub>
+        <mphantom>
+          <mi>x</mi>
+        </mphantom>
+        <mphantom>
+          <mi>x</mi>
+        </mphantom>
+      </munderover>
+    </mrow>
+  </mrow>
+</math>

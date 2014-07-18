@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle fontsize="130%" displaystyle="true">
+    <mtable>
+      <mtr>
+        <mtd>
+          <mrow>
+            <mi>x</mi> 
+            <mo>+</mo> 
+            <mrow>
+              <mo>(</mo> 
+            </mrow> 
+            <mfrac>
+              <mn>2</mn> 
+              <mn>3</mn> 
+            </mfrac> 
+            <mo>)</mo> 
+          </mrow> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mrow>
+            <mi>x</mi> 
+            <mo>+</mo> 
+            <mrow>
+              <mover>
+                <mo>(</mo> 
+                <mo>-</mo> 
+              </mover> 
+            </mrow> 
+            <mfrac>
+              <mn>2</mn> 
+              <mn>3</mn> 
+            </mfrac> 
+            <mo>)</mo> 
+          </mrow> 
+        </mtd> 
+      </mtr> 
+    </mtable> 
+  </mstyle> </math>

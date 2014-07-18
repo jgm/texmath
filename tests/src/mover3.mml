@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle mathsize="200%" displaystyle="false">
+    <mover>
+      <mi>x</mi> 
+      <mo> &#x02C6;</mo> 
+    </mover> 
+    <mo> &#x2260;</mo> 
+    <mstyle accent="false">
+      <mover>
+        <mi>x</mi> 
+        <mo> &#x02C6;</mo> 
+      </mover> 
+    </mstyle> 
+    <mo> &#x003D;</mo> 
+    <mover accent="false">
+      <mi>x</mi> 
+      <mo> &#x02C6;</mo> 
+    </mover> 
+    <mo> &#x003D;</mo> 
+    <mover>
+      <mi>x</mi> 
+      <mo accent="false"> &#x02C6;</mo> 
+    </mover> 
+  </mstyle> </math>

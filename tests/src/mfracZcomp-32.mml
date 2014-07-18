@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" mode="display">
+  <mtext>And this is an example where the bevelled attribute is set inside the radical </mtext>  
+  <mfrac>
+    <mrow>
+      <msup>
+        <mi>y</mi> 
+        <mn>2</mn> 
+      </msup> 
+      <mo>-</mo> 
+      <msup>
+        <mi>t</mi> 
+        <mn>2</mn> 
+      </msup> 
+    </mrow> 
+    <msqrt>
+      <mfrac bevelled="true">
+        <mn>1</mn> 
+        <mrow>
+          <mo>(</mo> 
+          <mn>1</mn> 
+          <mo>+</mo> 
+          <msup>
+            <mrow>
+              <mo>|</mo> 
+              <mrow>
+                <msup>
+                  <mi>y</mi> 
+                  <mn>2</mn> 
+                </msup> 
+                <mo>-</mo> 
+                <msup>
+                  <mi>t</mi> 
+                  <mn>2</mn> 
+                </msup> 
+              </mrow> 
+              <mo>|</mo> 
+            </mrow> 
+            <mn>2</mn> 
+          </msup> 
+          <mo>)</mo> 
+        </mrow> 
+      </mfrac> 
+    </msqrt> 
+  </mfrac> </math>

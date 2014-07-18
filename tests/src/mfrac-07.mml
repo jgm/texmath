@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mfrac linethickness="2">    <mrow>      <mfrac>        <mrow>          <mover>            <mi>a</mi>
+            <mphantom>
+              <mtext>!</mtext>
+            </mphantom>
+          </mover>
+        </mrow>
+        <mi>b</mi>
+      </mfrac>
+    </mrow>     <mrow>      <mfrac>        <mi>c</mi>
+        <mi>d</mi>
+      </mfrac>
+    </mrow>   </mfrac>   <mo>=</mo>   <mfrac linethickness="thick">    <mrow>      <mfrac>        <mi>a</mi>
+        <mi>b</mi>
+      </mfrac>
+    </mrow>     <mrow>      <mfrac>        <mi>c</mi>
+        <mrow>
+          <munder>
+            <mi>d</mi>
+            <mphantom>
+              <mtext>!</mtext>
+            </mphantom>
+          </munder>
+        </mrow>
+      </mfrac>
+    </mrow>   </mfrac> </math>

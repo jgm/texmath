@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" mode="display" class="background">
+  <mtext>And this shows a combination with a background image at a desired opacity </mtext> 
+  <mrow class="foreground">
+    <msub>
+      <mi>Z</mi> 
+      <mi>&#x003B1;</mi> 
+    </msub> 
+    <mrow>
+      <mo>(</mo> 
+      <mi>f</mi> 
+      <mo>)</mo> 
+    </mrow> 
+    <mo>=</mo> 
+    <mfrac>
+      <mn>1</mn> 
+      <mrow>
+        <mn>2</mn> 
+        <mi>i</mi> 
+        <mo>&#x02009;</mo> 
+        <mi>cos</mi> 
+        <mo>(</mo> 
+        <mfrac>
+          <mrow>
+            <mi>&#x003B1;</mi> 
+            <mi>&#x003C0;</mi> 
+          </mrow> 
+          <mn>2</mn> 
+        </mfrac> 
+        <mo>)</mo> 
+      </mrow> 
+    </mfrac> 
+    <mrow>
+      <msub>
+        <mo>&#x0222B;</mo> 
+        <mi>C</mi> 
+      </msub> 
+      <mfrac>
+        <mrow>
+          <mi>f</mi> 
+          <mo stretchy="false">(</mo> 
+          <mi>i</mi> 
+          <mi>z</mi> 
+          <mo stretchy="false">)</mo> 
+          <msup>
+            <mrow>
+              <mo>(</mo> 
+              <mo>-</mo> 
+              <mi>z</mi> 
+              <mo>)</mo> 
+            </mrow> 
+            <mi>&#x003B1;</mi> 
+          </msup> 
+        </mrow> 
+        <mrow>
+          <msup>
+            <mi>e</mi> 
+            <mrow>
+              <mn>2</mn> 
+              <mi>&#x003C0;</mi> 
+              <mi>z</mi> 
+            </mrow> 
+          </msup> 
+          <mo>-</mo> 
+          <mn>1</mn> 
+        </mrow> 
+      </mfrac> 
+    </mrow> 
+    <mo>&#x02146;</mo> 
+    <mi>z</mi> 
+  </mrow> </math>
