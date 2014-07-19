@@ -77,8 +77,10 @@ mathMLToPandoc dt inp = inp `seq`
 -- | Convert MathML to Pandoc Math Element
 mathMLToLaTeX :: DisplayType -> String -> Either String Inline
 mathMLToLaTeX dt inp = inp `seq`
-  rt . toTeXMath dt <$> readMathML inp
+  rt =<< (toTeXMath dt <$> readMathML inp)
   where
     mathType = case dt of { DisplayInline -> InlineMath;
                             DisplayBlock -> DisplayMath }
-    rt s = Math mathType s
+    rt s = case s of
+            "" -> Left "Conversion resulted in empty string"
+            _  -> Right $ Math mathType s
