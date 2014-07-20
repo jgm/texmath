@@ -79,7 +79,6 @@ Executable texmath
     Default-Language:    Haskell2010
     Main-is:             texmath.hs
     Hs-Source-Dirs:      extra
-    Build-Depends:       base >= 4.2 && < 5, texmath, xml
     if impl(ghc >= 6.12)
       Ghc-Options:     -Wall -fno-warn-unused-do-bind
     else
@@ -87,11 +86,13 @@ Executable texmath
     Ghc-Prof-Options:  -auto-all -caf-all
     if flag(executable)
       Buildable:         True
+      Build-Depends:     base >= 4.2 && < 5, texmath, xml
     else
       Buildable:         False
 
 Executable texmath-cgi
-    Main-is:             cgi/texmath-cgi.hs
+    Main-is:             texmath-cgi.hs
+    Hs-Source-Dirs:      cgi
     Default-Language:    Haskell2010
     if impl(ghc >= 6.12)
       Ghc-Options:     -Wall -fno-warn-unused-do-bind
@@ -99,8 +100,8 @@ Executable texmath-cgi
       Ghc-Options:     -Wall
     Ghc-Prof-Options:  -auto-all -caf-all
     if flag(cgi)
+      Build-Depends:     base >= 4.2 && < 5, texmath, xml, cgi, json, utf8-string
       Buildable:         True
-      Build-depends:     cgi, json, utf8-string
     else
       Buildable:         False
 
