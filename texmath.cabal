@@ -78,6 +78,8 @@ Library
 Executable texmath
     Default-Language:    Haskell2010
     Main-is:             texmath.hs
+    Hs-Source-Dirs:      extra
+    Build-Depends:       base >= 4.2 && < 5, texmath, xml
     if impl(ghc >= 6.12)
       Ghc-Options:     -Wall -fno-warn-unused-do-bind
     else
