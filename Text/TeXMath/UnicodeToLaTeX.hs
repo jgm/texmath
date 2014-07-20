@@ -37,7 +37,7 @@ LaTeX Project Public License.
 
 -}
 
-module Text.TeXMath.UnicodeToLaTeX (getLaTeX) where
+module Text.TeXMath.UnicodeToLaTeX (getLaTeX, records) where
 
 import qualified Data.Map as M
 import Text.TeXMath.Types
