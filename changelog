@@ -1,9 +1,47 @@
 texmath (0.6.7)
+  * New Module: Text.TeXMath.Unidecode
+    - A module for approximating unicode characters in Ascii
+    - Exports: getASCII :: Char -> String
+               records :: [Record]
+               The raw mapping table
+  * New Module: Text.TeXMath.Shared
+    - A module for shared lookup tables between the various readers and
+    writers
+  * New Module: Text.TeXMath.MathMLParser
+    - A reader for MathML
+    - Exports: readMathML :: String -> Either String [Exp]
+  * New Module: Text.TeXMath.EntityMap
+    - A conversion table from MathML entities to unicode characters
+    - Exports: getUnicode :: String -> Maybe String  
+  * New Module: Text.TeXMath.UnicodeToLaTeX
+    - A conversion table from unicode characters to LaTeX commands
+    - Exports: 
+      getLaTeX :: String -> String
+        Converts a string of unicode characters to a string of equivalent LaTeX
+        commands
+  * New Module: Text.TeXMath.LaTeX
+    - A writer for TeXMath expressions 
+    - Exports: toTeXMath :: DisplayType -> [Exp] -> String
+  * New Module: Text.TeXMath.MMLDict
+    - Implements a lookup table from operators to their default values as
+    defined by the MML dictionary
+    - Exports: getOperator :: Char -> FormType -> Operator
+  * New Module: Text.TeXMath.Compat
+    - This module maintains compatability with versions of mtl before 2.2.1
+  * Modified: Text.TeXMath
+    - This module now also exports the primitive readers
+    - New Exports
+      - All primitive readers and writers (OMML (Writer only), MML, TeXMath)  
+      - mathMLTo{Writer} for all writers
+  * Modified: Text.TeXMath.Types
+    - Added additional record types for Text.TeXMath.MMLDict and 
+    Text.TeXMath.UnicodeToLaTeX
+    - New Exports: Operator(..), Record(..)
+  * Modified: Tests Interface
+    - Rewrote to use cabal test and added significant number of tests
+  * Improvements: 
+    - Added recognition of the LaTeX command \phantom
 
-  * Added LaTeX Writer
-  * Added MathML Reader
-  * Exposed the reader and writer interface to the user
-	
 texmath (0.6.6.3)
 
   * Use combining tilde accent for \tilde.  Closes pandoc #1324.

@@ -37,7 +37,7 @@ LaTeX Project Public License.
 
 -}
 
-module Text.TeXMath.UnicodeToLaTeX (escapeLaTeX, convertText, getLaTeX) where
+module Text.TeXMath.UnicodeToLaTeX (getLaTeX, records) where
 
 import qualified Data.Map as M
 import Text.TeXMath.Types
@@ -55,21 +55,12 @@ env = ["amsmath", "amssymb", ""]
 commands :: [String]
 commands = ["mathaccent", "mathradical", "mathover", "mathunder"]
 
--- | Escapes characets reserved in the latex math environment
-escapeLaTeX :: Char -> String
-escapeLaTeX '~' = "\\textasciitilde"
-escapeLaTeX '^' = "\\textasciicircum"
-escapeLaTeX '\\' = "\\textbackslash"
-escapeLaTeX c
-  | c `elem` "#$%&_{}" = "\\" ++ [c]
-  | otherwise = [c]
-
--- | Converts a string of unicode characters into an equivalent LaTeX
+-- | Converts a string of unicode characters into a string of equivalent LaTeX
 -- commands.
 getLaTeX ::  String -> String
 getLaTeX s = concatMap charToString s
 
--- Guarenteed to return latex safe string
+-- Guaranteed to return latex safe string
 charToString :: Char -> String
 charToString c =
   fromMaybe fallback
@@ -78,7 +69,6 @@ charToString c =
     a = getASCII c
     fallback = concatMap asciiToLaTeX a
     asciiToLaTeX ac = fromMaybe [ac] (charToLaTeXString ac)
-
 
 -- Takes a single character and attempts to convert it to a latex string
 charToLaTeXString :: Char -> Maybe String
@@ -103,26 +93,11 @@ padCommand :: String -> String
 padCommand s@('\\':_) = s ++ " "
 padCommand s = s
 
-
 -- Convert special unicode characters not in the standard mapping
 textConvert :: Char -> Maybe String
 textConvert c = do
   (ttype, v) <- fromUnicode c
   return $ S.getLaTeXTextCommand ttype ++ ['{',v,'}']
-
--- | Converts a unicode sring in text environment to a LaTeX string using only
--- commands availible in that environment.
-convertText :: String -> String
-convertText = concatMap getSpaceLaTeX
-
-getSpaceLaTeX :: Char -> String
-getSpaceLaTeX c =
-  let cat = fromMaybe "" (cls <$> M.lookup c recordsMap) in
-  if ('S' `elem` cat)
-    then getLaTeX [c]
-    else
-      concatMap escapeLaTeX (getASCII c)
-
 
 -- Parses the comment field to find alternatives to commands
 getAlternatives :: String ->  [(String, String)]
