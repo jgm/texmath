@@ -6,7 +6,7 @@ texmath (0.6.7)
                The raw mapping table
   * New Module: Text.TeXMath.Shared
     - A module for shared lookup tables between the various readers and
-    writers
+      writers
   * New Module: Text.TeXMath.MathMLParser
     - A reader for MathML
     - Exports: readMathML :: String -> Either String [Exp]
@@ -24,7 +24,7 @@ texmath (0.6.7)
     - Exports: toTeXMath :: DisplayType -> [Exp] -> String
   * New Module: Text.TeXMath.MMLDict
     - Implements a lookup table from operators to their default values as
-    defined by the MML dictionary
+      defined by the MML dictionary
     - Exports: getOperator :: Char -> FormType -> Operator
   * New Module: Text.TeXMath.Compat
     - This module maintains compatability with versions of mtl before 2.2.1
@@ -35,7 +35,7 @@ texmath (0.6.7)
       - mathMLTo{Writer} for all writers
   * Modified: Text.TeXMath.Types
     - Added additional record types for Text.TeXMath.MMLDict and 
-    Text.TeXMath.UnicodeToLaTeX
+      Text.TeXMath.UnicodeToLaTeX
     - New Exports: Operator(..), Record(..)
   * Modified: Tests Interface
     - Rewrote to use cabal test and added significant number of tests
