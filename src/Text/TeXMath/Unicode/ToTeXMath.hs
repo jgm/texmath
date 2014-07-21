@@ -16,18 +16,21 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 -}
-{-
+{- |
 
 This module is derived from the list of unicode to LaTeX mappings
-compiled by Günter Milde. All request for support should be sent to the
+compiled by Günter Milde.
+
+An unmodified original copy of this work can be obtained from <http://milde.users.sourceforge.net/LUCR/Math/ here>
+
+-}
+
+{-
+
+All request for support should be sent to the
 current maintainer of this module and NOT the aforementioned original author.
 
 The work was originally licensed under the LaTeX Project Public License.
-
-An unmodified original copy of this work can be obtained from the following
-webpage.
-
-http://milde.users.sourceforge.net/LUCR/Math/
 
 Changes to the work can be seen via the git commit history to this module.
 
@@ -37,50 +40,62 @@ LaTeX Project Public License.
 
 -}
 
-module Text.TeXMath.UnicodeToLaTeX (getLaTeX, records) where
+module Text.TeXMath.Unicode.ToTeXMath (getTeXMathIn
+                                      , getTeXMath
+                                      , records
+                                      , Env) where
 
 import qualified Data.Map as M
 import Text.TeXMath.Types
 import Data.Maybe (fromMaybe, catMaybes, listToMaybe)
 import Control.Applicative hiding (optional)
 import Text.Parsec hiding ((<|>))
-import Text.TeXMath.Unidecode (getASCII)
-import Text.TeXMath.ToUnicode (fromUnicode)
+import Text.TeXMath.Unicode.ToASCII (getASCII)
+import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import qualified Text.TeXMath.Shared as S
 
-env :: [String]
-env = ["amsmath", "amssymb", ""]
+type Env = [String]
+
+-- Availible packages
+defaultEnv :: Env
+defaultEnv = ["amsmath", "amssymb"]
 
 -- Categories which require braces
 commands :: [String]
 commands = ["mathaccent", "mathradical", "mathover", "mathunder"]
 
--- | Converts a string of unicode characters into a string of equivalent LaTeX
--- commands.
-getLaTeX ::  String -> String
-getLaTeX s = concatMap charToString s
+-- | getTeXMathIn with the default environment (amsmath and amssymbol)
+getTeXMath ::  String -> String
+getTeXMath = getTeXMathIn defaultEnv
+
+-- | Converts a string of unicode characters into a strong of equivalent
+-- TeXMath commands. An environment is a list of strings specifying which
+-- additional packages are availible.
+getTeXMathIn :: Env -> String -> String
+getTeXMathIn e s = concatMap (charToString e) s
 
 -- Guaranteed to return latex safe string
-charToString :: Char -> String
-charToString c =
+charToString :: Env -> Char -> String
+charToString e c =
   fromMaybe fallback
-    (charToLaTeXString c <|> textConvert c)
+    (charToLaTeXString e c <|> textConvert c)
   where
     a = getASCII c
     fallback = concatMap asciiToLaTeX a
-    asciiToLaTeX ac = fromMaybe [ac] (charToLaTeXString ac)
+    asciiToLaTeX ac = fromMaybe [ac] (charToLaTeXString e ac)
 
 -- Takes a single character and attempts to convert it to a latex string
-charToLaTeXString :: Char -> Maybe String
-charToLaTeXString c = do
+charToLaTeXString :: Env -> Char -> Maybe String
+charToLaTeXString e c = do
+  let environment = e ++ [""]
   v <- M.lookup c recordsMap
   -- Required packages for the command
   let required = filter (\z -> head z /= '-') $ (words . requirements) v
   let alts = getAlternatives (comments v)
-  latexCommand  <- if null required || any (`elem` required) env
+  latexCommand  <- if null required || any (`elem` required) environment
            then Just $ latex v
            else
-             listToMaybe $ catMaybes (map (flip lookup alts) env)
+             listToMaybe $ catMaybes (map (flip lookup alts) environment)
   -- Check if we need to append additional braces
   let lc' =
         case category v `elem` commands of
@@ -134,6 +149,7 @@ recordsMap = M.fromList (map f records)
   where
     f r = (uchar r, r)
 
+-- | Complete raw mapping between unicode characters and TeXMath commands.
 records :: [Record]
 records = [Record {point = "00021", uchar = '!', latex = "!", unicodemath = "\\exclam", cls = "N", category = "mathpunct", requirements = "", comments = "EXCLAMATION MARK"}
   , Record {point = "00023", uchar = '#', latex = "\\#", unicodemath = "\\octothorpe", cls = "N", category = "mathord", requirements = "-oz", comments = "# \\# (oz), NUMBER SIGN"}

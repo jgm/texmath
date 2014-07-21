@@ -11,8 +11,6 @@ module Text.TeXMath.Compat ( ExceptT
 #if MIN_VERSION_mtl(2,2,1)
 import Control.Monad.Except
 
-
-
 #else
 import Control.Monad.Error
 import Control.Monad.Identity

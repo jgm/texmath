@@ -52,28 +52,29 @@ Library
       Build-depends: base >= 4.5 && < 5, syb
     else
       Build-depends: base >= 3 && < 4
-    Exposed-modules:     Text.TeXMath
-                         Text.TeXMath.Types
-                         Text.TeXMath.Parser
-                         Text.TeXMath.MathML
-                         Text.TeXMath.OMML
-                         Text.TeXMath.Pandoc
-                         Text.TeXMath.Macros
-                         Text.TeXMath.ToUnicode
-                         Text.TeXMath.MathMLParser
-                         Text.TeXMath.MMLDict
-                         Text.TeXMath.EntityMap
-                         Text.TeXMath.UnicodeToLaTeX
-                         Text.TeXMath.LaTeX
-                         Text.TeXMath.Unidecode
-                         Text.TeXMath.Shared
-    Other-modules:       Text.TeXMath.Compat
+    Exposed-modules:     Text.TeXMath,
+                         Text.TeXMath.Types,
+                         Text.TeXMath.Readers.TeXMath,
+                         Text.TeXMath.Writers.MathML,
+                         Text.TeXMath.Writers.OMML,
+                         Text.TeXMath.Writers.Pandoc,
+                         Text.TeXMath.Readers.Macros,
+                         Text.TeXMath.Unicode.ToUnicode,
+                         Text.TeXMath.Readers.MathML,
+                         Text.TeXMath.Readers.MathML.MMLDict,
+                         Text.TeXMath.Readers.MathML.EntityMap,
+                         Text.TeXMath.Unicode.ToTeXMath,
+                         Text.TeXMath.Writers.TeXMath,
+                         Text.TeXMath.Unicode.ToASCII
+    Other-modules:       Text.TeXMath.Compat,
+                         Text.TeXMath.Shared 
     if impl(ghc >= 6.12)
       Ghc-Options:     -Wall -fno-warn-unused-do-bind
     else
       Ghc-Options:     -Wall
     Ghc-Prof-Options:  -auto-all -caf-all
     Default-Language:    Haskell2010
+    Hs-Source-Dirs:    src
 
 Executable texmath
     Default-Language:    Haskell2010

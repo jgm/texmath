@@ -16,10 +16,10 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 -}
 
-{- | Function for replacing strings of characters with their respective mathvariant
+{- | Function for replacing strings of characters with their respective mathvariant and vice versa.
 -}
 
-module Text.TeXMath.ToUnicode (fromUnicode, toUnicode)
+module Text.TeXMath.Unicode.ToUnicode (fromUnicode, toUnicode)
 where
 
 import Text.TeXMath.Types
@@ -28,9 +28,9 @@ import Control.Applicative ((<$>), (<|>))
 import Data.Maybe (fromMaybe)
 
 -- | Replace all characters in the string A-Z, a-z with their corresponding mathvariant unicode character.
--- | MathML has a mathvariant attribute which is unimplemented in Firefox
--- | (see https://bugzilla.mozilla.org/show_bug.cgi?id=114365)
--- | Therefore, we may want to translate mathscr, etc to unicode symbols directly.
+--  MathML has a mathvariant attribute which is unimplemented in Firefox
+--  (see https://bugzilla.mozilla.org/show_bug.cgi?id=114365)
+--  Therefore, we may want to translate mathscr, etc to unicode symbols directly.
 toUnicode :: TextType -> String -> String
 toUnicode TextScript s       = map (mapChar mathscr) s
 toUnicode TextBoldScript s   = map (mapChar mathbfscr) s
@@ -43,8 +43,9 @@ mapChar :: [(Char, Char)] -> Char -> Char
 mapChar m c = fromMaybe c (M.lookup c charMap)
   where
     charMap = M.fromList m
+
 -- | The inverse of toUnicode, returns the corresponding
--- | A-Za-z character and 'TextType' of a unicode character.
+--  A-Za-z character and 'TextType' of a unicode character.
 fromUnicode :: Char -> Maybe (TextType, Char)
 fromUnicode c =
   getTTChar c mathscr TextScript <|>

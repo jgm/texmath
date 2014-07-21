@@ -20,7 +20,7 @@ readers :: [(Ext, String -> Either String [Exp])]
 readers = [(".tex", readTeXMath), (".mml", readMathML)]
 
 writers :: [(Ext, [Exp] -> String)]
-writers = [(".mml", ppTopElement . toMathML DisplayBlock), (".tex", toTeXMath DisplayBlock), (".omml", ppTopElement . toOMML DisplayBlock)]
+writers = [(".mml", ppTopElement . writeMathML DisplayBlock), (".tex", writeTeXMath DisplayBlock), (".omml", ppTopElement . writeOMML DisplayBlock)]
 
 main :: IO ()
 main = do

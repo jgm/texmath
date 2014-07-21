@@ -1,4 +1,3 @@
-module Text.TeXMath.Unidecode (getASCII) where
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -16,12 +15,15 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 -}
-{-
+{- |
 
-Information taken from the Unidecode python package which is based upon
-the Text::Unidecode Perl Module by Sean M. Burke.
+This module exposes functions which attempt to approximate unicode characters as ASCII.
+
+Information taken from the <https://pypi.python.org/pypi/Unidecode Unidecode python package> which is based upon
+the <http://search.cpan.org/~sburke/Text-Unidecode-1.01/lib/Text/Unidecode.pm Text::Unidecode Perl Module> by Sean M. Burke.
 
 -}
+module Text.TeXMath.Unicode.ToASCII (getASCII) where
 
 import qualified Data.Map as M
 import Data.Char (ord)
