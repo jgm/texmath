@@ -3,23 +3,24 @@ Version:             0.7
 Cabal-Version:       >= 1.10
 Build-type:          Simple
 Synopsis:            Conversion between formats used to represent mathematics.
-Description:         The texmath library provides functions to both read and write 
-                     formats used to represent mathematics.
-    
-                     The package is able to read and write both TeXMath and 
-                     presentation MathML. Support is also included for writing to 
-                     OMML (Office Math Markup Language, used in Microsoft Office)
-
-                     It also supports basic LaTeX and AMS
-                     extensions, and it can parse and apply LaTeX macros.
+Description:         The texmath library provides functions to both read and
+                     write formats used to represent mathematics.
+                     The package is able to read and write both TeX math and
+                     presentation MathML. Support is also included for writing
+                     to OMML (Office Math Markup Language, used in Microsoft
+                     Office) and to pandoc's native format (allowing conversion,
+                     using pandoc, to a variety of different markup formats).
+                     It supports basic LaTeX and AMS extensions,
+                     and it can parse and apply LaTeX macros.
                      .
-                     There are also several utility modules which may be useful for 
-                     anyone looking to manipulate either Unicode or MathML. For example
-                     a copy of the MathML operator dictionary is included.
+                     The package also includes several utility modules which
+                     may be useful for anyone looking to manipulate either
+                     Unicode or MathML.  For example, a copy of the MathML
+                     operator dictionary is included.
                      .
-                     Use the @executable@ flag to install a standalone executable,
-                     @texmath@, that reads a LaTeX formula from @stdin@ and
-                     writes MathML to @stdout@.
+                     Use the @executable@ flag to install a standalone
+                     executable, @texmath@, that reads a LaTeX formula from
+                     @stdin@ and writes MathML or OMML to @stdout@.
                      .
                      Use the @cgi@ flag to install a cgi script,
                      @texmath-cgi@.
