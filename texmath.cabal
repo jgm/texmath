@@ -18,9 +18,12 @@ Description:         The texmath library provides functions to read and
                      Unicode or MathML.  For example, a copy of the MathML
                      operator dictionary is included.
                      .
-                     Use the @executable@ flag to install a standalone
-                     executable, @texmath@, that reads a LaTeX formula from
-                     @stdin@ and writes MathML or OMML to @stdout@.
+                     Use the @executable@ flag to install a standalone executable,
+                     @texmath@, that by default reads a LaTeX formula 
+                     from @stdin@ and writes MathML to @stdout@. With flags
+                      all the functionality exposed by 'Text.TeXMath' can be
+                     accessed through this executable. (Use the `--help` flag) 
+                     for a description of all functionality) 
                      .
                      Use the @cgi@ flag to install a cgi script,
                      @texmath-cgi@.
@@ -67,7 +70,7 @@ Library
                          Text.TeXMath.Writers.MathML,
                          Text.TeXMath.Writers.OMML,
                          Text.TeXMath.Writers.Pandoc,
-                         Text.TeXMath.Readers.Macros,
+                         Text.TeXMath.Readers.TeXMath.Macros,
                          Text.TeXMath.Unicode.ToUnicode,
                          Text.TeXMath.Readers.MathML,
                          Text.TeXMath.Readers.MathML.MMLDict,
@@ -96,7 +99,7 @@ Executable texmath
     Ghc-Prof-Options:  -auto-all -caf-all
     if flag(executable)
       Buildable:         True
-      Build-Depends:     base >= 4.2 && < 5, texmath, xml
+      Build-Depends:     base >= 4.5 && < 5, texmath, xml, pandoc-types
     else
       Buildable:         False
 
@@ -110,7 +113,7 @@ Executable texmath-cgi
       Ghc-Options:     -Wall
     Ghc-Prof-Options:  -auto-all -caf-all
     if flag(cgi)
-      Build-Depends:     base >= 4.2 && < 5, texmath, xml, cgi, json, utf8-string
+      Build-Depends:     base >= 4.5 && < 5, texmath, xml, cgi, json, utf8-string
       Buildable:         True
     else
       Buildable:         False

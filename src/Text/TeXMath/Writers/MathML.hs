@@ -29,6 +29,7 @@ import Text.TeXMath.Unicode.ToUnicode
 import Data.Generics (everywhere, mkT)
 import Text.TeXMath.Shared (getMMLType)
 
+-- | Transforms an expression tree to a MathML XML tree
 writeMathML :: DisplayType -> [Exp] -> Element
 writeMathML dt exprs =
   add_attr dtattr $ math $ map showExp $ everywhere (mkT $ handleDownup dt) exprs

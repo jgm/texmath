@@ -16,17 +16,48 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 -}
 
-{- | Functions for converting LaTeX math formulas to MathML.
+{- | Functions for converting between different representations of
+mathematical formulas.
+
+Also note that in general @writeLaTeX . readLaTeX /= id@.
+
+A typical use is to combine together a reader and writer.
+
+> import Control.Applicative ((<$>))
+> import Text.TeXMath (writeMathML, readTeXMath)
+>
+> texMathToMathML :: DisplayType -> String -> Either String Element
+> texMathToMathML dt s = writeMathML dt <$> readTeXMath s
+
+It is also possible to manipulate the AST using 'Data.Generics'. Say
+for example you wanted to replace all occurences of the identifier 
+x in your expression then you do could do so with the following
+script.
+
+> import Control.Applicative ((<$>))
+> import Data.Generics (everywhere, mkT)
+> import Text.TeXMath (writeMathML, readTeXMath)
+> import Text.TeXMath.Types
+> import Text.XML.Light (Element)
+>
+> changeIdent :: Exp -> Exp
+> changeIdent (EIdentifier "x") = EIdentifier "y"
+> changeIdent e = e
+>
+> texToMMLWithChangeIdent :: DisplayType -> String -> Either String Element
+> texToMMLWithChangeIdent dt s =
+>   writeMathML dt . everywhere (mkT changeIdent) <$> readTeXMath s
+
 -}
 
 module Text.TeXMath (
                       readMathML,
                       readTeXMath,
                       writeTeXMath,
-                      writeTeXMathIn, 
+                      writeTeXMathIn,
                       writeOMML,
                       writeMathML,
-                      writePandoc, 
+                      writePandoc,
                       DisplayType(..),
                       Exp
                       )

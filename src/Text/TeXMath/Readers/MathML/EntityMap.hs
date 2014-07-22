@@ -22,9 +22,8 @@ HTML entity definitions as provided by W3C.
 
 The mapping matches the version from 10th April 2014.
 
-The original can be downloaded from the following link.
+The original source can be downloaded from <http://www.w3.org/TR/2014/REC-xml-entity-names-20140410/ here.>
 
-http://www.w3.org/TR/2014/REC-xml-entity-names-20140410/
 
 -}
 
