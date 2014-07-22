@@ -1,13 +1,21 @@
 Name:                texmath
-Version:             0.6.7
+Version:             0.7
 Cabal-Version:       >= 1.10
 Build-type:          Simple
-Synopsis:            Conversion of LaTeX math formulas to MathML or OMML.
-Description:         The texmathml library provides functions to convert LaTeX
-                     math formulas to presentation MathML (which can be used
-                     in HTML) or OMML (Office Math Markup Language, used in
-                     Microsoft Office). It supports basic LaTeX and AMS
+Synopsis:            Conversion between formats used to represent mathematics.
+Description:         The texmath library provides functions to both read and write 
+                     formats used to represent mathematics.
+    
+                     The package is able to read and write both TeXMath and 
+                     presentation MathML. Support is also included for writing to 
+                     OMML (Office Math Markup Language, used in Microsoft Office)
+
+                     It also supports basic LaTeX and AMS
                      extensions, and it can parse and apply LaTeX macros.
+                     .
+                     There are also several utility modules which may be useful for 
+                     anyone looking to manipulate either Unicode or MathML. For example
+                     a copy of the MathML operator dictionary is included.
                      .
                      Use the @executable@ flag to install a standalone executable,
                      @texmath@, that reads a LaTeX formula from @stdin@ and
