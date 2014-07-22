@@ -43,29 +43,29 @@ writers = [
   , ("omml",  XMLWriter writeOMML)
   , ("xhtml",   XMLWriter (\dt e -> inHtml (writeMathML dt e)))
   , ("mathml",   XMLWriter writeMathML)
-  , ("pandoc", PandocWriter writePandoc')] 
+  , ("pandoc", PandocWriter writePandoc')]
 
 writePandoc' :: (DisplayType -> [Exp] -> [Inline])
-writePandoc' dt e = 
+writePandoc' dt e =
   fromMaybe (error "Unable to convert to inlines") (writePandoc dt e)
 
 data Options = Options {
-    optDisplay :: DisplayType 
-  , optIn :: String 
+    optDisplay :: DisplayType
+  , optIn :: String
   , optOut :: String }
 
 def :: Options
 def = Options DisplayBlock "latex" "mml"
 
 options :: [OptDescr (Options -> IO Options)]
-options = 
-  [ Option [] ["inline"] 
+options =
+  [ Option [] ["inline"]
       (NoArg (\opts -> return opts {optDisplay = DisplayInline}))
       "Use the inline display style"
-  , Option "f" [] 
+  , Option "f" []
       (ReqArg (\s opts -> return opts {optIn = s}) "FORMAT")
       ("Input format: " ++ (concat $ intersperse ", " (map fst readers)))
-  , Option "t" [] 
+  , Option "t" []
       (ReqArg (\s opts -> return opts {optOut = s}) "FORMAT")
       ("Output format: " ++ (concat $ intersperse ", " (map fst writers)))
    , Option "v" ["version"]
@@ -73,7 +73,7 @@ options =
                       hPutStrLn stderr "Version 0.7"
                       exitWith ExitSuccess))
       "Print version"
-                                                                
+
     , Option "h" ["help"]
         (NoArg (\_ -> do
                         prg <- getProgName
