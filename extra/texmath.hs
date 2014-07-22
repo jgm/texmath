@@ -38,7 +38,7 @@ readers = [
 
 writers :: [(String, Writer)]
 writers = [
-    ("native", StringWriter (\_ es -> show es) )
+    ("native", StringWriter (\_ es -> show es ++ "\n") )
   , ("tex", StringWriter writeTeXMathIn)
   , ("omml",  XMLWriter writeOMML)
   , ("xhtml",   XMLWriter (\dt e -> inHtml (writeMathML dt e)))
@@ -85,7 +85,7 @@ options =
 output :: DisplayType -> Writer -> [Exp] -> String
 output dt (XMLWriter w) es = output dt (StringWriter (\dt' -> ppTopElement . w dt' )) es
 output dt (StringWriter w) es = w dt es
-output dt (PandocWriter w) es = show (w dt es)
+output dt (PandocWriter w) es = show (w dt es) ++ "\n"
 
 main :: IO ()
 main = do
