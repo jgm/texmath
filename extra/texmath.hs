@@ -34,7 +34,7 @@ data Writer = XMLWriter (DisplayType -> [Exp] -> Element)
 readers :: [(String, Reader)]
 readers = [
     ("tex", readTeXMath)
-  , ("mml", readMathML)]
+  , ("mathml", readMathML)]
 
 writers :: [(String, Writer)]
 writers = [
@@ -42,7 +42,7 @@ writers = [
   , ("tex", StringWriter writeTeXMathIn)
   , ("omml",  XMLWriter writeOMML)
   , ("xhtml",   XMLWriter (\dt e -> inHtml (writeMathML dt e)))
-  , ("mml",   XMLWriter writeMathML)
+  , ("mathml",   XMLWriter writeMathML)
   , ("pandoc", PandocWriter writePandoc')] 
 
 writePandoc' :: (DisplayType -> [Exp] -> [Inline])
