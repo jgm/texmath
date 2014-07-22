@@ -1,3 +1,39 @@
+texmath (0.7)
+
+  * Consistent Renaming
+    - All references to converting to or from LaTeX have been replaced
+    with a reference to TeXMath in order to differentiate between the two.
+  * Module Reorganisation
+    - All modules have been reorganised such that 
+      1. All writers now reside in Text.TeXMath.Writers
+        - Text.TeXMath.LaTeX -> Text.TeXMath.Writers.TeXMath
+        - Text.TeXMath.MathML -> Text.TeXMath.Writers.MathML
+        - Text.TeXMath.OMML -> Text.TeXMath.Writers.OMML
+        - Text.TeXMath.Pandoc -> Text.TeXMath.Writers.Pandoc
+      2. All readers now reside in Text.TeXMath.Readers
+        - Text.TeXMath.MathMLParser -> Text.TeXMath.Readers.MathML
+        - Text.TeXMath.Parser -> Text.TeXMath.Readers.TeXMath
+      3. Unicode lookup tables are now in Text.TeXMath.Unicode and renamed.
+        - Text.TeXMath.Unidecode -> Text.TeXMath.Unicode.ToASCII
+        - Text.TeXMath.UnicodeToLaTeX -> Text.TeXMath.Unicode.ToTeXMath
+      4. MathML specific modules moved to Text.TeXMath.Readers.MathML
+        - Text.TeXMath.EntityMap -> Text.TeXMath.Readers.MathML.EntityMap
+        - Text.TeXMath.MMLDict -> Text.TeXMath.Readers.MathML.MMLDict
+  * Text.TeXMath interface changes
+    - All XtoY functions have been removed in favour of rexporting raw
+    reader and writer functions.
+    - Data type Exp is now also exported.
+  * Text.TeXMath.Writers.TeXMath interface change
+    - Two functions are now exported
+      1. writeTeXMath :: [Exp] -> String
+      2. writeTeXMathIn :: DisplayType -> [Exp] -> String
+    The latter also wraps the result in the correct environment
+  * Text.TeXMath.Writers.(OMML|MathML) changes
+    - showExp is no longer exported from either module
+  * Text.TeXMath.Unicode.ToTeXMath
+    - Now exports getTeXMathIn :: Env -> String -> String
+    which allows the user to specify availible packages
+
 texmath (0.6.7)
 
   * New Module: Text.TeXMath.Unidecode
