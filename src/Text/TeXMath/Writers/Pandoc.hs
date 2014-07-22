@@ -25,9 +25,7 @@ where
 import Text.Pandoc.Definition
 import Text.TeXMath.Types
 
--- | Converts a formula to a list of 'Pandoc' inlines.
--- Defaults to raw formula between @$@ characters if entire formula
--- can't be converted.
+-- | Attempts to convert a formula to a list of 'Pandoc' inlines.
 writePandoc :: DisplayType
          -> [Exp]
          -> Maybe [Inline]

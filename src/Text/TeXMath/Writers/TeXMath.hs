@@ -26,12 +26,12 @@ import qualified Text.TeXMath.Shared as S
 import Data.Maybe (fromMaybe)
 import Data.Generics (everywhere, mkT)
 
--- | Transforms an expression tree to equivalent TeXMath without any
--- surrounding mathematical environment
+-- | Transforms an expression tree to equivalent LaTeX without any
+-- surrounding environment
 writeTeXMath :: [Exp] -> String
 writeTeXMath es = concatMap (writeExp . fixTree) es
 
--- | Transforms an expression tree to TeXMath with the correct
+-- | Transforms an expression tree to LaTeX with the
 -- corresponding LaTeX environment
 writeTeXMathIn :: DisplayType -> [Exp] -> String
 writeTeXMathIn dt es =

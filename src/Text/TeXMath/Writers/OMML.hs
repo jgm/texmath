@@ -26,6 +26,7 @@ import Text.XML.Light
 import Text.TeXMath.Types
 import Data.Generics (everywhere, mkT)
 
+-- | Transforms an expression tree to an OMML XML Tree
 writeOMML :: DisplayType -> [Exp] -> Element
 writeOMML dt = container . concatMap showExp
             . everywhere (mkT $ handleDownup dt)

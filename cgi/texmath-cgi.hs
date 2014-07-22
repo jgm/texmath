@@ -2,11 +2,15 @@ module Main where
 import Network.CGI
 import Text.XML.Light
 import Text.TeXMath
-import Text.TeXMath.Macros
+import Text.TeXMath.Readers.TeXMath.Macros
 import Data.Maybe (fromMaybe)
 import Control.Monad
 import Text.JSON
 import Codec.Binary.UTF8.String (decodeString, encodeString)
+import Control.Applicative
+
+texMathToMathML :: DisplayType -> String -> Either String Element
+texMathToMathML dt s = writeMathML dt <$> readTeXMath s
 
 cgiMain :: CGI CGIResult
 cgiMain = do

@@ -3,11 +3,14 @@ module Main where
 
 import Text.TeXMath
 import Text.XML.Light
-import Text.TeXMath.Types
 import System.IO
 import System.Environment
 import Control.Applicative
 import System.Console.GetOpt
+import Text.Pandoc.Definition
+import Data.List (intersperse)
+import System.Exit
+import Data.Maybe
 
 inHtml :: Element -> Element
 inHtml e =
@@ -26,19 +29,25 @@ getUTF8Contents =
 type Reader = String -> Either String [Exp]
 data Writer = XMLWriter (DisplayType -> [Exp] -> Element)
             | StringWriter (DisplayType -> [Exp] -> String)
+            | PandocWriter (DisplayType -> [Exp] -> [Inline])
 
 readers :: [(String, Reader)]
 readers = [
-    ("tex", readLaTeX)
+    ("tex", readTeXMath)
   , ("mml", readMathML)]
 
 writers :: [(String, Writer)]
 writers = [
     ("native", StringWriter (\_ es -> show es) )
-  , ("tex", StringWriter toLaTeX)
-  , ("omml",  XMLWriter toOMML)
-  , ("xhtml",   XMLWriter (\dt e -> inHtml (toMathML dt e)))
-  , ("mml",   XMLWriter toMathML)]
+  , ("tex", StringWriter writeTeXMathIn)
+  , ("omml",  XMLWriter writeOMML)
+  , ("xhtml",   XMLWriter (\dt e -> inHtml (writeMathML dt e)))
+  , ("mml",   XMLWriter writeMathML)
+  , ("pandoc", PandocWriter writePandoc')] 
+
+writePandoc' :: (DisplayType -> [Exp] -> [Inline])
+writePandoc' dt e = 
+  fromMaybe (error "Unable to convert to inlines") (writePandoc dt e)
 
 data Options = Options {
     optDisplay :: DisplayType 
@@ -48,27 +57,40 @@ data Options = Options {
 def :: Options
 def = Options DisplayBlock "latex" "mml"
 
-options :: [OptDescr (Options -> Options)]
+options :: [OptDescr (Options -> IO Options)]
 options = 
   [ Option [] ["inline"] 
-      (NoArg (\opts -> opts {optDisplay = DisplayInline}))
-      "Choose display type"
+      (NoArg (\opts -> return opts {optDisplay = DisplayInline}))
+      "Use the inline display style"
   , Option "f" [] 
-      (ReqArg (\s opts -> opts {optIn = s}) "FORMAT")
-      "Input format"
+      (ReqArg (\s opts -> return opts {optIn = s}) "FORMAT")
+      ("Input format: " ++ (concat $ intersperse ", " (map fst readers)))
   , Option "t" [] 
-      (ReqArg (\s opts -> opts {optOut = s}) "FORMAT")
-      "Output format"
+      (ReqArg (\s opts -> return opts {optOut = s}) "FORMAT")
+      ("Output format: " ++ (concat $ intersperse ", " (map fst writers)))
+   , Option "v" ["version"]
+      (NoArg (\_ -> do
+                      hPutStrLn stderr "Version 0.7"
+                      exitWith ExitSuccess))
+      "Print version"
+                                                                
+    , Option "h" ["help"]
+        (NoArg (\_ -> do
+                        prg <- getProgName
+                        hPutStrLn stderr (usageInfo prg options)
+                        exitWith ExitSuccess))
+      "Show help"
   ]
 
 output :: DisplayType -> Writer -> [Exp] -> String
 output dt (XMLWriter w) es = output dt (StringWriter (\dt' -> ppTopElement . w dt' )) es
 output dt (StringWriter w) es = w dt es
+output dt (PandocWriter w) es = show (w dt es)
 
 main :: IO ()
 main = do
   (actions, _, _) <- getOpt RequireOrder options <$> getArgs
-  let opts = (foldl (.) id actions) def
+  opts <- foldl (>>=) (return def) actions
   let reader = case lookup (optIn opts) readers of
                   Just r -> r
                   Nothing -> error "Unrecognised reader"

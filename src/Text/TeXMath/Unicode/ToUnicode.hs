@@ -29,7 +29,7 @@ import Data.Maybe (fromMaybe)
 
 -- | Replace all characters in the string A-Z, a-z with their corresponding mathvariant unicode character.
 --  MathML has a mathvariant attribute which is unimplemented in Firefox
---  (see https://bugzilla.mozilla.org/show_bug.cgi?id=114365)
+--  (see <https://bugzilla.mozilla.org/show_bug.cgi?id=114365 here>)
 --  Therefore, we may want to translate mathscr, etc to unicode symbols directly.
 toUnicode :: TextType -> String -> String
 toUnicode TextScript s       = map (mapChar mathscr) s

@@ -64,7 +64,7 @@ defaultEnv = ["amsmath", "amssymb"]
 commands :: [String]
 commands = ["mathaccent", "mathradical", "mathover", "mathunder"]
 
--- | getTeXMathIn with the default environment (amsmath and amssymbol)
+-- | 'getTeXMathIn' with the default environment (amsmath and amssymbol)
 getTeXMath ::  String -> String
 getTeXMath = getTeXMathIn defaultEnv
 

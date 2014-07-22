@@ -31,7 +31,7 @@ import Text.ParserCombinators.Parsec.Language
 import Text.TeXMath.Types
 import Control.Applicative ((<*), (*>), (<$>))
 import qualified Text.TeXMath.Shared as S
-import Text.TeXMath.Readers.Macros (applyMacros, parseMacroDefinitions)
+import Text.TeXMath.Readers.TeXMath.Macros (applyMacros, parseMacroDefinitions)
 
 type TP = GenParser Char ()
 
