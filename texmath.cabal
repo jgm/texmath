@@ -3,12 +3,12 @@ Version:             0.7
 Cabal-Version:       >= 1.10
 Build-type:          Simple
 Synopsis:            Conversion between formats used to represent mathematics.
-Description:         The texmath library provides functions to both read and
+Description:         The texmath library provides functions to read and
                      write formats used to represent mathematics.
                      The package is able to read and write both TeX math and
                      presentation MathML. Support is also included for writing
-                     to OMML (Office Math Markup Language, used in Microsoft
-                     Office) and to pandoc's native format (allowing conversion,
+                     OMML (Office Math Markup Language, used in Microsoft
+                     Office) and pandoc's native format (allowing conversion,
                      using pandoc, to a variety of different markup formats).
                      It supports basic LaTeX and AMS extensions,
                      and it can parse and apply LaTeX macros.
