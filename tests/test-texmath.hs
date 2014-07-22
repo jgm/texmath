@@ -3,7 +3,6 @@ import System.FilePath
 import Text.XML.Light
 import System.IO
 import Text.TeXMath
-import Text.TeXMath.Types
 import System.Exit
 import Control.Applicative
 import GHC.IO.Encoding (setLocaleEncoding)
@@ -20,7 +19,7 @@ readers :: [(Ext, String -> Either String [Exp])]
 readers = [(".tex", readTeXMath), (".mml", readMathML)]
 
 writers :: [(Ext, [Exp] -> String)]
-writers = [(".mml", ppTopElement . writeMathML DisplayBlock), (".tex", writeTeXMath DisplayBlock), (".omml", ppTopElement . writeOMML DisplayBlock)]
+writers = [(".mml", ppTopElement . writeMathML DisplayBlock), (".tex", writeTeXMath), (".omml", ppTopElement . writeOMML DisplayBlock)]
 
 main :: IO ()
 main = do
