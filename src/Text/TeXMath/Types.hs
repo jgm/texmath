@@ -23,7 +23,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 module Text.TeXMath.Types (Exp(..), TeXSymbolType(..), ArrayLine,
                            TextType(..), Alignment(..), DisplayType(..),
                            Operator(..), FormType(..), Record(..),
-                           Position(..) )
+                           Property, Position(..))
 where
 
 import Data.Generics
@@ -85,8 +85,6 @@ data FormType = FPrefix | FPostfix | FInfix deriving (Show, Ord, Eq)
 
 type Property = String
 
-data Position = Under | Over
-
 -- | A record of the MathML dictionary as defined
 -- <http://www.w3.org/TR/MathML3/appendixc.html in the specification>
 data Operator = Operator
@@ -116,3 +114,4 @@ data Record = Record { point :: String -- ^ Hex value
                                           --   description
                      } deriving (Show)
 
+data Position = Under | Over

@@ -1,4 +1,3 @@
-module Text.TeXMath.MMLDict (getOperator) where
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -16,30 +15,31 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 -}
-{-
-Dictionary of operators to MathML attributes as specified by the MML standard
+{- |
+Dictionary of operators to MathML attributes as specified by the W3C standard.
 
-The original file can be downloaded from the following link.
-
-http://www.w3.org/TR/xml-entity-names/#source
+The original file can be downloaded from <http://www.w3.org/TR/xml-entity-names/#source here>
 -}
+
+module Text.TeXMath.Readers.MathML.MMLDict (getOperator, operators) where
 
 import Text.TeXMath.Types
 import qualified Data.Map as M
-import Data.Maybe (fromMaybe)
 import Data.Monoid (First(..), mconcat)
 
 dict :: M.Map (String, FormType) Operator
 dict = M.fromList (map (\o -> ((oper o, form o), o)) operators)
 
--- | Tries to find the 'Operator' record, returns a dummy record indicating a
--- math operator if none are found
-getOperator :: String -> FormType -> Operator
-getOperator s p = fromMaybe (Operator s "" p 0 0 0 ["mathoperator"]) (
-  getFirst $ mconcat $ map First (map (\x -> M.lookup (s, x) dict) lookupOrder))
+-- | Tries to find the 'Operator' record based on a given position. If
+-- there is no exact match then the positions will be tried in the
+-- following order (Infix, Postfix, Prefix) with the first match (if any) being returned.
+getOperator :: String -> FormType -> Maybe Operator
+getOperator s p =
+  getFirst $ mconcat $ (map (\x -> First $ M.lookup (s, x) dict) lookupOrder)
   where
     lookupOrder = [p, FInfix, FPostfix, FPrefix]
 
+-- | A table of all operators as defined by the MathML operator dictionary.
 operators :: [Operator]
 operators =
   [ Operator {oper = "!", description = "EXCLAMATION MARK", form = FPostfix, priority = 810, lspace = 1, rspace = 0, properties = []}

@@ -19,15 +19,15 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 {- | Functions for writing a parsed formula as OMML.
 -}
 
-module Text.TeXMath.OMML (toOMML, showExp)
+module Text.TeXMath.Writers.OMML (writeOMML)
 where
 
 import Text.XML.Light
 import Text.TeXMath.Types
 import Data.Generics (everywhere, mkT)
 
-toOMML :: DisplayType -> [Exp] -> Element
-toOMML dt = container . concatMap showExp
+writeOMML :: DisplayType -> [Exp] -> Element
+writeOMML dt = container . concatMap showExp
             . everywhere (mkT $ handleDownup dt)
     where container = case dt of
                   DisplayBlock  -> \x -> mnode "oMathPara"

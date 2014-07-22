@@ -16,7 +16,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 -}
 
-{-
+{- |
 
 HTML entity definitions as provided by W3C.
 
@@ -28,7 +28,7 @@ http://www.w3.org/TR/2014/REC-xml-entity-names-20140410/
 
 -}
 
-module Text.TeXMath.EntityMap (getUnicode) where
+module Text.TeXMath.Readers.MathML.EntityMap (getUnicode) where
 
 import qualified Data.Map as M
 

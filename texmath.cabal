@@ -1,13 +1,21 @@
 Name:                texmath
-Version:             0.6.7
+Version:             0.7
 Cabal-Version:       >= 1.10
 Build-type:          Simple
-Synopsis:            Conversion of LaTeX math formulas to MathML or OMML.
-Description:         The texmathml library provides functions to convert LaTeX
-                     math formulas to presentation MathML (which can be used
-                     in HTML) or OMML (Office Math Markup Language, used in
-                     Microsoft Office). It supports basic LaTeX and AMS
+Synopsis:            Conversion between formats used to represent mathematics.
+Description:         The texmath library provides functions to both read and write 
+                     formats used to represent mathematics.
+    
+                     The package is able to read and write both TeXMath and 
+                     presentation MathML. Support is also included for writing to 
+                     OMML (Office Math Markup Language, used in Microsoft Office)
+
+                     It also supports basic LaTeX and AMS
                      extensions, and it can parse and apply LaTeX macros.
+                     .
+                     There are also several utility modules which may be useful for 
+                     anyone looking to manipulate either Unicode or MathML. For example
+                     a copy of the MathML operator dictionary is included.
                      .
                      Use the @executable@ flag to install a standalone executable,
                      @texmath@, that reads a LaTeX formula from @stdin@ and
@@ -52,28 +60,29 @@ Library
       Build-depends: base >= 4.5 && < 5, syb
     else
       Build-depends: base >= 3 && < 4
-    Exposed-modules:     Text.TeXMath
-                         Text.TeXMath.Types
-                         Text.TeXMath.Parser
-                         Text.TeXMath.MathML
-                         Text.TeXMath.OMML
-                         Text.TeXMath.Pandoc
-                         Text.TeXMath.Macros
-                         Text.TeXMath.ToUnicode
-                         Text.TeXMath.MathMLParser
-                         Text.TeXMath.MMLDict
-                         Text.TeXMath.EntityMap
-                         Text.TeXMath.UnicodeToLaTeX
-                         Text.TeXMath.LaTeX
-                         Text.TeXMath.Unidecode
-                         Text.TeXMath.Shared
-    Other-modules:       Text.TeXMath.Compat
+    Exposed-modules:     Text.TeXMath,
+                         Text.TeXMath.Types,
+                         Text.TeXMath.Readers.TeXMath,
+                         Text.TeXMath.Writers.MathML,
+                         Text.TeXMath.Writers.OMML,
+                         Text.TeXMath.Writers.Pandoc,
+                         Text.TeXMath.Readers.Macros,
+                         Text.TeXMath.Unicode.ToUnicode,
+                         Text.TeXMath.Readers.MathML,
+                         Text.TeXMath.Readers.MathML.MMLDict,
+                         Text.TeXMath.Readers.MathML.EntityMap,
+                         Text.TeXMath.Unicode.ToTeXMath,
+                         Text.TeXMath.Writers.TeXMath,
+                         Text.TeXMath.Unicode.ToASCII
+    Other-modules:       Text.TeXMath.Compat,
+                         Text.TeXMath.Shared 
     if impl(ghc >= 6.12)
       Ghc-Options:     -Wall -fno-warn-unused-do-bind
     else
       Ghc-Options:     -Wall
     Ghc-Prof-Options:  -auto-all -caf-all
     Default-Language:    Haskell2010
+    Hs-Source-Dirs:    src
 
 Executable texmath
     Default-Language:    Haskell2010

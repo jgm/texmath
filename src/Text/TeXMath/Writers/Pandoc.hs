@@ -20,7 +20,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
      Inlines.
 -}
 
-module Text.TeXMath.Pandoc (toPandoc)
+module Text.TeXMath.Writers.Pandoc (writePandoc)
 where
 import Text.Pandoc.Definition
 import Text.TeXMath.Types
@@ -28,10 +28,10 @@ import Text.TeXMath.Types
 -- | Converts a formula to a list of 'Pandoc' inlines.
 -- Defaults to raw formula between @$@ characters if entire formula
 -- can't be converted.
-toPandoc :: DisplayType
+writePandoc :: DisplayType
          -> [Exp]
          -> Maybe [Inline]
-toPandoc _ exps = expsToInlines exps
+writePandoc _ exps = expsToInlines exps
 
 expsToInlines :: [Exp] -> Maybe [Inline]
 expsToInlines xs = do

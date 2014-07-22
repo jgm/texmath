@@ -21,7 +21,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  to LateX expressions.
 -}
 
-module Text.TeXMath.Macros ( Macro
+module Text.TeXMath.Readers.Macros
+                           ( Macro
                            , parseMacroDefinitions
                            , applyMacros
                            )

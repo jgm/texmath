@@ -19,18 +19,18 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 {- | Functions for writing a parsed formula as MathML.
 -}
 
-module Text.TeXMath.MathML (toMathML, showExp)
+module Text.TeXMath.Writers.MathML (writeMathML)
 where
 
 import qualified Data.Map as M
 import Text.XML.Light
 import Text.TeXMath.Types
-import Text.TeXMath.ToUnicode
+import Text.TeXMath.Unicode.ToUnicode
 import Data.Generics (everywhere, mkT)
 import Text.TeXMath.Shared (getMMLType)
 
-toMathML :: DisplayType -> [Exp] -> Element
-toMathML dt exprs =
+writeMathML :: DisplayType -> [Exp] -> Element
+writeMathML dt exprs =
   add_attr dtattr $ math $ map showExp $ everywhere (mkT $ handleDownup dt) exprs
     where dtattr = Attr (unqual "display") dt'
           dt' =  case dt of
@@ -45,6 +45,7 @@ mrow = unode "mrow"
 
 {- Firefox seems to set spacing based on its own dictionary,
 -  so I believe this is unnecessary.
+-  (In fact the spacing is set from the MathML dictionary)
 
 setSpacing :: String -> String -> Bool -> Element -> Element
 setSpacing left right stretchy elt =

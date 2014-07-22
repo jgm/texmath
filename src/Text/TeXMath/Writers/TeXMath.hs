@@ -17,34 +17,46 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 -}
 
-module Text.TeXMath.LaTeX (toTeXMath) where
+module Text.TeXMath.Writers.TeXMath (writeTeXMath, writeTeXMathIn) where
 
 import Text.TeXMath.Types
 import Data.List (intersperse)
-import Text.TeXMath.UnicodeToLaTeX (getLaTeX)
+import Text.TeXMath.Unicode.ToTeXMath (getTeXMath)
 import qualified Text.TeXMath.Shared as S
 import Data.Maybe (fromMaybe)
 import Data.Generics (everywhere, mkT)
 
-toTeXMath :: DisplayType -> [Exp] -> String
-toTeXMath _ es = concatMap (writeExp . fixTree) es
+-- | Transforms an expression tree to equivalent TeXMath without any
+-- surrounding mathematical environment
+writeTeXMath :: [Exp] -> String
+writeTeXMath es = concatMap (writeExp . fixTree) es
+
+-- | Transforms an expression tree to TeXMath with the correct
+-- corresponding LaTeX environment
+writeTeXMathIn :: DisplayType -> [Exp] -> String
+writeTeXMathIn dt es =
+  let math = writeTeXMath es in
+    case dt of
+      DisplayInline -> around "$" "$" math
+      DisplayBlock  -> around "\\[" "\\]" math
+
 
 square :: [String]
 square = ["\\sqrt"]
 
 writeExp :: Exp -> String
-writeExp (ENumber s) = getLaTeX s
+writeExp (ENumber s) = getTeXMath s
 writeExp (EGrouped es) = concatMap writeExp es
 writeExp (EDelimited open close es) =
   "\\left" ++
-  getLaTeX open ++
+  getTeXMath open ++
   concatMap writeExp es ++
   "\\right" ++
-  getLaTeX close
-writeExp (EIdentifier s) = inBraces $ getLaTeX s
+  getTeXMath close
+writeExp (EIdentifier s) = inBraces $ getTeXMath s
 writeExp o@(EMathOperator s) =
-  fromMaybe ("\\operatorname" ++ (inBraces $ escapeSpace $ getLaTeX s)) (getOperator o)
-writeExp (ESymbol _ s) = getLaTeX s
+  fromMaybe ("\\operatorname" ++ (inBraces $ escapeSpace $ getTeXMath s)) (getOperator o)
+writeExp (ESymbol _ s) = getTeXMath s
 writeExp (ESpace width) = " " ++ S.getSpaceCommand width
 writeExp (EBinary s e1 e2)
   | s `elem` square = s ++ (evalInSquare e1) ++ (evalInBraces e2) ++ " "
@@ -70,14 +82,14 @@ writeExp (EDownup b e1 e2) = underOver b e1 e2
 writeExp (EUnary s e) = s ++ evalInBraces e
 writeExp (EScaled size e) = fromMaybe "" (S.getScalerCommand size) ++ evalInBraces e
 writeExp (EStretchy (ESymbol Open e)) =
-  let e' = getLaTeX e in
+  let e' = getTeXMath e in
     case e' of {"" -> ""; _ -> "\\left" ++  e' ++ " "}
 writeExp (EStretchy (ESymbol Close e)) =
-  let e' = getLaTeX e in
+  let e' = getTeXMath e in
     case e' of {"" -> ""; _ -> "\\right" ++ e' ++ " "}
 writeExp (EStretchy e) = writeExp e
 writeExp (EArray aligns rows) = table aligns rows
-writeExp (EText ttype s) = getLaTeXTextCommand ttype ++ inBraces (escapeSpace $ getLaTeX s)
+writeExp (EText ttype s) = getTeXMathTextCommand ttype ++ inBraces (escapeSpace $ getTeXMath s)
 
 table :: [Alignment] -> [ArrayLine] -> String
 table as rows = "\\begin{array}" ++ inBraces columnAligns ++ "\n" ++ concatMap row rows ++ "\\end{array}"
@@ -103,8 +115,8 @@ alts :: [(String, String)]
 alts = [ ("\\mathbfit", "\\mathbf"), ("\\mathbfsfup", "\\mathbf"), ("\\mathbfsfit", "\\mathbf")
        , ("\\mathbfscr", "\\mathcal"), ("\\mathbffrak", "\\mathfrak"), ("\\mathsfit", "\\mathsf")]
 
-getLaTeXTextCommand :: TextType -> String
-getLaTeXTextCommand t
+getTeXMathTextCommand :: TextType -> String
+getTeXMathTextCommand t
   | cmd `elem` formats = cmd
   | otherwise = fromMaybe "\\mathrm" (lookup cmd alts)
   where
@@ -170,10 +182,10 @@ reorderDiacritical x = x
 matchStretch' :: [Exp] -> Int
 matchStretch'  [] = 0
 matchStretch' ((EStretchy (ESymbol Open s)): xs) =
-  let s' = getLaTeX s in
+  let s' = getTeXMath s in
     case s' of {"" -> 0; _ -> 1} + (matchStretch' xs)
 matchStretch' ((EStretchy (ESymbol Close s)): xs) =
-  let s' = getLaTeX s in
+  let s' = getTeXMath s in
     case s' of {"" -> 0; _ -> (-1)} + (matchStretch' xs)
 matchStretch' (_:xs) = matchStretch' xs
 

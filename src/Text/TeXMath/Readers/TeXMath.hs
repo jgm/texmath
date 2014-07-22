@@ -19,7 +19,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 {- | Functions for parsing a LaTeX formula to a Haskell representation.
 -}
 
-module Text.TeXMath.Parser (readTeXMath)
+module Text.TeXMath.Readers.TeXMath (readTeXMath)
 where
 
 import Control.Monad
@@ -31,7 +31,7 @@ import Text.ParserCombinators.Parsec.Language
 import Text.TeXMath.Types
 import Control.Applicative ((<*), (*>), (<$>))
 import qualified Text.TeXMath.Shared as S
-import Text.TeXMath.Macros (applyMacros, parseMacroDefinitions)
+import Text.TeXMath.Readers.Macros (applyMacros, parseMacroDefinitions)
 
 type TP = GenParser Char ()
 

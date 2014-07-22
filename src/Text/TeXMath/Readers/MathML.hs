@@ -32,12 +32,12 @@ To Improve
   - Handling of mstyle
 -}
 
-module Text.TeXMath.MathMLParser (readMathML) where
+module Text.TeXMath.Readers.MathML (readMathML) where
 
 import Text.XML.Light hiding (onlyText)
 import Text.TeXMath.Types
-import Text.TeXMath.MMLDict (getOperator)
-import Text.TeXMath.EntityMap (getUnicode)
+import Text.TeXMath.Readers.MathML.MMLDict (getOperator)
+import Text.TeXMath.Readers.MathML.EntityMap (getUnicode)
 import Text.TeXMath.Shared (getTextType)
 import Text.TeXMath.Compat (throwError, Except, runExcept, MonadError)
 import Control.Applicative ((<$>), (<|>), (<*>))
@@ -117,7 +117,10 @@ op :: Element -> MML Exp
 op e = do
   Just inferredPosition <- (<|>) <$> (getFormType <$> findAttrQ "form" e)
                             <*> asks position
-  let opDict = getOperator (getString e) inferredPosition
+  let opString = getString e
+  let dummy = Operator opString "" inferredPosition 0 0 0 ["mathoperator"]
+  let opDict = fromMaybe dummy
+                (getOperator opString inferredPosition)
   props <- filterM (checkAttr (properties opDict))
             ["mathoperator", "fence", "accent", "stretchy"]
   let objectPosition = form opDict
