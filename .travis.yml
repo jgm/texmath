@@ -17,11 +17,11 @@ before_install:
 
 install:
  - cabal-1.18 update
- - cabal-1.18 install --only-dependencies --enable-tests
+ - cabal-1.18 install --only-dependencies --enable-tests -f cgi -f executable
 
 # Here starts the actual work to be performed for the package under test; any command which exits with a non-zero exit code causes the build to fail.
 script:
- - cabal-1.18 configure --enable-tests -v2  # -v2 provides useful information for debugging
+ - cabal-1.18 configure -f cgi -f executable --enable-tests -v2  # -v2 provides useful information for debugging
  - cabal-1.18 build --ghc-options=-Werror  # this builds all libraries and executables (including tests/benchmarks)
  - cabal-1.18 test
  - cabal-1.18 check
