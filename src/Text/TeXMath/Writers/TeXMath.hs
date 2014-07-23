@@ -143,7 +143,10 @@ evalInBraces :: Exp -> String
 evalInBraces = inBraces  . writeExp
 
 inBraces :: String -> String
-inBraces = around "{" "}"
+inBraces s = if isAlreadyInBraces
+                then s
+                else around "{" "}" s
+  where isAlreadyInBraces = length s >= 2 && head s == '{' && last s == '}'
 
 around :: String -> String -> String -> String
 around o c s = o ++ s ++ c
