@@ -137,7 +137,7 @@ underOver :: Exp -> Exp -> Exp -> String
 underOver b e1 e2 = bin "_" b e1 ++ "^" ++ evalInBraces e2
 
 bin :: String -> Exp -> Exp -> String
-bin s b e = evalInBraces b ++ s ++ evalInBraces e
+bin s b e = writeExp b ++ s ++ evalInBraces e
 
 evalInBraces :: Exp -> String
 evalInBraces = inBraces  . writeExp
