@@ -7,10 +7,10 @@ import System.IO
 import System.Environment
 import Control.Applicative
 import System.Console.GetOpt
-import Text.Pandoc.Definition
 import Data.List (intersperse)
 import System.Exit
 import Data.Maybe
+import Text.Pandoc.Definition
 
 inHtml :: Element -> Element
 inHtml e =
@@ -29,7 +29,7 @@ getUTF8Contents =
 type Reader = String -> Either String [Exp]
 data Writer = XMLWriter (DisplayType -> [Exp] -> Element)
             | StringWriter (DisplayType -> [Exp] -> String)
-            | PandocWriter (DisplayType -> [Exp] -> [Inline])
+            | PandocWriter (DisplayType -> [Exp] -> Maybe [Inline])
 
 readers :: [(String, Reader)]
 readers = [
@@ -43,11 +43,7 @@ writers = [
   , ("omml",  XMLWriter writeOMML)
   , ("xhtml",   XMLWriter (\dt e -> inHtml (writeMathML dt e)))
   , ("mathml",   XMLWriter writeMathML)
-  , ("pandoc", PandocWriter writePandoc')]
-
-writePandoc' :: (DisplayType -> [Exp] -> [Inline])
-writePandoc' dt e =
-  fromMaybe (error "Unable to convert to inlines") (writePandoc dt e)
+  , ("pandoc", PandocWriter writePandoc)]
 
 data Options = Options {
     optDisplay :: DisplayType
@@ -83,22 +79,30 @@ options =
   ]
 
 output :: DisplayType -> Writer -> [Exp] -> String
-output dt (XMLWriter w) es = output dt (StringWriter (\dt' -> ppTopElement . w dt' )) es
+output dt (XMLWriter w) es    = output dt (StringWriter (\dt' -> ppTopElement . w dt' )) es
 output dt (StringWriter w) es = w dt es
-output dt (PandocWriter w) es = show (w dt es) ++ "\n"
+output dt (PandocWriter w) es = show (fromMaybe fallback (w dt es)) ++ "\n"
+  where fallback = [Math mt (writeTeXMathIn dt es)]
+        mt = case dt of
+                  DisplayBlock  -> DisplayMath
+                  DisplayInline -> InlineMath
+
+err :: Int -> String -> IO a
+err code msg = do
+  hPutStrLn stderr msg
+  exitWith $ ExitFailure code
 
 main :: IO ()
 main = do
   (actions, _, _) <- getOpt RequireOrder options <$> getArgs
   opts <- foldl (>>=) (return def) actions
-  let reader = case lookup (optIn opts) readers of
-                  Just r -> r
-                  Nothing -> error "Unrecognised reader"
-  let writer = case lookup (optOut opts) writers of
-                  Just w -> w
-                  Nothing -> error "Unrecognised writer"
+  reader <- case lookup (optIn opts) readers of
+                  Just r -> return r
+                  Nothing -> err 3 "Unrecognised reader"
+  writer <- case lookup (optOut opts) writers of
+                  Just w -> return w
+                  Nothing -> err 5 "Unrecognised writer"
   inp <- getUTF8Contents
-  let formula = reader inp
-  case (formula) of
-        Left err         -> hPutStrLn stderr err
-        Right v          -> putStr (output (optDisplay opts) writer v)
+  case reader inp of
+        Left msg         -> err 1 msg
+        Right v          -> putStr $ output (optDisplay opts) writer v
