@@ -8,9 +8,9 @@ import Control.Applicative
 import GHC.IO.Encoding (setLocaleEncoding)
 import Data.Maybe
 
-data Status = Pass
-            | Fail FilePath FilePath String
-            | Error FilePath FilePath String
+data Status = Pass FilePath FilePath
+            | Fail FilePath FilePath
+            | Error FilePath FilePath
             deriving (Eq, Show)
 
 type Ext = String
@@ -28,29 +28,38 @@ main = do
   readerTests <- concat <$> mapM (uncurry runReader) readers
   writerTests <- concat <$> mapM (uncurry runWriter) writers
   let statuses = readerTests ++ writerTests
-  let passes = length $ filter (== Pass) statuses
+  let passes = length $ filter isPass statuses
   let failures = length statuses - passes
   putStrLn $ show passes ++ " tests passed, " ++ show failures ++ " failed."
-  if all (== Pass) statuses
-     then do
-       exitWith ExitSuccess
-     else do
-       mapM_ printStatus statuses
-       exitWith $ ExitFailure failures
+  if all isPass statuses
+     then exitWith ExitSuccess
+     else exitWith $ ExitFailure failures
 
-printStatus :: Status -> IO ()
-printStatus Pass = return ()
-printStatus (Fail inp out actual) = do
+printPass :: FilePath -> FilePath -> IO ()
+printPass inp out = putStrLn $ "PASSED:  " ++ inp ++ " ==> " ++ out
+
+printFail :: FilePath -> FilePath -> String -> IO ()
+printFail inp out actual = do
   putStrLn $ "FAILED:  " ++ inp ++ " ==> " ++ out
   putStrLn "------ input ---------"
-  readFile inp >>= putStr
+  readFile inp >>= putStr . ensureFinalNewline
   putStrLn "------ expected ------"
-  readFile out >>= putStr
+  readFile out >>= putStr . ensureFinalNewline
   putStrLn "------ actual --------"
-  putStr actual
+  putStr $ ensureFinalNewline actual
   putStrLn "----------------------"
-printStatus (Error inp out msg) =
+
+printError :: FilePath -> FilePath -> String -> IO ()
+printError inp out msg =
   putStrLn $ "ERROR:  " ++ inp ++ " ==> " ++ out ++ "\n" ++ msg
+
+ensureFinalNewline :: String -> String
+ensureFinalNewline "" = ""
+ensureFinalNewline xs = if last xs == '\n' then xs else xs ++ "\n"
+
+isPass :: Status -> Bool
+isPass (Pass _ _) = True
+isPass _ = False
 
 runReader :: String -> (String -> Either String [Exp]) -> IO [Status]
 runReader ext f = do
@@ -76,8 +85,8 @@ runWriterTest f input output = do
   let r = f (either (const []) id expr)
   out_t <- readFile output
   if (r == out_t)
-    then return $ Pass
-    else return $ Fail input output r
+     then printPass input output >> return (Pass input output)
+     else printFail input output r >> return (Fail input output)
 
 runReaderTest :: (String -> Either String String)
         -> FilePath
@@ -87,8 +96,10 @@ runReaderTest fn input output = do
   inp_t <- readFile input
   out_t <- readFile output
   case fn inp_t of
-       Left msg    -> return $ Error input output msg
-       Right r     ->
-         if r == out_t
-            then return Pass
-            else return $ Fail input output r
+       Left msg       -> printError input output msg >>
+                         return (Error input output)
+       Right r
+         | r == out_t -> printPass input output >>
+                         return (Pass input output)
+         | otherwise  -> printFail input output r >>
+                         return (Fail input output)
