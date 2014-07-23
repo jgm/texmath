@@ -54,7 +54,7 @@ readNative s =
 writers :: [(String, Writer)]
 writers = [
     ("native", StringWriter (\_ es -> show es) )
-  , ("tex", StringWriter writeTeXMathIn)
+  , ("tex", StringWriter (\_ es -> writeTeXMath es))
   , ("omml",  XMLWriter writeOMML)
   , ("xhtml",   XMLWriter (\dt e -> inHtml (writeMathML dt e)))
   , ("mathml",   XMLWriter writeMathML)
