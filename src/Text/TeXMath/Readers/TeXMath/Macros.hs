@@ -52,6 +52,7 @@ parseMacroDefinitions s =
 -- Return list of macros parsed + remainder of string.
 pMacroDefinitions :: GenParser Char st ([Macro], String)
 pMacroDefinitions = do
+  pSkipSpaceComments
   defs <- sepEndBy pMacroDefinition pSkipSpaceComments
   rest <- getInput
   return (reverse defs, rest)  -- reversed so later macros shadow earlier
