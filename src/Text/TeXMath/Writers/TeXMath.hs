@@ -25,6 +25,8 @@ import Text.TeXMath.Unicode.ToTeXMath (getTeXMath)
 import qualified Text.TeXMath.Shared as S
 import Data.Maybe (fromMaybe)
 import Data.Generics (everywhere, mkT)
+import Text.ParserCombinators.Parsec
+import Control.Applicative ((<$))
 
 -- | Transforms an expression tree to equivalent LaTeX without any
 -- surrounding environment
@@ -143,7 +145,18 @@ evalInBraces :: Exp -> String
 evalInBraces = inBraces  . writeExp
 
 inBraces :: String -> String
-inBraces = around "{" "}"
+inBraces xs@('{':_) =
+  case parse (balancedBraces >> spaces >> eof) "input" xs of
+       Left _   -> around "{" "}" xs
+       Right () -> xs
+  where balancedBraces = do
+          char '{'
+          skipMany $ (() <$ noneOf "\\{}")
+              <|> (() <$ try (char '\\' >> anyChar))
+              <|> balancedBraces
+          char '}'
+          return ()
+inBraces xs       = around "{" "}" xs
 
 around :: String -> String -> String -> String
 around o c s = o ++ s ++ c
