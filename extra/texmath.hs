@@ -104,6 +104,12 @@ ensureFinalNewline :: String -> String
 ensureFinalNewline "" = ""
 ensureFinalNewline xs = if last xs == '\n' then xs else xs ++ "\n"
 
+urlUnencode :: String -> String
+urlUnencode = unEscapeString . plusToSpace
+  where plusToSpace ('+':xs) = "%20" ++ plusToSpace xs
+        plusToSpace (x:xs)   = x : plusToSpace xs
+        plusToSpace []       = []
+
 main :: IO ()
 main = do
   args' <- getArgs
@@ -114,8 +120,8 @@ main = do
       case (args', mbquery) of
            ([], Just q)  -> do
              let topairs xs = case break (=='=') xs of
-                                   (ys,('=':zs)) -> (unEscapeString ys, unEscapeString zs)
-                                   (ys,_)        -> (unEscapeString ys,"")
+                                   (ys,('=':zs)) -> (urlUnencode ys, urlUnencode zs)
+                                   (ys,_)        -> (urlUnencode ys,"")
              let pairs = map topairs $ splitOn "&" q
              let inp'  = fromMaybe "" $ lookup "input" pairs
              let args'' = maybe [] (\x -> ["--from", x]) (lookup "from" pairs) ++
