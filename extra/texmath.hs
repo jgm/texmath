@@ -85,7 +85,7 @@ options =
   ]
 
 output :: DisplayType -> Writer -> [Exp] -> String
-output dt (XMLWriter w) es    = output dt (StringWriter (\dt' -> ppTopElement . w dt' )) es
+output dt (XMLWriter w) es    = output dt (StringWriter (\dt' -> ppElement . w dt' )) es
 output dt (StringWriter w) es = w dt es
 output dt (PandocWriter w) es = show (fromMaybe fallback (w dt es))
   where fallback = [Math mt (writeTeXMath es)]
