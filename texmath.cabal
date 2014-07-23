@@ -37,6 +37,7 @@ Maintainer:          jgm@berkeley.edu
 Homepage:            http://github.com/jgm/texmath
 Extra-source-files:  README.markdown,
                      changelog,
+                     man/man1/texmath.1,
                      cgi/texmath.xhtml,
                      tests/src/*.mml
                      tests/src/*.tex

@@ -1,0 +1,49 @@
+.TH "texmath" "1" "July 22, 2014" "texmath manual" ""
+.SH NAME
+.PP
+texmath \- convert between math formats.
+.SH SYNOPSIS
+.PP
+texmath [\f[I]options\f[]]
+.SH DESCRIPTION
+.PP
+\f[C]texmath\f[] acts as a pipe, reading from stdin and writing to
+stdout.
+It converts math in the specified input format (see \f[C]\-f\f[] below)
+to math in the specified output format (see \f[C]\-t\f[] below).
+.SH OPTIONS
+.TP
+.B \f[C]\-f\f[] \f[I]FORMAT\f[]
+Specify input ("from") format: \f[C]tex\f[], \f[C]mathml\f[].
+Defaults to \f[C]tex\f[].
+.RS
+.RE
+.TP
+.B \f[C]\-t\f[] \f[I]FORMAT\f[]
+Specify output ("to") format: \f[C]native\f[], \f[C]tex\f[],
+\f[C]omml\f[], \f[C]xhtml\f[], \f[C]mathml\f[], \f[C]pandoc\f[].
+Defaults to \f[C]mathml\f[].
+.RS
+.RE
+.TP
+.B \f[C]\-\-inline\f[]
+Use the inline display style.
+.RS
+.RE
+.TP
+.B \f[C]\-h,\ \-\-help\f[]
+Print usage information.
+.RS
+.RE
+.TP
+.B \f[C]\-V,\ \-\-version\f[]
+Print version.
+.RS
+.RE
+.SH AUTHORS
+.PP
+John MacFarlane, Matthew Pickering.
+.SH SEE ALSO
+.PP
+The \f[C]texmath\f[] source code and all documentation may be downloaded
+from <http://github.com/jgm/texmath/>.
