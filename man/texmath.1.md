@@ -27,11 +27,12 @@ and a message or `success` and the converted result.
 # OPTIONS
 
 `-f` *FORMAT*
-:   Specify input ("from") format:  `tex`, `mathml`.  Defaults to `tex`.
+:   Specify input ("from") format:  `tex`, `mathml`, `native`.
+    Defaults to `tex`.
 
 `-t` *FORMAT*
-:   Specify output ("to") format:  `native`, `tex`, `omml`,
-    `xhtml`, `mathml`, `pandoc`.  Defaults to `mathml`.
+:   Specify output ("to") format:  `tex`, `omml`,
+    `xhtml`, `mathml`, `pandoc`, `native`.  Defaults to `mathml`.
 
 `--inline`
 :   Use the inline display style.

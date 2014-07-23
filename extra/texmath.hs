@@ -3,6 +3,7 @@ module Main where
 
 import Text.TeXMath
 import Control.Monad (when)
+import Data.Char (isSpace)
 import Text.XML.Light
 import System.IO
 import System.Environment
@@ -40,7 +41,15 @@ data Writer = XMLWriter (DisplayType -> [Exp] -> Element)
 readers :: [(String, Reader)]
 readers = [
     ("tex", readTeXMath)
-  , ("mathml", readMathML)]
+  , ("mathml", readMathML)
+  , ("native", readNative)]
+
+readNative :: String -> Either String [Exp]
+readNative s =
+  case reads s of
+       ((exps, ws):_) | all isSpace ws -> Right exps
+       ((_, (_:_)):_) -> Left "Could not read whole input as native Exp"
+       _ -> Left "Could not read input as native Exp"
 
 writers :: [(String, Writer)]
 writers = [

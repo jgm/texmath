@@ -11,17 +11,25 @@ texmath [\f[I]options\f[]]
 stdout.
 It converts math in the specified input format (see \f[C]\-f\f[] below)
 to math in the specified output format (see \f[C]\-t\f[] below).
+.PP
+\f[C]texmath\f[] can also be used as a CGI script, when run in a CGI
+context with no arguments.
+It will expect query parameters for \f[C]from\f[], \f[C]to\f[],
+\f[C]input\f[], and optionally \f[C]inline\f[], and return a JSON object
+with either \f[C]error\f[] and a message or \f[C]success\f[] and the
+converted result.
 .SH OPTIONS
 .TP
 .B \f[C]\-f\f[] \f[I]FORMAT\f[]
-Specify input ("from") format: \f[C]tex\f[], \f[C]mathml\f[].
+Specify input ("from") format: \f[C]tex\f[], \f[C]mathml\f[],
+\f[C]native\f[].
 Defaults to \f[C]tex\f[].
 .RS
 .RE
 .TP
 .B \f[C]\-t\f[] \f[I]FORMAT\f[]
-Specify output ("to") format: \f[C]native\f[], \f[C]tex\f[],
-\f[C]omml\f[], \f[C]xhtml\f[], \f[C]mathml\f[], \f[C]pandoc\f[].
+Specify output ("to") format: \f[C]tex\f[], \f[C]omml\f[],
+\f[C]xhtml\f[], \f[C]mathml\f[], \f[C]pandoc\f[], \f[C]native\f[].
 Defaults to \f[C]mathml\f[].
 .RS
 .RE
