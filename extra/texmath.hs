@@ -51,7 +51,7 @@ data Options = Options {
   , optOut :: String }
 
 def :: Options
-def = Options DisplayBlock "latex" "mml"
+def = Options DisplayBlock "tex" "mathml"
 
 options :: [OptDescr (Options -> IO Options)]
 options =
