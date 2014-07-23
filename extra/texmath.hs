@@ -2,6 +2,7 @@
 module Main where
 
 import Text.TeXMath
+import Control.Monad (when)
 import Text.XML.Light
 import System.IO
 import System.Environment
@@ -11,6 +12,11 @@ import Data.List (intersperse)
 import System.Exit
 import Data.Maybe
 import Text.Pandoc.Definition
+import Network.URI (unEscapeString)
+import Data.List.Split (splitOn)
+import Data.Aeson (encode, (.=), object)
+import qualified Data.ByteString.Lazy as B
+import qualified Data.Text as T
 
 inHtml :: Element -> Element
 inHtml e =
@@ -58,10 +64,10 @@ options =
   [ Option [] ["inline"]
       (NoArg (\opts -> return opts {optDisplay = DisplayInline}))
       "Use the inline display style"
-  , Option "f" []
+  , Option "f" ["from"]
       (ReqArg (\s opts -> return opts {optIn = s}) "FORMAT")
       ("Input format: " ++ (concat $ intersperse ", " (map fst readers)))
-  , Option "t" []
+  , Option "t" ["to"]
       (ReqArg (\s opts -> return opts {optOut = s}) "FORMAT")
       ("Output format: " ++ (concat $ intersperse ", " (map fst writers)))
    , Option "v" ["version"]
@@ -87,9 +93,11 @@ output dt (PandocWriter w) es = show (fromMaybe fallback (w dt es))
                   DisplayBlock  -> DisplayMath
                   DisplayInline -> InlineMath
 
-err :: Int -> String -> IO a
-err code msg = do
-  hPutStrLn stderr msg
+err :: Bool -> Int -> String -> IO a
+err cgi code msg = do
+  if cgi
+     then B.putStr $ encode $ object [T.pack "error" .= msg]
+     else hPutStrLn stderr msg
   exitWith $ ExitFailure code
 
 ensureFinalNewline :: String -> String
@@ -98,16 +106,40 @@ ensureFinalNewline xs = if last xs == '\n' then xs else xs ++ "\n"
 
 main :: IO ()
 main = do
-  (actions, _, _) <- getOpt RequireOrder options <$> getArgs
+  args' <- getArgs
+  mbquery <- lookup "QUERY_STRING" <$> getEnvironment
+  -- if QUERY_STRING is set and we have no arguments, treat as CGI
+  -- and get arguments from QUERY_STRING
+  (cgi, inp, args) <-
+      case (args', mbquery) of
+           ([], Just q)  -> do
+             let topairs xs = case break (=='=') xs of
+                                   (ys,('=':zs)) -> (unEscapeString ys, unEscapeString zs)
+                                   (ys,_)        -> (unEscapeString ys,"")
+             let pairs = map topairs $ splitOn "&" q
+             let inp'  = fromMaybe "" $ lookup "input" pairs
+             let args'' = maybe [] (\x -> ["--from", x]) (lookup "from" pairs) ++
+                          maybe [] (\x -> ["--to", x]) (lookup "to" pairs) ++
+                          ["--inline" | lookup "inline" pairs /= Nothing]
+             return $ (True, inp', args'')
+           _             -> do
+             inp' <- getUTF8Contents
+             return (False, inp', args')
+  when cgi $ putStr "Content-type: text/json; charset=UTF-8\n\n"
+  let (actions, _, _) = getOpt RequireOrder options args
   opts <- foldl (>>=) (return def) actions
   reader <- case lookup (optIn opts) readers of
                   Just r -> return r
-                  Nothing -> err 3 "Unrecognised reader"
+                  Nothing -> err cgi 3 "Unrecognised reader"
   writer <- case lookup (optOut opts) writers of
                   Just w -> return w
-                  Nothing -> err 5 "Unrecognised writer"
-  inp <- getUTF8Contents
+                  Nothing -> err cgi 5 "Unrecognised writer"
   case reader inp of
-        Left msg         -> err 1 msg
-        Right v          -> putStr $ ensureFinalNewline
-                                   $ output (optDisplay opts) writer v
+        Left msg -> err cgi 1 msg
+        Right v
+          | cgi  -> B.putStr $ encode $ object
+                       [ T.pack "success" .=
+                         ensureFinalNewline (output (optDisplay opts) writer v) ]
+          | otherwise -> putStr $ ensureFinalNewline
+                                $ output (optDisplay opts) writer v
+  exitWith ExitSuccess

@@ -19,6 +19,11 @@ texmath [*options*]
 It converts math in the specified input format (see `-f` below)
 to math in the specified output format (see `-t` below).
 
+`texmath` can also be used as a CGI script, when run in a CGI context
+with no arguments.  It will expect query parameters for `from`, `to`, `input`,
+and optionally `inline`, and return a JSON object with either `error`
+and a message or `success` and the converted result.
+
 # OPTIONS
 
 `-f` *FORMAT*
