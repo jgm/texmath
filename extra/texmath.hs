@@ -38,7 +38,7 @@ readers = [
 
 writers :: [(String, Writer)]
 writers = [
-    ("native", StringWriter (\_ es -> show es ++ "\n") )
+    ("native", StringWriter (\_ es -> show es) )
   , ("tex", StringWriter writeTeXMathIn)
   , ("omml",  XMLWriter writeOMML)
   , ("xhtml",   XMLWriter (\dt e -> inHtml (writeMathML dt e)))
@@ -81,7 +81,7 @@ options =
 output :: DisplayType -> Writer -> [Exp] -> String
 output dt (XMLWriter w) es    = output dt (StringWriter (\dt' -> ppTopElement . w dt' )) es
 output dt (StringWriter w) es = w dt es
-output dt (PandocWriter w) es = show (fromMaybe fallback (w dt es)) ++ "\n"
+output dt (PandocWriter w) es = show (fromMaybe fallback (w dt es))
   where fallback = [Math mt (writeTeXMathIn dt es)]
         mt = case dt of
                   DisplayBlock  -> DisplayMath
@@ -91,6 +91,10 @@ err :: Int -> String -> IO a
 err code msg = do
   hPutStrLn stderr msg
   exitWith $ ExitFailure code
+
+ensureFinalNewline :: String -> String
+ensureFinalNewline "" = ""
+ensureFinalNewline xs = if last xs == '\n' then xs else xs ++ "\n"
 
 main :: IO ()
 main = do
@@ -105,4 +109,5 @@ main = do
   inp <- getUTF8Contents
   case reader inp of
         Left msg         -> err 1 msg
-        Right v          -> putStr $ output (optDisplay opts) writer v
+        Right v          -> putStr $ ensureFinalNewline
+                                   $ output (optDisplay opts) writer v
