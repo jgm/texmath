@@ -37,7 +37,7 @@ writeTeXMathIn :: DisplayType -> [Exp] -> String
 writeTeXMathIn dt es =
   let math = writeTeXMath es in
     case dt of
-      DisplayInline -> around "$" "$" math
+      DisplayInline -> around "\\(" "\\)" math
       DisplayBlock  -> around "\\[" "\\]" math
 
 
