@@ -14,19 +14,18 @@
       <![CDATA[
       $(document).ready(function(){
         $('#convert').click(function() {
-          $.getJSON("/cgi-bin/texmath", { 'input' : $('#macros').val() ++ $('#latexFormula').val(),
+          $.getJSON("/cgi-bin/texmath", { 'input' : $('#macros').val() + $('#latexFormula').val(),
                                           'from': 'tex',
                                           'to': 'mathml' },
             function(result){
                    if (result.success) {
-                     $('#result').html(result.mathml);
-                     convert();
-                     $('#xml').text(result.mathml);
-                     } else {
+                     $('#result').html(result.success);
+                     $('#xml').text(result.success);
+                   } else {
                      $('#result').html('');
                      $('#xml').text(result.error);
-                     };
-                   })
+                   };
+                 })
             });
         });
     ]]>
