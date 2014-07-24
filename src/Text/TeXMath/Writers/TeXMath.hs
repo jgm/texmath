@@ -164,7 +164,11 @@ inBraces xs@('{':_) =
 inBraces xs       = around "{" "}" xs
 
 around :: String -> String -> String -> String
-around o c s = o ++ s ++ c
+around o c s = o ++ trimr s ++ c
+  where trimr xs = case reverse xs of
+                        ' ':'\\':_ -> xs
+                        ' ':ys     -> reverse ys
+                        _          -> xs
 
 evalInSquare :: Exp -> String
 evalInSquare = around "[" "]" . writeExp
