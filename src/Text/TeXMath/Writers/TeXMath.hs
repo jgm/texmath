@@ -57,7 +57,10 @@ writeExp (EDelimited open close es) =
   concatMap writeExp es ++
   "\\right" ++
   getTeXMath close
-writeExp (EIdentifier s) = inBraces $ getTeXMath s
+writeExp (EIdentifier s) =
+  case getTeXMath s of
+       [c] -> [c] -- don't brace single token identifiers
+       cs  -> inBraces cs
 writeExp o@(EMathOperator s) =
   fromMaybe ("\\operatorname" ++ (inBraces $ escapeSpace $ getTeXMath s)) (getOperator o)
 writeExp (ESymbol _ s) = getTeXMath s
