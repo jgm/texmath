@@ -262,7 +262,7 @@ matchStretch'  _ [] = 0
 matchStretch' e ((EStretchy (ESymbol Open s)): xs) =
   (if null (getTeXMath s e) then 0 else 1) + matchStretch' e xs
 matchStretch' e ((EStretchy (ESymbol Close s)): xs) =
-  (if null (getTeXMath s e) then 0 else 1) + matchStretch' e xs
+  (if null (getTeXMath s e) then 0 else (-1)) + matchStretch' e xs
 matchStretch' e (_:xs) = matchStretch' e xs
 
 -- Ensure that the lefts match the rights.
