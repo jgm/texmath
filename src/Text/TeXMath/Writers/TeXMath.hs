@@ -188,15 +188,12 @@ table as rows = do
     alignmentToLetter AlignDefault = 'l'
 
 row :: ArrayLine -> Math ()
-row cells =  do
-  case cells of
-    [] -> return ()
-    (c:cs)  -> cell c >>
-                censor ([Space, Token '&', Space] ++) (mapM_ cell cs)
-  tell [Space, Literal "\\\\", Token '\n']
-  where
-    cell es = mapM_ writeExp es
+row []     = tell [Space, Literal "\\\\", Token '\n']
+row [c]    = cell c >> row []
+row (c:cs) = cell c >> tell [Space, Token '&', Space] >> row cs
 
+cell :: [Exp] -> Math ()
+cell = mapM_ writeExp
 
 
 -- Utility
