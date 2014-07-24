@@ -26,7 +26,6 @@ import qualified Text.TeXMath.Shared as S
 import Data.Maybe (fromMaybe)
 import Data.Generics (everywhere, mkT)
 import Control.Applicative ((<$>), (<|>), Applicative)
-import Data.Char (isLetter, isAlphaNum, isPunctuation)
 import qualified Data.Map as M
 import Data.Maybe (listToMaybe)
 import Control.Monad.Reader (MonadReader, runReader, Reader, asks)
