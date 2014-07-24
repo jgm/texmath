@@ -82,7 +82,7 @@ runWriterTest :: ([Exp] -> String) -> FilePath -> FilePath -> IO Status
 runWriterTest f input output = do
   expr <- (\fn -> (fromJust (lookup (takeExtension input) readers)) fn)
               <$> readFile input
-  let r = f (either (const []) id expr)
+  let r = ensureFinalNewline $ f (either (const []) id expr)
   --writeFile output r -- uncomment to regen rests (use with care!)
   out_t <- readFile output
   if (r == out_t)
@@ -95,8 +95,8 @@ runReaderTest :: (String -> Either String String)
         -> IO Status
 runReaderTest fn input output = do
   inp_t <- readFile input
-  out_t <- readFile output
-  case fn inp_t of
+  out_t <- ensureFinalNewline <$> readFile output
+  case ensureFinalNewline <$> (fn inp_t) of
        Left msg       -> printError input output msg >>
                          return (Error input output)
        Right r
