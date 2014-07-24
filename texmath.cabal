@@ -79,7 +79,8 @@ Library
                          Text.TeXMath.Writers.TeXMath,
                          Text.TeXMath.Unicode.ToASCII
     Other-modules:       Text.TeXMath.Compat,
-                         Text.TeXMath.Shared
+                         Text.TeXMath.Shared,
+                         Text.TeXMath.TeX
     if impl(ghc >= 6.12)
       Ghc-Options:     -Wall -fno-warn-unused-do-bind
     else

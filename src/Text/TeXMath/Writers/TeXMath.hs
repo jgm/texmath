@@ -31,6 +31,7 @@ import qualified Data.Map as M
 import Data.Maybe (listToMaybe)
 import Control.Monad.Reader (MonadReader, runReader, Reader, asks)
 import Control.Monad.Writer(MonadWriter, WriterT, execWriterT, tell, censor)
+import Text.TeXMath.TeX
 
 -- | Transforms an expression tree to equivalent LaTeX with the default
 -- packages (amsmath and amssymb)
@@ -43,33 +44,6 @@ addLaTeXEnvironment dt math =
     case dt of
       DisplayInline -> "\\(" ++ math ++ "\\)"
       DisplayBlock  -> "\\[" ++ math ++ "\\]"
-
--- | An intermediate representation of TeX math, to be used in rendering.
-data TeX = ControlSeq String
-         | Token Char
-         | Literal String
-         | Grouped [TeX]
-         | Space
-         deriving Show
-
--- | Render a 'TeX' to a string, appending to the front of the given string.
-renderTeX :: TeX -> String -> String
-renderTeX (Token c) cs     = c:cs
-renderTeX (Literal s) cs
-  | startsWith isLetter cs = s ++ (' ':cs)
-  | otherwise              = s ++ cs
-renderTeX (ControlSeq s) cs
-  | startsWith isAlphaNum cs = s ++ (' ':cs)
-  | otherwise                = s ++ cs
-renderTeX (Grouped [Grouped xs]) cs  = renderTeX (Grouped xs) cs
-renderTeX (Grouped xs) cs     = '{' : foldr renderTeX "" xs ++ "}" ++ cs
-renderTeX Space cs
-  | startsWith (==' ') cs     = cs
-  | otherwise                 = ' ':cs
-
-startsWith :: (Char -> Bool) -> String -> Bool
-startsWith p (c:_) = p c
-startsWith _ []     = False
 
 -- |  Transforms an expression tree to equivalent LaTeX with the specified
 -- packages
@@ -100,7 +74,7 @@ tellGroup :: Math () -> Math ()
 tellGroup = censor ((:[]) . Grouped)
 
 writeExp :: Exp -> Math ()
-writeExp (ENumber s) = tell =<< (map Token) <$> (getTeXMathM s)
+writeExp (ENumber s) = tell =<< getTeXMathM s
 writeExp (EGrouped es) = tellGroup (mapM_ writeExp es)
 writeExp (EDelimited open close es) =  do
   tell [ControlSeq "\\left" ]
