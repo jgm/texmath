@@ -56,10 +56,7 @@ data TeX = ControlSeq String
 
 -- | Render a 'TeX' to a string, appending to the front of the given string.
 renderTeX :: TeX -> String -> String
-renderTeX (Token c) cs
-  | isPunctuation c        = c:cs
-  | startsWith isLetter cs = c:' ':cs
-  | otherwise              = c:cs
+renderTeX (Token c) cs     = c:cs
 renderTeX (Literal s) cs
   | startsWith isLetter cs = s ++ (' ':cs)
   | otherwise              = s ++ cs
