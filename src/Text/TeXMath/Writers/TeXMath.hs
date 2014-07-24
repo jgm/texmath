@@ -85,9 +85,9 @@ writeExp (EDelimited open close es) =  do
 writeExp (EIdentifier s) = do
   math <- getTeXMathM s
   case math of
-       [c] -> tell [Token c] -- don't brace single token identifiers
+       [Token c]       -> tell [Token c] -- don't brace single token identifiers
        [ControlSeq cs] -> tell [ControlSeq cs]
-       _               -> writeExp (EMathOperator s)
+       cs              -> tellGroup cs
 writeExp o@(EMathOperator s) = do
   math <- getTeXMathM s
   case getOperator o of
