@@ -25,15 +25,17 @@ import Text.TeXMath.Unicode.ToTeXMath (getTeXMath)
 import qualified Text.TeXMath.Shared as S
 import Data.Maybe (fromMaybe)
 import Data.Generics (everywhere, mkT)
-import Text.ParserCombinators.Parsec
-import Control.Applicative ((<$))
-import Data.Char (isLetter, isAlphaNum)
+import Text.ParserCombinators.Parsec hiding ((<|>))
+import Control.Applicative ((<$), (<$>), (<|>))
+import Data.Char (isLetter, isAlphaNum, isPunctuation)
+import qualified Data.Map as M
+import Data.Maybe (listToMaybe)
 
 -- | Transforms an expression tree to equivalent LaTeX without any
 -- surrounding environment
 writeTeXMath :: [Exp] -> String
-writeTeXMath [EGrouped es] = writeTeXMath es -- remove outer group
-writeTeXMath es = concatMap (writeExp . fixTree) es
+writeTeXMath es =  -- we remove the leading { and trailing } at outer level
+  drop 1 $ init $ renderTeX (Grouped $ concatMap (writeExp . fixTree) es) ""
 
 -- | Transforms an expression tree to LaTeX with the
 -- corresponding LaTeX environment
@@ -41,87 +43,139 @@ writeTeXMathIn :: DisplayType -> [Exp] -> String
 writeTeXMathIn dt es =
   let math = writeTeXMath es in
     case dt of
-      DisplayInline -> around "\\(" "\\)" math
-      DisplayBlock  -> around "\\[" "\\]" math
+      DisplayInline -> "\\(" ++ math ++ "\\)"
+      DisplayBlock  -> "\\[" ++ math ++ "\\]"
 
-
-square :: [String]
-square = ["\\sqrt"]
-
+-- | An intermediate representation of TeX math, to be used in rendering.
 data TeX = ControlSeq String
          | Token Char
+         | Literal String
          | Grouped [TeX]
          | Space
          deriving Show
 
+-- | Render a 'TeX' to a string, appending to the front of the given string.
 renderTeX :: TeX -> String -> String
 renderTeX (Token c) cs
+  | isPunctuation c        = c:cs
   | startsWith isLetter cs = c:' ':cs
   | otherwise              = c:cs
+renderTeX (Literal s) cs
+  | startsWith isLetter cs = s ++ (' ':cs)
+  | otherwise              = s ++ cs
 renderTeX (ControlSeq s) cs
   | startsWith isAlphaNum cs = s ++ (' ':cs)
   | otherwise                = s ++ cs
 renderTeX (Grouped [Grouped xs]) cs  = renderTeX (Grouped xs) cs
-renderTeX (Grouped xs) cs     = '{' : foldr renderTeX "" xs ++ "}"
-renderTeX Space cs             = ' ':cs
+renderTeX (Grouped [Token c]) cs  = renderTeX (Token c) cs
+renderTeX (Grouped xs) cs     = '{' : foldr renderTeX "" xs ++ "}" ++ cs
+renderTeX Space cs
+  | startsWith (==' ') cs     = cs
+  | otherwise                 = ' ':cs
 
 startsWith :: (Char -> Bool) -> String -> Bool
 startsWith p (c:cs) = p c
 startsWith _ []     = False
 
-writeExp :: Exp -> String
-writeExp (ENumber s) = getTeXMath s
-writeExp (EGrouped [e]) = writeExp e
-writeExp (EGrouped es) = inBraces $ concatMap writeExp es
+square :: [String]
+square = ["\\sqrt", "\\surd"]
+
+isControlSeq :: String -> Bool
+isControlSeq ['\\',c] = c /= ' '
+isControlSeq ('\\':xs) = all isLetter xs
+isControlSeq _ = False
+
+writeExp :: Exp -> [TeX]
+writeExp (ENumber s) = map Token (getTeXMath s)
+writeExp (EGrouped es) = [Grouped $ concatMap writeExp es]
 writeExp (EDelimited open close es) =
-  "\\left" ++
-  getTeXMath open ++
+  ControlSeq "\\left" :
+  Literal (getTeXMath open) :
   concatMap writeExp es ++
-  "\\right" ++
-  getTeXMath close
+  [ControlSeq "\\right",
+   Literal (getTeXMath close)]
 writeExp (EIdentifier s) =
   case getTeXMath s of
-       [c] -> [c] -- don't brace single token identifiers
-       cs  -> inBraces cs
+       [c] -> [Token c] -- don't brace single token identifiers
+       cs | isControlSeq cs -> [ControlSeq cs]
+          | otherwise       -> writeExp (EMathOperator s)
 writeExp o@(EMathOperator s) =
-  fromMaybe ("\\operatorname" ++ (inBraces $ escapeSpace $ getTeXMath s)) (getOperator o)
-writeExp (ESymbol _ s) = getTeXMath s
-writeExp (ESpace width) = S.getSpaceCommand width
+  case getOperator o of
+       Just o   -> [o]
+       Nothing  -> case getTeXMath s of
+                        ""  -> []
+                        xs | all isLetter xs ->
+                              [ControlSeq "\\operatorname",
+                               Grouped [Literal xs]]
+                           | otherwise -> [Literal xs]
+writeExp (ESymbol _ s) = [Literal $ getTeXMath s]
+writeExp (ESpace width) = [ControlSeq $ getSpaceCommand width]
 writeExp (EBinary s e1 e2)
-  | s `elem` square = s ++ (evalInSquare e1) ++ (evalInBraces e2)
-  | otherwise = s ++ (evalInBraces e1) ++ (evalInBraces e2)
-writeExp (ESub b e1) = under b e1
-writeExp (ESuper b e1) = over b e1
-writeExp (ESubsup b e1 e2) = underOver b e1 e2
+  | s `elem` square = [ControlSeq s,
+                       Token '['] ++
+                       writeExp e1 ++
+                      [Token ']',
+                       Grouped (writeExp e2)]
+  | otherwise = [ControlSeq s,
+                 Grouped (writeExp e1),
+                 Grouped (writeExp e2)]
+writeExp (ESub b e1) =
+  [Grouped (writeExp b), Token '_', Grouped (writeExp e1)]
+writeExp (ESuper b e1) =
+  [Grouped (writeExp b), Token '^', Grouped (writeExp e1)]
+writeExp (ESubsup b e1 e2) =
+  [Grouped (writeExp b), Token '_', Grouped (writeExp e1),
+   Token '^', Grouped (writeExp e2)]
+writeExp (EDown b e1) =
+  [Grouped (writeExp b), ControlSeq "\\limits", Token '_',
+   Grouped (writeExp e1)]
+writeExp (EUp b e1) =
+  [Grouped (writeExp b), ControlSeq "\\limits", Token '^',
+   Grouped (writeExp e1)]
+writeExp (EDownup b e1 e2) =
+  [Grouped (writeExp b), ControlSeq "\\limits",
+   Token '_', Grouped (writeExp e1),
+   Token '^', Grouped (writeExp e2)]
 writeExp (EOver b e1) =
   case b of
-    (EMathOperator _) -> over b e1
-    _ -> "\\overset" ++ evalInBraces e1 ++ evalInBraces b
+    (EMathOperator _) -> writeExp (EUp b e1)
+    _ -> [ControlSeq "\\overset", Grouped (writeExp b), Grouped (writeExp e1)]
 writeExp (EUnder b e1) =
   case b of
-    (EMathOperator _) -> under b e1
-    _ -> "\\underset" ++ evalInBraces e1 ++ evalInBraces b
+    (EMathOperator _) -> writeExp (EDown b e1)
+    _ -> [ControlSeq "\\underset", Grouped (writeExp b), Grouped (writeExp e1)]
 writeExp (EUnderover b e1 e2) =
   case b of
-    (EMathOperator _) -> underOver b e1 e2
-    _ -> writeExp $ EUnder (EOver b e2) e1
-writeExp (EUp b e1) = over b e1
-writeExp (EDown b e1) = under b e1
-writeExp (EDownup b e1 e2) = underOver b e1 e2
-writeExp (EUnary s e) = s ++ evalInBraces e
-writeExp (EScaled size e) = fromMaybe "" (S.getScalerCommand size) ++ evalInBraces e
+    (EMathOperator _) -> writeExp (EDownup b e1 e2)
+    _ -> writeExp (EUnder (EOver b e2) e1)
+writeExp (EUnary s e) = [ControlSeq s, Grouped (writeExp e)]
+writeExp (EScaled size e) =
+  case S.getScalerCommand size of
+       Just s  -> [ControlSeq s, Grouped (writeExp e)]
+       Nothing -> [Grouped (writeExp e)]
 writeExp (EStretchy (ESymbol Open e)) =
-  let e' = getTeXMath e in
-    case e' of {"" -> ""; _ -> "\\left" ++  e' ++ " "}
+  case getTeXMath e of
+       "" -> []
+       e' -> [ControlSeq "\\left", Literal e']
 writeExp (EStretchy (ESymbol Close e)) =
-  let e' = getTeXMath e in
-    case e' of {"" -> ""; _ -> "\\right" ++ e' ++ " "}
+  case getTeXMath e of
+       "" -> []
+       e' -> [ControlSeq "\\right", Literal e']
 writeExp (EStretchy e) = writeExp e
+writeExp (EText ttype s) =
+  [ControlSeq (getTeXMathTextCommand ttype),
+   Grouped [Literal $ getTeXMath s]]
 writeExp (EArray aligns rows) = table aligns rows
-writeExp (EText ttype s) = getTeXMathTextCommand ttype ++ inBraces (escapeSpace $ getTeXMath s)
 
-table :: [Alignment] -> [ArrayLine] -> String
-table as rows = "\\begin{array}" ++ inBraces columnAligns ++ "\n" ++ concatMap row rows ++ "\\end{array}"
+table :: [Alignment] -> [ArrayLine] -> [TeX]
+table as rows =
+  [ControlSeq "\\begin",
+   Grouped [Literal "array"],
+   Grouped [Literal columnAligns],
+   Token '\n'] ++
+   concatMap row rows ++
+   [ControlSeq "\\end",
+   Grouped [Literal "array"]]
   where
     columnAligns = map alignmentToLetter as
     alignmentToLetter AlignLeft = 'l'
@@ -129,12 +183,39 @@ table as rows = "\\begin{array}" ++ inBraces columnAligns ++ "\n" ++ concatMap r
     alignmentToLetter AlignRight = 'r'
     alignmentToLetter AlignDefault = 'c'
 
-row :: ArrayLine -> String
-row cells = (concat  (intersperse " & " (map cell cells))) ++ " \\\\\n"
+row :: ArrayLine -> [TeX]
+row cells =
+  concat  (intersperse [Space, Token '&', Space] (map cell cells)) ++ [Space,
+  Literal "\\\\", Token '\n']
   where
     cell es = concatMap writeExp es
 
 -- Utility
+
+-- | Maps a length in em to the nearest bigger LaTeX space command
+getSpaceCommand :: String -> String
+getSpaceCommand width = snd $ fromMaybe (M.findMax spaceMap) (lookupGE (readSpace width) spaceMap)
+  where
+    spaceMap = M.fromList (map (\(k, ESpace s) -> (readSpace s, k)) spaceCommands)
+    readSpace :: String -> Float
+    readSpace s = maybe 0 fst $ listToMaybe $ reads s
+
+lookupGE :: Ord k =>  k -> M.Map k v -> Maybe (k, v)
+lookupGE k m = let (_, v, g) = M.splitLookup k m in
+                    (fmap ((,) k) (v <|> (fst <$> M.minView g)))
+
+spaceCommands :: [(String, Exp)]
+spaceCommands =
+           [ ("\\!", ESpace "-0.167em")
+           , (""   , ESpace "0.0em")
+           , ("\\,", ESpace "0.167em")
+           , ("\\>", ESpace "0.222em")
+           , ("\\:", ESpace "0.222em")
+           , ("\\;", ESpace "0.278em")
+           , ("~", ESpace "0.333em")
+           , ("\\quad", ESpace "1.0em")
+           , ("\\qquad", ESpace "2.0em")]
+
 
 -- Text commands availible in amsmath
 formats :: [String]
@@ -151,49 +232,7 @@ getTeXMathTextCommand t
   where
     cmd = S.getLaTeXTextCommand t
 
-escapeSpace :: String -> String
-escapeSpace = concatMap (\c -> if c == ' ' then "\\ " else [c])
-
 -- Constructors
-
-under :: Exp -> Exp -> String
-under = bin "_"
-
-over :: Exp -> Exp -> String
-over = bin "^"
-
-underOver :: Exp -> Exp -> Exp -> String
-underOver b e1 e2 = bin "_" b e1 ++ "^" ++ evalInBraces e2
-
-bin :: String -> Exp -> Exp -> String
-bin s b e = evalInBraces b ++ s ++ evalInBraces e
-
-evalInBraces :: Exp -> String
-evalInBraces = inBraces  . writeExp
-
-inBraces :: String -> String
-inBraces xs@('{':_) =
-  case parse (balancedBraces >> spaces >> eof) "input" xs of
-       Left _   -> around "{" "}" xs
-       Right () -> xs
-  where balancedBraces = do
-          char '{'
-          skipMany $ (() <$ noneOf "\\{}")
-              <|> (() <$ try (char '\\' >> anyChar))
-              <|> balancedBraces
-          char '}'
-          return ()
-inBraces xs       = around "{" "}" xs
-
-around :: String -> String -> String -> String
-around o c s = o ++ trimr s ++ c
-  where trimr xs = case reverse xs of
-                        ' ':'\\':_ -> xs
-                        ' ':ys     -> reverse ys
-                        _          -> xs
-
-evalInSquare :: Exp -> String
-evalInSquare = around "[" "]" . writeExp
 
 -- Fix up
 
@@ -256,8 +295,8 @@ fixTree = everywhere
 
 -- Operator Table
 
-getOperator :: Exp -> Maybe String
-getOperator op = fmap (++" ") $ lookup op operators
+getOperator :: Exp -> Maybe TeX
+getOperator op = fmap ControlSeq $ lookup op operators
 
 operators :: [(Exp, String)]
 operators =

@@ -19,7 +19,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 module Text.TeXMath.Shared
   ( getMMLType
   , getTextType
-  , getSpaceCommand
   , getLaTeXTextCommand
   , getScalerCommand
   , getScalerValue
@@ -30,7 +29,7 @@ module Text.TeXMath.Shared
 
 import Text.TeXMath.Types
 import qualified Data.Map as M
-import Data.Maybe (fromMaybe, listToMaybe)
+import Data.Maybe (fromMaybe)
 import Control.Applicative ((<$>), (<|>))
 import Control.Monad (guard)
 
@@ -47,18 +46,6 @@ getTextType :: String -> TextType
 getTextType s = fromMaybe TextNormal (M.lookup s revTypes)
   where
     revTypes = M.fromList (map (\(k,v) -> (fst v,k)) types)
-
-lookupGE :: Ord k =>  k -> M.Map k v -> Maybe (k, v)
-lookupGE k m = let (_, v, g) = M.splitLookup k m in
-                    (fmap ((,) k) (v <|> (fst <$> M.minView g)))
-
--- | Maps a length in em to the nearest bigger LaTeX space command
-getSpaceCommand :: String -> String
-getSpaceCommand width = snd $ fromMaybe (M.findMax spaceMap) (lookupGE (readSpace width) spaceMap)
-  where
-    spaceMap = M.fromList (map (\(k, ESpace s) -> (readSpace s, k)) spaceCommands)
-    readSpace :: String -> Float
-    readSpace s = maybe 0 fst $ listToMaybe $ reads s
 
 -- | Maps a LaTeX scaling command to the percentage scaling
 getScalerCommand :: String -> Maybe String
@@ -94,19 +81,6 @@ getDiacriticalCommand pos symbol = do
 
 reverseKeys :: [(a, b)] -> [(b, a)]
 reverseKeys = map (\(k,v) -> (v, k))
-
-spaceCommands :: [(String, Exp)]
-spaceCommands =
-           [ ("\\!", ESpace "-0.167em")
-           , (""   , ESpace "0.0em")
-           , ("\\,", ESpace "0.167em")
-           , ("\\>", ESpace "0.222em")
-           , ("\\:", ESpace "0.222em")
-           , ("\\;", ESpace "0.278em")
-           , ("~", ESpace "0.333em")
-           , ("\\quad ", ESpace "1.0em")
-           , ("\\qquad ", ESpace "2.0em")]
-
 
 --TextType to (MathML, LaTeX)
 types :: [(TextType, (String, String))]

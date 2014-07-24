@@ -92,21 +92,9 @@ charToLaTeXString e c = do
   -- Required packages for the command
   let required = filter (\z -> head z /= '-') $ (words . requirements) v
   let alts = getAlternatives (comments v)
-  latexCommand  <- if null required || any (`elem` required) environment
-           then Just $ latex v
-           else
-             listToMaybe $ catMaybes (map (flip lookup alts) environment)
-  -- Check if we need to append additional braces
-  let lc' =
-        case category v `elem` commands of
-          True -> latexCommand ++ "{}"
-          False -> latexCommand
-  return $ padCommand lc'
-
--- Append space to a command in case it is followed by text
-padCommand :: String -> String
-padCommand s@('\\':_) = s ++ " "
-padCommand s = s
+  if null required || any (`elem` required) environment
+     then Just $ latex v
+     else listToMaybe $ catMaybes (map (flip lookup alts) environment)
 
 -- Convert special unicode characters not in the standard mapping
 textConvert :: Char -> Maybe String
