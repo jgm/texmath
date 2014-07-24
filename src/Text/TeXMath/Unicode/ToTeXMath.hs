@@ -59,6 +59,15 @@ import qualified Text.TeXMath.Shared as S
 getTeXMath :: String -> Env -> String
 getTeXMath s e = concatMap (charToString e) s
 
+
+escapeLaTeX :: Char -> String
+escapeLaTeX c
+  | c `elem` "#$%&_{}" = "\\" ++ [c]
+  | c == '~' = "\\textasciitilde"
+  | c == '^' = "\\textasciicircum"
+  | c == '\\' = "\\textbackslash"
+  | otherwise = [c]
+
 -- Guaranteed to return latex safe string
 charToString :: Env -> Char -> String
 charToString e c =
