@@ -27,6 +27,7 @@ import Data.Maybe (fromMaybe)
 import Data.Generics (everywhere, mkT)
 import Text.ParserCombinators.Parsec
 import Control.Applicative ((<$))
+import Data.Char (isLetter, isAlphaNum)
 
 -- | Transforms an expression tree to equivalent LaTeX without any
 -- surrounding environment
@@ -46,6 +47,27 @@ writeTeXMathIn dt es =
 
 square :: [String]
 square = ["\\sqrt"]
+
+data TeX = ControlSeq String
+         | Token Char
+         | Grouped [TeX]
+         | Space
+         deriving Show
+
+renderTeX :: TeX -> String -> String
+renderTeX (Token c) cs
+  | startsWith isLetter cs = c:' ':cs
+  | otherwise              = c:cs
+renderTeX (ControlSeq s) cs
+  | startsWith isAlphaNum cs = s ++ (' ':cs)
+  | otherwise                = s ++ cs
+renderTeX (Grouped [Grouped xs]) cs  = renderTeX (Grouped xs) cs
+renderTeX (Grouped xs) cs     = '{' : foldr renderTeX "" xs ++ "}"
+renderTeX Space cs             = ' ':cs
+
+startsWith :: (Char -> Bool) -> String -> Bool
+startsWith p (c:cs) = p c
+startsWith _ []     = False
 
 writeExp :: Exp -> String
 writeExp (ENumber s) = getTeXMath s
