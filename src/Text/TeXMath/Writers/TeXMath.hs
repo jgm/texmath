@@ -235,7 +235,7 @@ fixTree = everywhere
 -- Operator Table
 
 getOperator :: Exp -> Maybe String
-getOperator = flip lookup operators
+getOperator op = fmap (++" ") $ lookup op operators
 
 operators :: [(Exp, String)]
 operators =
