@@ -64,7 +64,6 @@ renderTeX (ControlSeq s) cs
   | startsWith isAlphaNum cs = s ++ (' ':cs)
   | otherwise                = s ++ cs
 renderTeX (Grouped [Grouped xs]) cs  = renderTeX (Grouped xs) cs
-renderTeX (Grouped [Token c]) cs  = renderTeX (Token c) cs
 renderTeX (Grouped xs) cs     = '{' : foldr renderTeX "" xs ++ "}" ++ cs
 renderTeX Space cs
   | startsWith (==' ') cs     = cs
