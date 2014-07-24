@@ -143,15 +143,15 @@ writeExp (EOver b e1) =
     (EMathOperator _) -> writeExp (EUp b e1)
     _ -> do
           tell [ControlSeq "\\overset"]
-          tellGroup (writeExp b)
           tellGroup (writeExp e1)
+          tellGroup (writeExp b)
 writeExp (EUnder b e1) =
   case b of
     (EMathOperator _) -> writeExp (EDown b e1)
     _ -> do
           tell [ControlSeq "\\underset"]
-          tellGroup (writeExp b)
           tellGroup (writeExp e1)
+          tellGroup (writeExp b)
 writeExp (EUnderover b e1 e2) =
   case b of
     (EMathOperator _) -> writeExp (EDownup b e1 e2)
@@ -241,11 +241,9 @@ reorderDiacritical' :: Position -> Exp -> Exp -> Exp
 reorderDiacritical' p b e@(ESymbol Accent a) =
   case S.getDiacriticalCommand p a of
     Just accentCmd -> EUnary accentCmd b
-    Nothing -> EBinary def e b
-  where
-    def = case p of
-            Over -> "\\overset"
-            Under -> "\\underset"
+    Nothing -> case p of
+                    Over  -> EOver b e
+                    Under -> EUnder b e
 reorderDiacritical' _ _ _ = error "Must be called with Accent"
 
 reorderDiacritical :: Exp -> Exp
