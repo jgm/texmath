@@ -61,11 +61,6 @@ runExpr e m = flip runReader e $ execWriterT (runTeXMath m)
 square :: [String]
 square = ["\\sqrt", "\\surd"]
 
-isControlSeq :: String -> Bool
-isControlSeq ['\\',c] = c /= ' '
-isControlSeq ('\\':xs) = all isLetter xs
-isControlSeq _ = False
-
 newtype Math a = Math {runTeXMath :: WriterT [TeX] (Reader Env) a}
                   deriving (Functor, Applicative, Monad, MonadReader Env
                            , MonadWriter [TeX])
