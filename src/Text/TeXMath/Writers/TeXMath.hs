@@ -89,6 +89,7 @@ writeExp (EIdentifier s) = do
   math <- getTeXMathM s
   case math of
        [Token c]       -> tell [Token c] -- don't brace single token identifiers
+       [Literal [c]]   -> tell [Literal [c]]
        [ControlSeq cs] -> tell [ControlSeq cs]
        cs              -> tell [ControlSeq "\\operatorname", Grouped cs]
 writeExp o@(EMathOperator s) = do
