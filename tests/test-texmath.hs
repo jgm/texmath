@@ -2,6 +2,8 @@ import System.Directory
 import System.FilePath
 import Text.XML.Light
 import System.IO
+import System.IO.Temp (withTempDirectory)
+import System.Process
 import Text.TeXMath
 import System.Exit
 import Control.Applicative
@@ -36,18 +38,16 @@ main = do
      else exitWith $ ExitFailure failures
 
 printPass :: FilePath -> FilePath -> IO ()
-printPass inp out = putStrLn $ "PASSED:  " ++ inp ++ " ==> " ++ out
+printPass _inp _out = return () -- putStrLn $ "PASSED:  " ++ inp ++ " ==> " ++ out
 
 printFail :: FilePath -> FilePath -> String -> IO ()
-printFail inp out actual = do
+printFail inp out actual =  withTempDirectory "." "texmath-test." $ \tmpDir -> do
   putStrLn $ "FAILED:  " ++ inp ++ " ==> " ++ out
-  putStrLn "------ input ---------"
-  readFile inp >>= putStr . ensureFinalNewline
-  putStrLn "------ expected ------"
-  readFile out >>= putStr . ensureFinalNewline
-  putStrLn "------ actual --------"
-  putStr $ ensureFinalNewline actual
-  putStrLn "----------------------"
+  readFile out >>= writeFile (tmpDir </> "expected") . ensureFinalNewline
+  writeFile (tmpDir </> "actual") $ ensureFinalNewline actual
+  _ <- rawSystem "diff" ["-u", tmpDir </> "expected", tmpDir </> "actual"]
+  putStrLn ""
+  return ()
 
 printError :: FilePath -> FilePath -> String -> IO ()
 printError inp out msg =
