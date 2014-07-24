@@ -120,20 +120,20 @@ writeExp (EBinary s e1 e2)
                  Grouped (writeExp e1),
                  Grouped (writeExp e2)]
 writeExp (ESub b e1) =
-  [Grouped (writeExp b), Token '_', Grouped (writeExp e1)]
+  writeExp b ++ [Token '_', Grouped (writeExp e1)]
 writeExp (ESuper b e1) =
-  [Grouped (writeExp b), Token '^', Grouped (writeExp e1)]
+  writeExp b ++ [Token '^', Grouped (writeExp e1)]
 writeExp (ESubsup b e1 e2) =
-  [Grouped (writeExp b), Token '_', Grouped (writeExp e1),
+  writeExp b ++ [Token '_', Grouped (writeExp e1),
    Token '^', Grouped (writeExp e2)]
 writeExp (EDown b e1) =
-  [Grouped (writeExp b), ControlSeq "\\limits", Token '_',
+   writeExp b ++ [ControlSeq "\\limits", Token '_',
    Grouped (writeExp e1)]
 writeExp (EUp b e1) =
-  [Grouped (writeExp b), ControlSeq "\\limits", Token '^',
+   writeExp b ++ [ControlSeq "\\limits", Token '^',
    Grouped (writeExp e1)]
 writeExp (EDownup b e1 e2) =
-  [Grouped (writeExp b), ControlSeq "\\limits",
+   writeExp b ++ [ControlSeq "\\limits",
    Token '_', Grouped (writeExp e1),
    Token '^', Grouped (writeExp e2)]
 writeExp (EOver b e1) =
