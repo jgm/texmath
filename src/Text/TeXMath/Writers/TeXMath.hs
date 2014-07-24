@@ -31,6 +31,7 @@ import Control.Applicative ((<$))
 -- | Transforms an expression tree to equivalent LaTeX without any
 -- surrounding environment
 writeTeXMath :: [Exp] -> String
+writeTeXMath [EGrouped es] = writeTeXMath es -- remove outer group
 writeTeXMath es = concatMap (writeExp . fixTree) es
 
 -- | Transforms an expression tree to LaTeX with the
@@ -48,7 +49,8 @@ square = ["\\sqrt"]
 
 writeExp :: Exp -> String
 writeExp (ENumber s) = getTeXMath s
-writeExp (EGrouped es) = concatMap writeExp es
+writeExp (EGrouped [e]) = writeExp e
+writeExp (EGrouped es) = inBraces $ concatMap writeExp es
 writeExp (EDelimited open close es) =
   "\\left" ++
   getTeXMath open ++
