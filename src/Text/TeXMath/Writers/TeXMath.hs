@@ -258,24 +258,6 @@ spaceCommands =
            , ("\\quad", ESpace "1.0em")
            , ("\\qquad", ESpace "2.0em")]
 
-
--- Text commands availible in amsmath
-formats :: [String]
-formats = ["\\mathrm", "\\mathit", "\\mathsf", "\\mathtt", "\\mathfrak", "\\mathcal"]
-
-alts :: [(String, String)]
-alts = [ ("\\mathbfit", "\\mathbf"), ("\\mathbfsfup", "\\mathbf"), ("\\mathbfsfit", "\\mathbf")
-       , ("\\mathbfscr", "\\mathcal"), ("\\mathbffrak", "\\mathfrak"), ("\\mathsfit", "\\mathsf")]
-
-getTeXMathTextCommand :: TextType -> String
-getTeXMathTextCommand t
-  | cmd `elem` formats = cmd
-  | otherwise = fromMaybe "\\mathrm" (lookup cmd alts)
-  where
-    cmd = S.getLaTeXTextCommand t
-
--- Constructors
-
 -- Fix up
 
 removeAccentStretch :: Exp -> Exp

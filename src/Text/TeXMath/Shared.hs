@@ -38,8 +38,13 @@ getMMLType :: TextType -> String
 getMMLType t = fromMaybe "normal" (fst <$> M.lookup t (M.fromList types))
 
 -- | Maps TextType to corresponding LaTeX command
-getLaTeXTextCommand :: TextType -> String
-getLaTeXTextCommand t = fromMaybe "\\mathrm" (snd <$> M.lookup t (M.fromList types))
+getLaTeXTextCommand :: Env -> TextType -> String
+getLaTeXTextCommand e t =
+  let textCmd = fromMaybe "\\mathrm"
+                  (snd <$> M.lookup t (M.fromList types)) in
+  if textPackage textCmd `elem` e
+    then textCmd
+    else fromMaybe "\\mathrm" (lookup textCmd alts)
 
 -- | Maps MathML mathvariant to the corresponing TextType
 getTextType :: String -> TextType
@@ -100,6 +105,19 @@ types =
   , ( TextBoldFraktur         , ("bold-fraktur","\\mathbffrak"))
   , ( TextSansSerifItalic     , ("sans-serif-italic","\\mathsfit")) ]
 
+unicodeMath, base :: [String]
+unicodeMath = ["\\mathbfit", "\\mathbfsfup", "\\mathbfsfit", "\\mathbfscr", "\\mathbffrak", "mathsfit"]
+base = ["\\mathbb", "\\mathrm", "\\mathbf", "\\mathit", "\\mathsf", "\\mathtt", "\\mathfrak", "\\mathcal"]
+
+alts :: [(String, String)]
+alts = [ ("\\mathbfit", "\\mathbf"), ("\\mathbfsfup", "\\mathbf"), ("\\mathbfsfit", "\\mathbf")
+       , ("\\mathbfscr", "\\mathcal"), ("\\mathbffrak", "\\mathfrak"), ("\\mathsfit", "\\mathsf")]
+
+textPackage :: String -> String
+textPackage s
+  | s `elem` unicodeMath = "unicode-math"
+  | s `elem` base    = ""
+  | otherwise = ""
 
 scalers :: [(String, String)]
 scalers =

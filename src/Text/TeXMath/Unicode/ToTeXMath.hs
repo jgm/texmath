@@ -1,3 +1,4 @@
+{-# LANGUAGE ViewPatterns #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -91,10 +92,10 @@ charToLaTeXString e c = do
      else listToMaybe $ catMaybes (map (flip lookup alts) environment)
 
 -- Convert special unicode characters not in the standard mapping
-textConvert :: Char -> Maybe String
-textConvert c = do
+textConvert :: Env -> Char -> Maybe String
+textConvert env c = do
   (ttype, v) <- fromUnicode c
-  return $ S.getLaTeXTextCommand ttype ++ ['{',v,'}']
+  return $ S.getLaTeXTextCommand env ttype ++ ['{', v, '}']
 
 -- Parses the comment field to find alternatives to commands
 getAlternatives :: String ->  [(String, String)]
