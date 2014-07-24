@@ -1,4 +1,4 @@
-module Text.TeXMath.TeX (TeX(..), renderTeX, isControlSeq)
+module Text.TeXMath.TeX (TeX(..), renderTeX, isControlSeq, escapeLaTeX)
 where
 import Data.Char (isLetter, isAlphaNum)
 
@@ -33,3 +33,11 @@ isControlSeq :: String -> Bool
 isControlSeq ['\\',c] = c /= ' '
 isControlSeq ('\\':xs) = all isLetter xs
 isControlSeq _ = False
+
+escapeLaTeX :: Char -> TeX
+escapeLaTeX c
+  | c `elem` "#$%&_{}" = Literal ("\\" ++ [c])
+  | c == '~' = ControlSeq "\\textasciitilde"
+  | c == '^' = ControlSeq "\\textasciicircum"
+  | c == '\\' = ControlSeq "\\textbackslash"
+  | otherwise = Token c

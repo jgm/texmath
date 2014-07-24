@@ -176,8 +176,7 @@ writeExp (EStretchy (ESymbol Close e)) = do
 writeExp (EStretchy e) = writeExp e
 writeExp (EText ttype s) = do
   txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
-  math <- getTeXMathM s
-  tell [ControlSeq txtcmd, Grouped math]
+  tell [ControlSeq txtcmd, Grouped (map escapeLaTeX s)]
 writeExp (EArray aligns rows) = table aligns rows
 
 table :: [Alignment] -> [ArrayLine] -> Math ()

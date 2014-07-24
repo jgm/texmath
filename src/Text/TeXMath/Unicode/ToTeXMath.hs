@@ -65,14 +65,6 @@ getTeXMath s e = concatMap (charToString e) s
 commands :: [String]
 commands = ["mathaccent", "mathradical", "mathover", "mathunder"]
 
-escapeLaTeX :: Char -> TeX
-escapeLaTeX c
-  | c `elem` "#$%&_{}" = Literal ("\\" ++ [c])
-  | c == '~' = ControlSeq "\\textasciitilde"
-  | c == '^' = ControlSeq "\\textasciicircum"
-  | c == '\\' = ControlSeq "\\textbackslash"
-  | otherwise = Token c
-
 -- Guaranteed to return latex safe string
 charToString :: Env -> Char -> [TeX]
 charToString e c =
