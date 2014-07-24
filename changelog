@@ -26,12 +26,12 @@ texmath (0.7)
   * Text.TeXMath.Writers.TeXMath interface change
     - Two functions are now exported
       1. writeTeXMath :: [Exp] -> String
-      2. writeTeXMathIn :: DisplayType -> [Exp] -> String
-    The latter also wraps the result in the correct environment
+      2. writeTeXMathWith :: Env -> [Exp] -> String
+      3. addLaTeXEnvironment :: DisplayType -> String -> String
   * Text.TeXMath.Writers.(OMML|MathML) changes
     - showExp is no longer exported from either module
   * Text.TeXMath.Unicode.ToTeXMath
-    - Now exports getTeXMathIn :: Env -> String -> String
+    - Now exports getTeXMath :: Env -> String -> String
     which allows the user to specify availible packages
 
 texmath (0.6.7)

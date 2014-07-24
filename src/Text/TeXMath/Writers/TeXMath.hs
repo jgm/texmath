@@ -1,3 +1,4 @@
+{-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -17,31 +18,28 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 -}
 
-module Text.TeXMath.Writers.TeXMath (writeTeXMath, writeTeXMathIn) where
+module Text.TeXMath.Writers.TeXMath (writeTeXMath, writeTeXMathWith, addLaTeXEnvironment ) where
 
 import Text.TeXMath.Types
-import Data.List (intersperse)
 import Text.TeXMath.Unicode.ToTeXMath (getTeXMath)
 import qualified Text.TeXMath.Shared as S
 import Data.Maybe (fromMaybe)
 import Data.Generics (everywhere, mkT)
-import Text.ParserCombinators.Parsec hiding ((<|>))
-import Control.Applicative ((<$), (<$>), (<|>))
+import Control.Applicative ((<$>), (<|>), Applicative)
 import Data.Char (isLetter, isAlphaNum, isPunctuation)
 import qualified Data.Map as M
 import Data.Maybe (listToMaybe)
+import Control.Monad.Reader (MonadReader, runReader, Reader, asks)
+import Control.Monad.Writer(MonadWriter, WriterT, execWriterT, tell, censor)
 
--- | Transforms an expression tree to equivalent LaTeX without any
--- surrounding environment
+-- | Transforms an expression tree to equivalent LaTeX with the default
+-- packages (amsmath and amssymb)
 writeTeXMath :: [Exp] -> String
-writeTeXMath es =  -- we remove the leading { and trailing } at outer level
-  drop 1 $ init $ renderTeX (Grouped $ concatMap (writeExp . fixTree) es) ""
+writeTeXMath = writeTeXMathWith defaultEnv
 
--- | Transforms an expression tree to LaTeX with the
--- corresponding LaTeX environment
-writeTeXMathIn :: DisplayType -> [Exp] -> String
-writeTeXMathIn dt es =
-  let math = writeTeXMath es in
+-- | Adds the correct LaTeX environment around a TeXMath fragment
+addLaTeXEnvironment :: DisplayType -> String -> String
+addLaTeXEnvironment dt math =
     case dt of
       DisplayInline -> "\\(" ++ math ++ "\\)"
       DisplayBlock  -> "\\[" ++ math ++ "\\]"
@@ -70,8 +68,18 @@ renderTeX Space cs
   | otherwise                 = ' ':cs
 
 startsWith :: (Char -> Bool) -> String -> Bool
-startsWith p (c:cs) = p c
+startsWith p (c:_) = p c
 startsWith _ []     = False
+
+-- |  Transforms an expression tree to equivalent LaTeX with the specified
+-- packages
+writeTeXMathWith :: Env -> [Exp] -> String
+writeTeXMathWith env e = drop 1 . init . flip renderTeX "" . Grouped $
+                            runExpr env $
+                              mapM_ (writeExp . (fixTree env)) e
+
+runExpr :: Env -> Math () -> [TeX]
+runExpr e m = flip runReader e $ execWriterT (runTeXMath m)
 
 square :: [String]
 square = ["\\sqrt", "\\surd"]
@@ -81,110 +89,144 @@ isControlSeq ['\\',c] = c /= ' '
 isControlSeq ('\\':xs) = all isLetter xs
 isControlSeq _ = False
 
-writeExp :: Exp -> [TeX]
-writeExp (ENumber s) = map Token (getTeXMath s)
-writeExp (EGrouped es) = [Grouped $ concatMap writeExp es]
-writeExp (EDelimited open close es) =
-  ControlSeq "\\left" :
-  Literal (getTeXMath open) :
-  concatMap writeExp es ++
-  [ControlSeq "\\right",
-   Literal (getTeXMath close)]
-writeExp (EIdentifier s) =
-  case getTeXMath s of
-       [c] -> [Token c] -- don't brace single token identifiers
-       cs | isControlSeq cs -> [ControlSeq cs]
+newtype Math a = Math {runTeXMath :: WriterT [TeX] (Reader Env) a}
+                  deriving (Functor, Applicative, Monad, MonadReader Env
+                           , MonadWriter [TeX])
+
+getTeXMathM :: String -> Math String
+getTeXMathM s = asks (getTeXMath s)
+
+tellGroup :: Math () -> Math ()
+tellGroup = censor ((:[]) . Grouped)
+
+writeExp :: Exp -> Math ()
+writeExp (ENumber s) = tell =<< (map Token) <$> (getTeXMathM s)
+writeExp (EGrouped es) = tellGroup (mapM_ writeExp es)
+writeExp (EDelimited open close es) =  do
+  tell [ControlSeq "\\left" ]
+  tell =<< (:[]) . Literal <$>  (getTeXMathM open)
+  mapM_ writeExp es
+  tell [ControlSeq "\\right"]
+  tell =<< (:[]) . Literal <$> (getTeXMathM close)
+writeExp (EIdentifier s) = do
+  math <- getTeXMathM s
+  case math of
+       [c] -> tell [Token c] -- don't brace single token identifiers
+       cs | isControlSeq cs -> tell [ControlSeq cs]
           | otherwise       -> writeExp (EMathOperator s)
-writeExp o@(EMathOperator s) =
+writeExp o@(EMathOperator s) = do
+  math <- getTeXMathM s
   case getOperator o of
-       Just o   -> [o]
-       Nothing  -> case getTeXMath s of
-                        ""  -> []
+       Just op   -> tell [op]
+       Nothing  -> case math of
+                        ""  -> return ()
                         xs | all isLetter xs ->
-                              [ControlSeq "\\operatorname",
+                              tell [ControlSeq "\\operatorname",
                                Grouped [Literal xs]]
-                           | otherwise -> [Literal xs]
-writeExp (ESymbol _ s) = [Literal $ getTeXMath s]
-writeExp (ESpace width) = [ControlSeq $ getSpaceCommand width]
-writeExp (EBinary s e1 e2)
-  | s `elem` square = [ControlSeq s,
-                       Token '['] ++
-                       writeExp e1 ++
-                      [Token ']',
-                       Grouped (writeExp e2)]
-  | otherwise = [ControlSeq s,
-                 Grouped (writeExp e1),
-                 Grouped (writeExp e2)]
-writeExp (ESub b e1) =
-  writeExp b ++ [Token '_', Grouped (writeExp e1)]
-writeExp (ESuper b e1) =
-  writeExp b ++ [Token '^', Grouped (writeExp e1)]
-writeExp (ESubsup b e1 e2) =
-  writeExp b ++ [Token '_', Grouped (writeExp e1),
-   Token '^', Grouped (writeExp e2)]
-writeExp (EDown b e1) =
-   writeExp b ++ [ControlSeq "\\limits", Token '_',
-   Grouped (writeExp e1)]
-writeExp (EUp b e1) =
-   writeExp b ++ [ControlSeq "\\limits", Token '^',
-   Grouped (writeExp e1)]
-writeExp (EDownup b e1 e2) =
-   writeExp b ++ [ControlSeq "\\limits",
-   Token '_', Grouped (writeExp e1),
-   Token '^', Grouped (writeExp e2)]
+                           | otherwise -> tell [Literal xs]
+writeExp (ESymbol _ s) = tell =<< ((:[]) . Literal <$> getTeXMathM s)
+writeExp (ESpace width) = tell [ControlSeq $ getSpaceCommand width]
+writeExp (EBinary s e1 e2) = do
+  tell [ControlSeq s]
+  if (s `elem` square)
+    then tell [Token '['] >> writeExp e1 >> tell [Token ']']
+    else tellGroup (writeExp e1)
+  tellGroup (writeExp e2)
+writeExp (ESub b e1) = do
+  writeExp b
+  tell [Token '_']
+  tellGroup (writeExp e1)
+writeExp (ESuper b e1) = do
+  writeExp b
+  tell [Token '^']
+  tellGroup (writeExp e1)
+writeExp (ESubsup b e1 e2) = do
+  writeExp b
+  tell [Token '_']
+  tellGroup (writeExp e1)
+  tell [Token '^']
+  tellGroup (writeExp e2)
+writeExp ( EDown b e1) = do
+   writeExp b
+   tell [ControlSeq "\\limits", Token '_']
+   tellGroup (writeExp e1)
+writeExp (EUp b e1) = do
+   writeExp b
+   tell [ControlSeq "\\limits", Token '^']
+   tellGroup (writeExp e1)
+writeExp (EDownup b e1 e2) = do
+   writeExp b
+   tell [ControlSeq "\\limits", Token '_']
+   tellGroup (writeExp e1)
+   tell [Token '^']
+   tellGroup (writeExp e2)
 writeExp (EOver b e1) =
   case b of
     (EMathOperator _) -> writeExp (EUp b e1)
-    _ -> [ControlSeq "\\overset", Grouped (writeExp b), Grouped (writeExp e1)]
+    _ -> do
+          tell [ControlSeq "\\overset"]
+          tellGroup (writeExp b)
+          tellGroup (writeExp e1)
 writeExp (EUnder b e1) =
   case b of
     (EMathOperator _) -> writeExp (EDown b e1)
-    _ -> [ControlSeq "\\underset", Grouped (writeExp b), Grouped (writeExp e1)]
+    _ -> do
+          tell [ControlSeq "\\underset"]
+          tellGroup (writeExp b)
+          tellGroup (writeExp e1)
 writeExp (EUnderover b e1 e2) =
   case b of
     (EMathOperator _) -> writeExp (EDownup b e1 e2)
     _ -> writeExp (EUnder (EOver b e2) e1)
-writeExp (EUnary s e) = [ControlSeq s, Grouped (writeExp e)]
-writeExp (EScaled size e) =
+writeExp (EUnary s e) = do
+    tell [ControlSeq s]
+    tellGroup (writeExp e)
+writeExp (EScaled size e) = do
   case S.getScalerCommand size of
-       Just s  -> [ControlSeq s, Grouped (writeExp e)]
-       Nothing -> [Grouped (writeExp e)]
-writeExp (EStretchy (ESymbol Open e)) =
-  case getTeXMath e of
-       "" -> []
-       e' -> [ControlSeq "\\left", Literal e']
-writeExp (EStretchy (ESymbol Close e)) =
-  case getTeXMath e of
-       "" -> []
-       e' -> [ControlSeq "\\right", Literal e']
+       Just s  -> tell [ControlSeq s]
+       Nothing -> return ()
+  tellGroup (writeExp e)
+writeExp (EStretchy (ESymbol Open e)) = do
+  math <- getTeXMathM e
+  case math of
+       "" -> return ()
+       e' -> tell [ControlSeq "\\left", Literal e']
+writeExp (EStretchy (ESymbol Close e)) = do
+  math <- getTeXMathM e
+  case math of
+       "" -> return ()
+       e' -> tell [ControlSeq "\\right", Literal e']
 writeExp (EStretchy e) = writeExp e
-writeExp (EText ttype s) =
-  [ControlSeq (getTeXMathTextCommand ttype),
-   Grouped [Literal $ getTeXMath s]]
+writeExp (EText ttype s) = do
+  txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
+  math <- getTeXMathM s
+  tell [ControlSeq txtcmd, Grouped [Literal math]]
 writeExp (EArray aligns rows) = table aligns rows
 
-table :: [Alignment] -> [ArrayLine] -> [TeX]
-table as rows =
-  [ControlSeq "\\begin",
-   Grouped [Literal "array"],
-   Grouped [Literal columnAligns],
-   Token '\n'] ++
-   concatMap row rows ++
-   [ControlSeq "\\end",
-   Grouped [Literal "array"]]
+table :: [Alignment] -> [ArrayLine] -> Math ()
+table as rows = do
+  tell [ControlSeq "\\begin", Grouped [Literal "array"],
+         Grouped [Literal columnAligns], Token '\n']
+  mapM_ row rows
+  tell [ControlSeq "\\end", Grouped [Literal "array"]]
   where
     columnAligns = map alignmentToLetter as
     alignmentToLetter AlignLeft = 'l'
     alignmentToLetter AlignCenter = 'c'
     alignmentToLetter AlignRight = 'r'
-    alignmentToLetter AlignDefault = 'c'
+    alignmentToLetter AlignDefault = 'l'
 
-row :: ArrayLine -> [TeX]
-row cells =
-  concat  (intersperse [Space, Token '&', Space] (map cell cells)) ++ [Space,
-  Literal "\\\\", Token '\n']
+row :: ArrayLine -> Math ()
+row cells =  do
+  case cells of
+    [] -> return ()
+    (c:cs)  -> cell c >>
+                censor ([Space, Token '&', Space] ++) (mapM_ cell cs)
+  tell [Space, Literal "\\\\", Token '\n']
   where
-    cell es = concatMap writeExp es
+    cell es = mapM_ writeExp es
+
+
 
 -- Utility
 
@@ -211,24 +253,6 @@ spaceCommands =
            , ("~", ESpace "0.333em")
            , ("\\quad", ESpace "1.0em")
            , ("\\qquad", ESpace "2.0em")]
-
-
--- Text commands availible in amsmath
-formats :: [String]
-formats = ["\\mathrm", "\\mathit", "\\mathsf", "\\mathtt", "\\mathfrak", "\\mathcal"]
-
-alts :: [(String, String)]
-alts = [ ("\\mathbfit", "\\mathbf"), ("\\mathbfsfup", "\\mathbf"), ("\\mathbfsfit", "\\mathbf")
-       , ("\\mathbfscr", "\\mathcal"), ("\\mathbffrak", "\\mathfrak"), ("\\mathsfit", "\\mathsf")]
-
-getTeXMathTextCommand :: TextType -> String
-getTeXMathTextCommand t
-  | cmd `elem` formats = cmd
-  | otherwise = fromMaybe "\\mathrm" (lookup cmd alts)
-  where
-    cmd = S.getLaTeXTextCommand t
-
--- Constructors
 
 -- Fix up
 
@@ -258,34 +282,34 @@ reorderDiacritical (EUnderover b e1 e@(ESymbol Accent _)) =
   reorderDiacritical' Over (EUnder b e1) e
 reorderDiacritical x = x
 
-matchStretch' :: [Exp] -> Int
-matchStretch'  [] = 0
-matchStretch' ((EStretchy (ESymbol Open s)): xs) =
-  let s' = getTeXMath s in
-    case s' of {"" -> 0; _ -> 1} + (matchStretch' xs)
-matchStretch' ((EStretchy (ESymbol Close s)): xs) =
-  let s' = getTeXMath s in
-    case s' of {"" -> 0; _ -> (-1)} + (matchStretch' xs)
-matchStretch' (_:xs) = matchStretch' xs
+matchStretch' :: Env -> [Exp] -> Int
+matchStretch' _ [] = 0
+matchStretch' e ((EStretchy (ESymbol Open s)): xs) =
+  let s' = getTeXMath s e in
+    case s' of {"" -> 0; _ -> 1} + (matchStretch' e xs)
+matchStretch' e ((EStretchy (ESymbol Close s)): xs) =
+  let s' = getTeXMath s e in
+    case s' of {"" -> 0; _ -> (-1)} + (matchStretch' e xs)
+matchStretch' e (_:xs) = matchStretch' e xs
 
 -- Ensure that the lefts match the rights.
-matchStretch :: [Exp] -> [Exp]
-matchStretch es
+matchStretch :: Env -> [Exp] -> [Exp]
+matchStretch e es
   | n < 0 = (replicate (0 - n) $ EStretchy (ESymbol Open ".")) ++ es
   | n > 0 = es ++ (replicate n $ EStretchy (ESymbol Close "."))
   | otherwise = es
   where
-    n = matchStretch' es
+    n = matchStretch' e es
 
-ms :: Exp -> Exp
-ms (EGrouped xs) = EGrouped (matchStretch xs)
-ms (EDelimited o c xs) = EDelimited o c (matchStretch xs)
-ms (EArray as rs) = EArray as (map (map matchStretch) rs)
-ms x = x
+ms :: Env -> Exp -> Exp
+ms e (EGrouped xs) = EGrouped (matchStretch e xs)
+ms e (EDelimited o c xs) = EDelimited o c (matchStretch e xs)
+ms e (EArray as rs) = EArray as (map (map (matchStretch e)) rs)
+ms _ x = x
 
-fixTree :: Exp -> Exp
-fixTree = everywhere
-            ( mkT ms
+fixTree :: Env -> Exp -> Exp
+fixTree e = everywhere
+            ( mkT (ms e)
             . mkT reorderDiacritical
             . mkT removeAccentStretch )
 

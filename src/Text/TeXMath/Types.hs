@@ -1,4 +1,4 @@
-{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE DeriveDataTypeable, TypeSynonymInstances #-}
 {-
 Copyright (C) 2009 John MacFarlane <jgm@berkeley.edu>
 
@@ -23,7 +23,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 module Text.TeXMath.Types (Exp(..), TeXSymbolType(..), ArrayLine,
                            TextType(..), Alignment(..), DisplayType(..),
                            Operator(..), FormType(..), Record(..),
-                           Property, Position(..))
+                           Property, Position(..), Env, defaultEnv)
 where
 
 import Data.Generics
@@ -115,3 +115,10 @@ data Record = Record { point :: String -- ^ Hex value
                      } deriving (Show)
 
 data Position = Under | Over
+
+-- | List of available packages
+type Env = [String]
+
+-- | Contains @amsmath@ and @amssymbol@
+defaultEnv :: [String]
+defaultEnv = ["amsmath", "amssymbol"]
