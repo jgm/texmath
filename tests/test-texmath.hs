@@ -83,6 +83,7 @@ runWriterTest f input output = do
   expr <- (\fn -> (fromJust (lookup (takeExtension input) readers)) fn)
               <$> readFile input
   let r = f (either (const []) id expr)
+  --writeFile output r -- uncomment to regen rests (use with care!)
   out_t <- readFile output
   if (r == out_t)
      then printPass input output >> return (Pass input output)
