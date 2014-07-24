@@ -40,10 +40,9 @@ LaTeX Project Public License.
 
 -}
 
-module Text.TeXMath.Unicode.ToTeXMath (getTeXMathIn
-                                      , getTeXMath
+module Text.TeXMath.Unicode.ToTeXMath ( getTeXMath
                                       , records
-                                      , Env) where
+                                      ) where
 
 import qualified Data.Map as M
 import Text.TeXMath.Types
@@ -54,35 +53,21 @@ import Text.TeXMath.Unicode.ToASCII (getASCII)
 import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import qualified Text.TeXMath.Shared as S
 
-type Env = [String]
-
--- Availible packages
-defaultEnv :: Env
-defaultEnv = ["amsmath", "amssymb"]
-
--- Categories which require braces
-commands :: [String]
-commands = ["mathaccent", "mathradical", "mathover", "mathunder"]
-
--- | 'getTeXMathIn' with the default environment (amsmath and amssymbol)
-getTeXMath ::  String -> String
-getTeXMath = getTeXMathIn defaultEnv
-
 -- | Converts a string of unicode characters into a strong of equivalent
 -- TeXMath commands. An environment is a list of strings specifying which
--- additional packages are availible.
-getTeXMathIn :: Env -> String -> String
-getTeXMathIn e s = concatMap (charToString e) s
+-- additional packages are available.
+getTeXMath :: String -> Env -> String
+getTeXMath s e = concatMap (charToString e) s
 
 -- Guaranteed to return latex safe string
 charToString :: Env -> Char -> String
 charToString e c =
   fromMaybe fallback
-    (charToLaTeXString e c <|> textConvert c)
+    (charToLaTeXString e c <|> textConvert e c)
   where
     a = getASCII c
     fallback = concatMap asciiToLaTeX a
-    asciiToLaTeX ac = fromMaybe [ac] (charToLaTeXString e ac)
+    asciiToLaTeX ac = fromMaybe (escapeLaTeX ac) (charToLaTeXString e ac)
 
 -- Takes a single character and attempts to convert it to a latex string
 charToLaTeXString :: Env -> Char -> Maybe String
