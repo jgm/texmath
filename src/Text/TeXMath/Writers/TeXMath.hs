@@ -66,8 +66,8 @@ writeExp o@(EMathOperator s) =
 writeExp (ESymbol _ s) = getTeXMath s
 writeExp (ESpace width) = S.getSpaceCommand width
 writeExp (EBinary s e1 e2)
-  | s `elem` square = s ++ (evalInSquare e1) ++ (evalInBraces e2) ++ " "
-  | otherwise = s ++ (evalInBraces e1) ++ (evalInBraces e2) ++ " "
+  | s `elem` square = s ++ (evalInSquare e1) ++ (evalInBraces e2)
+  | otherwise = s ++ (evalInBraces e1) ++ (evalInBraces e2)
 writeExp (ESub b e1) = under b e1
 writeExp (ESuper b e1) = over b e1
 writeExp (ESubsup b e1 e2) = underOver b e1 e2
