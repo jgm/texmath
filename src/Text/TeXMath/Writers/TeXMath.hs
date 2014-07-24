@@ -33,6 +33,9 @@ import Control.Monad.Reader (MonadReader, runReader, Reader, asks)
 import Control.Monad.Writer(MonadWriter, WriterT, execWriterT, tell, censor)
 import Text.TeXMath.TeX
 
+-- import Debug.Trace
+-- tr' x = trace (show x) x
+
 -- | Transforms an expression tree to equivalent LaTeX with the default
 -- packages (amsmath and amssymb)
 writeTeXMath :: [Exp] -> String
@@ -87,17 +90,16 @@ writeExp (EIdentifier s) = do
   case math of
        [Token c]       -> tell [Token c] -- don't brace single token identifiers
        [ControlSeq cs] -> tell [ControlSeq cs]
-       cs              -> tellGroup cs
+       cs              -> tell [ControlSeq "\\operatorname"] >> tellGroup cs
 writeExp o@(EMathOperator s) = do
   math <- getTeXMathM s
   case getOperator o of
        Just op   -> tell [op]
        Nothing  -> case math of
                         []  -> return ()
-                        [Literal xs] | all isLetter xs ->
-                              tell [ControlSeq "\\operatorname",
-                               Grouped [Literal xs]]
-                        xs -> tell xs
+                        xs@(ControlSeq _:_) -> tell xs
+                        xs -> tell [ControlSeq "\\operatorname" >>
+                              tellGroup [Literal xs]
 writeExp (ESymbol _ s) = tell =<< ((:[]) . Literal <$> getTeXMathM s)
 writeExp (ESpace width) = tell [ControlSeq $ getSpaceCommand width]
 writeExp (EBinary s e1 e2) = do
