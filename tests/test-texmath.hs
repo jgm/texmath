@@ -41,7 +41,7 @@ printPass :: FilePath -> FilePath -> IO ()
 printPass _inp _out = return () -- putStrLn $ "PASSED:  " ++ inp ++ " ==> " ++ out
 
 printFail :: FilePath -> FilePath -> String -> IO ()
-printFail inp out actual =  withTempDirectory "." "texmath-test." $ \tmpDir -> do
+printFail inp out actual =  withTempDirectory "." (inp ++ ".") $ \tmpDir -> do
   putStrLn $ "FAILED:  " ++ inp ++ " ==> " ++ out
   readFile out >>= writeFile (tmpDir </> "expected") . ensureFinalNewline
   writeFile (tmpDir </> "actual") $ ensureFinalNewline actual
