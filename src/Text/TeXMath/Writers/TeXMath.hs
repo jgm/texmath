@@ -86,18 +86,18 @@ writeExp (EIdentifier s) = do
   math <- getTeXMathM s
   case math of
        [c] -> tell [Token c] -- don't brace single token identifiers
-       cs | isControlSeq cs -> tell [ControlSeq cs]
-          | otherwise       -> writeExp (EMathOperator s)
+       [ControlSeq cs] -> tell [ControlSeq cs]
+       _               -> writeExp (EMathOperator s)
 writeExp o@(EMathOperator s) = do
   math <- getTeXMathM s
   case getOperator o of
        Just op   -> tell [op]
        Nothing  -> case math of
-                        ""  -> return ()
-                        xs | all isLetter xs ->
+                        []  -> return ()
+                        [Literal xs] | all isLetter xs ->
                               tell [ControlSeq "\\operatorname",
                                Grouped [Literal xs]]
-                           | otherwise -> tell [Literal xs]
+                        xs -> tell xs
 writeExp (ESymbol _ s) = tell =<< ((:[]) . Literal <$> getTeXMathM s)
 writeExp (ESpace width) = tell [ControlSeq $ getSpaceCommand width]
 writeExp (EBinary s e1 e2) = do
@@ -120,7 +120,7 @@ writeExp (ESubsup b e1 e2) = do
   tellGroup (writeExp e1)
   tell [Token '^']
   tellGroup (writeExp e2)
-writeExp ( EDown b e1) = do
+writeExp (EDown b e1) = do
    writeExp b
    tell [ControlSeq "\\limits", Token '_']
    tellGroup (writeExp e1)
@@ -163,18 +163,18 @@ writeExp (EScaled size e) = do
 writeExp (EStretchy (ESymbol Open e)) = do
   math <- getTeXMathM e
   case math of
-       "" -> return ()
-       e' -> tell [ControlSeq "\\left", Literal e']
+       [] -> return ()
+       e' -> tell [ControlSeq "\\left"] >> writeExp e'
 writeExp (EStretchy (ESymbol Close e)) = do
   math <- getTeXMathM e
   case math of
-       "" -> return ()
-       e' -> tell [ControlSeq "\\right", Literal e']
+       [] -> return ()
+       e' -> tell [ControlSeq "\\right"] >> writeExp e'
 writeExp (EStretchy e) = writeExp e
 writeExp (EText ttype s) = do
   txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
   math <- getTeXMathM s
-  tell [ControlSeq txtcmd, Grouped [Literal math]]
+  tell [ControlSeq txtcmd, Grouped math]
 writeExp (EArray aligns rows) = table aligns rows
 
 table :: [Alignment] -> [ArrayLine] -> Math ()
@@ -257,13 +257,11 @@ reorderDiacritical (EUnderover b e1 e@(ESymbol Accent _)) =
 reorderDiacritical x = x
 
 matchStretch' :: Env -> [Exp] -> Int
-matchStretch' _ [] = 0
+matchStretch'  _ [] = 0
 matchStretch' e ((EStretchy (ESymbol Open s)): xs) =
-  let s' = getTeXMath s e in
-    case s' of {"" -> 0; _ -> 1} + (matchStretch' e xs)
+  (if null (getTeXMath s e) then 0 else 1) + matchStretch' e xs
 matchStretch' e ((EStretchy (ESymbol Close s)): xs) =
-  let s' = getTeXMath s e in
-    case s' of {"" -> 0; _ -> (-1)} + (matchStretch' e xs)
+  (if null (getTeXMath s e) then 0 else 1) + matchStretch' e xs
 matchStretch' e (_:xs) = matchStretch' e xs
 
 -- Ensure that the lefts match the rights.

@@ -46,6 +46,7 @@ module Text.TeXMath.Unicode.ToTeXMath ( getTeXMath
                                       ) where
 
 import qualified Data.Map as M
+import Text.TeXMath.TeX
 import Text.TeXMath.Types
 import Data.Maybe (fromMaybe, catMaybes, listToMaybe)
 import Control.Applicative hiding (optional)
@@ -57,9 +58,8 @@ import qualified Text.TeXMath.Shared as S
 -- | Converts a string of unicode characters into a strong of equivalent
 -- TeXMath commands. An environment is a list of strings specifying which
 -- additional packages are available.
-getTeXMath :: String -> Env -> String
+getTeXMath :: String -> Env -> [TeX]
 getTeXMath s e = concatMap (charToString e) s
-
 
 escapeLaTeX :: Char -> String
 escapeLaTeX c
@@ -70,32 +70,40 @@ escapeLaTeX c
   | otherwise = [c]
 
 -- Guaranteed to return latex safe string
-charToString :: Env -> Char -> String
+charToString :: Env -> Char -> [TeX]
 charToString e c =
   fromMaybe fallback
     (charToLaTeXString e c <|> textConvert e c)
   where
     a = getASCII c
     fallback = concatMap asciiToLaTeX a
-    asciiToLaTeX ac = fromMaybe (escapeLaTeX ac) (charToLaTeXString e ac)
+    asciiToLaTeX ac = fromMaybe [Token $ escapeLaTeX ac]
+                            (charToLaTeXString e ac)
 
 -- Takes a single character and attempts to convert it to a latex string
-charToLaTeXString :: Env -> Char -> Maybe String
+charToLaTeXString :: Env -> Char -> Maybe [TeX]
 charToLaTeXString e c = do
   let environment = e ++ [""]
   v <- M.lookup c recordsMap
   -- Required packages for the command
   let required = filter (\z -> head z /= '-') $ (words . requirements) v
   let alts = getAlternatives (comments v)
-  if null required || any (`elem` required) environment
-     then Just $ latex v
-     else listToMaybe $ catMaybes (map (flip lookup alts) environment)
+  latexCommand <-
+    if null required || any (`elem` required) environment
+       then Just $ case latex v of
+                         ltx | isControlSeq ltx -> [ControlSeq ltx]
+                             | otherwise        -> [Literal ltx]
+       else (:[]) . Literal  <$>
+              listToMaybe (catMaybes (map (flip lookup alts) environment))
+  return $ if category v `elem` commands
+              then latexCommand ++ [Grouped []]
+              else latexCommand
 
 -- Convert special unicode characters not in the standard mapping
-textConvert :: Env -> Char -> Maybe String
+textConvert :: Env -> Char -> Maybe [TeX]
 textConvert env c = do
   (ttype, v) <- fromUnicode c
-  return $ S.getLaTeXTextCommand env ttype ++ ['{', v, '}']
+  return [ControlSeq (S.getLaTeXTextCommand env ttype), Grouped [Token v]]
 
 -- Parses the comment field to find alternatives to commands
 getAlternatives :: String ->  [(String, String)]
