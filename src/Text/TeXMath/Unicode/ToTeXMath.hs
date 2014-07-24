@@ -61,13 +61,17 @@ import qualified Text.TeXMath.Shared as S
 getTeXMath :: String -> Env -> [TeX]
 getTeXMath s e = concatMap (charToString e) s
 
-escapeLaTeX :: Char -> String
+-- Categories which require braces
+commands :: [String]
+commands = ["mathaccent", "mathradical", "mathover", "mathunder"]
+
+escapeLaTeX :: Char -> TeX
 escapeLaTeX c
-  | c `elem` "#$%&_{}" = "\\" ++ [c]
-  | c == '~' = "\\textasciitilde"
-  | c == '^' = "\\textasciicircum"
-  | c == '\\' = "\\textbackslash"
-  | otherwise = [c]
+  | c `elem` "#$%&_{}" = Literal ("\\" ++ [c])
+  | c == '~' = ControlSeq "\\textasciitilde"
+  | c == '^' = ControlSeq "\\textasciicircum"
+  | c == '\\' = ControlSeq "\\textbackslash"
+  | otherwise = Token c
 
 -- Guaranteed to return latex safe string
 charToString :: Env -> Char -> [TeX]
@@ -75,10 +79,8 @@ charToString e c =
   fromMaybe fallback
     (charToLaTeXString e c <|> textConvert e c)
   where
-    a = getASCII c
-    fallback = concatMap asciiToLaTeX a
-    asciiToLaTeX ac = fromMaybe [Token $ escapeLaTeX ac]
-                            (charToLaTeXString e ac)
+    fallback = concatMap asciiToLaTeX $ getASCII c
+    asciiToLaTeX ac = fromMaybe [escapeLaTeX ac] (charToLaTeXString e ac)
 
 -- Takes a single character and attempts to convert it to a latex string
 charToLaTeXString :: Env -> Char -> Maybe [TeX]

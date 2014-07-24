@@ -70,7 +70,7 @@ newtype Math a = Math {runTeXMath :: WriterT [TeX] (Reader Env) a}
                   deriving (Functor, Applicative, Monad, MonadReader Env
                            , MonadWriter [TeX])
 
-getTeXMathM :: String -> Math String
+getTeXMathM :: String -> Math [TeX]
 getTeXMathM s = asks (getTeXMath s)
 
 tellGroup :: Math () -> Math ()
@@ -81,16 +81,16 @@ writeExp (ENumber s) = tell =<< getTeXMathM s
 writeExp (EGrouped es) = tellGroup (mapM_ writeExp es)
 writeExp (EDelimited open close es) =  do
   tell [ControlSeq "\\left" ]
-  tell =<< (:[]) . Literal <$>  (getTeXMathM open)
+  tell =<< getTeXMathM open
   mapM_ writeExp es
   tell [ControlSeq "\\right"]
-  tell =<< (:[]) . Literal <$> (getTeXMathM close)
+  tell =<< getTeXMathM close
 writeExp (EIdentifier s) = do
   math <- getTeXMathM s
   case math of
        [Token c]       -> tell [Token c] -- don't brace single token identifiers
        [ControlSeq cs] -> tell [ControlSeq cs]
-       cs              -> tell [ControlSeq "\\operatorname"] >> tellGroup cs
+       cs              -> tell [ControlSeq "\\operatorname", Grouped cs]
 writeExp o@(EMathOperator s) = do
   math <- getTeXMathM s
   case getOperator o of
@@ -98,14 +98,15 @@ writeExp o@(EMathOperator s) = do
        Nothing  -> case math of
                         []  -> return ()
                         xs@(ControlSeq _:_) -> tell xs
-                        xs -> tell [ControlSeq "\\operatorname" >>
-                              tellGroup [Literal xs]
-writeExp (ESymbol _ s) = tell =<< ((:[]) . Literal <$> getTeXMathM s)
+                        xs -> tell [ControlSeq "\\operatorname", Grouped xs]
+writeExp (ESymbol _ s) = tell =<< getTeXMathM s
 writeExp (ESpace width) = tell [ControlSeq $ getSpaceCommand width]
 writeExp (EBinary s e1 e2) = do
   tell [ControlSeq s]
   if (s `elem` square)
-    then tell [Token '['] >> writeExp e1 >> tell [Token ']']
+    then do tell [Token '[']
+            writeExp e1
+            tell [Token ']']
     else tellGroup (writeExp e1)
   tellGroup (writeExp e2)
 writeExp (ESub b e1) = do
@@ -166,12 +167,12 @@ writeExp (EStretchy (ESymbol Open e)) = do
   math <- getTeXMathM e
   case math of
        [] -> return ()
-       e' -> tell [ControlSeq "\\left"] >> writeExp e'
+       e' -> tell [ControlSeq "\\left"] >> tell e'
 writeExp (EStretchy (ESymbol Close e)) = do
   math <- getTeXMathM e
   case math of
        [] -> return ()
-       e' -> tell [ControlSeq "\\right"] >> writeExp e'
+       e' -> tell [ControlSeq "\\right"] >> tell e'
 writeExp (EStretchy e) = writeExp e
 writeExp (EText ttype s) = do
   txtcmd <- asks (flip S.getLaTeXTextCommand ttype)

@@ -30,7 +30,7 @@ module Text.TeXMath.Shared
 import Text.TeXMath.Types
 import qualified Data.Map as M
 import Data.Maybe (fromMaybe)
-import Control.Applicative ((<$>), (<|>))
+import Control.Applicative ((<$>))
 import Control.Monad (guard)
 
 -- | Maps TextType to the corresponding MathML mathvariant
