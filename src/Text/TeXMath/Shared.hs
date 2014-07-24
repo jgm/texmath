@@ -104,8 +104,8 @@ spaceCommands =
            , ("\\:", ESpace "0.222em")
            , ("\\;", ESpace "0.278em")
            , ("~", ESpace "0.333em")
-           , ("\\quad", ESpace "1.0em")
-           , ("\\qquad", ESpace "2.0em")]
+           , ("\\quad ", ESpace "1.0em")
+           , ("\\qquad ", ESpace "2.0em")]
 
 
 --TextType to (MathML, LaTeX)

@@ -59,7 +59,7 @@ writeExp (EIdentifier s) = inBraces $ getTeXMath s
 writeExp o@(EMathOperator s) =
   fromMaybe ("\\operatorname" ++ (inBraces $ escapeSpace $ getTeXMath s)) (getOperator o)
 writeExp (ESymbol _ s) = getTeXMath s
-writeExp (ESpace width) = " " ++ S.getSpaceCommand width
+writeExp (ESpace width) = S.getSpaceCommand width
 writeExp (EBinary s e1 e2)
   | s `elem` square = s ++ (evalInSquare e1) ++ (evalInBraces e2) ++ " "
   | otherwise = s ++ (evalInBraces e1) ++ (evalInBraces e2) ++ " "
