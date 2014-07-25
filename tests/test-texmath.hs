@@ -8,7 +8,12 @@ import Text.TeXMath
 import System.Exit
 import Control.Applicative
 import GHC.IO.Encoding (setLocaleEncoding)
-import Data.Maybe
+import qualified Data.Text as T
+import qualified Data.Text.IO as T
+
+-- strict version of readFile
+readFile' :: FilePath -> IO String
+readFile' f = T.unpack <$> T.readFile f
 
 data Status = Pass FilePath FilePath
             | Fail FilePath FilePath
@@ -18,10 +23,15 @@ data Status = Pass FilePath FilePath
 type Ext = String
 
 readers :: [(Ext, String -> Either String [Exp])]
-readers = [(".tex", readTeXMath), (".mml", readMathML)]
+readers = [ (".tex", readTeXMath)
+          , (".mml", readMathML)
+          ]
 
 writers :: [(Ext, [Exp] -> String)]
-writers = [(".mml", ppTopElement . writeMathML DisplayBlock), (".tex", writeTeXMath), (".omml", ppTopElement . writeOMML DisplayBlock)]
+writers = [ (".mml", ppTopElement . writeMathML DisplayBlock)
+          , (".tex", writeTeXMath)
+          , (".omml", ppTopElement . writeOMML DisplayBlock)
+          ]
 
 main :: IO ()
 main = do
@@ -43,7 +53,7 @@ printPass _inp _out = return () -- putStrLn $ "PASSED:  " ++ inp ++ " ==> " ++ o
 printFail :: FilePath -> FilePath -> String -> IO ()
 printFail inp out actual =  withTempDirectory "." (inp ++ ".") $ \tmpDir -> do
   putStrLn $ "FAILED:  " ++ inp ++ " ==> " ++ out
-  readFile out >>= writeFile (tmpDir </> "expected") . ensureFinalNewline
+  readFile' out >>= writeFile (tmpDir </> "expected") . ensureFinalNewline
   writeFile (tmpDir </> "actual") $ ensureFinalNewline actual
   hFlush stdout
   _ <- runProcess "diff" ["-u", tmpDir </> "expected", tmpDir </> "actual"]
@@ -72,31 +82,33 @@ runReader ext f = do
 
 runWriter ::  String -> ([Exp] -> String) -> IO [Status]
 runWriter ext f = do
-  let exts = map fst readers
-  input <- filter (\x -> takeExtension x `elem` exts) <$> getDirectoryContents "./src"
-  let input' = map ("src" </>) input
-  mapM (\inp -> runWriterTest f inp (rename inp)) input'
-  where
-    rename x = replaceExtension (replaceDirectory x "./writers") (tail ext)
+  mmls <- map ("./readers/mml/"++) <$> getDirectoryContents "./readers/mml"
+  texs <- map ("./readers/tex/"++) <$> getDirectoryContents "./readers/tex"
+  let sources = mmls ++ texs
+  let inputs = [x | x <- sources, takeExtension x == ".native"]
+  mapM (\inp -> runWriterTest f inp ("./writers/" ++ takeBaseName inp ++ ext))
+         inputs
 
 runWriterTest :: ([Exp] -> String) -> FilePath -> FilePath -> IO Status
 runWriterTest f input output = do
-  expr <- (\fn -> (fromJust (lookup (takeExtension input) readers)) fn)
-              <$> readFile input
-  let r = ensureFinalNewline $ f (either (const []) id expr)
-  --writeFile output r -- uncomment to regen rests (use with care!)
-  out_t <- readFile output
-  if (r == out_t)
+  rawnative <- readFile' input
+  native <- case reads rawnative of
+                 ((x,_):_) -> return x
+                 []        -> error $ "Could not read " ++ input
+  let result = ensureFinalNewline $ f native
+  --writeFile output result -- uncomment to regen rests (use with care!)
+  out_t <- ensureFinalNewline <$> readFile' output
+  if result == out_t
      then printPass input output >> return (Pass input output)
-     else printFail input output r >> return (Fail input output)
+     else printFail input output result >> return (Fail input output)
 
 runReaderTest :: (String -> Either String String)
         -> FilePath
         -> FilePath
         -> IO Status
 runReaderTest fn input output = do
-  inp_t <- readFile input
-  out_t <- ensureFinalNewline <$> readFile output
+  inp_t <- readFile' input
+  out_t <- ensureFinalNewline <$> readFile' output
   case ensureFinalNewline <$> (fn inp_t) of
        Left msg       -> printError input output msg >>
                          return (Error input output)
