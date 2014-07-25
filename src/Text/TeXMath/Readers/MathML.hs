@@ -38,20 +38,20 @@ import Text.XML.Light hiding (onlyText)
 import Text.TeXMath.Types
 import Text.TeXMath.Readers.MathML.MMLDict (getOperator)
 import Text.TeXMath.Readers.MathML.EntityMap (getUnicode)
-import Text.TeXMath.Shared (getTextType)
+import Text.TeXMath.Shared (getTextType, readLength)
 import Text.TeXMath.Compat (throwError, Except, runExcept, MonadError)
 import Control.Applicative ((<$>), (<|>), (<*>))
 import Control.Arrow ((&&&))
 import Data.Maybe (fromMaybe, listToMaybe)
 import Data.Monoid (mconcat, First(..), getFirst)
 import Data.List (transpose)
-import Control.Monad (filterM)
+import Control.Monad (filterM, guard)
 import Control.Monad.Reader (ReaderT, runReaderT, asks, local)
 import Data.Generics (everywhere, mkT)
 
 -- | Parse a MathML expression to a list of 'Exp'
 readMathML :: String -> Either String [Exp]
-readMathML inp = (:[]) . fixTree <$> (runExcept (flip runReaderT def (i >>= expr)))
+readMathML inp = map fixTree <$> (runExcept (flip runReaderT def (i >>= parseMathML)))
   where
     i = maybeToEither "Invalid XML" (parseXMLDoc inp)
 
@@ -63,6 +63,9 @@ data MMLState = MMLState { attrs :: [Attr]
 
 type MML = ReaderT MMLState (Except String)
 
+parseMathML :: Element -> MML [Exp]
+parseMathML e@(name -> "math") = group e
+parseMathML _ = throwError "Root must be math element"
 
 expr :: Element -> MML Exp
 expr e = local (addAttrs (elAttribs e)) (expr' e)
@@ -70,7 +73,6 @@ expr e = local (addAttrs (elAttribs e)) (expr' e)
 expr' :: Element -> MML Exp
 expr' e =
   case name e of
-    "math" -> row e
     "mi" -> ident e
     "mn" -> number e
     "mo" -> op e
@@ -78,7 +80,7 @@ expr' e =
     "ms" -> literal e
     "mspace" -> space e
     "mrow" -> row e
-    "mstyle" -> row e
+    "mstyle" -> style e
     "mfrac" -> frac e
     "msqrt" -> msqrt e
     "mroot" -> kroot e
@@ -96,7 +98,6 @@ expr' e =
     "mtable" -> table e
     "maction" -> action e
     "semantics" -> semantics e
-    "annotation-xml" -> annotation e
     _ -> return $ empty
 
 
@@ -104,6 +105,10 @@ expr' e =
 
 empty :: Exp
 empty = EGrouped []
+
+isEmpty :: Exp -> Bool
+isEmpty (EGrouped []) = True
+isEmpty _ = False
 
 ident :: Element -> MML Exp
 ident e =  do
@@ -151,19 +156,24 @@ literal e = do
 space :: Element -> MML Exp
 space e = do
   width <- fromMaybe "0.0em" <$> (findAttrQ "width" e)
-  return $ ESpace width
+  return $ ESpace (thicknessToNum width)
 
 -- Layout
 
-row :: Element -> MML Exp
-row e = do
+style :: Element -> MML Exp
+style e = do
   textStyle <- maybe TextNormal getTextType <$> (findAttrQ "mathvariant" e)
+  EStyled textStyle <$> group e
+
+row :: Element -> MML Exp
+row e = EGrouped <$> group e
+
+group :: Element -> MML [Exp]
+group e = do
   front <- mapM expr frontSpaces
   middle <- local resetPosition (row' body)
   end <- local resetPosition (mapM expr endSpaces)
-  return $ case textStyle of
-                TextNormal -> EGrouped (front ++ middle ++ end)
-                tt         -> EStyled tt (front ++ middle ++ end)
+  return $ (front ++ middle ++ end)
   where
     cs = elChildren e
     (frontSpaces, noFront)  = span spacelike cs
@@ -186,8 +196,9 @@ row' (x:xs) =
 frac :: Element -> MML Exp
 frac e = do
   [num, dom] <- mapM expr =<< (checkArgs 2 e)
-  constructor <- (maybe "\\frac" (\l -> "\\genfrac{}{}{" ++ l ++ "}{}"))
-                  . thicknessZero <$> (findAttrQ "linethickness" e)
+  rawThick <- findAttrQ "linethickness" e
+  let constructor = (maybe "\\frac" (\l -> "\\genfrac{}{}{" ++ l ++ "}{}"))
+                 (thicknessZero =<< rawThick)
   return $ EBinary constructor num dom
 
 msqrt :: Element -> MML Exp
@@ -273,17 +284,24 @@ underover e = do
 -- Other
 
 semantics :: Element -> MML Exp
-semantics e = EGrouped <$> mapM expr (elChildren e)
+semantics e = do
+  guard (not $ null cs)
+  first <- expr (head cs)
+  if isEmpty first
+    then fromMaybe empty . getFirst . mconcat <$> mapM annotation (tail cs)
+    else return first
+  where
+    cs = elChildren e
 
-annotation :: Element -> MML Exp
+annotation :: Element -> MML (First Exp)
 annotation e = do
   encoding <- findAttrQ "encoding" e
   case encoding of
     Just "application/mathml-presentation+xml" ->
-      EGrouped <$> mapM expr (elChildren e)
+      First . Just . EGrouped <$> mapM expr (elChildren e)
     Just "MathML-Presentation" ->
-      EGrouped <$> mapM expr (elChildren e)
-    _ -> return empty
+      First . Just . EGrouped <$> mapM expr (elChildren e)
+    _ -> return (First Nothing)
 
 -- Table
 
@@ -434,32 +452,17 @@ spacelike e@(name -> uid) =
   uid `elem` spacelikeElems || uid `elem` cSpacelikeElems &&
     and (map spacelike (elChildren e))
 
-thicknessZero :: Maybe String -> Maybe String
-thicknessZero (Just s) =
+thicknessZero :: String -> Maybe String
+thicknessZero s =
   let l = thicknessToNum s in
-  if l == "0.0mm" then Just l else Nothing
-thicknessZero Nothing = Nothing
+  if l == 0.0 then Just "0.0em" else Nothing
 
-thicknessToNum :: String -> String
-thicknessToNum "thin" = "0.05mm"
-thicknessToNum "medium" = ""
-thicknessToNum "thick" = "0.3mm"
-thicknessToNum v = processLength v
-
-processLength :: String -> String
-processLength s = show (n * (unitToLaTeX unit)) ++ "mm"
-  where
-    ((n, unit): _) = reads s :: [(Float, String)]
+thicknessToNum :: String -> Double
+thicknessToNum "thin" = 0.175
+thicknessToNum "medium" = 0.5
+thicknessToNum "thick" = 1
+thicknessToNum v = fromMaybe 0.5 (readLength v)
 
 postfixExpr :: Element -> MML Exp
 postfixExpr e = local (setPosition FPostfix) (expr e)
 
-unitToLaTeX :: String -> Float
-unitToLaTeX "pt" = 2.84
-unitToLaTeX "mm" = 1
-unitToLaTeX "cm" = 10
-unitToLaTeX "in" = 25.4
-unitToLaTeX "ex" = 1.51
-unitToLaTeX "em" = 3.51
-unitToLaTeX "mu" = 18 * unitToLaTeX "em"
-unitToLaTeX _    = 1

@@ -105,8 +105,8 @@ showBinary c x y =
        Just f   -> f [showExp x, showExp y]
        Nothing  -> error $ "Unknown binary op: " ++ c
 
-spaceWidth :: String -> Element
-spaceWidth w = withAttribute "width" w $ unode "mspace" ()
+spaceWidth :: Double -> Element
+spaceWidth w = withAttribute "width" (show w ++ "em") $ unode "mspace" ()
 
 makeStretchy :: Element -> Element
 makeStretchy = withAttribute "stretchy" "true"
@@ -124,7 +124,7 @@ makeText :: TextType -> String -> Element
 makeText a s = if trailingSp
                   then mrow [s', sp]
                   else s'
-  where sp = spaceWidth "0.333em"
+  where sp = spaceWidth 0.333
         s' = withAttribute "mathvariant" attr $ unode "mtext" $ toUnicode a s
         trailingSp = not (null s) && last s `elem` " \t"
         attr = getMMLType a

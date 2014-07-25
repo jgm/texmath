@@ -183,12 +183,12 @@ showExp props e =
    EMathOperator x  -> [makeText TextNormal x]  -- TODO revisit, use props?
    EStretchy x      -> showExp props x  -- no support for stretchy in OMML
    ESymbol _ x      -> [str props x]
-   ESpace "0.167em" -> [str props "\x2009"]
-   ESpace "0.222em" -> [str props "\x2005"]
-   ESpace "0.278em" -> [str props "\x2004"]
-   ESpace "0.333em" -> [str props "\x2004"]
-   ESpace "1em"     -> [str props "\x2001"]
-   ESpace "2em"     -> [str props "\x2001\x2001"]
+   ESpace 0.167     -> [str props "\x2009"]
+   ESpace 0.222     -> [str props "\x2005"]
+   ESpace 0.278     -> [str props "\x2004"]
+   ESpace 0.333     -> [str props "\x2004"]
+   ESpace 1         -> [str props "\x2001"]
+   ESpace 2         -> [str props "\x2001\x2001"]
    ESpace _         -> [] -- this is how the xslt sheet handles all spaces
    EBinary c x y    -> [showBinary props c x y]
    EUnder x (ESymbol Accent [c]) | isBarChar c ->

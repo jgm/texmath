@@ -25,7 +25,7 @@ renderTeX (Grouped xs) cs     =
   '{' : foldr renderTeX "" (trimSpaces xs) ++ "}" ++ cs
 renderTeX Space ""             = "" -- no need to end with space
 renderTeX Space ('^':cs)       = '^':cs  -- no space before ^
-renderTeX Space ('_':cs)       = '^':cs  -- no space before ^
+renderTeX Space ('_':cs)       = '_':cs  -- no space before _
 renderTeX Space (' ':cs)       = ' ':cs  -- no doubled up spaces
 renderTeX Space cs
   | "\\limits" `isPrefixOf` cs = cs      -- no space before \limits

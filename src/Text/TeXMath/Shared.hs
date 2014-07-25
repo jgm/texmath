@@ -24,14 +24,16 @@ module Text.TeXMath.Shared
   , getScalerValue
   , getDiacriticalCommand
   , getDiacriticalCons
+  , readLength
   ) where
 
 
 import Text.TeXMath.Types
 import qualified Data.Map as M
 import Data.Maybe (fromMaybe)
-import Control.Applicative ((<$>))
+import Control.Applicative ((<$>), (<*>))
 import Control.Monad (guard)
+import Text.Parsec (Parsec, parse, getInput, digit, char, many1, option)
 
 -- | Maps TextType to the corresponding MathML mathvariant
 getMMLType :: TextType -> String
@@ -74,13 +76,34 @@ getDiacriticalCons command =
 getDiacriticalCommand  :: Position -> String -> Maybe String
 getDiacriticalCommand pos symbol = do
   command <- M.lookup symbol diaMap
-  guard (not $ command `elem` unavailible)
+  guard (not $ command `elem` unavailable)
   let below = command `elem` under
   case pos of
     Under -> if below then Just command else Nothing
     Over -> if not below then Just command else Nothing
   where
     diaMap = M.fromList diacriticals
+
+-- | Attempts to convert a string into
+readLength :: String -> Maybe Double
+readLength s = do
+  (n, unit) <- case (parse parseLength "" s) of
+                  Left _ -> Nothing
+                  Right v -> Just v
+  (n *) <$> unitToMultiplier unit
+
+
+parseLength :: Parsec String () (Double, String)
+parseLength = do
+    neg <- option "" ((:[]) <$> char '-')
+    dec <- many1 digit
+    frac <- option "" ((:) <$> char '.' <*> many1 digit)
+    unit <- getInput
+    -- This is safe as dec and frac must be a double of some kind
+    let [(n, [])] = reads (neg ++ dec ++ frac) :: [(Double, String)]
+    return (n, unit)
+
+
 
 reverseKeys :: [(a, b)] -> [(b, a)]
 reverseKeys = map (\(k,v) -> (v, k))
@@ -142,9 +165,8 @@ under :: [String]
 under = ["\\underbrace", "\\underline", "\\underbar", "\\underbracket"]
 
 -- We want to parse these but we can't represent them in LaTeX
-unavailible :: [String]
-unavailible = ["\\overbracket", "\\underbracket"]
-
+unavailable :: [String]
+unavailable = ["\\overbracket", "\\underbracket"]
 
 diacriticals :: [(String, String)]
 diacriticals =
@@ -175,3 +197,21 @@ diacriticals =
                , (("\x0333", "\\underbar"))
                ]
 
+
+
+
+-- Converts unit to multiplier to reach em
+unitToMultiplier :: String -> Maybe Double
+unitToMultiplier s = lookup s units
+  where
+    units =
+			[ ( "pt" , 10)
+			, ( "mm" , 3.51)
+			, ( "cm" , 0.35)
+			, ( "in" , 0.14)
+			, ( "ex" , 2.32)
+			, ( "em" , 1)
+			, ( "mu" , 18)
+			, ( "dd" , 9.3)
+			, ( "bp" , 9.96)
+      , ( "pc" , 0.83) ]
