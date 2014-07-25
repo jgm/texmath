@@ -45,9 +45,10 @@ printFail inp out actual =  withTempDirectory "." (inp ++ ".") $ \tmpDir -> do
   putStrLn $ "FAILED:  " ++ inp ++ " ==> " ++ out
   readFile out >>= writeFile (tmpDir </> "expected") . ensureFinalNewline
   writeFile (tmpDir </> "actual") $ ensureFinalNewline actual
-  _ <- rawSystem "diff" ["-u", tmpDir </> "expected", tmpDir </> "actual"]
+  hFlush stdout
+  _ <- runProcess "diff" ["-u", tmpDir </> "expected", tmpDir </> "actual"]
+           Nothing Nothing Nothing Nothing Nothing >>= waitForProcess
   putStrLn ""
-  return ()
 
 printError :: FilePath -> FilePath -> String -> IO ()
 printError inp out msg =
