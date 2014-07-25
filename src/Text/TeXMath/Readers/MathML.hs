@@ -45,7 +45,7 @@ import Control.Arrow ((&&&))
 import Data.Maybe (fromMaybe, listToMaybe)
 import Data.Monoid (mconcat, First(..), getFirst)
 import Data.List (transpose)
-import Control.Monad (filterM)
+import Control.Monad (filterM, guard)
 import Control.Monad.Reader (ReaderT, runReaderT, asks, local)
 import Data.Generics (everywhere, mkT)
 
@@ -96,7 +96,6 @@ expr' e =
     "mtable" -> table e
     "maction" -> action e
     "semantics" -> semantics e
-    "annotation-xml" -> annotation e
     _ -> return $ empty
 
 
@@ -104,6 +103,10 @@ expr' e =
 
 empty :: Exp
 empty = EGrouped []
+
+isEmpty :: Exp -> Bool
+isEmpty (EGrouped []) = True
+isEmpty _ = False
 
 ident :: Element -> MML Exp
 ident e =  do
@@ -271,17 +274,24 @@ underover e = do
 -- Other
 
 semantics :: Element -> MML Exp
-semantics e = EGrouped <$> mapM expr (elChildren e)
+semantics e = do
+  guard (not $ null cs)
+  first <- expr (head cs)
+  if isEmpty first
+    then fromMaybe empty . getFirst . mconcat <$> mapM annotation (tail cs)
+    else return first
+  where
+    cs = elChildren e
 
-annotation :: Element -> MML Exp
+annotation :: Element -> MML (First Exp)
 annotation e = do
   encoding <- findAttrQ "encoding" e
   case encoding of
     Just "application/mathml-presentation+xml" ->
-      EGrouped <$> mapM expr (elChildren e)
+      First . Just . EGrouped <$> mapM expr (elChildren e)
     Just "MathML-Presentation" ->
-      EGrouped <$> mapM expr (elChildren e)
-    _ -> return empty
+      First . Just . EGrouped <$> mapM expr (elChildren e)
+    _ -> return (First Nothing)
 
 -- Table
 
