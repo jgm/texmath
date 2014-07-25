@@ -35,22 +35,20 @@ import Control.Monad (guard)
 
 -- | Maps TextType to the corresponding MathML mathvariant
 getMMLType :: TextType -> String
-getMMLType t = fromMaybe "normal" (fst <$> M.lookup t (M.fromList types))
+getMMLType t = fromMaybe "normal" (fst <$> M.lookup t textTypesMap)
 
 -- | Maps TextType to corresponding LaTeX command
 getLaTeXTextCommand :: Env -> TextType -> String
 getLaTeXTextCommand e t =
   let textCmd = fromMaybe "\\mathrm"
-                  (snd <$> M.lookup t (M.fromList types)) in
+                  (snd <$> M.lookup t textTypesMap) in
   if textPackage textCmd `elem` e
     then textCmd
     else fromMaybe "\\mathrm" (lookup textCmd alts)
 
 -- | Maps MathML mathvariant to the corresponing TextType
 getTextType :: String -> TextType
-getTextType s = fromMaybe TextNormal (M.lookup s revTypes)
-  where
-    revTypes = M.fromList (map (\(k,v) -> (fst v,k)) types)
+getTextType s = fromMaybe TextNormal (M.lookup s revTextTypesMap)
 
 -- | Maps a LaTeX scaling command to the percentage scaling
 getScalerCommand :: String -> Maybe String
@@ -87,9 +85,15 @@ getDiacriticalCommand pos symbol = do
 reverseKeys :: [(a, b)] -> [(b, a)]
 reverseKeys = map (\(k,v) -> (v, k))
 
+textTypesMap :: M.Map TextType (String, String)
+textTypesMap = M.fromList textTypes
+
+revTextTypesMap :: M.Map String TextType
+revTextTypesMap = M.fromList $ map (\(k, (v,_)) -> (v,k)) textTypes
+
 --TextType to (MathML, LaTeX)
-types :: [(TextType, (String, String))]
-types =
+textTypes :: [(TextType, (String, String))]
+textTypes =
   [ ( TextNormal       , ("normal", "\\mathrm"))
   , ( TextBold         , ("bold", "\\mathbf"))
   , ( TextItalic       , ("italic","\\mathit"))
