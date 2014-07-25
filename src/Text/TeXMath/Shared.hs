@@ -110,7 +110,7 @@ textTypes =
   , ( TextSansSerifItalic     , ("sans-serif-italic","\\mathsfit")) ]
 
 unicodeMath, base :: [String]
-unicodeMath = ["\\mathbfit", "\\mathbfsfup", "\\mathbfsfit", "\\mathbfscr", "\\mathbffrak", "mathsfit"]
+unicodeMath = ["\\mathbfit", "\\mathbfsfup", "\\mathbfsfit", "\\mathbfscr", "\\mathbffrak", "\\mathsfit"]
 base = ["\\mathbb", "\\mathrm", "\\mathbf", "\\mathit", "\\mathsf", "\\mathtt", "\\mathfrak", "\\mathcal"]
 
 alts :: [(String, String)]
