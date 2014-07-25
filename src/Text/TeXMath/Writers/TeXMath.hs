@@ -105,33 +105,33 @@ writeExp (EBinary s e1 e2) = do
     else tellGroup (writeExp e1)
   tellGroup (writeExp e2)
 writeExp (ESub b e1) = do
-  writeExp b
+  (if isFancy b then tellGroup else id) $ writeExp b
   tell [Token '_']
   tellGroup (writeExp e1)
 writeExp (ESuper b e1) = do
-  writeExp b
+  (if isFancy b then tellGroup else id) $ writeExp b
   tell [Token '^']
   tellGroup (writeExp e1)
 writeExp (ESubsup b e1 e2) = do
-  writeExp b
+  (if isFancy b then tellGroup else id) $ writeExp b
   tell [Token '_']
   tellGroup (writeExp e1)
   tell [Token '^']
   tellGroup (writeExp e2)
 writeExp (EDown b e1) = do
-   writeExp b
-   tell [ControlSeq "\\limits", Token '_']
-   tellGroup (writeExp e1)
+  (if isFancy b then tellGroup else id) $ writeExp b
+  tell [ControlSeq "\\limits", Token '_']
+  tellGroup (writeExp e1)
 writeExp (EUp b e1) = do
-   writeExp b
-   tell [ControlSeq "\\limits", Token '^']
-   tellGroup (writeExp e1)
+  (if isFancy b then tellGroup else id) $ writeExp b
+  tell [ControlSeq "\\limits", Token '^']
+  tellGroup (writeExp e1)
 writeExp (EDownup b e1 e2) = do
-   writeExp b
-   tell [ControlSeq "\\limits", Token '_']
-   tellGroup (writeExp e1)
-   tell [Token '^']
-   tellGroup (writeExp e2)
+  (if isFancy b then tellGroup else id) $ writeExp b
+  tell [ControlSeq "\\limits", Token '_']
+  tellGroup (writeExp e1)
+  tell [Token '^']
+  tellGroup (writeExp e2)
 writeExp (EOver b e1) =
   case b of
     (EMathOperator _) -> writeExp (EUp b e1)
@@ -316,4 +316,17 @@ operators =
            , (EMathOperator "sup", "\\sup")
            , (EMathOperator "tan", "\\tan")
            , (EMathOperator "tanh", "\\tanh") ]
+
+isFancy :: Exp -> Bool
+isFancy (ESub _ _) = True
+isFancy (ESuper _ _) = True
+isFancy (ESubsup _ _ _) = True
+isFancy (EOver _ _) = True
+isFancy (EUnder _ _) = True
+isFancy (EUnderover _ _ _) = True
+isFancy (EUp _ _) = True
+isFancy (EDown _ _) = True
+isFancy (EDownup _ _ _) = True
+isFancy (EUnary _ _) = True
+isFancy _ = False
 
