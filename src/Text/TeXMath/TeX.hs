@@ -36,7 +36,7 @@ isControlSeq _ = False
 
 escapeLaTeX :: Bool -> Char -> TeX
 escapeLaTeX mathmode c
-  | c `elem` "#$%&_{}" = Literal ("\\" ++ [c])
+  | c `elem` "#$%&_{} " = Literal ("\\" ++ [c])
   | c == '~' = if mathmode
                   then ControlSeq "\\sim"
                   else ControlSeq "\\textasciitilde"
