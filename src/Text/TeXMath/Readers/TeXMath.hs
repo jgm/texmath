@@ -59,6 +59,7 @@ expr1 =  choice [
   , number
   , texSymbol
   , text
+  , styled
   , root
   , unary
   , binary
@@ -368,33 +369,37 @@ unaryOps :: [String]
 unaryOps = ["\\sqrt", "\\surd"]
 
 -- Note: cal and scr are treated the same way, as unicode is lacking such two different sets for those.
+styleOps :: M.Map String ([Exp] -> Exp)
+styleOps = M.fromList
+          [ ("\\mathrm",     EStyled TextNormal)
+          , ("\\mathup",     EStyled TextNormal)
+          , ("\\mbox",       EStyled TextNormal)
+          , ("\\mathbf",     EStyled TextBold)
+          , ("\\mathbfup",   EStyled TextBold)
+          , ("\\mathit",     EStyled TextItalic)
+          , ("\\mathtt",     EStyled TextMonospace)
+          , ("\\texttt",     EStyled TextMonospace)
+          , ("\\mathsf",     EStyled TextSansSerif)
+          , ("\\mathsfup",   EStyled TextSansSerif)
+          , ("\\mathbb",     EStyled TextDoubleStruck)
+          , ("\\mathcal",    EStyled TextScript)
+          , ("\\mathscr",    EStyled TextScript)
+          , ("\\mathfrak",   EStyled TextFraktur)
+          , ("\\mathbfit",   EStyled TextBoldItalic)
+          , ("\\mathbfsfup", EStyled TextBoldSansSerif)
+          , ("\\mathbfsfit", EStyled TextBoldSansSerifItalic)
+          , ("\\mathbfscr",  EStyled TextBoldScript)
+          , ("\\mathbffrak", EStyled TextBoldFraktur)
+          , ("\\mathbfcal",  EStyled TextBoldScript)
+          , ("\\mathsfit",   EStyled TextSansSerifItalic)
+          ]
+
 textOps :: M.Map String (String -> Exp)
 textOps = M.fromList
           [ ("\\textrm",     EText TextNormal . parseText)
-          , ("\\mathrm",     EText TextNormal)
-          , ("\\mathup",     EText TextNormal)
           , ("\\text",       EText TextNormal . parseText)
-          , ("\\mbox",       EText TextNormal)
-          , ("\\mathbf",     EText TextBold)
-          , ("\\mathbfup",   EText TextBold)
           , ("\\textbf",     EText TextBold . parseText)
-          , ("\\mathit",     EText TextItalic)
           , ("\\textit",     EText TextItalic . parseText)
-          , ("\\mathtt",     EText TextMonospace)
-          , ("\\texttt",     EText TextMonospace)
-          , ("\\mathsf",     EText TextSansSerif)
-          , ("\\mathsfup",   EText TextSansSerif)
-          , ("\\mathbb",     EText TextDoubleStruck)
-          , ("\\mathcal",    EText TextScript)
-          , ("\\mathscr",    EText TextScript)
-          , ("\\mathfrak",   EText TextFraktur)
-          , ("\\mathbfit",   EText TextBoldItalic)
-          , ("\\mathbfsfup", EText TextBoldSansSerif)
-          , ("\\mathbfsfit", EText TextBoldSansSerifItalic)
-          , ("\\mathbfscr",  EText TextBoldScript)
-          , ("\\mathbffrak", EText TextBoldFraktur)
-          , ("\\mathbfcal",  EText TextBoldScript)
-          , ("\\mathsfit",   EText TextSansSerifItalic)
           ]
 
 parseText :: String -> String
@@ -428,6 +433,15 @@ text = try $ do
   c <- command
   case M.lookup c textOps of
        Just f   -> liftM f $ braces (many (noneOf "}" <|> (char '\\' >> char '}')))
+       Nothing  -> pzero
+
+styled :: TP Exp
+styled = try $ do
+  c <- command
+  case M.lookup c styleOps of
+       Just f   -> do
+         EGrouped xs <- inbraces
+         return $ f xs
        Nothing  -> pzero
 
 -- note: sqrt can be unary, \sqrt{2}, or binary, \sqrt[3]{2}

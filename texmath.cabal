@@ -111,6 +111,6 @@ Test-Suite test-texmath
     Hs-Source-Dirs:      tests
     Build-Depends:       base >= 4.2 && < 5, process, directory, filepath,
                          texmath, xml, utf8-string, bytestring, process,
-                         temporary, text
+                         temporary, text, split
     Default-Language:    Haskell2010
     Ghc-Options:         -Wall

@@ -59,6 +59,7 @@ data Exp =
   | EStretchy Exp
   | EArray [Alignment] [ArrayLine]
   | EText TextType String
+  | EStyled TextType [Exp]
   deriving (Show, Read, Eq, Data, Typeable)
 
 data DisplayType = DisplayBlock

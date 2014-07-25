@@ -10,6 +10,8 @@ import Control.Applicative
 import GHC.IO.Encoding (setLocaleEncoding)
 import qualified Data.Text as T
 import qualified Data.Text.IO as T
+import Data.List (intercalate)
+import Data.List.Split (splitWhen)
 
 -- strict version of readFile
 readFile' :: FilePath -> IO String
@@ -52,9 +54,14 @@ printPass _inp _out = return () -- putStrLn $ "PASSED:  " ++ inp ++ " ==> " ++ o
 
 printFail :: FilePath -> FilePath -> String -> IO ()
 printFail inp out actual =  withTempDirectory "." (inp ++ ".") $ \tmpDir -> do
+  -- break native files at commas for easier diffing
+  let breakAtCommas = if takeExtension out == ".native"
+                         then intercalate ",\n" . splitWhen (==',')
+                         else id
   putStrLn $ "FAILED:  " ++ inp ++ " ==> " ++ out
-  readFile' out >>= writeFile (tmpDir </> "expected") . ensureFinalNewline
-  writeFile (tmpDir </> "actual") $ ensureFinalNewline actual
+  readFile' out >>=
+    writeFile (tmpDir </> "expected") . ensureFinalNewline . breakAtCommas
+  writeFile (tmpDir </> "actual") $ ensureFinalNewline $ breakAtCommas actual
   hFlush stdout
   _ <- runProcess "diff" ["-u", tmpDir </> "expected", tmpDir </> "actual"]
            Nothing Nothing Nothing Nothing Nothing >>= waitForProcess

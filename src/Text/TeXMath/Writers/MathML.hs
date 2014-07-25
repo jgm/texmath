@@ -114,6 +114,11 @@ makeStretchy = withAttribute "stretchy" "true"
 makeScaled :: String -> Element -> Element
 makeScaled s = withAttribute "minsize" s . withAttribute "maxsize" s
 
+makeStyled :: TextType -> [Element] -> Element
+makeStyled a es = withAttribute "mathvariant" attr
+                $ unode "mstyled" es
+  where attr = getMMLType a
+
 -- Note: Converts strings to unicode directly, as few renderers support those mathvariants.
 makeText :: TextType -> String -> Element
 makeText a s = if trailingSp
@@ -181,6 +186,7 @@ showExp e =
    EScaled s x      -> makeScaled s $ showExp x
    EArray as ls     -> makeArray as ls
    EText a s        -> makeText a s
+   EStyled a es     -> makeStyled a $ map showExp es
    x                -> error $ "showExp encountered " ++ show x
                        -- note: EUp, EDown, EDownup should be removed by handleDownup
 

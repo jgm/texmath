@@ -78,10 +78,10 @@ expr' e =
     "ms" -> literal e
     "mspace" -> space e
     "mrow" -> row e
+    "mstyle" -> row e
     "mfrac" -> frac e
     "msqrt" -> msqrt e
     "mroot" -> kroot e
-    "mstyle" -> row e
     "merror" -> return $ empty
     "mpadded" -> row e
     "mphantom" -> phantom e
@@ -157,10 +157,13 @@ space e = do
 
 row :: Element -> MML Exp
 row e = do
+  textStyle <- maybe TextNormal getTextType <$> (findAttrQ "mathvariant" e)
   front <- mapM expr frontSpaces
   middle <- local resetPosition (row' body)
   end <- local resetPosition (mapM expr endSpaces)
-  return $ EGrouped (front ++ middle ++ end)
+  return $ case textStyle of
+                TextNormal -> EGrouped (front ++ middle ++ end)
+                tt         -> EStyled tt (front ++ middle ++ end)
   where
     cs = elChildren e
     (frontSpaces, noFront)  = span spacelike cs

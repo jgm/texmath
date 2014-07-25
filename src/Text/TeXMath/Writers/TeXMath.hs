@@ -177,6 +177,10 @@ writeExp (EStretchy e) = writeExp e
 writeExp (EText ttype s) = do
   txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
   tell [ControlSeq txtcmd, Grouped (map escapeLaTeX s)]
+writeExp (EStyled ttype es) = do
+  txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
+  tell [ControlSeq txtcmd]
+  tellGroup (mapM_ writeExp es)
 writeExp (EArray aligns rows) = table aligns rows
 
 table :: [Alignment] -> [ArrayLine] -> Math ()

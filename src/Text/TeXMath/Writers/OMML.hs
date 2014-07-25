@@ -28,7 +28,7 @@ import Data.Generics (everywhere, mkT)
 
 -- | Transforms an expression tree to an OMML XML Tree
 writeOMML :: DisplayType -> [Exp] -> Element
-writeOMML dt = container . concatMap showExp
+writeOMML dt = container . concatMap (showExp (setProps TextNormal))
             . everywhere (mkT $ handleDownup dt)
     where container = case dt of
                   DisplayBlock  -> \x -> mnode "oMathPara"
@@ -47,14 +47,14 @@ str :: [Element] -> String -> Element
 str props s = mnode "r" [ mnode "rPr" props
                         , mnode "t" s ]
 
-showBinary :: String -> Exp -> Exp -> Element
-showBinary c x y =
+showBinary :: [Element] -> String -> Exp -> Exp -> Element
+showBinary props c x y =
   case c of
        "\\frac" -> mnode "f" [ mnode "fPr" $
                                 mnodeA "type" "bar" ()
                              , mnode "num" x'
                              , mnode "den" y']
-       "\\dfrac" -> showBinary "\\frac" x y
+       "\\dfrac" -> showBinary props "\\frac" x y
        "\\tfrac" -> mnode "f" [ mnode "fPr" $
                                  mnodeA "type" "lin" ()
                               , mnode "num" x'
@@ -83,17 +83,17 @@ showBinary c x y =
                                              , mnode "den" y'
                                              ]
        _ -> error $ "Unknown binary operator " ++ c
-    where x' = showExp x
-          y' = showExp y
+    where x' = showExp props x
+          y' = showExp props y
 
-makeArray :: [Alignment] -> [ArrayLine] -> Element
-makeArray as rs = mnode "m" $ mProps : map toMr rs
+makeArray :: [Element] -> [Alignment] -> [ArrayLine] -> Element
+makeArray props as rs = mnode "m" $ mProps : map toMr rs
   where mProps = mnode "mPr"
                   [ mnodeA "baseJc" "center" ()
                   , mnodeA "plcHide" "on" ()
                   , mnode "mcs" $ map toMc as' ]
         as'    = take (length rs) $ as ++ cycle [AlignDefault]
-        toMr r = mnode "mr" $ map (mnode "e" . concatMap showExp) r
+        toMr r = mnode "mr" $ map (mnode "e" . concatMap (showExp props)) r
         toMc a = mnode "mc" $ mnode "mcPr"
                             $ mnodeA "mcJc" (toAlign a) ()
         toAlign AlignLeft    = "left"
@@ -102,24 +102,27 @@ makeArray as rs = mnode "m" $ mProps : map toMr rs
         toAlign AlignDefault = "left"
 
 makeText :: TextType -> String -> Element
-makeText a s = str attrs s
-  where attrs = case a of
-                     TextNormal       -> [sty "p"]
-                     TextBold         -> [sty "b"]
-                     TextItalic       -> [sty "i"]
-                     TextMonospace    -> [sty "p", scr "monospace"]
-                     TextSansSerif    -> [sty "p", scr "sans-serif"]
-                     TextDoubleStruck -> [sty "p", scr "double-struck"]
-                     TextScript       -> [sty "p", scr "script"]
-                     TextFraktur      -> [sty "p", scr "fraktur"]
-                     TextBoldItalic    -> [sty "i"]
-                     TextBoldSansSerif -> [sty "b", scr "sans-serif"]
-                     TextBoldScript    -> [sty "b", scr "script"]
-                     TextBoldFraktur   -> [sty "b", scr "fraktur"]
-                     TextSansSerifItalic -> [sty "i", scr "sans-serif"]
-                     TextBoldSansSerifItalic -> [sty "bi", scr "sans-serif"]
-        sty x = mnodeA "sty" x ()
-        scr x = mnodeA "scr" x ()
+makeText a s = str (setProps a) s
+
+setProps :: TextType -> [Element]
+setProps tt =
+  case tt of
+       TextNormal       -> [sty "p"]
+       TextBold         -> [sty "b"]
+       TextItalic       -> [sty "i"]
+       TextMonospace    -> [sty "p", scr "monospace"]
+       TextSansSerif    -> [sty "p", scr "sans-serif"]
+       TextDoubleStruck -> [sty "p", scr "double-struck"]
+       TextScript       -> [sty "p", scr "script"]
+       TextFraktur      -> [sty "p", scr "fraktur"]
+       TextBoldItalic    -> [sty "i"]
+       TextBoldSansSerif -> [sty "b", scr "sans-serif"]
+       TextBoldScript    -> [sty "b", scr "script"]
+       TextBoldFraktur   -> [sty "b", scr "fraktur"]
+       TextSansSerifItalic -> [sty "i", scr "sans-serif"]
+       TextBoldSansSerifItalic -> [sty "bi", scr "sans-serif"]
+   where sty x = mnodeA "sty" x ()
+         scr x = mnodeA "scr" x ()
 
 handleDownup :: DisplayType -> [Exp] -> [Exp]
 handleDownup dt (exp' : xs) =
@@ -161,67 +164,71 @@ handleDownup dt (exp' : xs) =
                              DisplayInline -> ESubsup
 handleDownup _ []            = []
 
-showExp :: Exp -> [Element]
-showExp e =
+showExp :: [Element] -> Exp -> [Element]
+showExp props e =
  case e of
-   ENumber x        -> [str [] x]
-   EGrouped [EUnderover (ESymbol Op s) y z, w] -> [makeNary "undOvr" s y z w]
-   EGrouped [ESubsup (ESymbol Op s) y z, w] -> [makeNary "subSup" s y z w]
-   EGrouped xs      -> concatMap showExp xs
+   ENumber x        -> [str props x]
+   EGrouped [EUnderover (ESymbol Op s) y z, w] -> [makeNary props "undOvr" s y z w]
+   EGrouped [ESubsup (ESymbol Op s) y z, w] -> [makeNary props "subSup" s y z w]
+   EGrouped xs      -> concatMap (showExp props) xs
    EDelimited start end xs ->
                        [mnode "d" [ mnode "dPr"
                                     [ mnodeA "begChr" start ()
                                     , mnodeA "endChr" end ()
                                     , mnode "grow" () ]
-                                  , mnode "e" $ concatMap showExp xs
+                                  , mnode "e" $ concatMap (showExp props) xs
                                   ] ]
 
-   EIdentifier x    -> [str [] x]
-   EMathOperator x  -> [makeText TextNormal x]
-   EStretchy x      -> showExp x  -- no support for stretchy in OMML
-   ESymbol _ x      -> [str [] x]
-   ESpace "0.167em" -> [str [] "\x2009"]
-   ESpace "0.222em" -> [str [] "\x2005"]
-   ESpace "0.278em" -> [str [] "\x2004"]
-   ESpace "0.333em" -> [str [] "\x2004"]
-   ESpace "1em"     -> [str [] "\x2001"]
-   ESpace "2em"     -> [str [] "\x2001\x2001"]
+   EIdentifier x    -> [str props x]
+   EMathOperator x  -> [makeText TextNormal x]  -- TODO revisit, use props?
+   EStretchy x      -> showExp props x  -- no support for stretchy in OMML
+   ESymbol _ x      -> [str props x]
+   ESpace "0.167em" -> [str props "\x2009"]
+   ESpace "0.222em" -> [str props "\x2005"]
+   ESpace "0.278em" -> [str props "\x2004"]
+   ESpace "0.333em" -> [str props "\x2004"]
+   ESpace "1em"     -> [str props "\x2001"]
+   ESpace "2em"     -> [str props "\x2001\x2001"]
    ESpace _         -> [] -- this is how the xslt sheet handles all spaces
-   EBinary c x y    -> [showBinary c x y]
+   EBinary c x y    -> [showBinary props c x y]
    EUnder x (ESymbol Accent [c]) | isBarChar c ->
                        [mnode "bar" [ mnode "barPr" $
                                         mnodeA "pos" "bot" ()
-                                    , mnode "e" $ showExp x ]]
+                                    , mnode "e" $ showExp props x ]]
    EOver x (ESymbol Accent [c]) | isBarChar c ->
                        [mnode "bar" [ mnode "barPr" $
                                         mnodeA "pos" "top" ()
-                                    , mnode "e" $ showExp x ]]
+                                    , mnode "e" $ showExp props x ]]
    EOver x (ESymbol Accent y) ->
                        [mnode "acc" [ mnode "accPr" $
                                         mnodeA "chr" y ()
-                                    , mnode "e" $ showExp x ]]
-   ESub x y         -> [mnode "sSub" [ mnode "e" $ showExp x
-                                     , mnode "sub" $ showExp y]]
-   ESuper x y       -> [mnode "sSup" [ mnode "e" $ showExp x
-                                     , mnode "sup" $ showExp y]]
-   ESubsup x y z    -> [mnode "sSubSup" [ mnode "e" $ showExp x
-                                        , mnode "sub" $ showExp y
-                                        , mnode "sup" $ showExp z]]
-   EUnder x y       -> [mnode "limLow" [ mnode "e" $ showExp x
-                                       , mnode "lim" $ showExp y]]
-   EOver x y        -> [mnode "limUpp" [ mnode "e" $ showExp x
-                                       , mnode "lim" $ showExp y]]
-   EUnderover x y z -> showExp (EUnder x (EOver y z))
+                                    , mnode "e" $ showExp props x ]]
+   ESub x y         -> [mnode "sSub" [ mnode "e" $ showExp props x
+                                     , mnode "sub" $ showExp props y]]
+   ESuper x y       -> [mnode "sSup" [ mnode "e" $ showExp props x
+                                     , mnode "sup" $ showExp props y]]
+   ESubsup x y z    -> [mnode "sSubSup" [ mnode "e" $ showExp props x
+                                        , mnode "sub" $ showExp props y
+                                        , mnode "sup" $ showExp props z]]
+   EUnder x y       -> [mnode "limLow" [ mnode "e" $ showExp props x
+                                       , mnode "lim" $ showExp props y]]
+   EOver x y        -> [mnode "limUpp" [ mnode "e" $ showExp props x
+                                       , mnode "lim" $ showExp props y]]
+   EUnderover x y z -> showExp props (EUnder x (EOver y z))
    EUnary "\\sqrt" x  -> [mnode "rad" [ mnode "radPr" $ mnodeA "degHide" "on" ()
                                       , mnode "deg" ()
-                                      , mnode "e" $ showExp x]]
-   EUnary "\\surd" x  -> showExp $ EUnary "\\sqrt" x
+                                      , mnode "e" $ showExp props x]]
+   EUnary "\\surd" x  -> showExp props $ EUnary "\\sqrt" x
    EUnary "\\phantom" _ -> [] -- To implement
-   EScaled _ x      -> showExp x   -- no support for scaler?
-   EArray as ls     -> [makeArray as ls]
+   EUnary _ x       -> showExp props x -- TODO?
+   EScaled _ x      -> showExp props x -- no support for scaler?
+   EArray as ls     -> [makeArray props as ls]
    EText a s        -> [makeText a s]
-   x                -> error $ "showExp encountered " ++ show x
+   EStyled a es     -> concatMap (showExp (setProps a)) es
    -- note: EUp, EDown, EDownup should be removed by handleDownup
+   EUp _ _          -> error "encountered EUp"
+   EDown _ _        -> error "encountered EDown"
+   EDownup _ _ _    -> error "encountered EDownup"
 
 isBarChar :: Char -> Bool
 isBarChar c = c == '\x203E' || c == '\x00AF'
@@ -230,8 +237,8 @@ isNary :: Exp -> Bool
 isNary (ESymbol Op _) = True
 isNary _ = False
 
-makeNary :: String -> String -> Exp -> Exp -> Exp -> Element
-makeNary t s y z w =
+makeNary :: [Element] -> String -> String -> Exp -> Exp -> Exp -> Element
+makeNary props t s y z w =
   mnode "nary" [ mnode "naryPr"
                  [ mnodeA "chr" s ()
                  , mnodeA "limLoc" t ()
@@ -240,7 +247,7 @@ makeNary t s y z w =
                  , mnodeA "supHide"
                     (if y == EGrouped [] then "on" else "off") ()
                  ]
-               , mnode "e" $ showExp w
-               , mnode "sub" $ showExp y
-               , mnode "sup" $ showExp z ]
+               , mnode "e" $ showExp props w
+               , mnode "sub" $ showExp props y
+               , mnode "sup" $ showExp props z ]
 
