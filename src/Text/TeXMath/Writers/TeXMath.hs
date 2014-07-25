@@ -28,6 +28,7 @@ import Data.Generics (everywhere, mkT)
 import Control.Applicative ((<$>), (<|>), Applicative)
 import qualified Data.Map as M
 import Data.Maybe (listToMaybe)
+import Control.Monad (when)
 import Control.Monad.Reader (MonadReader, runReader, Reader, asks)
 import Control.Monad.Writer(MonadWriter, WriterT, execWriterT, tell, censor)
 import Text.TeXMath.TeX
@@ -76,8 +77,9 @@ writeExp (EGrouped es) = tellGroup (mapM_ writeExp es)
 writeExp (EDelimited open close es) =  do
   tell [ControlSeq "\\left" ]
   tell =<< getTeXMathM open
+  tell [Space]
   mapM_ writeExp es
-  tell [ControlSeq "\\right"]
+  tell [Space, ControlSeq "\\right"]
   tell =<< getTeXMathM close
 writeExp (EIdentifier s) = do
   math <- getTeXMathM s
@@ -94,7 +96,10 @@ writeExp o@(EMathOperator s) = do
                         []  -> return ()
                         xs@(ControlSeq _:_) -> tell xs
                         xs -> tell [ControlSeq "\\operatorname", Grouped xs]
-writeExp (ESymbol _ s) = tell =<< getTeXMathM s
+writeExp (ESymbol t s) = do
+  when (t == Bin || t == Rel) $ tell [Space]
+  tell =<< getTeXMathM s
+  when (t == Bin || t == Rel) $ tell [Space]
 writeExp (ESpace width) = tell [ControlSeq $ getSpaceCommand width]
 writeExp (EBinary s e1 e2) = do
   tell [ControlSeq s]
