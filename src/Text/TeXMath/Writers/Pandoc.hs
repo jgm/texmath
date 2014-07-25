@@ -23,24 +23,44 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 module Text.TeXMath.Writers.Pandoc (writePandoc)
 where
 import Text.Pandoc.Definition
+import Text.TeXMath.Unicode.ToUnicode
 import Text.TeXMath.Types
 
 -- | Attempts to convert a formula to a list of 'Pandoc' inlines.
 writePandoc :: DisplayType
          -> [Exp]
          -> Maybe [Inline]
-writePandoc _ exps = expsToInlines exps
+writePandoc _ exps = expsToInlines TextNormal exps
 
-expsToInlines :: [Exp] -> Maybe [Inline]
-expsToInlines xs = do
-  res <- mapM expToInlines xs
+expsToInlines :: TextType -> [Exp] -> Maybe [Inline]
+expsToInlines tt xs = do
+  res <- mapM (expToInlines tt) xs
   return (concat res)
 
-expToInlines :: Exp -> Maybe [Inline]
-expToInlines (ENumber s) = Just [Str s]
-expToInlines (EIdentifier s) = Just [Emph [Str s]]
-expToInlines (EMathOperator s) = Just [Str s]
-expToInlines (ESymbol t s) = Just $ addSpace t (Str s)
+renderStr :: TextType -> String -> Inline
+renderStr tt s =
+  case tt of
+       TextNormal       -> Str s
+       TextBold         -> Strong [Str s]
+       TextItalic       -> Emph   [Str s]
+       TextMonospace    -> Code nullAttr s
+       TextSansSerif    -> Str s
+       TextDoubleStruck -> Str $ toUnicode tt s
+       TextScript       -> Str $ toUnicode tt s
+       TextFraktur      -> Str $ toUnicode tt s
+       TextBoldItalic    -> Strong [Emph [Str s]]
+       TextBoldSansSerif -> Strong [Str s]
+       TextBoldScript    -> Strong [Str $ toUnicode tt s]
+       TextBoldFraktur   -> Strong [Str $ toUnicode tt s]
+       TextSansSerifItalic -> Emph [Str s]
+       TextBoldSansSerifItalic -> Strong [Emph [Str s]]
+
+expToInlines :: TextType -> Exp -> Maybe [Inline]
+expToInlines tt (ENumber s) = Just [renderStr tt s]
+expToInlines TextNormal (EIdentifier s) = Just [renderStr TextItalic s]
+expToInlines tt (EIdentifier s) = Just [renderStr tt s]
+expToInlines tt (EMathOperator s) = Just [renderStr tt s]
+expToInlines tt (ESymbol t s) = Just $ addSpace t $ renderStr tt s
   where addSpace Op x = [x]
         addSpace Bin x = [medspace, x, medspace]
         addSpace Rel x = [widespace, x, widespace]
@@ -49,53 +69,50 @@ expToInlines (ESymbol t s) = Just $ addSpace t (Str s)
         thinspace = Str "\x2006"
         medspace  = Str "\x2005"
         widespace = Str "\x2004"
-expToInlines (EStretchy x) = expToInlines x
-expToInlines (EDelimited start end xs) = do
-  xs' <- mapM expToInlines xs
-  return $ [Str start] ++ concat xs' ++ [Str end]
-expToInlines (EGrouped xs) = expsToInlines xs
-expToInlines (ESpace "0.167em") = Just [Str "\x2009"]
-expToInlines (ESpace "0.222em") = Just [Str "\x2005"]
-expToInlines (ESpace "0.278em") = Just [Str "\x2004"]
-expToInlines (ESpace "0.333em") = Just [Str "\x2004"]
-expToInlines (ESpace "1em")     = Just [Str "\x2001"]
-expToInlines (ESpace "2em")     = Just [Str "\x2001\x2001"]
-expToInlines (ESpace _)         = Just [Str " "]
-expToInlines (EBinary _ _ _) = Nothing
-expToInlines (ESub x y) = do
-  x' <- expToInlines x
-  y' <- expToInlines y
+expToInlines tt (EStretchy x) = expToInlines tt x
+expToInlines tt (EDelimited start end xs) = do
+  xs' <- mapM (expToInlines tt) xs
+  return $ [renderStr tt start] ++ concat xs' ++ [renderStr tt end]
+expToInlines tt (EGrouped xs) = expsToInlines tt xs
+expToInlines _ (ESpace "0.167em") = Just [Str "\x2009"]
+expToInlines _ (ESpace "0.222em") = Just [Str "\x2005"]
+expToInlines _ (ESpace "0.278em") = Just [Str "\x2004"]
+expToInlines _ (ESpace "0.333em") = Just [Str "\x2004"]
+expToInlines _ (ESpace "1em")     = Just [Str "\x2001"]
+expToInlines _ (ESpace "2em")     = Just [Str "\x2001\x2001"]
+expToInlines _ (ESpace _)         = Just [Str " "]
+expToInlines _ (EBinary _ _ _) = Nothing
+expToInlines tt (ESub x y) = do
+  x' <- expToInlines tt x
+  y' <- expToInlines tt y
   return $ x' ++ [Subscript y']
-expToInlines (ESuper x y) = do
-  x' <- expToInlines x
-  y' <- expToInlines y
+expToInlines tt (ESuper x y) = do
+  x' <- expToInlines tt x
+  y' <- expToInlines tt y
   return $ x' ++ [Superscript y']
-expToInlines (ESubsup x y z) = do
-  x' <- expToInlines x
-  y' <- expToInlines y
-  z' <- expToInlines z
+expToInlines tt (ESubsup x y z) = do
+  x' <- expToInlines tt x
+  y' <- expToInlines tt y
+  z' <- expToInlines tt z
   return $ x' ++ [Subscript y'] ++ [Superscript z']
-expToInlines (EDown x y) = expToInlines (ESub x y)
-expToInlines (EUp x y) = expToInlines (ESuper x y)
-expToInlines (EDownup x y z) = expToInlines (ESubsup x y z)
-expToInlines (EText TextNormal x) = Just [Str x]
-expToInlines (EText TextBold x) = Just [Strong [Str x]]
-expToInlines (EText TextMonospace x) = Just [Code nullAttr x]
-expToInlines (EText TextItalic x) = Just [Emph [Str x]]
-expToInlines (EText _ x) = Just [Str x]
-expToInlines (EOver (EGrouped [EIdentifier [c]]) (ESymbol Accent [accent])) =
+expToInlines tt (EDown x y) = expToInlines tt (ESub x y)
+expToInlines tt (EUp x y) = expToInlines tt (ESuper x y)
+expToInlines tt (EDownup x y z) = expToInlines tt (ESubsup x y z)
+expToInlines _ (EText tt' x) = Just [renderStr tt' x]
+expToInlines tt (EOver (EGrouped [EIdentifier [c]]) (ESymbol Accent [accent])) =
     case accent of
-         '\x203E' -> Just [Emph [Str [c,'\x0304']]]  -- bar
-         '\x00B4' -> Just [Emph [Str [c,'\x0301']]]  -- acute
-         '\x0060' -> Just [Emph [Str [c,'\x0300']]]  -- grave
-         '\x02D8' -> Just [Emph [Str [c,'\x0306']]]  -- breve
-         '\x02C7' -> Just [Emph [Str [c,'\x030C']]]  -- check
-         '.'      -> Just [Emph [Str [c,'\x0307']]]  -- dot
-         '\x00B0' -> Just [Emph [Str [c,'\x030A']]]  -- ring
-         '\x20D7' -> Just [Emph [Str [c,'\x20D7']]]  -- arrow right
-         '\x20D6' -> Just [Emph [Str [c,'\x20D6']]]  -- arrow left
-         '\x005E' -> Just [Emph [Str [c,'\x0302']]]  -- hat
-         '\x0302' -> Just [Emph [Str [c,'\x0302']]]  -- hat
-         '~'      -> Just [Emph [Str [c,'\x0303']]]  -- tilde
+         '\x203E' -> Just [renderStr tt' [c,'\x0304']]  -- bar
+         '\x00B4' -> Just [renderStr tt' [c,'\x0301']]  -- acute
+         '\x0060' -> Just [renderStr tt' [c,'\x0300']]  -- grave
+         '\x02D8' -> Just [renderStr tt' [c,'\x0306']]  -- breve
+         '\x02C7' -> Just [renderStr tt' [c,'\x030C']]  -- check
+         '.'      -> Just [renderStr tt' [c,'\x0307']]  -- dot
+         '\x00B0' -> Just [renderStr tt' [c,'\x030A']]  -- ring
+         '\x20D7' -> Just [renderStr tt' [c,'\x20D7']]  -- arrow right
+         '\x20D6' -> Just [renderStr tt' [c,'\x20D6']]  -- arrow left
+         '\x005E' -> Just [renderStr tt' [c,'\x0302']]  -- hat
+         '\x0302' -> Just [renderStr tt' [c,'\x0302']]  -- hat
+         '~'      -> Just [renderStr tt' [c,'\x0303']]  -- tilde
          _        -> Nothing
-expToInlines _ = Nothing
+      where tt' = if tt == TextNormal then TextItalic else tt
+expToInlines _ _ = Nothing
