@@ -38,7 +38,7 @@ import Text.XML.Light hiding (onlyText)
 import Text.TeXMath.Types
 import Text.TeXMath.Readers.MathML.MMLDict (getOperator)
 import Text.TeXMath.Readers.MathML.EntityMap (getUnicode)
-import Text.TeXMath.Shared (getTextType)
+import Text.TeXMath.Shared (getTextType, readLength)
 import Text.TeXMath.Compat (throwError, Except, runExcept, MonadError)
 import Control.Applicative ((<$>), (<|>), (<*>))
 import Control.Arrow ((&&&))
@@ -151,7 +151,7 @@ literal e = do
 space :: Element -> MML Exp
 space e = do
   width <- fromMaybe "0.0em" <$> (findAttrQ "width" e)
-  return $ ESpace width
+  return $ ESpace (thicknessToNum width)
 
 -- Layout
 
@@ -183,8 +183,9 @@ row' (x:xs) =
 frac :: Element -> MML Exp
 frac e = do
   [num, dom] <- mapM expr =<< (checkArgs 2 e)
-  constructor <- (maybe "\\frac" (\l -> "\\genfrac{}{}{" ++ l ++ "}{}"))
-                  . thicknessZero <$> (findAttrQ "linethickness" e)
+  rawThick <- findAttrQ "linethickness" e
+  let constructor = (maybe "\\frac" (\l -> "\\genfrac{}{}{" ++ l ++ "}{}"))
+                 (thicknessZero =<< rawThick)
   return $ EBinary constructor num dom
 
 msqrt :: Element -> MML Exp
@@ -431,32 +432,17 @@ spacelike e@(name -> uid) =
   uid `elem` spacelikeElems || uid `elem` cSpacelikeElems &&
     and (map spacelike (elChildren e))
 
-thicknessZero :: Maybe String -> Maybe String
-thicknessZero (Just s) =
+thicknessZero :: String -> Maybe String
+thicknessZero s =
   let l = thicknessToNum s in
-  if l == "0.0mm" then Just l else Nothing
-thicknessZero Nothing = Nothing
+  if l == 0.0 then Just "0.0em" else Nothing
 
-thicknessToNum :: String -> String
-thicknessToNum "thin" = "0.05mm"
-thicknessToNum "medium" = ""
-thicknessToNum "thick" = "0.3mm"
-thicknessToNum v = processLength v
-
-processLength :: String -> String
-processLength s = show (n * (unitToLaTeX unit)) ++ "mm"
-  where
-    ((n, unit): _) = reads s :: [(Float, String)]
+thicknessToNum :: String -> Double
+thicknessToNum "thin" = 0.175
+thicknessToNum "medium" = 0.5
+thicknessToNum "thick" = 1
+thicknessToNum v = fromMaybe 0.5 (readLength v)
 
 postfixExpr :: Element -> MML Exp
 postfixExpr e = local (setPosition FPostfix) (expr e)
 
-unitToLaTeX :: String -> Float
-unitToLaTeX "pt" = 2.84
-unitToLaTeX "mm" = 1
-unitToLaTeX "cm" = 10
-unitToLaTeX "in" = 25.4
-unitToLaTeX "ex" = 1.51
-unitToLaTeX "em" = 3.51
-unitToLaTeX "mu" = 18 * unitToLaTeX "em"
-unitToLaTeX _    = 1

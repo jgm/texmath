@@ -54,12 +54,12 @@ expToInlines (EDelimited start end xs) = do
   xs' <- mapM expToInlines xs
   return $ [Str start] ++ concat xs' ++ [Str end]
 expToInlines (EGrouped xs) = expsToInlines xs
-expToInlines (ESpace "0.167em") = Just [Str "\x2009"]
-expToInlines (ESpace "0.222em") = Just [Str "\x2005"]
-expToInlines (ESpace "0.278em") = Just [Str "\x2004"]
-expToInlines (ESpace "0.333em") = Just [Str "\x2004"]
-expToInlines (ESpace "1em")     = Just [Str "\x2001"]
-expToInlines (ESpace "2em")     = Just [Str "\x2001\x2001"]
+expToInlines (ESpace 0.167) = Just [Str "\x2009"]
+expToInlines (ESpace 0.222) = Just [Str "\x2005"]
+expToInlines (ESpace 0.278) = Just [Str "\x2004"]
+expToInlines (ESpace 0.333) = Just [Str "\x2004"]
+expToInlines (ESpace 1)     = Just [Str "\x2001"]
+expToInlines (ESpace 2)     = Just [Str "\x2001\x2001"]
 expToInlines (ESpace _)         = Just [Str " "]
 expToInlines (EBinary _ _ _) = Nothing
 expToInlines (ESub x y) = do

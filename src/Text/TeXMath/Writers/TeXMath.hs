@@ -27,7 +27,6 @@ import Data.Maybe (fromMaybe)
 import Data.Generics (everywhere, mkT)
 import Control.Applicative ((<$>), (<|>), Applicative)
 import qualified Data.Map as M
-import Data.Maybe (listToMaybe)
 import Control.Monad (when)
 import Control.Monad.Reader (MonadReader, runReader, Reader, asks)
 import Control.Monad.Writer(MonadWriter, WriterT, execWriterT, tell, censor)
@@ -204,12 +203,10 @@ cell = mapM_ writeExp
 -- Utility
 
 -- | Maps a length in em to the nearest bigger LaTeX space command
-getSpaceCommand :: String -> String
-getSpaceCommand width = snd $ fromMaybe (M.findMax spaceMap) (lookupGE (readSpace width) spaceMap)
+getSpaceCommand :: Double -> String
+getSpaceCommand width = snd $ fromMaybe (M.findMax spaceMap) (lookupGE width spaceMap)
   where
-    spaceMap = M.fromList (map (\(k, ESpace s) -> (readSpace s, k)) spaceCommands)
-    readSpace :: String -> Float
-    readSpace s = maybe 0 fst $ listToMaybe $ reads s
+    spaceMap = M.fromList (map (\(k, ESpace s) -> (s, k)) spaceCommands)
 
 lookupGE :: Ord k =>  k -> M.Map k v -> Maybe (k, v)
 lookupGE k m = let (_, v, g) = M.splitLookup k m in
@@ -217,15 +214,15 @@ lookupGE k m = let (_, v, g) = M.splitLookup k m in
 
 spaceCommands :: [(String, Exp)]
 spaceCommands =
-           [ ("\\!", ESpace "-0.167em")
-           , (""   , ESpace "0.0em")
-           , ("\\,", ESpace "0.167em")
-           , ("\\>", ESpace "0.222em")
-           , ("\\:", ESpace "0.222em")
-           , ("\\;", ESpace "0.278em")
-           , ("~", ESpace "0.333em")
-           , ("\\quad", ESpace "1.0em")
-           , ("\\qquad", ESpace "2.0em")]
+           [ ("\\!", ESpace (-0.167))
+           , (""   , ESpace 0.0)
+           , ("\\,", ESpace 0.167)
+           , ("\\>", ESpace 0.222)
+           , ("\\:", ESpace 0.222)
+           , ("\\;", ESpace 0.278)
+           , ("~", ESpace 0.333)
+           , ("\\quad", ESpace 1.0)
+           , ("\\qquad", ESpace 2.0)]
 
 -- Fix up
 

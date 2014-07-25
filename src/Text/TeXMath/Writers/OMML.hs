@@ -180,12 +180,12 @@ showExp e =
    EMathOperator x  -> [makeText TextNormal x]
    EStretchy x      -> showExp x  -- no support for stretchy in OMML
    ESymbol _ x      -> [str [] x]
-   ESpace "0.167em" -> [str [] "\x2009"]
-   ESpace "0.222em" -> [str [] "\x2005"]
-   ESpace "0.278em" -> [str [] "\x2004"]
-   ESpace "0.333em" -> [str [] "\x2004"]
-   ESpace "1em"     -> [str [] "\x2001"]
-   ESpace "2em"     -> [str [] "\x2001\x2001"]
+   ESpace 0.167     -> [str [] "\x2009"]
+   ESpace 0.222     -> [str [] "\x2005"]
+   ESpace 0.278     -> [str [] "\x2004"]
+   ESpace 0.333     -> [str [] "\x2004"]
+   ESpace 1         -> [str [] "\x2001"]
+   ESpace 2         -> [str [] "\x2001\x2001"]
    ESpace _         -> [] -- this is how the xslt sheet handles all spaces
    EBinary c x y    -> [showBinary c x y]
    EUnder x (ESymbol Accent [c]) | isBarChar c ->

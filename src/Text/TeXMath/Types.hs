@@ -43,7 +43,7 @@ data Exp =
   | EIdentifier String
   | EMathOperator String
   | ESymbol TeXSymbolType String
-  | ESpace String
+  | ESpace Double -- ^ Width in em
   | EBinary String Exp Exp
   | ESub Exp Exp
   | ESuper Exp Exp
