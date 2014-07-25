@@ -34,10 +34,16 @@ isControlSeq ['\\',c] = c /= ' '
 isControlSeq ('\\':xs) = all isLetter xs
 isControlSeq _ = False
 
-escapeLaTeX :: Char -> TeX
-escapeLaTeX c
+escapeLaTeX :: Bool -> Char -> TeX
+escapeLaTeX mathmode c
   | c `elem` "#$%&_{}" = Literal ("\\" ++ [c])
-  | c == '~' = ControlSeq "\\textasciitilde"
-  | c == '^' = ControlSeq "\\textasciicircum"
-  | c == '\\' = ControlSeq "\\textbackslash"
+  | c == '~' = if mathmode
+                  then ControlSeq "\\sim"
+                  else ControlSeq "\\textasciitilde"
+  | c == '^' = if mathmode
+                  then Literal "\\char`\\^"
+                  else ControlSeq "\\textasciicircum"
+  | c == '\\' = if mathmode
+                   then ControlSeq "\\setminus"
+                   else ControlSeq "\\textbackslash"
   | otherwise = Token c

@@ -72,7 +72,7 @@ charToString e c =
     (charToLaTeXString e c <|> textConvert e c)
   where
     fallback = concatMap asciiToLaTeX $ getASCII c
-    asciiToLaTeX ac = fromMaybe [escapeLaTeX ac] (charToLaTeXString e ac)
+    asciiToLaTeX ac = fromMaybe [escapeLaTeX True ac] (charToLaTeXString e ac)
 
 -- Takes a single character and attempts to convert it to a latex string
 charToLaTeXString :: Env -> Char -> Maybe [TeX]
