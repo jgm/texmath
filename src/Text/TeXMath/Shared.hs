@@ -42,7 +42,7 @@ getLaTeXTextCommand :: Env -> TextType -> String
 getLaTeXTextCommand e t =
   let textCmd = fromMaybe "\\mathrm"
                   (snd <$> M.lookup t textTypesMap) in
-  if textPackage textCmd `elem` e
+  if textPackage textCmd e
     then textCmd
     else fromMaybe "\\mathrm" (lookup textCmd alts)
 
@@ -117,11 +117,11 @@ alts :: [(String, String)]
 alts = [ ("\\mathbfit", "\\mathbf"), ("\\mathbfsfup", "\\mathbf"), ("\\mathbfsfit", "\\mathbf")
        , ("\\mathbfscr", "\\mathcal"), ("\\mathbffrak", "\\mathfrak"), ("\\mathsfit", "\\mathsf")]
 
-textPackage :: String -> String
-textPackage s
-  | s `elem` unicodeMath = "unicode-math"
-  | s `elem` base    = ""
-  | otherwise = ""
+textPackage :: String -> [String] -> Bool
+textPackage s e
+  | s `elem` unicodeMath = "unicode-math" `elem` e
+  | s `elem` base    = True
+  | otherwise = True
 
 scalers :: [(String, String)]
 scalers =
