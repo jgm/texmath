@@ -1,5 +1,6 @@
 module Text.TeXMath.TeX (TeX(..), renderTeX, isControlSeq, escapeLaTeX)
 where
+import Data.List (isPrefixOf)
 import Data.Char (isLetter, isAlphaNum)
 
 -- | An intermediate representation of TeX math, to be used in rendering.
@@ -8,7 +9,7 @@ data TeX = ControlSeq String
          | Literal String
          | Grouped [TeX]
          | Space
-         deriving Show
+         deriving (Show, Eq)
 
 -- | Render a 'TeX' to a string, appending to the front of the given string.
 renderTeX :: TeX -> String -> String
@@ -20,10 +21,19 @@ renderTeX (ControlSeq s) cs
   | startsWith isAlphaNum cs = s ++ (' ':cs)
   | otherwise                = s ++ cs
 renderTeX (Grouped [Grouped xs]) cs  = renderTeX (Grouped xs) cs
-renderTeX (Grouped xs) cs     = '{' : foldr renderTeX "" xs ++ "}" ++ cs
+renderTeX (Grouped xs) cs     =
+  '{' : foldr renderTeX "" (trimSpaces xs) ++ "}" ++ cs
+renderTeX Space ""             = "" -- no need to end with space
+renderTeX Space ('^':cs)       = '^':cs  -- no space before ^
+renderTeX Space ('_':cs)       = '^':cs  -- no space before ^
+renderTeX Space (' ':cs)       = ' ':cs  -- no doubled up spaces
 renderTeX Space cs
-  | startsWith (==' ') cs     = cs
-  | otherwise                 = ' ':cs
+  | "\\limits" `isPrefixOf` cs = cs      -- no space before \limits
+  | otherwise                  = ' ':cs
+
+trimSpaces :: [TeX] -> [TeX]
+trimSpaces = reverse . go . reverse . go
+  where go = dropWhile (== Space)
 
 startsWith :: (Char -> Bool) -> String -> Bool
 startsWith p (c:_) = p c

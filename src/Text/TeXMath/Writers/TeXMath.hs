@@ -167,12 +167,12 @@ writeExp (EStretchy (ESymbol Open e)) = do
   math <- getTeXMathM e
   case math of
        [] -> return ()
-       e' -> tell [ControlSeq "\\left"] >> tell e'
+       e' -> tell [ControlSeq "\\left"] >> tell e' >> tell [Space]
 writeExp (EStretchy (ESymbol Close e)) = do
   math <- getTeXMathM e
   case math of
        [] -> return ()
-       e' -> tell [ControlSeq "\\right"] >> tell e'
+       e' -> tell [Space, ControlSeq "\\right"] >> tell e'
 writeExp (EStretchy e) = writeExp e
 writeExp (EText ttype s) = do
   txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
