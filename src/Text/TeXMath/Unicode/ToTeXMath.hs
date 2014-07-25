@@ -82,14 +82,15 @@ charToLaTeXString e c = do
   -- Required packages for the command
   let required = filter (\z -> head z /= '-') $ (words . requirements) v
   let alts = getAlternatives (comments v)
-  let toLit [c'] = Token c'
-      toLit cs   = Literal cs
+  let toLit [c'] = [Token c']
+      toLit []   = []
+      toLit cs   = [Literal cs]
   latexCommand <-
     if null required || any (`elem` required) environment
        then Just $ case latex v of
                          ltx | isControlSeq ltx -> [ControlSeq ltx]
-                             | otherwise        -> [toLit ltx]
-       else (:[]) . toLit  <$>
+                             | otherwise        -> toLit ltx
+       else toLit <$>
               listToMaybe (catMaybes (map (flip lookup alts) environment))
   return $ if category v `elem` commands
               then latexCommand ++ [Grouped []]
