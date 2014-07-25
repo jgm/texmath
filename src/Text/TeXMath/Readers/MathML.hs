@@ -40,7 +40,7 @@ import Text.TeXMath.Readers.MathML.MMLDict (getOperator)
 import Text.TeXMath.Readers.MathML.EntityMap (getUnicode)
 import Text.TeXMath.Shared (getTextType, readLength)
 import Text.TeXMath.Compat (throwError, Except, runExcept, MonadError)
-import Control.Applicative ((<$>), (<|>), (<*>))
+import Control.Applicative ((<$>), (<|>), (<*>))i
 import Control.Arrow ((&&&))
 import Data.Maybe (fromMaybe, listToMaybe)
 import Data.Monoid (mconcat, First(..), getFirst)
@@ -51,7 +51,7 @@ import Data.Generics (everywhere, mkT)
 
 -- | Parse a MathML expression to a list of 'Exp'
 readMathML :: String -> Either String [Exp]
-readMathML inp = (:[]) . fixTree <$> (runExcept (flip runReaderT def (i >>= expr)))
+readMathML inp = map fixTree <$> (runExcept (flip runReaderT def (i >>= parseMathML)))
   where
     i = maybeToEither "Invalid XML" (parseXMLDoc inp)
 
@@ -63,6 +63,9 @@ data MMLState = MMLState { attrs :: [Attr]
 
 type MML = ReaderT MMLState (Except String)
 
+parseMathML :: Element -> MML [Exp]
+parseMathML e@(name -> "math") = group e
+parseMathML _ = throwError "Root must be math element"
 
 expr :: Element -> MML Exp
 expr e = local (addAttrs (elAttribs e)) (expr' e)
@@ -70,7 +73,6 @@ expr e = local (addAttrs (elAttribs e)) (expr' e)
 expr' :: Element -> MML Exp
 expr' e =
   case name e of
-    "math" -> row e
     "mi" -> ident e
     "mn" -> number e
     "mo" -> op e
@@ -159,11 +161,14 @@ space e = do
 -- Layout
 
 row :: Element -> MML Exp
-row e = do
+row e = EGrouped <$> group e
+
+group :: Element -> MML [Exp]
+group e = do
   front <- mapM expr frontSpaces
   middle <- local resetPosition (row' body)
   end <- local resetPosition (mapM expr endSpaces)
-  return $ EGrouped (front ++ middle ++ end)
+  return $ (front ++ middle ++ end)
   where
     cs = elChildren e
     (frontSpaces, noFront)  = span spacelike cs
