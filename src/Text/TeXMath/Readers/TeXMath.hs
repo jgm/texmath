@@ -241,6 +241,8 @@ environments = M.fromList
   , ("flalign", flalign)
   , ("flaligned", flalign)
   , ("cases", cases)
+  , ("matrix", matrixWith "" "")
+  , ("smallmatrix", matrixWith "" "")
   , ("pmatrix", matrixWith "(" ")")
   , ("bmatrix", matrixWith "[" "]")
   , ("Bmatrix", matrixWith "{" "}")
@@ -264,7 +266,9 @@ matrixWith opendelim closedelim = do
   mbaligns <- mbArrayAlignments
   lines' <- sepEndBy1 arrayLine endLine
   let aligns = fromMaybe (alignsFromRows AlignCenter lines') mbaligns
-  return $ EDelimited opendelim closedelim [EArray aligns lines']
+  return $ if null opendelim && null closedelim
+              then EArray aligns lines'
+              else EDelimited opendelim closedelim [EArray aligns lines']
 
 stdarray :: TP Exp
 stdarray = do
