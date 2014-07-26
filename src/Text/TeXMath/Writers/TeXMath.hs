@@ -74,12 +74,12 @@ writeExp :: Exp -> Math ()
 writeExp (ENumber s) = tell =<< getTeXMathM s
 writeExp (EGrouped es) = tellGroup (mapM_ writeExp es)
 writeExp (EDelimited "{" "" [EArray [AlignDefault,AlignDefault] rows]) =
-  table "cases" Nothing [] rows
+  table "cases" (Just AlignDefault) [AlignDefault,AlignDefault] rows
 writeExp (EDelimited "(" ")" [EArray aligns rows]) =
   table "pmatrix" (Just AlignCenter) aligns rows
 writeExp (EDelimited "[" "]" [EArray aligns rows]) =
   table "bmatrix" (Just AlignCenter) aligns rows
-writeExp (EDelimited "[" "]" [EArray aligns rows]) =
+writeExp (EDelimited "{" "}" [EArray aligns rows]) =
   table "Bmatrix" (Just AlignCenter) aligns rows
 writeExp (EDelimited "\x2223" "\x2223" [EArray aligns rows]) =
   table "vmatrix" (Just AlignCenter) aligns rows
