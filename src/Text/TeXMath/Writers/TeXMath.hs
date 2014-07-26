@@ -279,13 +279,19 @@ reorderDiacritical (EUnderover b e1 e@(ESymbol Accent _)) =
   reorderDiacritical' Over (EUnder b e1) e
 reorderDiacritical x = x
 
-matchStretch' :: Env -> [Exp] -> Int
-matchStretch'  _ [] = 0
-matchStretch' e ((EStretchy (ESymbol Open s)): xs) =
-  (if null (getTeXMath s e) then 0 else 1) + matchStretch' e xs
-matchStretch' e ((EStretchy (ESymbol Close s)): xs) =
-  (if null (getTeXMath s e) then 0 else (-1)) + matchStretch' e xs
-matchStretch' e (_:xs) = matchStretch' e xs
+matchStretch' :: Env -> Bool -> Exp  ->  Int
+matchStretch' e context expr = 
+  case expr of
+    (ESub sexp _)       -> matchStretch' e context sexp
+    (ESuper sexp _)     -> matchStretch' e context sexp
+    (ESubsup sexp _ _)    -> matchStretch' e context sexp
+    (EStretchy sexp)    -> matchStretch' e True sexp
+    (ESymbol Open sexp) -> r 1 sexp 
+    (ESymbol Close sexp) -> r (-1) sexp 
+    _ -> 0
+  where
+    r n s = if (null $ getTeXMath s e) || not context then 0 else n
+
 
 -- Ensure that the lefts match the rights.
 matchStretch :: Env -> [Exp] -> [Exp]
@@ -294,7 +300,7 @@ matchStretch e es
   | n > 0 = es ++ (replicate n $ EStretchy (ESymbol Close "."))
   | otherwise = es
   where
-    n = matchStretch' e es
+    n = foldr ((+) . matchStretch' e False) 0 es
 
 ms :: Env -> Exp -> Exp
 ms e (EGrouped xs) = EGrouped (matchStretch e xs)
@@ -302,6 +308,14 @@ ms e (EDelimited o c xs) = EDelimited o c (matchStretch e xs)
 ms e (EArray as rs) = EArray as (map (map (matchStretch e)) rs)
 ms _ x = x
 
+nestedStretch :: Exp -> Exp
+nestedStretch (EStretchy (ESub o@(ESymbol Open _) s)) = ESub (EStretchy o) s
+nestedStretch (EStretchy (ESub o@(ESymbol Close _) s)) = ESub (EStretchy o) s
+nestedStretch (EStretchy (ESuper o@(ESymbol Open _) s)) = ESuper (EStretchy o) s
+nestedStretch (EStretchy (ESuper o@(ESymbol Close _) s)) = ESuper (EStretchy o) s
+nestedStretch (EStretchy (ESubsup o@(ESymbol Open _) s1 s2)) = ESubsup (EStretchy o) s1 s2
+nestedStretch (EStretchy (ESubsup o@(ESymbol Close _) s1 s2)) = ESubsup (EStretchy o) s1 s2
+nestedStretch x = x
 
 fixTree :: Env -> [Exp] -> [Exp]
 fixTree env  (EGrouped -> es) =
@@ -312,6 +326,7 @@ fixTree env  (EGrouped -> es) =
     ( mkT (ms env)
     . mkT nestedStretch
     . mkT reorderDiacritical
+    . mkT removeAccentStretch
     ) es
 
 -- Operator Table
