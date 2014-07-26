@@ -27,7 +27,7 @@ import Data.Maybe (fromMaybe)
 import Data.Generics (everywhere, mkT)
 import Control.Applicative ((<$>), (<|>), Applicative)
 import qualified Data.Map as M
-import Control.Monad (when)
+import Control.Monad (when, unless)
 import Control.Monad.Reader (MonadReader, runReader, Reader, asks)
 import Control.Monad.Writer(MonadWriter, WriterT, execWriterT, tell, censor)
 import Text.TeXMath.TeX
@@ -73,6 +73,23 @@ tellGroup = censor ((:[]) . Grouped)
 writeExp :: Exp -> Math ()
 writeExp (ENumber s) = tell =<< getTeXMathM s
 writeExp (EGrouped es) = tellGroup (mapM_ writeExp es)
+writeExp (EDelimited "{" "" [EArray [AlignDefault,AlignDefault] rows]) =
+  table "cases" [] rows
+writeExp (EDelimited "(" ")" [EArray aligns rows]) =
+  table "pmatrix" aligns' rows
+   where aligns' = if all (== AlignCenter) aligns then [] else aligns
+writeExp (EDelimited "[" "]" [EArray aligns rows]) =
+  table "bmatrix" aligns' rows
+   where aligns' = if all (== AlignCenter) aligns then [] else aligns
+writeExp (EDelimited "[" "]" [EArray aligns rows]) =
+  table "Bmatrix" aligns' rows
+   where aligns' = if all (== AlignCenter) aligns then [] else aligns
+writeExp (EDelimited "\x2223" "\x2223" [EArray aligns rows]) =
+  table "vmatrix" aligns' rows
+   where aligns' = if all (== AlignCenter) aligns then [] else aligns
+writeExp (EDelimited "\x2225" "\x2225" [EArray aligns rows]) =
+  table "Vmatrix" aligns' rows
+   where aligns' = if all (== AlignCenter) aligns then [] else aligns
 writeExp (EDelimited open close es) =  do
   tell [ControlSeq "\\left" ]
   tell =<< getTeXMathM open
@@ -181,14 +198,16 @@ writeExp (EStyled ttype es) = do
   txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
   tell [ControlSeq txtcmd]
   tellGroup (mapM_ writeExp es)
-writeExp (EArray aligns rows) = table aligns rows
+writeExp (EArray aligns rows) = table "array" aligns rows
 
-table :: [Alignment] -> [ArrayLine] -> Math ()
-table as rows = do
-  tell [ControlSeq "\\begin", Grouped [Literal "array"],
-         Grouped [Literal columnAligns], Token '\n']
+table :: String -> [Alignment] -> [ArrayLine] -> Math ()
+table name as rows = do
+  tell [ControlSeq "\\begin", Grouped [Literal name]]
+  unless (null columnAligns) $
+    tell [Grouped [Literal columnAligns]]
+  tell [Token '\n']
   mapM_ row rows
-  tell [ControlSeq "\\end", Grouped [Literal "array"]]
+  tell [ControlSeq "\\end", Grouped [Literal name]]
   where
     columnAligns = map alignmentToLetter as
     alignmentToLetter AlignLeft = 'l'
