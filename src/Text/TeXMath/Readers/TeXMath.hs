@@ -32,6 +32,7 @@ import Text.TeXMath.Types
 import Control.Applicative ((<*), (*>), (<$>))
 import qualified Text.TeXMath.Shared as S
 import Text.TeXMath.Readers.TeXMath.Macros (applyMacros, parseMacroDefinitions)
+import Data.Maybe (fromMaybe)
 
 type TP = GenParser Char ()
 
@@ -254,27 +255,28 @@ environments = M.fromList
 mbArrayAlignments :: TP (Maybe [Alignment])
 mbArrayAlignments = option Nothing $ Just <$> arrayAlignments
 
+alignsFromRows :: Alignment -> [ArrayLine] -> [Alignment]
+alignsFromRows _ [] = []
+alignsFromRows defaultAlignment (r:_) = replicate (length r) defaultAlignment
+
 matrixWith :: String -> String -> TP Exp
 matrixWith opendelim closedelim = do
   mbaligns <- mbArrayAlignments
   lines' <- sepEndBy1 arrayLine endLine
-  let aligns = case (mbaligns, lines') of
-                    (Nothing, (l:_)) -> replicate (length l) AlignCenter
-                    (Just as, _)     -> as
-                    _                -> []
+  let aligns = fromMaybe (alignsFromRows AlignCenter lines') mbaligns
   return $ EDelimited opendelim closedelim [EArray aligns lines']
 
 stdarray :: TP Exp
 stdarray = do
   mbaligns <- mbArrayAlignments
   lines' <- sepEndBy1 arrayLine endLine
-  let aligns = case (mbaligns, lines') of
-                    (Nothing, (l:_)) -> replicate (length l) AlignDefault
-                    (Just as, _)     -> as
+  let aligns = fromMaybe (alignsFromRows AlignDefault lines') mbaligns
   return $ EArray aligns lines'
 
 gather :: TP Exp
-gather = (EArray [AlignCenter]) <$> sepEndBy arrayLine endLine
+gather = do
+  rows <- sepEndBy arrayLine endLine
+  return $ EArray (alignsFromRows AlignCenter rows) rows
 
 eqnarray :: TP Exp
 eqnarray = (EArray [AlignRight, AlignCenter, AlignLeft]) <$>
@@ -289,7 +291,7 @@ flalign = (EArray [AlignLeft, AlignRight]) <$> sepEndBy1 arrayLine endLine
 cases :: TP Exp
 cases = do
   rs <- sepEndBy1 arrayLine endLine
-  return $ EDelimited "{" "" [EArray [AlignDefault] rs]
+  return $ EDelimited "{" "" [EArray (alignsFromRows AlignDefault rs) rs]
 
 variable :: TP Exp
 variable = do
