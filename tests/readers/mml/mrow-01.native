@@ -1,1 +1,1 @@
-[EGrouped [EBinary "\\frac" (EIdentifier "x") (ENumber "4"),ESymbol Op "=",EBinary "\\frac" (EGrouped [EIdentifier "x"]) (EGrouped [ENumber "4"])]]
+[EBinary "\\frac" (EIdentifier "x") (ENumber "4"),ESymbol Op "=",EBinary "\\frac" (EGrouped [EIdentifier "x"]) (EGrouped [ENumber "4"])]

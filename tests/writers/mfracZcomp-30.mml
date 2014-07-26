@@ -1,7 +1,7 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
+    <mstyled mathvariant="normal">
       <mrow>
         <mi>HypergeomDist</mi>
         <mo>&#8289;</mo>
@@ -36,7 +36,7 @@
           <mrow>
             <mrow>
               <mo stretchy="true">(</mo>
-              <mfrac linethickness="0">
+              <mfrac>
                 <mi>K</mi>
                 <mi>k</mi>
               </mfrac>
@@ -45,7 +45,7 @@
             <mo>&#8290;</mo>
             <mrow>
               <mo stretchy="true">(</mo>
-              <mfrac linethickness="0">
+              <mfrac>
                 <mrow>
                   <mi>M</mi>
                   <mo>-</mo>
@@ -62,7 +62,7 @@
           </mrow>
           <mrow>
             <mo stretchy="true">(</mo>
-            <mfrac linethickness="0">
+            <mfrac>
               <mi>M</mi>
               <mi>n</mi>
             </mfrac>
@@ -70,6 +70,6 @@
           </mrow>
         </mfrac>
       </mrow>
-    </mrow>
+    </mstyled>
   </mrow>
 </math>

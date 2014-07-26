@@ -5,23 +5,33 @@
   </m:oMathParaPr>
   <m:oMath>
     <m:r>
-      <m:rPr />
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>(</m:t>
     </m:r>
     <m:r>
-      <m:rPr />
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>a</m:t>
     </m:r>
     <m:r>
-      <m:rPr />
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>+</m:t>
     </m:r>
     <m:r>
-      <m:rPr />
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>b</m:t>
     </m:r>
     <m:r>
-      <m:rPr />
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>)</m:t>
     </m:r>
   </m:oMath>

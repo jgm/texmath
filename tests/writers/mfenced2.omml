@@ -12,7 +12,9 @@
       </m:dPr>
       <m:e>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>x</m:t>
         </m:r>
       </m:e>

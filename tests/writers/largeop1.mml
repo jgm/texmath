@@ -7,7 +7,7 @@
           <mtext mathvariant="normal">displaystyle: false largeop: false</mtext>
         </mtd>
         <mtd>
-          <mrow>
+          <mstyled mathvariant="normal">
             <mo>⋀</mo>
             <mo>⋁</mo>
             <mo>∫</mo>
@@ -15,7 +15,7 @@
             <mo>∏</mo>
             <mo>⋃</mo>
             <mo>⋂</mo>
-          </mrow>
+          </mstyled>
         </mtd>
       </mtr>
       <mtr>
@@ -23,7 +23,7 @@
           <mtext mathvariant="normal">displaystyle: false largeop: true</mtext>
         </mtd>
         <mtd>
-          <mrow>
+          <mstyled mathvariant="normal">
             <mo>⋀</mo>
             <mo>⋁</mo>
             <mo>∫</mo>
@@ -31,7 +31,7 @@
             <mo>∏</mo>
             <mo>⋃</mo>
             <mo>⋂</mo>
-          </mrow>
+          </mstyled>
         </mtd>
       </mtr>
       <mtr>
@@ -39,7 +39,7 @@
           <mtext mathvariant="normal">displaystyle: true largeop: false</mtext>
         </mtd>
         <mtd>
-          <mrow>
+          <mstyled mathvariant="normal">
             <mo>⋀</mo>
             <mo>⋁</mo>
             <mo>∫</mo>
@@ -47,7 +47,7 @@
             <mo>∏</mo>
             <mo>⋃</mo>
             <mo>⋂</mo>
-          </mrow>
+          </mstyled>
         </mtd>
       </mtr>
       <mtr>
@@ -55,7 +55,7 @@
           <mtext mathvariant="normal">displaystyle: true largeop: true</mtext>
         </mtd>
         <mtd>
-          <mrow>
+          <mstyled mathvariant="normal">
             <mo>⋀</mo>
             <mo>⋁</mo>
             <mo>∫</mo>
@@ -63,7 +63,7 @@
             <mo>∏</mo>
             <mo>⋃</mo>
             <mo>⋂</mo>
-          </mrow>
+          </mstyled>
         </mtd>
       </mtr>
       <mtr>
@@ -71,7 +71,7 @@
           <mtext mathvariant="normal">displaystyle: false largeop: default</mtext>
         </mtd>
         <mtd>
-          <mrow>
+          <mstyled mathvariant="normal">
             <mo>⋀</mo>
             <mo>⋁</mo>
             <mo>∫</mo>
@@ -79,7 +79,7 @@
             <mo>∏</mo>
             <mo>⋃</mo>
             <mo>⋂</mo>
-          </mrow>
+          </mstyled>
         </mtd>
       </mtr>
       <mtr>
@@ -87,7 +87,7 @@
           <mtext mathvariant="normal">displaystyle: true largeop: default</mtext>
         </mtd>
         <mtd>
-          <mrow>
+          <mstyled mathvariant="normal">
             <mo>⋀</mo>
             <mo>⋁</mo>
             <mo>∫</mo>
@@ -95,7 +95,7 @@
             <mo>∏</mo>
             <mo>⋃</mo>
             <mo>⋂</mo>
-          </mrow>
+          </mstyled>
         </mtd>
       </mtr>
     </mtable>

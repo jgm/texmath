@@ -1,9 +1,9 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <mtext mathvariant="normal">Inline, auto, no line </mtext>
-      <mfrac linethickness="0">
+    <mtext mathvariant="normal">Inline, auto, no line </mtext>
+    <mstyled mathvariant="normal">
+      <mfrac>
         <mrow>
           <msup>
             <mi>x</mi>
@@ -14,7 +14,7 @@
         </mrow>
         <mi>x</mi>
       </mfrac>
-      <mtext mathvariant="normal"> the end.</mtext>
-    </mrow>
+    </mstyled>
+    <mtext mathvariant="normal"> the end.</mtext>
   </mrow>
 </math>

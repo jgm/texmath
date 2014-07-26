@@ -1,8 +1,8 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <mtext mathvariant="normal">Inline fenced nested fractions </mtext>
+    <mtext mathvariant="normal">Inline fenced nested fractions </mtext>
+    <mstyled mathvariant="normal">
       <mrow>
         <mrow>
           <mo stretchy="true">[</mo>
@@ -47,7 +47,7 @@
           <mo stretchy="false">]</mo>
         </mrow>
       </mrow>
-      <mtext mathvariant="normal"> etc.</mtext>
-    </mrow>
+    </mstyled>
+    <mtext mathvariant="normal"> etc.</mtext>
   </mrow>
 </math>

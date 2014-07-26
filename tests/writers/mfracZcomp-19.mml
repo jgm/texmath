@@ -1,8 +1,8 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <mtext mathvariant="normal">Inline double up arrows, auto, thick line </mtext>
+    <mtext mathvariant="normal">Inline double up arrows, auto, thick line </mtext>
+    <mstyled mathvariant="normal">
       <mrow>
         <mo stretchy="true">⇑</mo>
         <mfrac>
@@ -15,7 +15,7 @@
         </mfrac>
         <mo stretchy="true">⇑</mo>
       </mrow>
-      <mtext mathvariant="normal"> the end.</mtext>
-    </mrow>
+    </mstyled>
+    <mtext mathvariant="normal"> the end.</mtext>
   </mrow>
 </math>

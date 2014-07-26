@@ -1,8 +1,8 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <mtext mathvariant="normal">Inline nested fracs </mtext>
+    <mtext mathvariant="normal">Inline nested fracs </mtext>
+    <mstyled mathvariant="normal">
       <mfrac>
         <msup>
           <mn>1</mn>
@@ -54,7 +54,7 @@
           </mfrac>
         </mrow>
       </mfrac>
-      <mtext mathvariant="normal"> are script size at the first level and decrease to script script size for all more nested levels.</mtext>
-    </mrow>
+    </mstyled>
+    <mtext mathvariant="normal"> are script size at the first level and decrease to script script size for all more nested levels.</mtext>
   </mrow>
 </math>

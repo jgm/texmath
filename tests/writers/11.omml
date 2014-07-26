@@ -7,61 +7,85 @@
     <m:sSub>
       <m:e>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>ϕ</m:t>
         </m:r>
       </m:e>
       <m:sub>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>n</m:t>
         </m:r>
       </m:sub>
     </m:sSub>
     <m:r>
-      <m:rPr />
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>(</m:t>
     </m:r>
     <m:r>
-      <m:rPr />
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>κ</m:t>
     </m:r>
     <m:r>
-      <m:rPr />
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>)</m:t>
     </m:r>
     <m:r>
-      <m:rPr />
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>=</m:t>
     </m:r>
     <m:r>
-      <m:rPr />
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>0</m:t>
     </m:r>
     <m:r>
-      <m:rPr />
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>.</m:t>
     </m:r>
     <m:r>
-      <m:rPr />
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>033</m:t>
     </m:r>
     <m:sSubSup>
       <m:e>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>C</m:t>
         </m:r>
       </m:e>
       <m:sub>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>n</m:t>
         </m:r>
       </m:sub>
       <m:sup>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>2</m:t>
         </m:r>
       </m:sup>
@@ -69,35 +93,49 @@
     <m:sSup>
       <m:e>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>κ</m:t>
         </m:r>
       </m:e>
       <m:sup>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>−</m:t>
         </m:r>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>11</m:t>
         </m:r>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>/</m:t>
         </m:r>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>3</m:t>
         </m:r>
       </m:sup>
     </m:sSup>
     <m:r>
-      <m:rPr />
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>,</m:t>
     </m:r>
     <m:r>
-      <m:rPr />
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t> </m:t>
     </m:r>
     <m:f>
@@ -106,7 +144,9 @@
       </m:fPr>
       <m:num>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>1</m:t>
         </m:r>
       </m:num>
@@ -114,13 +154,17 @@
         <m:sSub>
           <m:e>
             <m:r>
-              <m:rPr />
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>L</m:t>
             </m:r>
           </m:e>
           <m:sub>
             <m:r>
-              <m:rPr />
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>0</m:t>
             </m:r>
           </m:sub>
@@ -128,15 +172,21 @@
       </m:den>
     </m:f>
     <m:r>
-      <m:rPr />
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>≪</m:t>
     </m:r>
     <m:r>
-      <m:rPr />
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>κ</m:t>
     </m:r>
     <m:r>
-      <m:rPr />
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>≪</m:t>
     </m:r>
     <m:f>
@@ -145,7 +195,9 @@
       </m:fPr>
       <m:num>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>1</m:t>
         </m:r>
       </m:num>
@@ -153,13 +205,17 @@
         <m:sSub>
           <m:e>
             <m:r>
-              <m:rPr />
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>l</m:t>
             </m:r>
           </m:e>
           <m:sub>
             <m:r>
-              <m:rPr />
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>0</m:t>
             </m:r>
           </m:sub>

@@ -1,21 +1,23 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <mtext mathvariant="normal">Inline binomial, text style, no line </mtext>
+    <mtext mathvariant="normal">Inline binomial, text style, no line </mtext>
+    <mstyled mathvariant="normal">
       <mrow>
         <mo stretchy="true">(</mo>
-        <mfrac linethickness="0">
-          <mrow>
-            <mi>log</mi>
-            <mo>&#8289;</mo>
-            <mi>x</mi>
-          </mrow>
-          <mi>y</mi>
-        </mfrac>
+        <mstyled mathvariant="normal">
+          <mfrac>
+            <mrow>
+              <mi>log</mi>
+              <mo>&#8289;</mo>
+              <mi>x</mi>
+            </mrow>
+            <mi>y</mi>
+          </mfrac>
+        </mstyled>
         <mo stretchy="true">)</mo>
       </mrow>
-      <mtext mathvariant="normal"> the end.</mtext>
-    </mrow>
+    </mstyled>
+    <mtext mathvariant="normal"> the end.</mtext>
   </mrow>
 </math>

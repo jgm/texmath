@@ -12,35 +12,45 @@
     </m:r>
     <m:f>
       <m:fPr>
-        <m:type m:val="noBar" />
+        <m:type m:val="bar" />
       </m:fPr>
       <m:num>
         <m:sSup>
           <m:e>
             <m:r>
-              <m:rPr />
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>x</m:t>
             </m:r>
           </m:e>
           <m:sup>
             <m:r>
-              <m:rPr />
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>2</m:t>
             </m:r>
           </m:sup>
         </m:sSup>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>+</m:t>
         </m:r>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>1</m:t>
         </m:r>
       </m:num>
       <m:den>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>x</m:t>
         </m:r>
       </m:den>

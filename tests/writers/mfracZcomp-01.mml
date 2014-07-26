@@ -1,8 +1,8 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <mtext mathvariant="normal">Inline, auto, normal line </mtext>
+    <mtext mathvariant="normal">Inline, auto, normal line </mtext>
+    <mstyled mathvariant="normal">
       <mfrac>
         <mrow>
           <mi>sin</mi>
@@ -11,7 +11,7 @@
         </mrow>
         <mi>π</mi>
       </mfrac>
-      <mtext mathvariant="normal">, numerator and denominator should render script size.</mtext>
-    </mrow>
+    </mstyled>
+    <mtext mathvariant="normal">, numerator and denominator should render script size.</mtext>
   </mrow>
 </math>

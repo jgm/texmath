@@ -1,8 +1,8 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <mtext mathvariant="normal">Displayed nested fractions are normal size at the first level, </mtext>
+    <mtext mathvariant="normal">Displayed nested fractions are normal size at the first level, </mtext>
+    <mstyled mathvariant="normal">
       <mfrac>
         <msup>
           <mn>1</mn>
@@ -54,7 +54,7 @@
           </mfrac>
         </mrow>
       </mfrac>
-      <mtext mathvariant="normal"> script size at second level, and script-script size at all more nested levels.</mtext>
-    </mrow>
+    </mstyled>
+    <mtext mathvariant="normal"> script size at second level, and script-script size at all more nested levels.</mtext>
   </mrow>
 </math>

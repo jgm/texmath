@@ -15,29 +15,41 @@
           </m:radPr>
           <m:deg>
             <m:r>
-              <m:rPr />
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>x</m:t>
             </m:r>
             <m:r>
-              <m:rPr />
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>-</m:t>
             </m:r>
             <m:r>
-              <m:rPr />
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>3</m:t>
             </m:r>
           </m:deg>
           <m:e>
             <m:r>
-              <m:rPr />
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>x</m:t>
             </m:r>
             <m:r>
-              <m:rPr />
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>-</m:t>
             </m:r>
             <m:r>
-              <m:rPr />
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>3</m:t>
             </m:r>
           </m:e>
@@ -50,25 +62,35 @@
           </m:radPr>
           <m:deg>
             <m:r>
-              <m:rPr />
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>3</m:t>
             </m:r>
             <m:r>
-              <m:rPr />
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>x</m:t>
             </m:r>
           </m:deg>
           <m:e>
             <m:r>
-              <m:rPr />
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>x</m:t>
             </m:r>
             <m:r>
-              <m:rPr />
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>-</m:t>
             </m:r>
             <m:r>
-              <m:rPr />
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>3</m:t>
             </m:r>
           </m:e>
@@ -81,13 +103,17 @@
       </m:radPr>
       <m:deg>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>3</m:t>
         </m:r>
       </m:deg>
       <m:e>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>x</m:t>
         </m:r>
       </m:e>

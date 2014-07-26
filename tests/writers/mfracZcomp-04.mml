@@ -1,8 +1,8 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <mtext mathvariant="normal">Inline, auto, thick line </mtext>
+    <mtext mathvariant="normal">Inline, auto, thick line </mtext>
+    <mstyled mathvariant="normal">
       <mfrac>
         <mrow>
           <msup>
@@ -14,7 +14,7 @@
         </mrow>
         <mi>x</mi>
       </mfrac>
-      <mtext mathvariant="normal">, the superscripted 2 should be script-script size.</mtext>
-    </mrow>
+    </mstyled>
+    <mtext mathvariant="normal">, the superscripted 2 should be script-script size.</mtext>
   </mrow>
 </math>

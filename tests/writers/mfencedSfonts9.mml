@@ -1,7 +1,7 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
+    <mstyled mathvariant="normal">
       <mrow>
         <mo stretchy="true">(</mo>
         <mrow>
@@ -11,7 +11,9 @@
         </mrow>
         <mo stretchy="true">)</mo>
       </mrow>
-      <mo>=</mo>
+    </mstyled>
+    <mo>=</mo>
+    <mstyled mathvariant="normal">
       <mrow>
         <mo stretchy="true">(</mo>
         <mfrac>
@@ -20,7 +22,9 @@
         </mfrac>
         <mo stretchy="true">)</mo>
       </mrow>
-      <mo>=</mo>
+    </mstyled>
+    <mo>=</mo>
+    <mstyled mathvariant="normal">
       <mrow>
         <mo stretchy="true">[</mo>
         <mrow>
@@ -30,6 +34,6 @@
         </mrow>
         <mo stretchy="true">)</mo>
       </mrow>
-    </mrow>
+    </mstyled>
   </mrow>
 </math>

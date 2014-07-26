@@ -1,8 +1,8 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <mtext mathvariant="normal">LaTeX renders continued fractions </mtext>
+    <mtext mathvariant="normal">LaTeX renders continued fractions </mtext>
+    <mstyled mathvariant="normal">
       <mfrac>
         <mn>1</mn>
         <mrow>
@@ -10,46 +10,54 @@
             <mn>2</mn>
           </msqrt>
           <mo>+</mo>
-          <mfrac>
-            <mn>1</mn>
-            <mrow>
-              <msqrt>
-                <mn>3</mn>
-              </msqrt>
-              <mo>+</mo>
-              <mfrac>
-                <mn>1</mn>
-                <mrow>
-                  <msqrt>
-                    <mn>4</mn>
-                  </msqrt>
-                  <mo>+</mo>
+          <mstyled mathvariant="normal">
+            <mfrac>
+              <mn>1</mn>
+              <mrow>
+                <msqrt>
+                  <mn>3</mn>
+                </msqrt>
+                <mo>+</mo>
+                <mstyled mathvariant="normal">
                   <mfrac>
                     <mn>1</mn>
                     <mrow>
                       <msqrt>
-                        <mn>5</mn>
+                        <mn>4</mn>
                       </msqrt>
                       <mo>+</mo>
-                      <mfrac>
-                        <mn>1</mn>
-                        <mrow>
-                          <msqrt>
-                            <mn>6</mn>
-                          </msqrt>
-                          <mo>+</mo>
-                          <mi>…</mi>
-                        </mrow>
-                      </mfrac>
+                      <mstyled mathvariant="normal">
+                        <mfrac>
+                          <mn>1</mn>
+                          <mrow>
+                            <msqrt>
+                              <mn>5</mn>
+                            </msqrt>
+                            <mo>+</mo>
+                            <mstyled mathvariant="normal">
+                              <mfrac>
+                                <mn>1</mn>
+                                <mrow>
+                                  <msqrt>
+                                    <mn>6</mn>
+                                  </msqrt>
+                                  <mo>+</mo>
+                                  <mi>…</mi>
+                                </mrow>
+                              </mfrac>
+                            </mstyled>
+                          </mrow>
+                        </mfrac>
+                      </mstyled>
                     </mrow>
                   </mfrac>
-                </mrow>
-              </mfrac>
-            </mrow>
-          </mfrac>
+                </mstyled>
+              </mrow>
+            </mfrac>
+          </mstyled>
         </mrow>
       </mfrac>
-      <mtext mathvariant="normal"> normal size at all levels in all contexts</mtext>
-    </mrow>
+    </mstyled>
+    <mtext mathvariant="normal"> normal size at all levels in all contexts</mtext>
   </mrow>
 </math>

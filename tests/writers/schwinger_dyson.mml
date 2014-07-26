@@ -6,7 +6,9 @@
       <mi>ψ</mi>
       <mrow>
         <mo stretchy="true">∣</mo>
-        <mtext mathvariant="script">𝒯</mtext>
+        <mstyled mathvariant="script">
+          <mi>T</mi>
+        </mstyled>
         <mrow>
           <mo stretchy="true">{</mo>
           <mfrac>
@@ -29,13 +31,17 @@
     </mrow>
     <mo>=</mo>
     <mo>−</mo>
-    <mtext mathvariant="normal">i</mtext>
+    <mstyled mathvariant="normal">
+      <mi>i</mi>
+    </mstyled>
     <mrow>
       <mo stretchy="true">⟨</mo>
       <mi>ψ</mi>
       <mrow>
         <mo stretchy="true">∣</mo>
-        <mtext mathvariant="script">𝒯</mtext>
+        <mstyled mathvariant="script">
+          <mi>T</mi>
+        </mstyled>
         <mrow>
           <mo stretchy="true">{</mo>
           <mi>F</mi>

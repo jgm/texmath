@@ -1,7 +1,9 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mtext mathvariant="bold">C</mtext>
+    <mstyled mathvariant="bold">
+      <mi>C</mi>
+    </mstyled>
     <mo stretchy="false">(</mo>
     <mi>n</mi>
     <mo>,</mo>
@@ -9,7 +11,9 @@
     <mo stretchy="false">)</mo>
     <mo>=</mo>
     <msubsup>
-      <mtext mathvariant="bold">C</mtext>
+      <mstyled mathvariant="bold">
+        <mi>C</mi>
+      </mstyled>
       <mi>k</mi>
       <mi>n</mi>
     </msubsup>
@@ -19,7 +23,9 @@
       <mi>n</mi>
     </msub>
     <msub>
-      <mtext mathvariant="bold">C</mtext>
+      <mstyled mathvariant="bold">
+        <mi>C</mi>
+      </mstyled>
       <mi>k</mi>
     </msub>
     <mo>=</mo>

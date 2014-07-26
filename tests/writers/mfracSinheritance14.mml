@@ -2,7 +2,24 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
     <mrow>
-      <mfrac>
+      <mstyled mathvariant="normal">
+        <mfrac>
+          <mfrac>
+            <mn>1</mn>
+            <mrow>
+              <mi>y</mi>
+              <mo>+</mo>
+              <mn>3</mn>
+            </mrow>
+          </mfrac>
+          <mrow>
+            <mi>y</mi>
+            <mo>+</mo>
+            <mn>3</mn>
+          </mrow>
+        </mfrac>
+      </mstyled>
+      <mstyled mathvariant="normal">
         <mfrac>
           <mn>1</mn>
           <mrow>
@@ -11,35 +28,26 @@
             <mn>3</mn>
           </mrow>
         </mfrac>
-        <mrow>
-          <mi>y</mi>
-          <mo>+</mo>
-          <mn>3</mn>
-        </mrow>
-      </mfrac>
-      <mfrac>
-        <mn>1</mn>
-        <mrow>
-          <mi>y</mi>
-          <mo>+</mo>
-          <mn>3</mn>
-        </mrow>
-      </mfrac>
-      <mfrac>
+      </mstyled>
+      <mstyled mathvariant="normal">
         <mfrac>
-          <mn>1</mn>
+          <mstyled mathvariant="normal">
+            <mfrac>
+              <mn>1</mn>
+              <mrow>
+                <mi>y</mi>
+                <mo>+</mo>
+                <mn>3</mn>
+              </mrow>
+            </mfrac>
+          </mstyled>
           <mrow>
             <mi>y</mi>
             <mo>+</mo>
             <mn>3</mn>
           </mrow>
         </mfrac>
-        <mrow>
-          <mi>y</mi>
-          <mo>+</mo>
-          <mn>3</mn>
-        </mrow>
-      </mfrac>
+      </mstyled>
     </mrow>
   </mrow>
 </math>

@@ -7,19 +7,25 @@
     <m:sSub>
       <m:e>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>P</m:t>
         </m:r>
       </m:e>
       <m:sub>
         <m:r>
-          <m:rPr />
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>0</m:t>
         </m:r>
       </m:sub>
     </m:sSub>
     <m:r>
-      <m:rPr />
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>=</m:t>
     </m:r>
     <m:limLow>
@@ -27,13 +33,17 @@
         <m:sSub>
           <m:e>
             <m:r>
-              <m:rPr />
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>P</m:t>
             </m:r>
           </m:e>
           <m:sub>
             <m:r>
-              <m:rPr />
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>0</m:t>
             </m:r>
           </m:sub>

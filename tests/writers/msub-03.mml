@@ -1,21 +1,19 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
+    <msub>
+      <mi>V</mi>
+      <mo>+</mo>
+    </msub>
+    <mo>=</mo>
+    <msub>
+      <mi>V</mi>
       <msub>
-        <mi>V</mi>
         <mo>+</mo>
+        <mphantom>
+          <mtext mathvariant="normal">fail</mtext>
+        </mphantom>
       </msub>
-      <mo>=</mo>
-      <msub>
-        <mi>V</mi>
-        <msub>
-          <mo>+</mo>
-          <mphantom>
-            <mtext mathvariant="normal">fail</mtext>
-          </mphantom>
-        </msub>
-      </msub>
-    </mrow>
+    </msub>
   </mrow>
 </math>

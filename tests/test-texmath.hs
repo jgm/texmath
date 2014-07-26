@@ -103,7 +103,7 @@ runWriterTest f input output = do
                  ((x,_):_) -> return x
                  []        -> error $ "Could not read " ++ input
   let result = ensureFinalNewline $ f native
-  --writeFile output result -- uncomment to regen rests (use with care!)
+  -- writeFile output result -- uncomment to regen rests (use with care!)
   out_t <- ensureFinalNewline <$> readFile' output
   if result == out_t
      then printPass input output >> return (Pass input output)
@@ -115,8 +115,10 @@ runReaderTest :: (String -> Either String String)
         -> IO Status
 runReaderTest fn input output = do
   inp_t <- readFile' input
+  let result = ensureFinalNewline <$> fn inp_t
+  -- writeFile output (either (const "") id result) -- uncomment to regen rests (use with care!)
   out_t <- ensureFinalNewline <$> readFile' output
-  case ensureFinalNewline <$> (fn inp_t) of
+  case result of
        Left msg       -> printError input output msg >>
                          return (Error input output)
        Right r

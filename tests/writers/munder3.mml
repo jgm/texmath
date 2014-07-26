@@ -1,16 +1,18 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
+    <mstyled mathvariant="normal">
       <munder>
         <mi>x</mi>
         <mo stretchy="true" accent="true">ˆ</mo>
       </munder>
       <mo>≠</mo>
-      <munder>
-        <mi>x</mi>
-        <mo stretchy="true" accent="true">ˆ</mo>
-      </munder>
+      <mstyled mathvariant="normal">
+        <munder>
+          <mi>x</mi>
+          <mo stretchy="true" accent="true">ˆ</mo>
+        </munder>
+      </mstyled>
       <mo>=</mo>
       <munder>
         <mi>x</mi>
@@ -21,6 +23,6 @@
         <mi>x</mi>
         <mo stretchy="true">ˆ</mo>
       </munder>
-    </mrow>
+    </mstyled>
   </mrow>
 </math>

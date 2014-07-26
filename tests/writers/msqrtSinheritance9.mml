@@ -2,36 +2,46 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
     <mrow>
+      <mstyled mathvariant="normal">
+        <mfrac>
+          <mstyled mathvariant="normal">
+            <msqrt>
+              <mrow>
+                <mi>x</mi>
+                <mo>-</mo>
+                <mn>3</mn>
+              </mrow>
+            </msqrt>
+          </mstyled>
+          <mstyled mathvariant="normal">
+            <msqrt>
+              <mrow>
+                <mn>3</mn>
+                <mi>x</mi>
+              </mrow>
+            </msqrt>
+          </mstyled>
+        </mfrac>
+      </mstyled>
       <mfrac>
-        <msqrt>
-          <mrow>
-            <mi>x</mi>
-            <mo>-</mo>
-            <mn>3</mn>
-          </mrow>
-        </msqrt>
-        <msqrt>
-          <mrow>
-            <mn>3</mn>
-            <mi>x</mi>
-          </mrow>
-        </msqrt>
-      </mfrac>
-      <mfrac>
-        <msqrt>
-          <mrow>
-            <mn>2</mn>
-            <mi>x</mi>
-            <mo>-</mo>
-            <mn>3</mn>
-          </mrow>
-        </msqrt>
-        <msqrt>
-          <mrow>
-            <mn>3</mn>
-            <mi>x</mi>
-          </mrow>
-        </msqrt>
+        <mstyled mathvariant="normal">
+          <msqrt>
+            <mrow>
+              <mn>2</mn>
+              <mi>x</mi>
+              <mo>-</mo>
+              <mn>3</mn>
+            </mrow>
+          </msqrt>
+        </mstyled>
+        <mstyled mathvariant="normal">
+          <msqrt>
+            <mrow>
+              <mn>3</mn>
+              <mi>x</mi>
+            </mrow>
+          </msqrt>
+        </mstyled>
       </mfrac>
     </mrow>
   </mrow>

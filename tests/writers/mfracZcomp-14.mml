@@ -1,21 +1,23 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <mtext mathvariant="normal">Inline up arrows, display style, no line </mtext>
+    <mtext mathvariant="normal">Inline up arrows, display style, no line </mtext>
+    <mstyled mathvariant="normal">
       <mrow>
         <mo stretchy="true">↑</mo>
-        <mfrac linethickness="0">
-          <mrow>
-            <mi>sin</mi>
-            <mo>&#8289;</mo>
-            <mi>θ</mi>
-          </mrow>
-          <mi>M</mi>
-        </mfrac>
+        <mstyled mathvariant="normal">
+          <mfrac>
+            <mrow>
+              <mi>sin</mi>
+              <mo>&#8289;</mo>
+              <mi>θ</mi>
+            </mrow>
+            <mi>M</mi>
+          </mfrac>
+        </mstyled>
         <mo stretchy="true">↑</mo>
       </mrow>
-      <mtext mathvariant="normal"> the end.</mtext>
-    </mrow>
+    </mstyled>
+    <mtext mathvariant="normal"> the end.</mtext>
   </mrow>
 </math>

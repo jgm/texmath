@@ -1,7 +1,7 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
+    <mstyled mathvariant="normal">
       <msubsup>
         <mo>∫</mo>
         <mn>0</mn>
@@ -103,6 +103,6 @@
       <mtext mathvariant="normal"> </mtext>
       <mo>ⅆ</mo>
       <mi>x</mi>
-    </mrow>
+    </mstyled>
   </mrow>
 </math>

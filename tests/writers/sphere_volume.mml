@@ -28,7 +28,14 @@
     <mtable>
       <mtr>
         <mtd columnalign="right">
-          <mtext mathvariant="normal">Volume</mtext>
+          <mstyled mathvariant="normal">
+            <mi>V</mi>
+            <mi>o</mi>
+            <mi>l</mi>
+            <mi>u</mi>
+            <mi>m</mi>
+            <mi>e</mi>
+          </mstyled>
         </mtd>
         <mtd columnalign="left">
           <mo>=</mo>
@@ -44,13 +51,19 @@
           <mi>sin</mi>
           <mi>θ</mi>
           <mspace width="0.167em" />
-          <mtext mathvariant="normal">d</mtext>
+          <mstyled mathvariant="normal">
+            <mi>d</mi>
+          </mstyled>
           <mi>ρ</mi>
           <mspace width="0.167em" />
-          <mtext mathvariant="normal">d</mtext>
+          <mstyled mathvariant="normal">
+            <mi>d</mi>
+          </mstyled>
           <mi>θ</mi>
           <mspace width="0.167em" />
-          <mtext mathvariant="normal">d</mtext>
+          <mstyled mathvariant="normal">
+            <mi>d</mi>
+          </mstyled>
           <mi>ϕ</mi>
         </mtd>
       </mtr>
@@ -67,7 +80,9 @@
             </mrow>
           </msubsup>
           <mspace width="-0.167em" />
-          <mtext mathvariant="normal">d</mtext>
+          <mstyled mathvariant="normal">
+            <mi>d</mi>
+          </mstyled>
           <mi>ϕ</mi>
           <mspace width="0.167em" />
           <msubsup>
@@ -79,7 +94,9 @@
           <mi>sin</mi>
           <mi>θ</mi>
           <mspace width="0.167em" />
-          <mtext mathvariant="normal">d</mtext>
+          <mstyled mathvariant="normal">
+            <mi>d</mi>
+          </mstyled>
           <mi>θ</mi>
           <mspace width="0.167em" />
           <msubsup>
@@ -92,7 +109,9 @@
             <mi>ρ</mi>
             <mn>2</mn>
           </msup>
-          <mtext mathvariant="normal">d</mtext>
+          <mstyled mathvariant="normal">
+            <mi>d</mi>
+          </mstyled>
           <mi>ρ</mi>
         </mtd>
       </mtr>

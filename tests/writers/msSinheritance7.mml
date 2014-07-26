@@ -1,20 +1,22 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <mtext mathvariant="normal">“big”</mtext>
-      <mo>+</mo>
-      <mtext mathvariant="normal">“bog”</mtext>
-      <mo>+</mo>
+    <mstyled mathvariant="normal">
       <mrow>
-        <mtext mathvariant="normal">“new”</mtext>
+        <mtext mathvariant="normal">“big”</mtext>
         <mo>+</mo>
-        <mtext mathvariant="normal">“net”</mtext>
+        <mtext mathvariant="normal">“bog”</mtext>
         <mo>+</mo>
-        <mtext mathvariant="normal">“nod”</mtext>
+        <mstyled mathvariant="normal">
+          <mtext mathvariant="normal">“new”</mtext>
+          <mo>+</mo>
+          <mtext mathvariant="normal">“net”</mtext>
+          <mo>+</mo>
+          <mtext mathvariant="normal">“nod”</mtext>
+        </mstyled>
+        <mo>+</mo>
+        <mtext mathvariant="normal">“nix”</mtext>
       </mrow>
-      <mo>+</mo>
-      <mtext mathvariant="normal">“nix”</mtext>
-    </mrow>
+    </mstyled>
   </mrow>
 </math>

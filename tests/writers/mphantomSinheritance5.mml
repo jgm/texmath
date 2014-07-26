@@ -1,33 +1,35 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <mrow>
-        <mi>A</mi>
+    <mstyled mathvariant="normal">
+      <mi>A</mi>
+      <mstyled mathvariant="normal">
         <mphantom>
           <mi>A</mi>
         </mphantom>
+      </mstyled>
+      <mi>A</mi>
+      <mstyled mathvariant="normal">
+        <mphantom>
+          <mrow>
+            <mi>A</mi>
+            <mo>+</mo>
+            <mi>A</mi>
+          </mrow>
+        </mphantom>
         <mi>A</mi>
-        <mrow>
-          <mphantom>
-            <mrow>
-              <mi>A</mi>
-              <mo>+</mo>
-              <mi>A</mi>
-            </mrow>
-          </mphantom>
-          <mi>A</mi>
-        </mrow>
-      </mrow>
+      </mstyled>
+    </mstyled>
+    <mi>A</mi>
+    <mstyled mathvariant="normal">
+      <mi>A</mi>
+    </mstyled>
+    <mi>A</mi>
+    <mstyled mathvariant="normal">
+      <mi>A</mi>
+      <mo>+</mo>
       <mi>A</mi>
       <mi>A</mi>
-      <mi>A</mi>
-      <mrow>
-        <mi>A</mi>
-        <mo>+</mo>
-        <mi>A</mi>
-        <mi>A</mi>
-      </mrow>
-    </mrow>
+    </mstyled>
   </mrow>
 </math>

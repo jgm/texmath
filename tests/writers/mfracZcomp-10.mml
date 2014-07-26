@@ -1,17 +1,17 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <mtext mathvariant="normal">Inline binomial, auto, no line </mtext>
+    <mtext mathvariant="normal">Inline binomial, auto, no line </mtext>
+    <mstyled mathvariant="normal">
       <mrow>
         <mo stretchy="true">(</mo>
-        <mfrac linethickness="0">
+        <mfrac>
           <mn>5</mn>
           <mn>8</mn>
         </mfrac>
         <mo stretchy="true">)</mo>
       </mrow>
-      <mtext mathvariant="normal"> the end.</mtext>
-    </mrow>
+    </mstyled>
+    <mtext mathvariant="normal"> the end.</mtext>
   </mrow>
 </math>

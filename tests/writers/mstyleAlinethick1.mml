@@ -1,7 +1,7 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
+    <mstyled mathvariant="normal">
       <mfrac>
         <mi>x</mi>
         <mfrac>
@@ -9,7 +9,9 @@
           <mn>2</mn>
         </mfrac>
       </mfrac>
-      <mo>=</mo>
+    </mstyled>
+    <mo>=</mo>
+    <mstyled mathvariant="normal">
       <mfrac>
         <mi>x</mi>
         <mfrac>
@@ -17,7 +19,9 @@
           <mn>2</mn>
         </mfrac>
       </mfrac>
-      <mo>=</mo>
+    </mstyled>
+    <mo>=</mo>
+    <mstyled mathvariant="normal">
       <mfrac>
         <mi>x</mi>
         <mfrac>
@@ -25,6 +29,6 @@
           <mn>2</mn>
         </mfrac>
       </mfrac>
-    </mrow>
+    </mstyled>
   </mrow>
 </math>
