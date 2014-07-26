@@ -1,4 +1,4 @@
-{-# LANGUAGE GeneralizedNewtypeDeriving #-}
+{-# LANGUAGE GeneralizedNewtypeDeriving, ViewPatterns #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -52,7 +52,7 @@ addLaTeXEnvironment dt math =
 writeTeXMathWith :: Env -> [Exp] -> String
 writeTeXMathWith env e = drop 1 . init . flip renderTeX "" . Grouped $
                             runExpr env $
-                              mapM_ (writeExp . (fixTree env)) e
+                              mapM_ writeExp (fixTree env e)
 
 runExpr :: Env -> Math () -> [TeX]
 runExpr e m = flip runReader e $ execWriterT (runTeXMath m)
@@ -302,11 +302,17 @@ ms e (EDelimited o c xs) = EDelimited o c (matchStretch e xs)
 ms e (EArray as rs) = EArray as (map (map (matchStretch e)) rs)
 ms _ x = x
 
-fixTree :: Env -> Exp -> Exp
-fixTree e = everywhere
-            ( mkT (ms e)
-            . mkT reorderDiacritical
-            . mkT removeAccentStretch )
+
+fixTree :: Env -> [Exp] -> [Exp]
+fixTree env  (EGrouped -> es) =
+    let removeGroup (EGrouped e) = e
+        removeGroup e = [e] in
+    removeGroup $
+    everywhere
+    ( mkT (ms env)
+    . mkT nestedStretch
+    . mkT reorderDiacritical
+    ) es
 
 -- Operator Table
 
