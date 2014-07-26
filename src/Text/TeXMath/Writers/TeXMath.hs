@@ -175,7 +175,8 @@ writeExp (EStretchy (ESymbol Close e)) = do
 writeExp (EStretchy e) = writeExp e
 writeExp (EText ttype s) = do
   txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
-  tell [ControlSeq txtcmd, Grouped (map escapeLaTeX s)]
+  toks <- getTeXMathM s
+  tell [ControlSeq txtcmd, Grouped toks]
 writeExp (EStyled ttype es) = do
   txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
   tell [ControlSeq txtcmd]
