@@ -251,36 +251,45 @@ environments = M.fromList
   , ("gathered", gather)
   ]
 
+mbArrayAlignments :: TP (Maybe [Alignment])
+mbArrayAlignments = option Nothing $ Just <$> arrayAlignments
+
 matrixWith :: String -> String -> TP Exp
 matrixWith opendelim closedelim = do
-  aligns <- option [] arrayAlignments
+  mbaligns <- mbArrayAlignments
   lines' <- sepEndBy1 arrayLine endLine
+  let aligns = case (mbaligns, lines') of
+                    (Nothing, (l:_)) -> replicate (length l) AlignCenter
+                    (Just as, _)     -> as
+                    _                -> []
   return $ EDelimited opendelim closedelim [EArray aligns lines']
 
 stdarray :: TP Exp
 stdarray = do
-  aligns <- option [] arrayAlignments
-  (EArray aligns) <$> sepEndBy1 arrayLine endLine
+  mbaligns <- mbArrayAlignments
+  lines' <- sepEndBy1 arrayLine endLine
+  let aligns = case (mbaligns, lines') of
+                    (Nothing, (l:_)) -> replicate (length l) AlignDefault
+                    (Just as, _)     -> as
+  return $ EArray aligns lines'
 
 gather :: TP Exp
-gather = (EArray []) <$> sepEndBy arrayLine endLine
+gather = (EArray [AlignCenter]) <$> sepEndBy arrayLine endLine
 
 eqnarray :: TP Exp
 eqnarray = (EArray [AlignRight, AlignCenter, AlignLeft]) <$>
   sepEndBy1 arrayLine endLine
 
 align :: TP Exp
-align = (EArray [AlignRight, AlignLeft]) <$>
-  sepEndBy1 arrayLine endLine
+align = (EArray [AlignRight, AlignLeft]) <$> sepEndBy1 arrayLine endLine
 
 flalign :: TP Exp
-flalign = (EArray [AlignLeft, AlignRight]) <$>
-  sepEndBy1 arrayLine endLine
+flalign = (EArray [AlignLeft, AlignRight]) <$> sepEndBy1 arrayLine endLine
 
 cases :: TP Exp
 cases = do
   rs <- sepEndBy1 arrayLine endLine
-  return $ EDelimited "{" "" [EArray [] rs]
+  return $ EDelimited "{" "" [EArray [AlignDefault] rs]
 
 variable :: TP Exp
 variable = do
