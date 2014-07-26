@@ -458,10 +458,26 @@ thicknessZero s =
   if l == 0.0 then Just "0.0em" else Nothing
 
 thicknessToNum :: String -> Double
-thicknessToNum "thin" = 0.175
-thicknessToNum "medium" = 0.5
-thicknessToNum "thick" = 1
-thicknessToNum v = fromMaybe 0.5 (readLength v)
+thicknessToNum s =
+  case s of
+       "veryverythinmathspace"  -> 1/18
+       "verythinmathspace"      -> 2/18
+       "thinmathspace"          -> 3/18
+       "mediummathspace"        -> 4/18
+       "thickmathspace"         -> 5/18
+       "verythickmathspace"     -> 6/18
+       "veryverythickmathspace" -> 7/18
+       "negativeveryverythinmathspace"  -> -1/18
+       "negativeverythinmathspace"      -> -2/18
+       "negativethinmathspace"          -> -3/18
+       "negativemediummathspace"        -> -4/18
+       "negativethickmathspace"         -> -5/18
+       "negativeverythickmathspace"     -> -6/18
+       "negativeveryverythickmathspace" -> -7/18
+       "thin" -> 0.175
+       "medium" -> 0.5
+       "thick" -> 1
+       v -> fromMaybe 0.5 (readLength v)
 
 postfixExpr :: Element -> MML Exp
 postfixExpr e = local (setPosition FPostfix) (expr e)
