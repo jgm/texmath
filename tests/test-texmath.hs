@@ -53,7 +53,7 @@ printPass :: FilePath -> FilePath -> IO ()
 printPass _inp _out = return () -- putStrLn $ "PASSED:  " ++ inp ++ " ==> " ++ out
 
 printFail :: FilePath -> FilePath -> String -> IO ()
-printFail inp out actual =  withTempDirectory "." (inp ++ ".") $ \tmpDir -> do
+printFail inp out actual =  withTempDirectory "." (out ++ ".") $ \tmpDir -> do
   -- break native files at commas for easier diffing
   let breakAtCommas = if takeExtension out == ".native"
                          then intercalate ",\n" . splitWhen (==',')
