@@ -156,7 +156,7 @@ literal e = do
 space :: Element -> MML Exp
 space e = do
   width <- fromMaybe "0.0em" <$> (findAttrQ "width" e)
-  return $ ESpace (thicknessToNum width)
+  return $ ESpace (widthToNum width)
 
 -- Layout
 
@@ -457,8 +457,8 @@ thicknessZero s =
   let l = thicknessToNum s in
   if l == 0.0 then Just "0.0em" else Nothing
 
-thicknessToNum :: String -> Double
-thicknessToNum s =
+widthToNum :: String -> Double
+widthToNum s =
   case s of
        "veryverythinmathspace"  -> 1/18
        "verythinmathspace"      -> 2/18
@@ -474,6 +474,11 @@ thicknessToNum s =
        "negativethickmathspace"         -> -5/18
        "negativeverythickmathspace"     -> -6/18
        "negativeveryverythickmathspace" -> -7/18
+       _ -> fromMaybe 0 (readLength s)
+
+thicknessToNum :: String -> Double
+thicknessToNum s =
+  case s of
        "thin" -> 0.175
        "medium" -> 0.5
        "thick" -> 1
