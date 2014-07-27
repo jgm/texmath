@@ -29,7 +29,8 @@ import Control.Applicative ((<$>), (<|>), Applicative)
 import qualified Data.Map as M
 import Control.Monad (when)
 import Control.Monad.Reader (MonadReader, runReader, Reader, asks, ask)
-import Control.Monad.Writer(MonadWriter, WriterT, execWriterT, tell, censor)
+import Control.Monad.Writer( MonadWriter, WriterT, runWriterT
+                           , execWriterT, tell, censor)
 import Text.TeXMath.TeX
 
 -- import Debug.Trace
@@ -86,12 +87,9 @@ writeExp (EDelimited "\x2223" "\x2223" [EArray aligns rows]) =
 writeExp (EDelimited "\x2225" "\x2225" [EArray aligns rows]) =
   table "Vmatrix" (Just AlignCenter) aligns rows
 writeExp (EDelimited open close es) =  do
-  tell [ControlSeq "\\left" ]
-  tell =<< getTeXMathM open
-  tell [Space]
+  writeDelim True open
   mapM_ writeExp es
-  tell [Space, ControlSeq "\\right"]
-  tell =<< getTeXMathM close
+  writeDelim False close
 writeExp (EIdentifier s) = do
   math <- getTeXMathM s
   case math of
@@ -175,15 +173,9 @@ writeExp (EScaled size e) = do
        Nothing -> return ()
   tellGroup (writeExp e)
 writeExp (EStretchy (ESymbol Open e)) = do
-  math <- getTeXMathM e
-  case math of
-       [] -> return ()
-       e' -> tell [ControlSeq "\\left"] >> tell e' >> tell [Space]
+  writeDelim True e
 writeExp (EStretchy (ESymbol Close e)) = do
-  math <- getTeXMathM e
-  case math of
-       [] -> return ()
-       e' -> tell [Space, ControlSeq "\\right"] >> tell e'
+  writeDelim False e
 writeExp (EStretchy e) = writeExp e
 writeExp (EText ttype s) = do
   txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
@@ -228,6 +220,17 @@ row (c:cs) = cell c >> tell [Space, Token '&', Space] >> row cs
 cell :: [Exp] -> Math ()
 cell = mapM_ writeExp
 
+type Delim = String
+
+writeDelim :: Bool -> Delim -> Math ()
+writeDelim open delim = do
+    let cmd = if open then "\\left" else "\\right"
+    tex <- getTeXMathM delim
+    valid <- elem tex <$> delimiters
+    if valid then
+      tell $ [ControlSeq cmd] ++ tex ++ [Space]
+    else
+      tell tex
 
 -- Utility
 
@@ -252,6 +255,15 @@ spaceCommands =
            , ("~", ESpace 0.333)
            , ("\\quad", ESpace 1.0)
            , ("\\qquad", ESpace 2.0)]
+
+-- Commands which can be used with \left and \right
+delimiters :: Math [[TeX]]
+delimiters = do
+    env <- ask
+    let commands = [ ".", "(", ")", "[", "]", "|", "\x2016", "{", "}"
+                   , "\x2309", "\x2308", "\x2329", "\x232A"
+                   , "\x230B", "\x230A", "\x231C", "\x231D"]
+    return $ filter (not . null) (map (flip getTeXMath env) commands)
 
 -- Fix up
 
@@ -280,17 +292,18 @@ reorderDiacritical (EUnderover b e1 e@(ESymbol Accent _)) =
 reorderDiacritical x = x
 
 matchStretch' :: Env -> Bool -> Exp  ->  Int
-matchStretch' e context expr = 
+matchStretch' e context expr =
   case expr of
     (ESub sexp _)       -> matchStretch' e context sexp
     (ESuper sexp _)     -> matchStretch' e context sexp
     (ESubsup sexp _ _)    -> matchStretch' e context sexp
     (EStretchy sexp)    -> matchStretch' e True sexp
-    (ESymbol Open sexp) -> r 1 sexp 
-    (ESymbol Close sexp) -> r (-1) sexp 
+    (ESymbol Open sexp) -> r 1 sexp
+    (ESymbol Close sexp) -> r (-1) sexp
     _ -> 0
   where
-    r n s = if (null $ getTeXMath s e) || not context then 0 else n
+    valid = fst $ flip runReader e $ runWriterT (runTeXMath delimiters)
+    r n s = if (elem (getTeXMath s e) valid) && context then n else 0
 
 
 -- Ensure that the lefts match the rights.
