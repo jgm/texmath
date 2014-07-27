@@ -222,11 +222,12 @@ type Delim = String
 
 writeDelim :: Bool -> Delim -> Math ()
 writeDelim open delim = do
-    let cmd = if open then "\\left" else "\\right"
     tex <- getTeXMathM delim
     valid <- elem tex <$> delimiters
     if valid then
-      tell $ [ControlSeq cmd] ++ tex ++ [Space]
+      tell $ if open
+                then [ControlSeq "\\left"] ++ tex ++ [Space]
+                else [Space, ControlSeq "\\right"] ++ tex
     else
       tell tex
 
