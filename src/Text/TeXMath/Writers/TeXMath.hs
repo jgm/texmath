@@ -103,10 +103,7 @@ writeExp o@(EMathOperator s) = do
   math <- getTeXMathM s
   case getOperator o of
        Just op   -> tell [op]
-       Nothing  -> case math of
-                        []  -> return ()
-                        xs@(ControlSeq _:_) -> tell xs
-                        xs -> tell [ControlSeq "\\operatorname", Grouped xs]
+       Nothing  -> tell [ControlSeq "\\operatorname", Grouped math]
 writeExp (ESymbol t s) = do
   when (t == Bin || t == Rel) $ tell [Space]
   tell =<< getTeXMathM s
