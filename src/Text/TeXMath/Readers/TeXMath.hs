@@ -181,9 +181,8 @@ right = try $ do
 -- whole containing formula.
 tilRight :: Exp -> TP Exp
 tilRight start = try $ do
-  contents <- manyTill expr
-               (try $ symbol "\\right" >> lookAhead basicEnclosure)
-  end <- basicEnclosure
+  contents <- many (try $ notFollowedBy right >> expr)
+  end <- right
   let startChar = case start of
                      ESymbol _ c -> c
                      _           -> ""
