@@ -38,17 +38,17 @@
         </m:r>
       </m:e>
       <m:sub>
-        <m:nary>
-          <m:naryPr>
-            <m:chr m:val="+" />
-            <m:limLoc m:val="subSup" />
-            <m:supHide m:val="off" />
-            <m:supHide m:val="off" />
-          </m:naryPr>
-          <m:e />
+        <m:sSub>
+          <m:e>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>+</m:t>
+            </m:r>
+          </m:e>
           <m:sub />
-          <m:sup />
-        </m:nary>
+        </m:sSub>
       </m:sub>
     </m:sSub>
   </m:oMath>

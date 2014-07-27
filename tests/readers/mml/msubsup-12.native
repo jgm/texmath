@@ -1,1 +1,1 @@
-[ESubsup (EIdentifier "V") (EIdentifier "m") (EIdentifier "n"),ESymbol Op "=",EUnderover (EGrouped [ESubsup (EIdentifier "V") (EIdentifier "m") (EIdentifier "n")]) (EUnary "\\phantom" (EGrouped [EText TextNormal "d"])) (EUnary "\\phantom" (EGrouped [EText TextNormal "d"]))]
+[ESubsup (EIdentifier "V") (EIdentifier "m") (EIdentifier "n"),ESymbol Ord "=",EUnderover (EGrouped [ESubsup (EIdentifier "V") (EIdentifier "m") (EIdentifier "n")]) (EUnary "\\phantom" (EGrouped [EText TextNormal "d"])) (EUnary "\\phantom" (EGrouped [EText TextNormal "d"]))]

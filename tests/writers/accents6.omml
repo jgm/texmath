@@ -1597,7 +1597,10 @@
               </m:r>
             </m:e>
             <m:lim>
-              <m:limUpp>
+              <m:acc>
+                <m:accPr>
+                  <m:chr m:val="̑" />
+                </m:accPr>
                 <m:e>
                   <m:r>
                     <m:rPr>
@@ -1606,15 +1609,7 @@
                     <m:t>̑</m:t>
                   </m:r>
                 </m:e>
-                <m:lim>
-                  <m:r>
-                    <m:rPr>
-                      <m:sty m:val="p" />
-                    </m:rPr>
-                    <m:t>̑</m:t>
-                  </m:r>
-                </m:lim>
-              </m:limUpp>
+              </m:acc>
             </m:lim>
           </m:limLow>
           <m:limLow>
@@ -1657,7 +1652,10 @@
               </m:r>
             </m:e>
             <m:lim>
-              <m:limUpp>
+              <m:acc>
+                <m:accPr>
+                  <m:chr m:val="⃛" />
+                </m:accPr>
                 <m:e>
                   <m:r>
                     <m:rPr>
@@ -1666,15 +1664,7 @@
                     <m:t>⃛</m:t>
                   </m:r>
                 </m:e>
-                <m:lim>
-                  <m:r>
-                    <m:rPr>
-                      <m:sty m:val="p" />
-                    </m:rPr>
-                    <m:t>⃛</m:t>
-                  </m:r>
-                </m:lim>
-              </m:limUpp>
+              </m:acc>
             </m:lim>
           </m:limLow>
           <m:limLow>
@@ -1687,7 +1677,10 @@
               </m:r>
             </m:e>
             <m:lim>
-              <m:limUpp>
+              <m:acc>
+                <m:accPr>
+                  <m:chr m:val="⃜" />
+                </m:accPr>
                 <m:e>
                   <m:r>
                     <m:rPr>
@@ -1696,15 +1689,7 @@
                     <m:t>⃜</m:t>
                   </m:r>
                 </m:e>
-                <m:lim>
-                  <m:r>
-                    <m:rPr>
-                      <m:sty m:val="p" />
-                    </m:rPr>
-                    <m:t>⃜</m:t>
-                  </m:r>
-                </m:lim>
-              </m:limUpp>
+              </m:acc>
             </m:lim>
           </m:limLow>
           <m:limLow>

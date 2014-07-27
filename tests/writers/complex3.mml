@@ -223,7 +223,7 @@
             <mrow>
               <mrow>
                 <munder>
-                  <mo>lim</mo>
+                  <mi>lim</mi>
                   <mrow>
                     <mi>n</mi>
                     <mo stretchy="true" accent="true">→</mo>
@@ -4092,7 +4092,7 @@
           <mstyled mathvariant="normal">
             <mrow>
               <mrow>
-                <mo>∇×</mo>
+                <mi>∇×</mi>
                 <mi>F</mi>
               </mrow>
               <mo>=</mo>
@@ -4106,7 +4106,7 @@
         <mtd>
           <mstyled mathvariant="normal">
             <mrow>
-              <mo>∇·</mo>
+              <mi>∇·</mi>
               <mi>F</mi>
             </mrow>
           </mstyled>
@@ -4118,7 +4118,7 @@
           <mstyled mathvariant="normal">
             <mrow>
               <mrow>
-                <mo>∇·∇</mo>
+                <mi>∇·∇</mi>
                 <mi>F</mi>
               </mrow>
               <mo>=</mo>
@@ -4145,7 +4145,7 @@
           <mstyled mathvariant="normal">
             <mrow>
               <mrow>
-                <mo>∇×</mo>
+                <mi>∇×</mi>
                 <mrow>
                   <mo stretchy="false">(</mo>
                   <mrow>
@@ -4211,7 +4211,7 @@
           <mstyled mathvariant="normal">
             <mrow>
               <mrow>
-                <mo>∇×</mo>
+                <mi>∇×</mi>
                 <mrow>
                   <mo stretchy="false">(</mo>
                   <mrow>
@@ -4996,7 +4996,7 @@
           <mstyled mathvariant="normal">
             <mrow>
               <mrow>
-                <mo>det</mo>
+                <mi>det</mi>
                 <mrow>
                   <mo stretchy="true">(</mo>
                   <mtable>
@@ -5326,7 +5326,7 @@
           <mstyled mathvariant="normal">
             <mrow>
               <mrow>
-                <mo>det</mo>
+                <mi>det</mi>
                 <mrow>
                   <mo stretchy="true">(</mo>
                   <mtable>
@@ -5487,7 +5487,7 @@
               <mo>=</mo>
               <mrow>
                 <munder>
-                  <mo>max</mo>
+                  <mi>max</mi>
                   <mrow>
                     <mi>x</mi>
                     <mo>≠</mo>
@@ -5856,7 +5856,7 @@
               <mo>=</mo>
               <mrow>
                 <munder>
-                  <mo>lim</mo>
+                  <mi>lim</mi>
                   <mrow>
                     <mi>x</mi>
                     <mo>=</mo>
@@ -5907,7 +5907,7 @@
               <mo>=</mo>
               <mrow>
                 <munder>
-                  <mo>lim</mo>
+                  <mi>lim</mi>
                   <mrow>
                     <mrow>
                       <mo stretchy="true">∥</mo>
@@ -5990,7 +5990,7 @@
               <mo>=</mo>
               <mrow>
                 <munder>
-                  <mo>lim</mo>
+                  <mi>lim</mi>
                   <mrow>
                     <mi>n</mi>
                     <mo stretchy="true" accent="true">→</mo>
@@ -6304,7 +6304,7 @@
             <mrow>
               <mrow>
                 <munder>
-                  <mo>lim</mo>
+                  <mi>lim</mi>
                   <mrow>
                     <mi>x</mi>
                     <mo stretchy="true" accent="true">→</mo>
@@ -6330,7 +6330,7 @@
                   <mo>−</mo>
                   <mn>1</mn>
                 </mrow>
-                <mo>..</mo>
+                <mi>..</mi>
                 <mn>1</mn>
               </mrow>
             </mrow>
@@ -6534,7 +6534,7 @@
                 <mrow>
                   <mo stretchy="true">(</mo>
                   <mrow>
-                    <mo>max</mo>
+                    <mi>max</mi>
                     <mrow>
                       <mo stretchy="true">{</mo>
                       <mrow>
@@ -6694,7 +6694,7 @@
             <mrow>
               <mrow>
                 <munder>
-                  <mo>lim</mo>
+                  <mi>lim</mi>
                   <mrow>
                     <mi>a</mi>
                     <mo stretchy="true" accent="true">→</mo>
@@ -6759,7 +6759,7 @@
               <mo>=</mo>
               <mrow>
                 <munder>
-                  <mo>lim</mo>
+                  <mi>lim</mi>
                   <mrow>
                     <mi>a</mi>
                     <mo stretchy="true" accent="true">→</mo>
@@ -6914,7 +6914,7 @@
           <mstyled mathvariant="normal">
             <mrow>
               <mrow>
-                <mo>Aut</mo>
+                <mi>Aut</mi>
                 <mrow>
                   <mo stretchy="false">(</mo>
                   <mtext mathvariant="bold">I</mtext>
@@ -7728,7 +7728,7 @@
         <mtd>
           <mstyled mathvariant="normal">
             <mrow>
-              <mo>mod</mo>
+              <mi>mod</mi>
               <mi>a</mi>
             </mrow>
           </mstyled>
@@ -7741,7 +7741,7 @@
             <mrow>
               <mrow>
                 <mn>5</mn>
-                <mo>mod</mo>
+                <mi>mod</mi>
                 <mn>3</mn>
               </mrow>
               <mo>=</mo>
@@ -7765,7 +7765,7 @@
                     <mo stretchy="false">)</mo>
                   </mrow>
                 </mrow>
-                <mo>mod</mo>
+                <mi>mod</mi>
                 <mn>3</mn>
               </mrow>
               <mo>=</mo>
@@ -7796,7 +7796,7 @@
               <mrow>
                 <mo stretchy="true">(</mo>
                 <mrow>
-                  <mo>mod</mo>
+                  <mi>mod</mi>
                   <mn>13</mn>
                 </mrow>
                 <mo stretchy="true">)</mo>
@@ -7826,7 +7826,7 @@
                   <mo>/</mo>
                   <mn>5</mn>
                 </mrow>
-                <mo>mod</mo>
+                <mi>mod</mi>
                 <mn>7</mn>
               </mrow>
               <mo>=</mo>
@@ -7875,7 +7875,7 @@
                     <mo stretchy="true">)</mo>
                   </mrow>
                 </mrow>
-                <mo>mod</mo>
+                <mi>mod</mi>
                 <mn>3</mn>
               </mrow>
               <mo>=</mo>
@@ -8052,7 +8052,7 @@
           <mstyled mathvariant="normal">
             <mrow>
               <mrow>
-                <mo>Pr</mo>
+                <mi>Pr</mi>
                 <mrow>
                   <mo stretchy="false">(</mo>
                   <mrow>
@@ -8096,7 +8096,7 @@
                 <mi>k</mi>
                 <mo>=</mo>
                 <mrow>
-                  <mo>max</mo>
+                  <mi>max</mi>
                   <mrow>
                     <mo stretchy="true">{</mo>
                     <mrow>
@@ -8159,7 +8159,7 @@
               <mo>=</mo>
               <mrow>
                 <munder>
-                  <mo>lim</mo>
+                  <mi>lim</mi>
                   <mrow>
                     <mi>x</mi>
                     <mover stretchy="true">
@@ -9312,7 +9312,7 @@
             <mrow>
               <mrow>
                 <munder>
-                  <mo>max</mo>
+                  <mi>max</mi>
                   <mrow>
                     <mrow>
                       <mo>−</mo>
@@ -9676,7 +9676,7 @@
                 <mrow>
                   <mo stretchy="true">(</mo>
                   <mrow>
-                    <mo>∇×</mo>
+                    <mi>∇×</mi>
                     <mtext mathvariant="bold">F</mtext>
                   </mrow>
                   <mo stretchy="true">)</mo>
@@ -11655,9 +11655,9 @@
           <mstyled mathvariant="normal">
             <mrow>
               <mi>x</mi>
-              <mo>≰⃥</mo>
+              <mi>≰⃥</mi>
               <mi>y</mi>
-              <mo>≰⃥</mo>
+              <mi>≰⃥</mi>
               <mi>z</mi>
             </mrow>
           </mstyled>

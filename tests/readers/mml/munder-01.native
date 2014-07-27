@@ -1,1 +1,1 @@
-[EUnder (EText TextNormal "BASE") (EText TextNormal "under"),ESymbol Op "=",EUnder (EGrouped [EUnder (EText TextNormal "BASE") (EText TextNormal "under")]) (EUnary "\\phantom" (EGrouped [EText TextNormal "under"]))]
+[EUnder (EText TextNormal "BASE") (EText TextNormal "under"),ESymbol Ord "=",EUnder (EGrouped [EUnder (EText TextNormal "BASE") (EText TextNormal "under")]) (EUnary "\\phantom" (EGrouped [EText TextNormal "under"]))]

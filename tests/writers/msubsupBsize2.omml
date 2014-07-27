@@ -4,19 +4,13 @@
     <m:jc m:val="center" />
   </m:oMathParaPr>
   <m:oMath>
-    <m:nary>
-      <m:naryPr>
-        <m:chr m:val="∫" />
-        <m:limLoc m:val="subSup" />
-        <m:supHide m:val="off" />
-        <m:supHide m:val="off" />
-      </m:naryPr>
+    <m:sSubSup>
       <m:e>
         <m:r>
           <m:rPr>
             <m:sty m:val="p" />
           </m:rPr>
-          <m:t>+</m:t>
+          <m:t>∫</m:t>
         </m:r>
       </m:e>
       <m:sub>
@@ -35,7 +29,13 @@
           <m:t>1</m:t>
         </m:r>
       </m:sup>
-    </m:nary>
+    </m:sSubSup>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
     <m:sSubSup>
       <m:e>
         <m:f>
@@ -130,14 +130,15 @@
       </m:rPr>
       <m:t>+</m:t>
     </m:r>
-    <m:nary>
-      <m:naryPr>
-        <m:chr m:val="∫" />
-        <m:limLoc m:val="subSup" />
-        <m:supHide m:val="off" />
-        <m:supHide m:val="off" />
-      </m:naryPr>
-      <m:e />
+    <m:sSubSup>
+      <m:e>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>∫</m:t>
+        </m:r>
+      </m:e>
       <m:sub>
         <m:r>
           <m:rPr>
@@ -154,6 +155,6 @@
           <m:t>a</m:t>
         </m:r>
       </m:sup>
-    </m:nary>
+    </m:sSubSup>
   </m:oMath>
 </m:oMathPara>
