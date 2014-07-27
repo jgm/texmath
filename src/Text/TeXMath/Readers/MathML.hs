@@ -39,6 +39,7 @@ import Text.TeXMath.Types
 import Text.TeXMath.Readers.MathML.MMLDict (getOperator)
 import Text.TeXMath.Readers.MathML.EntityMap (getUnicode)
 import Text.TeXMath.Shared (getTextType, readLength)
+import Text.TeXMath.Unicode.ToTeXMath (getSymbolType)
 import Text.TeXMath.Compat (throwError, Except, runExcept, MonadError)
 import Control.Applicative ((<$>), (<|>), (<*>))
 import Control.Arrow ((&&&))
@@ -133,8 +134,11 @@ op e = do
                       then EStretchy else id
   let ts =  [("accent", ESymbol Accent), ("mathoperator", EMathOperator),
             ("fence", ESymbol (getPosition objectPosition))]
+  let fallback = case opString of
+                      [c]   -> ESymbol (getSymbolType c)
+                      _     -> EMathOperator
   let constructor =
-        fromMaybe (ESymbol Op)
+        fromMaybe fallback
           (getFirst . mconcat $ map (First . flip lookup ts) props)
   return $ (stretchCons . constructor) (oper opDict)
   where
