@@ -160,7 +160,7 @@ basicEnclosure = choice $ map (\(s, v) -> try (symbol s) >> return v) enclosures
 
 left :: TP Exp
 left = try $ do
-  symbol "\\left"
+  symbol "\\left" <|> symbol "\\Bigl" <|> symbol "\\Biggl"
   enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Open "\xFEFF"))
   case enc of
     (ESymbol Open _)  -> tilRight enc <|> return (EStretchy enc)
@@ -169,7 +169,7 @@ left = try $ do
 
 right :: TP Exp
 right = try $ do
-  symbol "\\right"
+  symbol "\\right" <|> symbol "\\Bigr" <|> symbol "\\Biggr"
   enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Close "\xFEFF"))
   case enc of
     (ESymbol Close x) -> return (EStretchy $ ESymbol Open x)
