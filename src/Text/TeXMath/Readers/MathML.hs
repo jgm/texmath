@@ -123,7 +123,7 @@ op e = do
   Just inferredPosition <- (<|>) <$> (getFormType <$> findAttrQ "form" e)
                             <*> asks position
   let opString = getString e
-  let dummy = Operator opString "" inferredPosition 0 0 0 ["mathoperator"]
+  let dummy = Operator opString "" inferredPosition 0 0 0 []
   let opDict = fromMaybe dummy
                 (getOperator opString inferredPosition)
   props <- filterM (checkAttr (properties opDict))
