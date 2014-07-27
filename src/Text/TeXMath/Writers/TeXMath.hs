@@ -98,7 +98,8 @@ writeExp (EIdentifier s) = do
        [Token c]       -> tell [Token c] -- don't brace single token identifiers
        [Literal [c]]   -> tell [Literal [c]]
        [ControlSeq cs] -> tell [ControlSeq cs]
-       cs              -> tell [ControlSeq "\\operatorname", Grouped cs]
+       cs              -> writeExp (EMathOperator s)  -- note that in mathml you
+                                                      -- use <mi>sin</mi> for sin
 writeExp o@(EMathOperator s) = do
   math <- getTeXMathM s
   case getOperator o of
