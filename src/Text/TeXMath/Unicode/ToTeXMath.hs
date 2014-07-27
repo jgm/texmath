@@ -42,6 +42,7 @@ LaTeX Project Public License.
 -}
 
 module Text.TeXMath.Unicode.ToTeXMath ( getTeXMath
+                                      , getSymbolType
                                       , records
                                       ) where
 
@@ -136,6 +137,19 @@ recordsMap :: M.Map Char Record
 recordsMap = M.fromList (map f records)
   where
     f r = (uchar r, r)
+
+-- | Returns TeX symbol type corresponding to a unicode character.
+getSymbolType :: Char -> TeXSymbolType
+getSymbolType c =
+  case category <$> M.lookup c recordsMap of
+       Just "mathpunct"   -> Pun
+       Just "mathord"     -> Ord
+       Just "mathbin"     -> Bin
+       Just "mathopen"    -> Open
+       Just "mathclose"   -> Close
+       Just "mathpun"     -> Pun
+       Just "mathaccent"  -> Accent
+       _                  -> Ord  -- default to Ordinary
 
 -- | Complete raw mapping between unicode characters and TeXMath commands.
 records :: [Record]
