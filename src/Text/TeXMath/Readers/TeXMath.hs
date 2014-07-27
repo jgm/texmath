@@ -158,23 +158,33 @@ enclosure = basicEnclosure <|> left <|> right <|> scaledEnclosure
 basicEnclosure :: TP Exp
 basicEnclosure = choice $ map (\(s, v) -> try (symbol s) >> return v) enclosures
 
+applyScaler :: String -> Exp -> Exp
+applyScaler s =
+  case S.getScalerValue s of
+       Just v   -> EScaled v
+       Nothing  -> id
+
 left :: TP Exp
 left = try $ do
-  symbol "\\left" <|> symbol "\\Bigl" <|> symbol "\\Biggl"
+  s <- choice $ map (try . symbol)
+         ["\\left", "\\Bigl", "\\Biggl", "\\bigl", "\biggl"]
   enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Open "\xFEFF"))
-  case enc of
-    (ESymbol Open x)  -> tilRight enc <|> return (EStretchy $ ESymbol Open x)
-    (ESymbol Close x) -> tilRight enc <|> return (EStretchy $ ESymbol Open x)
-    _ -> pzero
+  applyScaler s <$>
+    case enc of
+       (ESymbol Open x)  -> tilRight enc <|> return (EStretchy $ ESymbol Open x)
+       (ESymbol Close x) -> tilRight enc <|> return (EStretchy $ ESymbol Open x)
+       _ -> pzero
 
 right :: TP Exp
 right = try $ do
-  symbol "\\right" <|> symbol "\\Bigr" <|> symbol "\\Biggr"
+  s <- choice $ map (try . symbol)
+         ["\\right", "\\Bigr", "\\Biggr", "\\bigr", "\biggr"]
   enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Close "\xFEFF"))
-  case enc of
-    (ESymbol Close x) -> return (EStretchy $ ESymbol Close x)
-    (ESymbol Open x)  -> return (EStretchy $ ESymbol Close x)
-    _ -> pzero
+  applyScaler s <$>
+    case enc of
+      (ESymbol Close x) -> return (EStretchy $ ESymbol Close x)
+      (ESymbol Open x)  -> return (EStretchy $ ESymbol Close x)
+      _ -> pzero
 
 -- We want stuff between \left( and \right) to be in an mrow,
 -- so that the scaling is based just on this unit, and not the

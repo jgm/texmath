@@ -165,11 +165,20 @@ writeExp (EUnderover b e1 e2) =
 writeExp (EUnary s e) = do
     tell [ControlSeq s]
     tellGroup (writeExp e)
-writeExp (EScaled size e) = do
-  case S.getScalerCommand size of
-       Just s  -> tell [ControlSeq s]
-       Nothing -> return ()
-  tellGroup (writeExp e)
+writeExp (EScaled size e)
+  | case e of
+         (ESymbol Open _)  -> True
+         (ESymbol Close _) -> True
+         (EStretchy (ESymbol Open _))  -> True
+         (EStretchy (ESymbol Close _)) -> True
+         (EDelimited _ _ _) -> True
+         (EStretchy (EDelimited _ _ _)) -> True
+         _ -> False = do
+    case S.getScalerCommand size of
+         Just s  -> tell [ControlSeq s]
+         Nothing -> return ()
+    writeExp e
+  | otherwise = writeExp e
 writeExp (EStretchy (ESymbol Open e)) = do
   writeDelim True e
 writeExp (EStretchy (ESymbol Close e)) = do

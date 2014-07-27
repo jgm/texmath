@@ -54,9 +54,9 @@ getTextType s = fromMaybe TextNormal (M.lookup s revTextTypesMap)
 
 -- | Maps a LaTeX scaling command to the percentage scaling
 getScalerCommand :: String -> Maybe String
-getScalerCommand width = (M.lookup width scalerMap)
-  where
-    scalerMap = M.fromList (reverseKeys scalers)
+getScalerCommand width = lookup width (reverseKeys scalers)
+  -- note, we don't use a Map here because we need the first
+  -- match:  \Big, not \Bigr
 
 -- | Gets percentage scaling from LaTeX scaling command
 getScalerValue :: String -> Maybe String
