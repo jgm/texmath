@@ -222,7 +222,7 @@ type Delim = String
 
 writeDelim :: Bool -> Delim -> Math ()
 writeDelim open delim = do
-    tex <- getTeXMathM delim
+    tex <- getTeXMathM (if null delim || delim == "\xFEFF" then "." else delim)
     valid <- elem tex <$> delimiters
     if valid then
       tell $ if open
