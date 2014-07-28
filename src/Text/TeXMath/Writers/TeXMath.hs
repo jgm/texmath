@@ -27,7 +27,7 @@ import Data.Maybe (fromMaybe)
 import Data.Generics (everywhere, mkT)
 import Control.Applicative ((<$>), (<|>), Applicative)
 import qualified Data.Map as M
-import Control.Monad (when)
+import Control.Monad (when, unless)
 import Control.Monad.Reader (MonadReader, runReader, Reader, asks, ask)
 import Control.Monad.Writer( MonadWriter, WriterT, runWriterT
                            , execWriterT, tell, censor)
@@ -75,17 +75,17 @@ writeExp :: Exp -> Math ()
 writeExp (ENumber s) = tell =<< getTeXMathM s
 writeExp (EGrouped es) = tellGroup (mapM_ writeExp es)
 writeExp (EDelimited "{" "" [EArray [AlignDefault,AlignDefault] rows]) =
-  table "cases" (Just AlignDefault) [AlignDefault,AlignDefault] rows
+  table "cases" [] [AlignDefault,AlignDefault] rows
 writeExp (EDelimited "(" ")" [EArray aligns rows]) =
-  table "pmatrix" (Just AlignCenter) aligns rows
+  matrixWith "pmatrix" aligns rows
 writeExp (EDelimited "[" "]" [EArray aligns rows]) =
-  table "bmatrix" (Just AlignCenter) aligns rows
+  matrixWith "bmatrix" aligns rows
 writeExp (EDelimited "{" "}" [EArray aligns rows]) =
-  table "Bmatrix" (Just AlignCenter) aligns rows
+  matrixWith "Bmatrix" aligns rows
 writeExp (EDelimited "\x2223" "\x2223" [EArray aligns rows]) =
-  table "vmatrix" (Just AlignCenter) aligns rows
+  matrixWith "vmatrix" aligns rows
 writeExp (EDelimited "\x2225" "\x2225" [EArray aligns rows]) =
-  table "Vmatrix" (Just AlignCenter) aligns rows
+  matrixWith "Vmatrix" aligns rows
 writeExp (EDelimited open close es) =  do
   writeDelim True open
   mapM_ writeExp es
@@ -191,32 +191,37 @@ writeExp (EStyled ttype es) = do
   txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
   tell [ControlSeq txtcmd]
   tellGroup (mapM_ writeExp es)
+writeExp (EArray [AlignRight, AlignLeft] rows) =
+  table "aligned" [] [AlignRight, AlignLeft] rows
 writeExp (EArray aligns rows)
-  | all (== AlignCenter) aligns = table "matrix" (Just AlignCenter) aligns rows
-  | otherwise                   = table "array" Nothing aligns rows
+  | all (== AlignCenter) aligns = table "matrix" [] aligns rows
+  | otherwise                   = table "array" aligns aligns rows
 
-table :: String -> Maybe Alignment -> [Alignment] -> [ArrayLine] -> Math ()
-table name mbDefaultAlign as rows = do
+table :: String -> [Alignment] -> [Alignment] -> [ArrayLine] -> Math ()
+table name aligns origAligns rows = do
   env <- ask
   if "amsmath" `elem` env
-     then table' name mbDefaultAlign as rows
-     else table' "array" Nothing as rows
+     then table' name aligns rows
+     else table' "array" origAligns rows
 
-table' :: String -> Maybe Alignment -> [Alignment] -> [ArrayLine] -> Math ()
-table' name mbDefaultAlign as rows = do
+table' :: String -> [Alignment] -> [ArrayLine] -> Math ()
+table' name aligns rows = do
   tell [ControlSeq "\\begin", Grouped [Literal name]]
-  case mbDefaultAlign of
-       Just a | all (== a) as -> return ()
-       _ -> tell [Grouped [Literal columnAligns]]
+  unless (null aligns) $
+     tell [Grouped [Literal columnAligns]]
   tell [Token '\n']
   mapM_ row rows
   tell [ControlSeq "\\end", Grouped [Literal name]]
   where
-    columnAligns = map alignmentToLetter as
+    columnAligns = map alignmentToLetter aligns
     alignmentToLetter AlignLeft = 'l'
     alignmentToLetter AlignCenter = 'c'
     alignmentToLetter AlignRight = 'r'
     alignmentToLetter AlignDefault = 'l'
+
+matrixWith :: String -> [Alignment] -> [ArrayLine] -> Math ()
+matrixWith name aligns rows =
+  table name [a | a <- aligns, any (/= AlignCenter) aligns] aligns rows
 
 row :: ArrayLine -> Math ()
 row []     = tell [Space, Literal "\\\\", Token '\n']
