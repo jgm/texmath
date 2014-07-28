@@ -25,7 +25,7 @@ the <http://search.cpan.org/~sburke/Text-Unidecode-1.01/lib/Text/Unidecode.pm Te
 -}
 module Text.TeXMath.Unicode.ToASCII (getASCII) where
 
-import qualified Data.Map as M
+import qualified Data.IntMap as M
 import Data.Char (ord)
 import Data.Maybe (fromMaybe)
 
@@ -34,7 +34,7 @@ import Data.Maybe (fromMaybe)
 getASCII :: Char -> String
 getASCII u = fromMaybe "" (M.lookup (ord u) table)
 
-table :: M.Map Int String
+table :: M.IntMap String
 table = M.fromList
   [ ( 9, "\\t")
   , ( 10, "\\n")
