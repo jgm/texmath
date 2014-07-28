@@ -87,9 +87,10 @@ writeExp (EDelimited "\x2223" "\x2223" [EArray aligns rows]) =
 writeExp (EDelimited "\x2225" "\x2225" [EArray aligns rows]) =
   matrixWith "Vmatrix" aligns rows
 writeExp (EDelimited open close es) =  do
-  writeDelim True open
+  let checkNull delim = if null delim || delim == "\xFEFF" then "." else delim
+  writeDelim True (checkNull open)
   mapM_ writeExp es
-  writeDelim False close
+  writeDelim False (checkNull close)
 writeExp (EIdentifier s) = do
   math <- getTeXMathM s
   case math of
@@ -235,7 +236,7 @@ type Delim = String
 
 writeDelim :: Bool -> Delim -> Math ()
 writeDelim open delim = do
-    tex <- getTeXMathM (if null delim || delim == "\xFEFF" then "." else delim)
+    tex <- getTeXMathM delim
     valid <- elem tex <$> delimiters
     if valid then
       tell $ if open
