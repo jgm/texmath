@@ -116,7 +116,7 @@ makeScaled s = withAttribute "minsize" s . withAttribute "maxsize" s
 
 makeStyled :: TextType -> [Element] -> Element
 makeStyled a es = withAttribute "mathvariant" attr
-                $ unode "mstyled" es
+                $ unode "mstyle" es
   where attr = getMMLType a
 
 -- Note: Converts strings to unicode directly, as few renderers support those mathvariants.
