@@ -104,15 +104,10 @@ data Operator = Operator
 -- a full descripton can be seen
 -- <http://milde.users.sourceforge.net/LUCR/Math/data/unimathsymbols.txt
 -- here>
-data Record = Record { point :: String -- ^ Hex value
-                     , uchar :: Char -- ^ Unicode Character
-                     , latex :: String -- ^ LaTeX command
-                     , unicodemath :: String -- ^ Unicode-Math package command
-                     , cls :: String -- ^ Unicode math character class
+data Record = Record { uchar :: Char -- ^ Unicode Character
+                     , commands :: [(String, String)] -- ^ LaTeX commands (package, command)
                      , category :: String -- ^ TeX math category
-                     , requirements :: String -- ^ Required packages
-                     , comments :: String -- ^ Alternative commands and
-                                          --   description
+                     , comments :: String -- ^ Plain english description
                      } deriving (Show)
 
 data Position = Under | Over

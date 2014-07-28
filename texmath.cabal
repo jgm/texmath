@@ -49,6 +49,11 @@ Extra-source-files:  README.markdown,
                      tests/writers/*.xhtml
                      tests/writers/*.tex
                      tests/writers/*.omml
+                     lib/totexmath/unicodetotex.hs
+                     lib/totexmath/unimathsymbols.txt
+                     lib/mmldict/unicode.xml
+                     lib/mmldict/operatorDictionary.xsl
+                     lib/mmldict/mmldict.hs
 
 Source-repository head
   type:              git
