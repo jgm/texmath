@@ -70,26 +70,28 @@ pSkipSpaceComments = spaces >> skipMany (comment >> spaces)
 -- point is reached.  If there are several macros in the list with the
 -- same name, earlier ones will shadow later ones.
 applyMacros :: [Macro] -> String -> String
-applyMacros [] = id
-applyMacros ms = iterateToFixedPoint ((2 * length ms) + 1) $ applyMacrosOnce ms
+applyMacros [] s = s
+applyMacros ms s =
+  maybe s id $ iterateToFixedPoint ((2 * length ms) + 1) (applyMacrosOnce ms) s
 
 ------------------------------------------------------------------------------
 
-iterateToFixedPoint :: Eq a => Int -> (a -> a) -> a -> a
-iterateToFixedPoint 0     _ _ = error $
-  "Macro application did not terminate in a reasonable time.\n" ++
-  "Check your macros for loops."
+iterateToFixedPoint :: Eq a => Int -> (a -> Maybe a) -> a -> Maybe a
+iterateToFixedPoint 0     _ _ = Nothing
+  -- Macro application did not terminate in a reasonable time, possibly
+  -- because of a loop in the macro.
 iterateToFixedPoint limit f x =
-  if x' == x
-     then x'
-     else iterateToFixedPoint (limit - 1) f x'
-    where x' = f x
+  case f x of
+       Nothing       -> Nothing
+       Just y
+         | y == x    -> Just y
+         | otherwise -> iterateToFixedPoint (limit - 1) f y
 
-applyMacrosOnce :: [Macro] -> String -> String
+applyMacrosOnce :: [Macro] -> String -> Maybe String
 applyMacrosOnce ms s =
   case parse (many tok) "input" s of
-       Right r -> concat r
-       Left _  -> s  -- just return original on error
+       Right r -> Just $ concat r
+       Left _  -> Nothing
     where tok = try $ do
                   skipComment
                   choice [ choice (map macroParser ms)
