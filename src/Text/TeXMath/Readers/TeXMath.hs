@@ -158,30 +158,20 @@ enclosure = basicEnclosure <|> left <|> right <|> scaledEnclosure
 basicEnclosure :: TP Exp
 basicEnclosure = choice $ map (\(s, v) -> try (symbol s) >> return v) enclosures
 
-applyScaler :: String -> Exp -> Exp
-applyScaler s =
-  case S.getScalerValue s of
-       Just v   -> EScaled v
-       Nothing  -> id
-
 left :: TP Exp
 left = try $ do
-  s <- choice $ map (try . symbol)
-         ["\\left", "\\Bigl", "\\Biggl", "\\bigl", "\biggl"]
+  s <- symbol "\\left"
   enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Open "\xFEFF"))
-  applyScaler s <$>
-    case enc of
+  case enc of
        (ESymbol Open x)  -> tilRight enc <|> return (EStretchy $ ESymbol Open x)
        (ESymbol Close x) -> tilRight enc <|> return (EStretchy $ ESymbol Open x)
        _ -> pzero
 
 right :: TP Exp
 right = try $ do
-  s <- choice $ map (try . symbol)
-         ["\\right", "\\Bigr", "\\Biggr", "\\bigr", "\biggr"]
+  s <- symbol "\\right"
   enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Close "\xFEFF"))
-  applyScaler s <$>
-    case enc of
+  case enc of
       (ESymbol Close x) -> return (EStretchy $ ESymbol Close x)
       (ESymbol Open x)  -> return (EStretchy $ ESymbol Close x)
       _ -> pzero
@@ -205,7 +195,7 @@ scaledEnclosure :: TP Exp
 scaledEnclosure = try $ do
   cmd <- command
   case S.getScalerValue cmd of
-       Just  r -> liftM (EScaled r . EStretchy) basicEnclosure
+       Just  r -> EScaled r <$> basicEnclosure
        Nothing -> pzero
 
 endLine :: TP Char

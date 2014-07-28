@@ -169,10 +169,6 @@ writeExp (EScaled size e)
   | case e of
          (ESymbol Open _)  -> True
          (ESymbol Close _) -> True
-         (EStretchy (ESymbol Open _))  -> True
-         (EStretchy (ESymbol Close _)) -> True
-         (EDelimited _ _ _) -> True
-         (EStretchy (EDelimited _ _ _)) -> True
          _ -> False = do
     case S.getScalerCommand size of
          Just s  -> tell [ControlSeq s]
@@ -302,11 +298,11 @@ reorderDiacritical x = x
 matchStretch' :: Env -> Bool -> Exp  ->  Int
 matchStretch' e context expr =
   case expr of
-    (ESub sexp _)       -> matchStretch' e context sexp
-    (ESuper sexp _)     -> matchStretch' e context sexp
-    (ESubsup sexp _ _)    -> matchStretch' e context sexp
-    (EStretchy sexp)    -> matchStretch' e True sexp
-    (ESymbol Open sexp) -> r 1 sexp
+    (ESub sexp _)        -> matchStretch' e context sexp
+    (ESuper sexp _)      -> matchStretch' e context sexp
+    (ESubsup sexp _ _)   -> matchStretch' e context sexp
+    (EStretchy sexp)     -> matchStretch' e True sexp
+    (ESymbol Open sexp)  -> r 1 sexp
     (ESymbol Close sexp) -> r (-1) sexp
     _ -> 0
   where
