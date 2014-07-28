@@ -147,6 +147,7 @@ writeExp (EDownup b e1 e2) = do
 writeExp (EOver b e1) =
   case b of
     (EMathOperator _) -> writeExp (EUp b e1)
+    (ESymbol Op _)    -> writeExp (EUp b e1)
     _ -> do
           tell [ControlSeq "\\overset"]
           tellGroup (writeExp e1)
@@ -154,6 +155,7 @@ writeExp (EOver b e1) =
 writeExp (EUnder b e1) =
   case b of
     (EMathOperator _) -> writeExp (EDown b e1)
+    (ESymbol Op _)    -> writeExp (EDown b e1)
     _ -> do
           tell [ControlSeq "\\underset"]
           tellGroup (writeExp e1)
@@ -161,6 +163,7 @@ writeExp (EUnder b e1) =
 writeExp (EUnderover b e1 e2) =
   case b of
     (EMathOperator _) -> writeExp (EDownup b e1 e2)
+    (ESymbol Op _)    -> writeExp (EDownup b e1 e2)
     _ -> writeExp (EUnder (EOver b e2) e1)
 writeExp (EUnary s e) = do
     tell [ControlSeq s]
