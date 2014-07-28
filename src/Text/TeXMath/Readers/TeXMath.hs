@@ -187,8 +187,8 @@ tilRight start = try $ do
                      ESymbol _ c -> c
                      _           -> ""
   let endChar   = case end of
-                     ESymbol _ c -> c
-                     _           -> ""
+                     (EStretchy (ESymbol _ c)) -> c
+                     _                         -> ""
   return $ EDelimited startChar endChar contents
 
 scaledEnclosure :: TP Exp
