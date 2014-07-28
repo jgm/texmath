@@ -30,7 +30,9 @@ updates =
   , M.adjust (addCommand ("base", "\\hat{}")) '\710'
   , M.insert '\8220' c8220
   , M.insert '\8221' c8221
-  , M.adjust (addCommand ("base", "\\hat{}")) '\94' ]
+  , M.adjust (addCommand ("base", "\\hat{}")) '\94' 
+  , M.adjust (addCommand ("base", "\\,")) '\8201'
+  , M.adjust (addCommand ("base", "\\:")) '\8287' ]
 
 
 -- DO NOT ALTER
@@ -92,7 +94,7 @@ row = do
   reqs <- filter (\z -> head z /= '-') . words <$> field
   let reqs' = if null reqs then ["base"] else reqs
   (alts, comment) <- parseComment
-  let cmds = zip reqs' (repeat defcmd) ++ alts ++ [("unicode", unicmd)]
+  let cmds = zip reqs' (repeat defcmd) ++ alts ++ [("unicode-math", unicmd)]
   return (Record (readHex hex) cmds (getSymbolType texclass) comment)
 
 readHex :: String -> Char
@@ -131,5 +133,6 @@ cmd = do
   return (package', alt)
 
 skip :: Parsec String () ()
-skip = do
+skip = try $ do
+  lookAhead (notFollowedBy (many (noneOf ",")) *> newline)
   skipMany (satisfy (/= ','))
