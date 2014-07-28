@@ -2,7 +2,6 @@
 module Main where
 
 import Text.TeXMath
-import Control.Monad (when)
 import Data.Char (isSpace)
 import Text.XML.Light
 import System.IO
@@ -28,10 +27,6 @@ inHtml e =
         add_attr (Attr (unqual "http-equiv") "Content-Type") $
         unode "meta" ()
     , unode "body" e ]
-
-getUTF8Contents :: IO String
-getUTF8Contents =
-       hGetContents stdin
 
 type Reader = String -> Either String [Exp]
 data Writer = XMLWriter (DisplayType -> [Exp] -> Element)
@@ -88,7 +83,7 @@ options =
     , Option "h" ["help"]
         (NoArg (\_ -> do
                         prg <- getProgName
-                        hPutStrLn stderr (usageInfo prg options)
+                        hPutStrLn stderr (usageInfo (prg ++ " [OPTIONS] [FILE*]") options)
                         exitWith ExitSuccess))
       "Show help"
   ]
@@ -121,40 +116,60 @@ urlUnencode = unEscapeString . plusToSpace
 
 main :: IO ()
 main = do
-  args' <- getArgs
-  mbquery <- lookup "QUERY_STRING" <$> getEnvironment
-  -- if QUERY_STRING is set and we have no arguments, treat as CGI
-  -- and get arguments from QUERY_STRING
-  (cgi, inp, args) <-
-      case (args', mbquery) of
-           ([], Just q)  -> do
-             let topairs xs = case break (=='=') xs of
-                                   (ys,('=':zs)) -> (urlUnencode ys, urlUnencode zs)
-                                   (ys,_)        -> (urlUnencode ys,"")
-             let pairs = map topairs $ splitOn "&" q
-             let inp'  = fromMaybe "" $ lookup "input" pairs
-             let args'' = maybe [] (\x -> ["--from", x]) (lookup "from" pairs) ++
-                          maybe [] (\x -> ["--to", x]) (lookup "to" pairs) ++
-                          ["--inline" | lookup "inline" pairs /= Nothing]
-             return $ (True, inp', args'')
-           _             -> do
-             inp' <- getUTF8Contents
-             return (False, inp', args')
-  when cgi $ putStr "Content-type: text/json; charset=UTF-8\n\n"
-  let (actions, _, _) = getOpt RequireOrder options args
+  progname <- getProgName
+  let cgi = progname == "texmath-cgi"
+  if cgi
+     then runCGI
+     else runCommandLine
+
+runCommandLine :: IO ()
+runCommandLine = do
+  args <- getArgs
+  let (actions, files, _) = getOpt RequireOrder options args
   opts <- foldl (>>=) (return def) actions
+  inp <- case files of
+              [] -> getContents
+              _  -> concat <$> mapM readFile files
   reader <- case lookup (optIn opts) readers of
                   Just r -> return r
-                  Nothing -> err cgi 3 "Unrecognised reader"
+                  Nothing -> err False 3 "Unrecognised reader"
   writer <- case lookup (optOut opts) writers of
                   Just w -> return w
-                  Nothing -> err cgi 5 "Unrecognised writer"
+                  Nothing -> err False 5 "Unrecognised writer"
   case reader inp of
-        Left msg -> err cgi 1 msg
-        Right v
-          | cgi  -> B.putStr $ encode $ object
+        Left msg -> err False 1 msg
+        Right v  -> putStr $ ensureFinalNewline
+                           $ output (optDisplay opts) writer v
+  exitWith ExitSuccess
+
+runCGI :: IO ()
+runCGI = do
+  query <- getEnv "QUERY_STRING"
+  let topairs xs = case break (=='=') xs of
+                        (ys,('=':zs)) -> (urlUnencode ys, urlUnencode zs)
+                        (ys,_)        -> (urlUnencode ys,"")
+  let pairs = map topairs $ splitOn "&" query
+  inp <- case lookup "input" pairs of
+              Just x   -> return x
+              Nothing  -> err True 11 "Querry missing 'input'"
+  reader <- case lookup "from" pairs of
+                 Just x  -> case lookup x readers of
+                                 Just y  -> return y
+                                 Nothing -> err True 5 "Unsupported value of 'from'"
+                 Nothing -> err True 3 "Query missing 'from'"
+  writer <- case lookup "to" pairs of
+                 Just x  -> case lookup x writers of
+                                 Just y  -> return y
+                                 Nothing -> err True 7 "Unsupported value of 'to'"
+                 Nothing -> err True 3 "Query missing 'to'"
+  let inline = isJust $ lookup "inline" pairs
+  putStr "Content-type: text/json; charset=UTF-8\n\n"
+  case reader inp of
+        Left msg -> err True 1 msg
+        Right v  -> B.putStr $ encode $ object
                        [ T.pack "success" .=
-                         ensureFinalNewline (output (optDisplay opts) writer v) ]
-          | otherwise -> putStr $ ensureFinalNewline
-                                $ output (optDisplay opts) writer v
+                       ensureFinalNewline (output
+                        (if inline
+                            then DisplayInline
+                            else DisplayBlock) writer v) ]
   exitWith ExitSuccess

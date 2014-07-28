@@ -33,10 +33,8 @@ standalone xhtml file to stdout.  You can run the test suite thus:
 
 Macro definitions may be included before the formula.
 
-The `cgi` Cabal flag will cause a CGI binary, `texmath-cgi`, to be
-produced:
-
-    cabal install -fcgi
+`texmath` will behave as a CGI script when called under the name
+`texmath-cgi` (e.g. through a symbolic link).
 
 The file `cgi/texmath.html` contains an example of how it can
 be used.

@@ -14,7 +14,7 @@
       <![CDATA[
       $(document).ready(function(){
         $('#convert').click(function() {
-          $.getJSON("/cgi-bin/texmath", { 'input' : $('#macros').val() + $('#latexFormula').val(),
+          $.getJSON("/cgi-bin/texmath-cgi", { 'input' : $('#macros').val() + $('#latexFormula').val(),
                                           'from': 'tex',
                                           'to': 'mathml' },
             function(result){

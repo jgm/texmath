@@ -4,16 +4,17 @@
 texmath \- convert between math formats.
 .SH SYNOPSIS
 .PP
-texmath [\f[I]options\f[]]
+texmath [\f[I]options\f[]] [file*]
 .SH DESCRIPTION
 .PP
-\f[C]texmath\f[] acts as a pipe, reading from stdin and writing to
-stdout.
+\f[C]texmath\f[] acts as a pipe, reading from stdin or from the
+specified files and writing to stdout.
 It converts math in the specified input format (see \f[C]\-f\f[] below)
 to math in the specified output format (see \f[C]\-t\f[] below).
 .PP
-\f[C]texmath\f[] can also be used as a CGI script, when run in a CGI
-context with no arguments.
+If \f[C]texmath\f[] is invoked under the name \f[C]texmath\-cgi\f[] (via
+a symbolic link, or through simple renaming), it will act as a CGI
+script.
 It will expect query parameters for \f[C]from\f[], \f[C]to\f[],
 \f[C]input\f[], and optionally \f[C]inline\f[], and return a JSON object
 with either \f[C]error\f[] and a message or \f[C]success\f[] and the
