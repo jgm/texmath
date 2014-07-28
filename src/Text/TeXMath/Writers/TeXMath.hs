@@ -273,10 +273,10 @@ spaceCommands =
 delimiters :: Math [[TeX]]
 delimiters = do
     env <- ask
-    let commands = [ ".", "(", ")", "[", "]", "|", "\x2016", "{", "}"
-                   , "\x2309", "\x2308", "\x2329", "\x232A"
-                   , "\x230B", "\x230A", "\x231C", "\x231D"]
-    return $ filter (not . null) (map (flip getTeXMath env) commands)
+    let commands' = [ ".", "(", ")", "[", "]", "|", "\x2016", "{", "}"
+                    , "\x2309", "\x2308", "\x2329", "\x232A"
+                    , "\x230B", "\x230A", "\x231C", "\x231D"]
+    return $ filter (not . null) (map (flip getTeXMath env) commands')
 
 -- Fix up
 
