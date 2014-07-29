@@ -32,7 +32,8 @@ import Text.TeXMath.Shared (getMMLType)
 -- | Transforms an expression tree to a MathML XML tree
 writeMathML :: DisplayType -> [Exp] -> Element
 writeMathML dt exprs =
-  add_attr dtattr $ math $ map showExp $ everywhere (mkT $ handleDownup dt) exprs
+  add_attr dtattr $ math $ map (showExp TextNormal)
+  $ everywhere (mkT $ handleDownup dt) exprs
     where dtattr = Attr (unqual "display") dt'
           dt' =  case dt of
                       DisplayBlock  -> "block"
@@ -74,10 +75,10 @@ unaryOps = M.fromList
   , ("\\phantom", "mphantom")
   ]
 
-showUnary :: String -> Exp -> Element
-showUnary c x =
+showUnary :: TextType -> String -> Exp -> Element
+showUnary tt c x =
   case M.lookup c unaryOps of
-       Just c'  -> unode c' (showExp x)
+       Just c'  -> unode c' (showExp tt x)
        Nothing  -> error $ "Unknown unary op: " ++ c
 
 binaryOps :: M.Map String ([Element] -> Element)
@@ -99,10 +100,10 @@ binaryOps = M.fromList
 showBinom :: [Element] -> Element
 showBinom lst = unode "mfenced" $ withAttribute "linethickness" "0" $ unode "mfrac" lst
 
-showBinary :: String -> Exp -> Exp -> Element
-showBinary c x y =
+showBinary :: TextType -> String -> Exp -> Exp -> Element
+showBinary tt c x y =
   case M.lookup c binaryOps of
-       Just f   -> f [showExp x, showExp y]
+       Just f   -> f [showExp tt x, showExp tt y]
        Nothing  -> error $ "Unknown binary op: " ++ c
 
 spaceWidth :: Double -> Element
@@ -129,10 +130,10 @@ makeText a s = if trailingSp
         trailingSp = not (null s) && last s `elem` " \t"
         attr = getMMLType a
 
-makeArray :: [Alignment] -> [ArrayLine] -> Element
-makeArray as ls = unode "mtable" $
+makeArray :: TextType -> [Alignment] -> [ArrayLine] -> Element
+makeArray tt as ls = unode "mtable" $
   map (unode "mtr" .
-    zipWith (\a -> setAlignment a .  unode "mtd". map showExp) as') ls
+    zipWith (\a -> setAlignment a .  unode "mtd". map (showExp tt)) as') ls
    where setAlignment AlignLeft    = withAttribute "columnalign" "left"
          setAlignment AlignRight   = withAttribute "columnalign" "right"
          setAlignment AlignCenter  = withAttribute "columnalign" "center"
@@ -155,17 +156,17 @@ handleDownup DisplayInline (EDownup x y z) = ESubsup x y z
 handleDownup DisplayBlock  (EDownup x y z) = EUnderover x y z
 handleDownup _             x               = x
 
-showExp :: Exp -> Element
-showExp e =
+showExp :: TextType -> Exp -> Element
+showExp tt e =
  case e of
    ENumber x        -> unode "mn" x
-   EGrouped [x]     -> showExp x
-   EGrouped xs      -> mrow $ map showExp xs
+   EGrouped [x]     -> showExp tt x
+   EGrouped xs      -> mrow $ map (showExp tt) xs
    EDelimited start end xs -> mrow $
                        [ makeStretchy (unode "mo" start) | not (null start) ] ++
-                       map showExp xs ++
+                       map (showExp tt) xs ++
                        [ makeStretchy (unode "mo" end) | not (null end) ]
-   EIdentifier x    -> unode "mi" x
+   EIdentifier x    -> unode "mi" $ toUnicode tt x
    EMathOperator x  -> unode "mi" x
    ESymbol Accent x -> accent x
    EStretchy (ESymbol Open x)  -> makeStretchy $ unode "mo" x
@@ -174,19 +175,19 @@ showExp e =
    ESymbol Close x  -> withAttribute "stretchy" "false" $ unode "mo" x
    ESymbol _ x      -> unode "mo" x
    ESpace x         -> spaceWidth x
-   EBinary c x y    -> showBinary c x y
-   ESub x y         -> unode "msub" $ map showExp [x, y]
-   ESuper x y       -> unode "msup" $ map showExp [x, y]
-   ESubsup x y z    -> unode "msubsup" $ map showExp [x, y, z]
-   EUnder x y       -> unode "munder" $ map showExp [x, y]
-   EOver x y        -> unode "mover" $ map showExp [x, y]
-   EUnderover x y z -> unode "munderover" $ map showExp [x, y, z]
-   EUnary c x       -> showUnary c x
-   EStretchy x      -> makeStretchy $ showExp x
-   EScaled s x      -> makeScaled s $ showExp x
-   EArray as ls     -> makeArray as ls
+   EBinary c x y    -> showBinary tt c x y
+   ESub x y         -> unode "msub" $ map (showExp tt) [x, y]
+   ESuper x y       -> unode "msup" $ map (showExp tt) [x, y]
+   ESubsup x y z    -> unode "msubsup" $ map (showExp tt) [x, y, z]
+   EUnder x y       -> unode "munder" $ map (showExp tt) [x, y]
+   EOver x y        -> unode "mover" $ map (showExp tt) [x, y]
+   EUnderover x y z -> unode "munderover" $ map (showExp tt) [x, y, z]
+   EUnary c x       -> showUnary tt c x
+   EStretchy x      -> makeStretchy $ showExp tt x
+   EScaled s x      -> makeScaled s $ showExp tt x
+   EArray as ls     -> makeArray tt as ls
    EText a s        -> makeText a s
-   EStyled a es     -> makeStyled a $ map showExp es
+   EStyled a es     -> makeStyled a $ map (showExp a) es
    x                -> error $ "showExp encountered " ++ show x
                        -- note: EUp, EDown, EDownup should be removed by handleDownup
 
