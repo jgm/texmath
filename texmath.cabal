@@ -54,6 +54,8 @@ Extra-source-files:  README.markdown,
                      lib/mmldict/unicode.xml
                      lib/mmldict/operatorDictionary.xsl
                      lib/mmldict/mmldict.hs
+                     lib/tounicode/mkToUnicode.hs
+                     lib/tounicode/UnicodeData.txt
 
 Source-repository head
   type:              git
