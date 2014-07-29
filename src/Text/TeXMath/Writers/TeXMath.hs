@@ -187,7 +187,9 @@ writeExp (EStretchy e) = writeExp e
 writeExp (EText ttype s) = do
   txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
   toks <- getTeXMathM s
-  tell [ControlSeq txtcmd, Grouped toks]
+  if null toks
+     then return ()
+     else tell [ControlSeq txtcmd, Grouped toks]
 writeExp (EStyled ttype es) = do
   txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
   tell [ControlSeq txtcmd]
