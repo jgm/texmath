@@ -76,8 +76,8 @@ data TextType = TextNormal
               | TextScript
               | TextFraktur
               | TextBoldItalic
-              | TextBoldSansSerif
-              | TextBoldSansSerifItalic
+              | TextSansSerifBold
+              | TextSansSerifBoldItalic
               | TextBoldScript
               | TextBoldFraktur
               | TextSansSerifItalic

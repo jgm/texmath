@@ -49,11 +49,11 @@ renderStr tt s =
        TextScript       -> Str $ toUnicode tt s
        TextFraktur      -> Str $ toUnicode tt s
        TextBoldItalic    -> Strong [Emph [Str s]]
-       TextBoldSansSerif -> Strong [Str s]
+       TextSansSerifBold -> Strong [Str s]
        TextBoldScript    -> Strong [Str $ toUnicode tt s]
        TextBoldFraktur   -> Strong [Str $ toUnicode tt s]
        TextSansSerifItalic -> Emph [Str s]
-       TextBoldSansSerifItalic -> Strong [Emph [Str s]]
+       TextSansSerifBoldItalic -> Strong [Emph [Str s]]
 
 expToInlines :: TextType -> Exp -> Maybe [Inline]
 expToInlines tt (ENumber s) = Just [renderStr tt s]

@@ -126,8 +126,8 @@ textTypes =
   , ( TextScript       , ("script","\\mathcal"))
   , ( TextFraktur      , ("fraktur","\\mathfrak"))
   , ( TextBoldItalic          , ("bold-italic","\\mathbfit"))
-  , ( TextBoldSansSerif       , ("bold-sans-serif","\\mathbfsfup"))
-  , ( TextBoldSansSerifItalic , ("sans-serif-bold-italic","\\mathbfsfit"))
+  , ( TextSansSerifBold       , ("bold-sans-serif","\\mathbfsfup"))
+  , ( TextSansSerifBoldItalic , ("sans-serif-bold-italic","\\mathbfsfit"))
   , ( TextBoldScript          , ("bold-script","\\mathbfscr"))
   , ( TextBoldFraktur         , ("bold-fraktur","\\mathbffrak"))
   , ( TextSansSerifItalic     , ("sans-serif-italic","\\mathsfit")) ]
