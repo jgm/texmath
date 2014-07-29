@@ -166,8 +166,11 @@ space e = do
 
 style :: Element -> MML Exp
 style e = do
-  textStyle <- maybe TextNormal getTextType <$> (findAttrQ "mathvariant" e)
-  EStyled textStyle <$> group e
+  constructor <- maybe EGrouped (EStyled . getTextType) <$> (findAttrQ "mathvariant" e)
+  -- We do not want to propagate the mathvariant else
+  -- we end up with nested EStyled applying the same
+  -- style
+  constructor <$> local filterMathVariant (group e)
 
 row :: Element -> MML Exp
 row e = EGrouped <$> group e
@@ -369,6 +372,10 @@ def = MMLState [] Nothing
 
 addAttrs :: [Attr] -> MMLState -> MMLState
 addAttrs as s = s {attrs = as ++ attrs s }
+
+filterMathVariant :: MMLState -> MMLState
+filterMathVariant s@(attrs -> as) =
+  s{attrs = filter ((/= unqual "mathvariant") . attrKey) as}
 
 setPosition :: FormType -> MMLState -> MMLState
 setPosition p s = s {position = Just p}
