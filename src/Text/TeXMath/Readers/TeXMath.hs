@@ -153,43 +153,31 @@ number :: TP Exp
 number = lexeme $ liftM ENumber $ many1 digit
 
 enclosure :: TP Exp
-enclosure = basicEnclosure <|> left <|> right <|> scaledEnclosure
+enclosure = basicEnclosure <|> scaledEnclosure <|> delimited
 
 basicEnclosure :: TP Exp
 basicEnclosure = choice $ map (\(s, v) -> try (symbol s) >> return v) enclosures
 
-left :: TP Exp
-left = try $ do
+delimited :: TP Exp
+delimited = try $ do
   symbol "\\left"
   enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Open "\xFEFF"))
-  case enc of
-       (ESymbol Open x)  -> tilRight enc <|> return (EStretchy $ ESymbol Open x)
-       (ESymbol Close x) -> tilRight enc <|> return (EStretchy $ ESymbol Open x)
-       _ -> pzero
+  openc <- case enc of
+                ESymbol Open x  -> return x
+                ESymbol Close x -> return x
+                _ -> pzero
+  contents <- many (try $ notFollowedBy right >> expr)
+  closec <- right <|> return "\xFEFF"
+  return $ EDelimited openc closec contents
 
-right :: TP Exp
+right :: TP String
 right = try $ do
   symbol "\\right"
   enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Close "\xFEFF"))
   case enc of
-      (ESymbol Close x) -> return (EStretchy $ ESymbol Close x)
-      (ESymbol Open x)  -> return (EStretchy $ ESymbol Close x)
+      (ESymbol Close x) -> return x
+      (ESymbol Open x)  -> return x
       _ -> pzero
-
--- We want stuff between \left( and \right) to be in an mrow,
--- so that the scaling is based just on this unit, and not the
--- whole containing formula.
-tilRight :: Exp -> TP Exp
-tilRight start = try $ do
-  contents <- many (try $ notFollowedBy right >> expr)
-  end <- right
-  let startChar = case start of
-                     ESymbol _ c -> c
-                     _           -> ""
-  let endChar   = case end of
-                     (EStretchy (ESymbol _ c)) -> c
-                     _                         -> ""
-  return $ EDelimited startChar endChar contents
 
 scaledEnclosure :: TP Exp
 scaledEnclosure = try $ do
