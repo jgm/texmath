@@ -32,7 +32,11 @@ main = do
   putStrLn "unicodeTable :: [((TextType, Char), Char)]"
   putStr   "unicodeTable = [ "
   putStrLn $ intercalate
-         "\n               , " (map show entries) ++ "]"
+         "\n               , " (map showEntry entries) ++
+         "\n               ]"
+
+showEntry :: ((TextType, Char), Char) -> String
+showEntry ((tt,c),d) = show ((tt,c),d) ++ "  -- " ++ [c] ++ " -> " ++ [d]
 
 toEntry :: String -> Maybe (Char, String, Char)
 toEntry s = case splitWhen (==';') s of
