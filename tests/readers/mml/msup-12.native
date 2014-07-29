@@ -1,1 +1,1 @@
-[ESuper (EIdentifier "a") (ESymbol Bin "+"),ESymbol Ord "=",EUnderover (EGrouped [ESuper (EIdentifier "a") (ESymbol Bin "+")]) (EUnary "\\phantom" (EGrouped [EIdentifier "x"])) (EUnary "\\phantom" (EGrouped [EIdentifier "x"]))]
+[ESuper (EIdentifier "a") (ESymbol Bin "+"),ESymbol Rel "=",EUnderover (EGrouped [ESuper (EIdentifier "a") (ESymbol Bin "+")]) (EUnary "\\phantom" (EGrouped [EIdentifier "x"])) (EUnary "\\phantom" (EGrouped [EIdentifier "x"]))]

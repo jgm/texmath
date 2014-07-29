@@ -16,7 +16,7 @@
           <mtext mathvariant="normal">stretch=t, large=t</mtext>
         </mtd>
         <mtd>
-          <mstyled mathvariant="normal">
+          <mrow>
             <mrow>
               <mo stretchy="true">∫</mo>
               <mfrac>
@@ -29,10 +29,10 @@
               <mo stretchy="true">∫</mo>
               <mi>x</mi>
             </mrow>
-          </mstyled>
+          </mrow>
         </mtd>
         <mtd>
-          <mstyled mathvariant="normal">
+          <mrow>
             <mrow>
               <mo stretchy="true">∫</mo>
               <mfrac>
@@ -45,7 +45,7 @@
               <mo stretchy="true">∫</mo>
               <mi>x</mi>
             </mrow>
-          </mstyled>
+          </mrow>
         </mtd>
       </mtr>
       <mtr>
@@ -53,7 +53,7 @@
           <mtext mathvariant="normal">stretch=f, large=t</mtext>
         </mtd>
         <mtd>
-          <mstyled mathvariant="normal">
+          <mrow>
             <mrow>
               <mo>∫</mo>
               <mfrac>
@@ -66,10 +66,10 @@
               <mo>∫</mo>
               <mi>x</mi>
             </mrow>
-          </mstyled>
+          </mrow>
         </mtd>
         <mtd>
-          <mstyled mathvariant="normal">
+          <mrow>
             <mrow>
               <mo>∫</mo>
               <mfrac>
@@ -82,7 +82,7 @@
               <mo>∫</mo>
               <mi>x</mi>
             </mrow>
-          </mstyled>
+          </mrow>
         </mtd>
       </mtr>
       <mtr>
@@ -90,7 +90,7 @@
           <mtext mathvariant="normal">stretch=t, large=f</mtext>
         </mtd>
         <mtd>
-          <mstyled mathvariant="normal">
+          <mrow>
             <mrow>
               <mo stretchy="true">∫</mo>
               <mfrac>
@@ -111,10 +111,10 @@
               <mo stretchy="true">∫</mo>
               <mi>x</mi>
             </mrow>
-          </mstyled>
+          </mrow>
         </mtd>
         <mtd>
-          <mstyled mathvariant="normal">
+          <mrow>
             <mrow>
               <mo stretchy="true">∫</mo>
               <mfrac>
@@ -135,7 +135,7 @@
               <mo stretchy="true">∫</mo>
               <mi>x</mi>
             </mrow>
-          </mstyled>
+          </mrow>
         </mtd>
       </mtr>
       <mtr>
@@ -143,7 +143,7 @@
           <mtext mathvariant="normal">stretch=f, large=f</mtext>
         </mtd>
         <mtd>
-          <mstyled mathvariant="normal">
+          <mrow>
             <mrow>
               <mo>∫</mo>
               <mfrac>
@@ -156,10 +156,10 @@
               <mo>∫</mo>
               <mi>x</mi>
             </mrow>
-          </mstyled>
+          </mrow>
         </mtd>
         <mtd>
-          <mstyled mathvariant="normal">
+          <mrow>
             <mrow>
               <mo>∫</mo>
               <mfrac>
@@ -172,7 +172,7 @@
               <mo>∫</mo>
               <mi>x</mi>
             </mrow>
-          </mstyled>
+          </mrow>
         </mtd>
       </mtr>
     </mtable>

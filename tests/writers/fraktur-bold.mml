@@ -1,19 +1,19 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mstyled mathvariant="bold-fraktur">
+    <mstyle mathvariant="bold-fraktur">
       <mtable>
         <mtr>
           <mtd columnalign="left">
-            <mtext mathvariant="bold-fraktur">𝕬𝕭𝕮𝕿𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅</mtext>
+            <mtext mathvariant="normal">ABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext>
           </mtd>
         </mtr>
         <mtr>
           <mtd columnalign="left">
-            <mtext mathvariant="bold-fraktur">𝖆𝖇𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟</mtext>
+            <mtext mathvariant="normal">abcdefghijklmnopqrstuvwxyz</mtext>
           </mtd>
         </mtr>
       </mtable>
-    </mstyled>
+    </mstyle>
   </mrow>
 </math>

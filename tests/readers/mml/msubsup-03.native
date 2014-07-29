@@ -1,1 +1,1 @@
-[ESubsup (EIdentifier "L") (EIdentifier "x") (ENumber "2"),ESymbol Ord "=",ESubsup (EIdentifier "L") (EGrouped [ESub (EIdentifier "x") (EUnary "\\phantom" (EGrouped [EIdentifier "z"]))]) (EGrouped [ESuper (ENumber "2") (EUnary "\\phantom" (EGrouped [EIdentifier "z"]))])]
+[ESubsup (EIdentifier "L") (EIdentifier "x") (ENumber "2"),ESymbol Rel "=",ESubsup (EIdentifier "L") (EGrouped [ESub (EIdentifier "x") (EUnary "\\phantom" (EGrouped [EIdentifier "z"]))]) (EGrouped [ESuper (ENumber "2") (EUnary "\\phantom" (EGrouped [EIdentifier "z"]))])]

@@ -1,1 +1,1 @@
-[EUnder (EText TextNormal "_ baseline _") (EText TextNormal "under script"),ESymbol Ord "=",EUnder (EGrouped [EOver (EText TextNormal "_ baseline _") (EUnary "\\phantom" (EGrouped [EText TextNormal "fail"]))]) (EText TextNormal "under script")]
+[EUnder (EText TextNormal "_ baseline _") (EText TextNormal "under script"),ESymbol Rel "=",EUnder (EGrouped [EOver (EText TextNormal "_ baseline _") (EUnary "\\phantom" (EGrouped [EText TextNormal "fail"]))]) (EText TextNormal "under script")]

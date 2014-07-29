@@ -1,19 +1,19 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mstyled mathvariant="script">
+    <mstyle mathvariant="script">
       <mtable>
         <mtr>
           <mtd columnalign="left">
-            <mtext mathvariant="script">𝒜ℬ𝒞𝒟ℰℱ𝒢ℋℐ𝒥𝒦ℒℳ𝒩𝒪𝒫𝒬ℛ𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵</mtext>
+            <mtext mathvariant="normal">ABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext>
           </mtd>
         </mtr>
         <mtr>
           <mtd columnalign="left">
-            <mtext mathvariant="script">𝒶𝒷𝒸𝒹ℯ𝒻ℊ𝒽𝒾𝒿𝓀𝓁𝓂𝓃ℴ𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏</mtext>
+            <mtext mathvariant="normal">abcdefghijklmnopqrstuvwxyz</mtext>
           </mtd>
         </mtr>
       </mtable>
-    </mstyled>
+    </mstyle>
   </mrow>
 </math>

@@ -2,18 +2,14 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
     <mtext mathvariant="normal">Inline, display style, no line </mtext>
-    <mstyled mathvariant="normal">
-      <mstyled mathvariant="normal">
-        <mfrac>
-          <mn>1.234567</mn>
-          <mrow>
-            <mn>89</mn>
-            <mo>+</mo>
-            <mi>x</mi>
-          </mrow>
-        </mfrac>
-      </mstyled>
-    </mstyled>
+    <mfrac>
+      <mn>1.234567</mn>
+      <mrow>
+        <mn>89</mn>
+        <mo>+</mo>
+        <mi>x</mi>
+      </mrow>
+    </mfrac>
     <mtext mathvariant="normal"> the end.</mtext>
   </mrow>
 </math>

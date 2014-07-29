@@ -1,36 +1,20 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mstyled mathvariant="normal">
-      <mroot>
+    <mroot>
+      <mfrac>
+        <mi>x</mi>
+        <mn>3</mn>
+      </mfrac>
+      <mrow>
+        <mi>x</mi>
+        <mo>-</mo>
         <mfrac>
           <mi>x</mi>
           <mn>3</mn>
         </mfrac>
-        <mrow>
-          <mi>x</mi>
-          <mo>-</mo>
-          <mfrac>
-            <mi>x</mi>
-            <mn>3</mn>
-          </mfrac>
-        </mrow>
-      </mroot>
-    </mstyled>
-    <mo>+</mo>
-    <mstyled mathvariant="normal">
-      <mroot>
-        <mfrac>
-          <mi>x</mi>
-          <mn>3</mn>
-        </mfrac>
-        <mrow>
-          <mi>x</mi>
-          <mo>-</mo>
-          <mn>3</mn>
-        </mrow>
-      </mroot>
-    </mstyled>
+      </mrow>
+    </mroot>
     <mo>+</mo>
     <mroot>
       <mfrac>
@@ -44,11 +28,21 @@
       </mrow>
     </mroot>
     <mo>+</mo>
-    <mstyled mathvariant="normal">
+    <mroot>
       <mfrac>
         <mi>x</mi>
         <mn>3</mn>
       </mfrac>
-    </mstyled>
+      <mrow>
+        <mi>x</mi>
+        <mo>-</mo>
+        <mn>3</mn>
+      </mrow>
+    </mroot>
+    <mo>+</mo>
+    <mfrac>
+      <mi>x</mi>
+      <mn>3</mn>
+    </mfrac>
   </mrow>
 </math>

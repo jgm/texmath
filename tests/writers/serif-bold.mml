@@ -1,49 +1,49 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mstyled mathvariant="bold">
+    <mstyle mathvariant="bold">
       <mtable>
         <mtr>
           <mtd columnalign="left">
-            <mtext mathvariant="bold">!&quot;#$%&amp;&#39;()*+,-./0123456789:;&lt;=&gt;?</mtext>
+            <mtext mathvariant="normal">!&quot;#$%&amp;&#39;()*+,-./0123456789:;&lt;=&gt;?</mtext>
           </mtd>
         </mtr>
         <mtr>
           <mtd columnalign="left">
-            <mtext mathvariant="bold">@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_</mtext>
+            <mtext mathvariant="normal">@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_</mtext>
           </mtd>
         </mtr>
         <mtr>
           <mtd columnalign="left">
-            <mtext mathvariant="bold">`abcdefghijklmnopqrstuvwxyz{|}~</mtext>
+            <mtext mathvariant="normal">`abcdefghijklmnopqrstuvwxyz{|}~</mtext>
           </mtd>
         </mtr>
         <mtr>
           <mtd columnalign="left">
-            <mtext mathvariant="bold">ıȷ</mtext>
+            <mtext mathvariant="normal">ıȷ</mtext>
           </mtd>
         </mtr>
         <mtr>
           <mtd columnalign="left">
-            <mtext mathvariant="bold">ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡϴΣΤΥΦΧΨΩ∇</mtext>
+            <mtext mathvariant="normal">ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡϴΣΤΥΦΧΨΩ∇</mtext>
           </mtd>
         </mtr>
         <mtr>
           <mtd columnalign="left">
-            <mtext mathvariant="bold">αβγδεζηθικλμνξοπρςστυφχψω∂</mtext>
+            <mtext mathvariant="normal">αβγδεζηθικλμνξοπρςστυφχψω∂</mtext>
           </mtd>
         </mtr>
         <mtr>
           <mtd columnalign="left">
-            <mtext mathvariant="bold">ϵϑϰϕϱϖϜϝ</mtext>
+            <mtext mathvariant="normal">ϵϑϰϕϱϖϜϝ</mtext>
           </mtd>
         </mtr>
         <mtr>
           <mtd columnalign="left">
-            <mtext mathvariant="bold">±·×÷‘’“”•−∓∕∗∙≠≤≥⋅</mtext>
+            <mtext mathvariant="normal">±·×÷‘’“”•−∓∕∗∙≠≤≥⋅</mtext>
           </mtd>
         </mtr>
       </mtable>
-    </mstyled>
+    </mstyle>
   </mrow>
 </math>

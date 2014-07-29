@@ -1,1 +1,1 @@
-[EText TextNormal "_ baseline _",ESymbol Ord "=",EUnder (EText TextNormal "_ baseline _") (EUnary "\\phantom" (EGrouped [EText TextNormal "fail"]))]
+[EText TextNormal "_ baseline _",ESymbol Rel "=",EUnder (EText TextNormal "_ baseline _") (EUnary "\\phantom" (EGrouped [EText TextNormal "fail"]))]

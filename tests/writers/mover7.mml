@@ -1,19 +1,12 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mstyled mathvariant="normal">
+    <mrow>
       <mover>
         <mi>x</mi>
         <mo accent="true">¨</mo>
       </mover>
       <mo>≠</mo>
-      <mstyled mathvariant="normal">
-        <mover>
-          <mi>x</mi>
-          <mo>¨</mo>
-        </mover>
-      </mstyled>
-      <mo>=</mo>
       <mover>
         <mi>x</mi>
         <mo>¨</mo>
@@ -23,6 +16,11 @@
         <mi>x</mi>
         <mo>¨</mo>
       </mover>
-    </mstyled>
+      <mo>=</mo>
+      <mover>
+        <mi>x</mi>
+        <mo>¨</mo>
+      </mover>
+    </mrow>
   </mrow>
 </math>

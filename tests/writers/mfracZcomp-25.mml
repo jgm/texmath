@@ -2,7 +2,7 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
     <mtext mathvariant="normal">The same expression </mtext>
-    <mstyled mathvariant="normal">
+    <mrow>
       <mrow>
         <mo stretchy="true">[</mo>
         <mfrac>
@@ -45,7 +45,7 @@
         <mn>1.0</mn>
         <mo stretchy="false">]</mo>
       </mrow>
-    </mstyled>
+    </mrow>
     <mtext mathvariant="normal"> in a display.</mtext>
   </mrow>
 </math>

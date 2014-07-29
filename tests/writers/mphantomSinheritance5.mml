@@ -1,15 +1,13 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mstyled mathvariant="normal">
+    <mrow>
       <mi>A</mi>
-      <mstyled mathvariant="normal">
-        <mphantom>
-          <mi>A</mi>
-        </mphantom>
-      </mstyled>
+      <mphantom>
+        <mi>A</mi>
+      </mphantom>
       <mi>A</mi>
-      <mstyled mathvariant="normal">
+      <mrow>
         <mphantom>
           <mrow>
             <mi>A</mi>
@@ -18,18 +16,16 @@
           </mrow>
         </mphantom>
         <mi>A</mi>
-      </mstyled>
-    </mstyled>
+      </mrow>
+    </mrow>
     <mi>A</mi>
-    <mstyled mathvariant="normal">
-      <mi>A</mi>
-    </mstyled>
     <mi>A</mi>
-    <mstyled mathvariant="normal">
+    <mi>A</mi>
+    <mrow>
       <mi>A</mi>
       <mo>+</mo>
       <mi>A</mi>
       <mi>A</mi>
-    </mstyled>
+    </mrow>
   </mrow>
 </math>

@@ -39,27 +39,23 @@
       </mfrac>
     </mfrac>
     <mo>*</mo>
-    <mstyled mathvariant="normal">
-      <msubsup>
-        <mi>x</mi>
-        <mn>2</mn>
-        <mn>3</mn>
-      </msubsup>
-    </mstyled>
+    <msubsup>
+      <mi>x</mi>
+      <mn>2</mn>
+      <mn>3</mn>
+    </msubsup>
     <mo>=</mo>
-    <mstyled mathvariant="normal">
-      <mroot>
-        <mn>3</mn>
-        <mfrac>
-          <mn>1</mn>
-          <mrow>
-            <mn>23</mn>
-            <mo>+</mo>
-            <mn>β</mn>
-          </mrow>
-        </mfrac>
-      </mroot>
-    </mstyled>
+    <mroot>
+      <mn>3</mn>
+      <mfrac>
+        <mn>1</mn>
+        <mrow>
+          <mn>23</mn>
+          <mo>+</mo>
+          <mn>β</mn>
+        </mrow>
+      </mfrac>
+    </mroot>
     <mtext mathvariant="normal">#This is my string!&#39;</mtext>
   </mrow>
 </math>

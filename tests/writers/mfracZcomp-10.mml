@@ -2,16 +2,14 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
     <mtext mathvariant="normal">Inline binomial, auto, no line </mtext>
-    <mstyled mathvariant="normal">
-      <mrow>
-        <mo stretchy="true">(</mo>
-        <mfrac>
-          <mn>5</mn>
-          <mn>8</mn>
-        </mfrac>
-        <mo stretchy="true">)</mo>
-      </mrow>
-    </mstyled>
+    <mrow>
+      <mo stretchy="true">(</mo>
+      <mfrac>
+        <mn>5</mn>
+        <mn>8</mn>
+      </mfrac>
+      <mo stretchy="true">)</mo>
+    </mrow>
     <mtext mathvariant="normal"> the end.</mtext>
   </mrow>
 </math>

@@ -1,1 +1,1 @@
-[EBinary "\\frac" (ENumber "1") (ENumber "8"),ESymbol Ord "=",EBinary "\\frac" (ENumber "1") (EGrouped [EUnder (ENumber "8") (EUnary "\\phantom" (EGrouped [ENumber "0"]))])]
+[EBinary "\\frac" (ENumber "1") (ENumber "8"),ESymbol Rel "=",EBinary "\\frac" (ENumber "1") (EGrouped [EUnder (ENumber "8") (EUnary "\\phantom" (EGrouped [ENumber "0"]))])]

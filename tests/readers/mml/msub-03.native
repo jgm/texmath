@@ -1,1 +1,1 @@
-[ESub (EIdentifier "V") (ESymbol Bin "+"),ESymbol Ord "=",ESub (EIdentifier "V") (EGrouped [ESub (ESymbol Bin "+") (EUnary "\\phantom" (EGrouped [EText TextNormal "fail"]))])]
+[ESub (EIdentifier "V") (ESymbol Bin "+"),ESymbol Rel "=",ESub (EIdentifier "V") (EGrouped [ESub (ESymbol Bin "+") (EUnary "\\phantom" (EGrouped [EText TextNormal "fail"]))])]

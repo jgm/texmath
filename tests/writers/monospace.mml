@@ -1,24 +1,24 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mstyled mathvariant="monospace">
+    <mstyle mathvariant="monospace">
       <mtable>
         <mtr>
           <mtd columnalign="left">
-            <mtext mathvariant="monospace">0123456789</mtext>
+            <mtext mathvariant="normal">0123456789</mtext>
           </mtd>
         </mtr>
         <mtr>
           <mtd columnalign="left">
-            <mtext mathvariant="monospace">ABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext>
+            <mtext mathvariant="normal">ABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext>
           </mtd>
         </mtr>
         <mtr>
           <mtd columnalign="left">
-            <mtext mathvariant="monospace">abcdefghijklmnopqrstuvwxyz</mtext>
+            <mtext mathvariant="normal">abcdefghijklmnopqrstuvwxyz</mtext>
           </mtd>
         </mtr>
       </mtable>
-    </mstyled>
+    </mstyle>
   </mrow>
 </math>

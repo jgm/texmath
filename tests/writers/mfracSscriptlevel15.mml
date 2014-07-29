@@ -6,12 +6,10 @@
       <mn>2</mn>
     </mfrac>
     <mo>+</mo>
-    <mstyled mathvariant="normal">
-      <mfrac>
-        <mn>1</mn>
-        <mn>2</mn>
-      </mfrac>
-    </mstyled>
+    <mfrac>
+      <mn>1</mn>
+      <mn>2</mn>
+    </mfrac>
     <mo>+</mo>
     <mfrac>
       <mn>1</mn>
@@ -25,34 +23,28 @@
       </mrow>
     </mfrac>
     <mo>+</mo>
-    <mstyled mathvariant="normal">
-      <mfrac>
+    <mfrac>
+      <mn>1</mn>
+      <mrow>
         <mn>1</mn>
-        <mrow>
-          <mn>1</mn>
-          <mo>+</mo>
-          <mfrac>
-            <mi>x</mi>
-            <mn>3</mn>
-          </mfrac>
-        </mrow>
-      </mfrac>
-    </mstyled>
+        <mo>+</mo>
+        <mfrac>
+          <mi>x</mi>
+          <mn>3</mn>
+        </mfrac>
+      </mrow>
+    </mfrac>
     <mo>+</mo>
-    <mstyled mathvariant="normal">
-      <mfrac>
+    <mfrac>
+      <mn>1</mn>
+      <mrow>
         <mn>1</mn>
-        <mrow>
-          <mn>1</mn>
-          <mo>+</mo>
-          <mstyled mathvariant="normal">
-            <mfrac>
-              <mi>x</mi>
-              <mn>3</mn>
-            </mfrac>
-          </mstyled>
-        </mrow>
-      </mfrac>
-    </mstyled>
+        <mo>+</mo>
+        <mfrac>
+          <mi>x</mi>
+          <mn>3</mn>
+        </mfrac>
+      </mrow>
+    </mfrac>
   </mrow>
 </math>

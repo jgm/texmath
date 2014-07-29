@@ -4,13 +4,19 @@
     <m:jc m:val="center" />
   </m:oMathParaPr>
   <m:oMath>
-    <m:sSubSup>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="∫" />
+        <m:limLoc m:val="subSup" />
+        <m:supHide m:val="off" />
+        <m:supHide m:val="off" />
+      </m:naryPr>
       <m:e>
         <m:r>
           <m:rPr>
             <m:sty m:val="p" />
           </m:rPr>
-          <m:t>∫</m:t>
+          <m:t>f</m:t>
         </m:r>
       </m:e>
       <m:sub>
@@ -29,13 +35,7 @@
           <m:t>1</m:t>
         </m:r>
       </m:sup>
-    </m:sSubSup>
-    <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
-      <m:t>f</m:t>
-    </m:r>
+    </m:nary>
     <m:r>
       <m:rPr>
         <m:sty m:val="p" />
@@ -78,56 +78,32 @@
       </m:rPr>
       <m:t>=</m:t>
     </m:r>
-    <m:limLow>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="∑" />
+        <m:limLoc m:val="undOvr" />
+        <m:supHide m:val="off" />
+        <m:supHide m:val="off" />
+      </m:naryPr>
       <m:e>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>∑</m:t>
-        </m:r>
-      </m:e>
-      <m:lim>
-        <m:limUpp>
+        <m:sSub>
           <m:e>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+          <m:sub>
             <m:r>
               <m:rPr>
                 <m:sty m:val="p" />
               </m:rPr>
               <m:t>i</m:t>
             </m:r>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>=</m:t>
-            </m:r>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>0</m:t>
-            </m:r>
-          </m:e>
-          <m:lim>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>∞</m:t>
-            </m:r>
-          </m:lim>
-        </m:limUpp>
-      </m:lim>
-    </m:limLow>
-    <m:sSub>
-      <m:e>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>x</m:t>
-        </m:r>
+          </m:sub>
+        </m:sSub>
       </m:e>
       <m:sub>
         <m:r>
@@ -136,64 +112,60 @@
           </m:rPr>
           <m:t>i</m:t>
         </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>=</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>0</m:t>
+        </m:r>
       </m:sub>
-    </m:sSub>
+      <m:sup>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>∞</m:t>
+        </m:r>
+      </m:sup>
+    </m:nary>
     <m:r>
       <m:rPr>
         <m:sty m:val="p" />
       </m:rPr>
       <m:t>=</m:t>
     </m:r>
-    <m:limLow>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="∏" />
+        <m:limLoc m:val="undOvr" />
+        <m:supHide m:val="off" />
+        <m:supHide m:val="off" />
+      </m:naryPr>
       <m:e>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>∏</m:t>
-        </m:r>
-      </m:e>
-      <m:lim>
-        <m:limUpp>
+        <m:sSub>
           <m:e>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+          <m:sub>
             <m:r>
               <m:rPr>
                 <m:sty m:val="p" />
               </m:rPr>
               <m:t>i</m:t>
             </m:r>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>=</m:t>
-            </m:r>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>0</m:t>
-            </m:r>
-          </m:e>
-          <m:lim>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>∞</m:t>
-            </m:r>
-          </m:lim>
-        </m:limUpp>
-      </m:lim>
-    </m:limLow>
-    <m:sSub>
-      <m:e>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>x</m:t>
-        </m:r>
+          </m:sub>
+        </m:sSub>
       </m:e>
       <m:sub>
         <m:r>
@@ -202,64 +174,60 @@
           </m:rPr>
           <m:t>i</m:t>
         </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>=</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>0</m:t>
+        </m:r>
       </m:sub>
-    </m:sSub>
+      <m:sup>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>∞</m:t>
+        </m:r>
+      </m:sup>
+    </m:nary>
     <m:r>
       <m:rPr>
         <m:sty m:val="p" />
       </m:rPr>
       <m:t>=</m:t>
     </m:r>
-    <m:limLow>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="∐" />
+        <m:limLoc m:val="undOvr" />
+        <m:supHide m:val="off" />
+        <m:supHide m:val="off" />
+      </m:naryPr>
       <m:e>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>∐</m:t>
-        </m:r>
-      </m:e>
-      <m:lim>
-        <m:limUpp>
+        <m:sSub>
           <m:e>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+          <m:sub>
             <m:r>
               <m:rPr>
                 <m:sty m:val="p" />
               </m:rPr>
               <m:t>i</m:t>
             </m:r>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>=</m:t>
-            </m:r>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>0</m:t>
-            </m:r>
-          </m:e>
-          <m:lim>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>∞</m:t>
-            </m:r>
-          </m:lim>
-        </m:limUpp>
-      </m:lim>
-    </m:limLow>
-    <m:sSub>
-      <m:e>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>x</m:t>
-        </m:r>
+          </m:sub>
+        </m:sSub>
       </m:e>
       <m:sub>
         <m:r>
@@ -268,21 +236,47 @@
           </m:rPr>
           <m:t>i</m:t>
         </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>=</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>0</m:t>
+        </m:r>
       </m:sub>
-    </m:sSub>
+      <m:sup>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>∞</m:t>
+        </m:r>
+      </m:sup>
+    </m:nary>
     <m:r>
       <m:rPr>
         <m:sty m:val="p" />
       </m:rPr>
       <m:t>=</m:t>
     </m:r>
-    <m:sSubSup>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="∮" />
+        <m:limLoc m:val="subSup" />
+        <m:supHide m:val="off" />
+        <m:supHide m:val="off" />
+      </m:naryPr>
       <m:e>
         <m:r>
           <m:rPr>
             <m:sty m:val="p" />
           </m:rPr>
-          <m:t>∮</m:t>
+          <m:t>f</m:t>
         </m:r>
       </m:e>
       <m:sub>
@@ -301,13 +295,7 @@
           <m:t>1</m:t>
         </m:r>
       </m:sup>
-    </m:sSubSup>
-    <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
-      <m:t>f</m:t>
-    </m:r>
+    </m:nary>
     <m:r>
       <m:rPr>
         <m:sty m:val="p" />
@@ -350,13 +338,19 @@
       </m:rPr>
       <m:t>=</m:t>
     </m:r>
-    <m:sSubSup>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="∬" />
+        <m:limLoc m:val="subSup" />
+        <m:supHide m:val="off" />
+        <m:supHide m:val="off" />
+      </m:naryPr>
       <m:e>
         <m:r>
           <m:rPr>
             <m:sty m:val="p" />
           </m:rPr>
-          <m:t>∬</m:t>
+          <m:t>f</m:t>
         </m:r>
       </m:e>
       <m:sub>
@@ -375,13 +369,7 @@
           <m:t>1</m:t>
         </m:r>
       </m:sup>
-    </m:sSubSup>
-    <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
-      <m:t>f</m:t>
-    </m:r>
+    </m:nary>
     <m:r>
       <m:rPr>
         <m:sty m:val="p" />
@@ -424,13 +412,19 @@
       </m:rPr>
       <m:t>=</m:t>
     </m:r>
-    <m:sSubSup>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="∭" />
+        <m:limLoc m:val="subSup" />
+        <m:supHide m:val="off" />
+        <m:supHide m:val="off" />
+      </m:naryPr>
       <m:e>
         <m:r>
           <m:rPr>
             <m:sty m:val="p" />
           </m:rPr>
-          <m:t>∭</m:t>
+          <m:t>f</m:t>
         </m:r>
       </m:e>
       <m:sub>
@@ -449,13 +443,7 @@
           <m:t>1</m:t>
         </m:r>
       </m:sup>
-    </m:sSubSup>
-    <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
-      <m:t>f</m:t>
-    </m:r>
+    </m:nary>
     <m:r>
       <m:rPr>
         <m:sty m:val="p" />

@@ -1,1 +1,1 @@
-[EOver (EText TextNormal "B") (EText TextNormal "overscript"),ESymbol Ord "=",EOver (EGrouped [EUnary "\\phantom" (EGrouped [ENumber "1"]),EText TextNormal "B",EUnary "\\phantom" (EGrouped [ENumber "1"])]) (EText TextNormal "overscript")]
+[EOver (EText TextNormal "B") (EText TextNormal "overscript"),ESymbol Rel "=",EOver (EGrouped [EUnary "\\phantom" (EGrouped [ENumber "1"]),EText TextNormal "B",EUnary "\\phantom" (EGrouped [ENumber "1"])]) (EText TextNormal "overscript")]

@@ -2,26 +2,22 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
     <mtext mathvariant="normal">The same expression </mtext>
-    <mstyled mathvariant="normal">
+    <mrow>
       <mfrac>
         <mn>1</mn>
         <mn>2</mn>
       </mfrac>
       <mo>-</mo>
-      <mstyled mathvariant="normal">
-        <mfrac>
-          <mn>1</mn>
-          <mn>2</mn>
-        </mfrac>
-      </mstyled>
+      <mfrac>
+        <mn>1</mn>
+        <mn>2</mn>
+      </mfrac>
       <mo>+</mo>
-      <mstyled mathvariant="normal">
-        <mfrac>
-          <mn>1.23456</mn>
-          <mn>7890</mn>
-        </mfrac>
-      </mstyled>
-    </mstyled>
+      <mfrac>
+        <mn>1.23456</mn>
+        <mn>7890</mn>
+      </mfrac>
+    </mrow>
     <mtext mathvariant="normal"> in a display.</mtext>
   </mrow>
 </math>
