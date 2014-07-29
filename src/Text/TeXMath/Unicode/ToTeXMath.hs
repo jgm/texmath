@@ -52,7 +52,7 @@ import Text.TeXMath.Types
 import Data.Maybe (fromMaybe, listToMaybe, mapMaybe)
 import Control.Applicative hiding (optional)
 import Text.TeXMath.Unicode.ToASCII (getASCII)
-import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
+import Text.TeXMath.Unicode.ToUnicode (fromUnicodeChar)
 import qualified Text.TeXMath.Shared as S
 
 -- | Converts a string of unicode characters into a strong of equivalent
@@ -95,7 +95,7 @@ charToLaTeXString environment c = do
 -- Convert special unicode characters not in the standard mapping
 textConvert :: Env -> Char -> Maybe [TeX]
 textConvert env c = do
-  (ttype, v) <- fromUnicode c
+  (ttype, v) <- fromUnicodeChar c
   return [ControlSeq (S.getLaTeXTextCommand env ttype), Grouped [Token v]]
 
 

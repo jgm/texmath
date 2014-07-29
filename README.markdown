@@ -42,14 +42,15 @@ be used.
 Generating lookup tables
 =======================
 
-There are two main lookup tables which are built form externally compiled lists.
+There are three main lookup tables which are built form externally compiled lists.
 This section contains information about how to modify and regenerate these tables.
 
-In the `lib` direction there are two sub-directories which contain the 
+In the `lib` direction there are two sub-directories which contain the
 necessary files.
 
 MMLDict.hs
-==========
+----------
+
 The utility program `xsltproc` is required.
 You can find these files in `lib/mmldict/`
 
@@ -59,12 +60,24 @@ You can find these files in `lib/mmldict/`
   4. Replace the operator table at the bottom of `src/Text/TeXMath/Readers/MathML/MMLDict.hs` with the contents of `mmldict.hs`
 
 ToTeXMath.hs
-===========
+------------
+
 You can find these files in `lib/totexmath/`
 
   1. If desired, replace `unimathsymbols.txt` with an updated verson from [here](http://milde.users.sourceforge.net/LUCR/Math/)
   2. `runghc unicodetotex.hs`
   3. Replace the record table at the bottom of `src/Text/TeXMath/Unicode/ToTeXMath.hs` with the contents of `UnicodeToLaTeX.hs`
+
+ToUnicode.hs
+------------
+
+You can find these files in `lib/tounicode/`.
+
+  1. If desired, replace `UnicodeData.txt` with an updated verson from
+     [here](ftp://ftp.unicode.org/Public/UNIDATA/UnicodeData.txt).
+  2. `runghc mkUnicodeTable.hs`
+  3. Replace the table at the bottom of
+     `src/Text/TeXMath/Unicode/ToUnicode.hs` with the output.
 
 Editing the tables
 ==================
