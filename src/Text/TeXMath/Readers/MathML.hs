@@ -32,7 +32,7 @@ To Improve
   - Handling of mstyle
 -}
 
-module Text.TeXMath.Readers.MathML (readMathML) where
+module Text.TeXMath.Readers.MathML (matchNesting, readMathML) where
 
 import Text.XML.Light hiding (onlyText)
 import Text.TeXMath.Types
@@ -50,6 +50,8 @@ import Control.Monad (filterM, guard)
 import Control.Monad.Reader (ReaderT, runReaderT, asks, local)
 import Data.Generics (everywhere, mkT)
 
+import Debug.Trace
+
 -- | Parse a MathML expression to a list of 'Exp'
 readMathML :: String -> Either String [Exp]
 readMathML inp = map fixTree <$> (runExcept (flip runReaderT def (i >>= parseMathML)))
@@ -57,7 +59,8 @@ readMathML inp = map fixTree <$> (runExcept (flip runReaderT def (i >>= parseMat
     i = maybeToEither "Invalid XML" (parseXMLDoc inp)
 
 fixTree :: Exp -> Exp
-fixTree = everywhere (mkT fixNesting)
+--fixTree = everywhere (mkT fixNesting)
+fixTree = id
 
 data MMLState = MMLState { attrs :: [Attr]
                          , position :: Maybe FormType }
@@ -173,7 +176,46 @@ style e = do
   constructor <$> local filterMathVariant (group e)
 
 row :: Element -> MML Exp
-row e = EGrouped <$> group e
+row e = handleList . matchNesting <$> group e
+
+
+handleList :: [Exp] -> Exp
+handleList [] = empty
+handleList xs = if any isStretchy xs
+                  then EDelimited "" "" xs
+                  else case xs of
+                        [x] -> x
+                        _   -> EGrouped xs
+
+isStretchy :: Exp -> Bool
+isStretchy (EStretchy _) = True
+isStretchy _ = False
+
+matchNesting :: [Exp] -> [Exp]
+matchNesting (span (not . isFence) -> (inis, rest)) =
+  case rest of
+    [] -> inis
+    ((EStretchy (ESymbol Open opens)): rs) ->
+      let (body, tail) = revspan close rs
+          body' = matchNesting body in
+        case tail of
+          [] -> inis ++ [EDelimited opens "" body']
+          (last -> EStretchy (ESymbol Close closes)) ->
+            (EDelimited opens closes body') : matchNesting (init tail)
+          _ -> (error "logic is bad")
+    ((EStretchy (ESymbol Close closes)): rs) ->
+      EDelimited "" closes inis : matchNesting rs
+    _ -> error "bad logic"
+  where
+    close (EStretchy (ESymbol Close _)) = True
+    close _ = False
+    revspan f xs = let (fs, bs) = span f (reverse xs) in 
+                       (reverse bs, reverse fs)
+
+isFence :: Exp -> Bool
+isFence (EStretchy (ESymbol Open _)) = True
+isFence (EStretchy (ESymbol Close _)) = True
+isFence _ = False
 
 group :: Element -> MML [Exp]
 group e = do
