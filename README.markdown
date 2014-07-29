@@ -39,5 +39,41 @@ Macro definitions may be included before the formula.
 The file `cgi/texmath.html` contains an example of how it can
 be used.
 
-Thanks to Matthew Pickering and John Lenz for many contributions.
+Generating lookup tables
+=======================
 
+There are two main lookup tables which are built form externally compiled lists.
+This section contains information about how to modify and regenerate these tables.
+
+In the `lib` direction there are two sub-directories which contain the 
+necessary files.
+
+MMLDict.hs
+==========
+The utility program `xsltproc` is required.
+You can find these files in `lib/mmldict/`
+
+  1. If desired replace `unicode.xml` with and updated version (you can download a copy from [here](http://www.w3.org/TR/xml-entity-names/#source)
+  2. `xsltproc -o dictionary.xml operatorDictionary.xsl unicode.xml`
+  3. `runghc generateMMLDict.hs`
+  4. Replace the operator table at the bottom of `src/Text/TeXMath/Readers/MathML/MMLDict.hs` with the contents of `mmldict.hs`
+
+ToTeXMath.hs
+===========
+You can find these files in `lib/totexmath/`
+
+  1. If desired, replace `unimathsymbols.txt` with an updated verson from [here](http://milde.users.sourceforge.net/LUCR/Math/)
+  2. `runghc unicodetotex.hs`
+  3. Replace the record table at the bottom of `src/Text/TeXMath/Unicode/ToTeXMath.hs` with the contents of `UnicodeToLaTeX.hs`
+
+Editing the tables
+==================
+
+It is not necessary to edit the source files to add records to the tables.
+To add to or modify a table it is easier to add modify either `unicodetotex.hs`
+or `generateMMLDict.hs`. This is easily achieved by adding an item to the corresponding
+`updates` lists. After making the changes, follow the above steps to regenerate
+the table.
+
+
+Thanks to Matthew Pickering and John Lenz for many contributions.

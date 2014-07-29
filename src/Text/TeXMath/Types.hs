@@ -28,7 +28,8 @@ where
 
 import Data.Generics
 
-data TeXSymbolType = Ord | Op | Bin | Rel | Open | Close | Pun | Accent
+data TeXSymbolType = Ord | Op | Bin | Rel | Open | Close | Pun | Accent 
+                     | Fence | TOver | TUnder | Alpha | BotAccent | Rad
                      deriving (Show, Read, Eq, Data, Typeable)
 
 data Alignment = AlignLeft | AlignCenter | AlignRight | AlignDefault
@@ -106,7 +107,7 @@ data Operator = Operator
 -- here>
 data Record = Record { uchar :: Char -- ^ Unicode Character
                      , commands :: [(String, String)] -- ^ LaTeX commands (package, command)
-                     , category :: String -- ^ TeX math category
+                     , category :: TeXSymbolType -- ^ TeX math category
                      , comments :: String -- ^ Plain english description
                      } deriving (Show)
 
