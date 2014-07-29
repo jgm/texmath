@@ -51,19 +51,21 @@ getMathStyle (n, s, m) = go styles s
 styleStrings :: [String]
 styleStrings = map fst styles
 
+-- note: it's important to have longer strings below their
+-- substrings in this list, which is searched top to bottom!
 styles :: [(String, TextType)]
-styles  = [("MATHEMATICAL BOLD", TextBold)
-          ,("MATHEMATICAL ITALIC", TextItalic)
-          ,("MATHEMATICAL BOLD ITALIC", TextBoldItalic)
-          ,("MATHEMATICAL SCRIPT", TextScript)
-          ,("MATHEMATICAL BOLD SCRIPT", TextBoldScript)
-          ,("MATHEMATICAL FRAKTUR", TextFraktur)
-          ,("MATHEMATICAL DOUBLE-STRUCK", TextDoubleStruck)
-          ,("MATHEMATICAL BOLD FRAKTUR", TextBoldFraktur)
-          ,("MATHEMATICAL SANS-SERIF", TextSansSerif)
+styles  = [ ("MATHEMATICAL SANS-SERIF BOLD ITALIC", TextSansSerifBoldItalic)
           ,("MATHEMATICAL SANS-SERIF BOLD", TextSansSerifBold)
           ,("MATHEMATICAL SANS-SERIF ITALIC", TextSansSerifItalic)
-          ,("MATHEMATICAL SANS-SERIF BOLD ITALIC", TextSansSerifBoldItalic)
+          ,("MATHEMATICAL SANS-SERIF", TextSansSerif)
+          ,("MATHEMATICAL BOLD ITALIC", TextBoldItalic)
+          ,("MATHEMATICAL BOLD SCRIPT", TextBoldScript)
+          ,("MATHEMATICAL BOLD FRAKTUR", TextBoldFraktur)
+          ,("MATHEMATICAL BOLD", TextBold)
+          ,("MATHEMATICAL ITALIC", TextItalic)
+          ,("MATHEMATICAL SCRIPT", TextScript)
+          ,("MATHEMATICAL FRAKTUR", TextFraktur)
+          ,("MATHEMATICAL DOUBLE-STRUCK", TextDoubleStruck)
           ,("MATHEMATICAL MONOSPACE", TextMonospace)
           ,("BLACK-LETTER", TextFraktur)
           ,("SCRIPT", TextScript)
