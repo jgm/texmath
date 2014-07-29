@@ -1,4 +1,4 @@
-{-# LANGUAGE GeneralizedNewtypeDeriving, ViewPatterns #-}
+{-# LANGUAGE GeneralizedNewtypeDeriving, ViewPatterns, GADTs #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -179,11 +179,14 @@ writeExp (EScaled size e)
          Nothing -> return ()
     writeExp e
   | otherwise = writeExp e
-writeExp (EStretchy (ESymbol Open e)) = do
-  writeDelim True e
-writeExp (EStretchy (ESymbol Close e)) = do
-  writeDelim False e
-writeExp (EStretchy e) = writeExp e
+writeExp (EStretchy s) = do
+  delims <- delimiters
+  censor (\t -> if t `elem` delims 
+                  then (ControlSeq "\\middle"):t 
+                  else t)
+          (writeExp s)
+                       
+
 writeExp (EText ttype s) = do
   txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
   toks <- getTeXMathM s
@@ -237,7 +240,7 @@ cell = mapM_ writeExp
 type Delim = String
 
 writeDelim :: Bool -> Delim -> Math ()
-writeDelim open delim = do
+writeDelim open delim = do 
     tex <- getTeXMathM delim
     valid <- elem tex <$> delimiters
     if valid then
@@ -350,10 +353,10 @@ fixTree env  (EGrouped -> es) =
     let removeGroup (EGrouped e) = e
         removeGroup e = [e] in
     removeGroup $
-    everywhere
-    ( mkT (ms env)
-    . mkT nestedStretch
-    . mkT reorderDiacritical
+    everywhere (
+ --    mkT (ms env)
+ --   . mkT nestedStretch
+    mkT reorderDiacritical
     . mkT removeAccentStretch
     ) es
 
