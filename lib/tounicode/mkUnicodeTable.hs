@@ -26,9 +26,7 @@ data TextType = TextNormal
 main :: IO ()
 main = do
   rawEntries <- lines <$> readFile "UnicodeData.txt"
-  -- get all the MATHEMATICAL entries to the head of the table, so we prefer them
-  let sortedRawEntries = sortBy (comparing (\x -> if "MATHEMATICAL" `isInfixOf` x then 0 else 1)) rawEntries
-  let entries = mapMaybe (\s -> toEntry s >>= getMathStyle) $ sortedRawEntries
+  let entries = mapMaybe (\s -> toEntry s >>= getMathStyle) rawEntries
   putStrLn "unicodeTable :: [((TextType, Char), Char)]"
   putStr   "unicodeTable = [ "
   putStrLn $ intercalate
