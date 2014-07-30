@@ -182,7 +182,6 @@ showExp props e =
 
    EIdentifier x    -> [str props x]
    EMathOperator x  -> [makeText TextNormal x]  -- TODO revisit, use props?
-   EStretchy x      -> showExp props x  -- no support for stretchy in OMML
    ESymbol _ x      -> [str props x]
    ESpace 0.167     -> [str props "\x2009"]
    ESpace 0.222     -> [str props "\x2005"]

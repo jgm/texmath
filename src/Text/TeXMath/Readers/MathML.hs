@@ -60,7 +60,6 @@ readMathML inp = map fixTree <$> (runExcept (flip runReaderT def (i >>= parseMat
     i = maybeToEither "Invalid XML" (parseXMLDoc inp)
 
 fixTree :: Exp -> Exp
---fixTree = everywhere (mkT fixNesting)
 fixTree = everywhere (mkT removeNesting)
 
 data MMLState = MMLState { attrs :: [Attr]
@@ -179,7 +178,7 @@ space e = do
 
 style :: Element -> MML Exp
 style e = do 
-  constructor <- maybe EGrouped (EStyled . getTextType) <$> (findAttrQ "mathvariant" e)
+  constructor <- (maybe EGrouped (EStyled . getTextType)) <$> (findAttrQ "mathvariant" e)
   -- We do not want to propagate the mathvariant else
   -- we end up with nested EStyled applying the same
   -- style
@@ -217,7 +216,8 @@ removeStretch (E e) = E $ Right e
 removeStretch (Trailing a b)  = Trailing a b
 
 isStretchy :: InEDelimited -> Bool
-isStretchy = isLeft
+isStretchy (Left _) = True
+isStretchy (Right _) = False
 
 -- If at the end of a delimiter we need to apply the script to the whole
 -- expression. We only insert Trailing when reordering Stretchy
@@ -438,18 +438,6 @@ tableCell a e = do
     _ -> throwError $ "Invalid Element: Only expecting mtd elements " ++ err e
 
 -- Fixup
-
--- See Exception for embellished operators in handbox
--- This only affects stretched
-
-fixNesting :: Exp -> Exp
-fixNesting (EOver (EStretchy e) s) = EStretchy (EOver e s)
-fixNesting (EUnder (EStretchy e) s) = EStretchy (EUnder e s)
-fixNesting (EUnderover (EStretchy e) s1 s2) = EStretchy (EUnderover e s1 s2)
-fixNesting (ESub (EStretchy e) s) = EStretchy (ESub e s)
-fixNesting (ESuper (EStretchy e) s) = EStretchy (ESuper e s)
-fixNesting (ESubsup (EStretchy e) s1 s2) = EStretchy (ESubsup e s1 s2)
-fixNesting e = e
 
 -- Library Functions
 

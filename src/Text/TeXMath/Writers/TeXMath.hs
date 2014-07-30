@@ -29,8 +29,8 @@ import Control.Applicative ((<$>), (<|>), Applicative)
 import qualified Data.Map as M
 import Control.Monad (when, unless)
 import Control.Monad.Reader (MonadReader, runReader, Reader, asks, ask)
-import Control.Monad.Writer( MonadWriter, WriterT, runWriterT
-                           , execWriterT, tell, censor, listen)
+import Control.Monad.Writer( MonadWriter, WriterT,
+                             execWriterT, tell, censor, listen)
 import Text.TeXMath.TeX
 
 -- import Debug.Trace
@@ -53,7 +53,7 @@ addLaTeXEnvironment dt math =
 writeTeXMathWith :: Env -> [Exp] -> String
 writeTeXMathWith env e = drop 1 . init . flip renderTeX "" . Grouped $
                             runExpr env $
-                              mapM_ writeExp (fixTree env e)
+                              mapM_ writeExp (fixTree e)
 
 runExpr :: Env -> Math () -> [TeX]
 runExpr e m = flip runReader e $ execWriterT (runTeXMath m)
@@ -281,10 +281,6 @@ delimiters = do
 
 -- Fix up
 
-removeAccentStretch :: Exp -> Exp
-removeAccentStretch (EStretchy e@(ESymbol Accent _)) = e
-removeAccentStretch x = x
-
 reorderDiacritical' :: Position -> Exp -> Exp -> Exp
 reorderDiacritical' p b e@(ESymbol Accent a) =
   case S.getDiacriticalCommand p a of
@@ -305,41 +301,11 @@ reorderDiacritical (EUnderover b e1 e@(ESymbol Accent _)) =
   reorderDiacritical' Over (EUnder b e1) e
 reorderDiacritical x = x
 
-matchStretch' :: Env -> Bool -> Exp  ->  Int
-matchStretch' e context expr =
-  case expr of
-    (ESub sexp _)        -> matchStretch' e context sexp
-    (ESuper sexp _)      -> matchStretch' e context sexp
-    (ESubsup sexp _ _)   -> matchStretch' e context sexp
-    (EStretchy sexp)     -> matchStretch' e True sexp
-    (ESymbol Open sexp)  -> r 1 sexp
-    (ESymbol Close sexp) -> r (-1) sexp
-    _ -> 0
-  where
-    valid = fst $ flip runReader e $ runWriterT (runTeXMath delimiters)
-    r n s = if (elem (getTeXMath s e) valid) && context then n else 0
-
-
-nestedStretch :: Exp -> Exp
-nestedStretch (EStretchy (ESub o@(ESymbol Open _) s)) = ESub (EStretchy o) s
-nestedStretch (EStretchy (ESub o@(ESymbol Close _) s)) = ESub (EStretchy o) s
-nestedStretch (EStretchy (ESuper o@(ESymbol Open _) s)) = ESuper (EStretchy o) s
-nestedStretch (EStretchy (ESuper o@(ESymbol Close _) s)) = ESuper (EStretchy o) s
-nestedStretch (EStretchy (ESubsup o@(ESymbol Open _) s1 s2)) = ESubsup (EStretchy o) s1 s2
-nestedStretch (EStretchy (ESubsup o@(ESymbol Close _) s1 s2)) = ESubsup (EStretchy o) s1 s2
-nestedStretch x = x
-
-fixTree :: Env -> [Exp] -> [Exp]
-fixTree env  (EGrouped -> es) =
+fixTree :: [Exp] -> [Exp]
+fixTree (EGrouped -> es) =
     let removeGroup (EGrouped e) = e
         removeGroup e = [e] in
-    removeGroup $
-    everywhere (
- --    mkT (ms env)
- --   . mkT nestedStretch
-    mkT reorderDiacritical
-    . mkT removeAccentStretch
-    ) es
+    removeGroup $ everywhere (mkT reorderDiacritical) es
 
 -- Operator Table
 
