@@ -15,6 +15,8 @@ data TeX = ControlSeq String
 renderTeX :: TeX -> String -> String
 renderTeX (Token c) cs     = c:cs
 renderTeX (Literal s) cs
+  | startsWith (not . isLetter)
+               (reverse s) = s ++ cs
   | startsWith isLetter cs = s ++ (' ':cs)
   | otherwise              = s ++ cs
 renderTeX (ControlSeq s) cs
