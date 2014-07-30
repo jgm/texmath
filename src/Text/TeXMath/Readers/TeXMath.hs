@@ -168,7 +168,7 @@ delimited = try $ do
                 _ -> pzero
   contents <- many (try $ notFollowedBy right >> expr)
   closec <- right <|> return "\xFEFF"
-  return $ EDelimited openc closec contents
+  return $ EDelimited openc closec undefined
 
 right :: TP String
 right = try $ do
@@ -255,7 +255,7 @@ matrixWith opendelim closedelim = do
   let aligns = fromMaybe (alignsFromRows AlignCenter lines') mbaligns
   return $ if null opendelim && null closedelim
               then EArray aligns lines'
-              else EDelimited opendelim closedelim [EArray aligns lines']
+              else EDelimited opendelim closedelim [Right $ EArray aligns lines']
 
 stdarray :: TP Exp
 stdarray = do
@@ -282,7 +282,7 @@ flalign = (EArray [AlignLeft, AlignRight]) <$> sepEndBy1 arrayLine endLine
 cases :: TP Exp
 cases = do
   rs <- sepEndBy1 arrayLine endLine
-  return $ EDelimited "{" "" [EArray (alignsFromRows AlignDefault rs) rs]
+  return $ EDelimited "{" "" [Right $ EArray (alignsFromRows AlignDefault rs) rs]
 
 variable :: TP Exp
 variable = do

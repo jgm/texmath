@@ -29,8 +29,8 @@ import Control.Applicative ((<$>), (<|>), Applicative)
 import qualified Data.Map as M
 import Control.Monad (when, unless)
 import Control.Monad.Reader (MonadReader, runReader, Reader, asks, ask)
-import Control.Monad.Writer( MonadWriter, WriterT, runWriterT
-                           , execWriterT, tell, censor)
+import Control.Monad.Writer( MonadWriter, WriterT,
+                             execWriterT, tell, censor, listen)
 import Text.TeXMath.TeX
 
 -- import Debug.Trace
@@ -53,7 +53,7 @@ addLaTeXEnvironment dt math =
 writeTeXMathWith :: Env -> [Exp] -> String
 writeTeXMathWith env e = drop 1 . init . flip renderTeX "" . Grouped $
                             runExpr env $
-                              mapM_ writeExp (fixTree env e)
+                              mapM_ writeExp (fixTree e)
 
 runExpr :: Env -> Math () -> [TeX]
 runExpr e m = flip runReader e $ execWriterT (runTeXMath m)
@@ -74,23 +74,24 @@ tellGroup = censor ((:[]) . Grouped)
 writeExp :: Exp -> Math ()
 writeExp (ENumber s) = tell =<< getTeXMathM s
 writeExp (EGrouped es) = tellGroup (mapM_ writeExp es)
-writeExp (EDelimited "{" "" [EArray [AlignDefault,AlignDefault] rows]) =
+writeExp (EDelimited "{" "" [Right (EArray [AlignDefault,AlignDefault] rows)]) =
   table "cases" [] [AlignDefault,AlignDefault] rows
-writeExp (EDelimited "(" ")" [EArray aligns rows]) =
+writeExp (EDelimited "(" ")" [Right (EArray aligns rows)]) =
   matrixWith "pmatrix" aligns rows
-writeExp (EDelimited "[" "]" [EArray aligns rows]) =
+writeExp (EDelimited "[" "]" [Right (EArray aligns rows)]) =
   matrixWith "bmatrix" aligns rows
-writeExp (EDelimited "{" "}" [EArray aligns rows]) =
+writeExp (EDelimited "{" "}" [Right (EArray aligns rows)]) =
   matrixWith "Bmatrix" aligns rows
-writeExp (EDelimited "\x2223" "\x2223" [EArray aligns rows]) =
+writeExp (EDelimited "\x2223" "\x2223" [Right (EArray aligns rows)]) =
   matrixWith "vmatrix" aligns rows
-writeExp (EDelimited "\x2225" "\x2225" [EArray aligns rows]) =
+writeExp (EDelimited "\x2225" "\x2225" [Right (EArray aligns rows)]) =
   matrixWith "Vmatrix" aligns rows
 writeExp (EDelimited open close es) =  do
+  let checkLeft c = case c of  {(ControlSeq "\\left") -> True; _ -> False} 
   let checkNull delim = if null delim || delim == "\xFEFF" then "." else delim
-  writeDelim True (checkNull open)
-  mapM_ writeExp es
-  writeDelim False (checkNull close)
+  res <- snd <$> listen (writeDelim DLeft (checkNull open))
+  mapM_ (either (writeDelim DMiddle) writeExp) es
+  when (any checkLeft res) (writeDelim DRight (checkNull close))
 writeExp (EIdentifier s) = do
   math <- getTeXMathM s
   case math of
@@ -179,14 +180,6 @@ writeExp (EScaled size e)
          Nothing -> return ()
     writeExp e
   | otherwise = writeExp e
-writeExp (EStretchy s) = do
-  delims <- delimiters
-  censor (\t -> if t `elem` delims 
-                  then (ControlSeq "\\middle"):t 
-                  else t)
-          (writeExp s)
-                       
-
 writeExp (EText ttype s) = do
   txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
   toks <- getTeXMathM s
@@ -237,16 +230,19 @@ row (c:cs) = cell c >> tell [Space, Token '&', Space] >> row cs
 cell :: [Exp] -> Math ()
 cell = mapM_ writeExp
 
+data FenceType = DLeft | DMiddle | DRight
+
 type Delim = String
 
-writeDelim :: Bool -> Delim -> Math ()
-writeDelim open delim = do 
+writeDelim :: FenceType -> Delim -> Math ()
+writeDelim fence delim = do 
     tex <- getTeXMathM delim
     valid <- elem tex <$> delimiters
     if valid then
-      tell $ if open
-                then [ControlSeq "\\left"] ++ tex ++ [Space]
-                else [Space, ControlSeq "\\right"] ++ tex
+      tell $ case fence of
+               DLeft -> [ControlSeq "\\left"] ++ tex ++ [Space]
+               DMiddle -> [Space] ++ [ControlSeq "\\middle"] ++ tex ++ [Space]
+               DRight -> [Space, ControlSeq "\\right"] ++ tex
     else
       tell tex
 
@@ -285,10 +281,6 @@ delimiters = do
 
 -- Fix up
 
-removeAccentStretch :: Exp -> Exp
-removeAccentStretch (EStretchy e@(ESymbol Accent _)) = e
-removeAccentStretch x = x
-
 reorderDiacritical' :: Position -> Exp -> Exp -> Exp
 reorderDiacritical' p b e@(ESymbol Accent a) =
   case S.getDiacriticalCommand p a of
@@ -309,56 +301,11 @@ reorderDiacritical (EUnderover b e1 e@(ESymbol Accent _)) =
   reorderDiacritical' Over (EUnder b e1) e
 reorderDiacritical x = x
 
-matchStretch' :: Env -> Bool -> Exp  ->  Int
-matchStretch' e context expr =
-  case expr of
-    (ESub sexp _)        -> matchStretch' e context sexp
-    (ESuper sexp _)      -> matchStretch' e context sexp
-    (ESubsup sexp _ _)   -> matchStretch' e context sexp
-    (EStretchy sexp)     -> matchStretch' e True sexp
-    (ESymbol Open sexp)  -> r 1 sexp
-    (ESymbol Close sexp) -> r (-1) sexp
-    _ -> 0
-  where
-    valid = fst $ flip runReader e $ runWriterT (runTeXMath delimiters)
-    r n s = if (elem (getTeXMath s e) valid) && context then n else 0
-
-
--- Ensure that the lefts match the rights.
-matchStretch :: Env -> [Exp] -> [Exp]
-matchStretch e es
-  | n < 0 = (replicate (0 - n) $ EStretchy (ESymbol Open ".")) ++ es
-  | n > 0 = es ++ (replicate n $ EStretchy (ESymbol Close "."))
-  | otherwise = es
-  where
-    n = foldr ((+) . matchStretch' e False) 0 es
-
-ms :: Env -> Exp -> Exp
-ms e (EGrouped xs) = EGrouped (matchStretch e xs)
-ms e (EDelimited o c xs) = EDelimited o c (matchStretch e xs)
-ms e (EArray as rs) = EArray as (map (map (matchStretch e)) rs)
-ms _ x = x
-
-nestedStretch :: Exp -> Exp
-nestedStretch (EStretchy (ESub o@(ESymbol Open _) s)) = ESub (EStretchy o) s
-nestedStretch (EStretchy (ESub o@(ESymbol Close _) s)) = ESub (EStretchy o) s
-nestedStretch (EStretchy (ESuper o@(ESymbol Open _) s)) = ESuper (EStretchy o) s
-nestedStretch (EStretchy (ESuper o@(ESymbol Close _) s)) = ESuper (EStretchy o) s
-nestedStretch (EStretchy (ESubsup o@(ESymbol Open _) s1 s2)) = ESubsup (EStretchy o) s1 s2
-nestedStretch (EStretchy (ESubsup o@(ESymbol Close _) s1 s2)) = ESubsup (EStretchy o) s1 s2
-nestedStretch x = x
-
-fixTree :: Env -> [Exp] -> [Exp]
-fixTree env  (EGrouped -> es) =
+fixTree :: [Exp] -> [Exp]
+fixTree (EGrouped -> es) =
     let removeGroup (EGrouped e) = e
         removeGroup e = [e] in
-    removeGroup $
-    everywhere (
- --    mkT (ms env)
- --   . mkT nestedStretch
-    mkT reorderDiacritical
-    . mkT removeAccentStretch
-    ) es
+    removeGroup $ everywhere (mkT reorderDiacritical) es
 
 -- Operator Table
 
