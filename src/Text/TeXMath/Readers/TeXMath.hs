@@ -158,26 +158,28 @@ enclosure = basicEnclosure <|> scaledEnclosure <|> delimited
 basicEnclosure :: TP Exp
 basicEnclosure = choice $ map (\(s, v) -> try (symbol s) >> return v) enclosures
 
-delimited :: TP Exp
-delimited = try $ do
-  symbol "\\left"
-  enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Open "\xFEFF"))
-  openc <- case enc of
-                ESymbol Open x  -> return x
-                ESymbol Close x -> return x
-                _ -> pzero
-  contents <- many (try $ notFollowedBy right >> expr)
-  closec <- right <|> return "\xFEFF"
-  return $ EDelimited openc closec undefined
+fence :: String -> TP String
+fence cmd = try $ do
+  symbol cmd
+  enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Open ""))
+  case enc of
+       ESymbol Open x  -> return x
+       ESymbol Close x -> return x
+       _ -> pzero
+
+middle :: TP String
+middle = fence "\\middle"
 
 right :: TP String
-right = try $ do
-  symbol "\\right"
-  enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Close "\xFEFF"))
-  case enc of
-      (ESymbol Close x) -> return x
-      (ESymbol Open x)  -> return x
-      _ -> pzero
+right = fence "\\right"
+
+delimited :: TP Exp
+delimited = try $ do
+  openc <- fence "\\left"
+  contents <- many (try $ (Left <$> middle)
+                      <|> (Right <$> (notFollowedBy right >> expr)))
+  closec <- right <|> return ""
+  return $ EDelimited openc closec contents
 
 scaledEnclosure :: TP Exp
 scaledEnclosure = try $ do
