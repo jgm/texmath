@@ -57,7 +57,6 @@ data Exp =
   | EDownup Exp Exp Exp
   | EUnary String Exp
   | EScaled String Exp
-  | EStretchy Exp
   | EArray [Alignment] [ArrayLine]
   | EText TextType String
   | EStyled TextType [Exp]
