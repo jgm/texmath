@@ -18,6 +18,7 @@ renderTeX (Literal s) cs
   | startsWith isLetter cs = s ++ (' ':cs)
   | otherwise              = s ++ cs
 renderTeX (ControlSeq s) cs
+  | s == "\\ "               = s ++ cs
   | startsWith isAlphaNum cs = s ++ (' ':cs)
   | otherwise                = s ++ cs
 renderTeX (Grouped [Grouped xs]) cs  = renderTeX (Grouped xs) cs
