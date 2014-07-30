@@ -77,15 +77,15 @@ writeExp (EGrouped es) = tellGroup (mapM_ writeExp es)
 writeExp (EDelimited "{" "" [EArray [AlignDefault,AlignDefault] rows]) =
   table "cases" [] [AlignDefault,AlignDefault] rows
 writeExp (EDelimited "(" ")" [EArray aligns rows]) =
-  matrixWith "pmatrix" aligns rows
+  matrixWith "pmatrix*" aligns rows
 writeExp (EDelimited "[" "]" [EArray aligns rows]) =
-  matrixWith "bmatrix" aligns rows
+  matrixWith "bmatrix*" aligns rows
 writeExp (EDelimited "{" "}" [EArray aligns rows]) =
-  matrixWith "Bmatrix" aligns rows
+  matrixWith "Bmatrix*" aligns rows
 writeExp (EDelimited "\x2223" "\x2223" [EArray aligns rows]) =
-  matrixWith "vmatrix" aligns rows
+  matrixWith "vmatrix*" aligns rows
 writeExp (EDelimited "\x2225" "\x2225" [EArray aligns rows]) =
-  matrixWith "Vmatrix" aligns rows
+  matrixWith "Vmatrix*" aligns rows
 writeExp (EDelimited open close es) =  do
   let checkNull delim = if null delim || delim == "\xFEFF" then "." else delim
   writeDelim True (checkNull open)
