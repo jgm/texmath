@@ -71,7 +71,7 @@ expToInlines tt (ESymbol t s) = Just $ addSpace t $ renderStr tt s
         widespace = Str "\x2004"
 expToInlines tt (EStretchy x) = expToInlines tt x
 expToInlines tt (EDelimited start end xs) = do
-  xs' <- mapM (expToInlines tt) xs
+  xs' <- mapM (either (return . (:[]) . renderStr tt) (expToInlines tt)) xs
   return $ [renderStr tt start] ++ concat xs' ++ [renderStr tt end]
 expToInlines tt (EGrouped xs) = expsToInlines tt xs
 expToInlines _ (EStyled tt' xs) = expsToInlines tt' xs

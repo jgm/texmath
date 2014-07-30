@@ -176,7 +176,8 @@ showExp props e =
                                     [ mnodeA "begChr" start ()
                                     , mnodeA "endChr" end ()
                                     , mnode "grow" () ]
-                                  , mnode "e" $ concatMap (showExp props) xs
+                                  , mnode "e" $ concatMap 
+                                    (either ((:[]) . str props) (showExp props)) xs
                                   ] ]
 
    EIdentifier x    -> [str props x]

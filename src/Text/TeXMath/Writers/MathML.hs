@@ -164,7 +164,7 @@ showExp tt e =
    EGrouped xs      -> mrow $ map (showExp tt) xs
    EDelimited start end xs -> mrow $
                        [ makeStretchy (unode "mo" start) | not (null start) ] ++
-                       map (showExp tt) xs ++
+                       map (either (makeStretchy . unode "mo") (showExp tt)) xs ++
                        [ makeStretchy (unode "mo" end) | not (null end) ]
    EIdentifier x    -> unode "mi" $ toUnicode tt x
    EMathOperator x  -> unode "mi" x
