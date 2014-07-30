@@ -224,6 +224,7 @@ isStretchy = isLeft
 trailingSup :: String -> String -> [IR InEDelimited] -> Exp
 trailingSup open close es = go es
   where
+    go [] = EDelimited open close []
     go es@(last -> Trailing constructor e) =   traceShow "removing trailing" (constructor (go (init es)) e)
     go es = EDelimited open close (handleList es)
 
