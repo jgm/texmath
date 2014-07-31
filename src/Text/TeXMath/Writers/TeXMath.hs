@@ -76,16 +76,18 @@ writeExp (ENumber s) = tell =<< getTeXMathM s
 writeExp (EGrouped es) = tellGroup (mapM_ writeExp es)
 writeExp (EDelimited "{" "" [EArray [AlignDefault,AlignDefault] rows]) =
   table "cases" [] [AlignDefault,AlignDefault] rows
-writeExp (EDelimited "(" ")" [EArray aligns rows]) =
-  matrixWith "pmatrix*" aligns rows
-writeExp (EDelimited "[" "]" [EArray aligns rows]) =
-  matrixWith "bmatrix*" aligns rows
-writeExp (EDelimited "{" "}" [EArray aligns rows]) =
-  matrixWith "Bmatrix*" aligns rows
-writeExp (EDelimited "\x2223" "\x2223" [EArray aligns rows]) =
-  matrixWith "vmatrix*" aligns rows
-writeExp (EDelimited "\x2225" "\x2225" [EArray aligns rows]) =
-  matrixWith "Vmatrix*" aligns rows
+writeExp (EDelimited "(" ")" [EArray aligns rows]) | all (== AlignCenter) aligns =
+  matrixWith "pmatrix" aligns rows
+writeExp (EDelimited "[" "]" [EArray aligns rows]) | all (== AlignCenter) aligns =
+  matrixWith "bmatrix" aligns rows
+writeExp (EDelimited "{" "}" [EArray aligns rows]) | all (== AlignCenter) aligns =
+  matrixWith "Bmatrix" aligns rows
+writeExp (EDelimited "\x2223" "\x2223" [EArray aligns rows])
+  | all (== AlignCenter) aligns =
+  matrixWith "vmatrix" aligns rows
+writeExp (EDelimited "\x2225" "\x2225" [EArray aligns rows])
+  | all (== AlignCenter) aligns =
+  matrixWith "Vmatrix" aligns rows
 writeExp (EDelimited open close es) =  do
   let checkNull delim = if null delim || delim == "\xFEFF" then "." else delim
   writeDelim True (checkNull open)
@@ -223,8 +225,9 @@ table' name aligns rows = do
     alignmentToLetter AlignDefault = 'l'
 
 matrixWith :: String -> [Alignment] -> [ArrayLine] -> Math ()
-matrixWith name aligns rows =
-  table name [a | a <- aligns, any (/= AlignCenter) aligns] aligns rows
+matrixWith name aligns rows = table name' aligns' aligns rows
+    where name' = if null aligns' then name else "array"
+          aligns' = [a | a <- aligns, any (/= AlignCenter) aligns]
 
 row :: ArrayLine -> Math ()
 row []     = tell [Space, Literal "\\\\", Token '\n']
