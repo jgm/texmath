@@ -41,7 +41,7 @@ Homepage:            http://github.com/jgm/texmath
 Extra-source-files:  README.markdown,
                      changelog,
                      man/man1/texmath.1,
-                     cgi/texmath.xhtml,
+                     cgi/texmath.html,
                      tests/src/*.mml
                      tests/src/*.tex
                      tests/readers/mml/*.native
