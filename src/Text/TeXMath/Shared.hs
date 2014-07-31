@@ -176,6 +176,8 @@ diacriticals =
                , (("\x02C7", "\\check"))
                , (("\x307", "\\dot"))
                , (("\x308", "\\ddot"))
+               , (("\x20DB", "\\dddot"))
+               , (("\x20DC", "\\ddddot"))
                , (("\x00B0", "\\mathring"))
                , (("\x20D7", "\\vec"))
                , (("\x20D7", "\\overrightarrow"))
