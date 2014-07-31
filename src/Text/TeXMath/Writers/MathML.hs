@@ -164,13 +164,11 @@ showExp tt e =
    EGrouped xs      -> mrow $ map (showExp tt) xs
    EDelimited start end xs -> mrow $
                        [ makeStretchy (unode "mo" start) | not (null start) ] ++
-                       map (showExp tt) xs ++
+                       map (either (makeStretchy . unode "mo") (showExp tt)) xs ++
                        [ makeStretchy (unode "mo" end) | not (null end) ]
    EIdentifier x    -> unode "mi" $ toUnicode tt x
    EMathOperator x  -> unode "mi" x
    ESymbol Accent x -> accent x
-   EStretchy (ESymbol Open x)  -> makeStretchy $ unode "mo" x
-   EStretchy (ESymbol Close x) -> makeStretchy $ unode "mo" x
    ESymbol Open x   -> withAttribute "stretchy" "false" $ unode "mo" x
    ESymbol Close x  -> withAttribute "stretchy" "false" $ unode "mo" x
    ESymbol _ x      -> unode "mo" x
@@ -183,7 +181,6 @@ showExp tt e =
    EOver x y        -> unode "mover" $ map (showExp tt) [x, y]
    EUnderover x y z -> unode "munderover" $ map (showExp tt) [x, y, z]
    EUnary c x       -> showUnary tt c x
-   EStretchy x      -> makeStretchy $ showExp tt x
    EScaled s x      -> makeScaled s $ showExp tt x
    EArray as ls     -> makeArray tt as ls
    EText a s        -> makeText a s

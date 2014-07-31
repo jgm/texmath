@@ -23,7 +23,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 module Text.TeXMath.Types (Exp(..), TeXSymbolType(..), ArrayLine,
                            TextType(..), Alignment(..), DisplayType(..),
                            Operator(..), FormType(..), Record(..),
-                           Property, Position(..), Env, defaultEnv)
+                           Property, Position(..), Env, defaultEnv, InEDelimited)
 where
 
 import Data.Generics
@@ -40,7 +40,7 @@ type ArrayLine = [[Exp]]
 data Exp =
     ENumber String
   | EGrouped [Exp]
-  | EDelimited String String [Exp]
+  | EDelimited String String [InEDelimited]
   | EIdentifier String
   | EMathOperator String
   | ESymbol TeXSymbolType String
@@ -57,11 +57,13 @@ data Exp =
   | EDownup Exp Exp Exp
   | EUnary String Exp
   | EScaled String Exp
-  | EStretchy Exp
   | EArray [Alignment] [ArrayLine]
   | EText TextType String
   | EStyled TextType [Exp]
   deriving (Show, Read, Eq, Data, Typeable)
+
+type InEDelimited = Either Middle Exp
+type Middle = String
 
 data DisplayType = DisplayBlock
                  | DisplayInline

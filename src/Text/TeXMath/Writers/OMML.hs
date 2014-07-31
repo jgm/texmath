@@ -176,12 +176,12 @@ showExp props e =
                                     [ mnodeA "begChr" start ()
                                     , mnodeA "endChr" end ()
                                     , mnode "grow" () ]
-                                  , mnode "e" $ concatMap (showExp props) xs
+                                  , mnode "e" $ concatMap 
+                                    (either ((:[]) . str props) (showExp props)) xs
                                   ] ]
 
    EIdentifier x    -> [str props x]
    EMathOperator x  -> [makeText TextNormal x]  -- TODO revisit, use props?
-   EStretchy x      -> showExp props x  -- no support for stretchy in OMML
    ESymbol _ x      -> [str props x]
    ESpace 0.167     -> [str props "\x2009"]
    ESpace 0.222     -> [str props "\x2005"]

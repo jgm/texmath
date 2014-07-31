@@ -158,26 +158,28 @@ enclosure = basicEnclosure <|> scaledEnclosure <|> delimited
 basicEnclosure :: TP Exp
 basicEnclosure = choice $ map (\(s, v) -> try (symbol s) >> return v) enclosures
 
-delimited :: TP Exp
-delimited = try $ do
-  symbol "\\left"
-  enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Open "\xFEFF"))
-  openc <- case enc of
-                ESymbol Open x  -> return x
-                ESymbol Close x -> return x
-                _ -> pzero
-  contents <- many (try $ notFollowedBy right >> expr)
-  closec <- right <|> return "\xFEFF"
-  return $ EDelimited openc closec contents
+fence :: String -> TP String
+fence cmd = try $ do
+  symbol cmd
+  enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Open ""))
+  case enc of
+       ESymbol Open x  -> return x
+       ESymbol Close x -> return x
+       _ -> pzero
+
+middle :: TP String
+middle = fence "\\middle"
 
 right :: TP String
-right = try $ do
-  symbol "\\right"
-  enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Close "\xFEFF"))
-  case enc of
-      (ESymbol Close x) -> return x
-      (ESymbol Open x)  -> return x
-      _ -> pzero
+right = fence "\\right"
+
+delimited :: TP Exp
+delimited = try $ do
+  openc <- fence "\\left"
+  contents <- many (try $ (Left <$> middle)
+                      <|> (Right <$> (notFollowedBy right >> expr)))
+  closec <- right <|> return ""
+  return $ EDelimited openc closec contents
 
 scaledEnclosure :: TP Exp
 scaledEnclosure = try $ do
@@ -255,7 +257,7 @@ matrixWith opendelim closedelim = do
   let aligns = fromMaybe (alignsFromRows AlignCenter lines') mbaligns
   return $ if null opendelim && null closedelim
               then EArray aligns lines'
-              else EDelimited opendelim closedelim [EArray aligns lines']
+              else EDelimited opendelim closedelim [Right $ EArray aligns lines']
 
 stdarray :: TP Exp
 stdarray = do
@@ -282,7 +284,7 @@ flalign = (EArray [AlignLeft, AlignRight]) <$> sepEndBy1 arrayLine endLine
 cases :: TP Exp
 cases = do
   rs <- sepEndBy1 arrayLine endLine
-  return $ EDelimited "{" "" [EArray (alignsFromRows AlignDefault rs) rs]
+  return $ EDelimited "{" "" [Right $ EArray (alignsFromRows AlignDefault rs) rs]
 
 variable :: TP Exp
 variable = do
