@@ -32,7 +32,7 @@ To Improve
   - Handling of mstyle
 -}
 
-module Text.TeXMath.Readers.MathML (matchNesting, readMathML) where
+module Text.TeXMath.Readers.MathML (readMathML) where
 
 import Text.XML.Light hiding (onlyText)
 import Text.TeXMath.Types
@@ -71,6 +71,11 @@ data SupOrSub = Sub | Sup deriving (Show, Eq)
 data IR a = Stretchy TeXSymbolType String
           | Trailing (Exp -> Exp -> Exp) Exp
           | E a
+
+instance Show a => Show (IR a) where
+  show (Stretchy t s) = "Stretchy " ++ show t ++ " " ++ show s
+  show (Trailing _ s) = "Trailing " ++ show s
+  show (E s) = "E " ++ show s
 
 parseMathML :: Element -> MML [Exp]
 parseMathML e@(name -> "math") = (:[]) <$> row e
@@ -260,22 +265,27 @@ matchNesting ((break isFence) -> (inis, rest)) =
   case rest of
     [] -> inis'
     ((Stretchy Open opens): rs) ->
-      let (body, rems) = revspan close rs
+      let (body, rems) = go rs 0 []
           body' = matchNesting body in
         case rems of
           [] -> inis' ++ [E $ Right $ trailingSup opens "" body']
-          (last -> Stretchy Close closes) ->
-            (E $ Right $ trailingSup opens closes body') : matchNesting (init rems)
+          (Stretchy Close closes : rs') ->
+            inis' ++ (E $ Right $ trailingSup opens closes body') : matchNesting rs'
           _ -> (error "matchNesting: Logical error 1")
     ((Stretchy Close closes): rs) ->
-      (E $ Right $ trailingSup "" closes (matchNesting inis)) : matchNesting rs
+      inis' ++ (E $ Right $ trailingSup "" closes (matchNesting inis)) : matchNesting rs
     _ -> error "matchNesting: Logical error 2"
   where
-    close (Stretchy Close _) = True
-    close _ = False
-    -- Like span but operates from right end of list
-    revspan f xs = let (fs, bs) = span f (reverse xs) in
-                       (reverse bs, reverse fs)
+    isOpen (Stretchy Open _) = True
+    isOpen _ = False
+    isClose (Stretchy Close _) = True
+    isClose _ = False
+    go :: [IR a] -> Int -> [IR a] -> ([IR a], [IR a])
+    go (x:xs) 0 a | isClose x = (reverse a, x:xs)
+    go (x:xs) n a | isOpen x  = go xs (n + 1) (x:a)
+    go (x:xs) n a | isClose x = go xs (n - 1) (x:a)
+    go (x:xs) n a = go xs n (x:a)
+    go [] _ a = (reverse a, [])
 
 isFence :: IR a -> Bool
 isFence (Stretchy Open _) = True
@@ -389,12 +399,12 @@ subsup e = do
 under :: Element -> MML Exp
 under e = do
   [base, below] <- (checkArgs 2 e)
-  EUnder <$> safeExpr base <*> (postfixExpr below)
+  EUnder <$> safeExpr base <*> postfixExpr below 
 
 over :: Element -> MML Exp
 over e = do
   [base, above] <- (checkArgs 2 e)
-  EOver <$>  safeExpr base <*> (postfixExpr above)
+  EOver <$> safeExpr base <*> postfixExpr above
 
 underover :: Element -> MML Exp
 underover e = do
