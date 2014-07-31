@@ -7,12 +7,14 @@
           <mrow>
             <mi>x</mi>
             <mo>+</mo>
-            <mo stretchy="false">(</mo>
-            <mfrac>
-              <mn>2</mn>
-              <mn>3</mn>
-            </mfrac>
-            <mo stretchy="true">)</mo>
+            <mrow>
+              <mo stretchy="true">(</mo>
+              <mfrac>
+                <mn>2</mn>
+                <mn>3</mn>
+              </mfrac>
+              <mo stretchy="true">)</mo>
+            </mrow>
           </mrow>
         </mtd>
       </mtr>
@@ -29,7 +31,19 @@
               <mn>2</mn>
               <mn>3</mn>
             </mfrac>
-            <mo stretchy="true">)</mo>
+            <mrow>
+              <mi>x</mi>
+              <mo>+</mo>
+              <mover>
+                <mo stretchy="false">(</mo>
+                <mo>-</mo>
+              </mover>
+              <mfrac>
+                <mn>2</mn>
+                <mn>3</mn>
+              </mfrac>
+              <mo stretchy="true">)</mo>
+            </mrow>
           </mrow>
         </mtd>
       </mtr>
