@@ -30,7 +30,7 @@ import qualified Data.Map as M
 import Control.Monad (when, unless)
 import Control.Monad.Reader (MonadReader, runReader, Reader, asks, ask)
 import Control.Monad.Writer( MonadWriter, WriterT,
-                             execWriterT, tell, censor, listen)
+                             execWriterT, tell, censor)
 import Text.TeXMath.TeX
 
 -- import Debug.Trace
@@ -87,11 +87,9 @@ writeExp (EDelimited "\x2223" "\x2223" [Right (EArray aligns rows)]) =
 writeExp (EDelimited "\x2225" "\x2225" [Right (EArray aligns rows)]) =
   matrixWith "Vmatrix" aligns rows
 writeExp (EDelimited open close es) =  do
-  let checkLeft c = case c of  {(ControlSeq "\\left") -> True; _ -> False} 
-  let checkNull delim = if null delim || delim == "\xFEFF" then "." else delim
-  res <- snd <$> listen (writeDelim DLeft (checkNull open))
+  writeDelim DLeft open
   mapM_ (either (writeDelim DMiddle) writeExp) es
-  when (any checkLeft res) (writeDelim DRight (checkNull close))
+  writeDelim DRight close
 writeExp (EIdentifier s) = do
   math <- getTeXMathM s
   case math of
@@ -235,16 +233,17 @@ data FenceType = DLeft | DMiddle | DRight
 type Delim = String
 
 writeDelim :: FenceType -> Delim -> Math ()
-writeDelim fence delim = do 
+writeDelim fence delim = do
     tex <- getTeXMathM delim
     valid <- elem tex <$> delimiters
-    if valid then
-      tell $ case fence of
-               DLeft -> [ControlSeq "\\left"] ++ tex ++ [Space]
-               DMiddle -> [Space] ++ [ControlSeq "\\middle"] ++ tex ++ [Space]
-               DRight -> [Space, ControlSeq "\\right"] ++ tex
-    else
-      tell tex
+    nullLim <- getTeXMathM "."
+    let delimCmd = if valid then tex else nullLim
+    tell $ case fence of
+             DLeft -> [ControlSeq "\\left"] ++ delimCmd ++ [Space] ++ if valid then [] else tex
+             DMiddle -> case valid of
+                              True -> [Space] ++ [ControlSeq "\\middle"] ++ tex ++ [Space]
+                              False -> tex 
+             DRight -> [Space, ControlSeq "\\right"] ++ delimCmd ++ if valid then [] else tex
 
 -- Utility
 
