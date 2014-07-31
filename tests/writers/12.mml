@@ -2,12 +2,12 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
     <mi>f</mi>
-    <mo stretchy="false">(</mo>
+    <mo stretchy="false" form="prefix">(</mo>
     <mi>x</mi>
-    <mo stretchy="false">)</mo>
+    <mo stretchy="false" form="postfix">)</mo>
     <mo>=</mo>
     <mrow>
-      <mo stretchy="true">{</mo>
+      <mo stretchy="true" form="prefix">{</mo>
       <mtable>
         <mtr>
           <mtd>

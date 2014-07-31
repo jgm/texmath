@@ -3,21 +3,21 @@
   <mrow>
     <mrow>
       <mrow>
-        <mo stretchy="true">[</mo>
+        <mo stretchy="true" form="prefix">[</mo>
         <mrow>
           <mi>a</mi>
           <mo>+</mo>
           <mi>b</mi>
         </mrow>
-        <mo stretchy="true">)</mo>
+        <mo stretchy="true" form="postfix">)</mo>
       </mrow>
       <mrow>
-        <mo stretchy="true">{</mo>
+        <mo stretchy="true" form="prefix">{</mo>
         <mfrac>
           <mi>a</mi>
           <mi>b</mi>
         </mfrac>
-        <mo stretchy="true">|</mo>
+        <mo stretchy="true" form="infix">|</mo>
         <mfrac>
           <mi>d</mi>
           <mi>e</mi>
@@ -30,7 +30,7 @@
         <mi>a</mi>
         <mo>+</mo>
         <mi>b</mi>
-        <mo stretchy="true">}</mo>
+        <mo stretchy="true" form="postfix">}</mo>
       </mrow>
     </mrow>
   </mrow>

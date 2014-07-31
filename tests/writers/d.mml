@@ -311,7 +311,7 @@
           <mtext mathvariant="normal">DiacriticalTilde</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">˜</mo>
+          <mo stretchy="false" form="postfix">˜</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -439,7 +439,7 @@
           <mtext mathvariant="normal">dlcorn</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">⌞</mo>
+          <mo stretchy="false" form="prefix">⌞</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -823,7 +823,7 @@
           <mtext mathvariant="normal">drcorn</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">⌟</mo>
+          <mo stretchy="false" form="postfix">⌟</mo>
         </mtd>
       </mtr>
       <mtr>

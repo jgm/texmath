@@ -5,11 +5,11 @@
       <mtext mathvariant="normal">The same expression </mtext>
       <mrow>
         <mrow>
-          <mo stretchy="true">[</mo>
+          <mo stretchy="true" form="prefix">[</mo>
           <mfrac>
             <mrow>
               <mrow>
-                <mo stretchy="true">∥</mo>
+                <mo stretchy="true" form="infix">∥</mo>
                 <mfrac>
                   <mrow>
                     <mrow>
@@ -22,7 +22,7 @@
                   </mrow>
                   <mn>11</mn>
                 </mfrac>
-                <mo stretchy="true">∥</mo>
+                <mo stretchy="true" form="infix">∥</mo>
               </mrow>
               <mo>-</mo>
               <mi>x</mi>
@@ -38,13 +38,13 @@
               </msub>
             </mfrac>
           </mfrac>
-          <mo stretchy="true">]</mo>
+          <mo stretchy="true" form="postfix">]</mo>
         </mrow>
         <mo>+</mo>
         <mrow>
-          <mo stretchy="false">[</mo>
+          <mo stretchy="false" form="prefix">[</mo>
           <mn>1.0</mn>
-          <mo stretchy="false">]</mo>
+          <mo stretchy="false" form="postfix">]</mo>
         </mrow>
       </mrow>
       <mtext mathvariant="normal"> in a display.</mtext>

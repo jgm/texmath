@@ -4,11 +4,11 @@
     <mstyle mathvariant="bold">
       <mi>𝐂</mi>
     </mstyle>
-    <mo stretchy="false">(</mo>
+    <mo stretchy="false" form="prefix">(</mo>
     <mi>n</mi>
     <mo>,</mo>
     <mi>k</mi>
-    <mo stretchy="false">)</mo>
+    <mo stretchy="false" form="postfix">)</mo>
     <mo>=</mo>
     <msubsup>
       <mstyle mathvariant="bold">
@@ -45,11 +45,11 @@
         <mi>k</mi>
         <mo>!</mo>
         <mspace width="0.167em" />
-        <mo stretchy="false">(</mo>
+        <mo stretchy="false" form="prefix">(</mo>
         <mi>n</mi>
         <mo>−</mo>
         <mi>k</mi>
-        <mo stretchy="false">)</mo>
+        <mo stretchy="false" form="postfix">)</mo>
         <mo>!</mo>
       </mrow>
     </mfrac>

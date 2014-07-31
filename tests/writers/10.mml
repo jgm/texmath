@@ -5,9 +5,9 @@
       <mi>ϕ</mi>
       <mi>n</mi>
     </msub>
-    <mo stretchy="false">(</mo>
+    <mo stretchy="false" form="prefix">(</mo>
     <mi>κ</mi>
-    <mo stretchy="false">)</mo>
+    <mo stretchy="false" form="postfix">)</mo>
     <mo>=</mo>
     <mfrac>
       <mn>1</mn>
@@ -31,10 +31,10 @@
     <mfrac>
       <mrow>
         <mi>sin</mi>
-        <mo stretchy="false">(</mo>
+        <mo stretchy="false" form="prefix">(</mo>
         <mi>κ</mi>
         <mi>R</mi>
-        <mo stretchy="false">)</mo>
+        <mo stretchy="false" form="postfix">)</mo>
       </mrow>
       <mrow>
         <mi>κ</mi>
@@ -49,7 +49,7 @@
       </mrow>
     </mfrac>
     <mrow>
-      <mo stretchy="true">[</mo>
+      <mo stretchy="true" form="prefix">[</mo>
       <msup>
         <mi>R</mi>
         <mn>2</mn>
@@ -61,16 +61,16 @@
             <mi>D</mi>
             <mi>n</mi>
           </msub>
-          <mo stretchy="false">(</mo>
+          <mo stretchy="false" form="prefix">(</mo>
           <mi>R</mi>
-          <mo stretchy="false">)</mo>
+          <mo stretchy="false" form="postfix">)</mo>
         </mrow>
         <mrow>
           <mo>∂</mo>
           <mi>R</mi>
         </mrow>
       </mfrac>
-      <mo stretchy="true">]</mo>
+      <mo stretchy="true" form="postfix">]</mo>
     </mrow>
     <mspace width="0.167em" />
     <mi>d</mi>

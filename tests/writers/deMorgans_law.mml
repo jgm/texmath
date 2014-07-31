@@ -2,21 +2,21 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
     <mo>¬</mo>
-    <mo stretchy="false">(</mo>
+    <mo stretchy="false" form="prefix">(</mo>
     <mi>p</mi>
     <mo>∧</mo>
     <mi>q</mi>
-    <mo stretchy="false">)</mo>
+    <mo stretchy="false" form="postfix">)</mo>
     <mo>⇔</mo>
-    <mo stretchy="false">(</mo>
+    <mo stretchy="false" form="prefix">(</mo>
     <mo>¬</mo>
     <mi>p</mi>
-    <mo stretchy="false">)</mo>
+    <mo stretchy="false" form="postfix">)</mo>
     <mo>∨</mo>
-    <mo stretchy="false">(</mo>
+    <mo stretchy="false" form="prefix">(</mo>
     <mo>¬</mo>
     <mi>q</mi>
-    <mo stretchy="false">)</mo>
+    <mo stretchy="false" form="postfix">)</mo>
     <mover>
       <mrow>
         <munderover>

@@ -3,22 +3,22 @@
   <mrow>
     <mrow>
       <mrow>
-        <mo stretchy="true">(</mo>
+        <mo stretchy="true" form="prefix">(</mo>
         <mrow>
           <mi>a</mi>
           <mo>+</mo>
           <mi>b</mi>
         </mrow>
-        <mo stretchy="true">)</mo>
+        <mo stretchy="true" form="postfix">)</mo>
       </mrow>
       <mo>+</mo>
       <mrow>
-        <mo stretchy="true">(</mo>
+        <mo stretchy="true" form="prefix">(</mo>
         <mfrac>
           <mn>1</mn>
           <mn>2</mn>
         </mfrac>
-        <mo stretchy="true">)</mo>
+        <mo stretchy="true" form="postfix">)</mo>
       </mrow>
     </mrow>
   </mrow>

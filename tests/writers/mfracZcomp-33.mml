@@ -9,9 +9,9 @@
           <mi>α</mi>
         </msub>
         <mrow>
-          <mo stretchy="true">(</mo>
+          <mo stretchy="true" form="prefix">(</mo>
           <mi>f</mi>
-          <mo stretchy="true">)</mo>
+          <mo stretchy="true" form="postfix">)</mo>
         </mrow>
         <mo>=</mo>
         <mfrac>
@@ -22,7 +22,7 @@
             <mo> </mo>
             <mi>cos</mi>
             <mrow>
-              <mo stretchy="true">(</mo>
+              <mo stretchy="true" form="prefix">(</mo>
               <mfrac>
                 <mrow>
                   <mi>α</mi>
@@ -30,7 +30,7 @@
                 </mrow>
                 <mn>2</mn>
               </mfrac>
-              <mo stretchy="true">)</mo>
+              <mo stretchy="true" form="postfix">)</mo>
             </mrow>
           </mrow>
         </mfrac>
@@ -42,16 +42,16 @@
           <mfrac>
             <mrow>
               <mi>f</mi>
-              <mo stretchy="false">(</mo>
+              <mo stretchy="false" form="prefix">(</mo>
               <mi>i</mi>
               <mi>z</mi>
-              <mo stretchy="false">)</mo>
+              <mo stretchy="false" form="postfix">)</mo>
               <msup>
                 <mrow>
-                  <mo stretchy="true">(</mo>
+                  <mo stretchy="true" form="prefix">(</mo>
                   <mo>-</mo>
                   <mi>z</mi>
-                  <mo stretchy="true">)</mo>
+                  <mo stretchy="true" form="postfix">)</mo>
                 </mrow>
                 <mi>α</mi>
               </msup>

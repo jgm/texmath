@@ -3,7 +3,7 @@
   <mrow>
     <mrow>
       <mrow>
-        <mo stretchy="true">(</mo>
+        <mo stretchy="true" form="prefix">(</mo>
         <mtable>
           <mtr>
             <mtd>
@@ -31,9 +31,9 @@
             </mtd>
           </mtr>
         </mtable>
-        <mo stretchy="true">)</mo>
+        <mo stretchy="true" form="postfix">)</mo>
       </mrow>
-      <mo stretchy="false">(</mo>
+      <mo stretchy="false" form="prefix">(</mo>
       <mtable>
         <mtr>
           <mtd>
@@ -61,9 +61,9 @@
           </mtd>
         </mtr>
       </mtable>
-      <mo stretchy="false">)</mo>
+      <mo stretchy="false" form="postfix">)</mo>
       <mrow>
-        <mo stretchy="true">(</mo>
+        <mo stretchy="true" form="prefix">(</mo>
         <mtable>
           <mtr>
             <mtd>
@@ -91,7 +91,7 @@
             </mtd>
           </mtr>
         </mtable>
-        <mo stretchy="true">)</mo>
+        <mo stretchy="true" form="postfix">)</mo>
       </mrow>
     </mrow>
   </mrow>

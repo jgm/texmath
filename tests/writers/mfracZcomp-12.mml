@@ -4,7 +4,7 @@
     <mrow>
       <mtext mathvariant="normal">Inline binomial, text style, no line </mtext>
       <mrow>
-        <mo stretchy="true">(</mo>
+        <mo stretchy="true" form="prefix">(</mo>
         <mfrac>
           <mrow>
             <mi>log</mi>
@@ -13,7 +13,7 @@
           </mrow>
           <mi>y</mi>
         </mfrac>
-        <mo stretchy="true">)</mo>
+        <mo stretchy="true" form="postfix">)</mo>
       </mrow>
       <mtext mathvariant="normal"> the end.</mtext>
     </mrow>

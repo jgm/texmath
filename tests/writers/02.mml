@@ -4,15 +4,15 @@
     <mn>2</mn>
     <mo>=</mo>
     <mrow>
-      <mo stretchy="true">(</mo>
+      <mo stretchy="true" form="prefix">(</mo>
       <mfrac>
         <mrow>
           <mrow>
-            <mo stretchy="true">(</mo>
+            <mo stretchy="true" form="prefix">(</mo>
             <mn>3</mn>
             <mo>−</mo>
             <mi>x</mi>
-            <mo stretchy="true">)</mo>
+            <mo stretchy="true" form="postfix">)</mo>
           </mrow>
           <mo>×</mo>
           <mn>2</mn>
@@ -23,7 +23,7 @@
           <mi>x</mi>
         </mrow>
       </mfrac>
-      <mo stretchy="true">)</mo>
+      <mo stretchy="true" form="postfix">)</mo>
     </mrow>
   </mrow>
 </math>

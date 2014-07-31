@@ -39,7 +39,7 @@
           <mtext mathvariant="normal">radic</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">√</mo>
+          <mo stretchy="false" form="prefix">√</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -55,7 +55,7 @@
           <mtext mathvariant="normal">rang</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">⟩</mo>
+          <mo stretchy="false" form="postfix">⟩</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -63,7 +63,7 @@
           <mtext mathvariant="normal">Rang</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">⟫</mo>
+          <mo stretchy="false" form="postfix">⟫</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -71,7 +71,7 @@
           <mtext mathvariant="normal">rangd</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">⦒</mo>
+          <mo stretchy="false" form="postfix">⦒</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -87,7 +87,7 @@
           <mtext mathvariant="normal">rangle</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">⟩</mo>
+          <mo stretchy="false" form="postfix">⟩</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -279,7 +279,7 @@
           <mtext mathvariant="normal">rbbrk</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">❳</mo>
+          <mo stretchy="false" form="postfix">❳</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -287,7 +287,7 @@
           <mtext mathvariant="normal">rbrace</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">}</mo>
+          <mo stretchy="false" form="postfix">}</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -295,7 +295,7 @@
           <mtext mathvariant="normal">rbrack</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">]</mo>
+          <mo stretchy="false" form="postfix">]</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -303,7 +303,7 @@
           <mtext mathvariant="normal">rbrke</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">⦌</mo>
+          <mo stretchy="false" form="postfix">⦌</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -311,7 +311,7 @@
           <mtext mathvariant="normal">rbrksld</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">⦎</mo>
+          <mo stretchy="false" form="postfix">⦎</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -319,7 +319,7 @@
           <mtext mathvariant="normal">rbrkslu</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">⦐</mo>
+          <mo stretchy="false" form="postfix">⦐</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -359,7 +359,7 @@
           <mtext mathvariant="normal">rceil</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">⌉</mo>
+          <mo stretchy="false" form="postfix">⌉</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -367,7 +367,7 @@
           <mtext mathvariant="normal">rcub</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">}</mo>
+          <mo stretchy="false" form="postfix">}</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -407,7 +407,7 @@
           <mtext mathvariant="normal">rdquo</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">”</mo>
+          <mo stretchy="false" form="postfix">”</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -415,7 +415,7 @@
           <mtext mathvariant="normal">rdquor</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">”</mo>
+          <mo stretchy="false" form="postfix">”</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -519,7 +519,7 @@
           <mtext mathvariant="normal">rfloor</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">⌋</mo>
+          <mo stretchy="false" form="postfix">⌋</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -591,7 +591,7 @@
           <mtext mathvariant="normal">RightAngleBracket</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">⟩</mo>
+          <mo stretchy="false" form="postfix">⟩</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -647,7 +647,7 @@
           <mtext mathvariant="normal">RightCeiling</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">⌉</mo>
+          <mo stretchy="false" form="postfix">⌉</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -655,7 +655,7 @@
           <mtext mathvariant="normal">RightDoubleBracket</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">⟧</mo>
+          <mo stretchy="false" form="postfix">⟧</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -687,7 +687,7 @@
           <mtext mathvariant="normal">RightFloor</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">⌋</mo>
+          <mo stretchy="false" form="postfix">⌋</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -903,7 +903,7 @@
           <mtext mathvariant="normal">roang</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">⟭</mo>
+          <mo stretchy="false" form="postfix">⟭</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -919,7 +919,7 @@
           <mtext mathvariant="normal">robrk</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">⟧</mo>
+          <mo stretchy="false" form="postfix">⟧</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -927,7 +927,7 @@
           <mtext mathvariant="normal">ropar</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">⦆</mo>
+          <mo stretchy="false" form="postfix">⦆</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -975,7 +975,7 @@
           <mtext mathvariant="normal">rpar</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">)</mo>
+          <mo stretchy="false" form="postfix">)</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -983,7 +983,7 @@
           <mtext mathvariant="normal">rpargt</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">⦔</mo>
+          <mo stretchy="false" form="postfix">⦔</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1047,7 +1047,7 @@
           <mtext mathvariant="normal">rsqb</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">]</mo>
+          <mo stretchy="false" form="postfix">]</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1055,7 +1055,7 @@
           <mtext mathvariant="normal">rsquo</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">’</mo>
+          <mo stretchy="false" form="postfix">’</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1063,7 +1063,7 @@
           <mtext mathvariant="normal">rsquor</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="false">’</mo>
+          <mo stretchy="false" form="postfix">’</mo>
         </mtd>
       </mtr>
       <mtr>

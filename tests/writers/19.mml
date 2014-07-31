@@ -2,7 +2,7 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
     <mrow>
-      <mo stretchy="true">[</mo>
+      <mo stretchy="true" form="prefix">[</mo>
       <mtable>
         <mtr>
           <mtd columnalign="center">
@@ -94,10 +94,10 @@
           </mtd>
         </mtr>
       </mtable>
-      <mo stretchy="true">]</mo>
+      <mo stretchy="true" form="postfix">]</mo>
     </mrow>
     <mrow>
-      <mo stretchy="true">(</mo>
+      <mo stretchy="true" form="prefix">(</mo>
       <mtable>
         <mtr>
           <mtd columnalign="center">
@@ -116,10 +116,10 @@
           </mtd>
         </mtr>
       </mtable>
-      <mo stretchy="true">)</mo>
+      <mo stretchy="true" form="postfix">)</mo>
     </mrow>
     <mrow>
-      <mo stretchy="true">{</mo>
+      <mo stretchy="true" form="prefix">{</mo>
       <mtable>
         <mtr>
           <mtd columnalign="center">
@@ -138,10 +138,10 @@
           </mtd>
         </mtr>
       </mtable>
-      <mo stretchy="true">}</mo>
+      <mo stretchy="true" form="postfix">}</mo>
     </mrow>
     <mrow>
-      <mo stretchy="true">∣</mo>
+      <mo stretchy="true" form="prefix">∣</mo>
       <mtable>
         <mtr>
           <mtd columnalign="center">
@@ -160,10 +160,10 @@
           </mtd>
         </mtr>
       </mtable>
-      <mo stretchy="true">∣</mo>
+      <mo stretchy="true" form="postfix">∣</mo>
     </mrow>
     <mrow>
-      <mo stretchy="true">∥</mo>
+      <mo stretchy="true" form="prefix">∥</mo>
       <mtable>
         <mtr>
           <mtd columnalign="center">
@@ -182,7 +182,7 @@
           </mtd>
         </mtr>
       </mtable>
-      <mo stretchy="true">∥</mo>
+      <mo stretchy="true" form="postfix">∥</mo>
     </mrow>
   </mrow>
 </math>

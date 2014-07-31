@@ -272,7 +272,7 @@
           <mo>*</mo>
         </mtd>
         <mtd>
-          <mo stretchy="false">(</mo>
+          <mo stretchy="false" form="prefix">(</mo>
         </mtd>
         <mtd>
           <mo>8</mo>
@@ -301,7 +301,7 @@
           <mo>*</mo>
         </mtd>
         <mtd>
-          <mo stretchy="false">)</mo>
+          <mo stretchy="false" form="postfix">)</mo>
         </mtd>
         <mtd>
           <mo>9</mo>
@@ -368,13 +368,13 @@
           <mo>K</mo>
         </mtd>
         <mtd>
-          <mo stretchy="false">[</mo>
+          <mo stretchy="false" form="prefix">[</mo>
         </mtd>
         <mtd>
           <mo>k</mo>
         </mtd>
         <mtd>
-          <mo stretchy="false">{</mo>
+          <mo stretchy="false" form="prefix">{</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -426,13 +426,13 @@
           <mo>M</mo>
         </mtd>
         <mtd>
-          <mo stretchy="false">]</mo>
+          <mo stretchy="false" form="postfix">]</mo>
         </mtd>
         <mtd>
           <mo>m</mo>
         </mtd>
         <mtd>
-          <mo stretchy="false">}</mo>
+          <mo stretchy="false" form="postfix">}</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -461,7 +461,7 @@
           <mo>n</mo>
         </mtd>
         <mtd>
-          <mo stretchy="false">~</mo>
+          <mo stretchy="false" form="postfix">~</mo>
         </mtd>
       </mtr>
       <mtr>

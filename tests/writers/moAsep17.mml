@@ -3,7 +3,7 @@
   <mrow>
     <mrow>
       <mrow>
-        <mo stretchy="true">(</mo>
+        <mo stretchy="true" form="prefix">(</mo>
         <mrow>
           <mi>x</mi>
           <mo>,</mo>
@@ -12,11 +12,11 @@
             <mi>z</mi>
           </mfrac>
         </mrow>
-        <mo stretchy="true">)</mo>
+        <mo stretchy="true" form="postfix">)</mo>
       </mrow>
       <mo>+</mo>
       <mrow>
-        <mo stretchy="true">(</mo>
+        <mo stretchy="true" form="prefix">(</mo>
         <mrow>
           <mi>x</mi>
           <mo>,</mo>
@@ -25,11 +25,11 @@
             <mi>z</mi>
           </mfrac>
         </mrow>
-        <mo stretchy="true">)</mo>
+        <mo stretchy="true" form="postfix">)</mo>
       </mrow>
       <mo>+</mo>
       <mrow>
-        <mo stretchy="true">(</mo>
+        <mo stretchy="true" form="prefix">(</mo>
         <mrow>
           <mi>x</mi>
           <mo>,</mo>
@@ -38,7 +38,7 @@
             <mi>z</mi>
           </mfrac>
         </mrow>
-        <mo stretchy="true">)</mo>
+        <mo stretchy="true" form="postfix">)</mo>
       </mrow>
     </mrow>
   </mrow>

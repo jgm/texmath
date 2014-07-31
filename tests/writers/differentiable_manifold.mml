@@ -12,7 +12,7 @@
     </msub>
     <mo>⇔</mo>
     <mrow>
-      <mo stretchy="true">{</mo>
+      <mo stretchy="true" form="prefix">{</mo>
       <mtable>
         <mtr>
           <mtd columnalign="left">
@@ -20,17 +20,17 @@
               <mi>γ</mi>
               <mn>1</mn>
             </msub>
-            <mo stretchy="false">(</mo>
+            <mo stretchy="false" form="prefix">(</mo>
             <mn>0</mn>
-            <mo stretchy="false">)</mo>
+            <mo stretchy="false" form="postfix">)</mo>
             <mo>=</mo>
             <msub>
               <mi>γ</mi>
               <mn>2</mn>
             </msub>
-            <mo stretchy="false">(</mo>
+            <mo stretchy="false" form="prefix">(</mo>
             <mn>0</mn>
-            <mo stretchy="false">)</mo>
+            <mo stretchy="false" form="postfix">)</mo>
             <mo>=</mo>
             <mi>p</mi>
             <mo>,</mo>
@@ -61,10 +61,10 @@
                   <mi>γ</mi>
                   <mn>1</mn>
                 </msub>
-                <mo stretchy="false">(</mo>
+                <mo stretchy="false" form="prefix">(</mo>
                 <mi>t</mi>
-                <mo stretchy="false">)</mo>
-                <mo stretchy="true">|</mo>
+                <mo stretchy="false" form="postfix">)</mo>
+                <mo stretchy="true" form="postfix">|</mo>
               </mrow>
               <mrow>
                 <mi>t</mi>
@@ -92,10 +92,10 @@
                   <mi>γ</mi>
                   <mn>2</mn>
                 </msub>
-                <mo stretchy="false">(</mo>
+                <mo stretchy="false" form="prefix">(</mo>
                 <mi>t</mi>
-                <mo stretchy="false">)</mo>
-                <mo stretchy="true">|</mo>
+                <mo stretchy="false" form="postfix">)</mo>
+                <mo stretchy="true" form="postfix">|</mo>
               </mrow>
               <mrow>
                 <mi>t</mi>

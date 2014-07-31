@@ -8,19 +8,19 @@
           <mi>F</mi>
           <mo>&#8289;</mo>
           <mrow>
-            <mo stretchy="true">(</mo>
+            <mo stretchy="true" form="prefix">(</mo>
             <mrow>
               <mi>t</mi>
               <mo>,</mo>
               <mi>y</mi>
             </mrow>
-            <mo stretchy="true">)</mo>
+            <mo stretchy="true" form="postfix">)</mo>
           </mrow>
         </mrow>
         <mo>=</mo>
         <mfrac>
           <mrow>
-            <mo stretchy="true">(</mo>
+            <mo stretchy="true" form="prefix">(</mo>
             <mrow>
               <mn>1</mn>
               <mo>,</mo>
@@ -35,12 +35,12 @@
                 </mrow>
               </mfrac>
             </mrow>
-            <mo stretchy="true">)</mo>
+            <mo stretchy="true" form="postfix">)</mo>
           </mrow>
           <mrow>
-            <mo stretchy="true">∥</mo>
+            <mo stretchy="true" form="infix">∥</mo>
             <mrow>
-              <mo stretchy="true">(</mo>
+              <mo stretchy="true" form="prefix">(</mo>
               <mrow>
                 <mn>1</mn>
                 <mo>,</mo>
@@ -55,9 +55,9 @@
                   </mrow>
                 </mfrac>
               </mrow>
-              <mo stretchy="true">)</mo>
+              <mo stretchy="true" form="postfix">)</mo>
             </mrow>
-            <mo stretchy="true">∥</mo>
+            <mo stretchy="true" form="infix">∥</mo>
           </mrow>
         </mfrac>
       </mrow>

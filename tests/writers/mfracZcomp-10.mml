@@ -4,12 +4,12 @@
     <mrow>
       <mtext mathvariant="normal">Inline binomial, auto, no line </mtext>
       <mrow>
-        <mo stretchy="true">(</mo>
+        <mo stretchy="true" form="prefix">(</mo>
         <mfrac>
           <mn>5</mn>
           <mn>8</mn>
         </mfrac>
-        <mo stretchy="true">)</mo>
+        <mo stretchy="true" form="postfix">)</mo>
       </mrow>
       <mtext mathvariant="normal"> the end.</mtext>
     </mrow>

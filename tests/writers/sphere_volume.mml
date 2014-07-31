@@ -3,7 +3,7 @@
   <mrow>
     <mi>S</mi>
     <mo>=</mo>
-    <mo stretchy="false">{</mo>
+    <mo stretchy="false" form="prefix">{</mo>
     <mn>0</mn>
     <mo>≤</mo>
     <mi>ϕ</mi>
@@ -24,7 +24,7 @@
     <mi>ρ</mi>
     <mo>≤</mo>
     <mi>R</mi>
-    <mo stretchy="false">}</mo>
+    <mo stretchy="false" form="postfix">}</mo>
     <mtable>
       <mtr>
         <mtd columnalign="right">
@@ -121,7 +121,7 @@
           <mo>=</mo>
           <mi>ϕ</mi>
           <msubsup>
-            <mo minsize="1.6" maxsize="1.6" stretchy="false">|</mo>
+            <mo minsize="1.6" maxsize="1.6" stretchy="false" form="prefix">|</mo>
             <mn>0</mn>
             <mrow>
               <mn>2</mn>
@@ -129,13 +129,13 @@
             </mrow>
           </msubsup>
           <mo> </mo>
-          <mo stretchy="false">(</mo>
+          <mo stretchy="false" form="prefix">(</mo>
           <mo>−</mo>
           <mi>cos</mi>
           <mi>θ</mi>
-          <mo stretchy="false">)</mo>
+          <mo stretchy="false" form="postfix">)</mo>
           <msubsup>
-            <mo minsize="1.6" maxsize="1.6" stretchy="false">|</mo>
+            <mo minsize="1.6" maxsize="1.6" stretchy="false" form="prefix">|</mo>
             <mn>0</mn>
             <mi>π</mi>
           </msubsup>
@@ -151,7 +151,7 @@
             <mn>3</mn>
           </msup>
           <msubsup>
-            <mo minsize="1.6" maxsize="1.6" stretchy="false">|</mo>
+            <mo minsize="1.6" maxsize="1.6" stretchy="false" form="prefix">|</mo>
             <mn>0</mn>
             <mi>R</mi>
           </msubsup>

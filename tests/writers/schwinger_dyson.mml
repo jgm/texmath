@@ -2,15 +2,15 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
     <mrow>
-      <mo stretchy="true">⟨</mo>
+      <mo stretchy="true" form="prefix">⟨</mo>
       <mi>ψ</mi>
       <mrow>
-        <mo stretchy="true">|</mo>
+        <mo stretchy="true" form="prefix">|</mo>
         <mstyle mathvariant="script">
           <mi>𝒯</mi>
         </mstyle>
         <mrow>
-          <mo stretchy="true">{</mo>
+          <mo stretchy="true" form="prefix">{</mo>
           <mfrac>
             <mi>δ</mi>
             <mrow>
@@ -19,15 +19,15 @@
             </mrow>
           </mfrac>
           <mi>F</mi>
-          <mo stretchy="false">[</mo>
+          <mo stretchy="false" form="prefix">[</mo>
           <mi>ϕ</mi>
-          <mo stretchy="false">]</mo>
-          <mo stretchy="true">}</mo>
+          <mo stretchy="false" form="postfix">]</mo>
+          <mo stretchy="true" form="postfix">}</mo>
         </mrow>
-        <mo stretchy="true">|</mo>
+        <mo stretchy="true" form="postfix">|</mo>
       </mrow>
       <mi>ψ</mi>
-      <mo stretchy="true">⟩</mo>
+      <mo stretchy="true" form="postfix">⟩</mo>
     </mrow>
     <mo>=</mo>
     <mo>−</mo>
@@ -35,19 +35,19 @@
       <mi>i</mi>
     </mstyle>
     <mrow>
-      <mo stretchy="true">⟨</mo>
+      <mo stretchy="true" form="prefix">⟨</mo>
       <mi>ψ</mi>
       <mrow>
-        <mo stretchy="true">|</mo>
+        <mo stretchy="true" form="prefix">|</mo>
         <mstyle mathvariant="script">
           <mi>𝒯</mi>
         </mstyle>
         <mrow>
-          <mo stretchy="true">{</mo>
+          <mo stretchy="true" form="prefix">{</mo>
           <mi>F</mi>
-          <mo stretchy="false">[</mo>
+          <mo stretchy="false" form="prefix">[</mo>
           <mi>ϕ</mi>
-          <mo stretchy="false">]</mo>
+          <mo stretchy="false" form="postfix">]</mo>
           <mfrac>
             <mi>δ</mi>
             <mrow>
@@ -56,15 +56,15 @@
             </mrow>
           </mfrac>
           <mi>S</mi>
-          <mo stretchy="false">[</mo>
+          <mo stretchy="false" form="prefix">[</mo>
           <mi>ϕ</mi>
-          <mo stretchy="false">]</mo>
-          <mo stretchy="true">}</mo>
+          <mo stretchy="false" form="postfix">]</mo>
+          <mo stretchy="true" form="postfix">}</mo>
         </mrow>
-        <mo stretchy="true">|</mo>
+        <mo stretchy="true" form="postfix">|</mo>
       </mrow>
       <mi>ψ</mi>
-      <mo stretchy="true">⟩</mo>
+      <mo stretchy="true" form="postfix">⟩</mo>
     </mrow>
   </mrow>
 </math>
