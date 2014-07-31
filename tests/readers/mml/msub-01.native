@@ -1,1 +1,1 @@
-[ESub (EIdentifier "L") (EIdentifier "x"),ESymbol Rel "=",ESub (EIdentifier "L") (EGrouped [EIdentifier "x",EUnary "\\phantom" (EGrouped [EIdentifier "fail"])])]
+[EGrouped [ESub (EIdentifier "L") (EIdentifier "x"),ESymbol Rel "=",ESub (EIdentifier "L") (EGrouped [EIdentifier "x",EUnary "\\phantom" (EIdentifier "fail")])]]

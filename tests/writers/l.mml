@@ -7,7 +7,7 @@
           <mtext mathvariant="normal">lAarr</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⇚</mo>
+          <mo>⇚</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -63,7 +63,7 @@
           <mtext mathvariant="normal">lang</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⟨</mo>
+          <mo stretchy="false">⟨</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -71,7 +71,7 @@
           <mtext mathvariant="normal">Lang</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⟪</mo>
+          <mo stretchy="false">⟪</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -79,7 +79,7 @@
           <mtext mathvariant="normal">langd</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⦑</mo>
+          <mo stretchy="false">⦑</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -87,7 +87,7 @@
           <mtext mathvariant="normal">langle</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⟨</mo>
+          <mo stretchy="false">⟨</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -119,7 +119,7 @@
           <mtext mathvariant="normal">larr</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">←</mo>
+          <mo>←</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -127,7 +127,7 @@
           <mtext mathvariant="normal">lArr</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⇐</mo>
+          <mo>⇐</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -135,7 +135,7 @@
           <mtext mathvariant="normal">Larr</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">↞</mo>
+          <mo>↞</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -143,7 +143,7 @@
           <mtext mathvariant="normal">larrb</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⇤</mo>
+          <mo>⇤</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -167,7 +167,7 @@
           <mtext mathvariant="normal">larrhk</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">↩</mo>
+          <mo>↩</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -175,7 +175,7 @@
           <mtext mathvariant="normal">larrlp</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">↫</mo>
+          <mo>↫</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -199,7 +199,7 @@
           <mtext mathvariant="normal">larrtl</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">↢</mo>
+          <mo>↢</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -247,7 +247,7 @@
           <mtext mathvariant="normal">lbarr</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⤌</mo>
+          <mo>⤌</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -255,7 +255,7 @@
           <mtext mathvariant="normal">lBarr</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⤎</mo>
+          <mo>⤎</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -263,7 +263,7 @@
           <mtext mathvariant="normal">lbbrk</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">❲</mo>
+          <mo stretchy="false">❲</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -271,7 +271,7 @@
           <mtext mathvariant="normal">lbrace</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">{</mo>
+          <mo stretchy="false">{</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -279,7 +279,7 @@
           <mtext mathvariant="normal">lbrack</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">[</mo>
+          <mo stretchy="false">[</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -287,7 +287,7 @@
           <mtext mathvariant="normal">lbrke</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⦋</mo>
+          <mo stretchy="false">⦋</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -295,7 +295,7 @@
           <mtext mathvariant="normal">lbrksld</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⦏</mo>
+          <mo stretchy="false">⦏</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -303,7 +303,7 @@
           <mtext mathvariant="normal">lbrkslu</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⦍</mo>
+          <mo stretchy="false">⦍</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -343,7 +343,7 @@
           <mtext mathvariant="normal">lceil</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⌈</mo>
+          <mo stretchy="false">⌈</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -351,7 +351,7 @@
           <mtext mathvariant="normal">lcub</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">{</mo>
+          <mo stretchy="false">{</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -415,7 +415,7 @@
           <mtext mathvariant="normal">ldsh</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">↲</mo>
+          <mo>↲</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -439,7 +439,7 @@
           <mtext mathvariant="normal">LeftAngleBracket</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⟨</mo>
+          <mo stretchy="false">⟨</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -447,7 +447,7 @@
           <mtext mathvariant="normal">leftarrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">←</mo>
+          <mo>←</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -455,7 +455,7 @@
           <mtext mathvariant="normal">Leftarrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⇐</mo>
+          <mo>⇐</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -463,7 +463,7 @@
           <mtext mathvariant="normal">LeftArrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">←</mo>
+          <mo>←</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -471,7 +471,7 @@
           <mtext mathvariant="normal">LeftArrowBar</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⇤</mo>
+          <mo>⇤</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -479,7 +479,7 @@
           <mtext mathvariant="normal">LeftArrowRightArrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⇆</mo>
+          <mo>⇆</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -487,7 +487,7 @@
           <mtext mathvariant="normal">leftarrowtail</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">↢</mo>
+          <mo>↢</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -495,7 +495,7 @@
           <mtext mathvariant="normal">LeftCeiling</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⌈</mo>
+          <mo stretchy="false">⌈</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -503,7 +503,7 @@
           <mtext mathvariant="normal">LeftDoubleBracket</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⟦</mo>
+          <mo stretchy="false">⟦</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -511,7 +511,7 @@
           <mtext mathvariant="normal">LeftDownTeeVector</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⥡</mo>
+          <mo>⥡</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -519,7 +519,7 @@
           <mtext mathvariant="normal">LeftDownVector</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⇃</mo>
+          <mo>⇃</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -527,7 +527,7 @@
           <mtext mathvariant="normal">LeftDownVectorBar</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⥙</mo>
+          <mo>⥙</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -535,7 +535,7 @@
           <mtext mathvariant="normal">LeftFloor</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⌊</mo>
+          <mo stretchy="false">⌊</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -543,7 +543,7 @@
           <mtext mathvariant="normal">leftharpoondown</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">↽</mo>
+          <mo>↽</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -551,7 +551,7 @@
           <mtext mathvariant="normal">leftharpoonup</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">↼</mo>
+          <mo>↼</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -559,7 +559,7 @@
           <mtext mathvariant="normal">leftleftarrows</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⇇</mo>
+          <mo>⇇</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -567,7 +567,7 @@
           <mtext mathvariant="normal">leftrightarrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">↔</mo>
+          <mo>↔</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -575,7 +575,7 @@
           <mtext mathvariant="normal">Leftrightarrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⇔</mo>
+          <mo>⇔</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -583,7 +583,7 @@
           <mtext mathvariant="normal">LeftRightArrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">↔</mo>
+          <mo>↔</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -591,7 +591,7 @@
           <mtext mathvariant="normal">leftrightarrows</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⇆</mo>
+          <mo>⇆</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -599,7 +599,7 @@
           <mtext mathvariant="normal">leftrightharpoons</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⇋</mo>
+          <mo>⇋</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -607,7 +607,7 @@
           <mtext mathvariant="normal">leftrightsquigarrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">↭</mo>
+          <mo>↭</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -615,7 +615,7 @@
           <mtext mathvariant="normal">LeftRightVector</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⥎</mo>
+          <mo>⥎</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -631,7 +631,7 @@
           <mtext mathvariant="normal">LeftTeeArrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">↤</mo>
+          <mo>↤</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -639,7 +639,7 @@
           <mtext mathvariant="normal">LeftTeeVector</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⥚</mo>
+          <mo>⥚</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -679,7 +679,7 @@
           <mtext mathvariant="normal">LeftUpDownVector</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⥑</mo>
+          <mo>⥑</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -687,7 +687,7 @@
           <mtext mathvariant="normal">LeftUpTeeVector</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⥠</mo>
+          <mo>⥠</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -695,7 +695,7 @@
           <mtext mathvariant="normal">LeftUpVector</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">↿</mo>
+          <mo>↿</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -703,7 +703,7 @@
           <mtext mathvariant="normal">LeftUpVectorBar</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⥘</mo>
+          <mo>⥘</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -711,7 +711,7 @@
           <mtext mathvariant="normal">LeftVector</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">↼</mo>
+          <mo>↼</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -719,7 +719,7 @@
           <mtext mathvariant="normal">LeftVectorBar</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⥒</mo>
+          <mo>⥒</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -927,7 +927,7 @@
           <mtext mathvariant="normal">lfloor</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⌊</mo>
+          <mo stretchy="false">⌊</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -975,7 +975,7 @@
           <mtext mathvariant="normal">lhard</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">↽</mo>
+          <mo>↽</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -983,7 +983,7 @@
           <mtext mathvariant="normal">lharu</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">↼</mo>
+          <mo>↼</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1039,7 +1039,7 @@
           <mtext mathvariant="normal">llarr</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⇇</mo>
+          <mo>⇇</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1055,7 +1055,7 @@
           <mtext mathvariant="normal">Lleftarrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⇚</mo>
+          <mo>⇚</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1167,7 +1167,7 @@
           <mtext mathvariant="normal">loang</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⟬</mo>
+          <mo stretchy="false">⟬</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1175,7 +1175,7 @@
           <mtext mathvariant="normal">loarr</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⇽</mo>
+          <mo>⇽</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1183,7 +1183,7 @@
           <mtext mathvariant="normal">lobrk</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⟦</mo>
+          <mo stretchy="false">⟦</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1191,7 +1191,7 @@
           <mtext mathvariant="normal">longleftarrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⟵</mo>
+          <mo>⟵</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1199,7 +1199,7 @@
           <mtext mathvariant="normal">Longleftarrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⟸</mo>
+          <mo>⟸</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1207,7 +1207,7 @@
           <mtext mathvariant="normal">LongLeftArrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⟵</mo>
+          <mo>⟵</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1215,7 +1215,7 @@
           <mtext mathvariant="normal">longleftrightarrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⟷</mo>
+          <mo>⟷</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1223,7 +1223,7 @@
           <mtext mathvariant="normal">Longleftrightarrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⟺</mo>
+          <mo>⟺</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1231,7 +1231,7 @@
           <mtext mathvariant="normal">LongLeftRightArrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⟷</mo>
+          <mo>⟷</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1239,7 +1239,7 @@
           <mtext mathvariant="normal">longmapsto</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⟼</mo>
+          <mo>⟼</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1247,7 +1247,7 @@
           <mtext mathvariant="normal">longrightarrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⟶</mo>
+          <mo>⟶</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1255,7 +1255,7 @@
           <mtext mathvariant="normal">Longrightarrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⟹</mo>
+          <mo>⟹</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1263,7 +1263,7 @@
           <mtext mathvariant="normal">LongRightArrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⟶</mo>
+          <mo>⟶</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1271,7 +1271,7 @@
           <mtext mathvariant="normal">looparrowleft</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">↫</mo>
+          <mo>↫</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1279,7 +1279,7 @@
           <mtext mathvariant="normal">looparrowright</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">↬</mo>
+          <mo>↬</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1287,7 +1287,7 @@
           <mtext mathvariant="normal">lopar</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⦅</mo>
+          <mo stretchy="false">⦅</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1343,7 +1343,7 @@
           <mtext mathvariant="normal">LowerLeftArrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">↙</mo>
+          <mo>↙</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1351,7 +1351,7 @@
           <mtext mathvariant="normal">LowerRightArrow</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">↘</mo>
+          <mo>↘</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1383,7 +1383,7 @@
           <mtext mathvariant="normal">lpar</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">(</mo>
+          <mo stretchy="false">(</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1391,7 +1391,7 @@
           <mtext mathvariant="normal">lparlt</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⦓</mo>
+          <mo stretchy="false">⦓</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1399,7 +1399,7 @@
           <mtext mathvariant="normal">lrarr</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⇆</mo>
+          <mo>⇆</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1415,7 +1415,7 @@
           <mtext mathvariant="normal">lrhar</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true" accent="true">⇋</mo>
+          <mo>⇋</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1455,7 +1455,7 @@
           <mtext mathvariant="normal">lsh</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">↰</mo>
+          <mo>↰</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1463,7 +1463,7 @@
           <mtext mathvariant="normal">Lsh</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">↰</mo>
+          <mo>↰</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1495,7 +1495,7 @@
           <mtext mathvariant="normal">lsqb</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">[</mo>
+          <mo stretchy="false">[</mo>
         </mtd>
       </mtr>
       <mtr>
@@ -1631,7 +1631,7 @@
           <mtext mathvariant="normal">ltrPar</mtext>
         </mtd>
         <mtd>
-          <mo stretchy="true">⦖</mo>
+          <mo stretchy="false">⦖</mo>
         </mtd>
       </mtr>
       <mtr>

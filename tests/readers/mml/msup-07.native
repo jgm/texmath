@@ -1,1 +1,1 @@
-[ESuper (EIdentifier "a") (ENumber "2"),ESymbol Rel "=",ESuper (EIdentifier "a") (EGrouped [EOver (ENumber "2") (EUnary "\\phantom" (EGrouped [EIdentifier "x"]))])]
+[EGrouped [ESuper (EIdentifier "a") (ENumber "2"),ESymbol Rel "=",ESuper (EIdentifier "a") (EOver (ENumber "2") (EUnary "\\phantom" (EIdentifier "x")))]]

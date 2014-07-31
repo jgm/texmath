@@ -1,1 +1,1 @@
-[EOver (EText TextNormal "BASE") (EText TextNormal "over script"),ESymbol Rel "=",EOver (EGrouped [EOver (EGrouped [EOver (EText TextNormal "BASE") (EText TextNormal "over script")]) (EUnary "\\phantom" (EGrouped [EText TextNormal "over"]))]) (EUnary "\\phantom" (EGrouped [EText TextNormal "over"]))]
+[EGrouped [EOver (EText TextNormal "BASE") (EText TextNormal "over script"),ESymbol Rel "=",EOver (EOver (EOver (EText TextNormal "BASE") (EText TextNormal "over script")) (EUnary "\\phantom" (EText TextNormal "over"))) (EUnary "\\phantom" (EText TextNormal "over"))]]

@@ -1,1 +1,1 @@
-[EOver (EText TextNormal "BASE") (EText TextNormal "x"),ESymbol Rel "=",EOver (EText TextNormal "BASE") (EGrouped [EUnary "\\phantom" (EGrouped [ENumber "1"]),EText TextNormal "x",EUnary "\\phantom" (EGrouped [ENumber "1"])])]
+[EGrouped [EOver (EText TextNormal "BASE") (EText TextNormal "x"),ESymbol Rel "=",EOver (EText TextNormal "BASE") (EGrouped [EUnary "\\phantom" (ENumber "1"),EText TextNormal "x",EUnary "\\phantom" (ENumber "1")])]]

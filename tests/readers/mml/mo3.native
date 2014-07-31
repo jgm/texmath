@@ -1,1 +1,1 @@
-[EGrouped [EStretchy (ESymbol Open "("),EGrouped [EIdentifier "a",ESymbol Bin "+",EIdentifier "b"],EStretchy (ESymbol Close ")")]]
+[EDelimited "(" ")" [Right (EGrouped [EIdentifier "a",ESymbol Bin "+",EIdentifier "b"])]]

@@ -1,1 +1,1 @@
-[ESub (EIdentifier "U") (EIdentifier "t"),ESymbol Rel "=",ESub (EGrouped [EIdentifier "U"]) (EGrouped [EIdentifier "t"]),EUnary "\\phantom" (EGrouped [EBinary "\\frac" (EIdentifier "test") (EIdentifier "failed")])]
+[EGrouped [ESub (EIdentifier "U") (EIdentifier "t"),ESymbol Rel "=",ESub (EIdentifier "U") (EIdentifier "t"),EUnary "\\phantom" (EBinary "\\frac" (EIdentifier "test") (EIdentifier "failed"))]]

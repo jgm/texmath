@@ -1,1 +1,1 @@
-[EDelimited "[" "|" [EGrouped [EArray [AlignDefault] [[[EText TextNormal "U"]],[[EText TextNormal "V"]]]]],ESymbol Rel "=",EDelimited "|" "]" [EGrouped [EArray [AlignDefault] [[[EText TextNormal "U"]],[[EText TextNormal "V"]]]]]]
+[EGrouped [EDelimited "[" "|" [Right (EArray [AlignDefault] [[[EText TextNormal "U"]],[[EText TextNormal "V"]]])],ESymbol Rel "=",EDelimited "|" "]" [Right (EArray [AlignDefault] [[[EText TextNormal "U"]],[[EText TextNormal "V"]]])]]]

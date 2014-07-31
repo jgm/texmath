@@ -1,1 +1,1 @@
-[EText TextNormal "- middle -",ESymbol Rel "=",EUnder (EGrouped [EUnder (EText TextNormal "- middle -") (EUnary "\\phantom" (EGrouped [EText TextNormal "fail"]))]) (EUnary "\\phantom" (EGrouped [EText TextNormal "fail"]))]
+[EGrouped [EText TextNormal "- middle -",ESymbol Rel "=",EUnder (EUnder (EText TextNormal "- middle -") (EUnary "\\phantom" (EText TextNormal "fail"))) (EUnary "\\phantom" (EText TextNormal "fail"))]]

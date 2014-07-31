@@ -4,34 +4,42 @@
     <mrow>
       <mo stretchy="true">(</mo>
       <mrow>
-        <mi>x</mi>
-        <mo>,</mo>
-        <mfrac>
-          <mi>y</mi>
-          <mi>z</mi>
-        </mfrac>
+        <mrow>
+          <mi>x</mi>
+          <mo>,</mo>
+          <mfrac>
+            <mi>y</mi>
+            <mi>z</mi>
+          </mfrac>
+        </mrow>
+        <mo stretchy="true">)</mo>
       </mrow>
-      <mo stretchy="true">)</mo>
       <mo>+</mo>
-      <mo stretchy="true">(</mo>
       <mrow>
-        <mi>x</mi>
-        <mo>,</mo>
-        <mfrac>
-          <mi>y</mi>
-          <mi>z</mi>
-        </mfrac>
-      </mrow>
-      <mo stretchy="true">)</mo>
-      <mo>+</mo>
-      <mo stretchy="true">(</mo>
-      <mrow>
-        <mi>x</mi>
-        <mo>,</mo>
-        <mfrac>
-          <mi>y</mi>
-          <mi>z</mi>
-        </mfrac>
+        <mo stretchy="true">(</mo>
+        <mrow>
+          <mrow>
+            <mi>x</mi>
+            <mo>,</mo>
+            <mfrac>
+              <mi>y</mi>
+              <mi>z</mi>
+            </mfrac>
+          </mrow>
+          <mo stretchy="true">)</mo>
+        </mrow>
+        <mo>+</mo>
+        <mrow>
+          <mo stretchy="true">(</mo>
+          <mrow>
+            <mi>x</mi>
+            <mo>,</mo>
+            <mfrac>
+              <mi>y</mi>
+              <mi>z</mi>
+            </mfrac>
+          </mrow>
+        </mrow>
       </mrow>
       <mo stretchy="true">)</mo>
     </mrow>

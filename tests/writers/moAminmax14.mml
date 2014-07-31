@@ -3,17 +3,21 @@
   <mrow>
     <mrow>
       <mo stretchy="true">(</mo>
-      <mfrac>
-        <mi>y</mi>
-        <mi>z</mi>
-      </mfrac>
-      <mo stretchy="true">)</mo>
+      <mrow>
+        <mfrac>
+          <mi>y</mi>
+          <mi>z</mi>
+        </mfrac>
+        <mo stretchy="true">)</mo>
+      </mrow>
       <mo>+</mo>
-      <mo stretchy="true">(</mo>
-      <mfrac>
-        <mi>y</mi>
-        <mi>z</mi>
-      </mfrac>
+      <mrow>
+        <mo stretchy="true">(</mo>
+        <mfrac>
+          <mi>y</mi>
+          <mi>z</mi>
+        </mfrac>
+      </mrow>
       <mo stretchy="true">)</mo>
     </mrow>
   </mrow>

@@ -4,63 +4,73 @@
     <mtable>
       <mtr>
         <mtd>
-          <mi>x</mi>
-          <mo>-</mo>
-          <mfrac>
-            <mi>a</mi>
-            <mi>b</mi>
-          </mfrac>
-          <mi>x</mi>
+          <mrow>
+            <mi>x</mi>
+            <mo>-</mo>
+            <mfrac>
+              <mi>a</mi>
+              <mi>b</mi>
+            </mfrac>
+            <mi>x</mi>
+          </mrow>
         </mtd>
       </mtr>
       <mtr>
         <mtd>
-          <mi>x</mi>
-          <mo>-</mo>
-          <mfrac>
-            <mn>1</mn>
-            <mi>b</mi>
-          </mfrac>
-          <mi>x</mi>
+          <mrow>
+            <mi>x</mi>
+            <mo>-</mo>
+            <mfrac>
+              <mn>1</mn>
+              <mi>b</mi>
+            </mfrac>
+            <mi>x</mi>
+          </mrow>
         </mtd>
       </mtr>
       <mtr>
         <mtd>
-          <mi>x</mi>
-          <mo>-</mo>
-          <mfrac>
-            <mn>1</mn>
-            <mn>2</mn>
-          </mfrac>
-          <mi>x</mi>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mi>x</mi>
-          <mo>-</mo>
-          <mfrac>
-            <msup>
+          <mrow>
+            <mi>x</mi>
+            <mo>-</mo>
+            <mfrac>
               <mn>1</mn>
               <mn>2</mn>
-            </msup>
-            <mi>z</mi>
-          </mfrac>
-          <mi>x</mi>
+            </mfrac>
+            <mi>x</mi>
+          </mrow>
         </mtd>
       </mtr>
       <mtr>
         <mtd>
-          <mi>x</mi>
-          <mo>-</mo>
-          <mfrac>
-            <mi>z</mi>
-            <msup>
-              <mn>1</mn>
-              <mn>2</mn>
-            </msup>
-          </mfrac>
-          <mi>x</mi>
+          <mrow>
+            <mi>x</mi>
+            <mo>-</mo>
+            <mfrac>
+              <msup>
+                <mn>1</mn>
+                <mn>2</mn>
+              </msup>
+              <mi>z</mi>
+            </mfrac>
+            <mi>x</mi>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mrow>
+            <mi>x</mi>
+            <mo>-</mo>
+            <mfrac>
+              <mi>z</mi>
+              <msup>
+                <mn>1</mn>
+                <mn>2</mn>
+              </msup>
+            </mfrac>
+            <mi>x</mi>
+          </mrow>
         </mtd>
       </mtr>
     </mtable>

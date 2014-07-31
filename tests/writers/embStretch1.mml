@@ -1,13 +1,15 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mo stretchy="true">(</mo>
-    <mfrac>
-      <mn>2</mn>
-      <mi>x</mi>
-    </mfrac>
-    <msup stretchy="true">
-      <mo stretchy="false">)</mo>
+    <msup>
+      <mrow>
+        <mo stretchy="true">(</mo>
+        <mfrac>
+          <mn>2</mn>
+          <mi>x</mi>
+        </mfrac>
+        <mo stretchy="true">)</mo>
+      </mrow>
       <mo>-</mo>
     </msup>
   </mrow>

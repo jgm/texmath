@@ -1,1 +1,1 @@
-[EDelimited "(" ")" [ESub (EIdentifier "a") (ENumber "1"),ESymbol Pun ",",ESub (EIdentifier "a") (ENumber "2"),ESymbol Pun ",",ESub (EIdentifier "a") (ENumber "3")]]
+[EDelimited "(" ")" [Right (EGrouped [ESub (EIdentifier "a") (ENumber "1"),ESymbol Pun ",",ESub (EIdentifier "a") (ENumber "2"),ESymbol Pun ",",ESub (EIdentifier "a") (ENumber "3")])]]

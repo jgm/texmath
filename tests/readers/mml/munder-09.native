@@ -1,1 +1,1 @@
-[EOver (EGrouped [EUnder (EText TextNormal "- middle -") (EText TextNormal "bottom")]) (EUnary "\\phantom" (EGrouped [EText TextNormal "fail"])),ESymbol Rel "=",EUnder (EGrouped [EOver (EText TextNormal "- middle -") (EUnary "\\phantom" (EGrouped [EText TextNormal "fail"]))]) (EText TextNormal "bottom")]
+[EGrouped [EOver (EUnder (EText TextNormal "- middle -") (EText TextNormal "bottom")) (EUnary "\\phantom" (EText TextNormal "fail")),ESymbol Rel "=",EUnder (EOver (EText TextNormal "- middle -") (EUnary "\\phantom" (EText TextNormal "fail"))) (EText TextNormal "bottom")]]

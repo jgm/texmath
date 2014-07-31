@@ -1,1 +1,1 @@
-[EText TextNormal "Inline up arrows, display style, no line\160",EGrouped [EGrouped [EStretchy (ESymbol Op "\8593"),EGrouped [EGrouped [EBinary "\\frac" (EGrouped [EIdentifier "sin",ESymbol Ord "\8289",EIdentifier "\952"]) (EIdentifier "M")]],EStretchy (ESymbol Op "\8593")]],EText TextNormal "\160the end."]
+[EGrouped [EText TextNormal "Inline up arrows, display style, no line\160",EDelimited "" "" [Left "\8593",Right (EBinary "\\frac" (EGrouped [EIdentifier "sin",ESymbol Ord "\8289",EIdentifier "\952"]) (EIdentifier "M")),Left "\8593"],EText TextNormal "\160the end."]]

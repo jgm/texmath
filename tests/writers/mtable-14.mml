@@ -4,15 +4,17 @@
     <mtable>
       <mtr>
         <mtd>
-          <mphantom>
-            <mtext mathvariant="normal">F</mtext>
-          </mphantom>
-          <mspace width="0.0em" />
-          <mtext mathvariant="normal">HT</mtext>
-          <mspace width="0.0em" />
-          <mphantom>
-            <mtext mathvariant="normal">F</mtext>
-          </mphantom>
+          <mrow>
+            <mphantom>
+              <mtext mathvariant="normal">F</mtext>
+            </mphantom>
+            <mspace width="0.0em" />
+            <mtext mathvariant="normal">HT</mtext>
+            <mspace width="0.0em" />
+            <mphantom>
+              <mtext mathvariant="normal">F</mtext>
+            </mphantom>
+          </mrow>
         </mtd>
         <mtd>
           <mo>=</mo>

@@ -1,1 +1,1 @@
-[EUnderover (EText TextNormal "BASE") (EText TextNormal "under script") (EText TextNormal "over script"),ESymbol Rel "=",EUnder (EGrouped [EOver (EText TextNormal "BASE") (EText TextNormal "over script")]) (EText TextNormal "under script")]
+[EGrouped [EUnderover (EText TextNormal "BASE") (EText TextNormal "under script") (EText TextNormal "over script"),ESymbol Rel "=",EUnder (EOver (EText TextNormal "BASE") (EText TextNormal "over script")) (EText TextNormal "under script")]]

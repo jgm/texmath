@@ -10,141 +10,147 @@
       </m:rPr>
       <m:t>The same expression </m:t>
     </m:r>
-    <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
-      <m:t>[</m:t>
-    </m:r>
-    <m:f>
-      <m:fPr>
-        <m:type m:val="bar" />
-      </m:fPr>
-      <m:num>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>∥</m:t>
-        </m:r>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="[" />
+        <m:endChr m:val="]" />
+        <m:grow />
+      </m:dPr>
+      <m:e>
         <m:f>
           <m:fPr>
             <m:type m:val="bar" />
           </m:fPr>
           <m:num>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>sin</m:t>
-            </m:r>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>&#8289;</m:t>
-            </m:r>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>θ</m:t>
-            </m:r>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>+</m:t>
-            </m:r>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>1</m:t>
-            </m:r>
-          </m:num>
-          <m:den>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>11</m:t>
-            </m:r>
-          </m:den>
-        </m:f>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>∥</m:t>
-        </m:r>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>-</m:t>
-        </m:r>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>x</m:t>
-        </m:r>
-      </m:num>
-      <m:den>
-        <m:f>
-          <m:fPr>
-            <m:type m:val="bar" />
-          </m:fPr>
-          <m:num>
-            <m:sSup>
+            <m:d>
+              <m:dPr>
+                <m:begChr m:val="" />
+                <m:endChr m:val="" />
+                <m:grow />
+              </m:dPr>
               <m:e>
                 <m:r>
                   <m:rPr>
                     <m:sty m:val="p" />
                   </m:rPr>
-                  <m:t>x</m:t>
+                  <m:t>∥</m:t>
                 </m:r>
-              </m:e>
-              <m:sup>
+                <m:f>
+                  <m:fPr>
+                    <m:type m:val="bar" />
+                  </m:fPr>
+                  <m:num>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>sin</m:t>
+                    </m:r>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>&#8289;</m:t>
+                    </m:r>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>θ</m:t>
+                    </m:r>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>+</m:t>
+                    </m:r>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>1</m:t>
+                    </m:r>
+                  </m:num>
+                  <m:den>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>11</m:t>
+                    </m:r>
+                  </m:den>
+                </m:f>
                 <m:r>
                   <m:rPr>
                     <m:sty m:val="p" />
                   </m:rPr>
-                  <m:t>2</m:t>
+                  <m:t>∥</m:t>
                 </m:r>
-              </m:sup>
-            </m:sSup>
+              </m:e>
+            </m:d>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>-</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>x</m:t>
+            </m:r>
           </m:num>
           <m:den>
-            <m:sSub>
-              <m:e>
-                <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
-                  <m:t>a</m:t>
-                </m:r>
-              </m:e>
-              <m:sub>
-                <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
-                  <m:t>1</m:t>
-                </m:r>
-              </m:sub>
-            </m:sSub>
+            <m:f>
+              <m:fPr>
+                <m:type m:val="bar" />
+              </m:fPr>
+              <m:num>
+                <m:sSup>
+                  <m:e>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>x</m:t>
+                    </m:r>
+                  </m:e>
+                  <m:sup>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>2</m:t>
+                    </m:r>
+                  </m:sup>
+                </m:sSup>
+              </m:num>
+              <m:den>
+                <m:sSub>
+                  <m:e>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>a</m:t>
+                    </m:r>
+                  </m:e>
+                  <m:sub>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>1</m:t>
+                    </m:r>
+                  </m:sub>
+                </m:sSub>
+              </m:den>
+            </m:f>
           </m:den>
         </m:f>
-      </m:den>
-    </m:f>
-    <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
-      <m:t>]</m:t>
-    </m:r>
+      </m:e>
+    </m:d>
     <m:r>
       <m:rPr>
         <m:sty m:val="p" />

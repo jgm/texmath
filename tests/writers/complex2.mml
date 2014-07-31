@@ -546,64 +546,68 @@
         <mtd>
           <mrow>
             <mo stretchy="true">(</mo>
-            <mfrac>
-              <mrow>
-                <msubsup>
-                  <mi>x</mi>
-                  <mn>1</mn>
-                  <mrow />
-                </msubsup>
-                <mo>-</mo>
-                <msubsup>
-                  <mi>x</mi>
-                  <mn>2</mn>
-                  <mrow />
-                </msubsup>
-              </mrow>
-              <mrow>
-                <msubsup>
-                  <mi>x</mi>
-                  <mn>3</mn>
-                  <mrow />
-                </msubsup>
-                <mo>-</mo>
-                <msubsup>
-                  <mi>x</mi>
-                  <mn>4</mn>
-                  <mrow />
-                </msubsup>
-              </mrow>
-            </mfrac>
-            <mo stretchy="true">)</mo>
-            <mo stretchy="true">(</mo>
-            <mfrac>
-              <mrow>
-                <msubsup>
-                  <mi>x</mi>
-                  <mn>1</mn>
-                  <mrow />
-                </msubsup>
-                <mo>-</mo>
-                <msubsup>
-                  <mi>x</mi>
-                  <mn>4</mn>
-                  <mrow />
-                </msubsup>
-              </mrow>
-              <mrow>
-                <msubsup>
-                  <mi>x</mi>
-                  <mn>2</mn>
-                  <mrow />
-                </msubsup>
-                <mo>-</mo>
-                <msubsup>
-                  <mi>x</mi>
-                  <mn>3</mn>
-                  <mrow />
-                </msubsup>
-              </mrow>
-            </mfrac>
+            <mrow>
+              <mfrac>
+                <mrow>
+                  <msubsup>
+                    <mi>x</mi>
+                    <mn>1</mn>
+                    <mrow />
+                  </msubsup>
+                  <mo>-</mo>
+                  <msubsup>
+                    <mi>x</mi>
+                    <mn>2</mn>
+                    <mrow />
+                  </msubsup>
+                </mrow>
+                <mrow>
+                  <msubsup>
+                    <mi>x</mi>
+                    <mn>3</mn>
+                    <mrow />
+                  </msubsup>
+                  <mo>-</mo>
+                  <msubsup>
+                    <mi>x</mi>
+                    <mn>4</mn>
+                    <mrow />
+                  </msubsup>
+                </mrow>
+              </mfrac>
+              <mo stretchy="true">)</mo>
+            </mrow>
+            <mrow>
+              <mo stretchy="true">(</mo>
+              <mfrac>
+                <mrow>
+                  <msubsup>
+                    <mi>x</mi>
+                    <mn>1</mn>
+                    <mrow />
+                  </msubsup>
+                  <mo>-</mo>
+                  <msubsup>
+                    <mi>x</mi>
+                    <mn>4</mn>
+                    <mrow />
+                  </msubsup>
+                </mrow>
+                <mrow>
+                  <msubsup>
+                    <mi>x</mi>
+                    <mn>2</mn>
+                    <mrow />
+                  </msubsup>
+                  <mo>-</mo>
+                  <msubsup>
+                    <mi>x</mi>
+                    <mn>3</mn>
+                    <mrow />
+                  </msubsup>
+                </mrow>
+              </mfrac>
+            </mrow>
             <mo stretchy="true">)</mo>
           </mrow>
         </mtd>

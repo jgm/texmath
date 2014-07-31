@@ -1,28 +1,30 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mfrac>
-      <mi>x</mi>
+    <mrow>
       <mfrac>
-        <mi>y</mi>
-        <mn>2</mn>
+        <mi>x</mi>
+        <mfrac>
+          <mi>y</mi>
+          <mn>2</mn>
+        </mfrac>
       </mfrac>
-    </mfrac>
-    <mo>=</mo>
-    <mfrac>
-      <mi>x</mi>
+      <mo>=</mo>
       <mfrac>
-        <mi>y</mi>
-        <mn>2</mn>
+        <mi>x</mi>
+        <mfrac>
+          <mi>y</mi>
+          <mn>2</mn>
+        </mfrac>
       </mfrac>
-    </mfrac>
-    <mo>=</mo>
-    <mfrac>
-      <mi>x</mi>
+      <mo>=</mo>
       <mfrac>
-        <mi>y</mi>
-        <mn>2</mn>
+        <mi>x</mi>
+        <mfrac>
+          <mi>y</mi>
+          <mn>2</mn>
+        </mfrac>
       </mfrac>
-    </mfrac>
+    </mrow>
   </mrow>
 </math>

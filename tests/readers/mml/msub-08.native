@@ -1,1 +1,1 @@
-[ESub (EIdentifier "A") (EGrouped [ESub (EIdentifier "B") (EIdentifier "C")]),ESymbol Rel "=",ESub (EIdentifier "A") (EGrouped [ESub (EIdentifier "B") (EGrouped [EUnder (EIdentifier "C") (EUnary "\\phantom" (EGrouped [EIdentifier "D"]))])])]
+[EGrouped [ESub (EIdentifier "A") (ESub (EIdentifier "B") (EIdentifier "C")),ESymbol Rel "=",ESub (EIdentifier "A") (ESub (EIdentifier "B") (EUnder (EIdentifier "C") (EUnary "\\phantom" (EIdentifier "D"))))]]

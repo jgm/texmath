@@ -1,18 +1,20 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mtext mathvariant="normal">- middle -</mtext>
-    <mo>=</mo>
-    <munder>
+    <mrow>
+      <mtext mathvariant="normal">- middle -</mtext>
+      <mo>=</mo>
       <munder>
-        <mtext mathvariant="normal">- middle -</mtext>
+        <munder>
+          <mtext mathvariant="normal">- middle -</mtext>
+          <mphantom>
+            <mtext mathvariant="normal">fail</mtext>
+          </mphantom>
+        </munder>
         <mphantom>
           <mtext mathvariant="normal">fail</mtext>
         </mphantom>
       </munder>
-      <mphantom>
-        <mtext mathvariant="normal">fail</mtext>
-      </mphantom>
-    </munder>
+    </mrow>
   </mrow>
 </math>

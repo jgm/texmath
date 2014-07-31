@@ -56,7 +56,10 @@
               </m:r>
             </m:e>
           </m:acc>
-          <m:limUpp>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="^" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -65,16 +68,11 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>^</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
-          <m:limUpp>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="_" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -83,15 +81,7 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>_</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
+          </m:acc>
           <m:acc>
             <m:accPr>
               <m:chr m:val="`" />
@@ -105,7 +95,10 @@
               </m:r>
             </m:e>
           </m:acc>
-          <m:limUpp>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="~" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -114,15 +107,7 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>~</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
+          </m:acc>
           <m:acc>
             <m:accPr>
               <m:chr m:val="¨" />
@@ -136,7 +121,10 @@
               </m:r>
             </m:e>
           </m:acc>
-          <m:limUpp>
+          <m:bar>
+            <m:barPr>
+              <m:pos m:val="top" />
+            </m:barPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -145,15 +133,7 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>¯</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
+          </m:bar>
           <m:acc>
             <m:accPr>
               <m:chr m:val="´" />
@@ -180,7 +160,10 @@
               </m:r>
             </m:e>
           </m:acc>
-          <m:limUpp>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="ˆ" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -189,16 +172,11 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>ˆ</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
-          <m:limUpp>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="ˇ" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -207,15 +185,7 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>ˇ</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
+          </m:acc>
           <m:acc>
             <m:accPr>
               <m:chr m:val="˘" />
@@ -255,7 +225,10 @@
               </m:r>
             </m:e>
           </m:acc>
-          <m:limUpp>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="˜" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -264,15 +237,7 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>˜</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
+          </m:acc>
           <m:acc>
             <m:accPr>
               <m:chr m:val="˝" />
@@ -286,7 +251,10 @@
               </m:r>
             </m:e>
           </m:acc>
-          <m:limUpp>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="̂" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -295,15 +263,7 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>̂</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
+          </m:acc>
           <m:acc>
             <m:accPr>
               <m:chr m:val="̑" />
@@ -317,7 +277,10 @@
               </m:r>
             </m:e>
           </m:acc>
-          <m:limUpp>
+          <m:bar>
+            <m:barPr>
+              <m:pos m:val="top" />
+            </m:barPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -326,15 +289,7 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>‾</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
+          </m:bar>
           <m:acc>
             <m:accPr>
               <m:chr m:val="⃛" />
@@ -361,7 +316,10 @@
               </m:r>
             </m:e>
           </m:acc>
-          <m:limUpp>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="←" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -370,16 +328,11 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>←</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
-          <m:limUpp>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="→" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -388,16 +341,11 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>→</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
-          <m:limUpp>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="↔" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -406,16 +354,11 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>↔</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
-          <m:limUpp>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="↼" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -424,16 +367,11 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>↼</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
-          <m:limUpp>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="↽" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -442,16 +380,11 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>↽</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
-          <m:limUpp>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⇀" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -460,16 +393,11 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>⇀</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
-          <m:limUpp>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⇁" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -478,16 +406,11 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>⇁</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
-          <m:limUpp>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⎴" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -496,16 +419,11 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>⎴</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
-          <m:limUpp>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⎵" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -514,16 +432,11 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>⎵</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
-          <m:limUpp>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⏜" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -532,16 +445,11 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>⏜</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
-          <m:limUpp>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⏝" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -550,16 +458,11 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>⏝</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
-          <m:limUpp>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⏞" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -568,16 +471,11 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>⏞</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
-          <m:limUpp>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⏟" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -586,16 +484,11 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>⏟</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
-          <m:limUpp>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⥎" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -604,16 +497,11 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>⥎</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
-          <m:limUpp>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⥐" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -622,15 +510,7 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>⥐</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
+          </m:acc>
         </m:e>
       </m:mr>
       <m:mr>
@@ -933,7 +813,10 @@
               </m:r>
             </m:lim>
           </m:limUpp>
-          <m:limUpp>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="̂" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -942,15 +825,7 @@
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>̂</m:t>
-              </m:r>
-            </m:lim>
-          </m:limUpp>
+          </m:acc>
           <m:acc>
             <m:accPr>
               <m:chr m:val="̑" />

@@ -1,1 +1,1 @@
-[EGrouped [EGrouped [EStretchy (ESymbol Open "("),EBinary "\\frac" (EIdentifier "y") (EIdentifier "z"),EStretchy (ESymbol Close ")"),ESymbol Bin "+",EStretchy (ESymbol Open "("),EBinary "\\frac" (EIdentifier "y") (EIdentifier "z"),EStretchy (ESymbol Close ")")]]]
+[EDelimited "(" ")" [Right (EDelimited "" ")" [Right (EBinary "\\frac" (EIdentifier "y") (EIdentifier "z"))]),Right (ESymbol Bin "+"),Right (EDelimited "(" "" [Right (EBinary "\\frac" (EIdentifier "y") (EIdentifier "z"))])]]

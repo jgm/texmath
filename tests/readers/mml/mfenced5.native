@@ -1,1 +1,1 @@
-[EDelimited "[" ")" [ENumber "0",ESymbol Pun ",",ENumber "1"]]
+[EDelimited "[" ")" [Right (EGrouped [ENumber "0",ESymbol Pun ",",ENumber "1"])]]

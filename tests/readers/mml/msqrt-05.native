@@ -1,1 +1,1 @@
-[EUnary "\\sqrt" (EGrouped [EArray [AlignDefault] [[[EUnary "\\phantom" (EGrouped [EIdentifier "ABCD"])]],[[EUnary "\\phantom" (EGrouped [EIdentifier "ABCD"])]],[[EUnary "\\phantom" (EGrouped [EIdentifier "ABCD"])]]]])]
+[EUnary "\\sqrt" (EArray [AlignDefault] [[[EUnary "\\phantom" (EIdentifier "ABCD")]],[[EUnary "\\phantom" (EIdentifier "ABCD")]],[[EUnary "\\phantom" (EIdentifier "ABCD")]]])]

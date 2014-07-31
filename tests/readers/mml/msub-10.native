@@ -1,1 +1,1 @@
-[ESub (EIdentifier "S") (ENumber "5"),ESymbol Rel "=",EUnder (EGrouped [ESub (EIdentifier "S") (ENumber "5")]) (EUnary "\\phantom" (EGrouped [EIdentifier "t"]))]
+[EGrouped [ESub (EIdentifier "S") (ENumber "5"),ESymbol Rel "=",EUnder (ESub (EIdentifier "S") (ENumber "5")) (EUnary "\\phantom" (EIdentifier "t"))]]

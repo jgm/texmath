@@ -4,29 +4,33 @@
     <mtable>
       <mtr>
         <mtd>
-          <mphantom>
-            <mtext mathvariant="normal">fail</mtext>
-          </mphantom>
-          <munder>
-            <mtext mathvariant="normal">HT</mtext>
+          <mrow>
             <mphantom>
               <mtext mathvariant="normal">fail</mtext>
             </mphantom>
-          </munder>
+            <munder>
+              <mtext mathvariant="normal">HT</mtext>
+              <mphantom>
+                <mtext mathvariant="normal">fail</mtext>
+              </mphantom>
+            </munder>
+          </mrow>
         </mtd>
         <mtd>
           <mo>=</mo>
         </mtd>
         <mtd>
-          <mover>
-            <mtext mathvariant="normal">TH</mtext>
+          <mrow>
+            <mover>
+              <mtext mathvariant="normal">TH</mtext>
+              <mphantom>
+                <mtext mathvariant="normal">fail</mtext>
+              </mphantom>
+            </mover>
             <mphantom>
               <mtext mathvariant="normal">fail</mtext>
             </mphantom>
-          </mover>
-          <mphantom>
-            <mtext mathvariant="normal">fail</mtext>
-          </mphantom>
+          </mrow>
         </mtd>
       </mtr>
     </mtable>

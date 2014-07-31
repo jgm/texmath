@@ -1,16 +1,18 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <msqrt>
+    <mrow>
       <msqrt>
         <msqrt>
           <msqrt>
-            <mn>65536</mn>
+            <msqrt>
+              <mn>65536</mn>
+            </msqrt>
           </msqrt>
         </msqrt>
       </msqrt>
-    </msqrt>
-    <mo>=</mo>
-    <mn>2</mn>
+      <mo>=</mo>
+      <mn>2</mn>
+    </mrow>
   </mrow>
 </math>

@@ -151,7 +151,10 @@
               </m:r>
             </m:lim>
           </m:limLow>
-          <m:limLow>
+          <m:bar>
+            <m:barPr>
+              <m:pos m:val="bot" />
+            </m:barPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -160,15 +163,7 @@
                 <m:t>H</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>¯</m:t>
-              </m:r>
-            </m:lim>
-          </m:limLow>
+          </m:bar>
           <m:limLow>
             <m:e>
               <m:r>
@@ -367,7 +362,10 @@
               </m:r>
             </m:lim>
           </m:limLow>
-          <m:limLow>
+          <m:bar>
+            <m:barPr>
+              <m:pos m:val="bot" />
+            </m:barPr>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -376,15 +374,7 @@
                 <m:t>H</m:t>
               </m:r>
             </m:e>
-            <m:lim>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>‾</m:t>
-              </m:r>
-            </m:lim>
-          </m:limLow>
+          </m:bar>
           <m:limLow>
             <m:e>
               <m:r>

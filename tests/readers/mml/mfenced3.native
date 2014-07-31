@@ -1,1 +1,1 @@
-[EDelimited "(" ")" [EIdentifier "x",ESymbol Pun ",",EIdentifier "y"]]
+[EDelimited "(" ")" [Right (EGrouped [EIdentifier "x",ESymbol Pun ",",EIdentifier "y"])]]

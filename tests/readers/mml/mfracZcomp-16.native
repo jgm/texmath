@@ -1,1 +1,1 @@
-[EText TextNormal "Inline floor, auto, normal line\160",EGrouped [EGrouped [EStretchy (ESymbol Open "\8970"),EBinary "\\frac" (EGrouped [EIdentifier "sin",ESymbol Ord "\8289",EIdentifier "\952"]) (EIdentifier "M"),EStretchy (ESymbol Close "\8971")]],EText TextNormal "\160the end."]
+[EGrouped [EText TextNormal "Inline floor, auto, normal line\160",EDelimited "\8970" "\8971" [Right (EBinary "\\frac" (EGrouped [EIdentifier "sin",ESymbol Ord "\8289",EIdentifier "\952"]) (EIdentifier "M"))],EText TextNormal "\160the end."]]

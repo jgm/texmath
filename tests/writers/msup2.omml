@@ -6,36 +6,33 @@
   <m:oMath>
     <m:sSup>
       <m:e>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>(</m:t>
-        </m:r>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>x</m:t>
-        </m:r>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>+</m:t>
-        </m:r>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>y</m:t>
-        </m:r>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>)</m:t>
-        </m:r>
+        <m:d>
+          <m:dPr>
+            <m:begChr m:val="(" />
+            <m:endChr m:val=")" />
+            <m:grow />
+          </m:dPr>
+          <m:e>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>x</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>+</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>y</m:t>
+            </m:r>
+          </m:e>
+        </m:d>
       </m:e>
       <m:sup>
         <m:r>

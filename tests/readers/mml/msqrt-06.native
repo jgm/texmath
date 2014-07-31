@@ -1,1 +1,1 @@
-[EUnary "\\sqrt" (EGrouped [EUnary "\\sqrt" (EGrouped [EUnary "\\sqrt" (EGrouped [EUnary "\\sqrt" (EGrouped [ENumber "65536"])])])]),ESymbol Rel "=",ENumber "2"]
+[EGrouped [EUnary "\\sqrt" (EUnary "\\sqrt" (EUnary "\\sqrt" (EUnary "\\sqrt" (ENumber "65536")))),ESymbol Rel "=",ENumber "2"]]
