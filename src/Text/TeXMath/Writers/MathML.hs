@@ -1,3 +1,4 @@
+{-# LANGUAGE ViewPatterns #-}
 {-
 Copyright (C) 2009 John MacFarlane <jgm@berkeley.edu>
 
@@ -109,8 +110,15 @@ showBinary tt c x y =
 spaceWidth :: Double -> Element
 spaceWidth w = withAttribute "width" (show w ++ "em") $ unode "mspace" ()
 
-makeStretchy :: Element -> Element
-makeStretchy = withAttribute "stretchy" "true"
+makeStretchy :: FormType -> Element -> Element
+makeStretchy (fromForm -> t)  = withAttribute "stretchy" "true"
+                                . withAttribute "form" t
+
+fromForm :: FormType -> String
+fromForm FInfix   = "infix"
+fromForm FPostfix = "postfix"
+fromForm FPrefix  = "prefix"
+
 
 makeScaled :: String -> Element -> Element
 makeScaled s = withAttribute "minsize" s . withAttribute "maxsize" s
@@ -156,6 +164,9 @@ handleDownup DisplayInline (EDownup x y z) = ESubsup x y z
 handleDownup DisplayBlock  (EDownup x y z) = EUnderover x y z
 handleDownup _             x               = x
 
+makeFence :: FormType -> Element -> Element
+makeFence (fromForm -> t) = withAttribute "stretchy" "false" . withAttribute "form" t
+
 showExp :: TextType -> Exp -> Element
 showExp tt e =
  case e of
@@ -163,14 +174,14 @@ showExp tt e =
    EGrouped [x]     -> showExp tt x
    EGrouped xs      -> mrow $ map (showExp tt) xs
    EDelimited start end xs -> mrow $
-                       [ makeStretchy (unode "mo" start) | not (null start) ] ++
-                       map (either (makeStretchy . unode "mo") (showExp tt)) xs ++
-                       [ makeStretchy (unode "mo" end) | not (null end) ]
+                       [ makeStretchy FPrefix (unode "mo" start) | not (null start) ] ++
+                       map (either (makeStretchy FInfix . unode "mo") (showExp tt)) xs ++
+                       [ makeStretchy FPostfix (unode "mo" end) | not (null end) ]
    EIdentifier x    -> unode "mi" $ toUnicode tt x
    EMathOperator x  -> unode "mi" x
    ESymbol Accent x -> accent x
-   ESymbol Open x   -> withAttribute "stretchy" "false" $ unode "mo" x
-   ESymbol Close x  -> withAttribute "stretchy" "false" $ unode "mo" x
+   ESymbol Open x   -> makeFence FPrefix $ unode "mo" x
+   ESymbol Close x  -> makeFence FPostfix $ unode "mo" x
    ESymbol _ x      -> unode "mo" x
    ESpace x         -> spaceWidth x
    EBinary c x y    -> showBinary tt c x y
