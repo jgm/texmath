@@ -22,8 +22,7 @@ HTML entity definitions as provided by W3C.
 
 The mapping matches the version from 10th April 2014.
 
-The original source can be downloaded from <http://www.w3.org/TR/2014/REC-xml-entity-names-20140410/ here.>
-
+The original source can be downloaded from <http://www.w3.org/TR/2014/REC-xml-entity-names-20140410/>.
 
 -}
 
@@ -31,7 +30,7 @@ module Text.TeXMath.Readers.MathML.EntityMap (getUnicode) where
 
 import qualified Data.Map as M
 
--- | Translates MathML entity reference to the corresponding Unicode string
+-- | Translates MathML entity reference to the corresponding Unicode string.
 getUnicode :: String -> Maybe String
 getUnicode = flip M.lookup entityList
 

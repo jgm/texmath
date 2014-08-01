@@ -16,10 +16,12 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 -}
-{-
+{- |
+
 Parses MathML in conformance with the MathML3 specification.
 
-Unimplemented features
+Unimplemented features:
+
   - menclose
   - mpadded
   - mmultiscripts (etc)
@@ -27,7 +29,8 @@ Unimplemented features
   - maligngroup
   - Elementary Math
 
-To Improve
+To Improve:
+
   - Handling of menclose
   - Handling of mstyle
 -}
@@ -51,7 +54,7 @@ import Control.Monad.Reader (ReaderT, runReaderT, asks, local)
 import Data.Generics (everywhere, mkT)
 import Data.Either (rights)
 
--- | Parse a MathML expression to a list of 'Exp'
+-- | Parse a MathML expression to a list of 'Exp'.
 readMathML :: String -> Either String [Exp]
 readMathML inp = map fixTree <$> (runExcept (flip runReaderT def (i >>= parseMathML)))
   where

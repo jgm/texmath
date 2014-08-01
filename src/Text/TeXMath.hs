@@ -29,9 +29,9 @@ A typical use is to combine together a reader and writer.
 > texMathToMathML :: DisplayType -> String -> Either String Element
 > texMathToMathML dt s = writeMathML dt <$> readTeXMath s
 
-It is also possible to manipulate the AST using 'Data.Generics'. Say
-for example you wanted to replace all occurences of the identifier
-x in your expression then you do could do so with the following
+It is also possible to manipulate the AST using 'Data.Generics'. For
+example, if you wanted to replace all occurences of the identifier
+x in your expression, you do could do so with the following
 script.
 
 > import Control.Applicative ((<$>))
