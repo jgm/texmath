@@ -26,15 +26,15 @@ Description:         The texmath library provides functions to read and
                      formula from @stdin@ and writes MathML to @stdout@.
                      With flags all the functionality exposed by
                      'Text.TeXMath' can be accessed through this executable.
-                     (Use the `--help` flag) for a description of all
+                     (Use the @--help@ flag for a description of all
                      functionality)
                      .
                      The @texmath@ executable can also be used as a CGI
-                     script, when run in a CGI context with no arguments.
-                     It will expect query parameters for `from`, `to`,
-                     `input`, and optionally `inline`, and return a JSON
-                     object with either `error` and a message or
-                     `success` and the converted result.
+                     script, when renamed as @texmath-cgi@.
+                     It will expect query parameters for @from@, @to@,
+                     @input@, and optionally @inline@, and return a JSON
+                     object with either @error@ and a message or
+                     @success@ and the converted result.
 
 Category:            Text
 Stability:           Experimental
