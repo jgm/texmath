@@ -370,7 +370,7 @@ command :: TP String
 command = try $ char '\\' >> liftM ('\\':) (identifier <|> lexeme (count 1 anyChar))
 
 unaryOps :: [String]
-unaryOps = ["\\sqrt", "\\surd"]
+unaryOps = ["\\sqrt", "\\surd", "\\phantom"]
 
 -- Note: cal and scr are treated the same way, as unicode is lacking such two different sets for those.
 styleOps :: M.Map String ([Exp] -> Exp)
