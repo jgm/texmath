@@ -22,6 +22,7 @@ module Text.TeXMath.Writers.TeXMath (writeTeXMath, writeTeXMathWith, addLaTeXEnv
 
 import Text.TeXMath.Types
 import Text.TeXMath.Unicode.ToTeXMath (getTeXMath)
+import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import qualified Text.TeXMath.Shared as S
 import Data.Maybe (fromMaybe)
 import Data.Generics (everywhere, mkT)
@@ -185,14 +186,14 @@ writeExp (EScaled size e)
   | otherwise = writeExp e
 writeExp (EText ttype s) = do
   txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
-  toks <- getTeXMathM s
+  toks <- getTeXMathM $ fromUnicode ttype s
   if null toks
      then return ()
      else tell [ControlSeq txtcmd, Grouped toks]
 writeExp (EStyled ttype es) = do
   txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
   tell [ControlSeq txtcmd]
-  tellGroup (mapM_ writeExp es)
+  tellGroup (mapM_ writeExp $ everywhere (mkT (fromUnicode ttype)) es)
 writeExp (EArray [AlignRight, AlignLeft] rows) =
   table "aligned" [] [AlignRight, AlignLeft] rows
 writeExp (EArray aligns rows)
