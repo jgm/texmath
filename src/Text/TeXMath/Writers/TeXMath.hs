@@ -96,18 +96,22 @@ writeExp (EDelimited open close es) =  do
   mapM_ (either (writeDelim DMiddle) writeExp) es
   writeDelim DRight close
 writeExp (EIdentifier s) = do
-  math <- getTeXMathM s
-  case math of
-       [Token c]       -> tell [Token c] -- don't brace single token identifiers
-       [Literal [c]]   -> tell [Literal [c]]
-       [ControlSeq cs] -> tell [ControlSeq cs]
-       _               -> writeExp (EMathOperator s)  -- note that in mathml you
-                                                      -- use <mi>sin</mi> for sin
+  -- check for recognized operators; mathml uses <mi>sin</mi> for sin, etc.
+  case S.getOperator (EMathOperator s) of
+       Just op   -> tell [op]
+       Nothing   -> do
+         math <- getTeXMathM s
+         case math of
+              []      -> return ()
+              [t]     -> tell [t]
+              ts      -> tell [Grouped ts]
 writeExp o@(EMathOperator s) = do
   math <- getTeXMathM s
-  case getOperator o of
-       Just op   -> tell [op]
+  case S.getOperator o of
+       Just op  -> tell [op]
        Nothing  -> tell [ControlSeq "\\operatorname", Grouped math]
+writeExp (ESymbol Ord [c])  -- do not render "invisible operators"
+  | c `elem` ['\x2061'..'\x2064'] = return () -- see 3.2.5.5 of mathml spec
 writeExp (ESymbol t s) = do
   when (t == Bin || t == Rel) $ tell [Space]
   tell =<< getTeXMathM s
