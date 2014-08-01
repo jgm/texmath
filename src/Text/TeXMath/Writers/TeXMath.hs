@@ -312,46 +312,6 @@ fixTree (EGrouped -> es) =
         removeGroup e = [e] in
     removeGroup $ everywhere (mkT reorderDiacritical) es
 
--- Operator Table
-
-getOperator :: Exp -> Maybe TeX
-getOperator op = fmap ControlSeq $ lookup op operators
-
-operators :: [(Exp, String)]
-operators =
-           [ (EMathOperator "arccos", "\\arccos")
-           , (EMathOperator "arcsin", "\\arcsin")
-           , (EMathOperator "arctan", "\\arctan")
-           , (EMathOperator "arg", "\\arg")
-           , (EMathOperator "cos", "\\cos")
-           , (EMathOperator "cosh", "\\cosh")
-           , (EMathOperator "cot", "\\cot")
-           , (EMathOperator "coth", "\\coth")
-           , (EMathOperator "csc", "\\csc")
-           , (EMathOperator "deg", "\\deg")
-           , (EMathOperator "det", "\\det")
-           , (EMathOperator "dim", "\\dim")
-           , (EMathOperator "exp", "\\exp")
-           , (EMathOperator "gcd", "\\gcd")
-           , (EMathOperator "hom", "\\hom")
-           , (EMathOperator "inf", "\\inf")
-           , (EMathOperator "ker", "\\ker")
-           , (EMathOperator "lg", "\\lg")
-           , (EMathOperator "lim", "\\lim")
-           , (EMathOperator "liminf", "\\liminf")
-           , (EMathOperator "limsup", "\\limsup")
-           , (EMathOperator "ln", "\\ln")
-           , (EMathOperator "log", "\\log")
-           , (EMathOperator "max", "\\max")
-           , (EMathOperator "min", "\\min")
-           , (EMathOperator "Pr", "\\Pr")
-           , (EMathOperator "sec", "\\sec")
-           , (EMathOperator "sin", "\\sin")
-           , (EMathOperator "sinh", "\\sinh")
-           , (EMathOperator "sup", "\\sup")
-           , (EMathOperator "tan", "\\tan")
-           , (EMathOperator "tanh", "\\tanh") ]
-
 isFancy :: Exp -> Bool
 isFancy (ESub _ _) = True
 isFancy (ESuper _ _) = True
