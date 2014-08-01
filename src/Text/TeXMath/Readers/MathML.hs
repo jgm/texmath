@@ -56,7 +56,8 @@ import Data.Either (rights)
 
 -- | Parse a MathML expression to a list of 'Exp'.
 readMathML :: String -> Either String [Exp]
-readMathML inp = map fixTree <$> (runExcept (flip runReaderT def (i >>= parseMathML)))
+readMathML inp = map fixTree <$>
+  (runExcept (flip runReaderT defaultState (i >>= parseMathML)))
   where
     i = maybeToEither "Invalid XML" (parseXMLDoc inp)
 
@@ -65,7 +66,8 @@ fixTree = everywhere (mkT removeNesting) . everywhere (mkT removeEmpty)
 
 data MMLState = MMLState { attrs :: [Attr]
                          , position :: Maybe FormType
-                         , inAccent :: Bool }
+                         , inAccent :: Bool
+                         , curStyle :: TextType }
 
 type MML = ReaderT MMLState (Except String)
 
@@ -137,10 +139,12 @@ ident e =  do
                    Just _   -> EMathOperator s
                    Nothing  -> EIdentifier s
   mbVariant <- findAttrQ "mathvariant" e
+  curstyle <- asks curStyle
   case mbVariant of
        Nothing  -> return base
-       Just "normal" -> return base
-       Just v   -> return $ EStyled (getTextType v) [base]
+       Just v
+         | (curstyle == getTextType v) -> return base
+         | otherwise  -> return $ EStyled (getTextType v) [base]
 
 number :: Element -> MML Exp
 number e = return $ (ENumber (getString e))
@@ -192,12 +196,16 @@ space e = do
 -- Layout
 
 style :: Element -> MML Exp
-style e = do 
-  constructor <- (maybe EGrouped (EStyled . getTextType)) <$> (findAttrQ "mathvariant" e)
+style e = do
+  tt <- maybe TextNormal getTextType <$> findAttrQ "mathvariant" e
+  curstyle <- asks curStyle
   -- We do not want to propagate the mathvariant else
   -- we end up with nested EStyled applying the same
   -- style
-  constructor . (:[]) <$> local filterMathVariant (row e)
+  result <- local (filterMathVariant . enterStyled tt) (row e)
+  return $ if curstyle == tt
+              then result
+              else EStyled tt [result]
 
 row :: Element -> MML Exp
 row e = mkExp <$> group e
@@ -489,8 +497,8 @@ fInterleave (x:xs) ys = x : fInterleave ys xs
 
 -- MMLState helper functions
 
-def :: MMLState
-def = MMLState [] Nothing False
+defaultState :: MMLState
+defaultState = MMLState [] Nothing False TextNormal
 
 addAttrs :: [Attr] -> MMLState -> MMLState
 addAttrs as s = s {attrs = as ++ attrs s }
@@ -507,6 +515,9 @@ resetPosition s = s {position = Nothing}
 
 enterAccent :: MMLState -> MMLState
 enterAccent s = s{ inAccent = True }
+
+enterStyled :: TextType -> MMLState -> MMLState
+enterStyled tt s = s{ curStyle = tt }
 
 -- Utility
 
