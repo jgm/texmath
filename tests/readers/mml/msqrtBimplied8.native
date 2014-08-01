@@ -1,1 +1,1 @@
-[EGrouped [EUnary "\\sqrt" (EGrouped [EIdentifier "x",ESymbol Bin "-",ENumber "3"]),ESymbol Bin "+",EUnary "\\sqrt" (EGrouped [EIdentifier "x",ESymbol Bin "-",ENumber "3"]),ESymbol Bin "+",EUnary "\\sqrt" (EGrouped [])]]
+[EUnary "\\sqrt" (EGrouped [EIdentifier "x",ESymbol Bin "-",ENumber "3"]),ESymbol Bin "+",EUnary "\\sqrt" (EGrouped [EIdentifier "x",ESymbol Bin "-",ENumber "3"]),ESymbol Bin "+",EUnary "\\sqrt" (EGrouped [])]

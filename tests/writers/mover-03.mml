@@ -1,7 +1,15 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
+    <mover>
+      <mi>BASE</mi>
+      <mfrac>
+        <mi>first</mi>
+        <mi>second</mi>
+      </mfrac>
+    </mover>
+    <mo>=</mo>
+    <mover>
       <mover>
         <mi>BASE</mi>
         <mfrac>
@@ -9,19 +17,9 @@
           <mi>second</mi>
         </mfrac>
       </mover>
-      <mo>=</mo>
-      <mover>
-        <mover>
-          <mi>BASE</mi>
-          <mfrac>
-            <mi>first</mi>
-            <mi>second</mi>
-          </mfrac>
-        </mover>
-        <mphantom>
-          <mi>over</mi>
-        </mphantom>
-      </mover>
-    </mrow>
+      <mphantom>
+        <mi>over</mi>
+      </mphantom>
+    </mover>
   </mrow>
 </math>

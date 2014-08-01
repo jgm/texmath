@@ -1,18 +1,16 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <munderover>
-        <mi>_ baseline _</mi>
-        <mphantom>
-          <mi>fail</mi>
-        </mphantom>
-        <mphantom>
-          <mi>fail</mi>
-        </mphantom>
-      </munderover>
-      <mo>=</mo>
+    <munderover>
       <mi>_ baseline _</mi>
-    </mrow>
+      <mphantom>
+        <mi>fail</mi>
+      </mphantom>
+      <mphantom>
+        <mi>fail</mi>
+      </mphantom>
+    </munderover>
+    <mo>=</mo>
+    <mi>_ baseline _</mi>
   </mrow>
 </math>

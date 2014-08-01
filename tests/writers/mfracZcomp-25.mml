@@ -1,53 +1,51 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
+    <mtext mathvariant="normal">The same expression </mtext>
     <mrow>
-      <mtext mathvariant="normal">The same expression </mtext>
       <mrow>
-        <mrow>
-          <mo stretchy="true" form="prefix">[</mo>
-          <mfrac>
+        <mo stretchy="true" form="prefix">[</mo>
+        <mfrac>
+          <mrow>
             <mrow>
-              <mrow>
-                <mo stretchy="true" form="infix">∥</mo>
-                <mfrac>
+              <mo stretchy="true" form="infix">∥</mo>
+              <mfrac>
+                <mrow>
                   <mrow>
-                    <mrow>
-                      <mi>sin</mi>
-                      <mo>&#8289;</mo>
-                      <mi>θ</mi>
-                    </mrow>
-                    <mo>+</mo>
-                    <mn>1</mn>
+                    <mi>sin</mi>
+                    <mo>&#8289;</mo>
+                    <mi>θ</mi>
                   </mrow>
-                  <mn>11</mn>
-                </mfrac>
-                <mo stretchy="true" form="infix">∥</mo>
-              </mrow>
-              <mo>-</mo>
-              <mi>x</mi>
+                  <mo>+</mo>
+                  <mn>1</mn>
+                </mrow>
+                <mn>11</mn>
+              </mfrac>
+              <mo stretchy="true" form="infix">∥</mo>
             </mrow>
-            <mfrac>
-              <msup>
-                <mi>x</mi>
-                <mn>2</mn>
-              </msup>
-              <msub>
-                <mi>a</mi>
-                <mn>1</mn>
-              </msub>
-            </mfrac>
+            <mo>-</mo>
+            <mi>x</mi>
+          </mrow>
+          <mfrac>
+            <msup>
+              <mi>x</mi>
+              <mn>2</mn>
+            </msup>
+            <msub>
+              <mi>a</mi>
+              <mn>1</mn>
+            </msub>
           </mfrac>
-          <mo stretchy="true" form="postfix">]</mo>
-        </mrow>
-        <mo>+</mo>
-        <mrow>
-          <mo stretchy="false" form="prefix">[</mo>
-          <mn>1.0</mn>
-          <mo stretchy="false" form="postfix">]</mo>
-        </mrow>
+        </mfrac>
+        <mo stretchy="true" form="postfix">]</mo>
       </mrow>
-      <mtext mathvariant="normal"> in a display.</mtext>
+      <mo>+</mo>
+      <mrow>
+        <mo stretchy="false" form="prefix">[</mo>
+        <mn>1.0</mn>
+        <mo stretchy="false" form="postfix">]</mo>
+      </mrow>
     </mrow>
+    <mtext mathvariant="normal"> in a display.</mtext>
   </mrow>
 </math>

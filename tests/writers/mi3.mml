@@ -1,13 +1,11 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <mi>x</mi>
-      <mover>
-        <mo>→</mo>
-        <mtext mathvariant="normal">maps to</mtext>
-      </mover>
-      <mi>y</mi>
-    </mrow>
+    <mi>x</mi>
+    <mover>
+      <mo>→</mo>
+      <mtext mathvariant="normal">maps to</mtext>
+    </mover>
+    <mi>y</mi>
   </mrow>
 </math>

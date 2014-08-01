@@ -2,34 +2,32 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
     <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
       <mrow>
-        <mo stretchy="true" form="prefix">(</mo>
-        <mrow>
-          <mi>a</mi>
-          <mo>+</mo>
-          <mi>b</mi>
-        </mrow>
-        <mo stretchy="true" form="postfix">)</mo>
+        <mi>a</mi>
+        <mo>+</mo>
+        <mi>b</mi>
       </mrow>
-      <mo>=</mo>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mo>=</mo>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mfrac>
+        <mi>α</mi>
+        <mi>β</mi>
+      </mfrac>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mo>=</mo>
+    <mrow>
+      <mo stretchy="true" form="prefix">[</mo>
       <mrow>
-        <mo stretchy="true" form="prefix">(</mo>
-        <mfrac>
-          <mi>α</mi>
-          <mi>β</mi>
-        </mfrac>
-        <mo stretchy="true" form="postfix">)</mo>
+        <mi>a</mi>
+        <mo>+</mo>
+        <mi>b</mi>
       </mrow>
-      <mo>=</mo>
-      <mrow>
-        <mo stretchy="true" form="prefix">[</mo>
-        <mrow>
-          <mi>a</mi>
-          <mo>+</mo>
-          <mi>b</mi>
-        </mrow>
-        <mo stretchy="true" form="postfix">)</mo>
-      </mrow>
+      <mo stretchy="true" form="postfix">)</mo>
     </mrow>
   </mrow>
 </math>

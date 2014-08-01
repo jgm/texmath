@@ -1,21 +1,19 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <mover>
+    <mover>
+      <mi>_ baseline _</mi>
+      <mi>over script</mi>
+    </mover>
+    <mo>=</mo>
+    <mover>
+      <munder>
         <mi>_ baseline _</mi>
-        <mi>over script</mi>
-      </mover>
-      <mo>=</mo>
-      <mover>
-        <munder>
-          <mi>_ baseline _</mi>
-          <mphantom>
-            <mi>fail</mi>
-          </mphantom>
-        </munder>
-        <mi>over script</mi>
-      </mover>
-    </mrow>
+        <mphantom>
+          <mi>fail</mi>
+        </mphantom>
+      </munder>
+      <mi>over script</mi>
+    </mover>
   </mrow>
 </math>

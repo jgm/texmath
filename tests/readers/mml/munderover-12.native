@@ -1,1 +1,1 @@
-[EGrouped [EUnderover (EIdentifier "B") (EIdentifier "underscript") (EIdentifier "overscript"),ESymbol Rel "=",EOver (EUnder (EGrouped [EUnary "\\phantom" (ENumber "1"),EIdentifier "B",EUnary "\\phantom" (ENumber "1")]) (EIdentifier "underscript")) (EIdentifier "overscript")]]
+[EUnderover (EIdentifier "B") (EIdentifier "underscript") (EIdentifier "overscript"),ESymbol Rel "=",EOver (EUnder (EGrouped [EUnary "\\phantom" (ENumber "1"),EIdentifier "B",EUnary "\\phantom" (ENumber "1")]) (EIdentifier "underscript")) (EIdentifier "overscript")]
