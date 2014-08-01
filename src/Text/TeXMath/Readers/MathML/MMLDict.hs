@@ -21,7 +21,7 @@ Dictionary of operators to MathML attributes as specified by the W3C standard.
 The original file can be downloaded from <http://www.w3.org/TR/xml-entity-names/#source here>
 -}
 
-module Text.TeXMath.Readers.MathML.MMLDict (getOperator, operators) where
+module Text.TeXMath.Readers.MathML.MMLDict (getMathMLOperator, operators) where
 
 import Text.TeXMath.Types
 import qualified Data.Map as M
@@ -33,8 +33,8 @@ dict = M.fromList (map (\o -> ((oper o, form o), o)) operators)
 -- | Tries to find the 'Operator' record based on a given position. If
 -- there is no exact match then the positions will be tried in the
 -- following order (Infix, Postfix, Prefix) with the first match (if any) being returned.
-getOperator :: String -> FormType -> Maybe Operator
-getOperator s p =
+getMathMLOperator :: String -> FormType -> Maybe Operator
+getMathMLOperator s p =
   getFirst $ mconcat $ (map (\x -> First $ M.lookup (s, x) dict) lookupOrder)
   where
     lookupOrder = [p, FInfix, FPostfix, FPrefix]

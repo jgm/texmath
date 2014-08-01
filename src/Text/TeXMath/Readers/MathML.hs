@@ -39,9 +39,9 @@ module Text.TeXMath.Readers.MathML (readMathML) where
 
 import Text.XML.Light hiding (onlyText)
 import Text.TeXMath.Types
-import Text.TeXMath.Readers.MathML.MMLDict (getOperator)
+import Text.TeXMath.Readers.MathML.MMLDict (getMathMLOperator)
 import Text.TeXMath.Readers.MathML.EntityMap (getUnicode)
-import Text.TeXMath.Shared (getTextType, readLength)
+import Text.TeXMath.Shared (getTextType, readLength, getOperator)
 import Text.TeXMath.Unicode.ToTeXMath (getSymbolType)
 import Text.TeXMath.Compat (throwError, Except, runExcept, MonadError)
 import Control.Applicative ((<$>), (<|>), (<*>))
@@ -132,11 +132,15 @@ isEmpty _ = False
 
 ident :: Element -> MML Exp
 ident e =  do
+  let s = getString e
+  let base = case getOperator (EMathOperator s) of
+                   Just _   -> EMathOperator s
+                   Nothing  -> EIdentifier s
   mbVariant <- findAttrQ "mathvariant" e
   case mbVariant of
-       Nothing  -> return $ EIdentifier (getString e)
-       Just "normal" -> return $ EIdentifier (getString e)
-       Just v   -> return $ EStyled (getTextType v) [EIdentifier (getString e)]
+       Nothing  -> return base
+       Just "normal" -> return base
+       Just v   -> return $ EStyled (getTextType v) [base]
 
 number :: Element -> MML Exp
 number e = return $ (ENumber (getString e))
@@ -148,7 +152,7 @@ op e = do
   let opString = getString e
   let dummy = Operator opString "" inferredPosition 0 0 0 []
   let opDict = fromMaybe dummy
-                (getOperator opString inferredPosition)
+                (getMathMLOperator opString inferredPosition)
   props <- filterM (checkAttr (properties opDict))
             ["fence", "accent", "stretchy"]
   let objectPosition = getPosition $ form opDict

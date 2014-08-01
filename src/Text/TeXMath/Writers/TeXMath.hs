@@ -96,15 +96,11 @@ writeExp (EDelimited open close es) =  do
   mapM_ (either (writeDelim DMiddle) writeExp) es
   writeDelim DRight close
 writeExp (EIdentifier s) = do
-  -- check for recognized operators; mathml uses <mi>sin</mi> for sin, etc.
-  case S.getOperator (EMathOperator s) of
-       Just op   -> tell [op]
-       Nothing   -> do
-         math <- getTeXMathM s
-         case math of
-              []      -> return ()
-              [t]     -> tell [t]
-              ts      -> tell [Grouped ts]
+  math <- getTeXMathM s
+  case math of
+       []      -> return ()
+       [t]     -> tell [t]
+       ts      -> tell [Grouped ts]
 writeExp o@(EMathOperator s) = do
   math <- getTeXMathM s
   case S.getOperator o of
