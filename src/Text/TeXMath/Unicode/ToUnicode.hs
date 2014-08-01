@@ -19,7 +19,10 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 {- | Function for replacing strings of characters with their respective mathvariant and vice versa.
 -}
 
-module Text.TeXMath.Unicode.ToUnicode (fromUnicodeChar, toUnicodeChar, toUnicode)
+module Text.TeXMath.Unicode.ToUnicode (fromUnicodeChar,
+                                      toUnicodeChar,
+                                      fromUnicode,
+                                      toUnicode)
 where
 
 import Text.TeXMath.Types
@@ -41,6 +44,13 @@ toUnicodeChar x = M.lookup x unicodeMap
 --  unstyled character and 'TextType' of a unicode character.
 fromUnicodeChar :: Char -> Maybe (TextType, Char)
 fromUnicodeChar c = M.lookup c reverseUnicodeMap
+
+-- | Inverse of 'toUnicode'.
+fromUnicode :: TextType -> String -> String
+fromUnicode tt cs =
+  map (\c -> case fromUnicodeChar c of
+                   Just (tt', c') | tt' == tt -> c'
+                   _ -> c) cs
 
 reverseUnicodeMap :: M.Map Char (TextType, Char)
 reverseUnicodeMap = M.fromList $ map (\(a,b) -> (b,a)) unicodeTable
