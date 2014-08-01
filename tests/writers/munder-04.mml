@@ -3,15 +3,15 @@
   <mrow>
     <mrow>
       <munder>
-        <mtext mathvariant="normal">middle</mtext>
-        <mtext mathvariant="normal">bottom</mtext>
+        <mi>middle</mi>
+        <mi>bottom</mi>
       </munder>
       <mo>=</mo>
       <munderover>
-        <mtext mathvariant="normal">middle</mtext>
-        <mtext mathvariant="normal">bottom</mtext>
+        <mi>middle</mi>
+        <mi>bottom</mi>
         <mphantom>
-          <mtext mathvariant="normal">fail</mtext>
+          <mi>fail</mi>
         </mphantom>
       </munderover>
     </mrow>

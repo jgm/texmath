@@ -22,7 +22,9 @@
       <mtr>
         <mtd>
           <mrow>
-            <mtext mathvariant="script">𝒜</mtext>
+            <mstyle mathvariant="script">
+              <mi>𝒜</mi>
+            </mstyle>
             <mo>+</mo>
             <mi>A</mi>
             <mo>+</mo>
@@ -35,7 +37,9 @@
       <mtr>
         <mtd>
           <mrow>
-            <mtext mathvariant="script">𝒜</mtext>
+            <mstyle mathvariant="script">
+              <mi>𝒜</mi>
+            </mstyle>
             <mo>+</mo>
             <mi>A</mi>
             <mo>+</mo>

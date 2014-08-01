@@ -3,17 +3,17 @@
   <mrow>
     <mrow>
       <munderover>
-        <mtext mathvariant="normal">BASE</mtext>
-        <mtext mathvariant="normal">under script</mtext>
-        <mtext mathvariant="normal">over script</mtext>
+        <mi>BASE</mi>
+        <mi>under script</mi>
+        <mi>over script</mi>
       </munderover>
       <mo>=</mo>
       <munder>
         <mover>
-          <mtext mathvariant="normal">BASE</mtext>
-          <mtext mathvariant="normal">over script</mtext>
+          <mi>BASE</mi>
+          <mi>over script</mi>
         </mover>
-        <mtext mathvariant="normal">under script</mtext>
+        <mi>under script</mi>
       </munder>
     </mrow>
   </mrow>

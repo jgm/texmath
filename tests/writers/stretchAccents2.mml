@@ -8,7 +8,9 @@
       </mover>
       <mo>=</mo>
       <mover>
-        <mtext mathvariant="italic">𝑥𝑥𝑥</mtext>
+        <mstyle mathvariant="italic">
+          <mi>𝑥𝑥𝑥</mi>
+        </mstyle>
         <mo accent="true">¯</mo>
       </mover>
     </mrow>

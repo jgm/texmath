@@ -1,1 +1,1 @@
-[EArray [AlignDefault,AlignDefault,AlignDefault] [[[EUnder (EText TextNormal "HT") (EUnary "\\phantom" (EText TextNormal "fail"))],[ESymbol Rel "="],[EText TextNormal "TH"]]]]
+[EArray [AlignDefault,AlignDefault,AlignDefault] [[[EUnder (EIdentifier "HT") (EUnary "\\phantom" (EText TextNormal "fail"))],[ESymbol Rel "="],[EIdentifier "TH"]]]]

@@ -4,24 +4,24 @@
     <mrow>
       <munderover>
         <munderover>
-          <mtext mathvariant="normal">BASE</mtext>
-          <mtext mathvariant="normal">under-1</mtext>
+          <mi>BASE</mi>
+          <mi>under-1</mi>
           <mphantom>
-            <mtext mathvariant="normal">fail</mtext>
+            <mi>fail</mi>
           </mphantom>
         </munderover>
-        <mtext mathvariant="normal">under-2</mtext>
+        <mi>under-2</mi>
         <mphantom>
-          <mtext mathvariant="normal">fail</mtext>
+          <mi>fail</mi>
         </mphantom>
       </munderover>
       <mo>=</mo>
       <munder>
         <munder>
-          <mtext mathvariant="normal">BASE</mtext>
-          <mtext mathvariant="normal">under-1</mtext>
+          <mi>BASE</mi>
+          <mi>under-1</mi>
         </munder>
-        <mtext mathvariant="normal">under-2</mtext>
+        <mi>under-2</mi>
       </munder>
     </mrow>
   </mrow>

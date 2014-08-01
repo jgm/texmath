@@ -1,1 +1,1 @@
-[EGrouped [EUnderover (EText TextNormal "B") (EText TextNormal "under") (EText TextNormal "over"),ESymbol Rel "=",EOver (EUnder (EText TextNormal "B") (EText TextNormal "under")) (EText TextNormal "over")]]
+[EGrouped [EUnderover (EIdentifier "B") (EIdentifier "under") (EIdentifier "over"),ESymbol Rel "=",EOver (EUnder (EIdentifier "B") (EIdentifier "under")) (EIdentifier "over")]]

@@ -3640,7 +3640,9 @@
                     </msub>
                     <mo>=</mo>
                     <mrow>
-                      <mtext mathvariant="script">𝒩</mtext>
+                      <mstyle mathvariant="script">
+                        <mi>𝒩</mi>
+                      </mstyle>
                       <mo>&#8289;</mo>
                       <mrow>
                         <mo stretchy="false" form="prefix">(</mo>
@@ -3980,12 +3982,18 @@
         <mtd>
           <mrow>
             <mrow>
-              <mtext mathvariant="bold">𝐚</mtext>
+              <mstyle mathvariant="bold">
+                <mi>𝐚</mi>
+              </mstyle>
               <mo>+</mo>
-              <mtext mathvariant="bold">𝐛</mtext>
+              <mstyle mathvariant="bold">
+                <mi>𝐛</mi>
+              </mstyle>
             </mrow>
             <mo>=</mo>
-            <mtext mathvariant="bold">𝐜</mtext>
+            <mstyle mathvariant="bold">
+              <mi>𝐜</mi>
+            </mstyle>
           </mrow>
         </mtd>
         <mtd />
@@ -4011,7 +4019,9 @@
                 <mo>&#8289;</mo>
                 <mrow>
                   <mo stretchy="false" form="prefix">(</mo>
-                  <mtext mathvariant="bold">𝐱</mtext>
+                  <mstyle mathvariant="bold">
+                    <mi>𝐱</mi>
+                  </mstyle>
                   <mo stretchy="false" form="postfix">)</mo>
                 </mrow>
               </mrow>
@@ -4028,21 +4038,37 @@
         <mtd>
           <mrow>
             <mrow>
-              <mtext mathvariant="italic">𝑇</mtext>
+              <mstyle mathvariant="italic">
+                <mi>𝑇</mi>
+              </mstyle>
               <mo>&#8290;</mo>
-              <mtext mathvariant="italic">h</mtext>
+              <mstyle mathvariant="italic">
+                <mi>h</mi>
+              </mstyle>
               <mo>&#8290;</mo>
-              <mtext mathvariant="italic">𝑒</mtext>
+              <mstyle mathvariant="italic">
+                <mi>𝑒</mi>
+              </mstyle>
               <mo>&#8290;</mo>
-              <mtext mathvariant="italic">𝑞</mtext>
+              <mstyle mathvariant="italic">
+                <mi>𝑞</mi>
+              </mstyle>
               <mo>&#8290;</mo>
-              <mtext mathvariant="italic">𝑢</mtext>
+              <mstyle mathvariant="italic">
+                <mi>𝑢</mi>
+              </mstyle>
               <mo>&#8290;</mo>
-              <mtext mathvariant="italic">𝑖</mtext>
+              <mstyle mathvariant="italic">
+                <mi>𝑖</mi>
+              </mstyle>
               <mo>&#8290;</mo>
-              <mtext mathvariant="italic">𝑐</mtext>
+              <mstyle mathvariant="italic">
+                <mi>𝑐</mi>
+              </mstyle>
               <mo>&#8290;</mo>
-              <mtext mathvariant="italic">𝑘</mtext>
+              <mstyle mathvariant="italic">
+                <mi>𝑘</mi>
+              </mstyle>
               <mo>&#8290;</mo>
               <mi>b</mi>
               <mo>&#8290;</mo>
@@ -4070,13 +4096,21 @@
               <mo>&#8290;</mo>
               <mi>s</mi>
               <mo>&#8290;</mo>
-              <mtext mathvariant="bold">𝐨</mtext>
+              <mstyle mathvariant="bold">
+                <mi>𝐨</mi>
+              </mstyle>
               <mo>&#8290;</mo>
-              <mtext mathvariant="bold">𝐯</mtext>
+              <mstyle mathvariant="bold">
+                <mi>𝐯</mi>
+              </mstyle>
               <mo>&#8290;</mo>
-              <mtext mathvariant="bold">𝐞</mtext>
+              <mstyle mathvariant="bold">
+                <mi>𝐞</mi>
+              </mstyle>
               <mo>&#8290;</mo>
-              <mtext mathvariant="bold">𝐫</mtext>
+              <mstyle mathvariant="bold">
+                <mi>𝐫</mi>
+              </mstyle>
               <mo>&#8290;</mo>
               <mi>t</mi>
               <mo>&#8290;</mo>
@@ -4084,19 +4118,33 @@
               <mo>&#8290;</mo>
               <mi>e</mi>
               <mo>&#8290;</mo>
-              <mtext mathvariant="sans-serif">𝗅</mtext>
+              <mstyle mathvariant="sans-serif">
+                <mi>𝗅</mi>
+              </mstyle>
               <mo>&#8290;</mo>
-              <mtext mathvariant="sans-serif">𝖺</mtext>
+              <mstyle mathvariant="sans-serif">
+                <mi>𝖺</mi>
+              </mstyle>
               <mo>&#8290;</mo>
-              <mtext mathvariant="sans-serif">𝗓</mtext>
+              <mstyle mathvariant="sans-serif">
+                <mi>𝗓</mi>
+              </mstyle>
               <mo>&#8290;</mo>
-              <mtext mathvariant="sans-serif">𝗒</mtext>
+              <mstyle mathvariant="sans-serif">
+                <mi>𝗒</mi>
+              </mstyle>
               <mo>&#8290;</mo>
-              <mtext mathvariant="monospace">𝚍</mtext>
+              <mstyle mathvariant="monospace">
+                <mi>𝚍</mi>
+              </mstyle>
               <mo>&#8290;</mo>
-              <mtext mathvariant="monospace">𝚘</mtext>
+              <mstyle mathvariant="monospace">
+                <mi>𝚘</mi>
+              </mstyle>
               <mo>&#8290;</mo>
-              <mtext mathvariant="monospace">𝚐</mtext>
+              <mstyle mathvariant="monospace">
+                <mi>𝚐</mi>
+              </mstyle>
             </mrow>
             <mtext mathvariant="normal">.</mtext>
             <mrow>
@@ -4370,7 +4418,9 @@
                       </mrow>
                     </mrow>
                     <mo>⋅</mo>
-                    <mtext mathvariant="bold">𝐮</mtext>
+                    <mstyle mathvariant="bold">
+                      <mi>𝐮</mi>
+                    </mstyle>
                   </mrow>
                 </mrow>
               </mtd>
@@ -6497,7 +6547,9 @@
               <mi>Aut</mi>
               <mrow>
                 <mo stretchy="false" form="prefix">(</mo>
-                <mtext mathvariant="bold">𝐈</mtext>
+                <mstyle mathvariant="bold">
+                  <mi>𝐈</mi>
+                </mstyle>
                 <mo stretchy="false" form="postfix">)</mo>
               </mrow>
             </mrow>
@@ -9087,7 +9139,9 @@
               <msub>
                 <mrow />
                 <msup>
-                  <mtext mathvariant="bold">𝐑</mtext>
+                  <mstyle mathvariant="bold">
+                    <mi>𝐑</mi>
+                  </mstyle>
                   <mn>3</mn>
                 </msup>
               </msub>
@@ -9165,12 +9219,16 @@
                 <mo stretchy="true" form="prefix">(</mo>
                 <mrow>
                   <mi>∇×</mi>
-                  <mtext mathvariant="bold">𝐅</mtext>
+                  <mstyle mathvariant="bold">
+                    <mi>𝐅</mi>
+                  </mstyle>
                 </mrow>
                 <mo stretchy="true" form="postfix">)</mo>
               </mrow>
               <mo>⋅</mo>
-              <mtext mathvariant="bold">𝐤</mtext>
+              <mstyle mathvariant="bold">
+                <mi>𝐤</mi>
+              </mstyle>
             </mrow>
             <mo>=</mo>
             <mrow>

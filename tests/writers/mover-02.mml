@@ -3,22 +3,22 @@
   <mrow>
     <mrow>
       <mover>
-        <mtext mathvariant="normal">BASE</mtext>
-        <mtext mathvariant="normal">over script</mtext>
+        <mi>BASE</mi>
+        <mi>over script</mi>
       </mover>
       <mo>=</mo>
       <mover>
         <mover>
           <mover>
-            <mtext mathvariant="normal">BASE</mtext>
-            <mtext mathvariant="normal">over script</mtext>
+            <mi>BASE</mi>
+            <mi>over script</mi>
           </mover>
           <mphantom>
-            <mtext mathvariant="normal">over</mtext>
+            <mi>over</mi>
           </mphantom>
         </mover>
         <mphantom>
-          <mtext mathvariant="normal">over</mtext>
+          <mi>over</mi>
         </mphantom>
       </mover>
     </mrow>

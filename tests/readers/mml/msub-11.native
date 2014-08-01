@@ -1,1 +1,1 @@
-[EGrouped [ESub (EText TextNormal "H") (ESymbol Ord "2"),ESymbol Rel "=",EOver (ESub (EText TextNormal "H") (ESymbol Ord "2")) (EUnary "\\phantom" (EIdentifier "x"))]]
+[EGrouped [ESub (EIdentifier "H") (ESymbol Ord "2"),ESymbol Rel "=",EOver (ESub (EIdentifier "H") (ESymbol Ord "2")) (EUnary "\\phantom" (EIdentifier "x"))]]

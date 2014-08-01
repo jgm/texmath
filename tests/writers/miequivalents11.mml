@@ -7,7 +7,7 @@
           <mrow>
             <mi>A</mi>
             <mo>=</mo>
-            <mtext mathvariant="normal">A</mtext>
+            <mi>A</mi>
           </mrow>
         </mtd>
       </mtr>
@@ -16,7 +16,9 @@
           <mrow>
             <mi>𝐀</mi>
             <mo>=</mo>
-            <mtext mathvariant="bold">𝐀</mtext>
+            <mstyle mathvariant="bold">
+              <mi>𝐀</mi>
+            </mstyle>
           </mrow>
         </mtd>
       </mtr>
@@ -25,7 +27,9 @@
           <mrow>
             <mi>𝐴</mi>
             <mo>=</mo>
-            <mtext mathvariant="italic">𝐴</mtext>
+            <mstyle mathvariant="italic">
+              <mi>𝐴</mi>
+            </mstyle>
           </mrow>
         </mtd>
       </mtr>
@@ -34,7 +38,9 @@
           <mrow>
             <mi>𝑨</mi>
             <mo>=</mo>
-            <mtext mathvariant="bold-italic">𝑨</mtext>
+            <mstyle mathvariant="bold-italic">
+              <mi>𝑨</mi>
+            </mstyle>
           </mrow>
         </mtd>
       </mtr>
@@ -43,7 +49,9 @@
           <mrow>
             <mi>𝔸</mi>
             <mo>=</mo>
-            <mtext mathvariant="double-struck">𝔸</mtext>
+            <mstyle mathvariant="double-struck">
+              <mi>𝔸</mi>
+            </mstyle>
             <mo>=</mo>
             <mi>𝔸</mi>
           </mrow>
@@ -54,7 +62,9 @@
           <mrow>
             <mi>𝒜</mi>
             <mo>=</mo>
-            <mtext mathvariant="script">𝒜</mtext>
+            <mstyle mathvariant="script">
+              <mi>𝒜</mi>
+            </mstyle>
             <mo>=</mo>
             <mi>𝒜</mi>
           </mrow>
@@ -65,7 +75,9 @@
           <mrow>
             <mi>𝓐</mi>
             <mo>=</mo>
-            <mtext mathvariant="bold-script">𝓐</mtext>
+            <mstyle mathvariant="bold-script">
+              <mi>𝓐</mi>
+            </mstyle>
           </mrow>
         </mtd>
       </mtr>
@@ -74,7 +86,9 @@
           <mrow>
             <mi>𝔄</mi>
             <mo>=</mo>
-            <mtext mathvariant="fraktur">𝔄</mtext>
+            <mstyle mathvariant="fraktur">
+              <mi>𝔄</mi>
+            </mstyle>
             <mo>=</mo>
             <mi>𝔄</mi>
           </mrow>
@@ -85,7 +99,9 @@
           <mrow>
             <mi>𝕬</mi>
             <mo>=</mo>
-            <mtext mathvariant="bold-fraktur">𝕬</mtext>
+            <mstyle mathvariant="bold-fraktur">
+              <mi>𝕬</mi>
+            </mstyle>
           </mrow>
         </mtd>
       </mtr>
@@ -94,7 +110,9 @@
           <mrow>
             <mi>𝖠</mi>
             <mo>=</mo>
-            <mtext mathvariant="sans-serif">𝖠</mtext>
+            <mstyle mathvariant="sans-serif">
+              <mi>𝖠</mi>
+            </mstyle>
           </mrow>
         </mtd>
       </mtr>
@@ -103,7 +121,9 @@
           <mrow>
             <mi>𝗔</mi>
             <mo>=</mo>
-            <mtext mathvariant="bold-sans-serif">𝗔</mtext>
+            <mstyle mathvariant="bold-sans-serif">
+              <mi>𝗔</mi>
+            </mstyle>
           </mrow>
         </mtd>
       </mtr>
@@ -112,7 +132,9 @@
           <mrow>
             <mi>𝘈</mi>
             <mo>=</mo>
-            <mtext mathvariant="sans-serif-italic">𝘈</mtext>
+            <mstyle mathvariant="sans-serif-italic">
+              <mi>𝘈</mi>
+            </mstyle>
           </mrow>
         </mtd>
       </mtr>
@@ -121,7 +143,9 @@
           <mrow>
             <mi>𝘼</mi>
             <mo>=</mo>
-            <mtext mathvariant="sans-serif-bold-italic">𝘼</mtext>
+            <mstyle mathvariant="sans-serif-bold-italic">
+              <mi>𝘼</mi>
+            </mstyle>
           </mrow>
         </mtd>
       </mtr>
@@ -130,7 +154,9 @@
           <mrow>
             <mi>𝙰</mi>
             <mo>=</mo>
-            <mtext mathvariant="monospace">𝙰</mtext>
+            <mstyle mathvariant="monospace">
+              <mi>𝙰</mi>
+            </mstyle>
           </mrow>
         </mtd>
       </mtr>

@@ -1,1 +1,1 @@
-[EGrouped [EUnder (EText TextNormal "munder baseline") (EText TextNormal "munder under script"),ESymbol Rel "=",EOver (EUnder (EText TextNormal "munder baseline") (EText TextNormal "munder under script")) (EUnary "\\phantom" (EText TextNormal "fail"))]]
+[EGrouped [EUnder (EIdentifier "munder baseline") (EIdentifier "munder under script"),ESymbol Rel "=",EOver (EUnder (EIdentifier "munder baseline") (EIdentifier "munder under script")) (EUnary "\\phantom" (EIdentifier "fail"))]]

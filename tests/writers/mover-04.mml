@@ -3,16 +3,16 @@
   <mrow>
     <mrow>
       <mover>
-        <mtext mathvariant="normal">middle</mtext>
-        <mtext mathvariant="normal">top</mtext>
+        <mi>middle</mi>
+        <mi>top</mi>
       </mover>
       <mo>=</mo>
       <munderover>
-        <mtext mathvariant="normal">middle</mtext>
+        <mi>middle</mi>
         <mphantom>
-          <mtext mathvariant="normal">fail</mtext>
+          <mi>fail</mi>
         </mphantom>
-        <mtext mathvariant="normal">top</mtext>
+        <mi>top</mi>
       </munderover>
     </mrow>
   </mrow>

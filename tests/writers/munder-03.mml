@@ -3,23 +3,23 @@
   <mrow>
     <mrow>
       <munder>
-        <mtext mathvariant="normal">BASE</mtext>
+        <mi>BASE</mi>
         <mfrac>
-          <mtext mathvariant="normal">first under script</mtext>
-          <mtext mathvariant="normal">second one</mtext>
+          <mi>first under script</mi>
+          <mi>second one</mi>
         </mfrac>
       </munder>
       <mo>=</mo>
       <munder>
         <munder>
-          <mtext mathvariant="normal">BASE</mtext>
+          <mi>BASE</mi>
           <mfrac>
-            <mtext mathvariant="normal">first under script</mtext>
-            <mtext mathvariant="normal">second one</mtext>
+            <mi>first under script</mi>
+            <mi>second one</mi>
           </mfrac>
         </munder>
         <mphantom>
-          <mtext mathvariant="normal">fail</mtext>
+          <mi>fail</mi>
         </mphantom>
       </munder>
     </mrow>

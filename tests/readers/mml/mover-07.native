@@ -1,1 +1,1 @@
-[EGrouped [EOver (EText TextNormal "mover baseline") (EText TextNormal "mover over script"),ESymbol Rel "=",EOver (EOver (EText TextNormal "mover baseline") (EText TextNormal "mover over script")) (EUnary "\\phantom" (EText TextNormal "fail"))]]
+[EGrouped [EOver (EIdentifier "mover baseline") (EIdentifier "mover over script"),ESymbol Rel "=",EOver (EOver (EIdentifier "mover baseline") (EIdentifier "mover over script")) (EUnary "\\phantom" (EIdentifier "fail"))]]

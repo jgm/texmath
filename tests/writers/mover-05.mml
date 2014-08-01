@@ -2,12 +2,12 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
     <mrow>
-      <mtext mathvariant="normal">_ baseline _</mtext>
+      <mi>_ baseline _</mi>
       <mo>=</mo>
       <mover>
-        <mtext mathvariant="normal">_ baseline _</mtext>
+        <mi>_ baseline _</mi>
         <mphantom>
-          <mtext mathvariant="normal">fail</mtext>
+          <mi>fail</mi>
         </mphantom>
       </mover>
     </mrow>

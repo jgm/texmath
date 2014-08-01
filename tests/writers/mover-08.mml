@@ -3,18 +3,18 @@
   <mrow>
     <mrow>
       <mover>
-        <mtext mathvariant="normal">_ baseline _</mtext>
-        <mtext mathvariant="normal">over script</mtext>
+        <mi>_ baseline _</mi>
+        <mi>over script</mi>
       </mover>
       <mo>=</mo>
       <mover>
         <munder>
-          <mtext mathvariant="normal">_ baseline _</mtext>
+          <mi>_ baseline _</mi>
           <mphantom>
-            <mtext mathvariant="normal">fail</mtext>
+            <mi>fail</mi>
           </mphantom>
         </munder>
-        <mtext mathvariant="normal">over script</mtext>
+        <mi>over script</mi>
       </mover>
     </mrow>
   </mrow>

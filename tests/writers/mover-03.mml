@@ -3,23 +3,23 @@
   <mrow>
     <mrow>
       <mover>
-        <mtext mathvariant="normal">BASE</mtext>
+        <mi>BASE</mi>
         <mfrac>
-          <mtext mathvariant="normal">first</mtext>
-          <mtext mathvariant="normal">second</mtext>
+          <mi>first</mi>
+          <mi>second</mi>
         </mfrac>
       </mover>
       <mo>=</mo>
       <mover>
         <mover>
-          <mtext mathvariant="normal">BASE</mtext>
+          <mi>BASE</mi>
           <mfrac>
-            <mtext mathvariant="normal">first</mtext>
-            <mtext mathvariant="normal">second</mtext>
+            <mi>first</mi>
+            <mi>second</mi>
           </mfrac>
         </mover>
         <mphantom>
-          <mtext mathvariant="normal">over</mtext>
+          <mi>over</mi>
         </mphantom>
       </mover>
     </mrow>

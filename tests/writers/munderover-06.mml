@@ -4,24 +4,24 @@
     <mrow>
       <munderover>
         <munderover>
-          <mtext mathvariant="normal">BASE</mtext>
-          <mtext mathvariant="normal">first under script</mtext>
-          <mtext mathvariant="normal">second overscript</mtext>
+          <mi>BASE</mi>
+          <mi>first under script</mi>
+          <mi>second overscript</mi>
         </munderover>
-        <mtext mathvariant="normal">second one</mtext>
-        <mtext mathvariant="normal">first overscript</mtext>
+        <mi>second one</mi>
+        <mi>first overscript</mi>
       </munderover>
       <mo>=</mo>
       <munderover>
         <mover>
           <munder>
-            <mtext mathvariant="normal">BASE</mtext>
-            <mtext mathvariant="normal">first under script</mtext>
+            <mi>BASE</mi>
+            <mi>first under script</mi>
           </munder>
-          <mtext mathvariant="normal">second overscript</mtext>
+          <mi>second overscript</mi>
         </mover>
-        <mtext mathvariant="normal">second one</mtext>
-        <mtext mathvariant="normal">first overscript</mtext>
+        <mi>second one</mi>
+        <mi>first overscript</mi>
       </munderover>
     </mrow>
   </mrow>

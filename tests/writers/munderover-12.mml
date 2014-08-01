@@ -3,9 +3,9 @@
   <mrow>
     <mrow>
       <munderover>
-        <mtext mathvariant="normal">B</mtext>
-        <mtext mathvariant="normal">underscript</mtext>
-        <mtext mathvariant="normal">overscript</mtext>
+        <mi>B</mi>
+        <mi>underscript</mi>
+        <mi>overscript</mi>
       </munderover>
       <mo>=</mo>
       <mover>
@@ -14,14 +14,14 @@
             <mphantom>
               <mn>1</mn>
             </mphantom>
-            <mtext mathvariant="normal">B</mtext>
+            <mi>B</mi>
             <mphantom>
               <mn>1</mn>
             </mphantom>
           </mrow>
-          <mtext mathvariant="normal">underscript</mtext>
+          <mi>underscript</mi>
         </munder>
-        <mtext mathvariant="normal">overscript</mtext>
+        <mi>overscript</mi>
       </mover>
     </mrow>
   </mrow>

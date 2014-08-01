@@ -4,22 +4,22 @@
     <mrow>
       <munder>
         <mover>
-          <mtext mathvariant="normal">- middle -</mtext>
-          <mtext mathvariant="normal">top</mtext>
+          <mi>- middle -</mi>
+          <mi>top</mi>
         </mover>
         <mphantom>
-          <mtext mathvariant="normal">fail</mtext>
+          <mi>fail</mi>
         </mphantom>
       </munder>
       <mo>=</mo>
       <mover>
         <munder>
-          <mtext mathvariant="normal">- middle -</mtext>
+          <mi>- middle -</mi>
           <mphantom>
-            <mtext mathvariant="normal">fail</mtext>
+            <mi>fail</mi>
           </mphantom>
         </munder>
-        <mtext mathvariant="normal">top</mtext>
+        <mi>top</mi>
       </mover>
     </mrow>
   </mrow>

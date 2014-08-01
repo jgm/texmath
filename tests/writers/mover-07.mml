@@ -3,17 +3,17 @@
   <mrow>
     <mrow>
       <mover>
-        <mtext mathvariant="normal">mover baseline</mtext>
-        <mtext mathvariant="normal">mover over script</mtext>
+        <mi>mover baseline</mi>
+        <mi>mover over script</mi>
       </mover>
       <mo>=</mo>
       <mover>
         <mover>
-          <mtext mathvariant="normal">mover baseline</mtext>
-          <mtext mathvariant="normal">mover over script</mtext>
+          <mi>mover baseline</mi>
+          <mi>mover over script</mi>
         </mover>
         <mphantom>
-          <mtext mathvariant="normal">fail</mtext>
+          <mi>fail</mi>
         </mphantom>
       </mover>
     </mrow>
