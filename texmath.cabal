@@ -12,6 +12,9 @@ Description:         The texmath library provides functions to read and
                      conversion, via pandoc, to a variety of different markup
                      formats).  It supports basic LaTeX and AMS extensions,
                      and it can parse and apply LaTeX macros.
+                     (See <http://johnmacfarlane.net/texmath here> for a live
+                     demo of bidirectional conversion between LaTeX
+                     and MathML.)
                      .
                      The package also includes several utility modules which
                      may be useful for anyone looking to manipulate either
