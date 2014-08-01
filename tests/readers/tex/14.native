@@ -1,1 +1,1 @@
-[EBinary "\\frac" (EGrouped [EIdentifier "a"]) (EGrouped [EIdentifier "b"]),ESymbol Ord " ",EBinary "\\tfrac" (EGrouped [EIdentifier "a"]) (EGrouped [EIdentifier "b"])]
+[EBinary "\\frac" (EIdentifier "a") (EIdentifier "b"),ESymbol Ord " ",EBinary "\\tfrac" (EIdentifier "a") (EIdentifier "b")]

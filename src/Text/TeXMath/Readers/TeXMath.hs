@@ -139,8 +139,8 @@ inbraces :: TP Exp
 inbraces = do
   result <- braces $ many $ notFollowedBy (char '}') >> expr
   case result of
-       [EGrouped xs] -> return (EGrouped xs)  -- avoid doubling EGrouped
-       xs -> return (EGrouped xs)
+       [x] -> return x   -- avoid unnecessary EGrouped
+       xs  -> return (EGrouped xs)
 
 texToken :: TP Exp
 texToken = texSymbol <|> inbraces <|> inbrackets <|>
@@ -448,8 +448,10 @@ styled = try $ do
   c <- command
   case M.lookup c styleOps of
        Just f   -> do
-         EGrouped xs <- inbraces
-         return $ f xs
+         x <- inbraces
+         return $ case x of
+                       EGrouped xs -> f xs
+                       _           -> f [x]
        Nothing  -> pzero
 
 -- note: sqrt can be unary, \sqrt{2}, or binary, \sqrt[3]{2}
