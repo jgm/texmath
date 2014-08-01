@@ -6,6 +6,19 @@
   <m:oMath>
     <m:sSup>
       <m:e>
+        <m:phant>
+          <m:phantPr>
+            <m:show m:val="0" />
+          </m:phantPr>
+          <m:e>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>fail</m:t>
+            </m:r>
+          </m:e>
+        </m:phant>
         <m:r>
           <m:rPr>
             <m:sty m:val="p" />

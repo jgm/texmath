@@ -102,6 +102,19 @@
               </m:rPr>
               <m:t>4</m:t>
             </m:r>
+            <m:phant>
+              <m:phantPr>
+                <m:show m:val="0" />
+              </m:phantPr>
+              <m:e>
+                <m:r>
+                  <m:rPr>
+                    <m:sty m:val="p" />
+                  </m:rPr>
+                  <m:t>z</m:t>
+                </m:r>
+              </m:e>
+            </m:phant>
           </m:sub>
           <m:sup>
             <m:r>
@@ -138,6 +151,19 @@
               </m:rPr>
               <m:t>1</m:t>
             </m:r>
+            <m:phant>
+              <m:phantPr>
+                <m:show m:val="0" />
+              </m:phantPr>
+              <m:e>
+                <m:r>
+                  <m:rPr>
+                    <m:sty m:val="p" />
+                  </m:rPr>
+                  <m:t>z</m:t>
+                </m:r>
+              </m:e>
+            </m:phant>
           </m:sup>
         </m:sSubSup>
       </m:sup>

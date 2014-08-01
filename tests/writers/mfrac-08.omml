@@ -9,12 +9,38 @@
         <m:type m:val="bar" />
       </m:fPr>
       <m:num>
+        <m:phant>
+          <m:phantPr>
+            <m:show m:val="0" />
+          </m:phantPr>
+          <m:e>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>a</m:t>
+            </m:r>
+          </m:e>
+        </m:phant>
         <m:r>
           <m:rPr>
             <m:sty m:val="p" />
           </m:rPr>
           <m:t>12</m:t>
         </m:r>
+        <m:phant>
+          <m:phantPr>
+            <m:show m:val="0" />
+          </m:phantPr>
+          <m:e>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>a</m:t>
+            </m:r>
+          </m:e>
+        </m:phant>
       </m:num>
       <m:den>
         <m:r>
@@ -44,12 +70,38 @@
         </m:r>
       </m:num>
       <m:den>
+        <m:phant>
+          <m:phantPr>
+            <m:show m:val="0" />
+          </m:phantPr>
+          <m:e>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>a</m:t>
+            </m:r>
+          </m:e>
+        </m:phant>
         <m:r>
           <m:rPr>
             <m:sty m:val="p" />
           </m:rPr>
           <m:t>13</m:t>
         </m:r>
+        <m:phant>
+          <m:phantPr>
+            <m:show m:val="0" />
+          </m:phantPr>
+          <m:e>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>a</m:t>
+            </m:r>
+          </m:e>
+        </m:phant>
       </m:den>
     </m:f>
   </m:oMath>

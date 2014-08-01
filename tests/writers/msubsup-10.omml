@@ -65,7 +65,21 @@
           </m:sup>
         </m:sSubSup>
       </m:e>
-      <m:lim />
+      <m:lim>
+        <m:phant>
+          <m:phantPr>
+            <m:show m:val="0" />
+          </m:phantPr>
+          <m:e>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>l</m:t>
+            </m:r>
+          </m:e>
+        </m:phant>
+      </m:lim>
     </m:limLow>
   </m:oMath>
 </m:oMathPara>

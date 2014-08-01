@@ -15,8 +15,36 @@
       </m:e>
       <m:lim>
         <m:limUpp>
-          <m:e />
-          <m:lim />
+          <m:e>
+            <m:phant>
+              <m:phantPr>
+                <m:show m:val="0" />
+              </m:phantPr>
+              <m:e>
+                <m:r>
+                  <m:rPr>
+                    <m:sty m:val="p" />
+                  </m:rPr>
+                  <m:t>fail</m:t>
+                </m:r>
+              </m:e>
+            </m:phant>
+          </m:e>
+          <m:lim>
+            <m:phant>
+              <m:phantPr>
+                <m:show m:val="0" />
+              </m:phantPr>
+              <m:e>
+                <m:r>
+                  <m:rPr>
+                    <m:sty m:val="p" />
+                  </m:rPr>
+                  <m:t>fail</m:t>
+                </m:r>
+              </m:e>
+            </m:phant>
+          </m:lim>
         </m:limUpp>
       </m:lim>
     </m:limLow>

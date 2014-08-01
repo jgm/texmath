@@ -56,8 +56,94 @@
       <m:fPr>
         <m:type m:val="bar" />
       </m:fPr>
-      <m:num />
-      <m:den />
+      <m:num>
+        <m:phant>
+          <m:phantPr>
+            <m:show m:val="0" />
+          </m:phantPr>
+          <m:e>
+            <m:f>
+              <m:fPr>
+                <m:type m:val="bar" />
+              </m:fPr>
+              <m:num>
+                <m:phant>
+                  <m:phantPr>
+                    <m:show m:val="0" />
+                  </m:phantPr>
+                  <m:e>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>1</m:t>
+                    </m:r>
+                  </m:e>
+                </m:phant>
+              </m:num>
+              <m:den>
+                <m:phant>
+                  <m:phantPr>
+                    <m:show m:val="0" />
+                  </m:phantPr>
+                  <m:e>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>2</m:t>
+                    </m:r>
+                  </m:e>
+                </m:phant>
+              </m:den>
+            </m:f>
+          </m:e>
+        </m:phant>
+      </m:num>
+      <m:den>
+        <m:phant>
+          <m:phantPr>
+            <m:show m:val="0" />
+          </m:phantPr>
+          <m:e>
+            <m:f>
+              <m:fPr>
+                <m:type m:val="bar" />
+              </m:fPr>
+              <m:num>
+                <m:phant>
+                  <m:phantPr>
+                    <m:show m:val="0" />
+                  </m:phantPr>
+                  <m:e>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>1</m:t>
+                    </m:r>
+                  </m:e>
+                </m:phant>
+              </m:num>
+              <m:den>
+                <m:phant>
+                  <m:phantPr>
+                    <m:show m:val="0" />
+                  </m:phantPr>
+                  <m:e>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>2</m:t>
+                    </m:r>
+                  </m:e>
+                </m:phant>
+              </m:den>
+            </m:f>
+          </m:e>
+        </m:phant>
+      </m:den>
     </m:f>
   </m:oMath>
 </m:oMathPara>

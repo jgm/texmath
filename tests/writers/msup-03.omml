@@ -47,7 +47,21 @@
               <m:t>3</m:t>
             </m:r>
           </m:e>
-          <m:sup />
+          <m:sup>
+            <m:phant>
+              <m:phantPr>
+                <m:show m:val="0" />
+              </m:phantPr>
+              <m:e>
+                <m:r>
+                  <m:rPr>
+                    <m:sty m:val="p" />
+                  </m:rPr>
+                  <m:t>fail</m:t>
+                </m:r>
+              </m:e>
+            </m:phant>
+          </m:sup>
         </m:sSup>
       </m:sup>
     </m:sSup>

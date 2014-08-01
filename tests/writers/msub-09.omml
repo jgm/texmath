@@ -91,7 +91,21 @@
                       <m:t>D</m:t>
                     </m:r>
                   </m:e>
-                  <m:sub />
+                  <m:sub>
+                    <m:phant>
+                      <m:phantPr>
+                        <m:show m:val="0" />
+                      </m:phantPr>
+                      <m:e>
+                        <m:r>
+                          <m:rPr>
+                            <m:sty m:val="p" />
+                          </m:rPr>
+                          <m:t>E</m:t>
+                        </m:r>
+                      </m:e>
+                    </m:phant>
+                  </m:sub>
                 </m:sSub>
               </m:sub>
             </m:sSub>

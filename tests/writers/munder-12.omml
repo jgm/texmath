@@ -30,12 +30,38 @@
     </m:r>
     <m:limLow>
       <m:e>
+        <m:phant>
+          <m:phantPr>
+            <m:show m:val="0" />
+          </m:phantPr>
+          <m:e>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>1</m:t>
+            </m:r>
+          </m:e>
+        </m:phant>
         <m:r>
           <m:rPr>
             <m:sty m:val="p" />
           </m:rPr>
           <m:t>B</m:t>
         </m:r>
+        <m:phant>
+          <m:phantPr>
+            <m:show m:val="0" />
+          </m:phantPr>
+          <m:e>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>1</m:t>
+            </m:r>
+          </m:e>
+        </m:phant>
       </m:e>
       <m:lim>
         <m:r>
