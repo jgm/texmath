@@ -2,74 +2,72 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
     <mrow>
+      <mi>HypergeomDist</mi>
+      <mo>&#8289;</mo>
       <mrow>
-        <mi>HypergeomDist</mi>
-        <mo>&#8289;</mo>
+        <mo stretchy="true" form="prefix">(</mo>
         <mrow>
-          <mo stretchy="true" form="prefix">(</mo>
-          <mrow>
-            <mi>x</mi>
-            <mo>;</mo>
-            <mrow>
-              <mi>M</mi>
-              <mo>,</mo>
-              <mi>K</mi>
-              <mo>,</mo>
-              <mi>n</mi>
-            </mrow>
-          </mrow>
-          <mo stretchy="true" form="postfix">)</mo>
-        </mrow>
-      </mrow>
-      <mo>=</mo>
-      <mrow>
-        <munderover>
-          <mo stretchy="false" form="prefix">∑</mo>
-          <mrow>
-            <mi>k</mi>
-            <mo>=</mo>
-            <mn>0</mn>
-          </mrow>
           <mi>x</mi>
-        </munderover>
-        <mfrac>
+          <mo>;</mo>
           <mrow>
-            <mrow>
-              <mo stretchy="true" form="prefix">(</mo>
-              <mfrac>
-                <mi>K</mi>
-                <mi>k</mi>
-              </mfrac>
-              <mo stretchy="true" form="postfix">)</mo>
-            </mrow>
-            <mo>&#8290;</mo>
-            <mrow>
-              <mo stretchy="true" form="prefix">(</mo>
-              <mfrac>
-                <mrow>
-                  <mi>M</mi>
-                  <mo>-</mo>
-                  <mi>K</mi>
-                </mrow>
-                <mrow>
-                  <mi>n</mi>
-                  <mo>-</mo>
-                  <mi>k</mi>
-                </mrow>
-              </mfrac>
-              <mo stretchy="true" form="postfix">)</mo>
-            </mrow>
+            <mi>M</mi>
+            <mo>,</mo>
+            <mi>K</mi>
+            <mo>,</mo>
+            <mi>n</mi>
           </mrow>
+        </mrow>
+        <mo stretchy="true" form="postfix">)</mo>
+      </mrow>
+    </mrow>
+    <mo>=</mo>
+    <mrow>
+      <munderover>
+        <mo stretchy="false" form="prefix">∑</mo>
+        <mrow>
+          <mi>k</mi>
+          <mo>=</mo>
+          <mn>0</mn>
+        </mrow>
+        <mi>x</mi>
+      </munderover>
+      <mfrac>
+        <mrow>
           <mrow>
             <mo stretchy="true" form="prefix">(</mo>
             <mfrac>
-              <mi>M</mi>
-              <mi>n</mi>
+              <mi>K</mi>
+              <mi>k</mi>
             </mfrac>
             <mo stretchy="true" form="postfix">)</mo>
           </mrow>
-        </mfrac>
-      </mrow>
+          <mo>&#8290;</mo>
+          <mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <mfrac>
+              <mrow>
+                <mi>M</mi>
+                <mo>-</mo>
+                <mi>K</mi>
+              </mrow>
+              <mrow>
+                <mi>n</mi>
+                <mo>-</mo>
+                <mi>k</mi>
+              </mrow>
+            </mfrac>
+            <mo stretchy="true" form="postfix">)</mo>
+          </mrow>
+        </mrow>
+        <mrow>
+          <mo stretchy="true" form="prefix">(</mo>
+          <mfrac>
+            <mi>M</mi>
+            <mi>n</mi>
+          </mfrac>
+          <mo stretchy="true" form="postfix">)</mo>
+        </mrow>
+      </mfrac>
     </mrow>
   </mrow>
 </math>

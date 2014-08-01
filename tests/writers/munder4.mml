@@ -1,26 +1,24 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <munder>
-        <mi>x</mi>
-        <mo accent="true">ˇ</mo>
-      </munder>
-      <mo>≠</mo>
-      <munder>
-        <mi>x</mi>
-        <mo accent="true">ˇ</mo>
-      </munder>
-      <mo>=</mo>
-      <munder>
-        <mi>x</mi>
-        <mo accent="true">ˇ</mo>
-      </munder>
-      <mo>=</mo>
-      <munder>
-        <mi>x</mi>
-        <mo>ˇ</mo>
-      </munder>
-    </mrow>
+    <munder>
+      <mi>x</mi>
+      <mo accent="true">ˇ</mo>
+    </munder>
+    <mo>≠</mo>
+    <munder>
+      <mi>x</mi>
+      <mo accent="true">ˇ</mo>
+    </munder>
+    <mo>=</mo>
+    <munder>
+      <mi>x</mi>
+      <mo accent="true">ˇ</mo>
+    </munder>
+    <mo>=</mo>
+    <munder>
+      <mi>x</mi>
+      <mo>ˇ</mo>
+    </munder>
   </mrow>
 </math>
