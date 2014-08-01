@@ -219,7 +219,9 @@ showExp props e =
                                       , mnode "deg" ()
                                       , mnode "e" $ showExp props x]]
    EUnary "\\surd" x  -> showExp props $ EUnary "\\sqrt" x
-   EUnary "\\phantom" _ -> [] -- To implement
+   EUnary "\\phantom" x -> [mnode "phant" [ mnode "phantPr"
+                                            [ mnodeA "show" "0" () ]
+                                          , mnode "e" $ showExp props x]]
    EUnary _ x       -> showExp props x -- TODO?
    EScaled _ x      -> showExp props x -- no support for scaler?
    EArray as ls     -> [makeArray props as ls]
