@@ -12,6 +12,7 @@ import qualified Data.Text as T
 import qualified Data.Text.IO as T
 import Data.List (intercalate)
 import Data.List.Split (splitWhen)
+import System.Environment (getArgs)
 
 -- strict version of readFile
 readFile' :: FilePath -> IO String
@@ -35,13 +36,21 @@ writers = [ (".mml", ppTopElement . writeMathML DisplayBlock)
           , (".omml", ppTopElement . writeOMML DisplayBlock)
           ]
 
+-- when called with --round-trip, JUST do round trip tests.
+-- otherwise omit them.
 main :: IO ()
 main = do
+  args <- getArgs
+  let roundTrip = "--round-trip" `elem` args
   setLocaleEncoding utf8
   setCurrentDirectory "tests"
-  readerTests <- concat <$> mapM (uncurry runReader) readers
-  writerTests <- concat <$> mapM (uncurry runWriter) writers
-  let statuses = readerTests ++ writerTests
+  statuses <- if roundTrip
+                 then (++) <$> runRoundTrip ".tex" writeTeXMath readTeXMath
+                           <*> runRoundTrip ".mml"
+                                (ppTopElement . writeMathML DisplayBlock)
+                                readMathML
+                 else (++) <$> (concat <$> mapM (uncurry runReader) readers)
+                           <*> (concat <$> mapM (uncurry runWriter) writers)
   let passes = length $ filter isPass statuses
   let failures = length statuses - passes
   putStrLn $ show passes ++ " tests passed, " ++ show failures ++ " failed."
@@ -96,6 +105,19 @@ runWriter ext f = do
   mapM (\inp -> runWriterTest f inp ("./writers/" ++ takeBaseName inp ++ ext))
          inputs
 
+runRoundTrip :: String
+             -> ([Exp] -> String)
+             -> (String -> Either String [Exp])
+             -> IO [Status]
+runRoundTrip ext writer reader = do
+  inps <- filter (\x -> takeExtension x == ".native") <$>
+          if ext == ".tex"
+             then map ("./readers/tex/"++) <$>
+                    getDirectoryContents "./readers/tex"
+             else map ("./readers/mml/"++) <$>
+                    getDirectoryContents "./readers/mml"
+  mapM (runRoundTripTest writer reader) inps
+
 runWriterTest :: ([Exp] -> String) -> FilePath -> FilePath -> IO Status
 runWriterTest f input output = do
   rawnative <- readFile' input
@@ -126,3 +148,22 @@ runReaderTest fn input output = do
                          return (Pass input output)
          | otherwise  -> printFail input output r >>
                          return (Fail input output)
+
+runRoundTripTest :: ([Exp] -> String)
+                 -> (String -> Either String [Exp])
+                 -> FilePath
+                 -> IO Status
+runRoundTripTest writer reader input = do
+  rawnative <- readFile' input
+  native <- case reads rawnative of
+                 ((x,_):_) -> return x
+                 []        -> error $ "Could not read " ++ input
+  let rendered = ensureFinalNewline $ writer native
+  case reader rendered of
+       Left msg        -> printError input input msg >>
+                          return (Error input input)
+       Right r
+         | r == native -> printPass input input >>
+                          return (Pass input input)
+         | otherwise   -> printFail input input (show r) >>
+                          return (Fail input input)
