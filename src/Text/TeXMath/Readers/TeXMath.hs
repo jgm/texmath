@@ -136,7 +136,11 @@ limitsIndicator =
   <|> return Nothing
 
 inbraces :: TP Exp
-inbraces = liftM EGrouped $ braces $ many $ notFollowedBy (char '}') >> expr
+inbraces = do
+  result <- braces $ many $ notFollowedBy (char '}') >> expr
+  case result of
+       [EGrouped xs] -> return (EGrouped xs)  -- avoid doubling EGrouped
+       xs -> return (EGrouped xs)
 
 texToken :: TP Exp
 texToken = texSymbol <|> inbraces <|> inbrackets <|>
