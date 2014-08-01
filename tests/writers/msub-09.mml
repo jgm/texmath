@@ -1,33 +1,31 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
+    <msub>
+      <mi>A</mi>
       <msub>
-        <mi>A</mi>
+        <mi>B</mi>
         <msub>
-          <mi>B</mi>
+          <mi>C</mi>
+          <mi>D</mi>
+        </msub>
+      </msub>
+    </msub>
+    <mo>=</mo>
+    <msub>
+      <mi>A</mi>
+      <msub>
+        <mi>B</mi>
+        <msub>
+          <mi>C</mi>
           <msub>
-            <mi>C</mi>
             <mi>D</mi>
+            <mphantom>
+              <mi>E</mi>
+            </mphantom>
           </msub>
         </msub>
       </msub>
-      <mo>=</mo>
-      <msub>
-        <mi>A</mi>
-        <msub>
-          <mi>B</mi>
-          <msub>
-            <mi>C</mi>
-            <msub>
-              <mi>D</mi>
-              <mphantom>
-                <mi>E</mi>
-              </mphantom>
-            </msub>
-          </msub>
-        </msub>
-      </msub>
-    </mrow>
+    </msub>
   </mrow>
 </math>

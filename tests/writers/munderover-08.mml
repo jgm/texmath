@@ -1,28 +1,26 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
+    <munderover>
       <munderover>
-        <munderover>
-          <mi>BASE</mi>
-          <mi>under-1</mi>
-          <mphantom>
-            <mi>fail</mi>
-          </mphantom>
-        </munderover>
-        <mi>under-2</mi>
+        <mi>BASE</mi>
+        <mi>under-1</mi>
         <mphantom>
           <mi>fail</mi>
         </mphantom>
       </munderover>
-      <mo>=</mo>
+      <mi>under-2</mi>
+      <mphantom>
+        <mi>fail</mi>
+      </mphantom>
+    </munderover>
+    <mo>=</mo>
+    <munder>
       <munder>
-        <munder>
-          <mi>BASE</mi>
-          <mi>under-1</mi>
-        </munder>
-        <mi>under-2</mi>
+        <mi>BASE</mi>
+        <mi>under-1</mi>
       </munder>
-    </mrow>
+      <mi>under-2</mi>
+    </munder>
   </mrow>
 </math>

@@ -1,28 +1,26 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
+    <mi>there exists</mi>
     <mrow>
-      <mi>there exists</mi>
+      <mrow>
+        <mi>δ</mi>
+        <mo>&gt;</mo>
+        <mn>0</mn>
+      </mrow>
+      <mi>such that</mi>
       <mrow>
         <mrow>
-          <mi>δ</mi>
-          <mo>&gt;</mo>
-          <mn>0</mn>
-        </mrow>
-        <mi>such that</mi>
-        <mrow>
+          <mi>f</mi>
+          <mo>&#8289;</mo>
           <mrow>
-            <mi>f</mi>
-            <mo>&#8289;</mo>
-            <mrow>
-              <mo stretchy="true" form="prefix">(</mo>
-              <mi>x</mi>
-              <mo stretchy="true" form="postfix">)</mo>
-            </mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <mi>x</mi>
+            <mo stretchy="true" form="postfix">)</mo>
           </mrow>
-          <mo>&lt;</mo>
-          <mn>1</mn>
         </mrow>
+        <mo>&lt;</mo>
+        <mn>1</mn>
       </mrow>
     </mrow>
   </mrow>

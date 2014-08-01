@@ -1,28 +1,26 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <msqrt>
+    <msqrt>
+      <mi>content</mi>
+    </msqrt>
+    <mo>=</mo>
+    <msqrt>
+      <msub>
         <mi>content</mi>
-      </msqrt>
-      <mo>=</mo>
-      <msqrt>
-        <msub>
-          <mi>content</mi>
-          <mphantom>
-            <mi>fail</mi>
-          </mphantom>
-        </msub>
-      </msqrt>
-      <mo>=</mo>
-      <msqrt>
-        <msup>
-          <mi>content</mi>
-          <mphantom>
-            <mi>fail</mi>
-          </mphantom>
-        </msup>
-      </msqrt>
-    </mrow>
+        <mphantom>
+          <mi>fail</mi>
+        </mphantom>
+      </msub>
+    </msqrt>
+    <mo>=</mo>
+    <msqrt>
+      <msup>
+        <mi>content</mi>
+        <mphantom>
+          <mi>fail</mi>
+        </mphantom>
+      </msup>
+    </msqrt>
   </mrow>
 </math>

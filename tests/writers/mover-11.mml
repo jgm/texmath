@@ -1,24 +1,22 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <mover>
-        <mi>BASE</mi>
+    <mover>
+      <mi>BASE</mi>
+      <mi>x</mi>
+    </mover>
+    <mo>=</mo>
+    <mover>
+      <mi>BASE</mi>
+      <mrow>
+        <mphantom>
+          <mn>1</mn>
+        </mphantom>
         <mi>x</mi>
-      </mover>
-      <mo>=</mo>
-      <mover>
-        <mi>BASE</mi>
-        <mrow>
-          <mphantom>
-            <mn>1</mn>
-          </mphantom>
-          <mi>x</mi>
-          <mphantom>
-            <mn>1</mn>
-          </mphantom>
-        </mrow>
-      </mover>
-    </mrow>
+        <mphantom>
+          <mn>1</mn>
+        </mphantom>
+      </mrow>
+    </mover>
   </mrow>
 </math>

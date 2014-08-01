@@ -1,26 +1,24 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
+    <munder>
+      <mover>
+        <mi>- middle -</mi>
+        <mi>top</mi>
+      </mover>
+      <mphantom>
+        <mi>fail</mi>
+      </mphantom>
+    </munder>
+    <mo>=</mo>
+    <mover>
       <munder>
-        <mover>
-          <mi>- middle -</mi>
-          <mi>top</mi>
-        </mover>
+        <mi>- middle -</mi>
         <mphantom>
           <mi>fail</mi>
         </mphantom>
       </munder>
-      <mo>=</mo>
-      <mover>
-        <munder>
-          <mi>- middle -</mi>
-          <mphantom>
-            <mi>fail</mi>
-          </mphantom>
-        </munder>
-        <mi>top</mi>
-      </mover>
-    </mrow>
+      <mi>top</mi>
+    </mover>
   </mrow>
 </math>

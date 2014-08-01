@@ -1,1 +1,1 @@
-[EGrouped [EBinary "\\frac" (EGrouped [EUnary "\\phantom" (EIdentifier "a"),ENumber "12",EUnary "\\phantom" (EIdentifier "a")]) (ENumber "13"),ESymbol Rel "=",EBinary "\\frac" (ENumber "12") (EGrouped [EUnary "\\phantom" (EIdentifier "a"),ENumber "13",EUnary "\\phantom" (EIdentifier "a")])]]
+[EBinary "\\frac" (EGrouped [EUnary "\\phantom" (EIdentifier "a"),ENumber "12",EUnary "\\phantom" (EIdentifier "a")]) (ENumber "13"),ESymbol Rel "=",EBinary "\\frac" (ENumber "12") (EGrouped [EUnary "\\phantom" (EIdentifier "a"),ENumber "13",EUnary "\\phantom" (EIdentifier "a")])]

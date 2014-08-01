@@ -1,1 +1,1 @@
-[EGrouped [EOver (EIdentifier "BASE") (EBinary "\\frac" (EIdentifier "first") (EIdentifier "second")),ESymbol Rel "=",EOver (EOver (EIdentifier "BASE") (EBinary "\\frac" (EIdentifier "first") (EIdentifier "second"))) (EUnary "\\phantom" (EIdentifier "over"))]]
+[EOver (EIdentifier "BASE") (EBinary "\\frac" (EIdentifier "first") (EIdentifier "second")),ESymbol Rel "=",EOver (EOver (EIdentifier "BASE") (EBinary "\\frac" (EIdentifier "first") (EIdentifier "second"))) (EUnary "\\phantom" (EIdentifier "over"))]

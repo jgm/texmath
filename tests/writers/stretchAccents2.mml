@@ -1,18 +1,16 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <mover>
-        <mi>xxx</mi>
-        <mo accent="true">¯</mo>
-      </mover>
-      <mo>=</mo>
-      <mover>
-        <mstyle mathvariant="italic">
-          <mi>𝑥𝑥𝑥</mi>
-        </mstyle>
-        <mo accent="true">¯</mo>
-      </mover>
-    </mrow>
+    <mover>
+      <mi>xxx</mi>
+      <mo accent="true">¯</mo>
+    </mover>
+    <mo>=</mo>
+    <mover>
+      <mstyle mathvariant="italic">
+        <mi>𝑥𝑥𝑥</mi>
+      </mstyle>
+      <mo accent="true">¯</mo>
+    </mover>
   </mrow>
 </math>

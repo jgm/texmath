@@ -1,34 +1,32 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <munderover>
-        <mi>BASE</mi>
+    <munderover>
+      <mi>BASE</mi>
+      <mi>s</mi>
+      <mi>t</mi>
+    </munderover>
+    <mo>=</mo>
+    <munderover>
+      <mi>BASE</mi>
+      <mrow>
+        <mphantom>
+          <mn>1</mn>
+        </mphantom>
         <mi>s</mi>
+        <mphantom>
+          <mn>1</mn>
+        </mphantom>
+      </mrow>
+      <mrow>
+        <mphantom>
+          <mn>1</mn>
+        </mphantom>
         <mi>t</mi>
-      </munderover>
-      <mo>=</mo>
-      <munderover>
-        <mi>BASE</mi>
-        <mrow>
-          <mphantom>
-            <mn>1</mn>
-          </mphantom>
-          <mi>s</mi>
-          <mphantom>
-            <mn>1</mn>
-          </mphantom>
-        </mrow>
-        <mrow>
-          <mphantom>
-            <mn>1</mn>
-          </mphantom>
-          <mi>t</mi>
-          <mphantom>
-            <mn>1</mn>
-          </mphantom>
-        </mrow>
-      </munderover>
-    </mrow>
+        <mphantom>
+          <mn>1</mn>
+        </mphantom>
+      </mrow>
+    </munderover>
   </mrow>
 </math>

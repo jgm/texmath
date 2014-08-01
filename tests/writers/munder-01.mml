@@ -1,21 +1,19 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
+    <munder>
+      <mi>BASE</mi>
+      <mi>under</mi>
+    </munder>
+    <mo>=</mo>
+    <munder>
       <munder>
         <mi>BASE</mi>
         <mi>under</mi>
       </munder>
-      <mo>=</mo>
-      <munder>
-        <munder>
-          <mi>BASE</mi>
-          <mi>under</mi>
-        </munder>
-        <mphantom>
-          <mi>under</mi>
-        </mphantom>
-      </munder>
-    </mrow>
+      <mphantom>
+        <mi>under</mi>
+      </mphantom>
+    </munder>
   </mrow>
 </math>

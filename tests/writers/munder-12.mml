@@ -1,24 +1,22 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mrow>
-      <munder>
+    <munder>
+      <mi>B</mi>
+      <mi>underscript</mi>
+    </munder>
+    <mo>=</mo>
+    <munder>
+      <mrow>
+        <mphantom>
+          <mn>1</mn>
+        </mphantom>
         <mi>B</mi>
-        <mi>underscript</mi>
-      </munder>
-      <mo>=</mo>
-      <munder>
-        <mrow>
-          <mphantom>
-            <mn>1</mn>
-          </mphantom>
-          <mi>B</mi>
-          <mphantom>
-            <mn>1</mn>
-          </mphantom>
-        </mrow>
-        <mi>underscript</mi>
-      </munder>
-    </mrow>
+        <mphantom>
+          <mn>1</mn>
+        </mphantom>
+      </mrow>
+      <mi>underscript</mi>
+    </munder>
   </mrow>
 </math>
