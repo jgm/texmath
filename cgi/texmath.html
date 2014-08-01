@@ -4,6 +4,11 @@
   <meta charset="utf-8">
   <title>stmd.js demo</title>
   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <!-- mathjax preview causes text to be non-selectable, so commented out
+       for now:
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  -->
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
   <style type="text/css">
@@ -13,6 +18,11 @@
     textarea { width: 100%; }
   </style>
   <script type="text/javascript">
+     // Browsers do not always like self-closing tags
+     function removeSelfClosingTags(s){
+       return s.replace(/<([a-z][a-z0-9]*)([^<>]*?) *\/>/g, "<$1$2><\/$1>");
+     };
+
       $(document).ready(function(){
         $('#convert-latex2mathml').click(function() {
           $.getJSON("/cgi-bin/texmath-cgi",
@@ -21,12 +31,14 @@
                      'to': 'mathml' },
             function(result){
                    if (result.success) {
-                     $('#mathml-result').text(result.success);
-                     $('#mathml-preview').html(result.success);
+                     var res = result.success;
+                     $('#mathml-result').text(res);
+                     $('#mathml-preview').html(removeSelfClosingTags(res));
                    } else {
-                     $('#mathml-preview').html('');
                      $('#mathml-result').text(result.error);
+                     $('#mathml-preview').html('');
                    };
+                   // MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
                 })
             });
         $('#convert-mathml2latex').click(function() {
@@ -36,19 +48,24 @@
                      'to': 'tex' },
             function(result){
                    if (result.success) {
-                     $('#latex-result').text(result.success);
+                     var res = result.success;
+                     $('#latex-result').text(res);
+                     // $('#latex-preview').text("\\[" + res + "\\]");
                    } else {
                      $('#latex-result').text(result.error);
+                     // $('#latex-preview').text('');
                    };
+                   // MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
                 })
             });
         });
+
   </script>
 </head>
 <body>
 <div class="container">
  <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
       <h3><a href="http://github.com/jgm/texmath/tree/master">texmath</a>
       demo</h3>
       <ul class="nav nav-tabs" role="tablist">
@@ -57,24 +74,30 @@
       </ul>
     </div>
   </div>
-  <div class="col-md-6 tab-content">
+  <div class="row tab-content">
     <div id="tex2mathml" class="tab-pane active">
-      <label for="latex-input">Enter a LaTeX formula here. (You may precede it with macro definitions.)</label><br/>
-      <textarea name="latex-input" rows="10" id="latex-input">S = \{0 \leq \phi \leq 2\pi, \ 0 \leq \theta \leq \pi, \ 0 \leq \rho \leq R\}
+      <div class="col-md-6">
+        <label for="latex-input">Enter a LaTeX formula here. (You may precede it with macro definitions.)</label><br/>
+        <textarea name="latex-input" rows="10" id="latex-input">S = \{0 \leq \phi \leq 2\pi, \ 0 \leq \theta \leq \pi, \ 0 \leq \rho \leq R\}
 \begin{align*}
 \mathrm{Volume} &amp;=\iiint\limits_S\! \rho^2 \sin\theta \,\mathrm{d}\rho \,\mathrm{d}\theta \,\mathrm{d}\phi \\
 &amp;=\int_0^{2 \pi }\! \mathrm{d}\phi \,\int_0^{ \pi }\! \sin\theta \,\mathrm{d}\theta \,\int_0^R\! \rho^2 \mathrm{d}\rho \\
 &amp;=\phi \Bigr|_0^{2\pi}\ (-\cos\theta) \Bigr|_0^{ \pi }\ \tfrac13 \rho^3 \Bigr|_0^R \\
 &amp;=2\pi \times 2 \times \tfrac13 R^3 \\
 &amp;=\tfrac43 \pi R^3
-\end{align*}</textarea><br/>
-      <input type="submit" id="convert-latex2mathml" value="Convert to MathML" /> 
-      <pre id="mathml-result"></pre>
+\end{align*}</textarea>
+        <br/>
+        <input type="submit" id="convert-latex2mathml" value="Convert to MathML" /> 
+      </div>
+      <div class="col-md-6">
+        <pre id="mathml-result"></pre>
+      </div>
       <div id="mathml-preview"></div>
     </div>
     <div id="mathml2tex" class="tab-pane">
-      <label for="mathml-input">Enter a MathML formula here.</label><br/>
-      <textarea name="mathml-input" rows="10" id="mathml-input">&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;
+      <div class="col-md-6">
+        <label for="mathml-input">Enter a MathML formula here.</label><br/>
+        <textarea name="mathml-input" rows="10" id="mathml-input">&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;
   &lt;mstyle displaystyle=&quot;true&quot;&gt;
     &lt;msubsup&gt;
       &lt;mo&gt;&amp;#x222D;&lt;/mo&gt;
@@ -86,13 +109,18 @@
       &lt;mo&gt;(&lt;/mo&gt;
       &lt;mi&gt;x&lt;/mi&gt;
       &lt;mo&gt;)&lt;/mo&gt;
-    &lt;/mrow&gt;
+     &lt;/mrow&gt;
     &lt;mtext&gt;&amp;#x200A;&lt;/mtext&gt;
     &lt;mo&gt;&amp;#x2146;&lt;/mo&gt;
     &lt;mi&gt;x&lt;/mi&gt;
-  &lt;/mstyle&gt; &lt;/math&gt;</textarea><br/>
-      <input type="submit" id="convert-mathml2latex" value="Convert to LaTeX" />
-      <pre id="latex-result"></pre>
+  &lt;/mstyle&gt; &lt;/math&gt;</textarea>
+        <br/>
+        <input type="submit" id="convert-mathml2latex" value="Convert to LaTeX" />
+      </div>
+      <div class="col-md-6">
+        <pre id="latex-result"></pre>
+      </div>
+      <div id="latex-preview"></div>
     </div>
   </div>
 </div>
