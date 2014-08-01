@@ -79,6 +79,9 @@ readTeXMath inp =
   let (ms, rest) = parseMacroDefinitions inp in
   either (Left . show) (Right . id) $ parse formula "formula" (applyMacros ms rest)
 
+ctrlseq :: String -> TP String
+ctrlseq s = try $ symbol ('\\':s) <* notFollowedBy letter
+
 formula :: TP [Exp]
 formula = do
   whiteSpace
@@ -89,7 +92,7 @@ formula = do
 
 expr :: TP Exp
 expr = do
-  optional (try $ symbol "\\displaystyle")
+  optional (ctrlseq "displaystyle")
   (a, convertible) <- try (braces operatorname) -- needed because macros add {}
                  <|> (expr1 >>= \e -> return (e, False))
                  <|> operatorname
@@ -105,7 +108,7 @@ expr = do
 --     - False otherwise
 operatorname :: TP (Exp, Bool)
 operatorname = try $ do
-    symbol "\\operatorname"
+    ctrlseq "operatorname"
     convertible <- (char '*' >> spaces >> return True) <|> return False
     op <- liftM expToOperatorName texToken
     maybe pzero (\s -> return (EMathOperator s, convertible)) op
@@ -131,8 +134,8 @@ bareSubSup = subSup Nothing False (EIdentifier "")
 
 limitsIndicator :: TP (Maybe Bool)
 limitsIndicator =
-   try (symbol "\\limits" >> return (Just True))
-  <|> try (symbol "\\nolimits" >> return (Just False))
+   (ctrlseq "limits" >> return (Just True))
+  <|> (ctrlseq "nolimits" >> return (Just False))
   <|> return Nothing
 
 inbraces :: TP Exp
@@ -196,11 +199,12 @@ endLine :: TP Char
 endLine = try $ do
   symbol "\\\\"
   optional inbrackets  -- can contain e.g. [1.0in] for a line height, not yet supported
-  optional $ try $ symbol "\\hline"   -- we don't represent the line, but it shouldn't crash parsing
+  optional $ ctrlseq "hline"
+  -- we don't represent the line, but it shouldn't crash parsing
   return '\n'
 
 arrayLine :: TP ArrayLine
-arrayLine = notFollowedBy (try $ symbol "\\end" >> return '\n') >>
+arrayLine = notFollowedBy (ctrlseq "end" >> return '\n') >>
   sepBy1 (many (notFollowedBy endLine >> expr)) (symbol "&")
 
 arrayAlignments :: TP [Alignment]
@@ -214,12 +218,12 @@ arrayAlignments = try $ do
 
 environment :: TP Exp
 environment = try $ do
-  symbol "\\begin"
+  ctrlseq "begin"
   name <- char '{' *> manyTill anyChar (char '}')
   spaces
   let name' = filter (/='*') name
   case M.lookup name' environments of
-        Just env -> env <* spaces <* symbol "\\end"
+        Just env -> env <* spaces <* ctrlseq "end"
                         <* braces (string name) <* spaces
         Nothing  -> mzero
 
@@ -457,7 +461,7 @@ styled = try $ do
 -- note: sqrt can be unary, \sqrt{2}, or binary, \sqrt[3]{2}
 root :: TP Exp
 root = try $ do
-  try (symbol "\\sqrt") <|> symbol "\\surd"
+  ctrlseq "sqrt" <|> ctrlseq "surd"
   a <- inbrackets
   b <- texToken
   return $ EBinary "\\sqrt" b a
@@ -472,7 +476,7 @@ binary = try $ do
 
 texSymbol :: TP Exp
 texSymbol = try $ do
-  negated <- (try (symbol "\\not") >> return True) <|> return False
+  negated <- (ctrlseq "not" >> return True) <|> return False
   sym <- operator <|> command
   case M.lookup sym symbols of
        Just s   -> if negated then neg s else return s
