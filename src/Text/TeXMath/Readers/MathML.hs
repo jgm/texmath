@@ -132,8 +132,11 @@ isEmpty _ = False
 
 ident :: Element -> MML Exp
 ident e =  do
-  mv <- maybe EIdentifier (EText . getTextType) <$> findAttrQ "mathvariant" e
-  return $ mv (getString e)
+  mbVariant <- findAttrQ "mathvariant" e
+  case mbVariant of
+       Nothing  -> return $ EIdentifier (getString e)
+       Just "normal" -> return $ EIdentifier (getString e)
+       Just v   -> return $ EStyled (getTextType v) [EIdentifier (getString e)]
 
 number :: Element -> MML Exp
 number e = return $ (ENumber (getString e))
