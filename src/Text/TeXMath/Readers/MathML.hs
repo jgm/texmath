@@ -81,7 +81,12 @@ instance Show a => Show (IR a) where
   show (E s) = "E " ++ show s
 
 parseMathML :: Element -> MML [Exp]
-parseMathML e@(name -> "math") = (:[]) <$> row e
+parseMathML e@(name -> "math") = do
+  e' <- row e
+  return $
+    case e' of
+      EGrouped es -> es
+      _ -> [e']
 parseMathML _ = throwError "Root must be math element"
 
 expr :: Element -> MML [IR Exp]
