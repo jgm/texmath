@@ -7,6 +7,7 @@ import System.Process
 import Text.TeXMath
 import System.Exit
 import Control.Applicative
+import Control.Monad
 import GHC.IO.Encoding (setLocaleEncoding)
 import qualified Data.Text as T
 import qualified Data.Text.IO as T
@@ -42,6 +43,7 @@ main :: IO ()
 main = do
   args <- getArgs
   let roundTrip = "--round-trip" `elem` args
+  let regen = "--regenerate-tests" `elem` args
   setLocaleEncoding utf8
   setCurrentDirectory "tests"
   statuses <- if roundTrip
@@ -49,8 +51,8 @@ main = do
                            <*> runRoundTrip ".mml"
                                 (ppTopElement . writeMathML DisplayBlock)
                                 readMathML
-                 else (++) <$> (concat <$> mapM (uncurry runReader) readers)
-                           <*> (concat <$> mapM (uncurry runWriter) writers)
+                 else (++) <$> (concat <$> mapM (uncurry (runReader regen)) readers)
+                           <*> (concat <$> mapM (uncurry (runWriter regen)) writers)
   let passes = length $ filter isPass statuses
   let failures = length statuses - passes
   putStrLn $ show passes ++ " tests passed, " ++ show failures ++ " failed."
@@ -88,22 +90,24 @@ isPass :: Status -> Bool
 isPass (Pass _ _) = True
 isPass _ = False
 
-runReader :: String -> (String -> Either String [Exp]) -> IO [Status]
-runReader ext f = do
+runReader :: Bool -> String -> (String -> Either String [Exp]) -> IO [Status]
+runReader regen ext f = do
   input <- filter (\x -> takeExtension x == ext) <$> getDirectoryContents "./src"
   let input' = map ("src" </>) input
-  mapM (\inp -> runReaderTest (\x -> show <$> f x) inp (rename inp)) input'
+  mapM (\inp ->
+        runReaderTest regen (\x -> show <$> f x) inp (rename inp)) input'
   where
     rename x = replaceExtension (replaceDirectory x ("./readers" </> (tail ext))) "native"
 
-runWriter ::  String -> ([Exp] -> String) -> IO [Status]
-runWriter ext f = do
+runWriter ::  Bool -> String -> ([Exp] -> String) -> IO [Status]
+runWriter regen ext f = do
   mmls <- map ("./readers/mml/"++) <$> getDirectoryContents "./readers/mml"
   texs <- map ("./readers/tex/"++) <$> getDirectoryContents "./readers/tex"
   let sources = mmls ++ texs
   let inputs = [x | x <- sources, takeExtension x == ".native"]
-  mapM (\inp -> runWriterTest f inp ("./writers/" ++ takeBaseName inp ++ ext))
-         inputs
+  mapM (\inp ->
+         runWriterTest regen f inp ("./writers/" ++ takeBaseName inp ++ ext))
+       inputs
 
 runRoundTrip :: String
              -> ([Exp] -> String)
@@ -118,27 +122,29 @@ runRoundTrip ext writer reader = do
                     getDirectoryContents "./readers/mml"
   mapM (runRoundTripTest writer reader) inps
 
-runWriterTest :: ([Exp] -> String) -> FilePath -> FilePath -> IO Status
-runWriterTest f input output = do
+runWriterTest :: Bool -> ([Exp] -> String) -> FilePath -> FilePath -> IO Status
+runWriterTest regen f input output = do
   rawnative <- readFile' input
   native <- case reads rawnative of
                  ((x,_):_) -> return x
                  []        -> error $ "Could not read " ++ input
   let result = ensureFinalNewline $ f native
-  -- writeFile output result -- uncomment to regen rests (use with care!)
+  when regen $ writeFile output result
   out_t <- ensureFinalNewline <$> readFile' output
   if result == out_t
      then printPass input output >> return (Pass input output)
      else printFail input output result >> return (Fail input output)
 
-runReaderTest :: (String -> Either String String)
+runReaderTest :: Bool
+        -> (String -> Either String String)
         -> FilePath
         -> FilePath
         -> IO Status
-runReaderTest fn input output = do
+runReaderTest regen fn input output = do
   inp_t <- readFile' input
   let result = ensureFinalNewline <$> fn inp_t
-  -- writeFile output (either (const "") id result) -- uncomment to regen rests (use with care!)
+  when regen $
+    writeFile output (either (const "") id result)
   out_t <- ensureFinalNewline <$> readFile' output
   case result of
        Left msg       -> printError input output msg >>
