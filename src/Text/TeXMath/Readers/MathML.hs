@@ -42,7 +42,7 @@ import Text.TeXMath.Types
 import Text.TeXMath.Readers.MathML.MMLDict (getMathMLOperator)
 import Text.TeXMath.Readers.MathML.EntityMap (getUnicode)
 import Text.TeXMath.Shared (getTextType, readLength, getOperator)
-import Text.TeXMath.Unicode.ToTeXMath (getSymbolType)
+import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Text.TeXMath.Compat (throwError, Except, runExcept, MonadError)
 import Control.Applicative ((<$>), (<|>), (<*>))
 import Control.Arrow ((&&&))

@@ -24,10 +24,10 @@ Also note that in general @writeLaTeX . readLaTeX /= id@.
 A typical use is to combine together a reader and writer.
 
 > import Control.Applicative ((<$>))
-> import Text.TeXMath (writeMathML, readTeXMath)
+> import Text.TeXMath (writeMathML, readTeX)
 >
 > texMathToMathML :: DisplayType -> String -> Either String Element
-> texMathToMathML dt s = writeMathML dt <$> readTeXMath s
+> texMathToMathML dt s = writeMathML dt <$> readTeX s
 
 It is also possible to manipulate the AST using 'Data.Generics'. For
 example, if you wanted to replace all occurences of the identifier
@@ -36,7 +36,7 @@ script.
 
 > import Control.Applicative ((<$>))
 > import Data.Generics (everywhere, mkT)
-> import Text.TeXMath (writeMathML, readTeXMath)
+> import Text.TeXMath (writeMathML, readTeX)
 > import Text.TeXMath.Types
 > import Text.XML.Light (Element)
 >
@@ -46,15 +46,15 @@ script.
 >
 > texToMMLWithChangeIdent :: DisplayType -> String -> Either String Element
 > texToMMLWithChangeIdent dt s =
->   writeMathML dt . everywhere (mkT changeIdent) <$> readTeXMath s
+>   writeMathML dt . everywhere (mkT changeIdent) <$> readTeX s
 
 -}
 
 module Text.TeXMath (
                       readMathML,
-                      readTeXMath,
-                      writeTeXMath,
-                      writeTeXMathWith,
+                      readTeX,
+                      writeTeX,
+                      writeTeXWith,
                       addLaTeXEnvironment,
                       writeOMML,
                       writeMathML,
@@ -63,10 +63,10 @@ module Text.TeXMath (
                       Exp
                       )
 where
-import Text.TeXMath.Readers.TeXMath
+import Text.TeXMath.Readers.TeX
 import Text.TeXMath.Readers.MathML
 import Text.TeXMath.Writers.MathML
 import Text.TeXMath.Writers.OMML
 import Text.TeXMath.Writers.Pandoc
-import Text.TeXMath.Writers.TeXMath
+import Text.TeXMath.Writers.TeX
 import Text.TeXMath.Types

@@ -41,7 +41,7 @@ LaTeX Project Public License.
 
 -}
 
-module Text.TeXMath.Unicode.ToTeXMath ( getTeXMath
+module Text.TeXMath.Unicode.ToTeX ( getTeXMath
                                       , getSymbolType
                                       , records
                                       ) where

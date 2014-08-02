@@ -35,7 +35,7 @@ data Writer = XMLWriter (DisplayType -> [Exp] -> Element)
 
 readers :: [(String, Reader)]
 readers = [
-    ("tex", readTeXMath)
+    ("tex", readTeX)
   , ("mathml", readMathML)
   , ("native", readNative)]
 
@@ -49,7 +49,7 @@ readNative s =
 writers :: [(String, Writer)]
 writers = [
     ("native", StringWriter (\_ es -> show es) )
-  , ("tex", StringWriter (\_ -> writeTeXMath))
+  , ("tex", StringWriter (\_ -> writeTeX))
   , ("omml",  XMLWriter writeOMML)
   , ("xhtml",   XMLWriter (\dt e -> inHtml (writeMathML dt e)))
   , ("mathml",   XMLWriter writeMathML)
@@ -92,7 +92,7 @@ output :: DisplayType -> Writer -> [Exp] -> String
 output dt (XMLWriter w) es    = output dt (StringWriter (\dt' -> ppElement . w dt' )) es
 output dt (StringWriter w) es = w dt es
 output dt (PandocWriter w) es = show (fromMaybe fallback (w dt es))
-  where fallback = [Math mt (writeTeXMath es)]
+  where fallback = [Math mt (writeTeX es)]
         mt = case dt of
                   DisplayBlock  -> DisplayMath
                   DisplayInline -> InlineMath

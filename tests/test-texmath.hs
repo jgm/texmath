@@ -27,13 +27,13 @@ data Status = Pass FilePath FilePath
 type Ext = String
 
 readers :: [(Ext, String -> Either String [Exp])]
-readers = [ (".tex", readTeXMath)
+readers = [ (".tex", readTeX)
           , (".mml", readMathML)
           ]
 
 writers :: [(Ext, [Exp] -> String)]
 writers = [ (".mml", ppTopElement . writeMathML DisplayBlock)
-          , (".tex", writeTeXMath)
+          , (".tex", writeTeX)
           , (".omml", ppTopElement . writeOMML DisplayBlock)
           ]
 
@@ -47,7 +47,7 @@ main = do
   setLocaleEncoding utf8
   setCurrentDirectory "tests"
   statuses <- if roundTrip
-                 then (++) <$> runRoundTrip ".tex" writeTeXMath readTeXMath
+                 then (++) <$> runRoundTrip ".tex" writeTeX readTeX
                            <*> runRoundTrip ".mml"
                                 (ppTopElement . writeMathML DisplayBlock)
                                 readMathML

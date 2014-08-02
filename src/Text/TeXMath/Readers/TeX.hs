@@ -19,7 +19,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 {- | Functions for parsing a LaTeX formula to a Haskell representation.
 -}
 
-module Text.TeXMath.Readers.TeXMath (readTeXMath)
+module Text.TeXMath.Readers.TeX (readTeX)
 where
 
 import Control.Monad
@@ -31,7 +31,7 @@ import Text.ParserCombinators.Parsec.Language
 import Text.TeXMath.Types
 import Control.Applicative ((<*), (*>), (<$>))
 import qualified Text.TeXMath.Shared as S
-import Text.TeXMath.Readers.TeXMath.Macros (applyMacros, parseMacroDefinitions)
+import Text.TeXMath.Readers.TeX.Macros (applyMacros, parseMacroDefinitions)
 import Data.Maybe (fromMaybe)
 
 type TP = GenParser Char ()
@@ -74,8 +74,8 @@ expr1 =  choice [
   ]
 
 -- | Parse a formula, returning a list of 'Exp'.
-readTeXMath :: String -> Either String [Exp]
-readTeXMath inp =
+readTeX :: String -> Either String [Exp]
+readTeX inp =
   let (ms, rest) = parseMacroDefinitions inp in
   either (Left . show) (Right . id) $ parse formula "formula" (applyMacros ms rest)
 

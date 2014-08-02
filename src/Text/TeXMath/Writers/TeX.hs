@@ -18,10 +18,10 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 -}
 
-module Text.TeXMath.Writers.TeXMath (writeTeXMath, writeTeXMathWith, addLaTeXEnvironment ) where
+module Text.TeXMath.Writers.TeX (writeTeX, writeTeXWith, addLaTeXEnvironment ) where
 
 import Text.TeXMath.Types
-import Text.TeXMath.Unicode.ToTeXMath (getTeXMath)
+import Text.TeXMath.Unicode.ToTeX (getTeXMath)
 import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import qualified Text.TeXMath.Shared as S
 import Data.Maybe (fromMaybe)
@@ -39,8 +39,8 @@ import Text.TeXMath.TeX
 
 -- | Transforms an expression tree to equivalent LaTeX with the default
 -- packages (amsmath and amssymb)
-writeTeXMath :: [Exp] -> String
-writeTeXMath = writeTeXMathWith defaultEnv
+writeTeX :: [Exp] -> String
+writeTeX = writeTeXWith defaultEnv
 
 -- | Adds the correct LaTeX environment around a TeXMath fragment
 addLaTeXEnvironment :: DisplayType -> String -> String
@@ -51,8 +51,8 @@ addLaTeXEnvironment dt math =
 
 -- |  Transforms an expression tree to equivalent LaTeX with the specified
 -- packages
-writeTeXMathWith :: Env -> [Exp] -> String
-writeTeXMathWith env e = drop 1 . init . flip renderTeX "" . Grouped $
+writeTeXWith :: Env -> [Exp] -> String
+writeTeXWith env e = drop 1 . init . flip renderTeX "" . Grouped $
                             runExpr env $
                               mapM_ writeExp (fixTree e)
 
