@@ -23,7 +23,7 @@ module Text.TeXMath.Readers.TeXMath (readTeXMath)
 where
 
 import Control.Monad
-import Data.Char (isDigit, isAscii)
+import Data.Char (isDigit, isAscii, isLetter)
 import qualified Data.Map as M
 import Text.ParserCombinators.Parsec
 import qualified Text.ParserCombinators.Parsec.Token as P
@@ -418,6 +418,8 @@ textOps = M.fromList
           , ("\\text",       EText TextNormal . parseText)
           , ("\\textbf",     EText TextBold . parseText)
           , ("\\textit",     EText TextItalic . parseText)
+          , ("\\texttt",     EText TextMonospace . parseText)
+          , ("\\textsf",     EText TextSansSerif . parseText)
           ]
 
 parseText :: String -> String
@@ -428,6 +430,9 @@ parseText ('-':'-':'-':xs) = '\x2014' : parseText xs
 parseText ('-':'-':xs) = '\x2013' : parseText xs
 parseText ('\\':'l':'d':'o':'t':'s':xs) = '\x2026' : parseText xs
 parseText ('~':xs) = '\xA0' : parseText xs
+parseText ('\\':c:cs) | c `elem` "#$%&_{} " = c : parseText cs
+parseText ('\\':'s':'i':'m':c:cs) | not (isLetter c) = '~' : parseText (c:cs)
+parseText ('\\':'c':'h':'a':'r':'`':c:cs) = c : parseText cs
 parseText (x:xs) = x : parseText xs
 parseText [] = []
 
