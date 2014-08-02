@@ -296,7 +296,7 @@ matchNesting ((break isFence) -> (inis, rest)) =
             inis' ++ (E $ Right $ trailingSup opens closes body') : matchNesting rs'
           _ -> (error "matchNesting: Logical error 1")
     ((Stretchy Close closes): rs) ->
-      inis' ++ (E $ Right $ trailingSup "" closes (matchNesting inis)) : matchNesting rs
+      (E $ Right $ trailingSup "" closes (matchNesting inis)) : matchNesting rs
     _ -> error "matchNesting: Logical error 2"
   where
     isOpen (Stretchy Open _) = True
