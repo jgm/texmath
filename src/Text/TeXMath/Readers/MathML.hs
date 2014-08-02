@@ -148,7 +148,7 @@ ident e =  do
   case mbVariant of
        Nothing  -> return base
        Just v
-         | (curstyle == getTextType v) -> return base
+         | curstyle == getTextType v -> return base
          | otherwise  -> return $ EStyled (getTextType v) [base]
 
 number :: Element -> MML Exp
