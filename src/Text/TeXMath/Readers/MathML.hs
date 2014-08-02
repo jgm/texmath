@@ -506,7 +506,12 @@ defaultState :: MMLState
 defaultState = MMLState [] Nothing False TextNormal
 
 addAttrs :: [Attr] -> MMLState -> MMLState
-addAttrs as s = s {attrs = as ++ attrs s }
+addAttrs as s = s {attrs = (map renameAttr as) ++ attrs s }
+
+renameAttr :: Attr -> Attr
+renameAttr v@(qName . attrKey -> "accentunder") =
+  Attr (unqual "accent") (attrVal v)
+renameAttr a = a 
 
 filterMathVariant :: MMLState -> MMLState
 filterMathVariant s@(attrs -> as) =
