@@ -1,607 +1,605 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mtable>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">Tab</mtext>
-        </mtd>
-        <mtd>
-          <mi></mi>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">target</mtext>
-        </mtd>
-        <mtd>
-          <mo>⌖</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">tau</mtext>
-        </mtd>
-        <mtd>
-          <mo>τ</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">tbrk</mtext>
-        </mtd>
-        <mtd>
-          <mo stretchy="false" form="postfix">⎴</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">tcaron</mtext>
-        </mtd>
-        <mtd>
-          <mo>ť</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">Tcaron</mtext>
-        </mtd>
-        <mtd>
-          <mo>Ť</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">tcedil</mtext>
-        </mtd>
-        <mtd>
-          <mo>ţ</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">Tcedil</mtext>
-        </mtd>
-        <mtd>
-          <mo>Ţ</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">tcy</mtext>
-        </mtd>
-        <mtd>
-          <mo>т</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">Tcy</mtext>
-        </mtd>
-        <mtd>
-          <mo>Т</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">tdot</mtext>
-        </mtd>
-        <mtd>
-          <mo accent="true">⃛</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">telrec</mtext>
-        </mtd>
-        <mtd>
-          <mo>⌕</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">tfr</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝔱</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">Tfr</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝔗</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">there4</mtext>
-        </mtd>
-        <mtd>
-          <mo>∴</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">therefore</mtext>
-        </mtd>
-        <mtd>
-          <mo>∴</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">Therefore</mtext>
-        </mtd>
-        <mtd>
-          <mo>∴</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">theta</mtext>
-        </mtd>
-        <mtd>
-          <mo>θ</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">Theta</mtext>
-        </mtd>
-        <mtd>
-          <mo>Θ</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">thetav</mtext>
-        </mtd>
-        <mtd>
-          <mo>ϑ</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">thickapprox</mtext>
-        </mtd>
-        <mtd>
-          <mo>≈</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">thicksim</mtext>
-        </mtd>
-        <mtd>
-          <mo>∼</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">ThickSpace</mtext>
-        </mtd>
-        <mtd>
-          <mi>  </mi>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">thinsp</mtext>
-        </mtd>
-        <mtd>
-          <mo> </mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">ThinSpace</mtext>
-        </mtd>
-        <mtd>
-          <mo> </mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">thkap</mtext>
-        </mtd>
-        <mtd>
-          <mo>≈</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">thksim</mtext>
-        </mtd>
-        <mtd>
-          <mo>∼</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">thorn</mtext>
-        </mtd>
-        <mtd>
-          <mo>þ</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">THORN</mtext>
-        </mtd>
-        <mtd>
-          <mo>Þ</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">tilde</mtext>
-        </mtd>
-        <mtd>
-          <mo stretchy="false" form="postfix">˜</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">Tilde</mtext>
-        </mtd>
-        <mtd>
-          <mo>∼</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">TildeEqual</mtext>
-        </mtd>
-        <mtd>
-          <mo>≃</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">TildeFullEqual</mtext>
-        </mtd>
-        <mtd>
-          <mo>≅</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">TildeTilde</mtext>
-        </mtd>
-        <mtd>
-          <mo>≈</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">times</mtext>
-        </mtd>
-        <mtd>
-          <mo>×</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">timesb</mtext>
-        </mtd>
-        <mtd>
-          <mo>⊠</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">timesbar</mtext>
-        </mtd>
-        <mtd>
-          <mo>⨱</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">timesd</mtext>
-        </mtd>
-        <mtd>
-          <mo>⨰</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">tint</mtext>
-        </mtd>
-        <mtd>
-          <mo>∭</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">toea</mtext>
-        </mtd>
-        <mtd>
-          <mo>⤨</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">top</mtext>
-        </mtd>
-        <mtd>
-          <mo>⊤</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">topbot</mtext>
-        </mtd>
-        <mtd>
-          <mo>⌶</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">topcir</mtext>
-        </mtd>
-        <mtd>
-          <mo>⫱</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">topf</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝕥</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">Topf</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝕋</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">topfork</mtext>
-        </mtd>
-        <mtd>
-          <mo>⫚</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">tosa</mtext>
-        </mtd>
-        <mtd>
-          <mo>⤩</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">tprime</mtext>
-        </mtd>
-        <mtd>
-          <mo accent="true">‴</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">trade</mtext>
-        </mtd>
-        <mtd>
-          <mo>™</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">triangle</mtext>
-        </mtd>
-        <mtd>
-          <mo>▵</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">triangledown</mtext>
-        </mtd>
-        <mtd>
-          <mo>▿</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">triangleleft</mtext>
-        </mtd>
-        <mtd>
-          <mo>◃</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">trianglelefteq</mtext>
-        </mtd>
-        <mtd>
-          <mo>⊴</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">triangleq</mtext>
-        </mtd>
-        <mtd>
-          <mo>≜</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">triangleright</mtext>
-        </mtd>
-        <mtd>
-          <mo>▹</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">trianglerighteq</mtext>
-        </mtd>
-        <mtd>
-          <mo>⊵</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">tridot</mtext>
-        </mtd>
-        <mtd>
-          <mo>◬</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">trie</mtext>
-        </mtd>
-        <mtd>
-          <mo>≜</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">triminus</mtext>
-        </mtd>
-        <mtd>
-          <mo>⨺</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">TripleDot</mtext>
-        </mtd>
-        <mtd>
-          <mo accent="true">⃛</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">triplus</mtext>
-        </mtd>
-        <mtd>
-          <mo>⨹</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">trisb</mtext>
-        </mtd>
-        <mtd>
-          <mo>⧍</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">tritime</mtext>
-        </mtd>
-        <mtd>
-          <mo>⨻</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">trpezium</mtext>
-        </mtd>
-        <mtd>
-          <mo>⏢</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">tscr</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝓉</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">Tscr</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝒯</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">tscy</mtext>
-        </mtd>
-        <mtd>
-          <mo>ц</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">TScy</mtext>
-        </mtd>
-        <mtd>
-          <mo>Ц</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">tshcy</mtext>
-        </mtd>
-        <mtd>
-          <mo>ћ</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">TSHcy</mtext>
-        </mtd>
-        <mtd>
-          <mo>Ћ</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">tstrok</mtext>
-        </mtd>
-        <mtd>
-          <mo>ŧ</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">Tstrok</mtext>
-        </mtd>
-        <mtd>
-          <mo>Ŧ</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">twixt</mtext>
-        </mtd>
-        <mtd>
-          <mo>≬</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">twoheadleftarrow</mtext>
-        </mtd>
-        <mtd>
-          <mo>↞</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">twoheadrightarrow</mtext>
-        </mtd>
-        <mtd>
-          <mo>↠</mo>
-        </mtd>
-      </mtr>
-    </mtable>
-  </mrow>
+  <mtable>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">Tab</mtext>
+      </mtd>
+      <mtd>
+        <mi></mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">target</mtext>
+      </mtd>
+      <mtd>
+        <mo>⌖</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">tau</mtext>
+      </mtd>
+      <mtd>
+        <mo>τ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">tbrk</mtext>
+      </mtd>
+      <mtd>
+        <mo stretchy="false" form="postfix">⎴</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">tcaron</mtext>
+      </mtd>
+      <mtd>
+        <mo>ť</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">Tcaron</mtext>
+      </mtd>
+      <mtd>
+        <mo>Ť</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">tcedil</mtext>
+      </mtd>
+      <mtd>
+        <mo>ţ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">Tcedil</mtext>
+      </mtd>
+      <mtd>
+        <mo>Ţ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">tcy</mtext>
+      </mtd>
+      <mtd>
+        <mo>т</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">Tcy</mtext>
+      </mtd>
+      <mtd>
+        <mo>Т</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">tdot</mtext>
+      </mtd>
+      <mtd>
+        <mo accent="true">⃛</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">telrec</mtext>
+      </mtd>
+      <mtd>
+        <mo>⌕</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">tfr</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝔱</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">Tfr</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝔗</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">there4</mtext>
+      </mtd>
+      <mtd>
+        <mo>∴</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">therefore</mtext>
+      </mtd>
+      <mtd>
+        <mo>∴</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">Therefore</mtext>
+      </mtd>
+      <mtd>
+        <mo>∴</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">theta</mtext>
+      </mtd>
+      <mtd>
+        <mo>θ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">Theta</mtext>
+      </mtd>
+      <mtd>
+        <mo>Θ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">thetav</mtext>
+      </mtd>
+      <mtd>
+        <mo>ϑ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">thickapprox</mtext>
+      </mtd>
+      <mtd>
+        <mo>≈</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">thicksim</mtext>
+      </mtd>
+      <mtd>
+        <mo>∼</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">ThickSpace</mtext>
+      </mtd>
+      <mtd>
+        <mi>  </mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">thinsp</mtext>
+      </mtd>
+      <mtd>
+        <mo> </mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">ThinSpace</mtext>
+      </mtd>
+      <mtd>
+        <mo> </mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">thkap</mtext>
+      </mtd>
+      <mtd>
+        <mo>≈</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">thksim</mtext>
+      </mtd>
+      <mtd>
+        <mo>∼</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">thorn</mtext>
+      </mtd>
+      <mtd>
+        <mo>þ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">THORN</mtext>
+      </mtd>
+      <mtd>
+        <mo>Þ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">tilde</mtext>
+      </mtd>
+      <mtd>
+        <mo stretchy="false" form="postfix">˜</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">Tilde</mtext>
+      </mtd>
+      <mtd>
+        <mo>∼</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">TildeEqual</mtext>
+      </mtd>
+      <mtd>
+        <mo>≃</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">TildeFullEqual</mtext>
+      </mtd>
+      <mtd>
+        <mo>≅</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">TildeTilde</mtext>
+      </mtd>
+      <mtd>
+        <mo>≈</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">times</mtext>
+      </mtd>
+      <mtd>
+        <mo>×</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">timesb</mtext>
+      </mtd>
+      <mtd>
+        <mo>⊠</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">timesbar</mtext>
+      </mtd>
+      <mtd>
+        <mo>⨱</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">timesd</mtext>
+      </mtd>
+      <mtd>
+        <mo>⨰</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">tint</mtext>
+      </mtd>
+      <mtd>
+        <mo>∭</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">toea</mtext>
+      </mtd>
+      <mtd>
+        <mo>⤨</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">top</mtext>
+      </mtd>
+      <mtd>
+        <mo>⊤</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">topbot</mtext>
+      </mtd>
+      <mtd>
+        <mo>⌶</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">topcir</mtext>
+      </mtd>
+      <mtd>
+        <mo>⫱</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">topf</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝕥</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">Topf</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝕋</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">topfork</mtext>
+      </mtd>
+      <mtd>
+        <mo>⫚</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">tosa</mtext>
+      </mtd>
+      <mtd>
+        <mo>⤩</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">tprime</mtext>
+      </mtd>
+      <mtd>
+        <mo accent="true">‴</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">trade</mtext>
+      </mtd>
+      <mtd>
+        <mo>™</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">triangle</mtext>
+      </mtd>
+      <mtd>
+        <mo>▵</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">triangledown</mtext>
+      </mtd>
+      <mtd>
+        <mo>▿</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">triangleleft</mtext>
+      </mtd>
+      <mtd>
+        <mo>◃</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">trianglelefteq</mtext>
+      </mtd>
+      <mtd>
+        <mo>⊴</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">triangleq</mtext>
+      </mtd>
+      <mtd>
+        <mo>≜</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">triangleright</mtext>
+      </mtd>
+      <mtd>
+        <mo>▹</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">trianglerighteq</mtext>
+      </mtd>
+      <mtd>
+        <mo>⊵</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">tridot</mtext>
+      </mtd>
+      <mtd>
+        <mo>◬</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">trie</mtext>
+      </mtd>
+      <mtd>
+        <mo>≜</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">triminus</mtext>
+      </mtd>
+      <mtd>
+        <mo>⨺</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">TripleDot</mtext>
+      </mtd>
+      <mtd>
+        <mo accent="true">⃛</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">triplus</mtext>
+      </mtd>
+      <mtd>
+        <mo>⨹</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">trisb</mtext>
+      </mtd>
+      <mtd>
+        <mo>⧍</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">tritime</mtext>
+      </mtd>
+      <mtd>
+        <mo>⨻</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">trpezium</mtext>
+      </mtd>
+      <mtd>
+        <mo>⏢</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">tscr</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝓉</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">Tscr</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝒯</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">tscy</mtext>
+      </mtd>
+      <mtd>
+        <mo>ц</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">TScy</mtext>
+      </mtd>
+      <mtd>
+        <mo>Ц</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">tshcy</mtext>
+      </mtd>
+      <mtd>
+        <mo>ћ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">TSHcy</mtext>
+      </mtd>
+      <mtd>
+        <mo>Ћ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">tstrok</mtext>
+      </mtd>
+      <mtd>
+        <mo>ŧ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">Tstrok</mtext>
+      </mtd>
+      <mtd>
+        <mo>Ŧ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">twixt</mtext>
+      </mtd>
+      <mtd>
+        <mo>≬</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">twoheadleftarrow</mtext>
+      </mtd>
+      <mtd>
+        <mo>↞</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">twoheadrightarrow</mtext>
+      </mtd>
+      <mtd>
+        <mo>↠</mo>
+      </mtd>
+    </mtr>
+  </mtable>
 </math>

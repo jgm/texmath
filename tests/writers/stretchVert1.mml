@@ -1,25 +1,35 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mtable>
-      <mtr>
-        <mtd>
+  <mtable>
+    <mtr>
+      <mtd>
+        <mrow>
+          <mi>x</mi>
+          <mo>+</mo>
           <mrow>
-            <mi>x</mi>
-            <mo>+</mo>
-            <mrow>
-              <mo stretchy="true" form="prefix">(</mo>
-              <mfrac>
-                <mn>2</mn>
-                <mn>3</mn>
-              </mfrac>
-              <mo stretchy="true" form="postfix">)</mo>
-            </mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <mfrac>
+              <mn>2</mn>
+              <mn>3</mn>
+            </mfrac>
+            <mo stretchy="true" form="postfix">)</mo>
           </mrow>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mrow>
+          <mi>x</mi>
+          <mo>+</mo>
+          <mover>
+            <mo stretchy="false" form="prefix">(</mo>
+            <mo>-</mo>
+          </mover>
+          <mfrac>
+            <mn>2</mn>
+            <mn>3</mn>
+          </mfrac>
           <mrow>
             <mi>x</mi>
             <mo>+</mo>
@@ -31,22 +41,10 @@
               <mn>2</mn>
               <mn>3</mn>
             </mfrac>
-            <mrow>
-              <mi>x</mi>
-              <mo>+</mo>
-              <mover>
-                <mo stretchy="false" form="prefix">(</mo>
-                <mo>-</mo>
-              </mover>
-              <mfrac>
-                <mn>2</mn>
-                <mn>3</mn>
-              </mfrac>
-              <mo stretchy="true" form="postfix">)</mo>
-            </mrow>
+            <mo stretchy="true" form="postfix">)</mo>
           </mrow>
-        </mtd>
-      </mtr>
-    </mtable>
-  </mrow>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
 </math>

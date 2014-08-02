@@ -1,180 +1,178 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mtable>
-      <mtr>
-        <mtd />
-        <mtd>
-          <mtext mathvariant="normal">ds=true</mtext>
-        </mtd>
-        <mtd>
-          <mtext mathvariant="normal">ds=false</mtext>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">stretch=t, large=t</mtext>
-        </mtd>
-        <mtd>
+  <mtable>
+    <mtr>
+      <mtd />
+      <mtd>
+        <mtext mathvariant="normal">ds=true</mtext>
+      </mtd>
+      <mtd>
+        <mtext mathvariant="normal">ds=false</mtext>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">stretch=t, large=t</mtext>
+      </mtd>
+      <mtd>
+        <mrow>
           <mrow>
-            <mrow>
-              <mo stretchy="true" form="prefix">∫</mo>
-              <mfrac>
-                <mi>x</mi>
-                <mn>5</mn>
-              </mfrac>
-            </mrow>
-            <mo>=</mo>
-            <mrow>
-              <mo stretchy="true" form="prefix">∫</mo>
+            <mo stretchy="true" form="prefix">∫</mo>
+            <mfrac>
               <mi>x</mi>
-            </mrow>
+              <mn>5</mn>
+            </mfrac>
           </mrow>
-        </mtd>
-        <mtd>
+          <mo>=</mo>
           <mrow>
-            <mrow>
-              <mo stretchy="true" form="prefix">∫</mo>
-              <mfrac>
-                <mi>x</mi>
-                <mn>5</mn>
-              </mfrac>
-            </mrow>
-            <mo>=</mo>
-            <mrow>
-              <mo stretchy="true" form="prefix">∫</mo>
-              <mi>x</mi>
-            </mrow>
+            <mo stretchy="true" form="prefix">∫</mo>
+            <mi>x</mi>
           </mrow>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">stretch=f, large=t</mtext>
-        </mtd>
-        <mtd>
+        </mrow>
+      </mtd>
+      <mtd>
+        <mrow>
           <mrow>
-            <mrow>
-              <mo>∫</mo>
-              <mfrac>
-                <mi>x</mi>
-                <mn>5</mn>
-              </mfrac>
-            </mrow>
-            <mo>=</mo>
-            <mrow>
-              <mo>∫</mo>
+            <mo stretchy="true" form="prefix">∫</mo>
+            <mfrac>
               <mi>x</mi>
-            </mrow>
+              <mn>5</mn>
+            </mfrac>
           </mrow>
-        </mtd>
-        <mtd>
+          <mo>=</mo>
           <mrow>
-            <mrow>
-              <mo>∫</mo>
-              <mfrac>
-                <mi>x</mi>
-                <mn>5</mn>
-              </mfrac>
-            </mrow>
-            <mo>=</mo>
-            <mrow>
-              <mo>∫</mo>
-              <mi>x</mi>
-            </mrow>
+            <mo stretchy="true" form="prefix">∫</mo>
+            <mi>x</mi>
           </mrow>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">stretch=t, large=f</mtext>
-        </mtd>
-        <mtd>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">stretch=f, large=t</mtext>
+      </mtd>
+      <mtd>
+        <mrow>
           <mrow>
-            <mrow>
-              <mo stretchy="true" form="prefix">∫</mo>
-              <mfrac>
-                <mi>x</mi>
-                <mn>5</mn>
-              </mfrac>
-            </mrow>
-            <mo>=</mo>
-            <mrow>
-              <mo stretchy="true" form="prefix">∫</mo>
-              <mfrac>
-                <mi>A</mi>
-                <mn>5</mn>
-              </mfrac>
-            </mrow>
-            <mo>=</mo>
-            <mrow>
-              <mo stretchy="true" form="prefix">∫</mo>
+            <mo>∫</mo>
+            <mfrac>
               <mi>x</mi>
-            </mrow>
+              <mn>5</mn>
+            </mfrac>
           </mrow>
-        </mtd>
-        <mtd>
+          <mo>=</mo>
           <mrow>
-            <mrow>
-              <mo stretchy="true" form="prefix">∫</mo>
-              <mfrac>
-                <mi>x</mi>
-                <mn>5</mn>
-              </mfrac>
-            </mrow>
-            <mo>=</mo>
-            <mrow>
-              <mo stretchy="true" form="prefix">∫</mo>
-              <mfrac>
-                <mi>A</mi>
-                <mn>5</mn>
-              </mfrac>
-            </mrow>
-            <mo>=</mo>
-            <mrow>
-              <mo stretchy="true" form="prefix">∫</mo>
-              <mi>x</mi>
-            </mrow>
+            <mo>∫</mo>
+            <mi>x</mi>
           </mrow>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">stretch=f, large=f</mtext>
-        </mtd>
-        <mtd>
+        </mrow>
+      </mtd>
+      <mtd>
+        <mrow>
           <mrow>
-            <mrow>
-              <mo>∫</mo>
-              <mfrac>
-                <mi>x</mi>
-                <mn>5</mn>
-              </mfrac>
-            </mrow>
-            <mo>=</mo>
-            <mrow>
-              <mo>∫</mo>
+            <mo>∫</mo>
+            <mfrac>
               <mi>x</mi>
-            </mrow>
+              <mn>5</mn>
+            </mfrac>
           </mrow>
-        </mtd>
-        <mtd>
+          <mo>=</mo>
           <mrow>
-            <mrow>
-              <mo>∫</mo>
-              <mfrac>
-                <mi>x</mi>
-                <mn>5</mn>
-              </mfrac>
-            </mrow>
-            <mo>=</mo>
-            <mrow>
-              <mo>∫</mo>
-              <mi>x</mi>
-            </mrow>
+            <mo>∫</mo>
+            <mi>x</mi>
           </mrow>
-        </mtd>
-      </mtr>
-    </mtable>
-  </mrow>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">stretch=t, large=f</mtext>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mrow>
+            <mo stretchy="true" form="prefix">∫</mo>
+            <mfrac>
+              <mi>x</mi>
+              <mn>5</mn>
+            </mfrac>
+          </mrow>
+          <mo>=</mo>
+          <mrow>
+            <mo stretchy="true" form="prefix">∫</mo>
+            <mfrac>
+              <mi>A</mi>
+              <mn>5</mn>
+            </mfrac>
+          </mrow>
+          <mo>=</mo>
+          <mrow>
+            <mo stretchy="true" form="prefix">∫</mo>
+            <mi>x</mi>
+          </mrow>
+        </mrow>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mrow>
+            <mo stretchy="true" form="prefix">∫</mo>
+            <mfrac>
+              <mi>x</mi>
+              <mn>5</mn>
+            </mfrac>
+          </mrow>
+          <mo>=</mo>
+          <mrow>
+            <mo stretchy="true" form="prefix">∫</mo>
+            <mfrac>
+              <mi>A</mi>
+              <mn>5</mn>
+            </mfrac>
+          </mrow>
+          <mo>=</mo>
+          <mrow>
+            <mo stretchy="true" form="prefix">∫</mo>
+            <mi>x</mi>
+          </mrow>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">stretch=f, large=f</mtext>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mrow>
+            <mo>∫</mo>
+            <mfrac>
+              <mi>x</mi>
+              <mn>5</mn>
+            </mfrac>
+          </mrow>
+          <mo>=</mo>
+          <mrow>
+            <mo>∫</mo>
+            <mi>x</mi>
+          </mrow>
+        </mrow>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mrow>
+            <mo>∫</mo>
+            <mfrac>
+              <mi>x</mi>
+              <mn>5</mn>
+            </mfrac>
+          </mrow>
+          <mo>=</mo>
+          <mrow>
+            <mo>∫</mo>
+            <mi>x</mi>
+          </mrow>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
 </math>

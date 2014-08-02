@@ -1,13 +1,11 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mfrac>
+  <mfrac>
+    <mi>x</mi>
+    <mrow>
       <mi>x</mi>
-      <mrow>
-        <mi>x</mi>
-        <mo>+</mo>
-        <mn>1</mn>
-      </mrow>
-    </mfrac>
-  </mrow>
+      <mo>+</mo>
+      <mn>1</mn>
+    </mrow>
+  </mfrac>
 </math>

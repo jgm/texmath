@@ -1,52 +1,50 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mtable>
-      <mtr>
-        <mtd>
+  <mtable>
+    <mtr>
+      <mtd>
+        <mrow>
           <mrow>
             <mrow>
-              <mrow>
-                <mn>8.44</mn>
-                <mo>&#8290;</mo>
-                <mi>x</mi>
-              </mrow>
-              <mo>+</mo>
-              <mrow>
-                <mn>55</mn>
-                <mo>&#8290;</mo>
-                <mi>y</mi>
-              </mrow>
+              <mn>8.44</mn>
+              <mo>&#8290;</mo>
+              <mi>x</mi>
             </mrow>
-            <mo>=</mo>
-            <mn>0</mn>
+            <mo>+</mo>
+            <mrow>
+              <mn>55</mn>
+              <mo>&#8290;</mo>
+              <mi>y</mi>
+            </mrow>
           </mrow>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
+          <mo>=</mo>
+          <mn>0</mn>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mrow>
           <mrow>
             <mrow>
-              <mrow>
-                <mn>3.1</mn>
-                <mo>&#8290;</mo>
-                <mi>x</mi>
-              </mrow>
-              <mo>-</mo>
-              <mrow>
-                <mn>0.7</mn>
-                <mo>&#8290;</mo>
-                <mi>y</mi>
-              </mrow>
+              <mn>3.1</mn>
+              <mo>&#8290;</mo>
+              <mi>x</mi>
             </mrow>
-            <mo>=</mo>
+            <mo>-</mo>
             <mrow>
-              <mo>-</mo>
-              <mn>1.1</mn>
+              <mn>0.7</mn>
+              <mo>&#8290;</mo>
+              <mi>y</mi>
             </mrow>
           </mrow>
-        </mtd>
-      </mtr>
-    </mtable>
-  </mrow>
+          <mo>=</mo>
+          <mrow>
+            <mo>-</mo>
+            <mn>1.1</mn>
+          </mrow>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
 </math>

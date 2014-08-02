@@ -1,51 +1,49 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mtable>
-      <mtr>
-        <mtd>
+  <mtable>
+    <mtr>
+      <mtd>
+        <mrow>
+          <mi>A</mi>
+          <mo>+</mo>
+          <mi>A</mi>
+          <mo>+</mo>
           <mrow>
             <mi>A</mi>
             <mo>+</mo>
             <mi>A</mi>
             <mo>+</mo>
-            <mrow>
-              <mi>A</mi>
-              <mo>+</mo>
-              <mi>A</mi>
-              <mo>+</mo>
-              <mi>A</mi>
-            </mrow>
-            <mo>+</mo>
             <mi>A</mi>
           </mrow>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
+          <mo>+</mo>
+          <mi>A</mi>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mrow>
+          <mi>A</mi>
+          <mo>+</mo>
           <mrow>
             <mi>A</mi>
             <mo>+</mo>
-            <mrow>
-              <mi>A</mi>
-              <mo>+</mo>
-              <mi>A</mi>
-              <mo>+</mo>
-              <mi>A</mi>
-            </mrow>
+            <mi>A</mi>
+            <mo>+</mo>
+            <mi>A</mi>
+          </mrow>
+          <mo>+</mo>
+          <mi>A</mi>
+          <mo>+</mo>
+          <mrow>
+            <mi>A</mi>
             <mo>+</mo>
             <mi>A</mi>
             <mo>+</mo>
-            <mrow>
-              <mi>A</mi>
-              <mo>+</mo>
-              <mi>A</mi>
-              <mo>+</mo>
-              <mi>A</mi>
-            </mrow>
+            <mi>A</mi>
           </mrow>
-        </mtd>
-      </mtr>
-    </mtable>
-  </mrow>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
 </math>

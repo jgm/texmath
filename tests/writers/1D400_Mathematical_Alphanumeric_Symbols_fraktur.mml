@@ -1,270 +1,268 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mtable>
-      <mtr>
-        <mtd />
-        <mtd>
-          <mtext mathvariant="normal">1D50</mtext>
-        </mtd>
-        <mtd>
-          <mtext mathvariant="normal">1D51</mtext>
-        </mtd>
-        <mtd>
-          <mtext mathvariant="normal">1D52</mtext>
-        </mtd>
-        <mtd>
-          <mtext mathvariant="normal">1D53</mtext>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">0</mtext>
-        </mtd>
-        <mtd />
-        <mtd>
-          <mo>𝔐</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔠</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔰</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">1</mtext>
-        </mtd>
-        <mtd />
-        <mtd>
-          <mo>𝔑</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔡</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔱</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">2</mtext>
-        </mtd>
-        <mtd />
-        <mtd>
-          <mo>𝔒</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔢</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔲</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">3</mtext>
-        </mtd>
-        <mtd />
-        <mtd>
-          <mo>𝔓</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔣</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔳</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">4</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝔄</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔔</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔤</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔴</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">5</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝔅</mo>
-        </mtd>
-        <mtd>
-          <mo>@</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔥</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔵</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">6</mtext>
-        </mtd>
-        <mtd>
-          <mo>@</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔖</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔦</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔶</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">7</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝔇</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔗</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔧</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔷</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">8</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝔈</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔘</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔨</mo>
-        </mtd>
-        <mtd />
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">9</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝔉</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔙</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔩</mo>
-        </mtd>
-        <mtd />
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">A</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝔊</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔚</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔪</mo>
-        </mtd>
-        <mtd />
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">B</mtext>
-        </mtd>
-        <mtd>
-          <mo>@</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔛</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔫</mo>
-        </mtd>
-        <mtd />
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">C</mtext>
-        </mtd>
-        <mtd>
-          <mo>@</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔜</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔬</mo>
-        </mtd>
-        <mtd />
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">D</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝔍</mo>
-        </mtd>
-        <mtd>
-          <mo>@</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔭</mo>
-        </mtd>
-        <mtd />
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">E</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝔎</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔞</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔮</mo>
-        </mtd>
-        <mtd />
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">F</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝔏</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔟</mo>
-        </mtd>
-        <mtd>
-          <mo>𝔯</mo>
-        </mtd>
-        <mtd />
-      </mtr>
-    </mtable>
-  </mrow>
+  <mtable>
+    <mtr>
+      <mtd />
+      <mtd>
+        <mtext mathvariant="normal">1D50</mtext>
+      </mtd>
+      <mtd>
+        <mtext mathvariant="normal">1D51</mtext>
+      </mtd>
+      <mtd>
+        <mtext mathvariant="normal">1D52</mtext>
+      </mtd>
+      <mtd>
+        <mtext mathvariant="normal">1D53</mtext>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">0</mtext>
+      </mtd>
+      <mtd />
+      <mtd>
+        <mo>𝔐</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔠</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔰</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">1</mtext>
+      </mtd>
+      <mtd />
+      <mtd>
+        <mo>𝔑</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔡</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔱</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">2</mtext>
+      </mtd>
+      <mtd />
+      <mtd>
+        <mo>𝔒</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔢</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔲</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">3</mtext>
+      </mtd>
+      <mtd />
+      <mtd>
+        <mo>𝔓</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔣</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔳</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">4</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝔄</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔔</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔤</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔴</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">5</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝔅</mo>
+      </mtd>
+      <mtd>
+        <mo>@</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔥</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔵</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">6</mtext>
+      </mtd>
+      <mtd>
+        <mo>@</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔖</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔦</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔶</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">7</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝔇</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔗</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔧</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔷</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">8</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝔈</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔘</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔨</mo>
+      </mtd>
+      <mtd />
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">9</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝔉</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔙</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔩</mo>
+      </mtd>
+      <mtd />
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">A</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝔊</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔚</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔪</mo>
+      </mtd>
+      <mtd />
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">B</mtext>
+      </mtd>
+      <mtd>
+        <mo>@</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔛</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔫</mo>
+      </mtd>
+      <mtd />
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">C</mtext>
+      </mtd>
+      <mtd>
+        <mo>@</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔜</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔬</mo>
+      </mtd>
+      <mtd />
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">D</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝔍</mo>
+      </mtd>
+      <mtd>
+        <mo>@</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔭</mo>
+      </mtd>
+      <mtd />
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">E</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝔎</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔞</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔮</mo>
+      </mtd>
+      <mtd />
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">F</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝔏</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔟</mo>
+      </mtd>
+      <mtd>
+        <mo>𝔯</mo>
+      </mtd>
+      <mtd />
+    </mtr>
+  </mtable>
 </math>

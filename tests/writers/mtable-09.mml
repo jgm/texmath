@@ -1,38 +1,36 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mtable>
-      <mtr>
-        <mtd>
-          <mrow>
+  <mtable>
+    <mtr>
+      <mtd>
+        <mrow>
+          <mphantom>
+            <mtext mathvariant="normal">fail</mtext>
+          </mphantom>
+          <munder>
+            <mi>HT</mi>
             <mphantom>
               <mtext mathvariant="normal">fail</mtext>
             </mphantom>
-            <munder>
-              <mi>HT</mi>
-              <mphantom>
-                <mtext mathvariant="normal">fail</mtext>
-              </mphantom>
-            </munder>
-          </mrow>
-        </mtd>
-        <mtd>
-          <mo>=</mo>
-        </mtd>
-        <mtd>
-          <mrow>
-            <mover>
-              <mi>TH</mi>
-              <mphantom>
-                <mtext mathvariant="normal">fail</mtext>
-              </mphantom>
-            </mover>
+          </munder>
+        </mrow>
+      </mtd>
+      <mtd>
+        <mo>=</mo>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mover>
+            <mi>TH</mi>
             <mphantom>
               <mtext mathvariant="normal">fail</mtext>
             </mphantom>
-          </mrow>
-        </mtd>
-      </mtr>
-    </mtable>
-  </mrow>
+          </mover>
+          <mphantom>
+            <mtext mathvariant="normal">fail</mtext>
+          </mphantom>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
 </math>

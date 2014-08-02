@@ -33,15 +33,15 @@ import Text.TeXMath.Shared (getMMLType)
 -- | Transforms an expression tree to a MathML XML tree
 writeMathML :: DisplayType -> [Exp] -> Element
 writeMathML dt exprs =
-  add_attr dtattr $ math $ map (showExp TextNormal)
+  add_attr dtattr $ math $ showExp TextNormal $ EGrouped
   $ everywhere (mkT $ handleDownup dt) exprs
     where dtattr = Attr (unqual "display") dt'
           dt' =  case dt of
                       DisplayBlock  -> "block"
                       DisplayInline -> "inline"
 
-math :: [Element] -> Element
-math = add_attr (Attr (unqual "xmlns") "http://www.w3.org/1998/Math/MathML") . unode "math" . unode "mrow"
+math :: Element -> Element
+math = add_attr (Attr (unqual "xmlns") "http://www.w3.org/1998/Math/MathML") . unode "math"
 
 mrow :: [Element] -> Element
 mrow = unode "mrow"

@@ -1,14 +1,12 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
+    <mo stretchy="true" form="prefix">[</mo>
     <mrow>
-      <mo stretchy="true" form="prefix">[</mo>
-      <mrow>
-        <mn>0</mn>
-        <mo>,</mo>
-        <mn>1</mn>
-      </mrow>
-      <mo stretchy="true" form="postfix">)</mo>
+      <mn>0</mn>
+      <mo>,</mo>
+      <mn>1</mn>
     </mrow>
+    <mo stretchy="true" form="postfix">)</mo>
   </mrow>
 </math>

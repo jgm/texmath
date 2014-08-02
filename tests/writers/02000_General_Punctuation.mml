@@ -1,447 +1,445 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mtable>
-      <mtr>
-        <mtd />
-        <mtd>
-          <mtext mathvariant="normal">200</mtext>
-        </mtd>
-        <mtd>
-          <mtext mathvariant="normal">201</mtext>
-        </mtd>
-        <mtd>
-          <mtext mathvariant="normal">202</mtext>
-        </mtd>
-        <mtd>
-          <mtext mathvariant="normal">203</mtext>
-        </mtd>
-        <mtd>
-          <mtext mathvariant="normal">204</mtext>
-        </mtd>
-        <mtd>
-          <mtext mathvariant="normal">205</mtext>
-        </mtd>
-        <mtd>
-          <mtext mathvariant="normal">206</mtext>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">0</mtext>
-        </mtd>
-        <mtd>
-          <mo> </mo>
-        </mtd>
-        <mtd>
-          <mo>‐</mo>
-        </mtd>
-        <mtd>
-          <mo>†</mo>
-        </mtd>
-        <mtd>
-          <mo>‰</mo>
-        </mtd>
-        <mtd>
-          <mo>⁀</mo>
-        </mtd>
-        <mtd>
-          <mo>⁐</mo>
-        </mtd>
-        <mtd>
-          <mo>&#8288;</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">1</mtext>
-        </mtd>
-        <mtd>
-          <mo> </mo>
-        </mtd>
-        <mtd>
-          <mo>‑</mo>
-        </mtd>
-        <mtd>
-          <mo>‡</mo>
-        </mtd>
-        <mtd>
-          <mo>‱</mo>
-        </mtd>
-        <mtd>
-          <mo>⁁</mo>
-        </mtd>
-        <mtd>
-          <mo>⁑</mo>
-        </mtd>
-        <mtd>
-          <mo>&#8289;</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">2</mtext>
-        </mtd>
-        <mtd>
-          <mo> </mo>
-        </mtd>
-        <mtd>
-          <mo>‒</mo>
-        </mtd>
-        <mtd>
-          <mo>•</mo>
-        </mtd>
-        <mtd>
-          <mo>′</mo>
-        </mtd>
-        <mtd>
-          <mo>⁂</mo>
-        </mtd>
-        <mtd>
-          <mo>⁒</mo>
-        </mtd>
-        <mtd>
-          <mo>&#8290;</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">3</mtext>
-        </mtd>
-        <mtd>
-          <mo> </mo>
-        </mtd>
-        <mtd>
-          <mo>–</mo>
-        </mtd>
-        <mtd>
-          <mo>‣</mo>
-        </mtd>
-        <mtd>
-          <mo accent="true">″</mo>
-        </mtd>
-        <mtd>
-          <mo>⁃</mo>
-        </mtd>
-        <mtd>
-          <mo>⁓</mo>
-        </mtd>
-        <mtd>
-          <mo>&#8291;</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">4</mtext>
-        </mtd>
-        <mtd>
-          <mo> </mo>
-        </mtd>
-        <mtd>
-          <mo>—</mo>
-        </mtd>
-        <mtd>
-          <mo>․</mo>
-        </mtd>
-        <mtd>
-          <mo accent="true">‴</mo>
-        </mtd>
-        <mtd>
-          <mo>⁄</mo>
-        </mtd>
-        <mtd>
-          <mo>⁔</mo>
-        </mtd>
-        <mtd>
-          <mo>&#8292;</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">5</mtext>
-        </mtd>
-        <mtd>
-          <mo> </mo>
-        </mtd>
-        <mtd>
-          <mo>―</mo>
-        </mtd>
-        <mtd>
-          <mo>‥</mo>
-        </mtd>
-        <mtd>
-          <mo accent="true">‵</mo>
-        </mtd>
-        <mtd>
-          <mo>⁅</mo>
-        </mtd>
-        <mtd>
-          <mo>⁕</mo>
-        </mtd>
-        <mtd>
-          <mo>@</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">6</mtext>
-        </mtd>
-        <mtd>
-          <mo> </mo>
-        </mtd>
-        <mtd>
-          <mo stretchy="false" form="postfix">‖</mo>
-        </mtd>
-        <mtd>
-          <mo>…</mo>
-        </mtd>
-        <mtd>
-          <mo accent="true">‶</mo>
-        </mtd>
-        <mtd>
-          <mo>⁆</mo>
-        </mtd>
-        <mtd>
-          <mo>⁖</mo>
-        </mtd>
-        <mtd>
-          <mo>@</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">7</mtext>
-        </mtd>
-        <mtd>
-          <mo> </mo>
-        </mtd>
-        <mtd>
-          <mo>‗</mo>
-        </mtd>
-        <mtd>
-          <mo>‧</mo>
-        </mtd>
-        <mtd>
-          <mo accent="true">‷</mo>
-        </mtd>
-        <mtd>
-          <mo>⁇</mo>
-        </mtd>
-        <mtd>
-          <mo accent="true">⁗</mo>
-        </mtd>
-        <mtd>
-          <mo>@</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">8</mtext>
-        </mtd>
-        <mtd>
-          <mo> </mo>
-        </mtd>
-        <mtd>
-          <mo stretchy="false" form="prefix">‘</mo>
-        </mtd>
-        <mtd>
-          <mo>&#8232;</mo>
-        </mtd>
-        <mtd>
-          <mo>‸</mo>
-        </mtd>
-        <mtd>
-          <mo>⁈</mo>
-        </mtd>
-        <mtd>
-          <mo>⁘</mo>
-        </mtd>
-        <mtd>
-          <mo>@</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">9</mtext>
-        </mtd>
-        <mtd>
-          <mo> </mo>
-        </mtd>
-        <mtd>
-          <mo stretchy="false" form="postfix">’</mo>
-        </mtd>
-        <mtd>
-          <mo>&#8233;</mo>
-        </mtd>
-        <mtd>
-          <mo>‹</mo>
-        </mtd>
-        <mtd>
-          <mo>⁉</mo>
-        </mtd>
-        <mtd>
-          <mo>⁙</mo>
-        </mtd>
-        <mtd>
-          <mo>@</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">A</mtext>
-        </mtd>
-        <mtd>
-          <mo> </mo>
-        </mtd>
-        <mtd>
-          <mo accent="true">‚</mo>
-        </mtd>
-        <mtd>
-          <mo>&#8234;</mo>
-        </mtd>
-        <mtd>
-          <mo>›</mo>
-        </mtd>
-        <mtd>
-          <mo>⁊</mo>
-        </mtd>
-        <mtd>
-          <mo>⁚</mo>
-        </mtd>
-        <mtd>
-          <mo>&#8298;</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">B</mtext>
-        </mtd>
-        <mtd>
-          <mo>&#8203;</mo>
-        </mtd>
-        <mtd>
-          <mo accent="true">‛</mo>
-        </mtd>
-        <mtd>
-          <mo>&#8235;</mo>
-        </mtd>
-        <mtd>
-          <mo>※</mo>
-        </mtd>
-        <mtd>
-          <mo>⁋</mo>
-        </mtd>
-        <mtd>
-          <mo>⁛</mo>
-        </mtd>
-        <mtd>
-          <mo>&#8299;</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">C</mtext>
-        </mtd>
-        <mtd>
-          <mo>&#8204;</mo>
-        </mtd>
-        <mtd>
-          <mo stretchy="false" form="prefix">“</mo>
-        </mtd>
-        <mtd>
-          <mo>&#8236;</mo>
-        </mtd>
-        <mtd>
-          <mo>‼</mo>
-        </mtd>
-        <mtd>
-          <mo>⁌</mo>
-        </mtd>
-        <mtd>
-          <mo>⁜</mo>
-        </mtd>
-        <mtd>
-          <mo>&#8300;</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">D</mtext>
-        </mtd>
-        <mtd>
-          <mo>&#8205;</mo>
-        </mtd>
-        <mtd>
-          <mo stretchy="false" form="postfix">”</mo>
-        </mtd>
-        <mtd>
-          <mo>&#8237;</mo>
-        </mtd>
-        <mtd>
-          <mo>‽</mo>
-        </mtd>
-        <mtd>
-          <mo>⁍</mo>
-        </mtd>
-        <mtd>
-          <mo>⁝</mo>
-        </mtd>
-        <mtd>
-          <mo>&#8301;</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">E</mtext>
-        </mtd>
-        <mtd>
-          <mo>&#8206;</mo>
-        </mtd>
-        <mtd>
-          <mo accent="true">„</mo>
-        </mtd>
-        <mtd>
-          <mo>&#8238;</mo>
-        </mtd>
-        <mtd>
-          <mo stretchy="false" form="postfix">‾</mo>
-        </mtd>
-        <mtd>
-          <mo>⁎</mo>
-        </mtd>
-        <mtd>
-          <mo>⁞</mo>
-        </mtd>
-        <mtd>
-          <mo>&#8302;</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">F</mtext>
-        </mtd>
-        <mtd>
-          <mo>&#8207;</mo>
-        </mtd>
-        <mtd>
-          <mo accent="true">‟</mo>
-        </mtd>
-        <mtd>
-          <mo> </mo>
-        </mtd>
-        <mtd>
-          <mo>‿</mo>
-        </mtd>
-        <mtd>
-          <mo>⁏</mo>
-        </mtd>
-        <mtd>
-          <mo> </mo>
-        </mtd>
-        <mtd>
-          <mo>&#8303;</mo>
-        </mtd>
-      </mtr>
-    </mtable>
-  </mrow>
+  <mtable>
+    <mtr>
+      <mtd />
+      <mtd>
+        <mtext mathvariant="normal">200</mtext>
+      </mtd>
+      <mtd>
+        <mtext mathvariant="normal">201</mtext>
+      </mtd>
+      <mtd>
+        <mtext mathvariant="normal">202</mtext>
+      </mtd>
+      <mtd>
+        <mtext mathvariant="normal">203</mtext>
+      </mtd>
+      <mtd>
+        <mtext mathvariant="normal">204</mtext>
+      </mtd>
+      <mtd>
+        <mtext mathvariant="normal">205</mtext>
+      </mtd>
+      <mtd>
+        <mtext mathvariant="normal">206</mtext>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">0</mtext>
+      </mtd>
+      <mtd>
+        <mo> </mo>
+      </mtd>
+      <mtd>
+        <mo>‐</mo>
+      </mtd>
+      <mtd>
+        <mo>†</mo>
+      </mtd>
+      <mtd>
+        <mo>‰</mo>
+      </mtd>
+      <mtd>
+        <mo>⁀</mo>
+      </mtd>
+      <mtd>
+        <mo>⁐</mo>
+      </mtd>
+      <mtd>
+        <mo>&#8288;</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">1</mtext>
+      </mtd>
+      <mtd>
+        <mo> </mo>
+      </mtd>
+      <mtd>
+        <mo>‑</mo>
+      </mtd>
+      <mtd>
+        <mo>‡</mo>
+      </mtd>
+      <mtd>
+        <mo>‱</mo>
+      </mtd>
+      <mtd>
+        <mo>⁁</mo>
+      </mtd>
+      <mtd>
+        <mo>⁑</mo>
+      </mtd>
+      <mtd>
+        <mo>&#8289;</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">2</mtext>
+      </mtd>
+      <mtd>
+        <mo> </mo>
+      </mtd>
+      <mtd>
+        <mo>‒</mo>
+      </mtd>
+      <mtd>
+        <mo>•</mo>
+      </mtd>
+      <mtd>
+        <mo>′</mo>
+      </mtd>
+      <mtd>
+        <mo>⁂</mo>
+      </mtd>
+      <mtd>
+        <mo>⁒</mo>
+      </mtd>
+      <mtd>
+        <mo>&#8290;</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">3</mtext>
+      </mtd>
+      <mtd>
+        <mo> </mo>
+      </mtd>
+      <mtd>
+        <mo>–</mo>
+      </mtd>
+      <mtd>
+        <mo>‣</mo>
+      </mtd>
+      <mtd>
+        <mo accent="true">″</mo>
+      </mtd>
+      <mtd>
+        <mo>⁃</mo>
+      </mtd>
+      <mtd>
+        <mo>⁓</mo>
+      </mtd>
+      <mtd>
+        <mo>&#8291;</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">4</mtext>
+      </mtd>
+      <mtd>
+        <mo> </mo>
+      </mtd>
+      <mtd>
+        <mo>—</mo>
+      </mtd>
+      <mtd>
+        <mo>․</mo>
+      </mtd>
+      <mtd>
+        <mo accent="true">‴</mo>
+      </mtd>
+      <mtd>
+        <mo>⁄</mo>
+      </mtd>
+      <mtd>
+        <mo>⁔</mo>
+      </mtd>
+      <mtd>
+        <mo>&#8292;</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">5</mtext>
+      </mtd>
+      <mtd>
+        <mo> </mo>
+      </mtd>
+      <mtd>
+        <mo>―</mo>
+      </mtd>
+      <mtd>
+        <mo>‥</mo>
+      </mtd>
+      <mtd>
+        <mo accent="true">‵</mo>
+      </mtd>
+      <mtd>
+        <mo>⁅</mo>
+      </mtd>
+      <mtd>
+        <mo>⁕</mo>
+      </mtd>
+      <mtd>
+        <mo>@</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">6</mtext>
+      </mtd>
+      <mtd>
+        <mo> </mo>
+      </mtd>
+      <mtd>
+        <mo stretchy="false" form="postfix">‖</mo>
+      </mtd>
+      <mtd>
+        <mo>…</mo>
+      </mtd>
+      <mtd>
+        <mo accent="true">‶</mo>
+      </mtd>
+      <mtd>
+        <mo>⁆</mo>
+      </mtd>
+      <mtd>
+        <mo>⁖</mo>
+      </mtd>
+      <mtd>
+        <mo>@</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">7</mtext>
+      </mtd>
+      <mtd>
+        <mo> </mo>
+      </mtd>
+      <mtd>
+        <mo>‗</mo>
+      </mtd>
+      <mtd>
+        <mo>‧</mo>
+      </mtd>
+      <mtd>
+        <mo accent="true">‷</mo>
+      </mtd>
+      <mtd>
+        <mo>⁇</mo>
+      </mtd>
+      <mtd>
+        <mo accent="true">⁗</mo>
+      </mtd>
+      <mtd>
+        <mo>@</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">8</mtext>
+      </mtd>
+      <mtd>
+        <mo> </mo>
+      </mtd>
+      <mtd>
+        <mo stretchy="false" form="prefix">‘</mo>
+      </mtd>
+      <mtd>
+        <mo>&#8232;</mo>
+      </mtd>
+      <mtd>
+        <mo>‸</mo>
+      </mtd>
+      <mtd>
+        <mo>⁈</mo>
+      </mtd>
+      <mtd>
+        <mo>⁘</mo>
+      </mtd>
+      <mtd>
+        <mo>@</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">9</mtext>
+      </mtd>
+      <mtd>
+        <mo> </mo>
+      </mtd>
+      <mtd>
+        <mo stretchy="false" form="postfix">’</mo>
+      </mtd>
+      <mtd>
+        <mo>&#8233;</mo>
+      </mtd>
+      <mtd>
+        <mo>‹</mo>
+      </mtd>
+      <mtd>
+        <mo>⁉</mo>
+      </mtd>
+      <mtd>
+        <mo>⁙</mo>
+      </mtd>
+      <mtd>
+        <mo>@</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">A</mtext>
+      </mtd>
+      <mtd>
+        <mo> </mo>
+      </mtd>
+      <mtd>
+        <mo accent="true">‚</mo>
+      </mtd>
+      <mtd>
+        <mo>&#8234;</mo>
+      </mtd>
+      <mtd>
+        <mo>›</mo>
+      </mtd>
+      <mtd>
+        <mo>⁊</mo>
+      </mtd>
+      <mtd>
+        <mo>⁚</mo>
+      </mtd>
+      <mtd>
+        <mo>&#8298;</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">B</mtext>
+      </mtd>
+      <mtd>
+        <mo>&#8203;</mo>
+      </mtd>
+      <mtd>
+        <mo accent="true">‛</mo>
+      </mtd>
+      <mtd>
+        <mo>&#8235;</mo>
+      </mtd>
+      <mtd>
+        <mo>※</mo>
+      </mtd>
+      <mtd>
+        <mo>⁋</mo>
+      </mtd>
+      <mtd>
+        <mo>⁛</mo>
+      </mtd>
+      <mtd>
+        <mo>&#8299;</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">C</mtext>
+      </mtd>
+      <mtd>
+        <mo>&#8204;</mo>
+      </mtd>
+      <mtd>
+        <mo stretchy="false" form="prefix">“</mo>
+      </mtd>
+      <mtd>
+        <mo>&#8236;</mo>
+      </mtd>
+      <mtd>
+        <mo>‼</mo>
+      </mtd>
+      <mtd>
+        <mo>⁌</mo>
+      </mtd>
+      <mtd>
+        <mo>⁜</mo>
+      </mtd>
+      <mtd>
+        <mo>&#8300;</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">D</mtext>
+      </mtd>
+      <mtd>
+        <mo>&#8205;</mo>
+      </mtd>
+      <mtd>
+        <mo stretchy="false" form="postfix">”</mo>
+      </mtd>
+      <mtd>
+        <mo>&#8237;</mo>
+      </mtd>
+      <mtd>
+        <mo>‽</mo>
+      </mtd>
+      <mtd>
+        <mo>⁍</mo>
+      </mtd>
+      <mtd>
+        <mo>⁝</mo>
+      </mtd>
+      <mtd>
+        <mo>&#8301;</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">E</mtext>
+      </mtd>
+      <mtd>
+        <mo>&#8206;</mo>
+      </mtd>
+      <mtd>
+        <mo accent="true">„</mo>
+      </mtd>
+      <mtd>
+        <mo>&#8238;</mo>
+      </mtd>
+      <mtd>
+        <mo stretchy="false" form="postfix">‾</mo>
+      </mtd>
+      <mtd>
+        <mo>⁎</mo>
+      </mtd>
+      <mtd>
+        <mo>⁞</mo>
+      </mtd>
+      <mtd>
+        <mo>&#8302;</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">F</mtext>
+      </mtd>
+      <mtd>
+        <mo>&#8207;</mo>
+      </mtd>
+      <mtd>
+        <mo accent="true">‟</mo>
+      </mtd>
+      <mtd>
+        <mo> </mo>
+      </mtd>
+      <mtd>
+        <mo>‿</mo>
+      </mtd>
+      <mtd>
+        <mo>⁏</mo>
+      </mtd>
+      <mtd>
+        <mo> </mo>
+      </mtd>
+      <mtd>
+        <mo>&#8303;</mo>
+      </mtd>
+    </mtr>
+  </mtable>
 </math>

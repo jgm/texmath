@@ -1,84 +1,82 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mtable>
-      <mtr>
-        <mtd />
-        <mtd>
-          <mtext mathvariant="normal">Stetching in base</mtext>
-        </mtd>
-        <mtd>
-          <mtext mathvariant="normal">Stretching in script</mtext>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">no mrows</mtext>
-        </mtd>
-        <mtd>
-          <mover>
-            <mo>→</mo>
-            <mtext mathvariant="normal">maps to</mtext>
-          </mover>
-        </mtd>
-        <mtd>
-          <mover>
-            <mtext mathvariant="normal">maps to</mtext>
-            <mo accent="true">→</mo>
-          </mover>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">all in row</mtext>
-        </mtd>
-        <mtd>
-          <mover>
-            <mo>→</mo>
-            <mtext mathvariant="normal">maps to</mtext>
-          </mover>
-        </mtd>
-        <mtd>
-          <mover>
-            <mtext mathvariant="normal">maps to</mtext>
-            <mo accent="true">→</mo>
-          </mover>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">op in row</mtext>
-        </mtd>
-        <mtd>
-          <mover>
-            <mo>→</mo>
-            <mtext mathvariant="normal">maps to</mtext>
-          </mover>
-        </mtd>
-        <mtd>
-          <mover>
-            <mtext mathvariant="normal">maps to</mtext>
-            <mo accent="true">→</mo>
-          </mover>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">text in row</mtext>
-        </mtd>
-        <mtd>
-          <mover>
-            <mo>→</mo>
-            <mtext mathvariant="normal">maps to</mtext>
-          </mover>
-        </mtd>
-        <mtd>
-          <mover>
-            <mtext mathvariant="normal">maps to</mtext>
-            <mo accent="true">→</mo>
-          </mover>
-        </mtd>
-      </mtr>
-    </mtable>
-  </mrow>
+  <mtable>
+    <mtr>
+      <mtd />
+      <mtd>
+        <mtext mathvariant="normal">Stetching in base</mtext>
+      </mtd>
+      <mtd>
+        <mtext mathvariant="normal">Stretching in script</mtext>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">no mrows</mtext>
+      </mtd>
+      <mtd>
+        <mover>
+          <mo>→</mo>
+          <mtext mathvariant="normal">maps to</mtext>
+        </mover>
+      </mtd>
+      <mtd>
+        <mover>
+          <mtext mathvariant="normal">maps to</mtext>
+          <mo accent="true">→</mo>
+        </mover>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">all in row</mtext>
+      </mtd>
+      <mtd>
+        <mover>
+          <mo>→</mo>
+          <mtext mathvariant="normal">maps to</mtext>
+        </mover>
+      </mtd>
+      <mtd>
+        <mover>
+          <mtext mathvariant="normal">maps to</mtext>
+          <mo accent="true">→</mo>
+        </mover>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">op in row</mtext>
+      </mtd>
+      <mtd>
+        <mover>
+          <mo>→</mo>
+          <mtext mathvariant="normal">maps to</mtext>
+        </mover>
+      </mtd>
+      <mtd>
+        <mover>
+          <mtext mathvariant="normal">maps to</mtext>
+          <mo accent="true">→</mo>
+        </mover>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">text in row</mtext>
+      </mtd>
+      <mtd>
+        <mover>
+          <mo>→</mo>
+          <mtext mathvariant="normal">maps to</mtext>
+        </mover>
+      </mtd>
+      <mtd>
+        <mover>
+          <mtext mathvariant="normal">maps to</mtext>
+          <mo accent="true">→</mo>
+        </mover>
+      </mtd>
+    </mtr>
+  </mtable>
 </math>

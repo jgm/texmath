@@ -1,135 +1,133 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mtable>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">wcirc</mtext>
-        </mtd>
-        <mtd>
-          <mo>ŵ</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">Wcirc</mtext>
-        </mtd>
-        <mtd>
-          <mo>Ŵ</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">wedbar</mtext>
-        </mtd>
-        <mtd>
-          <mo>⩟</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">wedge</mtext>
-        </mtd>
-        <mtd>
-          <mo>∧</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">Wedge</mtext>
-        </mtd>
-        <mtd>
-          <mo>⋀</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">wedgeq</mtext>
-        </mtd>
-        <mtd>
-          <mo>≙</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">weierp</mtext>
-        </mtd>
-        <mtd>
-          <mo>℘</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">wfr</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝔴</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">Wfr</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝔚</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">wopf</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝕨</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">Wopf</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝕎</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">wp</mtext>
-        </mtd>
-        <mtd>
-          <mo>℘</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">wr</mtext>
-        </mtd>
-        <mtd>
-          <mo>≀</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">wreath</mtext>
-        </mtd>
-        <mtd>
-          <mo>≀</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">wscr</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝓌</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">Wscr</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝒲</mo>
-        </mtd>
-      </mtr>
-    </mtable>
-  </mrow>
+  <mtable>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">wcirc</mtext>
+      </mtd>
+      <mtd>
+        <mo>ŵ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">Wcirc</mtext>
+      </mtd>
+      <mtd>
+        <mo>Ŵ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">wedbar</mtext>
+      </mtd>
+      <mtd>
+        <mo>⩟</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">wedge</mtext>
+      </mtd>
+      <mtd>
+        <mo>∧</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">Wedge</mtext>
+      </mtd>
+      <mtd>
+        <mo>⋀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">wedgeq</mtext>
+      </mtd>
+      <mtd>
+        <mo>≙</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">weierp</mtext>
+      </mtd>
+      <mtd>
+        <mo>℘</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">wfr</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝔴</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">Wfr</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝔚</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">wopf</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝕨</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">Wopf</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝕎</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">wp</mtext>
+      </mtd>
+      <mtd>
+        <mo>℘</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">wr</mtext>
+      </mtd>
+      <mtd>
+        <mo>≀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">wreath</mtext>
+      </mtd>
+      <mtd>
+        <mo>≀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">wscr</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝓌</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">Wscr</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝒲</mo>
+      </mtd>
+    </mtr>
+  </mtable>
 </math>

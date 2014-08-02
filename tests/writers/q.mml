@@ -1,111 +1,109 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mrow>
-    <mtable>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">qfr</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝔮</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">Qfr</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝔔</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">qint</mtext>
-        </mtd>
-        <mtd>
-          <mo>⨌</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">qopf</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝕢</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">Qopf</mtext>
-        </mtd>
-        <mtd>
-          <mo>ℚ</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">qprime</mtext>
-        </mtd>
-        <mtd>
-          <mo accent="true">⁗</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">qscr</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝓆</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">Qscr</mtext>
-        </mtd>
-        <mtd>
-          <mo>𝒬</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">quaternions</mtext>
-        </mtd>
-        <mtd>
-          <mo>ℍ</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">quatint</mtext>
-        </mtd>
-        <mtd>
-          <mo>⨖</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">quest</mtext>
-        </mtd>
-        <mtd>
-          <mo>?</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">questeq</mtext>
-        </mtd>
-        <mtd>
-          <mo>≟</mo>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd>
-          <mtext mathvariant="normal">quot</mtext>
-        </mtd>
-        <mtd>
-          <mo accent="true">&quot;</mo>
-        </mtd>
-      </mtr>
-    </mtable>
-  </mrow>
+  <mtable>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">qfr</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝔮</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">Qfr</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝔔</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">qint</mtext>
+      </mtd>
+      <mtd>
+        <mo>⨌</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">qopf</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝕢</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">Qopf</mtext>
+      </mtd>
+      <mtd>
+        <mo>ℚ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">qprime</mtext>
+      </mtd>
+      <mtd>
+        <mo accent="true">⁗</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">qscr</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝓆</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">Qscr</mtext>
+      </mtd>
+      <mtd>
+        <mo>𝒬</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">quaternions</mtext>
+      </mtd>
+      <mtd>
+        <mo>ℍ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">quatint</mtext>
+      </mtd>
+      <mtd>
+        <mo>⨖</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">quest</mtext>
+      </mtd>
+      <mtd>
+        <mo>?</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">questeq</mtext>
+      </mtd>
+      <mtd>
+        <mo>≟</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd>
+        <mtext mathvariant="normal">quot</mtext>
+      </mtd>
+      <mtd>
+        <mo accent="true">&quot;</mo>
+      </mtd>
+    </mtr>
+  </mtable>
 </math>
