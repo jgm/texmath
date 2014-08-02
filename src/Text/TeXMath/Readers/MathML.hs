@@ -296,7 +296,7 @@ matchNesting ((break isFence) -> (inis, rest)) =
             inis' ++ (E $ Right $ trailingSup opens closes body') : matchNesting rs'
           _ -> (error "matchNesting: Logical error 1")
     ((Stretchy Close closes): rs) ->
-      inis' ++ (E $ Right $ trailingSup "" closes (matchNesting inis)) : matchNesting rs
+      (E $ Right $ trailingSup "" closes (matchNesting inis)) : matchNesting rs
     _ -> error "matchNesting: Logical error 2"
   where
     isOpen (Stretchy Open _) = True
@@ -506,7 +506,12 @@ defaultState :: MMLState
 defaultState = MMLState [] Nothing False TextNormal
 
 addAttrs :: [Attr] -> MMLState -> MMLState
-addAttrs as s = s {attrs = as ++ attrs s }
+addAttrs as s = s {attrs = (map renameAttr as) ++ attrs s }
+
+renameAttr :: Attr -> Attr
+renameAttr v@(qName . attrKey -> "accentunder") =
+  Attr (unqual "accent") (attrVal v)
+renameAttr a = a 
 
 filterMathVariant :: MMLState -> MMLState
 filterMathVariant s@(attrs -> as) =
