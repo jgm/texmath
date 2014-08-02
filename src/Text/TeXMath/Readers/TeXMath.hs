@@ -123,6 +123,10 @@ expToOperatorName e = case e of
                     EIdentifier s -> Just s
                     -- handle special characters
                     ESymbol _ "\x2212" -> Just "-"
+                    ESymbol _ "\x2032" -> Just "'"
+                    ESymbol _ "\x2033" -> Just "''"
+                    ESymbol _ "\x2034" -> Just "'''"
+                    ESymbol _ "\x2057" -> Just "''''"
                     ESymbol _ "\x02B9" -> Just "'"
                     ESymbol _ s -> Just s
                     ENumber s -> Just s
@@ -570,8 +574,8 @@ symbols = M.fromList [
            , (">", ESymbol Rel ">")
            , ("<", ESymbol Rel "<")
            , ("!", ESymbol Ord "!")
-           , ("'", ESymbol Ord "\x02B9")
-           , ("''", ESymbol Ord "\x02BA")
+           , ("'", ESymbol Ord "\x2032")
+           , ("''", ESymbol Ord "\x2033")
            , ("'''", ESymbol Ord "\x2034")
            , ("''''", ESymbol Ord "\x2057")
            , ("=", ESymbol Rel "=")
