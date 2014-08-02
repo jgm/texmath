@@ -56,9 +56,11 @@ Extra-source-files:  README.markdown,
                      tests/writers/*.omml
                      lib/totexmath/unicodetotex.hs
                      lib/totexmath/unimathsymbols.txt
+                     lib/totexmath/Makefile
                      lib/mmldict/unicode.xml
                      lib/mmldict/operatorDictionary.xsl
                      lib/mmldict/generateMMLDict.hs
+                     lib/mmldict/Makefile
                      lib/tounicode/mkUnicodeTable.hs
                      lib/tounicode/UnicodeData.txt
                      lib/tounicode/Makefile
