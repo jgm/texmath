@@ -136,26 +136,10 @@ writeExp (ESubsup b e1 e2) = do
   tellGroup (writeExp e1)
   tell [Token '^']
   tellGroup (writeExp e2)
-writeExp (EOver convertible b e1)
-  | isOperator b = do
-     (if isFancy b then tellGroup else id) $ writeExp b
-     unless convertible $ tell [ControlSeq "\\limits"]
-     tell [Token '^']
-     tellGroup (writeExp e1)
-  | otherwise = do
-      tell [ControlSeq "\\overset"]
-      tellGroup (writeExp e1)
-      tellGroup (writeExp b)
-writeExp (EUnder convertible b e1)
-  | isOperator b = do
-     (if isFancy b then tellGroup else id) $ writeExp b
-     unless convertible $ tell [ControlSeq "\\limits"]
-     tell [Token '_']
-     tellGroup (writeExp e1)
-  | otherwise = do
-      tell [ControlSeq "\\underset"]
-      tellGroup (writeExp e1)
-      tellGroup (writeExp b)
+writeExp (EOver convertible b e1) =
+  writeScript convertible b e1 '^' "\\overset"
+writeExp (EUnder convertible b e1) =
+  writeScript convertible b e1 '_' "\\underset"
 writeExp (EUnderover convertible b e1 e2)
   | isOperator b = do
       (if isFancy b then tellGroup else id) $ writeExp b
@@ -179,23 +163,7 @@ writeExp (EScaled size e)
     writeExp e
   | otherwise = writeExp e
 writeExp (EText ttype s) = do
-  let txtcmd x =
-         case ttype of
-              TextNormal     -> [ControlSeq "\\text", x]
-              TextItalic     -> [ControlSeq "\\textit", x]
-              TextBold       -> [ControlSeq "\\textbf", x]
-              TextMonospace  -> [ControlSeq "\\texttt", x]
-              TextBoldItalic -> [ControlSeq "\\textit",
-                                 Grouped [ControlSeq "\\textbf", x]]
-              TextSansSerif  -> [ControlSeq "\\textsf", x]
-              TextSansSerifBold -> [ControlSeq "\\textbf",
-                                    Grouped [ControlSeq "\\textsf", x]]
-              TextSansSerifItalic -> [ControlSeq "\\textit",
-                                      Grouped [ControlSeq "\\textsf", x]]
-              TextSansSerifBoldItalic -> [ControlSeq "\\textbf",
-                                      Grouped [ControlSeq "\\textit",
-                                        Grouped [ControlSeq "\\textsf", x]]]
-              _  -> [ControlSeq "\\text", x]
+  let txtcmd = getTextCommand ttype
   case map escapeLaTeX (fromUnicode ttype s) of
        []   -> return ()
        xs   -> tell $ txtcmd (Grouped xs)
@@ -209,10 +177,6 @@ writeExp (EArray aligns rows)
   | all (== AlignCenter) aligns = table "matrix" [] aligns rows
   | otherwise                   = table "array" aligns aligns rows
 
-isOperator :: Exp -> Bool
-isOperator (EMathOperator _) = True
-isOperator (ESymbol Op _)    = True
-isOperator _                 = False
 
 table :: String -> [Alignment] -> [Alignment] -> [ArrayLine] -> Math ()
 table name aligns origAligns rows = do
@@ -263,8 +227,20 @@ writeDelim fence delim = do
              DLeft -> [ControlSeq "\\left"] ++ delimCmd ++ [Space] ++ if valid then [] else tex
              DMiddle -> case valid of
                               True -> [Space] ++ [ControlSeq "\\middle"] ++ tex ++ [Space]
-                              False -> tex 
+                              False -> tex
              DRight -> [Space, ControlSeq "\\right"] ++ delimCmd ++ if valid then [] else tex
+
+writeScript :: Bool -> Exp -> Exp -> Char -> String -> Math ()
+writeScript convertible b e1 sep cmd
+  | isOperator b = do
+     (if isFancy b then tellGroup else id) $ writeExp b
+     unless convertible $ tell [ControlSeq "\\limits"]
+     tell [Token sep]
+     tellGroup (writeExp e1)
+  | otherwise = do
+      tell [ControlSeq cmd]
+      tellGroup (writeExp e1)
+      tellGroup (writeExp b)
 
 -- Utility
 
@@ -290,6 +266,25 @@ spaceCommands =
            , ("\\quad", ESpace 1.0)
            , ("\\qquad", ESpace 2.0)]
 
+getTextCommand :: TextType -> TeX -> [TeX]
+getTextCommand tt x =
+  case tt of
+        TextNormal     -> [ControlSeq "\\text", x]
+        TextItalic     -> [ControlSeq "\\textit", x]
+        TextBold       -> [ControlSeq "\\textbf", x]
+        TextMonospace  -> [ControlSeq "\\texttt", x]
+        TextBoldItalic -> [ControlSeq "\\textit",
+                             Grouped [ControlSeq "\\textbf", x]]
+        TextSansSerif  -> [ControlSeq "\\textsf", x]
+        TextSansSerifBold -> [ControlSeq "\\textbf",
+                               Grouped [ControlSeq "\\textsf", x]]
+        TextSansSerifItalic -> [ControlSeq "\\textit",
+                                Grouped [ControlSeq "\\textsf", x]]
+        TextSansSerifBoldItalic -> [ControlSeq "\\textbf",
+                                    Grouped [ControlSeq "\\textit",
+                                      Grouped [ControlSeq "\\textsf", x]]]
+        _  -> [ControlSeq "\\text", x]
+
 -- Commands which can be used with \left and \right
 delimiters :: Math [[TeX]]
 delimiters = do
@@ -298,6 +293,22 @@ delimiters = do
                     , "\x2309", "\x2308", "\x2329", "\x232A"
                     , "\x230B", "\x230A", "\x231C", "\x231D"]
     return $ filter (not . null) (map (flip getTeXMath env) commands')
+
+isFancy :: Exp -> Bool
+isFancy (ESub _ _) = True
+isFancy (ESuper _ _) = True
+isFancy (ESubsup _ _ _) = True
+isFancy (EOver _ _ _) = True
+isFancy (EUnder _ _ _) = True
+isFancy (EUnderover _ _ _ _) = True
+isFancy (EUnary _ _) = True
+isFancy _ = False
+
+
+isOperator :: Exp -> Bool
+isOperator (EMathOperator _) = True
+isOperator (ESymbol Op _)    = True
+isOperator _                 = False
 
 -- Fix up
 
@@ -326,14 +337,4 @@ fixTree (EGrouped -> es) =
     let removeGroup (EGrouped e) = e
         removeGroup e = [e] in
     removeGroup $ everywhere (mkT reorderDiacritical) es
-
-isFancy :: Exp -> Bool
-isFancy (ESub _ _) = True
-isFancy (ESuper _ _) = True
-isFancy (ESubsup _ _ _) = True
-isFancy (EOver _ _ _) = True
-isFancy (EUnder _ _ _) = True
-isFancy (EUnderover _ _ _ _) = True
-isFancy (EUnary _ _) = True
-isFancy _ = False
 

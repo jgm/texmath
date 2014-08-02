@@ -25,13 +25,7 @@ test program, `texmath`, use the `executable` Cabal flag:
 
 To run the test suite, compile with `--enable-tests` and do `cabal test`.
 
-`texmath` reads a LaTeX formula from stdin and writes a
-standalone xhtml file to stdout.  You can run the test suite thus:
-
-    cd tests
-    sh runtests.sh
-
-Macro definitions may be included before the formula.
+Macro definitions may be included before a LaTeX formula.
 
 `texmath` will behave as a CGI script when called under the name
 `texmath-cgi` (e.g. through a symbolic link).
