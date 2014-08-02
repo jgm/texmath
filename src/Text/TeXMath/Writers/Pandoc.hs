@@ -95,11 +95,8 @@ expToInlines tt (ESubsup x y z) = do
   y' <- expToInlines tt y
   z' <- expToInlines tt z
   return $ x' ++ [Subscript y'] ++ [Superscript z']
-expToInlines tt (EDown x y) = expToInlines tt (ESub x y)
-expToInlines tt (EUp x y) = expToInlines tt (ESuper x y)
-expToInlines tt (EDownup x y z) = expToInlines tt (ESubsup x y z)
 expToInlines _ (EText tt' x) = Just [renderStr tt' x]
-expToInlines tt (EOver (EGrouped [EIdentifier [c]]) (ESymbol Accent [accent])) =
+expToInlines tt (EOver _ (EGrouped [EIdentifier [c]]) (ESymbol Accent [accent])) =
     case accent of
          '\x203E' -> Just [renderStr tt' [c,'\x0304']]  -- bar
          '\x00B4' -> Just [renderStr tt' [c,'\x0301']]  -- acute
@@ -116,8 +113,12 @@ expToInlines tt (EOver (EGrouped [EIdentifier [c]]) (ESymbol Accent [accent])) =
          _        -> Nothing
       where tt' = if tt == TextNormal then TextItalic else tt
 expToInlines tt (EScaled _ e) = expToInlines tt e
-expToInlines _ (EUnder _ _) = Nothing
-expToInlines _ (EOver _ _) = Nothing
-expToInlines _ (EUnderover _ _ _) = Nothing
+expToInlines tt (EUnder convertible b e)
+  | convertible = expToInlines tt (ESub b e)
+  | otherwise   = Nothing
+expToInlines tt (EOver convertible b e)
+  | convertible = expToInlines tt (ESuper b e)
+  | otherwise   = Nothing
+expToInlines _ (EUnderover _ _ _ _) = Nothing
 expToInlines _ (EUnary _ _) = Nothing
 expToInlines _ (EArray _ _) = Nothing

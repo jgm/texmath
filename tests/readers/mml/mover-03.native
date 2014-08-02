@@ -1,1 +1,1 @@
-[EOver (EIdentifier "BASE") (EBinary "\\frac" (EIdentifier "first") (EIdentifier "second")),ESymbol Rel "=",EOver (EOver (EIdentifier "BASE") (EBinary "\\frac" (EIdentifier "first") (EIdentifier "second"))) (EUnary "\\phantom" (EIdentifier "over"))]
+[EOver False (EIdentifier "BASE") (EBinary "\\frac" (EIdentifier "first") (EIdentifier "second")),ESymbol Rel "=",EOver False (EOver False (EIdentifier "BASE") (EBinary "\\frac" (EIdentifier "first") (EIdentifier "second"))) (EUnary "\\phantom" (EIdentifier "over"))]

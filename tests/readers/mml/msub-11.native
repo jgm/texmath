@@ -1,1 +1,1 @@
-[ESub (EIdentifier "H") (ESymbol Ord "2"),ESymbol Rel "=",EOver (ESub (EIdentifier "H") (ESymbol Ord "2")) (EUnary "\\phantom" (EIdentifier "x"))]
+[ESub (EIdentifier "H") (ESymbol Ord "2"),ESymbol Rel "=",EOver False (ESub (EIdentifier "H") (ESymbol Ord "2")) (EUnary "\\phantom" (EIdentifier "x"))]

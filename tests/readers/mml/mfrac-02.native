@@ -1,1 +1,1 @@
-[EBinary "\\frac" (ENumber "1") (EGrouped [ENumber "2",EIdentifier "\960"]),ESymbol Rel "=",EBinary "\\frac" (EOver (ENumber "1") (EUnary "\\phantom" (ENumber "0"))) (EGrouped [ENumber "2",EIdentifier "\960"])]
+[EBinary "\\frac" (ENumber "1") (EGrouped [ENumber "2",EIdentifier "\960"]),ESymbol Rel "=",EBinary "\\frac" (EOver False (ENumber "1") (EUnary "\\phantom" (ENumber "0"))) (EGrouped [ENumber "2",EIdentifier "\960"])]

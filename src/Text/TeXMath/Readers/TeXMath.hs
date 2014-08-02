@@ -319,12 +319,12 @@ isConvertible _ = False
 
 -- check if sub/superscripts should always be under and over the expression
 isUnderover :: Exp -> Bool
-isUnderover (EOver _ (ESymbol Accent "\xFE37")) = True   -- \overbrace
-isUnderover (EOver _ (ESymbol Accent "\x23B4")) = True   -- \overbracket
-isUnderover (EUnder _ (ESymbol Accent "\xFE38")) = True  -- \underbrace
-isUnderover (EUnder _ (ESymbol Accent "\x23B5")) = True  -- \underbracket
-isUnderover (EOver  _ (ESymbol Accent "\x23DE")) = True  -- \overbrace
-isUnderover (EUnder  _ (ESymbol Accent "\x23DF")) = True  -- \underbrace
+isUnderover (EOver _ _ (ESymbol Accent "\xFE37")) = True   -- \overbrace
+isUnderover (EOver _ _ (ESymbol Accent "\x23B4")) = True   -- \overbracket
+isUnderover (EUnder _ _ (ESymbol Accent "\xFE38")) = True  -- \underbrace
+isUnderover (EUnder _ _ (ESymbol Accent "\x23B5")) = True  -- \underbracket
+isUnderover (EOver _  _ (ESymbol Accent "\x23DE")) = True  -- \overbrace
+isUnderover (EUnder _  _ (ESymbol Accent "\x23DF")) = True  -- \underbrace
 isUnderover _ = False
 
 subSup :: Maybe Bool -> Bool -> Exp -> TP Exp
@@ -334,9 +334,9 @@ subSup limits convertible a = try $ do
   (b,c) <- try (do {m <- sub1; n <- sup1; return (m,n)})
        <|> (do {n <- sup1; m <- sub1; return (m,n)})
   return $ case limits of
-            Just True  -> EUnderover a b c
-            Nothing | convertible || isConvertible a -> EDownup a b c
-                    | isUnderover a -> EUnderover a b c
+            Just True  -> EUnderover False a b c
+            Nothing | convertible || isConvertible a -> EUnderover True a b c
+                    | isUnderover a -> EUnderover False a b c
             _          -> ESubsup a b c
 
 superOrSubscripted :: Maybe Bool -> Bool -> Exp -> TP Exp
@@ -346,14 +346,16 @@ superOrSubscripted limits convertible a = try $ do
   b <- expr
   case c of
        '^' -> return $ case limits of
-                        Just True  -> EOver a b
-                        Nothing | convertible || isConvertible a -> EUp a b
-                                | isUnderover a -> EOver a b
+                        Just True  -> EOver False a b
+                        Nothing
+                          | convertible || isConvertible a -> EOver True a b
+                          | isUnderover a -> EOver False a b
                         _          -> ESuper a b
        '_' -> return $ case limits of
-                        Just True  -> EUnder a b
-                        Nothing | convertible || isConvertible a -> EDown a b
-                                | isUnderover a -> EUnder a b
+                        Just True  -> EUnder False a b
+                        Nothing
+                          | convertible || isConvertible a -> EUnder True a b
+                          | isUnderover a -> EUnder False a b
                         _          -> ESub a b
        _   -> pzero
 

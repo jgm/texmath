@@ -49,12 +49,9 @@ data Exp =
   | ESub Exp Exp
   | ESuper Exp Exp
   | ESubsup Exp Exp Exp
-  | EOver Exp Exp
-  | EUnder Exp Exp
-  | EUnderover Exp Exp Exp
-  | EUp Exp Exp
-  | EDown Exp Exp
-  | EDownup Exp Exp Exp
+  | EOver Bool Exp Exp  -- ^ Boolean is True if convertible
+  | EUnder Bool Exp Exp
+  | EUnderover Bool Exp Exp Exp
   | EUnary String Exp
   | EScaled String Exp
   | EArray [Alignment] [ArrayLine]
@@ -67,7 +64,7 @@ type Middle = String
 
 data DisplayType = DisplayBlock
                  | DisplayInline
-                 deriving Show
+                 deriving (Show, Eq)
 
 data TextType = TextNormal
               | TextBold

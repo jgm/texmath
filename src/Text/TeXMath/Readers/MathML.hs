@@ -422,18 +422,18 @@ subsup e = do
 under :: Element -> MML Exp
 under e = do
   [base, below] <- (checkArgs 2 e)
-  EUnder <$> safeExpr base <*> postfixExpr below 
+  EUnder False <$> safeExpr base <*> postfixExpr below
 
 over :: Element -> MML Exp
 over e = do
   [base, above] <- (checkArgs 2 e)
-  EOver <$> safeExpr base <*> postfixExpr above
+  EOver False <$> safeExpr base <*> postfixExpr above
 
 underover :: Element -> MML Exp
 underover e = do
   [base, below, above] <- (checkArgs 3 e)
-  EUnderover <$> safeExpr base  <*> (postfixExpr below)
-                             <*> (postfixExpr above)
+  EUnderover False <$> safeExpr base  <*> (postfixExpr below)
+                                      <*> (postfixExpr above)
 
 -- Other
 

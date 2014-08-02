@@ -72,7 +72,9 @@ getDiacriticalCons command =
     f <$> M.lookup command diaMap
   where
     diaMap = M.fromList (reverseKeys diacriticals)
-    f s e = (if command `elem` under then EUnder else EOver) e (ESymbol Accent s)
+    f s e = (if command `elem` under
+                then EUnder False
+                else EOver False) e (ESymbol Accent s)
 
 -- | Given a diacritical mark, returns the corresponding LaTeX command
 getDiacriticalCommand  :: Position -> String -> Maybe String

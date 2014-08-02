@@ -156,13 +156,13 @@ accent = add_attr (Attr (unqual "accent") "true") .
            unode "mo"
 
 handleDownup :: DisplayType -> Exp -> Exp
-handleDownup DisplayInline (EDown x y)     = ESub x y
-handleDownup DisplayBlock  (EDown x y)     = EUnder x y
-handleDownup DisplayInline (EUp x y)       = ESuper x y
-handleDownup DisplayBlock  (EUp x y)       = EOver x y
-handleDownup DisplayInline (EDownup x y z) = ESubsup x y z
-handleDownup DisplayBlock  (EDownup x y z) = EUnderover x y z
-handleDownup _             x               = x
+handleDownup DisplayInline (EUnder True x y)       = ESub x y
+handleDownup DisplayInline (EOver True x y)        = ESuper x y
+handleDownup DisplayInline (EUnderover True x y z) = ESubsup x y z
+handleDownup DisplayBlock  (EUnder True x y)       = EUnder False x y
+handleDownup DisplayBlock  (EOver True x y)        = EOver False  x y
+handleDownup DisplayBlock  (EUnderover True x y z) = EUnderover False x y z
+handleDownup _             x                       = x
 
 makeFence :: FormType -> Element -> Element
 makeFence (fromForm -> t) = withAttribute "stretchy" "false" . withAttribute "form" t
@@ -188,14 +188,11 @@ showExp tt e =
    ESub x y         -> unode "msub" $ map (showExp tt) [x, y]
    ESuper x y       -> unode "msup" $ map (showExp tt) [x, y]
    ESubsup x y z    -> unode "msubsup" $ map (showExp tt) [x, y, z]
-   EUnder x y       -> unode "munder" $ map (showExp tt) [x, y]
-   EOver x y        -> unode "mover" $ map (showExp tt) [x, y]
-   EUnderover x y z -> unode "munderover" $ map (showExp tt) [x, y, z]
+   EUnder _ x y     -> unode "munder" $ map (showExp tt) [x, y]
+   EOver _ x y      -> unode "mover" $ map (showExp tt) [x, y]
+   EUnderover _ x y z -> unode "munderover" $ map (showExp tt) [x, y, z]
    EUnary c x       -> showUnary tt c x
    EScaled s x      -> makeScaled s $ showExp tt x
    EArray as ls     -> makeArray tt as ls
    EText a s        -> makeText a s
    EStyled a es     -> makeStyled a $ map (showExp a) es
-   x                -> error $ "showExp encountered " ++ show x
-                       -- note: EUp, EDown, EDownup should be removed by handleDownup
-

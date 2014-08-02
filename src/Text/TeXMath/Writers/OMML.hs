@@ -127,49 +127,39 @@ setProps tt =
 handleDownup :: DisplayType -> [Exp] -> [Exp]
 handleDownup dt (exp' : xs) =
   case exp' of
-       EDown x y
-         | isNary x  -> EGrouped [constructor x y emptyGroup, next] : rest
-         | otherwise -> case dt of
-                             DisplayBlock  -> EUnder x y : xs
-                             DisplayInline -> ESub x y : xs
-       EUp   x y
-         | isNary x  -> EGrouped [constructor x emptyGroup y, next] : rest
-         | otherwise -> case dt of
-                             DisplayBlock  -> EOver x y : xs
-                             DisplayInline -> ESuper x y : xs
-       EDownup x y z
-         | isNary x  -> EGrouped [constructor x y z, next] : rest
-         | otherwise -> case dt of
-                             DisplayBlock  -> EUnderover x y z : xs
-                             DisplayInline -> ESubsup x y z : xs
+       EOver convertible x y
+         | isNary x  ->
+             EGrouped [EUnderover convertible x y emptyGroup, next] : rest
+         | convertible && dt == DisplayInline -> ESuper x y : xs
+       EUnder convertible x y
+         | isNary x  ->
+             EGrouped [EUnderover convertible x emptyGroup y, next] : rest
+         | convertible && dt == DisplayInline -> ESub x y : xs
+       EUnderover convertible x y z
+         | isNary x  ->
+             EGrouped [EUnderover convertible x y z, next] : rest
+         | convertible && dt == DisplayInline -> ESubsup x y z : xs
        ESub x y
          | isNary x  -> EGrouped [ESubsup x y emptyGroup, next] : rest
        ESuper x y
          | isNary x  -> EGrouped [ESubsup x emptyGroup y, next] : rest
        ESubsup x y z
          | isNary x  -> EGrouped [ESubsup x y z, next] : rest
-       EOver x y
-         | isNary x  -> EGrouped [EUnderover x y emptyGroup, next] : rest
-       EUnder x y
-         | isNary x  -> EGrouped [EUnderover x emptyGroup y, next] : rest
-       EUnderover x y z
-         | isNary x  -> EGrouped [EUnderover x y z, next] : rest
        _             -> exp' : next : rest
     where (next, rest) = case xs of
                               (t:ts) -> (t,ts)
                               []     -> (emptyGroup, [])
           emptyGroup = EGrouped []
-          constructor = case dt of
-                             DisplayBlock  -> EUnderover
-                             DisplayInline -> ESubsup
 handleDownup _ []            = []
 
 showExp :: [Element] -> Exp -> [Element]
 showExp props e =
  case e of
    ENumber x        -> [str props x]
-   EGrouped [EUnderover (ESymbol Op s) y z, w] -> [makeNary props "undOvr" s y z w]
-   EGrouped [ESubsup (ESymbol Op s) y z, w] -> [makeNary props "subSup" s y z w]
+   EGrouped [EUnderover _ (ESymbol Op s) y z, w] ->
+     [makeNary props "undOvr" s y z w]
+   EGrouped [ESubsup (ESymbol Op s) y z, w] ->
+     [makeNary props "subSup" s y z w]
    EGrouped xs      -> concatMap (showExp props) xs
    EDelimited start end xs ->
                        [mnode "d" [ mnode "dPr"
@@ -191,15 +181,15 @@ showExp props e =
    ESpace 2         -> [str props "\x2001\x2001"]
    ESpace _         -> [] -- this is how the xslt sheet handles all spaces
    EBinary c x y    -> [showBinary props c x y]
-   EUnder x (ESymbol Accent [c]) | isBarChar c ->
+   EUnder _ x (ESymbol Accent [c]) | isBarChar c ->
                        [mnode "bar" [ mnode "barPr" $
                                         mnodeA "pos" "bot" ()
                                     , mnode "e" $ showExp props x ]]
-   EOver x (ESymbol Accent [c]) | isBarChar c ->
+   EOver _ x (ESymbol Accent [c]) | isBarChar c ->
                        [mnode "bar" [ mnode "barPr" $
                                         mnodeA "pos" "top" ()
                                     , mnode "e" $ showExp props x ]]
-   EOver x (ESymbol Accent y) ->
+   EOver _ x (ESymbol Accent y) ->
                        [mnode "acc" [ mnode "accPr" $
                                         mnodeA "chr" y ()
                                     , mnode "e" $ showExp props x ]]
@@ -210,11 +200,11 @@ showExp props e =
    ESubsup x y z    -> [mnode "sSubSup" [ mnode "e" $ showExp props x
                                         , mnode "sub" $ showExp props y
                                         , mnode "sup" $ showExp props z]]
-   EUnder x y       -> [mnode "limLow" [ mnode "e" $ showExp props x
+   EUnder _ x y  -> [mnode "limLow" [ mnode "e" $ showExp props x
                                        , mnode "lim" $ showExp props y]]
-   EOver x y        -> [mnode "limUpp" [ mnode "e" $ showExp props x
+   EOver _ x y   -> [mnode "limUpp" [ mnode "e" $ showExp props x
                                        , mnode "lim" $ showExp props y]]
-   EUnderover x y z -> showExp props (EUnder x (EOver y z))
+   EUnderover c x y z -> showExp props (EUnder c x (EOver c y z))
    EUnary "\\sqrt" x  -> [mnode "rad" [ mnode "radPr" $ mnodeA "degHide" "on" ()
                                       , mnode "deg" ()
                                       , mnode "e" $ showExp props x]]
@@ -227,10 +217,6 @@ showExp props e =
    EArray as ls     -> [makeArray props as ls]
    EText a s        -> [makeText a s]
    EStyled a es     -> concatMap (showExp (setProps a)) es
-   -- note: EUp, EDown, EDownup should be removed by handleDownup
-   EUp _ _          -> error "encountered EUp"
-   EDown _ _        -> error "encountered EDown"
-   EDownup _ _ _    -> error "encountered EDownup"
 
 isBarChar :: Char -> Bool
 isBarChar c = c == '\x203E' || c == '\x00AF'

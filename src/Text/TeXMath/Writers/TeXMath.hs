@@ -136,41 +136,35 @@ writeExp (ESubsup b e1 e2) = do
   tellGroup (writeExp e1)
   tell [Token '^']
   tellGroup (writeExp e2)
-writeExp (EDown b e1) = do
-  (if isFancy b then tellGroup else id) $ writeExp b
-  tell [ControlSeq "\\limits", Token '_']
-  tellGroup (writeExp e1)
-writeExp (EUp b e1) = do
-  (if isFancy b then tellGroup else id) $ writeExp b
-  tell [ControlSeq "\\limits", Token '^']
-  tellGroup (writeExp e1)
-writeExp (EDownup b e1 e2) = do
-  (if isFancy b then tellGroup else id) $ writeExp b
-  tell [ControlSeq "\\limits", Token '_']
-  tellGroup (writeExp e1)
-  tell [Token '^']
-  tellGroup (writeExp e2)
-writeExp (EOver b e1) =
-  case b of
-    (EMathOperator _) -> writeExp (EUp b e1)
-    (ESymbol Op _)    -> writeExp (EUp b e1)
-    _ -> do
-          tell [ControlSeq "\\overset"]
-          tellGroup (writeExp e1)
-          tellGroup (writeExp b)
-writeExp (EUnder b e1) =
-  case b of
-    (EMathOperator _) -> writeExp (EDown b e1)
-    (ESymbol Op _)    -> writeExp (EDown b e1)
-    _ -> do
-          tell [ControlSeq "\\underset"]
-          tellGroup (writeExp e1)
-          tellGroup (writeExp b)
-writeExp (EUnderover b e1 e2) =
-  case b of
-    (EMathOperator _) -> writeExp (EDownup b e1 e2)
-    (ESymbol Op _)    -> writeExp (EDownup b e1 e2)
-    _ -> writeExp (EUnder (EOver b e2) e1)
+writeExp (EOver convertible b e1)
+  | isOperator b = do
+     (if isFancy b then tellGroup else id) $ writeExp b
+     unless convertible $ tell [ControlSeq "\\limits"]
+     tell [Token '^']
+     tellGroup (writeExp e1)
+  | otherwise = do
+      tell [ControlSeq "\\overset"]
+      tellGroup (writeExp e1)
+      tellGroup (writeExp b)
+writeExp (EUnder convertible b e1)
+  | isOperator b = do
+     (if isFancy b then tellGroup else id) $ writeExp b
+     unless convertible $ tell [ControlSeq "\\limits"]
+     tell [Token '_']
+     tellGroup (writeExp e1)
+  | otherwise = do
+      tell [ControlSeq "\\underset"]
+      tellGroup (writeExp e1)
+      tellGroup (writeExp b)
+writeExp (EUnderover convertible b e1 e2)
+  | isOperator b = do
+      (if isFancy b then tellGroup else id) $ writeExp b
+      unless convertible $ tell [ControlSeq "\\limits"]
+      tell [Token '_']
+      tellGroup (writeExp e1)
+      tell [Token '^']
+      tellGroup (writeExp e2)
+  | otherwise = writeExp (EUnder convertible (EOver convertible b e2) e1)
 writeExp (EUnary s e) = do
     tell [ControlSeq s]
     tellGroup (writeExp e)
@@ -214,6 +208,11 @@ writeExp (EArray [AlignRight, AlignLeft] rows) =
 writeExp (EArray aligns rows)
   | all (== AlignCenter) aligns = table "matrix" [] aligns rows
   | otherwise                   = table "array" aligns aligns rows
+
+isOperator :: Exp -> Bool
+isOperator (EMathOperator _) = True
+isOperator (ESymbol Op _)    = True
+isOperator _                 = False
 
 table :: String -> [Alignment] -> [Alignment] -> [ArrayLine] -> Math ()
 table name aligns origAligns rows = do
@@ -307,19 +306,19 @@ reorderDiacritical' p b e@(ESymbol Accent a) =
   case S.getDiacriticalCommand p a of
     Just accentCmd -> EUnary accentCmd b
     Nothing -> case p of
-                    Over  -> EOver b e
-                    Under -> EUnder b e
+                    Over  -> EOver False b e
+                    Under -> EUnder False b e
 reorderDiacritical' _ _ _ = error "Must be called with Accent"
 
 reorderDiacritical :: Exp -> Exp
-reorderDiacritical (EOver b e@(ESymbol Accent _)) =
+reorderDiacritical (EOver _ b e@(ESymbol Accent _)) =
   reorderDiacritical' Over b e
-reorderDiacritical (EUnder b e@(ESymbol Accent _)) =
+reorderDiacritical (EUnder _ b e@(ESymbol Accent _)) =
   reorderDiacritical' Under b e
-reorderDiacritical (EUnderover b e@(ESymbol Accent _) e1) =
-  reorderDiacritical' Under (EOver b e1) e
-reorderDiacritical (EUnderover b e1 e@(ESymbol Accent _)) =
-  reorderDiacritical' Over (EUnder b e1) e
+reorderDiacritical (EUnderover _ b e@(ESymbol Accent _) e1) =
+  reorderDiacritical' Under (EOver False b e1) e
+reorderDiacritical (EUnderover _ b e1 e@(ESymbol Accent _)) =
+  reorderDiacritical' Over (EUnder False b e1) e
 reorderDiacritical x = x
 
 fixTree :: [Exp] -> [Exp]
@@ -332,12 +331,9 @@ isFancy :: Exp -> Bool
 isFancy (ESub _ _) = True
 isFancy (ESuper _ _) = True
 isFancy (ESubsup _ _ _) = True
-isFancy (EOver _ _) = True
-isFancy (EUnder _ _) = True
-isFancy (EUnderover _ _ _) = True
-isFancy (EUp _ _) = True
-isFancy (EDown _ _) = True
-isFancy (EDownup _ _ _) = True
+isFancy (EOver _ _ _) = True
+isFancy (EUnder _ _ _) = True
+isFancy (EUnderover _ _ _ _) = True
 isFancy (EUnary _ _) = True
 isFancy _ = False
 
