@@ -478,7 +478,12 @@ binary = try $ do
   unless (c `elem` binaryOps) pzero
   a <- texToken
   b <- texToken
-  return $ EBinary c a b
+  return $
+    case c of
+       "\\overset"  -> EOver False b a
+       "\\stackrel" -> EOver False b a
+       "\\underset" -> EUnder False b a
+       _            -> EBinary c a b
 
 texSymbol :: TP Exp
 texSymbol = try $ do
