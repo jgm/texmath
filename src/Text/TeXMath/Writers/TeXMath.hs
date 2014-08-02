@@ -185,11 +185,26 @@ writeExp (EScaled size e)
     writeExp e
   | otherwise = writeExp e
 writeExp (EText ttype s) = do
-  txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
-  toks <- getTeXMathM $ fromUnicode ttype s
-  if null toks
-     then return ()
-     else tell [ControlSeq txtcmd, Grouped toks]
+  let txtcmd x =
+         case ttype of
+              TextNormal     -> [ControlSeq "\\text", x]
+              TextItalic     -> [ControlSeq "\\textit", x]
+              TextBold       -> [ControlSeq "\\textbf", x]
+              TextMonospace  -> [ControlSeq "\\texttt", x]
+              TextBoldItalic -> [ControlSeq "\\textit",
+                                 Grouped [ControlSeq "\\textbf", x]]
+              TextSansSerif  -> [ControlSeq "\\textsf", x]
+              TextSansSerifBold -> [ControlSeq "\\textbf",
+                                    Grouped [ControlSeq "\\textsf", x]]
+              TextSansSerifItalic -> [ControlSeq "\\textit",
+                                      Grouped [ControlSeq "\\textsf", x]]
+              TextSansSerifBoldItalic -> [ControlSeq "\\textbf",
+                                      Grouped [ControlSeq "\\textit",
+                                        Grouped [ControlSeq "\\textsf", x]]]
+              _  -> [ControlSeq "\\text", x]
+  case map escapeLaTeX (fromUnicode ttype s) of
+       []   -> return ()
+       xs   -> tell $ txtcmd (Grouped xs)
 writeExp (EStyled ttype es) = do
   txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
   tell [ControlSeq txtcmd]
