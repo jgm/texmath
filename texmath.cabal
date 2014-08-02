@@ -43,10 +43,12 @@ License-File:        LICENSE
 Author:              John MacFarlane, Matthew Pickering
 Maintainer:          jgm@berkeley.edu
 Homepage:            http://github.com/jgm/texmath
-Extra-source-files:  README.markdown,
-                     changelog,
-                     man/man1/texmath.1,
-                     cgi/texmath.html,
+Extra-source-files:  README.markdown
+                     changelog
+                     man/texmath.1.md
+                     man/Makefile
+                     man/man1/texmath.1
+                     cgi/texmath.html
                      tests/src/*.mml
                      tests/src/*.tex
                      tests/readers/mml/*.native
