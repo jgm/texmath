@@ -12,7 +12,7 @@ cat >word/document.xml <<EOF
   <w:p>
 EOF
 # skip top line <?xml...
-sed -ne '2,$p' >>word/document.xml
+grep -v '[<][?]xml version' >>word/document.xml
 cat >>word/document.xml <<EOF
 </w:p>
 </w:body>
