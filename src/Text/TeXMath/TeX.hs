@@ -1,4 +1,7 @@
-module Text.TeXMath.TeX (TeX(..), renderTeX, isControlSeq, escapeLaTeX)
+module Text.TeXMath.TeX (TeX(..),
+                         renderTeX,
+                         isControlSeq,
+                         escapeLaTeX)
 where
 import Data.List (isPrefixOf)
 import Data.Char (isLetter, isAlphaNum)
