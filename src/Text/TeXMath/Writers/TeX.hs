@@ -207,7 +207,7 @@ writeExp (EScaled size e)
   | otherwise = writeExp e
 writeExp (EText ttype s) = do
   let txtcmd = getTextCommand ttype
-  case map escapeLaTeX (fromUnicode ttype s) of
+  case map escapeLaTeX s of
        []   -> return ()
        xs   -> tell $ txtcmd (Grouped xs)
 writeExp (EStyled ttype es) = do

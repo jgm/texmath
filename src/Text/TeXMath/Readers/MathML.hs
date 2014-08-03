@@ -43,6 +43,7 @@ import Text.TeXMath.Readers.MathML.MMLDict (getMathMLOperator)
 import Text.TeXMath.Readers.MathML.EntityMap (getUnicode)
 import Text.TeXMath.Shared (getTextType, readLength, getOperator)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
+import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import Text.TeXMath.Compat (throwError, Except, runExcept, MonadError)
 import Control.Applicative ((<$>), (<|>), (<*>))
 import Control.Arrow ((&&&))
@@ -139,7 +140,7 @@ isEmpty _ = False
 
 ident :: Element -> MML Exp
 ident e =  do
-  let s = getString e
+  s <- getString e
   let base = case getOperator (EMathOperator s) of
                    Just _   -> EMathOperator s
                    Nothing  -> EIdentifier s
@@ -152,13 +153,13 @@ ident e =  do
          | otherwise  -> return $ EStyled (getTextType v) [base]
 
 number :: Element -> MML Exp
-number e = return $ (ENumber (getString e))
+number e = ENumber <$> getString e
 
 op :: Element -> MML (IR Exp)
 op e = do
   Just inferredPosition <- (<|>) <$> (getFormType <$> findAttrQ "form" e)
                             <*> asks position
-  let opString = getString e
+  opString <- getString e
   let dummy = Operator opString "" inferredPosition 0 0 0 []
   let opLookup = getMathMLOperator opString inferredPosition
   let opDict = fromMaybe dummy opLookup
@@ -186,7 +187,7 @@ text :: Element -> MML Exp
 text e = do
   textStyle <- maybe TextNormal getTextType
                 <$> (findAttrQ "mathvariant" e)
-  return $ (EText textStyle (getString e))
+  EText textStyle <$> getString e
 
 literal :: Element -> MML Exp
 literal e = do
@@ -540,8 +541,11 @@ enterStyled tt s = s{ curStyle = tt }
 
 -- Utility
 
-getString :: Element -> String
-getString e = (stripSpaces . concatMap cdData . onlyText . elContent) e
+getString :: Element -> MML String
+getString e = do
+  tt <- asks curStyle
+  return $ fromUnicode tt $ stripSpaces $ concatMap cdData
+         $ onlyText $ elContent $ e
 
 -- Finds only text data and replaces entity references with corresponding
 -- characters
