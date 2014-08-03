@@ -38,7 +38,7 @@
         <mtext mathvariant="normal">Uarr</mtext>
       </mtd>
       <mtd>
-        <mo>↟</mo>
+        <mo accent="false">↟</mo>
       </mtd>
     </mtr>
     <mtr>
@@ -278,7 +278,7 @@
         <mtext mathvariant="normal">UnderBar</mtext>
       </mtd>
       <mtd>
-        <mo>_</mo>
+        <mo accent="false">_</mo>
       </mtd>
     </mtr>
     <mtr>
@@ -286,7 +286,7 @@
         <mtext mathvariant="normal">UnderBrace</mtext>
       </mtd>
       <mtd>
-        <mo stretchy="false" form="postfix">⏟</mo>
+        <mo stretchy="false" form="postfix" accent="false">⏟</mo>
       </mtd>
     </mtr>
     <mtr>
@@ -294,7 +294,7 @@
         <mtext mathvariant="normal">UnderBracket</mtext>
       </mtd>
       <mtd>
-        <mo stretchy="false" form="postfix">⎵</mo>
+        <mo stretchy="false" form="postfix" accent="false">⎵</mo>
       </mtd>
     </mtr>
     <mtr>
@@ -302,7 +302,7 @@
         <mtext mathvariant="normal">UnderParenthesis</mtext>
       </mtd>
       <mtd>
-        <mo stretchy="false" form="postfix">⏝</mo>
+        <mo stretchy="false" form="postfix" accent="false">⏝</mo>
       </mtd>
     </mtr>
     <mtr>
