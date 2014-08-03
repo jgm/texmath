@@ -893,6 +893,7 @@ textCommands = M.fromList
   , ("c", option "c" $ try $ cedilla <$> tok)
   , ("v", option "v" $ try $ hacek <$> tok)
   , ("u", option "u" $ try $ breve <$> tok)
+  , (" ", return " ")
   ]
 
 parseC :: TP String
