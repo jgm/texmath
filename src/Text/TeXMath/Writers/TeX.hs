@@ -24,8 +24,8 @@ import Text.TeXMath.Types
 import Text.TeXMath.Unicode.ToTeX (getTeXMath)
 import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import qualified Text.TeXMath.Shared as S
-import Data.Maybe (fromMaybe)
 import Data.Generics (everywhere, mkT)
+import Data.Maybe (fromMaybe)
 import Control.Applicative ((<$>), (<|>), Applicative)
 import qualified Data.Map as M
 import Control.Monad (when, unless)
@@ -52,9 +52,9 @@ addLaTeXEnvironment dt math =
 -- |  Transforms an expression tree to equivalent LaTeX with the specified
 -- packages
 writeTeXWith :: Env -> [Exp] -> String
-writeTeXWith env e = drop 1 . init . flip renderTeX "" . Grouped $
+writeTeXWith env es = drop 1 . init . flip renderTeX "" . Grouped $
                             runExpr env $
-                              mapM_ writeExp (fixTree e)
+                              mapM_ writeExp (removeOuterGroup es)
 
 runExpr :: Env -> Math () -> [TeX]
 runExpr e m = flip runReader (MathState e False) $ execWriterT (runTeXMath m)
@@ -150,9 +150,13 @@ writeExp (ESubsup b e1 e2) = do
   tell [Token '^']
   tellGroup (writeExp e2)
 writeExp (EOver convertible b e1) =
-  writeScript convertible b e1 '^' "\\overset"
+  writeScript Over convertible b e1
 writeExp (EUnder convertible b e1) =
-  writeScript convertible b e1 '_' "\\underset"
+  writeScript Under convertible b e1
+writeExp (EUnderover convertible b e1@(ESymbol Accent _) e2) =
+ writeExp (EUnder convertible (EOver False b e2) e1)
+writeExp (EUnderover convertible b e1 e2@(ESymbol Accent _)) =
+ writeExp (EOver convertible (EUnder False b e1) e2)
 writeExp (EUnderover convertible b e1 e2)
   | isOperator b = do
       (if isFancy b then tellGroup else id) $
@@ -239,18 +243,28 @@ writeDelim fence delim = do
                               False -> tex
              DRight -> [Space, ControlSeq "\\right"] ++ delimCmd ++ if valid then [] else tex
 
-writeScript :: Bool -> Exp -> Exp -> Char -> String -> Math ()
-writeScript convertible b e1 sep cmd
-  | isOperator b = do
-     (if isFancy b then tellGroup else id) $
-       (if convertible then local setConvertible else id) $ writeExp b
-     unless convertible $ tell [ControlSeq "\\limits"]
-     tell [Token sep]
-     tellGroup (writeExp e1)
-  | otherwise = do
-      tell [ControlSeq cmd]
-      tellGroup (writeExp e1)
-      tellGroup (writeExp b)
+writeScript :: Position -> Bool -> Exp -> Exp -> Math ()
+writeScript pos convertible b e1 = do
+  let diacmd = case e1 of
+                    ESymbol Accent a -> S.getDiacriticalCommand pos a
+                    _ -> Nothing
+  case diacmd of
+       Just cmd -> do
+            tell [ControlSeq cmd]
+            tellGroup (writeExp b)
+       Nothing
+         | isOperator b -> do
+            (if isFancy b then tellGroup else id) $
+              (if convertible then local setConvertible else id) $ writeExp b
+            unless convertible $ tell [ControlSeq "\\limits"]
+            tell [Token $ case pos of { Over -> '^'; Under -> '_' }]
+            tellGroup (writeExp e1)
+         | otherwise -> do
+             case pos of
+                  Over   -> tell [ControlSeq "\\overset"]
+                  Under  -> tell [ControlSeq "\\underset"]
+             tellGroup (writeExp e1)
+             tellGroup (writeExp b)
 
 -- Utility
 
@@ -320,31 +334,6 @@ isOperator (EMathOperator _) = True
 isOperator (ESymbol Op _)    = True
 isOperator _                 = False
 
--- Fix up
-
-reorderDiacritical' :: Position -> Exp -> Exp -> Exp
-reorderDiacritical' p b e@(ESymbol Accent a) =
-  case S.getDiacriticalCommand p a of
-    Just accentCmd -> EUnary accentCmd b
-    Nothing -> case p of
-                    Over  -> EOver False b e
-                    Under -> EUnder False b e
-reorderDiacritical' _ _ _ = error "Must be called with Accent"
-
-reorderDiacritical :: Exp -> Exp
-reorderDiacritical (EOver _ b e@(ESymbol Accent _)) =
-  reorderDiacritical' Over b e
-reorderDiacritical (EUnder _ b e@(ESymbol Accent _)) =
-  reorderDiacritical' Under b e
-reorderDiacritical (EUnderover _ b e@(ESymbol Accent _) e1) =
-  reorderDiacritical' Under (EOver False b e1) e
-reorderDiacritical (EUnderover _ b e1 e@(ESymbol Accent _)) =
-  reorderDiacritical' Over (EUnder False b e1) e
-reorderDiacritical x = x
-
-fixTree :: [Exp] -> [Exp]
-fixTree (EGrouped -> es) =
-    let removeGroup (EGrouped e) = e
-        removeGroup e = [e] in
-    removeGroup $ everywhere (mkT reorderDiacritical) es
-
+removeOuterGroup :: [Exp] -> [Exp]
+removeOuterGroup [EGrouped es] = es
+removeOuterGroup es = es
