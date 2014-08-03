@@ -83,7 +83,7 @@ expToInlines _ (ESpace 2)     = Just [Str "\x2001\x2001"]
 expToInlines _ (ESpace _)         = Just [Str " "]
 expToInlines _ (ESqrt _)       = Nothing
 expToInlines _ (ERoot _ _)     = Nothing
-expToInlines _ (EBinary _ _ _) = Nothing
+expToInlines _ (EFraction _ _ _) = Nothing
 expToInlines tt (ESub x y) = do
   x' <- expToInlines tt x
   y' <- expToInlines tt y

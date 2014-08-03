@@ -1,1 +1,1 @@
-[ESuper (EDelimited "(" ")" [Right (EBinary "\\frac" (ENumber "2") (EIdentifier "x"))]) (ESymbol Bin "-")]
+[ESuper (EDelimited "(" ")" [Right (EFraction NormalFrac (ENumber "2") (EIdentifier "x"))]) (ESymbol Bin "-")]

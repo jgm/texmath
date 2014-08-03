@@ -21,9 +21,11 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 -}
 
 module Text.TeXMath.Types (Exp(..), TeXSymbolType(..), ArrayLine,
-                           TextType(..), Alignment(..), DisplayType(..),
+                           FractionType(..), TextType(..),
+                           Alignment(..), DisplayType(..),
                            Operator(..), FormType(..), Record(..),
-                           Property, Position(..), Env, defaultEnv, InEDelimited)
+                           Property, Position(..), Env, defaultEnv,
+                           InEDelimited)
 where
 
 import Data.Generics
@@ -34,6 +36,12 @@ data TeXSymbolType = Ord | Op | Bin | Rel | Open | Close | Pun | Accent
 
 data Alignment = AlignLeft | AlignCenter | AlignRight | AlignDefault
                  deriving (Show, Read, Eq, Data, Typeable)
+
+data FractionType = NormalFrac   -- ^ Displayed or textual, acc to 'DisplayType'
+                  | DisplayFrac  -- ^ Force display mode
+                  | InlineFrac   -- ^ Force inline mode (textual)
+                  | NoLineFrac   -- ^ No line between top and bottom
+                  deriving (Show, Read, Eq, Data, Typeable)
 
 type ArrayLine = [[Exp]]
 
@@ -68,10 +76,9 @@ data Exp =
                         -- The arguments work as in @EOver@.
   | EUnderover Bool Exp Exp Exp  -- ^ An expression with something over and
                        -- something under it.
-  | EBinary String Exp Exp -- ^ A binary operator.  The first argument is a
-                  -- LaTeX operator name like @\\root@; the others are the
-                  -- arguments.
   | EPhantom Exp  -- ^ A "phantom" operator that takes space but doesn't display.
+  | EFraction FractionType Exp Exp  -- ^ A fraction.  First argument is
+                       -- numerator, second denominator.
   | ERoot Exp Exp  -- ^ An nth root.  First argument is index, second is base.
   | ESqrt Exp      -- ^ A square root.
   | EScaled Double Exp -- ^ An expression that is scaled to some factor

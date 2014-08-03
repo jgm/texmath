@@ -59,9 +59,6 @@ writeTeXWith env es = drop 1 . init . flip renderTeX "" . Grouped $
 runExpr :: Env -> Math () -> [TeX]
 runExpr e m = flip runReader (MathState e False) $ execWriterT (runTeXMath m)
 
-square :: [String]
-square = ["\\sqrt", "\\surd"]
-
 data MathState = MathState{ mathEnv :: Env
                           , mathConvertible :: Bool
                           } deriving Show
@@ -79,9 +76,26 @@ getTeXMathM s = getTeXMath s <$> asks mathEnv
 tellGroup :: Math () -> Math ()
 tellGroup = censor ((:[]) . Grouped)
 
+writeBinom :: String -> Exp -> Exp -> Math ()
+writeBinom cmd x y = do
+  tell [ControlSeq cmd]
+  tellGroup $ writeExp x
+  tellGroup $ writeExp y
+
 writeExp :: Exp -> Math ()
 writeExp (ENumber s) = tell =<< getTeXMathM s
 writeExp (EGrouped es) = tellGroup (mapM_ writeExp es)
+writeExp (EDelimited "(" ")" [Right (EFraction NoLineFrac x y)]) = do
+  writeBinom "\\binom" x y
+writeExp (EDelimited "[" "]" [Right (EFraction NoLineFrac x y)]) = do
+  writeBinom "\\brack" x y
+writeExp (EDelimited "{" "}" [Right (EFraction NoLineFrac x y)]) = do
+  writeBinom "\\brace" x y
+writeExp (EDelimited "\x27E8" "\x27E9" [Right (EFraction NoLineFrac x y)]) = do
+  writeBinom "\\bangle" x y
+writeExp (EDelimited open close [Right (EFraction NoLineFrac x y)]) = do
+  writeExp (EDelimited open close [Right (EArray [AlignCenter]
+                   [[[x]],[[y]]])])
 writeExp (EDelimited open close [Right (EArray aligns rows)]) = do
   env <- asks mathEnv
   case ("amsmath" `elem` env, open, close) of
@@ -127,13 +141,15 @@ writeExp (ESymbol t s) = do
   tell =<< getTeXMathM s
   when (t == Bin || t == Rel) $ tell [Space]
 writeExp (ESpace width) = tell [ControlSeq $ getSpaceCommand width]
-writeExp (EBinary s e1 e2) = do
-  tell [ControlSeq s]
-  if (s `elem` square)
-    then do tell [Token '[']
-            writeExp e1
-            tell [Token ']']
-    else tellGroup (writeExp e1)
+writeExp (EFraction fractype e1 e2) = do
+  let cmd = case fractype of
+                 NormalFrac  -> "\\frac"
+                 DisplayFrac -> "\\dfrac"
+                 InlineFrac  -> "\\tfrac"
+                 NoLineFrac  -> "\\binom"  -- shouldn't happen because
+                         -- a binom will be in a delimited
+  tell [ControlSeq cmd]
+  tellGroup (writeExp e1)
   tellGroup (writeExp e2)
 writeExp (ESub b e1) = do
   (if isFancy b then tellGroup else id) $ writeExp b

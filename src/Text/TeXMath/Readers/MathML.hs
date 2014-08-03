@@ -353,11 +353,12 @@ safeExpr e = mkExp <$> expr e
 
 frac :: Element -> MML Exp
 frac e = do
-  [num, dom] <- mapM safeExpr =<< (checkArgs 2 e)
+  [num, denom] <- mapM safeExpr =<< (checkArgs 2 e)
   rawThick <- findAttrQ "linethickness" e
-  let constructor = (maybe "\\frac" (\l -> "\\genfrac{}{}{" ++ l ++ "}{}"))
-                 (thicknessZero =<< rawThick)
-  return $ EBinary constructor num dom
+  return $
+    if thicknessZero rawThick
+       then EFraction NoLineFrac num denom
+       else EFraction NormalFrac num denom
 
 msqrt :: Element -> MML Exp
 msqrt e = ESqrt <$> (row e)
@@ -616,10 +617,9 @@ spacelike e@(name -> uid) =
   uid `elem` spacelikeElems || uid `elem` cSpacelikeElems &&
     and (map spacelike (elChildren e))
 
-thicknessZero :: String -> Maybe String
-thicknessZero s =
-  let l = thicknessToNum s in
-  if l == 0.0 then Just "0.0em" else Nothing
+thicknessZero :: Maybe String -> Bool
+thicknessZero (Just s) = thicknessToNum s == 0.0
+thicknessZero Nothing  = False
 
 widthToNum :: String -> Double
 widthToNum s =

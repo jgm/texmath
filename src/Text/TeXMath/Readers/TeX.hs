@@ -1,3 +1,4 @@
+{-# LANGUAGE TupleSections #-}
 {-
 Copyright (C) 2009 John MacFarlane <jgm@berkeley.edu>
 
@@ -29,7 +30,7 @@ import Text.ParserCombinators.Parsec
 import qualified Text.ParserCombinators.Parsec.Token as P
 import Text.ParserCombinators.Parsec.Language
 import Text.TeXMath.Types
-import Control.Applicative ((<*), (*>), (<$>), (<$))
+import Control.Applicative ((<*), (*>), (<*>), (<$>), (<$))
 import qualified Text.TeXMath.Shared as S
 import Text.TeXMath.Readers.TeX.Macros (applyMacros, parseMacroDefinitions)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
@@ -143,12 +144,35 @@ limitsIndicator =
   <|> (ctrlseq "nolimits" >> return (Just False))
   <|> return Nothing
 
+binomCmd :: TP String
+binomCmd = choice $ map (ctrlseq . fst) binomCmds
+
+binomCmds :: [(String, Exp -> Exp -> Exp)]
+binomCmds = [ ("choose", \x y ->
+                EDelimited "(" ")" [Right (EFraction NoLineFrac x y)])
+            , ("brack", \x y ->
+                EDelimited "[" "]" [Right (EFraction NoLineFrac x y)])
+            , ("brace", \x y ->
+                EDelimited "{" "}" [Right (EFraction NoLineFrac x y)])
+            , ("bangle", \x y ->
+                EDelimited "\x27E8" "\x27E9" [Right (EFraction NoLineFrac x y)])
+            ]
+
+togroup :: [Exp] -> Exp
+togroup [x] = x
+togroup xs = EGrouped xs
+
 inbraces :: TP Exp
 inbraces = do
-  result <- braces $ many $ notFollowedBy (char '}') >> expr
+  result <- braces $
+      (,,) <$> (many $ notFollowedBy binomCmd >> expr)
+           <*> option "" binomCmd
+           <*> many expr
   case result of
-       [x] -> return x   -- avoid unnecessary EGrouped
-       xs  -> return (EGrouped xs)
+       (xs,"",_)   -> return $ togroup xs
+       (xs,sep,ys) -> case lookup (drop 1 sep) binomCmds of
+                           Just f -> return $ f (togroup xs) (togroup ys)
+                           Nothing -> pzero
 
 texToken :: TP Exp
 texToken = texSymbol <|> inbraces <|> inbrackets <|>
@@ -472,15 +496,18 @@ root = try $ do
 binary :: TP Exp
 binary = try $ do
   c <- command
-  unless (c `elem` binaryOps) pzero
   a <- texToken
   b <- texToken
-  return $
-    case c of
-       "\\overset"  -> EOver False b a
-       "\\stackrel" -> EOver False b a
-       "\\underset" -> EUnder False b a
-       _            -> EBinary c a b
+  case c of
+     "\\overset"  -> return $ EOver False b a
+     "\\stackrel" -> return $ EOver False b a
+     "\\underset" -> return $ EUnder False b a
+     "\\frac"     -> return $ EFraction NormalFrac a b
+     "\\tfrac"    -> return $ EFraction InlineFrac a b
+     "\\dfrac"    -> return $ EFraction DisplayFrac a b
+     "\\binom"    -> return $ EDelimited "(" ")"
+                              [Right (EFraction NoLineFrac a b)]
+     _            -> pzero
 
 texSymbol :: TP Exp
 texSymbol = try $ do
@@ -523,9 +550,6 @@ braces = lexeme . P.braces lexer
 
 brackets :: CharParser st a -> CharParser st a
 brackets = lexeme . P.brackets lexer
-
-binaryOps :: [String]
-binaryOps = ["\\frac", "\\tfrac", "\\dfrac", "\\stackrel", "\\overset", "\\underset", "\\binom"]
 
 enclosures :: [(String, Exp)]
 enclosures = [ ("(", ESymbol Open "(")

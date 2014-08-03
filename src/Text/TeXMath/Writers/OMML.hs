@@ -47,38 +47,23 @@ str :: [Element] -> String -> Element
 str props s = mnode "r" [ mnode "rPr" props
                         , mnode "t" s ]
 
-showBinary :: [Element] -> String -> Exp -> Exp -> Element
-showBinary props c x y =
-  case c of
-       "\\frac" -> mnode "f" [ mnode "fPr" $
+showFraction :: [Element] -> FractionType -> Exp -> Exp -> Element
+showFraction props ft x y =
+  case ft of
+       NormalFrac -> mnode "f" [ mnode "fPr" $
                                 mnodeA "type" "bar" ()
                              , mnode "num" x'
                              , mnode "den" y']
-       "\\dfrac" -> showBinary props "\\frac" x y
-       "\\tfrac" -> mnode "f" [ mnode "fPr" $
+       DisplayFrac -> showFraction props NormalFrac x y
+       InlineFrac -> mnode "f" [ mnode "fPr" $
                                  mnodeA "type" "lin" ()
                               , mnode "num" x'
                               , mnode "den" y']
-       "\\stackrel" -> mnode "limUpp" [ mnode "e" y'
-                                       , mnode "lim" x']
-       "\\overset" -> mnode "limUpp" [ mnode "e" y'
-                                     , mnode "lim" x' ]
-       "\\underset" -> mnode "limLow" [ mnode "e" y'
-                                      , mnode "lim" x' ]
-       "\\binom"    -> mnode "d" [ mnode "dPr" $
-                                     mnodeA "sepChr" "," ()
-                                 , mnode "e" $
-                                     mnode "f" [ mnode "fPr" $
-                                                   mnodeA "type"
-                                                     "noBar" ()
-                                               , mnode "num" x'
-                                               , mnode "den" y' ]]
-       "\\genfrac{}{}{0.0mm}{}" -> mnode "f" [ mnode "fPr" $
+       NoLineFrac -> mnode "f" [ mnode "fPr" $
                                               mnodeA "type" "noBar" ()
                                              , mnode "num" x'
                                              , mnode "den" y'
                                              ]
-       _ -> error $ "Unknown binary operator " ++ c
     where x' = showExp props x
           y' = showExp props y
 
@@ -209,7 +194,7 @@ showExp props e =
                                    mnodeA "degHide" "on" ()
                                 , mnode "deg" $ showExp props i
                                 , mnode "e" $ showExp props x]]
-   EBinary c x y    -> [showBinary props c x y]
+   EFraction ft x y -> [showFraction props ft x y]
    EPhantom x       -> [mnode "phant" [ mnode "phantPr"
                                             [ mnodeA "show" "0" () ]
                                           , mnode "e" $ showExp props x]]

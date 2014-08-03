@@ -23,7 +23,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 module Text.TeXMath.Writers.MathML (writeMathML)
 where
 
-import qualified Data.Map as M
 import Text.XML.Light
 import Text.TeXMath.Types
 import Text.TeXMath.Unicode.ToUnicode
@@ -49,29 +48,18 @@ math = add_attr (Attr (unqual "xmlns") "http://www.w3.org/1998/Math/MathML") . u
 mrow :: [Element] -> Element
 mrow = unode "mrow"
 
-binaryOps :: M.Map String ([Element] -> Element)
-binaryOps = M.fromList
-  [ ("\\frac", unode "mfrac")
-  , ("\\tfrac", withAttribute "displaystyle" "false" .
-                  unode "mstyle" . unode "mfrac")
-  , ("\\dfrac", withAttribute "displaystyle" "true" .
-                  unode "mstyle" . unode "mfrac")
-  , ("\\stackrel", unode "mover" . reverse)
-  , ("\\overset", unode "mover" . reverse)
-  , ("\\underset", unode "munder" . reverse)
-  , ("\\binom", showBinom)
-  , ("\\genfrac{}{}{0.0mm}{}", withAttribute "linethickness" "0" .
-                                unode "mfrac")
-  ]
-
-showBinom :: [Element] -> Element
-showBinom lst = unode "mfenced" $ withAttribute "linethickness" "0" $ unode "mfrac" lst
-
-showBinary :: TextType -> String -> Exp -> Exp -> Element
-showBinary tt c x y =
-  case M.lookup c binaryOps of
-       Just f   -> f [showExp tt x, showExp tt y]
-       Nothing  -> error $ "Unknown binary op: " ++ c
+showFraction :: TextType -> FractionType -> Exp -> Exp -> Element
+showFraction tt ft x y =
+  case ft of
+       NormalFrac   -> unode "mfrac" [x', y']
+       InlineFrac   -> withAttribute "displaystyle" "false" .
+                         unode "mstyle" . unode "mfrac" $ [x', y']
+       DisplayFrac  -> withAttribute "displaystyle" "true" .
+                         unode "mstyle" . unode "mfrac" $ [x', y']
+       NoLineFrac   -> withAttribute "linethickness" "0" .
+                         unode "mstyle" . unode "mfrac" $ [x', y']
+  where x' = showExp tt x
+        y' = showExp tt y
 
 spaceWidth :: Double -> Element
 spaceWidth w =
@@ -169,7 +157,7 @@ showExp tt e =
    ESymbol Close x  -> makeFence FPostfix $ op x
    ESymbol _ x      -> op x
    ESpace x         -> spaceWidth x
-   EBinary c x y    -> showBinary tt c x y
+   EFraction ft x y -> showFraction tt ft x y
    ESub x y         -> unode "msub" $ map (showExp tt) [x, y]
    ESuper x y       -> unode "msup" $ map (showExp tt) [x, y]
    ESubsup x y z    -> unode "msubsup" $ map (showExp tt) [x, y, z]

@@ -1,1 +1,1 @@
-[ESubsup (EIdentifier "A") (EIdentifier "B") (EIdentifier "C"),ESymbol Rel "=",ESubsup (EIdentifier "A") (EIdentifier "B") (EIdentifier "C"),EPhantom (EBinary "\\frac" (EIdentifier "test") (EIdentifier "failed"))]
+[ESubsup (EIdentifier "A") (EIdentifier "B") (EIdentifier "C"),ESymbol Rel "=",ESubsup (EIdentifier "A") (EIdentifier "B") (EIdentifier "C"),EPhantom (EFraction NormalFrac (EIdentifier "test") (EIdentifier "failed"))]

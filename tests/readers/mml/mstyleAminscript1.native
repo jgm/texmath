@@ -1,1 +1,1 @@
-[EBinary "\\frac" (ENumber "2") (EIdentifier "x"),ESymbol Rel "=",EBinary "\\frac" (ENumber "2") (EIdentifier "x")]
+[EFraction NormalFrac (ENumber "2") (EIdentifier "x"),ESymbol Rel "=",EFraction NormalFrac (ENumber "2") (EIdentifier "x")]

@@ -1,1 +1,1 @@
-[EDelimited "(" ")" [Right (EBinary "\\frac" (EIdentifier "a") (EIdentifier "b"))]]
+[EDelimited "(" ")" [Right (EFraction NormalFrac (EIdentifier "a") (EIdentifier "b"))]]
