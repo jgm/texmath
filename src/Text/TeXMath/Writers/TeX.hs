@@ -194,7 +194,7 @@ writeExp (ERoot i e) = do
     tellGroup (writeExp e)
 writeExp (EPhantom e) = do
     tell [ControlSeq "\\phantom"]
-    writeExp e
+    tellGroup (writeExp e)
 writeExp (EScaled size e)
   | case e of
          (ESymbol Open _)  -> True
