@@ -61,8 +61,8 @@ showBinary props c x y =
                               , mnode "den" y']
        "\\sqrt"  -> mnode "rad" [ mnode "radPr" $
                                    mnodeA "degHide" "on" ()
-                                , mnode "deg" y'
-                                , mnode "e" x']
+                                , mnode "deg" x' 
+                                , mnode "e" y']
        "\\stackrel" -> mnode "limUpp" [ mnode "e" y'
                                        , mnode "lim" x']
        "\\overset" -> mnode "limUpp" [ mnode "e" y'

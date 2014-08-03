@@ -69,7 +69,7 @@ binaryOps = M.fromList
                   unode "mstyle" . unode "mfrac")
   , ("\\dfrac", withAttribute "displaystyle" "true" .
                   unode "mstyle" . unode "mfrac")
-  , ("\\sqrt", unode "mroot")
+  , ("\\sqrt", unode "mroot" . reverse)
   , ("\\stackrel", unode "mover" . reverse)
   , ("\\overset", unode "mover" . reverse)
   , ("\\underset", unode "munder" . reverse)

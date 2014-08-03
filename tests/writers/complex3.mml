@@ -1888,8 +1888,8 @@
         <mrow>
           <mrow>
             <mroot>
-              <mi>n</mi>
               <mi>a</mi>
+              <mi>n</mi>
             </mroot>
             <mo>=</mo>
             <mi>b</mi>
@@ -1912,21 +1912,21 @@
       <mtd>
         <mrow>
           <mroot>
-            <mn>4</mn>
             <mfrac>
               <mn>16</mn>
               <mn>81</mn>
             </mfrac>
+            <mn>4</mn>
           </mroot>
           <mo>=</mo>
           <mfrac>
             <mroot>
-              <mn>4</mn>
               <mn>16</mn>
+              <mn>4</mn>
             </mroot>
             <mroot>
-              <mn>4</mn>
               <mn>81</mn>
+              <mn>4</mn>
             </mroot>
           </mfrac>
           <mo>=</mo>
@@ -2643,7 +2643,6 @@
                   <mrow>
                     <mo>−</mo>
                     <mroot>
-                      <mn>3</mn>
                       <mrow>
                         <mo stretchy="false" form="prefix">(</mo>
                         <mrow>
@@ -2652,6 +2651,7 @@
                         </mrow>
                         <mo stretchy="false" form="postfix">)</mo>
                       </mrow>
+                      <mn>3</mn>
                     </mroot>
                   </mrow>
                   <mo>&#8290;</mo>
@@ -2675,7 +2675,6 @@
                   </mfrac>
                   <mo>&#8290;</mo>
                   <mroot>
-                    <mn>3</mn>
                     <mrow>
                       <mo stretchy="false" form="prefix">(</mo>
                       <mrow>
@@ -2684,6 +2683,7 @@
                       </mrow>
                       <mo stretchy="false" form="postfix">)</mo>
                     </mrow>
+                    <mn>3</mn>
                   </mroot>
                   <mo>&#8290;</mo>
                   <mi>x</mi>
@@ -2704,7 +2704,6 @@
                   </msqrt>
                   <mo>&#8290;</mo>
                   <mroot>
-                    <mn>3</mn>
                     <mrow>
                       <mo stretchy="true" form="prefix">(</mo>
                       <mrow>
@@ -2713,6 +2712,7 @@
                       </mrow>
                       <mo stretchy="true" form="postfix">)</mo>
                     </mrow>
+                    <mn>3</mn>
                   </mroot>
                   <mo>&#8290;</mo>
                   <mi>x</mi>
@@ -8532,7 +8532,6 @@
     <mtr>
       <mtd>
         <mroot>
-          <mi>n</mi>
           <mrow>
             <msub>
               <mi>x</mi>
@@ -8551,6 +8550,7 @@
               <mi>n</mi>
             </msub>
           </mrow>
+          <mi>n</mi>
         </mroot>
       </mtd>
       <mtd />
@@ -9405,7 +9405,6 @@
                       <mi>x</mi>
                       <mo>+</mo>
                       <mroot>
-                        <mn>2</mn>
                         <mfrac>
                           <msup>
                             <mi>a</mi>
@@ -9417,6 +9416,7 @@
                           </msup>
                           <mn>12.34</mn>
                         </mfrac>
+                        <mn>2</mn>
                       </mroot>
                     </mrow>
                   </mtd>

@@ -7163,7 +7163,7 @@
                 <m:rPr>
                   <m:sty m:val="p" />
                 </m:rPr>
-                <m:t>a</m:t>
+                <m:t>n</m:t>
               </m:r>
             </m:deg>
             <m:e>
@@ -7171,7 +7171,7 @@
                 <m:rPr>
                   <m:sty m:val="p" />
                 </m:rPr>
-                <m:t>n</m:t>
+                <m:t>a</m:t>
               </m:r>
             </m:e>
           </m:rad>
@@ -7239,6 +7239,14 @@
               <m:degHide m:val="on" />
             </m:radPr>
             <m:deg>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>4</m:t>
+              </m:r>
+            </m:deg>
+            <m:e>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -7260,14 +7268,6 @@
                   </m:r>
                 </m:den>
               </m:f>
-            </m:deg>
-            <m:e>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>4</m:t>
-              </m:r>
             </m:e>
           </m:rad>
           <m:r>
@@ -7290,7 +7290,7 @@
                     <m:rPr>
                       <m:sty m:val="p" />
                     </m:rPr>
-                    <m:t>16</m:t>
+                    <m:t>4</m:t>
                   </m:r>
                 </m:deg>
                 <m:e>
@@ -7298,7 +7298,7 @@
                     <m:rPr>
                       <m:sty m:val="p" />
                     </m:rPr>
-                    <m:t>4</m:t>
+                    <m:t>16</m:t>
                   </m:r>
                 </m:e>
               </m:rad>
@@ -7313,7 +7313,7 @@
                     <m:rPr>
                       <m:sty m:val="p" />
                     </m:rPr>
-                    <m:t>81</m:t>
+                    <m:t>4</m:t>
                   </m:r>
                 </m:deg>
                 <m:e>
@@ -7321,7 +7321,7 @@
                     <m:rPr>
                       <m:sty m:val="p" />
                     </m:rPr>
-                    <m:t>4</m:t>
+                    <m:t>81</m:t>
                   </m:r>
                 </m:e>
               </m:rad>
@@ -9537,6 +9537,14 @@
                     <m:rPr>
                       <m:sty m:val="p" />
                     </m:rPr>
+                    <m:t>3</m:t>
+                  </m:r>
+                </m:deg>
+                <m:e>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
                     <m:t>(</m:t>
                   </m:r>
                   <m:r>
@@ -9556,14 +9564,6 @@
                       <m:sty m:val="p" />
                     </m:rPr>
                     <m:t>)</m:t>
-                  </m:r>
-                </m:deg>
-                <m:e>
-                  <m:r>
-                    <m:rPr>
-                      <m:sty m:val="p" />
-                    </m:rPr>
-                    <m:t>3</m:t>
                   </m:r>
                 </m:e>
               </m:rad>
@@ -9660,6 +9660,14 @@
                     <m:rPr>
                       <m:sty m:val="p" />
                     </m:rPr>
+                    <m:t>3</m:t>
+                  </m:r>
+                </m:deg>
+                <m:e>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
                     <m:t>(</m:t>
                   </m:r>
                   <m:r>
@@ -9679,14 +9687,6 @@
                       <m:sty m:val="p" />
                     </m:rPr>
                     <m:t>)</m:t>
-                  </m:r>
-                </m:deg>
-                <m:e>
-                  <m:r>
-                    <m:rPr>
-                      <m:sty m:val="p" />
-                    </m:rPr>
-                    <m:t>3</m:t>
                   </m:r>
                 </m:e>
               </m:rad>
@@ -9774,6 +9774,14 @@
               <m:degHide m:val="on" />
             </m:radPr>
             <m:deg>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>3</m:t>
+              </m:r>
+            </m:deg>
+            <m:e>
               <m:d>
                 <m:dPr>
                   <m:begChr m:val="(" />
@@ -9795,14 +9803,6 @@
                   </m:r>
                 </m:e>
               </m:d>
-            </m:deg>
-            <m:e>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>3</m:t>
-              </m:r>
             </m:e>
           </m:rad>
           <m:r>
@@ -27401,6 +27401,14 @@
               <m:degHide m:val="on" />
             </m:radPr>
             <m:deg>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>n</m:t>
+              </m:r>
+            </m:deg>
+            <m:e>
               <m:sSub>
                 <m:e>
                   <m:r>
@@ -27479,14 +27487,6 @@
                   </m:r>
                 </m:sub>
               </m:sSub>
-            </m:deg>
-            <m:e>
-              <m:r>
-                <m:rPr>
-                  <m:sty m:val="p" />
-                </m:rPr>
-                <m:t>n</m:t>
-              </m:r>
             </m:e>
           </m:rad>
         </m:e>
@@ -30206,6 +30206,14 @@
                           <m:degHide m:val="on" />
                         </m:radPr>
                         <m:deg>
+                          <m:r>
+                            <m:rPr>
+                              <m:sty m:val="p" />
+                            </m:rPr>
+                            <m:t>2</m:t>
+                          </m:r>
+                        </m:deg>
+                        <m:e>
                           <m:f>
                             <m:fPr>
                               <m:type m:val="bar" />
@@ -30251,14 +30259,6 @@
                               </m:r>
                             </m:den>
                           </m:f>
-                        </m:deg>
-                        <m:e>
-                          <m:r>
-                            <m:rPr>
-                              <m:sty m:val="p" />
-                            </m:rPr>
-                            <m:t>2</m:t>
-                          </m:r>
                         </m:e>
                       </m:rad>
                     </m:e>

@@ -9,18 +9,6 @@
         <m:degHide m:val="on" />
       </m:radPr>
       <m:deg>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>x</m:t>
-        </m:r>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>-</m:t>
-        </m:r>
         <m:f>
           <m:fPr>
             <m:type m:val="bar" />
@@ -44,6 +32,18 @@
         </m:f>
       </m:deg>
       <m:e>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>x</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>-</m:t>
+        </m:r>
         <m:f>
           <m:fPr>
             <m:type m:val="bar" />
@@ -78,26 +78,6 @@
         <m:degHide m:val="on" />
       </m:radPr>
       <m:deg>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>x</m:t>
-        </m:r>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>-</m:t>
-        </m:r>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>3</m:t>
-        </m:r>
-      </m:deg>
-      <m:e>
         <m:f>
           <m:fPr>
             <m:type m:val="bar" />
@@ -119,6 +99,26 @@
             </m:r>
           </m:den>
         </m:f>
+      </m:deg>
+      <m:e>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>x</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>-</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>3</m:t>
+        </m:r>
       </m:e>
     </m:rad>
     <m:r>
@@ -132,26 +132,6 @@
         <m:degHide m:val="on" />
       </m:radPr>
       <m:deg>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>x</m:t>
-        </m:r>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>-</m:t>
-        </m:r>
-        <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
-          <m:t>3</m:t>
-        </m:r>
-      </m:deg>
-      <m:e>
         <m:f>
           <m:fPr>
             <m:type m:val="bar" />
@@ -173,6 +153,26 @@
             </m:r>
           </m:den>
         </m:f>
+      </m:deg>
+      <m:e>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>x</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>-</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>3</m:t>
+        </m:r>
       </m:e>
     </m:rad>
     <m:r>

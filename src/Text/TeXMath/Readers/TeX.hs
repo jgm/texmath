@@ -467,7 +467,7 @@ root = try $ do
   ctrlseq "sqrt" <|> ctrlseq "surd"
   a <- inbrackets
   b <- texToken
-  return $ EBinary "\\sqrt" b a
+  return $ EBinary "\\sqrt" a b
 
 binary :: TP Exp
 binary = try $ do
