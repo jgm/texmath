@@ -28,7 +28,7 @@ where
 
 import Data.Generics
 
-data TeXSymbolType = Ord | Op | Bin | Rel | Open | Close | Pun | Accent 
+data TeXSymbolType = Ord | Op | Bin | Rel | Open | Close | Pun | Accent
                      | Fence | TOver | TUnder | Alpha | BotAccent | Rad
                      deriving (Show, Read, Eq, Data, Typeable)
 
@@ -38,32 +38,58 @@ data Alignment = AlignLeft | AlignCenter | AlignRight | AlignDefault
 type ArrayLine = [[Exp]]
 
 data Exp =
-    ENumber String
-  | EGrouped [Exp]
-  | EDelimited String String [InEDelimited]
-  | EIdentifier String
-  | EMathOperator String
-  | ESymbol TeXSymbolType String
-  | ESpace Double -- ^ Width in em
-  | EBinary String Exp Exp
-  | ESub Exp Exp
-  | ESuper Exp Exp
-  | ESubsup Exp Exp Exp
-  | EOver Bool Exp Exp  -- ^ Boolean is True if convertible
-  | EUnder Bool Exp Exp
-  | EUnderover Bool Exp Exp Exp
-  | EUnary String Exp
-  | EScaled String Exp
-  | EArray [Alignment] [ArrayLine]
-  | EText TextType String
-  | EStyled TextType [Exp]
+    ENumber String  -- ^ A number (@\<mn\>@ in MathML).
+  | EGrouped [Exp]  -- ^ A group of expressions that function as a unit
+                    -- (e.g. @{...}@) in TeX, @\<mrow\>...\</mrow\>@ in MathML.
+  | EDelimited String String [InEDelimited] -- ^ A group of expressions inside
+                    -- paired open and close delimiters (which may in some
+                    -- cases be null).
+  | EIdentifier String  -- ^ An identifier, e.g. a variable (@\<mi\>...\</mi\>@
+                    -- in MathML.  Note that MathML tends to use @\<mi\>@ tags
+                    -- for "sin" and other mathematical operators; these
+                    -- are represented as 'EMathOperator' in TeXMath.
+  | EMathOperator String  -- ^ A spelled-out operator like @lim@ or @sin@.
+  | ESymbol TeXSymbolType String  -- ^ A symbol.
+  | ESpace Double -- ^ A space, with the width specified in em.
+  | ESub Exp Exp  -- ^ An expression with a subscript.  First argument is base,
+                  -- second subscript.
+  | ESuper Exp Exp -- ^ An expresion with a superscript.  First argument is base,
+                   -- second subscript.
+  | ESubsup Exp Exp Exp  -- ^ An expression with both a sub and a superscript.
+                   -- First argument is base, second subscript, third
+                   -- superscript.
+  | EOver Bool Exp Exp  -- ^ An expression with something over it.
+                        -- The first argument is True if the formula is
+                        -- "convertible:" that is, if the material over the
+                        -- formula should appear as a regular superscript in
+                        -- inline math. The second argument is the base,
+                        -- the third the expression that goes over it.
+  | EUnder Bool Exp Exp -- ^ An expression with something under it.
+                        -- The arguments work as in @EOver@.
+  | EUnderover Bool Exp Exp Exp  -- ^ An expression with something over and
+                       -- something under it.
+  | EUnary String Exp  -- ^ A unary operator. The first argument is a LaTeX
+                       -- operator name like @\\sqrt@; the other is its argument.
+  | EBinary String Exp Exp -- ^ A binary operator.  The first argument is a
+                  -- LaTeX operator name like @\\root@; the others are the
+                  -- arguments.
+  | EScaled String Exp -- ^ An expression that is scaled beyond its normal size.
+  | EArray [Alignment] [ArrayLine] -- ^ An array or matrix.  The first argument
+                  -- specifies the alignments of the columns; the second gives
+                  -- the contents of the lines.  All of these lists should be
+                  -- the same length.
+  | EText TextType String  -- ^ Some normal text, possibly styled.
+  | EStyled TextType [Exp] -- ^  A group of styled expressions.
   deriving (Show, Read, Eq, Data, Typeable)
 
+-- | An @EDelimited@ element contains a string of ordinary expressions
+-- (represented here as @Right@ values) or fences (represented here as
+-- @Left@, and in LaTeX using @\mid@).
 type InEDelimited = Either Middle Exp
 type Middle = String
 
-data DisplayType = DisplayBlock
-                 | DisplayInline
+data DisplayType = DisplayBlock  -- ^ A displayed formula.
+                 | DisplayInline  -- ^ A formula rendered inline in text.
                  deriving (Show, Eq)
 
 data TextType = TextNormal
