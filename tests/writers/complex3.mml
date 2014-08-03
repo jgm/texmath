@@ -77,7 +77,7 @@
             <mo>=</mo>
             <mrow>
               <munderover>
-                <mo stretchy="false" form="prefix">∑</mo>
+                <mo>∑</mo>
                 <mrow>
                   <mi>n</mi>
                   <mo>=</mo>
@@ -138,7 +138,7 @@
                 <mo stretchy="true" form="prefix">(</mo>
                 <mrow>
                   <munderover>
-                    <mo stretchy="false" form="prefix">∑</mo>
+                    <mo>∑</mo>
                     <mrow>
                       <mi>n</mi>
                       <mo>=</mo>
@@ -170,7 +170,7 @@
           <mo>=</mo>
           <mrow>
             <munderover>
-              <mo stretchy="false" form="prefix">∑</mo>
+              <mo>∑</mo>
               <mrow>
                 <mi>n</mi>
                 <mo>=</mo>
@@ -244,7 +244,7 @@
                       <mo>−</mo>
                       <mrow>
                         <munderover>
-                          <mo stretchy="false" form="prefix">∑</mo>
+                          <mo>∑</mo>
                           <mrow>
                             <mi>k</mi>
                             <mo>=</mo>
@@ -316,7 +316,7 @@
                 <mo>−</mo>
                 <mrow>
                   <munderover>
-                    <mo stretchy="false" form="prefix">∑</mo>
+                    <mo>∑</mo>
                     <mrow>
                       <mi>k</mi>
                       <mo>=</mo>
@@ -5549,7 +5549,7 @@
         <mrow>
           <mrow>
             <msubsup>
-              <mo stretchy="false" form="prefix">∫</mo>
+              <mo>∫</mo>
               <mi>a</mi>
               <mi>b</mi>
             </msubsup>
@@ -5586,7 +5586,7 @@
             </munder>
             <mrow>
               <munderover>
-                <mo stretchy="false" form="prefix">∑</mo>
+                <mo>∑</mo>
                 <mrow>
                   <mi>i</mi>
                   <mo>=</mo>
@@ -11790,7 +11790,7 @@
         <mrow>
           <mi>A</mi>
           <munderover>
-            <mo accent="false">←</mo>
+            <mo accent="true">←</mo>
             <mspace width="0.056em" />
             <mrow>
               <mi>n</mi>
@@ -11802,7 +11802,7 @@
           </munderover>
           <mi>B</mi>
           <munderover>
-            <mo accent="false">→</mo>
+            <mo accent="true">→</mo>
             <mi>T</mi>
             <mrow>
               <mi>n</mi>
