@@ -29,7 +29,7 @@ import Text.ParserCombinators.Parsec
 import qualified Text.ParserCombinators.Parsec.Token as P
 import Text.ParserCombinators.Parsec.Language
 import Text.TeXMath.Types
-import Control.Applicative ((<*), (*>), (<$>))
+import Control.Applicative ((<*), (*>), (<$>), (<$))
 import qualified Text.TeXMath.Shared as S
 import Text.TeXMath.Readers.TeX.Macros (applyMacros, parseMacroDefinitions)
 import Data.Maybe (fromMaybe)
@@ -381,7 +381,11 @@ ensuremath :: TP Exp
 ensuremath = try $ lexeme (string "\\ensuremath") >> inbraces
 
 command :: TP String
-command = try $ char '\\' >> liftM ('\\':) (identifier <|> lexeme (count 1 anyChar))
+command = try $ do
+  char '\\'
+  res <- many1 letter <|> count 1 (satisfy (/='\n'))
+  spaces
+  return ('\\':res)
 
 unaryOps :: [String]
 unaryOps = ["\\sqrt", "\\surd", "\\phantom"]
@@ -412,30 +416,6 @@ styleOps = M.fromList
           , ("\\mathsfit",   EStyled TextSansSerifItalic)
           ]
 
-textOps :: M.Map String (String -> Exp)
-textOps = M.fromList
-          [ ("\\textrm",     EText TextNormal . parseText)
-          , ("\\text",       EText TextNormal . parseText)
-          , ("\\textbf",     EText TextBold . parseText)
-          , ("\\textit",     EText TextItalic . parseText)
-          , ("\\texttt",     EText TextMonospace . parseText)
-          , ("\\textsf",     EText TextSansSerif . parseText)
-          ]
-
-parseText :: String -> String
-parseText ('`':'`':xs) = '\x201C' : parseText xs
-parseText ('\'':'\'':xs) = '\x201D' : parseText xs
-parseText ('\'':xs) = '\x2019' : parseText xs
-parseText ('-':'-':'-':xs) = '\x2014' : parseText xs
-parseText ('-':'-':xs) = '\x2013' : parseText xs
-parseText ('\\':'l':'d':'o':'t':'s':xs) = '\x2026' : parseText xs
-parseText ('~':xs) = '\xA0' : parseText xs
-parseText ('\\':c:cs) | c `elem` "#$%&_{} " = c : parseText cs
-parseText ('\\':'s':'i':'m':c:cs) | not (isLetter c) = '~' : parseText (c:cs)
-parseText ('\\':'c':'h':'a':'r':'`':c:cs) = c : parseText cs
-parseText (x:xs) = x : parseText xs
-parseText [] = []
-
 diacritical :: TP Exp
 diacritical = try $ do
   c <- command
@@ -454,9 +434,17 @@ unary = try $ do
 text :: TP Exp
 text = try $ do
   c <- command
-  case M.lookup c textOps of
-       Just f   -> liftM f $ braces (many (noneOf "}" <|> (char '\\' >> char '}')))
-       Nothing  -> pzero
+  maybe mzero (<$> (bracedText <* spaces)) $ M.lookup c textOps
+
+textOps :: M.Map String (String -> Exp)
+textOps = M.fromList
+          [ ("\\textrm", (EText TextNormal))
+          , ("\\text",   (EText TextNormal))
+          , ("\\textbf", (EText TextBold))
+          , ("\\textit", (EText TextItalic))
+          , ("\\texttt", (EText TextMonospace))
+          , ("\\textsf", (EText TextSansSerif))
+          ]
 
 styled :: TP Exp
 styled = try $ do
@@ -518,9 +506,6 @@ lexeme = P.lexeme lexer
 
 whiteSpace :: CharParser st ()
 whiteSpace = P.whiteSpace lexer
-
-identifier :: CharParser st String
-identifier = lexeme (P.identifier lexer)
 
 operator :: CharParser st String
 operator = lexeme $ many1 (char '\'')
@@ -833,3 +818,264 @@ symbols = M.fromList [
            , ("\\tanh", EMathOperator "tanh")
            ]
 
+-- text mode parsing
+
+textual :: TP String
+textual = regular <|> sps <|> ligature <|> textCommand <|> bracedText
+
+sps :: TP String
+sps = " " <$ skipMany1 (oneOf " \t\n")
+
+regular :: TP String
+regular = many1 (noneOf "`'-~${}\\ \t")
+
+ligature :: TP String
+ligature = try ("\x2014" <$ string "---")
+       <|> try ("\x2013" <$ string "--")
+       <|> try ("\x201C" <$ string "``")
+       <|> try ("\x201D" <$ string "''")
+       <|> try ("\x2019" <$ string "'")
+       <|> try ("\x2018" <$ string "`")
+       <|> try ("\xA0"   <$ string "~")
+
+textCommand :: TP String
+textCommand = try $ do
+  ('\\':cmd) <- command
+  case M.lookup cmd textCommands of
+       Nothing -> fail ("Unknown command \\" ++ cmd)
+       Just c  -> c
+
+bracedText :: TP String
+bracedText = do
+  char '{'
+  inner <- concat <$> many textual
+  char '}'
+  return inner
+
+tok :: TP Char
+tok = (try $ char '{' *> spaces *> anyChar <* spaces <* char '}')
+   <|> anyChar
+
+textCommands :: M.Map String (TP String)
+textCommands = M.fromList
+  [ ("#", return "#")
+  , ("$", return "$")
+  , ("%", return "%")
+  , ("&", return "&")
+  , ("_", return "_")
+  , ("{", return "{")
+  , ("}", return "}")
+  , ("ldots", return "\x2026")
+  , ("sim", return "~")
+  , ("char", parseC)
+  , ("aa", return "å")
+  , ("AA", return "Å")
+  , ("ss", return "ß")
+  , ("o", return "ø")
+  , ("O", return "Ø")
+  , ("L", return "Ł")
+  , ("l", return "ł")
+  , ("ae", return "æ")
+  , ("AE", return "Æ")
+  , ("oe", return "œ")
+  , ("OE", return "Œ")
+  , ("`", option "`" $ grave <$> tok)
+  , ("'", option "'" $ acute <$> tok)
+  , ("^", option "^" $ circ  <$> tok)
+  , ("~", option "~" $ tilde <$> tok)
+  , ("\"", option "\"" $ try $ umlaut <$> tok)
+  , (".", option "." $ try $ dot <$> tok)
+  , ("=", option "=" $ try $ macron <$> tok)
+  , ("c", option "c" $ try $ cedilla <$> tok)
+  , ("v", option "v" $ try $ hacek <$> tok)
+  , ("u", option "u" $ try $ breve <$> tok)
+  ]
+
+parseC :: TP String
+parseC = try $ char '`' >> count 1 anyChar
+
+-- the functions below taken from pandoc:
+
+grave :: Char -> String
+grave 'A' = "À"
+grave 'E' = "È"
+grave 'I' = "Ì"
+grave 'O' = "Ò"
+grave 'U' = "Ù"
+grave 'a' = "à"
+grave 'e' = "è"
+grave 'i' = "ì"
+grave 'o' = "ò"
+grave 'u' = "ù"
+grave c   = [c]
+
+acute :: Char -> String
+acute 'A' = "Á"
+acute 'E' = "É"
+acute 'I' = "Í"
+acute 'O' = "Ó"
+acute 'U' = "Ú"
+acute 'Y' = "Ý"
+acute 'a' = "á"
+acute 'e' = "é"
+acute 'i' = "í"
+acute 'o' = "ó"
+acute 'u' = "ú"
+acute 'y' = "ý"
+acute 'C' = "Ć"
+acute 'c' = "ć"
+acute 'L' = "Ĺ"
+acute 'l' = "ĺ"
+acute 'N' = "Ń"
+acute 'n' = "ń"
+acute 'R' = "Ŕ"
+acute 'r' = "ŕ"
+acute 'S' = "Ś"
+acute 's' = "ś"
+acute 'Z' = "Ź"
+acute 'z' = "ź"
+acute c   = [c]
+
+circ :: Char -> String
+circ 'A' = "Â"
+circ 'E' = "Ê"
+circ 'I' = "Î"
+circ 'O' = "Ô"
+circ 'U' = "Û"
+circ 'a' = "â"
+circ 'e' = "ê"
+circ 'i' = "î"
+circ 'o' = "ô"
+circ 'u' = "û"
+circ 'C' = "Ĉ"
+circ 'c' = "ĉ"
+circ 'G' = "Ĝ"
+circ 'g' = "ĝ"
+circ 'H' = "Ĥ"
+circ 'h' = "ĥ"
+circ 'J' = "Ĵ"
+circ 'j' = "ĵ"
+circ 'S' = "Ŝ"
+circ 's' = "ŝ"
+circ 'W' = "Ŵ"
+circ 'w' = "ŵ"
+circ 'Y' = "Ŷ"
+circ 'y' = "ŷ"
+circ c   = [c]
+
+tilde :: Char -> String
+tilde 'A' = "Ã"
+tilde 'a' = "ã"
+tilde 'O' = "Õ"
+tilde 'o' = "õ"
+tilde 'I' = "Ĩ"
+tilde 'i' = "ĩ"
+tilde 'U' = "Ũ"
+tilde 'u' = "ũ"
+tilde 'N' = "Ñ"
+tilde 'n' = "ñ"
+tilde c   = [c]
+
+umlaut :: Char -> String
+umlaut 'A' = "Ä"
+umlaut 'E' = "Ë"
+umlaut 'I' = "Ï"
+umlaut 'O' = "Ö"
+umlaut 'U' = "Ü"
+umlaut 'a' = "ä"
+umlaut 'e' = "ë"
+umlaut 'i' = "ï"
+umlaut 'o' = "ö"
+umlaut 'u' = "ü"
+umlaut c   = [c]
+
+dot :: Char -> String
+dot 'C' = "Ċ"
+dot 'c' = "ċ"
+dot 'E' = "Ė"
+dot 'e' = "ė"
+dot 'G' = "Ġ"
+dot 'g' = "ġ"
+dot 'I' = "İ"
+dot 'Z' = "Ż"
+dot 'z' = "ż"
+dot c   = [c]
+
+macron :: Char -> String
+macron 'A' = "Ā"
+macron 'E' = "Ē"
+macron 'I' = "Ī"
+macron 'O' = "Ō"
+macron 'U' = "Ū"
+macron 'a' = "ā"
+macron 'e' = "ē"
+macron 'i' = "ī"
+macron 'o' = "ō"
+macron 'u' = "ū"
+macron c   = [c]
+
+cedilla :: Char -> String
+cedilla 'c' = "ç"
+cedilla 'C' = "Ç"
+cedilla 's' = "ş"
+cedilla 'S' = "Ş"
+cedilla 't' = "ţ"
+cedilla 'T' = "Ţ"
+cedilla 'e' = "ȩ"
+cedilla 'E' = "Ȩ"
+cedilla 'h' = "ḩ"
+cedilla 'H' = "Ḩ"
+cedilla 'o' = "o̧"
+cedilla 'O' = "O̧"
+cedilla c   = [c]
+
+hacek :: Char -> String
+hacek 'A' = "Ǎ"
+hacek 'a' = "ǎ"
+hacek 'C' = "Č"
+hacek 'c' = "č"
+hacek 'D' = "Ď"
+hacek 'd' = "ď"
+hacek 'E' = "Ě"
+hacek 'e' = "ě"
+hacek 'G' = "Ǧ"
+hacek 'g' = "ǧ"
+hacek 'H' = "Ȟ"
+hacek 'h' = "ȟ"
+hacek 'I' = "Ǐ"
+hacek 'i' = "ǐ"
+hacek 'j' = "ǰ"
+hacek 'K' = "Ǩ"
+hacek 'k' = "ǩ"
+hacek 'L' = "Ľ"
+hacek 'l' = "ľ"
+hacek 'N' = "Ň"
+hacek 'n' = "ň"
+hacek 'O' = "Ǒ"
+hacek 'o' = "ǒ"
+hacek 'R' = "Ř"
+hacek 'r' = "ř"
+hacek 'S' = "Š"
+hacek 's' = "š"
+hacek 'T' = "Ť"
+hacek 't' = "ť"
+hacek 'U' = "Ǔ"
+hacek 'u' = "ǔ"
+hacek 'Z' = "Ž"
+hacek 'z' = "ž"
+hacek c   = [c]
+
+breve :: Char -> String
+breve 'A' = "Ă"
+breve 'a' = "ă"
+breve 'E' = "Ĕ"
+breve 'e' = "ĕ"
+breve 'G' = "Ğ"
+breve 'g' = "ğ"
+breve 'I' = "Ĭ"
+breve 'i' = "ĭ"
+breve 'O' = "Ŏ"
+breve 'o' = "ŏ"
+breve 'U' = "Ŭ"
+breve 'u' = "ŭ"
+breve c   = [c]
