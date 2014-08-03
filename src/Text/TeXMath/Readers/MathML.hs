@@ -73,12 +73,12 @@ type MML = ReaderT MMLState (Except String)
 
 data SupOrSub = Sub | Sup deriving (Show, Eq)
 
-data IR a = Stretchy TeXSymbolType String
+data IR a = Stretchy TeXSymbolType (String -> Exp) String
           | Trailing (Exp -> Exp -> Exp) Exp
           | E a
 
 instance Show a => Show (IR a) where
-  show (Stretchy t s) = "Stretchy " ++ show t ++ " " ++ show s
+  show (Stretchy t _ s) = "Stretchy " ++ show t ++ " " ++ show s
   show (Trailing _ s) = "Trailing " ++ show s
   show (E s) = "E " ++ show s
 
@@ -166,17 +166,17 @@ op e = do
             ["fence", "accent", "stretchy"]
   let objectPosition = getPosition $ form opDict
   inScript <- asks inAccent
+  let ts =  [("accent", ESymbol Accent), ("fence", ESymbol objectPosition)]
+  let fallback = case opString of
+                      [c]   -> ESymbol (getSymbolType c)
+                      _     -> EMathOperator
+  let constructor =
+        fromMaybe fallback
+          (getFirst . mconcat $ map (First . flip lookup ts) props)
   if ("stretchy" `elem` props) && not inScript
-    then return $ Stretchy objectPosition (oper opDict)
+    then return $ Stretchy objectPosition constructor opString
     else do
-      let ts =  [("accent", ESymbol Accent), ("fence", ESymbol objectPosition)]
-      let fallback = case opString of
-                          [c]   -> ESymbol (getSymbolType c)
-                          _     -> EMathOperator
-      let constructor =
-            fromMaybe fallback
-              (getFirst . mconcat $ map (First . flip lookup ts) props)
-      return $ (E . constructor) (oper opDict)
+      return $ (E . constructor) opString
   where
     checkAttr ps v = maybe (v `elem` ps) (=="true") <$> findAttrQ v e
 
@@ -236,7 +236,7 @@ toExp xs =
 
 toEDelim :: [IR InEDelimited] -> [InEDelimited]
 toEDelim [] = []
-toEDelim [Stretchy t s] = [Right $ ESymbol t s]
+toEDelim [Stretchy _ con s] = [Right $ con s]
 toEDelim (xs) = map removeIR xs
 
 -- Strips internal representation from processed list
@@ -245,12 +245,13 @@ removeIR (E e) = e
 removeIR _ = error "removeIR, should only be ever called on processed lists"
 
 -- Convers stretch to InEDelimited element
-removeStretch :: IR Exp -> IR InEDelimited
-removeStretch (Stretchy _ s) = E $ Left s
-removeStretch (E e) = E $ Right e
--- This is never used as the function is only called on portions outside
--- delimiters.
-removeStretch (Trailing a b)  = Trailing a b
+removeStretch :: [IR Exp] -> [IR InEDelimited]
+removeStretch [Stretchy _ constructor s] = [E $ Right (constructor s)]
+removeStretch xs = map f xs
+  where
+    f (Stretchy _ _ s) = E $ Left s
+    f (E e) = E $ Right e
+    f (Trailing a b) = Trailing a b
 
 isStretchy :: InEDelimited -> Bool
 isStretchy (Left _) = True
@@ -258,16 +259,18 @@ isStretchy (Right _) = False
 
 -- If at the end of a delimiter we need to apply the script to the whole
 -- expression. We only insert Trailing when reordering Stretchy
-trailingSup :: String -> String -> [IR InEDelimited] -> Exp
+trailingSup :: Maybe (String, String -> Exp)  -> Maybe (String, String -> Exp)  -> [IR InEDelimited] -> Exp
 trailingSup open close es = go es
   where
     go [] = case (open, close) of
-              ("", "") -> empty
-              (_, "") -> ESymbol Open open
-              ("", _) -> ESymbol Close close
-              (_, _)  -> EGrouped [ESymbol Open open, ESymbol Close close]
+              (Nothing, Nothing) -> empty
+              (Just (openFence, conOpen), Nothing) -> conOpen openFence
+              (Nothing, Just (closeFence, conClose)) -> conClose closeFence
+              (Just (openFence, conOpen), Just (closeFence, conClose))  -> 
+                EGrouped [conOpen openFence, conClose closeFence]
     go es'@(last -> Trailing constructor e) = (constructor (go (init es')) e)
-    go es' = EDelimited open close (toEDelim es')
+    go es' = EDelimited (getFence open) (getFence close) (toEDelim es')
+    getFence = fromMaybe "" . fmap fst
 
 -- As we constuct from the bottom up, this situation can occur.
 removeNesting :: Exp -> Exp
@@ -284,24 +287,27 @@ removeEmpty xs = filter (not . isEmpty) xs
 -- The result of this function is a list with only E elements.
 matchNesting :: [IR Exp] -> [IR InEDelimited]
 matchNesting ((break isFence) -> (inis, rest)) =
-  let inis' = map removeStretch inis in
+  let inis' = removeStretch inis in
   case rest of
     [] -> inis'
-    ((Stretchy Open opens): rs) ->
-      let (body, rems) = go rs 0 []
+    ((Stretchy Open conOpen opens): rs) ->
+      let jOpen = Just (opens, conOpen)
+          (body, rems) = go rs 0 []
           body' = matchNesting body in
         case rems of
-          [] -> inis' ++ [E $ Right $ trailingSup opens "" body']
-          (Stretchy Close closes : rs') ->
-            inis' ++ (E $ Right $ trailingSup opens closes body') : matchNesting rs'
+          [] -> inis' ++ [E $ Right $ trailingSup jOpen Nothing body']
+          (Stretchy Close conClose closes : rs') ->
+            let jClose = Just (closes, conClose) in
+            inis' ++ (E $ Right $ trailingSup jOpen jClose body') : matchNesting rs'
           _ -> (error "matchNesting: Logical error 1")
-    ((Stretchy Close closes): rs) ->
-      (E $ Right $ trailingSup "" closes (matchNesting inis)) : matchNesting rs
+    ((Stretchy Close conClose closes): rs) ->
+      let jClose = Just (closes, conClose) in
+      (E $ Right $ trailingSup Nothing jClose (matchNesting inis)) : matchNesting rs
     _ -> error "matchNesting: Logical error 2"
   where
-    isOpen (Stretchy Open _) = True
+    isOpen (Stretchy Open _ _) = True
     isOpen _ = False
-    isClose (Stretchy Close _) = True
+    isClose (Stretchy Close _ _) = True
     isClose _ = False
     go :: [IR a] -> Int -> [IR a] -> ([IR a], [IR a])
     go (x:xs) 0 a | isClose x = (reverse a, x:xs)
@@ -311,8 +317,8 @@ matchNesting ((break isFence) -> (inis, rest)) =
     go [] _ a = (reverse a, [])
 
 isFence :: IR a -> Bool
-isFence (Stretchy Open _) = True
-isFence (Stretchy Close _) = True
+isFence (Stretchy Open _ _) = True
+isFence (Stretchy Close _ _) = True
 isFence _ = False
 
 group :: Element -> MML [IR Exp]
@@ -403,9 +409,9 @@ reorderScripts e subs c = do
   subExpr <- postfixExpr subs
   return $
     case baseExpr of
-      [Stretchy Open s] -> [Stretchy Open s, E $ c empty subExpr]  -- Open
-      [Stretchy Close s] -> [Trailing c subExpr, Stretchy Close s] -- Close
-      [Stretchy o s] -> [Stretchy o s, E $ ESub empty subExpr] -- Middle
+      [s@(Stretchy Open _ _)] -> [s, E $ c empty subExpr]  -- Open
+      [s@(Stretchy Close _ _)] -> [Trailing c subExpr, s] -- Close
+      [s@(Stretchy _ _ _)] -> [s, E $ ESub empty subExpr] -- Middle
       _ -> [E $ c (mkExp baseExpr) subExpr] -- No stretch
 
 sup :: Element -> MML [IR Exp]

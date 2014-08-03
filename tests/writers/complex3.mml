@@ -77,7 +77,7 @@
             <mo>=</mo>
             <mrow>
               <munderover>
-                <mo stretchy="false" form="prefix">∑</mo>
+                <mo>∑</mo>
                 <mrow>
                   <mi>n</mi>
                   <mo>=</mo>
@@ -138,7 +138,7 @@
                 <mo stretchy="true" form="prefix">(</mo>
                 <mrow>
                   <munderover>
-                    <mo stretchy="false" form="prefix">∑</mo>
+                    <mo>∑</mo>
                     <mrow>
                       <mi>n</mi>
                       <mo>=</mo>
@@ -170,7 +170,7 @@
           <mo>=</mo>
           <mrow>
             <munderover>
-              <mo stretchy="false" form="prefix">∑</mo>
+              <mo>∑</mo>
               <mrow>
                 <mi>n</mi>
                 <mo>=</mo>
@@ -244,7 +244,7 @@
                       <mo>−</mo>
                       <mrow>
                         <munderover>
-                          <mo stretchy="false" form="prefix">∑</mo>
+                          <mo>∑</mo>
                           <mrow>
                             <mi>k</mi>
                             <mo>=</mo>
@@ -316,7 +316,7 @@
                 <mo>−</mo>
                 <mrow>
                   <munderover>
-                    <mo stretchy="false" form="prefix">∑</mo>
+                    <mo>∑</mo>
                     <mrow>
                       <mi>k</mi>
                       <mo>=</mo>
@@ -1888,8 +1888,8 @@
         <mrow>
           <mrow>
             <mroot>
-              <mi>n</mi>
               <mi>a</mi>
+              <mi>n</mi>
             </mroot>
             <mo>=</mo>
             <mi>b</mi>
@@ -1912,21 +1912,21 @@
       <mtd>
         <mrow>
           <mroot>
-            <mn>4</mn>
             <mfrac>
               <mn>16</mn>
               <mn>81</mn>
             </mfrac>
+            <mn>4</mn>
           </mroot>
           <mo>=</mo>
           <mfrac>
             <mroot>
-              <mn>4</mn>
               <mn>16</mn>
+              <mn>4</mn>
             </mroot>
             <mroot>
-              <mn>4</mn>
               <mn>81</mn>
+              <mn>4</mn>
             </mroot>
           </mfrac>
           <mo>=</mo>
@@ -2643,7 +2643,6 @@
                   <mrow>
                     <mo>−</mo>
                     <mroot>
-                      <mn>3</mn>
                       <mrow>
                         <mo stretchy="false" form="prefix">(</mo>
                         <mrow>
@@ -2652,6 +2651,7 @@
                         </mrow>
                         <mo stretchy="false" form="postfix">)</mo>
                       </mrow>
+                      <mn>3</mn>
                     </mroot>
                   </mrow>
                   <mo>&#8290;</mo>
@@ -2675,7 +2675,6 @@
                   </mfrac>
                   <mo>&#8290;</mo>
                   <mroot>
-                    <mn>3</mn>
                     <mrow>
                       <mo stretchy="false" form="prefix">(</mo>
                       <mrow>
@@ -2684,6 +2683,7 @@
                       </mrow>
                       <mo stretchy="false" form="postfix">)</mo>
                     </mrow>
+                    <mn>3</mn>
                   </mroot>
                   <mo>&#8290;</mo>
                   <mi>x</mi>
@@ -2704,7 +2704,6 @@
                   </msqrt>
                   <mo>&#8290;</mo>
                   <mroot>
-                    <mn>3</mn>
                     <mrow>
                       <mo stretchy="true" form="prefix">(</mo>
                       <mrow>
@@ -2713,6 +2712,7 @@
                       </mrow>
                       <mo stretchy="true" form="postfix">)</mo>
                     </mrow>
+                    <mn>3</mn>
                   </mroot>
                   <mo>&#8290;</mo>
                   <mi>x</mi>
@@ -5549,7 +5549,7 @@
         <mrow>
           <mrow>
             <msubsup>
-              <mo stretchy="false" form="prefix">∫</mo>
+              <mo>∫</mo>
               <mi>a</mi>
               <mi>b</mi>
             </msubsup>
@@ -5586,7 +5586,7 @@
             </munder>
             <mrow>
               <munderover>
-                <mo stretchy="false" form="prefix">∑</mo>
+                <mo>∑</mo>
                 <mrow>
                   <mi>i</mi>
                   <mo>=</mo>
@@ -8532,7 +8532,6 @@
     <mtr>
       <mtd>
         <mroot>
-          <mi>n</mi>
           <mrow>
             <msub>
               <mi>x</mi>
@@ -8551,6 +8550,7 @@
               <mi>n</mi>
             </msub>
           </mrow>
+          <mi>n</mi>
         </mroot>
       </mtd>
       <mtd />
@@ -9405,7 +9405,6 @@
                       <mi>x</mi>
                       <mo>+</mo>
                       <mroot>
-                        <mn>2</mn>
                         <mfrac>
                           <msup>
                             <mi>a</mi>
@@ -9417,6 +9416,7 @@
                           </msup>
                           <mn>12.34</mn>
                         </mfrac>
+                        <mn>2</mn>
                       </mroot>
                     </mrow>
                   </mtd>
@@ -11790,7 +11790,7 @@
         <mrow>
           <mi>A</mi>
           <munderover>
-            <mo>←</mo>
+            <mo accent="true">←</mo>
             <mspace width="0.056em" />
             <mrow>
               <mi>n</mi>
@@ -11802,7 +11802,7 @@
           </munderover>
           <mi>B</mi>
           <munderover>
-            <mo>→</mo>
+            <mo accent="true">→</mo>
             <mi>T</mi>
             <mrow>
               <mi>n</mi>

@@ -29,6 +29,8 @@ import Text.TeXMath.Types
 import Text.TeXMath.Unicode.ToUnicode
 import Data.Generics (everywhere, mkT)
 import Text.TeXMath.Shared (getMMLType)
+import Text.TeXMath.Readers.MathML.MMLDict (getMathMLOperator)
+import Control.Applicative ((<$>))
 import Text.Printf
 
 -- | Transforms an expression tree to a MathML XML tree
@@ -46,29 +48,6 @@ math = add_attr (Attr (unqual "xmlns") "http://www.w3.org/1998/Math/MathML") . u
 
 mrow :: [Element] -> Element
 mrow = unode "mrow"
-
-{- Firefox seems to set spacing based on its own dictionary,
--  so I believe this is unnecessary.
--  (In fact the spacing is set from the MathML dictionary)
-
-setSpacing :: String -> String -> Bool -> Element -> Element
-setSpacing left right stretchy elt =
-  add_attr (Attr (unqual "lspace") left) $
-  add_attr (Attr (unqual "rspace") right) $
-  if stretchy
-     then add_attr (Attr (unqual "stretchy") "true") elt
-     else elt
-
-showSymbol (ESymbol s x) =
-  case s of
-    Ord   x  -> unode "mo" x
-    Op    x  -> setSpacing "0" "0.167em" True $ unode "mo" x
-    Bin   x  -> setSpacing "0.222em" "0.222em" False $ unode "mo" x
-    Rel   x  -> setSpacing "0.278em" "0.278em" False $ unode "mo" x
-    Open  x  -> setSpacing "0" "0" True $ unode "mo" x
-    Close x  -> setSpacing "0" "0" True $ unode "mo" x
-    Pun   x  -> setSpacing "0" "0.167em" False $ unode "mo" x
--}
 
 unaryOps :: M.Map String String
 unaryOps = M.fromList
@@ -90,7 +69,7 @@ binaryOps = M.fromList
                   unode "mstyle" . unode "mfrac")
   , ("\\dfrac", withAttribute "displaystyle" "true" .
                   unode "mstyle" . unode "mfrac")
-  , ("\\sqrt", unode "mroot")
+  , ("\\sqrt", unode "mroot" . reverse)
   , ("\\stackrel", unode "mover" . reverse)
   , ("\\overset", unode "mover" . reverse)
   , ("\\underset", unode "munder" . reverse)
@@ -177,6 +156,16 @@ handleDownup _             x                       = x
 makeFence :: FormType -> Element -> Element
 makeFence (fromForm -> t) = withAttribute "stretchy" "false" . withAttribute "form" t
 
+op :: String -> Element
+op s = accentCons $ unode "mo" s
+  where
+    accentCons = 
+      case (elem "accent") . properties <$> getMathMLOperator s FPostfix of
+            Nothing -> id
+            Just False -> id
+            Just True -> withAttribute "accent" "false"
+            
+
 showExp :: TextType -> Exp -> Element
 showExp tt e =
  case e of
@@ -190,9 +179,9 @@ showExp tt e =
    EIdentifier x    -> unode "mi" $ toUnicode tt x
    EMathOperator x  -> unode "mi" x
    ESymbol Accent x -> accent x
-   ESymbol Open x   -> makeFence FPrefix $ unode "mo" x
-   ESymbol Close x  -> makeFence FPostfix $ unode "mo" x
-   ESymbol _ x      -> unode "mo" x
+   ESymbol Open x   -> makeFence FPrefix $ op x
+   ESymbol Close x  -> makeFence FPostfix $ op x
+   ESymbol _ x      -> op x
    ESpace x         -> spaceWidth x
    EBinary c x y    -> showBinary tt c x y
    ESub x y         -> unode "msub" $ map (showExp tt) [x, y]

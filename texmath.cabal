@@ -53,7 +53,7 @@ Extra-source-files:  README.markdown
                      tests/src/*.tex
                      tests/readers/mml/*.native
                      tests/readers/tex/*.native
-                     tests/writers/*.xhtml
+                     tests/writers/*.mml
                      tests/writers/*.tex
                      tests/writers/*.omml
                      lib/totexmath/unicodetotex.hs
