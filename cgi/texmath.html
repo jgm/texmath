@@ -3,12 +3,19 @@
 <head>
   <meta charset="utf-8">
   <title>stmd.js demo</title>
-  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <!-- mathjax preview causes text to be non-selectable, so commented out
-       for now:
-  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      config: ["MMLorHTML.js"],
+      jax: ["input/TeX","input/MathML","output/HTML-CSS","output/NativeMML"],
+      extensions: ["tex2jax.js","mml2jax.js"],
+      skipTags: ["script","noscript","style","textarea","pre","code"],
+      TeX: {
+        extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+      }
+    });
   </script>
-  -->
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
   <style type="text/css">
@@ -34,12 +41,12 @@
                    if (result.success) {
                      var res = result.success;
                      $('#mathml-result').text(res);
-                     $('#mathml-preview').html(removeSelfClosingTags(res));
+                     $('#preview').html(removeSelfClosingTags(res));
                    } else {
                      $('#mathml-result').text(result.error);
-                     $('#mathml-preview').html('');
+                     $('#preview').html('');
                    };
-                   // MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+                   MathJax.Hub.Queue(["Typeset",MathJax.Hub,"preview"]);
                 })
             });
         $('#convert-mathml2latex').click(function() {
@@ -51,24 +58,32 @@
                    if (result.success) {
                      var res = result.success;
                      $('#latex-result').text(res);
-                     // $('#latex-preview').text("\\[" + res + "\\]");
+                     $('#preview').text("\\[" + res + "\\]");
                    } else {
                      $('#latex-result').text(result.error);
-                     // $('#latex-preview').text('');
+                     $('#preview').text('');
                    };
-                   // MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+                   MathJax.Hub.Queue(["Typeset",MathJax.Hub,"preview"]);
                 })
             });
+        $('a[data-toggle="tab"]').click(function (e) {
+          $('#preview').text(''); // clear preview
+          MathJax.Hub.Queue(["Typeset",MathJax.Hub,"preview"]);
         });
-
+      });
   </script>
 </head>
 <body>
 <div class="container">
  <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-4">
       <h3><a href="http://github.com/jgm/texmath/tree/master">texmath</a>
       demo</h3>
+    </div>
+    <div id="preview" class="col-md-8"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
       <ul class="nav nav-tabs" role="tablist">
         <li class="active"><a href="#tex2mathml" role="tab" data-toggle="tab">LaTeX &Rightarrow; MathML</a></li>
         <li><a href="#mathml2tex" role="tab" data-toggle="tab">MathML &Rightarrow; LaTeX</a></li>
@@ -86,7 +101,6 @@
       <div class="col-md-6">
         <pre id="mathml-result"></pre>
       </div>
-      <div id="mathml-preview"></div>
     </div>
     <div id="mathml2tex" class="tab-pane">
       <div class="col-md-6">
@@ -114,7 +128,6 @@
       <div class="col-md-6">
         <pre id="latex-result"></pre>
       </div>
-      <div id="latex-preview"></div>
     </div>
   </div>
 </div>
