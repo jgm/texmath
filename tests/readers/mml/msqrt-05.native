@@ -1,1 +1,1 @@
-[EUnary "\\sqrt" (EArray [AlignDefault] [[[EUnary "\\phantom" (EIdentifier "ABCD")]],[[EUnary "\\phantom" (EIdentifier "ABCD")]],[[EUnary "\\phantom" (EIdentifier "ABCD")]]])]
+[EUnary "\\sqrt" (EArray [AlignDefault] [[[EPhantom (EIdentifier "ABCD")]],[[EPhantom (EIdentifier "ABCD")]],[[EPhantom (EIdentifier "ABCD")]]])]

@@ -53,7 +53,6 @@ unaryOps :: M.Map String String
 unaryOps = M.fromList
   [ ("\\sqrt", "msqrt")
   , ("\\surd", "msqrt")
-  , ("\\phantom", "mphantom")
   ]
 
 showUnary :: TextType -> String -> Exp -> Element
@@ -191,6 +190,7 @@ showExp tt e =
    EOver _ x y      -> unode "mover" $ map (showExp tt) [x, y]
    EUnderover _ x y z -> unode "munderover" $ map (showExp tt) [x, y, z]
    EUnary c x       -> showUnary tt c x
+   EPhantom x       -> unode "mphantom" $ showExp tt x
    EScaled s x      -> makeScaled s $ showExp tt x
    EArray as ls     -> makeArray tt as ls
    EText a s        -> makeText a s

@@ -166,6 +166,9 @@ writeExp (EUnderover convertible b e1 e2)
 writeExp (EUnary s e) = do
     tell [ControlSeq s]
     tellGroup (writeExp e)
+writeExp (EPhantom e) = do
+    tell [ControlSeq "\\phantom"]
+    writeExp e
 writeExp (EScaled size e)
   | case e of
          (ESymbol Open _)  -> True

@@ -433,7 +433,9 @@ unary = try $ do
   c <- command
   unless (c `elem` unaryOps) pzero
   a <- texToken
-  return $ EUnary c a
+  return $ case c of
+                "\\phantom" -> EPhantom a
+                _ -> EUnary c a
 
 text :: TP Exp
 text = try $ do

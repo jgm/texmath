@@ -1,1 +1,1 @@
-[EUnary "\\sqrt" (EIdentifier "content"),ESymbol Rel "=",EUnary "\\sqrt" (ESub (EIdentifier "content") (EUnary "\\phantom" (EIdentifier "fail"))),ESymbol Rel "=",EUnary "\\sqrt" (ESuper (EIdentifier "content") (EUnary "\\phantom" (EIdentifier "fail")))]
+[EUnary "\\sqrt" (EIdentifier "content"),ESymbol Rel "=",EUnary "\\sqrt" (ESub (EIdentifier "content") (EPhantom (EIdentifier "fail"))),ESymbol Rel "=",EUnary "\\sqrt" (ESuper (EIdentifier "content") (EPhantom (EIdentifier "fail")))]

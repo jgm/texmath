@@ -1,1 +1,1 @@
-[ESuper (EIdentifier "S") (ENumber "3"),ESymbol Rel "=",ESuper (EIdentifier "S") (ENumber "3"),EUnary "\\phantom" (EBinary "\\frac" (EIdentifier "test") (EIdentifier "failed"))]
+[ESuper (EIdentifier "S") (ENumber "3"),ESymbol Rel "=",ESuper (EIdentifier "S") (ENumber "3"),EPhantom (EBinary "\\frac" (EIdentifier "test") (EIdentifier "failed"))]

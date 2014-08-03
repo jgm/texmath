@@ -1,1 +1,1 @@
-[EBinary "\\frac" (EGrouped [EIdentifier "x",ESymbol Bin "+",EIdentifier "y",ESymbol Bin "+",EIdentifier "z"]) (EGrouped [EIdentifier "x",EUnary "\\phantom" (EGrouped [ESymbol Bin "+",EIdentifier "y"]),ESymbol Bin "+",EIdentifier "z"])]
+[EBinary "\\frac" (EGrouped [EIdentifier "x",ESymbol Bin "+",EIdentifier "y",ESymbol Bin "+",EIdentifier "z"]) (EGrouped [EIdentifier "x",EPhantom (EGrouped [ESymbol Bin "+",EIdentifier "y"]),ESymbol Bin "+",EIdentifier "z"])]

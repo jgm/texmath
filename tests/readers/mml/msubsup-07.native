@@ -1,1 +1,1 @@
-[ESubsup (EIdentifier "D") (EIdentifier "x") (ENumber "2"),ESymbol Rel "=",ESubsup (EIdentifier "D") (EUnder False (EIdentifier "x") (EUnary "\\phantom" (ENumber "0"))) (EOver False (ENumber "2") (EUnary "\\phantom" (ENumber "0")))]
+[ESubsup (EIdentifier "D") (EIdentifier "x") (ENumber "2"),ESymbol Rel "=",ESubsup (EIdentifier "D") (EUnder False (EIdentifier "x") (EPhantom (ENumber "0"))) (EOver False (ENumber "2") (EPhantom (ENumber "0")))]

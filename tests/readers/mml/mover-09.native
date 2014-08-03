@@ -1,1 +1,1 @@
-[EUnder False (EOver False (EIdentifier "- middle -") (EIdentifier "top")) (EUnary "\\phantom" (EIdentifier "fail")),ESymbol Rel "=",EOver False (EUnder False (EIdentifier "- middle -") (EUnary "\\phantom" (EIdentifier "fail"))) (EIdentifier "top")]
+[EUnder False (EOver False (EIdentifier "- middle -") (EIdentifier "top")) (EPhantom (EIdentifier "fail")),ESymbol Rel "=",EOver False (EUnder False (EIdentifier "- middle -") (EPhantom (EIdentifier "fail"))) (EIdentifier "top")]

@@ -1,1 +1,1 @@
-[ESubsup (EIdentifier "V") (EIdentifier "m") (EIdentifier "n"),ESymbol Rel "=",EUnderover False (ESubsup (EIdentifier "V") (EIdentifier "m") (EIdentifier "n")) (EUnary "\\phantom" (EText TextNormal "d")) (EUnary "\\phantom" (EText TextNormal "d"))]
+[ESubsup (EIdentifier "V") (EIdentifier "m") (EIdentifier "n"),ESymbol Rel "=",EUnderover False (ESubsup (EIdentifier "V") (EIdentifier "m") (EIdentifier "n")) (EPhantom (EText TextNormal "d")) (EPhantom (EText TextNormal "d"))]

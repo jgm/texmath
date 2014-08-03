@@ -1,1 +1,1 @@
-[ESuper (EIdentifier "e") (EIdentifier "x"),ESymbol Rel "=",EOver False (ESuper (EIdentifier "e") (EIdentifier "x")) (EUnary "\\phantom" (EIdentifier "z"))]
+[ESuper (EIdentifier "e") (EIdentifier "x"),ESymbol Rel "=",EOver False (ESuper (EIdentifier "e") (EIdentifier "x")) (EPhantom (EIdentifier "z"))]

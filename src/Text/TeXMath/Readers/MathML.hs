@@ -366,7 +366,7 @@ kroot e = do
   return $ EBinary "\\sqrt" index base
 
 phantom :: Element -> MML Exp
-phantom e = EUnary "\\phantom" <$> row e
+phantom e = EPhantom <$> row e
 
 fenced :: Element -> MML Exp
 fenced e = do

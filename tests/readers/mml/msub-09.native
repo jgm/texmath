@@ -1,1 +1,1 @@
-[ESub (EIdentifier "A") (ESub (EIdentifier "B") (ESub (EIdentifier "C") (EIdentifier "D"))),ESymbol Rel "=",ESub (EIdentifier "A") (ESub (EIdentifier "B") (ESub (EIdentifier "C") (ESub (EIdentifier "D") (EUnary "\\phantom" (EIdentifier "E")))))]
+[ESub (EIdentifier "A") (ESub (EIdentifier "B") (ESub (EIdentifier "C") (EIdentifier "D"))),ESymbol Rel "=",ESub (EIdentifier "A") (ESub (EIdentifier "B") (ESub (EIdentifier "C") (ESub (EIdentifier "D") (EPhantom (EIdentifier "E")))))]

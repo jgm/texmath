@@ -121,4 +121,5 @@ expToInlines tt (EOver convertible b e)
   | otherwise   = Nothing
 expToInlines _ (EUnderover _ _ _ _) = Nothing
 expToInlines _ (EUnary _ _) = Nothing
+expToInlines _ (EPhantom _) = Nothing
 expToInlines _ (EArray _ _) = Nothing

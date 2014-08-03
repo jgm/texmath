@@ -73,6 +73,7 @@ data Exp =
   | EBinary String Exp Exp -- ^ A binary operator.  The first argument is a
                   -- LaTeX operator name like @\\root@; the others are the
                   -- arguments.
+  | EPhantom Exp  -- ^ A "phantom" operator that takes space but doesn't display.
   | EScaled Double Exp -- ^ An expression that is scaled to some factor
                   -- of its normal size.
   | EArray [Alignment] [ArrayLine] -- ^ An array or matrix.  The first argument

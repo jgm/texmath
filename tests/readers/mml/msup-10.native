@@ -1,1 +1,1 @@
-[ESuper (EIdentifier "S") (ENumber "2"),ESymbol Rel "=",EUnder False (ESuper (EIdentifier "S") (ENumber "2")) (EUnary "\\phantom" (EIdentifier "fail"))]
+[ESuper (EIdentifier "S") (ENumber "2"),ESymbol Rel "=",EUnder False (ESuper (EIdentifier "S") (ENumber "2")) (EPhantom (EIdentifier "fail"))]
