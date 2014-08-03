@@ -32,6 +32,7 @@ import Text.TeXMath.Types
 import Control.Applicative ((<*), (*>), (<$>), (<$))
 import qualified Text.TeXMath.Shared as S
 import Text.TeXMath.Readers.TeX.Macros (applyMacros, parseMacroDefinitions)
+import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Data.Maybe (fromMaybe)
 
 type TP = GenParser Char ()
@@ -375,7 +376,10 @@ escaped = lexeme $ try $
          isEscapable _   = False
 
 unicode :: TP Exp
-unicode = lexeme $ liftM (ESymbol Ord . (:[])) $ satisfy (not . isAscii)
+unicode = lexeme $
+  do
+    c <- satisfy (not . isAscii)
+    return (ESymbol (getSymbolType c) [c])
 
 ensuremath :: TP Exp
 ensuremath = try $ lexeme (string "\\ensuremath") >> inbraces
