@@ -1,83 +1,104 @@
 texmath (0.7)
 
-  * Consistent Renaming
-    - All references to converting to or from LaTeX have been replaced
-    with a reference to TeXMath in order to differentiate between the two.
-  * Module Reorganisation
-    - All modules have been reorganised such that 
-      1. All writers now reside in Text.TeXMath.Writers
-        - Text.TeXMath.LaTeX -> Text.TeXMath.Writers.TeXMath
-        - Text.TeXMath.MathML -> Text.TeXMath.Writers.MathML
-        - Text.TeXMath.OMML -> Text.TeXMath.Writers.OMML
-        - Text.TeXMath.Pandoc -> Text.TeXMath.Writers.Pandoc
-      2. All readers now reside in Text.TeXMath.Readers
-        - Text.TeXMath.MathMLParser -> Text.TeXMath.Readers.MathML
-        - Text.TeXMath.Parser -> Text.TeXMath.Readers.TeXMath
-      3. Unicode lookup tables are now in Text.TeXMath.Unicode and renamed.
-        - Text.TeXMath.Unidecode -> Text.TeXMath.Unicode.ToASCII
-        - Text.TeXMath.UnicodeToLaTeX -> Text.TeXMath.Unicode.ToTeXMath
-      4. MathML specific modules moved to Text.TeXMath.Readers.MathML
-        - Text.TeXMath.EntityMap -> Text.TeXMath.Readers.MathML.EntityMap
-        - Text.TeXMath.MMLDict -> Text.TeXMath.Readers.MathML.MMLDict
-  * Text.TeXMath interface changes
-    - All XtoY functions have been removed in favour of rexporting raw
-    reader and writer functions.
-    - Data type Exp is now also exported.
-  * Text.TeXMath.Writers.TeXMath interface change
-    - Two functions are now exported
-      1. writeTeXMath :: [Exp] -> String
-      2. writeTeXMathWith :: Env -> [Exp] -> String
-      3. addLaTeXEnvironment :: DisplayType -> String -> String
-  * Text.TeXMath.Writers.(OMML|MathML) changes
-    - showExp is no longer exported from either module
-  * Text.TeXMath.Unicode.ToTeXMath
-    - Now exports getTeXMath :: Env -> String -> String
-    which allows the user to specify availible packages
+  * Changes in Exp type:
+
+    + Removed EUp, EDown, EDownup.
+    + Added boolean "convertible" parameter to EUnder, EOver, EUnderover.
+    + Changed parameter of EScaled from String to Double.
+    + Changed parameter of ESpace from String to Double.
+    + Removed EStretchy.
+    + Added EStyled, corresponding to mstyle in mathml, and \mathrm,
+      \mathcal, etc. in TeX (which can contain arbitrary math content,
+      not just text).
+    + Changed the type of EDelimited.  The contents of an EDelimited are
+      now either Right Exp or Left String (the latter case represents a
+      fence in middle position, e.g. \mid| in LaTeX).
+
+  * Module reorganisation:  the exposed interface has been completely
+    changed, and modules for reading MathML and writing TeX math
+    have been added:
+
+    + All writers now reside in Text.TeXMath.Writers.
+        - Text.TeXMath.MathML -> Text.TeXMath.Writers.MathML.
+          toMathML and showExp are removed, writeMathML added.
+        - Text.TeXMath.OMML -> Text.TeXMath.Writers.OMML.
+          toOMML and showExp removed, writeOMML added.
+        - Text.TeXMath.Pandoc -> Text.TeXMath.Writers.Pandoc.
+          toPandoc removed, writePandoc added.
+        - New module Text.TeXMath.Writers.TeX, exporting writeTeX,
+          writeTeXWith, addLaTeXEnvironment (the latter giving control
+          over which packages are assumed to be available).
+
+    + All readers now reside in Text.TeXMath.Readers.
+        - Text.TeXMath.MathMLParser -> Text.TeXMath.Readers.MathML,
+	  exporting readMathML.
+        - Text.TeXMath.Readers.TeX nows exports readTeX rather than
+          parseFormula.
+
+    + New modules for unicode conversion: Text.TeXMath.Unicode.ToASCII,
+      Text.TeXMath.Unicode.ToTeX, Text.TeXMath.Unicode.ToUnicode.
+
+    + Two MathML specific modules: Text.TeXMath.Readers.MathML.EntityMap,
+      Text.TeXMath.Readers.MathML.MMLDict.
+
+    + In Text.TeXMath, all the XtoY functions have been removed
+      in favour of rexporting raw reader and writer functions. The
+      data type Exp is now also exported.
+
+  * Bug fixes and improvements.
+
+    + TeX writer: Properly handle accents inside \text{}.
+      Use real text environments for EText (\textrm, not \mathrm).
+      Improved handling of scalers (\Big etc.).  Use amsmath matrix
+      environments when appropriate.
+    + MathML writer:  Omit superfluous outer mrows.  Add position
+      information to fences.
+    + OMML writer:  Handle \phantom.
+    + Pandoc writer:  Use unicode characters to support Fraktur and
+      other text styles.
+    + TeX reader:  Use EUnder/Over for \stackrel, \overset, \underset.
+      Improved handling of primes.  Fixed \notin.  Avoid superfluous
+      grouping of single elements.  Improved handling of scalers (\Big etc.).
+    + Macros:  Don't raise an error if applying a macro fails to
+      resolve to a fixed point; instead, just return the original string.
+
+  * Rewrote test suite as a proper cabal test suite.  Added
+    --regenerate-tests and --round-trip options.
+
+  * Updated texmath online demo for bidirectional conversion.
+
+  * Removed cgi and test flags.  Added executable flag to build texmath.
+
+  * Modified texmath so it works like a cgi script when run as
+    texmath-cgi (through symlink or renaming).  Removed dependency on
+    the cgi package.
 
 texmath (0.6.7)
 
-  * New Module: Text.TeXMath.Unidecode
-    - A module for approximating unicode characters in Ascii
-    - Exports: getASCII :: Char -> String
-               records :: [Record]
-               The raw mapping table
-  * New Module: Text.TeXMath.Shared
-    - A module for shared lookup tables between the various readers and
-      writers
-  * New Module: Text.TeXMath.MathMLParser
-    - A reader for MathML
-    - Exports: readMathML :: String -> Either String [Exp]
-  * New Module: Text.TeXMath.EntityMap
-    - A conversion table from MathML entities to unicode characters
-    - Exports: getUnicode :: String -> Maybe String  
-  * New Module: Text.TeXMath.UnicodeToLaTeX
-    - A conversion table from unicode characters to LaTeX commands
-    - Exports: 
-      getLaTeX :: String -> String
-        Converts a string of unicode characters to a string of equivalent LaTeX
-        commands
-  * New Module: Text.TeXMath.LaTeX
-    - A writer for TeXMath expressions 
-    - Exports: toTeXMath :: DisplayType -> [Exp] -> String
-  * New Module: Text.TeXMath.MMLDict
-    - Implements a lookup table from operators to their default values as
-      defined by the MML dictionary
-    - Exports: getOperator :: Char -> FormType -> Operator
-  * New Module: Text.TeXMath.Compat
-    - This module maintains compatability with versions of mtl before 2.2.1
-  * Modified: Text.TeXMath
-    - This module now also exports the primitive readers
-    - New Exports
-      - All primitive readers and writers (OMML (Writer only), MML, TeXMath)  
-      - mathMLTo{Writer} for all writers
-  * Modified: Text.TeXMath.Types
-    - Added additional record types for Text.TeXMath.MMLDict and 
-      Text.TeXMath.UnicodeToLaTeX
-    - New Exports: Operator(..), Record(..)
-  * Modified: Tests Interface
-    - Rewrote to use cabal test and added significant number of tests
-  * Improvements: 
-    - Added recognition of the LaTeX command \phantom
+  * New Module: Text.TeXMath.Unidecode, a module for approximating
+    unicode characters in ASCII.
+  * New Module: Text.TeXMath.Shared, a module for shared lookup
+    tables between the various readers and writers
+  * New Module: Text.TeXMath.MathMLParser, exporting readMathML.
+  * New Module: Text.TeXMath.EntityMap, exporting getUnicode,
+    a conversion table from MathML entities to unicode characters.
+  * New Module: Text.TeXMath.UnicodeToLaTeX, exporting getLaTeX,
+    converting a string of unicode characters to a string of equivalent LaTeX
+    commands.
+  * New Module: Text.TeXMath.LaTeX, replacing Text.TeXMath.Parser,
+    exporting toTeXMath.
+  * New Module: Text.TeXMath.MMLDict, implements a lookup table from
+    operators to their default values as defined by the MML dictionary,
+    exporting getOperator.
+  * New Module: Text.TeXMath.Compat, maintaining compatibility with
+    mtl < 2.2.1.
+  * Modified Text.TeXMath to export the primitive readers, as well as
+    mathMLTo{Writer} for all writers
+  * Modified: Text.TeXMath.Types: added additional record types for
+    Text.TeXMath.MMLDict and Text.TeXMath.UnicodeToLaTeX.
+    New Exports: Operator(..), Record(..).
+  * Modified test suite:  use cabal test, added significant number of tests.
+  * Added recognition of the LaTeX command \phantom
 
 texmath (0.6.6.3)
 
