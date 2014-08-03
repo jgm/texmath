@@ -68,12 +68,12 @@ data Exp =
                         -- The arguments work as in @EOver@.
   | EUnderover Bool Exp Exp Exp  -- ^ An expression with something over and
                        -- something under it.
-  | EUnary String Exp  -- ^ A unary operator. The first argument is a LaTeX
-                       -- operator name like @\\sqrt@; the other is its argument.
   | EBinary String Exp Exp -- ^ A binary operator.  The first argument is a
                   -- LaTeX operator name like @\\root@; the others are the
                   -- arguments.
   | EPhantom Exp  -- ^ A "phantom" operator that takes space but doesn't display.
+  | ERoot Exp Exp  -- ^ An nth root.  First argument is index, second is base.
+  | ESqrt Exp      -- ^ A square root.
   | EScaled Double Exp -- ^ An expression that is scaled to some factor
                   -- of its normal size.
   | EArray [Alignment] [ArrayLine] -- ^ An array or matrix.  The first argument

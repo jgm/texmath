@@ -167,8 +167,14 @@ writeExp (EUnderover convertible b e1 e2)
       tell [Token '^']
       tellGroup (writeExp e2)
   | otherwise = writeExp (EUnder convertible (EOver convertible b e2) e1)
-writeExp (EUnary s e) = do
-    tell [ControlSeq s]
+writeExp (ESqrt e) = do
+    tell [ControlSeq "\\sqrt"]
+    tellGroup (writeExp e)
+writeExp (ERoot i e) = do
+    tell [ControlSeq "\\sqrt"]
+    tell [Token '[']
+    writeExp i
+    tell [Token ']']
     tellGroup (writeExp e)
 writeExp (EPhantom e) = do
     tell [ControlSeq "\\phantom"]
@@ -325,7 +331,9 @@ isFancy (ESubsup _ _ _) = True
 isFancy (EOver _ _ _) = True
 isFancy (EUnder _ _ _) = True
 isFancy (EUnderover _ _ _ _) = True
-isFancy (EUnary _ _) = True
+isFancy (ESqrt _) = True
+isFancy (ERoot _ _) = True
+isFancy (EPhantom _) = True
 isFancy _ = False
 
 

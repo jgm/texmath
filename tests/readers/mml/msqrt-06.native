@@ -1,1 +1,1 @@
-[EUnary "\\sqrt" (EUnary "\\sqrt" (EUnary "\\sqrt" (EUnary "\\sqrt" (ENumber "65536")))),ESymbol Rel "=",ENumber "2"]
+[ESqrt (ESqrt (ESqrt (ESqrt (ENumber "65536")))),ESymbol Rel "=",ENumber "2"]

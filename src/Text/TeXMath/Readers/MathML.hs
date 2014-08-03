@@ -350,7 +350,7 @@ safeExpr :: Element -> MML Exp
 safeExpr e = mkExp <$> expr e
 
 frac :: Element -> MML Exp
-frac e = do 
+frac e = do
   [num, dom] <- mapM safeExpr =<< (checkArgs 2 e)
   rawThick <- findAttrQ "linethickness" e
   let constructor = (maybe "\\frac" (\l -> "\\genfrac{}{}{" ++ l ++ "}{}"))
@@ -358,12 +358,12 @@ frac e = do
   return $ EBinary constructor num dom
 
 msqrt :: Element -> MML Exp
-msqrt e = EUnary "\\sqrt" <$> (row e)
+msqrt e = ESqrt <$> (row e)
 
 kroot :: Element -> MML Exp
 kroot e = do
   [base, index] <- mapM safeExpr =<< (checkArgs 2 e)
-  return $ EBinary "\\sqrt" index base
+  return $ ERoot index base
 
 phantom :: Element -> MML Exp
 phantom e = EPhantom <$> row e

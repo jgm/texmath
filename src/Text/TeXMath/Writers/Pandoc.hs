@@ -81,6 +81,8 @@ expToInlines _ (ESpace 0.333) = Just [Str "\x2004"]
 expToInlines _ (ESpace 1)     = Just [Str "\x2001"]
 expToInlines _ (ESpace 2)     = Just [Str "\x2001\x2001"]
 expToInlines _ (ESpace _)         = Just [Str " "]
+expToInlines _ (ESqrt _)       = Nothing
+expToInlines _ (ERoot _ _)     = Nothing
 expToInlines _ (EBinary _ _ _) = Nothing
 expToInlines tt (ESub x y) = do
   x' <- expToInlines tt x
@@ -120,6 +122,5 @@ expToInlines tt (EOver convertible b e)
   | convertible = expToInlines tt (ESuper b e)
   | otherwise   = Nothing
 expToInlines _ (EUnderover _ _ _ _) = Nothing
-expToInlines _ (EUnary _ _) = Nothing
 expToInlines _ (EPhantom _) = Nothing
 expToInlines _ (EArray _ _) = Nothing

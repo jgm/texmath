@@ -59,10 +59,6 @@ showBinary props c x y =
                                  mnodeA "type" "lin" ()
                               , mnode "num" x'
                               , mnode "den" y']
-       "\\sqrt"  -> mnode "rad" [ mnode "radPr" $
-                                   mnodeA "degHide" "on" ()
-                                , mnode "deg" x' 
-                                , mnode "e" y']
        "\\stackrel" -> mnode "limUpp" [ mnode "e" y'
                                        , mnode "lim" x']
        "\\overset" -> mnode "limUpp" [ mnode "e" y'
@@ -182,7 +178,6 @@ showExp props e =
      | n > 1.8               -> [str props "\x2001\x2001"]
      | otherwise             -> []
        -- this is how the xslt sheet handles all spaces
-   EBinary c x y    -> [showBinary props c x y]
    EUnder _ x (ESymbol Accent [c]) | isBarChar c ->
                        [mnode "bar" [ mnode "barPr" $
                                         mnodeA "pos" "bot" ()
@@ -207,11 +202,14 @@ showExp props e =
    EOver _ x y   -> [mnode "limUpp" [ mnode "e" $ showExp props x
                                        , mnode "lim" $ showExp props y]]
    EUnderover c x y z -> showExp props (EUnder c x (EOver c y z))
-   EUnary "\\sqrt" x  -> [mnode "rad" [ mnode "radPr" $ mnodeA "degHide" "on" ()
+   ESqrt x       -> [mnode "rad" [ mnode "radPr" $ mnodeA "degHide" "on" ()
                                       , mnode "deg" ()
                                       , mnode "e" $ showExp props x]]
-   EUnary "\\surd" x  -> showExp props $ EUnary "\\sqrt" x
-   EUnary _ x       -> showExp props x -- TODO?
+   ERoot i x     -> [mnode "rad" [ mnode "radPr" $
+                                   mnodeA "degHide" "on" ()
+                                , mnode "deg" $ showExp props i
+                                , mnode "e" $ showExp props x]]
+   EBinary c x y    -> [showBinary props c x y]
    EPhantom x       -> [mnode "phant" [ mnode "phantPr"
                                             [ mnodeA "show" "0" () ]
                                           , mnode "e" $ showExp props x]]

@@ -391,9 +391,6 @@ command = try $ do
   spaces
   return ('\\':res)
 
-unaryOps :: [String]
-unaryOps = ["\\sqrt", "\\surd", "\\phantom"]
-
 -- Note: cal and scr are treated the same way, as unicode is lacking such two different sets for those.
 styleOps :: M.Map String ([Exp] -> Exp)
 styleOps = M.fromList
@@ -431,11 +428,12 @@ diacritical = try $ do
 unary :: TP Exp
 unary = try $ do
   c <- command
-  unless (c `elem` unaryOps) pzero
   a <- texToken
-  return $ case c of
-                "\\phantom" -> EPhantom a
-                _ -> EUnary c a
+  case c of
+       "\\phantom" -> return $ EPhantom a
+       "\\sqrt"    -> return $ ESqrt a
+       "\\surd"    -> return $ ESqrt a
+       _ -> mzero
 
 text :: TP Exp
 text = try $ do
@@ -469,7 +467,7 @@ root = try $ do
   ctrlseq "sqrt" <|> ctrlseq "surd"
   a <- inbrackets
   b <- texToken
-  return $ EBinary "\\sqrt" a b
+  return $ ERoot a b
 
 binary :: TP Exp
 binary = try $ do

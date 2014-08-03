@@ -49,18 +49,6 @@ math = add_attr (Attr (unqual "xmlns") "http://www.w3.org/1998/Math/MathML") . u
 mrow :: [Element] -> Element
 mrow = unode "mrow"
 
-unaryOps :: M.Map String String
-unaryOps = M.fromList
-  [ ("\\sqrt", "msqrt")
-  , ("\\surd", "msqrt")
-  ]
-
-showUnary :: TextType -> String -> Exp -> Element
-showUnary tt c x =
-  case M.lookup c unaryOps of
-       Just c'  -> unode c' (showExp tt x)
-       Nothing  -> error $ "Unknown unary op: " ++ c
-
 binaryOps :: M.Map String ([Element] -> Element)
 binaryOps = M.fromList
   [ ("\\frac", unode "mfrac")
@@ -68,7 +56,6 @@ binaryOps = M.fromList
                   unode "mstyle" . unode "mfrac")
   , ("\\dfrac", withAttribute "displaystyle" "true" .
                   unode "mstyle" . unode "mfrac")
-  , ("\\sqrt", unode "mroot" . reverse)
   , ("\\stackrel", unode "mover" . reverse)
   , ("\\overset", unode "mover" . reverse)
   , ("\\underset", unode "munder" . reverse)
@@ -189,8 +176,9 @@ showExp tt e =
    EUnder _ x y     -> unode "munder" $ map (showExp tt) [x, y]
    EOver _ x y      -> unode "mover" $ map (showExp tt) [x, y]
    EUnderover _ x y z -> unode "munderover" $ map (showExp tt) [x, y, z]
-   EUnary c x       -> showUnary tt c x
    EPhantom x       -> unode "mphantom" $ showExp tt x
+   ESqrt x          -> unode "msqrt" $ showExp tt x
+   ERoot i x        -> unode "mroot" [showExp tt x, showExp tt i]
    EScaled s x      -> makeScaled s $ showExp tt x
    EArray as ls     -> makeArray tt as ls
    EText a s        -> makeText a s
