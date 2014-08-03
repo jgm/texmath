@@ -29,7 +29,7 @@ import Data.Generics (everywhere, mkT)
 import Control.Applicative ((<$>), (<|>), Applicative)
 import qualified Data.Map as M
 import Control.Monad (when, unless)
-import Control.Monad.Reader (MonadReader, runReader, Reader, asks)
+import Control.Monad.Reader (MonadReader, runReader, Reader, asks, local)
 import Control.Monad.Writer( MonadWriter, WriterT,
                              execWriterT, tell, censor)
 import Text.TeXMath.TeX
@@ -65,6 +65,9 @@ square = ["\\sqrt", "\\surd"]
 data MathState = MathState{ mathEnv :: Env
                           , mathConvertible :: Bool
                           } deriving Show
+
+setConvertible :: MathState -> MathState
+setConvertible s = s{ mathConvertible = True }
 
 newtype Math a = Math {runTeXMath :: WriterT [TeX] (Reader MathState) a}
                   deriving (Functor, Applicative, Monad, MonadReader MathState
@@ -112,7 +115,11 @@ writeExp o@(EMathOperator s) = do
   math <- getTeXMathM s
   case S.getOperator o of
        Just op  -> tell [op]
-       Nothing  -> tell [ControlSeq "\\operatorname", Grouped math]
+       Nothing  -> do
+         tell [ControlSeq "\\operatorname"]
+         -- use \operatorname* if convertible
+         asks mathConvertible >>= flip when (tell [Token '*'])
+         tell [Grouped math]
 writeExp (ESymbol Ord [c])  -- do not render "invisible operators"
   | c `elem` ['\x2061'..'\x2064'] = return () -- see 3.2.5.5 of mathml spec
 writeExp (ESymbol t s) = do
@@ -148,7 +155,8 @@ writeExp (EUnder convertible b e1) =
   writeScript convertible b e1 '_' "\\underset"
 writeExp (EUnderover convertible b e1 e2)
   | isOperator b = do
-      (if isFancy b then tellGroup else id) $ writeExp b
+      (if isFancy b then tellGroup else id) $
+        (if convertible then local setConvertible else id) $ writeExp b
       unless convertible $ tell [ControlSeq "\\limits"]
       tell [Token '_']
       tellGroup (writeExp e1)
@@ -231,7 +239,8 @@ writeDelim fence delim = do
 writeScript :: Bool -> Exp -> Exp -> Char -> String -> Math ()
 writeScript convertible b e1 sep cmd
   | isOperator b = do
-     (if isFancy b then tellGroup else id) $ writeExp b
+     (if isFancy b then tellGroup else id) $
+       (if convertible then local setConvertible else id) $ writeExp b
      unless convertible $ tell [ControlSeq "\\limits"]
      tell [Token sep]
      tellGroup (writeExp e1)
