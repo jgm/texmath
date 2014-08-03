@@ -29,7 +29,7 @@ import Data.Generics (everywhere, mkT)
 import Control.Applicative ((<$>), (<|>), Applicative)
 import qualified Data.Map as M
 import Control.Monad (when, unless)
-import Control.Monad.Reader (MonadReader, runReader, Reader, asks, ask)
+import Control.Monad.Reader (MonadReader, runReader, Reader, asks)
 import Control.Monad.Writer( MonadWriter, WriterT,
                              execWriterT, tell, censor)
 import Text.TeXMath.TeX
@@ -57,17 +57,21 @@ writeTeXWith env e = drop 1 . init . flip renderTeX "" . Grouped $
                               mapM_ writeExp (fixTree e)
 
 runExpr :: Env -> Math () -> [TeX]
-runExpr e m = flip runReader e $ execWriterT (runTeXMath m)
+runExpr e m = flip runReader (MathState e False) $ execWriterT (runTeXMath m)
 
 square :: [String]
 square = ["\\sqrt", "\\surd"]
 
-newtype Math a = Math {runTeXMath :: WriterT [TeX] (Reader Env) a}
-                  deriving (Functor, Applicative, Monad, MonadReader Env
+data MathState = MathState{ mathEnv :: Env
+                          , mathConvertible :: Bool
+                          } deriving Show
+
+newtype Math a = Math {runTeXMath :: WriterT [TeX] (Reader MathState) a}
+                  deriving (Functor, Applicative, Monad, MonadReader MathState
                            , MonadWriter [TeX])
 
 getTeXMathM :: String -> Math [TeX]
-getTeXMathM s = asks (getTeXMath s)
+getTeXMathM s = getTeXMath s <$> asks mathEnv
 
 tellGroup :: Math () -> Math ()
 tellGroup = censor ((:[]) . Grouped)
@@ -76,7 +80,7 @@ writeExp :: Exp -> Math ()
 writeExp (ENumber s) = tell =<< getTeXMathM s
 writeExp (EGrouped es) = tellGroup (mapM_ writeExp es)
 writeExp (EDelimited open close [Right (EArray aligns rows)]) = do
-  env <- ask
+  env <- asks mathEnv
   case ("amsmath" `elem` env, open, close) of
        (True, "{", "") | aligns == [AlignDefault, AlignDefault] ->
          table "cases" [] rows
@@ -170,16 +174,16 @@ writeExp (EText ttype s) = do
        []   -> return ()
        xs   -> tell $ txtcmd (Grouped xs)
 writeExp (EStyled ttype es) = do
-  txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
+  txtcmd <- (flip S.getLaTeXTextCommand ttype) <$> asks mathEnv
   tell [ControlSeq txtcmd]
   tellGroup (mapM_ writeExp $ everywhere (mkT (fromUnicode ttype)) es)
 writeExp (EArray [AlignRight, AlignLeft] rows) = do
-  env <- ask
+  env <- asks mathEnv
   if "amsmath" `elem` env
      then table "aligned" [] rows
      else table "array" [AlignRight, AlignLeft] rows
 writeExp (EArray aligns rows) = do
-  env <- ask
+  env <- asks mathEnv
   if "amsmath" `elem` env && all (== AlignCenter) aligns
      then table "matrix" [] rows
      else table "array" aligns rows
@@ -282,7 +286,7 @@ getTextCommand tt x =
 -- Commands which can be used with \left and \right
 delimiters :: Math [[TeX]]
 delimiters = do
-    env <- ask
+    env <- asks mathEnv
     let commands' = [ ".", "(", ")", "[", "]", "|", "\x2016", "{", "}"
                     , "\x2309", "\x2308", "\x2329", "\x232A"
                     , "\x230B", "\x230A", "\x231C", "\x231D"]
