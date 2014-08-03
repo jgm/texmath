@@ -46,7 +46,7 @@ import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Text.TeXMath.Compat (throwError, Except, runExcept, MonadError)
 import Control.Applicative ((<$>), (<|>), (<*>))
 import Control.Arrow ((&&&))
-import Data.Maybe (fromMaybe, listToMaybe)
+import Data.Maybe (fromMaybe, listToMaybe, isJust)
 import Data.Monoid (mconcat, First(..), getFirst)
 import Data.List (transpose)
 import Control.Monad (filterM, guard)
@@ -160,16 +160,18 @@ op e = do
                             <*> asks position
   let opString = getString e
   let dummy = Operator opString "" inferredPosition 0 0 0 []
-  let opDict = fromMaybe dummy
-                (getMathMLOperator opString inferredPosition)
+  let opLookup = getMathMLOperator opString inferredPosition
+  let opDict = fromMaybe dummy opLookup
   props <- filterM (checkAttr (properties opDict))
             ["fence", "accent", "stretchy"]
   let objectPosition = getPosition $ form opDict
   inScript <- asks inAccent
   let ts =  [("accent", ESymbol Accent), ("fence", ESymbol objectPosition)]
   let fallback = case opString of
-                      [c]   -> ESymbol (getSymbolType c)
-                      _     -> EMathOperator
+                      [t] -> ESymbol (getSymbolType t)
+                      _   -> if isJust opLookup 
+                                then ESymbol Ord
+                                else EMathOperator
   let constructor =
         fromMaybe fallback
           (getFirst . mconcat $ map (First . flip lookup ts) props)
