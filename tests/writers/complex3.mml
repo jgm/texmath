@@ -2397,14 +2397,14 @@
           <msubsup>
             <mn>1</mn>
             <msup>
-              <mspace width="5.555555555555555e-2em" />
+              <mspace width="0.056em" />
               <mtable>
                 <mtr>
                   <mtd>
                     <msubsup>
                       <mn>2</mn>
                       <msup>
-                        <mspace width="5.555555555555555e-2em" />
+                        <mspace width="0.056em" />
                         <mtable>
                           <mtr>
                             <mtd>
@@ -2427,7 +2427,7 @@
                     <msubsup>
                       <mn>5</mn>
                       <msup>
-                        <mspace width="5.555555555555555e-2em" />
+                        <mspace width="0.056em" />
                         <mtable>
                           <mtr>
                             <mtd>
@@ -6580,7 +6580,7 @@
                 </mrow>
               </mrow>
             </mrow>
-            <mspace width="0.2777777777777778em" />
+            <mspace width="0.278em" />
             <mrow>
               <mo stretchy="true" form="prefix">|</mo>
               <mtable>
@@ -7889,30 +7889,10 @@
                   <mo>⋅</mo>
                 </mtd>
                 <mtd>
-                  <mspace width="5.555555555555555e-2em" />
+                  <mspace width="0.056em" />
                 </mtd>
                 <mtd>
-                  <mspace width="5.555555555555555e-2em" />
-                </mtd>
-                <mtd>
-                  <mo>⋅</mo>
-                </mtd>
-              </mtr>
-              <mtr>
-                <mtd>
-                  <mo>⋅</mo>
-                </mtd>
-                <mtd>
-                  <mo>⋅</mo>
-                </mtd>
-                <mtd>
-                  <mspace width="5.555555555555555e-2em" />
-                </mtd>
-                <mtd>
-                  <mo>⋅</mo>
-                </mtd>
-                <mtd>
-                  <mspace width="5.555555555555555e-2em" />
+                  <mspace width="0.056em" />
                 </mtd>
                 <mtd>
                   <mo>⋅</mo>
@@ -7926,10 +7906,30 @@
                   <mo>⋅</mo>
                 </mtd>
                 <mtd>
-                  <mspace width="5.555555555555555e-2em" />
+                  <mspace width="0.056em" />
                 </mtd>
                 <mtd>
-                  <mspace width="5.555555555555555e-2em" />
+                  <mo>⋅</mo>
+                </mtd>
+                <mtd>
+                  <mspace width="0.056em" />
+                </mtd>
+                <mtd>
+                  <mo>⋅</mo>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mo>⋅</mo>
+                </mtd>
+                <mtd>
+                  <mo>⋅</mo>
+                </mtd>
+                <mtd>
+                  <mspace width="0.056em" />
+                </mtd>
+                <mtd>
+                  <mspace width="0.056em" />
                 </mtd>
                 <mtd>
                   <mo>⋅</mo>
@@ -9379,12 +9379,12 @@
       <mtd>
         <mrow>
           <mn>5</mn>
-          <mspace width="7.0e-2em" />
+          <mspace width="0.07em" />
           <mrow>
             <mn>24</mn>
             <mo>!</mo>
           </mrow>
-          <mspace width="7.0e-2em" />
+          <mspace width="0.07em" />
           <msup>
             <mi>x</mi>
             <mn>6</mn>
@@ -9430,7 +9430,7 @@
                 </mtr>
                 <mtr>
                   <mtd>
-                    <mspace width="5.555555555555555e-2em" />
+                    <mspace width="0.056em" />
                   </mtd>
                   <mtd>
                     <mn>1</mn>
@@ -9577,7 +9577,7 @@
                 <mn>11</mn>
               </mtd>
               <mtd columnalign="center">
-                <mspace width="5.555555555555555e-2em" />
+                <mspace width="0.056em" />
               </mtd>
             </mtr>
           </mtable>
@@ -9608,7 +9608,7 @@
               <mn>5</mn>
             </mtd>
             <mtd columnalign="center">
-              <mspace width="5.555555555555555e-2em" />
+              <mspace width="0.056em" />
             </mtd>
           </mtr>
         </mtable>
@@ -11169,7 +11169,7 @@
               </mtd>
             </mtr>
           </mtable>
-          <mspace width="0.2777777777777778em" />
+          <mspace width="0.278em" />
         </mrow>
       </mtd>
       <mtd />
@@ -11791,7 +11791,7 @@
           <mi>A</mi>
           <munderover>
             <mo>←</mo>
-            <mspace width="5.555555555555555e-2em" />
+            <mspace width="0.056em" />
             <mrow>
               <mi>n</mi>
               <mo>+</mo>

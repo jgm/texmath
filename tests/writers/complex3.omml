@@ -8751,7 +8751,14 @@
                 </m:e>
                 <m:sub>
                   <m:sSup>
-                    <m:e />
+                    <m:e>
+                      <m:r>
+                        <m:rPr>
+                          <m:sty m:val="p" />
+                        </m:rPr>
+                        <m:t> </m:t>
+                      </m:r>
+                    </m:e>
                     <m:sup>
                       <m:m>
                         <m:mPr>
@@ -8783,7 +8790,14 @@
                               </m:e>
                               <m:sub>
                                 <m:sSup>
-                                  <m:e />
+                                  <m:e>
+                                    <m:r>
+                                      <m:rPr>
+                                        <m:sty m:val="p" />
+                                      </m:rPr>
+                                      <m:t> </m:t>
+                                    </m:r>
+                                  </m:e>
                                   <m:sup>
                                     <m:m>
                                       <m:mPr>
@@ -8850,7 +8864,14 @@
                               </m:e>
                               <m:sub>
                                 <m:sSup>
-                                  <m:e />
+                                  <m:e>
+                                    <m:r>
+                                      <m:rPr>
+                                        <m:sty m:val="p" />
+                                      </m:rPr>
+                                      <m:t> </m:t>
+                                    </m:r>
+                                  </m:e>
                                   <m:sup>
                                     <m:m>
                                       <m:mPr>
@@ -21428,6 +21449,12 @@
                   </m:d>
                 </m:e>
               </m:d>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t> </m:t>
+              </m:r>
               <m:d>
                 <m:dPr>
                   <m:begChr m:val="|" />
@@ -25168,8 +25195,22 @@
                       <m:t>⋅</m:t>
                     </m:r>
                   </m:e>
-                  <m:e />
-                  <m:e />
+                  <m:e>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t> </m:t>
+                    </m:r>
+                  </m:e>
+                  <m:e>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t> </m:t>
+                    </m:r>
+                  </m:e>
                   <m:e>
                     <m:r>
                       <m:rPr>
@@ -25196,7 +25237,14 @@
                       <m:t>⋅</m:t>
                     </m:r>
                   </m:e>
-                  <m:e />
+                  <m:e>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t> </m:t>
+                    </m:r>
+                  </m:e>
                   <m:e>
                     <m:r>
                       <m:rPr>
@@ -25205,7 +25253,14 @@
                       <m:t>⋅</m:t>
                     </m:r>
                   </m:e>
-                  <m:e />
+                  <m:e>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t> </m:t>
+                    </m:r>
+                  </m:e>
                   <m:e>
                     <m:r>
                       <m:rPr>
@@ -25232,8 +25287,22 @@
                       <m:t>⋅</m:t>
                     </m:r>
                   </m:e>
-                  <m:e />
-                  <m:e />
+                  <m:e>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t> </m:t>
+                    </m:r>
+                  </m:e>
+                  <m:e>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t> </m:t>
+                    </m:r>
+                  </m:e>
                   <m:e>
                     <m:r>
                       <m:rPr>
@@ -30068,6 +30137,12 @@
             <m:rPr>
               <m:sty m:val="p" />
             </m:rPr>
+            <m:t> </m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
             <m:t>24</m:t>
           </m:r>
           <m:r>
@@ -30075,6 +30150,12 @@
               <m:sty m:val="p" />
             </m:rPr>
             <m:t>!</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t> </m:t>
           </m:r>
           <m:sSup>
             <m:e>
@@ -30227,7 +30308,14 @@
                     </m:e>
                   </m:mr>
                   <m:mr>
-                    <m:e />
+                    <m:e>
+                      <m:r>
+                        <m:rPr>
+                          <m:sty m:val="p" />
+                        </m:rPr>
+                        <m:t> </m:t>
+                      </m:r>
+                    </m:e>
                     <m:e>
                       <m:r>
                         <m:rPr>
@@ -30594,7 +30682,14 @@
                       <m:t>11</m:t>
                     </m:r>
                   </m:e>
-                  <m:e />
+                  <m:e>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t> </m:t>
+                    </m:r>
+                  </m:e>
                 </m:mr>
               </m:m>
               <m:r>
@@ -30670,7 +30765,14 @@
                   <m:t>5</m:t>
                 </m:r>
               </m:e>
-              <m:e />
+              <m:e>
+                <m:r>
+                  <m:rPr>
+                    <m:sty m:val="p" />
+                  </m:rPr>
+                  <m:t> </m:t>
+                </m:r>
+              </m:e>
             </m:mr>
           </m:m>
         </m:e>
@@ -35392,6 +35494,12 @@
               </m:e>
             </m:mr>
           </m:m>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t> </m:t>
+          </m:r>
         </m:e>
         <m:e />
       </m:mr>
@@ -37705,7 +37813,14 @@
             </m:e>
             <m:lim>
               <m:limUpp>
-                <m:e />
+                <m:e>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t> </m:t>
+                  </m:r>
+                </m:e>
                 <m:lim>
                   <m:r>
                     <m:rPr>

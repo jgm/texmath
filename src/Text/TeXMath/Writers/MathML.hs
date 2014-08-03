@@ -109,7 +109,9 @@ showBinary tt c x y =
        Nothing  -> error $ "Unknown binary op: " ++ c
 
 spaceWidth :: Double -> Element
-spaceWidth w = withAttribute "width" (show w ++ "em") $ unode "mspace" ()
+spaceWidth w =
+  withAttribute "width" (dropTrailing0s (printf "%.3f" w) ++ "em")
+  $ unode "mspace" ()
 
 makeStretchy :: FormType -> Element -> Element
 makeStretchy (fromForm -> t)  = withAttribute "stretchy" "true"
@@ -123,7 +125,13 @@ fromForm FPrefix  = "prefix"
 
 makeScaled :: Double -> Element -> Element
 makeScaled x = withAttribute "minsize" s . withAttribute "maxsize" s
-  where s = printf "%.1f" x
+  where s = dropTrailing0s $ printf "%.3f" x
+
+dropTrailing0s :: String -> String
+dropTrailing0s = reverse . go . reverse
+  where go ('0':'.':xs) = '0':'.':xs
+        go ('0':xs) = go xs
+        go xs       = xs
 
 makeStyled :: TextType -> [Element] -> Element
 makeStyled a es = withAttribute "mathvariant" attr

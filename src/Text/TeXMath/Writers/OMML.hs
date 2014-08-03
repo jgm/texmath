@@ -173,13 +173,15 @@ showExp props e =
    EIdentifier x    -> [str props x]
    EMathOperator x  -> [makeText TextNormal x]  -- TODO revisit, use props?
    ESymbol _ x      -> [str props x]
-   ESpace 0.167     -> [str props "\x2009"]
-   ESpace 0.222     -> [str props "\x2005"]
-   ESpace 0.278     -> [str props "\x2004"]
-   ESpace 0.333     -> [str props "\x2004"]
-   ESpace 1         -> [str props "\x2001"]
-   ESpace 2         -> [str props "\x2001\x2001"]
-   ESpace _         -> [] -- this is how the xslt sheet handles all spaces
+   ESpace n
+     | n > 0 && n <= 0.17    -> [str props "\x2009"]
+     | n > 0.17 && n <= 0.23 -> [str props "\x2005"]
+     | n > 0.23 && n <= 0.28 -> [str props "\x2004"]
+     | n > 0.28 && n <= 0.5  -> [str props "\x2004"]
+     | n > 0.5 && n <= 1.8   -> [str props "\x2001"]
+     | n > 1.8               -> [str props "\x2001\x2001"]
+     | otherwise             -> []
+       -- this is how the xslt sheet handles all spaces
    EBinary c x y    -> [showBinary props c x y]
    EUnder _ x (ESymbol Accent [c]) | isBarChar c ->
                        [mnode "bar" [ mnode "barPr" $
