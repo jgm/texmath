@@ -23,7 +23,7 @@ module Text.TeXMath.Readers.TeX (readTeX)
 where
 
 import Control.Monad
-import Data.Char (isDigit, isAscii, isLetter)
+import Data.Char (isDigit, isAscii)
 import qualified Data.Map as M
 import Text.ParserCombinators.Parsec
 import qualified Text.ParserCombinators.Parsec.Token as P
