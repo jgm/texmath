@@ -29,6 +29,7 @@ import Text.TeXMath.Types
 import Text.TeXMath.Unicode.ToUnicode
 import Data.Generics (everywhere, mkT)
 import Text.TeXMath.Shared (getMMLType)
+import Text.Printf
 
 -- | Transforms an expression tree to a MathML XML tree
 writeMathML :: DisplayType -> [Exp] -> Element
@@ -120,8 +121,9 @@ fromForm FPostfix = "postfix"
 fromForm FPrefix  = "prefix"
 
 
-makeScaled :: String -> Element -> Element
-makeScaled s = withAttribute "minsize" s . withAttribute "maxsize" s
+makeScaled :: Double -> Element -> Element
+makeScaled x = withAttribute "minsize" s . withAttribute "maxsize" s
+  where s = printf "%.1f" x
 
 makeStyled :: TextType -> [Element] -> Element
 makeStyled a es = withAttribute "mathvariant" attr

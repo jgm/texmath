@@ -33,6 +33,7 @@ import Text.TeXMath.Types
 import Text.TeXMath.TeX
 import qualified Data.Map as M
 import Data.Maybe (fromMaybe)
+import Data.List (sort)
 import Control.Applicative ((<$>), (<*>))
 import Control.Monad (guard)
 import Text.Parsec (Parsec, parse, getInput, digit, char, many1, option)
@@ -55,16 +56,17 @@ getTextType :: String -> TextType
 getTextType s = fromMaybe TextNormal (M.lookup s revTextTypesMap)
 
 -- | Maps a LaTeX scaling command to the percentage scaling
-getScalerCommand :: String -> Maybe String
-getScalerCommand width = lookup width (reverseKeys scalers)
+getScalerCommand :: Double -> Maybe String
+getScalerCommand width =
+  case sort [ (w, cmd) | (cmd, w) <- scalers, w >= width ] of
+       ((_,cmd):_) -> Just cmd
+       _           -> Nothing
   -- note, we don't use a Map here because we need the first
   -- match:  \Big, not \Bigr
 
 -- | Gets percentage scaling from LaTeX scaling command
-getScalerValue :: String -> Maybe String
-getScalerValue command = M.lookup command scalerMap
-  where
-    scalerMap = M.fromList scalers
+getScalerValue :: String -> Maybe Double
+getScalerValue command = lookup command scalers
 
 -- | Returns the correct constructor given a LaTeX command
 getDiacriticalCons :: String -> Maybe (Exp -> Exp)
@@ -190,19 +192,19 @@ textPackage s e
   | s `elem` base    = True
   | otherwise = True
 
-scalers :: [(String, String)]
+scalers :: [(String, Double)]
 scalers =
-          [ ("\\bigg", "2.2")
-          , ("\\Bigg", "2.9")
-          , ("\\big", "1.2")
-          , ("\\Big", "1.6")
-          , ("\\biggr", "2.2")
-          , ("\\Biggr", "2.9")
-          , ("\\bigr", "1.2")
-          , ("\\Bigr", "1.6")
-          , ("\\biggl", "2.2")
-          , ("\\Biggl", "2.9")
-          , ("\\bigl", "1.2")]
+          [ ("\\bigg", 2.2)
+          , ("\\Bigg", 2.9)
+          , ("\\big", 1.2)
+          , ("\\Big", 1.6)
+          , ("\\biggr", 2.2)
+          , ("\\Biggr", 2.9)
+          , ("\\bigr", 1.2)
+          , ("\\Bigr", 1.6)
+          , ("\\biggl", 2.2)
+          , ("\\Biggl", 2.9)
+          , ("\\bigl", 1.2)]
 
 -- Accents which go under the character
 under :: [String]
