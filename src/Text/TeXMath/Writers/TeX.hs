@@ -75,23 +75,25 @@ tellGroup = censor ((:[]) . Grouped)
 writeExp :: Exp -> Math ()
 writeExp (ENumber s) = tell =<< getTeXMathM s
 writeExp (EGrouped es) = tellGroup (mapM_ writeExp es)
-writeExp (EDelimited "{" "" [Right (EArray [AlignDefault,AlignDefault] rows)]) =
-  table "cases" [] [AlignDefault,AlignDefault] rows
-writeExp (EDelimited "(" ")" [Right (EArray aligns rows)])
-  | all (== AlignCenter) aligns =
-  matrixWith "pmatrix" aligns rows
-writeExp (EDelimited "[" "]" [Right (EArray aligns rows)])
-  | all (== AlignCenter) aligns =
-  matrixWith "bmatrix" aligns rows
-writeExp (EDelimited "{" "}" [Right (EArray aligns rows)])
-  | all (== AlignCenter) aligns =
-  matrixWith "Bmatrix" aligns rows
-writeExp (EDelimited "\x2223" "\x2223" [Right (EArray aligns rows)])
-  | all (== AlignCenter) aligns =
-  matrixWith "vmatrix" aligns rows
-writeExp (EDelimited "\x2225" "\x2225" [Right  (EArray aligns rows)])
-  | all (== AlignCenter) aligns =
-  matrixWith "Vmatrix" aligns rows
+writeExp (EDelimited open close [Right (EArray aligns rows)]) = do
+  env <- ask
+  case ("amsmath" `elem` env, open, close) of
+       (True, "{", "") | aligns == [AlignDefault, AlignDefault] ->
+         table "cases" [] rows
+       (True, "(", ")") | all (== AlignCenter) aligns ->
+         table "pmatrix" [] rows
+       (True, "[", "]") | all (== AlignCenter) aligns ->
+         table "bmatrix" [] rows
+       (True, "{", "}") | all (== AlignCenter) aligns ->
+         table "Bmatrix" [] rows
+       (True, "\x2223", "\x2223") | all (== AlignCenter) aligns ->
+         table "vmatrix" [] rows
+       (True, "\x2225", "\x2225") | all (== AlignCenter) aligns ->
+         table "Vmatrix" [] rows
+       _ -> do
+         writeDelim DLeft open
+         writeExp (EArray aligns rows)
+         writeDelim DRight close
 writeExp (EDelimited open close es) =  do
   writeDelim DLeft open
   mapM_ (either (writeDelim DMiddle) writeExp) es
@@ -171,22 +173,19 @@ writeExp (EStyled ttype es) = do
   txtcmd <- asks (flip S.getLaTeXTextCommand ttype)
   tell [ControlSeq txtcmd]
   tellGroup (mapM_ writeExp $ everywhere (mkT (fromUnicode ttype)) es)
-writeExp (EArray [AlignRight, AlignLeft] rows) =
-  table "aligned" [] [AlignRight, AlignLeft] rows
-writeExp (EArray aligns rows)
-  | all (== AlignCenter) aligns = table "matrix" [] aligns rows
-  | otherwise                   = table "array" aligns aligns rows
-
-
-table :: String -> [Alignment] -> [Alignment] -> [ArrayLine] -> Math ()
-table name aligns origAligns rows = do
+writeExp (EArray [AlignRight, AlignLeft] rows) = do
   env <- ask
   if "amsmath" `elem` env
-     then table' name aligns rows
-     else table' "array" origAligns rows
+     then table "aligned" [] rows
+     else table "array" [AlignRight, AlignLeft] rows
+writeExp (EArray aligns rows) = do
+  env <- ask
+  if "amsmath" `elem` env && all (== AlignCenter) aligns
+     then table "matrix" [] rows
+     else table "array" aligns rows
 
-table' :: String -> [Alignment] -> [ArrayLine] -> Math ()
-table' name aligns rows = do
+table :: String -> [Alignment] -> [ArrayLine] -> Math ()
+table name aligns rows = do
   tell [ControlSeq "\\begin", Grouped [Literal name]]
   unless (null aligns) $
      tell [Grouped [Literal columnAligns]]
@@ -199,11 +198,6 @@ table' name aligns rows = do
     alignmentToLetter AlignCenter = 'c'
     alignmentToLetter AlignRight = 'r'
     alignmentToLetter AlignDefault = 'l'
-
-matrixWith :: String -> [Alignment] -> [ArrayLine] -> Math ()
-matrixWith name aligns rows = table name' aligns' aligns rows
-    where name' = if null aligns' then name else "array"
-          aligns' = [a | a <- aligns, any (/= AlignCenter) aligns]
 
 row :: ArrayLine -> Math ()
 row []     = tell [Space, Literal "\\\\", Token '\n']
