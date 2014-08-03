@@ -24,6 +24,10 @@ The mapping matches the version from 10th April 2014.
 
 The original source can be downloaded from <http://www.w3.org/TR/2014/REC-xml-entity-names-20140410/>.
 
+Note:  I have made one alteration, switching epsilon and varepsilon,
+because the meanings of these names in HTML is different from the meanings
+in MathML+LaTeX.  See http://www.w3.org/2003/entities/2007doc/#epsilon.
+
 -}
 
 module Text.TeXMath.Readers.MathML.EntityMap (getUnicode) where
@@ -1004,7 +1008,7 @@ entityList = M.fromList
   , ("eparsl","\10723")
   , ("eplus","\10865")
   , ("epsi","\949")
-  , ("epsilon","\949")
+  , ("epsilon","\1013")
   , ("epsiv","\1013")
   , ("eqcirc","\8790")
   , ("eqcolon","\8789")
@@ -2065,7 +2069,7 @@ entityList = M.fromList
   , ("vBarv","\10985")
   , ("vDash","\8872")
   , ("vangrt","\10652")
-  , ("varepsilon","\1013")
+  , ("varepsilon","\949")
   , ("varkappa","\1008")
   , ("varnothing","\8709")
   , ("varphi","\981")

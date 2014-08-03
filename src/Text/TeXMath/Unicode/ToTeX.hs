@@ -79,11 +79,11 @@ charToLaTeXString :: Env -> Char -> Maybe [TeX]
 charToLaTeXString environment c = do
   v <- M.lookup c recordsMap
   -- Required packages for the command
-  let toLit [c'] = [Token c']
+  let toLit [x] = [Token x]
       toLit []   = []
       toLit cs   = [Literal cs]
   let cmds = commands v
-  raw <- lookup "base" cmds 
+  raw <- lookup "base" cmds
           <|> listToMaybe (mapMaybe (flip lookup cmds) environment)
   let latexCommand = if isControlSeq raw
                         then [ControlSeq raw]
