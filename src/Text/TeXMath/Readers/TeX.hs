@@ -26,9 +26,7 @@ where
 import Control.Monad
 import Data.Char (isDigit, isAscii)
 import qualified Data.Map as M
-import Text.ParserCombinators.Parsec
-import qualified Text.ParserCombinators.Parsec.Token as P
-import Text.ParserCombinators.Parsec.Language
+import Text.ParserCombinators.Parsec hiding (label)
 import Text.TeXMath.Types
 import Control.Applicative ((<*), (*>), (<*>), (<$>), (<$), pure)
 import qualified Text.TeXMath.Shared as S
@@ -38,26 +36,12 @@ import Data.Maybe (fromMaybe)
 
 type TP = GenParser Char ()
 
-texMathDef :: LanguageDef st
-texMathDef = LanguageDef
-   { commentStart   = "\\label{"
-   , commentEnd     = "}"
-   , commentLine    = "%"
-   , nestedComments = False
-   , identStart     = letter
-   , identLetter    = letter
-   , opStart        = opLetter texMathDef
-   , opLetter       = oneOf ":_+*/=^-(),;.?'~[]<>!"
-   , reservedOpNames= []
-   , reservedNames  = []
-   , caseSensitive  = True
-   }
-
 -- The parser
 
 expr1 :: TP Exp
-expr1 =  choice [
-    inbraces
+expr1 =
+  choice
+  [ inbraces
   , variable
   , number
   , texSymbol
@@ -73,13 +57,22 @@ expr1 =  choice [
   , escaped
   , unicode
   , ensuremath
-  ]
+  ] <* ignorable
 
 -- | Parse a formula, returning a list of 'Exp'.
 readTeX :: String -> Either String [Exp]
 readTeX inp =
   let (ms, rest) = parseMacroDefinitions inp in
   either (Left . show) (Right . id) $ parse formula "formula" (applyMacros ms rest)
+
+ignorable :: TP ()
+ignorable = skipMany (comment <|> label <|> skipMany1 space)
+
+comment :: TP ()
+comment = char '%' *> skipMany (noneOf "\n") *> optional newline
+
+label :: TP ()
+label = ctrlseq "label" *> braces (skipMany (noneOf "}"))
 
 ctrlseq :: String -> TP String
 ctrlseq s = try $ string ('\\':s) <* notFollowedBy letter <* spaces
@@ -89,12 +82,7 @@ unGrouped (EGrouped xs) = xs
 unGrouped x = [x]
 
 formula :: TP [Exp]
-formula = do
-  whiteSpace
-  f <- manyExp expr
-  whiteSpace
-  eof
-  return $ unGrouped f
+formula = unGrouped <$> (ignorable *> manyExp expr <* eof)
 
 expr :: TP Exp
 expr = do
@@ -545,28 +533,21 @@ neg (ESymbol Rel x) = ESymbol Rel `fmap`
        _        -> pzero
 neg _ = pzero
 
--- The lexer
-lexer :: P.TokenParser st
-lexer = P.makeTokenParser texMathDef
+lexeme :: TP a -> TP a
+lexeme p = p <* spaces
 
-lexeme :: CharParser st a -> CharParser st a
-lexeme = P.lexeme lexer
+braces :: TP a -> TP a
+braces p = lexeme $ char '{' *> spaces *> p <* spaces <* char '}'
 
-whiteSpace :: CharParser st ()
-whiteSpace = P.whiteSpace lexer
+brackets :: TP a -> TP a
+brackets p = lexeme $ char '[' *> spaces *> p <* spaces <* char ']'
 
-operator :: CharParser st String
-operator = lexeme $ many1 (char '\'')
-                 <|> ((:[]) <$> (opLetter texMathDef))
+operator :: TP String
+operator = lexeme $ many1 (char '\'') <|> ((:[]) <$> opLetter)
+   where opLetter = oneOf ":_+*/=^-(),;.?'~[]<>!"
 
-symbol :: String -> CharParser st String
-symbol = lexeme . P.symbol lexer
-
-braces :: CharParser st a -> CharParser st a
-braces = lexeme . P.braces lexer
-
-brackets :: CharParser st a -> CharParser st a
-brackets = lexeme . P.brackets lexer
+symbol :: String -> TP String
+symbol s = lexeme $ try $ string s
 
 enclosures :: [(String, Exp)]
 enclosures = [ ("(", ESymbol Open "(")
