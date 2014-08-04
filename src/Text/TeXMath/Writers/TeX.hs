@@ -88,11 +88,11 @@ writeExp (EGrouped es) = tellGroup (mapM_ writeExp es)
 writeExp (EDelimited "(" ")" [Right (EFraction NoLineFrac x y)]) = do
   writeBinom "\\binom" x y
 writeExp (EDelimited "[" "]" [Right (EFraction NoLineFrac x y)]) = do
-  writeBinom "\\brack" x y
+  tellGroup $ writeExp x >> tell [ControlSeq "\\brack"] >> writeExp y
 writeExp (EDelimited "{" "}" [Right (EFraction NoLineFrac x y)]) = do
-  writeBinom "\\brace" x y
+  tellGroup $ writeExp x >> tell [ControlSeq "\\brace"] >> writeExp y
 writeExp (EDelimited "\x27E8" "\x27E9" [Right (EFraction NoLineFrac x y)]) = do
-  writeBinom "\\bangle" x y
+  tellGroup $ writeExp x >> tell [ControlSeq "\\bangle"] >> writeExp y
 writeExp (EDelimited open close [Right (EFraction NoLineFrac x y)]) = do
   writeExp (EDelimited open close [Right (EArray [AlignCenter]
                    [[[x]],[[y]]])])

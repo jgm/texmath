@@ -30,7 +30,7 @@ import Text.ParserCombinators.Parsec
 import qualified Text.ParserCombinators.Parsec.Token as P
 import Text.ParserCombinators.Parsec.Language
 import Text.TeXMath.Types
-import Control.Applicative ((<*), (*>), (<*>), (<$>), (<$))
+import Control.Applicative ((<*), (*>), (<*>), (<$>), (<$), pure)
 import qualified Text.TeXMath.Shared as S
 import Text.TeXMath.Readers.TeX.Macros (applyMacros, parseMacroDefinitions)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
@@ -82,15 +82,19 @@ readTeX inp =
   either (Left . show) (Right . id) $ parse formula "formula" (applyMacros ms rest)
 
 ctrlseq :: String -> TP String
-ctrlseq s = try $ symbol ('\\':s) <* notFollowedBy letter
+ctrlseq s = try $ string ('\\':s) <* notFollowedBy letter <* spaces
+
+unGrouped :: Exp -> [Exp]
+unGrouped (EGrouped xs) = xs
+unGrouped x = [x]
 
 formula :: TP [Exp]
 formula = do
   whiteSpace
-  f <- many expr
+  f <- manyExp expr
   whiteSpace
   eof
-  return f
+  return $ unGrouped f
 
 expr :: TP Exp
 expr = do
@@ -112,14 +116,14 @@ operatorname :: TP (Exp, Bool)
 operatorname = try $ do
     ctrlseq "operatorname"
     convertible <- (char '*' >> spaces >> return True) <|> return False
-    op <- liftM expToOperatorName texToken
+    op <- expToOperatorName <$> texToken
     maybe pzero (\s -> return (EMathOperator s, convertible)) op
 
 -- | Converts identifiers, symbols and numbers to a flat string.
 -- Returns Nothing if the expression contains anything else.
 expToOperatorName :: Exp -> Maybe String
 expToOperatorName e = case e of
-            EGrouped xs ->  liftM concat $ mapM fl xs
+            EGrouped xs ->  concat <$> mapM fl xs
             _ -> fl e
     where fl f = case f of
                     EIdentifier s -> Just s
@@ -158,21 +162,32 @@ binomCmds = [ ("choose", \x y ->
                 EDelimited "\x27E8" "\x27E9" [Right (EFraction NoLineFrac x y)])
             ]
 
-togroup :: [Exp] -> Exp
-togroup [x] = x
-togroup xs = EGrouped xs
+asGroup :: [Exp] -> Exp
+asGroup [x] = x
+asGroup xs = EGrouped xs
+
+-- variant of many that is sensitive to \choose and other such commands
+manyExp' :: Bool -> TP Exp -> TP Exp
+manyExp' requireNonempty p = do
+  initial <- if requireNonempty
+                then many1 (try $ notFollowedBy binomCmd >> p)
+                else many (try $ notFollowedBy binomCmd >> p)
+  let withCmd :: String -> TP Exp
+      withCmd cmd =
+         case lookup (drop 1 cmd) binomCmds of
+              Just f  -> f <$> (asGroup <$> pure initial)
+                           <*> (asGroup <$> many p)
+              Nothing -> fail $ "Unknown command " ++ cmd
+  try (binomCmd >>= withCmd) <|> return (asGroup initial)
+
+manyExp :: TP Exp -> TP Exp
+manyExp = manyExp' False
+
+many1Exp :: TP Exp -> TP Exp
+many1Exp = manyExp' True
 
 inbraces :: TP Exp
-inbraces = do
-  result <- braces $
-      (,,) <$> (many $ notFollowedBy binomCmd >> expr)
-           <*> option "" binomCmd
-           <*> many expr
-  case result of
-       (xs,"",_)   -> return $ togroup xs
-       (xs,sep,ys) -> case lookup (drop 1 sep) binomCmds of
-                           Just f -> return $ f (togroup xs) (togroup ys)
-                           Nothing -> pzero
+inbraces = braces (manyExp expr)
 
 texToken :: TP Exp
 texToken = texSymbol <|> inbraces <|> inbrackets <|>
@@ -183,10 +198,10 @@ texToken = texSymbol <|> inbraces <|> inbrackets <|>
                             else (EIdentifier [c])
 
 inbrackets :: TP Exp
-inbrackets = liftM EGrouped (brackets $ many $ notFollowedBy (char ']') >> expr)
+inbrackets = (brackets $ manyExp $ notFollowedBy (char ']') >> expr)
 
 number :: TP Exp
-number = lexeme $ liftM ENumber $ many1 digit
+number = lexeme $ ENumber <$> many1 digit
 
 enclosure :: TP Exp
 enclosure = basicEnclosure <|> scaledEnclosure <|> delimited
@@ -212,8 +227,10 @@ right = fence "\\right"
 delimited :: TP Exp
 delimited = try $ do
   openc <- fence "\\left"
-  contents <- many (try $ (Left <$> middle)
-                      <|> (Right <$> (notFollowedBy right >> expr)))
+  contents <- concat <$>
+              many (try $ ((:[]) . Left <$> middle)
+                      <|> (map Right . unGrouped <$>
+                             many1Exp (notFollowedBy right >> expr)))
   closec <- right <|> return ""
   return $ EDelimited openc closec contents
 
@@ -234,7 +251,7 @@ endLine = try $ do
 
 arrayLine :: TP ArrayLine
 arrayLine = notFollowedBy (ctrlseq "end" >> return '\n') >>
-  sepBy1 (many (notFollowedBy endLine >> expr)) (symbol "&")
+  sepBy1 (unGrouped <$> manyExp (notFollowedBy endLine >> expr)) (symbol "&")
 
 arrayAlignments :: TP [Alignment]
 arrayAlignments = try $ do
@@ -387,7 +404,7 @@ superOrSubscripted limits convertible a = try $ do
 escaped :: TP Exp
 escaped = lexeme $ try $
           char '\\' >>
-          liftM (ESymbol Ord . (:[])) (satisfy isEscapable)
+          (ESymbol Ord . (:[])) <$> (satisfy isEscapable)
    where isEscapable '{' = True
          isEscapable '}' = True
          isEscapable '$' = True
@@ -445,7 +462,7 @@ diacritical :: TP Exp
 diacritical = try $ do
   c <- command
   case S.getDiacriticalCons c of
-       Just r  -> liftM r texToken
+       Just r  -> r <$> texToken
        Nothing -> pzero
 
 
@@ -540,7 +557,7 @@ whiteSpace = P.whiteSpace lexer
 
 operator :: CharParser st String
 operator = lexeme $ many1 (char '\'')
-                 <|> liftM (:[]) (opLetter texMathDef)
+                 <|> ((:[]) <$> (opLetter texMathDef))
 
 symbol :: String -> CharParser st String
 symbol = lexeme . P.symbol lexer
