@@ -88,7 +88,7 @@ expr :: TP Exp
 expr = do
   optional (ctrlseq "displaystyle")
   (a, convertible) <- try (braces operatorname) -- needed because macros add {}
-                 <|> (expr1 >>= \e -> return (e, False))
+                 <|> ((,False) <$> expr1)
                  <|> operatorname
   limits <- limitsIndicator
   subSup limits convertible a <|> superOrSubscripted limits convertible a <|> return a
@@ -158,15 +158,15 @@ asGroup xs = EGrouped xs
 manyExp' :: Bool -> TP Exp -> TP Exp
 manyExp' requireNonempty p = do
   initial <- if requireNonempty
-                then many1 (try $ notFollowedBy binomCmd >> p)
-                else many (try $ notFollowedBy binomCmd >> p)
+                then many1 (notFollowedBy binomCmd >> p)
+                else many (notFollowedBy binomCmd >> p)
   let withCmd :: String -> TP Exp
       withCmd cmd =
          case lookup (drop 1 cmd) binomCmds of
               Just f  -> f <$> (asGroup <$> pure initial)
                            <*> (asGroup <$> many p)
               Nothing -> fail $ "Unknown command " ++ cmd
-  try (binomCmd >>= withCmd) <|> return (asGroup initial)
+  (binomCmd >>= withCmd) <|> return (asGroup initial)
 
 manyExp :: TP Exp -> TP Exp
 manyExp = manyExp' False
