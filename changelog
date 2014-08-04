@@ -60,6 +60,7 @@ texmath (0.7)
     + TeX reader:  Use EUnder/Over for \stackrel, \overset, \underset.
       Improved handling of primes.  Fixed \notin.  Avoid superfluous
       grouping of single elements.  Improved handling of scalers (\Big etc.).
+      Handle \choose, \brace, \brack, \bangle (#21).
     + Macros:  Don't raise an error if applying a macro fails to
       resolve to a fixed point; instead, just return the original string.
 
