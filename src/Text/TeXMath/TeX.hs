@@ -53,7 +53,7 @@ isControlSeq _ = False
 escapeLaTeX :: Char -> TeX
 escapeLaTeX c
   | c `elem` "#$%&_{} " = Literal ("\\" ++ [c])
-  | c == '~' = ControlSeq "\\sim"
-  | c == '^' = Literal "\\char`\\^"
-  | c == '\\' = ControlSeq "\\backslash"
+  | c == '~' = ControlSeq "\\textasciitilde"
+  | c == '^' = Literal "\\textasciicircum"
+  | c == '\\' = ControlSeq "\\textbackslash"
   | otherwise = Token c
