@@ -2,7 +2,8 @@ texmath (0.7)
 
   * Changes in Exp type:
 
-    + Removed EUp, EDown, EDownup.
+    + Removed EUp, EDown, EDownup, EUnary, EBinary.
+    + Added EFraction (and FractionType), ESqrt, Eroot, EPhantom.
     + Added boolean "convertible" parameter to EUnder, EOver, EUnderover.
     + Changed parameter of EScaled from String to Double.
     + Changed parameter of ESpace from String to Double.
@@ -50,7 +51,7 @@ texmath (0.7)
     + TeX writer: Properly handle accents inside \text{}.
       Use real text environments for EText (\textrm, not \mathrm).
       Improved handling of scalers (\Big etc.).  Use amsmath matrix
-      environments when appropriate.
+      environments when appropriate.  Fixed \varepsilon.
     + MathML writer:  Omit superfluous outer mrows.  Add position
       information to fences.
     + OMML writer:  Handle \phantom.
