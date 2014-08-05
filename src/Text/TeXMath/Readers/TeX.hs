@@ -32,32 +32,33 @@ import Control.Applicative ((<*), (*>), (<*>), (<$>), (<$), pure)
 import qualified Text.TeXMath.Shared as S
 import Text.TeXMath.Readers.TeX.Macros (applyMacros, parseMacroDefinitions)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
-import Data.Maybe (fromMaybe)
+import Data.Maybe (fromMaybe, fromJust)
+import Data.List (sortBy)
+import Data.Ord (comparing)
 
 type TP = GenParser Char ()
 
 -- The parser
 
 expr1 :: TP Exp
-expr1 =
-  choice
-  [ inbraces
-  , variable
-  , number
-  , texSymbol
-  , text
-  , styled
-  , root
-  , unary
-  , binary
-  , enclosure
-  , bareSubSup
-  , environment
-  , diacritical
-  , escaped
-  , unicode
-  , ensuremath
-  ] <* ignorable
+expr1 = choice
+          [ inbraces
+          , variable
+          , number
+          , text
+          , styled
+          , root
+          , unary
+          , binary
+          , enclosure
+          , bareSubSup
+          , environment
+          , diacritical
+          , escaped
+          , unicode
+          , ensuremath
+          , texSymbol
+          ] <* ignorable
 
 -- | Parse a formula, returning a list of 'Exp'.
 readTeX :: String -> Either String [Exp]
@@ -66,7 +67,7 @@ readTeX inp =
   either (Left . show) (Right . id) $ parse formula "formula" (applyMacros ms rest)
 
 ignorable :: TP ()
-ignorable = skipMany (comment <|> label <|> skipMany1 space)
+ignorable = skipMany (comment <|> label <|> skipMany1 space) <?> "whitespace"
 
 comment :: TP ()
 comment = char '%' *> skipMany (noneOf "\n") *> optional newline
@@ -101,8 +102,8 @@ expr = do
 --
 --     - False otherwise
 operatorname :: TP (Exp, Bool)
-operatorname = try $ do
-    ctrlseq "operatorname"
+operatorname = do
+    try $ ctrlseq "operatorname"
     convertible <- (char '*' >> spaces >> return True) <|> return False
     op <- expToOperatorName <$> texToken
     maybe pzero (\s -> return (EMathOperator s, convertible)) op
@@ -128,7 +129,7 @@ expToOperatorName e = case e of
 
 bareSubSup :: TP Exp
 bareSubSup = subSup Nothing False (EIdentifier "")
-  <|> superOrSubscripted Nothing False (EIdentifier "")
+  <|> superOrSubscripted Nothing False (EIdentifier "") <?> "bareSubSup"
 
 limitsIndicator :: TP (Maybe Bool)
 limitsIndicator =
@@ -137,7 +138,7 @@ limitsIndicator =
   <|> return Nothing
 
 binomCmd :: TP String
-binomCmd = choice $ map (ctrlseq . fst) binomCmds
+binomCmd = choice (map (ctrlseq . fst) binomCmds) <?> "binomial command"
 
 binomCmds :: [(String, Exp -> Exp -> Exp)]
 binomCmds = [ ("choose", \x y ->
@@ -158,7 +159,8 @@ asGroup xs = EGrouped xs
 manyExp' :: Bool -> TP Exp -> TP Exp
 manyExp' requireNonempty p = do
   initial <- if requireNonempty
-                then many1 (notFollowedBy binomCmd >> p)
+                then many1 (do
+                              notFollowedBy binomCmd >> p)
                 else many (notFollowedBy binomCmd >> p)
   let withCmd :: String -> TP Exp
       withCmd cmd =
@@ -178,12 +180,15 @@ inbraces :: TP Exp
 inbraces = braces (manyExp expr)
 
 texToken :: TP Exp
-texToken = texSymbol <|> inbraces <|> inbrackets <|>
-             do c <- anyChar
-                spaces
-                return $ if isDigit c
-                            then (ENumber [c])
-                            else (EIdentifier [c])
+texToken = texSymbol <|> inbraces <|> inbrackets <|> texChar <?> "texToken"
+
+texChar :: TP Exp
+texChar =
+  do
+    c <- anyChar <* spaces
+    return $ if isDigit c
+              then ENumber [c]
+              else EIdentifier [c]
 
 inbrackets :: TP Exp
 inbrackets = (brackets $ manyExp $ notFollowedBy (char ']') >> expr)
@@ -192,14 +197,15 @@ number :: TP Exp
 number = lexeme $ ENumber <$> many1 digit
 
 enclosure :: TP Exp
-enclosure = basicEnclosure <|> scaledEnclosure <|> delimited
+enclosure = basicEnclosure <|> scaledEnclosure <|> delimited <?> "enclosure"
 
 basicEnclosure :: TP Exp
-basicEnclosure = choice $ map (\(s, v) -> try (symbol s) >> return v) enclosures
+basicEnclosure = choice (map (\(s, v) -> try (symbol s) >> return v) enclosures)
+                  <?> "basic enclosure"
 
 fence :: String -> TP String
-fence cmd = try $ do
-  symbol cmd
+fence cmd = do
+  try $ symbol cmd
   enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Open ""))
   case enc of
        ESymbol Open x  -> return x
@@ -213,18 +219,18 @@ right :: TP String
 right = fence "\\right"
 
 delimited :: TP Exp
-delimited = try $ do
-  openc <- fence "\\left"
+delimited = do
+  openc <- try $ fence "\\left"
   contents <- concat <$>
               many (try $ ((:[]) . Left <$> middle)
                       <|> (map Right . unGrouped <$>
-                             many1Exp (notFollowedBy right >> expr)))
+                             many1Exp (notFollowedBy right *> expr)))
   closec <- right <|> return ""
   return $ EDelimited openc closec contents
 
 scaledEnclosure :: TP Exp
-scaledEnclosure = try $ do
-  cmd <- command
+scaledEnclosure = do
+  cmd <- oneOfCommands (map fst S.scalers) <?> "scaled enclosure"
   case S.getScalerValue cmd of
        Just  r -> EScaled r <$> basicEnclosure
        Nothing -> pzero
@@ -251,8 +257,8 @@ arrayAlignments = try $ do
   return $ map letterToAlignment as
 
 environment :: TP Exp
-environment = try $ do
-  ctrlseq "begin"
+environment = do
+  try (ctrlseq "begin") <?> "environment"
   name <- char '{' *> manyTill anyChar (char '}')
   spaces
   let name' = filter (/='*') name
@@ -390,19 +396,9 @@ superOrSubscripted limits convertible a = try $ do
        _   -> pzero
 
 escaped :: TP Exp
-escaped = lexeme $ try $
-          char '\\' >>
-          (ESymbol Ord . (:[])) <$> (satisfy isEscapable)
-   where isEscapable '{' = True
-         isEscapable '}' = True
-         isEscapable '$' = True
-         isEscapable '%' = True
-         isEscapable '&' = True
-         isEscapable '_' = True
-         isEscapable '#' = True
-         isEscapable '^' = True  -- actually only if followed by {}
-         isEscapable ' ' = True
-         isEscapable _   = False
+escaped = lexeme $ do
+  ('\\':esc) <- choice $ map (\x -> try $ string ("\\" ++ [x])) "{}$%&_#^ "
+  return $ ESymbol Ord esc
 
 unicode :: TP Exp
 unicode = lexeme $
@@ -411,14 +407,9 @@ unicode = lexeme $
     return (ESymbol (getSymbolType c) [c])
 
 ensuremath :: TP Exp
-ensuremath = try $ lexeme (string "\\ensuremath") >> inbraces
-
-command :: TP String
-command = try $ do
-  char '\\'
-  res <- many1 letter <|> count 1 (satisfy (/='\n'))
-  spaces
-  return ('\\':res)
+ensuremath = do
+  try $ lexeme (string "\\ensuremath")
+  inbraces
 
 -- Note: cal and scr are treated the same way, as unicode is lacking such two different sets for those.
 styleOps :: M.Map String ([Exp] -> Exp)
@@ -447,26 +438,25 @@ styleOps = M.fromList
           ]
 
 diacritical :: TP Exp
-diacritical = try $ do
-  c <- command
+diacritical = do
+  c <- oneOfCommands (map snd S.diacriticals) <?> "diacritical command"
   case S.getDiacriticalCons c of
        Just r  -> r <$> texToken
        Nothing -> pzero
 
 
 unary :: TP Exp
-unary = try $ do
-  c <- command
-  a <- texToken
+unary = do
+  c <- oneOfCommands ["\\phantom", "\\sqrt", "\\surd"] <?> "unary command"
   case c of
-       "\\phantom" -> return $ EPhantom a
-       "\\sqrt"    -> return $ ESqrt a
-       "\\surd"    -> return $ ESqrt a
+       "\\phantom" -> EPhantom <$> texToken
+       "\\sqrt"    -> ESqrt <$> texToken
+       "\\surd"    -> ESqrt <$> texToken
        _ -> mzero
 
 text :: TP Exp
-text = try $ do
-  c <- command
+text = do
+  c <- oneOfCommands (M.keys textOps) <?> "text command"
   maybe mzero (<$> (bracedText <* spaces)) $ M.lookup c textOps
 
 textOps :: M.Map String (String -> Exp)
@@ -480,8 +470,8 @@ textOps = M.fromList
           ]
 
 styled :: TP Exp
-styled = try $ do
-  c <- command
+styled = do
+  c <- oneOfCommands (M.keys styleOps) <?> "style command"
   case M.lookup c styleOps of
        Just f   -> do
          x <- inbraces
@@ -492,15 +482,16 @@ styled = try $ do
 
 -- note: sqrt can be unary, \sqrt{2}, or binary, \sqrt[3]{2}
 root :: TP Exp
-root = try $ do
-  ctrlseq "sqrt" <|> ctrlseq "surd"
-  a <- inbrackets
+root = do
+  a <- try $ do
+              (ctrlseq "sqrt" <|> ctrlseq "surd")
+              inbrackets
   b <- texToken
   return $ ERoot a b
 
 binary :: TP Exp
-binary = try $ do
-  c <- command
+binary = do
+  c <- oneOfCommands binops <?> "binary operator"
   a <- texToken
   b <- texToken
   case c of
@@ -512,15 +503,32 @@ binary = try $ do
      "\\dfrac"    -> return $ EFraction DisplayFrac a b
      "\\binom"    -> return $ EDelimited "(" ")"
                               [Right (EFraction NoLineFrac a b)]
-     _            -> pzero
+     _            -> fail "Unrecognised binary operator"
+  where
+    binops = ["\\overset", "\\stackrel", "\\underset", "\\frac", "\\tfrac", "\\dfrac", "\\binom"]
 
 texSymbol :: TP Exp
-texSymbol = try $ do
-  negated <- (ctrlseq "not" >> return True) <|> return False
-  sym <- operator <|> command
-  case M.lookup sym symbols of
-       Just s   -> if negated then neg s else return s
-       Nothing  -> pzero
+texSymbol = do
+  negated <- (try (ctrlseq "not") >> return True) <|> return False
+  sym <- operator <|> tSymbol
+  if negated then neg sym else return sym
+
+oneOfCommands :: [String] -> TP String
+oneOfCommands cmds = lexeme . try $ do
+  r <- choice (map (try . string) (sortCommands cmds)) <?> "Invalid command"
+  when (length r > 2) (() <$ (notFollowedBy letter <?> "non alpha character"))
+  return r
+
+tSymbol :: TP Exp
+tSymbol = do
+  sym <- oneOfCommands (M.keys symbols)
+  return $ fromJust (M.lookup sym symbols)
+
+operator :: TP Exp
+operator = do
+  sym <- lexeme (choice $ map (try . string) (sortCommands $ M.keys operators))
+          <?> "operator"
+  return $ fromJust (M.lookup sym operators)
 
 neg :: Exp -> TP Exp
 neg (ESymbol Rel x) = ESymbol Rel `fmap`
@@ -542,9 +550,6 @@ braces p = lexeme $ char '{' *> spaces *> p <* spaces <* char '}'
 brackets :: TP a -> TP a
 brackets p = lexeme $ char '[' *> spaces *> p <* spaces <* char ']'
 
-operator :: TP String
-operator = lexeme $ many1 (char '\'') <|> ((:[]) <$> opLetter)
-   where opLetter = oneOf ":_+*/=^-(),;.?'~[]<>!"
 
 symbol :: String -> TP String
 symbol s = lexeme $ try $ string s
@@ -582,8 +587,8 @@ enclosures = [ ("(", ESymbol Open "(")
              , ("\\urcorner", ESymbol Close "\x231D")
              ]
 
-symbols :: M.Map String Exp
-symbols = M.fromList [
+operators :: M.Map String Exp
+operators = M.fromList [
              ("+", ESymbol Bin "+")
            , ("-", ESymbol Bin "\x2212")
            , ("*", ESymbol Bin "*")
@@ -592,7 +597,6 @@ symbols = M.fromList [
            , (".", ESymbol Ord ".")
            , (";", ESymbol Pun ";")
            , (":", ESymbol Rel ":")
-           , ("\\colon", ESymbol Pun ":")
            , ("?", ESymbol Ord "?")
            , (">", ESymbol Rel ">")
            , ("<", ESymbol Rel "<")
@@ -603,10 +607,15 @@ symbols = M.fromList [
            , ("''''", ESymbol Ord "\x2057")
            , ("=", ESymbol Rel "=")
            , (":=", ESymbol Rel ":=")
-           , ("\\mid", ESymbol Bin "\x2223")
+           , ("/", ESymbol Ord "/")
+           , ("~", ESpace 0.333) ]
+
+symbols :: M.Map String Exp
+symbols = M.fromList [
+             ("\\mid", ESymbol Bin "\x2223")
+           , ("\\colon", ESymbol Pun ":")
            , ("\\parallel", ESymbol Rel "\x2225")
            , ("\\backslash", ESymbol Bin "\x2216")
-           , ("/", ESymbol Ord "/")
            , ("\\setminus",	ESymbol Bin "\\")
            , ("\\times", ESymbol Bin "\x00D7")
            , ("\\alpha", EIdentifier "\x03B1")
@@ -703,7 +712,7 @@ symbols = M.fromList [
            , ("\\succeq", ESymbol Rel "\x227D")
            , ("\\subset", ESymbol Rel "\x2282")
            , ("\\supset", ESymbol Rel "\x2283")
-           , ("\\subseteq", ESymbol Rel "\x2286")
+           , ("\\eq", ESymbol Rel "\x2286")
            , ("\\supseteq", ESymbol Rel "\x2287")
            , ("\\nsubset", ESymbol Rel "\x2284")
            , ("\\nsupset", ESymbol Rel "\x2285")
@@ -807,7 +816,6 @@ symbols = M.fromList [
            , ("\\>", ESpace 0.222)
            , ("\\:", ESpace 0.222)
            , ("\\;", ESpace 0.278)
-           , ("~", ESpace 0.333)
            , ("\\quad", ESpace 1)
            , ("\\qquad", ESpace 2)
            , ("\\arccos", EMathOperator "arccos")
@@ -848,6 +856,7 @@ symbols = M.fromList [
 
 textual :: TP String
 textual = regular <|> sps <|> ligature <|> textCommand <|> bracedText
+            <?> "textual command"
 
 sps :: TP String
 sps = " " <$ skipMany1 (oneOf " \t\n")
@@ -865,8 +874,8 @@ ligature = try ("\x2014" <$ string "---")
        <|> try ("\xA0"   <$ string "~")
 
 textCommand :: TP String
-textCommand = try $ do
-  ('\\':cmd) <- command
+textCommand = do
+  ('\\':cmd) <- oneOfCommands (map (\x -> "\\" ++ x) (M.keys textCommands))
   case M.lookup cmd textCommands of
        Nothing -> fail ("Unknown command \\" ++ cmd)
        Just c  -> c
@@ -922,6 +931,11 @@ textCommands = M.fromList
 
 parseC :: TP String
 parseC = try $ char '`' >> count 1 anyChar
+
+-- We want to take the longest match so need to try commands in
+-- decreasing order when there is overlap.
+sortCommands :: [String] -> [String]
+sortCommands = reverse . sortBy (comparing length)
 
 -- the functions below taken from pandoc:
 
