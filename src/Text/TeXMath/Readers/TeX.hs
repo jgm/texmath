@@ -33,10 +33,6 @@ import qualified Text.TeXMath.Shared as S
 import Text.TeXMath.Readers.TeX.Macros (applyMacros, parseMacroDefinitions)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Data.Maybe (fromMaybe, fromJust)
-import Data.List (sortBy)
-import Data.Ord (comparing)
-
-import Debug.Trace
 
 type TP = GenParser Char ()
 
@@ -947,11 +943,6 @@ textCommands = M.fromList
 
 parseC :: TP String
 parseC = try $ char '`' >> count 1 anyChar
-
--- We want to take the longest match so need to try commands in
--- decreasing order when there is overlap.
-sortCommands :: [String] -> [String]
-sortCommands = reverse . sortBy (comparing length)
 
 -- the functions below taken from pandoc:
 
