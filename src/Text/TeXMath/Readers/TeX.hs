@@ -52,7 +52,7 @@ expr1 = choice
           , binary
           , enclosure
           , bareSubSup
-          , environment
+          , environment <?> "environment"
           , diacritical
           , unicode
           , ensuremath
@@ -132,8 +132,8 @@ expToOperatorName e = case e of
                     _ -> Nothing
 
 bareSubSup :: TP Exp
-bareSubSup = (subSup Nothing False (EIdentifier "")
-  <|> superOrSubscripted Nothing False (EIdentifier "")) <?> "bareSubSup"
+bareSubSup = subSup Nothing False (EIdentifier "")
+  <|> superOrSubscripted Nothing False (EIdentifier "")
 
 limitsIndicator :: TP (Maybe Bool)
 limitsIndicator =
@@ -142,7 +142,7 @@ limitsIndicator =
   <|> return Nothing
 
 binomCmd :: TP String
-binomCmd = choice (map (ctrlseq . fst) binomCmds) <?> "binomial coefficient command"
+binomCmd = choice (map (ctrlseq . fst) binomCmds)
 
 binomCmds :: [(String, Exp -> Exp -> Exp)]
 binomCmds = [ ("choose", \x y ->
@@ -183,7 +183,7 @@ inbraces :: TP Exp
 inbraces = braces (manyExp expr)
 
 texToken :: TP Exp
-texToken = texSymbol <|> inbraces <|> inbrackets <|> texChar <?> "texToken"
+texToken = texSymbol <|> inbraces <|> inbrackets <|> texChar
 
 texChar :: TP Exp
 texChar =
@@ -200,11 +200,10 @@ number :: TP Exp
 number = lexeme $ ENumber <$> many1 digit
 
 enclosure :: TP Exp
-enclosure = basicEnclosure <|> scaledEnclosure <|> delimited <?> "enclosure"
+enclosure = basicEnclosure <|> scaledEnclosure <|> delimited
 
 basicEnclosure :: TP Exp
 basicEnclosure = choice (map (\(s, v) -> try (symbol s) >> return v) enclosures)
-                  <?> "basic enclosure"
 
 fence :: String -> TP String
 fence cmd = do
@@ -233,7 +232,7 @@ delimited = do
 
 scaledEnclosure :: TP Exp
 scaledEnclosure = do
-  cmd <- oneOfCommands (map fst S.scalers) <?> "scaled enclosure"
+  cmd <- oneOfCommands (map fst S.scalers)
   case S.getScalerValue cmd of
        Just  r -> EScaled r <$> basicEnclosure
        Nothing -> pzero
@@ -261,7 +260,7 @@ arrayAlignments = try $ do
 
 environment :: TP Exp
 environment = do
-  ctrlseq "begin" <?> "environment"
+  ctrlseq "begin"
   name <- char '{' *> manyTill anyChar (char '}')
   spaces
   let name' = filter (/='*') name
@@ -440,7 +439,7 @@ styleOps = M.fromList
 
 diacritical :: TP Exp
 diacritical = do
-  c <- oneOfCommands (map snd S.diacriticals) <?> "diacritical command"
+  c <- oneOfCommands (map snd S.diacriticals)
   case S.getDiacriticalCons c of
        Just r  -> r <$> texToken
        Nothing -> pzero
@@ -451,7 +450,7 @@ phantom = EPhantom <$> (ctrlseq "\\phantom" *> texToken)
 
 text :: TP Exp
 text = do
-  c <- oneOfCommands (M.keys textOps) <?> "text command"
+  c <- oneOfCommands (M.keys textOps)
   maybe mzero (<$> (bracedText <* spaces)) $ M.lookup c textOps
 
 textOps :: M.Map String (String -> Exp)
@@ -466,7 +465,7 @@ textOps = M.fromList
 
 styled :: TP Exp
 styled = do
-  c <- oneOfCommands (M.keys styleOps) <?> "style command"
+  c <- oneOfCommands (M.keys styleOps)
   case M.lookup c styleOps of
        Just f   -> do
          x <- inbraces
@@ -483,7 +482,7 @@ root = do
 
 binary :: TP Exp
 binary = do
-  c <- oneOfCommands binops <?> "binary operator"
+  c <- oneOfCommands binops
   a <- texToken
   b <- texToken
   case c of
@@ -517,7 +516,6 @@ tSymbol = do
 operator :: TP Exp
 operator = do
   sym <- lexeme (choice $ map (try . string) (sortCommands $ M.keys operators))
-          <?> "operator"
   return $ fromJust (M.lookup sym operators)
 
 neg :: Exp -> TP Exp
@@ -865,9 +863,9 @@ ligature = try ("\x2014" <$ string "---")
 
 textCommand :: TP String
 textCommand = do
-  cmd <- try $ char '\\' *> oneOfCommands (M.keys textCommands)
+  cmd <- oneOfCommands (M.keys textCommands)
   case M.lookup cmd textCommands of
-       Nothing -> fail ("Unknown command \\" ++ cmd)
+       Nothing -> fail ("Unknown control sequence " ++ cmd)
        Just c  -> c
 
 bracedText :: TP String
@@ -883,40 +881,40 @@ tok = (try $ char '{' *> spaces *> anyChar <* spaces <* char '}')
 
 textCommands :: M.Map String (TP String)
 textCommands = M.fromList
-  [ ("#", return "#")
-  , ("$", return "$")
-  , ("%", return "%")
-  , ("&", return "&")
-  , ("_", return "_")
-  , ("{", return "{")
-  , ("}", return "}")
-  , ("ldots", return "\x2026")
-  , ("textasciitilde", return "~")
-  , ("textasciicircum", return "^")
-  , ("textbackslash", return "\\")
-  , ("char", parseC)
-  , ("aa", return "å")
-  , ("AA", return "Å")
-  , ("ss", return "ß")
-  , ("o", return "ø")
-  , ("O", return "Ø")
-  , ("L", return "Ł")
-  , ("l", return "ł")
-  , ("ae", return "æ")
-  , ("AE", return "Æ")
-  , ("oe", return "œ")
-  , ("OE", return "Œ")
-  , ("`", option "`" $ grave <$> tok)
-  , ("'", option "'" $ acute <$> tok)
-  , ("^", option "^" $ circ  <$> tok)
-  , ("~", option "~" $ tilde <$> tok)
-  , ("\"", option "\"" $ try $ umlaut <$> tok)
-  , (".", option "." $ try $ dot <$> tok)
-  , ("=", option "=" $ try $ macron <$> tok)
-  , ("c", option "c" $ try $ cedilla <$> tok)
-  , ("v", option "v" $ try $ hacek <$> tok)
-  , ("u", option "u" $ try $ breve <$> tok)
-  , (" ", return " ")
+  [ ("\\#", return "#")
+  , ("\\$", return "$")
+  , ("\\%", return "%")
+  , ("\\&", return "&")
+  , ("\\_", return "_")
+  , ("\\{", return "{")
+  , ("\\}", return "}")
+  , ("\\ldots", return "\x2026")
+  , ("\\textasciitilde", return "~")
+  , ("\\textasciicircum", return "^")
+  , ("\\textbackslash", return "\\")
+  , ("\\char", parseC)
+  , ("\\aa", return "å")
+  , ("\\AA", return "Å")
+  , ("\\ss", return "ß")
+  , ("\\o", return "ø")
+  , ("\\O", return "Ø")
+  , ("\\L", return "Ł")
+  , ("\\l", return "ł")
+  , ("\\ae", return "æ")
+  , ("\\AE", return "Æ")
+  , ("\\oe", return "œ")
+  , ("\\OE", return "Œ")
+  , ("\\`", option "`" $ grave <$> tok)
+  , ("\\'", option "'" $ acute <$> tok)
+  , ("\\^", option "^" $ circ  <$> tok)
+  , ("\\~", option "~" $ tilde <$> tok)
+  , ("\\\"", option "\"" $ try $ umlaut <$> tok)
+  , ("\\.", option "." $ try $ dot <$> tok)
+  , ("\\=", option "=" $ try $ macron <$> tok)
+  , ("\\c", option "c" $ try $ cedilla <$> tok)
+  , ("\\v", option "v" $ try $ hacek <$> tok)
+  , ("\\u", option "u" $ try $ breve <$> tok)
+  , ("\\ ", return " ")
   ]
 
 parseC :: TP String
