@@ -399,8 +399,8 @@ superOrSubscripted limits convertible a = try $ do
 
 escaped :: TP Exp
 escaped = lexeme $ do
-  esc <- try $ char '\\' *> choice (map char "{}$%&_#^ ")
-  return $ ESymbol Ord [esc]
+  ('\\':esc) <- choice $ map (ctrlseq . (:[])) "{}$%&_#^ "
+  return $ ESymbol Ord esc
 
 unicode :: TP Exp
 unicode = lexeme $
