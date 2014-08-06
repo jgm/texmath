@@ -48,7 +48,7 @@ expr1 = choice
           , text
           , styled
           , root
-          , unary
+          , phantom
           , binary
           , enclosure
           , bareSubSup
@@ -442,12 +442,8 @@ diacritical = do
        Nothing -> pzero
 
 
-unary :: TP Exp
-unary = do
-  c <- oneOfCommands ["\\phantom"] <?> "unary command"
-  case c of
-       "\\phantom" -> EPhantom <$> texToken
-       _ -> mzero
+phantom :: TP Exp
+phantom = EPhantom <$> (ctrlseq "\\phantom" *> texToken)
 
 text :: TP Exp
 text = do
