@@ -507,10 +507,9 @@ texSymbol = do
   if negated then neg sym else return sym
 
 oneOfCommands :: [String] -> TP String
-oneOfCommands cmds = do
-  cmd <- try $ do
-          char '\\'
-          oneOfStrings (map tail cmds)
+oneOfCommands cmds = try $ do
+  char '\\'
+  cmd <- oneOfStrings (map tail cmds)
   case cmd of
     [c] | not (isLetter c) -> return ()
     _ -> notFollowedBy letter <?> ("non-letter after \\" ++ cmd)
