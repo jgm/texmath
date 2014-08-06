@@ -36,6 +36,8 @@ import Data.Maybe (fromMaybe, fromJust)
 import Data.List (sortBy)
 import Data.Ord (comparing)
 
+import Debug.Trace
+
 type TP = GenParser Char ()
 
 -- The parser
@@ -505,8 +507,34 @@ texSymbol = do
   if negated then neg sym else return sym
 
 oneOfCommands :: [String] -> TP String
-oneOfCommands cmds =
-  choice (map (ctrlseq . drop 1) cmds)
+oneOfCommands cmds = do
+  cmd <- try $ do
+          char '\\'
+          oneOfStrings (map tail cmds)
+  case cmd of
+    [c] | not (isLetter c) -> return ()
+    _ -> notFollowedBy letter <?> ("non-letter after \\" ++ cmd)
+  spaces
+  return ('\\':cmd)
+
+
+oneOfStrings' :: (Char -> Char -> Bool) -> [String] -> TP String
+oneOfStrings' _ []   = fail "no strings"
+oneOfStrings' matches strs = try $ do
+    c <- anyChar
+    let strs' = [xs | (x:xs) <- strs, x `matches` c]
+    case strs' of
+      []  -> pzero
+      _   -> (c:) <$> oneOfStrings' matches strs'
+                     <|> if "" `elem` strs'
+                          then return [c]
+                          else pzero
+
+-- | Parses one of a list of strings.  If the list contains
+-- two strings one of which is a prefix of the other, the longer
+-- string will be matched if possible.
+oneOfStrings :: [String] -> TP String
+oneOfStrings = oneOfStrings' (==)
 
 tSymbol :: TP Exp
 tSymbol = do
