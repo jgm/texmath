@@ -24,7 +24,7 @@ module Text.TeXMath.Readers.TeX (readTeX)
 where
 
 import Control.Monad
-import Data.Char (isDigit, isAscii)
+import Data.Char (isDigit, isAscii, isLetter)
 import qualified Data.Map as M
 import Text.ParserCombinators.Parsec hiding (label)
 import Text.TeXMath.Types
@@ -66,6 +66,13 @@ readTeX inp =
   let (ms, rest) = parseMacroDefinitions inp in
   either (Left . show) (Right . id) $ parse formula "formula" (applyMacros ms rest)
 
+ctrlseq :: String -> TP String
+ctrlseq s = lexeme $
+  case s of
+       [c] | not (isLetter c) -> try (string ['\\',c])
+       _ -> try (string ('\\':s) <* (notFollowedBy letter
+                                     <?> ("non-letter after \\" ++ s)))
+
 ignorable :: TP ()
 ignorable = skipMany (comment <|> label <|> (skipMany1 space <?> "whitespace"))
 
@@ -74,9 +81,6 @@ comment = char '%' *> skipMany (noneOf "\n") *> optional newline
 
 label :: TP ()
 label = ctrlseq "label" *> braces (skipMany (noneOf "}"))
-
-ctrlseq :: String -> TP String
-ctrlseq s = lexeme (try $ string ('\\':s) <* notFollowedBy letter)
 
 unGrouped :: Exp -> [Exp]
 unGrouped (EGrouped xs) = xs
@@ -502,10 +506,8 @@ texSymbol = do
   if negated then neg sym else return sym
 
 oneOfCommands :: [String] -> TP String
-oneOfCommands cmds = lexeme . try $ do
-  r <- choice (map (try . string) (sortCommands cmds)) <?> "Invalid command"
-  when (length r > 2) (() <$ (notFollowedBy letter <?> "non alpha character"))
-  return r
+oneOfCommands cmds =
+  choice (map (ctrlseq . drop 1) cmds)
 
 tSymbol :: TP Exp
 tSymbol = do
