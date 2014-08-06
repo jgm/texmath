@@ -206,7 +206,7 @@ enclosure = basicEnclosure <|> scaledEnclosure <|> delimited
 
 -- Expensive
 basicEnclosure :: TP Exp
-basicEnclosure = choice (map (\(s, v) -> try (symbol s) >> return v) enclosures)
+basicEnclosure = choice (map (\(s, v) -> symbol s >> return v) enclosures)
 
 fence :: String -> TP String
 fence cmd = do
