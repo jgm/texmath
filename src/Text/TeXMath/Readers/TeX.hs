@@ -446,7 +446,7 @@ diacritical = do
 
 
 phantom :: TP Exp
-phantom = EPhantom <$> (ctrlseq "\\phantom" *> texToken)
+phantom = EPhantom <$> (ctrlseq "phantom" *> texToken)
 
 text :: TP Exp
 text = do
