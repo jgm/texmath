@@ -543,7 +543,7 @@ tSymbol = do
 
 operator :: TP Exp
 operator = do
-  sym <- lexeme (choice $ map (try . string) (sortCommands $ M.keys operators))
+  sym <- lexeme (oneOfStrings $ M.keys operators)
   return $ fromJust (M.lookup sym operators)
 
 neg :: Exp -> TP Exp
