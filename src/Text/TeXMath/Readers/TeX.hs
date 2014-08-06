@@ -52,12 +52,12 @@ expr1 = choice
           , root
           , phantom
           , binary
-          , enclosure
           , bareSubSup
           , environment <?> "environment"
           , diacritical
           , unicode
           , ensuremath
+          , enclosure
           , texSymbol
           , escaped
           ] <* ignorable
@@ -204,6 +204,7 @@ number = lexeme $ ENumber <$> many1 digit
 enclosure :: TP Exp
 enclosure = basicEnclosure <|> scaledEnclosure <|> delimited
 
+-- Expensive
 basicEnclosure :: TP Exp
 basicEnclosure = choice (map (\(s, v) -> try (symbol s) >> return v) enclosures)
 
