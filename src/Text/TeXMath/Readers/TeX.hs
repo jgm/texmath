@@ -51,7 +51,7 @@ expr1 = choice
           , phantom
           , binary
           , bareSubSup
-          , environment <?> "environment"
+          , environment
           , diacritical
           , unicode
           , ensuremath
@@ -261,13 +261,17 @@ arrayAlignments = try $ do
 environment :: TP Exp
 environment = do
   ctrlseq "begin"
-  name <- char '{' *> manyTill anyChar (char '}')
+  name <- braces (oneOfStrings (M.keys environments) <* optional (char '*'))
   spaces
-  let name' = filter (/='*') name
-  case M.lookup name' environments of
-        Just env -> env <* spaces <* ctrlseq "end"
-                        <* braces (string name) <* spaces
-        Nothing  -> mzero
+  case M.lookup name environments of
+        Just env -> do
+          result <- env
+          spaces
+          ctrlseq "end"
+          braces (string name <* optional (char '*'))
+          spaces
+          return result
+        Nothing  -> mzero  -- should not happen
 
 environments :: M.Map String (TP Exp)
 environments = M.fromList
