@@ -84,11 +84,16 @@ showParseError inp pe =
 
 
 ctrlseq :: String -> TP String
-ctrlseq s = lexeme $
+ctrlseq s = lexeme $ try $ do
+  result <- string ('\\':s)
   case s of
-       [c] | not (isLetter c) -> try (string ['\\',c])
-       _ -> try (string ('\\':s) <* (notFollowedBy letter
-                                     <?> ("non-letter after \\" ++ s)))
+       [c] | not (isLetter c) -> return ()
+       _ -> (do pos <- getPosition
+                letter
+                setPosition pos
+                mzero <?> ("non-letter after \\" ++ s))
+            <|> return ()
+  return result
 
 ignorable :: TP ()
 ignorable = skipMany (comment <|> label <|> (skipMany1 space <?> "whitespace"))
@@ -526,7 +531,11 @@ oneOfCommands cmds = try $ do
   cmd <- oneOfStrings cmds
   case cmd of
     ['\\',c] | not (isLetter c) -> return ()
-    _ -> notFollowedBy letter <?> ("non-letter after " ++ cmd)
+    _ -> (do pos <- getPosition
+             letter
+             setPosition pos
+             mzero <?> ("non-letter after " ++ cmd))
+         <|> return ()
   spaces
   return cmd
 
