@@ -22,8 +22,10 @@ module Text.TeXMath.Shared
   , getLaTeXTextCommand
   , getScalerCommand
   , getScalerValue
+  , scalers
   , getDiacriticalCommand
   , getDiacriticalCons
+  , diacriticals
   , getOperator
   , readLength
   ) where
@@ -192,6 +194,7 @@ textPackage s e
   | s `elem` base    = True
   | otherwise = True
 
+-- | Mapping between LaTeX scaling commands and the scaling factor
 scalers :: [(String, Double)]
 scalers =
           [ ("\\bigg", 2.2)
@@ -214,6 +217,8 @@ under = ["\\underbrace", "\\underline", "\\underbar", "\\underbracket"]
 unavailable :: [String]
 unavailable = ["\\overbracket", "\\underbracket"]
 
+
+-- | Mapping between unicode combining character and LaTeX accent command
 diacriticals :: [(String, String)]
 diacriticals =
                [ ("\x00B4", "\\acute")

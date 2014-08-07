@@ -133,12 +133,12 @@ makeFence (fromForm -> t) = withAttribute "stretchy" "false" . withAttribute "fo
 op :: String -> Element
 op s = accentCons $ unode "mo" s
   where
-    accentCons = 
+    accentCons =
       case (elem "accent") . properties <$> getMathMLOperator s FPostfix of
             Nothing -> id
             Just False -> id
             Just True -> withAttribute "accent" "false"
-            
+
 
 showExp :: TextType -> Exp -> Element
 showExp tt e =

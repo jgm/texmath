@@ -170,7 +170,7 @@ op e = do
   let ts =  [("accent", ESymbol Accent), ("fence", ESymbol objectPosition)]
   let fallback = case opString of
                       [t] -> ESymbol (getSymbolType t)
-                      _   -> if isJust opLookup 
+                      _   -> if isJust opLookup
                                 then ESymbol Ord
                                 else EMathOperator
   let constructor =
@@ -269,7 +269,7 @@ trailingSup open close es = go es
               (Nothing, Nothing) -> empty
               (Just (openFence, conOpen), Nothing) -> conOpen openFence
               (Nothing, Just (closeFence, conClose)) -> conClose closeFence
-              (Just (openFence, conOpen), Just (closeFence, conClose))  -> 
+              (Just (openFence, conOpen), Just (closeFence, conClose))  ->
                 EGrouped [conOpen openFence, conClose closeFence]
     go es'@(last -> Trailing constructor e) = (constructor (go (init es')) e)
     go es' = EDelimited (getFence open) (getFence close) (toEDelim es')
@@ -494,7 +494,7 @@ tableCell :: Alignment -> Element -> MML (Alignment, [Exp])
 tableCell a e = do
   align <- maybe a toAlignment <$> (findAttrQ "columnalign" e)
   case name e of
-    "mtd" -> (,) align . (:[]) <$> row e 
+    "mtd" -> (,) align . (:[]) <$> row e
     _ -> throwError $ "Invalid Element: Only expecting mtd elements " ++ err e
 
 -- Fixup
@@ -521,7 +521,7 @@ addAttrs as s = s {attrs = (map renameAttr as) ++ attrs s }
 renameAttr :: Attr -> Attr
 renameAttr v@(qName . attrKey -> "accentunder") =
   Attr (unqual "accent") (attrVal v)
-renameAttr a = a 
+renameAttr a = a
 
 filterMathVariant :: MMLState -> MMLState
 filterMathVariant s@(attrs -> as) =
