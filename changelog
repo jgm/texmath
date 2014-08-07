@@ -1,3 +1,16 @@
+texmath (0.7.0.1)
+
+  * TeX reader:
+
+    + Improved error reporting.
+    + Optimized parser.
+    + Treat `\ ` as ESpaced rather than ESymbol.
+    + Fixed parsing of `\phantom`.
+    + Internal improvements, including using the parsec3 interface
+      instead of the older parsec2 compatibility interface.
+
+  * Added tests for phantom.
+
 texmath (0.7)
 
   * Changes in Exp type:
