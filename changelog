@@ -5,7 +5,6 @@ texmath (0.7.0.1)
     + Improved error reporting.
     + Optimized parser.
     + Treat `\ ` as ESpaced rather than ESymbol.
-    + Fixed parsing of `\phantom`.
     + Internal improvements, including using the parsec3 interface
       instead of the older parsec2 compatibility interface.
 
