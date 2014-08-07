@@ -26,7 +26,8 @@ where
 import Control.Monad
 import Data.Char (isDigit, isAscii, isLetter)
 import qualified Data.Map as M
-import Text.ParserCombinators.Parsec hiding (label)
+import Text.Parsec hiding (label)
+import Text.Parsec.String
 import Text.TeXMath.Types
 import Control.Applicative ((<*), (*>), (<*>), (<$>), (<$), pure)
 import qualified Text.TeXMath.Shared as S
@@ -34,7 +35,7 @@ import Text.TeXMath.Readers.TeX.Macros (applyMacros, parseMacroDefinitions)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Data.Maybe (fromMaybe, fromJust)
 
-type TP = GenParser Char ()
+type TP = Parser
 
 -- The parser
 
@@ -107,7 +108,7 @@ operatorname = do
     ctrlseq "operatorname"
     convertible <- (char '*' >> spaces >> return True) <|> return False
     op <- expToOperatorName <$> texToken
-    maybe pzero (\s -> return (EMathOperator s, convertible)) op
+    maybe mzero (\s -> return (EMathOperator s, convertible)) op
 
 -- | Converts identifiers, symbols and numbers to a flat string.
 -- Returns Nothing if the expression contains anything else.
@@ -210,7 +211,7 @@ fence cmd = do
   case enc of
        ESymbol Open x  -> return x
        ESymbol Close x -> return x
-       _ -> pzero
+       _ -> mzero
 
 middle :: TP String
 middle = fence "\\middle"
@@ -233,7 +234,7 @@ scaledEnclosure = do
   cmd <- oneOfCommands (map fst S.scalers)
   case S.getScalerValue cmd of
        Just  r -> EScaled r <$> basicEnclosure
-       Nothing -> pzero
+       Nothing -> mzero
 
 endLine :: TP Char
 endLine = try $ do
@@ -393,7 +394,7 @@ superOrSubscripted limits convertible a = try $ do
                           | convertible || isConvertible a -> EUnder True a b
                           | isUnderover a -> EUnder False a b
                         _          -> ESub a b
-       _   -> pzero
+       _   -> mzero
 
 unicode :: TP Exp
 unicode = lexeme $
@@ -435,7 +436,7 @@ diacritical = do
   c <- oneOfCommands (map snd S.diacriticals)
   case S.getDiacriticalCons c of
        Just r  -> r <$> texToken
-       Nothing -> pzero
+       Nothing -> mzero
 
 
 phantom :: TP Exp
@@ -465,7 +466,7 @@ styled = do
          return $ case x of
                        EGrouped xs -> f xs
                        _           -> f [x]
-       Nothing  -> pzero
+       Nothing  -> mzero
 
 -- note: sqrt can be unary, \sqrt{2}, or binary, \sqrt[3]{2}
 root :: TP Exp
@@ -509,16 +510,16 @@ oneOfCommands cmds = try $ do
 
 
 oneOfStrings' :: (Char -> Char -> Bool) -> [String] -> TP String
-oneOfStrings' _ []   = fail "no strings"
+oneOfStrings' _ []           = mzero
 oneOfStrings' matches strs = try $ do
     c <- anyChar
     let strs' = [xs | (x:xs) <- strs, x `matches` c]
     case strs' of
-      []  -> pzero
+      []  -> mzero
       _   -> (c:) <$> oneOfStrings' matches strs'
                      <|> if "" `elem` strs'
                           then return [c]
-                          else pzero
+                          else mzero
 
 -- | Parses one of a list of strings.  If the list contains
 -- two strings one of which is a prefix of the other, the longer
@@ -544,8 +545,8 @@ neg (ESymbol Rel x) = ESymbol Rel `fmap`
        "\x2286" -> return "\x2288"
        "\x2287" -> return "\x2289"
        "\x2208" -> return "\x2209"
-       _        -> pzero
-neg _ = pzero
+       _        -> mzero
+neg _ = mzero
 
 lexeme :: TP a -> TP a
 lexeme p = p <* spaces
