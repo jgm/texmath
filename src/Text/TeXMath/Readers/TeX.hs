@@ -23,6 +23,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 module Text.TeXMath.Readers.TeX (readTeX)
 where
 
+import Data.List (intercalate)
 import Control.Monad
 import Data.Char (isDigit, isAscii, isLetter)
 import qualified Data.Map as M
@@ -500,17 +501,15 @@ texSymbol = do
 
 oneOfCommands :: [String] -> TP String
 oneOfCommands cmds = try $ do
-  char '\\'
-  cmd <- oneOfStrings (map tail cmds)
+  cmd <- oneOfStrings cmds
   case cmd of
-    [c] | not (isLetter c) -> return ()
-    _ -> notFollowedBy letter <?> ("non-letter after \\" ++ cmd)
+    ['\\',c] | not (isLetter c) -> return ()
+    _ -> notFollowedBy letter <?> ("non-letter after " ++ cmd)
   spaces
-  return ('\\':cmd)
-
+  return cmd
 
 oneOfStrings' :: (Char -> Char -> Bool) -> [String] -> TP String
-oneOfStrings' _ []           = mzero
+oneOfStrings' _ []         = mzero
 oneOfStrings' matches strs = try $ do
     c <- anyChar
     let strs' = [xs | (x:xs) <- strs, x `matches` c]
@@ -525,7 +524,16 @@ oneOfStrings' matches strs = try $ do
 -- two strings one of which is a prefix of the other, the longer
 -- string will be matched if possible.
 oneOfStrings :: [String] -> TP String
-oneOfStrings = oneOfStrings' (==)
+oneOfStrings strs = oneOfStrings' (==) strs <??> (intercalate ", " $ map show strs)
+
+-- | Like '(<?>)', but moves position back to the beginning of the parse
+-- before reporting the error.
+(<??>) :: Monad m => ParsecT s u m a -> String -> ParsecT s u m a
+(<??>) p expected = do
+  pos <- getPosition
+  p <|> (setPosition pos >> mzero <?> expected)
+
+infix 0 <??>
 
 tSymbol :: TP Exp
 tSymbol = do
