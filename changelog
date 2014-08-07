@@ -1,3 +1,11 @@
+texmath (0.7.0.2)
+
+  * TeX reader:  further improvements in error reporting.
+    Instead of reporting line and column, a snippet is printed
+    with a caret indicating the position of the error.  Also
+    fixed bad position information when control sequences are
+    followed by a letter.
+
 texmath (0.7.0.1)
 
   * TeX reader:
