@@ -55,7 +55,6 @@ expr1 = choice
           , ensuremath
           , enclosure
           , texSymbol
-          , escaped
           ] <* ignorable
 
 -- | Parse a formula, returning a list of 'Exp'.
@@ -396,11 +395,6 @@ superOrSubscripted limits convertible a = try $ do
                         _          -> ESub a b
        _   -> pzero
 
-escaped :: TP Exp
-escaped = lexeme $ do
-  ('\\':esc) <- choice $ map (ctrlseq . (:[])) "{}$%&_#^ "
-  return $ ESymbol Ord esc
-
 unicode :: TP Exp
 unicode = lexeme $
   do
@@ -623,12 +617,18 @@ operators = M.fromList [
            , ("~", ESpace 0.333) ]
 
 symbols :: M.Map String Exp
-symbols = M.fromList [
-             ("\\mid", ESymbol Bin "\x2223")
+symbols = M.fromList
+           [ ("\\$", ESymbol Ord "$")
+           , ("\\%", ESymbol Ord "%")
+           , ("\\&", ESymbol Ord "&")
+           , ("\\_", ESymbol Ord "_")
+           , ("\\#", ESymbol Ord "#")
+           , ("\\^", ESymbol Ord "^")
+           , ("\\mid", ESymbol Bin "\x2223")
            , ("\\colon", ESymbol Pun ":")
            , ("\\parallel", ESymbol Rel "\x2225")
            , ("\\backslash", ESymbol Bin "\x2216")
-           , ("\\setminus",	ESymbol Bin "\\")
+           , ("\\setminus", ESymbol Bin "\\")
            , ("\\times", ESymbol Bin "\x00D7")
            , ("\\alpha", EIdentifier "\x03B1")
            , ("\\beta", EIdentifier "\x03B2")
@@ -828,6 +828,7 @@ symbols = M.fromList [
            , ("\\>", ESpace 0.222)
            , ("\\:", ESpace 0.222)
            , ("\\;", ESpace 0.278)
+           , ("\\ ", ESpace 0.222)
            , ("\\quad", ESpace 1)
            , ("\\qquad", ESpace 2)
            , ("\\arccos", EMathOperator "arccos")
