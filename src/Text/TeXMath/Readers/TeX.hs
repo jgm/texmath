@@ -28,6 +28,7 @@ import Control.Monad
 import Data.Char (isDigit, isAscii, isLetter)
 import qualified Data.Map as M
 import Text.Parsec hiding (label)
+import Text.Parsec.Error
 import Text.Parsec.String
 import Text.TeXMath.Types
 import Control.Applicative ((<*), (*>), (<*>), (<$>), (<$), pure)
@@ -63,7 +64,24 @@ expr1 = choice
 readTeX :: String -> Either String [Exp]
 readTeX inp =
   let (ms, rest) = parseMacroDefinitions inp in
-  either (Left . show) (Right . id) $ parse formula "formula" (applyMacros ms rest)
+  either (Left . showParseError inp) (Right . id)
+    $ parse formula "formula" (applyMacros ms rest)
+
+showParseError :: String -> ParseError -> String
+showParseError inp pe =
+  snippet ++ "\n" ++ caretline ++
+    showErrorMessages "or" "unknown" "expecting" "unexpected" "eof"
+       (errorMessages pe)
+  where errln = sourceLine (errorPos pe)
+        errcol = sourceColumn (errorPos pe)
+        snipoffset = max 0 (errcol - 20)
+        inplns = lines inp
+        ln = if length inplns >= errln
+                then inplns !! (errln - 1)
+                else ""  -- should not happen
+        snippet = take 40 $ drop snipoffset ln
+        caretline = replicate (errcol - snipoffset - 1) ' ' ++ "^"
+
 
 ctrlseq :: String -> TP String
 ctrlseq s = lexeme $
