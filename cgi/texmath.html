@@ -24,6 +24,7 @@
     input { margin-top: 0.5em; margin-bottom: 0.5em; }
     textarea { width: 100%; }
     pre { margin-top: 1em; background-color: transparent; border: none; color: blue; }
+    #installing { padding: 1em; font-size: 120%; }
   </style>
   <script type="text/javascript">
      // Browsers do not always like self-closing tags
@@ -87,6 +88,7 @@
       <ul class="nav nav-tabs" role="tablist">
         <li class="active"><a href="#tex2mathml" role="tab" data-toggle="tab">LaTeX &Rightarrow; MathML</a></li>
         <li><a href="#mathml2tex" role="tab" data-toggle="tab">MathML &Rightarrow; LaTeX</a></li>
+        <li><a href="#installing" role="tab" data-toggle="tab">Installing</a></li>
       </ul>
     </div>
   </div>
@@ -127,6 +129,23 @@
       </div>
       <div class="col-md-6">
         <pre id="latex-result"></pre>
+      </div>
+    </div>
+    <div id="installing" class="tab-pane">
+      <div class="col-md-6">
+        <ol>
+          <li><p>Install the <a href="http://www.haskell.org/platform/">Haskell
+            Platform</a>.</p></li>
+          <li><p><code>cabal update &amp;&amp; cabal install texmath -fexecutable</code></p></li>
+          <li><p><code>texmath --help</code></p></li>
+        </ol>
+        <p>If installation succeeds but <code>texmath</code> is not found,
+        make sure your system PATH includes the cabal bindir, which by
+        default is <code>~/.cabal</code> on linux
+        and <code>~/Library/Haskell/bin</code> on Mac OS X.</p>
+        <p>If you want to use texmath as a Haskell library, see
+        the <a href="https://hackage.haskell.org/package/texmath">API
+          documentation</a>.</p>
       </div>
     </div>
   </div>
