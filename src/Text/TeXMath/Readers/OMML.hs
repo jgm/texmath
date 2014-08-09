@@ -35,21 +35,32 @@ module Text.TeXMath.Readers.OMML (readOMML) where
 import Text.XML.Light
 import Data.Maybe (mapMaybe, fromMaybe)
 import Data.List (intersperse)
-import qualified Text.TeXMath.Types as TM
+import Data.Char (isDigit)
+import Text.TeXMath.Types
+import Text.TeXMath.Shared (fixTree)
+import Text.TeXMath.Unicode.ToTeX (getSymbolType)
+import Control.Applicative ((<$>))
+-- As we constuct from the bottom up, this situation can occur.
 
-readOMML :: String -> Either String [TM.Exp]
+
+
+readOMML :: String -> Either String [Exp]
 readOMML s | Just e <- parseXMLDoc s =
   case elemToOMML e of
-    Just exs -> Right exs
+    Just exs -> Right $ map fixTree $ unGroup exs
     Nothing   -> Left "xml file was not an <m:oMathPara> or <m:oMath> element."
 readOMML _ = Left "Couldn't parse OMML file"
 
-elemToOMML :: Element -> Maybe [TM.Exp]
+unGroup :: [Exp] -> [Exp]
+unGroup [EGrouped exps] = exps
+unGroup exps = exps
+
+elemToOMML :: Element -> Maybe [Exp]
 elemToOMML element  | isElem "m" "oMathPara" element = do
   let expList = mapMaybe elemToOMML (elChildren element)
-  return $ map (\l -> if length l == 1 then (head l) else TM.EGrouped l) expList
+  return $ map (\l -> if length l == 1 then (head l) else EGrouped l) expList
 elemToOMML element  | isElem "m" "oMath" element =
-  Just $ concat $ mapMaybe (elemToExps') (elChildren element)
+  Just $ concat $ mapMaybe (elemToExps) (elChildren element)
 elemToOMML _ = Nothing
 
 isElem :: String -> String -> Element -> Bool
@@ -91,15 +102,15 @@ data OMathTextStyle = OPlain
                     | OBoldItalic
                     deriving (Show, Eq)
 
-elemToBase :: Element -> Maybe TM.Exp
+elemToBase :: Element -> Maybe Exp
 elemToBase element | isElem "m" "e" element = do
   bs <- elemToBases element
   return $ case bs of
     (e : []) -> e
-    exps     -> TM.EGrouped exps
+    exps     -> EGrouped exps
 elemToBase _ = Nothing
 
-elemToBases :: Element -> Maybe [TM.Exp]
+elemToBases :: Element -> Maybe [Exp]
 elemToBases element | isElem "m" "e" element =
   return $ concat $ mapMaybe elemToExps' (elChildren element)
 elemToBases _ = Nothing
@@ -108,11 +119,11 @@ elemToBases _ = Nothing
 -- TODO: The right way to do this is to use the ampersand to break the
 -- text lines into multiple columns. That's tricky, though, and this
 -- will get us most of the way for the time being.
-filterAmpersand :: TM.Exp -> TM.Exp
-filterAmpersand (TM.EIdentifier s)   = TM.EIdentifier (filter ('&' /=) s)
-filterAmpersand (TM.EText tt s)      = TM.EText tt (filter ('&' /=) s)
-filterAmpersand (TM.EStyled tt exps) = TM.EStyled tt (map filterAmpersand exps)
-filterAmpersand (TM.EGrouped exps)   = TM.EGrouped (map filterAmpersand exps)
+filterAmpersand :: Exp -> Exp
+filterAmpersand (EIdentifier s)   = EIdentifier (filter ('&' /=) s)
+filterAmpersand (EText tt s)      = EText tt (filter ('&' /=) s)
+filterAmpersand (EStyled tt exps) = EStyled tt (map filterAmpersand exps)
+filterAmpersand (EGrouped exps)   = EGrouped (map filterAmpersand exps)
 filterAmpersand e                    = e
 
 elemToOMathRunTextStyle :: Element -> OMathRunTextStyle
@@ -174,45 +185,47 @@ oMathRunElemToString (Tab) = ['\t']
 oMathRunElemsToString :: [OMathRunElem] -> String
 oMathRunElemsToString = concatMap oMathRunElemToString
 
-oMathRunTextStyleToTextType :: OMathRunTextStyle -> Maybe TM.TextType
-oMathRunTextStyleToTextType (Normal) = Just $ TM.TextNormal
+oMathRunTextStyleToTextType :: OMathRunTextStyle -> Maybe TextType
+oMathRunTextStyleToTextType (Normal) = Just $ TextNormal
 oMathRunTextStyleToTextType (NoStyle) = Nothing
 oMathRunTextStyleToTextType (Styled scr sty)
   | Just OBold <- sty
   , Just OSansSerif <- scr =
-    Just $ TM.TextSansSerifBold
+    Just $ TextSansSerifBold
   | Just OBoldItalic <- sty
   , Just OSansSerif <- scr =
-    Just $ TM.TextSansSerifBoldItalic
+    Just $ TextSansSerifBoldItalic
   | Just OBold <- sty
   , Just OScript <- scr =
-    Just $ TM.TextBoldScript
+    Just $ TextBoldScript
   | Just OBold <- sty
   , Just OFraktur <- scr =
-    Just $ TM.TextBoldFraktur
+    Just $ TextBoldFraktur
   | Just OItalic <- sty
   , Just OSansSerif <- scr =
-    Just $ TM.TextSansSerifItalic
+    Just $ TextSansSerifItalic
   | Just OBold <- sty =
-    Just $ TM.TextBold
+    Just $ TextBold
   | Just OItalic <- sty =
-    Just $ TM.TextItalic
+    Just $ TextItalic
   | Just OMonospace <- scr =
-    Just $ TM.TextMonospace
+    Just $ TextMonospace
   | Just OSansSerif <- scr =
-    Just $ TM.TextSansSerif
+    Just $ TextSansSerif
   | Just ODoubleStruck <- scr =
-    Just $ TM.TextDoubleStruck
+    Just $ TextDoubleStruck
   | Just OScript <- scr =
-    Just $ TM.TextDoubleStruck
+    Just $ TextScript
   | Just OFraktur <- scr =
-    Just $ TM.TextFraktur
+    Just $ TextFraktur
   | Just OBoldItalic <- sty =
-    Just $ TM.TextBoldItalic
+    Just $ TextBoldItalic
   | otherwise = Nothing
 
+elemToExps :: Element -> Maybe [Exp]
+elemToExps element = unGroup <$> elemToExps' element
 
-elemToExps' :: Element -> Maybe [TM.Exp]
+elemToExps' :: Element -> Maybe [Exp]
 elemToExps' element | isElem "m" "acc" element = do
   let chr = filterChildName (hasElemName "m" "accPr") element >>=
             filterChildName (hasElemName "m" "chr") >>=
@@ -223,7 +236,7 @@ elemToExps' element | isElem "m" "acc" element = do
         Nothing -> '\180'       -- default to acute.
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
-  return $ [TM.EOver False baseExp (TM.ESymbol TM.Accent [chr'])]
+  return $ [EOver False baseExp (ESymbol Accent [chr'])]
 elemToExps' element | isElem "m" "bar" element = do
   pos <- filterChildName (hasElemName "m" "barPr") element >>=
             filterChildName (hasElemName "m" "pos") >>=
@@ -231,8 +244,8 @@ elemToExps' element | isElem "m" "bar" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   case pos of
-    "top" -> Just [TM.EOver False baseExp (TM.ESymbol TM.Accent "\175")]
-    "bot" -> Just [TM.EUnder False baseExp (TM.ESymbol TM.Accent "\818")]
+    "top" -> Just [EOver False baseExp (ESymbol Accent "\175")]
+    "bot" -> Just [EUnder False baseExp (ESymbol Accent "\818")]
     _     -> Nothing
 elemToExps' element | isElem "m" "box" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
@@ -244,8 +257,8 @@ elemToExps' element | isElem "m" "borderBox" element = do
              elemToBase
   return [baseExp]
 elemToExps' element | isElem "m" "d" element =
-  let baseExps  = mapMaybe
-                  elemToBase
+  let baseExps  = concat $ mapMaybe
+                  elemToBases
                   (elChildren element)
       inDelimExps = map Right baseExps
       dPr = filterChildName (hasElemName "m" "dPr") element
@@ -266,18 +279,18 @@ elemToExps' element | isElem "m" "d" element =
       sep = fromMaybe '|' sepChr
       exps = intersperse (Left [sep]) inDelimExps
   in
-   Just [TM.EDelimited [beg] [end] exps]
+   Just [EDelimited [beg] [end] exps]
 elemToExps' element | isElem "m" "eqArr" element =
   let expLst = mapMaybe elemToBases (elChildren element)
       expLst' = map (\es -> [map filterAmpersand es]) expLst
   in
-   return [TM.EArray [] expLst']
+   return [EArray [] expLst']
 elemToExps' element | isElem "m" "f" element = do
   num <- filterChildName (hasElemName "m" "num") element
   den <- filterChildName (hasElemName "m" "den") element
-  let numExp = TM.EGrouped $ concat $ mapMaybe (elemToExps') (elChildren num)
-      denExp = TM.EGrouped $ concat $ mapMaybe (elemToExps') (elChildren den)
-  return $ [TM.EFraction TM.NormalFrac numExp denExp]
+  let numExp = EGrouped $ concat $ mapMaybe (elemToExps) (elChildren num)
+      denExp = EGrouped $ concat $ mapMaybe (elemToExps) (elChildren den)
+  return $ [EFraction NormalFrac numExp denExp]
 elemToExps' element | isElem "m" "func" element = do
   fName <- filterChildName (hasElemName "m" "fName") element
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
@@ -286,8 +299,8 @@ elemToExps' element | isElem "m" "func" element = do
   -- series of oMath elems. We're going to filter out the oMathRuns,
   -- which should work for us most of the time.
   let fnameString = concatMap expToString $
-                    concat $ mapMaybe (elemToExps') (elChildren fName)
-  return [TM.EMathOperator fnameString, baseExp]
+                    concat $ mapMaybe (elemToExps) (elChildren fName)
+  return [EMathOperator fnameString, baseExp]
 elemToExps' element | isElem "m" "groupChr" element = do
   let gPr = filterChildName (hasElemName "m" "groupChrPr") element
       chr = gPr >>=
@@ -304,28 +317,28 @@ elemToExps' element | isElem "m" "groupChr" element = do
             Just (c:_) -> c
             _           -> '\65079'   -- default to overbrace
       in
-       return [TM.EOver False baseExp (TM.ESymbol TM.Accent [chr'])]
+       return [EOver False baseExp (ESymbol Accent [chr'])]
     Just "bot" ->
       let chr' = case chr of
             Just (c:_) -> c
             _           -> '\65080'   -- default to underbrace
       in
-       return [TM.EUnder False baseExp (TM.ESymbol TM.Accent [chr'])]
+       return [EUnder False baseExp (ESymbol Accent [chr'])]
     _          -> Nothing
 elemToExps' element | isElem "m" "limLow" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element
           >>= elemToBase
   limExp <- filterChildName (hasElemName "m" "lim") element
-            >>= (\e -> Just $ concat $ mapMaybe (elemToExps') (elChildren e))
-            >>= (return . TM.EGrouped)
-  return [TM.EUnder True limExp baseExp]
+            >>= (\e -> Just $ concat $ mapMaybe (elemToExps) (elChildren e))
+            >>= (return . EGrouped)
+  return [EUnder True limExp baseExp]
 elemToExps' element | isElem "m" "limUpp" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element
           >>= elemToBase
   limExp <- filterChildName (hasElemName "m" "lim") element
-            >>= (\e -> Just $ concat $ mapMaybe (elemToExps') (elChildren e))
-            >>= (return . TM.EGrouped)
-  return [TM.EOver True limExp baseExp]
+            >>= (\e -> Just $ concat $ mapMaybe (elemToExps) (elChildren e))
+            >>= (return . EGrouped)
+  return [EOver True limExp baseExp]
 elemToExps' element | isElem "m" "m" element =
   let rows = filterChildrenName (hasElemName "m" "mr") element
       rowExps = map
@@ -334,7 +347,7 @@ elemToExps' element | isElem "m" "m" element =
                         (elChildren mr))
                 rows
   in
-   return [TM.EArray [TM.AlignCenter] rowExps]
+   return [EArray [AlignCenter] rowExps]
 elemToExps' element | isElem "m" "nary" element = do
   let naryPr = filterChildName (hasElemName "m" "naryPr") element
       naryChr = naryPr >>=
@@ -347,67 +360,67 @@ elemToExps' element | isElem "m" "nary" element = do
                filterChildName (hasElemName "m" "limLoc") >>=
                findAttrBy (hasElemName "m" "val")
   subExps <- filterChildName (hasElemName "m" "sub") element >>=
-         (\e -> return $ concat $ mapMaybe (elemToExps') (elChildren e))
+         (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
   supExps <- filterChildName (hasElemName "m" "sup") element >>=
-         (\e -> return $ concat $ mapMaybe (elemToExps') (elChildren e))
+         (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   case limLoc of
-    Just "undOvr" -> return [TM.EUnderover True
-                              (TM.ESymbol TM.Op [opChr])
-                              (TM.EGrouped subExps)
-                              (TM.EGrouped supExps)
+    Just "undOvr" -> return [EUnderover True
+                              (ESymbol Op [opChr])
+                              (EGrouped subExps)
+                              (EGrouped supExps)
                             , baseExp]
-    _             -> return [TM.ESubsup
-                              (TM.ESymbol TM.Op [opChr])
-                              (TM.EGrouped subExps)
-                              (TM.EGrouped supExps)
+    _             -> return [ESubsup
+                              (ESymbol Op [opChr])
+                              (EGrouped subExps)
+                              (EGrouped supExps)
                             , baseExp]
 
 elemToExps' element | isElem "m" "phant" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
-  return [TM.EPhantom baseExp]
+  return [EPhantom baseExp]
 elemToExps' element | isElem "m" "rad" element = do
   degExps <- filterChildName (hasElemName "m" "deg") element >>=
-              (\e -> return $ concat $ mapMaybe (elemToExps') (elChildren e))
+              (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   return $ case degExps of
-    [] -> [TM.ESqrt baseExp]
-    ds -> [TM.ERoot (TM.EGrouped ds) baseExp]
+    [] -> [ESqrt baseExp]
+    ds -> [ERoot (EGrouped ds) baseExp]
 elemToExps' element | isElem "m" "sPre" element = do
   subExps <- filterChildName (hasElemName "m" "sub") element >>=
-            (\e -> return $ concat $ mapMaybe (elemToExps') (elChildren e))
+            (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
   supExps <- filterChildName (hasElemName "m" "sup") element >>=
-            (\e -> return $ concat $ mapMaybe (elemToExps') (elChildren e))
+            (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
-  return [TM.ESubsup
-          (TM.EIdentifier "")
-          (TM.EGrouped subExps)
-          (TM.EGrouped supExps)
+  return [ESubsup
+          (EIdentifier "")
+          (EGrouped subExps)
+          (EGrouped supExps)
          , baseExp]
 elemToExps' element | isElem "m" "sSub" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   subExps <- filterChildName (hasElemName "m" "sub") element >>=
-            (\e -> return $ concat $ mapMaybe (elemToExps') (elChildren e))
-  return [TM.ESub baseExp (TM.EGrouped subExps)]
+            (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
+  return [ESub baseExp (EGrouped subExps)]
 elemToExps' element | isElem "m" "sSubSup" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   subExps <- filterChildName (hasElemName "m" "sub") element >>=
-             (\e -> return $ concat $ mapMaybe (elemToExps') (elChildren e))
+             (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
   supExps <- filterChildName (hasElemName "m" "sup") element >>=
-             (\e -> return $ concat $ mapMaybe (elemToExps') (elChildren e))
-  return [TM.ESubsup baseExp (TM.EGrouped subExps) (TM.EGrouped supExps)]
+             (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
+  return [ESubsup baseExp (EGrouped subExps) (EGrouped supExps)]
 elemToExps' element | isElem "m" "sSup" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   supExps <- filterChildName (hasElemName "m" "sup") element >>=
-            (\e -> return $ concat $ mapMaybe (elemToExps') (elChildren e))
-  return [TM.ESuper baseExp (TM.EGrouped supExps)]
+            (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
+  return [ESuper baseExp (EGrouped supExps)]
 elemToExps' element | isElem "m" "r" element = do
   let mrPr = filterChildName (hasElemName "m" "rPr") element
       lit = mrPr >>=
@@ -416,22 +429,31 @@ elemToExps' element | isElem "m" "r" element = do
       txtSty = elemToOMathRunTextStyle element
   mrElems <- elemToOMathRunElems element
   return $ case oMathRunTextStyleToTextType txtSty of
-    Nothing -> [TM.EIdentifier $ oMathRunElemsToString mrElems]
+    Nothing -> interpretString $ oMathRunElemsToString mrElems
     Just textType ->
       case lit of
         Just "on" ->
-          [TM.EText textType (oMathRunElemsToString mrElems)]
+          [EText textType (oMathRunElemsToString mrElems)]
         _         ->
-          [TM.EStyled textType [TM.EIdentifier $ oMathRunElemsToString mrElems]]
+          [EStyled textType $ interpretString $ oMathRunElemsToString mrElems]
 elemToExps' _ = Nothing
 
+interpretChar :: Char -> Exp
+interpretChar c | isDigit c = ENumber [c]
+interpretChar c = case getSymbolType c of
+  Alpha -> EIdentifier [c]
+  symType -> ESymbol symType [c]
 
-expToString :: TM.Exp -> String
-expToString (TM.ENumber s) = s
-expToString (TM.EIdentifier s) = s
-expToString (TM.EMathOperator s) = s
-expToString (TM.ESymbol _ s) = s
-expToString (TM.EText _ s) = s
-expToString (TM.EGrouped exps) = concatMap expToString exps
-expToString (TM.EStyled _ exps) = concatMap expToString exps
+interpretString :: String -> [Exp]
+interpretString s | all isDigit s = [ENumber s]
+interpretString s = map interpretChar s
+
+expToString :: Exp -> String
+expToString (ENumber s) = s
+expToString (EIdentifier s) = s
+expToString (EMathOperator s) = s
+expToString (ESymbol _ s) = s
+expToString (EText _ s) = s
+expToString (EGrouped exps) = concatMap expToString exps
+expToString (EStyled _ exps) = concatMap expToString exps
 expToString _ = ""

@@ -41,7 +41,7 @@ import Text.XML.Light hiding (onlyText)
 import Text.TeXMath.Types
 import Text.TeXMath.Readers.MathML.MMLDict (getMathMLOperator)
 import Text.TeXMath.Readers.MathML.EntityMap (getUnicode)
-import Text.TeXMath.Shared (getTextType, readLength, getOperator)
+import Text.TeXMath.Shared (getTextType, readLength, getOperator, fixTree, isEmpty, empty)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import Text.TeXMath.Compat (throwError, Except, runExcept, MonadError)
@@ -52,7 +52,6 @@ import Data.Monoid (mconcat, First(..), getFirst)
 import Data.List (transpose)
 import Control.Monad (filterM, guard)
 import Control.Monad.Reader (ReaderT, runReaderT, asks, local)
-import Data.Generics (everywhere, mkT)
 import Data.Either (rights)
 
 -- | Parse a MathML expression to a list of 'Exp'.
@@ -61,9 +60,6 @@ readMathML inp = map fixTree <$>
   (runExcept (flip runReaderT defaultState (i >>= parseMathML)))
   where
     i = maybeToEither "Invalid XML" (parseXMLDoc inp)
-
-fixTree :: Exp -> Exp
-fixTree = everywhere (mkT removeNesting) . everywhere (mkT removeEmpty)
 
 data MMLState = MMLState { attrs :: [Attr]
                          , position :: Maybe FormType
@@ -130,13 +126,6 @@ expr' e =
 
 
 -- Tokens
-
-empty :: Exp
-empty = EGrouped []
-
-isEmpty :: Exp -> Bool
-isEmpty (EGrouped []) = True
-isEmpty _ = False
 
 ident :: Element -> MML Exp
 ident e =  do
@@ -274,16 +263,6 @@ trailingSup open close es = go es
     go es'@(last -> Trailing constructor e) = (constructor (go (init es')) e)
     go es' = EDelimited (getFence open) (getFence close) (toEDelim es')
     getFence = fromMaybe "" . fmap fst
-
--- As we constuct from the bottom up, this situation can occur.
-removeNesting :: Exp -> Exp
-removeNesting (EDelimited o c [Right (EDelimited "" "" xs)]) = EDelimited o c xs
-removeNesting (EDelimited "" "" [x]) = either (ESymbol Ord) id x
-removeNesting (EGrouped [x]) = x
-removeNesting x = x
-
-removeEmpty :: [Exp] -> [Exp]
-removeEmpty xs = filter (not . isEmpty) xs
 
 -- TODO: Break this into two functions
 -- Matches open and closing brackets
@@ -654,4 +633,3 @@ thicknessToNum s =
 
 postfixExpr :: Element -> MML Exp
 postfixExpr e = local (setPosition FPostfix . enterAccent) (safeExpr e)
-

@@ -28,6 +28,9 @@ module Text.TeXMath.Shared
   , diacriticals
   , getOperator
   , readLength
+  , fixTree
+  , isEmpty
+  , empty
   ) where
 
 
@@ -39,6 +42,27 @@ import Data.List (sort)
 import Control.Applicative ((<$>), (<*>))
 import Control.Monad (guard)
 import Text.Parsec (Parsec, parse, getInput, digit, char, many1, option)
+import Data.Generics (everywhere, mkT)
+
+-- As we constuct from the bottom up, this situation can occur.
+removeNesting :: Exp -> Exp
+removeNesting (EDelimited o c [Right (EDelimited "" "" xs)]) = EDelimited o c xs
+removeNesting (EDelimited "" "" [x]) = either (ESymbol Ord) id x
+removeNesting (EGrouped [x]) = x
+removeNesting x = x
+
+removeEmpty :: [Exp] -> [Exp]
+removeEmpty xs = filter (not . isEmpty) xs
+
+empty :: Exp
+empty = EGrouped []
+
+isEmpty :: Exp -> Bool
+isEmpty (EGrouped []) = True
+isEmpty _ = False
+
+fixTree :: Exp -> Exp
+fixTree = everywhere (mkT removeNesting) . everywhere (mkT removeEmpty)
 
 -- | Maps TextType to the corresponding MathML mathvariant
 getMMLType :: TextType -> String
@@ -258,13 +282,13 @@ unitToMultiplier :: String -> Maybe Double
 unitToMultiplier s = lookup s units
   where
     units =
-			[ ( "pt" , 10)
-			, ( "mm" , 3.51)
-			, ( "cm" , 0.35)
-			, ( "in" , 0.14)
-			, ( "ex" , 2.32)
-			, ( "em" , 1)
-			, ( "mu" , 18)
-			, ( "dd" , 9.3)
-			, ( "bp" , 9.96)
+                        [ ( "pt" , 10)
+                        , ( "mm" , 3.51)
+                        , ( "cm" , 0.35)
+                        , ( "in" , 0.14)
+                        , ( "ex" , 2.32)
+                        , ( "em" , 1)
+                        , ( "mu" , 18)
+                        , ( "dd" , 9.3)
+                        , ( "bp" , 9.96)
       , ( "pc" , 0.83) ]
