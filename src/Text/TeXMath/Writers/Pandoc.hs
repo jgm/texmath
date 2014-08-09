@@ -25,6 +25,7 @@ where
 import Text.Pandoc.Definition
 import Text.TeXMath.Unicode.ToUnicode
 import Text.TeXMath.Types
+import Text.TeXMath.Shared (getSpaceChars)
 
 -- | Attempts to convert a formula to a list of 'Pandoc' inlines.
 writePandoc :: DisplayType
@@ -72,17 +73,11 @@ expToInlines tt (ESymbol t s) = Just $ addSpace t $ renderStr tt s
 expToInlines tt (EDelimited start end xs) = do
   xs' <- mapM (either (return . (:[]) . renderStr tt) (expToInlines tt)) xs
   return $ [renderStr tt start] ++ concat xs' ++ [renderStr tt end]
-expToInlines tt (EGrouped xs) = expsToInlines tt xs
-expToInlines _ (EStyled tt' xs) = expsToInlines tt' xs
-expToInlines _ (ESpace 0.167) = Just [Str "\x2009"]
-expToInlines _ (ESpace 0.222) = Just [Str "\x2005"]
-expToInlines _ (ESpace 0.278) = Just [Str "\x2004"]
-expToInlines _ (ESpace 0.333) = Just [Str "\x2004"]
-expToInlines _ (ESpace 1)     = Just [Str "\x2001"]
-expToInlines _ (ESpace 2)     = Just [Str "\x2001\x2001"]
-expToInlines _ (ESpace _)         = Just [Str " "]
-expToInlines _ (ESqrt _)       = Nothing
-expToInlines _ (ERoot _ _)     = Nothing
+expToInlines tt (EGrouped xs)    = expsToInlines tt xs
+expToInlines _ (EStyled tt' xs)  = expsToInlines tt' xs
+expToInlines _ (ESpace n)        = Just [Str $ getSpaceChars n]
+expToInlines _ (ESqrt _)         = Nothing
+expToInlines _ (ERoot _ _)       = Nothing
 expToInlines _ (EFraction _ _ _) = Nothing
 expToInlines tt (ESub x y) = do
   x' <- expToInlines tt x
