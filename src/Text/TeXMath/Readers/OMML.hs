@@ -215,7 +215,7 @@ oMathRunTextStyleToTextType (Styled scr sty)
   | Just ODoubleStruck <- scr =
     Just $ TextDoubleStruck
   | Just OScript <- scr =
-    Just $ TextDoubleStruck
+    Just $ TextScript
   | Just OFraktur <- scr =
     Just $ TextFraktur
   | Just OBoldItalic <- sty =
