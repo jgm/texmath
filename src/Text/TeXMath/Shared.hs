@@ -23,6 +23,8 @@ module Text.TeXMath.Shared
   , getScalerCommand
   , getScalerValue
   , scalers
+  , getSpaceWidth
+  , getSpaceChars
   , getDiacriticalCommand
   , getDiacriticalCons
   , diacriticals
@@ -232,6 +234,43 @@ scalers =
           , ("\\biggl", 2.2)
           , ("\\Biggl", 2.9)
           , ("\\bigl", 1.2)]
+
+
+-- | Returns the space width for a unicode space character, or Nothing.
+getSpaceWidth :: Char -> Maybe Double
+getSpaceWidth ' '      = Just (1/4)
+getSpaceWidth '\xA0'   = Just (1/4)
+getSpaceWidth '\x2000' = Just (1/2)
+getSpaceWidth '\x2001' = Just 1
+getSpaceWidth '\x2002' = Just (1/2)
+getSpaceWidth '\x2003' = Just 1
+getSpaceWidth '\x2004' = Just (1/3)
+getSpaceWidth '\x2005' = Just (1/4)
+getSpaceWidth '\x2006' = Just (1/6)
+getSpaceWidth '\x2007' = Just (1/3) -- ? width of a digit
+getSpaceWidth '\x2008' = Just (1/6) -- ? width of a period
+getSpaceWidth '\x2009' = Just (1/6)
+getSpaceWidth '\x200A' = Just (1/9)
+getSpaceWidth '\x200B' = Just 0
+getSpaceWidth '\x202F' = Just 3
+getSpaceWidth '\x205F' = Just 4
+getSpaceWidth _        = Nothing
+
+-- | Returns the sequence of unicode space characters closest to the
+-- specified width.
+getSpaceChars :: Double -> [Char]
+getSpaceChars n =
+  case n of
+       _ | n < 0      -> "\x200B"  -- no negative space chars in unicode
+         | n <= 2/18  -> "\x200A"
+         | n <= 3/18  -> "\x2006"
+         | n == 1/4   -> "\xA0"
+         | n <= 5/18  -> "\x2005"
+         | n <= 7/18  -> "\x2004"
+         | n <= 9/18  -> "\x2000"
+         | n < 1      -> '\x2000' : getSpaceChars (n - (1/2))
+         | n == 1     -> "\x2001"
+         | otherwise  -> '\x2001' : getSpaceChars (n - 1)
 
 -- Accents which go under the character
 under :: [String]
