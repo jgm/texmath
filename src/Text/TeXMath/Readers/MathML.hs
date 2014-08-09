@@ -604,7 +604,7 @@ thicknessZero :: Maybe String -> Bool
 thicknessZero (Just s) = thicknessToNum s == 0.0
 thicknessZero Nothing  = False
 
-widthToNum :: String -> Double
+widthToNum :: String -> Rational
 widthToNum s =
   case s of
        "veryverythinmathspace"  -> 1/18
@@ -623,11 +623,11 @@ widthToNum s =
        "negativeveryverythickmathspace" -> -7/18
        _ -> fromMaybe 0 (readLength s)
 
-thicknessToNum :: String -> Double
+thicknessToNum :: String -> Rational
 thicknessToNum s =
   case s of
-       "thin" -> 0.175
-       "medium" -> 0.5
+       "thin" -> (3/18)
+       "medium" -> (1/2)
        "thick" -> 1
        v -> fromMaybe 0.5 (readLength v)
 

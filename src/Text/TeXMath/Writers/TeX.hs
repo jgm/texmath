@@ -291,8 +291,9 @@ writeScript pos convertible b e1 = do
 -- Utility
 
 -- | Maps a length in em to the nearest bigger LaTeX space command
-getSpaceCommand :: Double -> String
-getSpaceCommand width = snd $ fromMaybe (M.findMax spaceMap) (lookupGE width spaceMap)
+getSpaceCommand :: Rational -> String
+getSpaceCommand width =
+  snd $ fromMaybe (M.findMax spaceMap) (lookupGE width spaceMap)
   where
     spaceMap = M.fromList (map (\(k, ESpace s) -> (s, k)) spaceCommands)
 
@@ -302,15 +303,15 @@ lookupGE k m = let (_, v, g) = M.splitLookup k m in
 
 spaceCommands :: [(String, Exp)]
 spaceCommands =
-           [ ("\\!", ESpace (-0.167))
-           , (""   , ESpace 0.0)
-           , ("\\,", ESpace 0.167)
-           , ("\\>", ESpace 0.222)
-           , ("\\:", ESpace 0.222)
-           , ("\\;", ESpace 0.278)
-           , ("~", ESpace 0.333)
-           , ("\\quad", ESpace 1.0)
-           , ("\\qquad", ESpace 2.0)]
+           [ ("\\!", ESpace (-3/18))
+           , (""   , ESpace 0)
+           , ("\\,", ESpace (3/18))
+           , ("\\>", ESpace (4/18))
+           , ("\\:", ESpace (4/18))
+           , ("\\;", ESpace (5/18))
+           , ("~", ESpace (4/18))
+           , ("\\quad", ESpace 1)
+           , ("\\qquad", ESpace 2) ]
 
 getTextCommand :: TextType -> TeX -> [TeX]
 getTextCommand tt x =

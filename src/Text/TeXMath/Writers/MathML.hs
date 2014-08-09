@@ -1,4 +1,4 @@
-{-# LANGUAGE ViewPatterns #-}
+{-# LANGUAGE ViewPatterns, ScopedTypeVariables #-}
 {-
 Copyright (C) 2009 John MacFarlane <jgm@berkeley.edu>
 
@@ -61,10 +61,10 @@ showFraction tt ft x y =
   where x' = showExp tt x
         y' = showExp tt y
 
-spaceWidth :: Double -> Element
+spaceWidth :: Rational -> Element
 spaceWidth w =
-  withAttribute "width" (dropTrailing0s (printf "%.3f" w) ++ "em")
-  $ unode "mspace" ()
+  withAttribute "width" (dropTrailing0s
+     (printf "%.3f" (fromRational w :: Double)) ++ "em") $ unode "mspace" ()
 
 makeStretchy :: FormType -> Element -> Element
 makeStretchy (fromForm -> t)  = withAttribute "stretchy" "true"
@@ -76,9 +76,9 @@ fromForm FPostfix = "postfix"
 fromForm FPrefix  = "prefix"
 
 
-makeScaled :: Double -> Element -> Element
+makeScaled :: Rational -> Element -> Element
 makeScaled x = withAttribute "minsize" s . withAttribute "maxsize" s
-  where s = dropTrailing0s $ printf "%.3f" x
+  where s = dropTrailing0s $ printf "%.3f" (fromRational x :: Double)
 
 dropTrailing0s :: String -> String
 dropTrailing0s = reverse . go . reverse
@@ -96,7 +96,7 @@ makeText :: TextType -> String -> Element
 makeText a s = if trailingSp
                   then mrow [s', sp]
                   else s'
-  where sp = spaceWidth 0.333
+  where sp = spaceWidth (1/3)
         s' = withAttribute "mathvariant" attr $ unode "mtext" $ toUnicode a s
         trailingSp = not (null s) && last s `elem` " \t"
         attr = getMMLType a

@@ -58,7 +58,7 @@ data Exp =
                     -- are represented as 'EMathOperator' in TeXMath.
   | EMathOperator String  -- ^ A spelled-out operator like @lim@ or @sin@.
   | ESymbol TeXSymbolType String  -- ^ A symbol.
-  | ESpace Double -- ^ A space, with the width specified in em.
+  | ESpace Rational -- ^ A space, with the width specified in em.
   | ESub Exp Exp  -- ^ An expression with a subscript.  First argument is base,
                   -- second subscript.
   | ESuper Exp Exp -- ^ An expresion with a superscript.  First argument is base,
@@ -81,7 +81,7 @@ data Exp =
                        -- numerator, second denominator.
   | ERoot Exp Exp  -- ^ An nth root.  First argument is index, second is base.
   | ESqrt Exp      -- ^ A square root.
-  | EScaled Double Exp -- ^ An expression that is scaled to some factor
+  | EScaled Rational Exp -- ^ An expression that is scaled to some factor
                   -- of its normal size.
   | EArray [Alignment] [ArrayLine] -- ^ An array or matrix.  The first argument
                   -- specifies the alignments of the columns; the second gives

@@ -1,4 +1,4 @@
-{-# LANGUAGE CPP #-}
+{-# LANGUAGE CPP, ScopedTypeVariables #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -40,6 +40,7 @@ import Text.TeXMath.Types
 import Text.TeXMath.TeX
 import qualified Data.Map as M
 import Data.Maybe (fromMaybe)
+import Data.Ratio (approxRational)
 import Data.List (sort)
 import Control.Applicative ((<$>), (<*>))
 import Control.Monad (guard)
@@ -84,7 +85,7 @@ getTextType :: String -> TextType
 getTextType s = fromMaybe TextNormal (M.lookup s revTextTypesMap)
 
 -- | Maps a LaTeX scaling command to the percentage scaling
-getScalerCommand :: Double -> Maybe String
+getScalerCommand :: Rational -> Maybe String
 getScalerCommand width =
   case sort [ (w, cmd) | (cmd, w) <- scalers, w >= width ] of
        ((_,cmd):_) -> Just cmd
@@ -93,7 +94,7 @@ getScalerCommand width =
   -- match:  \Big, not \Bigr
 
 -- | Gets percentage scaling from LaTeX scaling command
-getScalerValue :: String -> Maybe Double
+getScalerValue :: String -> Maybe Rational
 getScalerValue command = lookup command scalers
 
 -- | Returns the correct constructor given a LaTeX command
@@ -159,7 +160,7 @@ operators =
            , (EMathOperator "tanh", "\\tanh") ]
 
 -- | Attempts to convert a string into
-readLength :: String -> Maybe Double
+readLength :: String -> Maybe Rational
 readLength s = do
   (n, unit) <- case (parse parseLength "" s) of
                   Left _ -> Nothing
@@ -167,15 +168,15 @@ readLength s = do
   (n *) <$> unitToMultiplier unit
 
 
-parseLength :: Parsec String () (Double, String)
+parseLength :: Parsec String () (Rational, String)
 parseLength = do
     neg <- option "" ((:[]) <$> char '-')
     dec <- many1 digit
     frac <- option "" ((:) <$> char '.' <*> many1 digit)
     unit <- getInput
     -- This is safe as dec and frac must be a double of some kind
-    let [(n, [])] = reads (neg ++ dec ++ frac) :: [(Double, String)]
-    return (n, unit)
+    let [(n :: Double, [])] = reads (neg ++ dec ++ frac) :: [(Double, String)]
+    return (approxRational n (1/36), unit)
 
 
 
@@ -221,31 +222,34 @@ textPackage s e
   | otherwise = True
 
 -- | Mapping between LaTeX scaling commands and the scaling factor
-scalers :: [(String, Double)]
+scalers :: [(String, Rational)]
 scalers =
-          [ ("\\bigg", 2.2)
-          , ("\\Bigg", 2.9)
-          , ("\\big", 1.2)
-          , ("\\Big", 1.6)
-          , ("\\biggr", 2.2)
-          , ("\\Biggr", 2.9)
-          , ("\\bigr", 1.2)
-          , ("\\Bigr", 1.6)
-          , ("\\biggl", 2.2)
-          , ("\\Biggl", 2.9)
-          , ("\\bigl", 1.2)]
-
+          [ ("\\bigg", widthbigg)
+          , ("\\Bigg", widthBigg)
+          , ("\\big", widthbig)
+          , ("\\Big", widthBig)
+          , ("\\biggr", widthbigg)
+          , ("\\Biggr", widthBigg)
+          , ("\\bigr", widthbig)
+          , ("\\Bigr", widthBig)
+          , ("\\biggl", widthbigg)
+          , ("\\Biggl", widthBigg)
+          , ("\\bigl", widthbig)]
+  where widthbig = 6 / 5
+        widthBig = 9 / 5
+        widthbigg = 12 / 5
+        widthBigg = 3
 
 -- | Returns the space width for a unicode space character, or Nothing.
-getSpaceWidth :: Char -> Maybe Double
-getSpaceWidth ' '      = Just (1/4)
-getSpaceWidth '\xA0'   = Just (1/4)
+getSpaceWidth :: Char -> Maybe Rational
+getSpaceWidth ' '      = Just (4/18)
+getSpaceWidth '\xA0'   = Just (4/18)
 getSpaceWidth '\x2000' = Just (1/2)
 getSpaceWidth '\x2001' = Just 1
 getSpaceWidth '\x2002' = Just (1/2)
 getSpaceWidth '\x2003' = Just 1
 getSpaceWidth '\x2004' = Just (1/3)
-getSpaceWidth '\x2005' = Just (1/4)
+getSpaceWidth '\x2005' = Just (4/18)
 getSpaceWidth '\x2006' = Just (1/6)
 getSpaceWidth '\x2007' = Just (1/3) -- ? width of a digit
 getSpaceWidth '\x2008' = Just (1/6) -- ? width of a period
@@ -258,13 +262,13 @@ getSpaceWidth _        = Nothing
 
 -- | Returns the sequence of unicode space characters closest to the
 -- specified width.
-getSpaceChars :: Double -> [Char]
+getSpaceChars :: Rational -> [Char]
 getSpaceChars n =
   case n of
        _ | n < 0      -> "\x200B"  -- no negative space chars in unicode
          | n <= 2/18  -> "\x200A"
          | n <= 3/18  -> "\x2006"
-         | n == 1/4   -> "\xA0"
+         | n <= 4/18   -> "\xA0"
          | n <= 5/18  -> "\x2005"
          | n <= 7/18  -> "\x2004"
          | n <= 9/18  -> "\x2000"
@@ -317,17 +321,17 @@ diacriticals =
 
 
 -- Converts unit to multiplier to reach em
-unitToMultiplier :: String -> Maybe Double
+unitToMultiplier :: String -> Maybe Rational
 unitToMultiplier s = lookup s units
   where
     units =
                         [ ( "pt" , 10)
-                        , ( "mm" , 3.51)
-                        , ( "cm" , 0.35)
-                        , ( "in" , 0.14)
-                        , ( "ex" , 2.32)
+                        , ( "mm" , (351/10))
+                        , ( "cm" , (35/100))
+                        , ( "in" , (14/100))
+                        , ( "ex" , (232/100))
                         , ( "em" , 1)
                         , ( "mu" , 18)
-                        , ( "dd" , 9.3)
-                        , ( "bp" , 9.96)
-      , ( "pc" , 0.83) ]
+                        , ( "dd" , (93/100))
+                        , ( "bp" , (996/1000))
+                        , ( "pc" , (83/100)) ]
