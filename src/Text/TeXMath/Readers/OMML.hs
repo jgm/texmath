@@ -37,20 +37,29 @@ import Data.Maybe (mapMaybe, fromMaybe)
 import Data.List (intersperse)
 import Data.Char (isDigit)
 import Text.TeXMath.Types
+import Text.TeXMath.Unicode.ToTeX (getSymbolType)
+import Control.Applicative ((<$>))
+-- As we constuct from the bottom up, this situation can occur.
+
+
 
 readOMML :: String -> Either String [Exp]
 readOMML s | Just e <- parseXMLDoc s =
   case elemToOMML e of
-    Just exs -> Right exs
+    Just exs -> Right $ unGroup exs
     Nothing   -> Left "xml file was not an <m:oMathPara> or <m:oMath> element."
 readOMML _ = Left "Couldn't parse OMML file"
+
+unGroup :: [Exp] -> [Exp]
+unGroup [EGrouped exps] = exps
+unGroup exps = exps
 
 elemToOMML :: Element -> Maybe [Exp]
 elemToOMML element  | isElem "m" "oMathPara" element = do
   let expList = mapMaybe elemToOMML (elChildren element)
   return $ map (\l -> if length l == 1 then (head l) else EGrouped l) expList
 elemToOMML element  | isElem "m" "oMath" element =
-  Just $ concat $ mapMaybe (elemToExps') (elChildren element)
+  Just $ concat $ mapMaybe (elemToExps) (elChildren element)
 elemToOMML _ = Nothing
 
 isElem :: String -> String -> Element -> Bool
@@ -212,6 +221,8 @@ oMathRunTextStyleToTextType (Styled scr sty)
     Just $ TextBoldItalic
   | otherwise = Nothing
 
+elemToExps :: Element -> Maybe [Exp]
+elemToExps element = unGroup <$> elemToExps' element
 
 elemToExps' :: Element -> Maybe [Exp]
 elemToExps' element | isElem "m" "acc" element = do
@@ -276,8 +287,8 @@ elemToExps' element | isElem "m" "eqArr" element =
 elemToExps' element | isElem "m" "f" element = do
   num <- filterChildName (hasElemName "m" "num") element
   den <- filterChildName (hasElemName "m" "den") element
-  let numExp = EGrouped $ concat $ mapMaybe (elemToExps') (elChildren num)
-      denExp = EGrouped $ concat $ mapMaybe (elemToExps') (elChildren den)
+  let numExp = EGrouped $ concat $ mapMaybe (elemToExps) (elChildren num)
+      denExp = EGrouped $ concat $ mapMaybe (elemToExps) (elChildren den)
   return $ [EFraction NormalFrac numExp denExp]
 elemToExps' element | isElem "m" "func" element = do
   fName <- filterChildName (hasElemName "m" "fName") element
@@ -287,7 +298,7 @@ elemToExps' element | isElem "m" "func" element = do
   -- series of oMath elems. We're going to filter out the oMathRuns,
   -- which should work for us most of the time.
   let fnameString = concatMap expToString $
-                    concat $ mapMaybe (elemToExps') (elChildren fName)
+                    concat $ mapMaybe (elemToExps) (elChildren fName)
   return [EMathOperator fnameString, baseExp]
 elemToExps' element | isElem "m" "groupChr" element = do
   let gPr = filterChildName (hasElemName "m" "groupChrPr") element
@@ -317,14 +328,14 @@ elemToExps' element | isElem "m" "limLow" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element
           >>= elemToBase
   limExp <- filterChildName (hasElemName "m" "lim") element
-            >>= (\e -> Just $ concat $ mapMaybe (elemToExps') (elChildren e))
+            >>= (\e -> Just $ concat $ mapMaybe (elemToExps) (elChildren e))
             >>= (return . EGrouped)
   return [EUnder True limExp baseExp]
 elemToExps' element | isElem "m" "limUpp" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element
           >>= elemToBase
   limExp <- filterChildName (hasElemName "m" "lim") element
-            >>= (\e -> Just $ concat $ mapMaybe (elemToExps') (elChildren e))
+            >>= (\e -> Just $ concat $ mapMaybe (elemToExps) (elChildren e))
             >>= (return . EGrouped)
   return [EOver True limExp baseExp]
 elemToExps' element | isElem "m" "m" element =
@@ -348,9 +359,9 @@ elemToExps' element | isElem "m" "nary" element = do
                filterChildName (hasElemName "m" "limLoc") >>=
                findAttrBy (hasElemName "m" "val")
   subExps <- filterChildName (hasElemName "m" "sub") element >>=
-         (\e -> return $ concat $ mapMaybe (elemToExps') (elChildren e))
+         (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
   supExps <- filterChildName (hasElemName "m" "sup") element >>=
-         (\e -> return $ concat $ mapMaybe (elemToExps') (elChildren e))
+         (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   case limLoc of
@@ -371,7 +382,7 @@ elemToExps' element | isElem "m" "phant" element = do
   return [EPhantom baseExp]
 elemToExps' element | isElem "m" "rad" element = do
   degExps <- filterChildName (hasElemName "m" "deg") element >>=
-              (\e -> return $ concat $ mapMaybe (elemToExps') (elChildren e))
+              (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   return $ case degExps of
@@ -379,9 +390,9 @@ elemToExps' element | isElem "m" "rad" element = do
     ds -> [ERoot (EGrouped ds) baseExp]
 elemToExps' element | isElem "m" "sPre" element = do
   subExps <- filterChildName (hasElemName "m" "sub") element >>=
-            (\e -> return $ concat $ mapMaybe (elemToExps') (elChildren e))
+            (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
   supExps <- filterChildName (hasElemName "m" "sup") element >>=
-            (\e -> return $ concat $ mapMaybe (elemToExps') (elChildren e))
+            (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   return [ESubsup
@@ -393,21 +404,21 @@ elemToExps' element | isElem "m" "sSub" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   subExps <- filterChildName (hasElemName "m" "sub") element >>=
-            (\e -> return $ concat $ mapMaybe (elemToExps') (elChildren e))
+            (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
   return [ESub baseExp (EGrouped subExps)]
 elemToExps' element | isElem "m" "sSubSup" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   subExps <- filterChildName (hasElemName "m" "sub") element >>=
-             (\e -> return $ concat $ mapMaybe (elemToExps') (elChildren e))
+             (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
   supExps <- filterChildName (hasElemName "m" "sup") element >>=
-             (\e -> return $ concat $ mapMaybe (elemToExps') (elChildren e))
+             (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
   return [ESubsup baseExp (EGrouped subExps) (EGrouped supExps)]
 elemToExps' element | isElem "m" "sSup" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   supExps <- filterChildName (hasElemName "m" "sup") element >>=
-            (\e -> return $ concat $ mapMaybe (elemToExps') (elChildren e))
+            (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
   return [ESuper baseExp (EGrouped supExps)]
 elemToExps' element | isElem "m" "r" element = do
   let mrPr = filterChildName (hasElemName "m" "rPr") element
