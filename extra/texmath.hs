@@ -37,6 +37,7 @@ readers :: [(String, Reader)]
 readers = [
     ("tex", readTeX)
   , ("mathml", readMathML)
+  , ("omml", readOMML)
   , ("native", readNative)]
 
 readNative :: String -> Either String [Exp]

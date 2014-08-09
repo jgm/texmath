@@ -50,8 +50,8 @@ script.
 
 -}
 
-module Text.TeXMath (
-                      readMathML,
+module Text.TeXMath ( readMathML,
+                      readOMML,
                       readTeX,
                       writeTeX,
                       writeTeXWith,
@@ -65,6 +65,7 @@ module Text.TeXMath (
 where
 import Text.TeXMath.Readers.TeX
 import Text.TeXMath.Readers.MathML
+import Text.TeXMath.Readers.OMML
 import Text.TeXMath.Writers.MathML
 import Text.TeXMath.Writers.OMML
 import Text.TeXMath.Writers.Pandoc

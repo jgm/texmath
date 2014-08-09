@@ -29,7 +29,7 @@ expect query parameters for `from`, `to`, `input`, and optionally
 # OPTIONS
 
 `-f` *FORMAT*
-:   Specify input ("from") format:  `tex`, `mathml`, `native`.
+:   Specify input ("from") format:  `tex`, `mathml`, `omml`, `native`.
     Defaults to `tex`.
 
 `-t` *FORMAT*

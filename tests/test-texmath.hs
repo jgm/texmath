@@ -47,10 +47,14 @@ main = do
   setLocaleEncoding utf8
   setCurrentDirectory "tests"
   statuses <- if roundTrip
-                 then (++) <$> runRoundTrip ".tex" writeTeX readTeX
-                           <*> runRoundTrip ".mml"
+                 then do
+                   texs <- runRoundTrip ".tex" writeTeX readTeX
+                   ommls <- runRoundTrip ".omml"
+                               (ppTopElement .  writeOMML DisplayBlock) readOMML
+                   mathmls <- runRoundTrip ".mmml"
                                 (ppTopElement . writeMathML DisplayBlock)
                                 readMathML
+                   return $ texs ++ ommls ++ mathmls
                  else (++) <$> (concat <$> mapM (uncurry (runReader regen)) readers)
                            <*> (concat <$> mapM (uncurry (runWriter regen)) writers)
   let passes = length $ filter isPass statuses
@@ -63,20 +67,25 @@ main = do
 printPass :: FilePath -> FilePath -> IO ()
 printPass _inp _out = return () -- putStrLn $ "PASSED:  " ++ inp ++ " ==> " ++ out
 
-printFail :: FilePath -> FilePath -> String -> IO ()
-printFail inp out actual =  withTempDirectory "." (out ++ ".") $ \tmpDir -> do
-  -- break native files at commas for easier diffing
-  let breakAtCommas = if takeExtension out == ".native"
-                         then intercalate ",\n" . splitWhen (==',')
-                         else id
-  putStrLn $ "FAILED:  " ++ inp ++ " ==> " ++ out
-  readFile' out >>=
-    writeFile (tmpDir </> "expected") . ensureFinalNewline . breakAtCommas
-  writeFile (tmpDir </> "actual") $ ensureFinalNewline $ breakAtCommas actual
-  hFlush stdout
-  _ <- runProcess "diff" ["-u", tmpDir </> "expected", tmpDir </> "actual"]
-           Nothing Nothing Nothing Nothing Nothing >>= waitForProcess
-  putStrLn ""
+-- Second parameter is Left format (for round-trip) or Right output file.
+printFail :: FilePath -> Either String FilePath -> String -> IO ()
+printFail inp out actual =
+  withTempDirectory "." ((either (const inp) id out) ++ ".") $ \tmpDir -> do
+    -- break native files at commas for easier diffing
+    let breakAtCommas = case out of
+                             Left _ -> intercalate ",\n" . splitWhen (==',')
+                             Right f | takeExtension f == ".native" ->
+                                       intercalate ",\n" . splitWhen (==',')
+                             _ -> id
+    putStrLn $ "FAILED:  " ++ inp ++ " ==> " ++
+              either (\x -> "round trip via " ++ x) id out
+    readFile' (either (const inp) id out) >>=
+      writeFile (tmpDir </> "expected") . ensureFinalNewline . breakAtCommas
+    writeFile (tmpDir </> "actual") $ ensureFinalNewline $ breakAtCommas actual
+    hFlush stdout
+    _ <- runProcess "diff" ["-u", tmpDir </> "expected", tmpDir </> "actual"]
+             Nothing Nothing Nothing Nothing Nothing >>= waitForProcess
+    putStrLn ""
 
 printError :: FilePath -> FilePath -> String -> IO ()
 printError inp out msg =
@@ -115,12 +124,12 @@ runRoundTrip :: String
              -> IO [Status]
 runRoundTrip ext writer reader = do
   inps <- filter (\x -> takeExtension x == ".native") <$>
-          if ext == ".tex"
+          if ext == ".tex" || ext == ".omml"
              then map ("./readers/tex/"++) <$>
                     getDirectoryContents "./readers/tex"
              else map ("./readers/mml/"++) <$>
                     getDirectoryContents "./readers/mml"
-  mapM (runRoundTripTest writer reader) inps
+  mapM (runRoundTripTest (drop 1 ext) writer reader) inps
 
 runWriterTest :: Bool -> ([Exp] -> String) -> FilePath -> FilePath -> IO Status
 runWriterTest regen f input output = do
@@ -133,7 +142,7 @@ runWriterTest regen f input output = do
   out_t <- ensureFinalNewline <$> readFile' output
   if result == out_t
      then printPass input output >> return (Pass input output)
-     else printFail input output result >> return (Fail input output)
+     else printFail input (Right output) result >> return (Fail input output)
 
 runReaderTest :: Bool
         -> (String -> Either String String)
@@ -152,14 +161,15 @@ runReaderTest regen fn input output = do
        Right r
          | r == out_t -> printPass input output >>
                          return (Pass input output)
-         | otherwise  -> printFail input output r >>
+         | otherwise  -> printFail input (Right output) r >>
                          return (Fail input output)
 
-runRoundTripTest :: ([Exp] -> String)
+runRoundTripTest :: String
+                 -> ([Exp] -> String)
                  -> (String -> Either String [Exp])
                  -> FilePath
                  -> IO Status
-runRoundTripTest writer reader input = do
+runRoundTripTest fmt writer reader input = do
   rawnative <- readFile' input
   native <- case reads rawnative of
                  ((x,_):_) -> return x
@@ -171,5 +181,5 @@ runRoundTripTest writer reader input = do
        Right r
          | r == native -> printPass input input >>
                           return (Pass input input)
-         | otherwise   -> printFail input input (show r) >>
+         | otherwise   -> printFail input (Left fmt) (show r) >>
                           return (Fail input input)

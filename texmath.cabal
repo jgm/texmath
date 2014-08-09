@@ -4,13 +4,12 @@ Cabal-Version:       >= 1.10
 Build-type:          Simple
 Synopsis:            Conversion between formats used to represent mathematics.
 Description:         The texmath library provides functions to read and
-                     write formats used to represent mathematics.
-                     The package is able to read and write both TeX math and
-                     presentation MathML. Support is also included for
-                     writing OMML (Office Math Markup Language, used in
-                     Microsoft Office) and pandoc's native format (allowing
-                     conversion, via pandoc, to a variety of different markup
-                     formats).  It supports basic LaTeX and AMS extensions,
+                     write TeX math, presentation MathML, and OMML (Office
+                     Math Markup Language, used in Microsoft Office).
+                     Support is also included for converting math formats
+                     to pandoc's native format (allowing conversion, via
+                     pandoc, to a variety of different markup formats).
+                     The TeX reader supports basic LaTeX and AMS extensions,
                      and it can parse and apply LaTeX macros.
                      (See <http://johnmacfarlane.net/texmath here> for a live
                      demo of bidirectional conversion between LaTeX
@@ -18,7 +17,7 @@ Description:         The texmath library provides functions to read and
                      .
                      The package also includes several utility modules which
                      may be useful for anyone looking to manipulate either
-                     Unicode or MathML.  For example, a copy of the MathML
+                     TeX math or MathML.  For example, a copy of the MathML
                      operator dictionary is included.
                      .
                      Use the @executable@ flag to install a standalone
@@ -84,16 +83,17 @@ Library
     Exposed-modules:     Text.TeXMath,
                          Text.TeXMath.Types,
                          Text.TeXMath.Readers.TeX,
-                         Text.TeXMath.Writers.MathML,
-                         Text.TeXMath.Writers.OMML,
-                         Text.TeXMath.Writers.Pandoc,
                          Text.TeXMath.Readers.TeX.Macros,
-                         Text.TeXMath.Unicode.ToUnicode,
                          Text.TeXMath.Readers.MathML,
                          Text.TeXMath.Readers.MathML.MMLDict,
                          Text.TeXMath.Readers.MathML.EntityMap,
-                         Text.TeXMath.Unicode.ToTeX,
+                         Text.TeXMath.Readers.OMML,
+                         Text.TeXMath.Writers.MathML,
+                         Text.TeXMath.Writers.OMML,
+                         Text.TeXMath.Writers.Pandoc,
                          Text.TeXMath.Writers.TeX,
+                         Text.TeXMath.Unicode.ToUnicode,
+                         Text.TeXMath.Unicode.ToTeX,
                          Text.TeXMath.Unicode.ToASCII
     Other-modules:       Text.TeXMath.Compat,
                          Text.TeXMath.Shared,
