@@ -35,6 +35,7 @@ module Text.TeXMath.Readers.OMML (readOMML) where
 import Text.XML.Light
 import Data.Maybe (mapMaybe, fromMaybe)
 import Data.List (intersperse)
+import Data.Char (isDigit)
 import Text.TeXMath.Types
 
 readOMML :: String -> Either String [Exp]
@@ -416,7 +417,7 @@ elemToExps' element | isElem "m" "r" element = do
       txtSty = elemToOMathRunTextStyle element
   mrElems <- elemToOMathRunElems element
   return $ case oMathRunTextStyleToTextType txtSty of
-    Nothing -> [EIdentifier $ oMathRunElemsToString mrElems]
+    Nothing -> interpretString $ oMathRunElemsToString mrElems
     Just textType ->
       case lit of
         Just "on" ->
@@ -424,6 +425,16 @@ elemToExps' element | isElem "m" "r" element = do
         _         ->
           [EStyled textType [EIdentifier $ oMathRunElemsToString mrElems]]
 elemToExps' _ = Nothing
+
+interpretChar :: Char -> Exp
+interpretChar c | isDigit c = ENumber [c]
+interpretChar c = case getSymbolType c of
+  Alpha -> EIdentifier [c]
+  symType -> ESymbol symType [c]
+
+interpretString :: String -> [Exp]
+interpretString s | all isDigit s = [ENumber s]
+interpretString s = map interpretChar s
 
 expToString :: Exp -> String
 expToString (ENumber s) = s
