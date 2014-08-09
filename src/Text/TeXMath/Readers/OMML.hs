@@ -257,8 +257,8 @@ elemToExps' element | isElem "m" "borderBox" element = do
              elemToBase
   return [baseExp]
 elemToExps' element | isElem "m" "d" element =
-  let baseExps  = mapMaybe
-                  elemToBase
+  let baseExps  = concat $ mapMaybe
+                  elemToBases
                   (elChildren element)
       inDelimExps = map Right baseExps
       dPr = filterChildName (hasElemName "m" "dPr") element
