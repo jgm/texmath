@@ -74,23 +74,43 @@ getTeXMathM s = getTeXMath s <$> asks mathEnv
 tellGroup :: Math () -> Math ()
 tellGroup = censor ((:[]) . Grouped)
 
+tellGenFrac :: Char -> Char -> Math ()
+tellGenFrac open close =
+  tell [ ControlSeq "\\genfrac"
+       , Grouped [Token open]
+       , Grouped [Token close]
+       , Grouped [Literal "0pt"]
+       , Grouped [] ]
+
 writeBinom :: String -> Exp -> Exp -> Math ()
 writeBinom cmd x y = do
-  tell [ControlSeq cmd]
-  tellGroup $ writeExp x
-  tellGroup $ writeExp y
+  env <- asks mathEnv
+  if "amsmath" `elem` env
+     then do
+       case cmd of
+           "\\choose" -> tell [ControlSeq "\\binom"]
+           "\\brack"  -> tellGenFrac '(' ')'
+           "\\brace"  -> tellGenFrac '[' ']'
+           "\\bangle" -> tellGenFrac '\x27E8' '\x27E9'
+           _          -> fail "writeBinom: unknown cmd"
+       tellGroup $ writeExp x
+       tellGroup $ writeExp y
+     else tellGroup $ do
+       writeExp x
+       tell [ControlSeq cmd]
+       writeExp y
 
 writeExp :: Exp -> Math ()
 writeExp (ENumber s) = tell =<< getTeXMathM s
 writeExp (EGrouped es) = tellGroup (mapM_ writeExp es)
-writeExp (EDelimited "(" ")" [Right (EFraction NoLineFrac x y)]) = do
-  writeBinom "\\binom" x y
+writeExp (EDelimited "(" ")" [Right (EFraction NoLineFrac x y)]) =
+  writeBinom "\\choose" x y
 writeExp (EDelimited "[" "]" [Right (EFraction NoLineFrac x y)]) = do
-  tellGroup $ writeExp x >> tell [ControlSeq "\\brack"] >> writeExp y
+  writeBinom "\\brack" x y
 writeExp (EDelimited "{" "}" [Right (EFraction NoLineFrac x y)]) = do
-  tellGroup $ writeExp x >> tell [ControlSeq "\\brace"] >> writeExp y
+  writeBinom "\\brace" x y
 writeExp (EDelimited "\x27E8" "\x27E9" [Right (EFraction NoLineFrac x y)]) = do
-  tellGroup $ writeExp x >> tell [ControlSeq "\\bangle"] >> writeExp y
+  writeBinom "\\bangle" x y
 writeExp (EDelimited open close [Right (EFraction NoLineFrac x y)]) = do
   writeExp (EDelimited open close [Right (EArray [AlignCenter]
                    [[[x]],[[y]]])])
