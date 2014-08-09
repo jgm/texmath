@@ -37,6 +37,7 @@ import Data.Maybe (mapMaybe, fromMaybe)
 import Data.List (intersperse)
 import Data.Char (isDigit)
 import Text.TeXMath.Types
+import Text.TeXMath.Shared (fixTree)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Control.Applicative ((<$>))
 -- As we constuct from the bottom up, this situation can occur.
@@ -46,7 +47,7 @@ import Control.Applicative ((<$>))
 readOMML :: String -> Either String [Exp]
 readOMML s | Just e <- parseXMLDoc s =
   case elemToOMML e of
-    Just exs -> Right $ unGroup exs
+    Just exs -> Right $ map fixTree $ unGroup exs
     Nothing   -> Left "xml file was not an <m:oMathPara> or <m:oMath> element."
 readOMML _ = Left "Couldn't parse OMML file"
 
