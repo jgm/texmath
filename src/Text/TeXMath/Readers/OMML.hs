@@ -441,12 +441,20 @@ elemToExps' _ = Nothing
 interpretChar :: Char -> Exp
 interpretChar c | isDigit c = ENumber [c]
 interpretChar c = case getSymbolType c of
-  Alpha -> EIdentifier [c]
-  symType -> ESymbol symType [c]
+  Alpha           -> EIdentifier [c]
+  Ord | isDigit c -> ENumber [c]
+  symType         -> ESymbol symType [c]
 
 interpretString :: String -> [Exp]
-interpretString s | all isDigit s = [ENumber s]
-interpretString s = map interpretChar s
+interpretString [c]       = [interpretChar c]
+interpretString s
+  | all isDigit s         = [ENumber s]
+  | otherwise             =
+      case map interpretChar s of
+            xs | all isIdentifier xs -> [EText TextNormal s]
+               | otherwise           -> xs
+  where isIdentifier (EIdentifier _) = True
+        isIdentifier _               = False
 
 expToString :: Exp -> String
 expToString (ENumber s) = s
