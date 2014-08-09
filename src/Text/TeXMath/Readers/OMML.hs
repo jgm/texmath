@@ -434,7 +434,7 @@ elemToExps' element | isElem "m" "r" element = do
         Just "on" ->
           [EText textType (oMathRunElemsToString mrElems)]
         _         ->
-          [EStyled textType [EIdentifier $ oMathRunElemsToString mrElems]]
+          [EStyled textType $ interpretString $ oMathRunElemsToString mrElems]
 elemToExps' _ = Nothing
 
 interpretChar :: Char -> Exp
