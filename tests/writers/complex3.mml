@@ -1126,7 +1126,7 @@
           <mrow>
             <mn>10</mn>
             <msup>
-              <mtext mathvariant="normal">&#8203;</mtext>
+              <mspace width="0.0em" />
               <mtext mathvariant="normal">′</mtext>
             </msup>
           </mrow>
@@ -1139,7 +1139,7 @@
           <mrow>
             <mn>10</mn>
             <msup>
-              <mtext mathvariant="normal">&#8203;</mtext>
+              <mspace width="0.0em" />
               <mtext mathvariant="normal">′′</mtext>
             </msup>
           </mrow>
@@ -2339,8 +2339,8 @@
         <mrow>
           <munderover>
             <mo>∑</mo>
-            <mtext mathvariant="normal">&#8203;</mtext>
-            <mtext mathvariant="normal">&#8203;</mtext>
+            <mspace width="0.0em" />
+            <mspace width="0.0em" />
           </munderover>
           <mi>x</mi>
         </mrow>
@@ -2376,7 +2376,7 @@
                 </mtd>
               </mtr>
             </mtable>
-            <mtext mathvariant="normal">&#8203;</mtext>
+            <mspace width="0.0em" />
           </munderover>
           <msup>
             <mn>2</mn>
@@ -2418,7 +2418,7 @@
                           </mtr>
                         </mtable>
                       </msup>
-                      <mtext mathvariant="normal">&#8203;</mtext>
+                      <mspace width="0.0em" />
                     </msubsup>
                   </mtd>
                 </mtr>
@@ -2441,13 +2441,13 @@
                           </mtr>
                         </mtable>
                       </msup>
-                      <mtext mathvariant="normal">&#8203;</mtext>
+                      <mspace width="0.0em" />
                     </msubsup>
                   </mtd>
                 </mtr>
               </mtable>
             </msup>
-            <mtext mathvariant="normal">&#8203;</mtext>
+            <mspace width="0.0em" />
           </msubsup>
           <msup>
             <mn>1</mn>
@@ -10911,7 +10911,7 @@
               <mtext mathvariant="normal">Symmetric</mtext>
             </mtd>
             <mtd>
-              <mtext mathvariant="normal"> </mtext>
+              <mspace width="1.0em" />
             </mtd>
             <mtd>
               <mtext mathvariant="normal">Antisymmetric</mtext>

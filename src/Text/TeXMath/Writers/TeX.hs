@@ -25,9 +25,7 @@ import Text.TeXMath.Unicode.ToTeX (getTeXMath)
 import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import qualified Text.TeXMath.Shared as S
 import Data.Generics (everywhere, mkT)
-import Data.Maybe (fromMaybe)
-import Control.Applicative ((<$>), (<|>), Applicative)
-import qualified Data.Map as M
+import Control.Applicative ((<$>), Applicative)
 import Control.Monad (when, unless)
 import Control.Monad.Reader (MonadReader, runReader, Reader, asks, local)
 import Control.Monad.Writer( MonadWriter, WriterT,
@@ -140,7 +138,9 @@ writeExp (ESymbol t s) = do
   when (t == Bin || t == Rel) $ tell [Space]
   tell =<< getTeXMathM s
   when (t == Bin || t == Rel) $ tell [Space]
-writeExp (ESpace width) = tell [ControlSeq $ getSpaceCommand width]
+writeExp (ESpace width) = do
+  env <- asks mathEnv
+  tell [ControlSeq $ getSpaceCommand ("amsmath" `elem` env) width]
 writeExp (EFraction fractype e1 e2) = do
   let cmd = case fractype of
                  NormalFrac  -> "\\frac"
@@ -290,28 +290,20 @@ writeScript pos convertible b e1 = do
 
 -- Utility
 
--- | Maps a length in em to the nearest bigger LaTeX space command
-getSpaceCommand :: Rational -> String
-getSpaceCommand width =
-  snd $ fromMaybe (M.findMax spaceMap) (lookupGE width spaceMap)
-  where
-    spaceMap = M.fromList (map (\(k, ESpace s) -> (s, k)) spaceCommands)
-
-lookupGE :: Ord k =>  k -> M.Map k v -> Maybe (k, v)
-lookupGE k m = let (_, v, g) = M.splitLookup k m in
-                    (fmap ((,) k) (v <|> (fst <$> M.minView g)))
-
-spaceCommands :: [(String, Exp)]
-spaceCommands =
-           [ ("\\!", ESpace (-3/18))
-           , (""   , ESpace 0)
-           , ("\\,", ESpace (3/18))
-           , ("\\>", ESpace (4/18))
-           , ("\\:", ESpace (4/18))
-           , ("\\;", ESpace (5/18))
-           , ("~", ESpace (4/18))
-           , ("\\quad", ESpace 1)
-           , ("\\qquad", ESpace 2) ]
+-- | Maps a length in em to the nearest LaTeX space command
+getSpaceCommand :: Bool -> Rational -> String
+getSpaceCommand amsmath width =
+  case floor (width * 18) :: Int of
+          -3       -> "\\!"
+          0        -> ""
+          3        -> "\\,"
+          4        -> "\\:"
+          5        -> "\\;"
+          18       -> "\\quad"
+          36       -> "\\qquad"
+          n        -> if amsmath
+                         then "\\mspace{" ++ show n ++ "mu}"
+                         else "{\\mskip " ++ show n ++ "mu}"
 
 getTextCommand :: TextType -> TeX -> [TeX]
 getTextCommand tt x =

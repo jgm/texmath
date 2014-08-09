@@ -40,7 +40,7 @@ import Text.TeXMath.Types
 import Text.TeXMath.TeX
 import qualified Data.Map as M
 import Data.Maybe (fromMaybe)
-import Data.Ratio (approxRational)
+import Data.Ratio ((%))
 import Data.List (sort)
 import Control.Applicative ((<$>), (<*>))
 import Control.Monad (guard)
@@ -176,7 +176,7 @@ parseLength = do
     unit <- getInput
     -- This is safe as dec and frac must be a double of some kind
     let [(n :: Double, [])] = reads (neg ++ dec ++ frac) :: [(Double, String)]
-    return (approxRational n (1/36), unit)
+    return (round (n * 18) % 18, unit)
 
 
 
@@ -256,8 +256,8 @@ getSpaceWidth '\x2008' = Just (1/6) -- ? width of a period
 getSpaceWidth '\x2009' = Just (1/6)
 getSpaceWidth '\x200A' = Just (1/9)
 getSpaceWidth '\x200B' = Just 0
-getSpaceWidth '\x202F' = Just 3
-getSpaceWidth '\x205F' = Just 4
+getSpaceWidth '\x202F' = Just (3/18)
+getSpaceWidth '\x205F' = Just (4/18)
 getSpaceWidth _        = Nothing
 
 -- | Returns the sequence of unicode space characters closest to the
@@ -268,7 +268,7 @@ getSpaceChars n =
        _ | n < 0      -> "\x200B"  -- no negative space chars in unicode
          | n <= 2/18  -> "\x200A"
          | n <= 3/18  -> "\x2006"
-         | n <= 4/18   -> "\xA0"
+         | n <= 4/18  -> "\x2005"
          | n <= 5/18  -> "\x2005"
          | n <= 7/18  -> "\x2004"
          | n <= 9/18  -> "\x2000"

@@ -49,6 +49,7 @@ expr1 = choice
           , text
           , styled
           , root
+          , mspace
           , phantom
           , binary
           , bareSubSup
@@ -502,6 +503,17 @@ root = do
   ctrlseq "sqrt" <|> ctrlseq "surd"
   (ERoot <$> inbrackets <*> texToken) <|> (ESqrt <$> texToken)
 
+mspace :: TP Exp
+mspace = do
+  ctrlseq "mspace"
+  lexeme $ char '{'
+  len <- many1 digit
+  lexeme $ string "mu"
+  lexeme $ char '}'
+  case reads len of
+       ((n,[]):_) -> return $ ESpace (n/18)
+       _          -> mzero
+
 binary :: TP Exp
 binary = do
   c <- oneOfCommands binops
@@ -654,7 +666,7 @@ operators = M.fromList [
            , ("=", ESymbol Rel "=")
            , (":=", ESymbol Rel ":=")
            , ("/", ESymbol Ord "/")
-           , ("~", ESpace 0.333) ]
+           , ("~", ESpace (4/18)) ]
 
 symbols :: M.Map String Exp
 symbols = M.fromList

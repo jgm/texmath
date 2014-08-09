@@ -41,7 +41,8 @@ import Text.XML.Light hiding (onlyText)
 import Text.TeXMath.Types
 import Text.TeXMath.Readers.MathML.MMLDict (getMathMLOperator)
 import Text.TeXMath.Readers.MathML.EntityMap (getUnicode)
-import Text.TeXMath.Shared (getTextType, readLength, getOperator, fixTree, isEmpty, empty)
+import Text.TeXMath.Shared (getTextType, readLength, getOperator, fixTree,
+                            getSpaceWidth, isEmpty, empty)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import Text.TeXMath.Compat (throwError, Except, runExcept, MonadError)
@@ -176,14 +177,24 @@ text :: Element -> MML Exp
 text e = do
   textStyle <- maybe TextNormal getTextType
                 <$> (findAttrQ "mathvariant" e)
-  EText textStyle <$> getString e
+  s <- getString e
+  -- mathml seems to use mtext for spacing often; we get
+  -- more idiomatic math if we replace these with ESpace:
+  return $ case (textStyle, s) of
+       (TextNormal, [c]) ->
+         case getSpaceWidth c of
+              Just w  -> ESpace w
+              Nothing -> EText textStyle s
+       _ -> EText textStyle s
 
 literal :: Element -> MML Exp
 literal e = do
   lquote <- fromMaybe "\x201C" <$> findAttrQ "lquote" e
   rquote <- fromMaybe "\x201D" <$> findAttrQ "rquote" e
-  EText ttype cont <- text e
-  return $ EText ttype (lquote ++ cont ++ rquote)
+  textStyle <- maybe TextNormal getTextType
+                <$> (findAttrQ "mathvariant" e)
+  s <- getString e
+  return $ EText textStyle (lquote ++ s ++ rquote)
 
 space :: Element -> MML Exp
 space e = do

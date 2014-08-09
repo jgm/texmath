@@ -128,7 +128,7 @@
           <mo stretchy="false" form="prefix">(</mo>
           <mi>z</mi>
           <mo stretchy="false" form="postfix">)</mo>
-          <mtext mathvariant="normal"> </mtext>
+          <mspace width="0.167em" />
           <mo>·</mo>
           <msubsup>
             <mi>Ind</mi>
@@ -165,7 +165,7 @@
               <mi>z</mi>
             </mrow>
           </mfrac>
-          <mtext mathvariant="normal"> </mtext>
+          <mspace width="0.167em" />
           <mi>d</mi>
           <mi>ξ</mi>
         </mrow>
@@ -515,7 +515,7 @@
               <mtd>
                 <mrow>
                   <mo>∇</mo>
-                  <mtext mathvariant="normal">&#8203;</mtext>
+                  <mspace width="0.0em" />
                   <mo>×</mo>
                   <munderover>
                     <mi>B</mi>
@@ -523,16 +523,16 @@
                     <mo accent="true">↼</mo>
                   </munderover>
                   <mo>-</mo>
-                  <mtext mathvariant="normal"> </mtext>
+                  <mspace width="0.167em" />
                   <mfrac>
                     <mn>1</mn>
                     <mi>c</mi>
                   </mfrac>
-                  <mtext mathvariant="normal"> </mtext>
+                  <mspace width="0.167em" />
                   <mfrac>
                     <mrow>
                       <mo>∂</mo>
-                      <mtext mathvariant="normal">&#8203;</mtext>
+                      <mspace width="0.0em" />
                       <munderover>
                         <mi>E</mi>
                         <mrow />
@@ -541,7 +541,7 @@
                     </mrow>
                     <mrow>
                       <mo>∂</mo>
-                      <mtext mathvariant="normal">&#8203;</mtext>
+                      <mspace width="0.0em" />
                       <mi>t</mi>
                     </mrow>
                   </mfrac>
@@ -559,7 +559,7 @@
                     </mrow>
                     <mi>c</mi>
                   </mfrac>
-                  <mtext mathvariant="normal"> </mtext>
+                  <mspace width="0.167em" />
                   <munderover>
                     <mi>j</mi>
                     <mrow />
@@ -572,7 +572,7 @@
               <mtd>
                 <mrow>
                   <mo>∇</mo>
-                  <mtext mathvariant="normal">&#8203;</mtext>
+                  <mspace width="0.0em" />
                   <mo>·</mo>
                   <munderover>
                     <mi>E</mi>
@@ -596,25 +596,25 @@
               <mtd>
                 <mrow>
                   <mo>∇</mo>
-                  <mtext mathvariant="normal">&#8203;</mtext>
+                  <mspace width="0.0em" />
                   <mo>×</mo>
                   <munderover>
                     <mi>E</mi>
                     <mrow />
                     <mo accent="true">↼</mo>
                   </munderover>
-                  <mtext mathvariant="normal"> </mtext>
+                  <mspace width="0.167em" />
                   <mo>+</mo>
-                  <mtext mathvariant="normal"> </mtext>
+                  <mspace width="0.167em" />
                   <mfrac>
                     <mn>1</mn>
                     <mi>c</mi>
                   </mfrac>
-                  <mtext mathvariant="normal"> </mtext>
+                  <mspace width="0.167em" />
                   <mfrac>
                     <mrow>
                       <mo>∂</mo>
-                      <mtext mathvariant="normal">&#8203;</mtext>
+                      <mspace width="0.0em" />
                       <munderover>
                         <mi>B</mi>
                         <mrow />
@@ -623,7 +623,7 @@
                     </mrow>
                     <mrow>
                       <mo>∂</mo>
-                      <mtext mathvariant="normal">&#8203;</mtext>
+                      <mspace width="0.0em" />
                       <mi>t</mi>
                     </mrow>
                   </mfrac>
@@ -644,7 +644,7 @@
               <mtd>
                 <mrow>
                   <mo>∇</mo>
-                  <mtext mathvariant="normal">&#8203;</mtext>
+                  <mspace width="0.0em" />
                   <mo>·</mo>
                   <munderover>
                     <mi>B</mi>
@@ -683,7 +683,7 @@
             <mn>1</mn>
             <mn>2</mn>
           </mfrac>
-          <mtext mathvariant="normal"> </mtext>
+          <mspace width="0.167em" />
           <msubsup>
             <mi>g</mi>
             <mrow>
@@ -692,7 +692,7 @@
             </mrow>
             <mrow />
           </msubsup>
-          <mtext mathvariant="normal"> </mtext>
+          <mspace width="0.167em" />
           <mi>R</mi>
           <mo>=</mo>
           <mfrac>
@@ -707,7 +707,7 @@
               <mn>4</mn>
             </msubsup>
           </mfrac>
-          <mtext mathvariant="normal"> </mtext>
+          <mspace width="0.167em" />
           <msubsup>
             <mi>T</mi>
             <mrow>
@@ -841,7 +841,7 @@
                 <mo stretchy="false" form="prefix">⌊</mo>
                 <mi>k</mi>
                 <mo>·</mo>
-                <mtext mathvariant="normal">&#8203;</mtext>
+                <mspace width="0.0em" />
                 <mi>φ</mi>
                 <mo stretchy="false" form="postfix">⌋</mo>
               </mrow>
@@ -987,7 +987,7 @@
             <mi>o</mi>
             <mi>r</mi>
           </mrow>
-          <mtext mathvariant="normal"> </mtext>
+          <mspace width="0.222em" />
           <mo>|</mo>
           <mi>q</mi>
           <mo>|</mo>

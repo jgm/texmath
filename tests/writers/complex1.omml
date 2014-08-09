@@ -1820,12 +1820,6 @@
                       <m:rPr>
                         <m:sty m:val="p" />
                       </m:rPr>
-                      <m:t>&#8203;</m:t>
-                    </m:r>
-                    <m:r>
-                      <m:rPr>
-                        <m:sty m:val="p" />
-                      </m:rPr>
                       <m:t>×</m:t>
                     </m:r>
                     <m:limLow>
@@ -1896,12 +1890,6 @@
                           </m:rPr>
                           <m:t>∂</m:t>
                         </m:r>
-                        <m:r>
-                          <m:rPr>
-                            <m:sty m:val="p" />
-                          </m:rPr>
-                          <m:t>&#8203;</m:t>
-                        </m:r>
                         <m:limLow>
                           <m:e>
                             <m:r>
@@ -1927,12 +1915,6 @@
                             <m:sty m:val="p" />
                           </m:rPr>
                           <m:t>∂</m:t>
-                        </m:r>
-                        <m:r>
-                          <m:rPr>
-                            <m:sty m:val="p" />
-                          </m:rPr>
-                          <m:t>&#8203;</m:t>
                         </m:r>
                         <m:r>
                           <m:rPr>
@@ -2017,12 +1999,6 @@
                       <m:rPr>
                         <m:sty m:val="p" />
                       </m:rPr>
-                      <m:t>&#8203;</m:t>
-                    </m:r>
-                    <m:r>
-                      <m:rPr>
-                        <m:sty m:val="p" />
-                      </m:rPr>
                       <m:t>·</m:t>
                     </m:r>
                     <m:limLow>
@@ -2080,12 +2056,6 @@
                         <m:sty m:val="p" />
                       </m:rPr>
                       <m:t>∇</m:t>
-                    </m:r>
-                    <m:r>
-                      <m:rPr>
-                        <m:sty m:val="p" />
-                      </m:rPr>
-                      <m:t>&#8203;</m:t>
                     </m:r>
                     <m:r>
                       <m:rPr>
@@ -2167,12 +2137,6 @@
                           </m:rPr>
                           <m:t>∂</m:t>
                         </m:r>
-                        <m:r>
-                          <m:rPr>
-                            <m:sty m:val="p" />
-                          </m:rPr>
-                          <m:t>&#8203;</m:t>
-                        </m:r>
                         <m:limLow>
                           <m:e>
                             <m:r>
@@ -2198,12 +2162,6 @@
                             <m:sty m:val="p" />
                           </m:rPr>
                           <m:t>∂</m:t>
-                        </m:r>
-                        <m:r>
-                          <m:rPr>
-                            <m:sty m:val="p" />
-                          </m:rPr>
-                          <m:t>&#8203;</m:t>
                         </m:r>
                         <m:r>
                           <m:rPr>
@@ -2250,12 +2208,6 @@
                         <m:sty m:val="p" />
                       </m:rPr>
                       <m:t>∇</m:t>
-                    </m:r>
-                    <m:r>
-                      <m:rPr>
-                        <m:sty m:val="p" />
-                      </m:rPr>
-                      <m:t>&#8203;</m:t>
                     </m:r>
                     <m:r>
                       <m:rPr>
@@ -2903,12 +2855,6 @@
                         <m:rPr>
                           <m:sty m:val="p" />
                         </m:rPr>
-                        <m:t>&#8203;</m:t>
-                      </m:r>
-                      <m:r>
-                        <m:rPr>
-                          <m:sty m:val="p" />
-                        </m:rPr>
                         <m:t>φ</m:t>
                       </m:r>
                       <m:r>
@@ -3501,7 +3447,7 @@
             <m:rPr>
               <m:sty m:val="p" />
             </m:rPr>
-            <m:t> </m:t>
+            <m:t> </m:t>
           </m:r>
           <m:r>
             <m:rPr>

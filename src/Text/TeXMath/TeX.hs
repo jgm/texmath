@@ -51,9 +51,18 @@ isControlSeq ('\\':xs) = all isLetter xs
 isControlSeq _ = False
 
 escapeLaTeX :: Char -> TeX
-escapeLaTeX c
-  | c `elem` "#$%&_{} " = Literal ("\\" ++ [c])
-  | c == '~' = ControlSeq "\\textasciitilde"
-  | c == '^' = Literal "\\textasciicircum"
-  | c == '\\' = ControlSeq "\\textbackslash"
-  | otherwise = Token c
+escapeLaTeX c =
+  case c of
+       '~'   -> ControlSeq "\\textasciitilde"
+       '^'   -> Literal "\\textasciicircum"
+       '\\'  -> ControlSeq "\\textbackslash"
+       '\x200B' -> Literal "\\!"
+       '\x200A' -> Literal "\\,"
+       '\x2006' -> Literal "\\,"
+       '\xA0'   -> Literal "~"
+       '\x2005' -> Literal "\\:"
+       '\x2004' -> Literal "\\;"
+       '\x2001' -> ControlSeq "\\quad"
+       '\x2003' -> ControlSeq "\\quad"
+       _ | c `elem` "#$%&_{} " -> Literal ("\\" ++ [c])
+         | otherwise -> Token c
