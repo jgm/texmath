@@ -33,11 +33,11 @@ Types and functions for conversion of OMML into TeXMath 'Exp's.
 module Text.TeXMath.Readers.OMML (readOMML) where
 
 import Text.XML.Light
-import Data.Maybe (mapMaybe, fromMaybe)
+import Data.Maybe (isJust, mapMaybe, fromMaybe)
 import Data.List (intercalate)
 import Data.Char (isDigit)
 import Text.TeXMath.Types
-import Text.TeXMath.Shared (fixTree, getSpaceWidth)
+import Text.TeXMath.Shared (fixTree, getSpaceWidth, getOperator)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Control.Applicative ((<$>))
 -- As we constuct from the bottom up, this situation can occur.
@@ -451,6 +451,8 @@ interpretString :: String -> [Exp]
 interpretString [c]       = [interpretChar c]
 interpretString s
   | all isDigit s         = [ENumber s]
+  | isJust (getOperator (EMathOperator s))
+                          = [EMathOperator s]
   | otherwise             =
       case map interpretChar s of
             xs | all isIdentifierOrSpace xs -> [EText TextNormal s]
