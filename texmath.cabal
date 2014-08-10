@@ -50,8 +50,10 @@ Extra-source-files:  README.markdown
                      cgi/texmath.html
                      tests/src/*.mml
                      tests/src/*.tex
+                     tests/src/*.omml
                      tests/readers/mml/*.native
                      tests/readers/tex/*.native
+                     tests/readers/omml/*.native
                      tests/writers/*.mml
                      tests/writers/*.tex
                      tests/writers/*.omml

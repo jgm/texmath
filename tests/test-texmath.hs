@@ -29,6 +29,7 @@ type Ext = String
 readers :: [(Ext, String -> Either String [Exp])]
 readers = [ (".tex", readTeX)
           , (".mml", readMathML)
+          , (".omml", readOMML)
           ]
 
 writers :: [(Ext, [Exp] -> String)]
@@ -48,10 +49,10 @@ main = do
   setCurrentDirectory "tests"
   statuses <- if roundTrip
                  then do
-                   texs <- runRoundTrip ".tex" writeTeX readTeX
-                   ommls <- runRoundTrip ".omml"
+                   texs <- runRoundTrip "tex" writeTeX readTeX
+                   ommls <- runRoundTrip "omml"
                                (ppTopElement .  writeOMML DisplayBlock) readOMML
-                   mathmls <- runRoundTrip ".mmml"
+                   mathmls <- runRoundTrip "mmml"
                                 (ppTopElement . writeMathML DisplayBlock)
                                 readMathML
                    return $ texs ++ ommls ++ mathmls
@@ -122,14 +123,11 @@ runRoundTrip :: String
              -> ([Exp] -> String)
              -> (String -> Either String [Exp])
              -> IO [Status]
-runRoundTrip ext writer reader = do
+runRoundTrip fmt writer reader = do
   inps <- filter (\x -> takeExtension x == ".native") <$>
-          if ext == ".tex" || ext == ".omml"
-             then map ("./readers/tex/"++) <$>
-                    getDirectoryContents "./readers/tex"
-             else map ("./readers/mml/"++) <$>
-                    getDirectoryContents "./readers/mml"
-  mapM (runRoundTripTest (drop 1 ext) writer reader) inps
+             map (("./readers/" ++ fmt ++ "/") ++) <$>
+                 getDirectoryContents ("./readers/" ++ fmt)
+  mapM (runRoundTripTest fmt writer reader) inps
 
 runWriterTest :: Bool -> ([Exp] -> String) -> FilePath -> FilePath -> IO Status
 runWriterTest regen f input output = do

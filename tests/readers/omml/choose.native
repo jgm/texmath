@@ -1,0 +1,1 @@
+[EDelimited "(" ")" [Right (EFraction NormalFrac (EIdentifier "a") (EDelimited "{" "}" [Right (EFraction NormalFrac (EIdentifier "b") (EGrouped [EIdentifier "c",ESymbol Bin "+",ENumber "2"]))]))]]
