@@ -3,14 +3,14 @@ texmath
 
 texmath is a Haskell library for converting between formats used to
 represent mathematics.  Currently it provides functions to read and
-write both TeX math and presentation MathML, and to write OMML (Office
-Math Markup Language, used in Microsoft Office) and [pandoc]'s native
+write TeX math, presentation MathML, and OMML (Office Math Markup
+Language, used in Microsoft Office), and to write [pandoc]'s native
 format (allowing conversion, using pandoc, to a variety of different
-markup formats).  It supports basic LaTeX and AMS extensions, and it can
-parse and apply LaTeX macros.  The package also includes several utility
-modules which may be useful for anyone looking to manipulate either
-Unicode or MathML.  For example, a copy of the MathML operator
-dictionary is included.
+markup formats).  The TeX reader and writer supports basic LaTeX and AMS
+extensions, and it can parse and apply LaTeX macros.  The package also
+includes several utility modules which may be useful for anyone looking
+to manipulate either TeX math or MathML.  For example, a copy of the
+MathML operator dictionary is included.
 
 [pandoc]: http://github.com/jgm/pandoc
 
@@ -82,5 +82,10 @@ or `generateMMLDict.hs`. This is easily achieved by adding an item to the corres
 `updates` lists. After making the changes, follow the above steps to regenerate
 the table.
 
+Authors
+=======
 
-Thanks to Matthew Pickering and John Lenz for many contributions.
+John MacFarlane wrote the original TeX reader, MathML writer, and
+OMML writer.  Matthew Pickering contributed the MathML reader, the TeX
+writer, and many of the auxiliary modules.  Jesse Rosenthal contributed
+the OMML reader.  Thanks also to John Lenz for many contributions.
