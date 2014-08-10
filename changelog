@@ -1,3 +1,19 @@
+texmath (0.8)
+
+  * Added OMML reader (Jesse Rosenthal).
+  * Support latex \substack (#57).
+  * Added EBoxed and implemented in readers and writers (#58).
+  * Handle latex \genfrac.  Use \genfrac for \brace, \brack,
+    etc. when amsmath is available.
+  * Improvements in handling of space characters.
+  * Use ESpace rather than EText when a mathml mtext just contains
+    a space.
+  * Use \mspace when needed to get latex spaces with odd sizes, rather
+    than finding the closest simple command.
+  * Use Rational instead of Double in ESpaced, EScaled.
+  * Shared: Export getSpaceWidth, getSpaceChars.
+  * Shared: Export fixTree, isEmpty, empty (formerly in MathML reader).
+
 texmath (0.7.0.2)
 
   * TeX reader:  further improvements in error reporting.
