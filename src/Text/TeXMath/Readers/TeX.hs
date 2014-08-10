@@ -182,8 +182,8 @@ binomCmds = [ ("\\choose", \x y ->
 genfrac :: TP Exp
 genfrac = do
   ctrlseq "genfrac"
-  openDelim <- braces $ option '(' anyChar
-  closeDelim <- braces $ option ')' anyChar
+  openDelim <- braces $ option '(' ((char '\\' >> oneOf "{}") <|> anyChar)
+  closeDelim <- braces $ option ')' ((char '\\' >> oneOf "{}") <|> anyChar)
   bar <- False <$ try (braces (string "0pt")) <|> True <$ texToken
   displayStyle <- True <$ try (braces (char '0')) <|> False <$ texToken
   x <- texToken

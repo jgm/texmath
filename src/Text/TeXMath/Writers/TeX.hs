@@ -74,11 +74,11 @@ getTeXMathM s = getTeXMath s <$> asks mathEnv
 tellGroup :: Math () -> Math ()
 tellGroup = censor ((:[]) . Grouped)
 
-tellGenFrac :: Char -> Char -> Math ()
+tellGenFrac :: String -> String -> Math ()
 tellGenFrac open close =
   tell [ ControlSeq "\\genfrac"
-       , Grouped [Token open]
-       , Grouped [Token close]
+       , Grouped [Literal open]
+       , Grouped [Literal close]
        , Grouped [Literal "0pt"]
        , Grouped [] ]
 
@@ -89,9 +89,9 @@ writeBinom cmd x y = do
      then do
        case cmd of
            "\\choose" -> tell [ControlSeq "\\binom"]
-           "\\brack"  -> tellGenFrac '[' ']'
-           "\\brace"  -> tellGenFrac '{' '}'
-           "\\bangle" -> tellGenFrac '\x27E8' '\x27E9'
+           "\\brack"  -> tellGenFrac "[" "]"
+           "\\brace"  -> tellGenFrac "\\{" "\\}"
+           "\\bangle" -> tellGenFrac "\\langle" "\\rangle"
            _          -> fail "writeBinom: unknown cmd"
        tellGroup $ writeExp x
        tellGroup $ writeExp y
