@@ -77,6 +77,7 @@ data Exp =
   | EUnderover Bool Exp Exp Exp  -- ^ An expression with something over and
                        -- something under it.
   | EPhantom Exp  -- ^ A "phantom" operator that takes space but doesn't display.
+  | EBoxed Exp    -- ^ A boxed expression.
   | EFraction FractionType Exp Exp  -- ^ A fraction.  First argument is
                        -- numerator, second denominator.
   | ERoot Exp Exp  -- ^ An nth root.  First argument is index, second is base.

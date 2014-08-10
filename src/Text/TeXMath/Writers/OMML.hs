@@ -198,6 +198,7 @@ showExp props e =
    EPhantom x       -> [mnode "phant" [ mnode "phantPr"
                                             [ mnodeA "show" "0" () ]
                                           , mnode "e" $ showExp props x]]
+   EBoxed   x       -> [mnode "borderBox" [ mnode "e" $ showExp props x]]
    EScaled _ x      -> showExp props x -- no support for scaler?
    EArray as ls     -> [makeArray props as ls]
    EText a s        -> [makeText a s]

@@ -165,6 +165,8 @@ showExp tt e =
    EOver _ x y      -> unode "mover" $ map (showExp tt) [x, y]
    EUnderover _ x y z -> unode "munderover" $ map (showExp tt) [x, y, z]
    EPhantom x       -> unode "mphantom" $ showExp tt x
+   EBoxed x         -> withAttribute "notation" "box" .
+                       unode "menclose" $ showExp tt x
    ESqrt x          -> unode "msqrt" $ showExp tt x
    ERoot i x        -> unode "mroot" [showExp tt x, showExp tt i]
    EScaled s x      -> makeScaled s $ showExp tt x

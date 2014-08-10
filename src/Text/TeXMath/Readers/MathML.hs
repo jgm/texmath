@@ -381,7 +381,11 @@ fenced e = do
 
 -- This could approximate the variants
 enclosed :: Element -> MML Exp
-enclosed = row
+enclosed e = do
+  mbNotation <- findAttrQ "notation" e
+  case mbNotation of
+       Just "box" -> EBoxed <$> row e
+       _ -> row e
 
 action :: Element -> MML Exp
 action e = do

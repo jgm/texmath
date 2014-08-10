@@ -215,6 +215,13 @@ writeExp (ERoot i e) = do
 writeExp (EPhantom e) = do
     tell [ControlSeq "\\phantom"]
     tellGroup (writeExp e)
+writeExp (EBoxed e) = do
+    env <- asks mathEnv
+    if "amsmath" `elem` env
+      then do
+        tell [ControlSeq "\\boxed"]
+        tellGroup (writeExp e)
+      else writeExp e
 writeExp (EScaled size e)
   | case e of
          (ESymbol Open _)  -> True

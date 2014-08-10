@@ -51,6 +51,7 @@ expr1 = choice
           , root
           , mspace
           , phantom
+          , boxed
           , binary
           , genfrac
           , bareSubSup
@@ -486,6 +487,9 @@ diacritical = do
 
 phantom :: TP Exp
 phantom = EPhantom <$> (ctrlseq "phantom" *> texToken)
+
+boxed :: TP Exp
+boxed = EBoxed <$> (ctrlseq "boxed" *> texToken)
 
 text :: TP Exp
 text = do

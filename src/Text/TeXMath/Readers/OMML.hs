@@ -252,10 +252,9 @@ elemToExps' element | isElem "m" "box" element = do
              elemToBase
   return [baseExp]
 elemToExps' element | isElem "m" "borderBox" element = do
-  -- TODO: This needs to be "\\boxed" somehow.
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
-  return [baseExp]
+  return [EBoxed baseExp]
 elemToExps' element | isElem "m" "d" element =
   let baseExps  = concat $ mapMaybe
                   elemToBases
