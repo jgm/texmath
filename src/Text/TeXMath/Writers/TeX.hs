@@ -26,7 +26,7 @@ import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import qualified Text.TeXMath.Shared as S
 import Data.Generics (everywhere, mkT)
 import Control.Applicative ((<$>), Applicative)
-import Control.Monad (when, unless)
+import Control.Monad (when, unless, foldM_)
 import Control.Monad.Reader (MonadReader, runReader, Reader, asks, local)
 import Control.Monad.Writer( MonadWriter, WriterT,
                              execWriterT, tell, censor)
@@ -199,9 +199,9 @@ writeExp (EUnderover convertible b e1 e2)
         (if convertible then local setConvertible else id) $ writeExp b
       unless convertible $ tell [ControlSeq "\\limits"]
       tell [Token '_']
-      tellGroup (writeExp e1)
+      tellGroup (checkSubstack e1)
       tell [Token '^']
-      tellGroup (writeExp e2)
+      tellGroup (checkSubstack e2)
   | otherwise = writeExp (EUnder convertible (EOver convertible b e2) e1)
 writeExp (ESqrt e) = do
     tell [ControlSeq "\\sqrt"]
@@ -307,13 +307,29 @@ writeScript pos convertible b e1 = do
               (if convertible then local setConvertible else id) $ writeExp b
             unless convertible $ tell [ControlSeq "\\limits"]
             tell [Token $ case pos of { Over -> '^'; Under -> '_' }]
-            tellGroup (writeExp e1)
+            tellGroup (checkSubstack e1)
          | otherwise -> do
              case pos of
                   Over   -> tell [ControlSeq "\\overset"]
                   Under  -> tell [ControlSeq "\\underset"]
              tellGroup (writeExp e1)
              tellGroup (writeExp b)
+
+-- Replace an array with a substack if appropriate.
+checkSubstack :: Exp -> Math ()
+checkSubstack e@(EArray [AlignCenter] rows) = do
+  env <- asks mathEnv
+  if "amsmath" `elem` env
+     then do
+       tell [ControlSeq "\\substack"]
+       tellGroup $ foldM_ (\first r -> do
+          if first
+             then return ()
+             else tell [Space, Literal "\\\\", Space]
+          mapM_ (mapM_ writeExp) r
+          return False) True rows
+     else writeExp e
+checkSubstack e = writeExp e
 
 -- Utility
 

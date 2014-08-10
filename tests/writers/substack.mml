@@ -1,0 +1,38 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <munder>
+      <mo>∑</mo>
+      <mtable>
+        <mtr>
+          <mtd columnalign="center">
+            <mrow>
+              <mn>0</mn>
+              <mo>&lt;</mo>
+              <mi>i</mi>
+              <mo>&lt;</mo>
+              <mi>m</mi>
+            </mrow>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd columnalign="center">
+            <mrow>
+              <mn>0</mn>
+              <mo>&lt;</mo>
+              <mi>j</mi>
+              <mo>&lt;</mo>
+              <mi>n</mi>
+            </mrow>
+          </mtd>
+        </mtr>
+      </mtable>
+    </munder>
+    <mi>P</mi>
+    <mo stretchy="false" form="prefix">(</mo>
+    <mi>i</mi>
+    <mo>,</mo>
+    <mi>j</mi>
+    <mo stretchy="false" form="postfix">)</mo>
+  </mrow>
+</math>

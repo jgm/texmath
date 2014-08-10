@@ -54,6 +54,7 @@ expr1 = choice
           , boxed
           , binary
           , genfrac
+          , substack
           , bareSubSup
           , environment
           , diacritical
@@ -194,6 +195,12 @@ genfrac = do
                       (True, True) -> DisplayFrac
                       _            -> NormalFrac
   return $ EDelimited [openDelim] [closeDelim] [Right (EFraction fracType x y)]
+
+substack :: TP Exp
+substack = do
+  ctrlseq "substack"
+  formulas <- braces $ ignorable >> (manyExp expr) `sepEndBy` endLine
+  return $ EArray [AlignCenter] $ map (\x -> [[x]]) formulas
 
 asGroup :: [Exp] -> Exp
 asGroup [x] = x
@@ -621,7 +628,7 @@ neg (ESymbol Rel x) = ESymbol Rel `fmap`
 neg _ = mzero
 
 lexeme :: TP a -> TP a
-lexeme p = p <* spaces
+lexeme p = p <* ignorable
 
 braces :: TP a -> TP a
 braces p = lexeme $ char '{' *> spaces *> p <* spaces <* char '}'
