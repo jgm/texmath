@@ -34,7 +34,7 @@ module Text.TeXMath.Readers.OMML (readOMML) where
 
 import Text.XML.Light
 import Data.Maybe (mapMaybe, fromMaybe)
-import Data.List (intersperse)
+import Data.List (intercalate)
 import Data.Char (isDigit)
 import Text.TeXMath.Types
 import Text.TeXMath.Shared (fixTree, getSpaceWidth)
@@ -256,10 +256,10 @@ elemToExps' element | isElem "m" "borderBox" element = do
              elemToBase
   return [EBoxed baseExp]
 elemToExps' element | isElem "m" "d" element =
-  let baseExps  = concat $ mapMaybe
+  let baseExps  = mapMaybe
                   elemToBases
                   (elChildren element)
-      inDelimExps = map Right baseExps
+      inDelimExps = map (map Right) baseExps
       dPr = filterChildName (hasElemName "m" "dPr") element
       begChr = dPr >>=
                filterChildName (hasElemName "m" "begChr") >>=
@@ -276,7 +276,7 @@ elemToExps' element | isElem "m" "d" element =
       beg = fromMaybe '(' begChr
       end = fromMaybe ')' endChr
       sep = fromMaybe '|' sepChr
-      exps = intersperse (Left [sep]) inDelimExps
+      exps = intercalate [Left [sep]] inDelimExps
   in
    Just [EDelimited [beg] [end] exps]
 elemToExps' element | isElem "m" "eqArr" element =
