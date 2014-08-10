@@ -1,17 +1,31 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mn>0</mn>
-    <mn>1</mn>
+    <menclose notation="box">
+      <mn>0</mn>
+    </menclose>
+    <menclose notation="box">
+      <mn>1</mn>
+    </menclose>
     <mspace width="0.111em" />
-    <mn>2</mn>
+    <menclose notation="box">
+      <mn>2</mn>
+    </menclose>
     <mspace width="0.167em" />
-    <mn>3</mn>
+    <menclose notation="box">
+      <mn>3</mn>
+    </menclose>
     <mspace width="0.222em" />
-    <mn>4</mn>
+    <menclose notation="box">
+      <mn>4</mn>
+    </menclose>
     <mspace width="0.278em" />
-    <mn>5</mn>
+    <menclose notation="box">
+      <mn>5</mn>
+    </menclose>
     <mspace width="0.333em" />
-    <mn>6</mn>
+    <menclose notation="box">
+      <mn>6</mn>
+    </menclose>
   </mrow>
 </math>
