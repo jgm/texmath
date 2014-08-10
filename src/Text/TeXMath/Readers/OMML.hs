@@ -330,7 +330,7 @@ elemToExps' element | isElem "m" "limLow" element = do
   limExp <- filterChildName (hasElemName "m" "lim") element
             >>= (\e -> Just $ concat $ mapMaybe (elemToExps) (elChildren e))
             >>= (return . EGrouped)
-  return [EUnder True limExp baseExp]
+  return [EUnder True baseExp limExp]
 elemToExps' element | isElem "m" "limUpp" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element
           >>= elemToBase
