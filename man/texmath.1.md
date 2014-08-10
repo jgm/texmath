@@ -47,7 +47,7 @@ expect query parameters for `from`, `to`, `input`, and optionally
 
 # AUTHORS
 
-John MacFarlane, Matthew Pickering.
+John MacFarlane, Matthew Pickering, Jesse Rosenthal.
 
 # SEE ALSO
 
