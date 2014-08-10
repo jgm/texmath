@@ -268,7 +268,7 @@ getSpaceChars n =
        _ | n < 0      -> "\x200B"  -- no negative space chars in unicode
          | n <= 2/18  -> "\x200A"
          | n <= 3/18  -> "\x2006"
-         | n <= 4/18  -> "\x2005"
+         | n <= 4/18  -> "\xA0"   -- could also be "\x2005"
          | n <= 5/18  -> "\x2005"
          | n <= 7/18  -> "\x2004"
          | n <= 9/18  -> "\x2000"

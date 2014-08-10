@@ -324,7 +324,7 @@ getSpaceCommand amsmath width =
           -3       -> "\\!"
           0        -> ""
           3        -> "\\,"
-          4        -> "\\:"
+          4        -> "\\ "  -- could also use \: or \>
           5        -> "\\;"
           18       -> "\\quad"
           36       -> "\\qquad"
