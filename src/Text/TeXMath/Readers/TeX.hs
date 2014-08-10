@@ -52,6 +52,7 @@ expr1 = choice
           , mspace
           , phantom
           , binary
+          , genfrac
           , bareSubSup
           , environment
           , diacritical
@@ -177,6 +178,21 @@ binomCmds = [ ("\\choose", \x y ->
             , ("\\bangle", \x y ->
                 EDelimited "\x27E8" "\x27E9" [Right (EFraction NoLineFrac x y)])
             ]
+
+genfrac :: TP Exp
+genfrac = do
+  ctrlseq "genfrac"
+  openDelim <- braces $ option '(' anyChar
+  closeDelim <- braces $ option ')' anyChar
+  bar <- False <$ try (braces (string "0pt")) <|> True <$ texToken
+  displayStyle <- True <$ try (braces (char '0')) <|> False <$ texToken
+  x <- texToken
+  y <- texToken
+  let fracType = case (bar, displayStyle) of
+                      (False, _)   -> NoLineFrac
+                      (True, True) -> DisplayFrac
+                      _            -> NormalFrac
+  return $ EDelimited [openDelim] [closeDelim] [Right (EFraction fracType x y)]
 
 asGroup :: [Exp] -> Exp
 asGroup [x] = x
@@ -513,6 +529,7 @@ mspace = do
   case reads len of
        ((n,[]):_) -> return $ ESpace (n/18)
        _          -> mzero
+
 
 binary :: TP Exp
 binary = do

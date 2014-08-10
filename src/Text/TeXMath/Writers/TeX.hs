@@ -89,8 +89,8 @@ writeBinom cmd x y = do
      then do
        case cmd of
            "\\choose" -> tell [ControlSeq "\\binom"]
-           "\\brack"  -> tellGenFrac '(' ')'
-           "\\brace"  -> tellGenFrac '[' ']'
+           "\\brack"  -> tellGenFrac '[' ']'
+           "\\brace"  -> tellGenFrac '{' '}'
            "\\bangle" -> tellGenFrac '\x27E8' '\x27E9'
            _          -> fail "writeBinom: unknown cmd"
        tellGroup $ writeExp x
