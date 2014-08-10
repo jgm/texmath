@@ -326,7 +326,7 @@ checkSubstack e@(EArray [AlignCenter] rows) = do
           if first
              then return ()
              else tell [Space, Literal "\\\\", Space]
-          mapM_ (mapM_ writeExp) r
+          mapM_ (mapM_ writeExp . removeOuterGroup) r
           return False) True rows
      else writeExp e
 checkSubstack e = writeExp e
