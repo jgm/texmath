@@ -57,13 +57,18 @@ removeNesting x = x
 removeEmpty :: [Exp] -> [Exp]
 removeEmpty xs = filter (not . isEmpty) xs
 
+-- | An empty group of expressions
 empty :: Exp
 empty = EGrouped []
 
+-- | Test to see whether an expression is @empty@.
 isEmpty :: Exp -> Bool
 isEmpty (EGrouped []) = True
 isEmpty _ = False
 
+-- | Walks over a tree of expressions, removing empty expressions, and
+-- fixing delimited expressions with no delimiters and unnecessarily
+-- grouped expressions.
 fixTree :: Exp -> Exp
 fixTree = everywhere (mkT removeNesting) . everywhere (mkT removeEmpty)
 
