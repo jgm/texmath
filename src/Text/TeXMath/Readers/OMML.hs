@@ -233,7 +233,7 @@ elemToExps' element | isElem "m" "acc" element = do
             Just . head
       chr' = case chr of
         Just c -> c
-        Nothing -> '\180'       -- default to acute.
+        Nothing -> '^'       -- default to hat.
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   return $ [EOver False baseExp (ESymbol Accent [chr'])]
