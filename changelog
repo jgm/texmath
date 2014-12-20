@@ -1,3 +1,11 @@
+texmath (0.8.0.1)
+
+  * Added network-uri flag. This addresses the split of network
+    and network-uri packages.
+  * OMML reader: change default accent (Jesse Rosenthal).
+    The default had previously been set as accute (possibly as a
+    placeholder). It appears to be circumflex/hat instead.
+
 texmath (0.8)
 
   * Added OMML reader (Jesse Rosenthal).
