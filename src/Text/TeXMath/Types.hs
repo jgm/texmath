@@ -153,4 +153,4 @@ type Env = [String]
 
 -- | Contains @amsmath@ and @amssymbol@
 defaultEnv :: [String]
-defaultEnv = ["amsmath", "amssymbol"]
+defaultEnv = ["amsmath", "amssymb"]
