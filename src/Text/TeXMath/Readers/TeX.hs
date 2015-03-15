@@ -465,6 +465,7 @@ styleOps = M.fromList
           , ("\\mathup",     EStyled TextNormal)
           , ("\\mbox",       EStyled TextNormal)
           , ("\\mathbf",     EStyled TextBold)
+          , ("\\boldsymbol", EStyled TextBold)
           , ("\\mathbfup",   EStyled TextBold)
           , ("\\mathit",     EStyled TextItalic)
           , ("\\mathtt",     EStyled TextMonospace)
