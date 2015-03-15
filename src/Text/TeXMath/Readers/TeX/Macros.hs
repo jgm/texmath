@@ -111,6 +111,7 @@ newcommand = try $ do
   try (string "newcommand")
     <|> try (string "renewcommand")
     <|> string "providecommand"
+  optional (char '*')
   pSkipSpaceComments
   name <- inbraces <|> ctrlseq
   guard (take 1 name == "\\")
