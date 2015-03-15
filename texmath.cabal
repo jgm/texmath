@@ -108,9 +108,11 @@ Library
       Ghc-Options:     -Wall -fno-warn-unused-do-bind
     else
       Ghc-Options:     -Wall
-    Ghc-Prof-Options:  -auto-all -caf-all
+    Ghc-Prof-Options:
     Default-Language:    Haskell2010
     Hs-Source-Dirs:    src
+    c-sources: cbits/valToASCII.c
+            cbits/keyToASCII.c
 
 Executable texmath
     Default-Language:    Haskell2010
