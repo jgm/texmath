@@ -40,9 +40,6 @@ import Text.TeXMath.Types
 import Text.TeXMath.Shared (fixTree, getSpaceWidth, getOperator)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Control.Applicative ((<$>))
--- As we constuct from the bottom up, this situation can occur.
-
-
 
 readOMML :: String -> Either String [Exp]
 readOMML s | Just e <- parseXMLDoc s =
