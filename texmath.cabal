@@ -108,6 +108,8 @@ Library
       Ghc-Options:     -Wall -fno-warn-unused-do-bind
     else
       Ghc-Options:     -Wall
+--    note: we don't specify ghc-prof-optiosn: -auto-all -caf-all
+--    because this blows up compile time on clang
     Ghc-Prof-Options:
     Default-Language:    Haskell2010
     Hs-Source-Dirs:    src
