@@ -1,3 +1,13 @@
+texmath (0.8.0.2)
+
+  * Fixed typo in `defaultEnv` to include `amssymb` (#68).
+  * Moved some lookup tables to C, and disabled aggressive
+    profiling defaults, to avoid excessive memory usage in
+    compiling with clang (#70).
+  * Support `\newcommand*` in `parseMacroDefinition` (jgm/pandoc#2005).
+  * Fixed order bug for over/under in OMML reader (#66).
+  * Support `\boldsymbol` (#67).
+
 texmath (0.8.0.1)
 
   * Added network-uri flag. This addresses the split of network
