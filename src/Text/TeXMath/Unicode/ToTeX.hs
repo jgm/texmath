@@ -46,7 +46,7 @@ module Text.TeXMath.Unicode.ToTeX ( getTeXMath
                                       , records
                                       ) where
 
-import qualified Data.Map.Strict as M
+import qualified Data.Map as M
 import Text.TeXMath.TeX
 import Text.TeXMath.Types
 import Data.Maybe (fromMaybe, listToMaybe, mapMaybe)
