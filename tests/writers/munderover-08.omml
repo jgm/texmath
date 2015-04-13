@@ -9,9 +9,7 @@
         <m:limLow>
           <m:e>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>BASE</m:t>
             </m:r>
           </m:e>
@@ -19,9 +17,7 @@
             <m:limUpp>
               <m:e>
                 <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
+                  <m:rPr />
                   <m:t>under-1</m:t>
                 </m:r>
               </m:e>
@@ -32,9 +28,7 @@
                   </m:phantPr>
                   <m:e>
                     <m:r>
-                      <m:rPr>
-                        <m:sty m:val="p" />
-                      </m:rPr>
+                      <m:rPr />
                       <m:t>fail</m:t>
                     </m:r>
                   </m:e>
@@ -48,9 +42,7 @@
         <m:limUpp>
           <m:e>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>under-2</m:t>
             </m:r>
           </m:e>
@@ -61,9 +53,7 @@
               </m:phantPr>
               <m:e>
                 <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
+                  <m:rPr />
                   <m:t>fail</m:t>
                 </m:r>
               </m:e>
@@ -73,9 +63,7 @@
       </m:lim>
     </m:limLow>
     <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
+      <m:rPr />
       <m:t>=</m:t>
     </m:r>
     <m:limLow>
@@ -83,17 +71,13 @@
         <m:limLow>
           <m:e>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>BASE</m:t>
             </m:r>
           </m:e>
           <m:lim>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>under-1</m:t>
             </m:r>
           </m:lim>
@@ -101,9 +85,7 @@
       </m:e>
       <m:lim>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>under-2</m:t>
         </m:r>
       </m:lim>

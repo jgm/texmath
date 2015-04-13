@@ -7,25 +7,19 @@
     <m:limUpp>
       <m:e>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>_ baseline _</m:t>
         </m:r>
       </m:e>
       <m:lim>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>over script</m:t>
         </m:r>
       </m:lim>
     </m:limUpp>
     <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
+      <m:rPr />
       <m:t>=</m:t>
     </m:r>
     <m:limUpp>
@@ -33,9 +27,7 @@
         <m:limLow>
           <m:e>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>_ baseline _</m:t>
             </m:r>
           </m:e>
@@ -46,9 +38,7 @@
               </m:phantPr>
               <m:e>
                 <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
+                  <m:rPr />
                   <m:t>fail</m:t>
                 </m:r>
               </m:e>
@@ -58,9 +48,7 @@
       </m:e>
       <m:lim>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>over script</m:t>
         </m:r>
       </m:lim>

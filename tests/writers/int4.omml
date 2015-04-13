@@ -13,25 +13,19 @@
       </m:naryPr>
       <m:e>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>f</m:t>
         </m:r>
       </m:e>
       <m:sub>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>0</m:t>
         </m:r>
       </m:sub>
       <m:sup>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>1</m:t>
         </m:r>
       </m:sup>
@@ -49,17 +43,13 @@
           </m:fPr>
           <m:num>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>x</m:t>
             </m:r>
           </m:num>
           <m:den>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>2</m:t>
             </m:r>
           </m:den>
@@ -67,21 +57,15 @@
       </m:e>
     </m:d>
     <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
+      <m:rPr />
       <m:t> </m:t>
     </m:r>
     <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
+      <m:rPr />
       <m:t>ⅆ</m:t>
     </m:r>
     <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
+      <m:rPr />
       <m:t>x</m:t>
     </m:r>
   </m:oMath>

@@ -7,9 +7,7 @@
     <m:limLow>
       <m:e>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>BASE</m:t>
         </m:r>
       </m:e>
@@ -20,17 +18,13 @@
           </m:fPr>
           <m:num>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>first under script</m:t>
             </m:r>
           </m:num>
           <m:den>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>second one</m:t>
             </m:r>
           </m:den>
@@ -38,9 +32,7 @@
       </m:lim>
     </m:limLow>
     <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
+      <m:rPr />
       <m:t>=</m:t>
     </m:r>
     <m:limLow>
@@ -48,9 +40,7 @@
         <m:limLow>
           <m:e>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>BASE</m:t>
             </m:r>
           </m:e>
@@ -61,17 +51,13 @@
               </m:fPr>
               <m:num>
                 <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
+                  <m:rPr />
                   <m:t>first under script</m:t>
                 </m:r>
               </m:num>
               <m:den>
                 <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
+                  <m:rPr />
                   <m:t>second one</m:t>
                 </m:r>
               </m:den>
@@ -86,9 +72,7 @@
           </m:phantPr>
           <m:e>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>fail</m:t>
             </m:r>
           </m:e>

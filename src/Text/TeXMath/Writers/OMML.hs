@@ -28,7 +28,7 @@ import Data.Generics (everywhere, mkT)
 
 -- | Transforms an expression tree to an OMML XML Tree
 writeOMML :: DisplayType -> [Exp] -> Element
-writeOMML dt = container . concatMap (showExp (setProps TextNormal))
+writeOMML dt = container . concatMap (showExp [])
             . everywhere (mkT $ handleDownup dt)
     where container = case dt of
                   DisplayBlock  -> \x -> mnode "oMathPara"

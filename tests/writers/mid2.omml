@@ -5,9 +5,7 @@
   </m:oMathParaPr>
   <m:oMath>
     <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
+      <m:rPr />
       <m:t>∣</m:t>
     </m:r>
     <m:f>
@@ -16,25 +14,19 @@
       </m:fPr>
       <m:num>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>H</m:t>
         </m:r>
       </m:num>
       <m:den>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>K</m:t>
         </m:r>
       </m:den>
     </m:f>
     <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
+      <m:rPr />
       <m:t>∣</m:t>
     </m:r>
   </m:oMath>

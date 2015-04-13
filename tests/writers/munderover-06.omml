@@ -9,9 +9,7 @@
         <m:limLow>
           <m:e>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>BASE</m:t>
             </m:r>
           </m:e>
@@ -19,17 +17,13 @@
             <m:limUpp>
               <m:e>
                 <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
+                  <m:rPr />
                   <m:t>first under script</m:t>
                 </m:r>
               </m:e>
               <m:lim>
                 <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
+                  <m:rPr />
                   <m:t>second overscript</m:t>
                 </m:r>
               </m:lim>
@@ -41,17 +35,13 @@
         <m:limUpp>
           <m:e>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>second one</m:t>
             </m:r>
           </m:e>
           <m:lim>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>first overscript</m:t>
             </m:r>
           </m:lim>
@@ -59,9 +49,7 @@
       </m:lim>
     </m:limLow>
     <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
+      <m:rPr />
       <m:t>=</m:t>
     </m:r>
     <m:limLow>
@@ -71,17 +59,13 @@
             <m:limLow>
               <m:e>
                 <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
+                  <m:rPr />
                   <m:t>BASE</m:t>
                 </m:r>
               </m:e>
               <m:lim>
                 <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
+                  <m:rPr />
                   <m:t>first under script</m:t>
                 </m:r>
               </m:lim>
@@ -89,9 +73,7 @@
           </m:e>
           <m:lim>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>second overscript</m:t>
             </m:r>
           </m:lim>
@@ -101,17 +83,13 @@
         <m:limUpp>
           <m:e>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>second one</m:t>
             </m:r>
           </m:e>
           <m:lim>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>first overscript</m:t>
             </m:r>
           </m:lim>

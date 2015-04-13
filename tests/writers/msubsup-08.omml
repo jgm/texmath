@@ -7,57 +7,43 @@
     <m:sSubSup>
       <m:e>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>A</m:t>
         </m:r>
       </m:e>
       <m:sub>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>B</m:t>
         </m:r>
       </m:sub>
       <m:sup>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>C</m:t>
         </m:r>
       </m:sup>
     </m:sSubSup>
     <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
+      <m:rPr />
       <m:t>=</m:t>
     </m:r>
     <m:sSubSup>
       <m:e>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>A</m:t>
         </m:r>
       </m:e>
       <m:sub>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>B</m:t>
         </m:r>
       </m:sub>
       <m:sup>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>C</m:t>
         </m:r>
       </m:sup>
@@ -73,17 +59,13 @@
           </m:fPr>
           <m:num>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>test</m:t>
             </m:r>
           </m:num>
           <m:den>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>failed</m:t>
             </m:r>
           </m:den>

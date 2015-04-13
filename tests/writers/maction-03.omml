@@ -33,17 +33,13 @@
               <m:mr>
                 <m:e>
                   <m:r>
-                    <m:rPr>
-                      <m:sty m:val="p" />
-                    </m:rPr>
+                    <m:rPr />
                     <m:t>0</m:t>
                   </m:r>
                 </m:e>
                 <m:e>
                   <m:r>
-                    <m:rPr>
-                      <m:sty m:val="p" />
-                    </m:rPr>
+                    <m:rPr />
                     <m:t>1</m:t>
                   </m:r>
                 </m:e>
@@ -51,17 +47,13 @@
               <m:mr>
                 <m:e>
                   <m:r>
-                    <m:rPr>
-                      <m:sty m:val="p" />
-                    </m:rPr>
+                    <m:rPr />
                     <m:t>2</m:t>
                   </m:r>
                 </m:e>
                 <m:e>
                   <m:r>
-                    <m:rPr>
-                      <m:sty m:val="p" />
-                    </m:rPr>
+                    <m:rPr />
                     <m:t>3</m:t>
                   </m:r>
                 </m:e>
@@ -72,9 +64,7 @@
       </m:e>
       <m:sup>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>T</m:t>
         </m:r>
       </m:sup>

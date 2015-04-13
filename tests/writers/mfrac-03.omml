@@ -10,23 +10,17 @@
       </m:fPr>
       <m:num>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>A</m:t>
         </m:r>
       </m:num>
       <m:den>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>B</m:t>
         </m:r>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>+</m:t>
         </m:r>
         <m:f>
@@ -35,23 +29,17 @@
           </m:fPr>
           <m:num>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>C</m:t>
             </m:r>
           </m:num>
           <m:den>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>D</m:t>
             </m:r>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>+</m:t>
             </m:r>
             <m:f>
@@ -60,17 +48,13 @@
               </m:fPr>
               <m:num>
                 <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
+                  <m:rPr />
                   <m:t>E</m:t>
                 </m:r>
               </m:num>
               <m:den>
                 <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
+                  <m:rPr />
                   <m:t>F</m:t>
                 </m:r>
               </m:den>
@@ -80,9 +64,7 @@
       </m:den>
     </m:f>
     <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
+      <m:rPr />
       <m:t>=</m:t>
     </m:r>
     <m:f>
@@ -93,9 +75,7 @@
         <m:limUpp>
           <m:e>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>A</m:t>
             </m:r>
           </m:e>
@@ -106,9 +86,7 @@
               </m:phantPr>
               <m:e>
                 <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
+                  <m:rPr />
                   <m:t>0</m:t>
                 </m:r>
               </m:e>
@@ -118,15 +96,11 @@
       </m:num>
       <m:den>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>B</m:t>
         </m:r>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>+</m:t>
         </m:r>
         <m:f>
@@ -135,23 +109,17 @@
           </m:fPr>
           <m:num>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>C</m:t>
             </m:r>
           </m:num>
           <m:den>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>D</m:t>
             </m:r>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>+</m:t>
             </m:r>
             <m:f>
@@ -160,9 +128,7 @@
               </m:fPr>
               <m:num>
                 <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
+                  <m:rPr />
                   <m:t>E</m:t>
                 </m:r>
               </m:num>
@@ -170,9 +136,7 @@
                 <m:limLow>
                   <m:e>
                     <m:r>
-                      <m:rPr>
-                        <m:sty m:val="p" />
-                      </m:rPr>
+                      <m:rPr />
                       <m:t>F</m:t>
                     </m:r>
                   </m:e>
@@ -183,9 +147,7 @@
                       </m:phantPr>
                       <m:e>
                         <m:r>
-                          <m:rPr>
-                            <m:sty m:val="p" />
-                          </m:rPr>
+                          <m:rPr />
                           <m:t>0</m:t>
                         </m:r>
                       </m:e>

@@ -7,41 +7,31 @@
     <m:sSup>
       <m:e>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>S</m:t>
         </m:r>
       </m:e>
       <m:sup>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>3</m:t>
         </m:r>
       </m:sup>
     </m:sSup>
     <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
+      <m:rPr />
       <m:t>=</m:t>
     </m:r>
     <m:sSup>
       <m:e>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>S</m:t>
         </m:r>
       </m:e>
       <m:sup>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
+          <m:rPr />
           <m:t>3</m:t>
         </m:r>
       </m:sup>
@@ -57,17 +47,13 @@
           </m:fPr>
           <m:num>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>test</m:t>
             </m:r>
           </m:num>
           <m:den>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
+              <m:rPr />
               <m:t>failed</m:t>
             </m:r>
           </m:den>
