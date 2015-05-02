@@ -1,3 +1,9 @@
+texmath (0.8.2)
+
+  * Better handling of decimal points. Decimal points are now parsed
+    as parts of numbers, not as separate symbols.  E.g. in MathML they
+    now appear in `<mn>` elements.  Closes #74.
+
 texmath (0.8.1)
 
   * OMML: Don't force everything into Roman font by default.
