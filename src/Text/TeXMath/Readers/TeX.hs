@@ -244,7 +244,12 @@ inbrackets :: TP Exp
 inbrackets = (brackets $ manyExp $ notFollowedBy (char ']') >> expr)
 
 number :: TP Exp
-number = lexeme $ ENumber <$> many1 digit
+number = lexeme $ ENumber <$> (decimalNumber <|> many1 digit)
+  where decimalNumber = try $ do
+          xs <- many digit
+          char '.'
+          ys <- many1 digit
+          return (xs ++ '.':ys)
 
 enclosure :: TP Exp
 enclosure = basicEnclosure <|> scaledEnclosure <|> delimited
