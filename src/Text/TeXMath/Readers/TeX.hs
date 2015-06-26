@@ -719,6 +719,8 @@ symbols = M.fromList
            , ("\\backslash", ESymbol Bin "\x2216")
            , ("\\setminus", ESymbol Bin "\\")
            , ("\\times", ESymbol Bin "\x00D7")
+           , ("\\ltimes", ESymbol Bin "\x22C9")
+           , ("\\rtimes", ESymbol Bin "\x22CA")
            , ("\\alpha", EIdentifier "\x03B1")
            , ("\\beta", EIdentifier "\x03B2")
            , ("\\chi", EIdentifier "\x03C7")
