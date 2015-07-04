@@ -1,3 +1,7 @@
+texmath (0.8.2.2)
+
+  * Handle `.` after number with no following digits.
+
 texmath (0.8.2.1)
 
   * Handle bare hyphen in `\text{...}`.  Closes jgm/pandoc#2274.
