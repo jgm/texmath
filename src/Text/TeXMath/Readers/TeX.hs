@@ -971,6 +971,7 @@ regular = many1 (noneOf "`'-~${}\\ \t")
 ligature :: TP String
 ligature = try ("\x2014" <$ string "---")
        <|> try ("\x2013" <$ string "--")
+       <|> try (string "-")
        <|> try ("\x201C" <$ string "``")
        <|> try ("\x201D" <$ string "''")
        <|> try ("\x2019" <$ string "'")
