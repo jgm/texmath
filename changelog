@@ -1,3 +1,8 @@
+texmath (0.8.3)
+
+  * Parse uppercase Greek letters as EIdentifier, not ESymbol Op.
+    This fixes handling of things like `$Lambda^1$`, particularly in omml.
+
 texmath (0.8.2.2)
 
   * Handle `.` after number with no following digits.
