@@ -1,0 +1,275 @@
+From Appendix B of
+http://www.unicode.org/notes/tn28/UTN28-PlainTextMath-v3.pdf
+
+
+\acute U+0301 ordinary accent
+\aleph U+2135 ordinary operand
+\alpha U+03B1 ordinary operand
+\amalg U+2210 ordinary nary
+\angle U+2220 relational normal
+\aoint U+2233 ordinary nary
+\approx U+2248 relational normal
+\asmash U+2B06 ordinary encl phantom
+\ast U+2217 binary normal
+\asymp U+224D relational normal
+\atop U+00A6 ordinary divide
+\Bar U+033F ordinary accent
+\bar U+0305 ordinary accent
+\because U+2235 relational normal
+\begin U+3016 open open
+\below U+252C ordinary subsup lower
+\beta U+03B2 ordinary operand
+\beth U+2136 ordinary operand
+\bot U+22A5 relational normal
+\bigcap U+22C2 ordinary nary
+\bigcup U+22C2 ordinary nary
+\bigodot U+2A00 ordinary nary
+\bigoplus U+2A01 ordinary nary
+\bigotimes U+2A02 ordinary nary
+\bigsqcup U+2A06 ordinary nary
+\biguplus U+2A04 ordinary nary
+\bigvee U+22C1 ordinary nary
+\bigwedge U+22C0 ordinary nary
+\bowtie U+22C8 relational normal
+\bot U+22A5 relational normal
+\box U+25A1 ordinary encl box
+\bra U+27E8 open open
+\breve U+0306 ordinary accent
+\bullet U+2219 binary normal
+\cap U+2229 binary normal
+\cbrt U+221B open encl root
+\cdot U+22C5 binary normal
+\cdots U+22EF ordinary normal
+\check U+030C ordinary accent
+\chi U+03C7 ordinary operand
+\circ U+2218 binary normal
+\close U+2524 ordinary close
+\clubsuit U+2663 ordinary normal
+\coint U+2232 ordinary nary
+\cong U+2245 relational normal
+\cup U+222A binary normal
+\daleth U+2138 ordinary operand
+\dashv U+22A3 relational stretch horz
+\Dd U+2145 differential operand
+\dd U+2146 differential operand
+\ddddot U+20DC ordinary accent
+\dddot U+20DB ordinary accent
+\ddot U+0308 ordinary accent
+\ddots U+22F1 relational normal
+\degree U+00B0 ordinary operand
+\Delta U+0394 ordinary operand
+\delta U+03B4 ordinary operand
+\diamond U+22C4 binary normal
+\diamondsuit U+2662 ordinary normal
+\div U+00F7 binary normal
+\dot U+0307 ordinary accent
+\doteq U+2250 relational normal
+\dots U+2026 ordinary normal
+\Downarrow U+21D3 relational normal
+\downarrow U+2193 relational normal
+\dsmash U+2B07 ordinary encl phantom
+\ee U+2147 ordinary operand
+\ell U+2113 ordinary operand
+\emptyset U+2205 unary operand
+\emsp U+2003 skip normal
+\end U+3017 close close
+\ensp U+2002 skip normal
+\epsilon U+03F5 ordinary operand
+\eqarray U+2588 ordinary encl eqarray
+\eqno U+0023 ordinary marker
+\equiv U+2261 relational normal
+\eta U+03B7 ordinary operand
+\exists U+2203 unary normal
+\forall U+2200 unary normal
+\funcapply U+2061 binary subsupFA
+\Gamma U+0393 ordinary operand
+\gamma U+03B3 ordinary operand
+\ge U+2265 relational normal
+\geq U+2265 relational normal
+\gets U+2190 ordinary stretch horiz
+\gg U+226B relational normal
+\gimel U+2137 ordinary operand
+\grave U+0300 ordinary accent
+\hairsp U+200A skip normal
+\hat U+0302 ordinary accent
+\hbar U+210F ordinary operand
+\heartsuit U+2661 ordinary normal
+\hookleftarrow U+21A9 relational stretch horiz
+\hookrightarrow U+21AA relational stretch horiz
+\hphantom U+2B04 ordinary encl phantom
+\hsmash U+2B0C ordinary encl phantom
+\hvec U+20D1 ordinary accent
+\ii U+2148 ordinary operand
+\iiiint U+2A0C ordinary nary
+\iiint U+222D ordinary nary
+\iint U+222C ordinary nary
+\Im U+2111 ordinary operand
+\imath U+0131 ordinary operand
+\in U+2208 relational normal
+\inc U+2206 unary operand
+\infty U+221E ordinary operand
+\int U+222B ordinary nary
+\iota U+03B9 ordinary operand
+\jj U+2149 ordinary operand
+\jmath U+0237 ordinary operand
+\kappa U+03BA ordinary operand
+\ket U+27E9 close close
+\Lambda U+039B ordinary operand
+\lambda U+03BB ordinary operand
+\langle U+27E8 open open
+\lbrace U+007B open open
+\lbrack U+005B open open
+\lceil U+2308 open open
+\ldiv U+2215 binary divide
+\ldots U+2026 ordinary normal
+\le U+2264 relational normal
+\Leftarrow U+21D0 relational stretch horiz
+\leftarrow U+2190 relational stretch horiz
+\leftharpoondown U+21BD relational stretch horiz
+\leftharpoonup U+21BC relational stretch horiz
+\Leftrightarrow U+21D4 relational stretch horiz
+\leftrightarrow U+2194 relational stretch horiz
+\leq U+2264 relational normal
+\lfloor U+230A open open
+\ll U+226A relational normal
+\Longleftarrow U+27F8 relational normal
+\longleftarrow U+27F5 relational normal
+\Longleftrightarrow U+27FA relational normal
+\longleftrightarrow U+27F7 relational normal
+\Longrightarrow U+27F9 relational normal
+\longrightarrow U+27F6 relational normal
+\mapsto U+21A6 relational stretch horiz
+\matrix U+25A0 ordinary encl matrix
+\medsp U+205F Ordinary normal
+\mid U+2223 relational list delims
+\models U+22A8 relational stretch horz
+\mp U+2213 unary/binary unary/binary
+\mu U+03BC ordinary operand
+\nabla U+2207 unary operand
+\naryand U+2592 ordinary normal
+\nbsp U+00A0 skip normal
+\ndiv U+2298 binary divide
+\ne U+2260 relational normal
+\nearrow U+2197 relational normal
+\neg U+00AC unary normal
+\neq U+2260 relational normal
+\ni U+220B relational normal
+\norm U+2016 ordinary open/close
+\nu U+03BD ordinary operand
+\nwarrow U+2196 relational normal
+\odot U+2299 binary normal
+\of U+2592 ordinary normal
+\oiiint U+2230 ordinary nary
+\oiint U+222F ordinary nary
+\oint U+222E ordinary nary
+\Omega U+03A9 ordinary operand
+\omega U+03C9 ordinary operand
+\ominus U+2296 binary normal
+\open U+251C ordinary open
+\oplus U+2295 binary normal
+\oslash U+2298 binary normal
+\otimes U+2297 binary normal
+\over U+002F binarynsp divide
+\overbar U+00AF ordinary encl overbar
+\overbrace U+23DE ordinary stretch over
+\overparen U+23DC ordinary stretch over
+\parallel U+2225 relational normal
+\partial U+2202 unary operand
+\phantom U+27E1 ordinary encl phantom
+\Phi U+03A6 ordinary operand
+\phi U+03D5 ordinary operand
+\Pi U+03A0 ordinary operand
+\pi U+03C0 ordinary operand
+\pm U+00B1 unary/binary unary/binary
+\pppprime U+2057 ordinary Unisubsup
+\ppprime U+2034 ordinary Unisubsup
+\pprime U+2033 ordinary Unisubsup
+\prec U+227A relational normal
+\preceq U+227C relational normal
+\prime U+2032 ordinary Unisubsup
+\prod U+220F ordinary nary
+\propto U+221D relational normal
+\Psi U+03A8 ordinary operand
+\psi U+03C8 ordinary operand
+\qdrt U+221C open encl root
+\rangle U+27E9 close close
+\ratio U+2236 relational normal
+\rbrace U+007D close close
+\rbrack U+005D close close
+\rceil U+2309 close close
+\rddots U+22F0 relational normal
+\Re U+211C ordinary operand
+\rect U+25AD ordinary encl rect
+\rfloor U+230B close close
+\rho U+03C1 ordinary operand
+\Rightarrow U+21D2 relational stretch horiz
+\rightarrow U+2192 relational stretch horiz
+\rightharpoondown U+21C1 relational stretch horiz
+\rightharpoonup U+21C0 relational stretch horiz
+\sdiv U+2044 binarynsp divide
+\searrow U+2198 relational normal
+\setminus U+2216 binary normal
+\Sigma U+03A3 ordinary operand
+\sigma U+03C3 ordinary operand
+\sim U+223C relational normal
+\simeq U+2243 relational normal
+\smash U+2B0D ordinary encl phantom
+\spadesuit U+2660 ordinary normal
+\sqcap U+2293 binary normal
+\sqcup U+2294 binary normal
+\sqrt U+221A open encl root
+\sqsubseteq U+2291 relational normal
+\sqsuperseteq U+2292 relational normal
+\star U+22C6 binary normal
+\subset U+2282 relational normal
+\subseteq U+2286 relational normal
+\succ U+227B relational normal
+\succeq U+227D relational normal
+\sum U+2211 ordinary nary
+\superset U+2283 relational normal
+\superseteq U+2287 relational normal
+\swarrow U+2199 relational normal
+\tau U+03C4 ordinary operand
+\therefore U+2234 relational normal
+\Theta U+0398 ordinary operand
+\theta U+03B8 ordinary operand
+\thicksp U+2005 skip normal
+\thinsp U+2006 skip normal
+\tilde U+0303 ordinary accent
+\times U+00D7 binarynsp normal
+\to U+2192 relational stretch horiz
+\top U+22A4 relational normal
+\tvec U+20E1 ordinary accent
+\underbar U+2581 ordinary encl underbar
+\underbrace U+23DF ordinary stretch under
+\underparen U+23DD ordinary stretch under
+\Uparrow U+21D1 relational normal
+\uparrow U+2191 relational normal
+\Updownarrow U+21D5 relational normal
+\updownarrow U+2195 relational normal
+\uplus U+228E binary normal
+\Upsilon U+03A5 ordinary operand
+\upsilon U+03C5 ordinary operand
+\varepsilon U+03B5 ordinary operand
+\varphi U+03C6 ordinary operand
+\varpi U+03D6 ordinary operand
+\varrho U+03F1 ordinary operand
+\varsigma U+03C2 ordinary operand
+\vartheta U+03D1 ordinary operand
+\vbar U+2502 ordinary list delims
+\vdash U+22A2 relational stretch horz
+\vdots U+22EE relational normal
+\vec U+20D7 ordinary accent
+\vee U+2228 binary normal
+\Vert U+2016 ordinary open/close
+\vert U+007C ordinary open/close
+\vphantom U+21F3 relational encl phantom
+\vthicksp U+2004 skip normal
+\wedge U+2227 binary normal
+\wp U+2118 ordinary operand
+\wr U+2240 binary normal
+\Xi U+039E ordinary operand
+\xi U+03BE ordinary operand
+\zeta U+03B6 ordinary operand
+\zwnj U+200C ordinary normal
+\zwsp U+200B ordinary normal
