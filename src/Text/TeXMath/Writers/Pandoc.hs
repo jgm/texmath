@@ -35,8 +35,31 @@ writePandoc _ exps = expsToInlines TextNormal exps
 
 expsToInlines :: TextType -> [Exp] -> Maybe [Inline]
 expsToInlines tt xs = do
-  res <- mapM (expToInlines tt) xs
+  res <- mapM (expToInlines tt) (addSpaces xs)
   return (concat res)
+
+-- This adds spaces around certain symbols, in accord
+-- with Appendix G of TeXBook.
+addSpaces :: [Exp] -> [Exp]
+addSpaces (ESymbol t1 s1 : ESymbol t2 s2 : xs)
+  | t2 == Pun || (t1 `notElem` [Bin, Op, Rel, Open, Pun] && not (null xs)) =
+    ESymbol t1 s1 : addSpace t2 (ESymbol t2 s2) ++ addSpaces xs
+addSpaces (x : ESymbol t2 s2 : xs)
+  | not (null xs) =
+    x : addSpace t2 (ESymbol t2 s2) ++ addSpaces xs
+addSpaces (x : xs) = x : addSpaces xs
+addSpaces [] = []
+
+addSpace :: TeXSymbolType -> Exp -> [Exp]
+addSpace t x =
+  case t of
+      Bin -> [medspace, x, medspace]
+      Rel -> [widespace, x, widespace]
+      Pun -> [x, thinspace]
+      _   -> [x]
+  where thinspace = EText TextNormal "\x2006"
+        medspace  = EText TextNormal "\x2005"
+        widespace = EText TextNormal "\x2004"
 
 renderStr :: TextType -> String -> Inline
 renderStr tt s =
@@ -61,15 +84,7 @@ expToInlines tt (ENumber s) = Just [renderStr tt s]
 expToInlines TextNormal (EIdentifier s) = Just [renderStr TextItalic s]
 expToInlines tt (EIdentifier s) = Just [renderStr tt s]
 expToInlines tt (EMathOperator s) = Just [renderStr tt s]
-expToInlines tt (ESymbol t s) = Just $ addSpace t $ renderStr tt s
-  where addSpace Op x = [x]
-        addSpace Bin x = [medspace, x, medspace]
-        addSpace Rel x = [widespace, x, widespace]
-        addSpace Pun x = [x, thinspace]
-        addSpace _ x = [x]
-        thinspace = Str "\x2006"
-        medspace  = Str "\x2005"
-        widespace = Str "\x2004"
+expToInlines tt (ESymbol _ s) = Just [renderStr tt s]
 expToInlines tt (EDelimited start end xs) = do
   xs' <- mapM (either (return . (:[]) . renderStr tt) (expToInlines tt)) xs
   return $ [renderStr tt start] ++ concat xs' ++ [renderStr tt end]
