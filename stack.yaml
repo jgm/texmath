@@ -1,0 +1,8 @@
+flags:
+  texmath:
+    network-uri: true
+    executable: true
+packages:
+- '.'
+extra-deps: []
+resolver: lts-3.9
