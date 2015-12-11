@@ -96,7 +96,7 @@ setProps tt =
        TextDoubleStruck -> [sty "p", scr "double-struck"]
        TextScript       -> [sty "p", scr "script"]
        TextFraktur      -> [sty "p", scr "fraktur"]
-       TextBoldItalic    -> [sty "i"]
+       TextBoldItalic    -> [sty "bi"]
        TextSansSerifBold -> [sty "b", scr "sans-serif"]
        TextBoldScript    -> [sty "b", scr "script"]
        TextBoldFraktur   -> [sty "b", scr "fraktur"]
