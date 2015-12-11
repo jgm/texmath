@@ -25,6 +25,16 @@ test program, `texmath`, use the `executable` Cabal flag:
 
 To run the test suite, compile with `--enable-tests` and do `cabal test`.
 
+Alternatively, texmath can be installed using
+[stack](https://github.com/commercialhaskell/stack).  Install
+the stack binary somewhere in your path.  Then, in the texmath
+repository,
+
+    stack setup
+    stack install --flag texmath:executable
+
+The `texmath` binary will be put in `~/.local/bin`.
+
 Macro definitions may be included before a LaTeX formula.
 
 `texmath` will behave as a CGI script when called under the name
