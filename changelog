@@ -1,3 +1,18 @@
+texmath (0.8.4.1)
+
+  * Added stack install instructions.
+  * Fixed bold-italic in OMML (#76).  Previously `\mathbfit` didn't work
+    properly in OMML output.
+  * Ignore `\nonumber` (#79).
+  * Allow styling in `\operatorname` e.g. `\operatorname{\mathcal{L}}` (#80).
+  * Fixed bug in `supHide` and `subHide` for OMML.  This  led to little
+    empty boxes being displayed in integrals with subscripts but no
+    superscripts.  See jgm/pandoc#2571.
+  * Implemented `\mod` as a math operator (#81).  This doesn't capture all the
+    spacing subtleties of the amsmath version, but should be good enough
+    for most purposes.
+  * Allow pandoc-types < 1.17.
+
 texmath (0.8.4)
 
   * Improved symbol spacing in Pandoc output (jgm/pandoc#2261).
