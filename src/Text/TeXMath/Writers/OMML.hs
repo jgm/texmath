@@ -216,10 +216,10 @@ makeNary props t s y z w =
   mnode "nary" [ mnode "naryPr"
                  [ mnodeA "chr" s ()
                  , mnodeA "limLoc" t ()
-                 , mnodeA "supHide"
+                 , mnodeA "subHide"
                     (if y == EGrouped [] then "on" else "off") ()
                  , mnodeA "supHide"
-                    (if y == EGrouped [] then "on" else "off") ()
+                    (if z == EGrouped [] then "on" else "off") ()
                  ]
                , mnode "e" $ showExp props w
                , mnode "sub" $ showExp props y
