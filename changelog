@@ -1,3 +1,15 @@
+texmath (0.8.4)
+
+  * Improved symbol spacing in Pandoc output (jgm/pandoc#2261).
+    This change avoids putting space around binary symbols that
+    come at the beginning or end of a group, or appear on their
+    own.  It also avoids spacing on a binary symbol that follows
+    a Bin, Op, Rel, Open, or Punct atom, in accord with
+    TeXBook Appendix G.  We could go farther towards exactly
+    matching the TeXBook rules, but this simple change goes some of
+    the way.
+  * Added stack.yaml.
+
 texmath (0.8.3)
 
   * Parse uppercase Greek letters as EIdentifier, not ESymbol Op.
