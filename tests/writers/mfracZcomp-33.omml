@@ -106,8 +106,8 @@
       <m:naryPr>
         <m:chr m:val="∫" />
         <m:limLoc m:val="subSup" />
-        <m:supHide m:val="off" />
-        <m:supHide m:val="off" />
+        <m:subHide m:val="off" />
+        <m:supHide m:val="on" />
       </m:naryPr>
       <m:e>
         <m:f>

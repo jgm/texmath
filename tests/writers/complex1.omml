@@ -497,8 +497,8 @@
             <m:naryPr>
               <m:chr m:val="∮" />
               <m:limLoc m:val="undOvr" />
-              <m:supHide m:val="off" />
-              <m:supHide m:val="off" />
+              <m:subHide m:val="off" />
+              <m:supHide m:val="on" />
             </m:naryPr>
             <m:e>
               <m:f>
@@ -1130,8 +1130,8 @@
             <m:naryPr>
               <m:chr m:val="∏" />
               <m:limLoc m:val="undOvr" />
-              <m:supHide m:val="off" />
-              <m:supHide m:val="off" />
+              <m:subHide m:val="off" />
+              <m:supHide m:val="on" />
             </m:naryPr>
             <m:e>
               <m:r>
@@ -2237,7 +2237,7 @@
             <m:naryPr>
               <m:chr m:val="∑" />
               <m:limLoc m:val="undOvr" />
-              <m:supHide m:val="off" />
+              <m:subHide m:val="off" />
               <m:supHide m:val="off" />
             </m:naryPr>
             <m:e>
@@ -2403,7 +2403,7 @@
             <m:naryPr>
               <m:chr m:val="∑" />
               <m:limLoc m:val="undOvr" />
-              <m:supHide m:val="off" />
+              <m:subHide m:val="off" />
               <m:supHide m:val="off" />
             </m:naryPr>
             <m:e>
@@ -2566,7 +2566,7 @@
             <m:naryPr>
               <m:chr m:val="∏" />
               <m:limLoc m:val="undOvr" />
-              <m:supHide m:val="off" />
+              <m:subHide m:val="off" />
               <m:supHide m:val="off" />
             </m:naryPr>
             <m:e>
