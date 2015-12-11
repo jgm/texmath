@@ -101,7 +101,8 @@ ctrlseq s = lexeme $ try $ do
   return result
 
 ignorable :: TP ()
-ignorable = skipMany (comment <|> label <|> (skipMany1 space <?> "whitespace"))
+ignorable = skipMany (comment <|> label <|> () <$ ctrlseq "nonumber" <|>
+        (skipMany1 space <?> "whitespace"))
 
 comment :: TP ()
 comment = char '%' *> skipMany (noneOf "\n") *> optional newline
