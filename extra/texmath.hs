@@ -17,6 +17,8 @@ import Data.List.Split (splitOn)
 import Data.Aeson (encode, (.=), object)
 import qualified Data.ByteString.Lazy as B
 import qualified Data.Text as T
+import Data.Version ( showVersion )
+import Paths_texmath (version)
 
 inHtml :: Element -> Element
 inHtml e =
@@ -77,7 +79,7 @@ options =
       ("Output format: " ++ (concat $ intersperse ", " (map fst writers)))
    , Option "v" ["version"]
       (NoArg (\_ -> do
-                      hPutStrLn stderr "Version 0.7"
+                      hPutStrLn stderr $ "Version " ++ showVersion version
                       exitWith ExitSuccess))
       "Print version"
 
