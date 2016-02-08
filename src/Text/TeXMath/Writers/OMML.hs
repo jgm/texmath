@@ -172,8 +172,10 @@ showExp props e =
                                         mnodeA "pos" "top" ()
                                     , mnode "e" $ showExp props x ]]
    EOver _ x (ESymbol Accent y) ->
-                       [mnode "acc" [ mnode "accPr" $
-                                        mnodeA "chr" y ()
+                       [mnode "groupChr" [ mnode "groupChrPr"
+                                           [ mnodeA "chr" y ()
+                                           , mnodeA "pos" "top" ()
+                                           , mnodeA "vertJc" "bot" () ]
                                     , mnode "e" $ showExp props x ]]
    ESub x y         -> [mnode "sSub" [ mnode "e" $ showExp props x
                                      , mnode "sub" $ showExp props y]]

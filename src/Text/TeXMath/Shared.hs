@@ -312,11 +312,9 @@ diacriticals =
                , (("\x02DC", "\\widetilde"))
                , (("\x203E", "\\bar"))
                , (("\x23DE", "\\overbrace"))
-               , (("\xFE37", "\\overbrace"))
                , (("\x23B4", "\\overbracket")) -- Only availible in mathtools
                , (("\x00AF", "\\overline"))
                , (("\x23DF", "\\underbrace"))
-               , (("\xFE38", "\\underbrace"))
                , (("\x23B5", "\\underbracket")) -- mathtools
                , (("\x0332", "\\underline"))
                , (("\x0333", "\\underbar"))
