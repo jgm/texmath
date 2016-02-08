@@ -51,6 +51,7 @@ expr1 = choice
           , styled
           , root
           , mspace
+          , mathop
           , phantom
           , boxed
           , binary
@@ -560,6 +561,21 @@ mspace = do
        ((n,[]):_) -> return $ ESpace (n/18)
        _          -> mzero
 
+
+mathop :: TP Exp
+mathop = mathopWith "mathop" Op
+     <|> mathopWith "mathrel" Rel
+     <|> mathopWith "mathbin" Bin
+     <|> mathopWith "mathord" Ord
+
+mathopWith :: String -> TeXSymbolType -> TP Exp
+mathopWith name ty = try $ do
+  ctrlseq name
+  e <- expr1
+  case e of
+     ESymbol _ x   -> return $ ESymbol ty x
+     EIdentifier x -> return $ ESymbol ty x
+     x             -> return x
 
 binary :: TP Exp
 binary = do
