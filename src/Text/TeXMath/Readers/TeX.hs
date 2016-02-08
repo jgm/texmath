@@ -388,10 +388,16 @@ eqnarray = (EArray [AlignRight, AlignCenter, AlignLeft]) <$>
   sepEndBy1 arrayLine endLine
 
 align :: TP Exp
-align = (EArray [AlignRight, AlignLeft]) <$> sepEndBy1 arrayLine endLine
+align = do
+  rows <- sepEndBy1 arrayLine endLine
+  let n = maximum $ map length rows
+  return $ EArray (take n $ cycle [AlignRight, AlignLeft]) rows
 
 flalign :: TP Exp
-flalign = (EArray [AlignLeft, AlignRight]) <$> sepEndBy1 arrayLine endLine
+flalign = do
+  rows <- sepEndBy1 arrayLine endLine
+  let n = maximum $ map length rows
+  return $ EArray (take n $ cycle [AlignLeft, AlignRight]) rows
 
 cases :: TP Exp
 cases = do
