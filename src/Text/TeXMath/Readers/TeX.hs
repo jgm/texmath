@@ -384,8 +384,10 @@ gather = do
   return $ EArray (alignsFromRows AlignCenter rows) rows
 
 eqnarray :: TP Exp
-eqnarray = (EArray [AlignRight, AlignCenter, AlignLeft]) <$>
-  sepEndBy1 arrayLine endLine
+eqnarray = do
+  rows <- sepEndBy1 arrayLine endLine
+  let n = maximum $ map length rows
+  return $ EArray (take n $ cycle [AlignRight, AlignCenter, AlignLeft]) rows
 
 align :: TP Exp
 align = do
