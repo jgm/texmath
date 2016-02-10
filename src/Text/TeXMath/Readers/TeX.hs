@@ -51,6 +51,7 @@ expr1 = choice
           , styled
           , root
           , mspace
+          , mathop
           , phantom
           , boxed
           , binary
@@ -384,14 +385,22 @@ gather = do
   return $ EArray (alignsFromRows AlignCenter rows) rows
 
 eqnarray :: TP Exp
-eqnarray = (EArray [AlignRight, AlignCenter, AlignLeft]) <$>
-  sepEndBy1 arrayLine endLine
+eqnarray = do
+  rows <- sepEndBy1 arrayLine endLine
+  let n = maximum $ map length rows
+  return $ EArray (take n $ cycle [AlignRight, AlignCenter, AlignLeft]) rows
 
 align :: TP Exp
-align = (EArray [AlignRight, AlignLeft]) <$> sepEndBy1 arrayLine endLine
+align = do
+  rows <- sepEndBy1 arrayLine endLine
+  let n = maximum $ map length rows
+  return $ EArray (take n $ cycle [AlignRight, AlignLeft]) rows
 
 flalign :: TP Exp
-flalign = (EArray [AlignLeft, AlignRight]) <$> sepEndBy1 arrayLine endLine
+flalign = do
+  rows <- sepEndBy1 arrayLine endLine
+  let n = maximum $ map length rows
+  return $ EArray (take n $ cycle [AlignLeft, AlignRight]) rows
 
 cases :: TP Exp
 cases = do
@@ -552,6 +561,21 @@ mspace = do
        ((n,[]):_) -> return $ ESpace (n/18)
        _          -> mzero
 
+
+mathop :: TP Exp
+mathop = mathopWith "mathop" Op
+     <|> mathopWith "mathrel" Rel
+     <|> mathopWith "mathbin" Bin
+     <|> mathopWith "mathord" Ord
+
+mathopWith :: String -> TeXSymbolType -> TP Exp
+mathopWith name ty = try $ do
+  ctrlseq name
+  e <- expr1
+  case e of
+     ESymbol _ x   -> return $ ESymbol ty x
+     EIdentifier x -> return $ ESymbol ty x
+     x             -> return x
 
 binary :: TP Exp
 binary = do

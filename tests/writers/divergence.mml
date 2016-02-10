@@ -1,7 +1,7 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mo>∇</mo>
+    <mi>∇</mi>
     <mo>⋅</mo>
     <mover>
       <mi>v</mi>
@@ -10,42 +10,42 @@
     <mo>=</mo>
     <mfrac>
       <mrow>
-        <mo>∂</mo>
+        <mi>∂</mi>
         <msub>
           <mi>v</mi>
           <mi>x</mi>
         </msub>
       </mrow>
       <mrow>
-        <mo>∂</mo>
+        <mi>∂</mi>
         <mi>x</mi>
       </mrow>
     </mfrac>
     <mo>+</mo>
     <mfrac>
       <mrow>
-        <mo>∂</mo>
+        <mi>∂</mi>
         <msub>
           <mi>v</mi>
           <mi>y</mi>
         </msub>
       </mrow>
       <mrow>
-        <mo>∂</mo>
+        <mi>∂</mi>
         <mi>y</mi>
       </mrow>
     </mfrac>
     <mo>+</mo>
     <mfrac>
       <mrow>
-        <mo>∂</mo>
+        <mi>∂</mi>
         <msub>
           <mi>v</mi>
           <mi>z</mi>
         </msub>
       </mrow>
       <mrow>
-        <mo>∂</mo>
+        <mi>∂</mi>
         <mi>z</mi>
       </mrow>
     </mfrac>

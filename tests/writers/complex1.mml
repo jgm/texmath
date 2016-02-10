@@ -207,11 +207,11 @@
                 <mtd>
                   <mfrac>
                     <mrow>
-                      <mo>∂</mo>
+                      <mi>∂</mi>
                       <mi>X</mi>
                     </mrow>
                     <mrow>
-                      <mo>∂</mo>
+                      <mi>∂</mi>
                       <mi>u</mi>
                     </mrow>
                   </mfrac>
@@ -219,11 +219,11 @@
                 <mtd>
                   <mfrac>
                     <mrow>
-                      <mo>∂</mo>
+                      <mi>∂</mi>
                       <mi>Y</mi>
                     </mrow>
                     <mrow>
-                      <mo>∂</mo>
+                      <mi>∂</mi>
                       <mi>u</mi>
                     </mrow>
                   </mfrac>
@@ -236,11 +236,11 @@
                 <mtd>
                   <mfrac>
                     <mrow>
-                      <mo>∂</mo>
+                      <mi>∂</mi>
                       <mi>X</mi>
                     </mrow>
                     <mrow>
-                      <mo>∂</mo>
+                      <mi>∂</mi>
                       <mi>v</mi>
                     </mrow>
                   </mfrac>
@@ -248,11 +248,11 @@
                 <mtd>
                   <mfrac>
                     <mrow>
-                      <mo>∂</mo>
+                      <mi>∂</mi>
                       <mi>Y</mi>
                     </mrow>
                     <mrow>
-                      <mo>∂</mo>
+                      <mi>∂</mi>
                       <mi>v</mi>
                     </mrow>
                   </mfrac>
@@ -284,7 +284,7 @@
                   <mn>1</mn>
                 </mtd>
                 <mtd>
-                  <mo>⋯</mo>
+                  <mi>⋯</mi>
                 </mtd>
                 <mtd>
                   <mn>1</mn>
@@ -306,7 +306,7 @@
                   </msubsup>
                 </mtd>
                 <mtd>
-                  <mo>⋯</mo>
+                  <mi>⋯</mi>
                 </mtd>
                 <mtd>
                   <msubsup>
@@ -332,7 +332,7 @@
                   </msubsup>
                 </mtd>
                 <mtd>
-                  <mo>⋯</mo>
+                  <mi>⋯</mi>
                 </mtd>
                 <mtd>
                   <msubsup>
@@ -380,7 +380,7 @@
                   </msubsup>
                 </mtd>
                 <mtd>
-                  <mo>⋯</mo>
+                  <mi>⋯</mi>
                 </mtd>
                 <mtd>
                   <msubsup>
@@ -514,7 +514,7 @@
             <mtr>
               <mtd>
                 <mrow>
-                  <mo>∇</mo>
+                  <mi>∇</mi>
                   <mspace width="0.0em" />
                   <mo>×</mo>
                   <munderover>
@@ -531,7 +531,7 @@
                   <mspace width="0.167em" />
                   <mfrac>
                     <mrow>
-                      <mo>∂</mo>
+                      <mi>∂</mi>
                       <mspace width="0.0em" />
                       <munderover>
                         <mi>E</mi>
@@ -540,7 +540,7 @@
                       </munderover>
                     </mrow>
                     <mrow>
-                      <mo>∂</mo>
+                      <mi>∂</mi>
                       <mspace width="0.0em" />
                       <mi>t</mi>
                     </mrow>
@@ -571,7 +571,7 @@
             <mtr>
               <mtd>
                 <mrow>
-                  <mo>∇</mo>
+                  <mi>∇</mi>
                   <mspace width="0.0em" />
                   <mo>·</mo>
                   <munderover>
@@ -595,7 +595,7 @@
             <mtr>
               <mtd>
                 <mrow>
-                  <mo>∇</mo>
+                  <mi>∇</mi>
                   <mspace width="0.0em" />
                   <mo>×</mo>
                   <munderover>
@@ -613,7 +613,7 @@
                   <mspace width="0.167em" />
                   <mfrac>
                     <mrow>
-                      <mo>∂</mo>
+                      <mi>∂</mi>
                       <mspace width="0.0em" />
                       <munderover>
                         <mi>B</mi>
@@ -622,7 +622,7 @@
                       </munderover>
                     </mrow>
                     <mrow>
-                      <mo>∂</mo>
+                      <mi>∂</mi>
                       <mspace width="0.0em" />
                       <mi>t</mi>
                     </mrow>
@@ -643,7 +643,7 @@
             <mtr>
               <mtd>
                 <mrow>
-                  <mo>∇</mo>
+                  <mi>∇</mi>
                   <mspace width="0.0em" />
                   <mo>·</mo>
                   <munderover>
@@ -805,7 +805,7 @@
                         <mrow>
                           <mn>1</mn>
                           <mo>+</mo>
-                          <mo>…</mo>
+                          <mi>…</mi>
                         </mrow>
                       </mfrac>
                     </mrow>
@@ -866,7 +866,7 @@
                     <mn>1</mn>
                   </msubsup>
                   <mo>+</mo>
-                  <mo>⋯</mo>
+                  <mi>⋯</mi>
                 </mrow>
               </mfrac>
             </mrow>
@@ -921,7 +921,7 @@
                   <mn>2</mn>
                 </msubsup>
                 <mo stretchy="false" form="postfix">)</mo>
-                <mo>⋯</mo>
+                <mi>⋯</mi>
                 <mo stretchy="false" form="prefix">(</mo>
                 <mn>1</mn>
                 <mo>-</mo>

@@ -1,3 +1,11 @@
+texmath (0.8.4.2)
+
+  * Fixed overbrace, underbrace (#82).  Previously we were using the wrong
+    character: U+FE37 instead of U+23DE.  This didn't work in Word.
+  * Support \mathop, \mathrel, \mathbin, \mathord
+  * MathML - render Symbol Ord as mi, not mo (#83).
+  * Handle align environments with > 2 cells per row (#84).
+
 texmath (0.8.4.1)
 
   * Added stack install instructions.

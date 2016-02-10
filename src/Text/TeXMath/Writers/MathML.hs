@@ -155,6 +155,7 @@ showExp tt e =
    ESymbol Accent x -> accent x
    ESymbol Open x   -> makeFence FPrefix $ op x
    ESymbol Close x  -> makeFence FPostfix $ op x
+   ESymbol Ord x    -> unode "mi" x
    ESymbol _ x      -> op x
    ESpace x         -> spaceWidth x
    EFraction ft x y -> showFraction tt ft x y

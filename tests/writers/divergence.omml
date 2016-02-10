@@ -12,17 +12,19 @@
       <m:rPr />
       <m:t>⋅</m:t>
     </m:r>
-    <m:acc>
-      <m:accPr>
+    <m:groupChr>
+      <m:groupChrPr>
         <m:chr m:val="⃗" />
-      </m:accPr>
+        <m:pos m:val="top" />
+        <m:vertJc m:val="bot" />
+      </m:groupChrPr>
       <m:e>
         <m:r>
           <m:rPr />
           <m:t>v</m:t>
         </m:r>
       </m:e>
-    </m:acc>
+    </m:groupChr>
     <m:r>
       <m:rPr />
       <m:t>=</m:t>

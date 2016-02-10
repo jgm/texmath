@@ -1253,12 +1253,14 @@
                     </m:r>
                   </m:e>
                   <m:lim>
-                    <m:acc>
-                      <m:accPr>
+                    <m:groupChr>
+                      <m:groupChrPr>
                         <m:chr m:val="˙" />
-                      </m:accPr>
+                        <m:pos m:val="top" />
+                        <m:vertJc m:val="bot" />
+                      </m:groupChrPr>
                       <m:e />
-                    </m:acc>
+                    </m:groupChr>
                   </m:lim>
                 </m:limLow>
               </m:e>
@@ -1305,12 +1307,14 @@
                     </m:r>
                   </m:e>
                   <m:lim>
-                    <m:acc>
-                      <m:accPr>
+                    <m:groupChr>
+                      <m:groupChrPr>
                         <m:chr m:val="˙" />
-                      </m:accPr>
+                        <m:pos m:val="top" />
+                        <m:vertJc m:val="bot" />
+                      </m:groupChrPr>
                       <m:e />
-                    </m:acc>
+                    </m:groupChr>
                   </m:lim>
                 </m:limLow>
               </m:e>
@@ -1361,12 +1365,14 @@
                     </m:r>
                   </m:e>
                   <m:lim>
-                    <m:acc>
-                      <m:accPr>
+                    <m:groupChr>
+                      <m:groupChrPr>
                         <m:chr m:val="˙" />
-                      </m:accPr>
+                        <m:pos m:val="top" />
+                        <m:vertJc m:val="bot" />
+                      </m:groupChrPr>
                       <m:e />
-                    </m:acc>
+                    </m:groupChr>
                   </m:lim>
                 </m:limLow>
               </m:e>
@@ -1468,12 +1474,14 @@
                         </m:r>
                       </m:e>
                       <m:lim>
-                        <m:acc>
-                          <m:accPr>
+                        <m:groupChr>
+                          <m:groupChrPr>
                             <m:chr m:val="↼" />
-                          </m:accPr>
+                            <m:pos m:val="top" />
+                            <m:vertJc m:val="bot" />
+                          </m:groupChrPr>
                           <m:e />
-                        </m:acc>
+                        </m:groupChr>
                       </m:lim>
                     </m:limLow>
                     <m:r>
@@ -1522,12 +1530,14 @@
                             </m:r>
                           </m:e>
                           <m:lim>
-                            <m:acc>
-                              <m:accPr>
+                            <m:groupChr>
+                              <m:groupChrPr>
                                 <m:chr m:val="↼" />
-                              </m:accPr>
+                                <m:pos m:val="top" />
+                                <m:vertJc m:val="bot" />
+                              </m:groupChrPr>
                               <m:e />
-                            </m:acc>
+                            </m:groupChr>
                           </m:lim>
                         </m:limLow>
                       </m:num>
@@ -1583,12 +1593,14 @@
                         </m:r>
                       </m:e>
                       <m:lim>
-                        <m:acc>
-                          <m:accPr>
+                        <m:groupChr>
+                          <m:groupChrPr>
                             <m:chr m:val="↼" />
-                          </m:accPr>
+                            <m:pos m:val="top" />
+                            <m:vertJc m:val="bot" />
+                          </m:groupChrPr>
                           <m:e />
-                        </m:acc>
+                        </m:groupChr>
                       </m:lim>
                     </m:limLow>
                   </m:e>
@@ -1611,12 +1623,14 @@
                         </m:r>
                       </m:e>
                       <m:lim>
-                        <m:acc>
-                          <m:accPr>
+                        <m:groupChr>
+                          <m:groupChrPr>
                             <m:chr m:val="↼" />
-                          </m:accPr>
+                            <m:pos m:val="top" />
+                            <m:vertJc m:val="bot" />
+                          </m:groupChrPr>
                           <m:e />
-                        </m:acc>
+                        </m:groupChr>
                       </m:lim>
                     </m:limLow>
                   </m:e>
@@ -1659,12 +1673,14 @@
                         </m:r>
                       </m:e>
                       <m:lim>
-                        <m:acc>
-                          <m:accPr>
+                        <m:groupChr>
+                          <m:groupChrPr>
                             <m:chr m:val="↼" />
-                          </m:accPr>
+                            <m:pos m:val="top" />
+                            <m:vertJc m:val="bot" />
+                          </m:groupChrPr>
                           <m:e />
-                        </m:acc>
+                        </m:groupChr>
                       </m:lim>
                     </m:limLow>
                     <m:r>
@@ -1717,12 +1733,14 @@
                             </m:r>
                           </m:e>
                           <m:lim>
-                            <m:acc>
-                              <m:accPr>
+                            <m:groupChr>
+                              <m:groupChrPr>
                                 <m:chr m:val="↼" />
-                              </m:accPr>
+                                <m:pos m:val="top" />
+                                <m:vertJc m:val="bot" />
+                              </m:groupChrPr>
                               <m:e />
-                            </m:acc>
+                            </m:groupChr>
                           </m:lim>
                         </m:limLow>
                       </m:num>
@@ -1753,12 +1771,14 @@
                         </m:r>
                       </m:e>
                       <m:lim>
-                        <m:acc>
-                          <m:accPr>
+                        <m:groupChr>
+                          <m:groupChrPr>
                             <m:chr m:val="↼" />
-                          </m:accPr>
+                            <m:pos m:val="top" />
+                            <m:vertJc m:val="bot" />
+                          </m:groupChrPr>
                           <m:e />
-                        </m:acc>
+                        </m:groupChr>
                       </m:lim>
                     </m:limLow>
                   </m:e>
@@ -1781,12 +1801,14 @@
                         </m:r>
                       </m:e>
                       <m:lim>
-                        <m:acc>
-                          <m:accPr>
+                        <m:groupChr>
+                          <m:groupChrPr>
                             <m:chr m:val="↼" />
-                          </m:accPr>
+                            <m:pos m:val="top" />
+                            <m:vertJc m:val="bot" />
+                          </m:groupChrPr>
                           <m:e />
-                        </m:acc>
+                        </m:groupChr>
                       </m:lim>
                     </m:limLow>
                   </m:e>
