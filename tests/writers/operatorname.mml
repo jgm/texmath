@@ -6,23 +6,23 @@
       <mtr>
         <mtd>
           <msub>
-            <mi>div</mi>
+            <mo>div</mo>
             <mi>x</mi>
           </msub>
           <mi>u</mi>
           <msup>
-            <mi>div</mi>
+            <mo>div</mo>
             <mi>x</mi>
           </msup>
           <mi>u</mi>
           <msubsup>
-            <mi>div</mi>
+            <mo>div</mo>
             <mi>x</mi>
             <mi>y</mi>
           </msubsup>
           <mi>u</mi>
           <msubsup>
-            <mi>div</mi>
+            <mo>div</mo>
             <mi>x</mi>
             <mi>y</mi>
           </msubsup>
@@ -35,7 +35,7 @@
       <mtr>
         <mtd>
           <munder>
-            <mi>⋆-lim&#39;sup</mi>
+            <mo>⋆-lim&#39;sup</mo>
             <mrow>
               <mi>x</mi>
               <mo accent="false">→</mo>
@@ -44,12 +44,12 @@
           </munder>
           <mi>u</mi>
           <mover>
-            <mi>⋆-lim&#39;sup</mi>
+            <mo>⋆-lim&#39;sup</mo>
             <mi>w</mi>
           </mover>
           <mi>u</mi>
           <munderover>
-            <mi>⋆-lim&#39;sup</mi>
+            <mo>⋆-lim&#39;sup</mo>
             <mrow>
               <mi>x</mi>
               <mo accent="false">→</mo>
@@ -59,7 +59,7 @@
           </munderover>
           <mi>u</mi>
           <munderover>
-            <mi>⋆-lim&#39;sup</mi>
+            <mo>⋆-lim&#39;sup</mo>
             <mrow>
               <mi>x</mi>
               <mo accent="false">→</mo>
@@ -76,7 +76,7 @@
       <mtr>
         <mtd>
           <msub>
-            <mi>⋆-lim&#39;sup</mi>
+            <mo>⋆-lim&#39;sup</mo>
             <mrow>
               <mi>x</mi>
               <mo accent="false">→</mo>
@@ -85,12 +85,12 @@
           </msub>
           <mi>u</mi>
           <msup>
-            <mi>⋆-lim&#39;sup</mi>
+            <mo>⋆-lim&#39;sup</mo>
             <mi>w</mi>
           </msup>
           <mi>u</mi>
           <msubsup>
-            <mi>⋆-lim&#39;sup</mi>
+            <mo>⋆-lim&#39;sup</mo>
             <mrow>
               <mi>x</mi>
               <mo accent="false">→</mo>
@@ -100,7 +100,7 @@
           </msubsup>
           <mi>u</mi>
           <msubsup>
-            <mi>⋆-lim&#39;sup</mi>
+            <mo>⋆-lim&#39;sup</mo>
             <mrow>
               <mi>x</mi>
               <mo accent="false">→</mo>
@@ -117,12 +117,12 @@
       <mtr>
         <mtd>
           <msub>
-            <mi>curl</mi>
+            <mo>curl</mo>
             <mi>x</mi>
           </msub>
           <mi>v</mi>
           <munder>
-            <mi>argmax</mi>
+            <mo>argmax</mo>
             <mi>K</mi>
           </munder>
           <mi>u</mi>

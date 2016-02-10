@@ -48,9 +48,9 @@
             </mrow>
             <mo>+</mo>
             <mrow>
-              <mi>sin</mi>
+              <mo>sin</mo>
               <mi>&#8289;</mi>
-              <mi>cos</mi>
+              <mo>cos</mo>
               <mi>&#8289;</mi>
               <mi>θ</mi>
             </mrow>
@@ -213,7 +213,7 @@
         <mrow>
           <mrow>
             <munder>
-              <mi>lim</mi>
+              <mo>lim</mo>
               <mrow>
                 <mi>n</mi>
                 <mo accent="true">→</mo>
@@ -1445,7 +1445,7 @@
                       </msup>
                       <mi>&#8290;</mi>
                       <mrow>
-                        <mi>sin</mi>
+                        <mo>sin</mo>
                         <mi>&#8289;</mi>
                         <mi>y</mi>
                       </mrow>
@@ -1501,7 +1501,7 @@
           </mrow>
           <mo>=</mo>
           <mrow>
-            <mi>sin</mi>
+            <mo>sin</mo>
             <mi>&#8289;</mi>
             <mi>x</mi>
           </mrow>
@@ -2691,7 +2691,7 @@
               </msup>
               <mi>&#8290;</mi>
               <mrow>
-                <mi>cos</mi>
+                <mo>cos</mo>
                 <mi>&#8289;</mi>
                 <mrow>
                   <mfrac>
@@ -2741,7 +2741,7 @@
             <mn>2</mn>
             <mi>&#8290;</mi>
             <mrow>
-              <mi>tan</mi>
+              <mo>tan</mo>
               <mi>&#8289;</mi>
               <mrow>
                 <mo stretchy="true" form="prefix">(</mo>
@@ -3668,7 +3668,7 @@
           <mtr>
             <mtd>
               <mrow>
-                <mi>sin</mi>
+                <mo>sin</mo>
                 <mi>&#8289;</mi>
                 <mi>θ</mi>
               </mrow>
@@ -3677,7 +3677,7 @@
           <mtr>
             <mtd>
               <mrow>
-                <mi>cos</mi>
+                <mo>cos</mo>
                 <mi>&#8289;</mi>
                 <mi>γ</mi>
               </mrow>
@@ -3810,7 +3810,7 @@
       <mtd>
         <mrow>
           <mrow>
-            <mi>∇×</mi>
+            <mo>∇×</mo>
             <mi>F</mi>
           </mrow>
           <mo>=</mo>
@@ -3822,7 +3822,7 @@
     <mtr>
       <mtd>
         <mrow>
-          <mi>∇·</mi>
+          <mo>∇·</mo>
           <mi>F</mi>
         </mrow>
       </mtd>
@@ -3832,7 +3832,7 @@
       <mtd>
         <mrow>
           <mrow>
-            <mi>∇·∇</mi>
+            <mo>∇·∇</mo>
             <mi>F</mi>
           </mrow>
           <mo>=</mo>
@@ -3857,7 +3857,7 @@
       <mtd>
         <mrow>
           <mrow>
-            <mi>∇×</mi>
+            <mo>∇×</mo>
             <mrow>
               <mo stretchy="false" form="prefix">(</mo>
               <mrow>
@@ -3921,7 +3921,7 @@
       <mtd>
         <mrow>
           <mrow>
-            <mi>∇×</mi>
+            <mo>∇×</mo>
             <mrow>
               <mo stretchy="false" form="prefix">(</mo>
               <mrow>
@@ -4557,7 +4557,7 @@
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
                   <mrow>
-                    <mi>arccos</mi>
+                    <mo>arccos</mo>
                     <mi>&#8289;</mi>
                     <mrow>
                       <mfrac>
@@ -4608,7 +4608,7 @@
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
                   <mrow>
-                    <mi>arccos</mi>
+                    <mo>arccos</mo>
                     <mi>&#8289;</mi>
                     <mrow>
                       <mfrac>
@@ -4680,7 +4680,7 @@
       <mtd>
         <mrow>
           <mrow>
-            <mi>det</mi>
+            <mo>det</mo>
             <mrow>
               <mo stretchy="true" form="prefix">(</mo>
               <mtable>
@@ -4788,7 +4788,7 @@
                 <mtr>
                   <mtd>
                     <mrow>
-                      <mi>cos</mi>
+                      <mo>cos</mo>
                       <mi>&#8289;</mi>
                       <mi>θ</mi>
                     </mrow>
@@ -4797,7 +4797,7 @@
                     <mrow>
                       <mo>−</mo>
                       <mrow>
-                        <mi>sin</mi>
+                        <mo>sin</mo>
                         <mi>&#8289;</mi>
                         <mi>θ</mi>
                       </mrow>
@@ -4807,14 +4807,14 @@
                 <mtr>
                   <mtd>
                     <mrow>
-                      <mi>sin</mi>
+                      <mo>sin</mo>
                       <mi>&#8289;</mi>
                       <mi>θ</mi>
                     </mrow>
                   </mtd>
                   <mtd>
                     <mrow>
-                      <mi>cos</mi>
+                      <mo>cos</mo>
                       <mi>&#8289;</mi>
                       <mi>θ</mi>
                     </mrow>
@@ -4830,14 +4830,14 @@
                 <mtr>
                   <mtd>
                     <mrow>
-                      <mi>cos</mi>
+                      <mo>cos</mo>
                       <mi>&#8289;</mi>
                       <mi>θ</mi>
                     </mrow>
                   </mtd>
                   <mtd>
                     <mrow>
-                      <mi>sin</mi>
+                      <mo>sin</mo>
                       <mi>&#8289;</mi>
                       <mi>θ</mi>
                     </mrow>
@@ -4848,7 +4848,7 @@
                     <mrow>
                       <mo>−</mo>
                       <mrow>
-                        <mi>sin</mi>
+                        <mo>sin</mo>
                         <mi>&#8289;</mi>
                         <mi>θ</mi>
                       </mrow>
@@ -4856,7 +4856,7 @@
                   </mtd>
                   <mtd>
                     <mrow>
-                      <mi>cos</mi>
+                      <mo>cos</mo>
                       <mi>&#8289;</mi>
                       <mi>θ</mi>
                     </mrow>
@@ -5004,7 +5004,7 @@
       <mtd>
         <mrow>
           <mrow>
-            <mi>det</mi>
+            <mo>det</mo>
             <mrow>
               <mo stretchy="true" form="prefix">(</mo>
               <mtable>
@@ -5161,7 +5161,7 @@
           <mo>=</mo>
           <mrow>
             <munder>
-              <mi>max</mi>
+              <mo>max</mo>
               <mrow>
                 <mi>x</mi>
                 <mo>≠</mo>
@@ -5524,7 +5524,7 @@
           <mo>=</mo>
           <mrow>
             <munder>
-              <mi>lim</mi>
+              <mo>lim</mo>
               <mrow>
                 <mi>x</mi>
                 <mo>=</mo>
@@ -5573,7 +5573,7 @@
           <mo>=</mo>
           <mrow>
             <munder>
-              <mi>lim</mi>
+              <mo>lim</mo>
               <mrow>
                 <mrow>
                   <mo>∥</mo>
@@ -5654,7 +5654,7 @@
           <mo>=</mo>
           <mrow>
             <munder>
-              <mi>lim</mi>
+              <mo>lim</mo>
               <mrow>
                 <mi>n</mi>
                 <mo accent="true">→</mo>
@@ -5960,7 +5960,7 @@
         <mrow>
           <mrow>
             <munder>
-              <mi>lim</mi>
+              <mo>lim</mo>
               <mrow>
                 <mi>x</mi>
                 <mo accent="true">→</mo>
@@ -5968,7 +5968,7 @@
               </mrow>
             </munder>
             <mrow>
-              <mi>sin</mi>
+              <mo>sin</mo>
               <mi>&#8289;</mi>
               <mrow>
                 <mo stretchy="true" form="prefix">(</mo>
@@ -6180,7 +6180,7 @@
             <mrow>
               <mo stretchy="true" form="prefix">(</mo>
               <mrow>
-                <mi>max</mi>
+                <mo>max</mo>
                 <mrow>
                   <mo stretchy="true" form="prefix">{</mo>
                   <mrow>
@@ -6333,7 +6333,7 @@
         <mrow>
           <mrow>
             <munder>
-              <mi>lim</mi>
+              <mo>lim</mo>
               <mrow>
                 <mi>a</mi>
                 <mo accent="true">→</mo>
@@ -6345,7 +6345,7 @@
             </munder>
             <mrow>
               <msub>
-                <mi>log</mi>
+                <mo>log</mo>
                 <mi>a</mi>
               </msub>
               <mi>&#8289;</mi>
@@ -6396,7 +6396,7 @@
           <mo>=</mo>
           <mrow>
             <munder>
-              <mi>lim</mi>
+              <mo>lim</mo>
               <mrow>
                 <mi>a</mi>
                 <mo accent="true">→</mo>
@@ -6408,7 +6408,7 @@
             </munder>
             <mrow>
               <msub>
-                <mi>log</mi>
+                <mo>log</mo>
                 <mi>a</mi>
               </msub>
               <mi>&#8289;</mi>
@@ -6480,7 +6480,7 @@
           </mrow>
           <mo>=</mo>
           <mrow>
-            <mi>exp</mi>
+            <mo>exp</mo>
             <mi>&#8289;</mi>
             <mrow>
               <mo stretchy="true" form="prefix">(</mo>
@@ -6543,7 +6543,7 @@
       <mtd>
         <mrow>
           <mrow>
-            <mi>Aut</mi>
+            <mo>Aut</mo>
             <mrow>
               <mo stretchy="false" form="prefix">(</mo>
               <mstyle mathvariant="bold">
@@ -6658,7 +6658,7 @@
           <mtext mathvariant="normal">  </mtext>
           <mrow>
             <mrow>
-              <mi>tan</mi>
+              <mo>tan</mo>
               <mi>&#8289;</mi>
               <mi>θ</mi>
             </mrow>
@@ -6705,7 +6705,7 @@
                   <mn>2</mn>
                   <mo>+</mo>
                   <mrow>
-                    <mi>sin</mi>
+                    <mo>sin</mo>
                     <mi>&#8289;</mi>
                     <mi>t</mi>
                   </mrow>
@@ -6716,7 +6716,7 @@
               <mn>10</mn>
               <mi>&#8290;</mi>
               <mrow>
-                <mi>cos</mi>
+                <mo>cos</mo>
                 <mi>&#8289;</mi>
                 <mi>t</mi>
               </mrow>
@@ -6729,7 +6729,7 @@
                   <mn>2</mn>
                   <mo>+</mo>
                   <mrow>
-                    <mi>cos</mi>
+                    <mo>cos</mo>
                     <mi>&#8289;</mi>
                     <mi>t</mi>
                   </mrow>
@@ -6740,7 +6740,7 @@
               <mn>10</mn>
               <mi>&#8290;</mi>
               <mrow>
-                <mi>sin</mi>
+                <mo>sin</mo>
                 <mi>&#8289;</mi>
                 <mi>t</mi>
               </mrow>
@@ -6750,7 +6750,7 @@
               <mn>3</mn>
               <mi>&#8290;</mi>
               <mrow>
-                <mi>sin</mi>
+                <mo>sin</mo>
                 <mi>&#8289;</mi>
                 <mrow>
                   <mn>3</mn>
@@ -7336,7 +7336,7 @@
     <mtr>
       <mtd>
         <mrow>
-          <mi>mod</mi>
+          <mo>mod</mo>
           <mi>a</mi>
         </mrow>
       </mtd>
@@ -7347,7 +7347,7 @@
         <mrow>
           <mrow>
             <mn>5</mn>
-            <mi>mod</mi>
+            <mo>mod</mo>
             <mn>3</mn>
           </mrow>
           <mo>=</mo>
@@ -7369,7 +7369,7 @@
                 <mo stretchy="false" form="postfix">)</mo>
               </mrow>
             </mrow>
-            <mi>mod</mi>
+            <mo>mod</mo>
             <mn>3</mn>
           </mrow>
           <mo>=</mo>
@@ -7398,7 +7398,7 @@
           <mrow>
             <mo stretchy="true" form="prefix">(</mo>
             <mrow>
-              <mi>mod</mi>
+              <mo>mod</mo>
               <mn>13</mn>
             </mrow>
             <mo stretchy="true" form="postfix">)</mo>
@@ -7426,7 +7426,7 @@
               <mi>/</mi>
               <mn>5</mn>
             </mrow>
-            <mi>mod</mi>
+            <mo>mod</mo>
             <mn>7</mn>
           </mrow>
           <mo>=</mo>
@@ -7473,7 +7473,7 @@
                 <mo stretchy="true" form="postfix">)</mo>
               </mrow>
             </mrow>
-            <mi>mod</mi>
+            <mo>mod</mo>
             <mn>3</mn>
           </mrow>
           <mo>=</mo>
@@ -7638,7 +7638,7 @@
       <mtd>
         <mrow>
           <mrow>
-            <mi>Pr</mi>
+            <mo>Pr</mo>
             <mrow>
               <mo stretchy="false" form="prefix">(</mo>
               <mrow>
@@ -7680,7 +7680,7 @@
             <mi>k</mi>
             <mo>=</mo>
             <mrow>
-              <mi>max</mi>
+              <mo>max</mo>
               <mrow>
                 <mo stretchy="true" form="prefix">{</mo>
                 <mrow>
@@ -7741,7 +7741,7 @@
           <mo>=</mo>
           <mrow>
             <munder>
-              <mi>lim</mi>
+              <mo>lim</mo>
               <mrow>
                 <mi>x</mi>
                 <mover>
@@ -8636,7 +8636,7 @@
                 <mn>13</mn>
                 <mi>&#8290;</mi>
                 <mrow>
-                  <mi>cos</mi>
+                  <mo>cos</mo>
                   <mi>&#8289;</mi>
                   <mi>x</mi>
                 </mrow>
@@ -8659,7 +8659,7 @@
                       <mn>9</mn>
                       <mrow>
                         <msup>
-                          <mi>cos</mi>
+                          <mo>cos</mo>
                           <mn>2</mn>
                         </msup>
                         <mi>&#8289;</mi>
@@ -8671,14 +8671,14 @@
                       <mfrac>
                         <mn>60</mn>
                         <mrow>
-                          <mi>cos</mi>
+                          <mo>cos</mo>
                           <mi>&#8289;</mi>
                           <mi>x</mi>
                         </mrow>
                       </mfrac>
                       <mi>&#8290;</mi>
                       <mrow>
-                        <mi>sin</mi>
+                        <mo>sin</mo>
                         <mi>&#8289;</mi>
                         <mrow>
                           <mo stretchy="true" form="prefix">(</mo>
@@ -8716,7 +8716,7 @@
               <mo stretchy="true" form="prefix">∫</mo>
               <mrow>
                 <mrow>
-                  <mi>cos</mi>
+                  <mo>cos</mo>
                   <mi>&#8289;</mi>
                   <mrow>
                     <mo stretchy="false" form="prefix">(</mo>
@@ -8730,7 +8730,7 @@
                 </mrow>
                 <mi>&#8290;</mi>
                 <mrow>
-                  <mi>sin</mi>
+                  <mo>sin</mo>
                   <mi>&#8289;</mi>
                   <mrow>
                     <mo stretchy="false" form="prefix">(</mo>
@@ -8755,7 +8755,7 @@
                 <mrow>
                   <mo>−</mo>
                   <mrow>
-                    <mi>cos</mi>
+                    <mo>cos</mo>
                     <mi>&#8289;</mi>
                     <mrow>
                       <mrow>
@@ -8791,7 +8791,7 @@
                 <mrow>
                   <mo>−</mo>
                   <mrow>
-                    <mi>cos</mi>
+                    <mo>cos</mo>
                     <mi>&#8289;</mi>
                     <mrow>
                       <mrow>
@@ -8850,7 +8850,7 @@
         <mrow>
           <mrow>
             <munder>
-              <mi>max</mi>
+              <mo>max</mo>
               <mrow>
                 <mrow>
                   <mo>−</mo>
@@ -8950,7 +8950,7 @@
                 <mi>n</mi>
               </msup>
               <mrow>
-                <mi>sin</mi>
+                <mo>sin</mo>
                 <mi>&#8289;</mi>
                 <mi>x</mi>
               </mrow>
@@ -9048,7 +9048,7 @@
                 <mn>13</mn>
                 <mi>&#8290;</mi>
                 <mrow>
-                  <mi>cos</mi>
+                  <mo>cos</mo>
                   <mi>&#8289;</mi>
                   <mi>x</mi>
                 </mrow>
@@ -9071,7 +9071,7 @@
                       <mn>9</mn>
                       <mrow>
                         <msup>
-                          <mi>cos</mi>
+                          <mo>cos</mo>
                           <mn>2</mn>
                         </msup>
                         <mi>&#8289;</mi>
@@ -9083,14 +9083,14 @@
                       <mfrac>
                         <mn>60</mn>
                         <mrow>
-                          <mi>cos</mi>
+                          <mo>cos</mo>
                           <mi>&#8289;</mi>
                           <mi>x</mi>
                         </mrow>
                       </mfrac>
                       <mi>&#8290;</mi>
                       <mrow>
-                        <mi>sin</mi>
+                        <mo>sin</mo>
                         <mi>&#8289;</mi>
                         <mrow>
                           <mo stretchy="true" form="prefix">(</mo>
@@ -9207,7 +9207,7 @@
             <mrow>
               <mo stretchy="true" form="prefix">(</mo>
               <mrow>
-                <mi>∇×</mi>
+                <mo>∇×</mo>
                 <mstyle mathvariant="bold">
                   <mi>𝐅</mi>
                 </mstyle>
@@ -9422,7 +9422,7 @@
                   </mtd>
                   <mtd>
                     <mrow>
-                      <mi>sin</mi>
+                      <mo>sin</mo>
                       <mi>&#8289;</mi>
                       <mi>θ</mi>
                     </mrow>
@@ -9623,7 +9623,7 @@
             <mtr>
               <mtd>
                 <mrow>
-                  <mi>sin</mi>
+                  <mo>sin</mo>
                   <mi>&#8289;</mi>
                   <mi>θ</mi>
                 </mrow>
@@ -9731,7 +9731,7 @@
           <mrow>
             <mrow>
               <msup>
-                <mi>sin</mi>
+                <mo>sin</mo>
                 <mn>3</mn>
               </msup>
               <mi>&#8289;</mi>
@@ -9743,7 +9743,7 @@
             <mo>+</mo>
             <mrow>
               <mrow>
-                <mi>sin</mi>
+                <mo>sin</mo>
                 <mi>&#8289;</mi>
                 <msup>
                   <mi>x</mi>
@@ -9752,12 +9752,12 @@
               </mrow>
               <mi>&#8290;</mi>
               <mrow>
-                <mi>sin</mi>
+                <mo>sin</mo>
                 <mi>&#8289;</mi>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
                   <mrow>
-                    <mi>sin</mi>
+                    <mo>sin</mo>
                     <mi>&#8289;</mi>
                     <msup>
                       <mi>x</mi>
@@ -10562,7 +10562,7 @@
               <mo stretchy="false" form="prefix">(</mo>
               <mrow>
                 <msup>
-                  <mi>csc</mi>
+                  <mo>csc</mo>
                   <mrow>
                     <mo>−</mo>
                     <mn>1</mn>
@@ -10609,7 +10609,7 @@
           <mrow>
             <mrow>
               <msup>
-                <mi>tanh</mi>
+                <mo>tanh</mo>
                 <mrow>
                   <mo>−</mo>
                   <mn>1</mn>
@@ -10626,7 +10626,7 @@
               </mfrac>
               <mi>&#8290;</mi>
               <mrow>
-                <mi>ln</mi>
+                <mo>ln</mo>
                 <mi>&#8289;</mi>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
@@ -11029,9 +11029,9 @@
       <mtd>
         <mrow>
           <mi>x</mi>
-          <mi>≰⃥</mi>
+          <mo>≰⃥</mo>
           <mi>y</mi>
-          <mi>≰⃥</mi>
+          <mo>≰⃥</mo>
           <mi>z</mi>
         </mrow>
       </mtd>
@@ -11041,7 +11041,7 @@
       <mtd>
         <mrow>
           <mover>
-            <mi>lim</mi>
+            <mo>lim</mo>
             <mo accent="true">¯</mo>
           </mover>
           <mi>x</mi>
@@ -11053,7 +11053,7 @@
       <mtd>
         <mrow>
           <munder>
-            <mi>lim</mi>
+            <mo>lim</mo>
             <mo accent="true">̲</mo>
           </munder>
           <mi>x</mi>
@@ -11065,7 +11065,7 @@
       <mtd>
         <mrow>
           <munder>
-            <mi>lim</mi>
+            <mo>lim</mo>
             <mo accent="true">→</mo>
           </munder>
           <mi>x</mi>
@@ -11077,7 +11077,7 @@
       <mtd>
         <mrow>
           <munder>
-            <mi>lim</mi>
+            <mo>lim</mo>
             <mo accent="true">←</mo>
           </munder>
           <mi>x</mi>
@@ -11925,7 +11925,7 @@
           <mo stretchy="true" form="prefix">(</mo>
           <mfrac>
             <mrow>
-              <mi>sin</mi>
+              <mo>sin</mo>
               <mi>&#8289;</mi>
               <mi>θ</mi>
             </mrow>
@@ -11942,7 +11942,7 @@
           <mo stretchy="true" form="prefix">(</mo>
           <mfrac>
             <mrow>
-              <mi>sin</mi>
+              <mo>sin</mo>
               <mi>&#8289;</mi>
               <mi>θ</mi>
             </mrow>
@@ -11959,7 +11959,7 @@
           <mo stretchy="true" form="prefix">(</mo>
           <mfrac>
             <mrow>
-              <mi>sin</mi>
+              <mo>sin</mo>
               <mi>&#8289;</mi>
               <mi>θ</mi>
             </mrow>
@@ -11976,7 +11976,7 @@
           <mo stretchy="true" form="prefix">(</mo>
           <mfrac>
             <mrow>
-              <mi>sin</mi>
+              <mo>sin</mo>
               <mi>&#8289;</mi>
               <mi>θ</mi>
             </mrow>
@@ -11993,7 +11993,7 @@
           <mo stretchy="true" form="prefix">(</mo>
           <mfrac>
             <mrow>
-              <mi>sin</mi>
+              <mo>sin</mo>
               <mi>&#8289;</mi>
               <mi>θ</mi>
             </mrow>
@@ -12010,7 +12010,7 @@
           <mo stretchy="true" form="prefix">(</mo>
           <mfrac>
             <mrow>
-              <mi>sin</mi>
+              <mo>sin</mo>
               <mi>&#8289;</mi>
               <mi>θ</mi>
             </mrow>
@@ -12027,7 +12027,7 @@
           <mo stretchy="true" form="prefix">(</mo>
           <mfrac>
             <mrow>
-              <mi>sin</mi>
+              <mo>sin</mo>
               <mi>&#8289;</mi>
               <mi>θ</mi>
             </mrow>
@@ -12044,7 +12044,7 @@
           <mo stretchy="true" form="prefix">(</mo>
           <mfrac>
             <mrow>
-              <mi>sin</mi>
+              <mo>sin</mo>
               <mi>&#8289;</mi>
               <mi>θ</mi>
             </mrow>
@@ -12061,7 +12061,7 @@
           <mo stretchy="true" form="prefix">(</mo>
           <mfrac>
             <mrow>
-              <mi>sin</mi>
+              <mo>sin</mo>
               <mi>&#8289;</mi>
               <mi>θ</mi>
             </mrow>
@@ -12076,7 +12076,7 @@
       <mtd>
         <mfrac>
           <mrow>
-            <mi>sin</mi>
+            <mo>sin</mo>
             <mi>&#8289;</mi>
             <mi>θ</mi>
           </mrow>
@@ -12089,7 +12089,7 @@
       <mtd>
         <mfrac>
           <mrow>
-            <mi>sin</mi>
+            <mo>sin</mo>
             <mi>&#8289;</mi>
             <mi>θ</mi>
           </mrow>
@@ -12102,7 +12102,7 @@
       <mtd>
         <mfrac>
           <mrow>
-            <mi>sin</mi>
+            <mo>sin</mo>
             <mi>&#8289;</mi>
             <mi>θ</mi>
           </mrow>
@@ -12115,7 +12115,7 @@
       <mtd>
         <mfrac>
           <mrow>
-            <mi>sin</mi>
+            <mo>sin</mo>
             <mi>&#8289;</mi>
             <mi>θ</mi>
           </mrow>
@@ -12128,7 +12128,7 @@
       <mtd>
         <mfrac>
           <mrow>
-            <mi>sin</mi>
+            <mo>sin</mo>
             <mi>&#8289;</mi>
             <mi>θ</mi>
           </mrow>
@@ -12141,7 +12141,7 @@
       <mtd>
         <mfrac>
           <mrow>
-            <mi>sin</mi>
+            <mo>sin</mo>
             <mi>&#8289;</mi>
             <mi>θ</mi>
           </mrow>
@@ -12154,7 +12154,7 @@
       <mtd>
         <mfrac>
           <mrow>
-            <mi>sin</mi>
+            <mo>sin</mo>
             <mi>&#8289;</mi>
             <mi>θ</mi>
           </mrow>
@@ -12167,7 +12167,7 @@
       <mtd>
         <mfrac>
           <mrow>
-            <mi>sin</mi>
+            <mo>sin</mo>
             <mi>&#8289;</mi>
             <mi>θ</mi>
           </mrow>
@@ -12180,7 +12180,7 @@
       <mtd>
         <mfrac>
           <mrow>
-            <mi>sin</mi>
+            <mo>sin</mo>
             <mi>&#8289;</mi>
             <mi>θ</mi>
           </mrow>
