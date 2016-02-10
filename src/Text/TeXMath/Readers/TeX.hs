@@ -567,6 +567,9 @@ mathop = mathopWith "mathop" Op
      <|> mathopWith "mathrel" Rel
      <|> mathopWith "mathbin" Bin
      <|> mathopWith "mathord" Ord
+     <|> mathopWith "mathopen" Open
+     <|> mathopWith "mathclose" Close
+     <|> mathopWith "mathpunct" Pun
 
 mathopWith :: String -> TeXSymbolType -> TP Exp
 mathopWith name ty = try $ do
