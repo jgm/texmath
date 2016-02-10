@@ -482,7 +482,6 @@ styleOps :: M.Map String ([Exp] -> Exp)
 styleOps = M.fromList
           [ ("\\mathrm",     EStyled TextNormal)
           , ("\\mathup",     EStyled TextNormal)
-          , ("\\mbox",       EStyled TextNormal)
           , ("\\mathbf",     EStyled TextBold)
           , ("\\boldsymbol", EStyled TextBold)
           , ("\\mathbfup",   EStyled TextBold)
@@ -531,6 +530,7 @@ textOps = M.fromList
           , ("\\textit", (EText TextItalic))
           , ("\\texttt", (EText TextMonospace))
           , ("\\textsf", (EText TextSansSerif))
+          , ("\\mbox",   (EText TextNormal))
           ]
 
 styled :: TP Exp
