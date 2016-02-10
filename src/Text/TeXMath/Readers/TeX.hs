@@ -158,9 +158,17 @@ expToOperatorName e = case e of
                     ESymbol _ "\x02B9" -> Just "'"
                     ESymbol _ s -> Just s
                     ENumber s -> Just s
-                    EStyled sty [EIdentifier s] ->
-                      Just (toUnicode sty s)
+                    EStyled sty xs -> concat <$> sequence (map (toStr sty) xs)
                     _ -> Nothing
+          toStr sty (EIdentifier s)     = Just $ toUnicode sty s
+          toStr _   (EText sty' s)      = Just $ toUnicode sty' s
+          toStr sty (ENumber s)         = Just $ toUnicode sty s
+          toStr sty (EMathOperator s)   = Just $ toUnicode sty s
+          toStr sty (ESymbol _ s)       = Just $ toUnicode sty s
+          toStr _   (ESpace _)          = Just $ " "
+          toStr _   (EStyled sty' exps) = concat <$>
+                                            sequence (map (toStr sty') exps)
+          toStr _   _                   = Nothing
 
 bareSubSup :: TP Exp
 bareSubSup = subSup Nothing False (EIdentifier "")
