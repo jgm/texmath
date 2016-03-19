@@ -1,3 +1,14 @@
+texmath (0.8.5)
+
+  * TeX parser: Support limited styling inside \DeclareMathOperator (#85).
+  * TeX reader: Correctly parse \mbox.  Its argument is text mode.
+  * Updated mathml tests to use mo for operators.
+  * TeX reader: support mathopen, mathclose, mathpunct.
+  * MathML writer: render EMathOperator as mo, not mi (#86).
+  * MathML: handle leading space in EText (#87).
+  * Take --version in executable from cabal metadata.
+  * Added Paths_texmath to other-modules.
+
 texmath (0.8.4.2)
 
   * Fixed overbrace, underbrace (#82).  Previously we were using the wrong
