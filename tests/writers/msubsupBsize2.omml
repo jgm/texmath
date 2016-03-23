@@ -11,12 +11,6 @@
         <m:subHide m:val="off" />
         <m:supHide m:val="off" />
       </m:naryPr>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>+</m:t>
-        </m:r>
-      </m:e>
       <m:sub>
         <m:r>
           <m:rPr />
@@ -29,6 +23,12 @@
           <m:t>1</m:t>
         </m:r>
       </m:sup>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>+</m:t>
+        </m:r>
+      </m:e>
     </m:nary>
     <m:sSubSup>
       <m:e>
@@ -111,7 +111,6 @@
         <m:subHide m:val="off" />
         <m:supHide m:val="off" />
       </m:naryPr>
-      <m:e />
       <m:sub>
         <m:r>
           <m:rPr />
@@ -124,6 +123,7 @@
           <m:t>a</m:t>
         </m:r>
       </m:sup>
+      <m:e />
     </m:nary>
   </m:oMath>
 </m:oMathPara>

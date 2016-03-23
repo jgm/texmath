@@ -183,7 +183,6 @@
               <m:subHide m:val="on" />
               <m:supHide m:val="off" />
             </m:naryPr>
-            <m:e />
             <m:sub />
             <m:sup>
               <m:r>
@@ -191,6 +190,7 @@
                 <m:t>S</m:t>
               </m:r>
             </m:sup>
+            <m:e />
           </m:nary>
           <m:sSup>
             <m:e>
@@ -274,7 +274,6 @@
               <m:subHide m:val="off" />
               <m:supHide m:val="off" />
             </m:naryPr>
-            <m:e />
             <m:sub>
               <m:r>
                 <m:rPr />
@@ -291,6 +290,7 @@
                 <m:t>π</m:t>
               </m:r>
             </m:sup>
+            <m:e />
           </m:nary>
           <m:r>
             <m:rPr>
@@ -313,7 +313,6 @@
               <m:subHide m:val="off" />
               <m:supHide m:val="off" />
             </m:naryPr>
-            <m:e />
             <m:sub>
               <m:r>
                 <m:rPr />
@@ -326,6 +325,7 @@
                 <m:t>π</m:t>
               </m:r>
             </m:sup>
+            <m:e />
           </m:nary>
           <m:r>
             <m:rPr>
@@ -362,7 +362,6 @@
               <m:subHide m:val="off" />
               <m:supHide m:val="off" />
             </m:naryPr>
-            <m:e />
             <m:sub>
               <m:r>
                 <m:rPr />
@@ -375,6 +374,7 @@
                 <m:t>R</m:t>
               </m:r>
             </m:sup>
+            <m:e />
           </m:nary>
           <m:sSup>
             <m:e>

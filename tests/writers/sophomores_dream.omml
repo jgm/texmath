@@ -11,6 +11,18 @@
         <m:subHide m:val="off" />
         <m:supHide m:val="off" />
       </m:naryPr>
+      <m:sub>
+        <m:r>
+          <m:rPr />
+          <m:t>0</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:rPr />
+          <m:t>1</m:t>
+        </m:r>
+      </m:sup>
       <m:e>
         <m:sSup>
           <m:e>
@@ -27,18 +39,6 @@
           </m:sup>
         </m:sSup>
       </m:e>
-      <m:sub>
-        <m:r>
-          <m:rPr />
-          <m:t>0</m:t>
-        </m:r>
-      </m:sub>
-      <m:sup>
-        <m:r>
-          <m:rPr />
-          <m:t>1</m:t>
-        </m:r>
-      </m:sup>
     </m:nary>
     <m:r>
       <m:rPr />
@@ -65,6 +65,26 @@
         <m:subHide m:val="off" />
         <m:supHide m:val="off" />
       </m:naryPr>
+      <m:sub>
+        <m:r>
+          <m:rPr />
+          <m:t>n</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr />
+          <m:t>=</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr />
+          <m:t>1</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:rPr />
+          <m:t>∞</m:t>
+        </m:r>
+      </m:sup>
       <m:e>
         <m:r>
           <m:rPr />
@@ -123,26 +143,6 @@
           </m:sup>
         </m:sSup>
       </m:e>
-      <m:sub>
-        <m:r>
-          <m:rPr />
-          <m:t>n</m:t>
-        </m:r>
-        <m:r>
-          <m:rPr />
-          <m:t>=</m:t>
-        </m:r>
-        <m:r>
-          <m:rPr />
-          <m:t>1</m:t>
-        </m:r>
-      </m:sub>
-      <m:sup>
-        <m:r>
-          <m:rPr />
-          <m:t>∞</m:t>
-        </m:r>
-      </m:sup>
     </m:nary>
   </m:oMath>
 </m:oMathPara>
