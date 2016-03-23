@@ -223,7 +223,7 @@ makeNary props t s y z w =
                  , mnodeA "supHide"
                     (if z == EGrouped [] then "on" else "off") ()
                  ]
-               , mnode "e" $ showExp props w
                , mnode "sub" $ showExp props y
-               , mnode "sup" $ showExp props z ]
+               , mnode "sup" $ showExp props z
+               , mnode "e" $ showExp props w ]
 
