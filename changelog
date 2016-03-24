@@ -1,3 +1,11 @@
+texmath (0.8.5.1)
+
+  * OMML writer: Fixed order of elements in nary formulas to conform
+    to OMML spec (#88, Niko Weh).  `<e>` must follow the `<sup>` and `<sub>`
+    parts of `<nary>`. This fixes rendering issues in LibreOffice
+    (though Word copes with the incorrect order).
+  * Added Paths_texmath to Other-Modules for texmath executable.
+
 texmath (0.8.5)
 
   * TeX parser: Support limited styling inside \DeclareMathOperator (#85).
