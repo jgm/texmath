@@ -80,22 +80,6 @@
             <m:subHide m:val="off" />
             <m:supHide m:val="off" />
           </m:naryPr>
-          <m:e>
-            <m:sSub>
-              <m:e>
-                <m:r>
-                  <m:rPr />
-                  <m:t>A</m:t>
-                </m:r>
-              </m:e>
-              <m:sub>
-                <m:r>
-                  <m:rPr />
-                  <m:t>i</m:t>
-                </m:r>
-              </m:sub>
-            </m:sSub>
-          </m:e>
           <m:sub>
             <m:r>
               <m:rPr />
@@ -116,6 +100,22 @@
               <m:t>n</m:t>
             </m:r>
           </m:sup>
+          <m:e>
+            <m:sSub>
+              <m:e>
+                <m:r>
+                  <m:rPr />
+                  <m:t>A</m:t>
+                </m:r>
+              </m:e>
+              <m:sub>
+                <m:r>
+                  <m:rPr />
+                  <m:t>i</m:t>
+                </m:r>
+              </m:sub>
+            </m:sSub>
+          </m:e>
         </m:nary>
       </m:e>
     </m:bar>
@@ -130,6 +130,26 @@
         <m:subHide m:val="off" />
         <m:supHide m:val="off" />
       </m:naryPr>
+      <m:sub>
+        <m:r>
+          <m:rPr />
+          <m:t>i</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr />
+          <m:t>=</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr />
+          <m:t>1</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:rPr />
+          <m:t>n</m:t>
+        </m:r>
+      </m:sup>
       <m:e>
         <m:bar>
           <m:barPr>
@@ -153,26 +173,6 @@
           </m:e>
         </m:bar>
       </m:e>
-      <m:sub>
-        <m:r>
-          <m:rPr />
-          <m:t>i</m:t>
-        </m:r>
-        <m:r>
-          <m:rPr />
-          <m:t>=</m:t>
-        </m:r>
-        <m:r>
-          <m:rPr />
-          <m:t>1</m:t>
-        </m:r>
-      </m:sub>
-      <m:sup>
-        <m:r>
-          <m:rPr />
-          <m:t>n</m:t>
-        </m:r>
-      </m:sup>
     </m:nary>
   </m:oMath>
 </m:oMathPara>

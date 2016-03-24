@@ -11,12 +11,6 @@
         <m:subHide m:val="on" />
         <m:supHide m:val="off" />
       </m:naryPr>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>+</m:t>
-        </m:r>
-      </m:e>
       <m:sub />
       <m:sup>
         <m:r>
@@ -24,6 +18,12 @@
           <m:t>1</m:t>
         </m:r>
       </m:sup>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>+</m:t>
+        </m:r>
+      </m:e>
     </m:nary>
     <m:sSup>
       <m:e>
@@ -94,12 +94,6 @@
         <m:subHide m:val="on" />
         <m:supHide m:val="off" />
       </m:naryPr>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>+</m:t>
-        </m:r>
-      </m:e>
       <m:sub />
       <m:sup>
         <m:r>
@@ -107,6 +101,12 @@
           <m:t>a</m:t>
         </m:r>
       </m:sup>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>+</m:t>
+        </m:r>
+      </m:e>
     </m:nary>
     <m:nary>
       <m:naryPr>
@@ -115,14 +115,14 @@
         <m:subHide m:val="on" />
         <m:supHide m:val="off" />
       </m:naryPr>
+      <m:sub />
+      <m:sup>
+        <m:r>
+          <m:rPr />
+          <m:t>a</m:t>
+        </m:r>
+      </m:sup>
       <m:e />
-      <m:sub />
-      <m:sup>
-        <m:r>
-          <m:rPr />
-          <m:t>a</m:t>
-        </m:r>
-      </m:sup>
     </m:nary>
   </m:oMath>
 </m:oMathPara>

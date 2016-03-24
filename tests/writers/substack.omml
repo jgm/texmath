@@ -11,12 +11,6 @@
         <m:subHide m:val="on" />
         <m:supHide m:val="off" />
       </m:naryPr>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>P</m:t>
-        </m:r>
-      </m:e>
       <m:sub />
       <m:sup>
         <m:m>
@@ -86,6 +80,12 @@
           </m:mr>
         </m:m>
       </m:sup>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>P</m:t>
+        </m:r>
+      </m:e>
     </m:nary>
     <m:r>
       <m:rPr />

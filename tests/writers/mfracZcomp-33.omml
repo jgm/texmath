@@ -109,6 +109,13 @@
         <m:subHide m:val="off" />
         <m:supHide m:val="on" />
       </m:naryPr>
+      <m:sub>
+        <m:r>
+          <m:rPr />
+          <m:t>C</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup />
       <m:e>
         <m:f>
           <m:fPr>
@@ -197,13 +204,6 @@
           </m:den>
         </m:f>
       </m:e>
-      <m:sub>
-        <m:r>
-          <m:rPr />
-          <m:t>C</m:t>
-        </m:r>
-      </m:sub>
-      <m:sup />
     </m:nary>
     <m:r>
       <m:rPr />

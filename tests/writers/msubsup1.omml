@@ -11,6 +11,18 @@
         <m:subHide m:val="off" />
         <m:supHide m:val="off" />
       </m:naryPr>
+      <m:sub>
+        <m:r>
+          <m:rPr />
+          <m:t>0</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:rPr />
+          <m:t>1</m:t>
+        </m:r>
+      </m:sup>
       <m:e>
         <m:sSup>
           <m:e>
@@ -39,18 +51,6 @@
           <m:t>x</m:t>
         </m:r>
       </m:e>
-      <m:sub>
-        <m:r>
-          <m:rPr />
-          <m:t>0</m:t>
-        </m:r>
-      </m:sub>
-      <m:sup>
-        <m:r>
-          <m:rPr />
-          <m:t>1</m:t>
-        </m:r>
-      </m:sup>
     </m:nary>
   </m:oMath>
 </m:oMathPara>

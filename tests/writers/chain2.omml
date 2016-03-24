@@ -11,12 +11,6 @@
         <m:subHide m:val="off" />
         <m:supHide m:val="off" />
       </m:naryPr>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>f</m:t>
-        </m:r>
-      </m:e>
       <m:sub>
         <m:r>
           <m:rPr />
@@ -29,6 +23,12 @@
           <m:t>1</m:t>
         </m:r>
       </m:sup>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>f</m:t>
+        </m:r>
+      </m:e>
     </m:nary>
     <m:d>
       <m:dPr>
@@ -66,22 +66,6 @@
         <m:subHide m:val="off" />
         <m:supHide m:val="off" />
       </m:naryPr>
-      <m:e>
-        <m:sSub>
-          <m:e>
-            <m:r>
-              <m:rPr />
-              <m:t>x</m:t>
-            </m:r>
-          </m:e>
-          <m:sub>
-            <m:r>
-              <m:rPr />
-              <m:t>i</m:t>
-            </m:r>
-          </m:sub>
-        </m:sSub>
-      </m:e>
       <m:sub>
         <m:r>
           <m:rPr />
@@ -102,6 +86,22 @@
           <m:t>∞</m:t>
         </m:r>
       </m:sup>
+      <m:e>
+        <m:sSub>
+          <m:e>
+            <m:r>
+              <m:rPr />
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+          <m:sub>
+            <m:r>
+              <m:rPr />
+              <m:t>i</m:t>
+            </m:r>
+          </m:sub>
+        </m:sSub>
+      </m:e>
     </m:nary>
     <m:r>
       <m:rPr />
@@ -114,22 +114,6 @@
         <m:subHide m:val="off" />
         <m:supHide m:val="off" />
       </m:naryPr>
-      <m:e>
-        <m:sSub>
-          <m:e>
-            <m:r>
-              <m:rPr />
-              <m:t>x</m:t>
-            </m:r>
-          </m:e>
-          <m:sub>
-            <m:r>
-              <m:rPr />
-              <m:t>i</m:t>
-            </m:r>
-          </m:sub>
-        </m:sSub>
-      </m:e>
       <m:sub>
         <m:r>
           <m:rPr />
@@ -150,6 +134,22 @@
           <m:t>∞</m:t>
         </m:r>
       </m:sup>
+      <m:e>
+        <m:sSub>
+          <m:e>
+            <m:r>
+              <m:rPr />
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+          <m:sub>
+            <m:r>
+              <m:rPr />
+              <m:t>i</m:t>
+            </m:r>
+          </m:sub>
+        </m:sSub>
+      </m:e>
     </m:nary>
     <m:r>
       <m:rPr />
@@ -162,22 +162,6 @@
         <m:subHide m:val="off" />
         <m:supHide m:val="off" />
       </m:naryPr>
-      <m:e>
-        <m:sSub>
-          <m:e>
-            <m:r>
-              <m:rPr />
-              <m:t>x</m:t>
-            </m:r>
-          </m:e>
-          <m:sub>
-            <m:r>
-              <m:rPr />
-              <m:t>i</m:t>
-            </m:r>
-          </m:sub>
-        </m:sSub>
-      </m:e>
       <m:sub>
         <m:r>
           <m:rPr />
@@ -198,6 +182,22 @@
           <m:t>∞</m:t>
         </m:r>
       </m:sup>
+      <m:e>
+        <m:sSub>
+          <m:e>
+            <m:r>
+              <m:rPr />
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+          <m:sub>
+            <m:r>
+              <m:rPr />
+              <m:t>i</m:t>
+            </m:r>
+          </m:sub>
+        </m:sSub>
+      </m:e>
     </m:nary>
     <m:r>
       <m:rPr />
@@ -210,12 +210,6 @@
         <m:subHide m:val="off" />
         <m:supHide m:val="off" />
       </m:naryPr>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>f</m:t>
-        </m:r>
-      </m:e>
       <m:sub>
         <m:r>
           <m:rPr />
@@ -228,6 +222,12 @@
           <m:t>1</m:t>
         </m:r>
       </m:sup>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>f</m:t>
+        </m:r>
+      </m:e>
     </m:nary>
     <m:d>
       <m:dPr>
@@ -265,12 +265,6 @@
         <m:subHide m:val="off" />
         <m:supHide m:val="off" />
       </m:naryPr>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>f</m:t>
-        </m:r>
-      </m:e>
       <m:sub>
         <m:r>
           <m:rPr />
@@ -283,6 +277,12 @@
           <m:t>1</m:t>
         </m:r>
       </m:sup>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>f</m:t>
+        </m:r>
+      </m:e>
     </m:nary>
     <m:d>
       <m:dPr>
@@ -320,12 +320,6 @@
         <m:subHide m:val="off" />
         <m:supHide m:val="off" />
       </m:naryPr>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>f</m:t>
-        </m:r>
-      </m:e>
       <m:sub>
         <m:r>
           <m:rPr />
@@ -338,6 +332,12 @@
           <m:t>1</m:t>
         </m:r>
       </m:sup>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>f</m:t>
+        </m:r>
+      </m:e>
     </m:nary>
     <m:d>
       <m:dPr>

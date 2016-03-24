@@ -1,0 +1,24 @@
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <munderover>
+      <mo>∑</mo>
+      <mrow>
+        <mi>i</mi>
+        <mo>=</mo>
+        <mn>1</mn>
+      </mrow>
+      <mn>100</mn>
+    </munderover>
+    <mi>x</mi>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <mn>100</mn>
+        <mo>*</mo>
+        <mn>101</mn>
+      </mrow>
+      <mn>2</mn>
+    </mfrac>
+  </mrow>
+</math>

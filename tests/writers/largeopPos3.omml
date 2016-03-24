@@ -11,20 +11,6 @@
         <m:subHide m:val="off" />
         <m:supHide m:val="off" />
       </m:naryPr>
-      <m:e>
-        <m:r>
-          <m:rPr />
-          <m:t>A</m:t>
-        </m:r>
-        <m:r>
-          <m:rPr />
-          <m:t>∩</m:t>
-        </m:r>
-        <m:r>
-          <m:rPr />
-          <m:t>B</m:t>
-        </m:r>
-      </m:e>
       <m:sub>
         <m:r>
           <m:rPr />
@@ -45,6 +31,20 @@
           <m:t>∞</m:t>
         </m:r>
       </m:sup>
+      <m:e>
+        <m:r>
+          <m:rPr />
+          <m:t>A</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr />
+          <m:t>∩</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr />
+          <m:t>B</m:t>
+        </m:r>
+      </m:e>
     </m:nary>
   </m:oMath>
 </m:oMathPara>
