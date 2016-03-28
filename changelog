@@ -1,3 +1,9 @@
+texmath (0.8.6)
+
+  * TeX reader: Support hundreds more math symbols (all of those defined in
+    Text.TeXMath.Unicode.ToTeX), including `\nwarrow`, `\swarrow`,
+    `\nearrow`, `\searrow` (#90).
+
 texmath (0.8.5.1)
 
   * OMML writer: Fixed order of elements in nary formulas to conform
