@@ -882,10 +882,10 @@ symbols = M.fromList
            , ("\\notin", ESymbol Rel "\x2209")
            , ("\\gets", ESymbol Rel "\x2190")
            , ("\\leftarrow", ESymbol Rel "\x2190")
-           , ("\\nwarrow", ESymbol Rel "\8598"),
-           , ("\\nearrow", ESymbol Rel "\8599"),
-           , ("\\searrow", ESymbol Rel "\8600"),
-           , ("\\swarrow", ESymbol Rel "\8601"),
+           , ("\\nwarrow", ESymbol Rel "\8598")
+           , ("\\nearrow", ESymbol Rel "\8599")
+           , ("\\searrow", ESymbol Rel "\8600")
+           , ("\\swarrow", ESymbol Rel "\8601")
            , ("\\to", ESymbol Rel "\x2192")
            , ("\\rightarrow", ESymbol Rel "\x2192")
            , ("\\leftrightarrow", ESymbol Rel "\x2194")
