@@ -7,7 +7,6 @@
     <m:limLow>
       <m:e>
         <m:r>
-          <m:rPr />
           <m:t>BASE</m:t>
         </m:r>
       </m:e>
@@ -15,13 +14,11 @@
         <m:limUpp>
           <m:e>
             <m:r>
-              <m:rPr />
               <m:t>s</m:t>
             </m:r>
           </m:e>
           <m:lim>
             <m:r>
-              <m:rPr />
               <m:t>t</m:t>
             </m:r>
           </m:lim>
@@ -29,13 +26,11 @@
       </m:lim>
     </m:limLow>
     <m:r>
-      <m:rPr />
       <m:t>=</m:t>
     </m:r>
     <m:limLow>
       <m:e>
         <m:r>
-          <m:rPr />
           <m:t>BASE</m:t>
         </m:r>
       </m:e>
@@ -48,13 +43,11 @@
               </m:phantPr>
               <m:e>
                 <m:r>
-                  <m:rPr />
                   <m:t>1</m:t>
                 </m:r>
               </m:e>
             </m:phant>
             <m:r>
-              <m:rPr />
               <m:t>s</m:t>
             </m:r>
             <m:phant>
@@ -63,7 +56,6 @@
               </m:phantPr>
               <m:e>
                 <m:r>
-                  <m:rPr />
                   <m:t>1</m:t>
                 </m:r>
               </m:e>
@@ -76,13 +68,11 @@
               </m:phantPr>
               <m:e>
                 <m:r>
-                  <m:rPr />
                   <m:t>1</m:t>
                 </m:r>
               </m:e>
             </m:phant>
             <m:r>
-              <m:rPr />
               <m:t>t</m:t>
             </m:r>
             <m:phant>
@@ -91,7 +81,6 @@
               </m:phantPr>
               <m:e>
                 <m:r>
-                  <m:rPr />
                   <m:t>1</m:t>
                 </m:r>
               </m:e>

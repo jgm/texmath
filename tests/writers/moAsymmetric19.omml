@@ -5,11 +5,9 @@
   </m:oMathParaPr>
   <m:oMath>
     <m:r>
-      <m:rPr />
       <m:t>x</m:t>
     </m:r>
     <m:r>
-      <m:rPr />
       <m:t>=</m:t>
     </m:r>
     <m:d>
@@ -39,7 +37,6 @@
           <m:mr>
             <m:e>
               <m:r>
-                <m:rPr />
                 <m:t>0</m:t>
               </m:r>
             </m:e>
@@ -47,50 +44,6 @@
           <m:mr>
             <m:e>
               <m:r>
-                <m:rPr />
-                <m:t>0</m:t>
-              </m:r>
-            </m:e>
-          </m:mr>
-        </m:m>
-      </m:e>
-    </m:d>
-    <m:d>
-      <m:dPr>
-        <m:begChr m:val="(" />
-        <m:endChr m:val=")" />
-        <m:grow />
-      </m:dPr>
-      <m:e>
-        <m:m>
-          <m:mPr>
-            <m:baseJc m:val="center" />
-            <m:plcHide m:val="on" />
-            <m:mcs>
-              <m:mc>
-                <m:mcPr>
-                  <m:mcJc m:val="left" />
-                </m:mcPr>
-              </m:mc>
-              <m:mc>
-                <m:mcPr>
-                  <m:mcJc m:val="left" />
-                </m:mcPr>
-              </m:mc>
-            </m:mcs>
-          </m:mPr>
-          <m:mr>
-            <m:e>
-              <m:r>
-                <m:rPr />
-                <m:t>0</m:t>
-              </m:r>
-            </m:e>
-          </m:mr>
-          <m:mr>
-            <m:e>
-              <m:r>
-                <m:rPr />
                 <m:t>0</m:t>
               </m:r>
             </m:e>
@@ -125,7 +78,6 @@
           <m:mr>
             <m:e>
               <m:r>
-                <m:rPr />
                 <m:t>0</m:t>
               </m:r>
             </m:e>
@@ -133,7 +85,47 @@
           <m:mr>
             <m:e>
               <m:r>
-                <m:rPr />
+                <m:t>0</m:t>
+              </m:r>
+            </m:e>
+          </m:mr>
+        </m:m>
+      </m:e>
+    </m:d>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="(" />
+        <m:endChr m:val=")" />
+        <m:grow />
+      </m:dPr>
+      <m:e>
+        <m:m>
+          <m:mPr>
+            <m:baseJc m:val="center" />
+            <m:plcHide m:val="on" />
+            <m:mcs>
+              <m:mc>
+                <m:mcPr>
+                  <m:mcJc m:val="left" />
+                </m:mcPr>
+              </m:mc>
+              <m:mc>
+                <m:mcPr>
+                  <m:mcJc m:val="left" />
+                </m:mcPr>
+              </m:mc>
+            </m:mcs>
+          </m:mPr>
+          <m:mr>
+            <m:e>
+              <m:r>
+                <m:t>0</m:t>
+              </m:r>
+            </m:e>
+          </m:mr>
+          <m:mr>
+            <m:e>
+              <m:r>
                 <m:t>0</m:t>
               </m:r>
             </m:e>

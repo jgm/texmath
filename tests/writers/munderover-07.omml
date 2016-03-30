@@ -9,7 +9,6 @@
         <m:limLow>
           <m:e>
             <m:r>
-              <m:rPr />
               <m:t>BASE</m:t>
             </m:r>
           </m:e>
@@ -17,13 +16,11 @@
             <m:limUpp>
               <m:e>
                 <m:r>
-                  <m:rPr />
                   <m:t>under-1</m:t>
                 </m:r>
               </m:e>
               <m:lim>
                 <m:r>
-                  <m:rPr />
                   <m:t>over-2</m:t>
                 </m:r>
               </m:lim>
@@ -35,13 +32,11 @@
         <m:limUpp>
           <m:e>
             <m:r>
-              <m:rPr />
               <m:t>under-2</m:t>
             </m:r>
           </m:e>
           <m:lim>
             <m:r>
-              <m:rPr />
               <m:t>over-1</m:t>
             </m:r>
           </m:lim>
@@ -49,7 +44,6 @@
       </m:lim>
     </m:limLow>
     <m:r>
-      <m:rPr />
       <m:t>=</m:t>
     </m:r>
     <m:limLow>
@@ -59,13 +53,11 @@
             <m:limUpp>
               <m:e>
                 <m:r>
-                  <m:rPr />
                   <m:t>BASE</m:t>
                 </m:r>
               </m:e>
               <m:lim>
                 <m:r>
-                  <m:rPr />
                   <m:t>over-2</m:t>
                 </m:r>
               </m:lim>
@@ -73,7 +65,6 @@
           </m:e>
           <m:lim>
             <m:r>
-              <m:rPr />
               <m:t>under-1</m:t>
             </m:r>
           </m:lim>
@@ -83,13 +74,11 @@
         <m:limUpp>
           <m:e>
             <m:r>
-              <m:rPr />
               <m:t>under-2</m:t>
             </m:r>
           </m:e>
           <m:lim>
             <m:r>
-              <m:rPr />
               <m:t>over-1</m:t>
             </m:r>
           </m:lim>

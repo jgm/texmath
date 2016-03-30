@@ -7,7 +7,6 @@
     <m:limUpp>
       <m:e>
         <m:r>
-          <m:rPr />
           <m:t>BASE</m:t>
         </m:r>
       </m:e>
@@ -18,13 +17,11 @@
           </m:fPr>
           <m:num>
             <m:r>
-              <m:rPr />
               <m:t>first</m:t>
             </m:r>
           </m:num>
           <m:den>
             <m:r>
-              <m:rPr />
               <m:t>second</m:t>
             </m:r>
           </m:den>
@@ -32,7 +29,6 @@
       </m:lim>
     </m:limUpp>
     <m:r>
-      <m:rPr />
       <m:t>=</m:t>
     </m:r>
     <m:limUpp>
@@ -40,7 +36,6 @@
         <m:limUpp>
           <m:e>
             <m:r>
-              <m:rPr />
               <m:t>BASE</m:t>
             </m:r>
           </m:e>
@@ -51,13 +46,11 @@
               </m:fPr>
               <m:num>
                 <m:r>
-                  <m:rPr />
                   <m:t>first</m:t>
                 </m:r>
               </m:num>
               <m:den>
                 <m:r>
-                  <m:rPr />
                   <m:t>second</m:t>
                 </m:r>
               </m:den>
@@ -72,7 +65,6 @@
           </m:phantPr>
           <m:e>
             <m:r>
-              <m:rPr />
               <m:t>over</m:t>
             </m:r>
           </m:e>

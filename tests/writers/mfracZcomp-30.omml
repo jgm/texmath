@@ -5,11 +5,9 @@
   </m:oMathParaPr>
   <m:oMath>
     <m:r>
-      <m:rPr />
       <m:t>HypergeomDist</m:t>
     </m:r>
     <m:r>
-      <m:rPr />
       <m:t>&#8289;</m:t>
     </m:r>
     <m:d>
@@ -20,37 +18,29 @@
       </m:dPr>
       <m:e>
         <m:r>
-          <m:rPr />
           <m:t>x</m:t>
         </m:r>
         <m:r>
-          <m:rPr />
           <m:t>;</m:t>
         </m:r>
         <m:r>
-          <m:rPr />
           <m:t>M</m:t>
         </m:r>
         <m:r>
-          <m:rPr />
           <m:t>,</m:t>
         </m:r>
         <m:r>
-          <m:rPr />
           <m:t>K</m:t>
         </m:r>
         <m:r>
-          <m:rPr />
           <m:t>,</m:t>
         </m:r>
         <m:r>
-          <m:rPr />
           <m:t>n</m:t>
         </m:r>
       </m:e>
     </m:d>
     <m:r>
-      <m:rPr />
       <m:t>=</m:t>
     </m:r>
     <m:nary>
@@ -62,21 +52,17 @@
       </m:naryPr>
       <m:sub>
         <m:r>
-          <m:rPr />
           <m:t>k</m:t>
         </m:r>
         <m:r>
-          <m:rPr />
           <m:t>=</m:t>
         </m:r>
         <m:r>
-          <m:rPr />
           <m:t>0</m:t>
         </m:r>
       </m:sub>
       <m:sup>
         <m:r>
-          <m:rPr />
           <m:t>x</m:t>
         </m:r>
       </m:sup>
@@ -99,13 +85,11 @@
                   </m:fPr>
                   <m:num>
                     <m:r>
-                      <m:rPr />
                       <m:t>K</m:t>
                     </m:r>
                   </m:num>
                   <m:den>
                     <m:r>
-                      <m:rPr />
                       <m:t>k</m:t>
                     </m:r>
                   </m:den>
@@ -113,7 +97,6 @@
               </m:e>
             </m:d>
             <m:r>
-              <m:rPr />
               <m:t>&#8290;</m:t>
             </m:r>
             <m:d>
@@ -129,29 +112,23 @@
                   </m:fPr>
                   <m:num>
                     <m:r>
-                      <m:rPr />
                       <m:t>M</m:t>
                     </m:r>
                     <m:r>
-                      <m:rPr />
                       <m:t>-</m:t>
                     </m:r>
                     <m:r>
-                      <m:rPr />
                       <m:t>K</m:t>
                     </m:r>
                   </m:num>
                   <m:den>
                     <m:r>
-                      <m:rPr />
                       <m:t>n</m:t>
                     </m:r>
                     <m:r>
-                      <m:rPr />
                       <m:t>-</m:t>
                     </m:r>
                     <m:r>
-                      <m:rPr />
                       <m:t>k</m:t>
                     </m:r>
                   </m:den>
@@ -173,13 +150,11 @@
                   </m:fPr>
                   <m:num>
                     <m:r>
-                      <m:rPr />
                       <m:t>M</m:t>
                     </m:r>
                   </m:num>
                   <m:den>
                     <m:r>
-                      <m:rPr />
                       <m:t>n</m:t>
                     </m:r>
                   </m:den>

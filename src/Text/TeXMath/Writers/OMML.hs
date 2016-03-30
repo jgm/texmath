@@ -44,6 +44,7 @@ mnodeA :: Node t => String -> String -> t -> Element
 mnodeA s v = add_attr (Attr (QName "val" Nothing (Just "m")) v) . mnode s
 
 str :: [Element] -> String -> Element
+str []    s = mnode "r" [ mnode "t" s ]
 str props s = mnode "r" [ mnode "rPr" props
                         , mnode "t" s ]
 

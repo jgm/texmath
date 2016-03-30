@@ -7,7 +7,6 @@
     <m:limLow>
       <m:e>
         <m:r>
-          <m:rPr />
           <m:t>BASE</m:t>
         </m:r>
       </m:e>
@@ -15,13 +14,11 @@
         <m:limUpp>
           <m:e>
             <m:r>
-              <m:rPr />
               <m:t>under</m:t>
             </m:r>
           </m:e>
           <m:lim>
             <m:r>
-              <m:rPr />
               <m:t>over</m:t>
             </m:r>
           </m:lim>
@@ -29,13 +26,11 @@
       </m:lim>
     </m:limLow>
     <m:r>
-      <m:rPr />
       <m:t>=</m:t>
     </m:r>
     <m:limLow>
       <m:e>
         <m:r>
-          <m:rPr />
           <m:t>BASE</m:t>
         </m:r>
       </m:e>
@@ -43,13 +38,11 @@
         <m:limUpp>
           <m:e>
             <m:r>
-              <m:rPr />
               <m:t>under</m:t>
             </m:r>
           </m:e>
           <m:lim>
             <m:r>
-              <m:rPr />
               <m:t>over</m:t>
             </m:r>
           </m:lim>
