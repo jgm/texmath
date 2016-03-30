@@ -192,10 +192,8 @@ showExp props e =
    ESqrt x       -> [mnode "rad" [ mnode "radPr" $ mnodeA "degHide" "on" ()
                                       , mnode "deg" ()
                                       , mnode "e" $ showExp props x]]
-   ERoot i x     -> [mnode "rad" [ mnode "radPr" $
-                                   mnodeA "degHide" "on" ()
-                                , mnode "deg" $ showExp props i
-                                , mnode "e" $ showExp props x]]
+   ERoot i x     -> [mnode "rad" [ mnode "deg" $ showExp props i
+                                 , mnode "e" $ showExp props x]]
    EFraction ft x y -> [showFraction props ft x y]
    EPhantom x       -> [mnode "phant" [ mnode "phantPr"
                                             [ mnodeA "show" "0" () ]
