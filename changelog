@@ -1,3 +1,9 @@
+texmath (0.8.6.1)
+
+  * OMML writer:  Fixed rendering of roots, so that the degree appears
+    in the right place.
+  * OMML writer:  Don't include empty rPr elements.
+
 texmath (0.8.6)
 
   * TeX reader: Support hundreds more math symbols (all of those defined in
