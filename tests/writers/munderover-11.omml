@@ -6,15 +6,10 @@
   <m:oMath>
     <m:limLow>
       <m:e>
-        <m:r>
-          <m:t>BASE</m:t>
-        </m:r>
-      </m:e>
-      <m:lim>
         <m:limUpp>
           <m:e>
             <m:r>
-              <m:t>s</m:t>
+              <m:t>BASE</m:t>
             </m:r>
           </m:e>
           <m:lim>
@@ -23,6 +18,11 @@
             </m:r>
           </m:lim>
         </m:limUpp>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>s</m:t>
+        </m:r>
       </m:lim>
     </m:limLow>
     <m:r>
@@ -30,36 +30,11 @@
     </m:r>
     <m:limLow>
       <m:e>
-        <m:r>
-          <m:t>BASE</m:t>
-        </m:r>
-      </m:e>
-      <m:lim>
         <m:limUpp>
           <m:e>
-            <m:phant>
-              <m:phantPr>
-                <m:show m:val="0" />
-              </m:phantPr>
-              <m:e>
-                <m:r>
-                  <m:t>1</m:t>
-                </m:r>
-              </m:e>
-            </m:phant>
             <m:r>
-              <m:t>s</m:t>
+              <m:t>BASE</m:t>
             </m:r>
-            <m:phant>
-              <m:phantPr>
-                <m:show m:val="0" />
-              </m:phantPr>
-              <m:e>
-                <m:r>
-                  <m:t>1</m:t>
-                </m:r>
-              </m:e>
-            </m:phant>
           </m:e>
           <m:lim>
             <m:phant>
@@ -87,6 +62,31 @@
             </m:phant>
           </m:lim>
         </m:limUpp>
+      </m:e>
+      <m:lim>
+        <m:phant>
+          <m:phantPr>
+            <m:show m:val="0" />
+          </m:phantPr>
+          <m:e>
+            <m:r>
+              <m:t>1</m:t>
+            </m:r>
+          </m:e>
+        </m:phant>
+        <m:r>
+          <m:t>s</m:t>
+        </m:r>
+        <m:phant>
+          <m:phantPr>
+            <m:show m:val="0" />
+          </m:phantPr>
+          <m:e>
+            <m:r>
+              <m:t>1</m:t>
+            </m:r>
+          </m:e>
+        </m:phant>
       </m:lim>
     </m:limLow>
   </m:oMath>

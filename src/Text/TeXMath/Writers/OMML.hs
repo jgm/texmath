@@ -195,7 +195,7 @@ showExp props e =
                                        , mnode "lim" $ showExp props y]]
    EOver _ x y   -> [mnode "limUpp" [ mnode "e" $ showExp props x
                                        , mnode "lim" $ showExp props y]]
-   EUnderover c x y z -> showExp props (EUnder c x (EOver c y z))
+   EUnderover c x y z -> showExp props (EUnder c (EOver c x z) y)
    ESqrt x       -> [mnode "rad" [ mnode "radPr" $ mnodeA "degHide" "1" ()
                                       , mnode "deg" ()
                                       , mnode "e" $ showExp props x]]

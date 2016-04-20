@@ -21,23 +21,11 @@
     </m:r>
     <m:limLow>
       <m:e>
-        <m:r>
-          <m:t>middle</m:t>
-        </m:r>
-      </m:e>
-      <m:lim>
         <m:limUpp>
           <m:e>
-            <m:phant>
-              <m:phantPr>
-                <m:show m:val="0" />
-              </m:phantPr>
-              <m:e>
-                <m:r>
-                  <m:t>fail</m:t>
-                </m:r>
-              </m:e>
-            </m:phant>
+            <m:r>
+              <m:t>middle</m:t>
+            </m:r>
           </m:e>
           <m:lim>
             <m:r>
@@ -45,6 +33,18 @@
             </m:r>
           </m:lim>
         </m:limUpp>
+      </m:e>
+      <m:lim>
+        <m:phant>
+          <m:phantPr>
+            <m:show m:val="0" />
+          </m:phantPr>
+          <m:e>
+            <m:r>
+              <m:t>fail</m:t>
+            </m:r>
+          </m:e>
+        </m:phant>
       </m:lim>
     </m:limLow>
   </m:oMath>

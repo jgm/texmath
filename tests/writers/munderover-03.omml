@@ -6,15 +6,10 @@
   <m:oMath>
     <m:limLow>
       <m:e>
-        <m:r>
-          <m:t>_ baseline _</m:t>
-        </m:r>
-      </m:e>
-      <m:lim>
         <m:limUpp>
           <m:e>
             <m:r>
-              <m:t>under script</m:t>
+              <m:t>_ baseline _</m:t>
             </m:r>
           </m:e>
           <m:lim>
@@ -30,6 +25,11 @@
             </m:phant>
           </m:lim>
         </m:limUpp>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>under script</m:t>
+        </m:r>
       </m:lim>
     </m:limLow>
     <m:r>

@@ -139,21 +139,10 @@
                 <m:e>
                   <m:limLow>
                     <m:e>
-                      <m:r>
-                        <m:t>∑</m:t>
-                      </m:r>
-                    </m:e>
-                    <m:lim>
                       <m:limUpp>
                         <m:e>
                           <m:r>
-                            <m:t>k</m:t>
-                          </m:r>
-                          <m:r>
-                            <m:t>=</m:t>
-                          </m:r>
-                          <m:r>
-                            <m:t>1</m:t>
+                            <m:t>∑</m:t>
                           </m:r>
                         </m:e>
                         <m:lim>
@@ -162,6 +151,17 @@
                           </m:r>
                         </m:lim>
                       </m:limUpp>
+                    </m:e>
+                    <m:lim>
+                      <m:r>
+                        <m:t>k</m:t>
+                      </m:r>
+                      <m:r>
+                        <m:t>=</m:t>
+                      </m:r>
+                      <m:r>
+                        <m:t>1</m:t>
+                      </m:r>
                     </m:lim>
                   </m:limLow>
                   <m:sSubSup>
@@ -212,21 +212,10 @@
             <m:e>
               <m:limLow>
                 <m:e>
-                  <m:r>
-                    <m:t>∑</m:t>
-                  </m:r>
-                </m:e>
-                <m:lim>
                   <m:limUpp>
                     <m:e>
                       <m:r>
-                        <m:t>k</m:t>
-                      </m:r>
-                      <m:r>
-                        <m:t>=</m:t>
-                      </m:r>
-                      <m:r>
-                        <m:t>1</m:t>
+                        <m:t>∑</m:t>
                       </m:r>
                     </m:e>
                     <m:lim>
@@ -235,6 +224,17 @@
                       </m:r>
                     </m:lim>
                   </m:limUpp>
+                </m:e>
+                <m:lim>
+                  <m:r>
+                    <m:t>k</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:t>=</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:t>1</m:t>
+                  </m:r>
                 </m:lim>
               </m:limLow>
               <m:sSubSup>
@@ -265,21 +265,10 @@
             <m:e>
               <m:limLow>
                 <m:e>
-                  <m:r>
-                    <m:t>∑</m:t>
-                  </m:r>
-                </m:e>
-                <m:lim>
                   <m:limUpp>
                     <m:e>
                       <m:r>
-                        <m:t>k</m:t>
-                      </m:r>
-                      <m:r>
-                        <m:t>=</m:t>
-                      </m:r>
-                      <m:r>
-                        <m:t>1</m:t>
+                        <m:t>∑</m:t>
                       </m:r>
                     </m:e>
                     <m:lim>
@@ -288,6 +277,17 @@
                       </m:r>
                     </m:lim>
                   </m:limUpp>
+                </m:e>
+                <m:lim>
+                  <m:r>
+                    <m:t>k</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:t>=</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:t>1</m:t>
+                  </m:r>
                 </m:lim>
               </m:limLow>
               <m:sSubSup>
@@ -1050,20 +1050,20 @@
               <m:e>
                 <m:limLow>
                   <m:e>
-                    <m:r>
-                      <m:t>x</m:t>
-                    </m:r>
-                  </m:e>
-                  <m:lim>
                     <m:groupChr>
                       <m:groupChrPr>
                         <m:chr m:val="˙" />
                         <m:pos m:val="top" />
                         <m:vertJc m:val="bot" />
                       </m:groupChrPr>
-                      <m:e />
+                      <m:e>
+                        <m:r>
+                          <m:t>x</m:t>
+                        </m:r>
+                      </m:e>
                     </m:groupChr>
-                  </m:lim>
+                  </m:e>
+                  <m:lim />
                 </m:limLow>
               </m:e>
               <m:e>
@@ -1096,20 +1096,20 @@
               <m:e>
                 <m:limLow>
                   <m:e>
-                    <m:r>
-                      <m:t>y</m:t>
-                    </m:r>
-                  </m:e>
-                  <m:lim>
                     <m:groupChr>
                       <m:groupChrPr>
                         <m:chr m:val="˙" />
                         <m:pos m:val="top" />
                         <m:vertJc m:val="bot" />
                       </m:groupChrPr>
-                      <m:e />
+                      <m:e>
+                        <m:r>
+                          <m:t>y</m:t>
+                        </m:r>
+                      </m:e>
                     </m:groupChr>
-                  </m:lim>
+                  </m:e>
+                  <m:lim />
                 </m:limLow>
               </m:e>
               <m:e>
@@ -1145,20 +1145,20 @@
               <m:e>
                 <m:limLow>
                   <m:e>
-                    <m:r>
-                      <m:t>z</m:t>
-                    </m:r>
-                  </m:e>
-                  <m:lim>
                     <m:groupChr>
                       <m:groupChrPr>
                         <m:chr m:val="˙" />
                         <m:pos m:val="top" />
                         <m:vertJc m:val="bot" />
                       </m:groupChrPr>
-                      <m:e />
+                      <m:e>
+                        <m:r>
+                          <m:t>z</m:t>
+                        </m:r>
+                      </m:e>
                     </m:groupChr>
-                  </m:lim>
+                  </m:e>
+                  <m:lim />
                 </m:limLow>
               </m:e>
               <m:e>
@@ -1242,20 +1242,20 @@
                     </m:r>
                     <m:limLow>
                       <m:e>
-                        <m:r>
-                          <m:t>B</m:t>
-                        </m:r>
-                      </m:e>
-                      <m:lim>
                         <m:groupChr>
                           <m:groupChrPr>
                             <m:chr m:val="↼" />
                             <m:pos m:val="top" />
                             <m:vertJc m:val="bot" />
                           </m:groupChrPr>
-                          <m:e />
+                          <m:e>
+                            <m:r>
+                              <m:t>B</m:t>
+                            </m:r>
+                          </m:e>
                         </m:groupChr>
-                      </m:lim>
+                      </m:e>
+                      <m:lim />
                     </m:limLow>
                     <m:r>
                       <m:t>-</m:t>
@@ -1291,20 +1291,20 @@
                         </m:r>
                         <m:limLow>
                           <m:e>
-                            <m:r>
-                              <m:t>E</m:t>
-                            </m:r>
-                          </m:e>
-                          <m:lim>
                             <m:groupChr>
                               <m:groupChrPr>
                                 <m:chr m:val="↼" />
                                 <m:pos m:val="top" />
                                 <m:vertJc m:val="bot" />
                               </m:groupChrPr>
-                              <m:e />
+                              <m:e>
+                                <m:r>
+                                  <m:t>E</m:t>
+                                </m:r>
+                              </m:e>
                             </m:groupChr>
-                          </m:lim>
+                          </m:e>
+                          <m:lim />
                         </m:limLow>
                       </m:num>
                       <m:den>
@@ -1346,20 +1346,20 @@
                     </m:r>
                     <m:limLow>
                       <m:e>
-                        <m:r>
-                          <m:t>j</m:t>
-                        </m:r>
-                      </m:e>
-                      <m:lim>
                         <m:groupChr>
                           <m:groupChrPr>
                             <m:chr m:val="↼" />
                             <m:pos m:val="top" />
                             <m:vertJc m:val="bot" />
                           </m:groupChrPr>
-                          <m:e />
+                          <m:e>
+                            <m:r>
+                              <m:t>j</m:t>
+                            </m:r>
+                          </m:e>
                         </m:groupChr>
-                      </m:lim>
+                      </m:e>
+                      <m:lim />
                     </m:limLow>
                   </m:e>
                 </m:mr>
@@ -1373,20 +1373,20 @@
                     </m:r>
                     <m:limLow>
                       <m:e>
-                        <m:r>
-                          <m:t>E</m:t>
-                        </m:r>
-                      </m:e>
-                      <m:lim>
                         <m:groupChr>
                           <m:groupChrPr>
                             <m:chr m:val="↼" />
                             <m:pos m:val="top" />
                             <m:vertJc m:val="bot" />
                           </m:groupChrPr>
-                          <m:e />
+                          <m:e>
+                            <m:r>
+                              <m:t>E</m:t>
+                            </m:r>
+                          </m:e>
                         </m:groupChr>
-                      </m:lim>
+                      </m:e>
+                      <m:lim />
                     </m:limLow>
                   </m:e>
                   <m:e>
@@ -1416,20 +1416,20 @@
                     </m:r>
                     <m:limLow>
                       <m:e>
-                        <m:r>
-                          <m:t>E</m:t>
-                        </m:r>
-                      </m:e>
-                      <m:lim>
                         <m:groupChr>
                           <m:groupChrPr>
                             <m:chr m:val="↼" />
                             <m:pos m:val="top" />
                             <m:vertJc m:val="bot" />
                           </m:groupChrPr>
-                          <m:e />
+                          <m:e>
+                            <m:r>
+                              <m:t>E</m:t>
+                            </m:r>
+                          </m:e>
                         </m:groupChr>
-                      </m:lim>
+                      </m:e>
+                      <m:lim />
                     </m:limLow>
                     <m:r>
                       <m:t> </m:t>
@@ -1468,20 +1468,20 @@
                         </m:r>
                         <m:limLow>
                           <m:e>
-                            <m:r>
-                              <m:t>B</m:t>
-                            </m:r>
-                          </m:e>
-                          <m:lim>
                             <m:groupChr>
                               <m:groupChrPr>
                                 <m:chr m:val="↼" />
                                 <m:pos m:val="top" />
                                 <m:vertJc m:val="bot" />
                               </m:groupChrPr>
-                              <m:e />
+                              <m:e>
+                                <m:r>
+                                  <m:t>B</m:t>
+                                </m:r>
+                              </m:e>
                             </m:groupChr>
-                          </m:lim>
+                          </m:e>
+                          <m:lim />
                         </m:limLow>
                       </m:num>
                       <m:den>
@@ -1502,20 +1502,20 @@
                   <m:e>
                     <m:limLow>
                       <m:e>
-                        <m:r>
-                          <m:t>0</m:t>
-                        </m:r>
-                      </m:e>
-                      <m:lim>
                         <m:groupChr>
                           <m:groupChrPr>
                             <m:chr m:val="↼" />
                             <m:pos m:val="top" />
                             <m:vertJc m:val="bot" />
                           </m:groupChrPr>
-                          <m:e />
+                          <m:e>
+                            <m:r>
+                              <m:t>0</m:t>
+                            </m:r>
+                          </m:e>
                         </m:groupChr>
-                      </m:lim>
+                      </m:e>
+                      <m:lim />
                     </m:limLow>
                   </m:e>
                 </m:mr>
@@ -1529,20 +1529,20 @@
                     </m:r>
                     <m:limLow>
                       <m:e>
-                        <m:r>
-                          <m:t>B</m:t>
-                        </m:r>
-                      </m:e>
-                      <m:lim>
                         <m:groupChr>
                           <m:groupChrPr>
                             <m:chr m:val="↼" />
                             <m:pos m:val="top" />
                             <m:vertJc m:val="bot" />
                           </m:groupChrPr>
-                          <m:e />
+                          <m:e>
+                            <m:r>
+                              <m:t>B</m:t>
+                            </m:r>
+                          </m:e>
                         </m:groupChr>
-                      </m:lim>
+                      </m:e>
+                      <m:lim />
                     </m:limLow>
                   </m:e>
                   <m:e>

@@ -22749,15 +22749,10 @@
               </m:r>
               <m:limLow>
                 <m:e>
-                  <m:r>
-                    <m:t>∑</m:t>
-                  </m:r>
-                </m:e>
-                <m:lim>
                   <m:limUpp>
                     <m:e>
                       <m:r>
-                        <m:t>1</m:t>
+                        <m:t>∑</m:t>
                       </m:r>
                     </m:e>
                     <m:lim>
@@ -22766,6 +22761,11 @@
                       </m:r>
                     </m:lim>
                   </m:limUpp>
+                </m:e>
+                <m:lim>
+                  <m:r>
+                    <m:t>1</m:t>
+                  </m:r>
                 </m:lim>
               </m:limLow>
             </m:e>
@@ -22826,15 +22826,10 @@
               </m:r>
               <m:limLow>
                 <m:e>
-                  <m:r>
-                    <m:t>∑</m:t>
-                  </m:r>
-                </m:e>
-                <m:lim>
                   <m:limUpp>
                     <m:e>
                       <m:r>
-                        <m:t>1</m:t>
+                        <m:t>∑</m:t>
                       </m:r>
                     </m:e>
                     <m:lim>
@@ -22843,6 +22838,11 @@
                       </m:r>
                     </m:lim>
                   </m:limUpp>
+                </m:e>
+                <m:lim>
+                  <m:r>
+                    <m:t>1</m:t>
+                  </m:r>
                 </m:lim>
               </m:limLow>
             </m:e>
@@ -22903,15 +22903,10 @@
               </m:r>
               <m:limLow>
                 <m:e>
-                  <m:r>
-                    <m:t>∑</m:t>
-                  </m:r>
-                </m:e>
-                <m:lim>
                   <m:limUpp>
                     <m:e>
                       <m:r>
-                        <m:t>1</m:t>
+                        <m:t>∑</m:t>
                       </m:r>
                     </m:e>
                     <m:lim>
@@ -22920,6 +22915,11 @@
                       </m:r>
                     </m:lim>
                   </m:limUpp>
+                </m:e>
+                <m:lim>
+                  <m:r>
+                    <m:t>1</m:t>
+                  </m:r>
                 </m:lim>
               </m:limLow>
             </m:e>
@@ -22990,15 +22990,10 @@
                   </m:r>
                   <m:limLow>
                     <m:e>
-                      <m:r>
-                        <m:t>∑</m:t>
-                      </m:r>
-                    </m:e>
-                    <m:lim>
                       <m:limUpp>
                         <m:e>
                           <m:r>
-                            <m:t>1</m:t>
+                            <m:t>∑</m:t>
                           </m:r>
                         </m:e>
                         <m:lim>
@@ -23007,6 +23002,11 @@
                           </m:r>
                         </m:lim>
                       </m:limUpp>
+                    </m:e>
+                    <m:lim>
+                      <m:r>
+                        <m:t>1</m:t>
+                      </m:r>
                     </m:lim>
                   </m:limLow>
                 </m:e>
@@ -24508,15 +24508,10 @@
           </m:r>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>←</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t> </m:t>
+                    <m:t>←</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -24537,6 +24532,11 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t> </m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:r>
@@ -24544,15 +24544,10 @@
           </m:r>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>→</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>T</m:t>
+                    <m:t>→</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -24573,6 +24568,11 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>T</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:r>

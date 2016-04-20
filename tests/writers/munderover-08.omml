@@ -6,41 +6,36 @@
   <m:oMath>
     <m:limLow>
       <m:e>
-        <m:limLow>
+        <m:limUpp>
           <m:e>
-            <m:r>
-              <m:t>BASE</m:t>
-            </m:r>
-          </m:e>
-          <m:lim>
-            <m:limUpp>
+            <m:limLow>
               <m:e>
+                <m:limUpp>
+                  <m:e>
+                    <m:r>
+                      <m:t>BASE</m:t>
+                    </m:r>
+                  </m:e>
+                  <m:lim>
+                    <m:phant>
+                      <m:phantPr>
+                        <m:show m:val="0" />
+                      </m:phantPr>
+                      <m:e>
+                        <m:r>
+                          <m:t>fail</m:t>
+                        </m:r>
+                      </m:e>
+                    </m:phant>
+                  </m:lim>
+                </m:limUpp>
+              </m:e>
+              <m:lim>
                 <m:r>
                   <m:t>under-1</m:t>
                 </m:r>
-              </m:e>
-              <m:lim>
-                <m:phant>
-                  <m:phantPr>
-                    <m:show m:val="0" />
-                  </m:phantPr>
-                  <m:e>
-                    <m:r>
-                      <m:t>fail</m:t>
-                    </m:r>
-                  </m:e>
-                </m:phant>
               </m:lim>
-            </m:limUpp>
-          </m:lim>
-        </m:limLow>
-      </m:e>
-      <m:lim>
-        <m:limUpp>
-          <m:e>
-            <m:r>
-              <m:t>under-2</m:t>
-            </m:r>
+            </m:limLow>
           </m:e>
           <m:lim>
             <m:phant>
@@ -55,6 +50,11 @@
             </m:phant>
           </m:lim>
         </m:limUpp>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>under-2</m:t>
+        </m:r>
       </m:lim>
     </m:limLow>
     <m:r>

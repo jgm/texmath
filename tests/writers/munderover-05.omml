@@ -6,23 +6,11 @@
   <m:oMath>
     <m:limLow>
       <m:e>
-        <m:r>
-          <m:t>_ baseline _</m:t>
-        </m:r>
-      </m:e>
-      <m:lim>
         <m:limUpp>
           <m:e>
-            <m:phant>
-              <m:phantPr>
-                <m:show m:val="0" />
-              </m:phantPr>
-              <m:e>
-                <m:r>
-                  <m:t>fail</m:t>
-                </m:r>
-              </m:e>
-            </m:phant>
+            <m:r>
+              <m:t>_ baseline _</m:t>
+            </m:r>
           </m:e>
           <m:lim>
             <m:phant>
@@ -37,6 +25,18 @@
             </m:phant>
           </m:lim>
         </m:limUpp>
+      </m:e>
+      <m:lim>
+        <m:phant>
+          <m:phantPr>
+            <m:show m:val="0" />
+          </m:phantPr>
+          <m:e>
+            <m:r>
+              <m:t>fail</m:t>
+            </m:r>
+          </m:e>
+        </m:phant>
       </m:lim>
     </m:limLow>
     <m:r>

@@ -26,40 +26,25 @@
     </m:r>
     <m:limLow>
       <m:e>
-        <m:sSubSup>
-          <m:e>
-            <m:r>
-              <m:t>V</m:t>
-            </m:r>
-          </m:e>
-          <m:sub>
-            <m:r>
-              <m:t>m</m:t>
-            </m:r>
-          </m:sub>
-          <m:sup>
-            <m:r>
-              <m:t>n</m:t>
-            </m:r>
-          </m:sup>
-        </m:sSubSup>
-      </m:e>
-      <m:lim>
         <m:limUpp>
           <m:e>
-            <m:phant>
-              <m:phantPr>
-                <m:show m:val="0" />
-              </m:phantPr>
+            <m:sSubSup>
               <m:e>
                 <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
-                  <m:t>d</m:t>
+                  <m:t>V</m:t>
                 </m:r>
               </m:e>
-            </m:phant>
+              <m:sub>
+                <m:r>
+                  <m:t>m</m:t>
+                </m:r>
+              </m:sub>
+              <m:sup>
+                <m:r>
+                  <m:t>n</m:t>
+                </m:r>
+              </m:sup>
+            </m:sSubSup>
           </m:e>
           <m:lim>
             <m:phant>
@@ -77,6 +62,21 @@
             </m:phant>
           </m:lim>
         </m:limUpp>
+      </m:e>
+      <m:lim>
+        <m:phant>
+          <m:phantPr>
+            <m:show m:val="0" />
+          </m:phantPr>
+          <m:e>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>d</m:t>
+            </m:r>
+          </m:e>
+        </m:phant>
       </m:lim>
     </m:limLow>
   </m:oMath>

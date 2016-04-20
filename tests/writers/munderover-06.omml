@@ -6,55 +6,22 @@
   <m:oMath>
     <m:limLow>
       <m:e>
-        <m:limLow>
-          <m:e>
-            <m:r>
-              <m:t>BASE</m:t>
-            </m:r>
-          </m:e>
-          <m:lim>
-            <m:limUpp>
-              <m:e>
-                <m:r>
-                  <m:t>first under script</m:t>
-                </m:r>
-              </m:e>
-              <m:lim>
-                <m:r>
-                  <m:t>second overscript</m:t>
-                </m:r>
-              </m:lim>
-            </m:limUpp>
-          </m:lim>
-        </m:limLow>
-      </m:e>
-      <m:lim>
-        <m:limUpp>
-          <m:e>
-            <m:r>
-              <m:t>second one</m:t>
-            </m:r>
-          </m:e>
-          <m:lim>
-            <m:r>
-              <m:t>first overscript</m:t>
-            </m:r>
-          </m:lim>
-        </m:limUpp>
-      </m:lim>
-    </m:limLow>
-    <m:r>
-      <m:t>=</m:t>
-    </m:r>
-    <m:limLow>
-      <m:e>
         <m:limUpp>
           <m:e>
             <m:limLow>
               <m:e>
-                <m:r>
-                  <m:t>BASE</m:t>
-                </m:r>
+                <m:limUpp>
+                  <m:e>
+                    <m:r>
+                      <m:t>BASE</m:t>
+                    </m:r>
+                  </m:e>
+                  <m:lim>
+                    <m:r>
+                      <m:t>second overscript</m:t>
+                    </m:r>
+                  </m:lim>
+                </m:limUpp>
               </m:e>
               <m:lim>
                 <m:r>
@@ -65,17 +32,45 @@
           </m:e>
           <m:lim>
             <m:r>
-              <m:t>second overscript</m:t>
+              <m:t>first overscript</m:t>
             </m:r>
           </m:lim>
         </m:limUpp>
       </m:e>
       <m:lim>
+        <m:r>
+          <m:t>second one</m:t>
+        </m:r>
+      </m:lim>
+    </m:limLow>
+    <m:r>
+      <m:t>=</m:t>
+    </m:r>
+    <m:limLow>
+      <m:e>
         <m:limUpp>
           <m:e>
-            <m:r>
-              <m:t>second one</m:t>
-            </m:r>
+            <m:limUpp>
+              <m:e>
+                <m:limLow>
+                  <m:e>
+                    <m:r>
+                      <m:t>BASE</m:t>
+                    </m:r>
+                  </m:e>
+                  <m:lim>
+                    <m:r>
+                      <m:t>first under script</m:t>
+                    </m:r>
+                  </m:lim>
+                </m:limLow>
+              </m:e>
+              <m:lim>
+                <m:r>
+                  <m:t>second overscript</m:t>
+                </m:r>
+              </m:lim>
+            </m:limUpp>
           </m:e>
           <m:lim>
             <m:r>
@@ -83,6 +78,11 @@
             </m:r>
           </m:lim>
         </m:limUpp>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>second one</m:t>
+        </m:r>
       </m:lim>
     </m:limLow>
   </m:oMath>

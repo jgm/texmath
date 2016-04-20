@@ -170,24 +170,13 @@
               </m:r>
               <m:limLow>
                 <m:e>
-                  <m:r>
-                    <m:rPr>
-                      <m:sty m:val="p" />
-                    </m:rPr>
-                    <m:t>⋆-lim&#39;sup</m:t>
-                  </m:r>
-                </m:e>
-                <m:lim>
                   <m:limUpp>
                     <m:e>
                       <m:r>
-                        <m:t>x</m:t>
-                      </m:r>
-                      <m:r>
-                        <m:t>→</m:t>
-                      </m:r>
-                      <m:r>
-                        <m:t>0</m:t>
+                        <m:rPr>
+                          <m:sty m:val="p" />
+                        </m:rPr>
+                        <m:t>⋆-lim&#39;sup</m:t>
                       </m:r>
                     </m:e>
                     <m:lim>
@@ -196,6 +185,17 @@
                       </m:r>
                     </m:lim>
                   </m:limUpp>
+                </m:e>
+                <m:lim>
+                  <m:r>
+                    <m:t>x</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:t>→</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:t>0</m:t>
+                  </m:r>
                 </m:lim>
               </m:limLow>
               <m:r>
@@ -203,24 +203,13 @@
               </m:r>
               <m:limLow>
                 <m:e>
-                  <m:r>
-                    <m:rPr>
-                      <m:sty m:val="p" />
-                    </m:rPr>
-                    <m:t>⋆-lim&#39;sup</m:t>
-                  </m:r>
-                </m:e>
-                <m:lim>
                   <m:limUpp>
                     <m:e>
                       <m:r>
-                        <m:t>x</m:t>
-                      </m:r>
-                      <m:r>
-                        <m:t>→</m:t>
-                      </m:r>
-                      <m:r>
-                        <m:t>0</m:t>
+                        <m:rPr>
+                          <m:sty m:val="p" />
+                        </m:rPr>
+                        <m:t>⋆-lim&#39;sup</m:t>
                       </m:r>
                     </m:e>
                     <m:lim>
@@ -229,6 +218,17 @@
                       </m:r>
                     </m:lim>
                   </m:limUpp>
+                </m:e>
+                <m:lim>
+                  <m:r>
+                    <m:t>x</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:t>→</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:t>0</m:t>
+                  </m:r>
                 </m:lim>
               </m:limLow>
               <m:r>

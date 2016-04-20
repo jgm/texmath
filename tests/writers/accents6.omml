@@ -31,11 +31,6 @@
         <m:e>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="&#39;" />
@@ -44,19 +39,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>&#39;</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>&#39;</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="^" />
@@ -65,19 +60,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>^</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>^</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="_" />
@@ -86,19 +81,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>_</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>_</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="`" />
@@ -107,19 +102,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>`</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>`</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="~" />
@@ -128,19 +123,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>~</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>~</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="¨" />
@@ -149,38 +144,36 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>¨</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
-            </m:lim>
-          </m:limLow>
-          <m:limLow>
-            <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
             </m:e>
             <m:lim>
+              <m:r>
+                <m:t>¨</m:t>
+              </m:r>
+            </m:lim>
+          </m:limLow>
+          <m:bar>
+            <m:barPr>
+              <m:pos m:val="bot" />
+            </m:barPr>
+            <m:e>
               <m:bar>
                 <m:barPr>
                   <m:pos m:val="top" />
                 </m:barPr>
                 <m:e>
                   <m:r>
-                    <m:t>¯</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:bar>
-            </m:lim>
-          </m:limLow>
+            </m:e>
+          </m:bar>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="´" />
@@ -189,19 +182,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>´</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>´</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="¸" />
@@ -210,19 +203,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>¸</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>¸</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="ˆ" />
@@ -231,19 +224,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>ˆ</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>ˆ</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="ˇ" />
@@ -252,19 +245,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>ˇ</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>ˇ</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="˘" />
@@ -273,19 +266,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>˘</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>˘</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="˙" />
@@ -294,19 +287,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>˙</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>˙</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="˚" />
@@ -315,19 +308,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>˚</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>˚</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="˜" />
@@ -336,19 +329,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>˜</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>˜</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="˝" />
@@ -357,19 +350,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>˝</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>˝</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="̂" />
@@ -378,19 +371,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>̂</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>̂</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="̑" />
@@ -399,38 +392,36 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>̑</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
-            </m:lim>
-          </m:limLow>
-          <m:limLow>
-            <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
             </m:e>
             <m:lim>
+              <m:r>
+                <m:t>̑</m:t>
+              </m:r>
+            </m:lim>
+          </m:limLow>
+          <m:bar>
+            <m:barPr>
+              <m:pos m:val="bot" />
+            </m:barPr>
+            <m:e>
               <m:bar>
                 <m:barPr>
                   <m:pos m:val="top" />
                 </m:barPr>
                 <m:e>
                   <m:r>
-                    <m:t>‾</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:bar>
-            </m:lim>
-          </m:limLow>
+            </m:e>
+          </m:bar>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="⃛" />
@@ -439,19 +430,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>⃛</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⃛</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="⃜" />
@@ -460,19 +451,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>⃜</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⃜</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="←" />
@@ -481,19 +472,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>←</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>←</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="→" />
@@ -502,19 +493,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>→</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>→</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="↔" />
@@ -523,19 +514,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>↔</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>↔</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="↼" />
@@ -544,19 +535,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>↼</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>↼</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="↽" />
@@ -565,19 +556,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>↽</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>↽</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="⇀" />
@@ -586,19 +577,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>⇀</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⇀</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="⇁" />
@@ -607,19 +598,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>⇁</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⇁</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="⎴" />
@@ -628,19 +619,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>⎴</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⎴</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="⎵" />
@@ -649,19 +640,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>⎵</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⎵</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="⏜" />
@@ -670,19 +661,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>⏜</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⏜</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="⏝" />
@@ -691,19 +682,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>⏝</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⏝</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="⏞" />
@@ -712,19 +703,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>⏞</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⏞</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="⏟" />
@@ -733,19 +724,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>⏟</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⏟</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="⥎" />
@@ -754,19 +745,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>⥎</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⥎</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="⥐" />
@@ -775,10 +766,15 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>⥐</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⥐</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
         </m:e>
@@ -797,15 +793,10 @@
         <m:e>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>&#39;</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -814,19 +805,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>&#39;</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>^</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -835,19 +826,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>^</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>_</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -856,19 +847,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>_</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>`</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -877,19 +868,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>`</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>~</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -898,19 +889,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>~</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>¨</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -919,19 +910,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>¨</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>¯</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -940,19 +931,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>¯</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>´</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -961,19 +952,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>´</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>¸</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -982,19 +973,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>¸</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>ˆ</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1003,19 +994,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>ˆ</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>ˇ</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1024,19 +1015,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>ˇ</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>˘</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1045,19 +1036,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>˘</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>˙</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1066,19 +1057,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>˙</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>˚</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1087,19 +1078,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>˚</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>˜</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1108,19 +1099,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>˜</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>˝</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1129,15 +1120,15 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>˝</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="̂" />
@@ -1146,19 +1137,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>̂</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>̂</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="̑" />
@@ -1167,23 +1158,23 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>̑</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>̑</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>‾</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1192,15 +1183,15 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>‾</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="⃛" />
@@ -1209,19 +1200,19 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>⃛</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⃛</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:groupChr>
                 <m:groupChrPr>
                   <m:chr m:val="⃜" />
@@ -1230,23 +1221,23 @@
                 </m:groupChrPr>
                 <m:e>
                   <m:r>
-                    <m:t>⃜</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
               </m:groupChr>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⃜</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>←</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1255,19 +1246,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>←</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>→</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1276,19 +1267,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>→</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>↔</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1297,19 +1288,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>↔</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>↼</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1318,19 +1309,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>↼</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>↽</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1339,19 +1330,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>↽</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>⇀</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1360,19 +1351,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⇀</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>⇁</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1381,19 +1372,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⇁</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>⎴</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1402,19 +1393,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⎴</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>⎵</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1423,19 +1414,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⎵</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>⏜</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1444,19 +1435,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⏜</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>⏝</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1465,19 +1456,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⏝</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>⏞</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1486,19 +1477,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⏞</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>⏟</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1507,19 +1498,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⏟</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>⥎</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1528,19 +1519,19 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⥎</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
           <m:limLow>
             <m:e>
-              <m:r>
-                <m:t>x</m:t>
-              </m:r>
-            </m:e>
-            <m:lim>
               <m:limUpp>
                 <m:e>
                   <m:r>
-                    <m:t>⥐</m:t>
+                    <m:t>x</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
@@ -1549,6 +1540,11 @@
                   </m:r>
                 </m:lim>
               </m:limUpp>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:t>⥐</m:t>
+              </m:r>
             </m:lim>
           </m:limLow>
         </m:e>
