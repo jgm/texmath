@@ -1,3 +1,9 @@
+texmath (0.8.6.2)
+
+  * Fixed array alignment issues (jgm/pandoc#2864, jgm/pandoc#2310).
+  * Use 1 and 0 for _Hide attributes, rather than on and off.
+    Officially it seems that either 1/0 or true/false are wanted.
+
 texmath (0.8.6.1)
 
   * OMML writer:  Fixed rendering of roots, so that the degree appears
