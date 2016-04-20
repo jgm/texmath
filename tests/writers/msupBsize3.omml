@@ -8,8 +8,8 @@
       <m:naryPr>
         <m:chr m:val="∫" />
         <m:limLoc m:val="subSup" />
-        <m:subHide m:val="on" />
-        <m:supHide m:val="off" />
+        <m:subHide m:val="1" />
+        <m:supHide m:val="0" />
       </m:naryPr>
       <m:sub />
       <m:sup>
@@ -81,8 +81,8 @@
       <m:naryPr>
         <m:chr m:val="∫" />
         <m:limLoc m:val="subSup" />
-        <m:subHide m:val="on" />
-        <m:supHide m:val="off" />
+        <m:subHide m:val="1" />
+        <m:supHide m:val="0" />
       </m:naryPr>
       <m:sub />
       <m:sup>
@@ -100,8 +100,8 @@
       <m:naryPr>
         <m:chr m:val="∫" />
         <m:limLoc m:val="subSup" />
-        <m:subHide m:val="on" />
-        <m:supHide m:val="off" />
+        <m:subHide m:val="1" />
+        <m:supHide m:val="0" />
       </m:naryPr>
       <m:sub />
       <m:sup>

@@ -7,11 +7,24 @@
     <m:m>
       <m:mPr>
         <m:baseJc m:val="center" />
-        <m:plcHide m:val="on" />
+        <m:plcHide m:val="1" />
         <m:mcs>
           <m:mc>
             <m:mcPr>
               <m:mcJc m:val="left" />
+              <m:count m:val="1" />
+            </m:mcPr>
+          </m:mc>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="left" />
+              <m:count m:val="1" />
+            </m:mcPr>
+          </m:mc>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="left" />
+              <m:count m:val="1" />
             </m:mcPr>
           </m:mc>
         </m:mcs>

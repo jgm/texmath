@@ -68,16 +68,22 @@ showFraction props ft x y =
     where x' = showExp props x
           y' = showExp props y
 
+maximum' :: [Int] -> Int
+maximum' [] = 0
+maximum' xs = maximum xs
+
 makeArray :: [Element] -> [Alignment] -> [ArrayLine] -> Element
 makeArray props as rs = mnode "m" $ mProps : map toMr rs
   where mProps = mnode "mPr"
                   [ mnodeA "baseJc" "center" ()
                   , mnodeA "plcHide" "1" ()
                   , mnode "mcs" $ map toMc as' ]
-        as'    = take (length rs) $ as ++ cycle [AlignDefault]
+        as'    = take (maximum' $ map length rs) $ as ++ cycle [AlignDefault]
         toMr r = mnode "mr" $ map (mnode "e" . concatMap (showExp props)) r
         toMc a = mnode "mc" $ mnode "mcPr"
-                            $ mnodeA "mcJc" (toAlign a) ()
+                            [ mnodeA "mcJc" (toAlign a) ()
+                            , mnodeA "count" "1" ()
+                            ]
         toAlign AlignLeft    = "left"
         toAlign AlignRight   = "right"
         toAlign AlignCenter  = "center"
