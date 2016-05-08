@@ -1,0 +1,3 @@
+sum from {matrix{
+ccol{ {0 < i < m} above {0 < j < n} }
+}} P ( i , j )

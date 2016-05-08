@@ -1,0 +1,5 @@
+matrix{
+ccol{ {} above {roman "no mrows"} above {roman "all in row"} above {roman "op in row"} above {roman "text in row"} }
+ccol{ {roman "Stetching in base"} above {-> to {roman "maps to"}} above {-> to {roman "maps to"}} above {-> to {roman "maps to"}} above {-> to {roman "maps to"}} }
+ccol{ {roman "Stretching in script"} above {{roman "maps to"} to ->} above {{roman "maps to"} to ->} above {{roman "maps to"} to ->} above {{roman "maps to"} to ->} }
+}

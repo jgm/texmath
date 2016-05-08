@@ -1,0 +1,13 @@
+matrix{
+ccol{ 3 above {matrix{
+ccol{ 2 above 2 above 2 }
+}} above 0 }
+ccol{ 0 above 3 above 3 }
+ccol{ 0 above 0 above {} }
+} fwd 0 matrix{
+ccol{ 3 above {matrix{
+ccol{ 2 above 2 above 2 }
+}} above 0 }
+ccol{ 0 above 3 above 3 }
+ccol{ 0 above 0 above {} }
+}

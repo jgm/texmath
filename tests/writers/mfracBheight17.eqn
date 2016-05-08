@@ -1,0 +1,4 @@
+matrix{
+ccol{ {roman "taller num"} above {roman "taller denom"} }
+ccol{ {x sup 2 + {h over x} sup 2 + {left ( h over x right )} sup 2} above {x sup 2 + {x over y} sup 2 + {left ( x over y right )} sup 2} }
+}

@@ -1,0 +1,5 @@
+matrix{
+ccol{ {} above {roman "stretch=t, large=t"} above {roman "stretch=f, large=t"} above {roman "stretch=t, large=f"} above {roman "stretch=f, large=f"} }
+ccol{ {roman "ds=true"} above {left ∫ x over 5 right "" = left ∫ x right ""} above {{int x over 5} = {int x}} above {left ∫ x over 5 right "" = left ∫ A over 5 right "" = left ∫ x right ""} above {{int x over 5} = {int x}} }
+ccol{ {roman "ds=false"} above {left ∫ x over 5 right "" = left ∫ x right ""} above {{int x over 5} = {int x}} above {left ∫ x over 5 right "" = left ∫ A over 5 right "" = left ∫ x right ""} above {{int x over 5} = {int x}} }
+}

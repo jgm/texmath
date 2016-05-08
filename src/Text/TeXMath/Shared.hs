@@ -33,6 +33,7 @@ module Text.TeXMath.Shared
   , fixTree
   , isEmpty
   , empty
+  , handleDownup
   ) where
 
 
@@ -348,3 +349,12 @@ unitToMultiplier s = M.lookup s units
                         , ( "dd" , (93/100))
                         , ( "bp" , (996/1000))
                         , ( "pc" , (83/100)) ]
+
+handleDownup :: DisplayType -> Exp -> Exp
+handleDownup DisplayInline (EUnder True x y)       = ESub x y
+handleDownup DisplayInline (EOver True x y)        = ESuper x y
+handleDownup DisplayInline (EUnderover True x y z) = ESubsup x y z
+handleDownup DisplayBlock  (EUnder True x y)       = EUnder False x y
+handleDownup DisplayBlock  (EOver True x y)        = EOver False  x y
+handleDownup DisplayBlock  (EUnderover True x y z) = EUnderover False x y z
+handleDownup _             x                       = x

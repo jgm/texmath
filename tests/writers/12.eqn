@@ -1,0 +1,4 @@
+f ( x ) = left { matrix{
+ccol{ 1 above {1 over 2} above {1 \[u2212] x sup 2} }
+ccol{ {\[u2212] 1 <= x < 0} above {x = 0} above {roman "otherwise"} }
+} right ""

@@ -53,6 +53,7 @@ writers :: [(String, Writer)]
 writers = [
     ("native", StringWriter (\_ es -> show es) )
   , ("tex", StringWriter (\_ -> writeTeX))
+  , ("eqn", StringWriter writeEqn)
   , ("omml",  XMLWriter writeOMML)
   , ("xhtml",   XMLWriter (\dt e -> inHtml (writeMathML dt e)))
   , ("mathml",   XMLWriter writeMathML)

@@ -1,0 +1,16 @@
+left [ matrix{
+ccol{ {{partial x sub 1} over {partial y sub 1}} above ~ above {{partial x sub 1} over {partial y sub 2}} }
+ccol{ {{partial x sub 2} over {partial y sub 1}} above {{partial x sub 2} over {partial y sub 2}} }
+} right ] left ( matrix{
+ccol{ 1 above 3 }
+ccol{ 2 above 4 }
+} right ) left { matrix{
+ccol{ 1 above 3 }
+ccol{ 2 above 4 }
+} right } left ∣ matrix{
+ccol{ 1 above 3 }
+ccol{ 2 above 4 }
+} right ∣ left ∥ matrix{
+ccol{ 1 above 3 }
+ccol{ 2 above 4 }
+} right ∥

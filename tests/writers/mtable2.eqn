@@ -1,0 +1,5 @@
+matrix{
+lcol{ 1 above {x + y} above {x sup 2 + {2  y  x} + y sup 2} above {x sup 3 + {3  y  x sup 2} + {3  y sup 2  x} + y sup 3} }
+lcol{ {x + y} above {x sup 2 + {2  y  x} + y sup 2} above {x sup 3 + {3  y  x sup 2} + {3  y sup 2  x} + y sup 3} above {x sup 4 + {4  y  x sup 3} + {6  y sup 2  x sup 2} + {4  y sup 3  x} + y sup 4} }
+lcol{ {x sup 2 + {2  y  x} + y sup 2} above {x sup 3 + {3  y  x sup 2} + {3  y sup 2  x} + y sup 3} above {x sup 4 + {4  y  x sup 3} + {6  y sup 2  x sup 2} + {4  y sup 3  x} + y sup 4} above {x sup 5 + {5  y  x sup 4} + {10  y sup 2  x sup 3} + {10  y sup 3  x sup 2} + {5  y sup 4  x} + y sup 5} }
+}

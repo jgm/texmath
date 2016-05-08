@@ -1,0 +1,6 @@
+matrix{
+ccol{ {roman "Top"} above {roman "Bottom"} above {roman "Center"} above {roman "Baseline"} }
+ccol{ 3 above 3 above 3 above 3 }
+ccol{ {{a + 1} over 2} above {{a + 1} over 2} above {{a + 1} over 2} above {{a + 1} over 2} }
+ccol{ {y to {{a + 1} over 2}} above {y to {{a + 1} over 2}} above {y to {{a + 1} over 2}} above {y to {{a + 1} over 2}} }
+}

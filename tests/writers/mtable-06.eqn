@@ -1,0 +1,7 @@
+matrix{
+rcol{ {hphantom {roman "fail"} H} above {hphantom {roman "fail"} T} above {hphantom {roman "fail"} U} }
+rcol{ A above I above Y }
+} = matrix{
+lcol{ A above I above Y }
+lcol{ {H hphantom {roman "fail"}} above {T hphantom {roman "fail"}} above {U hphantom {roman "fail"}} }
+}

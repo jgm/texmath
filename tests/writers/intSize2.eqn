@@ -1,0 +1,7 @@
+matrix{
+ccol{ {} above {roman "small op"} above {roman "large op"} above {roman "small op"} above {roman "large op"} }
+ccol{ {} above {int x} above {int x} above {int x over y} above {int x over y} }
+ccol{ {roman "symm"} above {int x} above {int x} above {int x over y} above {int x over y} }
+ccol{ {roman "stretch"} above {left ∫ x right ""} above {left ∫ x right ""} above {left ∫ x over y right ""} above {left ∫ x over y right ""} }
+ccol{ {roman "symm/stretch"} above {left ∫ x right ""} above {left ∫ x right ""} above {left ∫ x over y right ""} above {left ∫ x over y right ""} }
+}

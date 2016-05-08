@@ -1,0 +1,5 @@
+matrix{
+ccol{ {hphantom {roman "fail"} H hphantom {roman "fail"}} above T above U }
+} = matrix{
+ccol{ H above T above {hphantom {roman "fail"} U hphantom {roman "fail"}} }
+}

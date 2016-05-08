@@ -56,6 +56,7 @@ module Text.TeXMath ( readMathML,
                       writeTeX,
                       writeTeXWith,
                       addLaTeXEnvironment,
+                      writeEqn,
                       writeOMML,
                       writeMathML,
                       writePandoc,
@@ -70,4 +71,5 @@ import Text.TeXMath.Writers.MathML
 import Text.TeXMath.Writers.OMML
 import Text.TeXMath.Writers.Pandoc
 import Text.TeXMath.Writers.TeX
+import Text.TeXMath.Writers.Eqn
 import Text.TeXMath.Types

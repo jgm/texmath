@@ -1,0 +1,1 @@
+roman "Displayed nested fractions are normal size at the first level, " {1 sup {sqrt 6}} over {sqrt 2 + 1 over {sqrt 3 + 1 over {sqrt 4 + 1 over {sqrt 5 + 1 over {sqrt 6 + ...}}}}} roman " script size at second level, and script-script size at all more nested levels."

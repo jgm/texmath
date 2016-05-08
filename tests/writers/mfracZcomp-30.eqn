@@ -1,0 +1,1 @@
+{HypergeomDist  left ( {x ; {M , K , n}} right )} = {sum from {k = 0} to x {left ( K over k right )  left ( {M - K} over {n - k} right )} over {left ( M over n right )}}

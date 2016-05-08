@@ -27,7 +27,7 @@ import Text.XML.Light
 import Text.TeXMath.Types
 import Text.TeXMath.Unicode.ToUnicode
 import Data.Generics (everywhere, mkT)
-import Text.TeXMath.Shared (getMMLType)
+import Text.TeXMath.Shared (getMMLType, handleDownup)
 import Text.TeXMath.Readers.MathML.MMLDict (getMathMLOperator)
 import Control.Applicative ((<$>))
 import Text.Printf
@@ -120,15 +120,6 @@ withAttribute a = add_attr . Attr (unqual a)
 accent :: String -> Element
 accent = add_attr (Attr (unqual "accent") "true") .
            unode "mo"
-
-handleDownup :: DisplayType -> Exp -> Exp
-handleDownup DisplayInline (EUnder True x y)       = ESub x y
-handleDownup DisplayInline (EOver True x y)        = ESuper x y
-handleDownup DisplayInline (EUnderover True x y z) = ESubsup x y z
-handleDownup DisplayBlock  (EUnder True x y)       = EUnder False x y
-handleDownup DisplayBlock  (EOver True x y)        = EOver False  x y
-handleDownup DisplayBlock  (EUnderover True x y z) = EUnderover False x y z
-handleDownup _             x                       = x
 
 makeFence :: FormType -> Element -> Element
 makeFence (fromForm -> t) = withAttribute "stretchy" "false" . withAttribute "form" t

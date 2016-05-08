@@ -1,0 +1,5 @@
+matrix{
+ccol{ {{a + 1} over 2} above x above 1 }
+ccol{ b above {2 over 3 y + 5} above 2 }
+ccol{ c above z above {{a + 5} over 3} }
+}
