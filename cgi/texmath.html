@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>stmd.js demo</title>
+  <title>texmath demo</title>
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       config: ["MMLorHTML.js"],
@@ -34,7 +34,7 @@
 
       $(document).ready(function(){
         $('#convert-latex2mathml').click(function() {
-          $.getJSON("/cgi-bin/texmath-cgi",
+          $.post("/cgi-bin/texmath-cgi",
                    { 'input' : $('#latex-input').val(),
                      'from': 'tex',
                      'to': 'mathml' },
@@ -48,10 +48,10 @@
                      $('#preview').html('');
                    };
                    MathJax.Hub.Queue(["Typeset",MathJax.Hub,"preview"]);
-                })
+                }, 'json')
             });
         $('#convert-mathml2latex').click(function() {
-          $.getJSON("/cgi-bin/texmath-cgi",
+          $.post("/cgi-bin/texmath-cgi",
                    { 'input' : $('#mathml-input').val(),
                      'from': 'mathml',
                      'to': 'tex' },
@@ -65,7 +65,7 @@
                      $('#preview').text('');
                    };
                    MathJax.Hub.Queue(["Typeset",MathJax.Hub,"preview"]);
-                })
+                }, 'json')
             });
         $('a[data-toggle="tab"]').click(function (e) {
           $('#preview').text(''); // clear preview

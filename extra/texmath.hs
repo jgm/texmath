@@ -147,14 +147,14 @@ runCommandLine = do
 
 runCGI :: IO ()
 runCGI = do
-  query <- getEnv "QUERY_STRING"
+  query <- getContents
   let topairs xs = case break (=='=') xs of
                         (ys,('=':zs)) -> (urlUnencode ys, urlUnencode zs)
                         (ys,_)        -> (urlUnencode ys,"")
   let pairs = map topairs $ splitOn "&" query
   inp <- case lookup "input" pairs of
-              Just x   -> return x
-              Nothing  -> err True 11 "Querry missing 'input'"
+                 Just x  -> return x
+                 Nothing -> err True 3 "Query missing 'input'"
   reader <- case lookup "from" pairs of
                  Just x  -> case lookup x readers of
                                  Just y  -> return y
