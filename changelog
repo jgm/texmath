@@ -1,3 +1,7 @@
+texmath (0.8.6.3)
+
+  * Use POST instead of GET for texmath-cgi.
+
 texmath (0.8.6.2)
 
   * Fixed array alignment issues (jgm/pandoc#2864, jgm/pandoc#2310).
