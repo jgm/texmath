@@ -368,6 +368,7 @@ environments = M.fromList
   , ("multline", gather)
   , ("gather", gather)
   , ("gathered", gather)
+  , ("equation", equation)
   ]
 
 mbArrayAlignments :: TP (Maybe [Alignment])
@@ -397,6 +398,11 @@ gather :: TP Exp
 gather = do
   rows <- sepEndBy arrayLine endLine
   return $ EArray (alignsFromRows AlignCenter rows) rows
+
+equation :: TP Exp
+equation = do
+  notFollowedBy (ctrlseq "end" >> return '\n')
+  manyExp (notFollowedBy endLine >> expr)
 
 eqnarray :: TP Exp
 eqnarray = do
