@@ -8,11 +8,10 @@
       <m:naryPr>
         <m:chr m:val="∑" />
         <m:limLoc m:val="undOvr" />
-        <m:subHide m:val="1" />
-        <m:supHide m:val="0" />
+        <m:subHide m:val="0" />
+        <m:supHide m:val="1" />
       </m:naryPr>
-      <m:sub />
-      <m:sup>
+      <m:sub>
         <m:m>
           <m:mPr>
             <m:baseJc m:val="center" />
@@ -65,7 +64,8 @@
             </m:e>
           </m:mr>
         </m:m>
-      </m:sup>
+      </m:sub>
+      <m:sup />
       <m:e>
         <m:r>
           <m:t>P</m:t>

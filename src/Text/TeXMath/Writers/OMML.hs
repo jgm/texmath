@@ -117,11 +117,11 @@ handleDownup dt (exp' : xs) =
   case exp' of
        EOver convertible x y
          | isNary x  ->
-             EGrouped [EUnderover convertible x y emptyGroup, next] : rest
+             EGrouped [EUnderover convertible x emptyGroup y, next] : rest
          | convertible && dt == DisplayInline -> ESuper x y : xs
        EUnder convertible x y
          | isNary x  ->
-             EGrouped [EUnderover convertible x emptyGroup y, next] : rest
+             EGrouped [EUnderover convertible x y emptyGroup, next] : rest
          | convertible && dt == DisplayInline -> ESub x y : xs
        EUnderover convertible x y z
          | isNary x  ->
