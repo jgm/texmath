@@ -1,3 +1,7 @@
+texmath (0.8.6.6)
+
+  * Allow pandoc-types 1.17.*.
+
 texmath (0.8.6.5)
 
   * Fixed transposition of sub/super on operators (jgm/pandoc#3040).
