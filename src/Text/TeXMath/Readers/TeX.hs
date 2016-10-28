@@ -975,6 +975,7 @@ symbols = M.fromList
   , ("\\:",ESpace (2 % 9))
   , ("\\;",ESpace (5 % 18))
   , ("\\ ",ESpace (2 % 9))
+  , ("\\\n",ESpace (2 % 9))
   , ("\\quad",ESpace (1 % 1))
   , ("\\qquad",ESpace (2 % 1))
   , ("\\arccos",EMathOperator "arccos")
