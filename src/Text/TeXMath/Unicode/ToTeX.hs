@@ -1,4 +1,4 @@
-{-# LANGUAGE ViewPatterns #-}
+{-# LANGUAGE ViewPatterns, OverloadedStrings #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -54,34 +54,38 @@ import Control.Applicative hiding (optional)
 import Text.TeXMath.Unicode.ToASCII (getASCII)
 import Text.TeXMath.Unicode.ToUnicode (fromUnicodeChar)
 import qualified Text.TeXMath.Shared as S
+import Data.Text (Text)
+import qualified Data.Text as Text
+import qualified Data.Foldable as Foldable
 
 -- | Converts a string of unicode characters into a strong of equivalent
 -- TeXMath commands. An environment is a list of strings specifying which
 -- additional packages are available.
-getTeXMath :: String -> Env -> [TeX]
-getTeXMath s e = concatMap (charToString e) s
+getTeXMath :: Text -> Env -> [TeX]
+getTeXMath s e = concatMap (charToText e) $ Text.unpack s
 
 -- Categories which require braces
 commandTypes :: [TeXSymbolType]
 commandTypes = [Accent, Rad, TOver, TUnder]
 
 -- Guaranteed to return latex safe string
-charToString :: Env -> Char -> [TeX]
-charToString e c =
+charToText :: Env -> Char -> [TeX]
+charToText e c =
   fromMaybe fallback
-    (charToLaTeXString e c <|> textConvert e c)
+    (charToLaTeXText e c <|> textConvert e c)
   where
-    fallback = concatMap asciiToLaTeX $ getASCII c
-    asciiToLaTeX ac = fromMaybe [escapeLaTeX ac] (charToLaTeXString e ac)
+    fallback = concatMap asciiToLaTeX $ Text.unpack $ getASCII c
+    asciiToLaTeX ac = fromMaybe [escapeLaTeX ac] (charToLaTeXText e ac)
 
 -- Takes a single character and attempts to convert it to a latex string
-charToLaTeXString :: Env -> Char -> Maybe [TeX]
-charToLaTeXString environment c = do
+charToLaTeXText :: Env -> Char -> Maybe [TeX]
+charToLaTeXText environment c = do
   v <- M.lookup c recordsMap
   -- Required packages for the command
-  let toLit [x] = [Token x]
-      toLit []   = []
-      toLit cs   = [Literal cs]
+  let toLit cs = case Text.uncons cs of
+                      Just (c, t) | Text.null t -> [Token c]
+                      Nothing                   -> []
+                      _                         -> [Literal cs]
   let cmds = commands v
   raw <- lookup "base" cmds
           <|> listToMaybe (mapMaybe (flip lookup cmds) environment)

@@ -26,7 +26,7 @@ A typical use is to combine together a reader and writer.
 > import Control.Applicative ((<$>))
 > import Text.TeXMath (writeMathML, readTeX)
 >
-> texMathToMathML :: DisplayType -> String -> Either String Element
+> texMathToMathML :: DisplayType -> Text -> Either Text Element
 > texMathToMathML dt s = writeMathML dt <$> readTeX s
 
 It is also possible to manipulate the AST using 'Data.Generics'. For
@@ -44,7 +44,7 @@ script.
 > changeIdent (EIdentifier "x") = EIdentifier "y"
 > changeIdent e = e
 >
-> texToMMLWithChangeIdent :: DisplayType -> String -> Either String Element
+> texToMMLWithChangeIdent :: DisplayType -> Text -> Either Text Element
 > texToMMLWithChangeIdent dt s =
 >   writeMathML dt . everywhere (mkT changeIdent) <$> readTeX s
 

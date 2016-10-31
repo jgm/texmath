@@ -26,6 +26,8 @@ module Text.TeXMath.Unicode.ToUnicode (fromUnicodeChar,
 where
 
 import Text.TeXMath.Types
+import Data.Text (Text)
+import qualified Data.Text as Text
 import qualified Data.Map as M
 import Data.Maybe (fromMaybe)
 
@@ -33,9 +35,9 @@ import Data.Maybe (fromMaybe)
 --  MathML has a mathvariant attribute which is unimplemented in Firefox
 --  (see <https://bugzilla.mozilla.org/show_bug.cgi?id=114365 here>)
 --  Therefore, we may want to translate mathscr, etc to unicode symbols directly.
-toUnicode :: TextType -> String -> String
+toUnicode :: TextType -> Text -> Text
 toUnicode TextNormal = id
-toUnicode tt = map (\c -> fromMaybe c (toUnicodeChar (tt, c)))
+toUnicode tt = Text.map (\c -> fromMaybe c (toUnicodeChar (tt, c)))
 
 toUnicodeChar :: (TextType, Char) -> Maybe Char
 toUnicodeChar x = M.lookup x unicodeMap
@@ -46,11 +48,11 @@ fromUnicodeChar :: Char -> Maybe (TextType, Char)
 fromUnicodeChar c = M.lookup c reverseUnicodeMap
 
 -- | Inverse of 'toUnicode'.
-fromUnicode :: TextType -> String -> String
+fromUnicode :: TextType -> Text -> Text
 fromUnicode tt cs =
-  map (\c -> case fromUnicodeChar c of
-                   Just (tt', c') | tt' == tt -> c'
-                   _ -> c) cs
+  Text.map (\c -> case fromUnicodeChar c of
+                       Just (tt', c') | tt' == tt -> c'
+                       _ -> c) cs
 
 reverseUnicodeMap :: M.Map Char (TextType, Char)
 reverseUnicodeMap = M.fromList $ map (\(a,b) -> (b,a)) unicodeTable

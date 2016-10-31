@@ -1,4 +1,4 @@
-{-# LANGUAGE PatternGuards #-}
+{-# LANGUAGE PatternGuards, OverloadedStrings #-}
 
 {-
 Copyright (C) 2014 Jesse Rosenthal <jrosenthal@jhu.edu>
@@ -40,8 +40,10 @@ import Text.TeXMath.Types
 import Text.TeXMath.Shared (fixTree, getSpaceWidth, getOperator)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Control.Applicative ((<$>))
+import Data.Text (Text)
+import qualified Data.Text as Text
 
-readOMML :: String -> Either String [Exp]
+readOMML :: Text -> Either Text [Exp]
 readOMML s | Just e <- parseXMLDoc s =
   case elemToOMML e of
     Just exs -> Right $ map fixTree $ unGroup exs
@@ -60,21 +62,21 @@ elemToOMML element  | isElem "m" "oMath" element =
   Just $ concat $ mapMaybe (elemToExps) (elChildren element)
 elemToOMML _ = Nothing
 
-isElem :: String -> String -> Element -> Bool
+isElem :: Text -> Text -> Element -> Bool
 isElem prefix name element =
   let qp = fromMaybe "" (qPrefix (elName element))
   in
-   qName (elName element) == name &&
-   qp == prefix
+   qName (elName (Text.unpack element)) == name &&
+   qp == Text.unpack prefix
 
-hasElemName:: String -> String -> QName -> Bool
+hasElemName:: Text -> Text -> QName -> Bool
 hasElemName prefix name qn =
   let qp = fromMaybe "" (qPrefix qn)
   in
    qName qn == name &&
    qp       == prefix
 
-data OMathRunElem = TextRun String
+data OMathRunElem = TextRun Text
                   | LnBrk
                   | Tab
                     deriving Show
@@ -174,13 +176,13 @@ elemToOMathRunElems _ = Nothing
 
 ----- And now the TeXMath Creation
 
-oMathRunElemToString :: OMathRunElem -> String
-oMathRunElemToString (TextRun s) = s
-oMathRunElemToString (LnBrk) = ['\n']
-oMathRunElemToString (Tab) = ['\t']
+oMathRunElemToText :: OMathRunElem -> Text
+oMathRunElemToText (TextRun s) = s
+oMathRunElemToText (LnBrk) = ['\n']
+oMathRunElemToText (Tab) = ['\t']
 
-oMathRunElemsToString :: [OMathRunElem] -> String
-oMathRunElemsToString = concatMap oMathRunElemToString
+oMathRunElemsToText :: [OMathRunElem] -> Text
+oMathRunElemsToText = concatMap oMathRunElemToText
 
 oMathRunTextStyleToTextType :: OMathRunTextStyle -> Maybe TextType
 oMathRunTextStyleToTextType (Normal) = Just $ TextNormal
@@ -294,9 +296,9 @@ elemToExps' element | isElem "m" "func" element = do
   -- We need a string for the fname, but omml gives it to us as a
   -- series of oMath elems. We're going to filter out the oMathRuns,
   -- which should work for us most of the time.
-  let fnameString = concatMap expToString $
+  let fnameText = concatMap expToText $
                     concat $ mapMaybe (elemToExps) (elChildren fName)
-  return [EMathOperator fnameString, baseExp]
+  return [EMathOperator fnameText, baseExp]
 elemToExps' element | isElem "m" "groupChr" element = do
   let gPr = filterChildName (hasElemName "m" "groupChrPr") element
       chr = gPr >>=
@@ -425,13 +427,13 @@ elemToExps' element | isElem "m" "r" element = do
       txtSty = elemToOMathRunTextStyle element
   mrElems <- elemToOMathRunElems element
   return $ case oMathRunTextStyleToTextType txtSty of
-    Nothing -> interpretString $ oMathRunElemsToString mrElems
+    Nothing -> interpretText $ oMathRunElemsToText mrElems
     Just textType ->
       case lit of
         Just "on" ->
-          [EText textType (oMathRunElemsToString mrElems)]
+          [EText textType (oMathRunElemsToText mrElems)]
         _         ->
-          [EStyled textType $ interpretString $ oMathRunElemsToString mrElems]
+          [EStyled textType $ interpretText $ oMathRunElemsToText mrElems]
 elemToExps' _ = Nothing
 
 interpretChar :: Char -> Exp
@@ -444,9 +446,9 @@ interpretChar c = case getSymbolType c of
                            Nothing -> ESymbol Ord [c]
   symType         -> ESymbol symType [c]
 
-interpretString :: String -> [Exp]
-interpretString [c]       = [interpretChar c]
-interpretString s
+interpretText :: Text -> [Exp]
+interpretText [c]       = [interpretChar c]
+interpretText s
   | all isDigit s         = [ENumber s]
   | isJust (getOperator (EMathOperator s))
                           = [EMathOperator s]
@@ -458,12 +460,12 @@ interpretString s
         isIdentifierOrSpace (ESpace _)      = True
         isIdentifierOrSpace _               = False
 
-expToString :: Exp -> String
-expToString (ENumber s) = s
-expToString (EIdentifier s) = s
-expToString (EMathOperator s) = s
-expToString (ESymbol _ s) = s
-expToString (EText _ s) = s
-expToString (EGrouped exps) = concatMap expToString exps
-expToString (EStyled _ exps) = concatMap expToString exps
-expToString _ = ""
+expToText :: Exp -> Text
+expToText (ENumber s) = s
+expToText (EIdentifier s) = s
+expToText (EMathOperator s) = s
+expToText (ESymbol _ s) = s
+expToText (EText _ s) = s
+expToText (EGrouped exps) = concatMap expToText exps
+expToText (EStyled _ exps) = concatMap expToText exps
+expToText _ = ""

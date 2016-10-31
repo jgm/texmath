@@ -30,7 +30,7 @@ import Data.Char (isDigit, isAscii, isLetter)
 import qualified Data.Map as M
 import Text.Parsec hiding (label)
 import Text.Parsec.Error
-import Text.Parsec.String
+import Text.Parsec.Text
 import Text.TeXMath.Types
 import Control.Applicative ((<*), (*>), (<*>), (<$>), (<$), pure)
 import qualified Text.TeXMath.Shared as S
@@ -68,13 +68,13 @@ expr1 = choice
           ] <* ignorable
 
 -- | Parse a formula, returning a list of 'Exp'.
-readTeX :: String -> Either String [Exp]
+readTeX :: Text -> Either Text [Exp]
 readTeX inp =
   let (ms, rest) = parseMacroDefinitions inp in
   either (Left . showParseError inp) (Right . id)
     $ parse formula "formula" (applyMacros ms rest)
 
-showParseError :: String -> ParseError -> String
+showParseError :: Text -> ParseError -> Text
 showParseError inp pe =
   snippet ++ "\n" ++ caretline ++
     showErrorMessages "or" "unknown" "expecting" "unexpected" "eof"
@@ -89,13 +89,13 @@ showParseError inp pe =
         snippet = take 40 $ drop snipoffset ln
         caretline = replicate (errcol - snipoffset - 1) ' ' ++ "^"
 
-anyCtrlSeq :: TP String
+anyCtrlSeq :: TP Text
 anyCtrlSeq = lexeme $ try $ do
   char '\\'
   res <- count 1 (satisfy (not . isLetter)) <|> many1 (satisfy isLetter)
   return $ '\\' : res
 
-ctrlseq :: String -> TP String
+ctrlseq :: Text -> TP Text
 ctrlseq s = lexeme $ try $ do
   result <- string ('\\':s)
   case s of
@@ -149,7 +149,7 @@ operatorname = do
 
 -- | Converts identifiers, symbols and numbers to a flat string.
 -- Returns Nothing if the expression contains anything else.
-expToOperatorName :: Exp -> Maybe String
+expToOperatorName :: Exp -> Maybe Text
 expToOperatorName e = case e of
             EGrouped xs ->  concat <$> mapM fl xs
             _ -> fl e
@@ -186,10 +186,10 @@ limitsIndicator =
   <|> (ctrlseq "nolimits" >> return (Just False))
   <|> return Nothing
 
-binomCmd :: TP String
+binomCmd :: TP Text
 binomCmd = oneOfCommands (map fst binomCmds)
 
-binomCmds :: [(String, Exp -> Exp -> Exp)]
+binomCmds :: [(Text, Exp -> Exp -> Exp)]
 binomCmds = [ ("\\choose", \x y ->
                 EDelimited "(" ")" [Right (EFraction NoLineFrac x y)])
             , ("\\brack", \x y ->
@@ -231,7 +231,7 @@ manyExp' requireNonempty p = do
   initial <- if requireNonempty
                 then many1 (notFollowedBy binomCmd >> p)
                 else many (notFollowedBy binomCmd >> p)
-  let withCmd :: String -> TP Exp
+  let withCmd :: Text -> TP Exp
       withCmd cmd =
          case lookup cmd binomCmds of
               Just f  -> f <$> (asGroup <$> pure initial)
@@ -278,7 +278,7 @@ enclosure = basicEnclosure <|> scaledEnclosure <|> delimited
 basicEnclosure :: TP Exp
 basicEnclosure = choice (map (\(s, v) -> symbol s >> return v) enclosures)
 
-fence :: String -> TP String
+fence :: Text -> TP Text
 fence cmd = do
   symbol cmd
   enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Open ""))
@@ -287,10 +287,10 @@ fence cmd = do
        ESymbol Close x -> return x
        _ -> mzero
 
-middle :: TP String
+middle :: TP Text
 middle = fence "\\middle"
 
-right :: TP String
+right :: TP Text
 right = fence "\\right"
 
 delimited :: TP Exp
@@ -334,7 +334,7 @@ arrayAlignments = try $ do
 environment :: TP Exp
 environment = do
   ctrlseq "begin"
-  name <- braces (oneOfStrings (M.keys environments) <* optional (char '*'))
+  name <- braces (oneOfTexts (M.keys environments) <* optional (char '*'))
   spaces
   case M.lookup name environments of
         Just env -> do
@@ -346,7 +346,7 @@ environment = do
           return result
         Nothing  -> mzero  -- should not happen
 
-environments :: M.Map String (TP Exp)
+environments :: M.Map Text (TP Exp)
 environments = M.fromList
   [ ("array", stdarray)
   , ("eqnarray", eqnarray)
@@ -378,7 +378,7 @@ alignsFromRows :: Alignment -> [ArrayLine] -> [Alignment]
 alignsFromRows _ [] = []
 alignsFromRows defaultAlignment (r:_) = replicate (length r) defaultAlignment
 
-matrixWith :: String -> String -> TP Exp
+matrixWith :: Text -> Text -> TP Exp
 matrixWith opendelim closedelim = do
   mbaligns <- mbArrayAlignments
   lines' <- sepEndBy1 arrayLine endLine
@@ -498,7 +498,7 @@ ensuremath :: TP Exp
 ensuremath = ctrlseq "ensuremath" *> inbraces
 
 -- Note: cal and scr are treated the same way, as unicode is lacking such two different sets for those.
-styleOps :: M.Map String ([Exp] -> Exp)
+styleOps :: M.Map Text ([Exp] -> Exp)
 styleOps = M.fromList
           [ ("\\mathrm",     EStyled TextNormal)
           , ("\\mathup",     EStyled TextNormal)
@@ -542,7 +542,7 @@ text = do
   c <- oneOfCommands (M.keys textOps)
   maybe mzero (<$> (bracedText <* spaces)) $ M.lookup c textOps
 
-textOps :: M.Map String (String -> Exp)
+textOps :: M.Map Text (Text -> Exp)
 textOps = M.fromList
           [ ("\\textrm", (EText TextNormal))
           , ("\\text",   (EText TextNormal))
@@ -591,7 +591,7 @@ mathop = mathopWith "mathop" Op
      <|> mathopWith "mathclose" Close
      <|> mathopWith "mathpunct" Pun
 
-mathopWith :: String -> TeXSymbolType -> TP Exp
+mathopWith :: Text -> TeXSymbolType -> TP Exp
 mathopWith name ty = try $ do
   ctrlseq name
   e <- expr1
@@ -624,9 +624,9 @@ texSymbol = do
   sym <- operator <|> tSymbol
   if negated then neg sym else return sym
 
-oneOfCommands :: [String] -> TP String
+oneOfCommands :: [Text] -> TP Text
 oneOfCommands cmds = try $ do
-  cmd <- oneOfStrings cmds
+  cmd <- oneOfTexts cmds
   case cmd of
     ['\\',c] | not (isLetter c) -> return ()
     _ -> (do pos <- getPosition
@@ -637,14 +637,14 @@ oneOfCommands cmds = try $ do
   spaces
   return cmd
 
-oneOfStrings' :: (Char -> Char -> Bool) -> [String] -> TP String
-oneOfStrings' _ []         = mzero
-oneOfStrings' matches strs = try $ do
+oneOfTexts' :: (Char -> Char -> Bool) -> [Text] -> TP Text
+oneOfTexts' _ []         = mzero
+oneOfTexts' matches strs = try $ do
     c <- anyChar
     let strs' = [xs | (x:xs) <- strs, x `matches` c]
     case strs' of
       []  -> mzero
-      _   -> (c:) <$> oneOfStrings' matches strs'
+      _   -> (c:) <$> oneOfTexts' matches strs'
                      <|> if "" `elem` strs'
                           then return [c]
                           else mzero
@@ -652,12 +652,12 @@ oneOfStrings' matches strs = try $ do
 -- | Parses one of a list of strings.  If the list contains
 -- two strings one of which is a prefix of the other, the longer
 -- string will be matched if possible.
-oneOfStrings :: [String] -> TP String
-oneOfStrings strs = oneOfStrings' (==) strs <??> (intercalate ", " $ map show strs)
+oneOfTexts :: [Text] -> TP Text
+oneOfTexts strs = oneOfTexts' (==) strs <??> (intercalate ", " $ map show strs)
 
 -- | Like '(<?>)', but moves position back to the beginning of the parse
 -- before reporting the error.
-(<??>) :: Monad m => ParsecT s u m a -> String -> ParsecT s u m a
+(<??>) :: Monad m => ParsecT s u m a -> Text -> ParsecT s u m a
 (<??>) p expected = do
   pos <- getPosition
   p <|> (setPosition pos >> mzero <?> expected)
@@ -673,7 +673,7 @@ tSymbol = try $ do
 
 operator :: TP Exp
 operator = do
-  sym <- lexeme (oneOfStrings $ M.keys operators)
+  sym <- lexeme (oneOfTexts $ M.keys operators)
   return $ fromJust (M.lookup sym operators)
 
 neg :: Exp -> TP Exp
@@ -697,10 +697,10 @@ brackets :: TP a -> TP a
 brackets p = lexeme $ char '[' *> spaces *> p <* spaces <* char ']'
 
 
-symbol :: String -> TP String
+symbol :: Text -> TP Text
 symbol s = lexeme $ try $ string s
 
-enclosures :: [(String, Exp)]
+enclosures :: [(Text, Exp)]
 enclosures = [ ("(", ESymbol Open "(")
              , (")", ESymbol Close ")")
              , ("[", ESymbol Open "[")
@@ -733,7 +733,7 @@ enclosures = [ ("(", ESymbol Open "(")
              , ("\\urcorner", ESymbol Close "\x231D")
              ]
 
-operators :: M.Map String Exp
+operators :: M.Map Text Exp
 operators = M.fromList [
              ("+", ESymbol Bin "+")
            , ("-", ESymbol Bin "\x2212")
@@ -756,7 +756,7 @@ operators = M.fromList [
            , ("/", ESymbol Ord "/")
            , ("~", ESpace (4/18)) ]
 
-symbols :: M.Map String Exp
+symbols :: M.Map Text Exp
 symbols = M.fromList
   [ ("\\$",ESymbol Ord "$")
   , ("\\%",ESymbol Ord "%")
@@ -3681,17 +3681,17 @@ symbols = M.fromList
 
 -- text mode parsing
 
-textual :: TP String
+textual :: TP Text
 textual = regular <|> sps <|> ligature <|> textCommand <|> bracedText
             <?> "text"
 
-sps :: TP String
+sps :: TP Text
 sps = " " <$ skipMany1 (oneOf " \t\n")
 
-regular :: TP String
+regular :: TP Text
 regular = many1 (noneOf "`'-~${}\\ \t")
 
-ligature :: TP String
+ligature :: TP Text
 ligature = try ("\x2014" <$ string "---")
        <|> try ("\x2013" <$ string "--")
        <|> try (string "-")
@@ -3701,14 +3701,14 @@ ligature = try ("\x2014" <$ string "---")
        <|> try ("\x2018" <$ string "`")
        <|> try ("\xA0"   <$ string "~")
 
-textCommand :: TP String
+textCommand :: TP Text
 textCommand = do
   cmd <- oneOfCommands (M.keys textCommands)
   case M.lookup cmd textCommands of
        Nothing -> fail ("Unknown control sequence " ++ cmd)
        Just c  -> c
 
-bracedText :: TP String
+bracedText :: TP Text
 bracedText = do
   char '{'
   inner <- concat <$> many textual
@@ -3719,7 +3719,7 @@ tok :: TP Char
 tok = (try $ char '{' *> spaces *> anyChar <* spaces <* char '}')
    <|> anyChar
 
-textCommands :: M.Map String (TP String)
+textCommands :: M.Map Text (TP Text)
 textCommands = M.fromList
   [ ("\\#", return "#")
   , ("\\$", return "$")
@@ -3757,12 +3757,12 @@ textCommands = M.fromList
   , ("\\ ", return " ")
   ]
 
-parseC :: TP String
+parseC :: TP Text
 parseC = try $ char '`' >> count 1 anyChar
 
 -- the functions below taken from pandoc:
 
-grave :: Char -> String
+grave :: Char -> Text
 grave 'A' = "À"
 grave 'E' = "È"
 grave 'I' = "Ì"
@@ -3775,7 +3775,7 @@ grave 'o' = "ò"
 grave 'u' = "ù"
 grave c   = [c]
 
-acute :: Char -> String
+acute :: Char -> Text
 acute 'A' = "Á"
 acute 'E' = "É"
 acute 'I' = "Í"
@@ -3802,7 +3802,7 @@ acute 'Z' = "Ź"
 acute 'z' = "ź"
 acute c   = [c]
 
-circ :: Char -> String
+circ :: Char -> Text
 circ 'A' = "Â"
 circ 'E' = "Ê"
 circ 'I' = "Î"
@@ -3829,7 +3829,7 @@ circ 'Y' = "Ŷ"
 circ 'y' = "ŷ"
 circ c   = [c]
 
-tilde :: Char -> String
+tilde :: Char -> Text
 tilde 'A' = "Ã"
 tilde 'a' = "ã"
 tilde 'O' = "Õ"
@@ -3842,7 +3842,7 @@ tilde 'N' = "Ñ"
 tilde 'n' = "ñ"
 tilde c   = [c]
 
-umlaut :: Char -> String
+umlaut :: Char -> Text
 umlaut 'A' = "Ä"
 umlaut 'E' = "Ë"
 umlaut 'I' = "Ï"
@@ -3855,7 +3855,7 @@ umlaut 'o' = "ö"
 umlaut 'u' = "ü"
 umlaut c   = [c]
 
-dot :: Char -> String
+dot :: Char -> Text
 dot 'C' = "Ċ"
 dot 'c' = "ċ"
 dot 'E' = "Ė"
@@ -3867,7 +3867,7 @@ dot 'Z' = "Ż"
 dot 'z' = "ż"
 dot c   = [c]
 
-macron :: Char -> String
+macron :: Char -> Text
 macron 'A' = "Ā"
 macron 'E' = "Ē"
 macron 'I' = "Ī"
@@ -3880,7 +3880,7 @@ macron 'o' = "ō"
 macron 'u' = "ū"
 macron c   = [c]
 
-cedilla :: Char -> String
+cedilla :: Char -> Text
 cedilla 'c' = "ç"
 cedilla 'C' = "Ç"
 cedilla 's' = "ş"
@@ -3895,7 +3895,7 @@ cedilla 'o' = "o̧"
 cedilla 'O' = "O̧"
 cedilla c   = [c]
 
-hacek :: Char -> String
+hacek :: Char -> Text
 hacek 'A' = "Ǎ"
 hacek 'a' = "ǎ"
 hacek 'C' = "Č"
@@ -3931,7 +3931,7 @@ hacek 'Z' = "Ž"
 hacek 'z' = "ž"
 hacek c   = [c]
 
-breve :: Char -> String
+breve :: Char -> Text
 breve 'A' = "Ă"
 breve 'a' = "ă"
 breve 'E' = "Ĕ"

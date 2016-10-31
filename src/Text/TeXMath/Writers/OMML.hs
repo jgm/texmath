@@ -1,3 +1,4 @@
+{-# LANGUAGE OverloadedStrings #-}
 {-
 Copyright (C) 2012 John MacFarlane <jgm@berkeley.edu>
 
@@ -25,6 +26,8 @@ where
 import Text.XML.Light
 import Text.TeXMath.Types
 import Data.Generics (everywhere, mkT)
+import Data.Text (Text)
+import qualified Data.Text as Text
 
 -- | Transforms an expression tree to an OMML XML Tree
 writeOMML :: DisplayType -> [Exp] -> Element
@@ -37,16 +40,16 @@ writeOMML dt = container . concatMap (showExp [])
                                     , mnode "oMath" x ]
                   DisplayInline -> mnode "oMath"
 
-mnode :: Node t => String -> t -> Element
-mnode s = node (QName s Nothing (Just "m"))
+mnode :: Node t => Text -> t -> Element
+mnode s = node (QName (Text.unpack s) Nothing (Just "m"))
 
-mnodeA :: Node t => String -> String -> t -> Element
-mnodeA s v = add_attr (Attr (QName "val" Nothing (Just "m")) v) . mnode s
+mnodeA :: Node t => Text -> Text -> t -> Element
+mnodeA s v = add_attr (Attr (QName "val" Nothing (Just "m")) (Text.unpack v)) . mnode s
 
-str :: [Element] -> String -> Element
-str []    s = mnode "r" [ mnode "t" s ]
+str :: [Element] -> Text -> Element
+str []    s = mnode "r" [ mnode "t" $ Text.unpack s ]
 str props s = mnode "r" [ mnode "rPr" props
-                        , mnode "t" s ]
+                        , mnode "t" $ Text.unpack s ]
 
 showFraction :: [Element] -> FractionType -> Exp -> Exp -> Element
 showFraction props ft x y =
@@ -89,7 +92,7 @@ makeArray props as rs = mnode "m" $ mProps : map toMr rs
         toAlign AlignCenter  = "center"
         toAlign AlignDefault = "left"
 
-makeText :: TextType -> String -> Element
+makeText :: TextType -> Text -> Element
 makeText a s = str (setProps a) s
 
 setProps :: TextType -> [Element]
@@ -170,11 +173,13 @@ showExp props e =
      | n > 1.8               -> [str props "\x2001\x2001"]
      | otherwise             -> []
        -- this is how the xslt sheet handles all spaces
-   EUnder _ x (ESymbol Accent [c]) | isBarChar c ->
+   EUnder _ x (ESymbol Accent c) | Text.length c == 1 &&
+                                   Text.all isBarChar c ->
                        [mnode "bar" [ mnode "barPr" $
                                         mnodeA "pos" "bot" ()
                                     , mnode "e" $ showExp props x ]]
-   EOver _ x (ESymbol Accent [c]) | isBarChar c ->
+   EOver _ x (ESymbol Accent c) | Text.length c == 1 &&
+                                  Text.all isBarChar c ->
                        [mnode "bar" [ mnode "barPr" $
                                         mnodeA "pos" "top" ()
                                     , mnode "e" $ showExp props x ]]
@@ -218,7 +223,7 @@ isNary :: Exp -> Bool
 isNary (ESymbol Op _) = True
 isNary _ = False
 
-makeNary :: [Element] -> String -> String -> Exp -> Exp -> Exp -> Element
+makeNary :: [Element] -> Text -> Text -> Exp -> Exp -> Exp -> Element
 makeNary props t s y z w =
   mnode "nary" [ mnode "naryPr"
                  [ mnodeA "chr" s ()

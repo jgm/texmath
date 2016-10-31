@@ -1,4 +1,4 @@
-{-# LANGUAGE ViewPatterns, ScopedTypeVariables #-}
+{-# LANGUAGE ViewPatterns, ScopedTypeVariables, OverloadedStrings #-}
 {-
 Copyright (C) 2009 John MacFarlane <jgm@berkeley.edu>
 
@@ -31,6 +31,8 @@ import Text.TeXMath.Shared (getMMLType)
 import Text.TeXMath.Readers.MathML.MMLDict (getMathMLOperator)
 import Control.Applicative ((<$>))
 import Text.Printf
+import Data.Text (Text)
+import qualified Data.Text as Text
 
 -- | Transforms an expression tree to a MathML XML tree
 writeMathML :: DisplayType -> [Exp] -> Element
@@ -63,14 +65,14 @@ showFraction tt ft x y =
 
 spaceWidth :: Rational -> Element
 spaceWidth w =
-  withAttribute "width" (dropTrailing0s
+  withAttribute "width" (Text.pack $ dropTrailing0s
      (printf "%.3f" (fromRational w :: Double)) ++ "em") $ unode "mspace" ()
 
 makeStretchy :: FormType -> Element -> Element
 makeStretchy (fromForm -> t)  = withAttribute "stretchy" "true"
                                 . withAttribute "form" t
 
-fromForm :: FormType -> String
+fromForm :: FormType -> Text
 fromForm FInfix   = "infix"
 fromForm FPostfix = "postfix"
 fromForm FPrefix  = "prefix"
@@ -78,7 +80,8 @@ fromForm FPrefix  = "prefix"
 
 makeScaled :: Rational -> Element -> Element
 makeScaled x = withAttribute "minsize" s . withAttribute "maxsize" s
-  where s = dropTrailing0s $ printf "%.3f" (fromRational x :: Double)
+  where s = Text.pack $
+            dropTrailing0s $ printf "%.3f" (fromRational x :: Double)
 
 dropTrailing0s :: String -> String
 dropTrailing0s = reverse . go . reverse
@@ -92,16 +95,17 @@ makeStyled a es = withAttribute "mathvariant" attr
   where attr = getMMLType a
 
 -- Note: Converts strings to unicode directly, as few renderers support those mathvariants.
-makeText :: TextType -> String -> Element
+makeText :: TextType -> Text -> Element
 makeText a s = case (leadingSp, trailingSp) of
                    (False, False) -> s'
                    (True,  False) -> mrow [sp, s']
                    (False, True)  -> mrow [s', sp]
                    (True,  True)  -> mrow [sp, s', sp]
   where sp = spaceWidth (1/3)
-        s' = withAttribute "mathvariant" attr $ unode "mtext" $ toUnicode a s
-        trailingSp = not (null s) && last s `elem` " \t"
-        leadingSp  = not (null s) && head s `elem` " \t"
+        s' = withAttribute "mathvariant" attr $ unode "mtext" $
+               Text.unpack $ toUnicode a s
+        trailingSp = not (Text.null s) && Text.last s `elem` [' ', '\t']
+        leadingSp  = not (Text.null s) && Text.head s `elem` [' ', '\t']
         attr = getMMLType a
 
 makeArray :: TextType -> [Alignment] -> [ArrayLine] -> Element
@@ -114,12 +118,12 @@ makeArray tt as ls = unode "mtable" $
          setAlignment AlignDefault = id
          as'                       = as ++ cycle [AlignDefault]
 
-withAttribute :: String -> String -> Element -> Element
-withAttribute a = add_attr . Attr (unqual a)
+withAttribute :: Text -> Text -> Element -> Element
+withAttribute a = add_attr . Attr (unqual (Text.unpack a)) . Text.unpack
 
-accent :: String -> Element
+accent :: Text -> Element
 accent = add_attr (Attr (unqual "accent") "true") .
-           unode "mo"
+           unode "mo" . Text.unpack
 
 handleDownup :: DisplayType -> Exp -> Exp
 handleDownup DisplayInline (EUnder True x y)       = ESub x y
@@ -133,8 +137,8 @@ handleDownup _             x                       = x
 makeFence :: FormType -> Element -> Element
 makeFence (fromForm -> t) = withAttribute "stretchy" "false" . withAttribute "form" t
 
-op :: String -> Element
-op s = accentCons $ unode "mo" s
+op :: Text -> Element
+op s = accentCons $ unode "mo" $ Text.unpack s
   where
     accentCons =
       case (elem "accent") . properties <$> getMathMLOperator s FPostfix of
@@ -146,19 +150,19 @@ op s = accentCons $ unode "mo" s
 showExp :: TextType -> Exp -> Element
 showExp tt e =
  case e of
-   ENumber x        -> unode "mn" x
+   ENumber x        -> unode "mn" $ Text.unpack x
    EGrouped [x]     -> showExp tt x
    EGrouped xs      -> mrow $ map (showExp tt) xs
    EDelimited start end xs -> mrow $
-                       [ makeStretchy FPrefix (unode "mo" start) | not (null start) ] ++
-                       map (either (makeStretchy FInfix . unode "mo") (showExp tt)) xs ++
-                       [ makeStretchy FPostfix (unode "mo" end) | not (null end) ]
-   EIdentifier x    -> unode "mi" $ toUnicode tt x
-   EMathOperator x  -> unode "mo" x
+                       [ makeStretchy FPrefix (unode "mo" (Text.unpack start)) | not (Text.null start) ] ++
+                       map (either (makeStretchy FInfix . unode "mo" . Text.unpack) (showExp tt)) xs ++
+                       [ makeStretchy FPostfix (unode "mo" (Text.unpack end)) | not (Text.null end) ]
+   EIdentifier x    -> unode "mi" $ Text.unpack $ toUnicode tt x
+   EMathOperator x  -> unode "mo" $ Text.unpack x
    ESymbol Accent x -> accent x
    ESymbol Open x   -> makeFence FPrefix $ op x
    ESymbol Close x  -> makeFence FPostfix $ op x
-   ESymbol Ord x    -> unode "mi" x
+   ESymbol Ord x    -> unode "mi" $ Text.unpack x
    ESymbol _ x      -> op x
    ESpace x         -> spaceWidth x
    EFraction ft x y -> showFraction tt ft x y

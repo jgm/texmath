@@ -1,4 +1,5 @@
-{-# LANGUAGE GeneralizedNewtypeDeriving, ViewPatterns, GADTs #-}
+{-# LANGUAGE GeneralizedNewtypeDeriving, ViewPatterns, GADTs,
+    OverloadedStrings #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -31,26 +32,29 @@ import Control.Monad.Reader (MonadReader, runReader, Reader, asks, local)
 import Control.Monad.Writer( MonadWriter, WriterT,
                              execWriterT, tell, censor)
 import Text.TeXMath.TeX
+import Data.Text (Text)
+import qualified Data.Text as Text
+import Data.Monoid
 
 -- import Debug.Trace
 -- tr' x = trace (show x) x
 
 -- | Transforms an expression tree to equivalent LaTeX with the default
 -- packages (amsmath and amssymb)
-writeTeX :: [Exp] -> String
+writeTeX :: [Exp] -> Text
 writeTeX = writeTeXWith defaultEnv
 
 -- | Adds the correct LaTeX environment around a TeXMath fragment
-addLaTeXEnvironment :: DisplayType -> String -> String
+addLaTeXEnvironment :: DisplayType -> Text -> Text
 addLaTeXEnvironment dt math =
     case dt of
-      DisplayInline -> "\\(" ++ math ++ "\\)"
-      DisplayBlock  -> "\\[" ++ math ++ "\\]"
+      DisplayInline -> "\\(" <> math <> "\\)"
+      DisplayBlock  -> "\\[" <> math <> "\\]"
 
 -- |  Transforms an expression tree to equivalent LaTeX with the specified
 -- packages
-writeTeXWith :: Env -> [Exp] -> String
-writeTeXWith env es = drop 1 . init . flip renderTeX "" . Grouped $
+writeTeXWith :: Env -> [Exp] -> Text
+writeTeXWith env es = Text.drop 1 . Text.init . flip renderTeX "" . Grouped $
                             runExpr env $
                               mapM_ writeExp (removeOuterGroup es)
 
@@ -68,13 +72,13 @@ newtype Math a = Math {runTeXMath :: WriterT [TeX] (Reader MathState) a}
                   deriving (Functor, Applicative, Monad, MonadReader MathState
                            , MonadWriter [TeX])
 
-getTeXMathM :: String -> Math [TeX]
+getTeXMathM :: Text -> Math [TeX]
 getTeXMathM s = getTeXMath s <$> asks mathEnv
 
 tellGroup :: Math () -> Math ()
 tellGroup = censor ((:[]) . Grouped)
 
-tellGenFrac :: String -> String -> Math ()
+tellGenFrac :: Text -> Text -> Math ()
 tellGenFrac open close =
   tell [ ControlSeq "\\genfrac"
        , Grouped [Literal open]
@@ -82,7 +86,7 @@ tellGenFrac open close =
        , Grouped [Literal "0pt"]
        , Grouped [] ]
 
-writeBinom :: String -> Exp -> Exp -> Math ()
+writeBinom :: Text -> Exp -> Exp -> Math ()
 writeBinom cmd x y = do
   env <- asks mathEnv
   if "amsmath" `elem` env
@@ -152,8 +156,10 @@ writeExp o@(EMathOperator s) = do
          -- use \operatorname* if convertible
          asks mathConvertible >>= flip when (tell [Token '*'])
          tell [Grouped math]
-writeExp (ESymbol Ord [c])  -- do not render "invisible operators"
-  | c `elem` ['\x2061'..'\x2064'] = return () -- see 3.2.5.5 of mathml spec
+writeExp (ESymbol Ord t)
+  -- do not render "invisible operators"
+  | Text.length t == 1 && Text.head t `elem` ['\x2061'..'\x2064'] = return ()
+  -- see 3.2.5.5 of mathml spec
 writeExp (ESymbol t s) = do
   when (t == Bin || t == Rel) $ tell [Space]
   tell =<< getTeXMathM s
@@ -234,9 +240,9 @@ writeExp (EScaled size e)
   | otherwise = writeExp e
 writeExp (EText ttype s) = do
   let txtcmd = getTextCommand ttype
-  case map escapeLaTeX s of
-       []   -> return ()
-       xs   -> tell $ txtcmd (Grouped xs)
+  case map escapeLaTeX $ Text.unpack s of
+       [] -> return ()
+       xs -> tell $ txtcmd (Grouped xs)
 writeExp (EStyled ttype es) = do
   txtcmd <- (flip S.getLaTeXTextCommand ttype) <$> asks mathEnv
   tell [ControlSeq txtcmd]
@@ -252,7 +258,7 @@ writeExp (EArray aligns rows) = do
      then table "matrix" [] rows
      else table "array" aligns rows
 
-table :: String -> [Alignment] -> [ArrayLine] -> Math ()
+table :: Text -> [Alignment] -> [ArrayLine] -> Math ()
 table name aligns rows = do
   tell [ControlSeq "\\begin", Grouped [Literal name]]
   unless (null aligns) $
@@ -261,7 +267,7 @@ table name aligns rows = do
   mapM_ row rows
   tell [ControlSeq "\\end", Grouped [Literal name]]
   where
-    columnAligns = map alignmentToLetter aligns
+    columnAligns = Text.pack $ map alignmentToLetter aligns
     alignmentToLetter AlignLeft = 'l'
     alignmentToLetter AlignCenter = 'c'
     alignmentToLetter AlignRight = 'r'
@@ -277,7 +283,7 @@ cell = mapM_ writeExp
 
 data FenceType = DLeft | DMiddle | DRight
 
-type Delim = String
+type Delim = Text
 
 writeDelim :: FenceType -> Delim -> Math ()
 writeDelim fence delim = do
@@ -286,11 +292,11 @@ writeDelim fence delim = do
     nullLim <- getTeXMathM "."
     let delimCmd = if valid then tex else nullLim
     tell $ case fence of
-             DLeft -> [ControlSeq "\\left"] ++ delimCmd ++ [Space] ++ if valid then [] else tex
+             DLeft -> [ControlSeq "\\left"] <> delimCmd <> [Space] <> if valid then [] else tex
              DMiddle -> case valid of
-                              True -> [Space] ++ [ControlSeq "\\middle"] ++ tex ++ [Space]
+                              True -> [Space] <> [ControlSeq "\\middle"] <> tex <> [Space]
                               False -> tex
-             DRight -> [Space, ControlSeq "\\right"] ++ delimCmd ++ if valid then [] else tex
+             DRight -> [Space, ControlSeq "\\right"] <> delimCmd <> if valid then [] else tex
 
 writeScript :: Position -> Bool -> Exp -> Exp -> Math ()
 writeScript pos convertible b e1 = do
@@ -334,7 +340,7 @@ checkSubstack e = writeExp e
 -- Utility
 
 -- | Maps a length in em to the nearest LaTeX space command
-getSpaceCommand :: Bool -> Rational -> String
+getSpaceCommand :: Bool -> Rational -> Text
 getSpaceCommand amsmath width =
   case floor (width * 18) :: Int of
           -3       -> "\\!"
@@ -345,8 +351,8 @@ getSpaceCommand amsmath width =
           18       -> "\\quad"
           36       -> "\\qquad"
           n        -> if amsmath
-                         then "\\mspace{" ++ show n ++ "mu}"
-                         else "{\\mskip " ++ show n ++ "mu}"
+                         then Text.pack $ "\\mspace{" <> show n <> "mu}"
+                         else Text.pack $ "{\\mskip " <> show n <> "mu}"
 
 getTextCommand :: TextType -> TeX -> [TeX]
 getTextCommand tt x =

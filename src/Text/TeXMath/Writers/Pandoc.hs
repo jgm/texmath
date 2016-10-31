@@ -1,3 +1,4 @@
+{-# LANGUAGE OverloadedStrings #-}
 {-
 Copyright (C) 2010-2013 John MacFarlane <jgm@berkeley.edu>
 
@@ -26,6 +27,9 @@ import Text.Pandoc.Definition
 import Text.TeXMath.Unicode.ToUnicode
 import Text.TeXMath.Types
 import Text.TeXMath.Shared (getSpaceChars)
+import Data.Text (Text)
+import qualified Data.Text as Text
+import Data.Monoid
 
 -- | Attempts to convert a formula to a list of 'Pandoc' inlines.
 writePandoc :: DisplayType
@@ -61,7 +65,7 @@ addSpace t x =
         medspace  = EText TextNormal "\x2005"
         widespace = EText TextNormal "\x2004"
 
-renderStr :: TextType -> String -> Inline
+renderStr :: TextType -> Text -> Inline
 renderStr tt s =
   case tt of
        TextNormal       -> Str s
@@ -108,20 +112,21 @@ expToInlines tt (ESubsup x y z) = do
   z' <- expToInlines tt z
   return $ x' ++ [Subscript y'] ++ [Superscript z']
 expToInlines _ (EText tt' x) = Just [renderStr tt' x]
-expToInlines tt (EOver _ (EGrouped [EIdentifier [c]]) (ESymbol Accent [accent])) =
+expToInlines tt (EOver _ (EGrouped [EIdentifier t]) (ESymbol Accent accent))
+  | Text.length t == 1 =
     case accent of
-         '\x203E' -> Just [renderStr tt' [c,'\x0304']]  -- bar
-         '\x00B4' -> Just [renderStr tt' [c,'\x0301']]  -- acute
-         '\x0060' -> Just [renderStr tt' [c,'\x0300']]  -- grave
-         '\x02D8' -> Just [renderStr tt' [c,'\x0306']]  -- breve
-         '\x02C7' -> Just [renderStr tt' [c,'\x030C']]  -- check
-         '.'      -> Just [renderStr tt' [c,'\x0307']]  -- dot
-         '\x00B0' -> Just [renderStr tt' [c,'\x030A']]  -- ring
-         '\x20D7' -> Just [renderStr tt' [c,'\x20D7']]  -- arrow right
-         '\x20D6' -> Just [renderStr tt' [c,'\x20D6']]  -- arrow left
-         '\x005E' -> Just [renderStr tt' [c,'\x0302']]  -- hat
-         '\x0302' -> Just [renderStr tt' [c,'\x0302']]  -- hat
-         '~'      -> Just [renderStr tt' [c,'\x0303']]  -- tilde
+         "\x203E" -> Just [renderStr tt' $ t <> "\x0304"]  -- bar
+         "\x00B4" -> Just [renderStr tt' $ t <> "\x0301"]  -- acute
+         "\x0060" -> Just [renderStr tt' $ t <> "\x0300"]  -- grave
+         "\x02D8" -> Just [renderStr tt' $ t <> "\x0306"]  -- breve
+         "\x02C7" -> Just [renderStr tt' $ t <> "\x030C"]  -- check
+         "."      -> Just [renderStr tt' $ t <> "\x0307"]  -- dot
+         "\x00B0" -> Just [renderStr tt' $ t <> "\x030A"]  -- ring
+         "\x20D7" -> Just [renderStr tt' $ t <> "\x20D7"]  -- arrow right
+         "\x20D6" -> Just [renderStr tt' $ t <> "\x20D6"]  -- arrow left
+         "\x005E" -> Just [renderStr tt' $ t <> "\x0302"]  -- hat
+         "\x0302" -> Just [renderStr tt' $ t <> "\x0302"]  -- hat
+         "~"      -> Just [renderStr tt' $ t <> "\x0303"]  -- tilde
          _        -> Nothing
       where tt' = if tt == TextNormal then TextItalic else tt
 expToInlines tt (EScaled _ e) = expToInlines tt e

@@ -1,4 +1,4 @@
-{-# LANGUAGE CPP, ScopedTypeVariables #-}
+{-# LANGUAGE CPP, ScopedTypeVariables, OverloadedStrings #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -38,6 +38,8 @@ module Text.TeXMath.Shared
 
 import Text.TeXMath.Types
 import Text.TeXMath.TeX
+import Data.Text (Text)
+import qualified Data.Text as Text
 import qualified Data.Map as M
 import Data.Maybe (fromMaybe)
 import Data.Ratio ((%))
@@ -73,11 +75,11 @@ fixTree :: Exp -> Exp
 fixTree = everywhere (mkT removeNesting) . everywhere (mkT removeEmpty)
 
 -- | Maps TextType to the corresponding MathML mathvariant
-getMMLType :: TextType -> String
+getMMLType :: TextType -> Text
 getMMLType t = fromMaybe "normal" (fst <$> M.lookup t textTypesMap)
 
 -- | Maps TextType to corresponding LaTeX command
-getLaTeXTextCommand :: Env -> TextType -> String
+getLaTeXTextCommand :: Env -> TextType -> Text
 getLaTeXTextCommand e t =
   let textCmd = fromMaybe "\\mathrm"
                   (snd <$> M.lookup t textTypesMap) in
@@ -86,11 +88,11 @@ getLaTeXTextCommand e t =
     else fromMaybe "\\mathrm" (lookup textCmd alts)
 
 -- | Maps MathML mathvariant to the corresponing TextType
-getTextType :: String -> TextType
+getTextType :: Text -> TextType
 getTextType s = fromMaybe TextNormal (M.lookup s revTextTypesMap)
 
 -- | Maps a LaTeX scaling command to the percentage scaling
-getScalerCommand :: Rational -> Maybe String
+getScalerCommand :: Rational -> Maybe Text
 getScalerCommand width =
   case sort [ (w, cmd) | (cmd, w) <- scalers, w >= width ] of
        ((_,cmd):_) -> Just cmd
@@ -99,11 +101,11 @@ getScalerCommand width =
   -- match:  \Big, not \Bigr
 
 -- | Gets percentage scaling from LaTeX scaling command
-getScalerValue :: String -> Maybe Rational
+getScalerValue :: Text -> Maybe Rational
 getScalerValue command = lookup command scalers
 
 -- | Returns the correct constructor given a LaTeX command
-getDiacriticalCons :: String -> Maybe (Exp -> Exp)
+getDiacriticalCons :: Text -> Maybe (Exp -> Exp)
 getDiacriticalCons command =
     f <$> M.lookup command diaMap
   where
@@ -113,7 +115,7 @@ getDiacriticalCons command =
                 else EOver False) e (ESymbol Accent s)
 
 -- | Given a diacritical mark, returns the corresponding LaTeX command
-getDiacriticalCommand  :: Position -> String -> Maybe String
+getDiacriticalCommand  :: Position -> Text -> Maybe Text
 getDiacriticalCommand pos symbol = do
   command <- M.lookup symbol diaMap
   guard (not $ command `elem` unavailable)
@@ -129,7 +131,7 @@ getDiacriticalCommand pos symbol = do
 getOperator :: Exp -> Maybe TeX
 getOperator op = fmap ControlSeq $ lookup op operators
 
-operators :: [(Exp, String)]
+operators :: [(Exp, Text)]
 operators =
            [ (EMathOperator "arccos", "\\arccos")
            , (EMathOperator "arcsin", "\\arcsin")
@@ -165,7 +167,7 @@ operators =
            , (EMathOperator "tanh", "\\tanh") ]
 
 -- | Attempts to convert a string into
-readLength :: String -> Maybe Rational
+readLength :: Text -> Maybe Rational
 readLength s = do
   (n, unit) <- case (parse parseLength "" s) of
                   Left _ -> Nothing
@@ -173,7 +175,7 @@ readLength s = do
   (n *) <$> unitToMultiplier unit
 
 
-parseLength :: Parsec String () (Rational, String)
+parseLength :: Parsec Text () (Rational, Text)
 parseLength = do
     neg <- option "" ((:[]) <$> char '-')
     dec <- many1 digit
@@ -188,14 +190,14 @@ parseLength = do
 reverseKeys :: [(a, b)] -> [(b, a)]
 reverseKeys = map (\(k,v) -> (v, k))
 
-textTypesMap :: M.Map TextType (String, String)
+textTypesMap :: M.Map TextType (Text, Text)
 textTypesMap = M.fromList textTypes
 
-revTextTypesMap :: M.Map String TextType
+revTextTypesMap :: M.Map Text TextType
 revTextTypesMap = M.fromList $ map (\(k, (v,_)) -> (v,k)) textTypes
 
 --TextType to (MathML, LaTeX)
-textTypes :: [(TextType, (String, String))]
+textTypes :: [(TextType, (Text, Text))]
 textTypes =
   [ ( TextNormal       , ("normal", "\\mathrm"))
   , ( TextBold         , ("bold", "\\mathbf"))
@@ -212,22 +214,22 @@ textTypes =
   , ( TextBoldFraktur         , ("bold-fraktur","\\mathbffrak"))
   , ( TextSansSerifItalic     , ("sans-serif-italic","\\mathsfit")) ]
 
-unicodeMath, base :: [String]
+unicodeMath, base :: [Text]
 unicodeMath = ["\\mathbfit", "\\mathbfsfup", "\\mathbfsfit", "\\mathbfscr", "\\mathbffrak", "\\mathsfit"]
 base = ["\\mathbb", "\\mathrm", "\\mathbf", "\\mathit", "\\mathsf", "\\mathtt", "\\mathfrak", "\\mathcal"]
 
-alts :: [(String, String)]
+alts :: [(Text, Text)]
 alts = [ ("\\mathbfit", "\\mathbf"), ("\\mathbfsfup", "\\mathbf"), ("\\mathbfsfit", "\\mathbf")
        , ("\\mathbfscr", "\\mathcal"), ("\\mathbffrak", "\\mathfrak"), ("\\mathsfit", "\\mathsf")]
 
-textPackage :: String -> [String] -> Bool
+textPackage :: Text -> [Text] -> Bool
 textPackage s e
   | s `elem` unicodeMath = "unicode-math" `elem` e
   | s `elem` base    = True
   | otherwise = True
 
 -- | Mapping between LaTeX scaling commands and the scaling factor
-scalers :: [(String, Rational)]
+scalers :: [(Text, Rational)]
 scalers =
           [ ("\\bigg", widthbigg)
           , ("\\Bigg", widthBigg)
@@ -267,31 +269,32 @@ getSpaceWidth _        = Nothing
 
 -- | Returns the sequence of unicode space characters closest to the
 -- specified width.
-getSpaceChars :: Rational -> [Char]
+getSpaceChars :: Rational -> Text
 getSpaceChars n =
   case n of
-       _ | n < 0      -> "\x200B"  -- no negative space chars in unicode
+       _ | n < 0      -> "\x200B"
+                         -- no negative space chars in unicode
          | n <= 2/18  -> "\x200A"
          | n <= 3/18  -> "\x2006"
          | n <= 4/18  -> "\xA0"   -- could also be "\x2005"
          | n <= 5/18  -> "\x2005"
          | n <= 7/18  -> "\x2004"
          | n <= 9/18  -> "\x2000"
-         | n < 1      -> '\x2000' : getSpaceChars (n - (1/2))
+         | n < 1      -> Text.cons '\x2000' (getSpaceChars (n - (1/2)))
          | n == 1     -> "\x2001"
-         | otherwise  -> '\x2001' : getSpaceChars (n - 1)
+         | otherwise  -> Text.cons '\x2001' (getSpaceChars (n - 1))
 
 -- Accents which go under the character
-under :: [String]
+under :: [Text]
 under = ["\\underbrace", "\\underline", "\\underbar", "\\underbracket"]
 
 -- We want to parse these but we can't represent them in LaTeX
-unavailable :: [String]
+unavailable :: [Text]
 unavailable = ["\\overbracket", "\\underbracket"]
 
 
 -- | Mapping between unicode combining character and LaTeX accent command
-diacriticals :: [(String, String)]
+diacriticals :: [(Text, Text)]
 diacriticals =
                [ ("\x00B4", "\\acute")
                , (("\x0060", "\\grave"))
@@ -324,7 +327,7 @@ diacriticals =
 
 
 -- Converts unit to multiplier to reach em
-unitToMultiplier :: String -> Maybe Rational
+unitToMultiplier :: Text -> Maybe Rational
 unitToMultiplier s = lookup s units
   where
     units =

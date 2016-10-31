@@ -82,6 +82,7 @@ Flag network-uri
 
 Library
     Build-depends:       xml, parsec >= 3, containers,
+                         text >= 0.11 && < 1.3,
                          pandoc-types >= 1.12.3.3 && < 1.18, mtl
     if impl(ghc >= 6.10)
       Build-depends: base >= 4.5 && < 5, syb

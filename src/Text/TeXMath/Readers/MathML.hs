@@ -56,7 +56,7 @@ import Control.Monad.Reader (ReaderT, runReaderT, asks, local)
 import Data.Either (rights)
 
 -- | Parse a MathML expression to a list of 'Exp'.
-readMathML :: String -> Either String [Exp]
+readMathML :: Text -> Either Text [Exp]
 readMathML inp = map fixTree <$>
   (runExcept (flip runReaderT defaultState (i >>= parseMathML)))
   where
@@ -67,11 +67,11 @@ data MMLState = MMLState { attrs :: [Attr]
                          , inAccent :: Bool
                          , curStyle :: TextType }
 
-type MML = ReaderT MMLState (Except String)
+type MML = ReaderT MMLState (Except Text)
 
 data SupOrSub = Sub | Sup deriving (Show, Eq)
 
-data IR a = Stretchy TeXSymbolType (String -> Exp) String
+data IR a = Stretchy TeXSymbolType (Text -> Exp) Text
           | Trailing (Exp -> Exp -> Exp) Exp
           | E a
 
@@ -130,7 +130,7 @@ expr' e =
 
 ident :: Element -> MML Exp
 ident e =  do
-  s <- getString e
+  s <- getText e
   let base = case getOperator (EMathOperator s) of
                    Just _   -> EMathOperator s
                    Nothing  -> EIdentifier s
@@ -143,22 +143,22 @@ ident e =  do
          | otherwise  -> return $ EStyled (getTextType v) [base]
 
 number :: Element -> MML Exp
-number e = ENumber <$> getString e
+number e = ENumber <$> getText e
 
 op :: Element -> MML (IR Exp)
 op e = do
   Just inferredPosition <- (<|>) <$> (getFormType <$> findAttrQ "form" e)
                             <*> asks position
-  opString <- getString e
-  let dummy = Operator opString "" inferredPosition 0 0 0 []
-  let opLookup = getMathMLOperator opString inferredPosition
+  opText <- getText e
+  let dummy = Operator opText "" inferredPosition 0 0 0 []
+  let opLookup = getMathMLOperator opText inferredPosition
   let opDict = fromMaybe dummy opLookup
   props <- filterM (checkAttr (properties opDict))
             ["fence", "accent", "stretchy"]
   let objectPosition = getPosition $ form opDict
   inScript <- asks inAccent
   let ts =  [("accent", ESymbol Accent), ("fence", ESymbol objectPosition)]
-  let fallback = case opString of
+  let fallback = case opText of
                       [t] -> ESymbol (getSymbolType t)
                       _   -> if isJust opLookup
                                 then ESymbol Ord
@@ -167,9 +167,9 @@ op e = do
         fromMaybe fallback
           (getFirst . mconcat $ map (First . flip lookup ts) props)
   if ("stretchy" `elem` props) && not inScript
-    then return $ Stretchy objectPosition constructor opString
+    then return $ Stretchy objectPosition constructor opText
     else do
-      return $ (E . constructor) opString
+      return $ (E . constructor) opText
   where
     checkAttr ps v = maybe (v `elem` ps) (=="true") <$> findAttrQ v e
 
@@ -177,7 +177,7 @@ text :: Element -> MML Exp
 text e = do
   textStyle <- maybe TextNormal getTextType
                 <$> (findAttrQ "mathvariant" e)
-  s <- getString e
+  s <- getText e
   -- mathml seems to use mtext for spacing often; we get
   -- more idiomatic math if we replace these with ESpace:
   return $ case (textStyle, s) of
@@ -193,7 +193,7 @@ literal e = do
   rquote <- fromMaybe "\x201D" <$> findAttrQ "rquote" e
   textStyle <- maybe TextNormal getTextType
                 <$> (findAttrQ "mathvariant" e)
-  s <- getString e
+  s <- getText e
   return $ EText textStyle (lquote ++ s ++ rquote)
 
 space :: Element -> MML Exp
@@ -262,7 +262,7 @@ isStretchy (Right _) = False
 
 -- If at the end of a delimiter we need to apply the script to the whole
 -- expression. We only insert Trailing when reordering Stretchy
-trailingSup :: Maybe (String, String -> Exp)  -> Maybe (String, String -> Exp)  -> [IR InEDelimited] -> Exp
+trailingSup :: Maybe (Text, Text -> Exp)  -> Maybe (Text, Text -> Exp)  -> [IR InEDelimited] -> Exp
 trailingSup open close es = go es
   where
     go [] = case (open, close) of
@@ -535,8 +535,8 @@ enterStyled tt s = s{ curStyle = tt }
 
 -- Utility
 
-getString :: Element -> MML String
-getString e = do
+getText :: Element -> MML Text
+getText e = do
   tt <- asks curStyle
   return $ fromUnicode tt $ stripSpaces $ concatMap cdData
          $ onlyText $ elContent $ e
@@ -559,26 +559,26 @@ checkArgs x e = do
 nargs :: Int -> [a] -> Bool
 nargs n xs = length xs == n
 
-err :: Element -> String
+err :: Element -> Text
 err e = name e ++ " line: " ++ (show $ elLine e) ++ (show e)
 
-findAttrQ :: String -> Element -> MML (Maybe String)
+findAttrQ :: Text -> Element -> MML (Maybe Text)
 findAttrQ s e = do
   inherit <- asks (lookupAttrQ s . attrs)
   return $
     findAttr (QName s Nothing Nothing) e
       <|> inherit
 
-lookupAttrQ :: String -> [Attr] -> Maybe String
+lookupAttrQ :: Text -> [Attr] -> Maybe Text
 lookupAttrQ s = lookupAttr (QName s Nothing Nothing)
 
-name :: Element -> String
+name :: Element -> Text
 name (elName -> (QName n _ _)) = n
 
-stripSpaces :: String -> String
+stripSpaces :: Text -> Text
 stripSpaces = reverse . (dropWhile isSpace) . reverse . (dropWhile isSpace)
 
-toAlignment :: String -> Alignment
+toAlignment :: Text -> Alignment
 toAlignment "left" = AlignLeft
 toAlignment "center" = AlignCenter
 toAlignment "right" = AlignRight
@@ -589,7 +589,7 @@ getPosition (FPrefix) = Open
 getPosition (FPostfix) = Close
 getPosition (FInfix) = Op
 
-getFormType :: Maybe String -> Maybe FormType
+getFormType :: Maybe Text -> Maybe FormType
 getFormType (Just "infix") = (Just FInfix)
 getFormType (Just "prefix") = (Just FPrefix)
 getFormType (Just "postfix") = (Just FPostfix)
@@ -606,7 +606,7 @@ isSpace '\t' = True
 isSpace '\n' = True
 isSpace _    = False
 
-spacelikeElems, cSpacelikeElems :: [String]
+spacelikeElems, cSpacelikeElems :: [Text]
 spacelikeElems = ["mtext", "mspace", "maligngroup", "malignmark"]
 cSpacelikeElems = ["mrow", "mstyle", "mphantom", "mpadded"]
 
@@ -615,11 +615,11 @@ spacelike e@(name -> uid) =
   uid `elem` spacelikeElems || uid `elem` cSpacelikeElems &&
     and (map spacelike (elChildren e))
 
-thicknessZero :: Maybe String -> Bool
+thicknessZero :: Maybe Text -> Bool
 thicknessZero (Just s) = thicknessToNum s == 0.0
 thicknessZero Nothing  = False
 
-widthToNum :: String -> Rational
+widthToNum :: Text -> Rational
 widthToNum s =
   case s of
        "veryverythinmathspace"  -> 1/18
@@ -638,7 +638,7 @@ widthToNum s =
        "negativeveryverythickmathspace" -> -7/18
        _ -> fromMaybe 0 (readLength s)
 
-thicknessToNum :: String -> Rational
+thicknessToNum :: Text -> Rational
 thicknessToNum s =
   case s of
        "thin" -> (3/18)

@@ -26,6 +26,8 @@ the <http://search.cpan.org/~sburke/Text-Unidecode-1.01/lib/Text/Unidecode.pm Te
 module Text.TeXMath.Unicode.ToASCII (getASCII) where
 
 import qualified Data.IntMap as M
+import Data.Text (Text)
+import qualified Data.Text as Text
 import Data.Char (ord)
 import Data.Maybe (fromMaybe)
 import Foreign.C
@@ -35,9 +37,9 @@ import Foreign.Storable
 
 -- | Approximates a single unicode character as an ASCII string
 --  (each character is between 0x00 and 0x7F).
-getASCII :: Char -> String
-getASCII u = fromMaybe "" (M.lookup (ord u) table)
-table :: M.IntMap String
+getASCII :: Char -> Text
+getASCII u = fromMaybe Text.empty (M.lookup (ord u) table)
+table :: M.IntMap Text
 table = M.fromList $ zip realKeyKey realValVal
 
 foreign import ccall unsafe "&keylookup" keyKey :: Ptr CInt
@@ -48,5 +50,5 @@ realKeyKey :: [Int]
 realKeyKey = unsafePerformIO $ mapM (\off ->  do  daInt <- peekElemOff keyKey off ; return $ fromIntegral daInt ) [ 0 .. 8922]
 
 {-# NOINLINE realValVal #-}
-realValVal :: [String]
-realValVal = unsafePerformIO $ mapM (\off -> do daPtrStr <- peekElemOff valVal off ; peekCString daPtrStr ) [0 .. 8922]
+realValVal :: [Text]
+realValVal = unsafePerformIO $ mapM (\off -> do daPtrStr <- peekElemOff valVal off ; Text.pack <$> peekCString daPtrStr ) [0 .. 8922]
