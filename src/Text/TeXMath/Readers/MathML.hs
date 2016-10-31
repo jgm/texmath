@@ -69,7 +69,7 @@ data MMLState = MMLState { attrs :: [Attr]
                          , inAccent :: Bool
                          , curStyle :: TextType }
 
-type MML = ReaderT MMLState (Except String)
+type MML = ReaderT MMLState (Except Text)
 
 data SupOrSub = Sub | Sup deriving (Show, Eq)
 
@@ -573,7 +573,7 @@ findAttrQ s e = do
 lookupAttrQ :: String -> [Attr] -> Maybe Text
 lookupAttrQ s = fmap Text.pack . lookupAttr (QName s Nothing Nothing)
 
-name :: Element -> String
+name :: Element -> Text
 name (elName -> (QName n _ _)) = n
 
 stripSpaces :: Text -> Text
