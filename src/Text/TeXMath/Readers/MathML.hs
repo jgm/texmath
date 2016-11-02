@@ -122,6 +122,8 @@ expr' e =
     "mtable" -> mkE <$> table e
     "maction" -> mkE <$> action e
     "semantics" -> mkE <$> semantics e
+    "maligngroup" -> return $ mkE empty
+    "malignmark" -> return $ mkE empty
     _ -> throwError $ "Unexpected element " ++ err e
   where
     mkE :: Exp -> [IR Exp]

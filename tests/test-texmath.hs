@@ -150,25 +150,32 @@ runReaderTest :: Bool
 runReaderTest regen fn input output = do
   inp_t <- readFile' input
   let result = ensureFinalNewline <$> fn inp_t
-  when regen $
-    writeFile output (either (const "") id result)
-  out_t <- ensureFinalNewline <$> readFile' output
-  case result of
-       Left msg       -> do
-         let errfile = dropExtension output ++ ".error"
-         errorExpected <- doesFileExist errfile
-         if errorExpected
-            then do
-              printPass input errfile
-              return (Pass input errfile)
-            else do
-              printError input output msg
-              return (Error input output)
-       Right r
-         | r == out_t -> printPass input output >>
-                         return (Pass input output)
-         | otherwise  -> printFail input (Right output) r >>
-                         return (Fail input output)
+  let errfile = dropExtension output ++ ".error"
+  errorExpected <- doesFileExist errfile
+  if errorExpected
+     then
+       case result of
+         Left _ -> do
+             printPass input errfile
+             return (Pass input errfile)
+         Right _ -> do
+             printError input errfile "error expected but not raised"
+             return (Error input errfile)
+     else do
+       when regen $
+         writeFile output (either (const "") id result)
+       out_t <- ensureFinalNewline <$> readFile' output
+       case result of
+            Left msg -> do
+                printError input output msg
+                return (Error input output)
+            Right r
+              | r == out_t -> do
+                  printPass input output
+                  return (Pass input output)
+              | otherwise  -> do
+                  printFail input (Right output) r
+                  return (Fail input output)
 
 runRoundTripTest :: String
                  -> ([Exp] -> String)
