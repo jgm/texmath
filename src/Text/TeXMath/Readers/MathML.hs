@@ -560,7 +560,7 @@ nargs :: Int -> [a] -> Bool
 nargs n xs = length xs == n
 
 err :: Element -> String
-err e = name e ++ maybe "" (\x -> " line: " ++ show x) (elLine e)
+err e = name e ++ maybe "" (\x -> " line " ++ show x) (elLine e)
 
 findAttrQ :: String -> Element -> MML (Maybe String)
 findAttrQ s e = do
