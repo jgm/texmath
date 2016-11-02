@@ -52,6 +52,7 @@ Extra-source-files:  README.markdown
                      tests/src/*.tex
                      tests/src/*.omml
                      tests/readers/mml/*.native
+                     tests/readers/mml/*.error
                      tests/readers/tex/*.native
                      tests/readers/omml/*.native
                      tests/writers/*.mml
