@@ -122,7 +122,7 @@ expr' e =
     "mtable" -> mkE <$> table e
     "maction" -> mkE <$> action e
     "semantics" -> mkE <$> semantics e
-    _ -> return $ mkE empty
+    _ -> throwError $ "Unexpected element " ++ err e
   where
     mkE :: Exp -> [IR Exp]
     mkE = (:[]) . E
@@ -560,7 +560,7 @@ checkArgs x e = do
   return cs
 
 err :: Element -> String
-err e = name e ++ " line: " ++ show (elLine e) ++ show e
+err e = name e ++ maybe "" (\x -> " line: " ++ show x) (elLine e)
 
 findAttrQ :: String -> Element -> MML (Maybe Text)
 findAttrQ s e = do
