@@ -560,7 +560,7 @@ checkArgs x e = do
   return cs
 
 err :: Element -> String
-err e = name e ++ maybe "" (\x -> " line: " ++ show x) (elLine e)
+err e = name e ++ maybe "" (\x -> " line " ++ show x) (elLine e)
 
 findAttrQ :: String -> Element -> MML (Maybe Text)
 findAttrQ s e = do
