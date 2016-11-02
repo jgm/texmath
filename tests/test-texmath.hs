@@ -154,8 +154,16 @@ runReaderTest regen fn input output = do
     writeFile output (either (const "") id result)
   out_t <- ensureFinalNewline <$> readFile' output
   case result of
-       Left msg       -> printError input output msg >>
-                         return (Error input output)
+       Left msg       -> do
+         let errfile = dropExtension output ++ ".error"
+         errorExpected <- doesFileExist errfile
+         if errorExpected
+            then do
+              printPass input errfile
+              return (Pass input errfile)
+            else do
+              printError input output msg
+              return (Error input output)
        Right r
          | r == out_t -> printPass input output >>
                          return (Pass input output)
