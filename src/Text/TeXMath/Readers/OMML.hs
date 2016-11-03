@@ -62,14 +62,13 @@ elemToOMML element  | isElem "m" "oMath" element =
   Just $ concat $ mapMaybe (elemToExps) (elChildren element)
 elemToOMML _ = Nothing
 
-isElem :: Text -> Text -> Element -> Bool
+isElem :: String -> String -> Element -> Bool
 isElem prefix name element =
   let qp = fromMaybe "" (qPrefix (elName element))
   in
-   qName (elName (Text.unpack element)) == name &&
-   qp == Text.unpack prefix
+   qName (elName element) == name && qp == prefix
 
-hasElemName:: Text -> Text -> QName -> Bool
+hasElemName:: String -> String -> QName -> Bool
 hasElemName prefix name qn =
   let qp = fromMaybe "" (qPrefix qn)
   in
