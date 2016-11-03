@@ -1,4 +1,4 @@
-{-# LANGUAGE ViewPatterns #-}
+{-# LANGUAGE ViewPatterns, OverloadedStrings #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -49,14 +49,16 @@ import Text.TeXMath.Compat (throwError, Except, runExcept, MonadError)
 import Control.Applicative ((<$>), (<|>), (<*>))
 import Control.Arrow ((&&&))
 import Data.Maybe (fromMaybe, listToMaybe, isJust)
-import Data.Monoid (mconcat, First(..), getFirst)
+import Data.Monoid (mconcat, First(..), getFirst, (<>))
 import Data.List (transpose)
-import Control.Monad (filterM, guard)
+import Control.Monad (filterM, guard, unless)
 import Control.Monad.Reader (ReaderT, runReaderT, asks, local)
 import Data.Either (rights)
+import Data.Text (Text)
+import qualified Data.Text as Text
 
 -- | Parse a MathML expression to a list of 'Exp'.
-readMathML :: Text -> Either Text [Exp]
+readMathML :: Text -> Either String [Exp]
 readMathML inp = map fixTree <$>
   (runExcept (flip runReaderT defaultState (i >>= parseMathML)))
   where
@@ -67,7 +69,7 @@ data MMLState = MMLState { attrs :: [Attr]
                          , inAccent :: Bool
                          , curStyle :: TextType }
 
-type MML = ReaderT MMLState (Except Text)
+type MML = ReaderT MMLState (Except String)
 
 data SupOrSub = Sub | Sup deriving (Show, Eq)
 
@@ -153,16 +155,17 @@ op e = do
   let dummy = Operator opText "" inferredPosition 0 0 0 []
   let opLookup = getMathMLOperator opText inferredPosition
   let opDict = fromMaybe dummy opLookup
-  props <- filterM (checkAttr (properties opDict))
+  props <- map Text.pack <$>
+      filterM (checkAttr (map Text.unpack $ properties opDict))
             ["fence", "accent", "stretchy"]
   let objectPosition = getPosition $ form opDict
   inScript <- asks inAccent
   let ts =  [("accent", ESymbol Accent), ("fence", ESymbol objectPosition)]
-  let fallback = case opText of
-                      [t] -> ESymbol (getSymbolType t)
-                      _   -> if isJust opLookup
-                                then ESymbol Ord
-                                else EMathOperator
+  let fallback = case Text.length opText of
+                      1  -> ESymbol (getSymbolType $ Text.head opText)
+                      _  -> if isJust opLookup
+                               then ESymbol Ord
+                               else EMathOperator
   let constructor =
         fromMaybe fallback
           (getFirst . mconcat $ map (First . flip lookup ts) props)
@@ -180,12 +183,11 @@ text e = do
   s <- getText e
   -- mathml seems to use mtext for spacing often; we get
   -- more idiomatic math if we replace these with ESpace:
-  return $ case (textStyle, s) of
-       (TextNormal, [c]) ->
-         case getSpaceWidth c of
-              Just w  -> ESpace w
-              Nothing -> EText textStyle s
-       _ -> EText textStyle s
+  return $ if textStyle == TextNormal && Text.length s == 1
+              then case getSpaceWidth (Text.head s) of
+                        Just w  -> ESpace w
+                        Nothing -> EText textStyle s
+              else EText textStyle s
 
 literal :: Element -> MML Exp
 literal e = do
@@ -194,7 +196,7 @@ literal e = do
   textStyle <- maybe TextNormal getTextType
                 <$> (findAttrQ "mathvariant" e)
   s <- getText e
-  return $ EText textStyle (lquote ++ s ++ rquote)
+  return $ EText textStyle (lquote <> s <> rquote)
 
 space :: Element -> MML Exp
 space e = do
@@ -371,13 +373,13 @@ fenced e = do
         case sep of
           "" -> elChildren e
           _  ->
-            let seps = map (\x -> unode "mo" [x]) sep
+            let seps = map (\x -> unode "mo" [x]) $ Text.unpack sep
                 sepsList = seps ++ repeat (last seps) in
                 fInterleave (elChildren e) (sepsList)
   safeExpr $ unode "mrow"
-              ([unode "mo" open | not $ null open] ++
+              ([unode "mo" (Text.unpack open) | not $ Text.null open] ++
                [unode "mrow" expanded] ++
-               [unode "mo" close | not $ null close])
+               [unode "mo" (Text.unpack close) | not $ Text.null close])
 
 -- This could approximate the variants
 enclosed :: Element -> MML Exp
@@ -389,8 +391,9 @@ enclosed e = do
 
 action :: Element -> MML Exp
 action e = do
-  selection <-  maybe 1 read <$> (findAttrQ "selection" e)  -- 1-indexing
-  safeExpr =<< maybeToEither ("Selection out of range")
+  selection <-  maybe 1 (read . Text.unpack) <$>
+                   (findAttrQ "selection" e)  -- 1-indexing
+  safeExpr =<< maybeToEither ("Selection out of range" :: String)
             (listToMaybe $ drop (selection - 1) (elChildren e))
 
 -- Scripts and Limits
@@ -538,7 +541,7 @@ enterStyled tt s = s{ curStyle = tt }
 getText :: Element -> MML Text
 getText e = do
   tt <- asks curStyle
-  return $ fromUnicode tt $ stripSpaces $ concatMap cdData
+  return $ fromUnicode tt $ stripSpaces $ Text.pack $ concat $ map cdData
          $ onlyText $ elContent $ e
 
 -- Finds only text data and replaces entity references with corresponding
@@ -552,31 +555,28 @@ onlyText (_:xs) = onlyText xs
 checkArgs :: Int -> Element -> MML [Element]
 checkArgs x e = do
   let cs = elChildren e
-  if nargs x cs
-    then return cs
-    else (throwError ("Incorrect number of arguments for " ++ err e))
+  unless (length cs == x) $
+    throwError ("Incorrect number of arguments for " ++ err e)
+  return cs
 
-nargs :: Int -> [a] -> Bool
-nargs n xs = length xs == n
+err :: Element -> String
+err e = name e ++ " line: " ++ show (elLine e) ++ show e
 
-err :: Element -> Text
-err e = name e ++ " line: " ++ (show $ elLine e) ++ (show e)
-
-findAttrQ :: Text -> Element -> MML (Maybe Text)
+findAttrQ :: String -> Element -> MML (Maybe Text)
 findAttrQ s e = do
   inherit <- asks (lookupAttrQ s . attrs)
-  return $
-    findAttr (QName s Nothing Nothing) e
+  return $ (fmap Text.pack $ findAttr (QName s Nothing Nothing) e)
       <|> inherit
 
-lookupAttrQ :: Text -> [Attr] -> Maybe Text
-lookupAttrQ s = lookupAttr (QName s Nothing Nothing)
+lookupAttrQ :: String -> [Attr] -> Maybe Text
+lookupAttrQ s = fmap Text.pack . lookupAttr (QName s Nothing Nothing)
 
-name :: Element -> Text
+name :: Element -> String
 name (elName -> (QName n _ _)) = n
 
 stripSpaces :: Text -> Text
-stripSpaces = reverse . (dropWhile isSpace) . reverse . (dropWhile isSpace)
+stripSpaces = Text.reverse . (Text.dropWhile isSpace) .
+              Text.reverse . (Text.dropWhile isSpace)
 
 toAlignment :: Text -> Alignment
 toAlignment "left" = AlignLeft
@@ -611,7 +611,7 @@ spacelikeElems = ["mtext", "mspace", "maligngroup", "malignmark"]
 cSpacelikeElems = ["mrow", "mstyle", "mphantom", "mpadded"]
 
 spacelike :: Element -> Bool
-spacelike e@(name -> uid) =
+spacelike e@(Text.pack . name -> uid) =
   uid `elem` spacelikeElems || uid `elem` cSpacelikeElems &&
     and (map spacelike (elChildren e))
 

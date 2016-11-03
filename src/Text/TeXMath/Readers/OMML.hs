@@ -62,14 +62,13 @@ elemToOMML element  | isElem "m" "oMath" element =
   Just $ concat $ mapMaybe (elemToExps) (elChildren element)
 elemToOMML _ = Nothing
 
-isElem :: Text -> Text -> Element -> Bool
+isElem :: String -> String -> Element -> Bool
 isElem prefix name element =
   let qp = fromMaybe "" (qPrefix (elName element))
   in
-   qName (elName (Text.unpack element)) == name &&
-   qp == Text.unpack prefix
+   qName (elName element) == name && qp == prefix
 
-hasElemName:: Text -> Text -> QName -> Bool
+hasElemName:: String -> String -> QName -> Bool
 hasElemName prefix name qn =
   let qp = fromMaybe "" (qPrefix qn)
   in
@@ -119,11 +118,11 @@ elemToBases _ = Nothing
 -- text lines into multiple columns. That's tricky, though, and this
 -- will get us most of the way for the time being.
 filterAmpersand :: Exp -> Exp
-filterAmpersand (EIdentifier s)   = EIdentifier (filter ('&' /=) s)
-filterAmpersand (EText tt s)      = EText tt (filter ('&' /=) s)
+filterAmpersand (EIdentifier s)   = EIdentifier (Text.filter ('&' /=) s)
+filterAmpersand (EText tt s)      = EText tt (Text.filter ('&' /=) s)
 filterAmpersand (EStyled tt exps) = EStyled tt (map filterAmpersand exps)
 filterAmpersand (EGrouped exps)   = EGrouped (map filterAmpersand exps)
-filterAmpersand e                    = e
+filterAmpersand e                 = e
 
 elemToOMathRunTextStyle :: Element -> OMathRunTextStyle
 elemToOMathRunTextStyle element
@@ -162,7 +161,8 @@ elemToOMathRunElem :: Element -> Maybe OMathRunElem
 elemToOMathRunElem element
   | isElem "w" "t" element
     || isElem "m" "t" element
-    || isElem "w" "delText" element = Just $ TextRun $ strContent element
+    || isElem "w" "delText" element =
+         Just $ TextRun $ Text.pack $ strContent element
   | isElem "w" "br" element = Just LnBrk
   | isElem "w" "tab" element = Just Tab
   | otherwise = Nothing
@@ -178,11 +178,11 @@ elemToOMathRunElems _ = Nothing
 
 oMathRunElemToText :: OMathRunElem -> Text
 oMathRunElemToText (TextRun s) = s
-oMathRunElemToText (LnBrk) = ['\n']
-oMathRunElemToText (Tab) = ['\t']
+oMathRunElemToText (LnBrk) = "\n"
+oMathRunElemToText (Tab) = "\t"
 
 oMathRunElemsToText :: [OMathRunElem] -> Text
-oMathRunElemsToText = concatMap oMathRunElemToText
+oMathRunElemsToText = Text.concat . map oMathRunElemToText
 
 oMathRunTextStyleToTextType :: OMathRunTextStyle -> Maybe TextType
 oMathRunTextStyleToTextType (Normal) = Just $ TextNormal
@@ -235,7 +235,7 @@ elemToExps' element | isElem "m" "acc" element = do
         Nothing -> '^'       -- default to hat.
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
-  return $ [EOver False baseExp (ESymbol Accent [chr'])]
+  return $ [EOver False baseExp (ESymbol Accent (Text.singleton chr'))]
 elemToExps' element | isElem "m" "bar" element = do
   pos <- filterChildName (hasElemName "m" "barPr") element >>=
             filterChildName (hasElemName "m" "pos") >>=
@@ -275,9 +275,9 @@ elemToExps' element | isElem "m" "d" element =
       beg = fromMaybe '(' begChr
       end = fromMaybe ')' endChr
       sep = fromMaybe '|' sepChr
-      exps = intercalate [Left [sep]] inDelimExps
+      exps = intercalate [Left (Text.singleton sep)] inDelimExps
   in
-   Just [EDelimited [beg] [end] exps]
+   Just [EDelimited (Text.singleton beg) (Text.singleton end) exps]
 elemToExps' element | isElem "m" "eqArr" element =
   let expLst = mapMaybe elemToBases (elChildren element)
       expLst' = map (\es -> [map filterAmpersand es]) expLst
@@ -296,7 +296,7 @@ elemToExps' element | isElem "m" "func" element = do
   -- We need a string for the fname, but omml gives it to us as a
   -- series of oMath elems. We're going to filter out the oMathRuns,
   -- which should work for us most of the time.
-  let fnameText = concatMap expToText $
+  let fnameText = Text.concat . map expToText $
                     concat $ mapMaybe (elemToExps) (elChildren fName)
   return [EMathOperator fnameText, baseExp]
 elemToExps' element | isElem "m" "groupChr" element = do
@@ -315,13 +315,13 @@ elemToExps' element | isElem "m" "groupChr" element = do
             Just (c:_) -> c
             _           -> '\65079'   -- default to overbrace
       in
-       return [EOver False baseExp (ESymbol Accent [chr'])]
+       return [EOver False baseExp (ESymbol Accent (Text.singleton chr'))]
     Just "bot" ->
       let chr' = case chr of
             Just (c:_) -> c
             _           -> '\65080'   -- default to underbrace
       in
-       return [EUnder False baseExp (ESymbol Accent [chr'])]
+       return [EUnder False baseExp (ESymbol Accent (Text.singleton chr'))]
     _          -> Nothing
 elemToExps' element | isElem "m" "limLow" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element
@@ -365,12 +365,12 @@ elemToExps' element | isElem "m" "nary" element = do
              elemToBase
   case limLoc of
     Just "undOvr" -> return [EUnderover True
-                              (ESymbol Op [opChr])
+                              (ESymbol Op (Text.singleton opChr))
                               (EGrouped subExps)
                               (EGrouped supExps)
                             , baseExp]
     _             -> return [ESubsup
-                              (ESymbol Op [opChr])
+                              (ESymbol Op (Text.singleton opChr))
                               (EGrouped subExps)
                               (EGrouped supExps)
                             , baseExp]
@@ -437,23 +437,23 @@ elemToExps' element | isElem "m" "r" element = do
 elemToExps' _ = Nothing
 
 interpretChar :: Char -> Exp
-interpretChar c | isDigit c = ENumber [c]
+interpretChar c | isDigit c = ENumber (Text.singleton c)
 interpretChar c = case getSymbolType c of
-  Alpha           -> EIdentifier [c]
-  Ord | isDigit c -> ENumber [c]
+  Alpha           -> EIdentifier (Text.singleton c)
+  Ord | isDigit c -> ENumber (Text.singleton c)
       | otherwise -> case getSpaceWidth c of
                            Just x  -> ESpace x
-                           Nothing -> ESymbol Ord [c]
-  symType         -> ESymbol symType [c]
+                           Nothing -> ESymbol Ord (Text.singleton c)
+  symType         -> ESymbol symType (Text.singleton c)
 
 interpretText :: Text -> [Exp]
-interpretText [c]       = [interpretChar c]
 interpretText s
-  | all isDigit s         = [ENumber s]
+  | Text.length s == 1    = [interpretChar $ Text.head s]
+  | Text.all isDigit s    = [ENumber s]
   | isJust (getOperator (EMathOperator s))
                           = [EMathOperator s]
   | otherwise             =
-      case map interpretChar s of
+      case map interpretChar $ Text.unpack s of
             xs | all isIdentifierOrSpace xs -> [EText TextNormal s]
                | otherwise                  -> xs
   where isIdentifierOrSpace (EIdentifier _) = True
@@ -466,6 +466,6 @@ expToText (EIdentifier s) = s
 expToText (EMathOperator s) = s
 expToText (ESymbol _ s) = s
 expToText (EText _ s) = s
-expToText (EGrouped exps) = concatMap expToText exps
-expToText (EStyled _ exps) = concatMap expToText exps
+expToText (EGrouped exps) = Text.concat $ map expToText exps
+expToText (EStyled _ exps) = Text.concat $ map expToText exps
 expToText _ = ""

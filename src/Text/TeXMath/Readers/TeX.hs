@@ -1,4 +1,4 @@
-{-# LANGUAGE TupleSections #-}
+{-# LANGUAGE TupleSections, OverloadedStrings #-}
 {-
 Copyright (C) 2009 John MacFarlane <jgm@berkeley.edu>
 
@@ -38,6 +38,8 @@ import Text.TeXMath.Readers.TeX.Macros (applyMacros, parseMacroDefinitions)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Data.Maybe (fromMaybe, fromJust)
 import Text.TeXMath.Unicode.ToUnicode (toUnicode)
+import Data.Text (Text)
+import qualified Data.Text as Text
 
 type TP = Parser
 
@@ -68,13 +70,13 @@ expr1 = choice
           ] <* ignorable
 
 -- | Parse a formula, returning a list of 'Exp'.
-readTeX :: Text -> Either Text [Exp]
+readTeX :: Text -> Either String [Exp]
 readTeX inp =
-  let (ms, rest) = parseMacroDefinitions inp in
+  let (ms, rest) = parseMacroDefinitions (Text.unpack inp) in
   either (Left . showParseError inp) (Right . id)
-    $ parse formula "formula" (applyMacros ms rest)
+    $ parse formula "formula" (Text.pack $ applyMacros ms rest)
 
-showParseError :: Text -> ParseError -> Text
+showParseError :: Text -> ParseError -> String
 showParseError inp pe =
   snippet ++ "\n" ++ caretline ++
     showErrorMessages "or" "unknown" "expecting" "unexpected" "eof"
@@ -82,7 +84,7 @@ showParseError inp pe =
   where errln = sourceLine (errorPos pe)
         errcol = sourceColumn (errorPos pe)
         snipoffset = max 0 (errcol - 20)
-        inplns = lines inp
+        inplns = Text.lines inp
         ln = if length inplns >= errln
                 then inplns !! (errln - 1)
                 else ""  -- should not happen
@@ -3773,7 +3775,7 @@ grave 'e' = "è"
 grave 'i' = "ì"
 grave 'o' = "ò"
 grave 'u' = "ù"
-grave c   = [c]
+grave c   = Text.singleton c
 
 acute :: Char -> Text
 acute 'A' = "Á"
@@ -3800,7 +3802,7 @@ acute 'S' = "Ś"
 acute 's' = "ś"
 acute 'Z' = "Ź"
 acute 'z' = "ź"
-acute c   = [c]
+acute c   = Text.singleton c
 
 circ :: Char -> Text
 circ 'A' = "Â"
@@ -3827,7 +3829,7 @@ circ 'W' = "Ŵ"
 circ 'w' = "ŵ"
 circ 'Y' = "Ŷ"
 circ 'y' = "ŷ"
-circ c   = [c]
+circ c   = Text.singleton c
 
 tilde :: Char -> Text
 tilde 'A' = "Ã"
@@ -3840,7 +3842,7 @@ tilde 'U' = "Ũ"
 tilde 'u' = "ũ"
 tilde 'N' = "Ñ"
 tilde 'n' = "ñ"
-tilde c   = [c]
+tilde c   = Text.singleton c
 
 umlaut :: Char -> Text
 umlaut 'A' = "Ä"
@@ -3853,7 +3855,7 @@ umlaut 'e' = "ë"
 umlaut 'i' = "ï"
 umlaut 'o' = "ö"
 umlaut 'u' = "ü"
-umlaut c   = [c]
+umlaut c   = Text.singleton c
 
 dot :: Char -> Text
 dot 'C' = "Ċ"
@@ -3865,7 +3867,7 @@ dot 'g' = "ġ"
 dot 'I' = "İ"
 dot 'Z' = "Ż"
 dot 'z' = "ż"
-dot c   = [c]
+dot c   = Text.singleton c
 
 macron :: Char -> Text
 macron 'A' = "Ā"
@@ -3878,7 +3880,7 @@ macron 'e' = "ē"
 macron 'i' = "ī"
 macron 'o' = "ō"
 macron 'u' = "ū"
-macron c   = [c]
+macron c   = Text.singleton c
 
 cedilla :: Char -> Text
 cedilla 'c' = "ç"
@@ -3893,7 +3895,7 @@ cedilla 'h' = "ḩ"
 cedilla 'H' = "Ḩ"
 cedilla 'o' = "o̧"
 cedilla 'O' = "O̧"
-cedilla c   = [c]
+cedilla c   = Text.singleton c
 
 hacek :: Char -> Text
 hacek 'A' = "Ǎ"
@@ -3929,7 +3931,7 @@ hacek 'U' = "Ǔ"
 hacek 'u' = "ǔ"
 hacek 'Z' = "Ž"
 hacek 'z' = "ž"
-hacek c   = [c]
+hacek c   = Text.singleton c
 
 breve :: Char -> Text
 breve 'A' = "Ă"
@@ -3944,4 +3946,4 @@ breve 'O' = "Ŏ"
 breve 'o' = "ŏ"
 breve 'U' = "Ŭ"
 breve 'u' = "ŭ"
-breve c   = [c]
+breve c   = Text.singleton c
