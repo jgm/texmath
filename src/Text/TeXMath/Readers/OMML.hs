@@ -43,7 +43,7 @@ import Control.Applicative ((<$>))
 import Data.Text (Text)
 import qualified Data.Text as Text
 
-readOMML :: Text -> Either Text [Exp]
+readOMML :: Text -> Either String [Exp]
 readOMML s | Just e <- parseXMLDoc s =
   case elemToOMML e of
     Just exs -> Right $ map fixTree $ unGroup exs

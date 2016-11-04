@@ -4,6 +4,8 @@ flags:
     executable: true
 packages:
 - '.'
-extra-deps:
-- pandoc-types-1.17.0.4
+- location:
+    git: 'https://github.com/jgm/pandoc-types'
+    commit: 596cb48e897dbc38ecfa51984f3f8ec78c4cdaee
+extra-deps: []
 resolver: lts-7.5

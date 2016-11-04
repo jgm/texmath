@@ -1,8 +1,12 @@
-{-# LANGUAGE CPP #-}
+{-# LANGUAGE CPP, OverloadedStrings #-}
 module Main where
 
 import Text.TeXMath
+import Data.Monoid
 import Data.Char (isSpace)
+import Data.Text (Text)
+import qualified Data.Text as Text
+import qualified Data.Text.IO as TIO
 import Text.XML.Light
 import System.IO
 import System.Environment
@@ -16,7 +20,6 @@ import Network.URI (unEscapeString)
 import Data.List.Split (splitOn)
 import Data.Aeson (encode, (.=), object)
 import qualified Data.ByteString.Lazy as B
-import qualified Data.Text as T
 import Data.Version ( showVersion )
 import Paths_texmath (version)
 
@@ -30,9 +33,9 @@ inHtml e =
         unode "meta" ()
     , unode "body" e ]
 
-type Reader = String -> Either String [Exp]
+type Reader = Text -> Either String [Exp]
 data Writer = XMLWriter (DisplayType -> [Exp] -> Element)
-            | StringWriter (DisplayType -> [Exp] -> String)
+            | TextWriter (DisplayType -> [Exp] -> Text)
             | PandocWriter (DisplayType -> [Exp] -> Maybe [Inline])
 
 readers :: [(String, Reader)]
@@ -42,17 +45,17 @@ readers = [
   , ("omml", readOMML)
   , ("native", readNative)]
 
-readNative :: String -> Either String [Exp]
+readNative :: Text -> Either String [Exp]
 readNative s =
-  case reads s of
+  case reads (Text.unpack s) of
        ((exps, ws):_) | all isSpace ws -> Right exps
        ((_, (_:_)):_) -> Left "Could not read whole input as native Exp"
        _ -> Left "Could not read input as native Exp"
 
 writers :: [(String, Writer)]
 writers = [
-    ("native", StringWriter (\_ es -> show es) )
-  , ("tex", StringWriter (\_ -> writeTeX))
+    ("native", TextWriter (\_ es -> Text.pack (show es)))
+  , ("tex", TextWriter (\_ -> writeTeX))
   , ("omml",  XMLWriter writeOMML)
   , ("xhtml",   XMLWriter (\dt e -> inHtml (writeMathML dt e)))
   , ("mathml",   XMLWriter writeMathML)
@@ -91,10 +94,10 @@ options =
       "Show help"
   ]
 
-output :: DisplayType -> Writer -> [Exp] -> String
-output dt (XMLWriter w) es    = output dt (StringWriter (\dt' -> ppElement . w dt' )) es
-output dt (StringWriter w) es = w dt es
-output dt (PandocWriter w) es = show (fromMaybe fallback (w dt es))
+output :: DisplayType -> Writer -> [Exp] -> Text
+output dt (XMLWriter w) es    = output dt (TextWriter (\dt' -> Text.pack . ppElement . w dt' )) es
+output dt (TextWriter w) es = w dt es
+output dt (PandocWriter w) es = Text.pack (show (fromMaybe fallback (w dt es)))
   where fallback = [Math mt (writeTeX es)]
         mt = case dt of
                   DisplayBlock  -> DisplayMath
@@ -103,13 +106,15 @@ output dt (PandocWriter w) es = show (fromMaybe fallback (w dt es))
 err :: Bool -> Int -> String -> IO a
 err cgi code msg = do
   if cgi
-     then B.putStr $ encode $ object [T.pack "error" .= msg]
+     then B.putStr $ encode $ object [Text.pack "error" .= msg]
      else hPutStrLn stderr msg
   exitWith $ ExitFailure code
 
-ensureFinalNewline :: String -> String
-ensureFinalNewline "" = ""
-ensureFinalNewline xs = if last xs == '\n' then xs else xs ++ "\n"
+ensureFinalNewline :: Text -> Text
+ensureFinalNewline xs
+  | Text.null xs = Text.empty
+  | Text.last xs == '\n' = xs
+  | otherwise = xs <> "\n"
 
 urlUnencode :: String -> String
 urlUnencode = unEscapeString . plusToSpace
@@ -131,8 +136,8 @@ runCommandLine = do
   let (actions, files, _) = getOpt RequireOrder options args
   opts <- foldl (>>=) (return def) actions
   inp <- case files of
-              [] -> getContents
-              _  -> concat <$> mapM readFile files
+              [] -> TIO.getContents
+              _  -> Text.concat <$> mapM TIO.readFile files
   reader <- case lookup (optIn opts) readers of
                   Just r -> return r
                   Nothing -> err False 3 "Unrecognised reader"
@@ -141,7 +146,7 @@ runCommandLine = do
                   Nothing -> err False 5 "Unrecognised writer"
   case reader inp of
         Left msg -> err False 1 msg
-        Right v  -> putStr $ ensureFinalNewline
+        Right v  -> TIO.putStr $ ensureFinalNewline
                            $ output (optDisplay opts) writer v
   exitWith ExitSuccess
 
@@ -150,10 +155,10 @@ runCGI = do
   query <- getContents
   let topairs xs = case break (=='=') xs of
                         (ys,('=':zs)) -> (urlUnencode ys, urlUnencode zs)
-                        (ys,_)        -> (urlUnencode ys,"")
+                        (ys,_)        -> (urlUnencode ys, "")
   let pairs = map topairs $ splitOn "&" query
   inp <- case lookup "input" pairs of
-                 Just x  -> return x
+                 Just x  -> return $ Text.pack x
                  Nothing -> err True 3 "Query missing 'input'"
   reader <- case lookup "from" pairs of
                  Just x  -> case lookup x readers of
@@ -170,7 +175,7 @@ runCGI = do
   case reader inp of
         Left msg -> err True 1 msg
         Right v  -> B.putStr $ encode $ object
-                       [ T.pack "success" .=
+                       [ Text.pack "success" .=
                        ensureFinalNewline (output
                         (if inline
                             then DisplayInline
