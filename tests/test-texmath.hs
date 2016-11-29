@@ -52,7 +52,7 @@ main = do
                    texs <- runRoundTrip "tex" writeTeX readTeX
                    ommls <- runRoundTrip "omml"
                                (ppTopElement .  writeOMML DisplayBlock) readOMML
-                   mathmls <- runRoundTrip "mmml"
+                   mathmls <- runRoundTrip "mml"
                                 (ppTopElement . writeMathML DisplayBlock)
                                 readMathML
                    return $ texs ++ ommls ++ mathmls
