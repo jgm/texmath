@@ -540,11 +540,28 @@ boxed = EBoxed <$> (ctrlseq "boxed" *> texToken)
 text :: TP Exp
 text = do
   c <- oneOfCommands (M.keys textOps)
-  contents <- bracedText
+  op <- maybe mzero return $ M.lookup c textOps
+  char '{'
+  let chunk = ((op . concat) <$> many1 textual)
+            <|> (char '{' *> (asGroup <$> manyTill chunk (char '}')))
+            <|> innermath
+  contents <- manyTill chunk (char '}')
   spaces
-  case M.lookup c textOps of
-       Nothing   -> mzero
-       Just op   -> return $ op contents
+  case contents of
+       []   -> return (op "")
+       [x]  -> return x
+       xs   -> return (EGrouped xs)
+
+innermath :: TP Exp
+innermath = choice $ map innerMathWith
+              [("$","$"),("$$","$$"),("\\(","\\)"),("\\[","\\]")]
+
+innerMathWith :: (String, String) -> TP Exp
+innerMathWith (opener, closer) = do
+  try (string opener)
+  e <- manyExp expr
+  string closer
+  return e
 
 textOps :: M.Map String (String -> Exp)
 textOps = M.fromList
@@ -3686,7 +3703,7 @@ symbols = M.fromList
 -- text mode parsing
 
 textual :: TP String
-textual = regular <|> sps <|> ligature <|> textCommand <|> bracedText
+textual = regular <|> sps <|> ligature <|> textCommand
             <?> "text"
 
 sps :: TP String
@@ -3708,16 +3725,10 @@ ligature = try ("\x2014" <$ string "---")
 textCommand :: TP String
 textCommand = do
   cmd <- oneOfCommands (M.keys textCommands)
+  optional $ try (char '{' >> spaces >> char '}')
   case M.lookup cmd textCommands of
        Nothing -> fail ("Unknown control sequence " ++ cmd)
        Just c  -> c
-
-bracedText :: TP String
-bracedText = do
-  char '{'
-  inner <- concat <$> many textual
-  char '}'
-  return inner
 
 tok :: TP Char
 tok = (try $ char '{' *> spaces *> anyChar <* spaces <* char '}')
