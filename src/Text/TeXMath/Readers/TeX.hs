@@ -540,7 +540,11 @@ boxed = EBoxed <$> (ctrlseq "boxed" *> texToken)
 text :: TP Exp
 text = do
   c <- oneOfCommands (M.keys textOps)
-  maybe mzero (<$> (bracedText <* spaces)) $ M.lookup c textOps
+  contents <- bracedText
+  spaces
+  case M.lookup c textOps of
+       Nothing   -> mzero
+       Just op   -> return $ op contents
 
 textOps :: M.Map String (String -> Exp)
 textOps = M.fromList
