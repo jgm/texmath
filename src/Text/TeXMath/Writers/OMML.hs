@@ -30,6 +30,7 @@ import Data.Generics (everywhere, mkT)
 writeOMML :: DisplayType -> [Exp] -> Element
 writeOMML dt = container . concatMap (showExp [])
             . everywhere (mkT $ handleDownup dt)
+            . everywhere (mkT $ handleDownup' dt)
     where container = case dt of
                   DisplayBlock  -> \x -> mnode "oMathPara"
                                     [ mnode "oMathParaPr"
@@ -133,12 +134,43 @@ handleDownup dt (exp' : xs) =
          | isNary x  -> EGrouped [ESubsup x emptyGroup y, next] : rest
        ESubsup x y z
          | isNary x  -> EGrouped [ESubsup x y z, next] : rest
-       _             -> exp' : next : rest
+       _             -> exp' : xs
     where (next, rest) = case xs of
                               (t:ts) -> (t,ts)
                               []     -> (emptyGroup, [])
           emptyGroup = EGrouped []
 handleDownup _ []            = []
+
+-- TODO This duplication is ugly and inefficient.  See #92.
+handleDownup' :: DisplayType -> [InEDelimited] -> [InEDelimited]
+handleDownup' dt ((Right exp') : xs) =
+  case exp' of
+       EOver convertible x y
+         | isNary x  ->
+             Right (EGrouped [EUnderover convertible x emptyGroup y, next]) :
+             rest
+         | convertible && dt == DisplayInline -> Right (ESuper x y) : xs
+       EUnder convertible x y
+         | isNary x  ->
+             Right (EGrouped [EUnderover convertible x y emptyGroup, next]) :
+             rest
+         | convertible && dt == DisplayInline -> Right (ESub x y) : xs
+       EUnderover convertible x y z
+         | isNary x  ->
+             Right (EGrouped [EUnderover convertible x y z, next]) : rest
+         | convertible && dt == DisplayInline -> Right (ESubsup x y z) : xs
+       ESub x y
+         | isNary x  -> Right (EGrouped [ESubsup x y emptyGroup, next]) : rest
+       ESuper x y
+         | isNary x  -> Right (EGrouped [ESubsup x emptyGroup y, next]) : rest
+       ESubsup x y z
+         | isNary x  -> Right (EGrouped [ESubsup x y z, next]) : rest
+       _             -> Right exp' : xs
+    where (next, rest) = case xs of
+                              (Right t:ts) -> (t,ts)
+                              _            -> (emptyGroup, xs)
+          emptyGroup = EGrouped []
+handleDownup' _ xs = xs
 
 showExp :: [Element] -> Exp -> [Element]
 showExp props e =

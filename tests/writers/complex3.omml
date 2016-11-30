@@ -22747,27 +22747,25 @@
               <m:r>
                 <m:t>↑</m:t>
               </m:r>
-              <m:limLow>
-                <m:e>
-                  <m:limUpp>
-                    <m:e>
-                      <m:r>
-                        <m:t>∑</m:t>
-                      </m:r>
-                    </m:e>
-                    <m:lim>
-                      <m:r>
-                        <m:t>2</m:t>
-                      </m:r>
-                    </m:lim>
-                  </m:limUpp>
-                </m:e>
-                <m:lim>
+              <m:nary>
+                <m:naryPr>
+                  <m:chr m:val="∑" />
+                  <m:limLoc m:val="undOvr" />
+                  <m:subHide m:val="0" />
+                  <m:supHide m:val="0" />
+                </m:naryPr>
+                <m:sub>
                   <m:r>
                     <m:t>1</m:t>
                   </m:r>
-                </m:lim>
-              </m:limLow>
+                </m:sub>
+                <m:sup>
+                  <m:r>
+                    <m:t>2</m:t>
+                  </m:r>
+                </m:sup>
+                <m:e />
+              </m:nary>
             </m:e>
           </m:d>
         </m:e>
@@ -22824,27 +22822,25 @@
               <m:r>
                 <m:t>|</m:t>
               </m:r>
-              <m:limLow>
-                <m:e>
-                  <m:limUpp>
-                    <m:e>
-                      <m:r>
-                        <m:t>∑</m:t>
-                      </m:r>
-                    </m:e>
-                    <m:lim>
-                      <m:r>
-                        <m:t>2</m:t>
-                      </m:r>
-                    </m:lim>
-                  </m:limUpp>
-                </m:e>
-                <m:lim>
+              <m:nary>
+                <m:naryPr>
+                  <m:chr m:val="∑" />
+                  <m:limLoc m:val="undOvr" />
+                  <m:subHide m:val="0" />
+                  <m:supHide m:val="0" />
+                </m:naryPr>
+                <m:sub>
                   <m:r>
                     <m:t>1</m:t>
                   </m:r>
-                </m:lim>
-              </m:limLow>
+                </m:sub>
+                <m:sup>
+                  <m:r>
+                    <m:t>2</m:t>
+                  </m:r>
+                </m:sup>
+                <m:e />
+              </m:nary>
             </m:e>
           </m:d>
         </m:e>
@@ -22901,27 +22897,25 @@
               <m:r>
                 <m:t>|</m:t>
               </m:r>
-              <m:limLow>
-                <m:e>
-                  <m:limUpp>
-                    <m:e>
-                      <m:r>
-                        <m:t>∑</m:t>
-                      </m:r>
-                    </m:e>
-                    <m:lim>
-                      <m:r>
-                        <m:t>2</m:t>
-                      </m:r>
-                    </m:lim>
-                  </m:limUpp>
-                </m:e>
-                <m:lim>
+              <m:nary>
+                <m:naryPr>
+                  <m:chr m:val="∑" />
+                  <m:limLoc m:val="undOvr" />
+                  <m:subHide m:val="0" />
+                  <m:supHide m:val="0" />
+                </m:naryPr>
+                <m:sub>
                   <m:r>
                     <m:t>1</m:t>
                   </m:r>
-                </m:lim>
-              </m:limLow>
+                </m:sub>
+                <m:sup>
+                  <m:r>
+                    <m:t>2</m:t>
+                  </m:r>
+                </m:sup>
+                <m:e />
+              </m:nary>
             </m:e>
           </m:d>
         </m:e>
@@ -22988,27 +22982,25 @@
                   <m:r>
                     <m:t>↕</m:t>
                   </m:r>
-                  <m:limLow>
-                    <m:e>
-                      <m:limUpp>
-                        <m:e>
-                          <m:r>
-                            <m:t>∑</m:t>
-                          </m:r>
-                        </m:e>
-                        <m:lim>
-                          <m:r>
-                            <m:t>2</m:t>
-                          </m:r>
-                        </m:lim>
-                      </m:limUpp>
-                    </m:e>
-                    <m:lim>
+                  <m:nary>
+                    <m:naryPr>
+                      <m:chr m:val="∑" />
+                      <m:limLoc m:val="undOvr" />
+                      <m:subHide m:val="0" />
+                      <m:supHide m:val="0" />
+                    </m:naryPr>
+                    <m:sub>
                       <m:r>
                         <m:t>1</m:t>
                       </m:r>
-                    </m:lim>
-                  </m:limLow>
+                    </m:sub>
+                    <m:sup>
+                      <m:r>
+                        <m:t>2</m:t>
+                      </m:r>
+                    </m:sup>
+                    <m:e />
+                  </m:nary>
                 </m:e>
               </m:d>
               <m:r>
