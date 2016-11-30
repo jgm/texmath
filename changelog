@@ -1,3 +1,25 @@
+texmath (0.9)
+
+  * OMML writer: Properly handle nary inside delimiters (#92).
+    Previously under-overs inside delimiters didn't get
+    converted to nary the way they did outside of delimiters.
+  * TeX reader: Support bm, mathbold, pmd.
+  * OMML reader: Handle w:sym (#65).
+  * New module, Text.TeXMath.Unicode.Fonts, for MS font code point
+    lookup.  Copied from pandoc Text.Pandoc.Readers.Docx.Fonts,
+    which will be changed to import this.  [API change]
+  * Fixed typo in test program for round-trip tests.
+  * Parse math inside text constructions (#62).  E.g.
+    `\text{if $y$ is greater than $0$}` Text and math can nest indefinitely.
+  * Modify test suite so tests can be marked as "ought to raise error."
+    So far this is only used in mml.  If the test is called foo
+    and `readers/mml/foo.error` exists, then the test is expected
+    to raise a parse error.
+  * MathML reader err: Don't print colon after line number.
+  * Restore proper error handling to MathML reader.  Note that the tests
+    need to be redone, since they assumed the old behavior of just
+    returning empty elements on parse errors.
+
 texmath (0.8.6.7)
 
   * TeX reader: treat backslash + newline as like backslash + space.
