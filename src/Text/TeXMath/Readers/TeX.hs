@@ -142,7 +142,7 @@ expr = do
 --     - False otherwise
 operatorname :: TP (Exp, Bool)
 operatorname = do
-    ctrlseq "operatorname" <|> ctrlseq "mathop"
+    ctrlseq "operatorname"
     -- these are slightly different but we won't worry about that here...
     convertible <- (char '*' >> spaces >> return True) <|> return False
     op <- expToOperatorName <$> texToken
@@ -623,7 +623,10 @@ mathopWith name ty = try $ do
   case e of
      ESymbol _ x   -> return $ ESymbol ty x
      EIdentifier x -> return $ ESymbol ty x
-     x             -> return x
+     x | ty == Op  -> case expToOperatorName x of
+                           Just y -> return $ EMathOperator y
+                           _      -> return x
+       | otherwise -> return x
 
 binary :: TP Exp
 binary = do
