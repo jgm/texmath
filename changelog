@@ -1,3 +1,9 @@
+texmath (0.9.1)
+
+  * Pandoc writer:  add thin space after math operators.
+  * TeX reader: improve parsing of `\mathop` to allow
+    multi-character operator names.
+
 texmath (0.9)
 
   * OMML writer: Properly handle nary inside delimiters (#92).
