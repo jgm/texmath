@@ -35,8 +35,13 @@ writePandoc _ exps = expsToInlines TextNormal exps
 
 expsToInlines :: TextType -> [Exp] -> Maybe [Inline]
 expsToInlines tt xs = do
-  res <- mapM (expToInlines tt) (addSpaces xs)
+  res <- mapM (expToInlines tt) (addSpaces $ map mathOpToSymbol xs)
   return (concat res)
+
+-- This is to ensure proper spacing around math operators:
+mathOpToSymbol :: Exp -> Exp
+mathOpToSymbol (EMathOperator s) = ESymbol Op s
+mathOpToSymbol x = x
 
 -- This adds spaces around certain symbols, in accord
 -- with Appendix G of TeXBook.
