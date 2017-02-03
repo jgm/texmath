@@ -28,7 +28,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 Utilities to convert between MS font codepoints and unicode characters.
 -}
 module Text.TeXMath.Unicode.Fonts (getUnicode, Font(..), stringToFont) where
-
+import qualified Data.Map as M
 
 -- | Enumeration of recognised fonts
 data Font = Symbol -- ^ <http://en.wikipedia.org/wiki/Symbol_(typeface) Adobe Symbol>
@@ -42,11 +42,11 @@ stringToFont _ = Nothing
 -- | Given a font and codepoint, returns the corresponding unicode
 -- character
 getUnicode :: Font -> Char -> Maybe Char
-getUnicode Symbol c = lookup c symbol
+getUnicode Symbol c = M.lookup c symbol
 
 -- Generated from lib/fonts/symbol.txt
-symbol :: [(Char, Char)]
-symbol =
+symbol :: M.Map Char Char
+symbol = M.fromList
   [ (' ',' ')
   , (' ','\160')
   , ('!','!')
