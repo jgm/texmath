@@ -83,6 +83,7 @@ expToInlines :: TextType -> Exp -> Maybe [Inline]
 expToInlines tt (ENumber s) = Just [renderStr tt s]
 expToInlines TextNormal (EIdentifier s) = Just [renderStr TextItalic s]
 expToInlines tt (EIdentifier s) = Just [renderStr tt s]
+expToInlines tt (EMathOperator s) = Just [renderStr tt s]
 expToInlines tt (ESymbol _ s) = Just [renderStr tt s]
 expToInlines tt (EDelimited start end xs) = do
   xs' <- mapM (either (return . (:[]) . renderStr tt) (expToInlines tt)) xs

@@ -143,14 +143,14 @@ writeExp (EIdentifier s) = do
        []      -> return ()
        [t]     -> tell [t]
        ts      -> tell [Grouped ts]
-writeExp (ESymbol Op s) | length s /= 1 = do
-  case S.getOperator s of
+writeExp o@(EMathOperator s) = do
+  math <- getTeXMathM s
+  case S.getOperator o of
        Just op  -> tell [op]
        Nothing  -> do
          tell [ControlSeq "\\operatorname"]
          -- use \operatorname* if convertible
          asks mathConvertible >>= flip when (tell [Token '*'])
-         math <- getTeXMathM s
          tell [Grouped math]
 writeExp (ESymbol Ord [c])  -- do not render "invisible operators"
   | c `elem` ['\x2061'..'\x2064'] = return () -- see 3.2.5.5 of mathml spec
@@ -390,6 +390,7 @@ isFancy _ = False
 
 
 isOperator :: Exp -> Bool
+isOperator (EMathOperator _) = True
 isOperator (ESymbol Op _)    = True
 isOperator _                 = False
 

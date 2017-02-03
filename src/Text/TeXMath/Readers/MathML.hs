@@ -133,8 +133,8 @@ expr' e =
 ident :: Element -> MML Exp
 ident e =  do
   s <- getString e
-  let base = case getOperator s of
-                   Just _   -> ESymbol Op s
+  let base = case getOperator (EMathOperator s) of
+                   Just _   -> EMathOperator s
                    Nothing  -> EIdentifier s
   mbVariant <- findAttrQ "mathvariant" e
   curstyle <- asks curStyle
@@ -164,7 +164,7 @@ op e = do
                       [t] -> ESymbol (getSymbolType t)
                       _   -> if isJust opLookup
                                 then ESymbol Ord
-                                else ESymbol Op
+                                else EMathOperator
   let constructor =
         fromMaybe fallback
           (getFirst . mconcat $ map (First . flip lookup ts) props)
