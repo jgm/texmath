@@ -142,7 +142,8 @@ expr = do
 --     - False otherwise
 operatorname :: TP (Exp, Bool)
 operatorname = do
-    ctrlseq "operatorname"
+    ctrlseq "operatorname" <|> ctrlseq "mathop"
+    -- these are slightly different but we won't worry about that here...
     convertible <- (char '*' >> spaces >> return True) <|> return False
     op <- expToOperatorName <$> texToken
     maybe mzero (\s -> return (EMathOperator s, convertible)) op
