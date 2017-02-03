@@ -32,16 +32,16 @@ import Data.Generics
 
 data TeXSymbolType = Ord | Op | Bin | Rel | Open | Close | Pun | Accent
                      | Fence | TOver | TUnder | Alpha | BotAccent | Rad
-                     deriving (Show, Read, Eq, Data, Typeable)
+                     deriving (Show, Read, Eq, Ord, Data, Typeable)
 
 data Alignment = AlignLeft | AlignCenter | AlignRight | AlignDefault
-                 deriving (Show, Read, Eq, Data, Typeable)
+                 deriving (Show, Read, Eq, Ord, Data, Typeable)
 
 data FractionType = NormalFrac   -- ^ Displayed or textual, acc to 'DisplayType'
                   | DisplayFrac  -- ^ Force display mode
                   | InlineFrac   -- ^ Force inline mode (textual)
                   | NoLineFrac   -- ^ No line between top and bottom
-                  deriving (Show, Read, Eq, Data, Typeable)
+                  deriving (Show, Read, Eq, Ord, Data, Typeable)
 
 type ArrayLine = [[Exp]]
 
@@ -90,7 +90,7 @@ data Exp =
                   -- the same length.
   | EText TextType String  -- ^ Some normal text, possibly styled.
   | EStyled TextType [Exp] -- ^  A group of styled expressions.
-  deriving (Show, Read, Eq, Data, Typeable)
+  deriving (Show, Read, Eq, Ord, Data, Typeable)
 
 -- | An @EDelimited@ element contains a string of ordinary expressions
 -- (represented here as @Right@ values) or fences (represented here as
@@ -100,7 +100,7 @@ type Middle = String
 
 data DisplayType = DisplayBlock  -- ^ A displayed formula.
                  | DisplayInline  -- ^ A formula rendered inline in text.
-                 deriving (Show, Eq)
+                 deriving (Show, Eq, Ord)
 
 data TextType = TextNormal
               | TextBold
@@ -116,7 +116,7 @@ data TextType = TextNormal
               | TextBoldScript
               | TextBoldFraktur
               | TextSansSerifItalic
-              deriving (Show, Ord, Read, Eq, Data, Typeable)
+              deriving (Show, Read, Eq, Ord, Data, Typeable)
 
 data FormType = FPrefix | FPostfix | FInfix deriving (Show, Ord, Eq)
 

@@ -188,10 +188,11 @@ limitsIndicator =
   <|> return Nothing
 
 binomCmd :: TP String
-binomCmd = oneOfCommands (map fst binomCmds)
+binomCmd = oneOfCommands (M.keys binomCmds)
 
-binomCmds :: [(String, Exp -> Exp -> Exp)]
-binomCmds = [ ("\\choose", \x y ->
+binomCmds :: M.Map String (Exp -> Exp -> Exp)
+binomCmds = M.fromList
+            [ ("\\choose", \x y ->
                 EDelimited "(" ")" [Right (EFraction NoLineFrac x y)])
             , ("\\brack", \x y ->
                 EDelimited "[" "]" [Right (EFraction NoLineFrac x y)])
@@ -234,7 +235,7 @@ manyExp' requireNonempty p = do
                 else many (notFollowedBy binomCmd >> p)
   let withCmd :: String -> TP Exp
       withCmd cmd =
-         case lookup cmd binomCmds of
+         case M.lookup cmd binomCmds of
               Just f  -> f <$> (asGroup <$> pure initial)
                            <*> (asGroup <$> many p)
               Nothing -> fail $ "Unknown command " ++ cmd

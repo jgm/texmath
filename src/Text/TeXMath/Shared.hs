@@ -39,6 +39,7 @@ module Text.TeXMath.Shared
 import Text.TeXMath.Types
 import Text.TeXMath.TeX
 import qualified Data.Map as M
+import qualified Data.Set as Set
 import Data.Maybe (fromMaybe)
 import Data.Ratio ((%))
 import Data.List (sort)
@@ -83,7 +84,7 @@ getLaTeXTextCommand e t =
                   (snd <$> M.lookup t textTypesMap) in
   if textPackage textCmd e
     then textCmd
-    else fromMaybe "\\mathrm" (lookup textCmd alts)
+    else fromMaybe "\\mathrm" (M.lookup textCmd alts)
 
 -- | Maps MathML mathvariant to the corresponing TextType
 getTextType :: String -> TextType
@@ -127,10 +128,10 @@ getDiacriticalCommand pos symbol = do
 -- Operator Table
 
 getOperator :: Exp -> Maybe TeX
-getOperator op = fmap ControlSeq $ lookup op operators
+getOperator op = fmap ControlSeq $ M.lookup op operators
 
-operators :: [(Exp, String)]
-operators =
+operators :: M.Map Exp String
+operators = M.fromList
            [ (EMathOperator "arccos", "\\arccos")
            , (EMathOperator "arcsin", "\\arcsin")
            , (EMathOperator "arctan", "\\arctan")
@@ -212,18 +213,28 @@ textTypes =
   , ( TextBoldFraktur         , ("bold-fraktur","\\mathbffrak"))
   , ( TextSansSerifItalic     , ("sans-serif-italic","\\mathsfit")) ]
 
-unicodeMath, base :: [String]
-unicodeMath = ["\\mathbfit", "\\mathbfsfup", "\\mathbfsfit", "\\mathbfscr", "\\mathbffrak", "\\mathsfit"]
-base = ["\\mathbb", "\\mathrm", "\\mathbf", "\\mathit", "\\mathsf", "\\mathtt", "\\mathfrak", "\\mathcal"]
+unicodeMath, base :: Set.Set String
+unicodeMath = Set.fromList
+  ["\\mathbfit", "\\mathbfsfup", "\\mathbfsfit", "\\mathbfscr",
+   "\\mathbffrak", "\\mathsfit"]
+base = Set.fromList
+  ["\\mathbb", "\\mathrm", "\\mathbf", "\\mathit", "\\mathsf",
+   "\\mathtt", "\\mathfrak", "\\mathcal"]
 
-alts :: [(String, String)]
-alts = [ ("\\mathbfit", "\\mathbf"), ("\\mathbfsfup", "\\mathbf"), ("\\mathbfsfit", "\\mathbf")
-       , ("\\mathbfscr", "\\mathcal"), ("\\mathbffrak", "\\mathfrak"), ("\\mathsfit", "\\mathsf")]
+alts :: M.Map String String
+alts = M.fromList
+  [ ("\\mathbfit", "\\mathbf")
+  , ("\\mathbfsfup", "\\mathbf")
+  , ("\\mathbfsfit", "\\mathbf")
+  , ("\\mathbfscr", "\\mathcal")
+  , ("\\mathbffrak", "\\mathfrak")
+  , ("\\mathsfit", "\\mathsf")
+  ]
 
 textPackage :: String -> [String] -> Bool
 textPackage s e
-  | s `elem` unicodeMath = "unicode-math" `elem` e
-  | s `elem` base    = True
+  | s `Set.member` unicodeMath = "unicode-math" `elem` e
+  | s `Set.member` base    = True
   | otherwise = True
 
 -- | Mapping between LaTeX scaling commands and the scaling factor
@@ -325,10 +336,9 @@ diacriticals =
 
 -- Converts unit to multiplier to reach em
 unitToMultiplier :: String -> Maybe Rational
-unitToMultiplier s = lookup s units
+unitToMultiplier s = M.lookup s units
   where
-    units =
-                        [ ( "pt" , 10)
+    units = M.fromList  [ ( "pt" , 10)
                         , ( "mm" , (351/10))
                         , ( "cm" , (35/100))
                         , ( "in" , (14/100))
