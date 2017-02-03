@@ -24,6 +24,7 @@ module Text.TeXMath.Readers.TeX (readTeX)
 where
 
 import Data.List (intercalate)
+import qualified Data.Set as Set
 import Data.Ratio ((%))
 import Control.Monad
 import Data.Char (isDigit, isAscii, isLetter)
@@ -134,7 +135,7 @@ expr = do
   subSup limits convertible a <|> superOrSubscripted limits convertible a <|> return a
 
 -- | Parser for \operatorname command.
--- Returns a tuple of EMathOperator name and Bool depending on the flavor
+-- Returns a tuple of ESymbol Op name and Bool depending on the flavor
 -- of the command:
 --
 --     - True for convertible operator (\operator*)
@@ -146,7 +147,7 @@ operatorname = do
     -- these are slightly different but we won't worry about that here...
     convertible <- (char '*' >> spaces >> return True) <|> return False
     op <- expToOperatorName <$> texToken
-    maybe mzero (\s -> return (EMathOperator s, convertible)) op
+    maybe mzero (\s -> return (ESymbol Op s, convertible)) op
 
 -- | Converts identifiers, symbols and numbers to a flat string.
 -- Returns Nothing if the expression contains anything else.
@@ -170,7 +171,6 @@ expToOperatorName e = case e of
           toStr sty (EIdentifier s)     = Just $ toUnicode sty s
           toStr _   (EText sty' s)      = Just $ toUnicode sty' s
           toStr sty (ENumber s)         = Just $ toUnicode sty s
-          toStr sty (EMathOperator s)   = Just $ toUnicode sty s
           toStr sty (ESymbol _ s)       = Just $ toUnicode sty s
           toStr _   (ESpace _)          = Just $ " "
           toStr _   (EStyled sty' exps) = concat <$>
@@ -435,17 +435,18 @@ variable = do
   return $ EIdentifier [v]
 
 isConvertible :: Exp -> Bool
-isConvertible (EMathOperator x) = x `elem` convertibleOps
-  where convertibleOps = [ "lim","liminf","limsup","inf","sup"
-                         , "min","max","Pr","det","gcd"
-                         ]
 isConvertible (ESymbol Rel _) = True
 isConvertible (ESymbol Bin _) = True
-isConvertible (ESymbol Op x) = x `elem` convertibleSyms
+isConvertible (ESymbol Op x) = x `Set.member` convertibles
+isConvertible _ = False
+
+convertibles :: Set.Set String
+convertibles = Set.fromList (convertibleSyms ++ convertibleOps)
   where convertibleSyms = ["\x2211","\x220F","\x22C2",
            "\x22C3","\x22C0","\x22C1","\x2A05","\x2A06",
            "\x2210","\x2A01","\x2A02","\x2A00","\x2A04"]
-isConvertible _ = False
+        convertibleOps = [ "lim","liminf","limsup","inf","sup"
+                         , "min","max","Pr","det","gcd" ]
 
 -- check if sub/superscripts should always be under and over the expression
 isUnderover :: Exp -> Bool
@@ -1003,39 +1004,39 @@ symbols = M.fromList
   , ("\\\n",ESpace (2 % 9))
   , ("\\quad",ESpace (1 % 1))
   , ("\\qquad",ESpace (2 % 1))
-  , ("\\arccos",EMathOperator "arccos")
-  , ("\\arcsin",EMathOperator "arcsin")
-  , ("\\arctan",EMathOperator "arctan")
-  , ("\\arg",EMathOperator "arg")
-  , ("\\cos",EMathOperator "cos")
-  , ("\\cosh",EMathOperator "cosh")
-  , ("\\cot",EMathOperator "cot")
-  , ("\\coth",EMathOperator "coth")
-  , ("\\csc",EMathOperator "csc")
-  , ("\\deg",EMathOperator "deg")
-  , ("\\det",EMathOperator "det")
-  , ("\\dim",EMathOperator "dim")
-  , ("\\exp",EMathOperator "exp")
-  , ("\\gcd",EMathOperator "gcd")
-  , ("\\hom",EMathOperator "hom")
-  , ("\\inf",EMathOperator "inf")
-  , ("\\ker",EMathOperator "ker")
-  , ("\\lg",EMathOperator "lg")
-  , ("\\lim",EMathOperator "lim")
-  , ("\\liminf",EMathOperator "liminf")
-  , ("\\limsup",EMathOperator "limsup")
-  , ("\\ln",EMathOperator "ln")
-  , ("\\log",EMathOperator "log")
-  , ("\\max",EMathOperator "max")
-  , ("\\min",EMathOperator "min")
-  , ("\\mod",EMathOperator "mod")
-  , ("\\Pr",EMathOperator "Pr")
-  , ("\\sec",EMathOperator "sec")
-  , ("\\sin",EMathOperator "sin")
-  , ("\\sinh",EMathOperator "sinh")
-  , ("\\sup",EMathOperator "sup")
-  , ("\\tan",EMathOperator "tan")
-  , ("\\tanh",EMathOperator "tanh")
+  , ("\\arccos",ESymbol Op "arccos")
+  , ("\\arcsin",ESymbol Op "arcsin")
+  , ("\\arctan",ESymbol Op "arctan")
+  , ("\\arg",ESymbol Op "arg")
+  , ("\\cos",ESymbol Op "cos")
+  , ("\\cosh",ESymbol Op "cosh")
+  , ("\\cot",ESymbol Op "cot")
+  , ("\\coth",ESymbol Op "coth")
+  , ("\\csc",ESymbol Op "csc")
+  , ("\\deg",ESymbol Op "deg")
+  , ("\\det",ESymbol Op "det")
+  , ("\\dim",ESymbol Op "dim")
+  , ("\\exp",ESymbol Op "exp")
+  , ("\\gcd",ESymbol Op "gcd")
+  , ("\\hom",ESymbol Op "hom")
+  , ("\\inf",ESymbol Op "inf")
+  , ("\\ker",ESymbol Op "ker")
+  , ("\\lg",ESymbol Op "lg")
+  , ("\\lim",ESymbol Op "lim")
+  , ("\\liminf",ESymbol Op "liminf")
+  , ("\\limsup",ESymbol Op "limsup")
+  , ("\\ln",ESymbol Op "ln")
+  , ("\\log",ESymbol Op "log")
+  , ("\\max",ESymbol Op "max")
+  , ("\\min",ESymbol Op "min")
+  , ("\\mod",ESymbol Op "mod")
+  , ("\\Pr",ESymbol Op "Pr")
+  , ("\\sec",ESymbol Op "sec")
+  , ("\\sin",ESymbol Op "sin")
+  , ("\\sinh",ESymbol Op "sinh")
+  , ("\\sup",ESymbol Op "sup")
+  , ("\\tan",ESymbol Op "tan")
+  , ("\\tanh",ESymbol Op "tanh")
   , ("\\AC",ESymbol Ord "\8767")
   , ("\\AC",ESymbol Ord "\9190")
   , ("\\APLboxquestion",ESymbol Ord "\9072")

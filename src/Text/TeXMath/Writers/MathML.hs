@@ -154,7 +154,6 @@ showExp tt e =
                        map (either (makeStretchy FInfix . unode "mo") (showExp tt)) xs ++
                        [ makeStretchy FPostfix (unode "mo" end) | not (null end) ]
    EIdentifier x    -> unode "mi" $ toUnicode tt x
-   EMathOperator x  -> unode "mo" x
    ESymbol Accent x -> accent x
    ESymbol Open x   -> makeFence FPrefix $ op x
    ESymbol Close x  -> makeFence FPostfix $ op x

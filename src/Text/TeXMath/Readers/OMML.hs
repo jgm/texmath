@@ -298,7 +298,7 @@ elemToExps' element | isElem "m" "func" element = do
   -- which should work for us most of the time.
   let fnameString = concatMap expToString $
                     concat $ mapMaybe (elemToExps) (elChildren fName)
-  return [EMathOperator fnameString, baseExp]
+  return [ESymbol Op fnameString, baseExp]
 elemToExps' element | isElem "m" "groupChr" element = do
   let gPr = filterChildName (hasElemName "m" "groupChrPr") element
       chr = gPr >>=
@@ -449,10 +449,9 @@ interpretChar c = case getSymbolType c of
 interpretString :: String -> [Exp]
 interpretString [c]       = [interpretChar c]
 interpretString s
-  | all isDigit s         = [ENumber s]
-  | isJust (getOperator (EMathOperator s))
-                          = [EMathOperator s]
-  | otherwise             =
+  | all isDigit s          = [ENumber s]
+  | isJust (getOperator s) = [ESymbol Op s]
+  | otherwise              =
       case map interpretChar s of
             xs | all isIdentifierOrSpace xs -> [EText TextNormal s]
                | otherwise                  -> xs
@@ -463,7 +462,6 @@ interpretString s
 expToString :: Exp -> String
 expToString (ENumber s) = s
 expToString (EIdentifier s) = s
-expToString (EMathOperator s) = s
 expToString (ESymbol _ s) = s
 expToString (EText _ s) = s
 expToString (EGrouped exps) = concatMap expToString exps

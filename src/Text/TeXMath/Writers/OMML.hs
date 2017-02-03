@@ -176,10 +176,10 @@ showExp :: [Element] -> Exp -> [Element]
 showExp props e =
  case e of
    ENumber x        -> [str props x]
-   EGrouped [EUnderover _ (ESymbol Op s) y z, w] ->
-     [makeNary props "undOvr" s y z w]
-   EGrouped [ESubsup (ESymbol Op s) y z, w] ->
-     [makeNary props "subSup" s y z w]
+   EGrouped [EUnderover _ (ESymbol Op [c]) y z, w] ->
+     [makeNary props "undOvr" c y z w]
+   EGrouped [ESubsup (ESymbol Op [c]) y z, w] ->
+     [makeNary props "subSup" c y z w]
    EGrouped xs      -> concatMap (showExp props) xs
    EDelimited start end xs ->
                        [mnode "d" [ mnode "dPr"
@@ -191,8 +191,9 @@ showExp props e =
                                   ] ]
 
    EIdentifier x    -> [str props x]
-   EMathOperator x  -> [makeText TextNormal x]  -- TODO revisit, use props?
-   ESymbol _ x      -> [str props x]
+   ESymbol _ x
+     | length x == 1 -> [str props x]
+     | otherwise     -> [makeText TextNormal x]  -- TODO revisit, use props?
    ESpace n
      | n > 0 && n <= 0.17    -> [str props "\x2009"]
      | n > 0.17 && n <= 0.23 -> [str props "\x2005"]
@@ -250,10 +251,10 @@ isNary :: Exp -> Bool
 isNary (ESymbol Op _) = True
 isNary _ = False
 
-makeNary :: [Element] -> String -> String -> Exp -> Exp -> Exp -> Element
-makeNary props t s y z w =
+makeNary :: [Element] -> String -> Char -> Exp -> Exp -> Exp -> Element
+makeNary props t c y z w =
   mnode "nary" [ mnode "naryPr"
-                 [ mnodeA "chr" s ()
+                 [ mnodeA "chr" [c] ()
                  , mnodeA "limLoc" t ()
                  , mnodeA "subHide"
                     (if y == EGrouped [] then "1" else "0") ()

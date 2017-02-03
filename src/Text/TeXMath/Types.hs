@@ -55,8 +55,7 @@ data Exp =
   | EIdentifier String  -- ^ An identifier, e.g. a variable (@\<mi\>...\</mi\>@
                     -- in MathML.  Note that MathML tends to use @\<mi\>@ tags
                     -- for "sin" and other mathematical operators; these
-                    -- are represented as 'EMathOperator' in TeXMath.
-  | EMathOperator String  -- ^ A spelled-out operator like @lim@ or @sin@.
+                    -- are represented as 'ESymbol Op' in TeXMath.
   | ESymbol TeXSymbolType String  -- ^ A symbol.
   | ESpace Rational -- ^ A space, with the width specified in em.
   | ESub Exp Exp  -- ^ An expression with a subscript.  First argument is base,

@@ -126,43 +126,43 @@ getDiacriticalCommand pos symbol = do
 
 -- Operator Table
 
-getOperator :: Exp -> Maybe TeX
-getOperator op = fmap ControlSeq $ lookup op operators
+getOperator :: String -> Maybe TeX
+getOperator op = fmap ControlSeq $ M.lookup op operators
 
-operators :: [(Exp, String)]
-operators =
-           [ (EMathOperator "arccos", "\\arccos")
-           , (EMathOperator "arcsin", "\\arcsin")
-           , (EMathOperator "arctan", "\\arctan")
-           , (EMathOperator "arg", "\\arg")
-           , (EMathOperator "cos", "\\cos")
-           , (EMathOperator "cosh", "\\cosh")
-           , (EMathOperator "cot", "\\cot")
-           , (EMathOperator "coth", "\\coth")
-           , (EMathOperator "csc", "\\csc")
-           , (EMathOperator "deg", "\\deg")
-           , (EMathOperator "det", "\\det")
-           , (EMathOperator "dim", "\\dim")
-           , (EMathOperator "exp", "\\exp")
-           , (EMathOperator "gcd", "\\gcd")
-           , (EMathOperator "hom", "\\hom")
-           , (EMathOperator "inf", "\\inf")
-           , (EMathOperator "ker", "\\ker")
-           , (EMathOperator "lg", "\\lg")
-           , (EMathOperator "lim", "\\lim")
-           , (EMathOperator "liminf", "\\liminf")
-           , (EMathOperator "limsup", "\\limsup")
-           , (EMathOperator "ln", "\\ln")
-           , (EMathOperator "log", "\\log")
-           , (EMathOperator "max", "\\max")
-           , (EMathOperator "min", "\\min")
-           , (EMathOperator "Pr", "\\Pr")
-           , (EMathOperator "sec", "\\sec")
-           , (EMathOperator "sin", "\\sin")
-           , (EMathOperator "sinh", "\\sinh")
-           , (EMathOperator "sup", "\\sup")
-           , (EMathOperator "tan", "\\tan")
-           , (EMathOperator "tanh", "\\tanh") ]
+operators :: M.Map String String
+operators = M.fromList
+           [ ("arccos", "\\arccos")
+           , ("arcsin", "\\arcsin")
+           , ("arctan", "\\arctan")
+           , ("arg", "\\arg")
+           , ("cos", "\\cos")
+           , ("cosh", "\\cosh")
+           , ("cot", "\\cot")
+           , ("coth", "\\coth")
+           , ("csc", "\\csc")
+           , ("deg", "\\deg")
+           , ("det", "\\det")
+           , ("dim", "\\dim")
+           , ("exp", "\\exp")
+           , ("gcd", "\\gcd")
+           , ("hom", "\\hom")
+           , ("inf", "\\inf")
+           , ("ker", "\\ker")
+           , ("lg", "\\lg")
+           , ("lim", "\\lim")
+           , ("liminf", "\\liminf")
+           , ("limsup", "\\limsup")
+           , ("ln", "\\ln")
+           , ("log", "\\log")
+           , ("max", "\\max")
+           , ("min", "\\min")
+           , ("Pr", "\\Pr")
+           , ("sec", "\\sec")
+           , ("sin", "\\sin")
+           , ("sinh", "\\sinh")
+           , ("sup", "\\sup")
+           , ("tan", "\\tan")
+           , ("tanh", "\\tanh") ]
 
 -- | Attempts to convert a string into
 readLength :: String -> Maybe Rational
