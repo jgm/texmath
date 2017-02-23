@@ -584,7 +584,7 @@ styled = do
   c <- oneOfCommands (M.keys styleOps)
   case M.lookup c styleOps of
        Just f   -> do
-         x <- inbraces
+         x <- texSymbol <|> inbraces <|> texChar
          return $ case x of
                        EGrouped xs -> f xs
                        _           -> f [x]
