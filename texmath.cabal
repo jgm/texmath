@@ -1,5 +1,5 @@
 Name:                texmath
-Version:             0.8.6.7
+Version:             0.9.1
 Cabal-Version:       >= 1.10
 Build-type:          Simple
 Synopsis:            Conversion between formats used to represent mathematics.
@@ -103,7 +103,8 @@ Library
                          Text.TeXMath.Writers.TeX,
                          Text.TeXMath.Unicode.ToUnicode,
                          Text.TeXMath.Unicode.ToTeX,
-                         Text.TeXMath.Unicode.ToASCII
+                         Text.TeXMath.Unicode.ToASCII,
+                         Text.TeXMath.Unicode.Fonts
     Other-modules:       Text.TeXMath.Compat,
                          Text.TeXMath.Shared,
                          Text.TeXMath.TeX,
@@ -112,9 +113,7 @@ Library
       Ghc-Options:     -Wall -fno-warn-unused-do-bind
     else
       Ghc-Options:     -Wall
---    note: we don't specify ghc-prof-optiosn: -auto-all -caf-all
---    because this blows up compile time on clang
-    Ghc-Prof-Options:
+    Ghc-Prof-Options:  -fprof-auto-exported
     Default-Language:    Haskell2010
     Hs-Source-Dirs:    src
     c-sources: cbits/valToASCII.c
@@ -129,7 +128,7 @@ Executable texmath
       Ghc-Options:     -Wall -fno-warn-unused-do-bind
     else
       Ghc-Options:     -Wall
-    Ghc-Prof-Options:  -auto-all -caf-all
+    Ghc-Prof-Options:  -fprof-auto-exported
     if flag(executable)
       Buildable:         True
       Build-Depends:     base >= 4.5 && < 5, texmath, xml,

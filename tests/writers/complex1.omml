@@ -137,22 +137,14 @@
                   <m:grow />
                 </m:dPr>
                 <m:e>
-                  <m:limLow>
-                    <m:e>
-                      <m:limUpp>
-                        <m:e>
-                          <m:r>
-                            <m:t>∑</m:t>
-                          </m:r>
-                        </m:e>
-                        <m:lim>
-                          <m:r>
-                            <m:t>n</m:t>
-                          </m:r>
-                        </m:lim>
-                      </m:limUpp>
-                    </m:e>
-                    <m:lim>
+                  <m:nary>
+                    <m:naryPr>
+                      <m:chr m:val="∑" />
+                      <m:limLoc m:val="undOvr" />
+                      <m:subHide m:val="0" />
+                      <m:supHide m:val="0" />
+                    </m:naryPr>
+                    <m:sub>
                       <m:r>
                         <m:t>k</m:t>
                       </m:r>
@@ -162,21 +154,28 @@
                       <m:r>
                         <m:t>1</m:t>
                       </m:r>
-                    </m:lim>
-                  </m:limLow>
-                  <m:sSubSup>
-                    <m:e>
-                      <m:r>
-                        <m:t>a</m:t>
-                      </m:r>
-                    </m:e>
-                    <m:sub>
-                      <m:r>
-                        <m:t>k</m:t>
-                      </m:r>
                     </m:sub>
-                    <m:sup />
-                  </m:sSubSup>
+                    <m:sup>
+                      <m:r>
+                        <m:t>n</m:t>
+                      </m:r>
+                    </m:sup>
+                    <m:e>
+                      <m:sSubSup>
+                        <m:e>
+                          <m:r>
+                            <m:t>a</m:t>
+                          </m:r>
+                        </m:e>
+                        <m:sub>
+                          <m:r>
+                            <m:t>k</m:t>
+                          </m:r>
+                        </m:sub>
+                        <m:sup />
+                      </m:sSubSup>
+                    </m:e>
+                  </m:nary>
                   <m:sSubSup>
                     <m:e>
                       <m:r>
@@ -210,22 +209,14 @@
               <m:grow />
             </m:dPr>
             <m:e>
-              <m:limLow>
-                <m:e>
-                  <m:limUpp>
-                    <m:e>
-                      <m:r>
-                        <m:t>∑</m:t>
-                      </m:r>
-                    </m:e>
-                    <m:lim>
-                      <m:r>
-                        <m:t>n</m:t>
-                      </m:r>
-                    </m:lim>
-                  </m:limUpp>
-                </m:e>
-                <m:lim>
+              <m:nary>
+                <m:naryPr>
+                  <m:chr m:val="∑" />
+                  <m:limLoc m:val="undOvr" />
+                  <m:subHide m:val="0" />
+                  <m:supHide m:val="0" />
+                </m:naryPr>
+                <m:sub>
                   <m:r>
                     <m:t>k</m:t>
                   </m:r>
@@ -235,25 +226,32 @@
                   <m:r>
                     <m:t>1</m:t>
                   </m:r>
-                </m:lim>
-              </m:limLow>
-              <m:sSubSup>
-                <m:e>
-                  <m:r>
-                    <m:t>a</m:t>
-                  </m:r>
-                </m:e>
-                <m:sub>
-                  <m:r>
-                    <m:t>k</m:t>
-                  </m:r>
                 </m:sub>
                 <m:sup>
                   <m:r>
-                    <m:t>2</m:t>
+                    <m:t>n</m:t>
                   </m:r>
                 </m:sup>
-              </m:sSubSup>
+                <m:e>
+                  <m:sSubSup>
+                    <m:e>
+                      <m:r>
+                        <m:t>a</m:t>
+                      </m:r>
+                    </m:e>
+                    <m:sub>
+                      <m:r>
+                        <m:t>k</m:t>
+                      </m:r>
+                    </m:sub>
+                    <m:sup>
+                      <m:r>
+                        <m:t>2</m:t>
+                      </m:r>
+                    </m:sup>
+                  </m:sSubSup>
+                </m:e>
+              </m:nary>
             </m:e>
           </m:d>
           <m:d>
@@ -263,22 +261,14 @@
               <m:grow />
             </m:dPr>
             <m:e>
-              <m:limLow>
-                <m:e>
-                  <m:limUpp>
-                    <m:e>
-                      <m:r>
-                        <m:t>∑</m:t>
-                      </m:r>
-                    </m:e>
-                    <m:lim>
-                      <m:r>
-                        <m:t>n</m:t>
-                      </m:r>
-                    </m:lim>
-                  </m:limUpp>
-                </m:e>
-                <m:lim>
+              <m:nary>
+                <m:naryPr>
+                  <m:chr m:val="∑" />
+                  <m:limLoc m:val="undOvr" />
+                  <m:subHide m:val="0" />
+                  <m:supHide m:val="0" />
+                </m:naryPr>
+                <m:sub>
                   <m:r>
                     <m:t>k</m:t>
                   </m:r>
@@ -288,25 +278,32 @@
                   <m:r>
                     <m:t>1</m:t>
                   </m:r>
-                </m:lim>
-              </m:limLow>
-              <m:sSubSup>
-                <m:e>
-                  <m:r>
-                    <m:t>b</m:t>
-                  </m:r>
-                </m:e>
-                <m:sub>
-                  <m:r>
-                    <m:t>k</m:t>
-                  </m:r>
                 </m:sub>
                 <m:sup>
                   <m:r>
-                    <m:t>2</m:t>
+                    <m:t>n</m:t>
                   </m:r>
                 </m:sup>
-              </m:sSubSup>
+                <m:e>
+                  <m:sSubSup>
+                    <m:e>
+                      <m:r>
+                        <m:t>b</m:t>
+                      </m:r>
+                    </m:e>
+                    <m:sub>
+                      <m:r>
+                        <m:t>k</m:t>
+                      </m:r>
+                    </m:sub>
+                    <m:sup>
+                      <m:r>
+                        <m:t>2</m:t>
+                      </m:r>
+                    </m:sup>
+                  </m:sSubSup>
+                </m:e>
+              </m:nary>
             </m:e>
           </m:d>
         </m:e>

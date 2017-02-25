@@ -27,7 +27,7 @@ import Text.Pandoc.Definition
 import Text.TeXMath.Unicode.ToUnicode
 import Text.TeXMath.Types
 import Text.TeXMath.Shared (getSpaceChars)
-import Data.Text (Text)
+import Data.Text (Text, unpack)
 import qualified Data.Text as Text
 import Data.Monoid
 
@@ -51,6 +51,8 @@ addSpaces (ESymbol t1 s1 : ESymbol t2 s2 : xs)
 addSpaces (x : ESymbol t2 s2 : xs)
   | not (null xs) =
     x : addSpace t2 (ESymbol t2 s2) ++ addSpaces xs
+addSpaces (EMathOperator s : xs) =
+  EMathOperator s : thinspace : addSpaces xs
 addSpaces (x : xs) = x : addSpaces xs
 addSpaces [] = []
 
@@ -61,27 +63,30 @@ addSpace t x =
       Rel -> [widespace, x, widespace]
       Pun -> [x, thinspace]
       _   -> [x]
-  where thinspace = EText TextNormal "\x2006"
-        medspace  = EText TextNormal "\x2005"
-        widespace = EText TextNormal "\x2004"
+
+thinspace, medspace, widespace :: Exp
+thinspace = EText TextNormal "\x2006"
+medspace  = EText TextNormal "\x2005"
+widespace = EText TextNormal "\x2004"
 
 renderStr :: TextType -> Text -> Inline
 renderStr tt s =
-  case tt of
-       TextNormal       -> Str s
-       TextBold         -> Strong [Str s]
-       TextItalic       -> Emph   [Str s]
-       TextMonospace    -> Code nullAttr s
-       TextSansSerif    -> Str s
-       TextDoubleStruck -> Str $ toUnicode tt s
-       TextScript       -> Str $ toUnicode tt s
-       TextFraktur      -> Str $ toUnicode tt s
-       TextBoldItalic    -> Strong [Emph [Str s]]
-       TextSansSerifBold -> Strong [Str s]
-       TextBoldScript    -> Strong [Str $ toUnicode tt s]
-       TextBoldFraktur   -> Strong [Str $ toUnicode tt s]
-       TextSansSerifItalic -> Emph [Str s]
-       TextSansSerifBoldItalic -> Strong [Emph [Str s]]
+  let str' = Str . unpack
+  in case tt of
+       TextNormal       -> str' s
+       TextBold         -> Strong [str' s]
+       TextItalic       -> Emph   [str' s]
+       TextMonospace    -> Code nullAttr $ unpack s
+       TextSansSerif    -> str' s
+       TextDoubleStruck -> str' $ toUnicode tt s
+       TextScript       -> str' $ toUnicode tt s
+       TextFraktur      -> str' $ toUnicode tt s
+       TextBoldItalic    -> Strong [Emph [str' s]]
+       TextSansSerifBold -> Strong [str' s]
+       TextBoldScript    -> Strong [str' $ toUnicode tt s]
+       TextBoldFraktur   -> Strong [str' $ toUnicode tt s]
+       TextSansSerifItalic -> Emph [str' s]
+       TextSansSerifBoldItalic -> Strong [Emph [str' s]]
 
 expToInlines :: TextType -> Exp -> Maybe [Inline]
 expToInlines tt (ENumber s) = Just [renderStr tt s]
@@ -94,7 +99,7 @@ expToInlines tt (EDelimited start end xs) = do
   return $ [renderStr tt start] ++ concat xs' ++ [renderStr tt end]
 expToInlines tt (EGrouped xs)    = expsToInlines tt xs
 expToInlines _ (EStyled tt' xs)  = expsToInlines tt' xs
-expToInlines _ (ESpace n)        = Just [Str $ getSpaceChars n]
+expToInlines _ (ESpace n)        = Just [Str $ unpack $ getSpaceChars n]
 expToInlines _ (ESqrt _)         = Nothing
 expToInlines _ (ERoot _ _)       = Nothing
 expToInlines _ (EFraction _ _ _) = Nothing

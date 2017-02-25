@@ -98,7 +98,7 @@ output :: DisplayType -> Writer -> [Exp] -> Text
 output dt (XMLWriter w) es    = output dt (TextWriter (\dt' -> Text.pack . ppElement . w dt' )) es
 output dt (TextWriter w) es = w dt es
 output dt (PandocWriter w) es = Text.pack (show (fromMaybe fallback (w dt es)))
-  where fallback = [Math mt (writeTeX es)]
+  where fallback = [Math mt (Text.unpack $ writeTeX es)]
         mt = case dt of
                   DisplayBlock  -> DisplayMath
                   DisplayInline -> InlineMath

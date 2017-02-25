@@ -145,6 +145,7 @@ expr = do
 operatorname :: TP (Exp, Bool)
 operatorname = do
     ctrlseq "operatorname"
+    -- these are slightly different but we won't worry about that here...
     convertible <- (char '*' >> spaces >> return True) <|> return False
     op <- expToOperatorName <$> texToken
     maybe mzero (\s -> return (EMathOperator s, convertible)) op
@@ -190,10 +191,11 @@ limitsIndicator =
   <|> return Nothing
 
 binomCmd :: TP Text
-binomCmd = oneOfCommands (map fst binomCmds)
+binomCmd = oneOfCommands (M.keys binomCmds)
 
-binomCmds :: [(Text, Exp -> Exp -> Exp)]
-binomCmds = [ ("\\choose", \x y ->
+binomCmds :: M.Map Text (Exp -> Exp -> Exp)
+binomCmds = M.fromList
+            [ ("\\choose", \x y ->
                 EDelimited "(" ")" [Right (EFraction NoLineFrac x y)])
             , ("\\brack", \x y ->
                 EDelimited "[" "]" [Right (EFraction NoLineFrac x y)])
@@ -237,7 +239,7 @@ manyExp' requireNonempty p = do
                 else many (notFollowedBy binomCmd >> p)
   let withCmd :: Text -> TP Exp
       withCmd cmd =
-         case lookup cmd binomCmds of
+         case M.lookup cmd binomCmds of
               Just f  -> f <$> (asGroup <$> pure initial)
                            <*> (asGroup <$> many p)
               Nothing -> fail $ "Unknown command " ++ Text.unpack cmd
@@ -508,6 +510,9 @@ styleOps = M.fromList
           , ("\\mathup",     EStyled TextNormal)
           , ("\\mathbf",     EStyled TextBold)
           , ("\\boldsymbol", EStyled TextBold)
+          , ("\\bm",         EStyled TextBold)
+          , ("\\mathbold",   EStyled TextBold)
+          , ("\\pmb",        EStyled TextBold)
           , ("\\mathbfup",   EStyled TextBold)
           , ("\\mathit",     EStyled TextItalic)
           , ("\\mathtt",     EStyled TextMonospace)
@@ -544,7 +549,28 @@ boxed = EBoxed <$> (ctrlseq "boxed" *> texToken)
 text :: TP Exp
 text = do
   c <- oneOfCommands (M.keys textOps)
-  maybe mzero (<$> (bracedText <* spaces)) $ M.lookup c textOps
+  op <- maybe mzero return $ M.lookup c textOps
+  char '{'
+  let chunk = ((op . mconcat) <$> many1 textual)
+            <|> (char '{' *> (asGroup <$> manyTill chunk (char '}')))
+            <|> innermath
+  contents <- manyTill chunk (char '}')
+  spaces
+  case contents of
+       []   -> return (op "")
+       [x]  -> return x
+       xs   -> return (EGrouped xs)
+
+innermath :: TP Exp
+innermath = choice $ map innerMathWith
+              [("$","$"),("$$","$$"),("\\(","\\)"),("\\[","\\]")]
+
+innerMathWith :: (String, String) -> TP Exp
+innerMathWith (opener, closer) = do
+  try (string opener)
+  e <- manyExp expr
+  string closer
+  return e
 
 textOps :: M.Map Text (Text -> Exp)
 textOps = M.fromList
@@ -562,7 +588,7 @@ styled = do
   c <- oneOfCommands (M.keys styleOps)
   case M.lookup c styleOps of
        Just f   -> do
-         x <- inbraces
+         x <- texSymbol <|> inbraces <|> texChar
          return $ case x of
                        EGrouped xs -> f xs
                        _           -> f [x]
@@ -602,7 +628,10 @@ mathopWith name ty = try $ do
   case e of
      ESymbol _ x   -> return $ ESymbol ty x
      EIdentifier x -> return $ ESymbol ty x
-     x             -> return x
+     x | ty == Op  -> case expToOperatorName x of
+                           Just y -> return $ EMathOperator y
+                           _      -> return x
+       | otherwise -> return x
 
 binary :: TP Exp
 binary = do
@@ -3710,6 +3739,7 @@ ligature = try ("\x2014" <$ string "---")
 textCommand :: TP Text
 textCommand = do
   cmd <- oneOfCommands (M.keys textCommands)
+  optional $ try (char '{' >> spaces >> char '}')
   case M.lookup cmd textCommands of
        Nothing -> fail ("Unknown control sequence " ++ Text.unpack cmd)
        Just c  -> c

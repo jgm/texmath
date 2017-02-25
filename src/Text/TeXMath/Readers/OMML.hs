@@ -35,13 +35,14 @@ module Text.TeXMath.Readers.OMML (readOMML) where
 import Text.XML.Light
 import Data.Maybe (isJust, mapMaybe, fromMaybe)
 import Data.List (intercalate)
-import Data.Char (isDigit)
+import Data.Char (isDigit, readLitChar)
 import Text.TeXMath.Types
 import Text.TeXMath.Shared (fixTree, getSpaceWidth, getOperator)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Control.Applicative ((<$>))
 import Data.Text (Text)
 import qualified Data.Text as Text
+import Text.TeXMath.Unicode.Fonts (getUnicode, stringToFont)
 
 readOMML :: Text -> Either String [Exp]
 readOMML s | Just e <- parseXMLDoc s =
@@ -165,6 +166,7 @@ elemToOMathRunElem element
          Just $ TextRun $ Text.pack $ strContent element
   | isElem "w" "br" element = Just LnBrk
   | isElem "w" "tab" element = Just Tab
+  | isElem "w" "sym" element = Just $ TextRun $ getSymChar element
   | otherwise = Nothing
 
 elemToOMathRunElems :: Element -> Maybe [OMathRunElem]
@@ -469,3 +471,17 @@ expToText (EText _ s) = s
 expToText (EGrouped exps) = Text.concat $ map expToText exps
 expToText (EStyled _ exps) = Text.concat $ map expToText exps
 expToText _ = ""
+
+-- The char attribute is a hex string
+getSymChar :: Element -> Text
+getSymChar element
+  | Just s <- lowerFromPrivate <$> getCodepoint
+  , Just font <- getFont =
+  let [(char, _)] = readLitChar ("\\x" ++ Text.unpack s) in
+    maybe Text.empty Text.singleton $ getUnicode font char
+  where
+    getCodepoint = findAttrBy (hasElemName "w" "char") element
+    getFont = stringToFont =<< findAttrBy (hasElemName "w" "font") element
+    lowerFromPrivate ('F':xs) = Text.pack $ '0':xs
+    lowerFromPrivate xs = Text.pack xs
+getSymChar _ = ""
