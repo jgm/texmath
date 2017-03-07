@@ -1,4 +1,6 @@
-int keylookup[8923]=  {9 /* lines 1-8923 have stuff, so its 8923 element array*/
+/* DO NOT MODIFY MANUALLY */
+/* Modify lib/toascii/Data.txt and make -C lib/toascii */
+int keylookup[8923] = {9
 ,10
 ,32
 ,33
@@ -8920,4 +8922,5 @@ int keylookup[8923]=  {9 /* lines 1-8923 have stuff, so its 8923 element array*/
 ,65528
 ,65529
 ,65530
-,65531} ;
+,65531
+};

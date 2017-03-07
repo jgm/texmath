@@ -1,4 +1,6 @@
-char *toASCIILut[8923]  = {"\\t" /* lines 1-8923 have stuff, so its 8923 element array*/
+/* DO NOT MODIFY MANUALLY */
+/* Modify lib/toascii/Data.txt and make -C lib/toascii */
+char *toASCIILut[8923] = {"\\t"
 ,"\\n"
 ," "
 ,"!"
@@ -8920,4 +8922,5 @@ char *toASCIILut[8923]  = {"\\t" /* lines 1-8923 have stuff, so its 8923 element
 ,"[?]"
 ,"{"
 ,"|"
-,"}" } ;
+,"}"
+};
