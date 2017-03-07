@@ -1,3 +1,12 @@
+texmath (0.9.1.1)
+
+  * Added program to generate cbits/{key,val}ToASCII.c from a data file.
+  * Migrate lookup structures for Unicode/ToTex.hs to use C
+    source files to accelerate builds (Carter Tazio Schonwald).
+  * Allow \boldsymbol + a token without braces.
+    And same for other styling commands. Closes #94.
+  * Better ghc-prof-options.
+
 texmath (0.9.1)
 
   * Pandoc writer:  add thin space after math operators.
