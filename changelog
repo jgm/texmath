@@ -1,3 +1,7 @@
+texmath (0.9.2)
+
+  * Support `\newenvironment` and `\renewenvironment`.
+
 texmath (0.9.1.1)
 
   * Added program to generate cbits/{key,val}ToASCII.c from a data file.
