@@ -60,7 +60,7 @@ pMacroDefinitions = do
 -- | Parses a @\\newcommand@ or @\\renewcommand@ macro definition and
 -- returns a 'Macro'.
 pMacroDefinition :: GenParser Char st Macro
-pMacroDefinition = newcommand <|> declareMathOperator
+pMacroDefinition = newcommand <|> declareMathOperator <|> newenvironment
 
 -- | Skip whitespace and comments.
 pSkipSpaceComments :: GenParser Char st ()
@@ -146,6 +146,57 @@ newcommand = try $ do
                      Just x  -> x : args
                      Nothing -> args
     return $ apply args' $ "{" ++ body ++ "}"
+
+newenvironment :: GenParser Char st Macro
+newenvironment = try $ do
+  char '\\'
+  -- we ignore differences between these so far:
+  try (string "newenvironment")
+    <|> try (string "renewenvironment")
+  optional (char '*')
+  pSkipSpaceComments
+  name <- inbraces <|> ctrlseq
+  pSkipSpaceComments
+  numargs <- numArgs
+  pSkipSpaceComments
+  optarg <- if numargs > 0
+               then optArg
+               else return Nothing
+  let numargs' = case optarg of
+                   Just _  -> numargs - 1
+                   Nothing -> numargs
+  pSkipSpaceComments
+  opener <- inbraces <|> ctrlseq
+  closer <- inbraces <|> ctrlseq
+  let defn = "\\newenvironment{" ++ name ++ "}" ++
+             (if numargs > 0 then ("[" ++ show numargs ++ "]") else "") ++
+             case optarg of { Nothing -> ""; Just x -> "[" ++ x ++ "]"} ++
+             "%\n{" ++ opener ++ "}%\n" ++ "{" ++ closer ++ "}"
+  return $ Macro defn $ try $ do
+    string "\\begin"
+    pSkipSpaceComments
+    char '{'
+    string name
+    pSkipSpaceComments
+    char '}'
+    opt <- case optarg of
+                Nothing  -> return Nothing
+                Just _   -> liftM (`mplus` optarg) optArg
+    pSkipSpaceComments
+    args <- count numargs' (pSkipSpaceComments >>
+                  (inbraces <|> ctrlseq <|> count 1 anyChar))
+    let args' = case opt of
+                     Just x  -> x : args
+                     Nothing -> args
+    let ender = try $ do
+                      string "\\end"
+                      pSkipSpaceComments
+                      char '{'
+                      string name
+                      char '}'
+    body <- manyTill anyChar ender
+    return $ apply args'
+           $ opener ++ "%\n" ++ body ++ "%\n" ++ closer ++ "\n"
 
 -- | Parser for \DeclareMathOperator(*) command.
 declareMathOperator :: GenParser Char st Macro
