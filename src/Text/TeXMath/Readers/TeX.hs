@@ -316,13 +316,18 @@ endLine :: TP Char
 endLine = try $ do
   symbol "\\\\"
   optional inbrackets  -- can contain e.g. [1.0in] for a line height, not yet supported
-  optional $ ctrlseq "hline"
-  -- we don't represent the line, but it shouldn't crash parsing
   return '\n'
 
 arrayLine :: TP ArrayLine
 arrayLine = notFollowedBy (ctrlseq "end" >> return '\n') >>
-  sepBy1 (unGrouped <$> manyExp (notFollowedBy endLine >> expr)) (symbol "&")
+  sepBy1 (unGrouped <$>
+    manyExp (try $ ignorable' *>
+               notFollowedBy endLine *>
+               expr <*
+               ignorable')) (symbol "&")
+  where ignorable' = ignorable >>
+                     optional (try (ctrlseq "hline" >> ignorable'))
+  -- we don't represent the line, but it shouldn't crash parsing
 
 arrayAlignments :: TP [Alignment]
 arrayAlignments = try $ do

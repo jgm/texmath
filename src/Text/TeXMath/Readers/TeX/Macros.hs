@@ -116,7 +116,6 @@ newcommand = try $ do
   name <- inbraces <|> ctrlseq
   guard (take 1 name == "\\")
   let name' = drop 1 name
-  pSkipSpaceComments
   numargs <- numArgs
   pSkipSpaceComments
   optarg <- if numargs > 0
@@ -151,22 +150,21 @@ newenvironment :: GenParser Char st Macro
 newenvironment = try $ do
   char '\\'
   -- we ignore differences between these so far:
-  try (string "newenvironment")
-    <|> try (string "renewenvironment")
+  optional (string "re")
+  string "newenvironment"
   optional (char '*')
   pSkipSpaceComments
   name <- inbraces <|> ctrlseq
-  pSkipSpaceComments
   numargs <- numArgs
   pSkipSpaceComments
   optarg <- if numargs > 0
-               then optArg
+               then optArg <* pSkipSpaceComments
                else return Nothing
   let numargs' = case optarg of
                    Just _  -> numargs - 1
                    Nothing -> numargs
-  pSkipSpaceComments
   opener <- inbraces <|> ctrlseq
+  pSkipSpaceComments
   closer <- inbraces <|> ctrlseq
   let defn = "\\newenvironment{" ++ name ++ "}" ++
              (if numargs > 0 then ("[" ++ show numargs ++ "]") else "") ++
@@ -182,7 +180,6 @@ newenvironment = try $ do
     opt <- case optarg of
                 Nothing  -> return Nothing
                 Just _   -> liftM (`mplus` optarg) optArg
-    pSkipSpaceComments
     args <- count numargs' (pSkipSpaceComments >>
                   (inbraces <|> ctrlseq <|> count 1 anyChar))
     let args' = case opt of
@@ -196,7 +193,7 @@ newenvironment = try $ do
                       char '}'
     body <- manyTill anyChar ender
     return $ apply args'
-           $ opener ++ "%\n" ++ body ++ "%\n" ++ closer ++ "\n"
+           $ opener ++ body ++ closer
 
 -- | Parser for \DeclareMathOperator(*) command.
 declareMathOperator :: GenParser Char st Macro
@@ -242,7 +239,7 @@ comment = do
   return ()
 
 numArgs :: GenParser Char st Int
-numArgs = option 0 $ do
+numArgs = option 0 $ try $ do
   pSkipSpaceComments
   char '['
   pSkipSpaceComments
@@ -268,8 +265,9 @@ inBrackets = try $ do
 inbraces :: GenParser Char st String
 inbraces = try $ do
   char '{'
-  res <- manyTill (skipComment >> (inbraces' <|> count 1 anyChar <|> escaped "{}"))
-    (try $ skipComment >> char '}')
+  res <- manyTill (pSkipSpaceComments >>
+            (inbraces' <|> count 1 anyChar <|> escaped "{}"))
+    (try $ pSkipSpaceComments >> char '}')
   return $ concat res
 
 inbraces' :: GenParser Char st String

@@ -12,8 +12,19 @@
 \renewcommand{\phi}{\aaa}
 \newcommand{\b}[1]{#1}
 
+\newenvironment{ary}
+{\begin{array}{cc}
+\hline}
+{\hline
+\end{array}}
+
 \phi
 \abc
 \xyz[y] {3}
 \xyz 3
 \xyz \alpha
+
+\begin{ary}
+2 & 3\\
+4 & 5
+\end{ary}
