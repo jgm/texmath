@@ -117,10 +117,10 @@ script:
   case "$BUILD" in
     stack)
       ulimit -n 4096
-      stack --no-terminal $ARGS test --flag 'aeson:fast' --flag 'texmath:executable' --haddock --no-haddock-deps --ghc-options="-Wall -fno-warn-unused-do-bind -Werror"
+      stack --no-terminal $ARGS test --flag 'aeson:fast' --flag 'texmath:executable' --haddock --no-haddock-deps --ghc-options="-Wall -fno-warn-unused-do-bind"
       ;;
     cabal)
-      cabal configure --enable-tests --enable-benchmarks -v2 -ffast -f-bootstrap -fexecutable --ghc-options="-Wall -fno-warn-unused-do-bind -Werror" && \
+      cabal configure --enable-tests --enable-benchmarks -v2 -ffast -f-bootstrap -fexecutable --ghc-options="-Wall -fno-warn-unused-do-bind" && \
       cabal build -j && \
       cabal check && \
       cabal test -j && \
