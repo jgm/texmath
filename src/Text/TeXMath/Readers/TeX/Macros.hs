@@ -31,6 +31,7 @@ where
 import Data.Char (isDigit, isLetter)
 import Control.Monad
 import Text.ParserCombinators.Parsec
+import Control.Applicative ((<*))
 
 data Macro = Macro { macroDefinition :: String
                    , macroParser     :: forall st . GenParser Char st String }
