@@ -1,4 +1,5 @@
 {-# LANGUAGE RankNTypes #-}
+{-# LANGUAGE FlexibleContexts #-}
 {-
 Copyright (C) 2010 John MacFarlane <jgm@berkeley.edu>
 
@@ -24,17 +25,19 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 module Text.TeXMath.Readers.TeX.Macros
                            ( Macro
                            , parseMacroDefinitions
+                           , pMacroDefinition
                            , applyMacros
                            )
 where
 
 import Data.Char (isDigit, isLetter)
 import Control.Monad
-import Text.ParserCombinators.Parsec
+import Text.Parsec
 import Control.Applicative ((<*))
 
 data Macro = Macro { macroDefinition :: String
-                   , macroParser     :: forall st . GenParser Char st String }
+                   , macroParser     :: forall st m s . Stream s m Char =>
+                          ParsecT s st m String }
 
 instance Show Macro where
   show m = "Macro " ++ show (macroDefinition m)
@@ -51,7 +54,8 @@ parseMacroDefinitions s =
 
 -- | Parses one or more macro definitions separated by comments & space.
 -- Return list of macros parsed + remainder of string.
-pMacroDefinitions :: GenParser Char st ([Macro], String)
+pMacroDefinitions :: (Monad m, Stream s m Char)
+                  => ParsecT s st m ([Macro], s)
 pMacroDefinitions = do
   pSkipSpaceComments
   defs <- sepEndBy pMacroDefinition pSkipSpaceComments
@@ -60,11 +64,13 @@ pMacroDefinitions = do
 
 -- | Parses a @\\newcommand@ or @\\renewcommand@ macro definition and
 -- returns a 'Macro'.
-pMacroDefinition :: GenParser Char st Macro
+pMacroDefinition :: (Monad m, Stream s m Char)
+                 => ParsecT s st m Macro
 pMacroDefinition = newcommand <|> declareMathOperator <|> newenvironment
 
 -- | Skip whitespace and comments.
-pSkipSpaceComments :: GenParser Char st ()
+pSkipSpaceComments :: (Monad m, Stream s m Char)
+                   => ParsecT s st m ()
 pSkipSpaceComments = spaces >> skipMany (comment >> spaces)
 
 -- | Applies a list of macros to a string recursively until a fixed
@@ -73,7 +79,8 @@ pSkipSpaceComments = spaces >> skipMany (comment >> spaces)
 applyMacros :: [Macro] -> String -> String
 applyMacros [] s = s
 applyMacros ms s =
-  maybe s id $ iterateToFixedPoint ((2 * length ms) + 1) (applyMacrosOnce ms) s
+  maybe s id $ iterateToFixedPoint ((2 * length ms) + 1)
+    (applyMacrosOnce ms) s
 
 ------------------------------------------------------------------------------
 
@@ -99,13 +106,15 @@ applyMacrosOnce ms s =
                          , ctrlseq
                          , count 1 anyChar ]
 
-ctrlseq :: GenParser Char st String
+ctrlseq :: (Monad m, Stream s m Char)
+        => ParsecT s st m String
 ctrlseq = do
           char '\\'
           res <- many1 letter <|> count 1 anyChar
           return $ '\\' : res
 
-newcommand :: GenParser Char st Macro
+newcommand :: (Monad m, Stream s m Char)
+           => ParsecT s st m Macro
 newcommand = try $ do
   char '\\'
   -- we ignore differences between these so far:
@@ -147,7 +156,8 @@ newcommand = try $ do
                      Nothing -> args
     return $ apply args' $ "{" ++ body ++ "}"
 
-newenvironment :: GenParser Char st Macro
+newenvironment :: (Monad m, Stream s m Char)
+               => ParsecT s st m Macro
 newenvironment = try $ do
   char '\\'
   -- we ignore differences between these so far:
@@ -197,7 +207,8 @@ newenvironment = try $ do
            $ opener ++ body ++ closer
 
 -- | Parser for \DeclareMathOperator(*) command.
-declareMathOperator :: GenParser Char st Macro
+declareMathOperator :: (Monad m, Stream s m Char)
+                    => ParsecT s st m Macro
 declareMathOperator = try $ do
   string "\\DeclareMathOperator"
   pSkipSpaceComments
@@ -229,17 +240,20 @@ apply args ('\\':'#':xs) = '\\':'#' : apply args xs
 apply args (x:xs) = x : apply args xs
 apply _ "" = ""
 
-skipComment :: GenParser Char st ()
+skipComment :: (Monad m, Stream s m Char)
+            => ParsecT s st m ()
 skipComment = skipMany comment
 
-comment :: GenParser Char st ()
+comment :: (Monad m, Stream s m Char)
+        => ParsecT s st m ()
 comment = do
   char '%'
   skipMany (notFollowedBy newline >> anyChar)
   newline
   return ()
 
-numArgs :: GenParser Char st Int
+numArgs :: (Monad m, Stream s m Char)
+        => ParsecT s st m Int
 numArgs = option 0 $ try $ do
   pSkipSpaceComments
   char '['
@@ -249,13 +263,16 @@ numArgs = option 0 $ try $ do
   char ']'
   return $ read [n]
 
-optArg :: GenParser Char st (Maybe String)
+optArg :: (Monad m, Stream s m Char)
+       => ParsecT s st m (Maybe String)
 optArg = option Nothing $ (liftM Just $ inBrackets)
 
-escaped :: String -> GenParser Char st String
+escaped :: (Monad m, Stream s m Char)
+         => String -> ParsecT s st m String
 escaped xs = try $ char '\\' >> oneOf xs >>= \x -> return ['\\',x]
 
-inBrackets :: GenParser Char st String
+inBrackets :: (Monad m, Stream s m Char)
+           => ParsecT s st m String
 inBrackets = try $ do
   char '['
   pSkipSpaceComments
@@ -263,7 +280,8 @@ inBrackets = try $ do
           (try $ pSkipSpaceComments >> char ']')
   return $ concat res
 
-inbraces :: GenParser Char st String
+inbraces :: (Monad m, Stream s m Char)
+         => ParsecT s st m String
 inbraces = try $ do
   char '{'
   res <- manyTill (skipComment >>
@@ -271,7 +289,8 @@ inbraces = try $ do
     (try $ skipComment >> char '}')
   return $ concat res
 
-inbraces' :: GenParser Char st String
+inbraces' :: (Monad m, Stream s m Char)
+          => ParsecT s st m String
 inbraces' = do
   res <- inbraces
   return $ '{' : (res ++ "}")
