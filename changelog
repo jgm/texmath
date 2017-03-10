@@ -1,3 +1,8 @@
+texmath (0.9.3)
+
+  * Expose pMacroDefinition in Text.TeXMath.Readers.TeX.Macros,
+    with generalized type.
+
 texmath (0.9.2)
 
   * Support `\newenvironment` and `\renewenvironment`.
