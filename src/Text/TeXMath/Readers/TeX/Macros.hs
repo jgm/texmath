@@ -266,9 +266,9 @@ inBrackets = try $ do
 inbraces :: GenParser Char st String
 inbraces = try $ do
   char '{'
-  res <- manyTill (pSkipSpaceComments >>
+  res <- manyTill (skipComment >>
             (inbraces' <|> count 1 anyChar <|> escaped "{}"))
-    (try $ pSkipSpaceComments >> char '}')
+    (try $ skipComment >> char '}')
   return $ concat res
 
 inbraces' :: GenParser Char st String
