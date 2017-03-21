@@ -1,3 +1,12 @@
+texmath (0.9.4)
+
+  * Added writer for GNU eqn format (used with *roff).
+
+    + New module Text.TeXMath.Writers.Eqn, exporting writeEqn.
+    + Moved handleDownup to Shared.
+    + Add eqn output option in texmath executable.
+    + Add eqn writer tests.
+
 texmath (0.9.3)
 
   * Expose pMacroDefinition in Text.TeXMath.Readers.TeX.Macros,
