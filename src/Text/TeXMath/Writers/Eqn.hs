@@ -24,14 +24,7 @@ import Data.List (intercalate, transpose)
 import Data.Char (isAscii, ord)
 import Text.Printf (printf)
 import Text.TeXMath.Types
-import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import qualified Text.TeXMath.Shared as S
-import Data.Generics (everywhere, mkT)
-import Control.Applicative ((<$>), Applicative)
-import Control.Monad (when, unless, foldM_)
-import Control.Monad.Reader (MonadReader, runReader, Reader, asks, local)
-import Control.Monad.Writer( MonadWriter, WriterT,
-                             execWriterT, tell, censor)
 import Data.Generics (everywhere, mkT)
 import Data.Ratio ((%))
 
@@ -46,7 +39,7 @@ writeEqn dt exprs =
 
 -- like writeExp but inserts {} if contents contain a space
 writeExp' :: Exp -> String
-writeExp' e@(EGrouped es) = writeExp e
+writeExp' e@(EGrouped _) = writeExp e
 writeExp' e = if ' ' `elem` s
                  then "{" ++ s ++ "}"
                  else s
@@ -74,7 +67,7 @@ writeExp (EMathOperator s) =
 writeExp (ESymbol Ord [c])  -- do not render "invisible operators"
   | c `elem` ['\x2061'..'\x2064'] = "" -- see 3.2.5.5 of mathml spec
 writeExp (EIdentifier s) = writeExp (ESymbol Ord s)
-writeExp (ESymbol t s) =
+writeExp (ESymbol _ s) =
   case s of
     "\8805" -> ">="
     "\8804" -> "<="
@@ -135,17 +128,14 @@ writeExp (ESymbol t s) =
     "\926" -> "XI"
     "\950" -> "zeta"
     _ | all isAscii s -> s
-    otherwise -> "\\[" ++ intercalate " " (map toUchar s) ++ "]"
+      |otherwise -> "\\[" ++ intercalate " " (map toUchar s) ++ "]"
   where toUchar c = printf "u%04x" (ord c)
 writeExp (ESpace d) =
   case d of
       _ | d > 0 && d < (2 % 9) -> "^"
         | d >= (2 % 9) && d < (3 % 9) -> "~"
-        | d < 0     -> "back " ++ show (floor $ -1 * d * 100)
-        | otherwise -> "fwd " ++ show (floor $ d * 100)
-writeExp (ESpace width) =
-  let halfs = floor $ width * 9
-  in  replicate (halfs `div` 2) '~' ++ replicate (halfs `mod` 2) '^'
+        | d < 0     -> "back " ++ show (floor (-1 * d * 100) :: Int)
+        | otherwise -> "fwd " ++ show (floor (d * 100) :: Int)
 writeExp (EFraction fractype e1 e2) = writeExp' e1 ++ op ++ writeExp' e2
   where op = if fractype == NoLineFrac
                 then " / "
@@ -168,7 +158,7 @@ writeExp (ESqrt e) = "sqrt " ++ writeExp' e
 writeExp (ERoot i e) = "\"\" sup " ++ writeExp' i ++ " sqrt " ++ writeExp' e
 writeExp (EPhantom e) = "hphantom " ++ writeExp' e
 writeExp (EBoxed e) = writeExp e -- TODO: any way to do this?
-writeExp (EScaled size e) = writeExp e
+writeExp (EScaled _size e) = writeExp e -- TODO: any way?
 writeExp (EText ttype s) =
   let quoted = "\"" ++ s ++ "\""
   in case ttype of
