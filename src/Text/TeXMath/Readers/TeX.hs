@@ -60,7 +60,6 @@ expr1 = choice
           , substack
           , bareSubSup
           , environment
-          , diacritical
           , unicode
           , ensuremath
           , enclosure
@@ -455,12 +454,12 @@ isConvertible _ = False
 
 -- check if sub/superscripts should always be under and over the expression
 isUnderover :: Exp -> Bool
-isUnderover (EOver _ _ (ESymbol Accent "\xFE37")) = True   -- \overbrace
-isUnderover (EOver _ _ (ESymbol Accent "\x23B4")) = True   -- \overbracket
-isUnderover (EUnder _ _ (ESymbol Accent "\xFE38")) = True  -- \underbrace
-isUnderover (EUnder _ _ (ESymbol Accent "\x23B5")) = True  -- \underbracket
-isUnderover (EOver _  _ (ESymbol Accent "\x23DE")) = True  -- \overbrace
-isUnderover (EUnder _  _ (ESymbol Accent "\x23DF")) = True  -- \underbrace
+isUnderover (EOver _ _ (ESymbol TOver "\xFE37")) = True   -- \overbrace
+isUnderover (EOver _ _ (ESymbol TOver "\x23B4")) = True   -- \overbracket
+isUnderover (EOver _  _ (ESymbol TOver "\x23DE")) = True  -- \overbrace
+isUnderover (EUnder _ _ (ESymbol TUnder "\xFE38")) = True  -- \underbrace
+isUnderover (EUnder _ _ (ESymbol TUnder "\x23B5")) = True  -- \underbracket
+isUnderover (EUnder _  _ (ESymbol TUnder "\x23DF")) = True  -- \underbrace
 isUnderover _ = False
 
 subSup :: Maybe Bool -> Bool -> Exp -> TP Exp
@@ -532,14 +531,6 @@ styleOps = M.fromList
           , ("\\mathbfcal",  EStyled TextBoldScript)
           , ("\\mathsfit",   EStyled TextSansSerifItalic)
           ]
-
-diacritical :: TP Exp
-diacritical = do
-  c <- oneOfCommands (map snd S.diacriticals)
-  case S.getDiacriticalCons c of
-       Just r  -> r <$> texToken
-       Nothing -> mzero
-
 
 phantom :: TP Exp
 phantom = EPhantom <$> (ctrlseq "phantom" *> texToken)
@@ -702,6 +693,12 @@ tSymbol :: TP Exp
 tSymbol = try $ do
   sym <- anyCtrlSeq
   case M.lookup sym symbols of
+       Just acc@(ESymbol Accent _) ->
+         (\t -> EOver False t acc) <$> texToken
+       Just acc@(ESymbol TUnder _) ->
+         (\t -> EUnder False t acc) <$> texToken
+       Just acc@(ESymbol TOver _) ->
+         (\t -> EOver False t acc) <$> texToken
        Just x  -> return x
        Nothing -> mzero
 
@@ -1339,7 +1336,7 @@ symbols = M.fromList
   , ("\\bagmember",ESymbol Rel "\8959")
   , ("\\ballotcheck",ESymbol Ord "\10003")
   , ("\\ballotx",ESymbol Ord "\10007")
-  , ("\\bar",ESymbol Accent "\772")
+  , ("\\bar",ESymbol Accent "\8254")
   , ("\\barV",ESymbol Rel "\10986")
   , ("\\barcap",ESymbol Bin "\10819")
   , ("\\barcup",ESymbol Bin "\10818")
@@ -1582,7 +1579,6 @@ symbols = M.fromList
   , ("\\divslash",ESymbol Bin "\8725")
   , ("\\dlsh",ESymbol Rel "\8626")
   , ("\\dot",ESymbol Accent "\775")
-  , ("\\dot",ESymbol Ord "\10625")
   , ("\\doteqdot",ESymbol Rel "\8785")
   , ("\\dotequal",ESymbol Rel "\8784")
   , ("\\dotequiv",ESymbol Rel "\10855")
@@ -3099,12 +3095,13 @@ symbols = M.fromList
   , ("\\otimeslhrim",ESymbol Bin "\10804")
   , ("\\otimesrhrim",ESymbol Bin "\10805")
   , ("\\oturnedcomma",ESymbol Accent "\786")
-  , ("\\overbar",ESymbol Accent "\773")
+  , ("\\overbar",ESymbol Accent "\175")
   , ("\\overbrace",ESymbol TOver "\9182")
   , ("\\overbracket",ESymbol TOver "\9140")
   , ("\\overleftarrow",ESymbol Accent "\8406")
+  , ("\\overrightarrow",ESymbol Accent "\8407")
   , ("\\overleftrightarrow",ESymbol Accent "\8417")
-  , ("\\overline",ESymbol Accent "\773")
+  , ("\\overline",ESymbol TOver "\175")
   , ("\\overparen",ESymbol TOver "\9180")
   , ("\\ovhook",ESymbol Accent "\777")
   , ("\\parallelogram",ESymbol Ord "\9649")
@@ -3488,12 +3485,12 @@ symbols = M.fromList
   , ("\\ulcorner",ESymbol Open "\8988")
   , ("\\ultriangle",ESymbol Ord "\9720")
   , ("\\uminus",ESymbol Bin "\10817")
-  , ("\\underbar",ESymbol Accent "\817")
+  , ("\\underbar",ESymbol TUnder "\817")
   , ("\\underbrace",ESymbol TUnder "\9183")
   , ("\\underbracket",ESymbol TUnder "\9141")
   , ("\\underleftarrow",ESymbol Accent "\8430")
   , ("\\underleftharpoondown",ESymbol Accent "\8429")
-  , ("\\underline",ESymbol Accent "\818")
+  , ("\\underline",ESymbol TUnder "\818")
   , ("\\underparen",ESymbol TUnder "\9181")
   , ("\\underrightarrow",ESymbol Accent "\8431")
   , ("\\underrightharpoondown",ESymbol Accent "\8428")

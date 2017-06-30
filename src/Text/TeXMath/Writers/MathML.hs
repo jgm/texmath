@@ -124,15 +124,17 @@ accent = add_attr (Attr (unqual "accent") "true") .
 makeFence :: FormType -> Element -> Element
 makeFence (fromForm -> t) = withAttribute "stretchy" "false" . withAttribute "form" t
 
-op :: String -> Element
-op s = accentCons $ unode "mo" s
-  where
-    accentCons =
-      case (elem "accent") . properties <$> getMathMLOperator s FPostfix of
-            Nothing -> id
-            Just False -> id
-            Just True -> withAttribute "accent" "false"
-
+showExp' :: TextType -> Exp -> Element
+showExp' tt e =
+  case e of
+    ESymbol Accent x -> accent x
+    ESymbol _ x      ->
+      let isaccent = case (elem "accent") . properties <$>
+                           getMathMLOperator x FPostfix of
+                             Just True -> "true"
+                             _         -> "false"
+      in  withAttribute "accent" isaccent $ unode "mo" x
+    _                -> showExp tt e
 
 showExp :: TextType -> Exp -> Element
 showExp tt e =
@@ -146,19 +148,19 @@ showExp tt e =
                        [ makeStretchy FPostfix (unode "mo" end) | not (null end) ]
    EIdentifier x    -> unode "mi" $ toUnicode tt x
    EMathOperator x  -> unode "mo" x
-   ESymbol Accent x -> accent x
-   ESymbol Open x   -> makeFence FPrefix $ op x
-   ESymbol Close x  -> makeFence FPostfix $ op x
+   ESymbol Open x   -> makeFence FPrefix $ unode "mo" x
+   ESymbol Close x  -> makeFence FPostfix $ unode "mo" x
    ESymbol Ord x    -> unode "mi" x
-   ESymbol _ x      -> op x
+   ESymbol _ x      -> unode "mo" x
    ESpace x         -> spaceWidth x
    EFraction ft x y -> showFraction tt ft x y
    ESub x y         -> unode "msub" $ map (showExp tt) [x, y]
    ESuper x y       -> unode "msup" $ map (showExp tt) [x, y]
    ESubsup x y z    -> unode "msubsup" $ map (showExp tt) [x, y, z]
-   EUnder _ x y     -> unode "munder" $ map (showExp tt) [x, y]
-   EOver _ x y      -> unode "mover" $ map (showExp tt) [x, y]
-   EUnderover _ x y z -> unode "munderover" $ map (showExp tt) [x, y, z]
+   EUnder _ x y     -> unode "munder" [showExp tt x, showExp' tt y]
+   EOver _ x y      -> unode "mover" [showExp tt x, showExp' tt y]
+   EUnderover _ x y z -> unode "munderover"
+                          [showExp tt x, showExp' tt y, showExp' tt z]
    EPhantom x       -> unode "mphantom" $ showExp tt x
    EBoxed x         -> withAttribute "notation" "box" .
                        unode "menclose" $ showExp tt x

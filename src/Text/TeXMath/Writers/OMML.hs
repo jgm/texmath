@@ -202,19 +202,25 @@ showExp props e =
      | n > 1.8               -> [str props "\x2001\x2001"]
      | otherwise             -> []
        -- this is how the xslt sheet handles all spaces
-   EUnder _ x (ESymbol Accent [c]) | isBarChar c ->
+   EUnder _ x (ESymbol _ [c]) | isBarChar c ->
                        [mnode "bar" [ mnode "barPr" $
                                         mnodeA "pos" "bot" ()
                                     , mnode "e" $ showExp props x ]]
-   EOver _ x (ESymbol Accent [c]) | isBarChar c ->
+   EOver _ x (ESymbol _ [c]) | isBarChar c ->
                        [mnode "bar" [ mnode "barPr" $
                                         mnodeA "pos" "top" ()
                                     , mnode "e" $ showExp props x ]]
-   EOver _ x (ESymbol Accent y) ->
+   EOver _ x (ESymbol st y) | st == Accent || st == TOver ->
                        [mnode "groupChr" [ mnode "groupChrPr"
                                            [ mnodeA "chr" y ()
                                            , mnodeA "pos" "top" ()
                                            , mnodeA "vertJc" "bot" () ]
+                                    , mnode "e" $ showExp props x ]]
+   EUnder _ x (ESymbol st y) | st == Accent || st == TUnder ->
+                       [mnode "groupChr" [ mnode "groupChrPr"
+                                           [ mnodeA "chr" y ()
+                                           , mnodeA "pos" "bot" ()
+                                           , mnodeA "vertJc" "top" () ]
                                     , mnode "e" $ showExp props x ]]
    ESub x y         -> [mnode "sSub" [ mnode "e" $ showExp props x
                                      , mnode "sub" $ showExp props y]]
@@ -244,7 +250,8 @@ showExp props e =
    EStyled a es     -> concatMap (showExp (setProps a)) es
 
 isBarChar :: Char -> Bool
-isBarChar c = c == '\x203E' || c == '\x00AF'
+isBarChar c = c == '\x203E' || c == '\x00AF' ||
+              c == '\x0304' || c == '\x0333'
 
 isNary :: Exp -> Bool
 isNary (ESymbol Op _) = True

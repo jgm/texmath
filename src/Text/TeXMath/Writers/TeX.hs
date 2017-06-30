@@ -295,7 +295,9 @@ writeDelim fence delim = do
 writeScript :: Position -> Bool -> Exp -> Exp -> Math ()
 writeScript pos convertible b e1 = do
   let diacmd = case e1 of
-                    ESymbol Accent a -> S.getDiacriticalCommand pos a
+                    ESymbol stype a
+                      | stype `elem` [Accent, TOver, TUnder]
+                      -> S.getDiacriticalCommand pos a
                     _ -> Nothing
   case diacmd of
        Just cmd -> do

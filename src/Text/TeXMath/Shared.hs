@@ -26,7 +26,6 @@ module Text.TeXMath.Shared
   , getSpaceWidth
   , getSpaceChars
   , getDiacriticalCommand
-  , getDiacriticalCons
   , diacriticals
   , getOperator
   , readLength
@@ -104,16 +103,6 @@ getScalerCommand width =
 getScalerValue :: String -> Maybe Rational
 getScalerValue command = lookup command scalers
 
--- | Returns the correct constructor given a LaTeX command
-getDiacriticalCons :: String -> Maybe (Exp -> Exp)
-getDiacriticalCons command =
-    f <$> M.lookup command diaMap
-  where
-    diaMap = M.fromList (reverseKeys diacriticals)
-    f s e = (if command `elem` under
-                then EUnder False
-                else EOver False) e (ESymbol Accent s)
-
 -- | Given a diacritical mark, returns the corresponding LaTeX command
 getDiacriticalCommand  :: Position -> String -> Maybe String
 getDiacriticalCommand pos symbol = do
@@ -184,11 +173,6 @@ parseLength = do
     -- This is safe as dec and frac must be a double of some kind
     let [(n :: Double, [])] = reads (neg ++ dec ++ frac) :: [(Double, String)]
     return (round (n * 18) % 18, unit)
-
-
-
-reverseKeys :: [(a, b)] -> [(b, a)]
-reverseKeys = map (\(k,v) -> (v, k))
 
 textTypesMap :: M.Map TextType (String, String)
 textTypesMap = M.fromList textTypes
@@ -306,30 +290,38 @@ unavailable = ["\\overbracket", "\\underbracket"]
 diacriticals :: [(String, String)]
 diacriticals =
                [ ("\x00B4", "\\acute")
-               , (("\x0060", "\\grave"))
-               , (("\x02D8", "\\breve"))
-               , (("\x02C7", "\\check"))
-               , (("\x307", "\\dot"))
-               , (("\x308", "\\ddot"))
-               , (("\x20DB", "\\dddot"))
-               , (("\x20DC", "\\ddddot"))
-               , (("\x00B0", "\\mathring"))
-               , (("\x20D7", "\\vec"))
-               , (("\x20D7", "\\overrightarrow"))
-               , (("\x20D6", "\\overleftarrow"))
-               , (("\x005E", "\\hat"))
-               , (("\x0302", "\\widehat"))
-               , (("\x02C6", "\\widehat"))
-               , (("\x0303", "\\tilde"))
-               , (("\x02DC", "\\widetilde"))
-               , (("\x203E", "\\bar"))
-               , (("\x23DE", "\\overbrace"))
-               , (("\x23B4", "\\overbracket")) -- Only availible in mathtools
-               , (("\x00AF", "\\overline"))
-               , (("\x23DF", "\\underbrace"))
-               , (("\x23B5", "\\underbracket")) -- mathtools
-               , (("\x0332", "\\underline"))
-               , (("\x0333", "\\underbar"))
+               , ("\x0301", "\\acute")
+               , ("\x0060", "\\grave")
+               , ("\x0300", "\\grave")
+               , ("\x02D8", "\\breve")
+               , ("\x0306", "\\breve")
+               , ("\x02C7", "\\check")
+               , ("\x030C", "\\check")
+               , ("\x307", "\\dot")
+               , ("\x308", "\\ddot")
+               , ("\x20DB", "\\dddot")
+               , ("\x20DC", "\\ddddot")
+               , ("\x00B0", "\\mathring")
+               , ("\x030A", "\\mathring")
+               , ("\x20D7", "\\vec")
+               , ("\x20D7", "\\overrightarrow")
+               , ("\x20D6", "\\overleftarrow")
+               , ("\x005E", "\\hat")
+               , ("\x02C6", "\\widehat")
+               , ("\x0302", "\\widehat")
+               , ("\x02DC", "\\widetilde")
+               , ("\x0303", "\\tilde")
+               , ("\x0303", "\\widetilde")
+               , ("\x0304", "\\bar")
+               , ("\x203E", "\\bar")
+               , ("\x23DE", "\\overbrace")
+               , ("\x23B4", "\\overbracket") -- Only availible in mathtools
+               , ("\x00AF", "\\overline")
+               , ("\x0305", "\\overline")
+               , ("\x23DF", "\\underbrace")
+               , ("\x23B5", "\\underbracket") -- mathtools
+               , ("\x0332", "\\underline")
+               , ("\x0333", "\\underbar")
                ]
 
 

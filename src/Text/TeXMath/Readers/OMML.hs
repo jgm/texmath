@@ -232,7 +232,7 @@ elemToExps' element | isElem "m" "acc" element = do
             Just . head
       chr' = case chr of
         Just c -> c
-        Nothing -> '^'       -- default to hat.
+        Nothing -> '\x302'       -- default to wide hat.
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   return $ [EOver False baseExp (ESymbol Accent [chr'])]
@@ -243,8 +243,8 @@ elemToExps' element | isElem "m" "bar" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   case pos of
-    "top" -> Just [EOver False baseExp (ESymbol Accent "\175")]
-    "bot" -> Just [EUnder False baseExp (ESymbol Accent "\818")]
+    "top" -> Just [EOver False baseExp (ESymbol TOver "\773")]
+    "bot" -> Just [EUnder False baseExp (ESymbol TUnder "\818")]
     _     -> Nothing
 elemToExps' element | isElem "m" "box" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
@@ -315,13 +315,13 @@ elemToExps' element | isElem "m" "groupChr" element = do
             Just (c:_) -> c
             _           -> '\65079'   -- default to overbrace
       in
-       return [EOver False baseExp (ESymbol Accent [chr'])]
+       return [EOver False baseExp (ESymbol TOver [chr'])]
     Just "bot" ->
       let chr' = case chr of
             Just (c:_) -> c
             _           -> '\65080'   -- default to underbrace
       in
-       return [EUnder False baseExp (ESymbol Accent [chr'])]
+       return [EUnder False baseExp (ESymbol TUnder [chr'])]
     _          -> Nothing
 elemToExps' element | isElem "m" "limLow" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element
