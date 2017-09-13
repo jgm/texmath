@@ -112,20 +112,29 @@ expToInlines tt (ESubsup x y z) = do
   z' <- expToInlines tt z
   return $ x' ++ [Subscript y'] ++ [Superscript z']
 expToInlines _ (EText tt' x) = Just [renderStr tt' x]
-expToInlines tt (EOver _ (EGrouped [EIdentifier [c]]) (ESymbol Accent [accent])) =
+expToInlines tt (EOver b (EGrouped [EIdentifier [c]]) (ESymbol Accent [accent])) = expToInlines tt (EOver b (EIdentifier [c]) (ESymbol Accent [accent]))
+expToInlines tt (EOver _ (EIdentifier [c]) (ESymbol Accent [accent])) =
     case accent of
          '\x203E' -> Just [renderStr tt' [c,'\x0304']]  -- bar
+         '\x0304' -> Just [renderStr tt' [c,'\x0304']]  -- bar combining
          '\x00B4' -> Just [renderStr tt' [c,'\x0301']]  -- acute
+         '\x0301' -> Just [renderStr tt' [c,'\x0301']]  -- acute combining
          '\x0060' -> Just [renderStr tt' [c,'\x0300']]  -- grave
+         '\x0300' -> Just [renderStr tt' [c,'\x0300']]  -- grave combining
          '\x02D8' -> Just [renderStr tt' [c,'\x0306']]  -- breve
+         '\x0306' -> Just [renderStr tt' [c,'\x0306']]  -- breve combining
          '\x02C7' -> Just [renderStr tt' [c,'\x030C']]  -- check
+         '\x030C' -> Just [renderStr tt' [c,'\x030C']]  -- check combining
          '.'      -> Just [renderStr tt' [c,'\x0307']]  -- dot
+         '\x0307' -> Just [renderStr tt' [c,'\x0307']]  -- dot combining
          '\x00B0' -> Just [renderStr tt' [c,'\x030A']]  -- ring
+         '\x030A' -> Just [renderStr tt' [c,'\x030A']]  -- ring combining
          '\x20D7' -> Just [renderStr tt' [c,'\x20D7']]  -- arrow right
          '\x20D6' -> Just [renderStr tt' [c,'\x20D6']]  -- arrow left
          '\x005E' -> Just [renderStr tt' [c,'\x0302']]  -- hat
-         '\x0302' -> Just [renderStr tt' [c,'\x0302']]  -- hat
+         '\x0302' -> Just [renderStr tt' [c,'\x0302']]  -- hat combining
          '~'      -> Just [renderStr tt' [c,'\x0303']]  -- tilde
+         '\x0303' -> Just [renderStr tt' [c,'\x0303']]  -- tilde combining
          _        -> Nothing
       where tt' = if tt == TextNormal then TextItalic else tt
 expToInlines tt (EScaled _ e) = expToInlines tt e
