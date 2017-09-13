@@ -1,3 +1,7 @@
+texmath (0.9.4.2)
+
+  * Pandoc writer: better handle accented characters (jgm/pandoc#3922).
+
 texmath (0.9.4.1)
 
   * Improved handling of accents and upper/lower delimiters (#98).
