@@ -1,3 +1,8 @@
+texmath (0.9.4.3)
+
+  * MathML writer: put linethickness attribute directly on mfrac
+    element. This fixes binomial rendering.
+
 texmath (0.9.4.2)
 
   * Pandoc writer: better handle accented characters (jgm/pandoc#3922).
