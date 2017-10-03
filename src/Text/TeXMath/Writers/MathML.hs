@@ -57,7 +57,7 @@ showFraction tt ft x y =
        DisplayFrac  -> withAttribute "displaystyle" "true" .
                          unode "mstyle" . unode "mfrac" $ [x', y']
        NoLineFrac   -> withAttribute "linethickness" "0" .
-                         unode "mstyle" . unode "mfrac" $ [x', y']
+                         unode "mfrac" $ [x', y']
   where x' = showExp tt x
         y' = showExp tt y
 
