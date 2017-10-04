@@ -31,12 +31,10 @@
     <mo>=</mo>
     <mrow>
       <mo stretchy="true" form="prefix">(</mo>
-      <mstyle linethickness="0">
-        <mfrac>
-          <mi>n</mi>
-          <mi>k</mi>
-        </mfrac>
-      </mstyle>
+      <mfrac linethickness="0">
+        <mi>n</mi>
+        <mi>k</mi>
+      </mfrac>
       <mo stretchy="true" form="postfix">)</mo>
     </mrow>
     <mo>=</mo>

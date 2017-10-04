@@ -2,25 +2,21 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
     <mo stretchy="true" form="prefix">(</mo>
-    <mstyle linethickness="0">
-      <mfrac>
-        <mi>a</mi>
-        <mrow>
-          <mo stretchy="true" form="prefix">{</mo>
-          <mstyle linethickness="0">
-            <mfrac>
-              <mi>b</mi>
-              <mrow>
-                <mi>c</mi>
-                <mo>+</mo>
-                <mn>2</mn>
-              </mrow>
-            </mfrac>
-          </mstyle>
-          <mo stretchy="true" form="postfix">}</mo>
-        </mrow>
-      </mfrac>
-    </mstyle>
+    <mfrac linethickness="0">
+      <mi>a</mi>
+      <mrow>
+        <mo stretchy="true" form="prefix">{</mo>
+        <mfrac linethickness="0">
+          <mi>b</mi>
+          <mrow>
+            <mi>c</mi>
+            <mo>+</mo>
+            <mn>2</mn>
+          </mrow>
+        </mfrac>
+        <mo stretchy="true" form="postfix">}</mo>
+      </mrow>
+    </mfrac>
     <mo stretchy="true" form="postfix">)</mo>
   </mrow>
 </math>
