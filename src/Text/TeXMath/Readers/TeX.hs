@@ -507,6 +507,7 @@ styleOps = M.fromList
           , ("\\mathbf",     EStyled TextBold)
           , ("\\boldsymbol", EStyled TextBold)
           , ("\\bm",         EStyled TextBold)
+          , ("\\symbf",      EStyled TextBold)
           , ("\\mathbold",   EStyled TextBold)
           , ("\\pmb",        EStyled TextBold)
           , ("\\mathbfup",   EStyled TextBold)
