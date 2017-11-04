@@ -2,7 +2,7 @@
 {2{\sum{ab}}} & \\
 x^{\prime 3} & \\
 {{{f^{\prime}{(x)}} + {\sin\cos\theta}} = 1} & \\
-{{{f{(z)}} = {\sum\limits_{n = 0}^{\infty}{a_{n}z^{n}}}}\text{, }{{\left| z \right| < R}{({R \neq 0})}}} & \\
+{{{f{(z)}} = {\sum\limits_{n = 0}^{\infty}{a_{n}z^{n}}}}\text{, }{{\left| z \right| < R}\hspace{0pt}{({R \neq 0})}}} & \\
 {\left. \int{}_{C}{\left( {\sum\limits_{n = 0}^{\infty}{a_{n}z^{n}}} \right){\mathbb{d}z}} \right. = {\sum\limits_{n = 0}^{\infty}{a_{n}\left. \int{}_{C}{z^{n}{\mathbb{d}z}} \right.}}} & \\
 {{\lim\limits_{n\rightarrow\infty}\left| \left. \int{}_{C}{\left\lbrack {{f{(z)}} - {\sum\limits_{k = 0}^{n}{a_{k}z^{k}}}} \right\rbrack{\mathbb{d}z}} \right. \right|} = 0} & \\
 \left. {n \geq {N{(\varepsilon)}}}\Rightarrow{\left| {{f{(z)}} - {\sum\limits_{k = 0}^{n}{a_{k}z^{k}}}} \right| < \varepsilon} \right. & \\
@@ -95,7 +95,7 @@ c & d \\
 \end{matrix}}} & \\
 {{y\left( x \right)} = \frac{{xe^{x}} - e^{x} + 2}{e^{x}} = {x - 1 + \frac{2}{e^{x}}}} & \\
 \begin{array}{r}
-{{{\mathbb{D}_{xx}y} - y} = 0} \\
+{{{\mathbb{D}_{x\hspace{0pt}x}y} - y} = 0} \\
 {{y{(0)}} = 1} \\
 {{y^{\prime}\left( 0 \right)} = 0} \\
 \end{array} & \\
@@ -175,8 +175,8 @@ x & {\text{if }{x < 0}} \\
 \end{matrix} & \\
 \text{⋮} & \\
 {{\operatorname{\nabla\times}F} = 0} & \\
-{\operatorname{\nabla}F} & \\
-{{\operatorname{\nabla\nabla}F} = {{\nabla^{2}F} + 7} = A} & \\
+{\operatorname{\nabla\cdot}F} & \\
+{{\operatorname{\nabla\cdot\nabla}F} = {{\nabla^{2}F} + 7} = A} & \\
 {{\operatorname{\nabla\times}{({{xy},{yz},{zx}})}} = \begin{bmatrix}
 {- y} \\
 {- z} \\
@@ -188,7 +188,7 @@ x & {\text{if }{x < 0}} \\
 {x + 1} & \\
 {{x + {f{(\mathbf{x})}} - 1} = 123} & \\
 {{\mathit{T}\mathit{h}\mathit{e}\mathit{q}\mathit{u}\mathit{i}\mathit{c}\mathit{k}brownfoxjumps\mathbf{o}\mathbf{v}\mathbf{e}\mathbf{r}the\mathsf{l}\mathsf{a}\mathsf{z}\mathsf{y}\mathtt{d}\mathtt{o}\mathtt{g}}\text{.}{Theend}\text{.}} & \\
-\left( {{\frac{\partial f}{\partial x_{1}}\left( {c_{1},c_{2},\ldots,c_{n}} \right)},{\frac{\partial f}{\partial x_{2}}\left( {c_{1},c_{2},\ldots,c_{n}} \right)},\ldots,{\frac{\partial f}{\partial x_{n1}}\left( {c_{1},c_{2},\ldots,c_{n}} \right)}} \right) & \\
+\left( {{\frac{\partial f}{\partial x_{1}}\left( {c_{1},c_{2},\ldots,c_{n}} \right)},{\frac{\partial f}{\partial x_{2}}\left( {c_{1},c_{2},\ldots,c_{n}} \right)},\ldots,{\frac{\partial f}{\partial x_{n\hspace{0pt}1}}\left( {c_{1},c_{2},\ldots,c_{n}} \right)}} \right) & \\
 {{\nabla\left( {{cuv} + {v^{2}w}} \right)} = \left( {{uv},{cv},{{cu} + {2vw}},v^{2}} \right)} & \\
 \begin{matrix}
 {{D_{u}{f\left( {a,b,c} \right)}} = {{\nabla{f\left( {a,b,c} \right)}} \cdot \mathbf{u}}} \\
@@ -225,14 +225,14 @@ a & d & 1 \\
 \end{pmatrix} \right\}\leftrightarrow{\frac{5}{2} - {\frac{1}{2}\sqrt{33}}} \right. & \\
 {\left. \parallel A\parallel \right. = {\max\limits_{x \neq 0}\frac{\left. \parallel{Ax}\parallel \right.}{\left. \parallel x\parallel \right.}}} & \\
 {{\begin{pmatrix}
-a_{11} & a_{12} \\
-a_{21} & a_{22} \\
+a_{1\hspace{0pt}1} & a_{1\hspace{0pt}2} \\
+a_{2\hspace{0pt}1} & a_{2\hspace{0pt}2} \\
 \end{pmatrix} + \begin{pmatrix}
-b_{11} & b_{12} \\
-b_{21} & b_{22} \\
+b_{1\hspace{0pt}1} & b_{1\hspace{0pt}2} \\
+b_{2\hspace{0pt}1} & b_{2\hspace{0pt}2} \\
 \end{pmatrix}} = \begin{pmatrix}
-{a_{11} + b_{11}} & {a_{12} + b_{12}} \\
-{a_{21} + b_{21}} & {a_{22} + b_{22}} \\
+{a_{1\hspace{0pt}1} + b_{1\hspace{0pt}1}} & {a_{1\hspace{0pt}2} + b_{1\hspace{0pt}2}} \\
+{a_{2\hspace{0pt}1} + b_{2\hspace{0pt}1}} & {a_{2\hspace{0pt}2} + b_{2\hspace{0pt}2}} \\
 \end{pmatrix}} & \\
 {{f\left( \begin{bmatrix}
 1 & 2 \\
@@ -308,7 +308,7 @@ x \\
 {\operatorname{mod}a} & \\
 {{5\operatorname{mod}3} = 2} & \\
 {{{f{(0)}}\operatorname{mod}3} = 1} & \\
-{{{{5x} + 4} \equiv 8}\left( {\operatorname{mod}13} \right)} & \\
+{{{{5x} + 4} \equiv 8}\hspace{0pt}\left( {\operatorname{mod}13} \right)} & \\
 {a = {{{({5 - 3})}/5}\operatorname{mod}7} = 6} & \\
 {{{\left( {{2x^{2}} + x + 2} \right) + \left( {{2x} + 1} \right)}\operatorname{mod}3} = {2x^{2}}} & \\
 \begin{matrix}
@@ -324,13 +324,13 @@ x \\
 {{k = {\max\left\{ {\left| {\frac{\partial f}{\partial y}{({x,y})}} \right|:{{({x,y})} \in D}} \right\}}}\text{.}} & \\
 {m = {\lim\limits_{x\overset{}{\rightarrow}a}\frac{{f{(x)}} - {f{(a)}}}{x - a}}} & \\
 {\left| A \right| = \left| \begin{matrix}
-a_{11} & a_{12} & \cdot & \cdot & \cdot & a_{1n} \\
-a_{21} & a_{22} & \cdot & \cdot & \cdot & a_{2n} \\
+a_{1\hspace{0pt}1} & a_{1\hspace{0pt}2} & \cdot & \cdot & \cdot & a_{1\hspace{0pt}n} \\
+a_{2\hspace{0pt}1} & a_{2\hspace{0pt}2} & \cdot & \cdot & \cdot & a_{2\hspace{0pt}n} \\
  \cdot & \cdot & \cdot & \mspace{1mu} & \mspace{1mu} & \cdot \\
  \cdot & \cdot & \mspace{1mu} & \cdot & \mspace{1mu} & \cdot \\
  \cdot & \cdot & \mspace{1mu} & \mspace{1mu} & \cdot & \cdot \\
-a_{n1} & a_{n2} & \cdot & \cdot & \cdot & a_{nn} \\
-\end{matrix} \right| = {{a_{11}A_{11}} + {a_{12}A_{12}} + \cdots + {a_{1n}A_{1n}}}} & \\
+a_{n\hspace{0pt}1} & a_{n\hspace{0pt}2} & \cdot & \cdot & \cdot & a_{n\hspace{0pt}n} \\
+\end{matrix} \right| = {{a_{1\hspace{0pt}1}A_{1\hspace{0pt}1}} + {a_{1\hspace{0pt}2}A_{1\hspace{0pt}2}} + \cdots + {a_{1\hspace{0pt}n}A_{1\hspace{0pt}n}}}} & \\
 {{x = 1}{(\text{hl\ text }x\text{ end.})}} & \\
 {{x = 1}{(\text{hl\ to\ URI }x\text{ end})}} & \\
 {{x = 1}{(\text{sex})}} & \\
@@ -359,7 +359,7 @@ x & x \\
 {\left. \int{}_{\mathbf{R}^{3}}{\left( {\frac{\left| u_{1} \right|^{2} + \left| {\nabla u_{0}} \right|^{2}}{2} + \frac{\left| u_{0} \right|^{6}}{6}} \right){\mathbb{d}x}} \right. < \infty} & \\
 {{\left( {\operatorname{\nabla\times}\mathbf{F}} \right) \cdot \mathbf{k}} = {z + 1}} & \\
 {M\frac{M^{\frac{M}{M}}}{M}} & \\
-{{\mathbb{D}_{x}x^{2}}\text{\quad\quad}{\mathbb{D}_{x}\left( x^{2} \right)}\text{\quad\quad}{\mathbb{D}_{xx}\left( x^{2} \right)}\text{\quad\quad}{\mathbb{D}_{x^{2}}\left( x^{2} \right)}\text{\quad\quad}{\mathbb{D}_{xy}\left( {x^{2}y^{3}} \right)}\text{\quad\quad}{\mathbb{D}_{x^{s}y^{t}}\left( {x^{2}y^{3}} \right)}} & \\
+{{\mathbb{D}_{x}x^{2}}\text{\quad\quad}{\mathbb{D}_{x}\left( x^{2} \right)}\text{\quad\quad}{\mathbb{D}_{x\hspace{0pt}x}\left( x^{2} \right)}\text{\quad\quad}{\mathbb{D}_{x^{2}}\left( x^{2} \right)}\text{\quad\quad}{\mathbb{D}_{x\hspace{0pt}y}\left( {x^{2}y^{3}} \right)}\text{\quad\quad}{\mathbb{D}_{x^{s}\hspace{0pt}y^{t}}\left( {x^{2}y^{3}} \right)}} & \\
 {5\mspace{1mu}{24!}\mspace{1mu} x^{6}} & \\
 \begin{matrix}
 \begin{matrix}
@@ -394,7 +394,7 @@ c & d \\
 {\text{testing }\begin{matrix}
 {\sin\theta} \\
 \end{matrix}} & \\
-{\widehat{a} + \check{b} + \widetilde{c} + \acute{d} + \grave{e} + \breve{f} + \overline{g} + h + \overset{}{i} + \overset{}{j} + \overset{"}{k} + \dddot{l} + \ddddot{m} + \overset{\rightarrow}{n}} & \\
+{\widehat{a} + \check{b} + \widetilde{c} + \acute{d} + \grave{e} + \breve{f} + \overline{g} + h + \overset{@}{i} + \overset{.}{j} + \overset{"}{k} + \dddot{l} + \ddddot{m} + \overset{\rightarrow}{n}} & \\
 {{f{({g{(x)}})}} = {{\sin^{3}x^{2}} + {{\sin x^{2}}{\sin\left( {\sin x^{2}} \right)}}}} & \\
 {\left( {x^{2} + 12} \right) + 1234} & \\
 \begin{matrix}
@@ -451,7 +451,7 @@ x^{2} & \text{merged} & y_{1} \\
 {{{\angle\alpha} + {\angle ABC} + {\angle 1}} = {\vartriangle abc}} & \\
 {y = {e^{- {\int{P{\mathbb{d}x}}}}\left\lbrack {{\int{e^{\int{P{\mathbb{d}x}}}Q{\mathbb{d}x}}} + c} \right\rbrack}} & \\
 {x = {1 + y^{3}}} & {x = {1 + y}} \\
-{{\$ 1.00} + {25C/} - {3\pounds} + {2.45} - {0.7Y=} - {aECU} + {20FF} + {30L} - {4.56Pts}} & \\
+{{\$ 1.00} + {25C/} - {3\pounds} + {2.45\$?} - {0.7Y=} - {aECU} + {20FF} + {30L} - {4.56Pts}} & \\
 \begin{matrix}
 {{{2x} + y} = 3} \\
 {{{3x} - {4y}} = 5} \\
@@ -468,7 +468,7 @@ x^{2} & \text{merged} & y_{1} \\
 {{A B} \subset C} & \\
 {A \nsubseteq B \nsubseteq C} & \\
 {10 11 \equiv 12} & \\
-{x\operatorname{\nleq{}}y\operatorname{\nleq{}}z} & \\
+{x\operatorname{\nleq}y\operatorname{\nleq}z} & \\
 {\overline{\lim}x} & \\
 {\underline{\lim}x} & \\
 {\lim\limits_{\rightarrow}x} & \\
