@@ -607,7 +607,7 @@ records =
   , Record {uchar = '\8714', commands = [("unicode-math","\\smallin")], category = Rel, comments = "set membership (small set membership)"}
   , Record {uchar = '\8715', commands = [("base","\\ni"),("base","\\owns"),("unicode-math","\\ni")], category = Rel, comments = "contains, variant"}
   , Record {uchar = '\8716', commands = [("wrisym","\\nni"),("txfonts","\\notni"),("unicode-math","\\nni")], category = Rel, comments = "= \\notowner (mathabx), = \\notowns (fourier), negated contains, variant"}
-  , Record {uchar = '\8717', commands = [("unicode-math","\\smallni")], category = Rel, comments = "r: contains (SMALL CONTAINS AS MEMBER)"}
+  , Record {uchar = '\8717', commands = [("base","\\ni"), ("unicode-math","\\smallni")], category = Rel, comments = "r: contains (SMALL CONTAINS AS MEMBER)"}
   , Record {uchar = '\8718', commands = [("amssymb","\\blacksquare"),("unicode-math","\\QED")], category = Ord, comments = "END OF PROOF"}
   , Record {uchar = '\8719', commands = [("base","\\prod"),("unicode-math","\\prod")], category = Op, comments = "product operator"}
   , Record {uchar = '\8720', commands = [("base","\\coprod"),("unicode-math","\\coprod")], category = Op, comments = "coproduct operator"}
