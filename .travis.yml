@@ -83,6 +83,7 @@ before_install:
 
 # We want to always allow newer versions of packages when building on GHC HEAD
 - CABALARGS=""
+- OPTS="-O0 -Wall -fno-warn-unused-do-bind -Werror"
 - if [ "x$GHCVER" = "xhead" ]; then CABALARGS=--allow-newer; fi
 
 # Download and unpack the stack executable
@@ -108,7 +109,7 @@ install:
     cabal)
       cabal --version
       travis_retry cabal update
-      cabal install -j --only-dependencies -ffast -fexecutable --enable-tests --enable-benchmarks --force-reinstalls --reorder-goals --max-backjumps=-1 $CABALARGS
+      cabal install -j --only-dependencies -ffast -fexecutable --enable-tests --enable-benchmarks --force-reinstalls --reorder-goals --ghc-options="$OPTS" --max-backjumps=-1 $CABALARGS
       ;;
   esac
 
@@ -117,16 +118,14 @@ script:
   case "$BUILD" in
     stack)
       ulimit -n 4096
-      stack --no-terminal $ARGS test --flag 'aeson:fast' --flag 'texmath:executable' --haddock --no-haddock-deps --ghc-options="-Wall -fno-warn-unused-do-bind"
+      stack --no-terminal $ARGS test --flag 'aeson:fast' --flag 'texmath:executable' --haddock --no-haddock-deps --ghc-options="$OPTS"
       ;;
     cabal)
-      cabal configure --enable-tests --enable-benchmarks -v2 -ffast -fexecutable --ghc-options="-Wall -fno-warn-unused-do-bind" && \
-      cabal build -j && \
-      cabal check && \
-      cabal test -j && \
-      cabal copy && \
-      cabal sdist && \
-      SRC_TGZ=$(cabal info . | awk '{print $2;exit}').tar.gz && \
-        (cd dist && cabal install -j --enable-tests --force-reinstalls "$SRC_TGZ")
+      cabal configure --enable-tests --enable-benchmarks -v2 -ffast -fexecutable --ghc-options="$OPTS" && \
+      cabal sdist --output-directory=sourcedist && \
+      cd sourcedist && \
+      cabal configure --enable-tests --enable-benchmarks -v2 -ffast -fexecutable --ghc-options="$OPTS" && \
+      cabal build -j2 && \
+      cabal test
       ;;
   esac
