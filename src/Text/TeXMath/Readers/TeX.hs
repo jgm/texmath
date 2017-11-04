@@ -36,7 +36,7 @@ import Control.Applicative ((<*), (*>), (<*>), (<$>), (<$), pure)
 import qualified Text.TeXMath.Shared as S
 import Text.TeXMath.Readers.TeX.Macros (applyMacros, parseMacroDefinitions)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
-import Data.Maybe (fromMaybe, fromJust)
+import Data.Maybe (fromJust)
 import Text.TeXMath.Unicode.ToUnicode (toUnicode)
 
 type TP = Parser
@@ -376,9 +376,6 @@ environments = M.fromList
   , ("gathered", gather)
   , ("equation", equation)
   ]
-
-mbArrayAlignments :: TP (Maybe [Alignment])
-mbArrayAlignments = option Nothing $ Just <$> arrayAlignments
 
 alignsFromRows :: Alignment -> [ArrayLine] -> [Alignment]
 alignsFromRows _ [] = []
