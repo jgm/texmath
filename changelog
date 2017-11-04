@@ -1,3 +1,20 @@
+texmath (0.10)
+
+  * Use `\ni` in base for U+220D (#103).
+  * Improved unicode -> tex symbol lookup.  Previously we had many
+    cases where the lookup table would map a unicode character to
+    the empty string for the base package, and this would print finding
+    a good match in another package in the environment.
+  * Added support for `\symbf` (#101).
+  * Revert "migrating the lookup structures for Unicode/ToTex.hs to
+    use C source files to accelerate builds."  This change gave us somewhat
+    faster builds (using less memory), but at a huge cost of
+    maintainability.
+  * Removed AlignDefault from Alignment (API change, #102).
+    AlignDefault doesn't make sense for a converter between
+    formats that may have different defaults.  We now properly treat
+    centering as the default in MathML and OMML input.
+
 texmath (0.9.4.4)
 
   * Update tests that should have been updated for 0.9.4.3.
