@@ -2,7 +2,7 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mtable>
     <mtr>
-      <mtd>
+      <mtd columnalign="center">
         <mrow>
           <mphantom>
             <mtext mathvariant="normal">F</mtext>
@@ -15,10 +15,10 @@
           </mphantom>
         </mrow>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mo>=</mo>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mi>TH</mi>
       </mtd>
     </mtr>

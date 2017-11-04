@@ -2,25 +2,25 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mtable>
     <mtr>
-      <mtd />
-      <mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
         <mtext mathvariant="normal">Stetching in base</mtext>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mtext mathvariant="normal">Stretching in script</mtext>
       </mtd>
     </mtr>
     <mtr>
-      <mtd>
+      <mtd columnalign="center">
         <mtext mathvariant="normal">no mrows</mtext>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mover>
           <mo>→</mo>
           <mtext mathvariant="normal">maps to</mtext>
         </mover>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mover>
           <mtext mathvariant="normal">maps to</mtext>
           <mo accent="true">→</mo>
@@ -28,16 +28,16 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd>
+      <mtd columnalign="center">
         <mtext mathvariant="normal">all in row</mtext>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mover>
           <mo>→</mo>
           <mtext mathvariant="normal">maps to</mtext>
         </mover>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mover>
           <mtext mathvariant="normal">maps to</mtext>
           <mo accent="true">→</mo>
@@ -45,16 +45,16 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd>
+      <mtd columnalign="center">
         <mtext mathvariant="normal">op in row</mtext>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mover>
           <mo>→</mo>
           <mtext mathvariant="normal">maps to</mtext>
         </mover>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mover>
           <mtext mathvariant="normal">maps to</mtext>
           <mo accent="true">→</mo>
@@ -62,16 +62,16 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd>
+      <mtd columnalign="center">
         <mtext mathvariant="normal">text in row</mtext>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mover>
           <mo>→</mo>
           <mtext mathvariant="normal">maps to</mtext>
         </mover>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mover>
           <mtext mathvariant="normal">maps to</mtext>
           <mo accent="true">→</mo>

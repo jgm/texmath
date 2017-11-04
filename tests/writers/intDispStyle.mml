@@ -2,19 +2,19 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mtable>
     <mtr>
-      <mtd />
-      <mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
         <mtext mathvariant="normal">ds=true</mtext>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mtext mathvariant="normal">ds=false</mtext>
       </mtd>
     </mtr>
     <mtr>
-      <mtd>
+      <mtd columnalign="center">
         <mtext mathvariant="normal">stretch=t, large=t</mtext>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mrow>
           <mrow>
             <mo stretchy="true" form="prefix">∫</mo>
@@ -30,7 +30,7 @@
           </mrow>
         </mrow>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mrow>
           <mrow>
             <mo stretchy="true" form="prefix">∫</mo>
@@ -48,10 +48,10 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd>
+      <mtd columnalign="center">
         <mtext mathvariant="normal">stretch=f, large=t</mtext>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mrow>
           <mrow>
             <mo>∫</mo>
@@ -67,7 +67,7 @@
           </mrow>
         </mrow>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mrow>
           <mrow>
             <mo>∫</mo>
@@ -85,10 +85,10 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd>
+      <mtd columnalign="center">
         <mtext mathvariant="normal">stretch=t, large=f</mtext>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mrow>
           <mrow>
             <mo stretchy="true" form="prefix">∫</mo>
@@ -112,7 +112,7 @@
           </mrow>
         </mrow>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mrow>
           <mrow>
             <mo stretchy="true" form="prefix">∫</mo>
@@ -138,10 +138,10 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd>
+      <mtd columnalign="center">
         <mtext mathvariant="normal">stretch=f, large=f</mtext>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mrow>
           <mrow>
             <mo>∫</mo>
@@ -157,7 +157,7 @@
           </mrow>
         </mrow>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mrow>
           <mrow>
             <mo>∫</mo>

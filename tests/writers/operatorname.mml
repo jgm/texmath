@@ -4,7 +4,7 @@
     <mo stretchy="true" form="prefix">{</mo>
     <mtable>
       <mtr>
-        <mtd>
+        <mtd columnalign="left">
           <msub>
             <mo>div</mo>
             <mi>x</mi>
@@ -28,12 +28,12 @@
           </msubsup>
           <mi>u</mi>
         </mtd>
-        <mtd>
+        <mtd columnalign="left">
           <mtext mathvariant="normal">operatorname</mtext>
         </mtd>
       </mtr>
       <mtr>
-        <mtd>
+        <mtd columnalign="left">
           <munder>
             <mo>⋆-lim&#39;sup</mo>
             <mrow>
@@ -69,12 +69,12 @@
           </munderover>
           <mi>u</mi>
         </mtd>
-        <mtd>
+        <mtd columnalign="left">
           <mtext mathvariant="normal">operatorname*</mtext>
         </mtd>
       </mtr>
       <mtr>
-        <mtd>
+        <mtd columnalign="left">
           <msub>
             <mo>⋆-lim&#39;sup</mo>
             <mrow>
@@ -110,12 +110,12 @@
           </msubsup>
           <mi>u</mi>
         </mtd>
-        <mtd>
+        <mtd columnalign="left">
           <mtext mathvariant="normal">operatorname*:nolimits</mtext>
         </mtd>
       </mtr>
       <mtr>
-        <mtd>
+        <mtd columnalign="left">
           <msub>
             <mo>curl</mo>
             <mi>x</mi>
@@ -127,7 +127,7 @@
           </munder>
           <mi>u</mi>
         </mtd>
-        <mtd>
+        <mtd columnalign="left">
           <mtext mathvariant="normal">DeclareMathOperator</mtext>
         </mtd>
       </mtr>

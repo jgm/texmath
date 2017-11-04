@@ -10,10 +10,10 @@
       <mo stretchy="true" form="prefix">{</mo>
       <mtable>
         <mtr>
-          <mtd>
+          <mtd columnalign="left">
             <mn>1</mn>
           </mtd>
-          <mtd>
+          <mtd columnalign="left">
             <mo>−</mo>
             <mn>1</mn>
             <mo>≤</mo>
@@ -23,20 +23,20 @@
           </mtd>
         </mtr>
         <mtr>
-          <mtd>
+          <mtd columnalign="left">
             <mfrac>
               <mn>1</mn>
               <mn>2</mn>
             </mfrac>
           </mtd>
-          <mtd>
+          <mtd columnalign="left">
             <mi>x</mi>
             <mo>=</mo>
             <mn>0</mn>
           </mtd>
         </mtr>
         <mtr>
-          <mtd>
+          <mtd columnalign="left">
             <mn>1</mn>
             <mo>−</mo>
             <msup>
@@ -44,7 +44,7 @@
               <mn>2</mn>
             </msup>
           </mtd>
-          <mtd>
+          <mtd columnalign="left">
             <mtext mathvariant="normal">otherwise</mtext>
           </mtd>
         </mtr>

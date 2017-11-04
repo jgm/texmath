@@ -117,7 +117,7 @@ writeExp (EDelimited open close [Right (EFraction NoLineFrac x y)]) = do
 writeExp (EDelimited open close [Right (EArray aligns rows)]) = do
   env <- asks mathEnv
   case ("amsmath" `elem` env, open, close) of
-       (True, "{", "") | aligns == [AlignDefault, AlignDefault] ->
+       (True, "{", "") | aligns == [AlignLeft, AlignLeft] ->
          table "cases" [] rows
        (True, "(", ")") | all (== AlignCenter) aligns ->
          table "pmatrix" [] rows
@@ -265,7 +265,6 @@ table name aligns rows = do
     alignmentToLetter AlignLeft = 'l'
     alignmentToLetter AlignCenter = 'c'
     alignmentToLetter AlignRight = 'r'
-    alignmentToLetter AlignDefault = 'l'
 
 row :: ArrayLine -> Math ()
 row []     = tell [Space, Literal "\\\\", Token '\n']

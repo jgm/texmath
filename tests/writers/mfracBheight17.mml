@@ -2,10 +2,10 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mtable>
     <mtr>
-      <mtd>
+      <mtd columnalign="center">
         <mtext mathvariant="normal">taller num</mtext>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mrow>
           <msup>
             <mi>x</mi>
@@ -35,10 +35,10 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd>
+      <mtd columnalign="center">
         <mtext mathvariant="normal">taller denom</mtext>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mrow>
           <msup>
             <mi>x</mi>

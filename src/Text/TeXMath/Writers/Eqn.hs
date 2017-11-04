@@ -182,8 +182,7 @@ writeExp (EArray aligns rows) =
           (case al of
                AlignLeft -> "lcol"
                AlignCenter -> "ccol"
-               AlignRight -> "rcol"
-               AlignDefault -> "ccol") ++
+               AlignRight -> "rcol") ++
             "{ " ++ intercalate " above " (map tocell cs) ++ " }\n"
         tocell [e] = writeExp' e
         tocell es  = writeExp (EGrouped es)

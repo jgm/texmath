@@ -467,16 +467,16 @@ annotation e = do
 
 table :: Element -> MML Exp
 table e = do
-  defAlign <- maybe AlignDefault toAlignment <$> (findAttrQ "columnalign" e)
+  defAlign <- maybe AlignCenter toAlignment <$> (findAttrQ "columnalign" e)
   rs <- mapM (tableRow defAlign) (elChildren e)
   let (onlyAligns, exprs) = (map .map) fst &&& (map . map) snd $ rs
   let rs' = map (pad (maximum (map length rs))) exprs
   let aligns = map findAlign (transpose onlyAligns)
   return $ EArray aligns rs'
   where
-    findAlign xs = if null xs then AlignDefault
+    findAlign xs = if null xs then AlignCenter
                     else foldl1 combine xs
-    combine x y = if x == y then x else AlignDefault
+    combine x y = if x == y then x else AlignCenter
 
 tableRow :: Alignment -> Element -> MML [(Alignment, [Exp])]
 tableRow a e = do
@@ -584,7 +584,7 @@ toAlignment :: String -> Alignment
 toAlignment "left" = AlignLeft
 toAlignment "center" = AlignCenter
 toAlignment "right" = AlignRight
-toAlignment _ = AlignDefault
+toAlignment _ = AlignCenter
 
 getPosition :: FormType -> TeXSymbolType
 getPosition (FPrefix) = Open

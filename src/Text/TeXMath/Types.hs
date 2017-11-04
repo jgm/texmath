@@ -34,7 +34,7 @@ data TeXSymbolType = Ord | Op | Bin | Rel | Open | Close | Pun | Accent
                      | Fence | TOver | TUnder | Alpha | BotAccent | Rad
                      deriving (Show, Read, Eq, Ord, Data, Typeable)
 
-data Alignment = AlignLeft | AlignCenter | AlignRight | AlignDefault
+data Alignment = AlignLeft | AlignCenter | AlignRight
                  deriving (Show, Read, Eq, Ord, Data, Typeable)
 
 data FractionType = NormalFrac   -- ^ Displayed or textual, acc to 'DisplayType'

@@ -2,7 +2,7 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mtable>
     <mtr>
-      <mtd>
+      <mtd columnalign="center">
         <munder>
           <mi>HT</mi>
           <mphantom>
@@ -10,10 +10,10 @@
           </mphantom>
         </munder>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mo>=</mo>
       </mtd>
-      <mtd>
+      <mtd columnalign="center">
         <mi>TH</mi>
       </mtd>
     </mtr>

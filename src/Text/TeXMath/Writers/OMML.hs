@@ -79,7 +79,7 @@ makeArray props as rs = mnode "m" $ mProps : map toMr rs
                   [ mnodeA "baseJc" "center" ()
                   , mnodeA "plcHide" "1" ()
                   , mnode "mcs" $ map toMc as' ]
-        as'    = take (maximum' $ map length rs) $ as ++ cycle [AlignDefault]
+        as'    = take (maximum' $ map length rs) $ as ++ cycle [AlignCenter]
         toMr r = mnode "mr" $ map (mnode "e" . concatMap (showExp props)) r
         toMc a = mnode "mc" $ mnode "mcPr"
                             [ mnodeA "mcJc" (toAlign a) ()
@@ -88,7 +88,6 @@ makeArray props as rs = mnode "m" $ mProps : map toMr rs
         toAlign AlignLeft    = "left"
         toAlign AlignRight   = "right"
         toAlign AlignCenter  = "center"
-        toAlign AlignDefault = "left"
 
 makeText :: TextType -> String -> Element
 makeText a s = str (setProps a) s

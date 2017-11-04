@@ -111,8 +111,7 @@ makeArray tt as ls = unode "mtable" $
    where setAlignment AlignLeft    = withAttribute "columnalign" "left"
          setAlignment AlignRight   = withAttribute "columnalign" "right"
          setAlignment AlignCenter  = withAttribute "columnalign" "center"
-         setAlignment AlignDefault = id
-         as'                       = as ++ cycle [AlignDefault]
+         as'                       = as ++ cycle [AlignCenter]
 
 withAttribute :: String -> String -> Element -> Element
 withAttribute a = add_attr . Attr (unqual a)
