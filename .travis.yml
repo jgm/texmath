@@ -83,7 +83,7 @@ before_install:
 
 # We want to always allow newer versions of packages when building on GHC HEAD
 - CABALARGS=""
-- OPTS="-O0 -Wall"
+- OPTS="-O0 -Wall -fno-warn-unused-do-bind"
 - if [ "x$GHCVER" = "xhead" ]; then CABALARGS=--allow-newer; fi
 
 # Download and unpack the stack executable
