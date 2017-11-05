@@ -604,7 +604,7 @@ records =
   , Record {uchar = '\8711', commands = [("base","\\nabla"),("unicode-math","\\nabla")], category = Ord, comments = "NABLA, del, hamilton operator"}
   , Record {uchar = '\8712', commands = [("base","\\in"),("unicode-math","\\in")], category = Rel, comments = "set membership, variant"}
   , Record {uchar = '\8713', commands = [("base","\\notin"),("wrisym","\\nin"),("unicode-math","\\notin")], category = Rel, comments = "negated set membership"}
-  , Record {uchar = '\8714', commands = [("unicode-math","\\smallin")], category = Rel, comments = "set membership (small set membership)"}
+  , Record {uchar = '\8714', commands = [("base","\\in"),("unicode-math","\\smallin")], category = Rel, comments = "set membership (small set membership)"}
   , Record {uchar = '\8715', commands = [("base","\\ni"),("base","\\owns"),("unicode-math","\\ni")], category = Rel, comments = "contains, variant"}
   , Record {uchar = '\8716', commands = [("wrisym","\\nni"),("txfonts","\\notni"),("unicode-math","\\nni")], category = Rel, comments = "= \\notowner (mathabx), = \\notowns (fourier), negated contains, variant"}
   , Record {uchar = '\8717', commands = [("base","\\ni"), ("unicode-math","\\smallni")], category = Rel, comments = "r: contains (SMALL CONTAINS AS MEMBER)"}
