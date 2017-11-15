@@ -317,6 +317,15 @@ endLine = try $ do
   optional inbrackets  -- can contain e.g. [1.0in] for a line height, not yet supported
   return '\n'
 
+-- Within environments provided by AMSmath, spaces are not allowed between
+-- the double-backslash command and its optional argument.
+endLineAMS :: TP Char
+endLineAMS = lexeme $ try $ do
+  string "\\\\"
+  skipMany comment
+  optional inbrackets  -- can contain e.g. [1.0in] for a line height, not yet supported
+  return '\n'
+
 arrayLine :: TP ArrayLine
 arrayLine = notFollowedBy (ctrlseq "end" >> return '\n') >>
   sepBy1 (unGrouped <$>
@@ -383,7 +392,7 @@ alignsFromRows defaultAlignment (r:_) = replicate (length r) defaultAlignment
 
 matrixWith :: String -> String -> TP Exp
 matrixWith opendelim closedelim = do
-  lines' <- sepEndBy1 arrayLine endLine
+  lines' <- sepEndBy1 arrayLine endLineAMS
   let aligns = alignsFromRows AlignCenter lines'
   return $ if null opendelim && null closedelim
               then EArray aligns lines'
@@ -398,7 +407,7 @@ stdarray = do
 
 gather :: TP Exp
 gather = do
-  rows <- sepEndBy arrayLine endLine
+  rows <- sepEndBy arrayLine endLineAMS
   return $ EArray (alignsFromRows AlignCenter rows) rows
 
 equation :: TP Exp
@@ -414,19 +423,19 @@ eqnarray = do
 
 align :: TP Exp
 align = do
-  rows <- sepEndBy1 arrayLine endLine
+  rows <- sepEndBy1 arrayLine endLineAMS
   let n = maximum $ map length rows
   return $ EArray (take n $ cycle [AlignRight, AlignLeft]) rows
 
 flalign :: TP Exp
 flalign = do
-  rows <- sepEndBy1 arrayLine endLine
+  rows <- sepEndBy1 arrayLine endLineAMS
   let n = maximum $ map length rows
   return $ EArray (take n $ cycle [AlignLeft, AlignRight]) rows
 
 cases :: TP Exp
 cases = do
-  rs <- sepEndBy1 arrayLine endLine
+  rs <- sepEndBy1 arrayLine endLineAMS
   return $ EDelimited "{" "" [Right $ EArray (alignsFromRows AlignLeft rs) rs]
 
 variable :: TP Exp
