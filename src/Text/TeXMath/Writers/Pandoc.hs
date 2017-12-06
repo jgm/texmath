@@ -41,15 +41,19 @@ expsToInlines tt xs = do
 -- This adds spaces around certain symbols, in accord
 -- with Appendix G of TeXBook.
 addSpaces :: [Exp] -> [Exp]
-addSpaces (ESymbol t1 s1 : ESymbol t2 s2 : xs)
-  | t2 == Pun || (t1 `notElem` [Bin, Op, Rel, Open, Pun] && not (null xs)) =
-    ESymbol t1 s1 : addSpace t2 (ESymbol t2 s2) ++ addSpaces xs
-addSpaces (x : ESymbol t2 s2 : xs)
-  | not (null xs) =
-    x : addSpace t2 (ESymbol t2 s2) ++ addSpaces xs
+addSpaces (ESymbol t1 s1 : ESpace r : xs)
+  = ESymbol t1 s1 : ESpace r : addSpaces xs
+addSpaces (ESymbol t1 s1 : xs)
+  | t1 `notElem` [Bin, Op, Rel, Open, Pun]
+  = ESymbol t1 s1 : addSpaces xs
+addSpaces (ESymbol t1 s1 : ESymbol Pun s2 : xs)
+  = ESymbol t1 s1 : ESymbol Pun s2 : addSpaces xs
+addSpaces (ESymbol t2 s2 : xs)
+  | not (null xs)
+  = addSpace t2 (ESymbol t2 s2) ++ addSpaces xs
 addSpaces (EMathOperator s : xs) =
   EMathOperator s : thinspace : addSpaces xs
-addSpaces (x : xs) = x : addSpaces xs
+addSpaces (x:xs) = x : addSpaces xs
 addSpaces [] = []
 
 addSpace :: TeXSymbolType -> Exp -> [Exp]
