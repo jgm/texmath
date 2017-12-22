@@ -1,3 +1,14 @@
+texmath (0.10.1)
+
+  * Expose Text.TeXMath.TeX (TeX rendering functions) (#108).
+    This is needed in order to use getTeXMath from Text.TeXMath.Unicode.ToTeX.
+  * Pandoc writer: don't insert punctuation space before explicit space
+    (#107).  E.g. in `2,\!4`.
+  * Fix end-line command ('\\') in AMSmath environments (ARATA Mizuki).
+    The end-line command in AMSmath environments does not allow spaces
+    before its optional argument.
+  * Use `\in` for SMALL ELEMENT OF in "base" (Vaclav Haisman).
+
 texmath (0.10)
 
   * Use `\ni` in base for U+220D (#103).
