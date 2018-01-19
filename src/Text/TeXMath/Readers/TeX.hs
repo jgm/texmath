@@ -623,9 +623,14 @@ mathopWith :: String -> TeXSymbolType -> TP Exp
 mathopWith name ty = try $ do
   ctrlseq name
   e <- expr1
-  case e of
+  let e' = case e of
+               EGrouped [x] -> x
+               _            -> e
+  case e' of
      ESymbol _ x   -> return $ ESymbol ty x
      EIdentifier x -> return $ ESymbol ty x
+     EText TextNormal x -> return $ ESymbol ty x
+     EText sty x -> return $ EStyled sty [ESymbol ty x]
      x | ty == Op  -> case expToOperatorName x of
                            Just y -> return $ EMathOperator y
                            _      -> return x

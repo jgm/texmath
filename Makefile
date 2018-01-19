@@ -1,5 +1,5 @@
 quick:
-	stack install --flag 'texmath:executable' --test
+	stack install --flag 'texmath:executable' --test --test-arguments='$(TESTARGS)'
 
 test:
 	stack test | tee testlog

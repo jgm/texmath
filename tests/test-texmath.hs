@@ -45,7 +45,7 @@ main :: IO ()
 main = do
   args <- getArgs
   let roundTrip = "--round-trip" `elem` args
-  let regen = "--regenerate-tests" `elem` args
+  let regen = "--regenerate-tests" `elem` args || "--accept" `elem` args
   setLocaleEncoding utf8
   setCurrentDirectory "tests"
   statuses <- if roundTrip

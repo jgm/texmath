@@ -25,6 +25,7 @@ where
 import Text.XML.Light
 import Text.TeXMath.Types
 import Data.Generics (everywhere, mkT)
+import Data.Char (isSymbol, isPunctuation)
 
 -- | Transforms an expression tree to an OMML XML Tree
 writeOMML :: DisplayType -> [Exp] -> Element
@@ -191,7 +192,18 @@ showExp props e =
 
    EIdentifier x    -> [str props x]
    EMathOperator x  -> [makeText TextNormal x]  -- TODO revisit, use props?
-   ESymbol _ x      -> [str props x]
+   ESymbol _ [c]
+    | isSymbol c || isPunctuation c
+                    -> [str props [c]]
+   ESymbol ty xs
+    | ty `elem` [Op, Bin, Rel]
+                    -> [mnode "box"
+                        [ mnode "boxPr"
+                          [ mnodeA "opEmu" "1" () ]
+                        , mnode "e"
+                          [str props xs]
+                        ]]
+   ESymbol _ xs     -> [str props xs]
    ESpace n
      | n > 0 && n <= 0.17    -> [str props "\x2009"]
      | n > 0.17 && n <= 0.23 -> [str props "\x2005"]
