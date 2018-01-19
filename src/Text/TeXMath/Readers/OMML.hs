@@ -58,8 +58,18 @@ elemToOMML element  | isElem "m" "oMathPara" element = do
   let expList = mapMaybe elemToOMML (elChildren element)
   return $ map (\l -> if length l == 1 then (head l) else EGrouped l) expList
 elemToOMML element  | isElem "m" "oMath" element =
-  Just $ concat $ mapMaybe (elemToExps) (elChildren element)
+  Just $ concat $ mapMaybe elemToExps $ unwrapWTags $ elChildren element
 elemToOMML _ = Nothing
+
+-- oMath can contain w:hyperlink, w:sdt, etc. I can't find a complete
+-- documentation of this, so we just unwrap any w:tag immediately
+-- beneath oMath. Note that this shouldn't affect the "w" tags in
+-- elemToOMathRunElem(s) because, those are underneath an "m:r" tag.
+unwrapWTags :: [Element] -> [Element]
+unwrapWTags elements = concatMap unwrapChild elements
+  where unwrapChild element = case qPrefix $ elName element of
+                                Just "w" -> elChildren element
+                                _        -> [element]
 
 isElem :: String -> String -> Element -> Bool
 isElem prefix name element =
