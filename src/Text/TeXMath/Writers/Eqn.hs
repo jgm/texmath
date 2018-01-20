@@ -67,7 +67,7 @@ writeExp (EMathOperator s) =
 writeExp (ESymbol Ord [c])  -- do not render "invisible operators"
   | c `elem` ['\x2061'..'\x2064'] = "" -- see 3.2.5.5 of mathml spec
 writeExp (EIdentifier s) = writeExp (ESymbol Ord s)
-writeExp (ESymbol _ s) =
+writeExp (ESymbol t s) =
   case s of
     "\8805" -> ">="
     "\8804" -> "<="
@@ -127,9 +127,22 @@ writeExp (ESymbol _ s) =
     "\958" -> "xi"
     "\926" -> "XI"
     "\950" -> "zeta"
-    _ | all isAscii s -> s
-      |otherwise -> "\\[" ++ intercalate " " (map toUchar s) ++ "]"
-  where toUchar c = printf "u%04x" (ord c)
+    _      -> let s' = if all isAscii s
+                          then s
+                          else "\\[" ++ unwords (map toUchar s) ++ "]"
+                  toUchar c = printf "u%04x" (ord c)
+              in  if length s > 1 && (t == Rel || t == Bin || t == Op)
+                     then "roman{\"" ++
+                          (if t == Rel || t == Bin
+                              then " "
+                              else "") ++
+                          s' ++
+                          (if t == Rel || t == Bin || t == Op
+                              then " "
+                              else "") ++
+                          "\"}"
+                     else s'
+
 writeExp (ESpace d) =
   case d of
       _ | d > 0 && d < (2 % 9) -> "^"

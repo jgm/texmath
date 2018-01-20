@@ -24,6 +24,7 @@ import Text.TeXMath.Types
 import Text.TeXMath.Unicode.ToTeX (getTeXMath)
 import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import qualified Text.TeXMath.Shared as S
+import Data.Char (toLower)
 import Data.Generics (everywhere, mkT)
 import Control.Applicative ((<$>), Applicative)
 import Control.Monad (when, unless, foldM_)
@@ -155,8 +156,12 @@ writeExp o@(EMathOperator s) = do
 writeExp (ESymbol Ord [c])  -- do not render "invisible operators"
   | c `elem` ['\x2061'..'\x2064'] = return () -- see 3.2.5.5 of mathml spec
 writeExp (ESymbol t s) = do
+  s' <- getTeXMathM s
   when (t == Bin || t == Rel) $ tell [Space]
-  tell =<< getTeXMathM s
+  if length s > 1 && (t == Bin || t == Rel || t == Op)
+     then tell [ControlSeq ("\\math" ++ map toLower (show t)),
+                 Grouped [ControlSeq "\\text", Grouped s']]
+     else tell s'
   when (t == Bin || t == Rel) $ tell [Space]
 writeExp (ESpace width) = do
   env <- asks mathEnv
