@@ -1,3 +1,10 @@
+texmath (0.10.1.1)
+
+  * Handle multicharacter operators better in Eqn, TeX, OMML (#109).
+
+  * OMML reader: unwrap `<w:...>` tags immediately under `<m:oMath>`
+    (#111, Jesse Rosenthal).
+
 texmath (0.10.1)
 
   * Expose Text.TeXMath.TeX (TeX rendering functions) (#108).
