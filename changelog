@@ -1,3 +1,7 @@
+texmath (0.10.1.2)
+
+  * eqn writer:  use uppercase letters in unicode escapes (jgm/pandoc#4597).
+
 texmath (0.10.1.1)
 
   * Handle multicharacter operators better in Eqn, TeX, OMML (#109).
