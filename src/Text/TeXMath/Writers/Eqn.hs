@@ -130,7 +130,7 @@ writeExp (ESymbol t s) =
     _      -> let s' = if all isAscii s
                           then s
                           else "\\[" ++ unwords (map toUchar s) ++ "]"
-                  toUchar c = printf "u%04x" (ord c)
+                  toUchar c = printf "u%04X" (ord c)
               in  if length s > 1 && (t == Rel || t == Bin || t == Op)
                      then "roman{\"" ++
                           (if t == Rel || t == Bin

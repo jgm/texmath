@@ -1,1 +1,1 @@
-{} sub p F sub q ( a sub 1 , ... , a sub p ; c sub 1 , ... , c sub q ; z ) = sum from {n = 0} to inf {( a sub 1 ) sub n \[u22ef] ( a sub p ) sub n} over {( c sub 1 ) sub n \[u22ef] ( c sub q ) sub n} {z sup n} over {n !}
+{} sub p F sub q ( a sub 1 , ... , a sub p ; c sub 1 , ... , c sub q ; z ) = sum from {n = 0} to inf {( a sub 1 ) sub n \[u22EF] ( a sub p ) sub n} over {( c sub 1 ) sub n \[u22EF] ( c sub q ) sub n} {z sup n} over {n !}
