@@ -215,7 +215,7 @@ records =
   , Record {uchar = '\172', commands = [("base","\\neg"),("base","\\lnot"),("unicode-math","\\neg")], category = Ord, comments = "NOT SIGN"}
   , Record {uchar = '\174', commands = [("amsfonts","\\circledR")], category = Ord, comments = "REGISTERED SIGN"}
   , Record {uchar = '\175', commands = [], category = Ord, comments = "macr, alias for 0304"}
-  , Record {uchar = '\176', commands = [], category = Ord, comments = "deg"}
+  , Record {uchar = '\176', commands = [("base","{^\\circ}")], category = Ord, comments = "deg"}
   , Record {uchar = '\177', commands = [("base","\\pm"),("unicode-math","\\pm")], category = Bin, comments = "plus-or-minus sign"}
   , Record {uchar = '\178', commands = [], category = Ord, comments = "sup2"}
   , Record {uchar = '\179', commands = [], category = Ord, comments = "sup3"}
