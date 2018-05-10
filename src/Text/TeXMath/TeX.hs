@@ -64,5 +64,8 @@ escapeLaTeX c =
        '\x2004' -> Literal "\\;"
        '\x2001' -> ControlSeq "\\quad"
        '\x2003' -> ControlSeq "\\quad"
+       '\x2032' -> Literal "'"
+       '\x2033' -> Literal "''"
+       '\x2034' -> Literal "'''"
        _ | c `elem` "#$%&_{} " -> Literal ("\\" ++ [c])
          | otherwise -> Token c

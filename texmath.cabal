@@ -1,5 +1,5 @@
 Name:                texmath
-Version:             0.10.1.2
+Version:             0.11
 Cabal-Version:       >= 1.10
 Build-type:          Simple
 Synopsis:            Conversion between formats used to represent mathematics.
@@ -108,7 +108,6 @@ Library
                          Text.TeXMath.Writers.Eqn,
                          Text.TeXMath.Unicode.ToUnicode,
                          Text.TeXMath.Unicode.ToTeX,
-                         Text.TeXMath.Unicode.ToASCII,
                          Text.TeXMath.Unicode.Fonts
     Other-modules:       Text.TeXMath.Compat,
                          Text.TeXMath.Shared,
@@ -120,8 +119,6 @@ Library
     Ghc-Prof-Options:  -fprof-auto-exported
     Default-Language:    Haskell2010
     Hs-Source-Dirs:    src
-    c-sources: cbits/valToASCII.c
-            cbits/keyToASCII.c
 
 Executable texmath
     Default-Language:    Haskell2010

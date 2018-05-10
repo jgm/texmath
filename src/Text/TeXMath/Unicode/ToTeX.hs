@@ -51,7 +51,6 @@ import Text.TeXMath.TeX
 import Text.TeXMath.Types
 import Data.Maybe (fromMaybe, listToMaybe, mapMaybe)
 import Control.Applicative hiding (optional)
-import Text.TeXMath.Unicode.ToASCII (getASCII)
 import Text.TeXMath.Unicode.ToUnicode (fromUnicodeChar)
 import qualified Text.TeXMath.Shared as S
 
@@ -68,18 +67,15 @@ commandTypes = [Accent, Rad, TOver, TUnder]
 -- Guaranteed to return latex safe string
 charToString :: Env -> Char -> [TeX]
 charToString e c =
-  fromMaybe fallback
+  fromMaybe [escapeLaTeX c]
     (charToLaTeXString e c <|> textConvert e c)
-  where
-    fallback = concatMap asciiToLaTeX $ getASCII c
-    asciiToLaTeX ac = fromMaybe [escapeLaTeX ac] (charToLaTeXString e ac)
 
 -- Takes a single character and attempts to convert it to a latex string
 charToLaTeXString :: Env -> Char -> Maybe [TeX]
 charToLaTeXString environment c = do
   v <- M.lookup c recordsMap
   -- Required packages for the command
-  let toLit [x] = [Token x]
+  let toLit [x]  = [Token x]
       toLit []   = []
       toLit cs   = [Literal cs]
   let cmds = commands v
