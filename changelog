@@ -1,3 +1,37 @@
+texmath (0.11)
+
+  * Changed treatment of non-ASCII characters.
+    Previously we ensured that the output of conversion to tex
+    was pure ASCII.  This meant rendering "ä" as "a", for
+    example, and it meant that many characters (e.g. Chinese)
+    simply got replaced with an empty string, while others
+    got replaced with "[?]".
+
+    This was not a particularly helpful behavior.  Including
+    the unicode characters verbatim doesn't interfere with
+    latex compilation.  They often won't show up in the generated
+    math, but that is no worse than what happened before.
+
+    This change passes through unicode characters unchanged
+    when they can't be converted to standard LaTeX commands.
+
+    An important reason for including the unicode characters
+    is that pandoc uses TeX to represent math in its AST.
+    So, for example, if you convert HTML with mathml to docx,
+    you'll currently lose all Chinese characters, since they'll
+    disappear in the TeX intermediary, even though a direct
+    mathml to ooml conversion would have passed them through.
+    With this change, these conversions will work better
+    (see jgm/pandoc#4642).
+
+    + Removed Text.TeXMath.Unicode.ToASCII (API change).
+    + Removed cbits that were needed for that module.
+    + Modified Tex.TeXMath.Unicode.ToTeX to pass through
+      unicode characters that can't be converted, rather
+      than trying to asciify them or remove them.
+
+  * Render degree symbol in tex as `{^\circ}`.
+
 texmath (0.10.1.2)
 
   * eqn writer:  use uppercase letters in unicode escapes (jgm/pandoc#4597).
