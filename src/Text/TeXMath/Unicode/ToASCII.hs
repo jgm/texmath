@@ -37,6 +37,7 @@ import Foreign.Storable
 --  (each character is between 0x00 and 0x7F).
 getASCII :: Char -> String
 getASCII u = fromMaybe "" (M.lookup (ord u) table)
+
 table :: M.IntMap String
 table = M.fromList $ zip realKeyKey realValVal
 
