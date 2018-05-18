@@ -1,3 +1,10 @@
+texmath (0.11.0.1)
+
+  * OMML writer: use zero-width space to avoid dashed box (#118).
+    In Word, a dashed box shows up for empty text runs in
+    exponents and bases, or empty exponents and bases.  So
+    we use a zero-width space in these contexts.
+
 texmath (0.11)
 
   * Changed treatment of non-ASCII characters.
