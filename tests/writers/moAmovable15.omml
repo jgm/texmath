@@ -136,7 +136,11 @@
           <m:t>0</m:t>
         </m:r>
       </m:sup>
-      <m:e />
+      <m:e>
+        <m:r>
+          <m:t>&#8203;</m:t>
+        </m:r>
+      </m:e>
     </m:nary>
   </m:oMath>
 </m:oMathPara>

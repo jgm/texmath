@@ -10,7 +10,11 @@
         <m:endChr m:val=")" />
         <m:grow />
       </m:dPr>
-      <m:e />
+      <m:e>
+        <m:r>
+          <m:t>&#8203;</m:t>
+        </m:r>
+      </m:e>
     </m:d>
   </m:oMath>
 </m:oMathPara>

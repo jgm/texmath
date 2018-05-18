@@ -49,7 +49,11 @@
         <m:degHide m:val="1" />
       </m:radPr>
       <m:deg />
-      <m:e />
+      <m:e>
+        <m:r>
+          <m:t>&#8203;</m:t>
+        </m:r>
+      </m:e>
     </m:rad>
   </m:oMath>
 </m:oMathPara>

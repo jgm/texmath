@@ -21,8 +21,18 @@
           <m:t>x</m:t>
         </m:r>
       </m:sup>
-      <m:e />
+      <m:e>
+        <m:r>
+          <m:t>&#8203;</m:t>
+        </m:r>
+      </m:e>
     </m:nary>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
     <m:nary>
       <m:naryPr>
         <m:chr m:val="∫" />

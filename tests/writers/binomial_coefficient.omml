@@ -52,7 +52,11 @@
       <m:t>=</m:t>
     </m:r>
     <m:sSub>
-      <m:e />
+      <m:e>
+        <m:r>
+          <m:t>&#8203;</m:t>
+        </m:r>
+      </m:e>
       <m:sub>
         <m:r>
           <m:t>n</m:t>

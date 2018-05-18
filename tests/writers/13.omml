@@ -5,7 +5,11 @@
   </m:oMathParaPr>
   <m:oMath>
     <m:sSub>
-      <m:e />
+      <m:e>
+        <m:r>
+          <m:t>&#8203;</m:t>
+        </m:r>
+      </m:e>
       <m:sub>
         <m:r>
           <m:t>p</m:t>

@@ -150,8 +150,16 @@
                 <m:t>S</m:t>
               </m:r>
             </m:sub>
-            <m:sup />
-            <m:e />
+            <m:sup>
+              <m:r>
+                <m:t>&#8203;</m:t>
+              </m:r>
+            </m:sup>
+            <m:e>
+              <m:r>
+                <m:t>&#8203;</m:t>
+              </m:r>
+            </m:e>
           </m:nary>
           <m:sSup>
             <m:e>
@@ -238,7 +246,11 @@
                 <m:t>π</m:t>
               </m:r>
             </m:sup>
-            <m:e />
+            <m:e>
+              <m:r>
+                <m:t>&#8203;</m:t>
+              </m:r>
+            </m:e>
           </m:nary>
           <m:r>
             <m:rPr>
@@ -269,7 +281,11 @@
                 <m:t>π</m:t>
               </m:r>
             </m:sup>
-            <m:e />
+            <m:e>
+              <m:r>
+                <m:t>&#8203;</m:t>
+              </m:r>
+            </m:e>
           </m:nary>
           <m:r>
             <m:rPr>
@@ -312,7 +328,11 @@
                 <m:t>R</m:t>
               </m:r>
             </m:sup>
-            <m:e />
+            <m:e>
+              <m:r>
+                <m:t>&#8203;</m:t>
+              </m:r>
+            </m:e>
           </m:nary>
           <m:sSup>
             <m:e>

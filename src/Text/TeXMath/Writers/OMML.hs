@@ -180,6 +180,7 @@ showExp props e =
      [makeNary props "undOvr" s y z w]
    EGrouped [ESubsup (ESymbol Op s) y z, w] ->
      [makeNary props "subSup" s y z w]
+   EGrouped []      -> [str props "\x200B"] -- avoid dashed box, see #118
    EGrouped xs      -> concatMap (showExp props) xs
    EDelimited start end xs ->
                        [mnode "d" [ mnode "dPr"
@@ -190,6 +191,8 @@ showExp props e =
                                     (either ((:[]) . str props) (showExp props)) xs
                                   ] ]
 
+   EIdentifier ""   -> [str props "\x200B"]  -- 0-width space
+                       -- to avoid the dashed box we get otherwise; see #118
    EIdentifier x    -> [str props x]
    EMathOperator x  -> [makeText TextNormal x]  -- TODO revisit, use props?
    ESymbol _ [c]
@@ -211,7 +214,7 @@ showExp props e =
      | n > 0.28 && n <= 0.5  -> [str props "\x2004"]
      | n > 0.5 && n <= 1.8   -> [str props "\x2001"]
      | n > 1.8               -> [str props "\x2001\x2001"]
-     | otherwise             -> []
+     | otherwise             -> [str props "\x200B"]
        -- this is how the xslt sheet handles all spaces
    EUnder _ x (ESymbol _ [c]) | isBarChar c ->
                        [mnode "bar" [ mnode "barPr" $

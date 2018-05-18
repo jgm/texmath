@@ -78,7 +78,11 @@
                 <m:t>p</m:t>
               </m:r>
             </m:e>
-            <m:sub />
+            <m:sub>
+              <m:r>
+                <m:t>&#8203;</m:t>
+              </m:r>
+            </m:sub>
             <m:sup>
               <m:r>
                 <m:t>k</m:t>
@@ -103,7 +107,11 @@
                 <m:t>)</m:t>
               </m:r>
             </m:e>
-            <m:sub />
+            <m:sub>
+              <m:r>
+                <m:t>&#8203;</m:t>
+              </m:r>
+            </m:sub>
             <m:sup>
               <m:r>
                 <m:t>n</m:t>
@@ -172,7 +180,11 @@
                             <m:t>k</m:t>
                           </m:r>
                         </m:sub>
-                        <m:sup />
+                        <m:sup>
+                          <m:r>
+                            <m:t>&#8203;</m:t>
+                          </m:r>
+                        </m:sup>
                       </m:sSubSup>
                     </m:e>
                   </m:nary>
@@ -187,12 +199,20 @@
                         <m:t>k</m:t>
                       </m:r>
                     </m:sub>
-                    <m:sup />
+                    <m:sup>
+                      <m:r>
+                        <m:t>&#8203;</m:t>
+                      </m:r>
+                    </m:sup>
                   </m:sSubSup>
                 </m:e>
               </m:d>
             </m:e>
-            <m:sub />
+            <m:sub>
+              <m:r>
+                <m:t>&#8203;</m:t>
+              </m:r>
+            </m:sub>
             <m:sup>
               <m:r>
                 <m:t>2</m:t>
@@ -347,7 +367,11 @@
                 <m:t>γ</m:t>
               </m:r>
             </m:sub>
-            <m:sup />
+            <m:sup>
+              <m:r>
+                <m:t>&#8203;</m:t>
+              </m:r>
+            </m:sup>
           </m:sSubSup>
           <m:r>
             <m:t>(</m:t>
@@ -394,7 +418,11 @@
                 <m:t>γ</m:t>
               </m:r>
             </m:sub>
-            <m:sup />
+            <m:sup>
+              <m:r>
+                <m:t>&#8203;</m:t>
+              </m:r>
+            </m:sup>
             <m:e>
               <m:f>
                 <m:fPr>
@@ -460,7 +488,11 @@
                 <m:t>1</m:t>
               </m:r>
             </m:sub>
-            <m:sup />
+            <m:sup>
+              <m:r>
+                <m:t>&#8203;</m:t>
+              </m:r>
+            </m:sup>
           </m:sSubSup>
           <m:r>
             <m:t>×</m:t>
@@ -476,7 +508,11 @@
                 <m:t>2</m:t>
               </m:r>
             </m:sub>
-            <m:sup />
+            <m:sup>
+              <m:r>
+                <m:t>&#8203;</m:t>
+              </m:r>
+            </m:sup>
           </m:sSubSup>
           <m:r>
             <m:t>=</m:t>
@@ -724,7 +760,11 @@
                           <m:t>1</m:t>
                         </m:r>
                       </m:sub>
-                      <m:sup />
+                      <m:sup>
+                        <m:r>
+                          <m:t>&#8203;</m:t>
+                        </m:r>
+                      </m:sup>
                     </m:sSubSup>
                   </m:e>
                   <m:e>
@@ -739,7 +779,11 @@
                           <m:t>2</m:t>
                         </m:r>
                       </m:sub>
-                      <m:sup />
+                      <m:sup>
+                        <m:r>
+                          <m:t>&#8203;</m:t>
+                        </m:r>
+                      </m:sup>
                     </m:sSubSup>
                   </m:e>
                   <m:e>
@@ -759,7 +803,11 @@
                           <m:t>n</m:t>
                         </m:r>
                       </m:sub>
-                      <m:sup />
+                      <m:sup>
+                        <m:r>
+                          <m:t>&#8203;</m:t>
+                        </m:r>
+                      </m:sup>
                     </m:sSubSup>
                   </m:e>
                 </m:mr>
@@ -967,7 +1015,11 @@
                 <m:t>n</m:t>
               </m:r>
             </m:sub>
-            <m:sup />
+            <m:sup>
+              <m:r>
+                <m:t>&#8203;</m:t>
+              </m:r>
+            </m:sup>
             <m:e>
               <m:r>
                 <m:t>(</m:t>
@@ -985,7 +1037,11 @@
                 <m:t>j</m:t>
               </m:r>
             </m:sub>
-            <m:sup />
+            <m:sup>
+              <m:r>
+                <m:t>&#8203;</m:t>
+              </m:r>
+            </m:sup>
           </m:sSubSup>
           <m:r>
             <m:t>-</m:t>
@@ -1001,7 +1057,11 @@
                 <m:t>i</m:t>
               </m:r>
             </m:sub>
-            <m:sup />
+            <m:sup>
+              <m:r>
+                <m:t>&#8203;</m:t>
+              </m:r>
+            </m:sup>
           </m:sSubSup>
           <m:r>
             <m:t>)</m:t>
@@ -1060,7 +1120,11 @@
                       </m:e>
                     </m:groupChr>
                   </m:e>
-                  <m:lim />
+                  <m:lim>
+                    <m:r>
+                      <m:t>&#8203;</m:t>
+                    </m:r>
+                  </m:lim>
                 </m:limLow>
               </m:e>
               <m:e>
@@ -1106,7 +1170,11 @@
                       </m:e>
                     </m:groupChr>
                   </m:e>
-                  <m:lim />
+                  <m:lim>
+                    <m:r>
+                      <m:t>&#8203;</m:t>
+                    </m:r>
+                  </m:lim>
                 </m:limLow>
               </m:e>
               <m:e>
@@ -1155,7 +1223,11 @@
                       </m:e>
                     </m:groupChr>
                   </m:e>
-                  <m:lim />
+                  <m:lim>
+                    <m:r>
+                      <m:t>&#8203;</m:t>
+                    </m:r>
+                  </m:lim>
                 </m:limLow>
               </m:e>
               <m:e>
@@ -1235,6 +1307,9 @@
                       <m:t>∇</m:t>
                     </m:r>
                     <m:r>
+                      <m:t>&#8203;</m:t>
+                    </m:r>
+                    <m:r>
                       <m:t>×</m:t>
                     </m:r>
                     <m:limLow>
@@ -1252,7 +1327,11 @@
                           </m:e>
                         </m:groupChr>
                       </m:e>
-                      <m:lim />
+                      <m:lim>
+                        <m:r>
+                          <m:t>&#8203;</m:t>
+                        </m:r>
+                      </m:lim>
                     </m:limLow>
                     <m:r>
                       <m:t>-</m:t>
@@ -1286,6 +1365,9 @@
                         <m:r>
                           <m:t>∂</m:t>
                         </m:r>
+                        <m:r>
+                          <m:t>&#8203;</m:t>
+                        </m:r>
                         <m:limLow>
                           <m:e>
                             <m:groupChr>
@@ -1301,12 +1383,19 @@
                               </m:e>
                             </m:groupChr>
                           </m:e>
-                          <m:lim />
+                          <m:lim>
+                            <m:r>
+                              <m:t>&#8203;</m:t>
+                            </m:r>
+                          </m:lim>
                         </m:limLow>
                       </m:num>
                       <m:den>
                         <m:r>
                           <m:t>∂</m:t>
+                        </m:r>
+                        <m:r>
+                          <m:t>&#8203;</m:t>
                         </m:r>
                         <m:r>
                           <m:t>t</m:t>
@@ -1356,7 +1445,11 @@
                           </m:e>
                         </m:groupChr>
                       </m:e>
-                      <m:lim />
+                      <m:lim>
+                        <m:r>
+                          <m:t>&#8203;</m:t>
+                        </m:r>
+                      </m:lim>
                     </m:limLow>
                   </m:e>
                 </m:mr>
@@ -1364,6 +1457,9 @@
                   <m:e>
                     <m:r>
                       <m:t>∇</m:t>
+                    </m:r>
+                    <m:r>
+                      <m:t>&#8203;</m:t>
                     </m:r>
                     <m:r>
                       <m:t>·</m:t>
@@ -1383,7 +1479,11 @@
                           </m:e>
                         </m:groupChr>
                       </m:e>
-                      <m:lim />
+                      <m:lim>
+                        <m:r>
+                          <m:t>&#8203;</m:t>
+                        </m:r>
+                      </m:lim>
                     </m:limLow>
                   </m:e>
                   <m:e>
@@ -1409,6 +1509,9 @@
                       <m:t>∇</m:t>
                     </m:r>
                     <m:r>
+                      <m:t>&#8203;</m:t>
+                    </m:r>
+                    <m:r>
                       <m:t>×</m:t>
                     </m:r>
                     <m:limLow>
@@ -1426,7 +1529,11 @@
                           </m:e>
                         </m:groupChr>
                       </m:e>
-                      <m:lim />
+                      <m:lim>
+                        <m:r>
+                          <m:t>&#8203;</m:t>
+                        </m:r>
+                      </m:lim>
                     </m:limLow>
                     <m:r>
                       <m:t> </m:t>
@@ -1463,6 +1570,9 @@
                         <m:r>
                           <m:t>∂</m:t>
                         </m:r>
+                        <m:r>
+                          <m:t>&#8203;</m:t>
+                        </m:r>
                         <m:limLow>
                           <m:e>
                             <m:groupChr>
@@ -1478,12 +1588,19 @@
                               </m:e>
                             </m:groupChr>
                           </m:e>
-                          <m:lim />
+                          <m:lim>
+                            <m:r>
+                              <m:t>&#8203;</m:t>
+                            </m:r>
+                          </m:lim>
                         </m:limLow>
                       </m:num>
                       <m:den>
                         <m:r>
                           <m:t>∂</m:t>
+                        </m:r>
+                        <m:r>
+                          <m:t>&#8203;</m:t>
                         </m:r>
                         <m:r>
                           <m:t>t</m:t>
@@ -1512,7 +1629,11 @@
                           </m:e>
                         </m:groupChr>
                       </m:e>
-                      <m:lim />
+                      <m:lim>
+                        <m:r>
+                          <m:t>&#8203;</m:t>
+                        </m:r>
+                      </m:lim>
                     </m:limLow>
                   </m:e>
                 </m:mr>
@@ -1520,6 +1641,9 @@
                   <m:e>
                     <m:r>
                       <m:t>∇</m:t>
+                    </m:r>
+                    <m:r>
+                      <m:t>&#8203;</m:t>
                     </m:r>
                     <m:r>
                       <m:t>·</m:t>
@@ -1539,7 +1663,11 @@
                           </m:e>
                         </m:groupChr>
                       </m:e>
-                      <m:lim />
+                      <m:lim>
+                        <m:r>
+                          <m:t>&#8203;</m:t>
+                        </m:r>
+                      </m:lim>
                     </m:limLow>
                   </m:e>
                   <m:e>
@@ -1582,7 +1710,11 @@
                 <m:t>ν</m:t>
               </m:r>
             </m:sub>
-            <m:sup />
+            <m:sup>
+              <m:r>
+                <m:t>&#8203;</m:t>
+              </m:r>
+            </m:sup>
           </m:sSubSup>
           <m:r>
             <m:t>-</m:t>
@@ -1619,7 +1751,11 @@
                 <m:t>ν</m:t>
               </m:r>
             </m:sub>
-            <m:sup />
+            <m:sup>
+              <m:r>
+                <m:t>&#8203;</m:t>
+              </m:r>
+            </m:sup>
           </m:sSubSup>
           <m:r>
             <m:t> </m:t>
@@ -1652,7 +1788,11 @@
                     <m:t>c</m:t>
                   </m:r>
                 </m:e>
-                <m:sub />
+                <m:sub>
+                  <m:r>
+                    <m:t>&#8203;</m:t>
+                  </m:r>
+                </m:sub>
                 <m:sup>
                   <m:r>
                     <m:t>4</m:t>
@@ -1678,7 +1818,11 @@
                 <m:t>ν</m:t>
               </m:r>
             </m:sub>
-            <m:sup />
+            <m:sup>
+              <m:r>
+                <m:t>&#8203;</m:t>
+              </m:r>
+            </m:sup>
           </m:sSubSup>
         </m:e>
       </m:mr>
@@ -1742,7 +1886,11 @@
                     <m:t>e</m:t>
                   </m:r>
                 </m:e>
-                <m:sub />
+                <m:sub>
+                  <m:r>
+                    <m:t>&#8203;</m:t>
+                  </m:r>
+                </m:sub>
                 <m:sup>
                   <m:f>
                     <m:fPr>
@@ -1783,7 +1931,11 @@
                     <m:t>e</m:t>
                   </m:r>
                 </m:e>
-                <m:sub />
+                <m:sub>
+                  <m:r>
+                    <m:t>&#8203;</m:t>
+                  </m:r>
+                </m:sub>
                 <m:sup>
                   <m:r>
                     <m:t>-</m:t>
@@ -1815,7 +1967,11 @@
                         <m:t>e</m:t>
                       </m:r>
                     </m:e>
-                    <m:sub />
+                    <m:sub>
+                      <m:r>
+                        <m:t>&#8203;</m:t>
+                      </m:r>
+                    </m:sub>
                     <m:sup>
                       <m:r>
                         <m:t>-</m:t>
@@ -1847,7 +2003,11 @@
                             <m:t>e</m:t>
                           </m:r>
                         </m:e>
-                        <m:sub />
+                        <m:sub>
+                          <m:r>
+                            <m:t>&#8203;</m:t>
+                          </m:r>
+                        </m:sub>
                         <m:sup>
                           <m:r>
                             <m:t>-</m:t>
@@ -1879,7 +2039,11 @@
                                 <m:t>e</m:t>
                               </m:r>
                             </m:e>
-                            <m:sub />
+                            <m:sub>
+                              <m:r>
+                                <m:t>&#8203;</m:t>
+                              </m:r>
+                            </m:sub>
                             <m:sup>
                               <m:r>
                                 <m:t>-</m:t>
@@ -1963,7 +2127,11 @@
                         <m:t>2</m:t>
                       </m:r>
                     </m:e>
-                    <m:sub />
+                    <m:sub>
+                      <m:r>
+                        <m:t>&#8203;</m:t>
+                      </m:r>
+                    </m:sub>
                     <m:sup>
                       <m:r>
                         <m:t>⌊</m:t>
@@ -1973,6 +2141,9 @@
                       </m:r>
                       <m:r>
                         <m:t>·</m:t>
+                      </m:r>
+                      <m:r>
+                        <m:t>&#8203;</m:t>
                       </m:r>
                       <m:r>
                         <m:t>φ</m:t>
@@ -2005,7 +2176,11 @@
                     <m:t>2</m:t>
                   </m:r>
                 </m:e>
-                <m:sub />
+                <m:sub>
+                  <m:r>
+                    <m:t>&#8203;</m:t>
+                  </m:r>
+                </m:sub>
                 <m:sup>
                   <m:r>
                     <m:t>0</m:t>
@@ -2031,7 +2206,11 @@
                         <m:t>2</m:t>
                       </m:r>
                     </m:e>
-                    <m:sub />
+                    <m:sub>
+                      <m:r>
+                        <m:t>&#8203;</m:t>
+                      </m:r>
+                    </m:sub>
                     <m:sup>
                       <m:r>
                         <m:t>1</m:t>
@@ -2101,7 +2280,11 @@
                         <m:t>q</m:t>
                       </m:r>
                     </m:e>
-                    <m:sub />
+                    <m:sub>
+                      <m:r>
+                        <m:t>&#8203;</m:t>
+                      </m:r>
+                    </m:sub>
                     <m:sup>
                       <m:sSubSup>
                         <m:e>
@@ -2109,7 +2292,11 @@
                             <m:t>k</m:t>
                           </m:r>
                         </m:e>
-                        <m:sub />
+                        <m:sub>
+                          <m:r>
+                            <m:t>&#8203;</m:t>
+                          </m:r>
+                        </m:sub>
                         <m:sup>
                           <m:r>
                             <m:t>2</m:t>
@@ -2156,7 +2343,11 @@
                         <m:t>q</m:t>
                       </m:r>
                     </m:e>
-                    <m:sub />
+                    <m:sub>
+                      <m:r>
+                        <m:t>&#8203;</m:t>
+                      </m:r>
+                    </m:sub>
                     <m:sup>
                       <m:r>
                         <m:t>2</m:t>
@@ -2184,7 +2375,11 @@
                         <m:t>q</m:t>
                       </m:r>
                     </m:e>
-                    <m:sub />
+                    <m:sub>
+                      <m:r>
+                        <m:t>&#8203;</m:t>
+                      </m:r>
+                    </m:sub>
                     <m:sup>
                       <m:r>
                         <m:t>k</m:t>
@@ -2250,7 +2445,11 @@
                         <m:t>q</m:t>
                       </m:r>
                     </m:e>
-                    <m:sub />
+                    <m:sub>
+                      <m:r>
+                        <m:t>&#8203;</m:t>
+                      </m:r>
+                    </m:sub>
                     <m:sup>
                       <m:r>
                         <m:t>5</m:t>
@@ -2284,7 +2483,11 @@
                         <m:t>q</m:t>
                       </m:r>
                     </m:e>
-                    <m:sub />
+                    <m:sub>
+                      <m:r>
+                        <m:t>&#8203;</m:t>
+                      </m:r>
+                    </m:sub>
                     <m:sup>
                       <m:r>
                         <m:t>5</m:t>
@@ -2412,7 +2615,11 @@
                   <m:t>↓</m:t>
                 </m:r>
               </m:e>
-              <m:e />
+              <m:e>
+                <m:r>
+                  <m:t>&#8203;</m:t>
+                </m:r>
+              </m:e>
               <m:e>
                 <m:r>
                   <m:t>↑</m:t>
