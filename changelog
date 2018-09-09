@@ -1,3 +1,8 @@
+texmath (0.11.1)
+
+  * OMML writer: Use m:acc for accents in OMML (#119).  This fixes
+    some spacing issues for e.g. the translation of `\dot{m}`.
+
 texmath (0.11.0.1)
 
   * OMML writer: use zero-width space to avoid dashed box (#118).
