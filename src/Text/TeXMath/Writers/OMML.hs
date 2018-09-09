@@ -224,17 +224,18 @@ showExp props e =
                        [mnode "bar" [ mnode "barPr" $
                                         mnodeA "pos" "top" ()
                                     , mnode "e" $ showExp props x ]]
-   EOver _ x (ESymbol st y) | st == Accent || st == TOver ->
-                       [mnode "groupChr" [ mnode "groupChrPr"
-                                           [ mnodeA "chr" y ()
-                                           , mnodeA "pos" "top" ()
-                                           , mnodeA "vertJc" "bot" () ]
+   EOver _ x (ESymbol st y)
+    | st == Accent  -> [mnode "acc" [ mnode "accPr" [ mnodeA "chr" y () ]
                                     , mnode "e" $ showExp props x ]]
-   EUnder _ x (ESymbol st y) | st == Accent || st == TUnder ->
-                       [mnode "groupChr" [ mnode "groupChrPr"
+    | st == TUnder  -> [mnode "groupChr" [ mnode "groupChrPr"
                                            [ mnodeA "chr" y ()
                                            , mnodeA "pos" "bot" ()
                                            , mnodeA "vertJc" "top" () ]
+                                    , mnode "e" $ showExp props x ]]
+    | st == TOver   -> [mnode "groupChr" [ mnode "groupChrPr"
+                                           [ mnodeA "chr" y ()
+                                           , mnodeA "pos" "top" ()
+                                           , mnodeA "vertJc" "bot" () ]
                                     , mnode "e" $ showExp props x ]]
    ESub x y         -> [mnode "sSub" [ mnode "e" $ showExp props x
                                      , mnode "sub" $ showExp props y]]

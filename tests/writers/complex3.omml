@@ -3862,12 +3862,7 @@
           </m:r>
           <m:limLow>
             <m:e>
-              <m:groupChr>
-                <m:groupChrPr>
-                  <m:chr m:val="︸" />
-                  <m:pos m:val="bot" />
-                  <m:vertJc m:val="top" />
-                </m:groupChrPr>
+              <m:limLow>
                 <m:e>
                   <m:r>
                     <m:t>a</m:t>
@@ -3891,7 +3886,12 @@
                     <m:t>a</m:t>
                   </m:r>
                 </m:e>
-              </m:groupChr>
+                <m:lim>
+                  <m:r>
+                    <m:t>︸</m:t>
+                  </m:r>
+                </m:lim>
+              </m:limLow>
             </m:e>
             <m:lim>
               <m:r>
@@ -17242,12 +17242,7 @@
         <m:e>
           <m:limLow>
             <m:e>
-              <m:groupChr>
-                <m:groupChrPr>
-                  <m:chr m:val="︸" />
-                  <m:pos m:val="bot" />
-                  <m:vertJc m:val="top" />
-                </m:groupChrPr>
+              <m:limLow>
                 <m:e>
                   <m:r>
                     <m:t>x</m:t>
@@ -17265,7 +17260,12 @@
                     <m:t>x</m:t>
                   </m:r>
                 </m:e>
-              </m:groupChr>
+                <m:lim>
+                  <m:r>
+                    <m:t>︸</m:t>
+                  </m:r>
+                </m:lim>
+              </m:limLow>
             </m:e>
             <m:lim>
               <m:r>
@@ -19651,93 +19651,81 @@
       </m:mr>
       <m:mr>
         <m:e>
-          <m:groupChr>
-            <m:groupChrPr>
+          <m:acc>
+            <m:accPr>
               <m:chr m:val="̂" />
-              <m:pos m:val="top" />
-              <m:vertJc m:val="bot" />
-            </m:groupChrPr>
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:t>a</m:t>
               </m:r>
             </m:e>
-          </m:groupChr>
+          </m:acc>
           <m:r>
             <m:t>+</m:t>
           </m:r>
-          <m:groupChr>
-            <m:groupChrPr>
+          <m:acc>
+            <m:accPr>
               <m:chr m:val="ˇ" />
-              <m:pos m:val="top" />
-              <m:vertJc m:val="bot" />
-            </m:groupChrPr>
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:t>b</m:t>
               </m:r>
             </m:e>
-          </m:groupChr>
+          </m:acc>
           <m:r>
             <m:t>+</m:t>
           </m:r>
-          <m:groupChr>
-            <m:groupChrPr>
+          <m:acc>
+            <m:accPr>
               <m:chr m:val="˜" />
-              <m:pos m:val="top" />
-              <m:vertJc m:val="bot" />
-            </m:groupChrPr>
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:t>c</m:t>
               </m:r>
             </m:e>
-          </m:groupChr>
+          </m:acc>
           <m:r>
             <m:t>+</m:t>
           </m:r>
-          <m:groupChr>
-            <m:groupChrPr>
+          <m:acc>
+            <m:accPr>
               <m:chr m:val="´" />
-              <m:pos m:val="top" />
-              <m:vertJc m:val="bot" />
-            </m:groupChrPr>
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:t>d</m:t>
               </m:r>
             </m:e>
-          </m:groupChr>
+          </m:acc>
           <m:r>
             <m:t>+</m:t>
           </m:r>
-          <m:groupChr>
-            <m:groupChrPr>
+          <m:acc>
+            <m:accPr>
               <m:chr m:val="`" />
-              <m:pos m:val="top" />
-              <m:vertJc m:val="bot" />
-            </m:groupChrPr>
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:t>e</m:t>
               </m:r>
             </m:e>
-          </m:groupChr>
+          </m:acc>
           <m:r>
             <m:t>+</m:t>
           </m:r>
-          <m:groupChr>
-            <m:groupChrPr>
+          <m:acc>
+            <m:accPr>
               <m:chr m:val="˘" />
-              <m:pos m:val="top" />
-              <m:vertJc m:val="bot" />
-            </m:groupChrPr>
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:t>f</m:t>
               </m:r>
             </m:e>
-          </m:groupChr>
+          </m:acc>
           <m:r>
             <m:t>+</m:t>
           </m:r>
@@ -19760,93 +19748,81 @@
           <m:r>
             <m:t>+</m:t>
           </m:r>
-          <m:groupChr>
-            <m:groupChrPr>
+          <m:acc>
+            <m:accPr>
               <m:chr m:val="˚" />
-              <m:pos m:val="top" />
-              <m:vertJc m:val="bot" />
-            </m:groupChrPr>
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:t>i</m:t>
               </m:r>
             </m:e>
-          </m:groupChr>
+          </m:acc>
           <m:r>
             <m:t>+</m:t>
           </m:r>
-          <m:groupChr>
-            <m:groupChrPr>
+          <m:acc>
+            <m:accPr>
               <m:chr m:val="˙" />
-              <m:pos m:val="top" />
-              <m:vertJc m:val="bot" />
-            </m:groupChrPr>
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:t>j</m:t>
               </m:r>
             </m:e>
-          </m:groupChr>
+          </m:acc>
           <m:r>
             <m:t>+</m:t>
           </m:r>
-          <m:groupChr>
-            <m:groupChrPr>
+          <m:acc>
+            <m:accPr>
               <m:chr m:val="¨" />
-              <m:pos m:val="top" />
-              <m:vertJc m:val="bot" />
-            </m:groupChrPr>
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:t>k</m:t>
               </m:r>
             </m:e>
-          </m:groupChr>
+          </m:acc>
           <m:r>
             <m:t>+</m:t>
           </m:r>
-          <m:groupChr>
-            <m:groupChrPr>
+          <m:acc>
+            <m:accPr>
               <m:chr m:val="⃛" />
-              <m:pos m:val="top" />
-              <m:vertJc m:val="bot" />
-            </m:groupChrPr>
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:t>l</m:t>
               </m:r>
             </m:e>
-          </m:groupChr>
+          </m:acc>
           <m:r>
             <m:t>+</m:t>
           </m:r>
-          <m:groupChr>
-            <m:groupChrPr>
+          <m:acc>
+            <m:accPr>
               <m:chr m:val="⃜" />
-              <m:pos m:val="top" />
-              <m:vertJc m:val="bot" />
-            </m:groupChrPr>
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:t>m</m:t>
               </m:r>
             </m:e>
-          </m:groupChr>
+          </m:acc>
           <m:r>
             <m:t>+</m:t>
           </m:r>
-          <m:groupChr>
-            <m:groupChrPr>
+          <m:acc>
+            <m:accPr>
               <m:chr m:val="→" />
-              <m:pos m:val="top" />
-              <m:vertJc m:val="bot" />
-            </m:groupChrPr>
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:t>n</m:t>
               </m:r>
             </m:e>
-          </m:groupChr>
+          </m:acc>
         </m:e>
         <m:e />
       </m:mr>
@@ -22511,12 +22487,7 @@
       </m:mr>
       <m:mr>
         <m:e>
-          <m:groupChr>
-            <m:groupChrPr>
-              <m:chr m:val="̲" />
-              <m:pos m:val="bot" />
-              <m:vertJc m:val="top" />
-            </m:groupChrPr>
+          <m:limLow>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -22525,7 +22496,12 @@
                 <m:t>lim</m:t>
               </m:r>
             </m:e>
-          </m:groupChr>
+            <m:lim>
+              <m:r>
+                <m:t>̲</m:t>
+              </m:r>
+            </m:lim>
+          </m:limLow>
           <m:r>
             <m:t>x</m:t>
           </m:r>
@@ -22534,12 +22510,7 @@
       </m:mr>
       <m:mr>
         <m:e>
-          <m:groupChr>
-            <m:groupChrPr>
-              <m:chr m:val="→" />
-              <m:pos m:val="bot" />
-              <m:vertJc m:val="top" />
-            </m:groupChrPr>
+          <m:limLow>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -22548,7 +22519,12 @@
                 <m:t>lim</m:t>
               </m:r>
             </m:e>
-          </m:groupChr>
+            <m:lim>
+              <m:r>
+                <m:t>→</m:t>
+              </m:r>
+            </m:lim>
+          </m:limLow>
           <m:r>
             <m:t>x</m:t>
           </m:r>
@@ -22557,12 +22533,7 @@
       </m:mr>
       <m:mr>
         <m:e>
-          <m:groupChr>
-            <m:groupChrPr>
-              <m:chr m:val="←" />
-              <m:pos m:val="bot" />
-              <m:vertJc m:val="top" />
-            </m:groupChrPr>
+          <m:limLow>
             <m:e>
               <m:r>
                 <m:rPr>
@@ -22571,7 +22542,12 @@
                 <m:t>lim</m:t>
               </m:r>
             </m:e>
-          </m:groupChr>
+            <m:lim>
+              <m:r>
+                <m:t>←</m:t>
+              </m:r>
+            </m:lim>
+          </m:limLow>
           <m:r>
             <m:t>x</m:t>
           </m:r>

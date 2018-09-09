@@ -10,18 +10,16 @@
     <m:r>
       <m:t>⋅</m:t>
     </m:r>
-    <m:groupChr>
-      <m:groupChrPr>
+    <m:acc>
+      <m:accPr>
         <m:chr m:val="⃗" />
-        <m:pos m:val="top" />
-        <m:vertJc m:val="bot" />
-      </m:groupChrPr>
+      </m:accPr>
       <m:e>
         <m:r>
           <m:t>v</m:t>
         </m:r>
       </m:e>
-    </m:groupChr>
+    </m:acc>
     <m:r>
       <m:t>=</m:t>
     </m:r>
