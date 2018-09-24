@@ -149,8 +149,11 @@ number e = ENumber <$> getString e
 
 op :: Element -> MML (IR Exp)
 op e = do
-  Just inferredPosition <- (<|>) <$> (getFormType <$> findAttrQ "form" e)
+  mInferredPosition <- (<|>) <$> (getFormType <$> findAttrQ "form" e)
                             <*> asks position
+  inferredPosition <- case mInferredPosition of
+    Just inferredPosition -> pure inferredPosition
+    Nothing               -> throwError "Did not find an inferred position"
   opString <- getString e
   let dummy = Operator opString "" inferredPosition 0 0 0 []
   let opLookup = getMathMLOperator opString inferredPosition
@@ -346,7 +349,7 @@ safeExpr e = mkExp <$> expr e
 
 frac :: Element -> MML Exp
 frac e = do
-  [num, denom] <- mapM safeExpr =<< (checkArgs 2 e)
+  (num, denom) <- mapPairM safeExpr =<< (checkArgs2 e)
   rawThick <- findAttrQ "linethickness" e
   return $
     if thicknessZero rawThick
@@ -358,7 +361,7 @@ msqrt e = ESqrt <$> (row e)
 
 kroot :: Element -> MML Exp
 kroot e = do
-  [base, index] <- mapM safeExpr =<< (checkArgs 2 e)
+  (base, index) <- mapPairM safeExpr =<< (checkArgs2 e)
   return $ ERoot index base
 
 phantom :: Element -> MML Exp
@@ -399,7 +402,7 @@ action e = do
 
 sub :: Element -> MML [IR Exp]
 sub e =  do
-  [base, subs] <- (checkArgs 2 e)
+  (base, subs) <- checkArgs2 e
   reorderScripts base subs ESub
 
 -- Handles case with strethy elements in the base of sub/sup
@@ -416,28 +419,28 @@ reorderScripts e subs c = do
 
 sup :: Element -> MML [IR Exp]
 sup e = do
-  [base, sups] <- (checkArgs 2 e)
+  (base, sups) <- checkArgs2 e
   reorderScripts base sups ESuper
 
 subsup :: Element -> MML Exp
 subsup e = do
-  [base, subs, sups] <- (checkArgs 3 e)
+  (base, subs, sups) <- checkArgs3 e
   ESubsup <$> safeExpr base <*> (postfixExpr subs)
                          <*> (postfixExpr sups)
 
 under :: Element -> MML Exp
 under e = do
-  [base, below] <- (checkArgs 2 e)
+  (base, below) <- checkArgs2 e
   EUnder False <$> safeExpr base <*> postfixExpr below
 
 over :: Element -> MML Exp
 over e = do
-  [base, above] <- (checkArgs 2 e)
+  (base, above) <- checkArgs2 e
   EOver False <$> safeExpr base <*> postfixExpr above
 
 underover :: Element -> MML Exp
 underover e = do
-  [base, below, above] <- (checkArgs 3 e)
+  (base, below, above) <- checkArgs3 e
   EUnderover False <$> safeExpr base  <*> (postfixExpr below)
                                       <*> (postfixExpr above)
 
@@ -551,15 +554,18 @@ onlyText ((Text c):xs) = c : onlyText xs
 onlyText (CRef s : xs)  = (CData CDataText (fromMaybe s $ getUnicode s) Nothing) : onlyText xs
 onlyText (_:xs) = onlyText xs
 
-checkArgs :: Int -> Element -> MML [Element]
-checkArgs x e = do
-  let cs = elChildren e
-  if nargs x cs
-    then return cs
-    else (throwError ("Incorrect number of arguments for " ++ err e))
+checkArgs2 :: Element -> MML (Element, Element)
+checkArgs2 e = case elChildren e of
+  [a, b] -> return (a, b)
+  _      -> throwError ("Incorrect number of arguments for " ++ err e)
 
-nargs :: Int -> [a] -> Bool
-nargs n xs = length xs == n
+checkArgs3 :: Element -> MML (Element, Element, Element)
+checkArgs3 e = case elChildren e of
+  [a, b, c] -> return (a, b, c)
+  _         -> throwError ("Incorrect number of arguments for " ++ err e)
+
+mapPairM :: Monad m => (a -> m b) -> (a, a) -> m (b, b)
+mapPairM f (a, b) = (,) <$> (f a) <*> (f b)
 
 err :: Element -> String
 err e = name e ++ maybe "" (\x -> " line " ++ show x) (elLine e)
