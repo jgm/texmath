@@ -276,9 +276,12 @@ number = lexeme $ ENumber <$> try decimalNumber
 enclosure :: TP Exp
 enclosure = basicEnclosure <|> delimited
 
--- Expensive
 basicEnclosure :: TP Exp
-basicEnclosure = choice (map (\(s, v) -> symbol s >> return v) enclosures)
+basicEnclosure = try $ do
+  possibleEncl <- lexeme (anyCtrlSeq <|> count 1 (oneOf "()[]|"))
+  case M.lookup possibleEncl enclosures of
+       Just x  -> return x
+       Nothing -> mzero
 
 fence :: String -> TP String
 fence cmd = do
@@ -743,38 +746,39 @@ brackets p = lexeme $ char '[' *> spaces *> p <* spaces <* char ']'
 symbol :: String -> TP String
 symbol s = lexeme $ try $ string s
 
-enclosures :: [(String, Exp)]
-enclosures = [ ("(", ESymbol Open "(")
-             , (")", ESymbol Close ")")
-             , ("[", ESymbol Open "[")
-             , ("]", ESymbol Close "]")
-             , ("\\{", ESymbol Open "{")
-             , ("\\}", ESymbol Close "}")
-             , ("\\lbrack", ESymbol Open "[")
-             , ("\\lbrace", ESymbol Open "{")
-             , ("\\rbrack", ESymbol Close "]")
-             , ("\\rbrace", ESymbol Close "}")
-             , ("\\llbracket", ESymbol Open "\x27E6")
-             , ("\\rrbracket", ESymbol Close "\x27E7")
-             , ("\\langle", ESymbol Open "\x27E8")
-             , ("\\rangle", ESymbol Close "\x27E9")
-             , ("\\lfloor", ESymbol Open "\x230A")
-             , ("\\rfloor", ESymbol Close "\x230B")
-             , ("\\lceil", ESymbol Open "\x2308")
-             , ("\\rceil", ESymbol Close "\x2309")
-             , ("|", ESymbol Open "|")
-             , ("|", ESymbol Close "|")
-             , ("\\|", ESymbol Open "\x2225")
-             , ("\\|", ESymbol Close "\x2225")
-             , ("\\lvert", ESymbol Open "\x7C")
-             , ("\\rvert", ESymbol Close "\x7C")
-             , ("\\vert", ESymbol Close "\x7C")
-             , ("\\lVert", ESymbol Open "\x2225")
-             , ("\\rVert", ESymbol Close "\x2225")
-             , ("\\Vert", ESymbol Close "\x2016")
-             , ("\\ulcorner", ESymbol Open "\x231C")
-             , ("\\urcorner", ESymbol Close "\x231D")
-             ]
+enclosures :: M.Map String Exp
+enclosures = M.fromList
+  [ ("(", ESymbol Open "(")
+  , (")", ESymbol Close ")")
+  , ("[", ESymbol Open "[")
+  , ("]", ESymbol Close "]")
+  , ("\\{", ESymbol Open "{")
+  , ("\\}", ESymbol Close "}")
+  , ("\\lbrack", ESymbol Open "[")
+  , ("\\lbrace", ESymbol Open "{")
+  , ("\\rbrack", ESymbol Close "]")
+  , ("\\rbrace", ESymbol Close "}")
+  , ("\\llbracket", ESymbol Open "\x27E6")
+  , ("\\rrbracket", ESymbol Close "\x27E7")
+  , ("\\langle", ESymbol Open "\x27E8")
+  , ("\\rangle", ESymbol Close "\x27E9")
+  , ("\\lfloor", ESymbol Open "\x230A")
+  , ("\\rfloor", ESymbol Close "\x230B")
+  , ("\\lceil", ESymbol Open "\x2308")
+  , ("\\rceil", ESymbol Close "\x2309")
+  , ("|", ESymbol Close "|")
+  , ("|", ESymbol Open "|")
+  , ("\\|", ESymbol Open "\x2225")
+  , ("\\|", ESymbol Close "\x2225")
+  , ("\\lvert", ESymbol Open "\x7C")
+  , ("\\rvert", ESymbol Close "\x7C")
+  , ("\\vert", ESymbol Close "\x7C")
+  , ("\\lVert", ESymbol Open "\x2225")
+  , ("\\rVert", ESymbol Close "\x2225")
+  , ("\\Vert", ESymbol Close "\x2016")
+  , ("\\ulcorner", ESymbol Open "\x231C")
+  , ("\\urcorner", ESymbol Close "\x231D")
+  ]
 
 operators :: M.Map String Exp
 operators = M.fromList [
