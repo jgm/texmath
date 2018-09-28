@@ -62,6 +62,7 @@ expr1 = choice
           , environment
           , unicode
           , ensuremath
+          , scaled
           , enclosure
           , texSymbol
           ] <* ignorable
@@ -273,7 +274,7 @@ number = lexeme $ ENumber <$> try decimalNumber
                zs  -> return zs
 
 enclosure :: TP Exp
-enclosure = basicEnclosure <|> scaledEnclosure <|> delimited
+enclosure = basicEnclosure <|> delimited
 
 -- Expensive
 basicEnclosure :: TP Exp
@@ -304,11 +305,11 @@ delimited = do
   closec <- right <|> return ""
   return $ EDelimited openc closec contents
 
-scaledEnclosure :: TP Exp
-scaledEnclosure = do
+scaled :: TP Exp
+scaled = do
   cmd <- oneOfCommands (map fst S.scalers)
   case S.getScalerValue cmd of
-       Just  r -> EScaled r <$> basicEnclosure
+       Just  r -> EScaled r <$> (basicEnclosure <|> operator)
        Nothing -> mzero
 
 endLine :: TP Char
