@@ -1051,6 +1051,7 @@ symbols = M.fromList
   , ("\\max",EMathOperator "max")
   , ("\\min",EMathOperator "min")
   , ("\\mod",EMathOperator "mod")
+  , ("\\bmod",EMathOperator "mod")
   , ("\\Pr",EMathOperator "Pr")
   , ("\\sec",EMathOperator "sec")
   , ("\\sin",EMathOperator "sin")
