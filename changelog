@@ -2,6 +2,7 @@ texmath (0.11.1.1)
 
   * Fix building with ghc-8.6.1 by removing need for now missing
     MonadFail instances (Jonas Scholl).
+  * Allow operators like `/` to be scaled (#120).
 
 texmath (0.11.1)
 
