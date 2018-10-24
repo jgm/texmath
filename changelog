@@ -1,3 +1,8 @@
+texmath (0.11.1.2)
+
+  * Eqn writer: properly escape `{` and `}`.
+  * Set more accurate bounds (Herbert Valerio Riedel).
+
 texmath (0.11.1.1)
 
   * Fix building with ghc-8.6.1 by removing need for now missing
