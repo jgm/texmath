@@ -69,6 +69,8 @@ writeExp (ESymbol Ord [c])  -- do not render "invisible operators"
 writeExp (EIdentifier s) = writeExp (ESymbol Ord s)
 writeExp (ESymbol t s) =
   case s of
+    "{"     -> "\\[lC]"
+    "}"     -> "\\[rC]"
     "\8805" -> ">="
     "\8804" -> "<="
     "\8801" -> "=="
