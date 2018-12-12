@@ -343,12 +343,12 @@ arrayLine = notFollowedBy (ctrlseq "end" >> return '\n') >>
 
 arrayAlignments :: TP [Alignment]
 arrayAlignments = try $ do
-  as <- braces (many letter)
+  as <- braces (many (letter <|> char '|'))
   let letterToAlignment 'l' = AlignLeft
       letterToAlignment 'c' = AlignCenter
       letterToAlignment 'r' = AlignRight
       letterToAlignment _   = AlignCenter
-  return $ map letterToAlignment as
+  return $ map letterToAlignment $ filter (/= '|') as
 
 environment :: TP Exp
 environment = do
