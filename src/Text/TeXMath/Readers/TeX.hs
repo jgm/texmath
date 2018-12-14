@@ -530,6 +530,7 @@ styleOps = M.fromList
           , ("\\mathsf",     EStyled TextSansSerif)
           , ("\\mathsfup",   EStyled TextSansSerif)
           , ("\\mathbb",     EStyled TextDoubleStruck)
+          , ("\\mathds",     EStyled TextDoubleStruck) -- mathds package
           , ("\\mathcal",    EStyled TextScript)
           , ("\\mathscr",    EStyled TextScript)
           , ("\\mathfrak",   EStyled TextFraktur)
