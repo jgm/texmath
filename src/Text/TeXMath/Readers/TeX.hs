@@ -989,6 +989,7 @@ symbols = M.fromList
   , ("\\prime",ESymbol Ord "\8242")
   , ("\\dots",ESymbol Ord "\8230")
   , ("\\ldots",ESymbol Ord "\8230")
+  , ("\\hdots",ESymbol Ord "\8230")
   , ("\\cdots",ESymbol Ord "\8943")
   , ("\\vdots",ESymbol Ord "\8942")
   , ("\\ddots",ESymbol Ord "\8945")
