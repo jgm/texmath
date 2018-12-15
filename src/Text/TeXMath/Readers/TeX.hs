@@ -1,4 +1,5 @@
 {-# LANGUAGE TupleSections #-}
+{-# LANGUAGE ScopedTypeVariables #-}
 {-
 Copyright (C) 2009 John MacFarlane <jgm@berkeley.edu>
 
@@ -52,6 +53,7 @@ expr1 = choice
           , styled
           , root
           , mspace
+          , hspace
           , mathop
           , phantom
           , boxed
@@ -108,8 +110,11 @@ ctrlseq s = lexeme $ try $ do
   return result
 
 ignorable :: TP ()
-ignorable = skipMany (comment <|> label <|> () <$ ctrlseq "nonumber" <|>
-        (skipMany1 space <?> "whitespace"))
+ignorable = skipMany $
+        comment
+    <|> label
+    <|> () <$ ctrlseq "nonumber"
+    <|> (skipMany1 space <?> "whitespace")
 
 comment :: TP ()
 comment = char '%' *> skipMany (noneOf "\n") *> optional newline
@@ -606,13 +611,27 @@ root = do
 mspace :: TP Exp
 mspace = do
   ctrlseq "mspace"
-  lexeme $ char '{'
-  len <- many1 digit
-  lexeme $ string "mu"
-  lexeme $ char '}'
-  case reads len of
-       ((n,[]):_) -> return $ ESpace (n/18)
-       _          -> mzero
+  braces $ do
+    len <- many1 digit
+    lexeme $ string "mu"
+    case reads len of
+       ((n :: Integer,[]):_) -> return $ ESpace (fromIntegral n/18)
+       _                     -> mzero
+
+
+hspace :: TP Exp
+hspace = do
+  ctrlseq "hspace"
+  braces $ do
+    len <- many1 digit
+    scaleFactor <-
+           1      <$ (string "em")
+      <|> (1/12)  <$ (string "pt")
+      <|> 6       <$ (string "in")
+      <|> (50/21) <$ (string "cm")
+    case reads len of
+       ((n :: Integer,[]):_) -> return $ ESpace (fromIntegral n * scaleFactor)
+       _                     -> mzero
 
 
 mathop :: TP Exp
