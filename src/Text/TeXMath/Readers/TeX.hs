@@ -29,6 +29,7 @@ import Data.Ratio ((%))
 import Control.Monad
 import Data.Char (isDigit, isAscii, isLetter)
 import qualified Data.Map as M
+import Data.Maybe (mapMaybe)
 import Text.Parsec hiding (label)
 import Text.Parsec.Error
 import Text.Parsec.String
@@ -39,6 +40,7 @@ import Text.TeXMath.Readers.TeX.Macros (applyMacros, parseMacroDefinitions)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Data.Maybe (fromJust)
 import Text.TeXMath.Unicode.ToUnicode (toUnicode)
+import Text.TeXMath.Shared (getSpaceChars)
 
 type TP = Parser
 
@@ -177,7 +179,7 @@ expToOperatorName e = case e of
           toStr sty (ENumber s)         = Just $ toUnicode sty s
           toStr sty (EMathOperator s)   = Just $ toUnicode sty s
           toStr sty (ESymbol _ s)       = Just $ toUnicode sty s
-          toStr _   (ESpace _)          = Just $ " "
+          toStr _   (ESpace n)          = Just $ getSpaceChars n
           toStr _   (EStyled sty' exps) = concat <$>
                                             sequence (map (toStr sty') exps)
           toStr _   _                   = Nothing
@@ -646,19 +648,18 @@ mathop = mathopWith "mathop" Op
 mathopWith :: String -> TeXSymbolType -> TP Exp
 mathopWith name ty = try $ do
   ctrlseq name
-  e <- expr1
-  let e' = case e of
-               EGrouped [x] -> x
-               _            -> e
-  case e' of
-     ESymbol _ x   -> return $ ESymbol ty x
-     EIdentifier x -> return $ ESymbol ty x
-     EText TextNormal x -> return $ ESymbol ty x
-     EText sty x -> return $ EStyled sty [ESymbol ty x]
-     x | ty == Op  -> case expToOperatorName x of
-                           Just y -> return $ EMathOperator y
-                           _      -> return x
-       | otherwise -> return x
+  e <- inbraces <|> expr1
+  let es' = case e of
+                 EGrouped xs -> xs
+                 x           -> [x]
+  case es' of
+     [ESymbol _ x]   -> return $ ESymbol ty x
+     [EIdentifier x] -> return $ ESymbol ty x
+     [EText TextNormal x] -> return $ ESymbol ty x
+     [EText sty x] -> return $ EStyled sty [ESymbol ty x]
+     xs | ty == Op  -> return $ EMathOperator $
+                         concat $ mapMaybe expToOperatorName xs
+        | otherwise -> return $ EGrouped xs
 
 binary :: TP Exp
 binary = do
