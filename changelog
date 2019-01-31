@@ -1,3 +1,14 @@
+texmath (0.11.2)
+
+  * Improved handling of \mathop etc (#126).  We now allow operators like
+    `arg\,min`, converting the space into unicode.
+  * Support \hspace (#126).
+  * Support \hdots as synonym of \ldots (#126).
+  * Support \mathds (#126).
+  * In parsing array, ignore `|` in column specs (#127).
+    We have no way to represent this in EArray, currently.
+    Ignoring them seems better than failing altogether.
+
 texmath (0.11.1.2)
 
   * Eqn writer: properly escape `{` and `}`.
