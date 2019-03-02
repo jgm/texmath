@@ -303,12 +303,10 @@ elemToExps' element | isElem "m" "func" element = do
   fName <- filterChildName (hasElemName "m" "fName") element
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
           elemToBase
-  -- We need a string for the fname, but omml gives it to us as a
-  -- series of oMath elems. We're going to filter out the oMathRuns,
-  -- which should work for us most of the time.
-  let fnameString = concatMap expToString $
-                    concat $ mapMaybe (elemToExps) (elChildren fName)
-  return [EMathOperator fnameString, baseExp]
+  let fnameExp = case mconcat $ mapMaybe (elemToExps') (elChildren fName) of
+                   [x] -> x
+                   xs  -> EGrouped xs
+  return [fnameExp, baseExp]
 elemToExps' element | isElem "m" "groupChr" element = do
   let gPr = filterChildName (hasElemName "m" "groupChrPr") element
       chr = gPr >>=
@@ -469,16 +467,6 @@ interpretString s
   where isIdentifierOrSpace (EIdentifier _) = True
         isIdentifierOrSpace (ESpace _)      = True
         isIdentifierOrSpace _               = False
-
-expToString :: Exp -> String
-expToString (ENumber s) = s
-expToString (EIdentifier s) = s
-expToString (EMathOperator s) = s
-expToString (ESymbol _ s) = s
-expToString (EText _ s) = s
-expToString (EGrouped exps) = concatMap expToString exps
-expToString (EStyled _ exps) = concatMap expToString exps
-expToString _ = ""
 
 -- The char attribute is a hex string
 getSymChar :: Element -> String
