@@ -1,3 +1,9 @@
+texmath (0.11.2.1)
+
+  * OMML reader: Don't collapse `fName` to a string (#133).
+    This fixes cases where fName has some complexity, e.g.
+    a subscript or limit.
+
 texmath (0.11.2)
 
   * Improved handling of \mathop etc (#126).  We now allow operators like
