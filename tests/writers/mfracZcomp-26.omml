@@ -6,6 +6,7 @@
   <m:oMath>
     <m:r>
       <m:rPr>
+        <m:nor />
         <m:sty m:val="p" />
       </m:rPr>
       <m:t>LaTeX renders continued fractions </m:t>
@@ -145,6 +146,7 @@
     </m:f>
     <m:r>
       <m:rPr>
+        <m:nor />
         <m:sty m:val="p" />
       </m:rPr>
       <m:t> normal size at all levels in all contexts</m:t>

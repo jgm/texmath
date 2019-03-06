@@ -6,6 +6,7 @@
   <m:oMath>
     <m:r>
       <m:rPr>
+        <m:nor />
         <m:sty m:val="p" />
       </m:rPr>
       <m:t>The same expression </m:t>
@@ -63,6 +64,7 @@
     </m:f>
     <m:r>
       <m:rPr>
+        <m:nor />
         <m:sty m:val="p" />
       </m:rPr>
       <m:t> in a display.</m:t>

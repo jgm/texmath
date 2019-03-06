@@ -6,6 +6,7 @@
   <m:oMath>
     <m:r>
       <m:rPr>
+        <m:nor />
         <m:sty m:val="p" />
       </m:rPr>
       <m:t>Inline, display style, normal line </m:t>
@@ -17,6 +18,7 @@
       <m:num>
         <m:r>
           <m:rPr>
+            <m:nor />
             <m:sty m:val="p" />
           </m:rPr>
           <m:t>ln</m:t>
@@ -36,6 +38,7 @@
     </m:f>
     <m:r>
       <m:rPr>
+        <m:nor />
         <m:sty m:val="p" />
       </m:rPr>
       <m:t>, numerator and denominator should render normal size.</m:t>

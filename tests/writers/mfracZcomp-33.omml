@@ -6,6 +6,7 @@
   <m:oMath>
     <m:r>
       <m:rPr>
+        <m:nor />
         <m:sty m:val="p" />
       </m:rPr>
       <m:t>And this shows a combination with a background image at a desired opacity </m:t>
@@ -58,6 +59,7 @@
         </m:r>
         <m:r>
           <m:rPr>
+            <m:nor />
             <m:sty m:val="p" />
           </m:rPr>
           <m:t>cos</m:t>

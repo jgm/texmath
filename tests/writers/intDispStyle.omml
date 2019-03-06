@@ -34,6 +34,7 @@
         <m:e>
           <m:r>
             <m:rPr>
+              <m:nor />
               <m:sty m:val="p" />
             </m:rPr>
             <m:t>ds=true</m:t>
@@ -42,6 +43,7 @@
         <m:e>
           <m:r>
             <m:rPr>
+              <m:nor />
               <m:sty m:val="p" />
             </m:rPr>
             <m:t>ds=false</m:t>
@@ -52,6 +54,7 @@
         <m:e>
           <m:r>
             <m:rPr>
+              <m:nor />
               <m:sty m:val="p" />
             </m:rPr>
             <m:t>stretch=t, large=t</m:t>
@@ -144,6 +147,7 @@
         <m:e>
           <m:r>
             <m:rPr>
+              <m:nor />
               <m:sty m:val="p" />
             </m:rPr>
             <m:t>stretch=f, large=t</m:t>
@@ -212,6 +216,7 @@
         <m:e>
           <m:r>
             <m:rPr>
+              <m:nor />
               <m:sty m:val="p" />
             </m:rPr>
             <m:t>stretch=t, large=f</m:t>
@@ -358,6 +363,7 @@
         <m:e>
           <m:r>
             <m:rPr>
+              <m:nor />
               <m:sty m:val="p" />
             </m:rPr>
             <m:t>stretch=f, large=f</m:t>

@@ -48,6 +48,7 @@
       <m:e>
         <m:r>
           <m:rPr>
+            <m:nor />
             <m:sty m:val="p" />
           </m:rPr>
           <m:t>min</m:t>
@@ -66,6 +67,7 @@
       <m:e>
         <m:r>
           <m:rPr>
+            <m:nor />
             <m:sty m:val="p" />
           </m:rPr>
           <m:t>max</m:t>
@@ -84,6 +86,7 @@
       <m:e>
         <m:r>
           <m:rPr>
+            <m:nor />
             <m:sty m:val="p" />
           </m:rPr>
           <m:t>det</m:t>
@@ -102,6 +105,7 @@
       <m:e>
         <m:r>
           <m:rPr>
+            <m:nor />
             <m:sty m:val="p" />
           </m:rPr>
           <m:t>Pr</m:t>
@@ -120,6 +124,7 @@
       <m:e>
         <m:r>
           <m:rPr>
+            <m:nor />
             <m:sty m:val="p" />
           </m:rPr>
           <m:t>gcd</m:t>
@@ -231,6 +236,7 @@
       <m:lim>
         <m:r>
           <m:rPr>
+            <m:nor />
             <m:sty m:val="p" />
           </m:rPr>
           <m:t>term</m:t>

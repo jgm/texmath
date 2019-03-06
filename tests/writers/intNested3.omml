@@ -27,6 +27,7 @@
         <m:e>
           <m:r>
             <m:rPr>
+              <m:nor />
               <m:sty m:val="p" />
             </m:rPr>
             <m:t>single integral</m:t>
@@ -171,6 +172,7 @@
         <m:e>
           <m:r>
             <m:rPr>
+              <m:nor />
               <m:sty m:val="p" />
             </m:rPr>
             <m:t>double integral</m:t>
@@ -390,6 +392,7 @@
         <m:e>
           <m:r>
             <m:rPr>
+              <m:nor />
               <m:sty m:val="p" />
             </m:rPr>
             <m:t>double nested integral</m:t>

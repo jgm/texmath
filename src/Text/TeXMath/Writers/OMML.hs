@@ -91,7 +91,7 @@ makeArray props as rs = mnode "m" $ mProps : map toMr rs
         toAlign AlignCenter  = "center"
 
 makeText :: TextType -> String -> Element
-makeText a s = str (setProps a) s
+makeText a s = str (mnode "nor" () : setProps a) s
 
 setProps :: TextType -> [Element]
 setProps tt =

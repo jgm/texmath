@@ -6,6 +6,7 @@
   <m:oMath>
     <m:r>
       <m:rPr>
+        <m:nor />
         <m:sty m:val="p" />
       </m:rPr>
       <m:t>Inline fenced nested fractions </m:t>
@@ -39,6 +40,7 @@
                   <m:num>
                     <m:r>
                       <m:rPr>
+                        <m:nor />
                         <m:sty m:val="p" />
                       </m:rPr>
                       <m:t>sin</m:t>
@@ -126,6 +128,7 @@
     </m:r>
     <m:r>
       <m:rPr>
+        <m:nor />
         <m:sty m:val="p" />
       </m:rPr>
       <m:t> etc.</m:t>

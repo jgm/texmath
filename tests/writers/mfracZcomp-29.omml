@@ -6,6 +6,7 @@
   <m:oMath>
     <m:r>
       <m:rPr>
+        <m:nor />
         <m:sty m:val="p" />
       </m:rPr>
       <m:t>Displayed nested fractions are normal size at the first level, </m:t>
@@ -162,6 +163,7 @@
     </m:f>
     <m:r>
       <m:rPr>
+        <m:nor />
         <m:sty m:val="p" />
       </m:rPr>
       <m:t> script size at second level, and script-script size at all more nested levels.</m:t>
