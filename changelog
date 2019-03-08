@@ -1,3 +1,7 @@
+texmath (0.11.2.2)
+
+  * OMML writer: use m:nor for normal text (#135).
+
 texmath (0.11.2.1)
 
   * OMML reader: Don't collapse `fName` to a string (#133).
