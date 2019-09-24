@@ -3529,7 +3529,7 @@ symbols = M.fromList
   , ("\\underbracket",ESymbol TUnder "\9141")
   , ("\\underleftarrow",ESymbol Accent "\8430")
   , ("\\underleftharpoondown",ESymbol Accent "\8429")
-  , ("\\underline",ESymbol TUnder "\818")
+  , ("\\underline",ESymbol TUnder "_")
   , ("\\underparen",ESymbol TUnder "\9181")
   , ("\\underrightarrow",ESymbol Accent "\8431")
   , ("\\underrightharpoondown",ESymbol Accent "\8428")

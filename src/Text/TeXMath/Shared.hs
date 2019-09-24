@@ -321,6 +321,7 @@ diacriticals =
                , ("\x23DF", "\\underbrace")
                , ("\x23B5", "\\underbracket") -- mathtools
                , ("\x0332", "\\underline")
+               , ("_", "\\underline")
                , ("\x0333", "\\underbar")
                ]
 
