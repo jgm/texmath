@@ -429,19 +429,18 @@ elemToExps' element | isElem "m" "sSup" element = do
   return [ESuper baseExp (EGrouped supExps)]
 elemToExps' element | isElem "m" "r" element = do
   let mrPr = filterChildName (hasElemName "m" "rPr") element
-      lit = mrPr >>=
-            filterChildName (hasElemName "m" "lit") >>=
-            findAttrBy (hasElemName "m" "val")
-      txtSty = elemToOMathRunTextStyle element
+      lit = mrPr >>= filterChildName (hasElemName "m" "lit")
+      nor = mrPr >>= filterChildName (hasElemName "m" "nor")
+      txtSty = oMathRunTextStyleToTextType $ elemToOMathRunTextStyle element
   mrElems <- elemToOMathRunElems element
-  return $ case oMathRunTextStyleToTextType txtSty of
-    Nothing -> interpretString $ oMathRunElemsToString mrElems
-    Just textType ->
-      case lit of
-        Just "on" ->
-          [EText textType (oMathRunElemsToString mrElems)]
-        _         ->
-          [EStyled textType $ interpretString $ oMathRunElemsToString mrElems]
+  return $
+    if null lit && null nor
+       then case txtSty of
+              Nothing ->
+                interpretString $ oMathRunElemsToString mrElems
+              Just textSty ->
+                [EStyled textSty $ interpretString $ oMathRunElemsToString mrElems]
+       else [EText (fromMaybe TextNormal txtSty) $ oMathRunElemsToString mrElems]
 elemToExps' _ = Nothing
 
 interpretChar :: Char -> Exp
