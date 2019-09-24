@@ -1,3 +1,15 @@
+texmath (0.11.2.3)
+
+  * OMML reader: properly distinguish normal text from math (#136).
+    If `m:nor` or `m:lit` is set in `m:rPr`, we interpret the
+    contents as literal text and not as math.
+  * TeX reader: use different symbol (`_`) for `\underline` (#142).
+    This gets the right accent properties on MathML output, so
+    that the underline is not lower than it should be.
+  * TeX reader: Treat `\bmod` as a relational symbol rather than
+    an operator (#143).  This fixes spacing problems in several
+    output formats.
+
 texmath (0.11.2.2)
 
   * OMML writer: use m:nor for normal text (#135).
