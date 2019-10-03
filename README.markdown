@@ -1,6 +1,9 @@
 texmath
 =======
 
+[![CI
+tests](https://github.com/jgm/texmath/workflows/CI%20tests/badge.svg)](https://github.com/jgm/texmath/actions)
+
 texmath is a Haskell library for converting between formats used to
 represent mathematics.  Currently it provides functions to read and
 write TeX math, presentation MathML, and OMML (Office Math Markup
