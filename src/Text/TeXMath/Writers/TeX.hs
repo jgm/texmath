@@ -93,7 +93,7 @@ writeBinom cmd x y = do
            "\\brack"  -> tellGenFrac "[" "]"
            "\\brace"  -> tellGenFrac "\\{" "\\}"
            "\\bangle" -> tellGenFrac "\\langle" "\\rangle"
-           _          -> fail "writeBinom: unknown cmd"
+           _          -> error "writeBinom: unknown cmd"
        tellGroup $ writeExp x
        tellGroup $ writeExp y
      else tellGroup $ do
