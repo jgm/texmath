@@ -1,3 +1,17 @@
+texmath (0.11.3)
+
+  * Use error instead of fail to allow building with ghc 8.8.
+  * Test output: remove superfluous spaces after control sequences,
+    superfluous groups, and unicode VARIATION SELECTOR 1.
+  * renderTeX: add space between control sequence and any non-ASCII
+    character.  There are differences in behavior of isAlphaNum between
+    different ghc versions that would affect test output otherwise.
+  * charToLaTeXString: Ignore 65024 VARIATION SELECTOR 1 to avoid putting
+    it literally in the output ; it is used in mathml output and occurs
+    in many of the test cases.
+  * Add cabal.project.
+  * Use actions rather than travis for CI.
+
 texmath (0.11.2.3)
 
   * OMML reader: properly distinguish normal text from math (#136).
