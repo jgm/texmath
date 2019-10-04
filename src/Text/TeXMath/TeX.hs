@@ -4,7 +4,7 @@ module Text.TeXMath.TeX (TeX(..),
                          escapeLaTeX)
 where
 import Data.List (isPrefixOf)
-import Data.Char (isLetter, isAlphaNum)
+import Data.Char (isLetter, isAlphaNum, isAscii)
 
 -- | An intermediate representation of TeX math, to be used in rendering.
 data TeX = ControlSeq String
@@ -24,7 +24,8 @@ renderTeX (Literal s) cs
   | otherwise              = s ++ cs
 renderTeX (ControlSeq s) cs
   | s == "\\ "               = s ++ cs
-  | startsWith isAlphaNum cs = s ++ (' ':cs)
+  | startsWith (\c -> isAlphaNum c || not (isAscii c)) cs
+                             = s ++ (' ':cs)
   | otherwise                = s ++ cs
 renderTeX (Grouped [Grouped xs]) cs  = renderTeX (Grouped xs) cs
 renderTeX (Grouped xs) cs     =
