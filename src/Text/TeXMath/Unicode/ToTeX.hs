@@ -72,6 +72,9 @@ charToString e c =
 
 -- Takes a single character and attempts to convert it to a latex string
 charToLaTeXString :: Env -> Char -> Maybe [TeX]
+-- we ignore 65024 VARIATION SELECTOR 1 to avoid putting it
+-- literally in the output ; it is used in mathml output.
+charToLaTeXString _ '\65024' = Just []
 charToLaTeXString environment c = do
   v <- M.lookup c recordsMap
   -- Required packages for the command
