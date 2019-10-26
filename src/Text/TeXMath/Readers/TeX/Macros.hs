@@ -231,7 +231,7 @@ declareMathOperator = try $ do
 
 
 apply :: [String] -> String -> String
-apply args ('#':d:xs) | isDigit d =
+apply args ('#':d:xs) | isDigit d, d /= '0' =
   let argnum = read [d]
   in  if length args >= argnum
          then args !! (argnum - 1) ++ apply args xs
