@@ -22,7 +22,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 module Text.TeXMath.Writers.Pandoc (writePandoc)
 where
-import Text.Pandoc.Legacy.Definition
+import Text.Pandoc.Definition
+import qualified Data.Text as T
 import Text.TeXMath.Unicode.ToUnicode
 import Text.TeXMath.Types
 import Text.TeXMath.Shared (getSpaceChars)
@@ -72,20 +73,20 @@ widespace = EText TextNormal "\x2004"
 renderStr :: TextType -> String -> Inline
 renderStr tt s =
   case tt of
-       TextNormal       -> Str s
-       TextBold         -> Strong [Str s]
-       TextItalic       -> Emph   [Str s]
-       TextMonospace    -> Code nullAttr s
-       TextSansSerif    -> Str s
-       TextDoubleStruck -> Str $ toUnicode tt s
-       TextScript       -> Str $ toUnicode tt s
-       TextFraktur      -> Str $ toUnicode tt s
-       TextBoldItalic    -> Strong [Emph [Str s]]
-       TextSansSerifBold -> Strong [Str s]
-       TextBoldScript    -> Strong [Str $ toUnicode tt s]
-       TextBoldFraktur   -> Strong [Str $ toUnicode tt s]
-       TextSansSerifItalic -> Emph [Str s]
-       TextSansSerifBoldItalic -> Strong [Emph [Str s]]
+       TextNormal       -> Str $ T.pack s
+       TextBold         -> Strong [Str $ T.pack s]
+       TextItalic       -> Emph   [Str $ T.pack s]
+       TextMonospace    -> Code nullAttr $ T.pack s
+       TextSansSerif    -> Str $ T.pack s
+       TextDoubleStruck -> Str $ T.pack $ toUnicode tt s
+       TextScript       -> Str $ T.pack $ toUnicode tt s
+       TextFraktur      -> Str $ T.pack $ toUnicode tt s
+       TextBoldItalic    -> Strong [Emph [Str $ T.pack s]]
+       TextSansSerifBold -> Strong [Str $ T.pack s]
+       TextBoldScript    -> Strong [Str $ T.pack $ toUnicode tt s]
+       TextBoldFraktur   -> Strong [Str $ T.pack $ toUnicode tt s]
+       TextSansSerifItalic -> Emph [Str $ T.pack s]
+       TextSansSerifBoldItalic -> Strong [Emph [Str $ T.pack s]]
 
 expToInlines :: TextType -> Exp -> Maybe [Inline]
 expToInlines tt (ENumber s) = Just [renderStr tt s]
@@ -98,7 +99,7 @@ expToInlines tt (EDelimited start end xs) = do
   return $ [renderStr tt start] ++ concat xs' ++ [renderStr tt end]
 expToInlines tt (EGrouped xs)    = expsToInlines tt xs
 expToInlines _ (EStyled tt' xs)  = expsToInlines tt' xs
-expToInlines _ (ESpace n)        = Just [Str $ getSpaceChars n]
+expToInlines _ (ESpace n)        = Just [Str $ T.pack $ getSpaceChars n]
 expToInlines _ (ESqrt _)         = Nothing
 expToInlines _ (ERoot _ _)       = Nothing
 expToInlines _ (EFraction _ _ _) = Nothing

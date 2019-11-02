@@ -11,7 +11,7 @@ import System.Console.GetOpt
 import Data.List (intersperse)
 import System.Exit
 import Data.Maybe
-import Text.Pandoc.Legacy.Definition
+import Text.Pandoc.Definition
 import Network.URI (unEscapeString)
 import Data.List.Split (splitOn)
 import Data.Aeson (encode, (.=), object)
@@ -96,7 +96,7 @@ output :: DisplayType -> Writer -> [Exp] -> String
 output dt (XMLWriter w) es    = output dt (StringWriter (\dt' -> ppElement . w dt' )) es
 output dt (StringWriter w) es = w dt es
 output dt (PandocWriter w) es = show (fromMaybe fallback (w dt es))
-  where fallback = [Math mt (writeTeX es)]
+  where fallback = [Math mt (T.pack $ writeTeX es)]
         mt = case dt of
                   DisplayBlock  -> DisplayMath
                   DisplayInline -> InlineMath
