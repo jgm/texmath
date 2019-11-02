@@ -11,7 +11,7 @@ import System.Console.GetOpt
 import Data.List (intersperse)
 import System.Exit
 import Data.Maybe
-import Text.Pandoc.Definition
+import Text.Pandoc.Legacy.Definition
 import Network.URI (unEscapeString)
 import Data.List.Split (splitOn)
 import Data.Aeson (encode, (.=), object)

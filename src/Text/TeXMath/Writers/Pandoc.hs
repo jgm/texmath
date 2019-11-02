@@ -22,7 +22,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 module Text.TeXMath.Writers.Pandoc (writePandoc)
 where
-import Text.Pandoc.Definition
+import Text.Pandoc.Legacy.Definition
 import Text.TeXMath.Unicode.ToUnicode
 import Text.TeXMath.Types
 import Text.TeXMath.Shared (getSpaceChars)
