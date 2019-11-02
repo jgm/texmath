@@ -40,7 +40,15 @@ import Text.TeXMath.Types
 import Text.TeXMath.Shared (fixTree, getSpaceWidth, getOperator)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Control.Applicative ((<$>))
-import Text.TeXMath.Unicode.Fonts (getUnicode, stringToFont)
+import Text.TeXMath.Unicode.Fonts (getUnicode, textToFont)
+
+-- TODO text: remove
+import qualified Data.Text as T
+import Text.TeXMath.Unicode.Fonts (Font)
+
+stringToFont :: String -> Maybe Font
+stringToFont = textToFont . T.pack
+--
 
 readOMML :: String -> Either String [Exp]
 readOMML s | Just e <- parseXMLDoc s =

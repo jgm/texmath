@@ -21,7 +21,8 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 module Text.TeXMath.Writers.TeX (writeTeX, writeTeXWith, addLaTeXEnvironment ) where
 
 import Text.TeXMath.Types
-import Text.TeXMath.Unicode.ToTeX (getTeXMath)
+-- import Text.TeXMath.Unicode.ToTeX (getTeXMath) TODO text: restore
+import qualified Text.TeXMath.Unicode.ToTeX as TT
 import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import qualified Text.TeXMath.Shared as S
 import Data.Char (toLower)
@@ -36,6 +37,11 @@ import Text.TeXMath.TeX
 
 -- import Debug.Trace
 -- tr' x = trace (show x) x
+
+-- TODO text: remove
+getTeXMath :: String -> Env -> [TeX]
+getTeXMath = TT.getTeXMath . T.pack
+--
 
 -- | Transforms an expression tree to equivalent LaTeX with the default
 -- packages (amsmath and amssymb)

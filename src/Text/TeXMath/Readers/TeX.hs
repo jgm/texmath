@@ -40,11 +40,18 @@ import qualified Text.TeXMath.Shared as S
 import Text.TeXMath.Readers.TeX.Macros (applyMacros, parseMacroDefinitions)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Data.Maybe (fromJust)
-import Text.TeXMath.Unicode.ToUnicode (toUnicode)
+-- import Text.TeXMath.Unicode.ToUnicode (toUnicode) TODO text: restore
 -- import Text.TeXMath.Shared (getSpaceChars) TODO text: restore
+
+ -- TODO text: remove
+import qualified Text.TeXMath.Unicode.ToUnicode as TU
 
 getSpaceChars :: Rational -> String
 getSpaceChars = T.unpack . S.getSpaceChars
+
+toUnicode :: TextType -> String -> String
+toUnicode tt = T.unpack . TU.toUnicode tt . T.pack
+--
 
 type TP = Parser
 

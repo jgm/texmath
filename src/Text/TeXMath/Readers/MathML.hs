@@ -46,7 +46,7 @@ import Text.TeXMath.Readers.MathML.EntityMap (getUnicode)
 import qualified Text.TeXMath.Shared as S
 import Text.TeXMath.Shared (fixTree, empty, getOperator, getSpaceWidth, isEmpty)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
-import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
+-- import Text.TeXMath.Unicode.ToUnicode (fromUnicode) TODO text: restore
 import Text.TeXMath.Compat (throwError, Except, runExcept, MonadError)
 import Control.Applicative ((<$>), (<|>), (<*>))
 import Control.Arrow ((&&&))
@@ -58,11 +58,18 @@ import Control.Monad (filterM, guard)
 import Control.Monad.Reader (ReaderT, runReaderT, asks, local)
 import Data.Either (rights)
 
+-- TODO text: remove
+import qualified Text.TeXMath.Unicode.ToUnicode as TU
+
+fromUnicode :: TextType -> String -> String
+fromUnicode tt = T.unpack . TU.fromUnicode tt . T.pack
+
 getTextType :: String -> TextType
 getTextType = S.getTextType . T.pack
 
 readLength :: String -> Maybe Rational
 readLength = S.readLength . T.pack
+--
 
 -- | Parse a MathML expression to a list of 'Exp'.
 readMathML :: String -> Either String [Exp]

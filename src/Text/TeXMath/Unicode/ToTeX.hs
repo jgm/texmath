@@ -58,8 +58,8 @@ import qualified Text.TeXMath.Shared as S
 -- | Converts a string of unicode characters into a strong of equivalent
 -- TeXMath commands. An environment is a list of strings specifying which
 -- additional packages are available.
-getTeXMath :: String -> Env -> [TeX]
-getTeXMath s e = concatMap (charToString e) s
+getTeXMath :: T.Text -> Env -> [TeX]
+getTeXMath s e = concatMap (charToString e) $ T.unpack s
 
 -- Categories which require braces
 commandTypes :: [TeXSymbolType]

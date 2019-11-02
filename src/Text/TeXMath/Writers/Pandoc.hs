@@ -24,9 +24,16 @@ module Text.TeXMath.Writers.Pandoc (writePandoc)
 where
 import Text.Pandoc.Definition
 import qualified Data.Text as T
-import Text.TeXMath.Unicode.ToUnicode
+-- import Text.TeXMath.Unicode.ToUnicode TODO text: restore
 import Text.TeXMath.Types
 import Text.TeXMath.Shared (getSpaceChars)
+
+-- TODO text: remove
+import qualified Text.TeXMath.Unicode.ToUnicode as TU
+
+toUnicode :: TextType -> String -> T.Text
+toUnicode tt = TU.toUnicode tt . T.pack
+--
 
 -- | Attempts to convert a formula to a list of 'Pandoc' inlines.
 writePandoc :: DisplayType
@@ -78,13 +85,13 @@ renderStr tt s =
        TextItalic       -> Emph   [Str $ T.pack s]
        TextMonospace    -> Code nullAttr $ T.pack s
        TextSansSerif    -> Str $ T.pack s
-       TextDoubleStruck -> Str $ T.pack $ toUnicode tt s
-       TextScript       -> Str $ T.pack $ toUnicode tt s
-       TextFraktur      -> Str $ T.pack $ toUnicode tt s
+       TextDoubleStruck -> Str $ toUnicode tt s
+       TextScript       -> Str $ toUnicode tt s
+       TextFraktur      -> Str $ toUnicode tt s
        TextBoldItalic    -> Strong [Emph [Str $ T.pack s]]
        TextSansSerifBold -> Strong [Str $ T.pack s]
-       TextBoldScript    -> Strong [Str $ T.pack $ toUnicode tt s]
-       TextBoldFraktur   -> Strong [Str $ T.pack $ toUnicode tt s]
+       TextBoldScript    -> Strong [Str $ toUnicode tt s]
+       TextBoldFraktur   -> Strong [Str $ toUnicode tt s]
        TextSansSerifItalic -> Emph [Str $ T.pack s]
        TextSansSerifBoldItalic -> Strong [Emph [Str $ T.pack s]]
 
