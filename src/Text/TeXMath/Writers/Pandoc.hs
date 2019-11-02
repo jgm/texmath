@@ -99,7 +99,7 @@ expToInlines tt (EDelimited start end xs) = do
   return $ [renderStr tt start] ++ concat xs' ++ [renderStr tt end]
 expToInlines tt (EGrouped xs)    = expsToInlines tt xs
 expToInlines _ (EStyled tt' xs)  = expsToInlines tt' xs
-expToInlines _ (ESpace n)        = Just [Str $ T.pack $ getSpaceChars n]
+expToInlines _ (ESpace n)        = Just [Str $ getSpaceChars n]
 expToInlines _ (ESqrt _)         = Nothing
 expToInlines _ (ERoot _ _)       = Nothing
 expToInlines _ (EFraction _ _ _) = Nothing

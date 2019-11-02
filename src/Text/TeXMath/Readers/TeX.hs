@@ -29,6 +29,7 @@ import Data.Ratio ((%))
 import Control.Monad
 import Data.Char (isDigit, isAscii, isLetter)
 import qualified Data.Map as M
+import qualified Data.Text as T
 import Data.Maybe (mapMaybe)
 import Text.Parsec hiding (label)
 import Text.Parsec.Error
@@ -40,7 +41,10 @@ import Text.TeXMath.Readers.TeX.Macros (applyMacros, parseMacroDefinitions)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Data.Maybe (fromJust)
 import Text.TeXMath.Unicode.ToUnicode (toUnicode)
-import Text.TeXMath.Shared (getSpaceChars)
+-- import Text.TeXMath.Shared (getSpaceChars) TODO text: restore
+
+getSpaceChars :: Rational -> String
+getSpaceChars = T.unpack . S.getSpaceChars
 
 type TP = Parser
 
@@ -317,8 +321,8 @@ delimited = do
 
 scaled :: TP Exp
 scaled = do
-  cmd <- oneOfCommands (map fst S.scalers)
-  case S.getScalerValue cmd of
+  cmd <- oneOfCommands (map (T.unpack . fst) S.scalers)
+  case S.getScalerValue (T.pack cmd) of
        Just  r -> EScaled r <$> (basicEnclosure <|> operator)
        Nothing -> mzero
 

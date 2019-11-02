@@ -27,10 +27,16 @@ import Text.XML.Light
 import Text.TeXMath.Types
 import Text.TeXMath.Unicode.ToUnicode
 import Data.Generics (everywhere, mkT)
-import Text.TeXMath.Shared (getMMLType, handleDownup)
+-- import Text.TeXMath.Shared (getMMLType, handleDownup)
+import qualified Text.TeXMath.Shared as S
+import Text.TeXMath.Shared (handleDownup)
 import Text.TeXMath.Readers.MathML.MMLDict (getMathMLOperator)
 import Control.Applicative ((<$>))
+import qualified Data.Text as T
 import Text.Printf
+
+getMMLType :: TextType -> String
+getMMLType = T.unpack . S.getMMLType
 
 -- | Transforms an expression tree to a MathML XML tree
 writeMathML :: DisplayType -> [Exp] -> Element

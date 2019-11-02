@@ -42,11 +42,12 @@ LaTeX Project Public License.
 -}
 
 module Text.TeXMath.Unicode.ToTeX ( getTeXMath
-                                      , getSymbolType
-                                      , records
-                                      ) where
+                                  , getSymbolType
+                                  , records
+                                  ) where
 
 import qualified Data.Map as M
+import qualified Data.Text as T
 import Text.TeXMath.TeX
 import Text.TeXMath.Types
 import Data.Maybe (fromMaybe, listToMaybe, mapMaybe)
@@ -95,7 +96,7 @@ charToLaTeXString environment c = do
 textConvert :: Env -> Char -> Maybe [TeX]
 textConvert env c = do
   (ttype, v) <- fromUnicodeChar c
-  return [ControlSeq (S.getLaTeXTextCommand env ttype), Grouped [Token v]]
+  return [ControlSeq (T.unpack $ S.getLaTeXTextCommand env ttype), Grouped [Token v]]
 
 
 recordsMap :: M.Map Char Record

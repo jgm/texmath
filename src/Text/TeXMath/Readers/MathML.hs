@@ -41,8 +41,10 @@ import Text.XML.Light hiding (onlyText)
 import Text.TeXMath.Types
 import Text.TeXMath.Readers.MathML.MMLDict (getMathMLOperator)
 import Text.TeXMath.Readers.MathML.EntityMap (getUnicode)
-import Text.TeXMath.Shared (getTextType, readLength, getOperator, fixTree,
-                            getSpaceWidth, isEmpty, empty)
+-- import Text.TeXMath.Shared (getTextType, readLength, getOperator, fixTree,
+--                             getSpaceWidth, isEmpty, empty)
+import qualified Text.TeXMath.Shared as S
+import Text.TeXMath.Shared (fixTree, empty, getOperator, getSpaceWidth, isEmpty)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import Text.TeXMath.Compat (throwError, Except, runExcept, MonadError)
@@ -51,9 +53,16 @@ import Control.Arrow ((&&&))
 import Data.Maybe (fromMaybe, listToMaybe, isJust)
 import Data.Monoid (mconcat, First(..), getFirst)
 import Data.List (transpose)
+import qualified Data.Text as T
 import Control.Monad (filterM, guard)
 import Control.Monad.Reader (ReaderT, runReaderT, asks, local)
 import Data.Either (rights)
+
+getTextType :: String -> TextType
+getTextType = S.getTextType . T.pack
+
+readLength :: String -> Maybe Rational
+readLength = S.readLength . T.pack
 
 -- | Parse a MathML expression to a list of 'Exp'.
 readMathML :: String -> Either String [Exp]

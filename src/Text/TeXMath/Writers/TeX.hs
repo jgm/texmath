@@ -25,6 +25,7 @@ import Text.TeXMath.Unicode.ToTeX (getTeXMath)
 import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import qualified Text.TeXMath.Shared as S
 import Data.Char (toLower)
+import qualified Data.Text as T
 import Data.Generics (everywhere, mkT)
 import Control.Applicative ((<$>), Applicative)
 import Control.Monad (when, unless, foldM_)
@@ -232,7 +233,7 @@ writeExp (EScaled size e)
          (ESymbol Open _)  -> True
          (ESymbol Close _) -> True
          _ -> False = do
-    case S.getScalerCommand size of
+    case T.unpack <$> S.getScalerCommand size of
          Just s  -> tell [ControlSeq s]
          Nothing -> return ()
     writeExp e
@@ -244,7 +245,7 @@ writeExp (EText ttype s) = do
        xs   -> tell $ txtcmd (Grouped xs)
 writeExp (EStyled ttype es) = do
   txtcmd <- (flip S.getLaTeXTextCommand ttype) <$> asks mathEnv
-  tell [ControlSeq txtcmd]
+  tell [ControlSeq $ T.unpack txtcmd]
   tellGroup (mapM_ writeExp $ everywhere (mkT (fromUnicode ttype)) es)
 writeExp (EArray [AlignRight, AlignLeft] rows) = do
   env <- asks mathEnv
@@ -301,7 +302,7 @@ writeScript pos convertible b e1 = do
   let diacmd = case e1 of
                     ESymbol stype a
                       | stype `elem` [Accent, TOver, TUnder]
-                      -> S.getDiacriticalCommand pos a
+                      -> T.unpack <$> S.getDiacriticalCommand pos (T.pack a)
                     _ -> Nothing
   case diacmd of
        Just cmd -> do
