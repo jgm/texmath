@@ -264,19 +264,21 @@ getSpaceWidth _        = Nothing
 
 -- | Returns the sequence of unicode space characters closest to the
 -- specified width.
-getSpaceChars :: Rational -> T.Text -- TODO text: refactor
-getSpaceChars n =
-  case n of
-       _ | n < 0      -> "\x200B"  -- no negative space chars in unicode
-         | n <= 2/18  -> "\x200A"
-         | n <= 3/18  -> "\x2006"
-         | n <= 4/18  -> "\xA0"   -- could also be "\x2005"
-         | n <= 5/18  -> "\x2005"
-         | n <= 7/18  -> "\x2004"
-         | n <= 9/18  -> "\x2000"
-         | n < 1      -> T.cons '\x2000' $ getSpaceChars (n - (1/2))
-         | n == 1     -> "\x2001"
-         | otherwise  -> T.cons '\x2001' $ getSpaceChars (n - 1)
+getSpaceChars :: Rational -> T.Text
+getSpaceChars r
+  | n < 0 = "\x200B" -- no negative space chars in unicode
+  | otherwise = fracSpaces f <> emQuads n
+  where
+    (n, f) = properFraction r
+    emQuads x = T.replicate x "\x2001"
+    fracSpaces x
+      | x <= 2/18 = "\x200A"
+      | x <= 3/18 = "\x2006"
+      | x <= 4/18 = "\xA0"   -- could also be "\x2005"
+      | x <= 5/18 = "\x2005"
+      | x <= 7/18 = "\x2004"
+      | x <= 9/18 = "\x2000"
+      | otherwise = T.cons '\x2000' $ fracSpaces (x - (1/2))
 
 -- Accents which go under the character
 under :: [T.Text]
