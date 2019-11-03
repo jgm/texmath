@@ -1,4 +1,4 @@
-{-# LANGUAGE ViewPatterns, ScopedTypeVariables #-}
+{-# LANGUAGE ViewPatterns, ScopedTypeVariables, OverloadedStrings #-}
 {-
 Copyright (C) 2009 John MacFarlane <jgm@berkeley.edu>
 
@@ -38,8 +38,8 @@ import Text.Printf
 -- TODO text: remove
 import qualified Text.TeXMath.Unicode.ToUnicode as TU
 
-toUnicode :: TextType -> String -> String
-toUnicode tt = T.unpack . TU.toUnicode tt . T.pack
+toUnicode :: TextType -> T.Text -> String
+toUnicode tt = T.unpack . TU.toUnicode tt
 
 getMMLType :: TextType -> String
 getMMLType = T.unpack . S.getMMLType
@@ -112,9 +112,10 @@ makeText a s = case (leadingSp, trailingSp) of
                    (False, True)  -> mrow [s', sp]
                    (True,  True)  -> mrow [sp, s', sp]
   where sp = spaceWidth (1/3)
-        s' = withAttribute "mathvariant" attr $ unode "mtext" $ toUnicode a s
-        trailingSp = not (null s) && last s `elem` " \t"
-        leadingSp  = not (null s) && head s `elem` " \t"
+        s' = withAttribute "mathvariant" attr $ unode "mtext" $ toUnicode a $ T.pack s
+        -- TODO text: refactor
+        trailingSp = not (null s) && last s `elem` (" \t" :: String)
+        leadingSp  = not (null s) && head s `elem` (" \t" :: String)
         attr = getMMLType a
 
 makeArray :: TextType -> [Alignment] -> [ArrayLine] -> Element
@@ -139,31 +140,31 @@ makeFence (fromForm -> t) = withAttribute "stretchy" "false" . withAttribute "fo
 showExp' :: TextType -> Exp -> Element
 showExp' tt e =
   case e of
-    ESymbol Accent x -> accent x
+    ESymbol Accent (T.unpack -> x) -> accent x
     ESymbol _ x      ->
       let isaccent = case (elem "accent") . properties <$>
-                           getMathMLOperator x FPostfix of
+                           getMathMLOperator (T.unpack x) FPostfix of
                              Just True -> "true"
                              _         -> "false"
-      in  withAttribute "accent" isaccent $ unode "mo" x
+      in  withAttribute "accent" isaccent $ unode "mo" $ T.unpack x -- TODO text: refactor
     _                -> showExp tt e
 
 showExp :: TextType -> Exp -> Element
 showExp tt e =
  case e of
-   ENumber x        -> unode "mn" x
+   ENumber x        -> unode "mn" $ T.unpack x
    EGrouped [x]     -> showExp tt x
    EGrouped xs      -> mrow $ map (showExp tt) xs
-   EDelimited start end xs -> mrow $
+   EDelimited (T.unpack -> start) (T.unpack -> end) xs -> mrow $
                        [ makeStretchy FPrefix (unode "mo" start) | not (null start) ] ++
-                       map (either (makeStretchy FInfix . unode "mo") (showExp tt)) xs ++
+                       map (either (makeStretchy FInfix . unode "mo" . T.unpack) (showExp tt)) xs ++
                        [ makeStretchy FPostfix (unode "mo" end) | not (null end) ]
    EIdentifier x    -> unode "mi" $ toUnicode tt x
-   EMathOperator x  -> unode "mo" x
-   ESymbol Open x   -> makeFence FPrefix $ unode "mo" x
-   ESymbol Close x  -> makeFence FPostfix $ unode "mo" x
-   ESymbol Ord x    -> unode "mi" x
-   ESymbol _ x      -> unode "mo" x
+   EMathOperator x  -> unode "mo" $ T.unpack x
+   ESymbol Open x   -> makeFence FPrefix $ unode "mo" $ T.unpack x
+   ESymbol Close x  -> makeFence FPostfix $ unode "mo" $ T.unpack x
+   ESymbol Ord x    -> unode "mi" $ T.unpack x
+   ESymbol _ x      -> unode "mo" $ T.unpack x
    ESpace x         -> spaceWidth x
    EFraction ft x y -> showFraction tt ft x y
    ESub x y         -> unode "msub" $ map (showExp tt) [x, y]
@@ -180,5 +181,5 @@ showExp tt e =
    ERoot i x        -> unode "mroot" [showExp tt x, showExp tt i]
    EScaled s x      -> makeScaled s $ showExp tt x
    EArray as ls     -> makeArray tt as ls
-   EText a s        -> makeText a s
+   EText a s        -> makeText a $ T.unpack s
    EStyled a es     -> makeStyled a $ map (showExp a) es

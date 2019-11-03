@@ -108,7 +108,7 @@ writeBinom cmd x y = do
        writeExp y
 
 writeExp :: Exp -> Math ()
-writeExp (ENumber s) = tell =<< getTeXMathM s
+writeExp (ENumber s) = tell =<< getTeXMathM (T.unpack s)
 writeExp (EGrouped es) = tellGroup (mapM_ writeExp es)
 writeExp (EDelimited "(" ")" [Right (EFraction NoLineFrac x y)]) =
   writeBinom "\\choose" x y
@@ -137,20 +137,20 @@ writeExp (EDelimited open close [Right (EArray aligns rows)]) = do
        (True, "\x2225", "\x2225") | all (== AlignCenter) aligns ->
          table "Vmatrix" [] rows
        _ -> do
-         writeDelim DLeft open
+         writeDelim DLeft (T.unpack open)
          writeExp (EArray aligns rows)
-         writeDelim DRight close
+         writeDelim DRight (T.unpack close)
 writeExp (EDelimited open close es) =  do
-  writeDelim DLeft open
-  mapM_ (either (writeDelim DMiddle) writeExp) es
-  writeDelim DRight close
-writeExp (EIdentifier s) = do
+  writeDelim DLeft (T.unpack open)
+  mapM_ (either (writeDelim DMiddle . T.unpack) writeExp) es
+  writeDelim DRight (T.unpack close)
+writeExp (EIdentifier (T.unpack -> s)) = do
   math <- getTeXMathM s
   case math of
        []      -> return ()
        [t]     -> tell [t]
        ts      -> tell [Grouped ts]
-writeExp o@(EMathOperator s) = do
+writeExp o@(EMathOperator (T.unpack -> s)) = do
   math <- getTeXMathM s
   case S.getOperator o of
        Just op  -> tell [op]
@@ -159,9 +159,9 @@ writeExp o@(EMathOperator s) = do
          -- use \operatorname* if convertible
          asks mathConvertible >>= flip when (tell [Token '*'])
          tell [Grouped math]
-writeExp (ESymbol Ord [c])  -- do not render "invisible operators"
+writeExp (ESymbol Ord (T.unpack -> [c]))  -- do not render "invisible operators"
   | c `elem` ['\x2061'..'\x2064'] = return () -- see 3.2.5.5 of mathml spec
-writeExp (ESymbol t s) = do
+writeExp (ESymbol t (T.unpack -> s)) = do
   s' <- getTeXMathM s
   when (t == Bin || t == Rel) $ tell [Space]
   if length s > 1 && (t == Bin || t == Rel || t == Op)
@@ -243,7 +243,7 @@ writeExp (EScaled size e)
          Nothing -> return ()
     writeExp e
   | otherwise = writeExp e
-writeExp (EText ttype s) = do
+writeExp (EText ttype (T.unpack -> s)) = do
   let txtcmd = getTextCommand ttype
   case map escapeLaTeX s of
        []   -> return ()
@@ -307,7 +307,7 @@ writeScript pos convertible b e1 = do
   let diacmd = case e1 of
                     ESymbol stype a
                       | stype `elem` [Accent, TOver, TUnder]
-                      -> S.getDiacriticalCommand pos (T.pack a)
+                      -> S.getDiacriticalCommand pos a
                     _ -> Nothing
   case diacmd of
        Just cmd -> do

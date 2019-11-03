@@ -83,7 +83,7 @@ getLaTeXTextCommand :: Env -> TextType -> T.Text
 getLaTeXTextCommand e t =
   let textCmd = fromMaybe "\\mathrm"
                   (snd <$> M.lookup t textTypesMap) in
-  if textPackage textCmd $ map T.pack e
+  if textPackage textCmd e
     then textCmd
     else fromMaybe "\\mathrm" (M.lookup textCmd alts)
 

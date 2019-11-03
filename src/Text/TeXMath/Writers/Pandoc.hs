@@ -1,3 +1,5 @@
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE ViewPatterns #-} -- TODO text: remove
 {-
 Copyright (C) 2010-2013 John MacFarlane <jgm@berkeley.edu>
 
@@ -96,14 +98,14 @@ renderStr tt s =
        TextSansSerifBoldItalic -> Strong [Emph [Str $ T.pack s]]
 
 expToInlines :: TextType -> Exp -> Maybe [Inline]
-expToInlines tt (ENumber s) = Just [renderStr tt s]
-expToInlines TextNormal (EIdentifier s) = Just [renderStr TextItalic s]
-expToInlines tt (EIdentifier s) = Just [renderStr tt s]
-expToInlines tt (EMathOperator s) = Just [renderStr tt s]
-expToInlines tt (ESymbol _ s) = Just [renderStr tt s]
+expToInlines tt (ENumber s) = Just [renderStr tt $ T.unpack s]
+expToInlines TextNormal (EIdentifier s) = Just [renderStr TextItalic $ T.unpack s]
+expToInlines tt (EIdentifier s) = Just [renderStr tt $ T.unpack s]
+expToInlines tt (EMathOperator s) = Just [renderStr tt $ T.unpack s]
+expToInlines tt (ESymbol _ s) = Just [renderStr tt $ T.unpack s]
 expToInlines tt (EDelimited start end xs) = do
-  xs' <- mapM (either (return . (:[]) . renderStr tt) (expToInlines tt)) xs
-  return $ [renderStr tt start] ++ concat xs' ++ [renderStr tt end]
+  xs' <- mapM (either (return . (:[]) . renderStr tt . T.unpack) (expToInlines tt)) xs
+  return $ [renderStr tt $ T.unpack start] ++ concat xs' ++ [renderStr tt $ T.unpack end]
 expToInlines tt (EGrouped xs)    = expsToInlines tt xs
 expToInlines _ (EStyled tt' xs)  = expsToInlines tt' xs
 expToInlines _ (ESpace n)        = Just [Str $ getSpaceChars n]
@@ -123,9 +125,9 @@ expToInlines tt (ESubsup x y z) = do
   y' <- expToInlines tt y
   z' <- expToInlines tt z
   return $ x' ++ [Subscript y'] ++ [Superscript z']
-expToInlines _ (EText tt' x) = Just [renderStr tt' x]
-expToInlines tt (EOver b (EGrouped [EIdentifier [c]]) (ESymbol Accent [accent])) = expToInlines tt (EOver b (EIdentifier [c]) (ESymbol Accent [accent]))
-expToInlines tt (EOver _ (EIdentifier [c]) (ESymbol Accent [accent])) =
+expToInlines _ (EText tt' x) = Just [renderStr tt' $ T.unpack x]
+expToInlines tt (EOver b (EGrouped [EIdentifier (T.unpack -> [c])]) (ESymbol Accent (T.unpack -> [accent]))) = expToInlines tt (EOver b (EIdentifier $ T.singleton c) (ESymbol Accent $ T.singleton accent))
+expToInlines tt (EOver _ (EIdentifier (T.unpack -> [c])) (ESymbol Accent (T.unpack -> [accent]))) =
     case accent of
          '\x203E' -> Just [renderStr tt' [c,'\x0304']]  -- bar
          '\x0304' -> Just [renderStr tt' [c,'\x0304']]  -- bar combining

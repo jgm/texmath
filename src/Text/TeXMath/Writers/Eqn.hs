@@ -1,4 +1,4 @@
-{-# LANGUAGE GeneralizedNewtypeDeriving, ViewPatterns, GADTs #-}
+{-# LANGUAGE GeneralizedNewtypeDeriving, ViewPatterns, GADTs, OverloadedStrings #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -22,6 +22,7 @@ module Text.TeXMath.Writers.Eqn (writeEqn) where
 
 import Data.List (intercalate, transpose)
 import Data.Char (isAscii, ord)
+import qualified Data.Text as T
 import Text.Printf (printf)
 import Text.TeXMath.Types
 import qualified Text.TeXMath.Shared as S
@@ -49,12 +50,12 @@ writeExps :: [Exp] -> String
 writeExps = intercalate " " . map writeExp
 
 writeExp :: Exp -> String
-writeExp (ENumber s) = s
+writeExp (ENumber s) = T.unpack s
 writeExp (EGrouped es) = "{" ++ writeExps es ++ "}"
 writeExp (EDelimited open close es) =
-  "left " ++ mbQuote open ++ " " ++ intercalate " " (map fromDelimited es) ++
-  " right " ++ mbQuote close
-  where fromDelimited (Left e)  = "\"" ++ e ++ "\""
+  "left " ++ mbQuote (T.unpack open) ++ " " ++ intercalate " " (map fromDelimited es) ++
+  " right " ++ mbQuote (T.unpack close)
+  where fromDelimited (Left e)  = "\"" ++ (T.unpack e) ++ "\""
         fromDelimited (Right e) = writeExp e
         mbQuote "" = "\"\""
         mbQuote s  = s
@@ -62,9 +63,9 @@ writeExp (EMathOperator s) =
   if s `elem` ["sin", "cos", "tan", "sinh", "cosh",
                "tanh", "arc", "max", "min", "lim",
                "log", "ln", "exp"]
-     then s
-     else "\"" ++ s ++ "\""
-writeExp (ESymbol Ord [c])  -- do not render "invisible operators"
+     then T.unpack s
+     else "\"" ++ T.unpack s ++ "\""
+writeExp (ESymbol Ord (T.unpack -> [c]))  -- do not render "invisible operators"
   | c `elem` ['\x2061'..'\x2064'] = "" -- see 3.2.5.5 of mathml spec
 writeExp (EIdentifier s) = writeExp (ESymbol Ord s)
 writeExp (ESymbol t s) =
@@ -129,11 +130,11 @@ writeExp (ESymbol t s) =
     "\958" -> "xi"
     "\926" -> "XI"
     "\950" -> "zeta"
-    _      -> let s' = if all isAscii s
-                          then s
-                          else "\\[" ++ unwords (map toUchar s) ++ "]"
-                  toUchar c = printf "u%04X" (ord c)
-              in  if length s > 1 && (t == Rel || t == Bin || t == Op)
+    _      -> let s' = if T.all isAscii s
+                          then T.unpack s
+                          else "\\[" ++ T.unpack (T.unwords (map toUchar $ T.unpack s)) ++ "]"
+                  toUchar c = T.pack $ printf "u%04X" (ord c)
+              in  if T.length s > 1 && (t == Rel || t == Bin || t == Op)
                      then "roman{\"" ++
                           (if t == Rel || t == Bin
                               then " "
@@ -175,7 +176,7 @@ writeExp (EPhantom e) = "hphantom " ++ writeExp' e
 writeExp (EBoxed e) = writeExp e -- TODO: any way to do this?
 writeExp (EScaled _size e) = writeExp e -- TODO: any way?
 writeExp (EText ttype s) =
-  let quoted = "\"" ++ s ++ "\""
+  let quoted = "\"" ++ T.unpack s ++ "\""
   in case ttype of
        TextNormal -> "roman " ++ quoted
        TextItalic -> quoted

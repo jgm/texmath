@@ -1,4 +1,5 @@
 {-# LANGUAGE ViewPatterns #-}
+{-# LANGUAGE OverloadedStrings #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -83,8 +84,8 @@ charToLaTeXString environment c = do
         Just (x, xs) -> if T.null xs then [Token x] else [Literal cs]
         Nothing      -> []
   let cmds = commands v
-  raw <- fmap T.pack $ lookup "base" cmds <|> -- TODO text: refactor
-                       listToMaybe (mapMaybe (flip lookup cmds) environment)
+  raw <- lookup "base" cmds <|>
+         listToMaybe (mapMaybe (flip lookup cmds) environment)
   let latexCommand = if isControlSeq raw
                         then [ControlSeq raw]
                         else toLit raw

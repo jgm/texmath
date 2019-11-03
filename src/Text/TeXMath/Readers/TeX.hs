@@ -1,5 +1,6 @@
 {-# LANGUAGE TupleSections #-}
 {-# LANGUAGE ScopedTypeVariables #-}
+{-# LANGUAGE OverloadedStrings #-}
 {-
 Copyright (C) 2009 John MacFarlane <jgm@berkeley.edu>
 
@@ -46,11 +47,11 @@ import Data.Maybe (fromJust)
  -- TODO text: remove
 import qualified Text.TeXMath.Unicode.ToUnicode as TU
 
-getSpaceChars :: Rational -> String
-getSpaceChars = T.unpack . S.getSpaceChars
+getSpaceChars :: Rational -> T.Text
+getSpaceChars = S.getSpaceChars
 
-toUnicode :: TextType -> String -> String
-toUnicode tt = T.unpack . TU.toUnicode tt . T.pack
+toUnicode :: TextType -> T.Text -> T.Text
+toUnicode tt = TU.toUnicode tt
 --
 
 type TP = Parser
@@ -164,14 +165,14 @@ operatorname = do
     -- these are slightly different but we won't worry about that here...
     convertible <- (char '*' >> spaces >> return True) <|> return False
     op <- expToOperatorName <$> texToken
-    maybe mzero (\s -> return (EMathOperator s, convertible)) op
+    maybe mzero (\s -> return (EMathOperator s, convertible)) $ T.pack <$> op
 
 -- | Converts identifiers, symbols and numbers to a flat string.
 -- Returns Nothing if the expression contains anything else.
 expToOperatorName :: Exp -> Maybe String
 expToOperatorName e = case e of
-            EGrouped xs ->  concat <$> mapM fl xs
-            _ -> fl e
+            EGrouped xs -> T.unpack . T.concat <$> mapM fl xs
+            _ -> T.unpack <$> fl e
     where fl f = case f of
                     EIdentifier s -> Just s
                     -- handle special characters
@@ -183,7 +184,7 @@ expToOperatorName e = case e of
                     ESymbol _ "\x02B9" -> Just "'"
                     ESymbol _ s -> Just s
                     ENumber s -> Just s
-                    EStyled sty xs -> concat <$> sequence (map (toStr sty) xs)
+                    EStyled sty xs -> T.concat <$> sequence (map (toStr sty) xs)
                     _ -> Nothing
           toStr sty (EIdentifier s)     = Just $ toUnicode sty s
           toStr _   (EText sty' s)      = Just $ toUnicode sty' s
@@ -191,7 +192,7 @@ expToOperatorName e = case e of
           toStr sty (EMathOperator s)   = Just $ toUnicode sty s
           toStr sty (ESymbol _ s)       = Just $ toUnicode sty s
           toStr _   (ESpace n)          = Just $ getSpaceChars n
-          toStr _   (EStyled sty' exps) = concat <$>
+          toStr _   (EStyled sty' exps) = T.concat <$>
                                             sequence (map (toStr sty') exps)
           toStr _   _                   = Nothing
 
@@ -233,7 +234,9 @@ genfrac = do
                       (False, _)   -> NoLineFrac
                       (True, True) -> DisplayFrac
                       _            -> NormalFrac
-  return $ EDelimited [openDelim] [closeDelim] [Right (EFraction fracType x y)]
+  return $ EDelimited (T.singleton openDelim)
+                      (T.singleton closeDelim)
+                      [Right (EFraction fracType x y)]
 
 substack :: TP Exp
 substack = do
@@ -275,9 +278,7 @@ texChar :: TP Exp
 texChar =
   do
     c <- noneOf "\n\t\r \\{}" <* spaces
-    return $ if isDigit c
-              then ENumber [c]
-              else EIdentifier [c]
+    return $ (if isDigit c then ENumber else EIdentifier) $ T.singleton c
 
 inbrackets :: TP Exp
 inbrackets = (brackets $ manyExp $ notFollowedBy (char ']') >> expr)
@@ -289,7 +290,7 @@ number = lexeme $ ENumber <$> try decimalNumber
           ys <- option [] $ try (char '.' >> (('.':) <$> many1 digit))
           case xs ++ ys of
                []  -> mzero
-               zs  -> return zs
+               zs  -> return $ T.pack zs
 
 enclosure :: TP Exp
 enclosure = basicEnclosure <|> delimited
@@ -306,8 +307,8 @@ fence cmd = do
   symbol cmd
   enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Open ""))
   case enc of
-       ESymbol Open x  -> return x
-       ESymbol Close x -> return x
+       ESymbol Open x  -> return $ T.unpack x
+       ESymbol Close x -> return $ T.unpack x
        _ -> mzero
 
 middle :: TP String
@@ -320,11 +321,11 @@ delimited :: TP Exp
 delimited = do
   openc <- try $ fence "\\left"
   contents <- concat <$>
-              many (try $ ((:[]) . Left <$> middle)
+              many (try $ ((:[]) . Left . T.pack <$> middle)
                       <|> (map Right . unGrouped <$>
                              many1Exp (notFollowedBy right *> expr)))
   closec <- right <|> return ""
-  return $ EDelimited openc closec contents
+  return $ EDelimited (T.pack openc) (T.pack closec) contents
 
 scaled :: TP Exp
 scaled = do
@@ -418,7 +419,7 @@ matrixWith opendelim closedelim = do
   let aligns = alignsFromRows AlignCenter lines'
   return $ if null opendelim && null closedelim
               then EArray aligns lines'
-              else EDelimited opendelim closedelim
+              else EDelimited (T.pack opendelim) (T.pack closedelim)
                        [Right $ EArray aligns lines']
 
 stdarray :: TP Exp
@@ -464,7 +465,7 @@ variable :: TP Exp
 variable = do
   v <- letter
   spaces
-  return $ EIdentifier [v]
+  return $ EIdentifier $ T.singleton v
 
 isConvertible :: Exp -> Bool
 isConvertible (EMathOperator x) = x `elem` convertibleOps
@@ -525,7 +526,7 @@ unicode :: TP Exp
 unicode = lexeme $
   do
     c <- satisfy (not . isAscii)
-    return (ESymbol (getSymbolType c) [c])
+    return (ESymbol (getSymbolType c) $ T.singleton c)
 
 ensuremath :: TP Exp
 ensuremath = ctrlseq "ensuremath" *> inbraces
@@ -594,7 +595,7 @@ innerMathWith (opener, closer) = do
   return e
 
 textOps :: M.Map String (String -> Exp)
-textOps = M.fromList
+textOps = fmap (. T.pack) $ M.fromList
           [ ("\\textrm", (EText TextNormal))
           , ("\\text",   (EText TextNormal))
           , ("\\textbf", (EText TextBold))
@@ -668,7 +669,7 @@ mathopWith name ty = try $ do
      [EIdentifier x] -> return $ ESymbol ty x
      [EText TextNormal x] -> return $ ESymbol ty x
      [EText sty x] -> return $ EStyled sty [ESymbol ty x]
-     xs | ty == Op  -> return $ EMathOperator $
+     xs | ty == Op  -> return $ EMathOperator $ T.pack $
                          concat $ mapMaybe expToOperatorName xs
         | otherwise -> return $ EGrouped xs
 

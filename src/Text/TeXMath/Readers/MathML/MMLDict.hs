@@ -1,3 +1,4 @@
+{-# LANGUAGE OverloadedStrings #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -25,10 +26,11 @@ module Text.TeXMath.Readers.MathML.MMLDict (getMathMLOperator, operators) where
 
 import Text.TeXMath.Types
 import qualified Data.Map as M
+import qualified Data.Text as T
 import Data.Monoid (First(..), mconcat)
 
 dict :: M.Map (String, FormType) Operator
-dict = M.fromList (map (\o -> ((oper o, form o), o)) operators)
+dict = M.fromList (map (\o -> ((T.unpack $ oper o, form o), o)) operators)
 
 -- | Tries to find the 'Operator' record based on a given position. If
 -- there is no exact match then the positions will be tried in the

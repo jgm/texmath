@@ -1,4 +1,5 @@
 {-# LANGUAGE ViewPatterns #-}
+{-# LANGUAGE OverloadedStrings #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -148,7 +149,7 @@ expr' e =
 
 ident :: Element -> MML Exp
 ident e =  do
-  s <- getString e
+  s <- T.pack <$> getString e
   let base = case getOperator (EMathOperator s) of
                    Just _   -> EMathOperator s
                    Nothing  -> EIdentifier s
@@ -161,7 +162,7 @@ ident e =  do
          | otherwise  -> return $ EStyled (getTextType v) [base]
 
 number :: Element -> MML Exp
-number e = ENumber <$> getString e
+number e = ENumber . T.pack <$> getString e
 
 op :: Element -> MML (IR Exp)
 op e = do
@@ -170,44 +171,47 @@ op e = do
   inferredPosition <- case mInferredPosition of
     Just inferredPosition -> pure inferredPosition
     Nothing               -> throwError "Did not find an inferred position"
-  opString <- getString e
+  opString <- T.pack <$> getString e
   let dummy = Operator opString "" inferredPosition 0 0 0 []
-  let opLookup = getMathMLOperator opString inferredPosition
+  let opLookup = getMathMLOperator (T.unpack opString) inferredPosition
   let opDict = fromMaybe dummy opLookup
-  props <- filterM (checkAttr (properties opDict))
+  props <- filterM (checkAttr (map T.unpack (properties opDict)))
             ["fence", "accent", "stretchy"]
   let objectPosition = getPosition $ form opDict
   inScript <- asks inAccent
   let ts =  [("accent", ESymbol Accent), ("fence", ESymbol objectPosition)]
-  let fallback = case opString of
+  let fallback = case T.unpack opString of -- TODO text: refactor
                       [t] -> ESymbol (getSymbolType t)
                       _   -> if isJust opLookup
                                 then ESymbol Ord
                                 else EMathOperator
+      -- TODO text: refactor
   let constructor =
         fromMaybe fallback
           (getFirst . mconcat $ map (First . flip lookup ts) props)
   if ("stretchy" `elem` props) && not inScript
-    then return $ Stretchy objectPosition constructor opString
+    then return $ Stretchy objectPosition (constructor . T.pack) (T.unpack opString)
     else do
       return $ (E . constructor) opString
   where
+    -- TODO text: refactor
     checkAttr ps v = maybe (v `elem` ps) (=="true") <$> findAttrQ v e
 
 text :: Element -> MML Exp
 text e = do
   textStyle <- maybe TextNormal getTextType
                 <$> (findAttrQ "mathvariant" e)
-  s <- getString e
+  s <- T.pack <$> getString e
   -- mathml seems to use mtext for spacing often; we get
   -- more idiomatic math if we replace these with ESpace:
-  return $ case (textStyle, s) of
+  return $ case (textStyle, T.unpack s) of -- TODO text: refactor
        (TextNormal, [c]) ->
          case getSpaceWidth c of
               Just w  -> ESpace w
               Nothing -> EText textStyle s
        _ -> EText textStyle s
 
+-- TODO text: refactor
 literal :: Element -> MML Exp
 literal e = do
   lquote <- fromMaybe "\x201C" <$> findAttrQ "lquote" e
@@ -215,7 +219,7 @@ literal e = do
   textStyle <- maybe TextNormal getTextType
                 <$> (findAttrQ "mathvariant" e)
   s <- getString e
-  return $ EText textStyle (lquote ++ s ++ rquote)
+  return $ EText textStyle $ T.pack (lquote <> s <> rquote)
 
 space :: Element -> MML Exp
 space e = do
@@ -273,7 +277,7 @@ removeStretch :: [IR Exp] -> [IR InEDelimited]
 removeStretch [Stretchy _ constructor s] = [E $ Right (constructor s)]
 removeStretch xs = map f xs
   where
-    f (Stretchy _ _ s) = E $ Left s
+    f (Stretchy _ _ s) = E $ Left $ T.pack s
     f (E e) = E $ Right e
     f (Trailing a b) = Trailing a b
 
@@ -294,7 +298,7 @@ trailingSup open close es = go es
                 EGrouped [conOpen openFence, conClose closeFence]
     go es'@(last -> Trailing constructor e) = (constructor (go (init es')) e)
     go es' = EDelimited (getFence open) (getFence close) (toEDelim es')
-    getFence = fromMaybe "" . fmap fst
+    getFence = T.pack . fromMaybe "" . fmap fst
 
 -- TODO: Break this into two functions
 -- Matches open and closing brackets

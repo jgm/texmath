@@ -1,4 +1,5 @@
 {-# LANGUAGE PatternGuards #-}
+{-# LANGUAGE OverloadedStrings #-}
 
 {-
 Copyright (C) 2014 Jesse Rosenthal <jrosenthal@jhu.edu>
@@ -136,8 +137,8 @@ elemToBases _ = Nothing
 -- text lines into multiple columns. That's tricky, though, and this
 -- will get us most of the way for the time being.
 filterAmpersand :: Exp -> Exp
-filterAmpersand (EIdentifier s)   = EIdentifier (filter ('&' /=) s)
-filterAmpersand (EText tt s)      = EText tt (filter ('&' /=) s)
+filterAmpersand (EIdentifier s)   = EIdentifier (T.filter ('&' /=) s)
+filterAmpersand (EText tt s)      = EText tt (T.filter ('&' /=) s)
 filterAmpersand (EStyled tt exps) = EStyled tt (map filterAmpersand exps)
 filterAmpersand (EGrouped exps)   = EGrouped (map filterAmpersand exps)
 filterAmpersand e                    = e
@@ -249,11 +250,11 @@ elemToExps' element | isElem "m" "acc" element = do
             findAttrBy (hasElemName "m" "val") >>=
             Just . head
       chr' = case chr of
-        Just c -> c
-        Nothing -> '\x302'       -- default to wide hat.
+        Just c -> T.singleton c
+        Nothing -> "\x302"       -- default to wide hat.
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
-  return $ [EOver False baseExp (ESymbol Accent [chr'])]
+  return $ [EOver False baseExp (ESymbol Accent chr')]
 elemToExps' element | isElem "m" "bar" element = do
   pos <- filterChildName (hasElemName "m" "barPr") element >>=
             filterChildName (hasElemName "m" "pos") >>=
@@ -290,12 +291,12 @@ elemToExps' element | isElem "m" "d" element =
                filterChildName (hasElemName "m" "endChr") >>=
                findAttrBy (hasElemName "m" "val") >>=
                (\c -> if null c then (Just ' ') else (Just $ head c))
-      beg = fromMaybe '(' begChr
-      end = fromMaybe ')' endChr
-      sep = fromMaybe '|' sepChr
-      exps = intercalate [Left [sep]] inDelimExps
+      beg = maybe "(" T.singleton begChr
+      end = maybe ")" T.singleton endChr
+      sep = maybe "|" T.singleton sepChr
+      exps = intercalate [Left sep] inDelimExps
   in
-   Just [EDelimited [beg] [end] exps]
+   Just [EDelimited beg end exps]
 elemToExps' element | isElem "m" "eqArr" element =
   let expLst = mapMaybe elemToBases (elChildren element)
       expLst' = map (\es -> [map filterAmpersand es]) expLst
@@ -328,16 +329,16 @@ elemToExps' element | isElem "m" "groupChr" element = do
   case pos of
     Just "top" ->
       let chr' = case chr of
-            Just (c:_) -> c
-            _           -> '\65079'   -- default to overbrace
+            Just (c:_) -> T.singleton c
+            _           -> "\65079"   -- default to overbrace
       in
-       return [EOver False baseExp (ESymbol TOver [chr'])]
+       return [EOver False baseExp (ESymbol TOver chr')]
     Just "bot" ->
       let chr' = case chr of
-            Just (c:_) -> c
-            _           -> '\65080'   -- default to underbrace
+            Just (c:_) -> T.singleton c
+            _           -> "\65080"   -- default to underbrace
       in
-       return [EUnder False baseExp (ESymbol TUnder [chr'])]
+       return [EUnder False baseExp (ESymbol TUnder chr')]
     _          -> Nothing
 elemToExps' element | isElem "m" "limLow" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element
@@ -368,8 +369,8 @@ elemToExps' element | isElem "m" "nary" element = do
                 filterChildName (hasElemName "m" "chr") >>=
                 findAttrBy (hasElemName "m" "val")
       opChr = case naryChr of
-        Just (c:_) -> c
-        _          -> '\8747'   -- default to integral
+        Just (c:_) -> T.singleton c
+        _          -> "\8747"   -- default to integral
       limLoc = naryPr >>=
                filterChildName (hasElemName "m" "limLoc") >>=
                findAttrBy (hasElemName "m" "val")
@@ -381,12 +382,12 @@ elemToExps' element | isElem "m" "nary" element = do
              elemToBase
   case limLoc of
     Just "undOvr" -> return [EUnderover True
-                              (ESymbol Op [opChr])
+                              (ESymbol Op opChr)
                               (EGrouped subExps)
                               (EGrouped supExps)
                             , baseExp]
     _             -> return [ESubsup
-                              (ESymbol Op [opChr])
+                              (ESymbol Op opChr)
                               (EGrouped subExps)
                               (EGrouped supExps)
                             , baseExp]
@@ -448,28 +449,30 @@ elemToExps' element | isElem "m" "r" element = do
                 interpretString $ oMathRunElemsToString mrElems
               Just textSty ->
                 [EStyled textSty $ interpretString $ oMathRunElemsToString mrElems]
-       else [EText (fromMaybe TextNormal txtSty) $ oMathRunElemsToString mrElems]
+       else [EText (fromMaybe TextNormal txtSty) $ T.pack $ oMathRunElemsToString mrElems]
 elemToExps' _ = Nothing
 
 interpretChar :: Char -> Exp
-interpretChar c | isDigit c = ENumber [c]
+interpretChar c | isDigit c = ENumber $ T.singleton c
 interpretChar c = case getSymbolType c of
-  Alpha           -> EIdentifier [c]
-  Ord | isDigit c -> ENumber [c]
+  Alpha           -> EIdentifier c'
+  Ord | isDigit c -> ENumber c'
       | otherwise -> case getSpaceWidth c of
                            Just x  -> ESpace x
-                           Nothing -> ESymbol Ord [c]
-  symType         -> ESymbol symType [c]
+                           Nothing -> ESymbol Ord c'
+  symType         -> ESymbol symType c'
+  where
+    c' = T.singleton c
 
 interpretString :: String -> [Exp]
 interpretString [c]       = [interpretChar c]
 interpretString s
-  | all isDigit s         = [ENumber s]
-  | isJust (getOperator (EMathOperator s))
-                          = [EMathOperator s]
+  | all isDigit s         = [ENumber $ T.pack s]
+  | isJust (getOperator (EMathOperator $ T.pack s))
+                          = [EMathOperator $ T.pack s]
   | otherwise             =
       case map interpretChar s of
-            xs | all isIdentifierOrSpace xs -> [EText TextNormal s]
+            xs | all isIdentifierOrSpace xs -> [EText TextNormal $ T.pack s]
                | otherwise                  -> xs
   where isIdentifierOrSpace (EIdentifier _) = True
         isIdentifierOrSpace (ESpace _)      = True

@@ -1,3 +1,5 @@
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE ViewPatterns #-} -- TODO text: remove
 {-
 Copyright (C) 2012 John MacFarlane <jgm@berkeley.edu>
 
@@ -26,6 +28,7 @@ import Text.XML.Light
 import Text.TeXMath.Types
 import Data.Generics (everywhere, mkT)
 import Data.Char (isSymbol, isPunctuation)
+import qualified Data.Text as T
 
 -- | Transforms an expression tree to an OMML XML Tree
 writeOMML :: DisplayType -> [Exp] -> Element
@@ -175,27 +178,27 @@ handleDownup' _ xs = xs
 showExp :: [Element] -> Exp -> [Element]
 showExp props e =
  case e of
-   ENumber x        -> [str props x]
+   ENumber x        -> [str props $ T.unpack x]
    EGrouped [EUnderover _ (ESymbol Op s) y z, w] ->
-     [makeNary props "undOvr" s y z w]
+     [makeNary props "undOvr" (T.unpack s) y z w]
    EGrouped [ESubsup (ESymbol Op s) y z, w] ->
-     [makeNary props "subSup" s y z w]
+     [makeNary props "subSup" (T.unpack s) y z w]
    EGrouped []      -> [str props "\x200B"] -- avoid dashed box, see #118
    EGrouped xs      -> concatMap (showExp props) xs
    EDelimited start end xs ->
                        [mnode "d" [ mnode "dPr"
-                                    [ mnodeA "begChr" start ()
-                                    , mnodeA "endChr" end ()
+                                    [ mnodeA "begChr" (T.unpack start) ()
+                                    , mnodeA "endChr" (T.unpack end) ()
                                     , mnode "grow" () ]
                                   , mnode "e" $ concatMap
-                                    (either ((:[]) . str props) (showExp props)) xs
+                                    (either ((:[]) . str props . T.unpack) (showExp props)) xs
                                   ] ]
-
+   -- TODO text: refactor
    EIdentifier ""   -> [str props "\x200B"]  -- 0-width space
                        -- to avoid the dashed box we get otherwise; see #118
-   EIdentifier x    -> [str props x]
-   EMathOperator x  -> [makeText TextNormal x]  -- TODO revisit, use props?
-   ESymbol _ [c]
+   EIdentifier x    -> [str props $ T.unpack x]
+   EMathOperator x  -> [makeText TextNormal $ T.unpack x]  -- TODO revisit, use props?
+   ESymbol _ (T.unpack -> [c])
     | isSymbol c || isPunctuation c
                     -> [str props [c]]
    ESymbol ty xs
@@ -204,9 +207,9 @@ showExp props e =
                         [ mnode "boxPr"
                           [ mnodeA "opEmu" "1" () ]
                         , mnode "e"
-                          [str props xs]
+                          [str props $ T.unpack xs]
                         ]]
-   ESymbol _ xs     -> [str props xs]
+   ESymbol _ xs     -> [str props $ T.unpack xs]
    ESpace n
      | n > 0 && n <= 0.17    -> [str props "\x2009"]
      | n > 0.17 && n <= 0.23 -> [str props "\x2005"]
@@ -216,15 +219,15 @@ showExp props e =
      | n > 1.8               -> [str props "\x2001\x2001"]
      | otherwise             -> [str props "\x200B"]
        -- this is how the xslt sheet handles all spaces
-   EUnder _ x (ESymbol _ [c]) | isBarChar c ->
+   EUnder _ x (ESymbol _ (T.unpack -> [c])) | isBarChar c ->
                        [mnode "bar" [ mnode "barPr" $
                                         mnodeA "pos" "bot" ()
                                     , mnode "e" $ showExp props x ]]
-   EOver _ x (ESymbol _ [c]) | isBarChar c ->
+   EOver _ x (ESymbol _ (T.unpack -> [c])) | isBarChar c ->
                        [mnode "bar" [ mnode "barPr" $
                                         mnodeA "pos" "top" ()
                                     , mnode "e" $ showExp props x ]]
-   EOver _ x (ESymbol st y)
+   EOver _ x (ESymbol st (T.unpack -> y))
     | st == Accent  -> [mnode "acc" [ mnode "accPr" [ mnodeA "chr" y () ]
                                     , mnode "e" $ showExp props x ]]
     | st == TUnder  -> [mnode "groupChr" [ mnode "groupChrPr"
@@ -261,7 +264,7 @@ showExp props e =
    EBoxed   x       -> [mnode "borderBox" [ mnode "e" $ showExp props x]]
    EScaled _ x      -> showExp props x -- no support for scaler?
    EArray as ls     -> [makeArray props as ls]
-   EText a s        -> [makeText a s]
+   EText a s        -> [makeText a $ T.unpack s]
    EStyled a es     -> concatMap (showExp (setProps a)) es
 
 isBarChar :: Char -> Bool
