@@ -14,11 +14,6 @@ import qualified Data.Text as T
 import qualified Data.Text.IO as T
 import System.Environment (getArgs)
 
--- TODO text: remove
-stringAround :: (String -> Either String a) -> T.Text -> Either T.Text a
-stringAround f = either (Left . T.pack) Right . f . T.unpack
---
-
 tshow :: Show a => a -> T.Text
 tshow = T.pack . show
 
@@ -31,7 +26,7 @@ type Ext = String
 
 readers :: [(Ext, T.Text -> Either T.Text [Exp])]
 readers = [ (".tex", readTeX)
-          , (".mml", stringAround readMathML)
+          , (".mml", readMathML)
           , (".omml", readOMML)
           ]
 
@@ -58,7 +53,7 @@ main = do
                                (T.pack . ppTopElement .  writeOMML DisplayBlock) readOMML
                    mathmls <- runRoundTrip "mml"
                                 (T.pack . ppTopElement . writeMathML DisplayBlock)
-                                (stringAround readMathML)
+                                readMathML
                    return $ texs <> ommls <> mathmls
                  else (<>) <$> (concat <$> mapM (uncurry (runReader regen)) readers)
                            <*> (concat <$> mapM (uncurry (runWriter regen)) writers)

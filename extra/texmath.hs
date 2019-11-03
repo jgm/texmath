@@ -46,7 +46,7 @@ data Writer = XMLWriter (DisplayType -> [Exp] -> Element)
 readers :: [(T.Text, Reader)]
 readers = [
     ("tex", readTeX)
-  , ("mathml", stringAround readMathML)
+  , ("mathml", readMathML)
   , ("omml", readOMML)
   , ("native", readNative)]
 

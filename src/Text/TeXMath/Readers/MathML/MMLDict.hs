@@ -29,13 +29,13 @@ import qualified Data.Map as M
 import qualified Data.Text as T
 import Data.Monoid (First(..), mconcat)
 
-dict :: M.Map (String, FormType) Operator
-dict = M.fromList (map (\o -> ((T.unpack $ oper o, form o), o)) operators)
+dict :: M.Map (T.Text, FormType) Operator
+dict = M.fromList (map (\o -> ((oper o, form o), o)) operators)
 
 -- | Tries to find the 'Operator' record based on a given position. If
 -- there is no exact match then the positions will be tried in the
 -- following order (Infix, Postfix, Prefix) with the first match (if any) being returned.
-getMathMLOperator :: String -> FormType -> Maybe Operator
+getMathMLOperator :: T.Text -> FormType -> Maybe Operator
 getMathMLOperator s p =
   getFirst $ mconcat $ (map (\x -> First $ M.lookup (s, x) dict) lookupOrder)
   where

@@ -143,7 +143,7 @@ showExp' tt e =
     ESymbol Accent (T.unpack -> x) -> accent x
     ESymbol _ x      ->
       let isaccent = case (elem "accent") . properties <$>
-                           getMathMLOperator (T.unpack x) FPostfix of
+                           getMathMLOperator x FPostfix of
                              Just True -> "true"
                              _         -> "false"
       in  withAttribute "accent" isaccent $ unode "mo" $ T.unpack x -- TODO text: refactor
