@@ -73,7 +73,7 @@ type MML = ReaderT MMLState (Except T.Text)
 
 data SupOrSub = Sub | Sup deriving (Show, Eq)
 
-data IR a = Stretchy TeXSymbolType (String -> Exp) String
+data IR a = Stretchy TeXSymbolType (T.Text -> Exp) T.Text
           | Trailing (Exp -> Exp -> Exp) Exp
           | E a
 
@@ -160,27 +160,25 @@ op e = do
   let dummy = Operator opString "" inferredPosition 0 0 0 []
   let opLookup = getMathMLOperator opString inferredPosition
   let opDict = fromMaybe dummy opLookup
-  props <- filterM (checkAttr (map T.unpack (properties opDict)))
+  props <- filterM (checkAttr (properties opDict))
             ["fence", "accent", "stretchy"]
   let objectPosition = getPosition $ form opDict
   inScript <- asks inAccent
   let ts =  [("accent", ESymbol Accent), ("fence", ESymbol objectPosition)]
-  let fallback = case T.unpack opString of -- TODO text: refactor
-                      [t] -> ESymbol (getSymbolType t)
-                      _   -> if isJust opLookup
-                                then ESymbol Ord
-                                else EMathOperator
-      -- TODO text: refactor
+  let fallback = case T.unpack opString of
+                   [t] -> ESymbol (getSymbolType t)
+                   _   -> if isJust opLookup
+                          then ESymbol Ord
+                          else EMathOperator
   let constructor =
         fromMaybe fallback
           (getFirst . mconcat $ map (First . flip lookup ts) props)
   if ("stretchy" `elem` props) && not inScript
-    then return $ Stretchy objectPosition (constructor . T.pack) (T.unpack opString)
+    then return $ Stretchy objectPosition constructor opString
     else do
       return $ (E . constructor) opString
   where
-    -- TODO text: refactor
-    checkAttr ps v = maybe (v `elem` ps) (=="true") <$> findAttrQ v e
+    checkAttr ps v = maybe (v `elem` ps) (=="true") <$> findAttrQ (T.unpack v) e
 
 text :: Element -> MML Exp
 text e = do
@@ -189,14 +187,13 @@ text e = do
   s <- getString e
   -- mathml seems to use mtext for spacing often; we get
   -- more idiomatic math if we replace these with ESpace:
-  return $ case (textStyle, T.unpack s) of -- TODO text: refactor
+  return $ case (textStyle, T.unpack s) of
        (TextNormal, [c]) ->
          case getSpaceWidth c of
               Just w  -> ESpace w
               Nothing -> EText textStyle s
        _ -> EText textStyle s
 
--- TODO text: refactor
 literal :: Element -> MML Exp
 literal e = do
   lquote <- fromMaybe "\x201C" <$> findAttrQ "lquote" e
@@ -262,7 +259,7 @@ removeStretch :: [IR Exp] -> [IR InEDelimited]
 removeStretch [Stretchy _ constructor s] = [E $ Right (constructor s)]
 removeStretch xs = map f xs
   where
-    f (Stretchy _ _ s) = E $ Left $ T.pack s
+    f (Stretchy _ _ s) = E $ Left s
     f (E e) = E $ Right e
     f (Trailing a b) = Trailing a b
 
@@ -272,7 +269,7 @@ isStretchy (Right _) = False
 
 -- If at the end of a delimiter we need to apply the script to the whole
 -- expression. We only insert Trailing when reordering Stretchy
-trailingSup :: Maybe (String, String -> Exp)  -> Maybe (String, String -> Exp)  -> [IR InEDelimited] -> Exp
+trailingSup :: Maybe (T.Text, T.Text -> Exp)  -> Maybe (T.Text, T.Text -> Exp)  -> [IR InEDelimited] -> Exp
 trailingSup open close es = go es
   where
     go [] = case (open, close) of
@@ -283,7 +280,7 @@ trailingSup open close es = go es
                 EGrouped [conOpen openFence, conClose closeFence]
     go es'@(last -> Trailing constructor e) = (constructor (go (init es')) e)
     go es' = EDelimited (getFence open) (getFence close) (toEDelim es')
-    getFence = T.pack . fromMaybe "" . fmap fst
+    getFence = fromMaybe "" . fmap fst
 
 -- TODO: Break this into two functions
 -- Matches open and closing brackets
@@ -584,6 +581,7 @@ findAttrQ s e = do
     findAttr (QName s Nothing Nothing) e
       <|> inherit
 
+-- Kept as String for Text.XML.Light
 lookupAttrQ :: String -> [Attr] -> Maybe String
 lookupAttrQ s = lookupAttr (QName s Nothing Nothing)
 
@@ -594,13 +592,8 @@ name (elName -> (QName n _ _)) = T.pack n
 tunode :: String -> T.Text -> Element
 tunode s = unode s . T.unpack
 
--- TODO text: refactor
-stripSpaces' :: String -> String
-stripSpaces' = reverse . (dropWhile isSpace) . reverse . (dropWhile isSpace)
-
 stripSpaces :: T.Text -> T.Text
-stripSpaces = T.pack . stripSpaces' . T.unpack
---
+stripSpaces = T.dropAround isSpace
 
 toAlignment :: T.Text -> Alignment
 toAlignment "left" = AlignLeft
