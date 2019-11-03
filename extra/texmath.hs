@@ -61,7 +61,7 @@ writers :: [(T.Text, Writer)]
 writers = [
     ("native", StringWriter (\_ es -> tshow es) )
   , ("tex", StringWriter (\_ -> T.pack . writeTeX))
-  , ("eqn", StringWriter (\x -> T.pack . writeEqn x))
+  , ("eqn", StringWriter writeEqn)
   , ("omml",  XMLWriter writeOMML)
   , ("xhtml",   XMLWriter (\dt e -> inHtml (writeMathML dt e)))
   , ("mathml",   XMLWriter writeMathML)

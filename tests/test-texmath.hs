@@ -34,7 +34,7 @@ writers :: [(Ext, [Exp] -> T.Text)]
 writers = [ (".mml", T.pack . ppTopElement . writeMathML DisplayBlock)
           , (".tex", T.pack . writeTeX)
           , (".omml", T.pack . ppTopElement . writeOMML DisplayBlock)
-          , (".eqn", T.pack . writeEqn DisplayBlock)
+          , (".eqn", writeEqn DisplayBlock)
           ]
 
 -- when called with --round-trip, JUST do round trip tests.
