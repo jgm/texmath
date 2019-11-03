@@ -20,11 +20,6 @@ import qualified Data.Text.IO as T
 import Data.Version ( showVersion )
 import Paths_texmath (version)
 
--- TODO text: remove
-stringAround :: (String -> Either String a) -> T.Text -> Either T.Text a
-stringAround f = either (Left . T.pack) Right . f . T.unpack
---
-
 tshow :: Show a => a -> T.Text
 tshow = T.pack . show
 
