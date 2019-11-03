@@ -18,11 +18,10 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 -}
 
-module Text.TeXMath.Writers.TeX (writeTeX, writeTeXWith, addLaTeXEnvironment ) where
+module Text.TeXMath.Writers.TeX (writeTeX, writeTeXWith, addLaTeXEnvironment) where
 
 import Text.TeXMath.Types
--- import Text.TeXMath.Unicode.ToTeX (getTeXMath) TODO text: restore
-import qualified Text.TeXMath.Unicode.ToTeX as TT
+import Text.TeXMath.Unicode.ToTeX (getTeXMath)
 import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import qualified Text.TeXMath.Shared as S
 import qualified Data.Text as T
@@ -37,27 +36,22 @@ import Text.TeXMath.TeX
 -- import Debug.Trace
 -- tr' x = trace (show x) x
 
--- TODO text: remove
-getTeXMath :: String -> Env -> [TeX]
-getTeXMath = TT.getTeXMath . T.pack
---
-
 -- | Transforms an expression tree to equivalent LaTeX with the default
 -- packages (amsmath and amssymb)
-writeTeX :: [Exp] -> String
+writeTeX :: [Exp] -> T.Text
 writeTeX = writeTeXWith defaultEnv
 
 -- | Adds the correct LaTeX environment around a TeXMath fragment
-addLaTeXEnvironment :: DisplayType -> String -> String
+addLaTeXEnvironment :: DisplayType -> T.Text -> T.Text
 addLaTeXEnvironment dt math =
     case dt of
-      DisplayInline -> "\\(" ++ math ++ "\\)"
-      DisplayBlock  -> "\\[" ++ math ++ "\\]"
+      DisplayInline -> "\\(" <> math <> "\\)"
+      DisplayBlock  -> "\\[" <> math <> "\\]"
 
 -- |  Transforms an expression tree to equivalent LaTeX with the specified
 -- packages
-writeTeXWith :: Env -> [Exp] -> String
-writeTeXWith env es = drop 1 . init . T.unpack . flip renderTeX "" . Grouped $
+writeTeXWith :: Env -> [Exp] -> T.Text
+writeTeXWith env es = T.drop 1 . T.init . flip renderTeX "" . Grouped $
                             runExpr env $
                               mapM_ writeExp (removeOuterGroup es)
 
@@ -75,21 +69,21 @@ newtype Math a = Math {runTeXMath :: WriterT [TeX] (Reader MathState) a}
                   deriving (Functor, Applicative, Monad, MonadReader MathState
                            , MonadWriter [TeX])
 
-getTeXMathM :: String -> Math [TeX]
+getTeXMathM :: T.Text -> Math [TeX]
 getTeXMathM s = getTeXMath s <$> asks mathEnv
 
 tellGroup :: Math () -> Math ()
 tellGroup = censor ((:[]) . Grouped)
 
-tellGenFrac :: String -> String -> Math ()
+tellGenFrac :: T.Text -> T.Text -> Math ()
 tellGenFrac open close =
   tell [ ControlSeq "\\genfrac"
-       , Grouped [Literal $ T.pack open]
-       , Grouped [Literal $ T.pack close]
+       , Grouped [Literal open]
+       , Grouped [Literal close]
        , Grouped [Literal "0pt"]
        , Grouped [] ]
 
-writeBinom :: String -> Exp -> Exp -> Math ()
+writeBinom :: T.Text -> Exp -> Exp -> Math ()
 writeBinom cmd x y = do
   env <- asks mathEnv
   if "amsmath" `elem` env
@@ -104,11 +98,11 @@ writeBinom cmd x y = do
        tellGroup $ writeExp y
      else tellGroup $ do
        writeExp x
-       tell [ControlSeq $ T.pack cmd]
+       tell [ControlSeq cmd]
        writeExp y
 
 writeExp :: Exp -> Math ()
-writeExp (ENumber s) = tell =<< getTeXMathM (T.unpack s)
+writeExp (ENumber s) = tell =<< getTeXMathM s
 writeExp (EGrouped es) = tellGroup (mapM_ writeExp es)
 writeExp (EDelimited "(" ")" [Right (EFraction NoLineFrac x y)]) =
   writeBinom "\\choose" x y
@@ -137,20 +131,20 @@ writeExp (EDelimited open close [Right (EArray aligns rows)]) = do
        (True, "\x2225", "\x2225") | all (== AlignCenter) aligns ->
          table "Vmatrix" [] rows
        _ -> do
-         writeDelim DLeft (T.unpack open)
+         writeDelim DLeft open
          writeExp (EArray aligns rows)
-         writeDelim DRight (T.unpack close)
+         writeDelim DRight close
 writeExp (EDelimited open close es) =  do
-  writeDelim DLeft (T.unpack open)
-  mapM_ (either (writeDelim DMiddle . T.unpack) writeExp) es
-  writeDelim DRight (T.unpack close)
-writeExp (EIdentifier (T.unpack -> s)) = do
+  writeDelim DLeft open
+  mapM_ (either (writeDelim DMiddle) writeExp) es
+  writeDelim DRight close
+writeExp (EIdentifier s) = do
   math <- getTeXMathM s
   case math of
        []      -> return ()
        [t]     -> tell [t]
        ts      -> tell [Grouped ts]
-writeExp o@(EMathOperator (T.unpack -> s)) = do
+writeExp o@(EMathOperator s) = do
   math <- getTeXMathM s
   case S.getOperator o of
        Just op  -> tell [op]
@@ -161,17 +155,17 @@ writeExp o@(EMathOperator (T.unpack -> s)) = do
          tell [Grouped math]
 writeExp (ESymbol Ord (T.unpack -> [c]))  -- do not render "invisible operators"
   | c `elem` ['\x2061'..'\x2064'] = return () -- see 3.2.5.5 of mathml spec
-writeExp (ESymbol t (T.unpack -> s)) = do
+writeExp (ESymbol t s) = do
   s' <- getTeXMathM s
   when (t == Bin || t == Rel) $ tell [Space]
-  if length s > 1 && (t == Bin || t == Rel || t == Op)
-     then tell [ControlSeq ("\\math" <> T.toLower (T.pack $ show t)),
+  if T.length s > 1 && (t == Bin || t == Rel || t == Op)
+     then tell [ControlSeq ("\\math" <> T.toLower (tshow t)),
                  Grouped [ControlSeq "\\text", Grouped s']]
      else tell s'
   when (t == Bin || t == Rel) $ tell [Space]
 writeExp (ESpace width) = do
   env <- asks mathEnv
-  tell [ControlSeq $ T.pack $ getSpaceCommand ("amsmath" `elem` env) width]
+  tell [ControlSeq $ getSpaceCommand ("amsmath" `elem` env) width]
 writeExp (EFraction fractype e1 e2) = do
   let cmd = case fractype of
                  NormalFrac  -> "\\frac"
@@ -243,9 +237,9 @@ writeExp (EScaled size e)
          Nothing -> return ()
     writeExp e
   | otherwise = writeExp e
-writeExp (EText ttype (T.unpack -> s)) = do
+writeExp (EText ttype s) = do
   let txtcmd = getTextCommand ttype
-  case map escapeLaTeX s of
+  case map escapeLaTeX (T.unpack s) of
        []   -> return ()
        xs   -> tell $ txtcmd (Grouped xs)
 writeExp (EStyled ttype es) = do
@@ -263,14 +257,14 @@ writeExp (EArray aligns rows) = do
      then table "matrix" [] rows
      else table "array" aligns rows
 
-table :: String -> [Alignment] -> [ArrayLine] -> Math ()
+table :: T.Text -> [Alignment] -> [ArrayLine] -> Math ()
 table name aligns rows = do
-  tell [ControlSeq "\\begin", Grouped [Literal $ T.pack name]]
+  tell [ControlSeq "\\begin", Grouped [Literal name]]
   unless (null aligns) $
      tell [Grouped [Literal columnAligns]]
   tell [Token '\n']
   mapM_ row rows
-  tell [ControlSeq "\\end", Grouped [Literal $ T.pack name]]
+  tell [ControlSeq "\\end", Grouped [Literal name]]
   where
     columnAligns = T.pack $ map alignmentToLetter aligns
     alignmentToLetter AlignLeft = 'l'
@@ -287,7 +281,7 @@ cell = mapM_ writeExp
 
 data FenceType = DLeft | DMiddle | DRight
 
-type Delim = String
+type Delim = T.Text
 
 writeDelim :: FenceType -> Delim -> Math ()
 writeDelim fence delim = do
@@ -346,7 +340,7 @@ checkSubstack e = writeExp e
 -- Utility
 
 -- | Maps a length in em to the nearest LaTeX space command
-getSpaceCommand :: Bool -> Rational -> String
+getSpaceCommand :: Bool -> Rational -> T.Text
 getSpaceCommand amsmath width =
   case floor (width * 18) :: Int of
           -3       -> "\\!"
@@ -357,8 +351,8 @@ getSpaceCommand amsmath width =
           18       -> "\\quad"
           36       -> "\\qquad"
           n        -> if amsmath
-                         then "\\mspace{" ++ show n ++ "mu}"
-                         else "{\\mskip " ++ show n ++ "mu}"
+                         then "\\mspace{" <> tshow n <> "mu}"
+                         else "{\\mskip " <> tshow n <> "mu}"
 
 getTextCommand :: TextType -> TeX -> [TeX]
 getTextCommand tt x =
@@ -400,7 +394,6 @@ isFancy (ERoot _ _) = True
 isFancy (EPhantom _) = True
 isFancy _ = False
 
-
 isOperator :: Exp -> Bool
 isOperator (EMathOperator _) = True
 isOperator (ESymbol Op _)    = True
@@ -409,3 +402,6 @@ isOperator _                 = False
 removeOuterGroup :: [Exp] -> [Exp]
 removeOuterGroup [EGrouped es] = es
 removeOuterGroup es = es
+
+tshow :: Show a => a -> T.Text
+tshow = T.pack . show

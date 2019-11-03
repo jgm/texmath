@@ -60,7 +60,7 @@ readNative s =
 writers :: [(T.Text, Writer)]
 writers = [
     ("native", StringWriter (\_ es -> tshow es) )
-  , ("tex", StringWriter (\_ -> T.pack . writeTeX))
+  , ("tex", StringWriter (\_ -> writeTeX))
   , ("eqn", StringWriter writeEqn)
   , ("omml",  XMLWriter writeOMML)
   , ("xhtml",   XMLWriter (\dt e -> inHtml (writeMathML dt e)))
@@ -104,7 +104,7 @@ output :: DisplayType -> Writer -> [Exp] -> T.Text
 output dt (XMLWriter w) es    = output dt (StringWriter (\dt' -> T.pack . ppElement . w dt' )) es
 output dt (StringWriter w) es = w dt es
 output dt (PandocWriter w) es = tshow (fromMaybe fallback (w dt es))
-  where fallback = [Math mt (T.pack $ writeTeX es)]
+  where fallback = [Math mt $ writeTeX es]
         mt = case dt of
                   DisplayBlock  -> DisplayMath
                   DisplayInline -> InlineMath

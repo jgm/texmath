@@ -32,7 +32,7 @@ readers = [ (".tex", readTeX)
 
 writers :: [(Ext, [Exp] -> T.Text)]
 writers = [ (".mml", T.pack . ppTopElement . writeMathML DisplayBlock)
-          , (".tex", T.pack . writeTeX)
+          , (".tex", writeTeX)
           , (".omml", T.pack . ppTopElement . writeOMML DisplayBlock)
           , (".eqn", writeEqn DisplayBlock)
           ]
@@ -48,7 +48,7 @@ main = do
   setCurrentDirectory "tests"
   statuses <- if roundTrip
                  then do
-                   texs <- runRoundTrip "tex" (T.pack . writeTeX) readTeX
+                   texs <- runRoundTrip "tex" writeTeX readTeX
                    ommls <- runRoundTrip "omml"
                                (T.pack . ppTopElement .  writeOMML DisplayBlock) readOMML
                    mathmls <- runRoundTrip "mml"
