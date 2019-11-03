@@ -30,7 +30,7 @@ data Status = Pass FilePath FilePath
 type Ext = String
 
 readers :: [(Ext, T.Text -> Either T.Text [Exp])]
-readers = [ (".tex", stringAround readTeX)
+readers = [ (".tex", readTeX)
           , (".mml", stringAround readMathML)
           , (".omml", readOMML)
           ]
@@ -53,7 +53,7 @@ main = do
   setCurrentDirectory "tests"
   statuses <- if roundTrip
                  then do
-                   texs <- runRoundTrip "tex" (T.pack . writeTeX) (stringAround readTeX)
+                   texs <- runRoundTrip "tex" (T.pack . writeTeX) readTeX
                    ommls <- runRoundTrip "omml"
                                (T.pack . ppTopElement .  writeOMML DisplayBlock) readOMML
                    mathmls <- runRoundTrip "mml"

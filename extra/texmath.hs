@@ -45,14 +45,14 @@ data Writer = XMLWriter (DisplayType -> [Exp] -> Element)
 
 readers :: [(T.Text, Reader)]
 readers = [
-    ("tex", stringAround readTeX)
+    ("tex", readTeX)
   , ("mathml", stringAround readMathML)
   , ("omml", readOMML)
-  , ("native", readNative . T.unpack)]
+  , ("native", readNative)]
 
-readNative :: String -> Either T.Text [Exp]
+readNative :: T.Text -> Either T.Text [Exp]
 readNative s =
-  case reads s of
+  case reads (T.unpack s) of
        ((exps, ws):_) | all isSpace ws -> Right exps
        ((_, (_:_)):_) -> Left "Could not read whole input as native Exp"
        _ -> Left "Could not read input as native Exp"

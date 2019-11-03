@@ -34,7 +34,7 @@ import qualified Data.Text as T
 import Data.Maybe (mapMaybe)
 import Text.Parsec hiding (label)
 import Text.Parsec.Error
-import Text.Parsec.String
+import Text.Parsec.Text
 import Text.TeXMath.Types
 import Control.Applicative ((<*), (*>), (<*>), (<$>), (<$), pure)
 import qualified Text.TeXMath.Shared as S
@@ -84,26 +84,26 @@ expr1 = choice
           ] <* ignorable
 
 -- | Parse a formula, returning a list of 'Exp'.
-readTeX :: String -> Either String [Exp]
-readTeX inp =
+readTeX :: T.Text -> Either T.Text [Exp]
+readTeX inp = -- TODO text: refactor
   let (ms, rest) = parseMacroDefinitions inp in
   either (Left . showParseError inp) (Right . id)
-    $ parse formula "formula" (applyMacros ms rest)
+    $ parse formula "formula" $ applyMacros ms rest
 
-showParseError :: String -> ParseError -> String
+showParseError :: T.Text -> ParseError -> T.Text
 showParseError inp pe =
-  snippet ++ "\n" ++ caretline ++
-    showErrorMessages "or" "unknown" "expecting" "unexpected" "eof"
-       (errorMessages pe)
+  snippet <> "\n" <> caretline <>
+    T.pack (showErrorMessages "or" "unknown" "expecting" "unexpected" "eof"
+            (errorMessages pe))
   where errln = sourceLine (errorPos pe)
         errcol = sourceColumn (errorPos pe)
         snipoffset = max 0 (errcol - 20)
-        inplns = lines inp
+        inplns = T.lines inp
         ln = if length inplns >= errln
                 then inplns !! (errln - 1)
                 else ""  -- should not happen
-        snippet = take 40 $ drop snipoffset ln
-        caretline = replicate (errcol - snipoffset - 1) ' ' ++ "^"
+        snippet = T.take 40 $ T.drop snipoffset ln
+        caretline = T.replicate (errcol - snipoffset - 1) " " <> "^"
 
 anyCtrlSeq :: TP String
 anyCtrlSeq = lexeme $ try $ do
