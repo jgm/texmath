@@ -24,9 +24,10 @@ Also note that in general @writeLaTeX . readLaTeX /= id@.
 A typical use is to combine together a reader and writer.
 
 > import Control.Applicative ((<$>))
+> import Data.Text (Text)
 > import Text.TeXMath (writeMathML, readTeX)
 >
-> texMathToMathML :: DisplayType -> String -> Either String Element
+> texMathToMathML :: DisplayType -> Text -> Either Text Element
 > texMathToMathML dt s = writeMathML dt <$> readTeX s
 
 It is also possible to manipulate the AST using 'Data.Generics'. For
@@ -34,20 +35,24 @@ example, if you wanted to replace all occurences of the identifier
 x in your expression, you do could do so with the following
 script.
 
-> import Control.Applicative ((<$>))
-> import Data.Generics (everywhere, mkT)
-> import Text.TeXMath (writeMathML, readTeX)
-> import Text.TeXMath.Types
-> import Text.XML.Light (Element)
->
-> changeIdent :: Exp -> Exp
-> changeIdent (EIdentifier "x") = EIdentifier "y"
-> changeIdent e = e
->
-> texToMMLWithChangeIdent :: DisplayType -> String -> Either String Element
-> texToMMLWithChangeIdent dt s =
->   writeMathML dt . everywhere (mkT changeIdent) <$> readTeX s
+@
+&#x7b;-\# LANGUAGE OverloadedStrings -\#&#x7d;
 
+import Control.Applicative ((\<$\>))
+import Data.Text (Text)
+import Data.Generics (everywhere, mkT)
+import Text.TeXMath (writeMathML, readTeX)
+import Text.TeXMath.Types
+import Text.XML.Light (Element)
+
+changeIdent :: Exp -> Exp
+changeIdent (EIdentifier "x") = EIdentifier "y"
+changeIdent e = e
+
+texToMMLWithChangeIdent :: DisplayType -> Text -> Either Text Element
+texToMMLWithChangeIdent dt s =
+  writeMathML dt . everywhere (mkT changeIdent) \<$\> readTeX s
+@
 -}
 
 module Text.TeXMath ( readMathML,
