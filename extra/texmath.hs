@@ -20,6 +20,11 @@ import qualified Data.Text as T
 import Data.Version ( showVersion )
 import Paths_texmath (version)
 
+-- TODO text: remove
+stringAround :: (T.Text -> Either T.Text a) -> String -> Either String a
+stringAround f = either (Left . T.unpack) Right . f . T.pack
+--
+
 inHtml :: Element -> Element
 inHtml e =
   add_attr (Attr (unqual "xmlns") "http://www.w3.org/1999/xhtml") $
@@ -39,7 +44,7 @@ readers :: [(String, Reader)]
 readers = [
     ("tex", readTeX)
   , ("mathml", readMathML)
-  , ("omml", readOMML)
+  , ("omml", stringAround readOMML)
   , ("native", readNative)]
 
 readNative :: String -> Either String [Exp]

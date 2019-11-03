@@ -37,21 +37,14 @@ import Text.XML.Light
 import Data.Maybe (isJust, mapMaybe, fromMaybe)
 import Data.List (intercalate)
 import Data.Char (isDigit, readLitChar)
+import qualified Data.Text as T
 import Text.TeXMath.Types
 import Text.TeXMath.Shared (fixTree, getSpaceWidth, getOperator)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Control.Applicative ((<$>))
 import Text.TeXMath.Unicode.Fonts (getUnicode, textToFont)
 
--- TODO text: remove
-import qualified Data.Text as T
-import Text.TeXMath.Unicode.Fonts (Font)
-
-stringToFont :: String -> Maybe Font
-stringToFont = textToFont . T.pack
---
-
-readOMML :: String -> Either String [Exp]
+readOMML :: T.Text -> Either T.Text [Exp]
 readOMML s | Just e <- parseXMLDoc s =
   case elemToOMML e of
     Just exs -> Right $ map fixTree $ unGroup exs
@@ -80,6 +73,7 @@ unwrapWTags elements = concatMap unwrapChild elements
                                 Just "w" -> elChildren element
                                 _        -> [element]
 
+-- Kept as String because of Text.XML.Light
 isElem :: String -> String -> Element -> Bool
 isElem prefix name element =
   let qp = fromMaybe "" (qPrefix (elName element))
@@ -87,14 +81,15 @@ isElem prefix name element =
    qName (elName element) == name &&
    qp == prefix
 
-hasElemName:: String -> String -> QName -> Bool
+-- Kept as String because of Text.XML.Light
+hasElemName :: String -> String -> QName -> Bool
 hasElemName prefix name qn =
   let qp = fromMaybe "" (qPrefix qn)
   in
    qName qn == name &&
    qp       == prefix
 
-data OMathRunElem = TextRun String
+data OMathRunElem = TextRun T.Text
                   | LnBrk
                   | Tab
                     deriving Show
@@ -180,7 +175,7 @@ elemToOMathRunElem :: Element -> Maybe OMathRunElem
 elemToOMathRunElem element
   | isElem "w" "t" element
     || isElem "m" "t" element
-    || isElem "w" "delText" element = Just $ TextRun $ strContent element
+    || isElem "w" "delText" element = Just $ TextRun $ T.pack $ strContent element
   | isElem "w" "br" element = Just LnBrk
   | isElem "w" "tab" element = Just Tab
   | isElem "w" "sym" element = Just $ TextRun $ getSymChar element
@@ -195,13 +190,13 @@ elemToOMathRunElems _ = Nothing
 
 ----- And now the TeXMath Creation
 
-oMathRunElemToString :: OMathRunElem -> String
-oMathRunElemToString (TextRun s) = s
-oMathRunElemToString (LnBrk) = ['\n']
-oMathRunElemToString (Tab) = ['\t']
+oMathRunElemToText :: OMathRunElem -> T.Text
+oMathRunElemToText (TextRun s) = s
+oMathRunElemToText (LnBrk) = "\n"
+oMathRunElemToText (Tab) = "\t"
 
-oMathRunElemsToString :: [OMathRunElem] -> String
-oMathRunElemsToString = concatMap oMathRunElemToString
+oMathRunElemsToText :: [OMathRunElem] -> T.Text
+oMathRunElemsToText = T.concat . map oMathRunElemToText
 
 oMathRunTextStyleToTextType :: OMathRunTextStyle -> Maybe TextType
 oMathRunTextStyleToTextType (Normal) = Just $ TextNormal
@@ -446,10 +441,10 @@ elemToExps' element | isElem "m" "r" element = do
     if null lit && null nor
        then case txtSty of
               Nothing ->
-                interpretString $ oMathRunElemsToString mrElems
+                interpretText $ oMathRunElemsToText mrElems
               Just textSty ->
-                [EStyled textSty $ interpretString $ oMathRunElemsToString mrElems]
-       else [EText (fromMaybe TextNormal txtSty) $ T.pack $ oMathRunElemsToString mrElems]
+                [EStyled textSty $ interpretText $ oMathRunElemsToText mrElems]
+       else [EText (fromMaybe TextNormal txtSty) $ oMathRunElemsToText mrElems]
 elemToExps' _ = Nothing
 
 interpretChar :: Char -> Exp
@@ -464,30 +459,31 @@ interpretChar c = case getSymbolType c of
   where
     c' = T.singleton c
 
-interpretString :: String -> [Exp]
-interpretString [c]       = [interpretChar c]
-interpretString s
-  | all isDigit s         = [ENumber $ T.pack s]
-  | isJust (getOperator (EMathOperator $ T.pack s))
-                          = [EMathOperator $ T.pack s]
+interpretText :: T.Text -> [Exp]
+interpretText s
+  | Just (c, xs) <- T.uncons s
+  , T.null xs = [interpretChar c]
+  | T.all isDigit s         = [ENumber s]
+  | isJust (getOperator (EMathOperator s))
+                          = [EMathOperator s]
   | otherwise             =
-      case map interpretChar s of
-            xs | all isIdentifierOrSpace xs -> [EText TextNormal $ T.pack s]
+      case map interpretChar (T.unpack s) of
+            xs | all isIdentifierOrSpace xs -> [EText TextNormal s]
                | otherwise                  -> xs
   where isIdentifierOrSpace (EIdentifier _) = True
         isIdentifierOrSpace (ESpace _)      = True
         isIdentifierOrSpace _               = False
 
 -- The char attribute is a hex string
-getSymChar :: Element -> String
+getSymChar :: Element -> T.Text
 getSymChar element
   | Just s <- lowerFromPrivate <$> getCodepoint
   , Just font <- getFont =
   let [(char, _)] = readLitChar ("\\x" ++ s) in
-    maybe "" (:[]) $ getUnicode font char
+    maybe "" T.singleton $ getUnicode font char
   where
     getCodepoint = findAttrBy (hasElemName "w" "char") element
-    getFont = stringToFont =<< findAttrBy (hasElemName "w" "font") element
+    getFont = (textToFont . T.pack) =<< findAttrBy (hasElemName "w" "font") element
     lowerFromPrivate ('F':xs) = '0':xs
     lowerFromPrivate xs = xs
 getSymChar _ = ""

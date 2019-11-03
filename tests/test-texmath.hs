@@ -15,6 +15,10 @@ import Data.List (intercalate)
 import Data.List.Split (splitWhen)
 import System.Environment (getArgs)
 
+-- TODO text: remove
+stringAround :: (T.Text -> Either T.Text a) -> String -> Either String a
+stringAround f = either (Left . T.unpack) Right . f . T.pack
+
 -- strict version of readFile
 readFile' :: FilePath -> IO String
 readFile' f = T.unpack <$> T.readFile f
@@ -29,7 +33,7 @@ type Ext = String
 readers :: [(Ext, String -> Either String [Exp])]
 readers = [ (".tex", readTeX)
           , (".mml", readMathML)
-          , (".omml", readOMML)
+          , (".omml", stringAround readOMML)
           ]
 
 writers :: [(Ext, [Exp] -> String)]
@@ -52,7 +56,7 @@ main = do
                  then do
                    texs <- runRoundTrip "tex" writeTeX readTeX
                    ommls <- runRoundTrip "omml"
-                               (ppTopElement .  writeOMML DisplayBlock) readOMML
+                               (ppTopElement .  writeOMML DisplayBlock) (stringAround readOMML)
                    mathmls <- runRoundTrip "mml"
                                 (ppTopElement . writeMathML DisplayBlock)
                                 readMathML
