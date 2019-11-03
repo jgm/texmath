@@ -1,5 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE ViewPatterns #-} -- TODO text: remove
+
 module Text.TeXMath.TeX (TeX(..),
                          renderTeX,
                          isControlSeq,
@@ -31,32 +31,33 @@ renderTeX (ControlSeq s) cs
 renderTeX (Grouped [Grouped xs]) cs  = renderTeX (Grouped xs) cs
 renderTeX (Grouped xs) cs     =
   "{" <> foldr renderTeX "" (trimSpaces xs) <> "}" <> cs
-renderTeX Space ""             = "" -- no need to end with space
--- TODO text: refactor
-renderTeX Space (T.unpack -> ('^':cs)) = T.pack $ '^' : cs  -- no space before ^
-renderTeX Space (T.unpack -> ('_':cs)) = T.pack $ '_' : cs  -- no space before _
-renderTeX Space (T.unpack -> (' ':cs)) = T.pack $ ' ' : cs  -- no doubled up spaces
 renderTeX Space cs
-  | "\\limits" `T.isPrefixOf` cs = cs      -- no space before \limits
+  | cs == ""                   = ""
+  | any (`T.isPrefixOf` cs) ps = cs
   | otherwise                  = T.cons ' ' cs
+  where
+    -- No space before ^, _, or \limits, and no doubled up spaces
+    ps = [ "^", "_", " ", "\\limits" ]
 
 trimSpaces :: [TeX] -> [TeX]
 trimSpaces = reverse . go . reverse . go
   where go = dropWhile (== Space)
 
--- TODO text: refactor
 startsWith :: (Char -> Bool) -> T.Text -> Bool
-startsWith p (T.unpack -> (c:_)) = p c
-startsWith _ _    = False
+startsWith p t = case T.uncons t of
+  Just (c, _) -> p c
+  Nothing     -> False
 
 endsWith :: (Char -> Bool) -> T.Text -> Bool
-endsWith p = startsWith p . T.reverse -- TODO text: refactor
+endsWith p t = case T.unsnoc t of
+  Just (_, c) -> p c
+  Nothing     -> False
 
--- TODO text: refactor
 isControlSeq :: T.Text -> Bool
-isControlSeq (T.unpack -> ['\\',c]) = c /= ' '
-isControlSeq (T.unpack -> ('\\':xs)) = all isLetter xs
-isControlSeq _ = False
+isControlSeq t = case T.uncons t of
+  Just ('\\', xs) -> T.length xs == 1 && xs /= " "
+                     || T.all isLetter xs
+  _               -> False
 
 escapeLaTeX :: Char -> TeX
 escapeLaTeX c =
