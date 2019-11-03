@@ -1,54 +1,61 @@
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE ViewPatterns #-} -- TODO text: remove
 module Text.TeXMath.TeX (TeX(..),
                          renderTeX,
                          isControlSeq,
                          escapeLaTeX)
 where
-import Data.List (isPrefixOf)
 import Data.Char (isLetter, isAlphaNum, isAscii)
+import qualified Data.Text as T
 
 -- | An intermediate representation of TeX math, to be used in rendering.
-data TeX = ControlSeq String
+data TeX = ControlSeq T.Text
          | Token Char
-         | Literal String
+         | Literal T.Text
          | Grouped [TeX]
          | Space
          deriving (Show, Eq)
 
 -- | Render a 'TeX' to a string, appending to the front of the given string.
-renderTeX :: TeX -> String -> String
-renderTeX (Token c) cs     = c:cs
+renderTeX :: TeX -> T.Text -> T.Text
+renderTeX (Token c) cs     = T.cons c cs
 renderTeX (Literal s) cs
-  | startsWith (not . isLetter)
-               (reverse s) = s ++ cs
-  | startsWith isLetter cs = s ++ (' ':cs)
-  | otherwise              = s ++ cs
+  | endsWith (not . isLetter) s = s <> cs
+  | startsWith isLetter cs      = s <> T.cons ' ' cs
+  | otherwise                   = s <> cs
 renderTeX (ControlSeq s) cs
-  | s == "\\ "               = s ++ cs
+  | s == "\\ "               = s <> cs
   | startsWith (\c -> isAlphaNum c || not (isAscii c)) cs
-                             = s ++ (' ':cs)
-  | otherwise                = s ++ cs
+                             = s <> T.cons ' ' cs
+  | otherwise                = s <> cs
 renderTeX (Grouped [Grouped xs]) cs  = renderTeX (Grouped xs) cs
 renderTeX (Grouped xs) cs     =
-  '{' : foldr renderTeX "" (trimSpaces xs) ++ "}" ++ cs
+  "{" <> foldr renderTeX "" (trimSpaces xs) <> "}" <> cs
 renderTeX Space ""             = "" -- no need to end with space
-renderTeX Space ('^':cs)       = '^':cs  -- no space before ^
-renderTeX Space ('_':cs)       = '_':cs  -- no space before _
-renderTeX Space (' ':cs)       = ' ':cs  -- no doubled up spaces
+-- TODO text: refactor
+renderTeX Space (T.unpack -> ('^':cs)) = T.pack $ '^' : cs  -- no space before ^
+renderTeX Space (T.unpack -> ('_':cs)) = T.pack $ '_' : cs  -- no space before _
+renderTeX Space (T.unpack -> (' ':cs)) = T.pack $ ' ' : cs  -- no doubled up spaces
 renderTeX Space cs
-  | "\\limits" `isPrefixOf` cs = cs      -- no space before \limits
-  | otherwise                  = ' ':cs
+  | "\\limits" `T.isPrefixOf` cs = cs      -- no space before \limits
+  | otherwise                  = T.cons ' ' cs
 
 trimSpaces :: [TeX] -> [TeX]
 trimSpaces = reverse . go . reverse . go
   where go = dropWhile (== Space)
 
-startsWith :: (Char -> Bool) -> String -> Bool
-startsWith p (c:_) = p c
-startsWith _ []    = False
+-- TODO text: refactor
+startsWith :: (Char -> Bool) -> T.Text -> Bool
+startsWith p (T.unpack -> (c:_)) = p c
+startsWith _ _    = False
 
-isControlSeq :: String -> Bool
-isControlSeq ['\\',c] = c /= ' '
-isControlSeq ('\\':xs) = all isLetter xs
+endsWith :: (Char -> Bool) -> T.Text -> Bool
+endsWith p = startsWith p . T.reverse -- TODO text: refactor
+
+-- TODO text: refactor
+isControlSeq :: T.Text -> Bool
+isControlSeq (T.unpack -> ['\\',c]) = c /= ' '
+isControlSeq (T.unpack -> ('\\':xs)) = all isLetter xs
 isControlSeq _ = False
 
 escapeLaTeX :: Char -> TeX
@@ -68,5 +75,5 @@ escapeLaTeX c =
        '\x2032' -> Literal "'"
        '\x2033' -> Literal "''"
        '\x2034' -> Literal "'''"
-       _ | c `elem` "#$%&_{} " -> Literal ("\\" ++ [c])
+       _ | T.any (== c) "#$%&_{} " -> Literal ("\\" <> T.singleton c)
          | otherwise -> Token c

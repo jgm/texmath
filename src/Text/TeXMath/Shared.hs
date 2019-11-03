@@ -119,7 +119,7 @@ getDiacriticalCommand pos symbol = do
 -- Operator Table
 
 getOperator :: Exp -> Maybe TeX
-getOperator op = fmap (ControlSeq . T.unpack) $ M.lookup op operators
+getOperator op = fmap ControlSeq $ M.lookup op operators
 
 operators :: M.Map Exp T.Text
 operators = M.fromList

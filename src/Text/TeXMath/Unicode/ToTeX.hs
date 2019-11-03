@@ -79,12 +79,12 @@ charToLaTeXString _ '\65024' = Just []
 charToLaTeXString environment c = do
   v <- M.lookup c recordsMap
   -- Required packages for the command
-  let toLit [x]  = [Token x]
-      toLit []   = []
-      toLit cs   = [Literal cs]
+  let toLit cs = case T.uncons cs of
+        Just (x, xs) -> if T.null xs then [Token x] else [Literal cs]
+        Nothing      -> []
   let cmds = commands v
-  raw <- lookup "base" cmds
-          <|> listToMaybe (mapMaybe (flip lookup cmds) environment)
+  raw <- fmap T.pack $ lookup "base" cmds <|> -- TODO text: refactor
+                       listToMaybe (mapMaybe (flip lookup cmds) environment)
   let latexCommand = if isControlSeq raw
                         then [ControlSeq raw]
                         else toLit raw
@@ -96,7 +96,7 @@ charToLaTeXString environment c = do
 textConvert :: Env -> Char -> Maybe [TeX]
 textConvert env c = do
   (ttype, v) <- fromUnicodeChar c
-  return [ControlSeq (T.unpack $ S.getLaTeXTextCommand env ttype), Grouped [Token v]]
+  return [ControlSeq (S.getLaTeXTextCommand env ttype), Grouped [Token v]]
 
 
 recordsMap :: M.Map Char Record

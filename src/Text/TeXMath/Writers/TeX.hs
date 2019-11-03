@@ -1,4 +1,4 @@
-{-# LANGUAGE GeneralizedNewtypeDeriving, ViewPatterns, GADTs #-}
+{-# LANGUAGE GeneralizedNewtypeDeriving, ViewPatterns, GADTs, OverloadedStrings #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -25,7 +25,6 @@ import Text.TeXMath.Types
 import qualified Text.TeXMath.Unicode.ToTeX as TT
 import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import qualified Text.TeXMath.Shared as S
-import Data.Char (toLower)
 import qualified Data.Text as T
 import Data.Generics (everywhere, mkT)
 import Control.Applicative ((<$>), Applicative)
@@ -58,7 +57,7 @@ addLaTeXEnvironment dt math =
 -- |  Transforms an expression tree to equivalent LaTeX with the specified
 -- packages
 writeTeXWith :: Env -> [Exp] -> String
-writeTeXWith env es = drop 1 . init . flip renderTeX "" . Grouped $
+writeTeXWith env es = drop 1 . init . T.unpack . flip renderTeX "" . Grouped $
                             runExpr env $
                               mapM_ writeExp (removeOuterGroup es)
 
@@ -85,8 +84,8 @@ tellGroup = censor ((:[]) . Grouped)
 tellGenFrac :: String -> String -> Math ()
 tellGenFrac open close =
   tell [ ControlSeq "\\genfrac"
-       , Grouped [Literal open]
-       , Grouped [Literal close]
+       , Grouped [Literal $ T.pack open]
+       , Grouped [Literal $ T.pack close]
        , Grouped [Literal "0pt"]
        , Grouped [] ]
 
@@ -105,7 +104,7 @@ writeBinom cmd x y = do
        tellGroup $ writeExp y
      else tellGroup $ do
        writeExp x
-       tell [ControlSeq cmd]
+       tell [ControlSeq $ T.pack cmd]
        writeExp y
 
 writeExp :: Exp -> Math ()
@@ -166,13 +165,13 @@ writeExp (ESymbol t s) = do
   s' <- getTeXMathM s
   when (t == Bin || t == Rel) $ tell [Space]
   if length s > 1 && (t == Bin || t == Rel || t == Op)
-     then tell [ControlSeq ("\\math" ++ map toLower (show t)),
+     then tell [ControlSeq ("\\math" <> T.toLower (T.pack $ show t)),
                  Grouped [ControlSeq "\\text", Grouped s']]
      else tell s'
   when (t == Bin || t == Rel) $ tell [Space]
 writeExp (ESpace width) = do
   env <- asks mathEnv
-  tell [ControlSeq $ getSpaceCommand ("amsmath" `elem` env) width]
+  tell [ControlSeq $ T.pack $ getSpaceCommand ("amsmath" `elem` env) width]
 writeExp (EFraction fractype e1 e2) = do
   let cmd = case fractype of
                  NormalFrac  -> "\\frac"
@@ -239,7 +238,7 @@ writeExp (EScaled size e)
          (ESymbol Open _)  -> True
          (ESymbol Close _) -> True
          _ -> False = do
-    case T.unpack <$> S.getScalerCommand size of
+    case S.getScalerCommand size of
          Just s  -> tell [ControlSeq s]
          Nothing -> return ()
     writeExp e
@@ -251,7 +250,7 @@ writeExp (EText ttype s) = do
        xs   -> tell $ txtcmd (Grouped xs)
 writeExp (EStyled ttype es) = do
   txtcmd <- (flip S.getLaTeXTextCommand ttype) <$> asks mathEnv
-  tell [ControlSeq $ T.unpack txtcmd]
+  tell [ControlSeq txtcmd]
   tellGroup (mapM_ writeExp $ everywhere (mkT (fromUnicode ttype)) es)
 writeExp (EArray [AlignRight, AlignLeft] rows) = do
   env <- asks mathEnv
@@ -266,14 +265,14 @@ writeExp (EArray aligns rows) = do
 
 table :: String -> [Alignment] -> [ArrayLine] -> Math ()
 table name aligns rows = do
-  tell [ControlSeq "\\begin", Grouped [Literal name]]
+  tell [ControlSeq "\\begin", Grouped [Literal $ T.pack name]]
   unless (null aligns) $
      tell [Grouped [Literal columnAligns]]
   tell [Token '\n']
   mapM_ row rows
-  tell [ControlSeq "\\end", Grouped [Literal name]]
+  tell [ControlSeq "\\end", Grouped [Literal $ T.pack name]]
   where
-    columnAligns = map alignmentToLetter aligns
+    columnAligns = T.pack $ map alignmentToLetter aligns
     alignmentToLetter AlignLeft = 'l'
     alignmentToLetter AlignCenter = 'c'
     alignmentToLetter AlignRight = 'r'
@@ -308,7 +307,7 @@ writeScript pos convertible b e1 = do
   let diacmd = case e1 of
                     ESymbol stype a
                       | stype `elem` [Accent, TOver, TUnder]
-                      -> T.unpack <$> S.getDiacriticalCommand pos (T.pack a)
+                      -> S.getDiacriticalCommand pos (T.pack a)
                     _ -> Nothing
   case diacmd of
        Just cmd -> do
