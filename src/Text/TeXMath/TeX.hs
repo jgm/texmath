@@ -6,6 +6,7 @@ module Text.TeXMath.TeX (TeX(..),
                          escapeLaTeX)
 where
 import Data.Char (isLetter, isAlphaNum, isAscii)
+import Data.Semigroup ((<>))
 import qualified Data.Text as T
 
 -- | An intermediate representation of TeX math, to be used in rendering.

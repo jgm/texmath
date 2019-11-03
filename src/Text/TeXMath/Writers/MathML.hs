@@ -30,6 +30,7 @@ import Data.Generics (everywhere, mkT)
 import Text.TeXMath.Shared (getMMLType, handleDownup)
 import Text.TeXMath.Readers.MathML.MMLDict (getMathMLOperator)
 import Control.Applicative ((<$>))
+import Data.Semigroup ((<>))
 import qualified Data.Text as T
 import Text.Printf
 

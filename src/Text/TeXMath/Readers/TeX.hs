@@ -32,6 +32,7 @@ import Data.Char (isDigit, isAscii, isLetter)
 import qualified Data.Map as M
 import qualified Data.Text as T
 import Data.Maybe (mapMaybe)
+import Data.Semigroup ((<>))
 import Text.Parsec hiding (label)
 import Text.Parsec.Error
 import Text.Parsec.Text

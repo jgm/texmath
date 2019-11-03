@@ -44,6 +44,7 @@ import qualified Data.Text as T
 import Data.Maybe (fromMaybe)
 import Data.Ratio ((%))
 import Data.List (sort)
+import Data.Semigroup ((<>))
 import Control.Applicative ((<$>), (<*>))
 import Control.Monad (guard)
 import Text.Parsec (Parsec, parse, getInput, digit, char, many1, option)

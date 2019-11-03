@@ -51,6 +51,7 @@ import Control.Applicative ((<$>), (<|>), (<*>))
 import Control.Arrow ((&&&))
 import Data.Maybe (fromMaybe, listToMaybe, isJust)
 import Data.Monoid (mconcat, First(..), getFirst)
+import Data.Semigroup ((<>))
 import Data.List (transpose)
 import qualified Data.Text as T
 import Control.Monad (filterM, guard)
