@@ -1,4 +1,4 @@
-{-# LANGUAGE CPP, ScopedTypeVariables #-}
+{-# LANGUAGE CPP, ScopedTypeVariables, OverloadedStrings #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -40,9 +40,11 @@ import Text.TeXMath.Types
 import Text.TeXMath.TeX
 import qualified Data.Map as M
 import qualified Data.Set as Set
+import qualified Data.Text as T
 import Data.Maybe (fromMaybe)
 import Data.Ratio ((%))
 import Data.List (sort)
+import Data.Semigroup ((<>))
 import Control.Applicative ((<$>), (<*>))
 import Control.Monad (guard)
 import Text.Parsec (Parsec, parse, getInput, digit, char, many1, option)
@@ -74,11 +76,11 @@ fixTree :: Exp -> Exp
 fixTree = everywhere (mkT removeNesting) . everywhere (mkT removeEmpty)
 
 -- | Maps TextType to the corresponding MathML mathvariant
-getMMLType :: TextType -> String
+getMMLType :: TextType -> T.Text
 getMMLType t = fromMaybe "normal" (fst <$> M.lookup t textTypesMap)
 
 -- | Maps TextType to corresponding LaTeX command
-getLaTeXTextCommand :: Env -> TextType -> String
+getLaTeXTextCommand :: Env -> TextType -> T.Text
 getLaTeXTextCommand e t =
   let textCmd = fromMaybe "\\mathrm"
                   (snd <$> M.lookup t textTypesMap) in
@@ -87,11 +89,11 @@ getLaTeXTextCommand e t =
     else fromMaybe "\\mathrm" (M.lookup textCmd alts)
 
 -- | Maps MathML mathvariant to the corresponing TextType
-getTextType :: String -> TextType
+getTextType :: T.Text -> TextType
 getTextType s = fromMaybe TextNormal (M.lookup s revTextTypesMap)
 
 -- | Maps a LaTeX scaling command to the percentage scaling
-getScalerCommand :: Rational -> Maybe String
+getScalerCommand :: Rational -> Maybe T.Text
 getScalerCommand width =
   case sort [ (w, cmd) | (cmd, w) <- scalers, w >= width ] of
        ((_,cmd):_) -> Just cmd
@@ -100,11 +102,11 @@ getScalerCommand width =
   -- match:  \Big, not \Bigr
 
 -- | Gets percentage scaling from LaTeX scaling command
-getScalerValue :: String -> Maybe Rational
+getScalerValue :: T.Text -> Maybe Rational
 getScalerValue command = lookup command scalers
 
 -- | Given a diacritical mark, returns the corresponding LaTeX command
-getDiacriticalCommand  :: Position -> String -> Maybe String
+getDiacriticalCommand  :: Position -> T.Text -> Maybe T.Text
 getDiacriticalCommand pos symbol = do
   command <- M.lookup symbol diaMap
   guard (not $ command `elem` unavailable)
@@ -120,7 +122,7 @@ getDiacriticalCommand pos symbol = do
 getOperator :: Exp -> Maybe TeX
 getOperator op = fmap ControlSeq $ M.lookup op operators
 
-operators :: M.Map Exp String
+operators :: M.Map Exp T.Text
 operators = M.fromList
            [ (EMathOperator "arccos", "\\arccos")
            , (EMathOperator "arcsin", "\\arcsin")
@@ -156,7 +158,7 @@ operators = M.fromList
            , (EMathOperator "tanh", "\\tanh") ]
 
 -- | Attempts to convert a string into
-readLength :: String -> Maybe Rational
+readLength :: T.Text -> Maybe Rational
 readLength s = do
   (n, unit) <- case (parse parseLength "" s) of
                   Left _ -> Nothing
@@ -164,24 +166,24 @@ readLength s = do
   (n *) <$> unitToMultiplier unit
 
 
-parseLength :: Parsec String () (Rational, String)
+parseLength :: Parsec T.Text () (Rational, T.Text)
 parseLength = do
     neg <- option "" ((:[]) <$> char '-')
     dec <- many1 digit
     frac <- option "" ((:) <$> char '.' <*> many1 digit)
     unit <- getInput
     -- This is safe as dec and frac must be a double of some kind
-    let [(n :: Double, [])] = reads (neg ++ dec ++ frac) :: [(Double, String)]
+    let [(n :: Double, [])] = reads (neg ++ dec ++ frac)
     return (round (n * 18) % 18, unit)
 
-textTypesMap :: M.Map TextType (String, String)
+textTypesMap :: M.Map TextType (T.Text, T.Text)
 textTypesMap = M.fromList textTypes
 
-revTextTypesMap :: M.Map String TextType
+revTextTypesMap :: M.Map T.Text TextType
 revTextTypesMap = M.fromList $ map (\(k, (v,_)) -> (v,k)) textTypes
 
 --TextType to (MathML, LaTeX)
-textTypes :: [(TextType, (String, String))]
+textTypes :: [(TextType, (T.Text, T.Text))]
 textTypes =
   [ ( TextNormal       , ("normal", "\\mathrm"))
   , ( TextBold         , ("bold", "\\mathbf"))
@@ -198,7 +200,7 @@ textTypes =
   , ( TextBoldFraktur         , ("bold-fraktur","\\mathbffrak"))
   , ( TextSansSerifItalic     , ("sans-serif-italic","\\mathsfit")) ]
 
-unicodeMath, base :: Set.Set String
+unicodeMath, base :: Set.Set T.Text
 unicodeMath = Set.fromList
   ["\\mathbfit", "\\mathbfsfup", "\\mathbfsfit", "\\mathbfscr",
    "\\mathbffrak", "\\mathsfit"]
@@ -206,7 +208,7 @@ base = Set.fromList
   ["\\mathbb", "\\mathrm", "\\mathbf", "\\mathit", "\\mathsf",
    "\\mathtt", "\\mathfrak", "\\mathcal"]
 
-alts :: M.Map String String
+alts :: M.Map T.Text T.Text
 alts = M.fromList
   [ ("\\mathbfit", "\\mathbf")
   , ("\\mathbfsfup", "\\mathbf")
@@ -216,14 +218,14 @@ alts = M.fromList
   , ("\\mathsfit", "\\mathsf")
   ]
 
-textPackage :: String -> [String] -> Bool
+textPackage :: T.Text -> [T.Text] -> Bool
 textPackage s e
   | s `Set.member` unicodeMath = "unicode-math" `elem` e
   | s `Set.member` base    = True
   | otherwise = True
 
 -- | Mapping between LaTeX scaling commands and the scaling factor
-scalers :: [(String, Rational)]
+scalers :: [(T.Text, Rational)]
 scalers =
           [ ("\\bigg", widthbigg)
           , ("\\Bigg", widthBigg)
@@ -263,31 +265,33 @@ getSpaceWidth _        = Nothing
 
 -- | Returns the sequence of unicode space characters closest to the
 -- specified width.
-getSpaceChars :: Rational -> [Char]
-getSpaceChars n =
-  case n of
-       _ | n < 0      -> "\x200B"  -- no negative space chars in unicode
-         | n <= 2/18  -> "\x200A"
-         | n <= 3/18  -> "\x2006"
-         | n <= 4/18  -> "\xA0"   -- could also be "\x2005"
-         | n <= 5/18  -> "\x2005"
-         | n <= 7/18  -> "\x2004"
-         | n <= 9/18  -> "\x2000"
-         | n < 1      -> '\x2000' : getSpaceChars (n - (1/2))
-         | n == 1     -> "\x2001"
-         | otherwise  -> '\x2001' : getSpaceChars (n - 1)
+getSpaceChars :: Rational -> T.Text
+getSpaceChars r
+  | n < 0 = "\x200B" -- no negative space chars in unicode
+  | otherwise = fracSpaces f <> emQuads n
+  where
+    (n, f) = properFraction r
+    emQuads x = T.replicate x "\x2001"
+    fracSpaces x
+      | x <= 2/18 = "\x200A"
+      | x <= 3/18 = "\x2006"
+      | x <= 4/18 = "\xA0"   -- could also be "\x2005"
+      | x <= 5/18 = "\x2005"
+      | x <= 7/18 = "\x2004"
+      | x <= 9/18 = "\x2000"
+      | otherwise = T.cons '\x2000' $ fracSpaces (x - (1/2))
 
 -- Accents which go under the character
-under :: [String]
+under :: [T.Text]
 under = ["\\underbrace", "\\underline", "\\underbar", "\\underbracket"]
 
 -- We want to parse these but we can't represent them in LaTeX
-unavailable :: [String]
+unavailable :: [T.Text]
 unavailable = ["\\overbracket", "\\underbracket"]
 
 
 -- | Mapping between unicode combining character and LaTeX accent command
-diacriticals :: [(String, String)]
+diacriticals :: [(T.Text, T.Text)]
 diacriticals =
                [ ("\x00B4", "\\acute")
                , ("\x0301", "\\acute")
@@ -329,7 +333,7 @@ diacriticals =
 
 
 -- Converts unit to multiplier to reach em
-unitToMultiplier :: String -> Maybe Rational
+unitToMultiplier :: T.Text -> Maybe Rational
 unitToMultiplier s = M.lookup s units
   where
     units = M.fromList  [ ( "pt" , 10)

@@ -1,3 +1,4 @@
+{-# LANGUAGE OverloadedStrings #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -33,12 +34,13 @@ in MathML+LaTeX.  See http://www.w3.org/2003/entities/2007doc/#epsilon.
 module Text.TeXMath.Readers.MathML.EntityMap (getUnicode) where
 
 import qualified Data.Map as M
+import qualified Data.Text as T
 
 -- | Translates MathML entity reference to the corresponding Unicode string.
-getUnicode :: String -> Maybe String
+getUnicode :: T.Text -> Maybe T.Text
 getUnicode = flip M.lookup entityList
 
-entityList :: M.Map String String
+entityList :: M.Map T.Text T.Text
 entityList = M.fromList
   [ ("AElig","\198")
   , ("AMP","&")

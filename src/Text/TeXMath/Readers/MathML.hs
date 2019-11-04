@@ -1,4 +1,5 @@
 {-# LANGUAGE ViewPatterns #-}
+{-# LANGUAGE OverloadedStrings #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -50,13 +51,15 @@ import Control.Applicative ((<$>), (<|>), (<*>))
 import Control.Arrow ((&&&))
 import Data.Maybe (fromMaybe, listToMaybe, isJust)
 import Data.Monoid (mconcat, First(..), getFirst)
+import Data.Semigroup ((<>))
 import Data.List (transpose)
+import qualified Data.Text as T
 import Control.Monad (filterM, guard)
 import Control.Monad.Reader (ReaderT, runReaderT, asks, local)
 import Data.Either (rights)
 
 -- | Parse a MathML expression to a list of 'Exp'.
-readMathML :: String -> Either String [Exp]
+readMathML :: T.Text -> Either T.Text [Exp]
 readMathML inp = map fixTree <$>
   (runExcept (flip runReaderT defaultState (i >>= parseMathML)))
   where
@@ -67,11 +70,11 @@ data MMLState = MMLState { attrs :: [Attr]
                          , inAccent :: Bool
                          , curStyle :: TextType }
 
-type MML = ReaderT MMLState (Except String)
+type MML = ReaderT MMLState (Except T.Text)
 
 data SupOrSub = Sub | Sup deriving (Show, Eq)
 
-data IR a = Stretchy TeXSymbolType (String -> Exp) String
+data IR a = Stretchy TeXSymbolType (T.Text -> Exp) T.Text
           | Trailing (Exp -> Exp -> Exp) Exp
           | E a
 
@@ -122,7 +125,7 @@ expr' e =
     "semantics" -> mkE <$> semantics e
     "maligngroup" -> return $ mkE empty
     "malignmark" -> return $ mkE empty
-    _ -> throwError $ "Unexpected element " ++ err e
+    _ -> throwError $ "Unexpected element " <> err e
   where
     mkE :: Exp -> [IR Exp]
     mkE = (:[]) . E
@@ -163,11 +166,11 @@ op e = do
   let objectPosition = getPosition $ form opDict
   inScript <- asks inAccent
   let ts =  [("accent", ESymbol Accent), ("fence", ESymbol objectPosition)]
-  let fallback = case opString of
-                      [t] -> ESymbol (getSymbolType t)
-                      _   -> if isJust opLookup
-                                then ESymbol Ord
-                                else EMathOperator
+  let fallback = case T.unpack opString of
+                   [t] -> ESymbol (getSymbolType t)
+                   _   -> if isJust opLookup
+                          then ESymbol Ord
+                          else EMathOperator
   let constructor =
         fromMaybe fallback
           (getFirst . mconcat $ map (First . flip lookup ts) props)
@@ -176,7 +179,7 @@ op e = do
     else do
       return $ (E . constructor) opString
   where
-    checkAttr ps v = maybe (v `elem` ps) (=="true") <$> findAttrQ v e
+    checkAttr ps v = maybe (v `elem` ps) (=="true") <$> findAttrQ (T.unpack v) e
 
 text :: Element -> MML Exp
 text e = do
@@ -185,7 +188,7 @@ text e = do
   s <- getString e
   -- mathml seems to use mtext for spacing often; we get
   -- more idiomatic math if we replace these with ESpace:
-  return $ case (textStyle, s) of
+  return $ case (textStyle, T.unpack s) of
        (TextNormal, [c]) ->
          case getSpaceWidth c of
               Just w  -> ESpace w
@@ -199,7 +202,7 @@ literal e = do
   textStyle <- maybe TextNormal getTextType
                 <$> (findAttrQ "mathvariant" e)
   s <- getString e
-  return $ EText textStyle (lquote ++ s ++ rquote)
+  return $ EText textStyle $ lquote <> s <> rquote
 
 space :: Element -> MML Exp
 space e = do
@@ -267,7 +270,7 @@ isStretchy (Right _) = False
 
 -- If at the end of a delimiter we need to apply the script to the whole
 -- expression. We only insert Trailing when reordering Stretchy
-trailingSup :: Maybe (String, String -> Exp)  -> Maybe (String, String -> Exp)  -> [IR InEDelimited] -> Exp
+trailingSup :: Maybe (T.Text, T.Text -> Exp)  -> Maybe (T.Text, T.Text -> Exp)  -> [IR InEDelimited] -> Exp
 trailingSup open close es = go es
   where
     go [] = case (open, close) of
@@ -376,13 +379,13 @@ fenced e = do
         case sep of
           "" -> elChildren e
           _  ->
-            let seps = map (\x -> unode "mo" [x]) sep
+            let seps = map (\x -> unode "mo" [x]) $ T.unpack sep
                 sepsList = seps ++ repeat (last seps) in
                 fInterleave (elChildren e) (sepsList)
   safeExpr $ unode "mrow"
-              ([unode "mo" open | not $ null open] ++
+              ([tunode "mo" open | not $ T.null open] ++
                [unode "mrow" expanded] ++
-               [unode "mo" close | not $ null close])
+               [tunode "mo" close | not $ T.null close])
 
 -- This could approximate the variants
 enclosed :: Element -> MML Exp
@@ -394,7 +397,7 @@ enclosed e = do
 
 action :: Element -> MML Exp
 action e = do
-  selection <-  maybe 1 read <$> (findAttrQ "selection" e)  -- 1-indexing
+  selection <-  maybe 1 (read . T.unpack) <$> (findAttrQ "selection" e)  -- 1-indexing
   safeExpr =<< maybeToEither ("Selection out of range")
             (listToMaybe $ drop (selection - 1) (elChildren e))
 
@@ -487,14 +490,14 @@ tableRow a e = do
   case name e of
     "mtr" -> mapM (tableCell align) (elChildren e)
     "mlabeledtr" -> mapM (tableCell align) (tail $ elChildren e)
-    _ -> throwError $ "Invalid Element: Only expecting mtr elements " ++ err e
+    _ -> throwError $ "Invalid Element: Only expecting mtr elements " <> err e
 
 tableCell :: Alignment -> Element -> MML (Alignment, [Exp])
 tableCell a e = do
   align <- maybe a toAlignment <$> (findAttrQ "columnalign" e)
   case name e of
     "mtd" -> (,) align . (:[]) <$> row e
-    _ -> throwError $ "Invalid Element: Only expecting mtd elements " ++ err e
+    _ -> throwError $ "Invalid Element: Only expecting mtd elements " <> err e
 
 -- Fixup
 
@@ -540,10 +543,10 @@ enterStyled tt s = s{ curStyle = tt }
 
 -- Utility
 
-getString :: Element -> MML String
+getString :: Element -> MML T.Text
 getString e = do
   tt <- asks curStyle
-  return $ fromUnicode tt $ stripSpaces $ concatMap cdData
+  return $ fromUnicode tt $ stripSpaces $ T.pack $ concatMap cdData
          $ onlyText $ elContent $ e
 
 -- Finds only text data and replaces entity references with corresponding
@@ -551,42 +554,49 @@ getString e = do
 onlyText :: [Content] -> [CData]
 onlyText [] = []
 onlyText ((Text c):xs) = c : onlyText xs
-onlyText (CRef s : xs)  = (CData CDataText (fromMaybe s $ getUnicode s) Nothing) : onlyText xs
+onlyText (CRef s : xs)  = (CData CDataText (fromMaybe s $ getUnicode' s) Nothing) : onlyText xs
+  where getUnicode' = fmap T.unpack . getUnicode . T.pack
 onlyText (_:xs) = onlyText xs
 
 checkArgs2 :: Element -> MML (Element, Element)
 checkArgs2 e = case elChildren e of
   [a, b] -> return (a, b)
-  _      -> throwError ("Incorrect number of arguments for " ++ err e)
+  _      -> throwError ("Incorrect number of arguments for " <> err e)
 
 checkArgs3 :: Element -> MML (Element, Element, Element)
 checkArgs3 e = case elChildren e of
   [a, b, c] -> return (a, b, c)
-  _         -> throwError ("Incorrect number of arguments for " ++ err e)
+  _         -> throwError ("Incorrect number of arguments for " <> err e)
 
 mapPairM :: Monad m => (a -> m b) -> (a, a) -> m (b, b)
 mapPairM f (a, b) = (,) <$> (f a) <*> (f b)
 
-err :: Element -> String
-err e = name e ++ maybe "" (\x -> " line " ++ show x) (elLine e)
+err :: Element -> T.Text
+err e = name e <> maybe "" (\x -> " line " <> T.pack (show x)) (elLine e)
 
-findAttrQ :: String -> Element -> MML (Maybe String)
+-- Kept as String for Text.XML.Light
+findAttrQ :: String -> Element -> MML (Maybe T.Text)
 findAttrQ s e = do
   inherit <- asks (lookupAttrQ s . attrs)
-  return $
+  return $ fmap T.pack $
     findAttr (QName s Nothing Nothing) e
       <|> inherit
 
+-- Kept as String for Text.XML.Light
 lookupAttrQ :: String -> [Attr] -> Maybe String
 lookupAttrQ s = lookupAttr (QName s Nothing Nothing)
 
-name :: Element -> String
-name (elName -> (QName n _ _)) = n
+name :: Element -> T.Text
+name (elName -> (QName n _ _)) = T.pack n
 
-stripSpaces :: String -> String
-stripSpaces = reverse . (dropWhile isSpace) . reverse . (dropWhile isSpace)
+-- Kept as String for Text.XML.Light
+tunode :: String -> T.Text -> Element
+tunode s = unode s . T.unpack
 
-toAlignment :: String -> Alignment
+stripSpaces :: T.Text -> T.Text
+stripSpaces = T.dropAround isSpace
+
+toAlignment :: T.Text -> Alignment
 toAlignment "left" = AlignLeft
 toAlignment "center" = AlignCenter
 toAlignment "right" = AlignRight
@@ -597,7 +607,7 @@ getPosition (FPrefix) = Open
 getPosition (FPostfix) = Close
 getPosition (FInfix) = Op
 
-getFormType :: Maybe String -> Maybe FormType
+getFormType :: Maybe T.Text -> Maybe FormType
 getFormType (Just "infix") = (Just FInfix)
 getFormType (Just "prefix") = (Just FPrefix)
 getFormType (Just "postfix") = (Just FPostfix)
@@ -614,7 +624,7 @@ isSpace '\t' = True
 isSpace '\n' = True
 isSpace _    = False
 
-spacelikeElems, cSpacelikeElems :: [String]
+spacelikeElems, cSpacelikeElems :: [T.Text]
 spacelikeElems = ["mtext", "mspace", "maligngroup", "malignmark"]
 cSpacelikeElems = ["mrow", "mstyle", "mphantom", "mpadded"]
 
@@ -623,11 +633,11 @@ spacelike e@(name -> uid) =
   uid `elem` spacelikeElems || uid `elem` cSpacelikeElems &&
     and (map spacelike (elChildren e))
 
-thicknessZero :: Maybe String -> Bool
+thicknessZero :: Maybe T.Text -> Bool
 thicknessZero (Just s) = thicknessToNum s == 0.0
 thicknessZero Nothing  = False
 
-widthToNum :: String -> Rational
+widthToNum :: T.Text -> Rational
 widthToNum s =
   case s of
        "veryverythinmathspace"  -> 1/18
@@ -646,7 +656,7 @@ widthToNum s =
        "negativeveryverythickmathspace" -> -7/18
        _ -> fromMaybe 0 (readLength s)
 
-thicknessToNum :: String -> Rational
+thicknessToNum :: T.Text -> Rational
 thicknessToNum s =
   case s of
        "thin" -> (3/18)

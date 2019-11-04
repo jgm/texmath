@@ -4,5 +4,8 @@ flags:
     executable: true
 packages:
 - '.'
-extra-deps: []
+extra-deps:
+  # The text branch
+- git: https://github.com/jgm/pandoc-types
+  commit: f63baa73ae9a353b1896b008a145ebf1ef9a0342
 resolver: lts-13.5

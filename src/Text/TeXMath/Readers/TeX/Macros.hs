@@ -31,13 +31,14 @@ module Text.TeXMath.Readers.TeX.Macros
 where
 
 import Data.Char (isDigit, isLetter)
+import qualified Data.Text as T
 import Control.Monad
 import Text.Parsec
 import Control.Applicative ((<*))
 
-data Macro = Macro { macroDefinition :: String
+data Macro = Macro { macroDefinition :: T.Text
                    , macroParser     :: forall st m s . Stream s m Char =>
-                          ParsecT s st m String }
+                          ParsecT s st m T.Text }
 
 instance Show Macro where
   show m = "Macro " ++ show (macroDefinition m)
@@ -46,7 +47,7 @@ instance Show Macro where
 -- separated and ended by spaces and TeX comments.  Returns
 -- the list of macros (which may be empty) and the unparsed
 -- portion of the input string.
-parseMacroDefinitions :: String -> ([Macro], String)
+parseMacroDefinitions :: T.Text -> ([Macro], T.Text)
 parseMacroDefinitions s =
   case parse pMacroDefinitions "input" s of
        Left _       -> ([], s)
@@ -76,7 +77,7 @@ pSkipSpaceComments = spaces >> skipMany (comment >> spaces)
 -- | Applies a list of macros to a string recursively until a fixed
 -- point is reached.  If there are several macros in the list with the
 -- same name, earlier ones will shadow later ones.
-applyMacros :: [Macro] -> String -> String
+applyMacros :: [Macro] -> T.Text -> T.Text
 applyMacros [] s = s
 applyMacros ms s =
   maybe s id $ iterateToFixedPoint ((2 * length ms) + 1)
@@ -95,16 +96,16 @@ iterateToFixedPoint limit f x =
          | y == x    -> Just y
          | otherwise -> iterateToFixedPoint (limit - 1) f y
 
-applyMacrosOnce :: [Macro] -> String -> Maybe String
+applyMacrosOnce :: [Macro] -> T.Text -> Maybe T.Text
 applyMacrosOnce ms s =
   case parse (many tok) "input" s of
-       Right r -> Just $ concat r
+       Right r -> Just $ T.concat r
        Left _  -> Nothing
     where tok = try $ do
                   skipComment
                   choice [ choice (map macroParser ms)
-                         , ctrlseq
-                         , count 1 anyChar ]
+                         , T.pack <$> ctrlseq
+                         , T.pack <$> count 1 anyChar ]
 
 ctrlseq :: (Monad m, Stream s m Char)
         => ParsecT s st m String
@@ -140,7 +141,7 @@ newcommand = try $ do
              (if numargs > 0 then ("[" ++ show numargs ++ "]") else "") ++
              case optarg of { Nothing -> ""; Just x -> "[" ++ x ++ "]"} ++
              "{" ++ body ++ "}"
-  return $ Macro defn $ try $ do
+  return $ Macro (T.pack defn) $ fmap T.pack $ try $ do
     char '\\'
     string name'
     when (all isLetter name') $
@@ -181,7 +182,7 @@ newenvironment = try $ do
              (if numargs > 0 then ("[" ++ show numargs ++ "]") else "") ++
              case optarg of { Nothing -> ""; Just x -> "[" ++ x ++ "]"} ++
              "%\n{" ++ opener ++ "}%\n" ++ "{" ++ closer ++ "}"
-  return $ Macro defn $ try $ do
+  return $ Macro (T.pack defn) $ fmap T.pack $ try $ do
     string "\\begin"
     pSkipSpaceComments
     char '{'
@@ -221,7 +222,7 @@ declareMathOperator = try $ do
   body <- inbraces <|> ctrlseq
   let defn = "\\DeclareMathOperator" ++ star ++ "{" ++ name ++ "}" ++
              "{" ++ body ++ "}"
-  return $ Macro defn $ try $ do
+  return $ Macro (T.pack defn) $ fmap T.pack $ try $ do
     char '\\'
     string name'
     when (all isLetter name') $

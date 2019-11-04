@@ -1,4 +1,4 @@
-{-# LANGUAGE DeriveDataTypeable, TypeSynonymInstances #-}
+{-# LANGUAGE DeriveDataTypeable, TypeSynonymInstances, OverloadedStrings #-}
 {-
 Copyright (C) 2009 John MacFarlane <jgm@berkeley.edu>
 
@@ -29,6 +29,7 @@ module Text.TeXMath.Types (Exp(..), TeXSymbolType(..), ArrayLine,
 where
 
 import Data.Generics
+import qualified Data.Text as T
 
 data TeXSymbolType = Ord | Op | Bin | Rel | Open | Close | Pun | Accent
                      | Fence | TOver | TUnder | Alpha | BotAccent | Rad
@@ -46,18 +47,18 @@ data FractionType = NormalFrac   -- ^ Displayed or textual, acc to 'DisplayType'
 type ArrayLine = [[Exp]]
 
 data Exp =
-    ENumber String  -- ^ A number (@\<mn\>@ in MathML).
+    ENumber T.Text  -- ^ A number (@\<mn\>@ in MathML).
   | EGrouped [Exp]  -- ^ A group of expressions that function as a unit
                     -- (e.g. @{...}@) in TeX, @\<mrow\>...\</mrow\>@ in MathML.
-  | EDelimited String String [InEDelimited] -- ^ A group of expressions inside
+  | EDelimited T.Text T.Text [InEDelimited] -- ^ A group of expressions inside
                     -- paired open and close delimiters (which may in some
                     -- cases be null).
-  | EIdentifier String  -- ^ An identifier, e.g. a variable (@\<mi\>...\</mi\>@
+  | EIdentifier T.Text  -- ^ An identifier, e.g. a variable (@\<mi\>...\</mi\>@
                     -- in MathML.  Note that MathML tends to use @\<mi\>@ tags
                     -- for "sin" and other mathematical operators; these
                     -- are represented as 'EMathOperator' in TeXMath.
-  | EMathOperator String  -- ^ A spelled-out operator like @lim@ or @sin@.
-  | ESymbol TeXSymbolType String  -- ^ A symbol.
+  | EMathOperator T.Text  -- ^ A spelled-out operator like @lim@ or @sin@.
+  | ESymbol TeXSymbolType T.Text  -- ^ A symbol.
   | ESpace Rational -- ^ A space, with the width specified in em.
   | ESub Exp Exp  -- ^ An expression with a subscript.  First argument is base,
                   -- second subscript.
@@ -88,7 +89,7 @@ data Exp =
                   -- specifies the alignments of the columns; the second gives
                   -- the contents of the lines.  All of these lists should be
                   -- the same length.
-  | EText TextType String  -- ^ Some normal text, possibly styled.
+  | EText TextType T.Text  -- ^ Some normal text, possibly styled.
   | EStyled TextType [Exp] -- ^  A group of styled expressions.
   deriving (Show, Read, Eq, Ord, Data, Typeable)
 
@@ -96,7 +97,7 @@ data Exp =
 -- (represented here as @Right@ values) or fences (represented here as
 -- @Left@, and in LaTeX using @\mid@).
 type InEDelimited = Either Middle Exp
-type Middle = String
+type Middle = T.Text
 
 data DisplayType = DisplayBlock  -- ^ A displayed formula.
                  | DisplayInline  -- ^ A formula rendered inline in text.
@@ -120,13 +121,13 @@ data TextType = TextNormal
 
 data FormType = FPrefix | FPostfix | FInfix deriving (Show, Ord, Eq)
 
-type Property = String
+type Property = T.Text
 
 -- | A record of the MathML dictionary as defined
 -- <http://www.w3.org/TR/MathML3/appendixc.html in the specification>
 data Operator = Operator
-                  { oper :: String -- ^ Operator
-                  , description :: String -- ^ Plain English Description
+                  { oper :: T.Text -- ^ Operator
+                  , description :: T.Text -- ^ Plain English Description
                   , form :: FormType -- ^ Whether Prefix, Postfix or Infix
                   , priority :: Int -- ^ Default priority for implicit
                                     --   nesting
@@ -141,16 +142,16 @@ data Operator = Operator
 -- <http://milde.users.sourceforge.net/LUCR/Math/data/unimathsymbols.txt
 -- here>
 data Record = Record { uchar :: Char -- ^ Unicode Character
-                     , commands :: [(String, String)] -- ^ LaTeX commands (package, command)
+                     , commands :: [(T.Text, T.Text)] -- ^ LaTeX commands (package, command)
                      , category :: TeXSymbolType -- ^ TeX math category
-                     , comments :: String -- ^ Plain english description
+                     , comments :: T.Text -- ^ Plain english description
                      } deriving (Show)
 
 data Position = Under | Over
 
 -- | List of available packages
-type Env = [String]
+type Env = [T.Text]
 
 -- | Contains @amsmath@ and @amssymbol@
-defaultEnv :: [String]
+defaultEnv :: [T.Text]
 defaultEnv = ["amsmath", "amssymb"]

@@ -1,4 +1,5 @@
 {-# LANGUAGE ViewPatterns #-}
+{-# LANGUAGE OverloadedStrings #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -42,11 +43,12 @@ LaTeX Project Public License.
 -}
 
 module Text.TeXMath.Unicode.ToTeX ( getTeXMath
-                                      , getSymbolType
-                                      , records
-                                      ) where
+                                  , getSymbolType
+                                  , records
+                                  ) where
 
 import qualified Data.Map as M
+import qualified Data.Text as T
 import Text.TeXMath.TeX
 import Text.TeXMath.Types
 import Data.Maybe (fromMaybe, listToMaybe, mapMaybe)
@@ -57,8 +59,8 @@ import qualified Text.TeXMath.Shared as S
 -- | Converts a string of unicode characters into a strong of equivalent
 -- TeXMath commands. An environment is a list of strings specifying which
 -- additional packages are available.
-getTeXMath :: String -> Env -> [TeX]
-getTeXMath s e = concatMap (charToString e) s
+getTeXMath :: T.Text -> Env -> [TeX]
+getTeXMath s e = concatMap (charToString e) $ T.unpack s
 
 -- Categories which require braces
 commandTypes :: [TeXSymbolType]
@@ -78,12 +80,12 @@ charToLaTeXString _ '\65024' = Just []
 charToLaTeXString environment c = do
   v <- M.lookup c recordsMap
   -- Required packages for the command
-  let toLit [x]  = [Token x]
-      toLit []   = []
-      toLit cs   = [Literal cs]
+  let toLit cs = case T.uncons cs of
+        Just (x, xs) -> if T.null xs then [Token x] else [Literal cs]
+        Nothing      -> []
   let cmds = commands v
-  raw <- lookup "base" cmds
-          <|> listToMaybe (mapMaybe (flip lookup cmds) environment)
+  raw <- lookup "base" cmds <|>
+         listToMaybe (mapMaybe (flip lookup cmds) environment)
   let latexCommand = if isControlSeq raw
                         then [ControlSeq raw]
                         else toLit raw

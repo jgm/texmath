@@ -1,3 +1,5 @@
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE ViewPatterns #-}
 {-
 Copyright (C) 2012 John MacFarlane <jgm@berkeley.edu>
 
@@ -26,6 +28,7 @@ import Text.XML.Light
 import Text.TeXMath.Types
 import Data.Generics (everywhere, mkT)
 import Data.Char (isSymbol, isPunctuation)
+import qualified Data.Text as T
 
 -- | Transforms an expression tree to an OMML XML Tree
 writeOMML :: DisplayType -> [Exp] -> Element
@@ -39,16 +42,18 @@ writeOMML dt = container . concatMap (showExp [])
                                     , mnode "oMath" x ]
                   DisplayInline -> mnode "oMath"
 
+-- Kept as String for Text.XML.Light
 mnode :: Node t => String -> t -> Element
 mnode s = node (QName s Nothing (Just "m"))
 
+-- Kept as String for Text.XML.Light
 mnodeA :: Node t => String -> String -> t -> Element
 mnodeA s v = add_attr (Attr (QName "val" Nothing (Just "m")) v) . mnode s
 
-str :: [Element] -> String -> Element
-str []    s = mnode "r" [ mnode "t" s ]
+str :: [Element] -> T.Text -> Element
+str []    s = mnode "r" [ mnode "t" $ T.unpack s ]
 str props s = mnode "r" [ mnode "rPr" props
-                        , mnode "t" s ]
+                        , mnode "t" $ T.unpack s ]
 
 showFraction :: [Element] -> FractionType -> Exp -> Exp -> Element
 showFraction props ft x y =
@@ -90,7 +95,7 @@ makeArray props as rs = mnode "m" $ mProps : map toMr rs
         toAlign AlignRight   = "right"
         toAlign AlignCenter  = "center"
 
-makeText :: TextType -> String -> Element
+makeText :: TextType -> T.Text -> Element
 makeText a s = str (mnode "nor" () : setProps a) s
 
 setProps :: TextType -> [Element]
@@ -184,21 +189,21 @@ showExp props e =
    EGrouped xs      -> concatMap (showExp props) xs
    EDelimited start end xs ->
                        [mnode "d" [ mnode "dPr"
-                                    [ mnodeA "begChr" start ()
-                                    , mnodeA "endChr" end ()
+                                    [ mnodeA "begChr" (T.unpack start) ()
+                                    , mnodeA "endChr" (T.unpack end) ()
                                     , mnode "grow" () ]
                                   , mnode "e" $ concatMap
                                     (either ((:[]) . str props) (showExp props)) xs
                                   ] ]
-
    EIdentifier ""   -> [str props "\x200B"]  -- 0-width space
                        -- to avoid the dashed box we get otherwise; see #118
    EIdentifier x    -> [str props x]
    EMathOperator x  -> [makeText TextNormal x]  -- TODO revisit, use props?
-   ESymbol _ [c]
-    | isSymbol c || isPunctuation c
-                    -> [str props [c]]
    ESymbol ty xs
+    | Just (c, xs') <- T.uncons xs
+    , T.null xs'
+    , isSymbol c || isPunctuation c
+                    -> [str props xs]
     | ty `elem` [Op, Bin, Rel]
                     -> [mnode "box"
                         [ mnode "boxPr"
@@ -206,7 +211,7 @@ showExp props e =
                         , mnode "e"
                           [str props xs]
                         ]]
-   ESymbol _ xs     -> [str props xs]
+    | otherwise     -> [str props xs]
    ESpace n
      | n > 0 && n <= 0.17    -> [str props "\x2009"]
      | n > 0.17 && n <= 0.23 -> [str props "\x2005"]
@@ -216,15 +221,15 @@ showExp props e =
      | n > 1.8               -> [str props "\x2001\x2001"]
      | otherwise             -> [str props "\x200B"]
        -- this is how the xslt sheet handles all spaces
-   EUnder _ x (ESymbol _ [c]) | isBarChar c ->
+   EUnder _ x (ESymbol _ (T.unpack -> [c])) | isBarChar c ->
                        [mnode "bar" [ mnode "barPr" $
                                         mnodeA "pos" "bot" ()
                                     , mnode "e" $ showExp props x ]]
-   EOver _ x (ESymbol _ [c]) | isBarChar c ->
+   EOver _ x (ESymbol _ (T.unpack -> [c])) | isBarChar c ->
                        [mnode "bar" [ mnode "barPr" $
                                         mnodeA "pos" "top" ()
                                     , mnode "e" $ showExp props x ]]
-   EOver _ x (ESymbol st y)
+   EOver _ x (ESymbol st (T.unpack -> y))
     | st == Accent  -> [mnode "acc" [ mnode "accPr" [ mnodeA "chr" y () ]
                                     , mnode "e" $ showExp props x ]]
     | st == TUnder  -> [mnode "groupChr" [ mnode "groupChrPr"
@@ -272,10 +277,11 @@ isNary :: Exp -> Bool
 isNary (ESymbol Op _) = True
 isNary _ = False
 
-makeNary :: [Element] -> String -> String -> Exp -> Exp -> Exp -> Element
+-- Kept as String for Text.XML.Light
+makeNary :: [Element] -> String -> T.Text -> Exp -> Exp -> Exp -> Element
 makeNary props t s y z w =
   mnode "nary" [ mnode "naryPr"
-                 [ mnodeA "chr" s ()
+                 [ mnodeA "chr" (T.unpack s) ()
                  , mnodeA "limLoc" t ()
                  , mnodeA "subHide"
                     (if y == EGrouped [] then "1" else "0") ()

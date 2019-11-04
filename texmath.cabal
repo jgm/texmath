@@ -87,7 +87,7 @@ Flag network-uri
 
 Library
     Build-depends:       base >= 4.8 && < 5, syb >= 0.4.2 && < 0.8, xml, parsec >= 3, containers,
-                         pandoc-types >= 1.12.3.3 && < 1.18, mtl
+                         pandoc-types >= 1.12.3.3 && < 1.18, mtl, text
     
     Exposed-modules:     Text.TeXMath,
                          Text.TeXMath.Types,
@@ -131,7 +131,7 @@ Executable texmath
       Buildable:         True
       Build-Depends:     base >= 4.8 && < 5, texmath, xml,
                          pandoc-types >= 1.12.3.3 && < 1.18,
-                         split, aeson, bytestring, text
+                         aeson, bytestring, text
     else
       Buildable:         False
     if flag(network-uri)
@@ -145,6 +145,6 @@ Test-Suite test-texmath
     Hs-Source-Dirs:      tests
     Build-Depends:       base >= 4.8 && < 5, process, directory, filepath,
                          texmath, xml, utf8-string, bytestring, process,
-                         temporary, text, split
+                         temporary, text
     Default-Language:    Haskell2010
     Ghc-Options:         -Wall

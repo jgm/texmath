@@ -1,3 +1,4 @@
+{-# LANGUAGE OverloadedStrings #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
 
@@ -27,17 +28,18 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 Utilities to convert between MS font codepoints and unicode characters.
 -}
-module Text.TeXMath.Unicode.Fonts (getUnicode, Font(..), stringToFont) where
+module Text.TeXMath.Unicode.Fonts (getUnicode, Font(..), textToFont) where
 import qualified Data.Map as M
+import qualified Data.Text as T
 
 -- | Enumeration of recognised fonts
 data Font = Symbol -- ^ <http://en.wikipedia.org/wiki/Symbol_(typeface) Adobe Symbol>
           deriving (Show, Eq)
 
 -- | Parse font name into Font if possible.
-stringToFont :: String -> Maybe Font
-stringToFont "Symbol" = Just Symbol
-stringToFont _ = Nothing
+textToFont :: T.Text -> Maybe Font
+textToFont "Symbol" = Just Symbol
+textToFont _ = Nothing
 
 -- | Given a font and codepoint, returns the corresponding unicode
 -- character
