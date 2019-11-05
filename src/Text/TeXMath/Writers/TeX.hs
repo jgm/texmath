@@ -52,9 +52,15 @@ addLaTeXEnvironment dt math =
 -- |  Transforms an expression tree to equivalent LaTeX with the specified
 -- packages
 writeTeXWith :: Env -> [Exp] -> T.Text
-writeTeXWith env es = T.drop 1 . T.init . flip renderTeX "" . Grouped $
+writeTeXWith env es = stripFirstLast . flip renderTeX "" . Grouped $
                             runExpr env $
                               mapM_ writeExp (removeOuterGroup es)
+  where
+    stripFirstLast t = case T.uncons t of
+      Just (_, t') -> case T.unsnoc t' of
+        Just (t'', _) -> t''
+        _             -> t'
+      _               -> ""
 
 runExpr :: Env -> Math () -> [TeX]
 runExpr e m = flip runReader (MathState e False) $ execWriterT (runTeXMath m)
