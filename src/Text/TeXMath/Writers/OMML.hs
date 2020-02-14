@@ -221,11 +221,11 @@ showExp props e =
      | n > 1.8               -> [str props "\x2001\x2001"]
      | otherwise             -> [str props "\x200B"]
        -- this is how the xslt sheet handles all spaces
-   EUnder _ x (ESymbol _ (T.unpack -> [c])) | isBarChar c ->
+   EUnder _ x (ESymbol TUnder t) | T.all isBarChar t ->
                        [mnode "bar" [ mnode "barPr" $
                                         mnodeA "pos" "bot" ()
                                     , mnode "e" $ showExp props x ]]
-   EOver _ x (ESymbol _ (T.unpack -> [c])) | isBarChar c ->
+   EOver _ x (ESymbol TOver t) | T.all isBarChar t ->
                        [mnode "bar" [ mnode "barPr" $
                                         mnodeA "pos" "top" ()
                                     , mnode "e" $ showExp props x ]]

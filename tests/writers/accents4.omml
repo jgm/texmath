@@ -102,16 +102,18 @@
               </m:r>
             </m:lim>
           </m:limLow>
-          <m:bar>
-            <m:barPr>
-              <m:pos m:val="bot" />
-            </m:barPr>
+          <m:limLow>
             <m:e>
               <m:r>
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-          </m:bar>
+            <m:lim>
+              <m:r>
+                <m:t>¯</m:t>
+              </m:r>
+            </m:lim>
+          </m:limLow>
           <m:limLow>
             <m:e>
               <m:r>
@@ -244,16 +246,18 @@
               </m:r>
             </m:lim>
           </m:limLow>
-          <m:bar>
-            <m:barPr>
-              <m:pos m:val="bot" />
-            </m:barPr>
+          <m:limLow>
             <m:e>
               <m:r>
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-          </m:bar>
+            <m:lim>
+              <m:r>
+                <m:t>‾</m:t>
+              </m:r>
+            </m:lim>
+          </m:limLow>
           <m:limLow>
             <m:e>
               <m:r>
@@ -545,16 +549,18 @@
               </m:r>
             </m:lim>
           </m:limLow>
-          <m:bar>
-            <m:barPr>
-              <m:pos m:val="bot" />
-            </m:barPr>
+          <m:limLow>
             <m:e>
               <m:r>
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-          </m:bar>
+            <m:lim>
+              <m:r>
+                <m:t>¯</m:t>
+              </m:r>
+            </m:lim>
+          </m:limLow>
           <m:limLow>
             <m:e>
               <m:r>
@@ -687,16 +693,18 @@
               </m:r>
             </m:lim>
           </m:limLow>
-          <m:bar>
-            <m:barPr>
-              <m:pos m:val="bot" />
-            </m:barPr>
+          <m:limLow>
             <m:e>
               <m:r>
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-          </m:bar>
+            <m:lim>
+              <m:r>
+                <m:t>‾</m:t>
+              </m:r>
+            </m:lim>
+          </m:limLow>
           <m:limLow>
             <m:e>
               <m:r>

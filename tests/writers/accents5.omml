@@ -144,23 +144,25 @@
               </m:r>
             </m:lim>
           </m:limLow>
-          <m:bar>
-            <m:barPr>
-              <m:pos m:val="bot" />
-            </m:barPr>
+          <m:limLow>
             <m:e>
-              <m:bar>
-                <m:barPr>
-                  <m:pos m:val="top" />
-                </m:barPr>
+              <m:acc>
+                <m:accPr>
+                  <m:chr m:val="¯" />
+                </m:accPr>
                 <m:e>
                   <m:r>
                     <m:t>H</m:t>
                   </m:r>
                 </m:e>
-              </m:bar>
+              </m:acc>
             </m:e>
-          </m:bar>
+            <m:lim>
+              <m:r>
+                <m:t>¯</m:t>
+              </m:r>
+            </m:lim>
+          </m:limLow>
           <m:limLow>
             <m:e>
               <m:acc>
@@ -370,23 +372,25 @@
               </m:r>
             </m:lim>
           </m:limLow>
-          <m:bar>
-            <m:barPr>
-              <m:pos m:val="bot" />
-            </m:barPr>
+          <m:limLow>
             <m:e>
-              <m:bar>
-                <m:barPr>
-                  <m:pos m:val="top" />
-                </m:barPr>
+              <m:acc>
+                <m:accPr>
+                  <m:chr m:val="‾" />
+                </m:accPr>
                 <m:e>
                   <m:r>
                     <m:t>H</m:t>
                   </m:r>
                 </m:e>
-              </m:bar>
+              </m:acc>
             </m:e>
-          </m:bar>
+            <m:lim>
+              <m:r>
+                <m:t>‾</m:t>
+              </m:r>
+            </m:lim>
+          </m:limLow>
           <m:limLow>
             <m:e>
               <m:acc>
@@ -851,23 +855,27 @@
               </m:r>
             </m:lim>
           </m:limLow>
-          <m:bar>
-            <m:barPr>
-              <m:pos m:val="bot" />
-            </m:barPr>
+          <m:limLow>
             <m:e>
-              <m:bar>
-                <m:barPr>
-                  <m:pos m:val="top" />
-                </m:barPr>
+              <m:limUpp>
                 <m:e>
                   <m:r>
                     <m:t>H</m:t>
                   </m:r>
                 </m:e>
-              </m:bar>
+                <m:lim>
+                  <m:r>
+                    <m:t>¯</m:t>
+                  </m:r>
+                </m:lim>
+              </m:limUpp>
             </m:e>
-          </m:bar>
+            <m:lim>
+              <m:r>
+                <m:t>¯</m:t>
+              </m:r>
+            </m:lim>
+          </m:limLow>
           <m:limLow>
             <m:e>
               <m:limUpp>
@@ -1095,23 +1103,27 @@
               </m:r>
             </m:lim>
           </m:limLow>
-          <m:bar>
-            <m:barPr>
-              <m:pos m:val="bot" />
-            </m:barPr>
+          <m:limLow>
             <m:e>
-              <m:bar>
-                <m:barPr>
-                  <m:pos m:val="top" />
-                </m:barPr>
+              <m:limUpp>
                 <m:e>
                   <m:r>
                     <m:t>H</m:t>
                   </m:r>
                 </m:e>
-              </m:bar>
+                <m:lim>
+                  <m:r>
+                    <m:t>‾</m:t>
+                  </m:r>
+                </m:lim>
+              </m:limUpp>
             </m:e>
-          </m:bar>
+            <m:lim>
+              <m:r>
+                <m:t>‾</m:t>
+              </m:r>
+            </m:lim>
+          </m:limLow>
           <m:limLow>
             <m:e>
               <m:acc>

@@ -90,16 +90,16 @@
               </m:r>
             </m:e>
           </m:acc>
-          <m:bar>
-            <m:barPr>
-              <m:pos m:val="top" />
-            </m:barPr>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="¯" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-          </m:bar>
+          </m:acc>
           <m:acc>
             <m:accPr>
               <m:chr m:val="´" />
@@ -210,16 +210,16 @@
               </m:r>
             </m:e>
           </m:acc>
-          <m:bar>
-            <m:barPr>
-              <m:pos m:val="top" />
-            </m:barPr>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="‾" />
+            </m:accPr>
             <m:e>
               <m:r>
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-          </m:bar>
+          </m:acc>
           <m:acc>
             <m:accPr>
               <m:chr m:val="⃛" />
@@ -477,16 +477,18 @@
               </m:r>
             </m:lim>
           </m:limUpp>
-          <m:bar>
-            <m:barPr>
-              <m:pos m:val="top" />
-            </m:barPr>
+          <m:limUpp>
             <m:e>
               <m:r>
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-          </m:bar>
+            <m:lim>
+              <m:r>
+                <m:t>¯</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
           <m:limUpp>
             <m:e>
               <m:r>
@@ -615,16 +617,18 @@
               </m:r>
             </m:e>
           </m:acc>
-          <m:bar>
-            <m:barPr>
-              <m:pos m:val="top" />
-            </m:barPr>
+          <m:limUpp>
             <m:e>
               <m:r>
                 <m:t>x</m:t>
               </m:r>
             </m:e>
-          </m:bar>
+            <m:lim>
+              <m:r>
+                <m:t>‾</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
           <m:acc>
             <m:accPr>
               <m:chr m:val="⃛" />
