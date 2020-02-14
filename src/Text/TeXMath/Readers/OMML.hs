@@ -41,7 +41,7 @@ import qualified Data.Text as T
 import Text.TeXMath.Types
 import Text.TeXMath.Shared (fixTree, getSpaceWidth, getOperator)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
-import Control.Applicative ((<$>))
+import Control.Applicative ((<$>), (<|>))
 import Text.TeXMath.Unicode.Fonts (getUnicode, textToFont)
 
 readOMML :: T.Text -> Either T.Text [Exp]
@@ -316,9 +316,12 @@ elemToExps' element | isElem "m" "groupChr" element = do
       chr = gPr >>=
             filterChildName (hasElemName "m" "chr") >>=
             findAttrBy (hasElemName "m" "val")
-      pos = gPr >>=
-            filterChildName (hasElemName "m" "pos") >>=
-            findAttrBy (hasElemName "m" "val")
+      pos = gPr >>= \el ->
+             (filterChildName (hasElemName "m" "pos") el >>=
+              findAttrBy (hasElemName "m" "val"))
+              <|>
+             (filterChildName (hasElemName "m" "vertJc") el >>=
+             findAttrBy (hasElemName "m" "val"))
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   case pos of
