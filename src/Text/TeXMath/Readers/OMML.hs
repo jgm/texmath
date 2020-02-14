@@ -41,7 +41,7 @@ import qualified Data.Text as T
 import Text.TeXMath.Types
 import Text.TeXMath.Shared (fixTree, getSpaceWidth, getOperator)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
-import Control.Applicative ((<$>), (<|>))
+import Control.Applicative ((<$>))
 import Text.TeXMath.Unicode.Fonts (getUnicode, textToFont)
 
 readOMML :: T.Text -> Either T.Text [Exp]
@@ -316,12 +316,12 @@ elemToExps' element | isElem "m" "groupChr" element = do
       chr = gPr >>=
             filterChildName (hasElemName "m" "chr") >>=
             findAttrBy (hasElemName "m" "val")
-      pos = gPr >>= \el ->
-             (filterChildName (hasElemName "m" "pos") el >>=
-              findAttrBy (hasElemName "m" "val"))
-              <|>
-             (filterChildName (hasElemName "m" "vertJc") el >>=
-             findAttrBy (hasElemName "m" "val"))
+      pos = gPr >>=
+            filterChildName (hasElemName "m" "pos") >>=
+            findAttrBy (hasElemName "m" "val")
+      justif = gPr >>=
+               filterChildName (hasElemName "m" "vertJC") >>=
+               findAttrBy (hasElemName "m" "val")
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   case pos of
@@ -330,14 +330,19 @@ elemToExps' element | isElem "m" "groupChr" element = do
             Just (c:_) -> T.singleton c
             _           -> "\65079"   -- default to overbrace
       in
-       return [EOver False baseExp (ESymbol TOver chr')]
-    Just "bot" ->
+       return $
+         case justif of
+           Just "top" -> [EUnder False (ESymbol TOver chr') baseExp]
+           _ -> [EOver False baseExp (ESymbol TOver chr')]
+    _ -> -- bot is default
       let chr' = case chr of
             Just (c:_) -> T.singleton c
             _           -> "\65080"   -- default to underbrace
       in
-       return [EUnder False baseExp (ESymbol TUnder chr')]
-    _          -> Nothing
+       return $
+         case justif of
+           Just "top" -> [EUnder False baseExp (ESymbol TUnder chr')]
+           _ -> [EOver False (ESymbol TUnder chr') baseExp]
 elemToExps' element | isElem "m" "limLow" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element
           >>= elemToBase
