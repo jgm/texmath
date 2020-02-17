@@ -315,6 +315,12 @@ writeScript pos convertible b e1 = do
             unless convertible $ tell [ControlSeq "\\limits"]
             tell [Token $ case pos of { Over -> '^'; Under -> '_' }]
             tellGroup (checkSubstack e1)
+         | case pos of {Over -> True; _ -> False}
+         , e1 == ESymbol Accent "\831" -> do -- double bar
+            tell [ControlSeq "\\overline", Literal "{",
+                  ControlSeq "\\overline"]
+            tellGroup (writeExp b)
+            tell [Literal "}"]
          | otherwise -> do
              case pos of
                   Over   -> tell [ControlSeq "\\overset"]
