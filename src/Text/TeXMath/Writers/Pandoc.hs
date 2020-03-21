@@ -72,33 +72,34 @@ thinspace = EText TextNormal "\x2006"
 medspace  = EText TextNormal "\x2005"
 widespace = EText TextNormal "\x2004"
 
-renderStr :: TextType -> T.Text -> Inline
+renderStr :: TextType -> T.Text -> [Inline]
+renderStr _ "" = []
 renderStr tt s =
   case tt of
-       TextNormal       -> Str s
-       TextBold         -> Strong [Str s]
-       TextItalic       -> Emph   [Str s]
-       TextMonospace    -> Code nullAttr s
-       TextSansSerif    -> Str s
-       TextDoubleStruck -> Str $ toUnicode tt s
-       TextScript       -> Str $ toUnicode tt s
-       TextFraktur      -> Str $ toUnicode tt s
-       TextBoldItalic    -> Strong [Emph [Str s]]
-       TextSansSerifBold -> Strong [Str s]
-       TextBoldScript    -> Strong [Str $ toUnicode tt s]
-       TextBoldFraktur   -> Strong [Str $ toUnicode tt s]
-       TextSansSerifItalic -> Emph [Str s]
-       TextSansSerifBoldItalic -> Strong [Emph [Str s]]
+       TextNormal       -> [Str s]
+       TextBold         -> [Strong [Str s]]
+       TextItalic       -> [Emph   [Str s]]
+       TextMonospace    -> [Code nullAttr s]
+       TextSansSerif    -> [Str s]
+       TextDoubleStruck -> [Str $ toUnicode tt s]
+       TextScript       -> [Str $ toUnicode tt s]
+       TextFraktur      -> [Str $ toUnicode tt s]
+       TextBoldItalic    -> [Strong [Emph [Str s]]]
+       TextSansSerifBold -> [Strong [Str s]]
+       TextBoldScript    -> [Strong [Str $ toUnicode tt s]]
+       TextBoldFraktur   -> [Strong [Str $ toUnicode tt s]]
+       TextSansSerifItalic -> [Emph [Str s]]
+       TextSansSerifBoldItalic -> [Strong [Emph [Str s]]]
 
 expToInlines :: TextType -> Exp -> Maybe [Inline]
-expToInlines tt (ENumber s) = Just [renderStr tt s]
-expToInlines TextNormal (EIdentifier s) = Just [renderStr TextItalic s]
-expToInlines tt (EIdentifier s) = Just [renderStr tt s]
-expToInlines tt (EMathOperator s) = Just [renderStr tt s]
-expToInlines tt (ESymbol _ s) = Just [renderStr tt s]
+expToInlines tt (ENumber s) = Just $ renderStr tt s
+expToInlines TextNormal (EIdentifier s) = Just $ renderStr TextItalic s
+expToInlines tt (EIdentifier s) = Just $ renderStr tt s
+expToInlines tt (EMathOperator s) = Just $ renderStr tt s
+expToInlines tt (ESymbol _ s) = Just $ renderStr tt s
 expToInlines tt (EDelimited start end xs) = do
-  xs' <- mapM (either (return . (:[]) . renderStr tt) (expToInlines tt)) xs
-  return $ [renderStr tt start] ++ concat xs' ++ [renderStr tt end]
+  xs' <- mapM (either (return . renderStr tt) (expToInlines tt)) xs
+  return $ renderStr tt start ++ concat xs' ++ renderStr tt end
 expToInlines tt (EGrouped xs)    = expsToInlines tt xs
 expToInlines _ (EStyled tt' xs)  = expsToInlines tt' xs
 expToInlines _ (ESpace n)        = Just [Str $ getSpaceChars n]
@@ -118,30 +119,30 @@ expToInlines tt (ESubsup x y z) = do
   y' <- expToInlines tt y
   z' <- expToInlines tt z
   return $ x' ++ [Subscript y'] ++ [Superscript z']
-expToInlines _ (EText tt' x) = Just [renderStr tt' x]
+expToInlines _ (EText tt' x) = Just $ renderStr tt' x
 expToInlines tt (EOver b (EGrouped [EIdentifier (T.unpack -> [c])]) (ESymbol Accent (T.unpack -> [accent]))) = expToInlines tt (EOver b (EIdentifier $ T.singleton c) (ESymbol Accent $ T.singleton accent))
 expToInlines tt (EOver _ (EIdentifier (T.unpack -> [c])) (ESymbol Accent (T.unpack -> [accent]))) =
     case accent of
-         '\x203E' -> Just [renderStr tt' $ T.pack [c,'\x0304']]  -- bar
-         '\x0304' -> Just [renderStr tt' $ T.pack [c,'\x0304']]  -- bar combining
-         '\x00B4' -> Just [renderStr tt' $ T.pack [c,'\x0301']]  -- acute
-         '\x0301' -> Just [renderStr tt' $ T.pack [c,'\x0301']]  -- acute combining
-         '\x0060' -> Just [renderStr tt' $ T.pack [c,'\x0300']]  -- grave
-         '\x0300' -> Just [renderStr tt' $ T.pack [c,'\x0300']]  -- grave combining
-         '\x02D8' -> Just [renderStr tt' $ T.pack [c,'\x0306']]  -- breve
-         '\x0306' -> Just [renderStr tt' $ T.pack [c,'\x0306']]  -- breve combining
-         '\x02C7' -> Just [renderStr tt' $ T.pack [c,'\x030C']]  -- check
-         '\x030C' -> Just [renderStr tt' $ T.pack [c,'\x030C']]  -- check combining
-         '.'      -> Just [renderStr tt' $ T.pack [c,'\x0307']]  -- dot
-         '\x0307' -> Just [renderStr tt' $ T.pack [c,'\x0307']]  -- dot combining
-         '\x00B0' -> Just [renderStr tt' $ T.pack [c,'\x030A']]  -- ring
-         '\x030A' -> Just [renderStr tt' $ T.pack [c,'\x030A']]  -- ring combining
-         '\x20D7' -> Just [renderStr tt' $ T.pack [c,'\x20D7']]  -- arrow right
-         '\x20D6' -> Just [renderStr tt' $ T.pack [c,'\x20D6']]  -- arrow left
-         '\x005E' -> Just [renderStr tt' $ T.pack [c,'\x0302']]  -- hat
-         '\x0302' -> Just [renderStr tt' $ T.pack [c,'\x0302']]  -- hat combining
-         '~'      -> Just [renderStr tt' $ T.pack [c,'\x0303']]  -- tilde
-         '\x0303' -> Just [renderStr tt' $ T.pack [c,'\x0303']]  -- tilde combining
+         '\x203E' -> Just $ renderStr tt' $ T.pack [c,'\x0304']  -- bar
+         '\x0304' -> Just $ renderStr tt' $ T.pack [c,'\x0304']  -- bar combining
+         '\x00B4' -> Just $ renderStr tt' $ T.pack [c,'\x0301']  -- acute
+         '\x0301' -> Just $ renderStr tt' $ T.pack [c,'\x0301']  -- acute combining
+         '\x0060' -> Just $ renderStr tt' $ T.pack [c,'\x0300']  -- grave
+         '\x0300' -> Just $ renderStr tt' $ T.pack [c,'\x0300']  -- grave combining
+         '\x02D8' -> Just $ renderStr tt' $ T.pack [c,'\x0306']  -- breve
+         '\x0306' -> Just $ renderStr tt' $ T.pack [c,'\x0306']  -- breve combining
+         '\x02C7' -> Just $ renderStr tt' $ T.pack [c,'\x030C']  -- check
+         '\x030C' -> Just $ renderStr tt' $ T.pack [c,'\x030C']  -- check combining
+         '.'      -> Just $ renderStr tt' $ T.pack [c,'\x0307']  -- dot
+         '\x0307' -> Just $ renderStr tt' $ T.pack [c,'\x0307']  -- dot combining
+         '\x00B0' -> Just $ renderStr tt' $ T.pack [c,'\x030A']  -- ring
+         '\x030A' -> Just $ renderStr tt' $ T.pack [c,'\x030A']  -- ring combining
+         '\x20D7' -> Just $ renderStr tt' $ T.pack [c,'\x20D7']  -- arrow right
+         '\x20D6' -> Just $ renderStr tt' $ T.pack [c,'\x20D6']  -- arrow left
+         '\x005E' -> Just $ renderStr tt' $ T.pack [c,'\x0302']  -- hat
+         '\x0302' -> Just $ renderStr tt' $ T.pack [c,'\x0302']  -- hat combining
+         '~'      -> Just $ renderStr tt' $ T.pack [c,'\x0303']  -- tilde
+         '\x0303' -> Just $ renderStr tt' $ T.pack [c,'\x0303']  -- tilde combining
          _        -> Nothing
       where tt' = if tt == TextNormal then TextItalic else tt
 expToInlines tt (EScaled _ e) = expToInlines tt e
