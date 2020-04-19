@@ -1,3 +1,10 @@
+texmath (0.12.0.2)
+
+  * Allow pandoc-types 1.21.
+  * Pandoc output: omit empty Emph for sub/superscript without base (#155).
+  * tex writer: Use `\overline{\overline{B}}` instead of unicode
+    double line accent (#153).
+
 texmath (0.12.0.1)
 
   * OMML writer: Fix overline and accent rendering (#152).
