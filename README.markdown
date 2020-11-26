@@ -72,7 +72,7 @@ ToTeXMath.hs
 
 You can find these files in `lib/totexmath/`
 
-  1. If desired, replace `unimathsymbols.txt` with an updated verson from [here](http://milde.users.sourceforge.net/LUCR/Math/)
+  1. If desired, replace `unimathsymbols.txt` with an updated version from [here](http://milde.users.sourceforge.net/LUCR/Math/)
   2. `runghc unicodetotex.hs`
   3. Replace the record table at the bottom of `src/Text/TeXMath/Unicode/ToTeXMath.hs` with the contents of `UnicodeToLaTeX.hs`
 
