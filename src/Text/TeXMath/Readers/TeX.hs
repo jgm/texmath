@@ -742,7 +742,25 @@ tSymbol = try $ do
        Just acc@(ESymbol TOver _) ->
          (\t -> EOver False t acc) <$> texToken
        Just x  -> return x
-       Nothing -> mzero
+       Nothing
+         | sym == "\\mod" -> do
+             x <- texToken
+             return $ EGrouped
+               [ESpace (8/18), EMathOperator "mod", ESpace (4/18), x]
+         | sym == "\\bmod" -> do
+             x <- texToken
+             return $ EGrouped
+               [ESpace (4/18), EMathOperator "mod", ESpace (4/18), x]
+         | sym == "\\pmod" -> do
+             x <- texToken
+             return $ EGrouped
+               [ESpace (4/18), ESymbol Open "(", EMathOperator "mod",
+                ESpace (4/18), x, ESymbol Close ")"]
+         | sym == "\\pod"  -> do
+             x <- texToken
+             return $ EGrouped
+               [ESpace (4/18), ESymbol Open "(", x, ESymbol Close ")"]
+         | otherwise -> mzero
 
 operator :: TP Exp
 operator = do
@@ -1083,8 +1101,6 @@ symbols = M.fromList
   , ("\\log",EMathOperator "log")
   , ("\\max",EMathOperator "max")
   , ("\\min",EMathOperator "min")
-  , ("\\mod",EMathOperator "mod")
-  , ("\\bmod",ESymbol Rel "mod")
   , ("\\Pr",EMathOperator "Pr")
   , ("\\sec",EMathOperator "sec")
   , ("\\sin",EMathOperator "sin")
