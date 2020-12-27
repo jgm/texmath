@@ -139,7 +139,8 @@ formula = unGrouped <$> (ignorable *> manyExp expr <* eof)
 
 expr :: TP Exp
 expr = do
-  optional (ctrlseq "displaystyle")
+  optional (ctrlseq "displaystyle" <|> ctrlseq "textstyle" <|>
+            ctrlseq "scriptstyle" <|> ctrlseq "scriptscriptstyle")
   (a, convertible) <- try (braces operatorname) -- needed because macros add {}
                  <|> ((,False) <$> expr1)
                  <|> operatorname
