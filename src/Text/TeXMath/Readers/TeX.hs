@@ -219,8 +219,12 @@ binomCmds = M.fromList
 genfrac :: TP Exp
 genfrac = do
   ctrlseq "genfrac"
-  openDelim <- braces $ option '(' ((char '\\' >> oneOf "{}") <|> anyChar)
-  closeDelim <- braces $ option ')' ((char '\\' >> oneOf "{}") <|> anyChar)
+  let opener = option "" $
+                T.singleton <$> ((char '\\' >> anyChar) <|> anyChar)
+  let closer = option "" $
+                T.singleton <$> ((char '\\' >> anyChar) <|> anyChar)
+  openDelim <- braces opener <|> opener
+  closeDelim <- braces closer <|> closer
   bar <- False <$ try (braces (string "0pt")) <|> True <$ texToken
   displayStyle <- True <$ try (braces (char '0')) <|> False <$ texToken
   x <- texToken
@@ -229,8 +233,7 @@ genfrac = do
                       (False, _)   -> NoLineFrac
                       (True, True) -> DisplayFrac
                       _            -> NormalFrac
-  return $ EDelimited (T.singleton openDelim)
-                      (T.singleton closeDelim)
+  return $ EDelimited openDelim closeDelim
                       [Right (EFraction fracType x y)]
 
 substack :: TP Exp
