@@ -72,6 +72,7 @@ expr1 = choice
           , ensuremath
           , scaled
           , enclosure
+          , negated
           , texSymbol
           ] <* ignorable
 
@@ -684,10 +685,49 @@ binary = do
     binops = ["\\overset", "\\stackrel", "\\underset", "\\frac", "\\tfrac", "\\dfrac", "\\binom"]
 
 texSymbol :: TP Exp
-texSymbol = do
-  negated <- (try (ctrlseq "not") >> return True) <|> return False
-  sym <- operator <|> tSymbol
-  if negated then neg sym else return sym
+texSymbol = operator <|> tSymbol <|> negated
+
+negated :: TP Exp
+negated = do
+  ctrlseq "not"
+  sym <- texSymbol <|> texChar
+  case sym of
+    ESymbol Rel x -> return $ ESymbol Rel $ toNeg x
+    EText tt x    -> return $ EText tt $ toNeg x
+    ENumber x     -> return $ ENumber $ toNeg x
+    EIdentifier x -> return $ EIdentifier $ toNeg x
+    _             -> mzero
+
+toNeg :: T.Text -> T.Text
+toNeg x = case x of
+            "\x2203" -> "\x2204"
+            "\x2208" -> "\x2209"
+            "\x220B" -> "\x220C"
+            "\x2223" -> "\x2224"
+            "\x2225" -> "\x2226"
+            "\x2243" -> "\x2244"
+            "\x2245" -> "\x2246"
+            "\x2248" -> "\x2249"
+            "="      -> "\x2260"
+            "\x2261" -> "\x2262"
+            "<"      -> "\x226E"
+            ">"      -> "\x226F"
+            "\x2264" -> "\x2270"
+            "\x2265" -> "\x2271"
+            "\x2272" -> "\x2274"
+            "\x2273" -> "\x2275"
+            "\x227A" -> "\x2280"
+            "\x227B" -> "\x2281"
+            "\x2282" -> "\x2284"
+            "\x2283" -> "\x2285"
+            "\x2286" -> "\x2288"
+            "\x2287" -> "\x2289"
+            "\x227C" -> "\x22E0"
+            "\x227D" -> "\x22E1"
+            "\x2291" -> "\x22E2"
+            "\x2292" -> "\x22E3"
+            _        -> x <> "\x0338"
+
 
 oneOfCommands :: [T.Text] -> TP T.Text
 oneOfCommands cmds = try $ do
@@ -766,17 +806,6 @@ operator :: TP Exp
 operator = do
   sym <- lexeme (oneOfStrings $ M.keys operators)
   return $ fromJust (M.lookup sym operators)
-
-neg :: Exp -> TP Exp
-neg (ESymbol Rel x) = ESymbol Rel `fmap`
-  case x of
-       "\x2282" -> return "\x2284"
-       "\x2283" -> return "\x2285"
-       "\x2286" -> return "\x2288"
-       "\x2287" -> return "\x2289"
-       "\x2208" -> return "\x2209"
-       _        -> mzero
-neg _ = mzero
 
 lexeme :: TP a -> TP a
 lexeme p = p <* ignorable
