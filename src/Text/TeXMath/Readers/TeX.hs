@@ -25,13 +25,13 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 module Text.TeXMath.Readers.TeX (readTeX)
 where
 
-import Data.List (intercalate, find)
+import Data.List (intercalate, intersperse, find)
 import Data.Ratio ((%))
 import Control.Monad
 import Data.Char (isDigit, isAscii, isLetter)
 import qualified Data.Map as M
 import qualified Data.Text as T
-import Data.Maybe (mapMaybe)
+import Data.Maybe (mapMaybe, catMaybes)
 import Data.Semigroup ((<>))
 import Text.Parsec hiding (label)
 import Text.Parsec.Error
@@ -73,6 +73,7 @@ expr1 = choice
           , scaled
           , enclosure
           , negated
+          , siunitx
           , texSymbol
           ] <* ignorable
 
@@ -4065,3 +4066,350 @@ breve 'o' = "ŏ"
 breve 'U' = "Ŭ"
 breve 'u' = "ŭ"
 breve c   = T.singleton c
+
+-- siunitx
+
+siunitx :: TP Exp
+siunitx = try $ do
+  name <- T.dropWhile (=='\\') <$> anyCtrlSeq
+  case name of
+    "si"       -> dosi
+    "SI"       -> doSI
+    "SIrange"  -> doSIrange True
+    "numrange" -> doSIrange False
+    "numlist"  -> doSInumlist
+    "num"      -> doSInum
+    "ang"      -> doSIang
+    _          -> mzero
+
+-- converts e.g. \SIrange{100}{200}{\ms} to "100 ms--200 ms"
+doSIrange :: Bool -> TP Exp
+doSIrange includeUnits = do
+  optional $ skipMany inbrackets
+  startvalue <- Just <$> doSInum
+  startvalueprefix <- option Nothing $ Just <$> brackets expr
+  stopvalue <- Just <$> doSInum
+  stopvalueprefix <- option Nothing $ Just <$> brackets expr
+  unit <- if includeUnits
+             then option Nothing $ Just <$> dosi
+             else return Nothing
+  return $ EGrouped $ catMaybes
+           [startvalueprefix,
+            emptyOr160 startvalueprefix,
+            startvalue,
+            emptyOr160 unit,
+            unit,
+            Just (EText TextNormal "\8211"), -- An en-dash
+            stopvalueprefix,
+            emptyOr160 stopvalueprefix,
+            stopvalue,
+            emptyOr160 unit,
+            unit]
+
+
+doSInumlist :: TP Exp
+doSInumlist = do
+  optional $ skipMany inbrackets
+  xs <- braces (sepBy siNum (spaces *> char ';' <* spaces))
+  return $
+    case xs of
+      []  -> EGrouped []
+      [x] -> x
+      _   -> EGrouped $
+               intersperse (EText TextNormal ", ") (init xs) ++
+               [EText TextNormal ", & ", last xs]
+
+dosi :: TP Exp
+dosi = siUnit <|> braces (manyExp (siUnit <|> expr))
+
+doSIang :: TP Exp
+doSIang = do
+  optional $ skipMany inbrackets
+  ps <- braces $ sepBy siNum (spaces *> char ';' <* spaces)
+  return $ EGrouped $
+    case ps ++ repeat (EGrouped []) of
+      (d:m:s:_) ->
+        (if d == EGrouped [] then [] else [d, EText TextNormal "\xb0"]) <>
+        (if m == EGrouped [] then [] else [m, EText TextNormal "\x2032"]) <>
+        (if s == EGrouped [] then [] else [s, EText TextNormal "\x2033"])
+      _ -> []
+
+-- converts e.g. \SI{1}[\$]{} to "$ 1" or \SI{1}{\euro} to "1 €"
+doSI :: TP Exp
+doSI = do
+  optional $ skipMany inbrackets
+  value <- Just <$> doSInum
+  valueprefix <- option Nothing $ do
+                    x <- inbrackets
+                    if x == EGrouped []
+                       then return Nothing
+                       else return $ Just x
+  unit <- option Nothing $ Just <$> dosi
+  return $ EGrouped $ catMaybes
+         [ valueprefix,
+           emptyOr160 valueprefix,
+           value,
+           emptyOr160 unit,
+           unit
+         ]
+
+emptyOr160 :: Maybe Exp -> Maybe Exp
+emptyOr160 (Just _) = Just (ESpace (4/18))
+emptyOr160 Nothing  = Nothing
+
+
+siUnit :: TP Exp
+siUnit = try $ do
+  name <- T.dropWhile (=='\\') <$> anyCtrlSeq
+  case name of
+    "square" -> do
+       unit <- siUnit
+       return $ ESuper unit (ENumber "2")
+    "cubic" -> do
+       unit <- siUnit
+       return $ ESuper unit (ENumber "3")
+    "raisetothe" -> do
+       n <- expr
+       unit <- siUnit
+       return $ ESuper unit n
+    _ ->
+       case M.lookup name siUnitMap of
+            Just il ->
+              option il $
+                choice
+                 [ (ESuper il (ENumber "2")) <$ ctrlseq "squared"
+                 , (ESuper il (ENumber "3")) <$ ctrlseq "cubed"
+                 , (\n -> ESuper il n) <$> (ctrlseq "tothe" *> expr)
+                 ]
+            Nothing -> fail "not an siunit unit command"
+
+siUnitMap :: M.Map T.Text Exp
+siUnitMap = M.fromList
+  [ ("fg", str "fg")
+  , ("pg", str "pg")
+  , ("ng", str "ng")
+  , ("ug", str "μg")
+  , ("mg", str "mg")
+  , ("g", str "g")
+  , ("kg", str "kg")
+  , ("amu", str "u")
+  , ("pm", str "pm")
+  , ("nm", str "nm")
+  , ("um", str "μm")
+  , ("mm", str "mm")
+  , ("cm", str "cm")
+  , ("dm", str "dm")
+  , ("m", str "m")
+  , ("km", str "km")
+  , ("as", str "as")
+  , ("fs", str "fs")
+  , ("ps", str "ps")
+  , ("ns", str "ns")
+  , ("us", str "μs")
+  , ("ms", str "ms")
+  , ("s", str "s")
+  , ("fmol", str "fmol")
+  , ("pmol", str "pmol")
+  , ("nmol", str "nmol")
+  , ("umol", str "μmol")
+  , ("mmol", str "mmol")
+  , ("mol", str "mol")
+  , ("kmol", str "kmol")
+  , ("pA", str "pA")
+  , ("nA", str "nA")
+  , ("uA", str "μA")
+  , ("mA", str "mA")
+  , ("A", str "A")
+  , ("kA", str "kA")
+  , ("ul", str "μl")
+  , ("ml", str "ml")
+  , ("l", str "l")
+  , ("hl", str "hl")
+  , ("uL", str "μL")
+  , ("mL", str "mL")
+  , ("L", str "L")
+  , ("hL", str "hL")
+  , ("mHz", str "mHz")
+  , ("Hz", str "Hz")
+  , ("kHz", str "kHz")
+  , ("MHz", str "MHz")
+  , ("GHz", str "GHz")
+  , ("THz", str "THz")
+  , ("mN", str "mN")
+  , ("N", str "N")
+  , ("kN", str "kN")
+  , ("MN", str "MN")
+  , ("Pa", str "Pa")
+  , ("kPa", str "kPa")
+  , ("MPa", str "MPa")
+  , ("GPa", str "GPa")
+  , ("mohm", str "mΩ")
+  , ("kohm", str "kΩ")
+  , ("Mohm", str "MΩ")
+  , ("pV", str "pV")
+  , ("nV", str "nV")
+  , ("uV", str "μV")
+  , ("mV", str "mV")
+  , ("V", str "V")
+  , ("kV", str "kV")
+  , ("W", str "W")
+  , ("uW", str "μW")
+  , ("mW", str "mW")
+  , ("kW", str "kW")
+  , ("MW", str "MW")
+  , ("GW", str "GW")
+  , ("J", str "J")
+  , ("uJ", str "μJ")
+  , ("mJ", str "mJ")
+  , ("kJ", str "kJ")
+  , ("eV", str "eV")
+  , ("meV", str "meV")
+  , ("keV", str "keV")
+  , ("MeV", str "MeV")
+  , ("GeV", str "GeV")
+  , ("TeV", str "TeV")
+  , ("kWh", str "kWh")
+  , ("F", str "F")
+  , ("fF", str "fF")
+  , ("pF", str "pF")
+  , ("K", str "K")
+  , ("dB", str "dB")
+  , ("ampere", str "A")
+  , ("angstrom", str "Å")
+  , ("arcmin", str "′")
+  , ("arcminute", str "′")
+  , ("arcsecond", str "″")
+  , ("astronomicalunit", str "ua")
+  , ("atomicmassunit", str "u")
+  , ("atto", str "a")
+  , ("bar", str "bar")
+  , ("barn", str "b")
+  , ("becquerel", str "Bq")
+  , ("bel", str "B")
+  , ("bohr", ESuper (EText TextItalic "a") (ENumber "0"))
+  , ("candela", str "cd")
+  , ("celsius", str "°C")
+  , ("centi", str "c")
+  , ("clight", ESuper (EText TextItalic "c") (ENumber "0"))
+  , ("coulomb", str "C")
+  , ("dalton", str "Da")
+  , ("day", str "d")
+  , ("deca", str "d")
+  , ("deci", str "d")
+  , ("decibel", str "db")
+  , ("degreeCelsius",str "°C")
+  , ("degree", str "°")
+  , ("deka", str "d")
+  , ("electronmass", ESuper (EText TextItalic "m") (EText TextItalic "e"))
+  , ("electronvolt", str "eV")
+  , ("elementarycharge", EText TextItalic "e")
+  , ("exa", str "E")
+  , ("farad", str "F")
+  , ("femto", str "f")
+  , ("giga", str "G")
+  , ("gram", str "g")
+  , ("gray", str "Gy")
+  , ("hartree", ESuper (EText TextItalic "E") (EText TextItalic "h"))
+  , ("hectare", str "ha")
+  , ("hecto", str "h")
+  , ("henry", str "H")
+  , ("hertz", str "Hz")
+  , ("hour", str "h")
+  , ("joule", str "J")
+  , ("katal", str "kat")
+  , ("kelvin", str "K")
+  , ("kilo", str "k")
+  , ("kilogram", str "kg")
+  , ("knot", str "kn")
+  , ("liter", str "L")
+  , ("litre", str "l")
+  , ("lumen", str "lm")
+  , ("lux", str "lx")
+  , ("mega", str "M")
+  , ("meter", str "m")
+  , ("metre", str "m")
+  , ("micro", str "μ")
+  , ("milli", str "m")
+  , ("minute", str "min")
+  , ("mmHg", str "mmHg")
+  , ("mole", str "mol")
+  , ("nano", str "n")
+  , ("nauticalmile", str "M")
+  , ("neper", str "Np")
+  , ("newton", str "N")
+  , ("ohm", str "Ω")
+  , ("Pa", str "Pa")
+  , ("pascal", str "Pa")
+  , ("percent", str "%")
+  , ("per", str "/")
+  , ("peta", str "P")
+  , ("pico", str "p")
+  , ("planckbar", EText TextItalic "\x210f")
+  , ("radian", str "rad")
+  , ("second", str "s")
+  , ("siemens", str "S")
+  , ("sievert", str "Sv")
+  , ("steradian", str "sr")
+  , ("tera", str "T")
+  , ("tesla", str "T")
+  , ("tonne", str "t")
+  , ("volt", str "V")
+  , ("watt", str "W")
+  , ("weber", str "Wb")
+  , ("yocto", str "y")
+  , ("yotta", str "Y")
+  , ("zepto", str "z")
+  , ("zetta", str "Z")
+  ]
+ where
+  str = EText TextNormal
+
+doSInum :: TP Exp
+doSInum = do
+  optional $ skipMany inbrackets
+  braces siNum
+
+siNum :: TP Exp
+siNum = asGroup . mconcat <$> many parseNumPart
+
+parseNumPart :: TP [Exp]
+parseNumPart =
+  parseDecimalNum <|>
+  parseComma <|>
+  parsePlusMinus <|>
+  parseI <|>
+  parseExp <|>
+  parseX <|>
+  parseSpace
+ where
+  parseDecimalNum = do
+    pref <- option mempty $ (mempty <$ char '+') <|> ("\x2212" <$ char '-')
+    basenum <- (pref <>) . T.pack
+                <$> many1 (satisfy (\c -> isDigit c || c == '.'))
+    uncertainty <- option mempty $ T.pack <$> parseParens
+    if T.null uncertainty
+       then return [ENumber basenum]
+       else return [ENumber $ basenum <> "\xa0\xb1\xa0" <>
+             let (_,ys) = T.break (=='.') basenum
+              in case (T.length ys - 1, T.length uncertainty) of
+                   (0,_) -> uncertainty
+                   (x,y)
+                     | x > y  -> "0." <> T.replicate (x - y) "0" <>
+                                      T.dropWhileEnd (=='0') uncertainty
+                     | otherwise -> T.take (y - x) uncertainty <>
+                                      case T.dropWhileEnd (=='0')
+                                             (T.drop (y - x) uncertainty) of
+                                             t | T.null t -> mempty
+                                               | otherwise -> "." <> t]
+  parseComma = [ENumber "."] <$ char ','
+  parsePlusMinus = [EText TextNormal "\xa0\xb1\xa0"] <$ try (string "+-")
+  parseParens =
+    char '(' *> many1 (satisfy (\c -> isDigit c || c == '.')) <* char ')'
+  parseI = [EIdentifier "i"] <$ char 'i'
+  parseX = [ESymbol Rel "\xa0\xd7\xa0"] <$ char 'x'
+  parseExp = do
+    n <- asGroup <$> (char 'e' *> parseDecimalNum)
+    return $ [ESymbol Rel "\xa0\xd7\xa0", ESuper (ENumber "10") n ]
+  parseSpace = mempty <$ skipMany1 (char ' ')
+
+
