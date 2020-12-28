@@ -17,15 +17,24 @@
       </m:sub>
     </m:sSub>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>(</m:t>
     </m:r>
     <m:r>
       <m:t>κ</m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>)</m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>=</m:t>
     </m:r>
     <m:r>
@@ -56,12 +65,18 @@
       </m:e>
       <m:sup>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>−</m:t>
         </m:r>
         <m:r>
           <m:t>11</m:t>
         </m:r>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>/</m:t>
         </m:r>
         <m:r>
@@ -70,6 +85,9 @@
       </m:sup>
     </m:sSup>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>,</m:t>
     </m:r>
     <m:r>
@@ -100,12 +118,18 @@
       </m:den>
     </m:f>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>≪</m:t>
     </m:r>
     <m:r>
       <m:t>κ</m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>≪</m:t>
     </m:r>
     <m:f>

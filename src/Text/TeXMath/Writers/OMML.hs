@@ -98,6 +98,10 @@ makeArray props as rs = mnode "m" $ mProps : map toMr rs
 makeText :: TextType -> T.Text -> Element
 makeText a s = str (mnode "nor" () : setProps a) s
 
+defaultTo :: TextType -> [Element] -> [Element]
+defaultTo tt [] = setProps tt
+defaultTo _  ps = ps
+
 setProps :: TextType -> [Element]
 setProps tt =
   case tt of
@@ -203,15 +207,15 @@ showExp props e =
     | Just (c, xs') <- T.uncons xs
     , T.null xs'
     , isSymbol c || isPunctuation c
-                    -> [str props xs]
+                    -> [str (defaultTo TextNormal props) xs]
     | ty `elem` [Op, Bin, Rel]
                     -> [mnode "box"
                         [ mnode "boxPr"
                           [ mnodeA "opEmu" "1" () ]
                         , mnode "e"
-                          [str props xs]
+                          [str (defaultTo TextNormal props) xs]
                         ]]
-    | otherwise     -> [str props xs]
+    | otherwise     -> [str (defaultTo TextNormal props) xs]
    ESpace n
      | n > 0 && n <= 0.17    -> [str props "\x2009"]
      | n > 0.17 && n <= 0.23 -> [str props "\x2005"]

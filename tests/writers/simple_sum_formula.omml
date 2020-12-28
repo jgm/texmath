@@ -16,6 +16,9 @@
           <m:t>i</m:t>
         </m:r>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>=</m:t>
         </m:r>
         <m:r>
@@ -34,6 +37,9 @@
       </m:e>
     </m:nary>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>=</m:t>
     </m:r>
     <m:f>
@@ -45,6 +51,9 @@
           <m:t>100</m:t>
         </m:r>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>*</m:t>
         </m:r>
         <m:r>

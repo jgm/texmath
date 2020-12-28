@@ -5,6 +5,9 @@
   </m:oMathParaPr>
   <m:oMath>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>∀</m:t>
     </m:r>
     <m:r>
@@ -14,6 +17,9 @@
       <m:t> </m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>∃</m:t>
     </m:r>
     <m:r>
@@ -23,6 +29,9 @@
       <m:t> </m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>∀</m:t>
     </m:r>
     <m:r>
@@ -32,21 +41,33 @@
       <m:t> </m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>[</m:t>
     </m:r>
     <m:r>
       <m:t>B</m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>∈</m:t>
     </m:r>
     <m:r>
       <m:t>P</m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>⇔</m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>∀</m:t>
     </m:r>
     <m:r>
@@ -56,33 +77,51 @@
       <m:t> </m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>(</m:t>
     </m:r>
     <m:r>
       <m:t>C</m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>∈</m:t>
     </m:r>
     <m:r>
       <m:t>B</m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>⇒</m:t>
     </m:r>
     <m:r>
       <m:t>C</m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>∈</m:t>
     </m:r>
     <m:r>
       <m:t>A</m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>)</m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>]</m:t>
     </m:r>
   </m:oMath>

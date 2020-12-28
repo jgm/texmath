@@ -17,15 +17,24 @@
       </m:sub>
     </m:sSub>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>(</m:t>
     </m:r>
     <m:r>
       <m:t>κ</m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>)</m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>=</m:t>
     </m:r>
     <m:f>
@@ -81,6 +90,9 @@
       </m:sub>
       <m:sup>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>∞</m:t>
         </m:r>
       </m:sup>
@@ -98,6 +110,9 @@
               <m:t>sin</m:t>
             </m:r>
             <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>(</m:t>
             </m:r>
             <m:r>
@@ -107,6 +122,9 @@
               <m:t>R</m:t>
             </m:r>
             <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>)</m:t>
             </m:r>
           </m:num>
@@ -127,11 +145,17 @@
       </m:fPr>
       <m:num>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>∂</m:t>
         </m:r>
       </m:num>
       <m:den>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>∂</m:t>
         </m:r>
         <m:r>
@@ -164,6 +188,9 @@
           </m:fPr>
           <m:num>
             <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>∂</m:t>
             </m:r>
             <m:sSub>
@@ -179,17 +206,26 @@
               </m:sub>
             </m:sSub>
             <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>(</m:t>
             </m:r>
             <m:r>
               <m:t>R</m:t>
             </m:r>
             <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>)</m:t>
             </m:r>
           </m:num>
           <m:den>
             <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>∂</m:t>
             </m:r>
             <m:r>

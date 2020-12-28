@@ -21,6 +21,9 @@
       <m:t>A</m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>+</m:t>
     </m:r>
     <m:f>
@@ -32,12 +35,18 @@
           <m:t>1</m:t>
         </m:r>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>+</m:t>
         </m:r>
         <m:r>
           <m:t>2</m:t>
         </m:r>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>+</m:t>
         </m:r>
         <m:r>
@@ -49,6 +58,9 @@
           <m:t>1</m:t>
         </m:r>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>+</m:t>
         </m:r>
         <m:phant>
@@ -60,6 +72,9 @@
               <m:t>2</m:t>
             </m:r>
             <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>+</m:t>
             </m:r>
           </m:e>

@@ -8,6 +8,9 @@
       <m:t>HypergeomDist</m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>&#8289;</m:t>
     </m:r>
     <m:d>
@@ -21,18 +24,27 @@
           <m:t>x</m:t>
         </m:r>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>;</m:t>
         </m:r>
         <m:r>
           <m:t>M</m:t>
         </m:r>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>,</m:t>
         </m:r>
         <m:r>
           <m:t>K</m:t>
         </m:r>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>,</m:t>
         </m:r>
         <m:r>
@@ -41,6 +53,9 @@
       </m:e>
     </m:d>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>=</m:t>
     </m:r>
     <m:nary>
@@ -55,6 +70,9 @@
           <m:t>k</m:t>
         </m:r>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>=</m:t>
         </m:r>
         <m:r>
@@ -97,6 +115,9 @@
               </m:e>
             </m:d>
             <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>&#8290;</m:t>
             </m:r>
             <m:d>
@@ -115,6 +136,9 @@
                       <m:t>M</m:t>
                     </m:r>
                     <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
                       <m:t>-</m:t>
                     </m:r>
                     <m:r>
@@ -126,6 +150,9 @@
                       <m:t>n</m:t>
                     </m:r>
                     <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
                       <m:t>-</m:t>
                     </m:r>
                     <m:r>

@@ -23,6 +23,9 @@
             <m:t>x</m:t>
           </m:r>
           <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
             <m:t>+</m:t>
           </m:r>
           <m:d>
@@ -64,16 +67,25 @@
                 <m:t>x</m:t>
               </m:r>
               <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
                 <m:t>+</m:t>
               </m:r>
               <m:limUpp>
                 <m:e>
                   <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
                     <m:t>(</m:t>
                   </m:r>
                 </m:e>
                 <m:lim>
                   <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
                     <m:t>-</m:t>
                   </m:r>
                 </m:lim>

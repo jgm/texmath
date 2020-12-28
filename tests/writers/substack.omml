@@ -31,12 +31,18 @@
                 <m:t>0</m:t>
               </m:r>
               <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
                 <m:t>&lt;</m:t>
               </m:r>
               <m:r>
                 <m:t>i</m:t>
               </m:r>
               <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
                 <m:t>&lt;</m:t>
               </m:r>
               <m:r>
@@ -50,12 +56,18 @@
                 <m:t>0</m:t>
               </m:r>
               <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
                 <m:t>&lt;</m:t>
               </m:r>
               <m:r>
                 <m:t>j</m:t>
               </m:r>
               <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
                 <m:t>&lt;</m:t>
               </m:r>
               <m:r>
@@ -77,18 +89,27 @@
       </m:e>
     </m:nary>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>(</m:t>
     </m:r>
     <m:r>
       <m:t>i</m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>,</m:t>
     </m:r>
     <m:r>
       <m:t>j</m:t>
     </m:r>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>)</m:t>
     </m:r>
   </m:oMath>

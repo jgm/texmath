@@ -12,11 +12,17 @@
       </m:e>
       <m:lim>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>¨</m:t>
         </m:r>
       </m:lim>
     </m:limLow>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>≠</m:t>
     </m:r>
     <m:limLow>
@@ -27,11 +33,17 @@
       </m:e>
       <m:lim>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>¨</m:t>
         </m:r>
       </m:lim>
     </m:limLow>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>=</m:t>
     </m:r>
     <m:limLow>
@@ -42,11 +54,17 @@
       </m:e>
       <m:lim>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>¨</m:t>
         </m:r>
       </m:lim>
     </m:limLow>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>=</m:t>
     </m:r>
     <m:limLow>
@@ -57,6 +75,9 @@
       </m:e>
       <m:lim>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>¨</m:t>
         </m:r>
       </m:lim>

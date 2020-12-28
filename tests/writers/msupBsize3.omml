@@ -23,6 +23,9 @@
       </m:sup>
       <m:e>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>+</m:t>
         </m:r>
       </m:e>
@@ -52,6 +55,9 @@
       </m:sup>
     </m:sSup>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>+</m:t>
     </m:r>
     <m:sSup>
@@ -79,6 +85,9 @@
       </m:sup>
     </m:sSup>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>+</m:t>
     </m:r>
     <m:nary>
@@ -100,6 +109,9 @@
       </m:sup>
       <m:e>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>+</m:t>
         </m:r>
       </m:e>
