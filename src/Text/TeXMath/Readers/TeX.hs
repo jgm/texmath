@@ -270,7 +270,12 @@ inbraces :: TP Exp
 inbraces = braces (manyExp expr)
 
 texToken :: TP Exp
-texToken = texSymbol <|> inbraces <|> inbrackets <|> texChar
+texToken = texSymbol <|> inbraces <|> texChar
+
+-- Remove superfluous EGrouped if present.
+deGroup :: Exp -> Exp
+deGroup (EGrouped [x]) = x
+deGroup x = x
 
 texChar :: TP Exp
 texChar =
@@ -789,20 +794,20 @@ tSymbol = try $ do
        Just x  -> return x
        Nothing
          | sym == "\\mod" -> do
-             x <- texToken
+             x <- deGroup <$> expr
              return $ EGrouped
                [ESpace (8/18), EMathOperator "mod", ESpace (4/18), x]
          | sym == "\\bmod" -> do
-             x <- texToken
+             x <- deGroup <$> expr
              return $ EGrouped
                [ESpace (4/18), EMathOperator "mod", ESpace (4/18), x]
          | sym == "\\pmod" -> do
-             x <- texToken
+             x <- deGroup <$> expr
              return $ EGrouped
                [ESpace (4/18), ESymbol Open "(", EMathOperator "mod",
                 ESpace (4/18), x, ESymbol Close ")"]
          | sym == "\\pod"  -> do
-             x <- texToken
+             x <- deGroup <$> expr
              return $ EGrouped
                [ESpace (4/18), ESymbol Open "(", x, ESymbol Close ")"]
          | otherwise -> mzero
