@@ -355,8 +355,7 @@ endLineAMS = lexeme $ try $ do
 arrayLine :: TP ArrayLine
 arrayLine = notFollowedBy (ctrlseq "end" >> return '\n') >>
   sepBy1 (unGrouped <$>
-    manyExp (try $ ignorable' *>
-               notFollowedBy endLine *>
+    manyExp (try (ignorable' *> notFollowedBy endLine) *>
                expr <*
                ignorable')) (symbol "&")
   where ignorable' = ignorable >>
