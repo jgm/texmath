@@ -1,6 +1,6 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mtable>
+  <mtable columnlines="none">
     <mtr>
       <mtd columnalign="center">
         <mtext mathvariant="normal">Bernoulli Trials</mtext>
@@ -191,7 +191,7 @@
           <mo>=</mo>
           <mrow>
             <mo stretchy="true" form="prefix">|</mo>
-            <mtable>
+            <mtable columnlines="none none">
               <mtr>
                 <mtd columnalign="center">
                   <mi>i</mi>
@@ -275,7 +275,7 @@
         <mrow>
           <mrow>
             <mo stretchy="true" form="prefix">|</mo>
-            <mtable>
+            <mtable columnlines="none none none">
               <mtr>
                 <mtd columnalign="center">
                   <mn>1</mn>
@@ -432,7 +432,7 @@
         <mtext mathvariant="normal">Lorenz Equations</mtext>
       </mtd>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="none none">
           <mtr>
             <mtd columnalign="center">
               <munderover>
@@ -510,7 +510,7 @@
       <mtd columnalign="center">
         <mrow>
           <mo stretchy="true" form="prefix">{</mo>
-          <mtable>
+          <mtable columnlines="none none">
             <mtr>
               <mtd columnalign="center">
                 <mrow>
@@ -1002,7 +1002,7 @@
         <mtext mathvariant="normal">Commutative Diagram</mtext>
       </mtd>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="none none">
           <mtr>
             <mtd columnalign="center">
               <mi>H</mi>

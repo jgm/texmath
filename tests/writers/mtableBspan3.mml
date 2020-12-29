@@ -1,7 +1,7 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mtable>
+    <mtable columnlines="solid solid">
       <mtr>
         <mtd columnalign="center">
           <mn>3</mn>
@@ -15,7 +15,7 @@
       </mtr>
       <mtr>
         <mtd columnalign="center">
-          <mtable>
+          <mtable columnlines="">
             <mtr>
               <mtd columnalign="center">
                 <mn>2</mn>
@@ -51,7 +51,7 @@
       </mtr>
     </mtable>
     <mspace width="0.0em" />
-    <mtable>
+    <mtable columnlines="solid solid">
       <mtr>
         <mtd columnalign="center">
           <mn>3</mn>
@@ -65,7 +65,7 @@
       </mtr>
       <mtr>
         <mtd columnalign="center">
-          <mtable>
+          <mtable columnlines="">
             <mtr>
               <mtd columnalign="center">
                 <mn>2</mn>

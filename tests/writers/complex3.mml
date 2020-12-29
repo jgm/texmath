@@ -1,6 +1,6 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mtable>
+  <mtable columnlines="none">
     <mtr>
       <mtd columnalign="center">
         <mrow>
@@ -1780,7 +1780,7 @@
           <mo>=</mo>
           <mrow>
             <mo stretchy="true" form="prefix">{</mo>
-            <mtable>
+            <mtable columnlines="none none">
               <mtr>
                 <mtd columnalign="center">
                   <mi>a</mi>
@@ -2098,7 +2098,7 @@
               <mrow>
                 <mrow>
                   <mo stretchy="true" form="prefix">(</mo>
-                  <mtable>
+                  <mtable columnlines="none">
                     <mtr>
                       <mtd columnalign="center">
                         <mi>a</mi>
@@ -2352,7 +2352,7 @@
         <mrow>
           <munderover>
             <mo>∑</mo>
-            <mtable>
+            <mtable columnlines="">
               <mtr>
                 <mtd columnalign="center">
                   <mrow>
@@ -2398,14 +2398,14 @@
             <mn>1</mn>
             <msup>
               <mspace width="0.056em" />
-              <mtable>
+              <mtable columnlines="">
                 <mtr>
                   <mtd columnalign="center">
                     <msubsup>
                       <mn>2</mn>
                       <msup>
                         <mspace width="0.056em" />
-                        <mtable>
+                        <mtable columnlines="">
                           <mtr>
                             <mtd columnalign="center">
                               <mn>3</mn>
@@ -2428,7 +2428,7 @@
                       <mn>5</mn>
                       <msup>
                         <mspace width="0.056em" />
-                        <mtable>
+                        <mtable columnlines="">
                           <mtr>
                             <mtd columnalign="center">
                               <mn>6</mn>
@@ -2451,12 +2451,12 @@
           </msubsup>
           <msup>
             <mn>1</mn>
-            <mtable>
+            <mtable columnlines="">
               <mtr>
                 <mtd columnalign="center">
                   <msup>
                     <mn>5</mn>
-                    <mtable>
+                    <mtable columnlines="">
                       <mtr>
                         <mtd columnalign="center">
                           <mn>7</mn>
@@ -2475,7 +2475,7 @@
                 <mtd columnalign="center">
                   <msup>
                     <mn>2</mn>
-                    <mtable>
+                    <mtable columnlines="">
                       <mtr>
                         <mtd columnalign="center">
                           <mn>4</mn>
@@ -2552,7 +2552,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="right">
               <mrow>
@@ -2778,7 +2778,7 @@
             <mrow>
               <mo stretchy="true" form="prefix">(</mo>
               <mrow>
-                <mtable>
+                <mtable columnlines="">
                   <mtr>
                     <mtd columnalign="center">
                       <msup>
@@ -2834,7 +2834,7 @@
           <mo>=</mo>
           <mrow>
             <mo stretchy="true" form="prefix">(</mo>
-            <mtable>
+            <mtable columnlines="">
               <mtr>
                 <mtd columnalign="center">
                   <mrow>
@@ -2896,7 +2896,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -2925,7 +2925,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="none none none">
           <mtr>
             <mtd columnalign="center">
               <mi>t</mi>
@@ -3354,7 +3354,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="solid none">
           <mtr>
             <mtd columnalign="center">
               <mn>1</mn>
@@ -3401,7 +3401,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -3426,7 +3426,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -3460,7 +3460,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -3505,7 +3505,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -3530,7 +3530,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -3664,7 +3664,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -3694,7 +3694,7 @@
           <mo>=</mo>
           <mrow>
             <mo stretchy="true" form="prefix">{</mo>
-            <mtable>
+            <mtable columnlines="none">
               <mtr>
                 <mtd columnalign="left">
                   <mi>x</mi>
@@ -3736,7 +3736,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -3769,7 +3769,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -3885,7 +3885,7 @@
           <mo>=</mo>
           <mrow>
             <mo stretchy="true" form="prefix">[</mo>
-            <mtable>
+            <mtable columnlines="">
               <mtr>
                 <mtd columnalign="center">
                   <mrow>
@@ -4370,7 +4370,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -4683,7 +4683,7 @@
             <mo>det</mo>
             <mrow>
               <mo stretchy="true" form="prefix">(</mo>
-              <mtable>
+              <mtable columnlines="none none">
                 <mtr>
                   <mtd columnalign="center">
                     <mi>x</mi>
@@ -4784,7 +4784,7 @@
           <mrow>
             <mrow>
               <mo stretchy="true" form="prefix">[</mo>
-              <mtable>
+              <mtable columnlines="none">
                 <mtr>
                   <mtd columnalign="center">
                     <mrow>
@@ -4826,7 +4826,7 @@
             <mi>&#8290;</mi>
             <mrow>
               <mo stretchy="true" form="prefix">[</mo>
-              <mtable>
+              <mtable columnlines="none">
                 <mtr>
                   <mtd columnalign="center">
                     <mrow>
@@ -4885,7 +4885,7 @@
           <mo>=</mo>
           <mrow>
             <mo stretchy="true" form="prefix">[</mo>
-            <mtable>
+            <mtable columnlines="none none none">
               <mtr>
                 <mtd columnalign="center">
                   <mrow>
@@ -5007,7 +5007,7 @@
             <mo>det</mo>
             <mrow>
               <mo stretchy="true" form="prefix">(</mo>
-              <mtable>
+              <mtable columnlines="none none">
                 <mtr>
                   <mtd columnalign="center">
                     <mrow>
@@ -5093,7 +5093,7 @@
             <mo stretchy="true" form="prefix">{</mo>
             <mrow>
               <mo stretchy="true" form="prefix">(</mo>
-              <mtable>
+              <mtable columnlines="">
                 <mtr>
                   <mtd columnalign="center">
                     <mrow>
@@ -5195,7 +5195,7 @@
           <mrow>
             <mrow>
               <mo stretchy="true" form="prefix">(</mo>
-              <mtable>
+              <mtable columnlines="none">
                 <mtr>
                   <mtd columnalign="center">
                     <msub>
@@ -5246,7 +5246,7 @@
             <mo>+</mo>
             <mrow>
               <mo stretchy="true" form="prefix">(</mo>
-              <mtable>
+              <mtable columnlines="none">
                 <mtr>
                   <mtd columnalign="center">
                     <msub>
@@ -5298,7 +5298,7 @@
           <mo>=</mo>
           <mrow>
             <mo stretchy="true" form="prefix">(</mo>
-            <mtable>
+            <mtable columnlines="none">
               <mtr>
                 <mtd columnalign="center">
                   <mrow>
@@ -5404,7 +5404,7 @@
               <mo stretchy="true" form="prefix">(</mo>
               <mrow>
                 <mo stretchy="true" form="prefix">[</mo>
-                <mtable>
+                <mtable columnlines="none">
                   <mtr>
                     <mtd columnalign="center">
                       <mn>1</mn>
@@ -5432,7 +5432,7 @@
             <msup>
               <mrow>
                 <mo stretchy="true" form="prefix">[</mo>
-                <mtable>
+                <mtable columnlines="none">
                   <mtr>
                     <mtd columnalign="center">
                       <mn>1</mn>
@@ -5460,7 +5460,7 @@
               <mi>&#8290;</mi>
               <mrow>
                 <mo stretchy="true" form="prefix">[</mo>
-                <mtable>
+                <mtable columnlines="none">
                   <mtr>
                     <mtd columnalign="center">
                       <mn>1</mn>
@@ -5487,7 +5487,7 @@
           <mo>=</mo>
           <mrow>
             <mo stretchy="true" form="prefix">[</mo>
-            <mtable>
+            <mtable columnlines="none">
               <mtr>
                 <mtd columnalign="center">
                   <mn>2</mn>
@@ -6279,7 +6279,7 @@
           <mo>=</mo>
           <mrow>
             <mo stretchy="true" form="prefix">{</mo>
-            <mtable>
+            <mtable columnlines="none none">
               <mtr>
                 <mtd columnalign="center">
                   <mrow>
@@ -6583,7 +6583,7 @@
             <mspace width="0.278em" />
             <mrow>
               <mo stretchy="true" form="prefix">|</mo>
-              <mtable>
+              <mtable columnlines="">
                 <mtr>
                   <mtd columnalign="left">
                     <mrow>
@@ -6809,10 +6809,10 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
-              <mtable>
+              <mtable columnlines="none none none none none none none none none">
                 <mtr>
                   <mtd columnalign="center">
                     <mn>1</mn>
@@ -7142,7 +7142,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -7161,7 +7161,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mtext mathvariant="normal">x</mtext>
@@ -7173,7 +7173,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mi>x</mi>
@@ -7185,7 +7185,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mtext mathvariant="normal">x</mtext>
@@ -7197,7 +7197,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mi>x</mi>
@@ -7491,7 +7491,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="solid solid">
           <mtr>
             <mtd columnalign="center">
               <mo>+</mo>
@@ -7795,7 +7795,7 @@
           <mo>=</mo>
           <mrow>
             <mo stretchy="true" form="prefix">|</mo>
-            <mtable>
+            <mtable columnlines="none none none none none">
               <mtr>
                 <mtd columnalign="center">
                   <msub>
@@ -8316,7 +8316,7 @@
         <mrow>
           <mi>x</mi>
           <mi>&#8290;</mi>
-          <mtable>
+          <mtable columnlines="none">
             <mtr>
               <mtd columnalign="center">
                 <mi>x</mi>
@@ -9395,10 +9395,10 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
-              <mtable>
+              <mtable columnlines="none">
                 <mtr>
                   <mtd columnalign="center">
                     <mrow>
@@ -9445,7 +9445,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="none">
           <mtr>
             <mtd columnalign="center">
               <mn>0</mn>
@@ -9470,7 +9470,7 @@
       <mtd columnalign="center">
         <mrow>
           <mo stretchy="true" form="prefix">(</mo>
-          <mtable>
+          <mtable columnlines="none">
             <mtr>
               <mtd columnalign="center">
                 <mn>0</mn>
@@ -9500,7 +9500,7 @@
       <mtd columnalign="center">
         <mrow>
           <mo stretchy="true" form="prefix">[</mo>
-          <mtable>
+          <mtable columnlines="none">
             <mtr>
               <mtd columnalign="center">
                 <mn>1</mn>
@@ -9530,7 +9530,7 @@
       <mtd columnalign="center">
         <mrow>
           <mo stretchy="true" form="prefix">|</mo>
-          <mtable>
+          <mtable columnlines="none">
             <mtr>
               <mtd columnalign="center">
                 <mi>a</mi>
@@ -9557,7 +9557,7 @@
       <mtd columnalign="center">
         <mrow>
           <mo stretchy="true" form="infix">∥</mo>
-          <mtable>
+          <mtable columnlines="none none">
             <mtr>
               <mtd columnalign="center">
                 <mn>1</mn>
@@ -9588,7 +9588,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="none none">
           <mtr>
             <mtd columnalign="center">
               <mn>1</mn>
@@ -9619,7 +9619,7 @@
       <mtd columnalign="center">
         <mrow>
           <mtext mathvariant="normal">testing </mtext>
-          <mtable>
+          <mtable columnlines="">
             <mtr>
               <mtd columnalign="center">
                 <mrow>
@@ -9796,7 +9796,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="none none">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -9873,7 +9873,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -9925,7 +9925,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -9977,7 +9977,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -10021,7 +10021,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -10105,7 +10105,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mtext mathvariant="normal">First line of equation</mtext>
@@ -10132,7 +10132,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -10197,7 +10197,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -10361,7 +10361,7 @@
     <mtr>
       <mtd columnalign="center">
         <mrow>
-          <mtable>
+          <mtable columnlines="">
             <mtr>
               <mtd columnalign="center">
                 <mrow>
@@ -10401,7 +10401,7 @@
             </mtr>
           </mtable>
           <mtext mathvariant="normal">  </mtext>
-          <mtable>
+          <mtable columnlines="">
             <mtr>
               <mtd columnalign="center">
                 <mrow>
@@ -10486,7 +10486,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="none">
           <mtr>
             <mtd columnalign="center">
               <mtext mathvariant="normal">Vertex</mtext>
@@ -10837,7 +10837,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -10899,7 +10899,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="none none none none none none">
           <mtr>
             <mtd columnalign="center">
               <mtext mathvariant="normal">Unrestricted</mtext>
@@ -11087,7 +11087,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="center">
-        <mtable>
+        <mtable columnlines="">
           <mtr>
             <mtd columnalign="center">
               <mrow>
@@ -11120,7 +11120,7 @@
     <mtr>
       <mtd columnalign="center">
         <mrow>
-          <mtable>
+          <mtable columnlines="">
             <mtr>
               <mtd columnalign="left">
                 <mrow>

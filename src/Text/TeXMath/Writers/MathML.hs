@@ -120,12 +120,11 @@ makeArray tt as ls cs = setColumnLines $ unode "mtable" $
    where setAlignment AlignLeft    = withAttribute "columnalign" "left"
          setAlignment AlignRight   = withAttribute "columnalign" "right"
          setAlignment AlignCenter  = withAttribute "columnalign" "center"
-         setColumnLines            = withAttribute "columnlines" . T.intercalate " " $ map colSepToString cs'
+         setColumnLines            = withAttribute "columnlines" . T.intercalate " " $ map colSepToString cs
          colSepToString CSNone     = "none"
          colSepToString CSDashed   = "dashed"
          colSepToString CSSolid    = "solid"
          as'                       = as ++ cycle [AlignCenter]
-         cs'                       = cs ++ cycle [CSNone]
 
 -- Kept as String for Text.XML.Light
 withAttribute :: String -> T.Text -> Element -> Element

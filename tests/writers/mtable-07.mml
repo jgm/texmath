@@ -1,7 +1,7 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mtable>
+    <mtable columnlines="solid">
       <mtr>
         <mtd columnalign="right">
           <mrow>
@@ -43,7 +43,7 @@
       </mtr>
     </mtable>
     <mo>=</mo>
-    <mtable>
+    <mtable columnlines="solid">
       <mtr>
         <mtd columnalign="left">
           <mi>A</mi>
