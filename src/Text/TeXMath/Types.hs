@@ -22,7 +22,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 module Text.TeXMath.Types (Exp(..), TeXSymbolType(..), ArrayLine,
                            FractionType(..), TextType(..),
-                           Alignment(..), DisplayType(..),
+                           Alignment(..), ColumnSeparator(..), DisplayType(..),
                            Operator(..), FormType(..), Record(..),
                            Property, Position(..), Env, defaultEnv,
                            InEDelimited)
@@ -36,6 +36,9 @@ data TeXSymbolType = Ord | Op | Bin | Rel | Open | Close | Pun | Accent
                      deriving (Show, Read, Eq, Ord, Data, Typeable)
 
 data Alignment = AlignLeft | AlignCenter | AlignRight
+                 deriving (Show, Read, Eq, Ord, Data, Typeable)
+
+data ColumnSeparator = CSNone | CSDashed | CSSolid
                  deriving (Show, Read, Eq, Ord, Data, Typeable)
 
 data FractionType = NormalFrac   -- ^ Displayed or textual, acc to 'DisplayType'
@@ -85,10 +88,11 @@ data Exp =
   | ESqrt Exp      -- ^ A square root.
   | EScaled Rational Exp -- ^ An expression that is scaled to some factor
                   -- of its normal size.
-  | EArray [Alignment] [ArrayLine] -- ^ An array or matrix.  The first argument
+  | EArray [Alignment] [ArrayLine] [ColumnSeparator] -- ^ An array or matrix.  The first argument
                   -- specifies the alignments of the columns; the second gives
-                  -- the contents of the lines.  All of these lists should be
-                  -- the same length.
+                  -- the contents of the lines; the third gives the type of separator between
+                  -- columns. The first two of these lists should be the same length, the last
+                  -- be one element shorter.
   | EText TextType T.Text  -- ^ Some normal text, possibly styled.
   | EStyled TextType [Exp] -- ^  A group of styled expressions.
   deriving (Show, Read, Eq, Ord, Data, Typeable)

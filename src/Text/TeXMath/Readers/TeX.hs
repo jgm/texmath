@@ -25,7 +25,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 module Text.TeXMath.Readers.TeX (readTeX)
 where
 
-import Data.List (intercalate, intersperse, find)
+import Data.List (intercalate, intersperse, find, elemIndices)
 import Data.Ratio ((%))
 import Control.Monad
 import Data.Char (isDigit, isAscii, isLetter)
@@ -250,7 +250,7 @@ genfrac _ = mzero
 substack :: Text -> TP Exp
 substack "\\substack" = do
   formulas <- braces $ ignorable >> (manyExp expr) `sepEndBy` endLine
-  return $ EArray [AlignCenter] $ map (\x -> [[x]]) formulas
+  return $ EArray [AlignCenter] (map (\x -> [[x]]) formulas) []
 substack _ = mzero
 
 asGroup :: [Exp] -> Exp
@@ -372,14 +372,16 @@ arrayLine = notFollowedBy (ctrlseq "end" >> return '\n') >>
                      optional (try (ctrlseq "hline" >> ignorable'))
   -- we don't represent the line, but it shouldn't crash parsing
 
-arrayAlignments :: TP [Alignment]
+arrayAlignments :: TP ([Alignment], [ColumnSeparator])
 arrayAlignments = try $ do
   as <- braces (many (letter <|> char '|'))
   let letterToAlignment 'l' = AlignLeft
       letterToAlignment 'c' = AlignCenter
       letterToAlignment 'r' = AlignRight
       letterToAlignment _   = AlignCenter
-  return $ map letterToAlignment $ filter (/= '|') as
+  let generate n f = map f [0..n-1]
+  let findColSeps = let seperatorPositions = elemIndices '|' as in generate (length as) (\i -> if i `elem` seperatorPositions then CSSolid else CSNone)
+  return $ (map letterToAlignment $ filter (/= '|') as, findColSeps)
 
 environment :: Text -> TP Exp
 environment "\\begin" = do
@@ -421,29 +423,31 @@ environments = M.fromList
   , ("equation", equation)
   ]
 
-alignsFromRows :: Alignment -> [ArrayLine] -> [Alignment]
-alignsFromRows _ [] = []
-alignsFromRows defaultAlignment (r:_) = replicate (length r) defaultAlignment
+alignsFromRows :: Alignment -> ColumnSeparator -> [ArrayLine] -> ([Alignment], [ColumnSeparator])
+alignsFromRows _ _ [] = ([], [])
+alignsFromRows defaultAlignment defaultColSep (r:_) = let n = length r in (replicate n defaultAlignment, replicate (n-1) defaultColSep)
 
 matrixWith :: Text -> Text -> TP Exp
 matrixWith opendelim closedelim = do
   lines' <- sepEndBy1 arrayLine endLineAMS
-  let aligns = alignsFromRows AlignCenter lines'
+  let (aligns, colseps) = alignsFromRows AlignCenter CSNone lines'
   return $ if T.null opendelim && T.null closedelim
-              then EArray aligns lines'
+              then EArray aligns lines' colseps
               else EDelimited opendelim closedelim
-                       [Right $ EArray aligns lines']
+                       [Right $ EArray aligns lines' colseps]
 
 stdarray :: TP Exp
 stdarray = do
-  aligns <- arrayAlignments
+  (aligns, colseps) <- arrayAlignments
+  --aligns <- arrayAlignments
   lines' <- sepEndBy1 arrayLine endLine
-  return $ EArray aligns lines'
+  return $ EArray aligns lines' colseps
 
 gather :: TP Exp
 gather = do
   rows <- sepEndBy arrayLine endLineAMS
-  return $ EArray (alignsFromRows AlignCenter rows) rows
+  let (aligns, colseps) = (alignsFromRows AlignCenter CSNone rows)
+  return $ EArray aligns rows colseps
 
 equation :: TP Exp
 equation = do
@@ -454,24 +458,25 @@ eqnarray :: TP Exp
 eqnarray = do
   rows <- sepEndBy1 arrayLine endLine
   let n = maximum $ map length rows
-  return $ EArray (take n $ cycle [AlignRight, AlignCenter, AlignLeft]) rows
+  return $ EArray (take n $ cycle [AlignRight, AlignCenter, AlignLeft]) rows (replicate (n-1) CSNone)
 
 align :: TP Exp
 align = do
   rows <- sepEndBy1 arrayLine endLineAMS
   let n = maximum $ map length rows
-  return $ EArray (take n $ cycle [AlignRight, AlignLeft]) rows
+  return $ EArray (take n $ cycle [AlignRight, AlignLeft]) rows (replicate (n-1) CSNone)
 
 flalign :: TP Exp
 flalign = do
   rows <- sepEndBy1 arrayLine endLineAMS
   let n = maximum $ map length rows
-  return $ EArray (take n $ cycle [AlignLeft, AlignRight]) rows
+  return $ EArray (take n $ cycle [AlignLeft, AlignRight]) rows (replicate (n-1) CSNone)
 
 cases :: TP Exp
 cases = do
   rs <- sepEndBy1 arrayLine endLineAMS
-  return $ EDelimited "{" "" [Right $ EArray (alignsFromRows AlignLeft rs) rs]
+  let (aligns, colseps) = (alignsFromRows AlignLeft CSNone rs)
+  return $ EDelimited "{" "" [Right $ EArray aligns rs colseps]
 
 variable :: TP Exp
 variable = do

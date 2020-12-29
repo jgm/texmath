@@ -113,14 +113,19 @@ makeText a s = case (leadingSp, trailingSp) of
           _           -> False
         attr = getMMLType a
 
-makeArray :: TextType -> [Alignment] -> [ArrayLine] -> Element
-makeArray tt as ls = unode "mtable" $
+makeArray :: TextType -> [Alignment] -> [ArrayLine] -> [ColumnSeparator] -> Element
+makeArray tt as ls cs = setColumnLines $ unode "mtable" $
   map (unode "mtr" .
     zipWith (\a -> setAlignment a .  unode "mtd". map (showExp tt)) as') ls
    where setAlignment AlignLeft    = withAttribute "columnalign" "left"
          setAlignment AlignRight   = withAttribute "columnalign" "right"
          setAlignment AlignCenter  = withAttribute "columnalign" "center"
+         setColumnLines            = withAttribute "columnlines" . T.intercalate " " $ map colSepToString cs'
+         colSepToString CSNone     = "none"
+         colSepToString CSDashed   = "dashed"
+         colSepToString CSSolid    = "solid"
          as'                       = as ++ cycle [AlignCenter]
+         cs'                       = cs ++ cycle [CSNone]
 
 -- Kept as String for Text.XML.Light
 withAttribute :: String -> T.Text -> Element -> Element
@@ -176,7 +181,7 @@ showExp tt e =
    ESqrt x          -> unode "msqrt" $ showExp tt x
    ERoot i x        -> unode "mroot" [showExp tt x, showExp tt i]
    EScaled s x      -> makeScaled s $ showExp tt x
-   EArray as ls     -> makeArray tt as ls
+   EArray as ls cs  -> makeArray tt as ls cs
    EText a s        -> makeText a s
    EStyled a es     -> makeStyled a $ map (showExp a) es
 

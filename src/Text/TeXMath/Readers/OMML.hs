@@ -296,7 +296,7 @@ elemToExps' element | isElem "m" "eqArr" element =
   let expLst = mapMaybe elemToBases (elChildren element)
       expLst' = map (\es -> [map filterAmpersand es]) expLst
   in
-   return [EArray [] expLst']
+   return [EArray [] expLst' []]
 elemToExps' element | isElem "m" "f" element = do
   num <- filterChildName (hasElemName "m" "num") element
   den <- filterChildName (hasElemName "m" "den") element
@@ -365,7 +365,7 @@ elemToExps' element | isElem "m" "m" element =
                         (elChildren mr))
                 rows
   in
-   return [EArray [AlignCenter] rowExps]
+   return [EArray [AlignCenter] rowExps []]
 elemToExps' element | isElem "m" "nary" element = do
   let naryPr = filterChildName (hasElemName "m" "naryPr") element
       naryChr = naryPr >>=

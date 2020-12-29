@@ -192,7 +192,7 @@ writeExp (EStyled ttype es) =
        TextBold   -> "bold " <> contents
        TextBoldItalic -> "bold italic " <> contents
        _   -> contents
-writeExp (EArray aligns rows) =
+writeExp (EArray aligns rows _) = -- TODO: does \matrix support column separators?
   "matrix{\n" <> T.concat cols <> "}"
   where cols = zipWith tocol aligns (transpose rows)
         tocol al cs =
