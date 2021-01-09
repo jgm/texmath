@@ -56,6 +56,9 @@ expr1 = choice
           , variable
           , number
           , text
+          , unicode
+          , operator
+          -- control sequences -- TODO put in a case:
           , styled
           , root
           , mspace
@@ -68,13 +71,13 @@ expr1 = choice
           , substack
           , bareSubSup
           , environment
-          , unicode
           , ensuremath
           , scaled
           , enclosure
           , negated
           , siunitx
-          , texSymbol
+          , tSymbol
+          , negated
           ] <* ignorable
 
 -- | Parse a formula, returning a list of 'Exp'.
