@@ -1,8 +1,8 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mtable columnlines="none none">
+  <mtable>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mphantom>
             <mtext mathvariant="normal">F</mtext>
@@ -15,10 +15,10 @@
           </mphantom>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mo>=</mo>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mi>TH</mi>
       </mtd>
     </mtr>

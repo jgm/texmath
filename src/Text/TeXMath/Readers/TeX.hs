@@ -379,8 +379,9 @@ arrayAlignments = try $ do
       letterToAlignment 'c' = AlignCenter
       letterToAlignment 'r' = AlignRight
       letterToAlignment _   = AlignCenter
-  let generate n f = map f [0..n-1]
-  let findColSeps = let seperatorPositions = elemIndices '|' as in generate (length as) (\i -> if i `elem` seperatorPositions then CSSolid else CSNone)
+  -- this will omit borders for `|c|c|`, [0..n] should handle that (changing the colseps invariant from n-1 to n+1), at the cost of complicating mathML emission
+  let generate n f = map f [1..n-1]
+  let findColSeps = let seperatorPositions = elemIndices '|' as in generate (length as-1) (\i -> if i `elem` seperatorPositions then CSSolid else CSNone)
   return $ (map letterToAlignment $ filter (/= '|') as, findColSeps)
 
 environment :: Text -> TP Exp

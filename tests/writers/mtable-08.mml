@@ -1,9 +1,9 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mtable columnlines="">
+    <mtable>
       <mtr>
-        <mtd columnalign="center">
+        <mtd>
           <mrow>
             <mphantom>
               <mtext mathvariant="normal">fail</mtext>
@@ -16,30 +16,30 @@
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="center">
+        <mtd>
           <mi>T</mi>
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="center">
+        <mtd>
           <mi>U</mi>
         </mtd>
       </mtr>
     </mtable>
     <mo>=</mo>
-    <mtable columnlines="">
+    <mtable>
       <mtr>
-        <mtd columnalign="center">
+        <mtd>
           <mi>H</mi>
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="center">
+        <mtd>
           <mi>T</mi>
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="center">
+        <mtd>
           <mrow>
             <mphantom>
               <mtext mathvariant="normal">fail</mtext>

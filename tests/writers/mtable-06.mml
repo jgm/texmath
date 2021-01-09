@@ -1,9 +1,9 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mtable columnlines="solid">
+    <mtable columnlines="solid" columnalign="right">
       <mtr>
-        <mtd columnalign="right">
+        <mtd>
           <mrow>
             <mphantom>
               <mtext mathvariant="normal">fail</mtext>
@@ -11,12 +11,12 @@
             <mi>H</mi>
           </mrow>
         </mtd>
-        <mtd columnalign="right">
+        <mtd>
           <mi>A</mi>
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="right">
+        <mtd>
           <mrow>
             <mphantom>
               <mtext mathvariant="normal">fail</mtext>
@@ -24,12 +24,12 @@
             <mi>T</mi>
           </mrow>
         </mtd>
-        <mtd columnalign="right">
+        <mtd>
           <mi>I</mi>
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="right">
+        <mtd>
           <mrow>
             <mphantom>
               <mtext mathvariant="normal">fail</mtext>
@@ -37,18 +37,18 @@
             <mi>U</mi>
           </mrow>
         </mtd>
-        <mtd columnalign="right">
+        <mtd>
           <mi>Y</mi>
         </mtd>
       </mtr>
     </mtable>
     <mo>=</mo>
-    <mtable columnlines="solid">
+    <mtable columnlines="solid" columnalign="left">
       <mtr>
-        <mtd columnalign="left">
+        <mtd>
           <mi>A</mi>
         </mtd>
-        <mtd columnalign="left">
+        <mtd>
           <mrow>
             <mi>H</mi>
             <mphantom>
@@ -58,10 +58,10 @@
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="left">
+        <mtd>
           <mi>I</mi>
         </mtd>
-        <mtd columnalign="left">
+        <mtd>
           <mrow>
             <mi>T</mi>
             <mphantom>
@@ -71,10 +71,10 @@
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="left">
+        <mtd>
           <mi>Y</mi>
         </mtd>
-        <mtd columnalign="left">
+        <mtd>
           <mrow>
             <mi>U</mi>
             <mphantom>

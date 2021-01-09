@@ -1,42 +1,42 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mtable columnlines="none none none none">
+  <mtable>
     <mtr>
-      <mtd columnalign="center" />
-      <mtd columnalign="center" />
-      <mtd columnalign="center">
+      <mtd />
+      <mtd />
+      <mtd>
         <mtext mathvariant="normal">symm</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">stretch</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">symm/stretch</mtext>
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">small op</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mo>∫</mo>
           <mi>x</mi>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mo>∫</mo>
           <mi>x</mi>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mo stretchy="true" form="prefix">∫</mo>
           <mi>x</mi>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mo stretchy="true" form="prefix">∫</mo>
           <mi>x</mi>
@@ -44,28 +44,28 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">large op</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mo>∫</mo>
           <mi>x</mi>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mo>∫</mo>
           <mi>x</mi>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mo stretchy="true" form="prefix">∫</mo>
           <mi>x</mi>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mo stretchy="true" form="prefix">∫</mo>
           <mi>x</mi>
@@ -73,10 +73,10 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">small op</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mo>∫</mo>
           <mfrac>
@@ -85,7 +85,7 @@
           </mfrac>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mo>∫</mo>
           <mfrac>
@@ -94,7 +94,7 @@
           </mfrac>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mo stretchy="true" form="prefix">∫</mo>
           <mfrac>
@@ -103,7 +103,7 @@
           </mfrac>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mo stretchy="true" form="prefix">∫</mo>
           <mfrac>
@@ -114,10 +114,10 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">large op</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mo>∫</mo>
           <mfrac>
@@ -126,7 +126,7 @@
           </mfrac>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mo>∫</mo>
           <mfrac>
@@ -135,7 +135,7 @@
           </mfrac>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mo stretchy="true" form="prefix">∫</mo>
           <mfrac>
@@ -144,7 +144,7 @@
           </mfrac>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mo stretchy="true" form="prefix">∫</mo>
           <mfrac>

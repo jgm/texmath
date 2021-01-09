@@ -25,9 +25,9 @@
     <mo>≤</mo>
     <mi>R</mi>
     <mo stretchy="false" form="postfix">}</mo>
-    <mtable columnlines="none">
+    <mtable columnalign="right left">
       <mtr>
-        <mtd columnalign="right">
+        <mtd>
           <mstyle mathvariant="normal">
             <mi>V</mi>
             <mi>o</mi>
@@ -37,7 +37,7 @@
             <mi>e</mi>
           </mstyle>
         </mtd>
-        <mtd columnalign="left">
+        <mtd>
           <mo>=</mo>
           <munder>
             <mo>∭</mo>
@@ -68,8 +68,8 @@
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="right" />
-        <mtd columnalign="left">
+        <mtd />
+        <mtd>
           <mo>=</mo>
           <msubsup>
             <mo>∫</mo>
@@ -116,8 +116,8 @@
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="right" />
-        <mtd columnalign="left">
+        <mtd />
+        <mtd>
           <mo>=</mo>
           <mi>ϕ</mi>
           <msubsup>
@@ -158,8 +158,8 @@
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="right" />
-        <mtd columnalign="left">
+        <mtd />
+        <mtd>
           <mo>=</mo>
           <mn>2</mn>
           <mi>π</mi>
@@ -179,8 +179,8 @@
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="right" />
-        <mtd columnalign="left">
+        <mtd />
+        <mtd>
           <mo>=</mo>
           <mstyle displaystyle="false">
             <mfrac>

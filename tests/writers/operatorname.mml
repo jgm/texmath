@@ -2,9 +2,9 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
     <mo stretchy="true" form="prefix">{</mo>
-    <mtable columnlines="none">
+    <mtable columnalign="left">
       <mtr>
-        <mtd columnalign="left">
+        <mtd>
           <msub>
             <mo>div</mo>
             <mi>x</mi>
@@ -28,12 +28,12 @@
           </msubsup>
           <mi>u</mi>
         </mtd>
-        <mtd columnalign="left">
+        <mtd>
           <mtext mathvariant="normal">operatorname</mtext>
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="left">
+        <mtd>
           <munder>
             <mo>⋆-lim&#39;sup</mo>
             <mrow>
@@ -69,12 +69,12 @@
           </munderover>
           <mi>u</mi>
         </mtd>
-        <mtd columnalign="left">
+        <mtd>
           <mtext mathvariant="normal">operatorname*</mtext>
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="left">
+        <mtd>
           <msub>
             <mo>⋆-lim&#39;sup</mo>
             <mrow>
@@ -110,12 +110,12 @@
           </msubsup>
           <mi>u</mi>
         </mtd>
-        <mtd columnalign="left">
+        <mtd>
           <mtext mathvariant="normal">operatorname*:nolimits</mtext>
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="left">
+        <mtd>
           <msub>
             <mo>curl</mo>
             <mi>x</mi>
@@ -127,7 +127,7 @@
           </munder>
           <mi>u</mi>
         </mtd>
-        <mtd columnalign="left">
+        <mtd>
           <mtext mathvariant="normal">DeclareMathOperator</mtext>
         </mtd>
       </mtr>

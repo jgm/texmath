@@ -1,14 +1,14 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mtable columnlines="solid solid solid">
+  <mtable columnlines="solid">
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">Top</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mn>3</mn>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mfrac>
           <mrow>
             <mi>a</mi>
@@ -18,7 +18,7 @@
           <mn>2</mn>
         </mfrac>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mover>
           <mi>y</mi>
           <mfrac>
@@ -33,13 +33,13 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">Bottom</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mn>3</mn>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mfrac>
           <mrow>
             <mi>a</mi>
@@ -49,7 +49,7 @@
           <mn>2</mn>
         </mfrac>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mover>
           <mi>y</mi>
           <mfrac>
@@ -64,13 +64,13 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">Center</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mn>3</mn>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mfrac>
           <mrow>
             <mi>a</mi>
@@ -80,7 +80,7 @@
           <mn>2</mn>
         </mfrac>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mover>
           <mi>y</mi>
           <mfrac>
@@ -95,13 +95,13 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">Baseline</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mn>3</mn>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mfrac>
           <mrow>
             <mi>a</mi>
@@ -111,7 +111,7 @@
           <mn>2</mn>
         </mfrac>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mover>
           <mi>y</mi>
           <mfrac>

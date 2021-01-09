@@ -1,8 +1,8 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mtable columnlines="solid solid">
+  <mtable columnlines="solid">
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mfrac>
           <mrow>
             <mi>a</mi>
@@ -12,18 +12,18 @@
           <mn>2</mn>
         </mfrac>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mi>b</mi>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mi>c</mi>
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mi>x</mi>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mfrac>
             <mn>2</mn>
@@ -34,18 +34,18 @@
           <mn>5</mn>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mi>z</mi>
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mn>1</mn>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mn>2</mn>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mn>5</mn>
       </mtd>
     </mtr>
