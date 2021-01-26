@@ -67,6 +67,23 @@
                    MathJax.Hub.Queue(["Typeset",MathJax.Hub,"preview"]);
                 }, 'json')
             });
+        $('#convert-latex2eqn').click(function() {
+          $.post("/cgi-bin/texmath-cgi",
+                   { 'input' : $('#latex-input').val(),
+                     'from': 'tex',
+                     'to': 'eqn' },
+            function(result){
+                   if (result.success) {
+                     var res = result.success;
+                     $('#eqn-result').text(res);
+                     $('#preview').html(removeSelfClosingTags(res));
+                   } else {
+                     $('#eqn-result').text(result.error);
+                     $('#preview').html('');
+                   };
+                   MathJax.Hub.Queue(["Typeset",MathJax.Hub,"preview"]);
+                }, 'json')
+            });
         $('a[data-toggle="tab"]').click(function (e) {
           $('#preview').text(''); // clear preview
           MathJax.Hub.Queue(["Typeset",MathJax.Hub,"preview"]);
@@ -87,6 +104,7 @@
     <div class="col-md-12">
       <ul class="nav nav-tabs" role="tablist">
         <li class="active"><a href="#tex2mathml" role="tab" data-toggle="tab">LaTeX &Rightarrow; MathML</a></li>
+        <li><a href="#tex2eqn" role="tab" data-toggle="tab">LaTeX &Rightarrow; eqn</a></li>
         <li><a href="#mathml2tex" role="tab" data-toggle="tab">MathML &Rightarrow; LaTeX</a></li>
         <li><a href="#installing" role="tab" data-toggle="tab">Installing</a></li>
       </ul>
@@ -102,6 +120,17 @@
       </div>
       <div class="col-md-6">
         <pre id="mathml-result"></pre>
+      </div>
+    </div>
+    <div id="tex2eqn" class="tab-pane active">
+      <div class="col-md-6">
+        <label for="latex-input">Enter a LaTeX formula here. (You may precede it with macro definitions.)</label><br/>
+        <textarea name="latex-input" rows="10" id="latex-input">\iiint_{0}^{1}f\left( x \right)\mathbb{d}x</textarea>
+        <br/>
+        <input type="submit" id="convert-latex2eqn" value="Convert to eqn" /> 
+      </div>
+      <div class="col-md-6">
+        <pre id="eqn-result"></pre>
       </div>
     </div>
     <div id="mathml2tex" class="tab-pane">
