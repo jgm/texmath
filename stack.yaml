@@ -6,4 +6,4 @@ packages:
 - '.'
 extra-deps:
 - pandoc-types-1.22
-resolver: lts-14.14
+resolver: lts-16.23
