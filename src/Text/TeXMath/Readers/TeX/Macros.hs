@@ -103,7 +103,7 @@ applyMacrosOnce ms s =
        Left _  -> Nothing
     where tok = try $ do
                   skipComment
-                  choice [ choice (map macroParser ms)
+                  choice [ choice (map (\m -> macroParser m) ms)
                          , T.pack <$> ctrlseq
                          , T.pack <$> count 1 anyChar ]
 
