@@ -1,3 +1,12 @@
+texmath (0.12.1.1)
+
+  * Fix compilation with GHC-9.0.1 (#169, Simon Jakobi).
+    Background:
+    https://gitlab.haskell.org/ghc/ghc/-/wikis/migration/9.0#simplified-subsumption
+  * Add eqn to online demo.
+  * Improve error messages for unknown control sequences, and restructure
+    tex parser to be more efficient (#167).
+
 texmath (0.12.1)
 
   * OMML writer: explicitly mark symbols as non-italic (#109).
