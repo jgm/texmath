@@ -478,7 +478,9 @@ table e = do
   let (onlyAligns, exprs) = (map .map) fst &&& (map . map) snd $ rs
   let rs' = map (pad (maximum (map length rs))) exprs
   let aligns = map findAlign (transpose onlyAligns)
-  return $ EArray aligns rs'
+  let canonicalizeColSeps cs = take (length aligns-1) $ cycle cs -- e.g. expand columnlines="solid" to "solid solid solid" when there are 3 rows
+  colseps <- maybe (replicate (length aligns-1) CSNone) (canonicalizeColSeps . map toColSep . T.splitOn " ") <$> findAttrQ "columnlines" e
+  return $ EArray aligns rs' colseps
   where
     findAlign xs = if null xs then AlignCenter
                     else foldl1 combine xs
@@ -601,6 +603,12 @@ toAlignment "left" = AlignLeft
 toAlignment "center" = AlignCenter
 toAlignment "right" = AlignRight
 toAlignment _ = AlignCenter
+
+toColSep :: T.Text -> ColumnSeparator
+toColSep "none" = CSNone
+toColSep "dashed" = CSDashed
+toColSep "solid" = CSSolid
+toColSep _ = CSNone
 
 getPosition :: FormType -> TeXSymbolType
 getPosition (FPrefix) = Open

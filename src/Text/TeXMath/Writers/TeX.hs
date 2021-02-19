@@ -115,25 +115,25 @@ writeExp (EDelimited "\x27E8" "\x27E9" [Right (EFraction NoLineFrac x y)]) = do
   writeBinom "\\bangle" x y
 writeExp (EDelimited open close [Right (EFraction NoLineFrac x y)]) = do
   writeExp (EDelimited open close [Right (EArray [AlignCenter]
-                   [[[x]],[[y]]])])
-writeExp (EDelimited open close [Right (EArray aligns rows)]) = do
+                   [[[x]],[[y]]] [])])
+writeExp (EDelimited open close [Right (EArray aligns rows colseps)]) = do
   env <- asks mathEnv
   case ("amsmath" `elem` env, open, close) of
        (True, "{", "") | aligns == [AlignLeft, AlignLeft] ->
-         table "cases" [] rows
+         table "cases" [] rows colseps
        (True, "(", ")") | all (== AlignCenter) aligns ->
-         table "pmatrix" [] rows
+         table "pmatrix" [] rows colseps
        (True, "[", "]") | all (== AlignCenter) aligns ->
-         table "bmatrix" [] rows
+         table "bmatrix" [] rows colseps
        (True, "{", "}") | all (== AlignCenter) aligns ->
-         table "Bmatrix" [] rows
+         table "Bmatrix" [] rows colseps
        (True, "\x2223", "\x2223") | all (== AlignCenter) aligns ->
-         table "vmatrix" [] rows
+         table "vmatrix" [] rows colseps
        (True, "\x2225", "\x2225") | all (== AlignCenter) aligns ->
-         table "Vmatrix" [] rows
+         table "Vmatrix" [] rows colseps
        _ -> do
          writeDelim DLeft open
-         writeExp (EArray aligns rows)
+         writeExp (EArray aligns rows colseps)
          writeDelim DRight close
 writeExp (EDelimited open close es) =  do
   writeDelim DLeft open
@@ -247,19 +247,19 @@ writeExp (EStyled ttype es) = do
   txtcmd <- (flip S.getLaTeXTextCommand ttype) <$> asks mathEnv
   tell [ControlSeq txtcmd]
   tellGroup (mapM_ writeExp $ everywhere (mkT (fromUnicode ttype)) es)
-writeExp (EArray [AlignRight, AlignLeft] rows) = do
+writeExp (EArray [AlignRight, AlignLeft] rows colseps) = do
   env <- asks mathEnv
   if "amsmath" `elem` env
-     then table "aligned" [] rows
-     else table "array" [AlignRight, AlignLeft] rows
-writeExp (EArray aligns rows) = do
+     then table "aligned" [] rows colseps
+     else table "array" [AlignRight, AlignLeft] rows colseps
+writeExp (EArray aligns rows colseps) = do
   env <- asks mathEnv
   if "amsmath" `elem` env && all (== AlignCenter) aligns
-     then table "matrix" [] rows
-     else table "array" aligns rows
+     then table "matrix" [] rows colseps
+     else table "array" aligns rows colseps
 
-table :: T.Text -> [Alignment] -> [ArrayLine] -> Math ()
-table name aligns rows = do
+table :: T.Text -> [Alignment] -> [ArrayLine] -> [ColumnSeparator] -> Math ()
+table name aligns rows colseps = do
   tell [ControlSeq "\\begin", Grouped [Literal name]]
   unless (null aligns) $
      tell [Grouped [Literal columnAligns]]
@@ -267,10 +267,13 @@ table name aligns rows = do
   mapM_ row rows
   tell [ControlSeq "\\end", Grouped [Literal name]]
   where
-    columnAligns = T.pack $ map alignmentToLetter aligns
+    columnAligns = T.pack . concat $ zipWith (\a c -> alignmentToLetter a:colsepToString c) aligns (colseps ++ [CSNone])
     alignmentToLetter AlignLeft = 'l'
     alignmentToLetter AlignCenter = 'c'
     alignmentToLetter AlignRight = 'r'
+    colsepToString CSNone = ""
+    colsepToString CSDashed = "|" -- Lossy, CSDashed can only come from MathML input
+    colsepToString CSSolid = "|"
 
 row :: ArrayLine -> Math ()
 row []     = tell [Space, Literal "\\\\", Token '\n']
@@ -330,7 +333,7 @@ writeScript pos convertible b e1 = do
 
 -- Replace an array with a substack if appropriate.
 checkSubstack :: Exp -> Math ()
-checkSubstack e@(EArray [AlignCenter] rows) = do
+checkSubstack e@(EArray [AlignCenter] rows _) = do
   env <- asks mathEnv
   if "amsmath" `elem` env
      then do

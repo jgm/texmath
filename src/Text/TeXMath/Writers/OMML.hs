@@ -79,8 +79,8 @@ maximum' :: [Int] -> Int
 maximum' [] = 0
 maximum' xs = maximum xs
 
-makeArray :: [Element] -> [Alignment] -> [ArrayLine] -> Element
-makeArray props as rs = mnode "m" $ mProps : map toMr rs
+makeArray :: [Element] -> [Alignment] -> [ArrayLine] -> [ColumnSeparator] -> Element
+makeArray props as rs _ = mnode "m" $ mProps : map toMr rs
   where mProps = mnode "mPr"
                   [ mnodeA "baseJc" "center" ()
                   , mnodeA "plcHide" "1" ()
@@ -269,7 +269,7 @@ showExp props e =
                                           , mnode "e" $ showExp props x]]
    EBoxed   x       -> [mnode "borderBox" [ mnode "e" $ showExp props x]]
    EScaled _ x      -> showExp props x -- no support for scaler?
-   EArray as ls     -> [makeArray props as ls]
+   EArray as ls cs  -> [makeArray props as ls cs]
    EText a s        -> [makeText a s]
    EStyled a es     -> concatMap (showExp (setProps a)) es
 

@@ -113,14 +113,25 @@ makeText a s = case (leadingSp, trailingSp) of
           _           -> False
         attr = getMMLType a
 
-makeArray :: TextType -> [Alignment] -> [ArrayLine] -> Element
-makeArray tt as ls = unode "mtable" $
-  map (unode "mtr" .
-    zipWith (\a -> setAlignment a .  unode "mtd". map (showExp tt)) as') ls
-   where setAlignment AlignLeft    = withAttribute "columnalign" "left"
-         setAlignment AlignRight   = withAttribute "columnalign" "right"
-         setAlignment AlignCenter  = withAttribute "columnalign" "center"
-         as'                       = as ++ cycle [AlignCenter]
+-- "In this context, a single value specifies the value to be used for all rows (resp., columns or gaps)."
+-- https://www.w3.org/TR/MathML3/chapter3.html#presm.mtable
+dedupMtableAttribute :: Eq a => String -> a -> (a -> T.Text) -> [a] -> Element -> Element
+dedupMtableAttribute attrName defaultValue renderValue values = case values of
+    _ | all (== defaultValue) values -> id -- handles [] as well as just a list of the default
+    (v:vs) | all (== v) vs -> withAttribute attrName (renderValue v)
+    _ -> withAttribute attrName $ T.intercalate " " (map renderValue values)
+
+makeArray :: TextType -> [Alignment] -> [ArrayLine] -> [ColumnSeparator] -> Element
+makeArray tt as ls cs = setColumnLines . setAlignments $ unode "mtable" $
+  map (unode "mtr" . map (unode "mtd" . map (showExp tt))) ls
+   where setAlignments               = dedupMtableAttribute "columnalign" AlignCenter renderAlignment as
+         setColumnLines              = dedupMtableAttribute "columnlines" CSNone renderColSep cs
+         renderAlignment AlignLeft   = "left"
+         renderAlignment AlignRight  = "right"
+         renderAlignment AlignCenter = "center"
+         renderColSep CSNone         = "none"
+         renderColSep CSDashed       = "dashed"
+         renderColSep CSSolid        = "solid"
 
 -- Kept as String for Text.XML.Light
 withAttribute :: String -> T.Text -> Element -> Element
@@ -176,7 +187,7 @@ showExp tt e =
    ESqrt x          -> unode "msqrt" $ showExp tt x
    ERoot i x        -> unode "mroot" [showExp tt x, showExp tt i]
    EScaled s x      -> makeScaled s $ showExp tt x
-   EArray as ls     -> makeArray tt as ls
+   EArray as ls cs  -> makeArray tt as ls cs
    EText a s        -> makeText a s
    EStyled a es     -> makeStyled a $ map (showExp a) es
 

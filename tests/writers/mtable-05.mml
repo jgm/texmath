@@ -1,55 +1,55 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mtable>
+    <mtable columnlines="solid">
       <mtr>
-        <mtd columnalign="center">
+        <mtd>
           <mi>H</mi>
         </mtd>
-        <mtd columnalign="center">
+        <mtd>
           <mi>A</mi>
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="center">
+        <mtd>
           <mi>T</mi>
         </mtd>
-        <mtd columnalign="center">
+        <mtd>
           <mi>I</mi>
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="center">
+        <mtd>
           <mi>U</mi>
         </mtd>
-        <mtd columnalign="center">
+        <mtd>
           <mi>Y</mi>
         </mtd>
       </mtr>
     </mtable>
     <mo>=</mo>
-    <mtable>
+    <mtable columnlines="solid">
       <mtr>
-        <mtd columnalign="center">
+        <mtd>
           <mi>A</mi>
         </mtd>
-        <mtd columnalign="center">
+        <mtd>
           <mi>H</mi>
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="center">
+        <mtd>
           <mi>I</mi>
         </mtd>
-        <mtd columnalign="center">
+        <mtd>
           <mi>T</mi>
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="center">
+        <mtd>
           <mi>Y</mi>
         </mtd>
-        <mtd columnalign="center">
+        <mtd>
           <mi>U</mi>
         </mtd>
       </mtr>

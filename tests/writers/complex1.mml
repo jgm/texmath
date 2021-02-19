@@ -2,10 +2,10 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mtable>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">Bernoulli Trials</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mrow>
             <mi>P</mi>
@@ -46,10 +46,10 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">Cauchy-Schwarz Inequality</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <msubsup>
             <mrow>
@@ -119,10 +119,10 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">Cauchy Formula</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mi>f</mi>
           <mo stretchy="false" form="prefix">(</mo>
@@ -172,10 +172,10 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">Cross Product</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <msubsup>
             <mi>V</mi>
@@ -193,18 +193,18 @@
             <mo stretchy="true" form="prefix">|</mo>
             <mtable>
               <mtr>
-                <mtd columnalign="center">
+                <mtd>
                   <mi>i</mi>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <mi>j</mi>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <mi>k</mi>
                 </mtd>
               </mtr>
               <mtr>
-                <mtd columnalign="center">
+                <mtd>
                   <mfrac>
                     <mrow>
                       <mi>∂</mi>
@@ -216,7 +216,7 @@
                     </mrow>
                   </mfrac>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <mfrac>
                     <mrow>
                       <mi>∂</mi>
@@ -228,12 +228,12 @@
                     </mrow>
                   </mfrac>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <mn>0</mn>
                 </mtd>
               </mtr>
               <mtr>
-                <mtd columnalign="center">
+                <mtd>
                   <mfrac>
                     <mrow>
                       <mi>∂</mi>
@@ -245,7 +245,7 @@
                     </mrow>
                   </mfrac>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <mfrac>
                     <mrow>
                       <mi>∂</mi>
@@ -257,7 +257,7 @@
                     </mrow>
                   </mfrac>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <mn>0</mn>
                 </mtd>
               </mtr>
@@ -268,47 +268,47 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">Vandermonde Determinant</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mrow>
             <mo stretchy="true" form="prefix">|</mo>
             <mtable>
               <mtr>
-                <mtd columnalign="center">
+                <mtd>
                   <mn>1</mn>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <mn>1</mn>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <mi>⋯</mi>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <mn>1</mn>
                 </mtd>
               </mtr>
               <mtr>
-                <mtd columnalign="center">
+                <mtd>
                   <msubsup>
                     <mi>v</mi>
                     <mn>1</mn>
                     <mrow />
                   </msubsup>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <msubsup>
                     <mi>v</mi>
                     <mn>2</mn>
                     <mrow />
                   </msubsup>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <mi>⋯</mi>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <msubsup>
                     <mi>v</mi>
                     <mi>n</mi>
@@ -317,24 +317,24 @@
                 </mtd>
               </mtr>
               <mtr>
-                <mtd columnalign="center">
+                <mtd>
                   <msubsup>
                     <mi>v</mi>
                     <mn>1</mn>
                     <mn>2</mn>
                   </msubsup>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <msubsup>
                     <mi>v</mi>
                     <mn>2</mn>
                     <mn>2</mn>
                   </msubsup>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <mi>⋯</mi>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <msubsup>
                     <mi>v</mi>
                     <mi>n</mi>
@@ -343,21 +343,21 @@
                 </mtd>
               </mtr>
               <mtr>
-                <mtd columnalign="center">
+                <mtd>
                   <mo>⋮</mo>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <mo>⋮</mo>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <mo>⋱</mo>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <mo>⋮</mo>
                 </mtd>
               </mtr>
               <mtr>
-                <mtd columnalign="center">
+                <mtd>
                   <msubsup>
                     <mi>v</mi>
                     <mn>1</mn>
@@ -368,7 +368,7 @@
                     </mrow>
                   </msubsup>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <msubsup>
                     <mi>v</mi>
                     <mn>2</mn>
@@ -379,10 +379,10 @@
                     </mrow>
                   </msubsup>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <mi>⋯</mi>
                 </mtd>
-                <mtd columnalign="center">
+                <mtd>
                   <msubsup>
                     <mi>v</mi>
                     <mi>n</mi>
@@ -428,23 +428,23 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">Lorenz Equations</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mtable>
           <mtr>
-            <mtd columnalign="center">
+            <mtd>
               <munderover>
                 <mi>x</mi>
                 <mrow />
                 <mo accent="true">˙</mo>
               </munderover>
             </mtd>
-            <mtd columnalign="center">
+            <mtd>
               <mo>=</mo>
             </mtd>
-            <mtd columnalign="center">
+            <mtd>
               <mrow>
                 <mi>σ</mi>
                 <mo stretchy="false" form="prefix">(</mo>
@@ -456,17 +456,17 @@
             </mtd>
           </mtr>
           <mtr>
-            <mtd columnalign="center">
+            <mtd>
               <munderover>
                 <mi>y</mi>
                 <mrow />
                 <mo accent="true">˙</mo>
               </munderover>
             </mtd>
-            <mtd columnalign="center">
+            <mtd>
               <mo>=</mo>
             </mtd>
-            <mtd columnalign="center">
+            <mtd>
               <mrow>
                 <mi>ρ</mi>
                 <mi>x</mi>
@@ -479,17 +479,17 @@
             </mtd>
           </mtr>
           <mtr>
-            <mtd columnalign="center">
+            <mtd>
               <munderover>
                 <mi>z</mi>
                 <mrow />
                 <mo accent="true">˙</mo>
               </munderover>
             </mtd>
-            <mtd columnalign="center">
+            <mtd>
               <mo>=</mo>
             </mtd>
-            <mtd columnalign="center">
+            <mtd>
               <mrow>
                 <mo>-</mo>
                 <mi>β</mi>
@@ -504,15 +504,15 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">Maxwell&#39;s Equations</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mo stretchy="true" form="prefix">{</mo>
           <mtable>
             <mtr>
-              <mtd columnalign="center">
+              <mtd>
                 <mrow>
                   <mi>∇</mi>
                   <mspace width="0.0em" />
@@ -547,10 +547,10 @@
                   </mfrac>
                 </mrow>
               </mtd>
-              <mtd columnalign="center">
+              <mtd>
                 <mo>=</mo>
               </mtd>
-              <mtd columnalign="center">
+              <mtd>
                 <mrow>
                   <mfrac>
                     <mrow>
@@ -569,7 +569,7 @@
               </mtd>
             </mtr>
             <mtr>
-              <mtd columnalign="center">
+              <mtd>
                 <mrow>
                   <mi>∇</mi>
                   <mspace width="0.0em" />
@@ -581,10 +581,10 @@
                   </munderover>
                 </mrow>
               </mtd>
-              <mtd columnalign="center">
+              <mtd>
                 <mo>=</mo>
               </mtd>
-              <mtd columnalign="center">
+              <mtd>
                 <mrow>
                   <mn>4</mn>
                   <mi>π</mi>
@@ -593,7 +593,7 @@
               </mtd>
             </mtr>
             <mtr>
-              <mtd columnalign="center">
+              <mtd>
                 <mrow>
                   <mi>∇</mi>
                   <mspace width="0.0em" />
@@ -629,10 +629,10 @@
                   </mfrac>
                 </mrow>
               </mtd>
-              <mtd columnalign="center">
+              <mtd>
                 <mo>=</mo>
               </mtd>
-              <mtd columnalign="center">
+              <mtd>
                 <munderover>
                   <mn>0</mn>
                   <mrow />
@@ -641,7 +641,7 @@
               </mtd>
             </mtr>
             <mtr>
-              <mtd columnalign="center">
+              <mtd>
                 <mrow>
                   <mi>∇</mi>
                   <mspace width="0.0em" />
@@ -653,10 +653,10 @@
                   </munderover>
                 </mrow>
               </mtd>
-              <mtd columnalign="center">
+              <mtd>
                 <mo>=</mo>
               </mtd>
-              <mtd columnalign="center">
+              <mtd>
                 <mn>0</mn>
               </mtd>
             </mtr>
@@ -665,10 +665,10 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">Einstein Field Equations</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <msubsup>
             <mi>R</mi>
@@ -720,10 +720,10 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">Ramanujan Identity</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mfrac>
             <mn>1</mn>
@@ -818,10 +818,10 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">Another Ramanujan identity</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <munderover>
             <mo>∑</mo>
@@ -875,10 +875,10 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">Rogers-Ramanujan Identity</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mrow>
           <mn>1</mn>
           <mo>+</mo>
@@ -998,41 +998,41 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd>
         <mtext mathvariant="normal">Commutative Diagram</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd>
         <mtable>
           <mtr>
-            <mtd columnalign="center">
+            <mtd>
               <mi>H</mi>
             </mtd>
-            <mtd columnalign="center">
+            <mtd>
               <mo>←</mo>
             </mtd>
-            <mtd columnalign="center">
+            <mtd>
               <mi>K</mi>
             </mtd>
           </mtr>
           <mtr>
-            <mtd columnalign="center">
+            <mtd>
               <mo>↓</mo>
             </mtd>
-            <mtd columnalign="center">
+            <mtd>
               <mspace width="0.0em" />
             </mtd>
-            <mtd columnalign="center">
+            <mtd>
               <mo>↑</mo>
             </mtd>
           </mtr>
           <mtr>
-            <mtd columnalign="center">
+            <mtd>
               <mi>H</mi>
             </mtd>
-            <mtd columnalign="center">
+            <mtd>
               <mo>→</mo>
             </mtd>
-            <mtd columnalign="center">
+            <mtd>
               <mi>K</mi>
             </mtd>
           </mtr>

@@ -1,19 +1,19 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mstyle mathvariant="monospace">
-    <mtable>
+    <mtable columnalign="left">
       <mtr>
-        <mtd columnalign="left">
+        <mtd>
           <mtext mathvariant="normal">0123456789</mtext>
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="left">
+        <mtd>
           <mtext mathvariant="normal">ABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext>
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="left">
+        <mtd>
           <mtext mathvariant="normal">abcdefghijklmnopqrstuvwxyz</mtext>
         </mtd>
       </mtr>
