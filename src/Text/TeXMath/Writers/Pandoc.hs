@@ -34,9 +34,9 @@ import Text.TeXMath.Shared (getSpaceChars)
 writePandoc :: DisplayType
          -> [Exp]
          -> Maybe [Inline]
-writePandoc _ exps = expsToInlines TextNormal exps
+writePandoc _ exps = expsToInlines Nothing exps
 
-expsToInlines :: TextType -> [Exp] -> Maybe [Inline]
+expsToInlines :: Maybe TextType -> [Exp] -> Maybe [Inline]
 expsToInlines tt xs = do
   res <- mapM (expToInlines tt) (addSpaces xs)
   return (concat res)
@@ -72,9 +72,10 @@ thinspace = EText TextNormal "\x2006"
 medspace  = EText TextNormal "\x2005"
 widespace = EText TextNormal "\x2004"
 
-renderStr :: TextType -> T.Text -> [Inline]
+renderStr :: Maybe TextType -> T.Text -> [Inline]
 renderStr _ "" = []
-renderStr tt s =
+renderStr Nothing s = [Str s]
+renderStr (Just tt) s =
   case tt of
        TextNormal       -> [Str s]
        TextBold         -> [Strong [Str s]]
@@ -91,9 +92,9 @@ renderStr tt s =
        TextSansSerifItalic -> [Emph [Str s]]
        TextSansSerifBoldItalic -> [Strong [Emph [Str s]]]
 
-expToInlines :: TextType -> Exp -> Maybe [Inline]
+expToInlines :: Maybe TextType -> Exp -> Maybe [Inline]
 expToInlines tt (ENumber s) = Just $ renderStr tt s
-expToInlines TextNormal (EIdentifier s) = Just $ renderStr TextItalic s
+expToInlines Nothing (EIdentifier s) = Just $ renderStr (Just TextItalic) s
 expToInlines tt (EIdentifier s) = Just $ renderStr tt s
 expToInlines tt (EMathOperator s) = Just $ renderStr tt s
 expToInlines tt (ESymbol _ s) = Just $ renderStr tt s
@@ -101,7 +102,7 @@ expToInlines tt (EDelimited start end xs) = do
   xs' <- mapM (either (return . renderStr tt) (expToInlines tt)) xs
   return $ renderStr tt start ++ concat xs' ++ renderStr tt end
 expToInlines tt (EGrouped xs)    = expsToInlines tt xs
-expToInlines _ (EStyled tt' xs)  = expsToInlines tt' xs
+expToInlines _ (EStyled tt' xs)  = expsToInlines (Just tt') xs
 expToInlines _ (ESpace n)        = Just [Str $ getSpaceChars n]
 expToInlines _ (ESqrt _)         = Nothing
 expToInlines _ (ERoot _ _)       = Nothing
@@ -119,7 +120,7 @@ expToInlines tt (ESubsup x y z) = do
   y' <- expToInlines tt y
   z' <- expToInlines tt z
   return $ x' ++ [Subscript y'] ++ [Superscript z']
-expToInlines _ (EText tt' x) = Just $ renderStr tt' x
+expToInlines _ (EText tt' x) = Just $ renderStr (Just tt') x
 expToInlines tt (EOver b (EGrouped [EIdentifier (T.unpack -> [c])]) (ESymbol Accent (T.unpack -> [accent]))) = expToInlines tt (EOver b (EIdentifier $ T.singleton c) (ESymbol Accent $ T.singleton accent))
 expToInlines tt (EOver _ (EIdentifier (T.unpack -> [c])) (ESymbol Accent (T.unpack -> [accent]))) =
     case accent of
@@ -144,7 +145,7 @@ expToInlines tt (EOver _ (EIdentifier (T.unpack -> [c])) (ESymbol Accent (T.unpa
          '~'      -> Just $ renderStr tt' $ T.pack [c,'\x0303']  -- tilde
          '\x0303' -> Just $ renderStr tt' $ T.pack [c,'\x0303']  -- tilde combining
          _        -> Nothing
-      where tt' = if tt == TextNormal then TextItalic else tt
+      where tt' = maybe (Just TextItalic) Just tt
 expToInlines tt (EScaled _ e) = expToInlines tt e
 expToInlines tt (EUnder convertible b e)
   | convertible = expToInlines tt (ESub b e)
