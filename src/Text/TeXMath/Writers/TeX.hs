@@ -135,6 +135,17 @@ writeExp (EDelimited open close [Right (EArray aligns rows)]) = do
          writeDelim DLeft open
          writeExp (EArray aligns rows)
          writeDelim DRight close
+writeExp (EDelimited open close es)
+  | all isStandardHeight es =  do
+    getTeXMathM open >>= tell
+    mapM_ (either (writeDelim DMiddle) writeExp) es
+    getTeXMathM close >>= tell
+ where
+  isStandardHeight (Right (EIdentifier{})) = True
+  isStandardHeight (Right (ENumber{})) = True
+  isStandardHeight (Right (ESpace{})) = True
+  isStandardHeight (Right (ESymbol ty _)) = ty `elem` [Ord, Op, Bin, Rel, Pun]
+  isStandardHeight _ = False
 writeExp (EDelimited open close es) =  do
   writeDelim DLeft open
   mapM_ (either (writeDelim DMiddle) writeExp) es
