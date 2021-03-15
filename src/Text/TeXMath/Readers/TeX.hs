@@ -107,6 +107,7 @@ ignorable :: TP ()
 ignorable = skipMany $
         comment
     <|> label
+    <|> tag
     <|> () <$ ctrlseq "nonumber"
     <|> (skipMany1 space <?> "whitespace")
 
@@ -115,6 +116,9 @@ comment = char '%' *> skipMany (noneOf "\n") *> optional newline
 
 label :: TP ()
 label = ctrlseq "label" *> braces (skipMany (noneOf "}"))
+
+tag :: TP ()
+tag = ctrlseq "tag" *> braces (skipMany (noneOf "}"))
 
 unGrouped :: Exp -> [Exp]
 unGrouped (EGrouped xs) = xs
