@@ -23,9 +23,7 @@ Parses MathML in conformance with the MathML3 specification.
 
 Unimplemented features:
 
-  - menclose
   - mpadded
-  - mmultiscripts (etc)
   - malignmark
   - maligngroup
   - Elementary Math
@@ -126,6 +124,7 @@ expr' e =
     "semantics" -> mkE <$> semantics e
     "maligngroup" -> return $ mkE empty
     "malignmark" -> return $ mkE empty
+    "mmultiscripts" -> mkE <$> multiscripts e
     _ -> throwError $ "Unexpected element " <> err e
   where
     mkE :: Exp -> [IR Exp]
@@ -469,6 +468,27 @@ annotation e = do
     Just "MathML-Presentation" ->
       First . Just <$> row e
     _ -> return (First Nothing)
+
+multiscripts :: Element -> MML Exp
+multiscripts e = do
+  let (xs, pres) = break ((== "mprescripts") . name) (elChildren e)
+  let row' e' = if name e' == "none"
+                   then return $ EGrouped []
+                   else row e'
+  xs' <- mapM row' xs
+  let base =
+        case xs' of
+          [x]       -> x
+          [x,y]     -> ESub x y
+          (x:y:z:_) -> ESubsup x y z
+          []        -> EGrouped []
+  pres' <- mapM row' $ drop 1 pres
+  return $
+    case pres' of
+        (x:y:_) -> EGrouped [ESubsup (EGrouped []) x y, base]
+        [x]     -> EGrouped [ESub x (EGrouped []), base]
+        []      -> base
+
 
 -- Table
 
