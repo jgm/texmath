@@ -4,6 +4,5 @@ flags:
     executable: true
 packages:
 - '.'
-extra-deps:
-- pandoc-types-1.22
-resolver: lts-16.23
+extra-deps: []
+resolver: lts-17.5
