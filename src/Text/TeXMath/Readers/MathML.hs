@@ -49,6 +49,7 @@ import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import Text.TeXMath.Compat (throwError, Except, runExcept, MonadError)
 import Control.Applicative ((<$>), (<|>), (<*>))
 import Control.Arrow ((&&&))
+import Data.Char (toLower)
 import Data.Maybe (fromMaybe, listToMaybe, isJust)
 import Data.Monoid (mconcat, First(..), getFirst)
 import Data.Semigroup ((<>))
@@ -584,10 +585,10 @@ findAttrQ s e = do
 
 -- Kept as String for Text.XML.Light
 lookupAttrQ :: String -> [Attr] -> Maybe String
-lookupAttrQ s = lookupAttr (QName s Nothing Nothing)
+lookupAttrQ s = lookupAttr (QName (map toLower s) Nothing Nothing)
 
 name :: Element -> T.Text
-name (elName -> (QName n _ _)) = T.pack n
+name (elName -> (QName n _ _)) = T.toLower $ T.pack n
 
 -- Kept as String for Text.XML.Light
 tunode :: String -> T.Text -> Element
