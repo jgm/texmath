@@ -33,6 +33,7 @@ import Control.Monad.Reader (MonadReader, runReader, Reader, asks, local)
 import Control.Monad.Writer( MonadWriter, WriterT,
                              execWriterT, tell, censor)
 import Text.TeXMath.TeX
+import Data.Either (isRight)
 
 -- import Debug.Trace
 -- tr' x = trace (show x) x
@@ -135,8 +136,13 @@ writeExp (EDelimited open close [Right (EArray aligns rows)]) = do
          writeDelim DLeft open
          writeExp (EArray aligns rows)
          writeDelim DRight close
+-- this clause is meant to pair with delimitedImplicit in the tex reader:
 writeExp (EDelimited open close es)
-  | all isStandardHeight es =  do
+  | all isStandardHeight es
+  , open == "(" || open == "[" || open == "|"
+  , close == ")" || close == "]" || close == "|"
+  , all isRight es
+  = do
     getTeXMathM open >>= tell
     mapM_ (either (writeDelim DMiddle) writeExp) es
     getTeXMathM close >>= tell
