@@ -307,7 +307,7 @@ number = lexeme $ ENumber <$> try decimalNumber
                zs  -> return $ T.pack zs
 
 enclosure :: TP Exp
-enclosure = basicEnclosure <|> delimited
+enclosure = delimited <|> delimitedImplicit <|> basicEnclosure
 
 basicEnclosure :: TP Exp
 basicEnclosure = try $ do
@@ -340,6 +340,22 @@ delimited = do
                              many1Exp (notFollowedBy right *> expr)))
   closec <- right <|> return ""
   return $ EDelimited openc closec contents
+
+delimitedImplicit :: TP Exp
+delimitedImplicit = try $ do
+  openc <- lexeme $ oneOf "()[]|"
+  closec <- case openc of
+                 '(' -> return ')'
+                 '[' -> return ']'
+                 '|' -> return '|'
+                 _   -> mzero
+  let closer = lexeme $ char closec
+  contents <- concat <$>
+              many (try $ ((:[]) . Left  <$> middle)
+                      <|> (map Right . unGrouped <$>
+                             many1Exp (notFollowedBy closer *> expr)))
+  _ <- closer
+  return $ EDelimited (T.singleton openc) (T.singleton closec) contents
 
 scaled :: Text -> TP Exp
 scaled cmd = do
