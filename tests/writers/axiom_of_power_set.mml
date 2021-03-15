@@ -10,23 +10,27 @@
     <mo>∀</mo>
     <mi>B</mi>
     <mspace width="0.167em" />
-    <mo stretchy="false" form="prefix">[</mo>
-    <mi>B</mi>
-    <mo>∈</mo>
-    <mi>P</mi>
-    <mo>⇔</mo>
-    <mo>∀</mo>
-    <mi>C</mi>
-    <mspace width="0.167em" />
-    <mo stretchy="false" form="prefix">(</mo>
-    <mi>C</mi>
-    <mo>∈</mo>
-    <mi>B</mi>
-    <mo>⇒</mo>
-    <mi>C</mi>
-    <mo>∈</mo>
-    <mi>A</mi>
-    <mo stretchy="false" form="postfix">)</mo>
-    <mo stretchy="false" form="postfix">]</mo>
+    <mrow>
+      <mo stretchy="true" form="prefix">[</mo>
+      <mi>B</mi>
+      <mo>∈</mo>
+      <mi>P</mi>
+      <mo>⇔</mo>
+      <mo>∀</mo>
+      <mi>C</mi>
+      <mspace width="0.167em" />
+      <mrow>
+        <mo stretchy="true" form="prefix">(</mo>
+        <mi>C</mi>
+        <mo>∈</mo>
+        <mi>B</mi>
+        <mo>⇒</mo>
+        <mi>C</mi>
+        <mo>∈</mo>
+        <mi>A</mi>
+        <mo stretchy="true" form="postfix">)</mo>
+      </mrow>
+      <mo stretchy="true" form="postfix">]</mo>
+    </mrow>
   </mrow>
 </math>

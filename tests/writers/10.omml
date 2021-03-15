@@ -16,21 +16,18 @@
         </m:r>
       </m:sub>
     </m:sSub>
-    <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
-      <m:t>(</m:t>
-    </m:r>
-    <m:r>
-      <m:t>κ</m:t>
-    </m:r>
-    <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
-      <m:t>)</m:t>
-    </m:r>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="(" />
+        <m:endChr m:val=")" />
+        <m:grow />
+      </m:dPr>
+      <m:e>
+        <m:r>
+          <m:t>κ</m:t>
+        </m:r>
+      </m:e>
+    </m:d>
     <m:r>
       <m:rPr>
         <m:sty m:val="p" />
@@ -109,24 +106,21 @@
               </m:rPr>
               <m:t>sin</m:t>
             </m:r>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>(</m:t>
-            </m:r>
-            <m:r>
-              <m:t>κ</m:t>
-            </m:r>
-            <m:r>
-              <m:t>R</m:t>
-            </m:r>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>)</m:t>
-            </m:r>
+            <m:d>
+              <m:dPr>
+                <m:begChr m:val="(" />
+                <m:endChr m:val=")" />
+                <m:grow />
+              </m:dPr>
+              <m:e>
+                <m:r>
+                  <m:t>κ</m:t>
+                </m:r>
+                <m:r>
+                  <m:t>R</m:t>
+                </m:r>
+              </m:e>
+            </m:d>
           </m:num>
           <m:den>
             <m:r>
@@ -205,21 +199,18 @@
                 </m:r>
               </m:sub>
             </m:sSub>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>(</m:t>
-            </m:r>
-            <m:r>
-              <m:t>R</m:t>
-            </m:r>
-            <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
-              <m:t>)</m:t>
-            </m:r>
+            <m:d>
+              <m:dPr>
+                <m:begChr m:val="(" />
+                <m:endChr m:val=")" />
+                <m:grow />
+              </m:dPr>
+              <m:e>
+                <m:r>
+                  <m:t>R</m:t>
+                </m:r>
+              </m:e>
+            </m:d>
           </m:num>
           <m:den>
             <m:r>

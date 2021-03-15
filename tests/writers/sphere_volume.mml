@@ -129,11 +129,13 @@
             </mrow>
           </msubsup>
           <mspace width="0.222em" />
-          <mo stretchy="false" form="prefix">(</mo>
-          <mo>−</mo>
-          <mo>cos</mo>
-          <mi>θ</mi>
-          <mo stretchy="false" form="postfix">)</mo>
+          <mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <mo>−</mo>
+            <mo>cos</mo>
+            <mi>θ</mi>
+            <mo stretchy="true" form="postfix">)</mo>
+          </mrow>
           <msubsup>
             <mo minsize="1.8" maxsize="1.8" stretchy="false" form="prefix">|</mo>
             <mn>0</mn>

@@ -26,11 +26,13 @@
       <mo accent="false">∞</mo>
     </munderover>
     <mrow>
-      <mo stretchy="false" form="prefix">(</mo>
-      <mo>−</mo>
-      <mn>1</mn>
       <msup>
-        <mo stretchy="false" form="postfix">)</mo>
+        <mrow>
+          <mo stretchy="true" form="prefix">(</mo>
+          <mo>−</mo>
+          <mn>1</mn>
+          <mo stretchy="true" form="postfix">)</mo>
+        </mrow>
         <mrow>
           <mi>n</mi>
           <mo>+</mo>

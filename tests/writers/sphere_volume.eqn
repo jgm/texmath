@@ -1,4 +1,4 @@
 S = \[lC] 0 <= phi <= 2 pi , ~ 0 <= theta <= pi , ~ 0 <= rho <= R \[rC] matrix{
 rcol{ {roman {V o l u m e}} above {} above {} above {} above {} }
-lcol{ {= \[u222D] from S back 16 rho sup 2 sin theta ^ roman {d} rho ^ roman {d} theta ^ roman {d} phi} above {= int sub 0 sup {2 pi} back 16 roman {d} phi ^ int sub 0 sup pi back 16 sin theta ^ roman {d} theta ^ int sub 0 sup R back 16 rho sup 2 roman {d} rho} above {= phi | sub 0 sup {2 pi} ~ ( \[u2212] cos theta ) | sub 0 sup pi ~ 1 over 3 rho sup 3 | sub 0 sup R} above {= 2 pi times 2 times 1 over 3 R sup 3} above {= 4 over 3 pi R sup 3} }
+lcol{ {= \[u222D] from S back 16 rho sup 2 sin theta ^ roman {d} rho ^ roman {d} theta ^ roman {d} phi} above {= int sub 0 sup {2 pi} back 16 roman {d} phi ^ int sub 0 sup pi back 16 sin theta ^ roman {d} theta ^ int sub 0 sup R back 16 rho sup 2 roman {d} rho} above {= phi | sub 0 sup {2 pi} ~ left ( \[u2212] cos theta right ) | sub 0 sup pi ~ 1 over 3 rho sup 3 | sub 0 sup R} above {= 2 pi times 2 times 1 over 3 R sup 3} above {= 4 over 3 pi R sup 3} }
 }

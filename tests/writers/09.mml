@@ -13,16 +13,20 @@
       </mrow>
     </munder>
     <mi>f</mi>
-    <mo stretchy="false" form="prefix">(</mo>
-    <mi>z</mi>
-    <mo stretchy="false" form="postfix">)</mo>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>z</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
     <mo>=</mo>
     <mi>f</mi>
-    <mo stretchy="false" form="prefix">(</mo>
-    <msub>
-      <mi>z</mi>
-      <mn>0</mn>
-    </msub>
-    <mo stretchy="false" form="postfix">)</mo>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <msub>
+        <mi>z</mi>
+        <mn>0</mn>
+      </msub>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
   </mrow>
 </math>

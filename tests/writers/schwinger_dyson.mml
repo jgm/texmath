@@ -19,9 +19,11 @@
             </mrow>
           </mfrac>
           <mi>F</mi>
-          <mo stretchy="false" form="prefix">[</mo>
-          <mi>ϕ</mi>
-          <mo stretchy="false" form="postfix">]</mo>
+          <mrow>
+            <mo stretchy="true" form="prefix">[</mo>
+            <mi>ϕ</mi>
+            <mo stretchy="true" form="postfix">]</mo>
+          </mrow>
           <mo stretchy="true" form="postfix">}</mo>
         </mrow>
         <mo stretchy="true" form="postfix">|</mo>
@@ -45,9 +47,11 @@
         <mrow>
           <mo stretchy="true" form="prefix">{</mo>
           <mi>F</mi>
-          <mo stretchy="false" form="prefix">[</mo>
-          <mi>ϕ</mi>
-          <mo stretchy="false" form="postfix">]</mo>
+          <mrow>
+            <mo stretchy="true" form="prefix">[</mo>
+            <mi>ϕ</mi>
+            <mo stretchy="true" form="postfix">]</mo>
+          </mrow>
           <mfrac>
             <mi>δ</mi>
             <mrow>
@@ -56,9 +60,11 @@
             </mrow>
           </mfrac>
           <mi>S</mi>
-          <mo stretchy="false" form="prefix">[</mo>
-          <mi>ϕ</mi>
-          <mo stretchy="false" form="postfix">]</mo>
+          <mrow>
+            <mo stretchy="true" form="prefix">[</mo>
+            <mi>ϕ</mi>
+            <mo stretchy="true" form="postfix">]</mo>
+          </mrow>
           <mo stretchy="true" form="postfix">}</mo>
         </mrow>
         <mo stretchy="true" form="postfix">|</mo>

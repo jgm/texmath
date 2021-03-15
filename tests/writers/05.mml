@@ -15,9 +15,11 @@
       <mi>s</mi>
     </msubsup>
     <mi>f</mi>
-    <mo stretchy="false" form="prefix">(</mo>
-    <mi>y</mi>
-    <mo stretchy="false" form="postfix">)</mo>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>y</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
     <mspace width="0.167em" />
     <mi>d</mi>
     <mi>y</mi>
@@ -31,14 +33,18 @@
       <mi>x</mi>
     </msubsup>
     <mi>f</mi>
-    <mo stretchy="false" form="prefix">(</mo>
-    <mi>y</mi>
-    <mo stretchy="false" form="postfix">)</mo>
-    <mo stretchy="false" form="prefix">(</mo>
-    <mi>x</mi>
-    <mo>−</mo>
-    <mi>y</mi>
-    <mo stretchy="false" form="postfix">)</mo>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>y</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>x</mi>
+      <mo>−</mo>
+      <mi>y</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
     <mspace width="0.167em" />
     <mi>d</mi>
     <mi>y</mi>

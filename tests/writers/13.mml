@@ -9,33 +9,35 @@
       <mi>F</mi>
       <mi>q</mi>
     </msub>
-    <mo stretchy="false" form="prefix">(</mo>
-    <msub>
-      <mi>a</mi>
-      <mn>1</mn>
-    </msub>
-    <mo>,</mo>
-    <mi>…</mi>
-    <mo>,</mo>
-    <msub>
-      <mi>a</mi>
-      <mi>p</mi>
-    </msub>
-    <mo>;</mo>
-    <msub>
-      <mi>c</mi>
-      <mn>1</mn>
-    </msub>
-    <mo>,</mo>
-    <mi>…</mi>
-    <mo>,</mo>
-    <msub>
-      <mi>c</mi>
-      <mi>q</mi>
-    </msub>
-    <mo>;</mo>
-    <mi>z</mi>
-    <mo stretchy="false" form="postfix">)</mo>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <msub>
+        <mi>a</mi>
+        <mn>1</mn>
+      </msub>
+      <mo>,</mo>
+      <mi>…</mi>
+      <mo>,</mo>
+      <msub>
+        <mi>a</mi>
+        <mi>p</mi>
+      </msub>
+      <mo>;</mo>
+      <msub>
+        <mi>c</mi>
+        <mn>1</mn>
+      </msub>
+      <mo>,</mo>
+      <mi>…</mi>
+      <mo>,</mo>
+      <msub>
+        <mi>c</mi>
+        <mi>q</mi>
+      </msub>
+      <mo>;</mo>
+      <mi>z</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
     <mo>=</mo>
     <munderover>
       <mo>∑</mo>
@@ -48,44 +50,52 @@
     </munderover>
     <mfrac>
       <mrow>
-        <mo stretchy="false" form="prefix">(</mo>
         <msub>
-          <mi>a</mi>
-          <mn>1</mn>
-        </msub>
-        <msub>
-          <mo stretchy="false" form="postfix">)</mo>
+          <mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <msub>
+              <mi>a</mi>
+              <mn>1</mn>
+            </msub>
+            <mo stretchy="true" form="postfix">)</mo>
+          </mrow>
           <mi>n</mi>
         </msub>
         <mi>⋯</mi>
-        <mo stretchy="false" form="prefix">(</mo>
         <msub>
-          <mi>a</mi>
-          <mi>p</mi>
-        </msub>
-        <msub>
-          <mo stretchy="false" form="postfix">)</mo>
+          <mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <msub>
+              <mi>a</mi>
+              <mi>p</mi>
+            </msub>
+            <mo stretchy="true" form="postfix">)</mo>
+          </mrow>
           <mi>n</mi>
         </msub>
       </mrow>
       <mrow>
-        <mo stretchy="false" form="prefix">(</mo>
         <msub>
-          <mi>c</mi>
-          <mn>1</mn>
-        </msub>
-        <msub>
-          <mo stretchy="false" form="postfix">)</mo>
+          <mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <msub>
+              <mi>c</mi>
+              <mn>1</mn>
+            </msub>
+            <mo stretchy="true" form="postfix">)</mo>
+          </mrow>
           <mi>n</mi>
         </msub>
         <mi>⋯</mi>
-        <mo stretchy="false" form="prefix">(</mo>
         <msub>
-          <mi>c</mi>
-          <mi>q</mi>
-        </msub>
-        <msub>
-          <mo stretchy="false" form="postfix">)</mo>
+          <mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <msub>
+              <mi>c</mi>
+              <mi>q</mi>
+            </msub>
+            <mo stretchy="true" form="postfix">)</mo>
+          </mrow>
           <mi>n</mi>
         </msub>
       </mrow>
