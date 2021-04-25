@@ -265,6 +265,7 @@
             <m:dPr>
               <m:begChr m:val="|" />
               <m:endChr m:val="|" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -321,6 +322,7 @@
             <m:dPr>
               <m:begChr m:val="∫" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -340,6 +342,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -476,6 +479,7 @@
                 <m:dPr>
                   <m:begChr m:val="∫" />
                   <m:endChr m:val="" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -556,6 +560,7 @@
             <m:dPr>
               <m:begChr m:val="|" />
               <m:endChr m:val="|" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -563,6 +568,7 @@
                 <m:dPr>
                   <m:begChr m:val="∫" />
                   <m:endChr m:val="" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -582,6 +588,7 @@
                     <m:dPr>
                       <m:begChr m:val="[" />
                       <m:endChr m:val="]" />
+                      <m:sepChr m:val="" />
                       <m:grow />
                     </m:dPr>
                     <m:e>
@@ -713,6 +720,7 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="⇒" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -749,13 +757,13 @@
                 </m:rPr>
                 <m:t>)</m:t>
               </m:r>
-              <m:r>
-                <m:t>⇒</m:t>
-              </m:r>
+            </m:e>
+            <m:e>
               <m:d>
                 <m:dPr>
                   <m:begChr m:val="|" />
                   <m:endChr m:val="|" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -3639,6 +3647,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -3659,6 +3668,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -3890,6 +3900,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -3920,6 +3931,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -3950,6 +3962,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -3979,6 +3992,7 @@
             <m:dPr>
               <m:begChr m:val="[" />
               <m:endChr m:val="]" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -4009,6 +4023,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -4039,6 +4054,7 @@
             <m:dPr>
               <m:begChr m:val="{" />
               <m:endChr m:val="}" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -4068,6 +4084,7 @@
             <m:dPr>
               <m:begChr m:val="〈" />
               <m:endChr m:val="〉" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -4098,6 +4115,7 @@
             <m:dPr>
               <m:begChr m:val="⌊" />
               <m:endChr m:val="⌋" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -4128,6 +4146,7 @@
             <m:dPr>
               <m:begChr m:val="⌈" />
               <m:endChr m:val="⌉" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -4157,12 +4176,11 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="↑" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>↑</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -4178,10 +4196,8 @@
                   </m:r>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>↑</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
           <m:r>
             <m:rPr>
@@ -4193,12 +4209,11 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="↓" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>↓</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -4214,10 +4229,8 @@
                   </m:r>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>↓</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
           <m:r>
             <m:rPr>
@@ -4229,12 +4242,11 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="↕" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>↕</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -4250,10 +4262,8 @@
                   </m:r>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>↕</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
         </m:e>
         <m:e />
@@ -4613,6 +4623,7 @@
             <m:dPr>
               <m:begChr m:val="|" />
               <m:endChr m:val="|" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -4631,6 +4642,7 @@
             <m:dPr>
               <m:begChr m:val="{" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -4820,6 +4832,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -4865,6 +4878,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -5051,6 +5065,7 @@
             <m:dPr>
               <m:begChr m:val="{" />
               <m:endChr m:val="}" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -5283,6 +5298,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -5310,6 +5326,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -5419,6 +5436,7 @@
             <m:dPr>
               <m:begChr m:val="{" />
               <m:endChr m:val="}" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -5426,6 +5444,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -5751,6 +5770,7 @@
             <m:dPr>
               <m:begChr m:val="[" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -5814,6 +5834,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val="]" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -6398,6 +6419,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -6660,6 +6682,7 @@
                   <m:dPr>
                     <m:begChr m:val="(" />
                     <m:endChr m:val=")" />
+                    <m:sepChr m:val="" />
                     <m:grow />
                   </m:dPr>
                   <m:e>
@@ -6698,6 +6721,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -6951,6 +6975,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -6994,6 +7019,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -7034,6 +7060,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -7099,6 +7126,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -7191,6 +7219,7 @@
                       <m:dPr>
                         <m:begChr m:val="(" />
                         <m:endChr m:val=")" />
+                        <m:sepChr m:val="" />
                         <m:grow />
                       </m:dPr>
                       <m:e>
@@ -7250,6 +7279,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -7299,6 +7329,7 @@
                       <m:dPr>
                         <m:begChr m:val="(" />
                         <m:endChr m:val=")" />
+                        <m:sepChr m:val="" />
                         <m:grow />
                       </m:dPr>
                       <m:e>
@@ -7860,6 +7891,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -7988,6 +8020,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -8229,6 +8262,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -8274,6 +8308,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -8334,6 +8369,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -9143,6 +9179,7 @@
             <m:dPr>
               <m:begChr m:val="{" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -9594,6 +9631,7 @@
             <m:dPr>
               <m:begChr m:val="[" />
               <m:endChr m:val="]" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -9707,6 +9745,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -10355,6 +10394,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -10404,6 +10444,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -10518,6 +10559,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -10650,6 +10692,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -10729,6 +10772,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -10792,6 +10836,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -10941,6 +10986,7 @@
                   <m:dPr>
                     <m:begChr m:val="(" />
                     <m:endChr m:val=")" />
+                    <m:sepChr m:val="" />
                     <m:grow />
                   </m:dPr>
                   <m:e>
@@ -10992,6 +11038,7 @@
                   <m:dPr>
                     <m:begChr m:val="(" />
                     <m:endChr m:val=")" />
+                    <m:sepChr m:val="" />
                     <m:grow />
                   </m:dPr>
                   <m:e>
@@ -11077,6 +11124,7 @@
                   <m:dPr>
                     <m:begChr m:val="(" />
                     <m:endChr m:val=")" />
+                    <m:sepChr m:val="" />
                     <m:grow />
                   </m:dPr>
                   <m:e>
@@ -11164,6 +11212,7 @@
                   <m:dPr>
                     <m:begChr m:val="(" />
                     <m:endChr m:val=")" />
+                    <m:sepChr m:val="" />
                     <m:grow />
                   </m:dPr>
                   <m:e>
@@ -11251,6 +11300,7 @@
                   <m:dPr>
                     <m:begChr m:val="(" />
                     <m:endChr m:val=")" />
+                    <m:sepChr m:val="" />
                     <m:grow />
                   </m:dPr>
                   <m:e>
@@ -11316,6 +11366,7 @@
             <m:dPr>
               <m:begChr m:val="{" />
               <m:endChr m:val="}" />
+              <m:sepChr m:val="|" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -11368,6 +11419,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -11418,9 +11470,8 @@
                   </m:rad>
                 </m:e>
               </m:d>
-              <m:r>
-                <m:t>|</m:t>
-              </m:r>
+            </m:e>
+            <m:e>
               <m:sSub>
                 <m:e>
                   <m:r>
@@ -11463,6 +11514,7 @@
             <m:dPr>
               <m:begChr m:val="{" />
               <m:endChr m:val="}" />
+              <m:sepChr m:val="|" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -11515,6 +11567,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -11565,9 +11618,8 @@
                   </m:rad>
                 </m:e>
               </m:d>
-              <m:r>
-                <m:t>|</m:t>
-              </m:r>
+            </m:e>
+            <m:e>
               <m:sSub>
                 <m:e>
                   <m:r>
@@ -11620,6 +11672,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -11693,6 +11746,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -11874,6 +11928,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -11901,6 +11956,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -11925,6 +11981,7 @@
             <m:dPr>
               <m:begChr m:val="[" />
               <m:endChr m:val="]" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -12042,6 +12099,7 @@
             <m:dPr>
               <m:begChr m:val="[" />
               <m:endChr m:val="]" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -12188,6 +12246,7 @@
             <m:dPr>
               <m:begChr m:val="[" />
               <m:endChr m:val="]" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -12255,6 +12314,7 @@
                       <m:dPr>
                         <m:begChr m:val="(" />
                         <m:endChr m:val=")" />
+                        <m:sepChr m:val="" />
                         <m:grow />
                       </m:dPr>
                       <m:e>
@@ -12327,6 +12387,7 @@
                       <m:dPr>
                         <m:begChr m:val="(" />
                         <m:endChr m:val=")" />
+                        <m:sepChr m:val="" />
                         <m:grow />
                       </m:dPr>
                       <m:e>
@@ -12442,6 +12503,7 @@
                       <m:dPr>
                         <m:begChr m:val="(" />
                         <m:endChr m:val=")" />
+                        <m:sepChr m:val="" />
                         <m:grow />
                       </m:dPr>
                       <m:e>
@@ -12480,6 +12542,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -12625,6 +12688,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -12658,6 +12722,7 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="↔" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -12665,6 +12730,7 @@
                 <m:dPr>
                   <m:begChr m:val="{" />
                   <m:endChr m:val="}" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -12672,6 +12738,7 @@
                     <m:dPr>
                       <m:begChr m:val="(" />
                       <m:endChr m:val=")" />
+                      <m:sepChr m:val="" />
                       <m:grow />
                     </m:dPr>
                     <m:e>
@@ -12763,9 +12830,8 @@
                   </m:d>
                 </m:e>
               </m:d>
-              <m:r>
-                <m:t>↔</m:t>
-              </m:r>
+            </m:e>
+            <m:e>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -12830,19 +12896,16 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="∥" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>∥</m:t>
-              </m:r>
               <m:r>
                 <m:t>A</m:t>
               </m:r>
-              <m:r>
-                <m:t>∥</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
           <m:r>
             <m:rPr>
@@ -12884,12 +12947,11 @@
                 <m:dPr>
                   <m:begChr m:val="" />
                   <m:endChr m:val="" />
+                  <m:sepChr m:val="∥" />
                   <m:grow />
                 </m:dPr>
+                <m:e />
                 <m:e>
-                  <m:r>
-                    <m:t>∥</m:t>
-                  </m:r>
                   <m:r>
                     <m:t>A</m:t>
                   </m:r>
@@ -12902,10 +12964,8 @@
                   <m:r>
                     <m:t>x</m:t>
                   </m:r>
-                  <m:r>
-                    <m:t>∥</m:t>
-                  </m:r>
                 </m:e>
+                <m:e />
               </m:d>
             </m:num>
             <m:den>
@@ -12913,19 +12973,16 @@
                 <m:dPr>
                   <m:begChr m:val="" />
                   <m:endChr m:val="" />
+                  <m:sepChr m:val="∥" />
                   <m:grow />
                 </m:dPr>
+                <m:e />
                 <m:e>
-                  <m:r>
-                    <m:t>∥</m:t>
-                  </m:r>
                   <m:r>
                     <m:t>x</m:t>
                   </m:r>
-                  <m:r>
-                    <m:t>∥</m:t>
-                  </m:r>
                 </m:e>
+                <m:e />
               </m:d>
             </m:den>
           </m:f>
@@ -12938,6 +12995,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -13069,6 +13127,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -13200,6 +13259,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -13447,6 +13507,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -13454,6 +13515,7 @@
                 <m:dPr>
                   <m:begChr m:val="[" />
                   <m:endChr m:val="]" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -13517,6 +13579,7 @@
                 <m:dPr>
                   <m:begChr m:val="[" />
                   <m:endChr m:val="]" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -13592,6 +13655,7 @@
             <m:dPr>
               <m:begChr m:val="[" />
               <m:endChr m:val="]" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -13660,6 +13724,7 @@
             <m:dPr>
               <m:begChr m:val="[" />
               <m:endChr m:val="]" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -13930,6 +13995,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -14145,6 +14211,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -14350,6 +14417,7 @@
                         <m:dPr>
                           <m:begChr m:val="(" />
                           <m:endChr m:val=")" />
+                          <m:sepChr m:val="" />
                           <m:grow />
                         </m:dPr>
                         <m:e>
@@ -14377,6 +14445,7 @@
                         <m:dPr>
                           <m:begChr m:val="(" />
                           <m:endChr m:val=")" />
+                          <m:sepChr m:val="" />
                           <m:grow />
                         </m:dPr>
                         <m:e>
@@ -14434,6 +14503,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -14461,6 +14531,7 @@
                         <m:dPr>
                           <m:begChr m:val="(" />
                           <m:endChr m:val=")" />
+                          <m:sepChr m:val="" />
                           <m:grow />
                         </m:dPr>
                         <m:e>
@@ -14518,6 +14589,7 @@
                         <m:dPr>
                           <m:begChr m:val="(" />
                           <m:endChr m:val=")" />
+                          <m:sepChr m:val="" />
                           <m:grow />
                         </m:dPr>
                         <m:e>
@@ -14591,6 +14663,7 @@
             <m:dPr>
               <m:begChr m:val="∫" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -14708,6 +14781,7 @@
             <m:dPr>
               <m:begChr m:val="∫" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -14884,6 +14958,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -15125,6 +15200,7 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="→" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -15132,6 +15208,7 @@
                 <m:dPr>
                   <m:begChr m:val="[" />
                   <m:endChr m:val="]" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -15149,13 +15226,13 @@
                   </m:r>
                 </m:e>
               </m:d>
-              <m:r>
-                <m:t>→</m:t>
-              </m:r>
+            </m:e>
+            <m:e>
               <m:d>
                 <m:dPr>
                   <m:begChr m:val="[" />
                   <m:endChr m:val="]" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -15252,6 +15329,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -15268,6 +15346,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -15295,6 +15374,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -15356,6 +15436,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -15370,6 +15451,7 @@
                 <m:dPr>
                   <m:begChr m:val="{" />
                   <m:endChr m:val="}" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -15386,6 +15468,7 @@
                     <m:dPr>
                       <m:begChr m:val="(" />
                       <m:endChr m:val=")" />
+                      <m:sepChr m:val="" />
                       <m:grow />
                     </m:dPr>
                     <m:e>
@@ -15413,6 +15496,7 @@
                     <m:dPr>
                       <m:begChr m:val="(" />
                       <m:endChr m:val=")" />
+                      <m:sepChr m:val="" />
                       <m:grow />
                     </m:dPr>
                     <m:e>
@@ -15479,6 +15563,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -15495,6 +15580,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -15522,6 +15608,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -15574,6 +15661,7 @@
             <m:dPr>
               <m:begChr m:val="{" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -15760,6 +15848,7 @@
             <m:dPr>
               <m:begChr m:val="[" />
               <m:endChr m:val="]" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -15781,6 +15870,7 @@
                     <m:dPr>
                       <m:begChr m:val="(" />
                       <m:endChr m:val=")" />
+                      <m:sepChr m:val="" />
                       <m:grow />
                     </m:dPr>
                     <m:e>
@@ -15817,6 +15907,7 @@
                     <m:dPr>
                       <m:begChr m:val="(" />
                       <m:endChr m:val=")" />
+                      <m:sepChr m:val="" />
                       <m:grow />
                     </m:dPr>
                     <m:e>
@@ -15930,6 +16021,7 @@
             <m:dPr>
               <m:begChr m:val="[" />
               <m:endChr m:val="]" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -15951,6 +16043,7 @@
                     <m:dPr>
                       <m:begChr m:val="(" />
                       <m:endChr m:val=")" />
+                      <m:sepChr m:val="" />
                       <m:grow />
                     </m:dPr>
                     <m:e>
@@ -15987,6 +16080,7 @@
                     <m:dPr>
                       <m:begChr m:val="(" />
                       <m:endChr m:val=")" />
+                      <m:sepChr m:val="" />
                       <m:grow />
                     </m:dPr>
                     <m:e>
@@ -16101,6 +16195,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -16130,6 +16225,7 @@
                         <m:dPr>
                           <m:begChr m:val="(" />
                           <m:endChr m:val=")" />
+                          <m:sepChr m:val="" />
                           <m:grow />
                         </m:dPr>
                         <m:e>
@@ -16160,6 +16256,7 @@
                     <m:dPr>
                       <m:begChr m:val="(" />
                       <m:endChr m:val=")" />
+                      <m:sepChr m:val="" />
                       <m:grow />
                     </m:dPr>
                     <m:e>
@@ -16198,6 +16295,7 @@
                         <m:dPr>
                           <m:begChr m:val="(" />
                           <m:endChr m:val=")" />
+                          <m:sepChr m:val="" />
                           <m:grow />
                         </m:dPr>
                         <m:e>
@@ -16266,6 +16364,7 @@
             <m:dPr>
               <m:begChr m:val="{" />
               <m:endChr m:val="}" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -16282,6 +16381,7 @@
                 <m:dPr>
                   <m:begChr m:val="" />
                   <m:endChr m:val="" />
+                  <m:sepChr m:val="→" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -16289,6 +16389,7 @@
                     <m:dPr>
                       <m:begChr m:val="[" />
                       <m:endChr m:val="]" />
+                      <m:sepChr m:val="" />
                       <m:grow />
                     </m:dPr>
                     <m:e>
@@ -16306,13 +16407,13 @@
                       </m:r>
                     </m:e>
                   </m:d>
-                  <m:r>
-                    <m:t>→</m:t>
-                  </m:r>
+                </m:e>
+                <m:e>
                   <m:d>
                     <m:dPr>
                       <m:begChr m:val="[" />
                       <m:endChr m:val="]" />
+                      <m:sepChr m:val="" />
                       <m:grow />
                     </m:dPr>
                     <m:e>
@@ -16339,6 +16440,7 @@
                 <m:dPr>
                   <m:begChr m:val="|" />
                   <m:endChr m:val="" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -16403,6 +16505,7 @@
                           <m:dPr>
                             <m:begChr m:val="(" />
                             <m:endChr m:val=")" />
+                            <m:sepChr m:val="" />
                             <m:grow />
                           </m:dPr>
                           <m:e>
@@ -16430,6 +16533,7 @@
                           <m:dPr>
                             <m:begChr m:val="(" />
                             <m:endChr m:val=")" />
+                            <m:sepChr m:val="" />
                             <m:grow />
                           </m:dPr>
                           <m:e>
@@ -16608,6 +16712,7 @@
             <m:dPr>
               <m:begChr m:val="[" />
               <m:endChr m:val="]" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -16804,6 +16909,7 @@
             <m:dPr>
               <m:begChr m:val="{" />
               <m:endChr m:val="}" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -16849,6 +16955,7 @@
             <m:dPr>
               <m:begChr m:val="{" />
               <m:endChr m:val="}" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -18125,6 +18232,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -18215,6 +18323,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -18269,6 +18378,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -18487,6 +18597,7 @@
             <m:dPr>
               <m:begChr m:val="[" />
               <m:endChr m:val="]" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -18597,6 +18708,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -18782,6 +18894,7 @@
             <m:dPr>
               <m:begChr m:val="{" />
               <m:endChr m:val="}" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -18789,6 +18902,7 @@
                 <m:dPr>
                   <m:begChr m:val="|" />
                   <m:endChr m:val="|" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -19031,6 +19145,7 @@
             <m:dPr>
               <m:begChr m:val="|" />
               <m:endChr m:val="|" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -19049,6 +19164,7 @@
             <m:dPr>
               <m:begChr m:val="|" />
               <m:endChr m:val="|" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -20015,6 +20131,7 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="|" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -20051,12 +20168,11 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="∥" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>∥</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -20090,12 +20206,11 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="/" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>/</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -20123,10 +20238,8 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>/</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
           <m:r>
             <m:rPr>
@@ -20138,6 +20251,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -20174,12 +20288,11 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="↕" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>↕</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -20207,10 +20320,8 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>↕</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
           <m:f>
             <m:fPr>
@@ -20243,12 +20354,11 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="⇕" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>⇕</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -20288,21 +20398,18 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>⇕</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
           <m:d>
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="↑" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>↑</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -20330,10 +20437,8 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>↑</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
           <m:r>
             <m:rPr>
@@ -20345,12 +20450,11 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="⇑" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>⇑</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -20378,21 +20482,18 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>⇑</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
           <m:d>
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="↓" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>↓</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -20420,21 +20521,18 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>↓</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
           <m:d>
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="⇓" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>⇓</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -20462,10 +20560,8 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>⇓</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
         </m:e>
         <m:e />
@@ -20543,6 +20639,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -20615,6 +20712,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -20827,6 +20925,7 @@
             <m:dPr>
               <m:begChr m:val="⌊" />
               <m:endChr m:val="⌋" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -20857,6 +20956,7 @@
             <m:dPr>
               <m:begChr m:val="⌊" />
               <m:endChr m:val="⌋" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -20896,6 +20996,7 @@
             <m:dPr>
               <m:begChr m:val="⌊" />
               <m:endChr m:val="⌋" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -20935,6 +21036,7 @@
             <m:dPr>
               <m:begChr m:val="⌊" />
               <m:endChr m:val="⌋" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -21426,6 +21528,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -21532,6 +21635,7 @@
                     <m:dPr>
                       <m:begChr m:val="(" />
                       <m:endChr m:val=")" />
+                      <m:sepChr m:val="" />
                       <m:grow />
                     </m:dPr>
                     <m:e>
@@ -21583,6 +21687,7 @@
             <m:dPr>
               <m:begChr m:val="∫" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -21974,6 +22079,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -22091,6 +22197,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -22348,6 +22455,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -22501,6 +22609,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -22607,6 +22716,7 @@
                     <m:dPr>
                       <m:begChr m:val="(" />
                       <m:endChr m:val=")" />
+                      <m:sepChr m:val="" />
                       <m:grow />
                     </m:dPr>
                     <m:e>
@@ -22658,6 +22768,7 @@
             <m:dPr>
               <m:begChr m:val="∫" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -22689,6 +22800,7 @@
                 <m:dPr>
                   <m:begChr m:val="(" />
                   <m:endChr m:val=")" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -22703,6 +22815,7 @@
                             <m:dPr>
                               <m:begChr m:val="|" />
                               <m:endChr m:val="|" />
+                              <m:sepChr m:val="" />
                               <m:grow />
                             </m:dPr>
                             <m:e>
@@ -22739,6 +22852,7 @@
                             <m:dPr>
                               <m:begChr m:val="|" />
                               <m:endChr m:val="|" />
+                              <m:sepChr m:val="" />
                               <m:grow />
                             </m:dPr>
                             <m:e>
@@ -22793,6 +22907,7 @@
                             <m:dPr>
                               <m:begChr m:val="|" />
                               <m:endChr m:val="|" />
+                              <m:sepChr m:val="" />
                               <m:grow />
                             </m:dPr>
                             <m:e>
@@ -22861,6 +22976,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -23017,6 +23133,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -23069,6 +23186,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -23121,6 +23239,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -23173,6 +23292,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -23261,6 +23381,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -23517,6 +23638,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -23581,6 +23703,7 @@
             <m:dPr>
               <m:begChr m:val="[" />
               <m:endChr m:val="]" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -23645,6 +23768,7 @@
             <m:dPr>
               <m:begChr m:val="|" />
               <m:endChr m:val="|" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -23703,12 +23827,11 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="∥" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>∥</m:t>
-              </m:r>
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
@@ -23769,10 +23892,8 @@
                   </m:e>
                 </m:mr>
               </m:m>
-              <m:r>
-                <m:t>∥</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
         </m:e>
         <m:e />
@@ -24245,6 +24366,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -24284,6 +24406,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -26318,6 +26441,7 @@
                 <m:dPr>
                   <m:begChr m:val="|" />
                   <m:endChr m:val="|" />
+                  <m:sepChr m:val="" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -26443,6 +26567,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -26637,6 +26762,7 @@
             <m:dPr>
               <m:begChr m:val="[" />
               <m:endChr m:val="]" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -27692,6 +27818,7 @@
             <m:dPr>
               <m:begChr m:val="{" />
               <m:endChr m:val="}" />
+              <m:sepChr m:val="↑" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -27734,9 +27861,8 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>↑</m:t>
-              </m:r>
+            </m:e>
+            <m:e>
               <m:nary>
                 <m:naryPr>
                   <m:chr m:val="∑" />
@@ -27771,6 +27897,7 @@
             <m:dPr>
               <m:begChr m:val="〈" />
               <m:endChr m:val="〉" />
+              <m:sepChr m:val="|" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -27813,9 +27940,8 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>|</m:t>
-              </m:r>
+            </m:e>
+            <m:e>
               <m:nary>
                 <m:naryPr>
                   <m:chr m:val="∑" />
@@ -27850,6 +27976,7 @@
             <m:dPr>
               <m:begChr m:val="⌈" />
               <m:endChr m:val="⌉" />
+              <m:sepChr m:val="|" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -27892,9 +28019,8 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>|</m:t>
-              </m:r>
+            </m:e>
+            <m:e>
               <m:nary>
                 <m:naryPr>
                   <m:chr m:val="∑" />
@@ -27929,16 +28055,16 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="⇓" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>⇓</m:t>
-              </m:r>
               <m:d>
                 <m:dPr>
                   <m:begChr m:val="" />
                   <m:endChr m:val="" />
+                  <m:sepChr m:val="↕" />
                   <m:grow />
                 </m:dPr>
                 <m:e>
@@ -27981,9 +28107,8 @@
                       </m:f>
                     </m:den>
                   </m:f>
-                  <m:r>
-                    <m:t>↕</m:t>
-                  </m:r>
+                </m:e>
+                <m:e>
                   <m:nary>
                     <m:naryPr>
                       <m:chr m:val="∑" />
@@ -28009,10 +28134,8 @@
                   </m:nary>
                 </m:e>
               </m:d>
-              <m:r>
-                <m:t>⇓</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
         </m:e>
         <m:e />
@@ -28023,6 +28146,7 @@
             <m:dPr>
               <m:begChr m:val="[" />
               <m:endChr m:val="]" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -28076,6 +28200,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val=")" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -28129,6 +28254,7 @@
             <m:dPr>
               <m:begChr m:val="{" />
               <m:endChr m:val="}" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -28182,6 +28308,7 @@
             <m:dPr>
               <m:begChr m:val="〈" />
               <m:endChr m:val="〉" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -28235,6 +28362,7 @@
             <m:dPr>
               <m:begChr m:val="⌊" />
               <m:endChr m:val="⌋" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -28288,6 +28416,7 @@
             <m:dPr>
               <m:begChr m:val="⌈" />
               <m:endChr m:val="⌉" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -28341,12 +28470,11 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="↑" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>↑</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -28386,10 +28514,8 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>↑</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
         </m:e>
         <m:e />
@@ -28400,12 +28526,11 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="↓" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>↓</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -28445,10 +28570,8 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>↓</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
         </m:e>
         <m:e />
@@ -28459,12 +28582,11 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="↕" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>↕</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -28504,10 +28626,8 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>↕</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
         </m:e>
         <m:e />
@@ -28518,12 +28638,11 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="⇑" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>⇑</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -28563,10 +28682,8 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>⇑</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
         </m:e>
         <m:e />
@@ -28577,12 +28694,11 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="⇓" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>⇓</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -28622,10 +28738,8 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>⇓</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
         </m:e>
         <m:e />
@@ -28636,12 +28750,11 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="⇕" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>⇕</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -28681,10 +28794,8 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>⇕</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
         </m:e>
         <m:e />
@@ -28739,6 +28850,7 @@
             <m:dPr>
               <m:begChr m:val="\arrowvert" />
               <m:endChr m:val="\arrowvert" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -28792,6 +28904,7 @@
             <m:dPr>
               <m:begChr m:val="\Arrowvert" />
               <m:endChr m:val="\Arrowvert" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -28845,6 +28958,7 @@
             <m:dPr>
               <m:begChr m:val="\bracevert" />
               <m:endChr m:val="\bracevert" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -28898,6 +29012,7 @@
             <m:dPr>
               <m:begChr m:val="|" />
               <m:endChr m:val="|" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -28951,6 +29066,7 @@
             <m:dPr>
               <m:begChr m:val="|" />
               <m:endChr m:val="|" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -29004,6 +29120,7 @@
             <m:dPr>
               <m:begChr m:val="|" />
               <m:endChr m:val="|" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -29057,12 +29174,11 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="∥" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>∥</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -29102,10 +29218,8 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>∥</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
         </m:e>
         <m:e />
@@ -29116,12 +29230,11 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="∥" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>∥</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -29161,10 +29274,8 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>∥</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
         </m:e>
         <m:e />
@@ -29175,12 +29286,11 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="/" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>/</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -29220,10 +29330,8 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>/</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
         </m:e>
         <m:e />
@@ -29234,12 +29342,11 @@
             <m:dPr>
               <m:begChr m:val="" />
               <m:endChr m:val="" />
+              <m:sepChr m:val="\" />
               <m:grow />
             </m:dPr>
+            <m:e />
             <m:e>
-              <m:r>
-                <m:t>\</m:t>
-              </m:r>
               <m:f>
                 <m:fPr>
                   <m:type m:val="bar" />
@@ -29279,10 +29386,8 @@
                   </m:f>
                 </m:den>
               </m:f>
-              <m:r>
-                <m:t>\</m:t>
-              </m:r>
             </m:e>
+            <m:e />
           </m:d>
         </m:e>
         <m:e />
@@ -29293,6 +29398,7 @@
             <m:dPr>
               <m:begChr m:val="⎱" />
               <m:endChr m:val="⎰" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -29346,6 +29452,7 @@
             <m:dPr>
               <m:begChr m:val="\lgroup" />
               <m:endChr m:val="\rgroup" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -29399,6 +29506,7 @@
             <m:dPr>
               <m:begChr m:val="⌞" />
               <m:endChr m:val="⌟" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -29452,6 +29560,7 @@
             <m:dPr>
               <m:begChr m:val="⌜" />
               <m:endChr m:val="⌝" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -29909,6 +30018,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val="⌋" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -29951,6 +30061,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val="⌋" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -29993,6 +30104,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val="⌋" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -30035,6 +30147,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val="⌋" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -30077,6 +30190,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val="⌋" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -30119,6 +30233,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val="⌋" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -30161,6 +30276,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val="⌋" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -30203,6 +30319,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val="⌋" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>
@@ -30245,6 +30362,7 @@
             <m:dPr>
               <m:begChr m:val="(" />
               <m:endChr m:val="⌋" />
+              <m:sepChr m:val="" />
               <m:grow />
             </m:dPr>
             <m:e>

@@ -28,7 +28,9 @@ import Text.XML.Light
 import Text.TeXMath.Types
 import Data.Generics (everywhere, mkT)
 import Data.Char (isSymbol, isPunctuation)
+import Data.Either (lefts, isLeft, rights)
 import qualified Data.Text as T
+import Data.List.Split  (splitWhen)
 
 -- | Transforms an expression tree to an OMML XML Tree
 writeOMML :: DisplayType -> [Exp] -> Element
@@ -192,13 +194,20 @@ showExp props e =
    EGrouped []      -> [str props "\x200B"] -- avoid dashed box, see #118
    EGrouped xs      -> concatMap (showExp props) xs
    EDelimited start end xs ->
-                       [mnode "d" [ mnode "dPr"
-                                    [ mnodeA "begChr" (T.unpack start) ()
-                                    , mnodeA "endChr" (T.unpack end) ()
-                                    , mnode "grow" () ]
-                                  , mnode "e" $ concatMap
-                                    (either ((:[]) . str props) (showExp props)) xs
-                                  ] ]
+                  [ mnode "d" $ mnode "dPr"
+                               [ mnodeA "begChr" (T.unpack start) ()
+                               , mnodeA "endChr" (T.unpack end) ()
+                               , mnodeA "sepChr" (T.unpack sepchr) ()
+                               , mnode "grow" () ]
+                              : map (mnode "e" . concatMap (showExp props)) es
+                  ]
+      where
+       seps = lefts xs
+       sepchr = case seps of
+                  []    -> ""
+                  (s:_) -> s
+       es   = map rights $ splitWhen isLeft xs
+
    EIdentifier ""   -> [str props "\x200B"]  -- 0-width space
                        -- to avoid the dashed box we get otherwise; see #118
    EIdentifier x    -> [str props x]

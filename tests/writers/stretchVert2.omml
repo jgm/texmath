@@ -8,15 +8,15 @@
       <m:dPr>
         <m:begChr m:val="|" />
         <m:endChr m:val="" />
+        <m:sepChr m:val="|" />
         <m:grow />
       </m:dPr>
       <m:e>
         <m:r>
           <m:t>H</m:t>
         </m:r>
-        <m:r>
-          <m:t>|</m:t>
-        </m:r>
+      </m:e>
+      <m:e>
         <m:r>
           <m:rPr>
             <m:sty m:val="p" />
@@ -27,6 +27,7 @@
           <m:dPr>
             <m:begChr m:val="⟨" />
             <m:endChr m:val="⟩" />
+            <m:sepChr m:val="" />
             <m:grow />
           </m:dPr>
           <m:e>
