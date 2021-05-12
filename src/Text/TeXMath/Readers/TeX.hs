@@ -46,6 +46,7 @@ import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Data.Maybe (fromJust)
 import Text.TeXMath.Unicode.ToUnicode (toUnicode)
 import Text.TeXMath.Shared (getSpaceChars)
+import Data.Generics (everywhere, mkT)
 
 type TP = Parser
 
@@ -67,8 +68,40 @@ expr1 = choice
 readTeX :: Text -> Either Text [Exp]
 readTeX inp =
   let (ms, rest) = parseMacroDefinitions inp in
-  either (Left . showParseError inp) (Right . id)
+  either (Left . showParseError inp) (Right . everywhere (mkT fixBins))
     $ parse formula "formula" $ applyMacros ms rest
+
+-- | Convert Bin after nothing, Open, Pun, or Op to Op (#176).
+fixBins :: Exp -> Exp
+fixBins e =
+  case e of
+    EGrouped es -> EGrouped (fixBinList True es)
+    EDelimited op cl des -> EDelimited op cl (fixBinListDel True des)
+    _ -> e
+ where
+  fixBinList atBeginning xs =
+    case xs of
+      ESymbol Bin t : rest
+        | atBeginning
+        -> ESymbol Op t : fixBinList False rest
+      ESymbol Bin t : rest@(ESymbol ty _ : _)
+        | ty == Open || ty == Pun || ty == Op
+        -> ESymbol Op t : fixBinList False rest
+      x:rest -> x : fixBinList False rest
+      [] -> []
+
+  fixBinListDel atBeginning xs =
+    case xs of
+      Left x : rest
+        ->  Left x : fixBinListDel True rest
+      Right (ESymbol Bin t) : rest
+        | atBeginning
+        -> Right (ESymbol Op t) : fixBinListDel False rest
+      Right (ESymbol Bin t) : rest@(Right (ESymbol ty _):_)
+        | ty == Open || ty == Pun || ty == Op
+        -> Right (ESymbol Op t) : fixBinListDel False rest
+      x:rest -> x : fixBinListDel False rest
+      [] -> []
 
 showParseError :: Text -> ParseError -> Text
 showParseError inp pe =
