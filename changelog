@@ -1,3 +1,13 @@
+texmath (0.12.3)
+
+  * TeX reader: implement logic to convert a Bin symbol to
+    an Op to Op when it occurs at the beginning of a group,
+    or after an Open, Pun, or Op symbol. This will give much
+    better results for unary `-` (#176).
+
+  * OMML writer: fixed rendering of EDelimited (#173).
+    We now properly render "middles" (separators).
+
 texmath (0.12.2)
 
   * MathML input: support mmultiscripts element (#158, #100).
