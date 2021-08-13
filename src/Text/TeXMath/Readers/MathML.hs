@@ -598,7 +598,11 @@ err e = name e <> maybe "" (\x -> " line " <> T.pack (show x)) (elLine e)
 -- Kept as String for Text.XML.Light
 findAttrQ :: String -> Element -> MML (Maybe T.Text)
 findAttrQ s e = do
-  inherit <- asks (lookupAttrQ s . attrs)
+  inherit <- case (name e, s) of
+            ("mfenced", "open") -> return Nothing
+            ("mfenced", "close") -> return Nothing
+            ("mfenced", "separators") -> return Nothing
+            _ -> asks (lookupAttrQ s . attrs)
   return $ fmap T.pack $
     findAttr (QName s Nothing Nothing) e
       <|> inherit
