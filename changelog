@@ -1,3 +1,10 @@
+texmath (0.12.3.1)
+
+  * MathML reader: don't allow mfenced attributes to inherit (#177).
+    When open and close attributes aren't given on an mfenced,
+    we should use defaults rather than inheriting these from a
+    parent mfenced.
+
 texmath (0.12.3)
 
   * TeX reader: implement logic to convert a Bin symbol to
