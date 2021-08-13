@@ -472,17 +472,17 @@ annotation e = do
 multiscripts :: Element -> MML Exp
 multiscripts e = do
   let (xs, pres) = break ((== "mprescripts") . name) (elChildren e)
-  let row' e' = if name e' == "none"
-                   then return $ EGrouped []
-                   else row e'
-  xs' <- mapM row' xs
+  let row'' e' = if name e' == "none"
+                    then return $ EGrouped []
+                    else row e'
+  xs' <- mapM row'' xs
   let base =
         case xs' of
           [x]       -> x
           [x,y]     -> ESub x y
           (x:y:z:_) -> ESubsup x y z
           []        -> EGrouped []
-  pres' <- mapM row' $ drop 1 pres
+  pres' <- mapM row'' $ drop 1 pres
   return $
     case pres' of
         (x:y:_) -> EGrouped [ESubsup (EGrouped []) x y, base]
