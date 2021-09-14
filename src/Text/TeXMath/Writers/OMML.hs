@@ -211,7 +211,7 @@ showExp props e =
    EIdentifier ""   -> [str props "\x200B"]  -- 0-width space
                        -- to avoid the dashed box we get otherwise; see #118
    EIdentifier x    -> [str props x]
-   EMathOperator x  -> [makeText TextNormal x]  -- TODO revisit, use props?
+   EMathOperator x  -> [str (mnodeA "sty" "p" () : props) x]
    ESymbol ty xs
     | Just (c, xs') <- T.uncons xs
     , T.null xs'
