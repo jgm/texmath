@@ -87,7 +87,7 @@ Flag network-uri
 
 Library
     Build-depends:       base >= 4.8 && < 5, syb >= 0.4.2 && < 0.8, xml, parsec >= 3, containers,
-                         pandoc-types >= 1.20 && < 1.23, mtl, text, split
+                         pandoc-types >= 1.23 && < 1.24, mtl, text, split
 
     Exposed-modules:     Text.TeXMath,
                          Text.TeXMath.Types,
@@ -130,7 +130,7 @@ Executable texmath
     if flag(executable)
       Buildable:         True
       Build-Depends:     base >= 4.8 && < 5, texmath, xml,
-                         pandoc-types >= 1.20 && < 1.23,
+                         pandoc-types >= 1.23 && < 1.24,
                          aeson, bytestring, text
     else
       Buildable:         False
