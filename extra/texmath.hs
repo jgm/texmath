@@ -108,7 +108,7 @@ output dt (PandocWriter w) es = tshow (fromMaybe fallback (w dt es))
 err :: Bool -> Int -> T.Text -> IO a
 err cgi code msg = do
   if cgi
-     then B.putStr $ encode $ object [T.pack "error" .= msg]
+     then B.putStr $ encode $ object ["error" .= msg]
      else T.hPutStrLn stderr msg
   exitWith $ ExitFailure code
 
@@ -178,7 +178,7 @@ runCGI = do
   case reader inp of
         Left msg -> err True 1 msg
         Right v  -> B.putStr $ encode $ object
-                       [ T.pack "success" .=
+                       [ "success" .=
                        ensureFinalNewline (output
                         (if inline
                             then DisplayInline
