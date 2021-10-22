@@ -1,3 +1,9 @@
+texmath (0.12.3.2)
+
+  * OMML writer: remove m:nor element in math operators (#178).
+    This caused the document's main font, rather than the math
+    font, to be used in formatting operators, which is undesirable.
+
 texmath (0.12.3.1)
 
   * MathML reader: don't allow mfenced attributes to inherit (#177).
