@@ -151,7 +151,7 @@ label :: TP ()
 label = ctrlseq "label" *> braces (skipMany (noneOf "}"))
 
 tag :: TP ()
-tag = ctrlseq "tag" *> braces (skipMany (noneOf "}"))
+tag = ctrlseq "tag" *> optional (char '*') *> braces (skipMany (noneOf "}"))
 
 unGrouped :: Exp -> [Exp]
 unGrouped (EGrouped xs) = xs
