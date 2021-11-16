@@ -355,7 +355,12 @@ basicEnclosure = try $ do
 fence :: String -> TP Text
 fence cmd = do
   symbol cmd
-  enc <- basicEnclosure <|> (try (symbol ".") >> return (ESymbol Open ""))
+  let nullDelim = try (ESymbol Open "" <$ symbol ".")
+      angleDelim = try $ choice
+        [ ESymbol Open "\x27E8" <$ symbol "<"
+        , ESymbol Close "\x27E9" <$ symbol ">"
+        ]
+  enc <- basicEnclosure <|> nullDelim <|> angleDelim
   case enc of
        ESymbol Open x  -> return x
        ESymbol Close x -> return x
