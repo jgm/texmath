@@ -208,24 +208,38 @@ writeExp (ESubsup b e1 e2) = do
   tellGroup (writeExp e1)
   tell [Token '^']
   tellGroup (writeExp e2)
-writeExp (EOver convertible b e1) =
-  writeScript Over convertible b e1
+writeExp (EOver convertible b e1) = do
+  env <- asks mathEnv
+  case xarrow b of
+    Just arrowCtrlSeq | "amsmath" `elem` env -> do
+      tell [arrowCtrlSeq]
+      tellGroup (writeExp e1)
+    _ -> writeScript Over convertible b e1
 writeExp (EUnder convertible b e1) =
   writeScript Under convertible b e1
 writeExp (EUnderover convertible b e1@(ESymbol Accent _) e2) =
  writeExp (EUnder convertible (EOver False b e2) e1)
 writeExp (EUnderover convertible b e1 e2@(ESymbol Accent _)) =
  writeExp (EOver convertible (EUnder False b e1) e2)
-writeExp (EUnderover convertible b e1 e2)
-  | isOperator b = do
-      (if isFancy b then tellGroup else id) $
-        (if convertible then local setConvertible else id) $ writeExp b
-      unless convertible $ tell [ControlSeq "\\limits"]
-      tell [Token '_']
-      tellGroup (checkSubstack e1)
-      tell [Token '^']
-      tellGroup (checkSubstack e2)
-  | otherwise = writeExp (EUnder convertible (EOver convertible b e2) e1)
+writeExp (EUnderover convertible b e1 e2) = do
+  env <- asks mathEnv
+  case xarrow b of
+    Just arrowCtrlSeq | "amsmath" `elem` env -> do
+      tell [arrowCtrlSeq]
+      tell [Token '[']
+      tellGroup $ writeExp e1
+      tell [Token ']']
+      tellGroup (writeExp e2)
+    Nothing
+      | isOperator b -> do
+          (if isFancy b then tellGroup else id) $
+            (if convertible then local setConvertible else id) $ writeExp b
+          unless convertible $ tell [ControlSeq "\\limits"]
+          tell [Token '_']
+          tellGroup (checkSubstack e1)
+          tell [Token '^']
+          tellGroup (checkSubstack e2)
+    _ -> writeExp (EUnder convertible (EOver convertible b e2) e1)
 writeExp (ESqrt e) = do
     tell [ControlSeq "\\sqrt"]
     tellGroup (writeExp e)
@@ -396,6 +410,11 @@ getTextCommand tt x =
                                     Grouped [ControlSeq "\\textit",
                                       Grouped [ControlSeq "\\textsf", x]]]
         _  -> [ControlSeq "\\text", x]
+
+xarrow :: Exp -> Maybe TeX
+xarrow (ESymbol Op "\x2190") = Just $ ControlSeq "\\xleftarrow"
+xarrow (ESymbol Op "\x2192") = Just $ ControlSeq "\\xrightarrow"
+xarrow _ = Nothing
 
 -- Commands which can be used with \left and \right
 delimiters :: Math [[TeX]]
