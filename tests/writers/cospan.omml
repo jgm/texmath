@@ -1,0 +1,57 @@
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:t>B</m:t>
+    </m:r>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="→" />
+        <m:limLoc m:val="undOvr" />
+        <m:subHide m:val="0" />
+        <m:supHide m:val="1" />
+      </m:naryPr>
+      <m:sub>
+        <m:r>
+          <m:t>f</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:t>&#8203;</m:t>
+        </m:r>
+      </m:sup>
+      <m:e>
+        <m:r>
+          <m:t>A</m:t>
+        </m:r>
+      </m:e>
+    </m:nary>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="←" />
+        <m:limLoc m:val="undOvr" />
+        <m:subHide m:val="0" />
+        <m:supHide m:val="1" />
+      </m:naryPr>
+      <m:sub>
+        <m:r>
+          <m:t>f</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:t>&#8203;</m:t>
+        </m:r>
+      </m:sup>
+      <m:e>
+        <m:r>
+          <m:t>C</m:t>
+        </m:r>
+      </m:e>
+    </m:nary>
+  </m:oMath>
+</m:oMathPara>
