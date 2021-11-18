@@ -190,6 +190,7 @@ command = try $ do
     , scaled c
     , negated c
     , siunitx c
+    , arrow c
     , tSymbol c
     ] <|> unexpected ("control sequence " <> T.unpack c)
 
@@ -4497,4 +4498,16 @@ parseNumPart =
     return $ [ESymbol Rel "\xa0\xd7\xa0", ESuper (ENumber "10") n ]
   parseSpace = mempty <$ skipMany1 (char ' ')
 
+arrow :: Text -> TP Exp
+arrow c = case c of
+  "\\xleftarrow"   -> underoverarrow "\x2190"
+  "\\xrightarrow"  -> underoverarrow "\x2192"
+  _                -> mzero
+ where
+  underoverarrow s = do
+    munder <- optionMaybe inbrackets
+    over <- texToken
+    return $ case munder of
+      Nothing    -> EOver False (ESymbol Op s) over
+      Just under -> EUnderover False (ESymbol Op s) under over
 
