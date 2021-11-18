@@ -286,8 +286,21 @@ isBarChar :: Char -> Bool
 isBarChar c = c == '\x203E' || c == '\x00AF' ||
               c == '\x0304' || c == '\x0333'
 
+-- | Checks whether an expression marks the start of an nary operator
+-- expression. These are different integrals, sums, products, and
+-- coproducts.
 isNary :: Exp -> Bool
-isNary (ESymbol Op _) = True
+isNary (ESymbol Op s) = case s of
+  "\x222b" -> True  -- integral
+  "\x222c" -> True  -- double integral
+  "\x222d" -> True  -- triple integral
+  "\x222e" -> True  -- line integral
+  "\x222f" -> True  -- double line integral
+  "\x2230" -> True  -- triple line integral
+  "\x220f" -> True  -- product
+  "\x2210" -> True  -- coproduct
+  "\x2211" -> True  -- sum
+  _        -> False
 isNary _ = False
 
 -- Kept as String for Text.XML.Light

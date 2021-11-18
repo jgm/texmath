@@ -136,14 +136,25 @@
       </m:rPr>
       <m:t>=</m:t>
     </m:r>
-    <m:nary>
-      <m:naryPr>
-        <m:chr m:val="⋂" />
-        <m:limLoc m:val="undOvr" />
-        <m:subHide m:val="0" />
-        <m:supHide m:val="0" />
-      </m:naryPr>
-      <m:sub>
+    <m:limLow>
+      <m:e>
+        <m:limUpp>
+          <m:e>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>⋂</m:t>
+            </m:r>
+          </m:e>
+          <m:lim>
+            <m:r>
+              <m:t>n</m:t>
+            </m:r>
+          </m:lim>
+        </m:limUpp>
+      </m:e>
+      <m:lim>
         <m:r>
           <m:t>i</m:t>
         </m:r>
@@ -156,33 +167,26 @@
         <m:r>
           <m:t>1</m:t>
         </m:r>
-      </m:sub>
-      <m:sup>
-        <m:r>
-          <m:t>n</m:t>
-        </m:r>
-      </m:sup>
+      </m:lim>
+    </m:limLow>
+    <m:bar>
+      <m:barPr>
+        <m:pos m:val="top" />
+      </m:barPr>
       <m:e>
-        <m:bar>
-          <m:barPr>
-            <m:pos m:val="top" />
-          </m:barPr>
+        <m:sSub>
           <m:e>
-            <m:sSub>
-              <m:e>
-                <m:r>
-                  <m:t>A</m:t>
-                </m:r>
-              </m:e>
-              <m:sub>
-                <m:r>
-                  <m:t>i</m:t>
-                </m:r>
-              </m:sub>
-            </m:sSub>
+            <m:r>
+              <m:t>A</m:t>
+            </m:r>
           </m:e>
-        </m:bar>
+          <m:sub>
+            <m:r>
+              <m:t>i</m:t>
+            </m:r>
+          </m:sub>
+        </m:sSub>
       </m:e>
-    </m:nary>
+    </m:bar>
   </m:oMath>
 </m:oMathPara>

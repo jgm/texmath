@@ -7,51 +7,41 @@
     <m:r>
       <m:t>Y</m:t>
     </m:r>
-    <m:nary>
-      <m:naryPr>
-        <m:chr m:val="←" />
-        <m:limLoc m:val="undOvr" />
-        <m:subHide m:val="1" />
-        <m:supHide m:val="0" />
-      </m:naryPr>
-      <m:sub>
+    <m:limUpp>
+      <m:e>
         <m:r>
-          <m:t>&#8203;</m:t>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>←</m:t>
         </m:r>
-      </m:sub>
-      <m:sup>
+      </m:e>
+      <m:lim>
         <m:r>
           <m:t>f</m:t>
         </m:r>
-      </m:sup>
+      </m:lim>
+    </m:limUpp>
+    <m:r>
+      <m:t>X</m:t>
+    </m:r>
+    <m:limUpp>
       <m:e>
         <m:r>
-          <m:t>X</m:t>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>→</m:t>
         </m:r>
       </m:e>
-    </m:nary>
-    <m:nary>
-      <m:naryPr>
-        <m:chr m:val="→" />
-        <m:limLoc m:val="undOvr" />
-        <m:subHide m:val="1" />
-        <m:supHide m:val="0" />
-      </m:naryPr>
-      <m:sub>
-        <m:r>
-          <m:t>&#8203;</m:t>
-        </m:r>
-      </m:sub>
-      <m:sup>
+      <m:lim>
         <m:r>
           <m:t>g</m:t>
         </m:r>
-      </m:sup>
-      <m:e>
-        <m:r>
-          <m:t>Z</m:t>
-        </m:r>
-      </m:e>
-    </m:nary>
+      </m:lim>
+    </m:limUpp>
+    <m:r>
+      <m:t>Z</m:t>
+    </m:r>
   </m:oMath>
 </m:oMathPara>
