@@ -1,3 +1,26 @@
+texmath (0.12.3.3)
+
+  * OMML writer: use nary only for operators supported by LibreOffice
+    (Albert Krewinkel).  LibreOffice (and possibly Word, too) can handle
+    only a small set of operators in an `nary` element.
+
+  * TeX writer: use `\xleftarrow`, `\xrightarrow` where sensible
+    (Albert Krewinkel).  The commands are generated for expressions over `←`
+    or `→`. Besides being more idiomatic, this change also prevents the
+    generation of invalid LaTeX, as `\leftarrow` and `\rightarrow` are not
+    math operators and hence may not be followed by `\limit`.
+    Both commands are part of amsmath.sty.
+
+  * TeX reader:
+
+    + Improve angled-bracket support (Albert Krewinkel).
+      The amsmath package allows `\left<` and `\right>` as alternatives to
+      `\left\langle` and `\right\rangle`, respectively.
+    + Ignore stared version of `\tag` (Albert Krewinkel).
+    + Support \dots{c,b,m,i,o} from amsmath (#179).
+    + Change symbol returned for \dots{b,i,m} from `…` to `⋯`
+      (Albert Krewinkel).
+
 texmath (0.12.3.2)
 
   * OMML writer: remove m:nor element in math operators (#178).
