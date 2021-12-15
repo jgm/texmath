@@ -474,13 +474,7 @@ interpretText s
   | T.all isDigit s         = [ENumber s]
   | isJust (getOperator (EMathOperator s))
                           = [EMathOperator s]
-  | otherwise             =
-      case map interpretChar (T.unpack s) of
-            xs | all isIdentifierOrSpace xs -> [EText TextNormal s]
-               | otherwise                  -> xs
-  where isIdentifierOrSpace (EIdentifier _) = True
-        isIdentifierOrSpace (ESpace _)      = True
-        isIdentifierOrSpace _               = False
+  | otherwise             = map interpretChar (T.unpack s)
 
 -- The char attribute is a hex string
 getSymChar :: Element -> T.Text
