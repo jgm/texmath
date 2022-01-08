@@ -108,6 +108,7 @@ Library
                          Text.TeXMath.Unicode.Fonts
     Other-modules:       Text.TeXMath.Compat,
                          Text.TeXMath.Shared,
+                         Text.TeXMath.Readers.TeX.Commands
                          Paths_texmath
     if impl(ghc >= 6.12)
       Ghc-Options:     -Wall -fno-warn-unused-do-bind
