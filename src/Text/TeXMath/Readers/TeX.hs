@@ -1134,10 +1134,15 @@ siunitx :: Text -> TP Exp
 siunitx c = do
   case c of
     "\\si"       -> dosi
+    "\\unit"     -> dosi  -- v3 version of \si
     "\\SI"       -> doSI
+    "\\qty"      -> doSI  -- v3 version of \SI
     "\\SIrange"  -> doSIrange True
+    "\\qtyrange" -> doSIrange True -- v3 version of SIrange
     "\\numrange" -> doSIrange False
     "\\numlist"  -> doSInumlist
+  -- "\\SIlist"   -> doSIlist -- v3 version of SIlist
+  -- "\\qtylist"  -> doSIlist -- v3 version of SIlist
     "\\num"      -> doSInum
     "\\ang"      -> doSIang
     _          -> mzero
