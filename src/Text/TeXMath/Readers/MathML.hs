@@ -44,7 +44,7 @@ import Text.TeXMath.Shared (getTextType, readLength, getOperator, fixTree,
                             getSpaceWidth, isEmpty, empty)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
-import Text.TeXMath.Compat (throwError, Except, runExcept, MonadError)
+import Control.Monad.Except (throwError, Except, runExcept, MonadError)
 import Control.Applicative ((<$>), (<|>), (<*>))
 import Control.Arrow ((&&&))
 import Data.Char (toLower)
