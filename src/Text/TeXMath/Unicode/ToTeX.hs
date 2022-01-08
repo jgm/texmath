@@ -44,6 +44,7 @@ LaTeX Project Public License.
 
 module Text.TeXMath.Unicode.ToTeX ( getTeXMath
                                   , getSymbolType
+                                  , symbolMap
                                   , records
                                   ) where
 
@@ -108,6 +109,18 @@ recordsMap = M.fromList (map f records)
 -- | Returns TeX symbol type corresponding to a unicode character.
 getSymbolType :: Char -> TeXSymbolType
 getSymbolType c = fromMaybe Ord (category <$> M.lookup c recordsMap)
+
+-- | Mapping from TeX commands to Exp.
+symbolMap :: M.Map T.Text Exp
+symbolMap = foldr go mempty records
+ where
+   go r m =
+     foldr (\(_,c) ->
+              if T.take 1 c == "\\" && not (T.any (=='{') c)
+              then M.insert c (ESymbol (category r) (T.singleton (uchar r)))
+              else id)
+           m
+           (commands r)
 
 
 records :: [Record]
