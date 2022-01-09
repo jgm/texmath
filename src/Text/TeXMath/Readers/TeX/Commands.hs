@@ -190,6 +190,7 @@ symbolMapOverrides = M.fromList
   , ("\\blacksquare",ESymbol Ord "\9724")
   , ("\\blacktriangleleft",ESymbol Bin "\9666")
   , ("\\blacktriangleright",ESymbol Bin "\9656")
+  , ("\\cdot",ESymbol Bin "\8901")
   , ("\\chi",EIdentifier "\967")
   , ("\\cos",EMathOperator "cos")
   , ("\\cosh",EMathOperator "cosh")
