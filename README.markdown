@@ -40,10 +40,64 @@ The `texmath` binary will be put in `~/.local/bin`.
 
 Macro definitions may be included before a LaTeX formula.
 
+# Running texmath as a server
+
 `texmath` will behave as a CGI script when called under the name
 `texmath-cgi` (e.g. through a symbolic link).
 The file `cgi/texmath.html` contains an example of how it can
 be used.
+
+But it is also possible to compile a full webserver with a JSON
+API.  To do this, set the `server` cabal flag, e.g.
+
+    stack install --flag texmath:server
+
+To run the server on port 3000:
+
+    texmath-server -p 3000
+
+Sample of use, with `httpie`:
+
+```
+% http --verbose localhost:3000/convert text='2^2' from=tex to=mathml display:=false Accept:'text/plain'
+POST /convert HTTP/1.1
+Accept: text/plain
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Content-Length: 64
+Content-Type: application/json
+Host: localhost:3000
+User-Agent: HTTPie/3.1.0
+
+{
+    "display": false,
+    "from": "tex",
+    "text": "2^2",
+    "to": "mathml"
+}
+
+
+HTTP/1.1 200 OK
+Content-Type: text/plain;charset=utf-8
+Date: Mon, 21 Mar 2022 18:29:26 GMT
+Server: Warp/3.3.17
+Transfer-Encoding: chunked
+
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mn>2</mn>
+    <mn>2</mn>
+  </msup>
+</math>
+```
+
+Possible values for `from` are `tex`, `mathml`, and `omml`.
+Possible values for `to` are `tex`, `mathml`, `omml`, `eqn`, and
+`pandoc` (JSON-encoded Pandoc).
+
+Alternatively, you can use the `convert-batch` endpoint to pass
+in a JSON-encoded list of conversions and get back a JSON-encoded
+list of results.
 
 # Generating lookup tables
 

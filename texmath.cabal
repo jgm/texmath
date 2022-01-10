@@ -68,6 +68,10 @@ Flag executable
   description:       Compile test executable.
   default:           False
 
+Flag server
+  description:       Compile webserver.
+  default:           False
+
 Library
     Build-depends:       base >= 4.11 && < 5,
                          syb >= 0.4.2 && < 0.8,
@@ -128,6 +132,31 @@ Executable texmath
                          text,
                          pretty-show,
                          network-uri >= 2.6
+    else
+      Buildable:         False
+
+Executable texmath-server
+    Default-Language:    Haskell2010
+    Main-is:             Main.hs
+    Hs-Source-Dirs:      server
+    if impl(ghc >= 6.12)
+      Ghc-Options:     -Wall -fno-warn-unused-do-bind
+    else
+      Ghc-Options:     -Wall
+    Ghc-Prof-Options:  -fprof-auto-exported
+    if flag(server)
+      Buildable:         True
+      Build-Depends:     base >= 4.8 && < 5
+                       , texmath
+                       , aeson
+                       , text
+                       , xml
+                       , servant-server
+                       , wai
+                       , warp
+                       , optparse-applicative
+                       , safe
+
     else
       Buildable:         False
 
