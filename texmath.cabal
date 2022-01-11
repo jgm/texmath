@@ -77,7 +77,7 @@ Flag executable
   default:           False
 
 Library
-    Build-depends:       base >= 4.8 && < 5,
+    Build-depends:       base >= 4.11 && < 5,
                          syb >= 0.4.2 && < 0.8,
                          xml,
                          parsec >= 3,
@@ -127,7 +127,7 @@ Executable texmath
     Ghc-Prof-Options:  -fprof-auto-exported
     if flag(executable)
       Buildable:         True
-      Build-Depends:     base >= 4.8 && < 5,
+      Build-Depends:     base >= 4.11 && < 5,
                          texmath,
                          xml,
                          pandoc-types >= 1.20 && < 1.23,
@@ -142,7 +142,7 @@ Test-Suite test-texmath
     Type:                exitcode-stdio-1.0
     Main-Is:             test-texmath.hs
     Hs-Source-Dirs:      tests
-    Build-Depends:       base >= 4.8 && < 5,
+    Build-Depends:       base >= 4.11 && < 5,
                          directory,
                          filepath,
                          texmath,
