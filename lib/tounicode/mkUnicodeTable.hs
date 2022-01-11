@@ -1,3 +1,8 @@
+#!/usr/bin/env cabal
+{- cabal:
+    build-depends: base, split
+-}
+
 -- creates the code for toUnicode from UnicodeData.txt
 import Data.List.Split
 import Control.Applicative
@@ -27,10 +32,10 @@ main :: IO ()
 main = do
   rawEntries <- lines <$> readFile "UnicodeData.txt"
   let entries = mapMaybe (\s -> toEntry s >>= getMathStyle) rawEntries
-  putStrLn "unicodeTable :: [((TextType, Char), Char)]"
-  putStr   "unicodeTable = [ "
-  putStrLn $ intercalate
-         "\n               , " (map showEntry entries) ++
+  writeFile "UnicodeTable.hs" $
+    "unicodeTable :: [((TextType, Char), Char)]\n"
+    <> "unicodeTable = [ "
+    <> intercalate "\n               , " (map showEntry entries) ++
          "\n               ]"
 
 showEntry :: ((TextType, Char), Char) -> String

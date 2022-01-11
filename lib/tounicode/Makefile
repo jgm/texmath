@@ -1,5 +1,5 @@
 UnicodeTable.hs: UnicodeData.txt mkUnicodeTable.hs
-	runghc mkUnicodeTable.hs > $@
+	./mkUnicodeTable.hs
 
 .PHONY: clean
 clean:
