@@ -1,4 +1,10 @@
+#!/usr/bin/env cabal
+{-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE ViewPatterns #-}
+{- cabal:
+    build-depends: base, text, xml, texmath, containers, parsec
+-}
+
 import Text.Parsec hiding (optional, (<|>))
 import Control.Applicative hiding (many)
 import Data.List
@@ -7,7 +13,8 @@ import Data.Maybe
 import Data.Char
 import Debug.Trace
 import qualified Data.Map as M
-
+import Data.Text (Text)
+import qualified Data.Text as T
 
 type Parser = Parsec String ()
 
@@ -37,7 +44,7 @@ updates =
 
 -- DO NOT ALTER
 
-addCommand :: (String, String) -> Record -> Record
+addCommand :: (Text, Text) -> Record -> Record
 addCommand newcmd@(pkg,_) r@(filter ((/= pkg) . fst ) . commands -> cs) =
   r {commands = newcmd : cs}
 
@@ -86,15 +93,17 @@ comment = char '#' *> manyTill anyChar (char '\n')
 row :: Parser Record
 row = do
   hex <- field
-  field
-  defcmd <- field
-  unicmd <- field
-  uniclass <- field
+  _ <- string "^^" <|> field
+  defcmd <- T.pack <$> field
+  unicmd <- T.pack <$> field
+  _uniclass <- field
   texclass <- field
   reqs <- filter (\z -> head z /= '-') . words <$> field
-  let reqs' = if null reqs then ["base"] else reqs
+  let reqs' = if null reqs then ["base"] else map T.pack reqs
   (alts, comment) <- parseComment
-  let cmds = zip reqs' (repeat defcmd) ++ alts ++ [("unicode-math", unicmd)]
+  let cmds = filter (\(_,x) -> not (T.null x)) $
+               zip reqs' (repeat defcmd) ++ alts ++
+               [("unicode-math", unicmd)]
   return (Record (readHex hex) cmds (getSymbolType texclass) comment)
 
 readHex :: String -> Char
@@ -103,14 +112,10 @@ readHex = fst . head . readLitChar . ("\\x" ++)
 field :: Parser String
 field = manyTill anyChar (char '^')
 
--- Parses the comment field to find alternatives to commands
-getAlternatives :: String ->  ([(String, String)], String)
-getAlternatives s = either (error . show) id (parse parseComment "" s)
+parseComment :: Parsec String () ([(Text, Text)], Text)
+parseComment  = (,) <$> (catMaybes <$> sepBy command (char ',')) <* optional (many $ char ' ') <*> (T.pack <$> manyTill anyChar (char '\n'))
 
-parseComment :: Parsec String () ([(String, String)], String)
-parseComment  = (,) <$> (catMaybes <$> sepBy command (char ',')) <* optional (many $ char ' ') <*> manyTill anyChar (char '\n')
-
-command :: Parsec String () (Maybe (String, String))
+command :: Parsec String () (Maybe (Text, Text))
 command = do
   first <- lookAhead anyChar
   case first of
@@ -120,7 +125,7 @@ command = do
     't'-> Nothing <$ skip
     _ -> Nothing <$ return ()
 
-cmd :: Parsec String () (String, String)
+cmd :: Parsec String () (Text, Text)
 cmd = do
   anyChar
   optional spaces
@@ -130,7 +135,7 @@ cmd = do
                 (many1 (satisfy (/= ')'))))
   optional (many $ char ' ')
   let package' = if null package then "base" else package
-  return (package', alt)
+  return (T.pack package', T.pack alt)
 
 skip :: Parsec String () ()
 skip = try $ do

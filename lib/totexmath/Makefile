@@ -1,5 +1,5 @@
 UnicodeToLaTeX.hs: unimathsymbols.txt
-	runghc unicodetotex.hs
+	./unicodetotex.hs
 
 .PHONY: clean
 clean:
