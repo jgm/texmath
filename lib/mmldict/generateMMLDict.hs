@@ -1,3 +1,9 @@
+#!/usr/bin/env cabal
+{-# LANGUAGE OverloadedStrings #-}
+{- cabal:
+    build-depends: base, texmath, text, xml, containers
+-}
+
 import Text.XML.Light
 import Control.Applicative
 import Data.Maybe
@@ -7,8 +13,10 @@ import Text.TeXMath.Types
 import Data.List (intersperse)
 import Data.Char
 import qualified Data.Map as M
+import qualified Data.Text as T
+import Data.Text (Text)
 
-updates :: [M.Map (String, FormType) Operator -> M.Map (String, FormType) Operator]
+updates :: [M.Map (Text, FormType) Operator -> M.Map (Text, FormType) Operator]
 updates = 
   [ M.insert ("\65079", FInfix) c65079
   , M.insert ("\65080", FInfix) c65080
@@ -19,7 +27,7 @@ c65080 = Operator {oper = "\65080", description = "PRESENTATION FORM FOR VERTICA
 
 applyChanges = foldr (.) id updates
 
-mkMap :: [Operator] -> M.Map (String, FormType) Operator
+mkMap :: [Operator] -> M.Map (Text, FormType) Operator
 mkMap operators = M.fromList (map (\o -> ((oper o, form o), o)) operators)
 
 findAttrQ s = findAttr (QName s Nothing Nothing)
@@ -43,7 +51,7 @@ splitMany s sep =  case bs of
 
 
 f :: Element -> Maybe Operator
-f e = Operator <$> c <*> d <*> f <*> p <*> ls <*> rs <*> ps
+f e = Operator <$> (T.pack <$> c) <*> (T.pack <$> d) <*> f <*> p <*> ls <*> rs <*> ps
   where
     c = toChar e
     d = findAttrQ "description" e 
@@ -51,7 +59,7 @@ f e = Operator <$> c <*> d <*> f <*> p <*> ls <*> rs <*> ps
     p = read <$> findAttrQ "priority" e
     ls = read <$> findAttrQ "lspace" e
     rs = read <$> findAttrQ "rspace" e
-    ps = return $ fromMaybe [] (words <$> findAttrQ "properties" e)
+    ps = return $ fromMaybe [] (T.words . T.pack <$> findAttrQ "properties" e)
 
 mapForm "prefix" = FPrefix
 mapForm "postfix" = FPostfix
