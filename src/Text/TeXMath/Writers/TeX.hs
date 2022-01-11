@@ -26,8 +26,6 @@ import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import qualified Text.TeXMath.Shared as S
 import qualified Data.Text as T
 import Data.Generics (everywhere, mkT)
-import Data.Semigroup ((<>))
-import Control.Applicative ((<$>), Applicative)
 import Control.Monad (when, unless, foldM_)
 import Control.Monad.Reader (MonadReader, runReader, Reader, asks, local)
 import Control.Monad.Writer( MonadWriter, WriterT,

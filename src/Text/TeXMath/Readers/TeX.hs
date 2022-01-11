@@ -32,13 +32,11 @@ import qualified Data.Map as M
 import qualified Data.Text as T
 import Data.Text (Text)
 import Data.Maybe (catMaybes, fromJust, mapMaybe)
-import Data.Semigroup ((<>))
 import Text.Parsec hiding (label)
 import Text.Parsec.Error
 import Text.Parsec.Text
 import Text.TeXMath.Types
 import Data.Functor (($>))
-import Control.Applicative ((<*), (*>), (<*>), (<$>), (<$), pure)
 import qualified Text.TeXMath.Shared as S
 import Text.TeXMath.Readers.TeX.Macros (applyMacros, parseMacroDefinitions)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)

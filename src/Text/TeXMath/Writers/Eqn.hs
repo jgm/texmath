@@ -28,7 +28,6 @@ import Text.TeXMath.Types
 import qualified Text.TeXMath.Shared as S
 import Data.Generics (everywhere, mkT)
 import Data.Ratio ((%))
-import Data.Semigroup ((<>))
 
 -- import Debug.Trace
 -- tr' x = trace (show x) x

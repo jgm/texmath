@@ -34,7 +34,6 @@ import Data.Char (isDigit, isLetter)
 import qualified Data.Text as T
 import Control.Monad
 import Text.Parsec
-import Control.Applicative ((<*))
 
 data Macro = Macro { macroDefinition :: T.Text
                    , macroParser     :: forall st m s . Stream s m Char =>

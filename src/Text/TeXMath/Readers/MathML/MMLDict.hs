@@ -27,7 +27,7 @@ module Text.TeXMath.Readers.MathML.MMLDict (getMathMLOperator, operators) where
 import Text.TeXMath.Types
 import qualified Data.Map as M
 import qualified Data.Text as T
-import Data.Monoid (First(..), mconcat)
+import Data.Monoid (First(..))
 
 dict :: M.Map (T.Text, FormType) Operator
 dict = M.fromList (map (\o -> ((oper o, form o), o)) operators)

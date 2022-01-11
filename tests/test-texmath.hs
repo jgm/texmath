@@ -9,7 +9,6 @@ import System.Process
 import Text.TeXMath
 import System.Exit
 import Control.Monad
-import Data.Semigroup ((<>))
 import GHC.IO.Encoding (setLocaleEncoding)
 import qualified Data.Text as T
 import qualified Data.Text.IO as T

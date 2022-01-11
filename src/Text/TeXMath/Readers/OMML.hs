@@ -41,7 +41,6 @@ import qualified Data.Text as T
 import Text.TeXMath.Types
 import Text.TeXMath.Shared (fixTree, getSpaceWidth, getOperator)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
-import Control.Applicative ((<$>))
 import Text.TeXMath.Unicode.Fonts (getUnicode, textToFont)
 
 readOMML :: T.Text -> Either T.Text [Exp]

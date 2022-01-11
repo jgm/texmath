@@ -14,7 +14,6 @@ import Data.Maybe
 import Text.Pandoc.Definition
 import Network.URI (unEscapeString)
 import Data.Aeson (encode, (.=), object)
-import Data.Semigroup ((<>))
 import qualified Data.ByteString.Lazy as B
 import qualified Data.Text as T
 import qualified Data.Text.IO as T
