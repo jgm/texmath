@@ -81,10 +81,6 @@ Flag executable
   description:       Compile test executable.
   default:           False
 
-Flag network-uri
-  description: Get Network.URI from the network-uri package
-  default: True
-
 Library
     Build-depends:       base >= 4.8 && < 5,
                          syb >= 0.4.2 && < 0.8,
@@ -136,22 +132,31 @@ Executable texmath
     Ghc-Prof-Options:  -fprof-auto-exported
     if flag(executable)
       Buildable:         True
-      Build-Depends:     base >= 4.8 && < 5, texmath, xml,
+      Build-Depends:     base >= 4.8 && < 5,
+                         texmath,
+                         xml,
                          pandoc-types >= 1.20 && < 1.23,
-                         aeson, bytestring, text
+                         aeson,
+                         bytestring,
+                         text,
+                         network-uri >= 2.6
     else
       Buildable:         False
-    if flag(network-uri)
-      Build-Depends:     network-uri >= 2.6
-    else
-      Build-Depends:     network < 2.6
 
 Test-Suite test-texmath
     Type:                exitcode-stdio-1.0
     Main-Is:             test-texmath.hs
     Hs-Source-Dirs:      tests
-    Build-Depends:       base >= 4.8 && < 5, process, directory, filepath,
-                         texmath, xml, utf8-string, bytestring, process,
-                         temporary, text
+    Build-Depends:       base >= 4.8 && < 5,
+                         process,
+                         directory,
+                         filepath,
+                         texmath,
+                         xml,
+                         utf8-string,
+                         bytestring,
+                         process,
+                         temporary,
+                         text
     Default-Language:    Haskell2010
     Ghc-Options:         -Wall
