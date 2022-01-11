@@ -57,13 +57,13 @@ operators =
   , Operator {oper = "*", description = "ASTERISK", form = FInfix, priority = 390, lspace = 3, rspace = 3, properties = []}
   , Operator {oper = "**", description = "MULTIPLE CHARACTER OPERATOR: **", form = FInfix, priority = 780, lspace = 1, rspace = 1, properties = []}
   , Operator {oper = "*=", description = "MULTIPLE CHARACTER OPERATOR: *=", form = FInfix, priority = 260, lspace = 4, rspace = 4, properties = []}
-  , Operator {oper = "+", description = "PLUS SIGN", form = FInfix, priority = 275, lspace = 4, rspace = 4, properties = []}
   , Operator {oper = "+", description = "PLUS SIGN", form = FPrefix, priority = 275, lspace = 0, rspace = 1, properties = []}
+  , Operator {oper = "+", description = "PLUS SIGN", form = FInfix, priority = 275, lspace = 4, rspace = 4, properties = []}
   , Operator {oper = "++", description = "MULTIPLE CHARACTER OPERATOR: ++", form = FPostfix, priority = 880, lspace = 0, rspace = 0, properties = []}
   , Operator {oper = "+=", description = "MULTIPLE CHARACTER OPERATOR: +=", form = FInfix, priority = 260, lspace = 4, rspace = 4, properties = []}
   , Operator {oper = ",", description = "COMMA", form = FInfix, priority = 40, lspace = 0, rspace = 3, properties = ["separator"]}
-  , Operator {oper = "-", description = "HYPHEN-MINUS", form = FInfix, priority = 275, lspace = 4, rspace = 4, properties = []}
   , Operator {oper = "-", description = "HYPHEN-MINUS", form = FPrefix, priority = 275, lspace = 0, rspace = 1, properties = []}
+  , Operator {oper = "-", description = "HYPHEN-MINUS", form = FInfix, priority = 275, lspace = 4, rspace = 4, properties = []}
   , Operator {oper = "--", description = "MULTIPLE CHARACTER OPERATOR: --", form = FPostfix, priority = 880, lspace = 0, rspace = 0, properties = []}
   , Operator {oper = "-=", description = "MULTIPLE CHARACTER OPERATOR: -=", form = FInfix, priority = 260, lspace = 4, rspace = 4, properties = []}
   , Operator {oper = "->", description = "MULTIPLE CHARACTER OPERATOR: ->", form = FInfix, priority = 90, lspace = 5, rspace = 5, properties = []}
@@ -94,15 +94,15 @@ operators =
   , Operator {oper = "_", description = "LOW LINE", form = FInfix, priority = 900, lspace = 1, rspace = 1, properties = []}
   , Operator {oper = "`", description = "GRAVE ACCENT", form = FPostfix, priority = 880, lspace = 0, rspace = 0, properties = ["accent"]}
   , Operator {oper = "{", description = "LEFT CURLY BRACKET", form = FPrefix, priority = 20, lspace = 0, rspace = 0, properties = ["symmetric","fence","stretchy","mirrorable"]}
-  , Operator {oper = "|", description = "VERTICAL LINE", form = FInfix, priority = 270, lspace = 2, rspace = 2, properties = ["stretchy","symmetric","fence"]}
   , Operator {oper = "|", description = "VERTICAL LINE", form = FPrefix, priority = 20, lspace = 0, rspace = 0, properties = ["symmetric","fence","stretchy"]}
   , Operator {oper = "|", description = "VERTICAL LINE", form = FPostfix, priority = 20, lspace = 0, rspace = 0, properties = ["symmetric","fence","stretchy"]}
-  , Operator {oper = "||", description = "MULTIPLE CHARACTER OPERATOR: ||", form = FInfix, priority = 270, lspace = 2, rspace = 2, properties = ["stretchy","symmetric","fence"]}
+  , Operator {oper = "|", description = "VERTICAL LINE", form = FInfix, priority = 270, lspace = 2, rspace = 2, properties = ["stretchy","symmetric","fence"]}
   , Operator {oper = "||", description = "MULTIPLE CHARACTER OPERATOR: ||", form = FPrefix, priority = 20, lspace = 0, rspace = 0, properties = ["symmetric","fence","stretchy"]}
   , Operator {oper = "||", description = "MULTIPLE CHARACTER OPERATOR: ||", form = FPostfix, priority = 20, lspace = 0, rspace = 0, properties = ["symmetric","fence","stretchy"]}
-  , Operator {oper = "|||", description = "MULTIPLE CHARACTER OPERATOR: |||", form = FInfix, priority = 270, lspace = 2, rspace = 2, properties = ["stretchy","symmetric","fence"]}
+  , Operator {oper = "||", description = "MULTIPLE CHARACTER OPERATOR: ||", form = FInfix, priority = 270, lspace = 2, rspace = 2, properties = ["stretchy","symmetric","fence"]}
   , Operator {oper = "|||", description = "MULTIPLE CHARACTER OPERATOR: |||", form = FPrefix, priority = 20, lspace = 0, rspace = 0, properties = ["symmetric","fence","stretchy"]}
   , Operator {oper = "|||", description = "MULTIPLE CHARACTER OPERATOR: |||", form = FPostfix, priority = 20, lspace = 0, rspace = 0, properties = ["symmetric","fence","stretchy"]}
+  , Operator {oper = "|||", description = "MULTIPLE CHARACTER OPERATOR: |||", form = FInfix, priority = 270, lspace = 2, rspace = 2, properties = ["stretchy","symmetric","fence"]}
   , Operator {oper = "}", description = "RIGHT CURLY BRACKET", form = FPostfix, priority = 20, lspace = 0, rspace = 0, properties = ["symmetric","fence","stretchy","mirrorable"]}
   , Operator {oper = "~", description = "TILDE", form = FPostfix, priority = 880, lspace = 0, rspace = 0, properties = ["accent","stretchy"]}
   , Operator {oper = "\168", description = "DIAERESIS", form = FPostfix, priority = 880, lspace = 0, rspace = 0, properties = ["accent"]}
@@ -110,8 +110,8 @@ operators =
   , Operator {oper = "\172", description = "NOT SIGN", form = FPrefix, priority = 680, lspace = 2, rspace = 1, properties = []}
   , Operator {oper = "\175", description = "MACRON", form = FPostfix, priority = 880, lspace = 0, rspace = 0, properties = ["accent","stretchy"]}
   , Operator {oper = "\176", description = "DEGREE SIGN", form = FPostfix, priority = 880, lspace = 0, rspace = 0, properties = []}
-  , Operator {oper = "\177", description = "PLUS-MINUS SIGN", form = FInfix, priority = 275, lspace = 4, rspace = 4, properties = []}
   , Operator {oper = "\177", description = "PLUS-MINUS SIGN", form = FPrefix, priority = 275, lspace = 0, rspace = 1, properties = []}
+  , Operator {oper = "\177", description = "PLUS-MINUS SIGN", form = FInfix, priority = 275, lspace = 4, rspace = 4, properties = []}
   , Operator {oper = "\178", description = "SUPERSCRIPT TWO", form = FPostfix, priority = 880, lspace = 0, rspace = 0, properties = ["accent"]}
   , Operator {oper = "\179", description = "SUPERSCRIPT THREE", form = FPostfix, priority = 880, lspace = 0, rspace = 0, properties = ["accent"]}
   , Operator {oper = "\180", description = "ACUTE ACCENT", form = FPostfix, priority = 880, lspace = 0, rspace = 0, properties = ["accent"]}
@@ -295,10 +295,10 @@ operators =
   , Operator {oper = "\8719", description = "N-ARY PRODUCT", form = FPrefix, priority = 350, lspace = 1, rspace = 2, properties = ["symmetric","largeop","movablelimits"]}
   , Operator {oper = "\8720", description = "N-ARY COPRODUCT", form = FPrefix, priority = 350, lspace = 1, rspace = 2, properties = ["symmetric","largeop","movablelimits"]}
   , Operator {oper = "\8721", description = "N-ARY SUMMATION", form = FPrefix, priority = 290, lspace = 1, rspace = 2, properties = ["symmetric","largeop","movablelimits","mirrorable"]}
-  , Operator {oper = "\8722", description = "MINUS SIGN", form = FInfix, priority = 275, lspace = 4, rspace = 4, properties = []}
   , Operator {oper = "\8722", description = "MINUS SIGN", form = FPrefix, priority = 275, lspace = 0, rspace = 1, properties = []}
-  , Operator {oper = "\8723", description = "MINUS-OR-PLUS SIGN", form = FInfix, priority = 275, lspace = 4, rspace = 4, properties = []}
+  , Operator {oper = "\8722", description = "MINUS SIGN", form = FInfix, priority = 275, lspace = 4, rspace = 4, properties = []}
   , Operator {oper = "\8723", description = "MINUS-OR-PLUS SIGN", form = FPrefix, priority = 275, lspace = 0, rspace = 1, properties = []}
+  , Operator {oper = "\8723", description = "MINUS-OR-PLUS SIGN", form = FInfix, priority = 275, lspace = 4, rspace = 4, properties = []}
   , Operator {oper = "\8724", description = "DOT PLUS", form = FInfix, priority = 275, lspace = 4, rspace = 4, properties = []}
   , Operator {oper = "\8725", description = "DIVISION SLASH", form = FInfix, priority = 265, lspace = 4, rspace = 4, properties = ["stretchy","mirrorable"]}
   , Operator {oper = "\8726", description = "SET MINUS", form = FInfix, priority = 650, lspace = 4, rspace = 4, properties = []}
@@ -1149,5 +1149,5 @@ operators =
   , Operator {oper = "\11007", description = "N-ARY WHITE VERTICAL BAR", form = FPrefix, priority = 330, lspace = 1, rspace = 2, properties = ["symmetric","largeop","movablelimits"]}
   , Operator {oper = "\11077", description = "LEFTWARDS QUADRUPLE ARROW", form = FInfix, priority = 270, lspace = 5, rspace = 5, properties = ["stretchy"]}
   , Operator {oper = "\11078", description = "RIGHTWARDS QUADRUPLE ARROW", form = FInfix, priority = 270, lspace = 5, rspace = 5, properties = ["stretchy"]}
-  , Operator {oper = "\65079", description = "PRESENTATION FORM FOR VERTICAL LEFT CURLY BRACKET" , form = FInfix, priority = 880, lspace = 0, rspace = 0, properties = ["stretchy", "accent"]}
-  , Operator {oper = "\65080", description = "PRESENTATION FORM FOR VERTICAL RIGHT CURLY BRACKET", form = FInfix, priority = 880, lspace = 0, rspace = 0, properties = ["stretchy", "accent"]}]
+  , Operator {oper = "\65079", description = "PRESENTATION FORM FOR VERTICAL LEFT CURLY BRACKET", form = FInfix, priority = 880, lspace = 0, rspace = 0, properties = ["stretchy","accent"]}
+  , Operator {oper = "\65080", description = "PRESENTATION FORM FOR VERTICAL RIGHT CURLY BRACKET", form = FInfix, priority = 880, lspace = 0, rspace = 0, properties = ["stretchy","accent"]}]
