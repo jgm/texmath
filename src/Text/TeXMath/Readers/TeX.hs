@@ -59,6 +59,7 @@ expr1 = choice
           , operator
           , bareSubSup
           , enclosure
+          , hyperref
           , command
           ] <* ignorable
 
@@ -167,6 +168,12 @@ expr = do
                  <|> ((,False) <$> expr1)
   limits <- limitsIndicator
   subSup limits convertible a <|> superOrSubscripted limits convertible a <|> return a
+
+hyperref :: TP Exp
+hyperref = do
+  ctrlseq "hyperref"  -- we just ignore hyperref, see #186
+  optional inbrackets
+  inbraces
 
 command :: TP Exp
 command = try $ do
