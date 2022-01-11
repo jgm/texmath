@@ -148,7 +148,6 @@ Test-Suite test-texmath
     Main-Is:             test-texmath.hs
     Hs-Source-Dirs:      tests
     Build-Depends:       base >= 4.8 && < 5,
-                         process,
                          directory,
                          filepath,
                          texmath,
