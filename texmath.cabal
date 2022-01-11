@@ -69,9 +69,6 @@ Extra-source-files:  README.markdown
                      lib/tounicode/mkUnicodeTable.hs
                      lib/tounicode/UnicodeData.txt
                      lib/tounicode/Makefile
-                     lib/toascii/Data.txt
-                     lib/toascii/generate-cbits.hs
-                     lib/toascii/Makefile
 
 Source-repository head
   type:              git
