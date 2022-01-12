@@ -1,4 +1,4 @@
-texmath (0.12.4 PROVISIONAL)
+texmath (0.12.4)
 
   * TeX reader: handle hyperref better (#186).  We don't parse it as a link,
     but we pass its contents through rather than failing.
