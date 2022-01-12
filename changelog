@@ -1,3 +1,44 @@
+texmath (0.12.4 PROVISIONAL)
+
+  * TeX reader: handle hyperref better (#186).  We don't parse it as a link,
+    but we pass its contents through rather than failing.
+
+  * Update scripts and data in `lib/` directory. These are not build
+    dependencies, but they were used to produce some of the large
+    tables in the source code.  Fixed the scripts and Makefile to work
+    with recent texmath and cabal.  Removed two very large unicode data
+    files that can be downloaded when needed.  (This reduces the size of
+    the source tarball considerably.) Remove `lib/toascii` (no longer used).
+
+  * Update MMLDict using latest unicode.xml.
+
+  * TeX reader: support siunitx `\qty`, `\qtyrange`, `\unit` (#185).
+
+  * Remove Text.TeXMath.Compat.  We can now safely require mtl >= 2.2.1.
+
+  * Use symbolMap from ToTeX to shorten the long hardcoded symbols list.
+    Now we only hard-code items that differ what what is in symbolMap.
+    This reduces the code size by thousands of lines.
+
+  * Unicode.ToTeX: export `symbolMap` [API change].  This uses the data in
+  `records` to create a backwards mapping from TeX commands to Exps (ESymbol
+      elements).  This can replace most of the hardcoded list in the current
+  TeX reader.
+
+  * Split out TeXMath.Readers.TeX.Commands internal module.
+    This makes the TeX reader shorter and should help compile times.
+
+  * OMML reader: better handling of m:t nodes (#151).
+    Previously we parsed an m:t element as an EIdentifier if it contains a
+    single letter, but an EText TextNormal if it contains more than one.  This
+    gave bad results in some cases.  It is better to reserve EText for the
+    case where the m:nor property is specified for "normal text."
+
+  * Require base >= 4.11.
+
+  * Remove `network-uri` flag from stack.yaml.
+
+
 texmath (0.12.3.3)
 
   * OMML writer: use nary only for operators supported by LibreOffice
