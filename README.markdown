@@ -99,7 +99,8 @@ the table.
 Authors
 =======
 
-John MacFarlane wrote the original TeX reader, MathML writer, and
-OMML writer.  Matthew Pickering contributed the MathML reader, the TeX
-writer, and many of the auxiliary modules.  Jesse Rosenthal contributed
-the OMML reader.  Thanks also to John Lenz for many contributions.
+John MacFarlane wrote the original TeX reader, MathML writer, Eq
+writer, and OMML writer.  Matthew Pickering contributed the
+MathML reader, the TeX writer, and many of the auxiliary
+modules.  Jesse Rosenthal contributed the OMML reader.  Thanks
+also to John Lenz for many contributions.
