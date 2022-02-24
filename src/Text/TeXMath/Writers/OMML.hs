@@ -37,6 +37,7 @@ writeOMML :: DisplayType -> [Exp] -> Element
 writeOMML dt = container . concatMap (showExp [])
             . everywhere (mkT $ handleDownup dt)
             . everywhere (mkT $ handleDownup' dt)
+            . everywhere (mkT $ handleScaledDelims)
     where container = case dt of
                   DisplayBlock  -> \x -> mnode "oMathPara"
                                     [ mnode "oMathParaPr"
@@ -123,6 +124,18 @@ setProps tt =
        TextSansSerifBoldItalic -> [sty "bi", scr "sans-serif"]
    where sty x = mnodeA "sty" x ()
          scr x = mnodeA "scr" x ()
+
+handleScaledDelims :: [Exp] -> [Exp]
+handleScaledDelims (x@(EScaled scale (ESymbol Open op)) : xs) =
+  case break isCloser xs of
+    (ys, EScaled scale' (ESymbol Close cl) : zs) | scale' == scale ->
+      EDelimited op cl (map Right ys) : zs
+    _ -> x:xs
+ where
+  isCloser (EScaled _ (ESymbol Close _)) = True
+  isCloser _ = False
+handleScaledDelims xs = xs
+
 
 handleDownup :: DisplayType -> [Exp] -> [Exp]
 handleDownup dt (exp' : xs) =
