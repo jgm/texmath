@@ -250,7 +250,7 @@ elemToExps' element | isElem "m" "acc" element = do
              elemToBase
   return $ [EOver False baseExp (ESymbol Accent chr')]
 elemToExps' element | isElem "m" "bar" element = do
-  pos <- filterChildName (hasElemName "m" "barPr") element >>=
+  let pos = filterChildName (hasElemName "m" "barPr") element >>=
             filterChildName (hasElemName "m" "pos") >>=
             findAttrBy (hasElemName "m" "val")
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
@@ -258,8 +258,8 @@ elemToExps' element | isElem "m" "bar" element = do
   -- According to OMML Specification, the default value of pos (whether it exists or not) is "bot"
   -- see https://github.com/jgm/texmath/issues/187
   case pos of
-    "top" -> Just [EOver False baseExp (ESymbol TOver "\773")]
-    _     -> Just [EUnder False baseExp (ESymbol TUnder "\818")]
+    Just "top" -> Just [EOver False baseExp (ESymbol TOver "\773")]
+    _          -> Just [EUnder False baseExp (ESymbol TUnder "\818")]
 elemToExps' element | isElem "m" "box" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
