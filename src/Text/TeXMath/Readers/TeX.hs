@@ -222,28 +222,23 @@ operatorname = do
 -- Fails if the expression contains anything else.
 expToOperatorName :: MonadPlus m => Exp -> m Text
 expToOperatorName e = case e of
-            EGrouped xs -> T.concat <$> mapM fl xs
-            _ -> fl e
-    where fl f = case f of
-                    EIdentifier s -> return s
-                    -- handle special characters
-                    ESymbol _ "\x2212" -> return "-"
-                    ESymbol _ "\x2032" -> return "'"
-                    ESymbol _ "\x2033" -> return "''"
-                    ESymbol _ "\x2034" -> return "'''"
-                    ESymbol _ "\x2057" -> return "''''"
-                    ESymbol _ "\x02B9" -> return "'"
-                    ESymbol _ s -> return s
-                    ENumber s -> return s
-                    EStyled sty xs -> T.concat <$> sequence (map (toStr sty) xs)
-                    _ -> mzero
+            EGrouped xs -> T.concat <$> mapM (toStr TextNormal) xs
+            _ -> toStr TextNormal e
+    where
           toStr sty (EIdentifier s)     = return $ toUnicode sty s
           toStr _   (EText sty' s)      = return $ toUnicode sty' s
           toStr sty (ENumber s)         = return $ toUnicode sty s
           toStr sty (EMathOperator s)   = return $ toUnicode sty s
+          -- handle special characters
+          toStr _ (ESymbol _ "\x2212")  = return "-"
+          toStr _ (ESymbol _ "\x2032")  = return "'"
+          toStr _ (ESymbol _ "\x2033")  = return "''"
+          toStr _ (ESymbol _ "\x2034")  = return "'''"
+          toStr _ (ESymbol _ "\x2057")  = return "''''"
+          toStr _ (ESymbol _ "\x02B9")  = return "'"
           toStr sty (ESymbol _ s)       = return $ toUnicode sty s
-          toStr _   (ESpace n)          = return $ getSpaceChars n
-          toStr _   (EStyled sty' exps) = T.concat <$>
+          toStr _ (ESpace n)            = return $ getSpaceChars n
+          toStr _ (EStyled sty' exps)   = T.concat <$>
                                             sequence (map (toStr sty') exps)
           toStr _   _                   = mzero
 
