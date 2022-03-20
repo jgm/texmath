@@ -213,37 +213,39 @@ operatorname = do
     ctrlseq "operatorname"
     -- these are slightly different but we won't worry about that here...
     convertible <- (char '*' >> spaces >> return True) <|> return False
-    op <- expToOperatorName <$> texToken
-    maybe mzero (\s -> return (EMathOperator s, convertible)) op
+    tok' <- texToken
+    tok'' <- (EMathOperator <$> (expToOperatorName tok'))
+           <|> return (EStyled TextNormal [tok'])
+    return (tok'', convertible)
 
 -- | Converts identifiers, symbols and numbers to a flat string.
--- Returns Nothing if the expression contains anything else.
-expToOperatorName :: Exp -> Maybe Text
+-- Fails if the expression contains anything else.
+expToOperatorName :: MonadPlus m => Exp -> m Text
 expToOperatorName e = case e of
             EGrouped xs -> T.concat <$> mapM fl xs
             _ -> fl e
     where fl f = case f of
-                    EIdentifier s -> Just s
+                    EIdentifier s -> return s
                     -- handle special characters
-                    ESymbol _ "\x2212" -> Just "-"
-                    ESymbol _ "\x2032" -> Just "'"
-                    ESymbol _ "\x2033" -> Just "''"
-                    ESymbol _ "\x2034" -> Just "'''"
-                    ESymbol _ "\x2057" -> Just "''''"
-                    ESymbol _ "\x02B9" -> Just "'"
-                    ESymbol _ s -> Just s
-                    ENumber s -> Just s
+                    ESymbol _ "\x2212" -> return "-"
+                    ESymbol _ "\x2032" -> return "'"
+                    ESymbol _ "\x2033" -> return "''"
+                    ESymbol _ "\x2034" -> return "'''"
+                    ESymbol _ "\x2057" -> return "''''"
+                    ESymbol _ "\x02B9" -> return "'"
+                    ESymbol _ s -> return s
+                    ENumber s -> return s
                     EStyled sty xs -> T.concat <$> sequence (map (toStr sty) xs)
-                    _ -> Nothing
-          toStr sty (EIdentifier s)     = Just $ toUnicode sty s
-          toStr _   (EText sty' s)      = Just $ toUnicode sty' s
-          toStr sty (ENumber s)         = Just $ toUnicode sty s
-          toStr sty (EMathOperator s)   = Just $ toUnicode sty s
-          toStr sty (ESymbol _ s)       = Just $ toUnicode sty s
-          toStr _   (ESpace n)          = Just $ getSpaceChars n
+                    _ -> mzero
+          toStr sty (EIdentifier s)     = return $ toUnicode sty s
+          toStr _   (EText sty' s)      = return $ toUnicode sty' s
+          toStr sty (ENumber s)         = return $ toUnicode sty s
+          toStr sty (EMathOperator s)   = return $ toUnicode sty s
+          toStr sty (ESymbol _ s)       = return $ toUnicode sty s
+          toStr _   (ESpace n)          = return $ getSpaceChars n
           toStr _   (EStyled sty' exps) = T.concat <$>
                                             sequence (map (toStr sty') exps)
-          toStr _   _                   = Nothing
+          toStr _   _                   = mzero
 
 bareSubSup :: TP Exp
 bareSubSup = subSup Nothing False (EIdentifier "")
