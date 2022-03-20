@@ -1,0 +1,12 @@
+[ EFraction
+    NormalFrac
+    (ESqrt
+       (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ]))
+    (ESqrt (EGrouped [ ENumber "3" , EIdentifier "x" ]))
+, EFraction
+    NormalFrac
+    (ESqrt
+       (EGrouped
+          [ ENumber "2" , EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ]))
+    (ESqrt (EGrouped [ ENumber "3" , EIdentifier "x" ]))
+]

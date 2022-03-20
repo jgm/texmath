@@ -1,0 +1,12 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <msup>    <mn>2</mn>     <mn>3</mn>   </msup>   <mo>=</mo>   <msup>    <mn>2</mn>     <mrow>      <msup>        <mn>3</mn>         <mphantom>          <mi>fail</mi>
+        </mphantom>       </msup>     </mrow>   </msup> </math>
+>>> native
+[ ESuper (ENumber "2") (ENumber "3")
+, ESymbol Rel "="
+, ESuper
+    (ENumber "2")
+    (ESuper (ENumber "3") (EPhantom (EIdentifier "fail")))
+]

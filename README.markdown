@@ -1,5 +1,4 @@
-texmath
-=======
+# texmath
 
 [![CI
 tests](https://github.com/jgm/texmath/workflows/CI%20tests/badge.svg)](https://github.com/jgm/texmath/actions)
@@ -27,7 +26,7 @@ test program, `texmath`, use the `executable` Cabal flag:
 
     cabal install -fexecutable
 
-To run the test suite, compile with `--enable-tests` and do `cabal test`.
+By default, the executable will be installed in `~/.cabal/bin`.
 
 Alternatively, texmath can be installed using
 [stack](https://github.com/commercialhaskell/stack).  Install
@@ -43,12 +42,10 @@ Macro definitions may be included before a LaTeX formula.
 
 `texmath` will behave as a CGI script when called under the name
 `texmath-cgi` (e.g. through a symbolic link).
-
 The file `cgi/texmath.html` contains an example of how it can
 be used.
 
-Generating lookup tables
-=======================
+# Generating lookup tables
 
 There are three main lookup tables which are built form externally compiled lists.
 This section contains information about how to modify and regenerate these tables.
@@ -56,8 +53,7 @@ This section contains information about how to modify and regenerate these table
 In the `lib` direction there are two sub-directories which contain the
 necessary files.
 
-MMLDict.hs
-----------
+## MMLDict.hs
 
 The utility program `xsltproc` is required.
 You can find these files in `lib/mmldict/`
@@ -67,8 +63,7 @@ You can find these files in `lib/mmldict/`
   3. `runghc generateMMLDict.hs`
   4. Replace the operator table at the bottom of `src/Text/TeXMath/Readers/MathML/MMLDict.hs` with the contents of `mmldict.hs`
 
-ToTeXMath.hs
-------------
+## ToTeXMath.hs
 
 You can find these files in `lib/totexmath/`
 
@@ -76,8 +71,7 @@ You can find these files in `lib/totexmath/`
   2. `runghc unicodetotex.hs`
   3. Replace the record table at the bottom of `src/Text/TeXMath/Unicode/ToTeXMath.hs` with the contents of `UnicodeToLaTeX.hs`
 
-ToUnicode.hs
-------------
+## ToUnicode.hs
 
 You can find these files in `lib/tounicode/`.
 
@@ -87,17 +81,46 @@ You can find these files in `lib/tounicode/`.
   3. Replace the table at the bottom of
      `src/Text/TeXMath/Unicode/ToUnicode.hs` with the output.
 
-Editing the tables
-==================
+## Editing the tables
 
-It is not necessary to edit the source files to add records to the tables.
-To add to or modify a table it is easier to add modify either `unicodetotex.hs`
-or `generateMMLDict.hs`. This is easily achieved by adding an item to the corresponding
-`updates` lists. After making the changes, follow the above steps to regenerate
-the table.
+It is not necessary to edit the source files to add records to
+the tables.  To add to or modify a table it is easier to add
+modify either `unicodetotex.hs` or `generateMMLDict.hs`. This is
+easily achieved by adding an item to the corresponding `updates`
+lists. After making the changes, follow the above steps to
+regenerate the table.
 
-Authors
-=======
+# The test suite
+
+To run the test suite, do `cabal test` or `stack test`.
+
+In its standard mode, the test suite will run golden tests of
+the individual readers and writers.  Reader tests can be found
+in `test/reader/{mml,omml,tex}`, and writer tests in
+`test/writer/{eqn,mml,omml,tex}`.
+
+Each test file consists of an input and an expected output.
+The input begins after a line `<<< FORMAT` and the output
+begins after a line `>>> FORMAT`.
+
+If many tests fail as a result of changes, but the test
+failures are all because of improvements in the output,
+you can pass `--accept` to the test suite (e.g., with
+`--test-arguments=--accept` on `stack test`), and the existing
+golden files will be overwritten.  If you do this, inspect
+the outputs very carefully to make sure they are correct.
+
+If you pass the `--roundtrip` option into the test suite
+(e.g., using `--test-arguments=--roundtrip` with `stack test`),
+round-trip tests will be run instead.  Many of these will
+fail. In these tests, the native inputs in `test/roundtrip/*.native`
+will be converted to (respectively) `mml`, `omml`, or `tex`,
+then converted back, and the result will be compared with the
+starting point.  Although we don't guarantee that this kind
+of round-trip transformation will be the identity, looking
+at cases where it fails can be a guide to improvements.
+
+# Authors
 
 John MacFarlane wrote the original TeX reader, MathML writer, Eq
 writer, and OMML writer.  Matthew Pickering contributed the

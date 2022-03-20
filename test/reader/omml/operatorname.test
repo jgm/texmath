@@ -1,0 +1,810 @@
+<<< omml
+<?xml version="1.0" encoding="UTF-8"?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="{" />
+        <m:endChr m:val="" />
+        <m:grow />
+      </m:dPr>
+      <m:e>
+        <m:m>
+          <m:mPr>
+            <m:baseJc m:val="center" />
+            <m:plcHide m:val="on" />
+            <m:mcs>
+              <m:mc>
+                <m:mcPr>
+                  <m:mcJc m:val="left" />
+                </m:mcPr>
+              </m:mc>
+              <m:mc>
+                <m:mcPr>
+                  <m:mcJc m:val="left" />
+                </m:mcPr>
+              </m:mc>
+              <m:mc>
+                <m:mcPr>
+                  <m:mcJc m:val="left" />
+                </m:mcPr>
+              </m:mc>
+              <m:mc>
+                <m:mcPr>
+                  <m:mcJc m:val="left" />
+                </m:mcPr>
+              </m:mc>
+            </m:mcs>
+          </m:mPr>
+          <m:mr>
+            <m:e>
+              <m:sSub>
+                <m:e>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>div</m:t>
+                  </m:r>
+                </m:e>
+                <m:sub>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>x</m:t>
+                  </m:r>
+                </m:sub>
+              </m:sSub>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>u</m:t>
+              </m:r>
+              <m:sSup>
+                <m:e>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>div</m:t>
+                  </m:r>
+                </m:e>
+                <m:sup>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>x</m:t>
+                  </m:r>
+                </m:sup>
+              </m:sSup>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>u</m:t>
+              </m:r>
+              <m:sSubSup>
+                <m:e>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>div</m:t>
+                  </m:r>
+                </m:e>
+                <m:sub>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>x</m:t>
+                  </m:r>
+                </m:sub>
+                <m:sup>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>y</m:t>
+                  </m:r>
+                </m:sup>
+              </m:sSubSup>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>u</m:t>
+              </m:r>
+              <m:sSubSup>
+                <m:e>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>div</m:t>
+                  </m:r>
+                </m:e>
+                <m:sub>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>x</m:t>
+                  </m:r>
+                </m:sub>
+                <m:sup>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>y</m:t>
+                  </m:r>
+                </m:sup>
+              </m:sSubSup>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>u</m:t>
+              </m:r>
+            </m:e>
+            <m:e>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>operatorname</m:t>
+              </m:r>
+            </m:e>
+          </m:mr>
+          <m:mr>
+            <m:e>
+              <m:limLow>
+                <m:e>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>⋆-lim&#39;sup</m:t>
+                  </m:r>
+                </m:e>
+                <m:lim>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>x</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>→</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>0</m:t>
+                  </m:r>
+                </m:lim>
+              </m:limLow>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>u</m:t>
+              </m:r>
+              <m:limUpp>
+                <m:e>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>⋆-lim&#39;sup</m:t>
+                  </m:r>
+                </m:e>
+                <m:lim>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>w</m:t>
+                  </m:r>
+                </m:lim>
+              </m:limUpp>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>u</m:t>
+              </m:r>
+              <m:limLow>
+                <m:e>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>⋆-lim&#39;sup</m:t>
+                  </m:r>
+                </m:e>
+                <m:lim>
+                  <m:limUpp>
+                    <m:e>
+                      <m:r>
+                        <m:rPr>
+                          <m:sty m:val="p" />
+                        </m:rPr>
+                        <m:t>x</m:t>
+                      </m:r>
+                      <m:r>
+                        <m:rPr>
+                          <m:sty m:val="p" />
+                        </m:rPr>
+                        <m:t>→</m:t>
+                      </m:r>
+                      <m:r>
+                        <m:rPr>
+                          <m:sty m:val="p" />
+                        </m:rPr>
+                        <m:t>0</m:t>
+                      </m:r>
+                    </m:e>
+                    <m:lim>
+                      <m:r>
+                        <m:rPr>
+                          <m:sty m:val="p" />
+                        </m:rPr>
+                        <m:t>w</m:t>
+                      </m:r>
+                    </m:lim>
+                  </m:limUpp>
+                </m:lim>
+              </m:limLow>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>u</m:t>
+              </m:r>
+              <m:limLow>
+                <m:e>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>⋆-lim&#39;sup</m:t>
+                  </m:r>
+                </m:e>
+                <m:lim>
+                  <m:limUpp>
+                    <m:e>
+                      <m:r>
+                        <m:rPr>
+                          <m:sty m:val="p" />
+                        </m:rPr>
+                        <m:t>x</m:t>
+                      </m:r>
+                      <m:r>
+                        <m:rPr>
+                          <m:sty m:val="p" />
+                        </m:rPr>
+                        <m:t>→</m:t>
+                      </m:r>
+                      <m:r>
+                        <m:rPr>
+                          <m:sty m:val="p" />
+                        </m:rPr>
+                        <m:t>0</m:t>
+                      </m:r>
+                    </m:e>
+                    <m:lim>
+                      <m:r>
+                        <m:rPr>
+                          <m:sty m:val="p" />
+                        </m:rPr>
+                        <m:t>w</m:t>
+                      </m:r>
+                    </m:lim>
+                  </m:limUpp>
+                </m:lim>
+              </m:limLow>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>u</m:t>
+              </m:r>
+            </m:e>
+            <m:e>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>operatorname*</m:t>
+              </m:r>
+            </m:e>
+          </m:mr>
+          <m:mr>
+            <m:e>
+              <m:sSub>
+                <m:e>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>⋆-lim&#39;sup</m:t>
+                  </m:r>
+                </m:e>
+                <m:sub>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>x</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>→</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>0</m:t>
+                  </m:r>
+                </m:sub>
+              </m:sSub>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>u</m:t>
+              </m:r>
+              <m:sSup>
+                <m:e>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>⋆-lim&#39;sup</m:t>
+                  </m:r>
+                </m:e>
+                <m:sup>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>w</m:t>
+                  </m:r>
+                </m:sup>
+              </m:sSup>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>u</m:t>
+              </m:r>
+              <m:sSubSup>
+                <m:e>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>⋆-lim&#39;sup</m:t>
+                  </m:r>
+                </m:e>
+                <m:sub>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>x</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>→</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>0</m:t>
+                  </m:r>
+                </m:sub>
+                <m:sup>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>w</m:t>
+                  </m:r>
+                </m:sup>
+              </m:sSubSup>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>u</m:t>
+              </m:r>
+              <m:sSubSup>
+                <m:e>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>⋆-lim&#39;sup</m:t>
+                  </m:r>
+                </m:e>
+                <m:sub>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>x</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>→</m:t>
+                  </m:r>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>0</m:t>
+                  </m:r>
+                </m:sub>
+                <m:sup>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>w</m:t>
+                  </m:r>
+                </m:sup>
+              </m:sSubSup>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>u</m:t>
+              </m:r>
+            </m:e>
+            <m:e>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>operatorname*:nolimits</m:t>
+              </m:r>
+            </m:e>
+          </m:mr>
+          <m:mr>
+            <m:e>
+              <m:sSub>
+                <m:e>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>curl</m:t>
+                  </m:r>
+                </m:e>
+                <m:sub>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>x</m:t>
+                  </m:r>
+                </m:sub>
+              </m:sSub>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>v</m:t>
+              </m:r>
+              <m:limLow>
+                <m:e>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>argmax</m:t>
+                  </m:r>
+                </m:e>
+                <m:lim>
+                  <m:r>
+                    <m:rPr>
+                      <m:sty m:val="p" />
+                    </m:rPr>
+                    <m:t>K</m:t>
+                  </m:r>
+                </m:lim>
+              </m:limLow>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>u</m:t>
+              </m:r>
+            </m:e>
+            <m:e>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>DeclareMathOperator</m:t>
+              </m:r>
+            </m:e>
+          </m:mr>
+        </m:m>
+      </m:e>
+    </m:d>
+  </m:oMath>
+</m:oMathPara>
+
+>>> native
+[ EDelimited
+    "{"
+    " "
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ ESub
+                   (EGrouped [ EIdentifier "d" , EIdentifier "i" , EIdentifier "v" ])
+                   (EIdentifier "x")
+               , EIdentifier "u"
+               , ESuper
+                   (EGrouped [ EIdentifier "d" , EIdentifier "i" , EIdentifier "v" ])
+                   (EIdentifier "x")
+               , EIdentifier "u"
+               , ESubsup
+                   (EGrouped [ EIdentifier "d" , EIdentifier "i" , EIdentifier "v" ])
+                   (EIdentifier "x")
+                   (EIdentifier "y")
+               , EIdentifier "u"
+               , ESubsup
+                   (EGrouped [ EIdentifier "d" , EIdentifier "i" , EIdentifier "v" ])
+                   (EIdentifier "x")
+                   (EIdentifier "y")
+               , EIdentifier "u"
+               ]
+             , [ EIdentifier "o"
+               , EIdentifier "p"
+               , EIdentifier "e"
+               , EIdentifier "r"
+               , EIdentifier "a"
+               , EIdentifier "t"
+               , EIdentifier "o"
+               , EIdentifier "r"
+               , EIdentifier "n"
+               , EIdentifier "a"
+               , EIdentifier "m"
+               , EIdentifier "e"
+               ]
+             ]
+           , [ [ EUnder
+                   True
+                   (EGrouped
+                      [ ESymbol Bin "\8902"
+                      , ESymbol Bin "-"
+                      , EIdentifier "l"
+                      , EIdentifier "i"
+                      , EIdentifier "m"
+                      , ESymbol Ord "'"
+                      , EIdentifier "s"
+                      , EIdentifier "u"
+                      , EIdentifier "p"
+                      ])
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+               , EIdentifier "u"
+               , EOver
+                   True
+                   (EGrouped
+                      [ ESymbol Bin "\8902"
+                      , ESymbol Bin "-"
+                      , EIdentifier "l"
+                      , EIdentifier "i"
+                      , EIdentifier "m"
+                      , ESymbol Ord "'"
+                      , EIdentifier "s"
+                      , EIdentifier "u"
+                      , EIdentifier "p"
+                      ])
+                   (EIdentifier "w")
+               , EIdentifier "u"
+               , EUnder
+                   True
+                   (EGrouped
+                      [ ESymbol Bin "\8902"
+                      , ESymbol Bin "-"
+                      , EIdentifier "l"
+                      , EIdentifier "i"
+                      , EIdentifier "m"
+                      , ESymbol Ord "'"
+                      , EIdentifier "s"
+                      , EIdentifier "u"
+                      , EIdentifier "p"
+                      ])
+                   (EOver
+                      True
+                      (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+                      (EIdentifier "w"))
+               , EIdentifier "u"
+               , EUnder
+                   True
+                   (EGrouped
+                      [ ESymbol Bin "\8902"
+                      , ESymbol Bin "-"
+                      , EIdentifier "l"
+                      , EIdentifier "i"
+                      , EIdentifier "m"
+                      , ESymbol Ord "'"
+                      , EIdentifier "s"
+                      , EIdentifier "u"
+                      , EIdentifier "p"
+                      ])
+                   (EOver
+                      True
+                      (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+                      (EIdentifier "w"))
+               , EIdentifier "u"
+               ]
+             , [ EIdentifier "o"
+               , EIdentifier "p"
+               , EIdentifier "e"
+               , EIdentifier "r"
+               , EIdentifier "a"
+               , EIdentifier "t"
+               , EIdentifier "o"
+               , EIdentifier "r"
+               , EIdentifier "n"
+               , EIdentifier "a"
+               , EIdentifier "m"
+               , EIdentifier "e"
+               , ESymbol Ord "*"
+               ]
+             ]
+           , [ [ ESub
+                   (EGrouped
+                      [ ESymbol Bin "\8902"
+                      , ESymbol Bin "-"
+                      , EIdentifier "l"
+                      , EIdentifier "i"
+                      , EIdentifier "m"
+                      , ESymbol Ord "'"
+                      , EIdentifier "s"
+                      , EIdentifier "u"
+                      , EIdentifier "p"
+                      ])
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+               , EIdentifier "u"
+               , ESuper
+                   (EGrouped
+                      [ ESymbol Bin "\8902"
+                      , ESymbol Bin "-"
+                      , EIdentifier "l"
+                      , EIdentifier "i"
+                      , EIdentifier "m"
+                      , ESymbol Ord "'"
+                      , EIdentifier "s"
+                      , EIdentifier "u"
+                      , EIdentifier "p"
+                      ])
+                   (EIdentifier "w")
+               , EIdentifier "u"
+               , ESubsup
+                   (EGrouped
+                      [ ESymbol Bin "\8902"
+                      , ESymbol Bin "-"
+                      , EIdentifier "l"
+                      , EIdentifier "i"
+                      , EIdentifier "m"
+                      , ESymbol Ord "'"
+                      , EIdentifier "s"
+                      , EIdentifier "u"
+                      , EIdentifier "p"
+                      ])
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+                   (EIdentifier "w")
+               , EIdentifier "u"
+               , ESubsup
+                   (EGrouped
+                      [ ESymbol Bin "\8902"
+                      , ESymbol Bin "-"
+                      , EIdentifier "l"
+                      , EIdentifier "i"
+                      , EIdentifier "m"
+                      , ESymbol Ord "'"
+                      , EIdentifier "s"
+                      , EIdentifier "u"
+                      , EIdentifier "p"
+                      ])
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+                   (EIdentifier "w")
+               , EIdentifier "u"
+               ]
+             , [ EIdentifier "o"
+               , EIdentifier "p"
+               , EIdentifier "e"
+               , EIdentifier "r"
+               , EIdentifier "a"
+               , EIdentifier "t"
+               , EIdentifier "o"
+               , EIdentifier "r"
+               , EIdentifier "n"
+               , EIdentifier "a"
+               , EIdentifier "m"
+               , EIdentifier "e"
+               , ESymbol Ord "*"
+               , ESymbol Pun ":"
+               , EIdentifier "n"
+               , EIdentifier "o"
+               , EIdentifier "l"
+               , EIdentifier "i"
+               , EIdentifier "m"
+               , EIdentifier "i"
+               , EIdentifier "t"
+               , EIdentifier "s"
+               ]
+             ]
+           , [ [ ESub
+                   (EGrouped
+                      [ EIdentifier "c"
+                      , EIdentifier "u"
+                      , EIdentifier "r"
+                      , EIdentifier "l"
+                      ])
+                   (EIdentifier "x")
+               , EIdentifier "v"
+               , EUnder
+                   True
+                   (EGrouped
+                      [ EIdentifier "a"
+                      , EIdentifier "r"
+                      , EIdentifier "g"
+                      , EIdentifier "m"
+                      , EIdentifier "a"
+                      , EIdentifier "x"
+                      ])
+                   (EIdentifier "K")
+               , EIdentifier "u"
+               ]
+             , [ EIdentifier "D"
+               , EIdentifier "e"
+               , EIdentifier "c"
+               , EIdentifier "l"
+               , EIdentifier "a"
+               , EIdentifier "r"
+               , EIdentifier "e"
+               , EIdentifier "M"
+               , EIdentifier "a"
+               , EIdentifier "t"
+               , EIdentifier "h"
+               , EIdentifier "O"
+               , EIdentifier "p"
+               , EIdentifier "e"
+               , EIdentifier "r"
+               , EIdentifier "a"
+               , EIdentifier "t"
+               , EIdentifier "o"
+               , EIdentifier "r"
+               ]
+             ]
+           ])
+    ]
+]

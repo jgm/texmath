@@ -1,0 +1,697 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "aacute" ] , [ ESymbol Ord "\225" ] ]
+    , [ [ EText TextNormal "Aacute" ] , [ ESymbol Ord "\193" ] ]
+    , [ [ EText TextNormal "abreve" ] , [ ESymbol Ord "\259" ] ]
+    , [ [ EText TextNormal "Abreve" ] , [ ESymbol Ord "\258" ] ]
+    , [ [ EText TextNormal "ac" ] , [ ESymbol Bin "\8766" ] ]
+    , [ [ EText TextNormal "acd" ] , [ ESymbol Ord "\8767" ] ]
+    , [ [ EText TextNormal "acE" ] , [ EMathOperator "\8766\819" ] ]
+    , [ [ EText TextNormal "acirc" ] , [ ESymbol Ord "\226" ] ]
+    , [ [ EText TextNormal "Acirc" ] , [ ESymbol Ord "\194" ] ]
+    , [ [ EText TextNormal "acute" ] , [ ESymbol Accent "\180" ] ]
+    , [ [ EText TextNormal "acy" ] , [ ESymbol Ord "\1072" ] ]
+    , [ [ EText TextNormal "Acy" ] , [ ESymbol Ord "\1040" ] ]
+    , [ [ EText TextNormal "aelig" ] , [ ESymbol Ord "\230" ] ]
+    , [ [ EText TextNormal "AElig" ] , [ ESymbol Ord "\198" ] ]
+    , [ [ EText TextNormal "af" ] , [ ESymbol Ord "\8289" ] ]
+    , [ [ EText TextNormal "afr" ] , [ ESymbol Alpha "\120094" ] ]
+    , [ [ EText TextNormal "Afr" ] , [ ESymbol Alpha "\120068" ] ]
+    , [ [ EText TextNormal "agrave" ] , [ ESymbol Ord "\224" ] ]
+    , [ [ EText TextNormal "Agrave" ] , [ ESymbol Ord "\192" ] ]
+    , [ [ EText TextNormal "aleph" ] , [ ESymbol Alpha "\8501" ] ]
+    , [ [ EText TextNormal "alpha" ] , [ ESymbol Alpha "\945" ] ]
+    , [ [ EText TextNormal "amacr" ] , [ ESymbol Ord "\257" ] ]
+    , [ [ EText TextNormal "Amacr" ] , [ ESymbol Ord "\256" ] ]
+    , [ [ EText TextNormal "amalg" ] , [ ESymbol Bin "\10815" ] ]
+    , [ [ EText TextNormal "amp" ] , [ ESymbol Ord "&" ] ]
+    , [ [ EText TextNormal "and" ] , [ ESymbol Bin "\8743" ] ]
+    , [ [ EText TextNormal "And" ] , [ ESymbol Bin "\10835" ] ]
+    , [ [ EText TextNormal "andand" ] , [ ESymbol Bin "\10837" ] ]
+    , [ [ EText TextNormal "andd" ] , [ ESymbol Bin "\10844" ] ]
+    , [ [ EText TextNormal "andslope" ] , [ ESymbol Bin "\10840" ] ]
+    , [ [ EText TextNormal "andv" ] , [ ESymbol Bin "\10842" ] ]
+    , [ [ EText TextNormal "ang" ] , [ ESymbol Ord "\8736" ] ]
+    , [ [ EText TextNormal "ange" ] , [ ESymbol Ord "\10660" ] ]
+    , [ [ EText TextNormal "angle" ] , [ ESymbol Ord "\8736" ] ]
+    , [ [ EText TextNormal "angmsd" ] , [ ESymbol Ord "\8737" ] ]
+    , [ [ EText TextNormal "angmsdaa" ] , [ ESymbol Ord "\10664" ] ]
+    , [ [ EText TextNormal "angmsdab" ] , [ ESymbol Ord "\10665" ] ]
+    , [ [ EText TextNormal "angmsdac" ] , [ ESymbol Ord "\10666" ] ]
+    , [ [ EText TextNormal "angmsdad" ] , [ ESymbol Ord "\10667" ] ]
+    , [ [ EText TextNormal "angmsdae" ] , [ ESymbol Ord "\10668" ] ]
+    , [ [ EText TextNormal "angmsdaf" ] , [ ESymbol Ord "\10669" ] ]
+    , [ [ EText TextNormal "angmsdag" ] , [ ESymbol Ord "\10670" ] ]
+    , [ [ EText TextNormal "angmsdah" ] , [ ESymbol Ord "\10671" ] ]
+    , [ [ EText TextNormal "angrt" ] , [ ESymbol Ord "\8735" ] ]
+    , [ [ EText TextNormal "angrtvb" ] , [ ESymbol Ord "\8894" ] ]
+    , [ [ EText TextNormal "angrtvbd" ] , [ ESymbol Ord "\10653" ] ]
+    , [ [ EText TextNormal "angsph" ] , [ ESymbol Ord "\8738" ] ]
+    , [ [ EText TextNormal "angst" ] , [ ESymbol Ord "\197" ] ]
+    , [ [ EText TextNormal "angzarr" ] , [ ESymbol Ord "\9084" ] ]
+    , [ [ EText TextNormal "aogon" ] , [ ESymbol Ord "\261" ] ]
+    , [ [ EText TextNormal "Aogon" ] , [ ESymbol Ord "\260" ] ]
+    , [ [ EText TextNormal "aopf" ] , [ ESymbol Alpha "\120146" ] ]
+    , [ [ EText TextNormal "Aopf" ] , [ ESymbol Alpha "\120120" ] ]
+    , [ [ EText TextNormal "ap" ] , [ ESymbol Rel "\8776" ] ]
+    , [ [ EText TextNormal "apacir" ] , [ ESymbol Rel "\10863" ] ]
+    , [ [ EText TextNormal "ape" ] , [ ESymbol Rel "\8778" ] ]
+    , [ [ EText TextNormal "apE" ] , [ ESymbol Rel "\10864" ] ]
+    , [ [ EText TextNormal "apid" ] , [ ESymbol Rel "\8779" ] ]
+    , [ [ EText TextNormal "apos" ] , [ ESymbol Accent "'" ] ]
+    , [ [ EText TextNormal "ApplyFunction" ]
+      , [ ESymbol Ord "\8289" ]
+      ]
+    , [ [ EText TextNormal "approx" ] , [ ESymbol Rel "\8776" ] ]
+    , [ [ EText TextNormal "approxeq" ] , [ ESymbol Rel "\8778" ] ]
+    , [ [ EText TextNormal "aring" ] , [ ESymbol Ord "\229" ] ]
+    , [ [ EText TextNormal "Aring" ] , [ ESymbol Ord "\197" ] ]
+    , [ [ EText TextNormal "ascr" ] , [ ESymbol Alpha "\119990" ] ]
+    , [ [ EText TextNormal "Ascr" ] , [ ESymbol Alpha "\119964" ] ]
+    , [ [ EText TextNormal "Assign" ] , [ ESymbol Rel "\8788" ] ]
+    , [ [ EText TextNormal "ast" ] , [ ESymbol Ord "*" ] ]
+    , [ [ EText TextNormal "asymp" ] , [ ESymbol Rel "\8776" ] ]
+    , [ [ EText TextNormal "asympeq" ] , [ ESymbol Rel "\8781" ] ]
+    , [ [ EText TextNormal "atilde" ] , [ ESymbol Ord "\227" ] ]
+    , [ [ EText TextNormal "Atilde" ] , [ ESymbol Ord "\195" ] ]
+    , [ [ EText TextNormal "auml" ] , [ ESymbol Ord "\228" ] ]
+    , [ [ EText TextNormal "Auml" ] , [ ESymbol Ord "\196" ] ]
+    , [ [ EText TextNormal "awconint" ] , [ ESymbol Op "\8755" ] ]
+    , [ [ EText TextNormal "awint" ] , [ ESymbol Op "\10769" ] ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">aacute</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>á</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Aacute</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Á</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">abreve</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ă</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Abreve</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ă</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ac</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∾</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">acd</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>∿</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">acE</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∾̳</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">acirc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>â</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Acirc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Â</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">acute</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>´</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">acy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>а</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Acy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>А</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">aelig</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>æ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">AElig</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Æ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">af</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>&#8289;</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">afr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔞</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Afr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔄</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">agrave</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>à</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Agrave</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>À</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">aleph</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℵ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">alpha</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>α</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">amacr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ā</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Amacr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ā</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">amalg</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⨿</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">amp</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>&amp;</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">and</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∧</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">And</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩓</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">andand</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩕</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">andd</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩜</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">andslope</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩘</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">andv</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩚</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ang</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>∠</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ange</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦤</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">angle</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>∠</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">angmsd</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>∡</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">angmsdaa</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦨</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">angmsdab</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦩</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">angmsdac</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦪</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">angmsdad</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦫</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">angmsdae</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦬</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">angmsdaf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦭</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">angmsdag</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦮</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">angmsdah</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦯</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">angrt</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>∟</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">angrtvb</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⊾</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">angrtvbd</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦝</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">angsph</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>∢</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">angst</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Å</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">angzarr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⍼</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">aogon</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ą</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Aogon</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ą</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">aopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕒</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Aopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔸</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ap</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≈</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">apacir</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩯</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ape</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≊</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">apE</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩰</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">apid</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≋</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">apos</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>&#39;</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ApplyFunction</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>&#8289;</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">approx</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≈</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">approxeq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≊</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">aring</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>å</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Aring</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Å</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ascr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝒶</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Ascr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝒜</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Assign</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≔</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ast</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>*</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">asymp</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≈</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">asympeq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≍</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">atilde</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ã</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Atilde</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ã</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">auml</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ä</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Auml</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ä</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">awconint</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∳</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">awint</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⨑</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

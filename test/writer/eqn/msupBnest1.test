@@ -1,0 +1,7 @@
+<<< native
+[ EIdentifier "x"
+, ESymbol Bin "+"
+, ESuper (EIdentifier "y") (EIdentifier "n")
+]
+>>> eqn
+x + y sup n

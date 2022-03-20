@@ -1,0 +1,79 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi> 
+  <mo>=</mo> 
+  <mrow>
+    <mo>(</mo> 
+    <mtable align="bottom">
+      <mtr>
+        <mtd>
+          <mn>0</mn> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mn>0</mn> 
+        </mtd> 
+      </mtr> 
+    </mtable> 
+    <mo>)</mo> 
+    <mrow>
+      <mo symmetric="false">(</mo> 
+      <mtable align="bottom">
+        <mtr>
+          <mtd>
+            <mn>0</mn> 
+          </mtd> 
+        </mtr> 
+        <mtr>
+          <mtd>
+            <mn>0</mn> 
+          </mtd> 
+        </mtr> 
+      </mtable> 
+      <mo symmetric="false">)</mo> 
+    </mrow> 
+    <mo symmetric="true">(</mo> 
+    <mtable align="bottom">
+      <mtr>
+        <mtd>
+          <mn>0</mn> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mn>0</mn> 
+        </mtd> 
+      </mtr> 
+    </mtable> 
+    <mo symmetric="true">)</mo> 
+  </mrow> </math>
+>>> native
+[ EIdentifier "x"
+, ESymbol Rel "="
+, EGrouped
+    [ EDelimited
+        "("
+        ")"
+        [ Right
+            (EArray
+               [ AlignCenter ] [ [ [ ENumber "0" ] ] , [ [ ENumber "0" ] ] ])
+        ]
+    , EDelimited
+        "("
+        ")"
+        [ Right
+            (EArray
+               [ AlignCenter ] [ [ [ ENumber "0" ] ] , [ [ ENumber "0" ] ] ])
+        ]
+    , EDelimited
+        "("
+        ")"
+        [ Right
+            (EArray
+               [ AlignCenter ] [ [ [ ENumber "0" ] ] , [ [ ENumber "0" ] ] ])
+        ]
+    ]
+]

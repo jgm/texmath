@@ -1,0 +1,13 @@
+<<< native
+[ ESubsup
+    (EIdentifier "X")
+    (ESubsup (EIdentifier "Z") (ENumber "4") (ENumber "3"))
+    (ESubsup (EIdentifier "Y") (ENumber "2") (ENumber "1"))
+, ESymbol Rel "="
+, ESubsup
+    (EIdentifier "X")
+    (ESubsup (EIdentifier "Z") (ENumber "4") (ENumber "3"))
+    (ESubsup (EIdentifier "Y") (ENumber "2") (ENumber "1"))
+]
+>>> eqn
+X sub {Z sub 4 sup 3} sup {Y sub 2 sup 1} = X sub {Z sub 4 sup 3} sup {Y sub 2 sup 1}

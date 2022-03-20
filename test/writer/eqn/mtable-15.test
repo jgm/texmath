@@ -1,0 +1,22 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EGrouped
+            [ EPhantom (EText TextNormal "F")
+            , ESpace (0 % 1)
+            , EIdentifier "HT"
+            , ESpace (0 % 1)
+            , EPhantom (EText TextNormal "F")
+            ]
+        ]
+      , [ ESymbol Rel "=" ]
+      , [ EIdentifier "TH" ]
+      ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ {hphantom {roman "F"} fwd 0 HT fwd 0 hphantom {roman "F"}} }
+ccol{ = }
+ccol{ TH }
+}

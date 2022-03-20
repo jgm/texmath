@@ -1,0 +1,10 @@
+[ ESubsup
+    (EIdentifier "X")
+    (ESubsup (EIdentifier "Z") (ENumber "4") (ENumber "3"))
+    (ESubsup (EIdentifier "Y") (ENumber "2") (ENumber "1"))
+, ESymbol Rel "="
+, ESubsup
+    (EIdentifier "X")
+    (ESubsup (EIdentifier "Z") (ENumber "4") (ENumber "3"))
+    (ESubsup (EIdentifier "Y") (ENumber "2") (ENumber "1"))
+]

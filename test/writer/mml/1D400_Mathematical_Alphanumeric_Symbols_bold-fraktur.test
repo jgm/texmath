@@ -1,0 +1,381 @@
+<<< native
+[ EArray
+    [ AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    ]
+    [ [ []
+      , [ EText TextNormal "1D56" ]
+      , [ EText TextNormal "1D57" ]
+      , [ EText TextNormal "1D58" ]
+      , [ EText TextNormal "1D59" ]
+      ]
+    , [ [ EText TextNormal "0" ]
+      , []
+      , [ ESymbol Alpha "\120176" ]
+      , [ ESymbol Alpha "\120192" ]
+      , [ ESymbol Alpha "\120208" ]
+      ]
+    , [ [ EText TextNormal "1" ]
+      , []
+      , [ ESymbol Alpha "\120177" ]
+      , [ ESymbol Alpha "\120193" ]
+      , [ ESymbol Alpha "\120209" ]
+      ]
+    , [ [ EText TextNormal "2" ]
+      , []
+      , [ ESymbol Alpha "\120178" ]
+      , [ ESymbol Alpha "\120194" ]
+      , [ ESymbol Alpha "\120210" ]
+      ]
+    , [ [ EText TextNormal "3" ]
+      , []
+      , [ ESymbol Alpha "\120179" ]
+      , [ ESymbol Alpha "\120195" ]
+      , [ ESymbol Alpha "\120211" ]
+      ]
+    , [ [ EText TextNormal "4" ]
+      , []
+      , [ ESymbol Alpha "\120180" ]
+      , [ ESymbol Alpha "\120196" ]
+      , [ ESymbol Alpha "\120212" ]
+      ]
+    , [ [ EText TextNormal "5" ]
+      , []
+      , [ ESymbol Alpha "\120181" ]
+      , [ ESymbol Alpha "\120197" ]
+      , [ ESymbol Alpha "\120213" ]
+      ]
+    , [ [ EText TextNormal "6" ]
+      , []
+      , [ ESymbol Alpha "\120182" ]
+      , [ ESymbol Alpha "\120198" ]
+      , [ ESymbol Alpha "\120214" ]
+      ]
+    , [ [ EText TextNormal "7" ]
+      , []
+      , [ ESymbol Alpha "\120183" ]
+      , [ ESymbol Alpha "\120199" ]
+      , [ ESymbol Alpha "\120215" ]
+      ]
+    , [ [ EText TextNormal "8" ]
+      , []
+      , [ ESymbol Alpha "\120184" ]
+      , [ ESymbol Alpha "\120200" ]
+      , [ ESymbol Alpha "\120216" ]
+      ]
+    , [ [ EText TextNormal "9" ]
+      , []
+      , [ ESymbol Alpha "\120185" ]
+      , [ ESymbol Alpha "\120201" ]
+      , [ ESymbol Alpha "\120217" ]
+      ]
+    , [ [ EText TextNormal "A" ]
+      , []
+      , [ ESymbol Alpha "\120186" ]
+      , [ ESymbol Alpha "\120202" ]
+      , [ ESymbol Alpha "\120218" ]
+      ]
+    , [ [ EText TextNormal "B" ]
+      , []
+      , [ ESymbol Alpha "\120187" ]
+      , [ ESymbol Alpha "\120203" ]
+      , [ ESymbol Alpha "\120219" ]
+      ]
+    , [ [ EText TextNormal "C" ]
+      , [ ESymbol Alpha "\120172" ]
+      , [ ESymbol Alpha "\120188" ]
+      , [ ESymbol Alpha "\120204" ]
+      , [ ESymbol Alpha "\120220" ]
+      ]
+    , [ [ EText TextNormal "D" ]
+      , [ ESymbol Alpha "\120173" ]
+      , [ ESymbol Alpha "\120189" ]
+      , [ ESymbol Alpha "\120205" ]
+      , [ ESymbol Alpha "\120221" ]
+      ]
+    , [ [ EText TextNormal "E" ]
+      , [ ESymbol Alpha "\120174" ]
+      , [ ESymbol Alpha "\120190" ]
+      , [ ESymbol Alpha "\120206" ]
+      , [ ESymbol Alpha "\120222" ]
+      ]
+    , [ [ EText TextNormal "F" ]
+      , [ ESymbol Alpha "\120175" ]
+      , [ ESymbol Alpha "\120191" ]
+      , [ ESymbol Alpha "\120207" ]
+      , [ ESymbol Alpha "\120223" ]
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1D56</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1D57</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1D58</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1D59</mtext>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">0</mtext>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝕰</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖀</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖐</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1</mtext>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝕱</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖁</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖑</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">2</mtext>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝕲</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖂</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖒</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">3</mtext>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝕳</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖃</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖓</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">4</mtext>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝕴</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖄</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖔</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">5</mtext>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝕵</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖅</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖕</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">6</mtext>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝕶</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖆</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖖</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">7</mtext>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝕷</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖇</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖗</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">8</mtext>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝕸</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖈</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖘</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">9</mtext>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝕹</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖉</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖙</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">A</mtext>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝕺</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖊</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖚</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">B</mtext>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝕻</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖋</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖛</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">C</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕬</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕼</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖌</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖜</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">D</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕭</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕽</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖍</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖝</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">E</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕮</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕾</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖎</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖞</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">F</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕯</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕿</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖏</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝖟</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

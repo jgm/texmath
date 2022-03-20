@@ -1,0 +1,29 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ ENumber "1" ]
+      , [ ESymbol Accent "\8594" ]
+      , [ ENumber "2" ]
+      ]
+    , [ [ ESymbol Rel "\8595" ]
+      , [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "+"
+            , EFraction
+                NormalFrac (ENumber "2") (ESuper (EIdentifier "y") (ENumber "3"))
+            ]
+        ]
+      , [ ESymbol Rel "\8595" ]
+      ]
+    , [ [ ENumber "3" ]
+      , [ ESymbol Accent "\8594" ]
+      , [ ENumber "4" ]
+      ]
+    ]
+]
+>>> tex
+\begin{matrix}
+1 & \rightarrow & 2 \\
+ \downarrow & {x + \frac{2}{y^{3}}} & \downarrow \\
+3 & \rightarrow & 4 \\
+\end{matrix}

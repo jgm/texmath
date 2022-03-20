@@ -1,0 +1,30 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>|</mo> 
+  <mi>H</mi> 
+  <mo>|</mo> 
+  <mo>+</mo> 
+  <mo>&#x27E8;</mo> 
+  <mi>H</mi> 
+  <mo>&#x2223;</mo> 
+  <mi>H</mi> 
+  <mo>&#x27E9;</mo> </math>
+>>> native
+[ EDelimited
+    "|"
+    ""
+    [ Right (EIdentifier "H")
+    , Left "|"
+    , Right (ESymbol Bin "+")
+    , Right
+        (EDelimited
+           "\10216"
+           "\10217"
+           [ Right (EIdentifier "H")
+           , Right (ESymbol Rel "\8739")
+           , Right (EIdentifier "H")
+           ])
+    ]
+]

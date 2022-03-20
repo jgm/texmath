@@ -1,0 +1,23 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EGrouped
+            [ EPhantom (EText TextNormal "fail")
+            , EUnder
+                False (EIdentifier "HT") (EPhantom (EText TextNormal "fail"))
+            ]
+        ]
+      , [ ESymbol Rel "=" ]
+      , [ EGrouped
+            [ EOver
+                False (EIdentifier "TH") (EPhantom (EText TextNormal "fail"))
+            , EPhantom (EText TextNormal "fail")
+            ]
+        ]
+      ]
+    ]
+]
+>>> tex
+\begin{matrix}
+{\phantom{\text{fail}}\underset{\phantom{\text{fail}}}{HT}} & = & {\overset{\phantom{\text{fail}}}{TH}\phantom{\text{fail}}} \\
+\end{matrix}

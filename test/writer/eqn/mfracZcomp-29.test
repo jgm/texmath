@@ -1,0 +1,43 @@
+<<< native
+[ EText
+    TextNormal
+    "Displayed nested fractions are normal size at the first level,\160"
+, EFraction
+    NormalFrac
+    (ESuper (ENumber "1") (ESqrt (ENumber "6")))
+    (EGrouped
+       [ ESqrt (ENumber "2")
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (ENumber "1")
+           (EGrouped
+              [ ESqrt (ENumber "3")
+              , ESymbol Bin "+"
+              , EFraction
+                  NormalFrac
+                  (ENumber "1")
+                  (EGrouped
+                     [ ESqrt (ENumber "4")
+                     , ESymbol Bin "+"
+                     , EFraction
+                         NormalFrac
+                         (ENumber "1")
+                         (EGrouped
+                            [ ESqrt (ENumber "5")
+                            , ESymbol Bin "+"
+                            , EFraction
+                                NormalFrac
+                                (ENumber "1")
+                                (EGrouped
+                                   [ ESqrt (ENumber "6") , ESymbol Bin "+" , EIdentifier "\8230" ])
+                            ])
+                     ])
+              ])
+       ])
+, EText
+    TextNormal
+    "\160script size at second level, and script-script size at all more nested levels."
+]
+>>> eqn
+roman "Displayed nested fractions are normal size at the first level, " {1 sup {sqrt 6}} over {sqrt 2 + 1 over {sqrt 3 + 1 over {sqrt 4 + 1 over {sqrt 5 + 1 over {sqrt 6 + ...}}}}} roman " script size at second level, and script-script size at all more nested levels."

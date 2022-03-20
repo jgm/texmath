@@ -1,0 +1,9 @@
+[ EUnder
+    False (EIdentifier "_ baseline _") (EIdentifier "under script")
+, ESymbol Rel "="
+, EUnder
+    False
+    (EOver
+       False (EIdentifier "_ baseline _") (EPhantom (EIdentifier "fail")))
+    (EIdentifier "under script")
+]

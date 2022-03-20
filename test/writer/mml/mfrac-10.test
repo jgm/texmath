@@ -1,0 +1,76 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (ENumber "4")
+    (EGrouped
+       [ ENumber "2"
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (ENumber "3")
+           (EGrouped
+              [ ENumber "1"
+              , ESymbol Bin "+"
+              , EFraction NormalFrac (ENumber "1") (ENumber "2")
+              ])
+       ])
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ENumber "1"
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (ENumber "9")
+           (EGrouped
+              [ ENumber "2"
+              , ESymbol Bin "+"
+              , EFraction NormalFrac (ENumber "1") (ENumber "4")
+              ])
+       ])
+    (ENumber "5")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <mn>4</mn>
+      <mrow>
+        <mn>2</mn>
+        <mo>+</mo>
+        <mfrac>
+          <mn>3</mn>
+          <mrow>
+            <mn>1</mn>
+            <mo>+</mo>
+            <mfrac>
+              <mn>1</mn>
+              <mn>2</mn>
+            </mfrac>
+          </mrow>
+        </mfrac>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <mn>1</mn>
+        <mo>+</mo>
+        <mfrac>
+          <mn>9</mn>
+          <mrow>
+            <mn>2</mn>
+            <mo>+</mo>
+            <mfrac>
+              <mn>1</mn>
+              <mn>4</mn>
+            </mfrac>
+          </mrow>
+        </mfrac>
+      </mrow>
+      <mn>5</mn>
+    </mfrac>
+  </mrow>
+</math>

@@ -1,0 +1,14 @@
+<<< native
+[ EUnderover
+    False
+    (EIdentifier "BASE")
+    (EIdentifier "under script")
+    (EIdentifier "over script")
+, ESymbol Rel "="
+, EUnder
+    False
+    (EOver False (EIdentifier "BASE") (EIdentifier "over script"))
+    (EIdentifier "under script")
+]
+>>> tex
+\underset{under\ script}{\overset{over\ script}{BASE}} = \underset{under\ script}{\overset{over\ script}{BASE}}

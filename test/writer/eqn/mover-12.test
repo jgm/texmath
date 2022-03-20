@@ -1,0 +1,14 @@
+<<< native
+[ EOver False (EIdentifier "B") (EIdentifier "overscript")
+, ESymbol Rel "="
+, EOver
+    False
+    (EGrouped
+       [ EPhantom (ENumber "1")
+       , EIdentifier "B"
+       , EPhantom (ENumber "1")
+       ])
+    (EIdentifier "overscript")
+]
+>>> eqn
+B to overscript = {hphantom 1 B hphantom 1} to overscript

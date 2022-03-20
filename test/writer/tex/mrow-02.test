@@ -1,0 +1,7 @@
+<<< native
+[ ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Rel "="
+, ESuper (EIdentifier "x") (ENumber "2")
+]
+>>> tex
+x^{2} = x^{2}

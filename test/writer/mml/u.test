@@ -1,0 +1,767 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "uacute" ] , [ ESymbol Ord "\250" ] ]
+    , [ [ EText TextNormal "Uacute" ] , [ ESymbol Ord "\218" ] ]
+    , [ [ EText TextNormal "uarr" ] , [ ESymbol Rel "\8593" ] ]
+    , [ [ EText TextNormal "uArr" ] , [ ESymbol Rel "\8657" ] ]
+    , [ [ EText TextNormal "Uarr" ] , [ ESymbol Accent "\8607" ] ]
+    , [ [ EText TextNormal "Uarrocir" ] , [ ESymbol Rel "\10569" ] ]
+    , [ [ EText TextNormal "ubrcy" ] , [ ESymbol Ord "\1118" ] ]
+    , [ [ EText TextNormal "Ubrcy" ] , [ ESymbol Ord "\1038" ] ]
+    , [ [ EText TextNormal "ubreve" ] , [ ESymbol Ord "\365" ] ]
+    , [ [ EText TextNormal "Ubreve" ] , [ ESymbol Ord "\364" ] ]
+    , [ [ EText TextNormal "ucirc" ] , [ ESymbol Ord "\251" ] ]
+    , [ [ EText TextNormal "Ucirc" ] , [ ESymbol Ord "\219" ] ]
+    , [ [ EText TextNormal "ucy" ] , [ ESymbol Ord "\1091" ] ]
+    , [ [ EText TextNormal "Ucy" ] , [ ESymbol Ord "\1059" ] ]
+    , [ [ EText TextNormal "udarr" ] , [ ESymbol Rel "\8645" ] ]
+    , [ [ EText TextNormal "udblac" ] , [ ESymbol Ord "\369" ] ]
+    , [ [ EText TextNormal "Udblac" ] , [ ESymbol Ord "\368" ] ]
+    , [ [ EText TextNormal "udhar" ] , [ ESymbol Rel "\10606" ] ]
+    , [ [ EText TextNormal "ufisht" ] , [ ESymbol Rel "\10622" ] ]
+    , [ [ EText TextNormal "ufr" ] , [ ESymbol Alpha "\120114" ] ]
+    , [ [ EText TextNormal "Ufr" ] , [ ESymbol Alpha "\120088" ] ]
+    , [ [ EText TextNormal "ugrave" ] , [ ESymbol Ord "\249" ] ]
+    , [ [ EText TextNormal "Ugrave" ] , [ ESymbol Ord "\217" ] ]
+    , [ [ EText TextNormal "uHar" ] , [ ESymbol Rel "\10595" ] ]
+    , [ [ EText TextNormal "uharl" ] , [ ESymbol Rel "\8639" ] ]
+    , [ [ EText TextNormal "uharr" ] , [ ESymbol Rel "\8638" ] ]
+    , [ [ EText TextNormal "uhblk" ] , [ ESymbol Ord "\9600" ] ]
+    , [ [ EText TextNormal "ulcorn" ] , [ ESymbol Open "\8988" ] ]
+    , [ [ EText TextNormal "ulcorner" ] , [ ESymbol Open "\8988" ] ]
+    , [ [ EText TextNormal "ulcrop" ] , [ ESymbol Ord "\8975" ] ]
+    , [ [ EText TextNormal "ultri" ] , [ ESymbol Ord "\9720" ] ]
+    , [ [ EText TextNormal "umacr" ] , [ ESymbol Ord "\363" ] ]
+    , [ [ EText TextNormal "Umacr" ] , [ ESymbol Ord "\362" ] ]
+    , [ [ EText TextNormal "uml" ] , [ ESymbol Accent "\168" ] ]
+    , [ [ EText TextNormal "UnderBar" ] , [ ESymbol Ord "_" ] ]
+    , [ [ EText TextNormal "UnderBrace" ]
+      , [ ESymbol Accent "\9183" ]
+      ]
+    , [ [ EText TextNormal "UnderBracket" ]
+      , [ ESymbol Accent "\9141" ]
+      ]
+    , [ [ EText TextNormal "UnderParenthesis" ]
+      , [ ESymbol Accent "\9181" ]
+      ]
+    , [ [ EText TextNormal "Union" ] , [ ESymbol Op "\8899" ] ]
+    , [ [ EText TextNormal "UnionPlus" ] , [ ESymbol Bin "\8846" ] ]
+    , [ [ EText TextNormal "uogon" ] , [ ESymbol Ord "\371" ] ]
+    , [ [ EText TextNormal "Uogon" ] , [ ESymbol Ord "\370" ] ]
+    , [ [ EText TextNormal "uopf" ] , [ ESymbol Alpha "\120166" ] ]
+    , [ [ EText TextNormal "Uopf" ] , [ ESymbol Alpha "\120140" ] ]
+    , [ [ EText TextNormal "uparrow" ] , [ ESymbol Rel "\8593" ] ]
+    , [ [ EText TextNormal "Uparrow" ] , [ ESymbol Rel "\8657" ] ]
+    , [ [ EText TextNormal "UpArrow" ] , [ ESymbol Rel "\8593" ] ]
+    , [ [ EText TextNormal "UpArrowBar" ] , [ ESymbol Rel "\10514" ] ]
+    , [ [ EText TextNormal "UpArrowDownArrow" ]
+      , [ ESymbol Rel "\8645" ]
+      ]
+    , [ [ EText TextNormal "updownarrow" ] , [ ESymbol Rel "\8597" ] ]
+    , [ [ EText TextNormal "Updownarrow" ] , [ ESymbol Rel "\8661" ] ]
+    , [ [ EText TextNormal "UpDownArrow" ] , [ ESymbol Rel "\8597" ] ]
+    , [ [ EText TextNormal "UpEquilibrium" ]
+      , [ ESymbol Rel "\10606" ]
+      ]
+    , [ [ EText TextNormal "upharpoonleft" ]
+      , [ ESymbol Rel "\8639" ]
+      ]
+    , [ [ EText TextNormal "upharpoonright" ]
+      , [ ESymbol Rel "\8638" ]
+      ]
+    , [ [ EText TextNormal "uplus" ] , [ ESymbol Bin "\8846" ] ]
+    , [ [ EText TextNormal "UpperLeftArrow" ]
+      , [ ESymbol Rel "\8598" ]
+      ]
+    , [ [ EText TextNormal "UpperRightArrow" ]
+      , [ ESymbol Rel "\8599" ]
+      ]
+    , [ [ EText TextNormal "upsi" ] , [ ESymbol Alpha "\965" ] ]
+    , [ [ EText TextNormal "Upsi" ] , [ ESymbol Alpha "\978" ] ]
+    , [ [ EText TextNormal "upsilon" ] , [ ESymbol Alpha "\965" ] ]
+    , [ [ EText TextNormal "Upsilon" ] , [ ESymbol Alpha "\933" ] ]
+    , [ [ EText TextNormal "UpTee" ] , [ ESymbol Ord "\8869" ] ]
+    , [ [ EText TextNormal "UpTeeArrow" ] , [ ESymbol Rel "\8613" ] ]
+    , [ [ EText TextNormal "upuparrows" ] , [ ESymbol Rel "\8648" ] ]
+    , [ [ EText TextNormal "urcorn" ] , [ ESymbol Close "\8989" ] ]
+    , [ [ EText TextNormal "urcorner" ] , [ ESymbol Close "\8989" ] ]
+    , [ [ EText TextNormal "urcrop" ] , [ ESymbol Ord "\8974" ] ]
+    , [ [ EText TextNormal "uring" ] , [ ESymbol Ord "\367" ] ]
+    , [ [ EText TextNormal "Uring" ] , [ ESymbol Ord "\366" ] ]
+    , [ [ EText TextNormal "urtri" ] , [ ESymbol Ord "\9721" ] ]
+    , [ [ EText TextNormal "uscr" ] , [ ESymbol Alpha "\120010" ] ]
+    , [ [ EText TextNormal "Uscr" ] , [ ESymbol Alpha "\119984" ] ]
+    , [ [ EText TextNormal "utdot" ] , [ ESymbol Rel "\8944" ] ]
+    , [ [ EText TextNormal "utilde" ] , [ ESymbol Ord "\361" ] ]
+    , [ [ EText TextNormal "Utilde" ] , [ ESymbol Ord "\360" ] ]
+    , [ [ EText TextNormal "utri" ] , [ ESymbol Bin "\9653" ] ]
+    , [ [ EText TextNormal "utrif" ] , [ ESymbol Bin "\9652" ] ]
+    , [ [ EText TextNormal "uuarr" ] , [ ESymbol Rel "\8648" ] ]
+    , [ [ EText TextNormal "uuml" ] , [ ESymbol Ord "\252" ] ]
+    , [ [ EText TextNormal "Uuml" ] , [ ESymbol Ord "\220" ] ]
+    , [ [ EText TextNormal "uwangle" ] , [ ESymbol Ord "\10663" ] ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">uacute</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ú</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Uacute</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ú</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">uarr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↑</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">uArr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇑</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Uarr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↟</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Uarrocir</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⥉</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ubrcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ў</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Ubrcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ў</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ubreve</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ŭ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Ubreve</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ŭ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ucirc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>û</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Ucirc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Û</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ucy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>у</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Ucy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>У</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">udarr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇅</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">udblac</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ű</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Udblac</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ű</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">udhar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⥮</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ufisht</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⥾</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ufr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔲</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Ufr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔘</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ugrave</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ù</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Ugrave</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ù</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">uHar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⥣</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">uharl</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↿</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">uharr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↾</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">uhblk</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>▀</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ulcorn</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="prefix">⌜</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ulcorner</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="prefix">⌜</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ulcrop</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⌏</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ultri</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>◸</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">umacr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ū</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Umacr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ū</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">uml</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>¨</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">UnderBar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>_</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">UnderBrace</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⏟</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">UnderBracket</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⎵</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">UnderParenthesis</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⏝</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Union</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋃</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">UnionPlus</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊎</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">uogon</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ų</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Uogon</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ų</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">uopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕦</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Uopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕌</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">uparrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↑</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Uparrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇑</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">UpArrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↑</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">UpArrowBar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⤒</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">UpArrowDownArrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇅</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">updownarrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↕</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Updownarrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇕</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">UpDownArrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↕</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">UpEquilibrium</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⥮</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">upharpoonleft</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↿</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">upharpoonright</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↾</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">uplus</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊎</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">UpperLeftArrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↖</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">UpperRightArrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↗</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">upsi</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>υ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Upsi</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ϒ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">upsilon</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>υ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Upsilon</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>Υ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">UpTee</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⊥</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">UpTeeArrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↥</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">upuparrows</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇈</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">urcorn</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="postfix">⌝</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">urcorner</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="postfix">⌝</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">urcrop</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⌎</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">uring</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ů</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Uring</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ů</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">urtri</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>◹</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">uscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝓊</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Uscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝒰</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">utdot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋰</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">utilde</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ũ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Utilde</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ũ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">utri</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>▵</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">utrif</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>▴</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">uuarr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇈</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">uuml</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ü</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Uuml</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ü</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">uwangle</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦧</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

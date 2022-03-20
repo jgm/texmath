@@ -1,0 +1,14 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EDelimited
+           "("
+           ")"
+           [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "y"))
+           ])
+    ]
+]
+>>> tex
+\left( \left( \frac{x}{y} \right) \right)

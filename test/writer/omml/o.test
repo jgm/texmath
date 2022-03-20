@@ -1,0 +1,1502 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "oacute" ] , [ ESymbol Ord "\243" ] ]
+    , [ [ EText TextNormal "Oacute" ] , [ ESymbol Ord "\211" ] ]
+    , [ [ EText TextNormal "oast" ] , [ ESymbol Bin "\8859" ] ]
+    , [ [ EText TextNormal "ocir" ] , [ ESymbol Bin "\8858" ] ]
+    , [ [ EText TextNormal "ocirc" ] , [ ESymbol Ord "\244" ] ]
+    , [ [ EText TextNormal "Ocirc" ] , [ ESymbol Ord "\212" ] ]
+    , [ [ EText TextNormal "ocy" ] , [ ESymbol Ord "\1086" ] ]
+    , [ [ EText TextNormal "Ocy" ] , [ ESymbol Ord "\1054" ] ]
+    , [ [ EText TextNormal "odash" ] , [ ESymbol Bin "\8861" ] ]
+    , [ [ EText TextNormal "odblac" ] , [ ESymbol Ord "\337" ] ]
+    , [ [ EText TextNormal "Odblac" ] , [ ESymbol Ord "\336" ] ]
+    , [ [ EText TextNormal "odiv" ] , [ ESymbol Bin "\10808" ] ]
+    , [ [ EText TextNormal "odot" ] , [ ESymbol Bin "\8857" ] ]
+    , [ [ EText TextNormal "odsold" ] , [ ESymbol Ord "\10684" ] ]
+    , [ [ EText TextNormal "oelig" ] , [ ESymbol Ord "\339" ] ]
+    , [ [ EText TextNormal "OElig" ] , [ ESymbol Ord "\338" ] ]
+    , [ [ EText TextNormal "ofcir" ] , [ ESymbol Ord "\10687" ] ]
+    , [ [ EText TextNormal "ofr" ] , [ ESymbol Alpha "\120108" ] ]
+    , [ [ EText TextNormal "Ofr" ] , [ ESymbol Alpha "\120082" ] ]
+    , [ [ EText TextNormal "ogon" ] , [ ESymbol Ord "\731" ] ]
+    , [ [ EText TextNormal "ograve" ] , [ ESymbol Ord "\242" ] ]
+    , [ [ EText TextNormal "Ograve" ] , [ ESymbol Ord "\210" ] ]
+    , [ [ EText TextNormal "ogt" ] , [ ESymbol Bin "\10689" ] ]
+    , [ [ EText TextNormal "ohbar" ] , [ ESymbol Bin "\10677" ] ]
+    , [ [ EText TextNormal "ohm" ] , [ ESymbol Alpha "\937" ] ]
+    , [ [ EText TextNormal "oint" ] , [ ESymbol Op "\8750" ] ]
+    , [ [ EText TextNormal "olarr" ] , [ ESymbol Ord "\8634" ] ]
+    , [ [ EText TextNormal "olcir" ] , [ ESymbol Ord "\10686" ] ]
+    , [ [ EText TextNormal "olcross" ] , [ ESymbol Ord "\10683" ] ]
+    , [ [ EText TextNormal "olt" ] , [ ESymbol Bin "\10688" ] ]
+    , [ [ EText TextNormal "omacr" ] , [ ESymbol Ord "\333" ] ]
+    , [ [ EText TextNormal "Omacr" ] , [ ESymbol Ord "\332" ] ]
+    , [ [ EText TextNormal "omega" ] , [ ESymbol Alpha "\969" ] ]
+    , [ [ EText TextNormal "Omega" ] , [ ESymbol Alpha "\937" ] ]
+    , [ [ EText TextNormal "omid" ] , [ ESymbol Bin "\10678" ] ]
+    , [ [ EText TextNormal "ominus" ] , [ ESymbol Bin "\8854" ] ]
+    , [ [ EText TextNormal "oopf" ] , [ ESymbol Alpha "\120160" ] ]
+    , [ [ EText TextNormal "Oopf" ] , [ ESymbol Alpha "\120134" ] ]
+    , [ [ EText TextNormal "opar" ] , [ ESymbol Bin "\10679" ] ]
+    , [ [ EText TextNormal "OpenCurlyDoubleQuote" ]
+      , [ ESymbol Open "\8220" ]
+      ]
+    , [ [ EText TextNormal "OpenCurlyQuote" ]
+      , [ ESymbol Open "\8216" ]
+      ]
+    , [ [ EText TextNormal "operp" ] , [ ESymbol Bin "\10681" ] ]
+    , [ [ EText TextNormal "oplus" ] , [ ESymbol Bin "\8853" ] ]
+    , [ [ EText TextNormal "or" ] , [ ESymbol Bin "\8744" ] ]
+    , [ [ EText TextNormal "Or" ] , [ ESymbol Bin "\10836" ] ]
+    , [ [ EText TextNormal "orarr" ] , [ ESymbol Ord "\8635" ] ]
+    , [ [ EText TextNormal "ord" ] , [ ESymbol Bin "\10845" ] ]
+    , [ [ EText TextNormal "order" ] , [ ESymbol Alpha "\8500" ] ]
+    , [ [ EText TextNormal "orderof" ] , [ ESymbol Alpha "\8500" ] ]
+    , [ [ EText TextNormal "ordf" ] , [ ESymbol Accent "\170" ] ]
+    , [ [ EText TextNormal "ordm" ] , [ ESymbol Accent "\186" ] ]
+    , [ [ EText TextNormal "origof" ] , [ ESymbol Rel "\8886" ] ]
+    , [ [ EText TextNormal "oror" ] , [ ESymbol Bin "\10838" ] ]
+    , [ [ EText TextNormal "orslope" ] , [ ESymbol Bin "\10839" ] ]
+    , [ [ EText TextNormal "orv" ] , [ ESymbol Bin "\10843" ] ]
+    , [ [ EText TextNormal "oS" ] , [ ESymbol Ord "\9416" ] ]
+    , [ [ EText TextNormal "oscr" ] , [ ESymbol Alpha "\8500" ] ]
+    , [ [ EText TextNormal "Oscr" ] , [ ESymbol Alpha "\119978" ] ]
+    , [ [ EText TextNormal "oslash" ] , [ ESymbol Ord "\248" ] ]
+    , [ [ EText TextNormal "Oslash" ] , [ ESymbol Ord "\216" ] ]
+    , [ [ EText TextNormal "osol" ] , [ ESymbol Bin "\8856" ] ]
+    , [ [ EText TextNormal "otilde" ] , [ ESymbol Ord "\245" ] ]
+    , [ [ EText TextNormal "Otilde" ] , [ ESymbol Ord "\213" ] ]
+    , [ [ EText TextNormal "otimes" ] , [ ESymbol Bin "\8855" ] ]
+    , [ [ EText TextNormal "Otimes" ] , [ ESymbol Bin "\10807" ] ]
+    , [ [ EText TextNormal "otimesas" ] , [ ESymbol Bin "\10806" ] ]
+    , [ [ EText TextNormal "ouml" ] , [ ESymbol Ord "\246" ] ]
+    , [ [ EText TextNormal "Ouml" ] , [ ESymbol Ord "\214" ] ]
+    , [ [ EText TextNormal "ovbar" ] , [ ESymbol Bin "\9021" ] ]
+    , [ [ EText TextNormal "OverBar" ] , [ ESymbol Accent "\8254" ] ]
+    , [ [ EText TextNormal "OverBrace" ] , [ ESymbol Accent "\9182" ] ]
+    , [ [ EText TextNormal "OverBracket" ]
+      , [ ESymbol Accent "\9140" ]
+      ]
+    , [ [ EText TextNormal "OverParenthesis" ]
+      , [ ESymbol Accent "\9180" ]
+      ]
+    ]
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:m>
+      <m:mPr>
+        <m:baseJc m:val="center" />
+        <m:plcHide m:val="1" />
+        <m:mcs>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="center" />
+              <m:count m:val="1" />
+            </m:mcPr>
+          </m:mc>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="center" />
+              <m:count m:val="1" />
+            </m:mcPr>
+          </m:mc>
+        </m:mcs>
+      </m:mPr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>oacute</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ó</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Oacute</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ó</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>oast</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⊛</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ocir</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⊚</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ocirc</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ô</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ocirc</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ô</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ocy</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>о</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ocy</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>О</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>odash</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⊝</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>odblac</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ő</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Odblac</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ő</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>odiv</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⨸</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>odot</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⊙</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>odsold</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⦼</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>oelig</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>œ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>OElig</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Œ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ofcir</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⦿</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ofr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝔬</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ofr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝔒</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ogon</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>˛</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ograve</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ò</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ograve</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ò</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ogt</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⧁</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ohbar</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⦵</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ohm</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ω</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>oint</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∮</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>olarr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>↺</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>olcir</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⦾</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>olcross</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⦻</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>olt</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⧀</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>omacr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ō</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Omacr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ō</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>omega</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ω</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Omega</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ω</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>omid</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⦶</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ominus</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⊖</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>oopf</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝕠</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Oopf</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝕆</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>opar</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⦷</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>OpenCurlyDoubleQuote</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>“</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>OpenCurlyQuote</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>‘</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>operp</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⦹</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>oplus</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⊕</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>or</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∨</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Or</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⩔</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>orarr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>↻</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ord</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⩝</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>order</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ℴ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>orderof</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ℴ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ordf</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ª</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ordm</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>º</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>origof</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⊶</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>oror</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⩖</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>orslope</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⩗</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>orv</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⩛</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>oS</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ⓢ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>oscr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ℴ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Oscr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝒪</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>oslash</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ø</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Oslash</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ø</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>osol</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⊘</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>otilde</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>õ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Otilde</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Õ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>otimes</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⊗</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Otimes</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⨷</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>otimesas</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⨶</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ouml</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ö</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ouml</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ö</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ovbar</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⌽</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>OverBar</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>‾</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>OverBrace</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⏞</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>OverBracket</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⎴</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>OverParenthesis</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⏜</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+    </m:m>
+  </m:oMath>
+</m:oMathPara>

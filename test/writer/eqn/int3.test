@@ -1,0 +1,10 @@
+<<< native
+[ ESubsup (ESymbol Op "\8747") (ENumber "0") (ENumber "1")
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, ESpace (1 % 9)
+, ESymbol Ord "\8518"
+, EIdentifier "x"
+]
+>>> eqn
+int sub 0 sup 1 f left ( x right ) ^ \[u2146] x

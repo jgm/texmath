@@ -1,0 +1,13 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <munder>    <mi mathvariant="normal">BASE</mi>     <mi mathvariant="normal">under</mi>   </munder>   <mo>=</mo>   <munder>    <mrow>      <munder>        <mi mathvariant="normal">BASE</mi>         <mi mathvariant="normal">under</mi>       </munder>     </mrow>     <mphantom>      <mi mathvariant="normal">under</mi>
+    </mphantom>   </munder> </math>
+>>> native
+[ EUnder False (EIdentifier "BASE") (EIdentifier "under")
+, ESymbol Rel "="
+, EUnder
+    False
+    (EUnder False (EIdentifier "BASE") (EIdentifier "under"))
+    (EPhantom (EIdentifier "under"))
+]

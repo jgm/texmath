@@ -1,0 +1,24 @@
+<<< native
+[ EText TextNormal "Inline, text style, thick line\160"
+, EGrouped
+    [ EFraction
+        NormalFrac
+        (EGrouped
+           [ ESuper (EIdentifier "x") (ENumber "2")
+           , ESymbol Bin "+"
+           , ENumber "1"
+           ])
+        (EIdentifier "x")
+    , EFraction
+        NormalFrac
+        (EGrouped
+           [ ESuper (EIdentifier "x") (ENumber "2")
+           , ESymbol Bin "+"
+           , ENumber "1"
+           ])
+        (EIdentifier "x")
+    ]
+, EText TextNormal "\160the end."
+]
+>>> eqn
+roman "Inline, text style, thick line " {{x sup 2 + 1} over x {x sup 2 + 1} over x} roman " the end."

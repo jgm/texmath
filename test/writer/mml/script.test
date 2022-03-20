@@ -1,0 +1,28 @@
+<<< native
+[ EStyled
+    TextScript
+    [ EArray
+        [ AlignLeft ]
+        [ [ [ EText TextNormal "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ] ]
+        , [ [ EText TextNormal "abcdefghijklmnopqrstuvwxyz" ] ]
+        ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle mathvariant="script">
+    <mtable>
+      <mtr>
+        <mtd columnalign="left">
+          <mtext mathvariant="normal">ABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="left">
+          <mtext mathvariant="normal">abcdefghijklmnopqrstuvwxyz</mtext>
+        </mtd>
+      </mtr>
+    </mtable>
+  </mstyle>
+</math>

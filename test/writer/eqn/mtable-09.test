@@ -1,0 +1,25 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EGrouped
+            [ EPhantom (EText TextNormal "fail")
+            , EUnder
+                False (EIdentifier "HT") (EPhantom (EText TextNormal "fail"))
+            ]
+        ]
+      , [ ESymbol Rel "=" ]
+      , [ EGrouped
+            [ EOver
+                False (EIdentifier "TH") (EPhantom (EText TextNormal "fail"))
+            , EPhantom (EText TextNormal "fail")
+            ]
+        ]
+      ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ {hphantom {roman "fail"} HT from {hphantom {roman "fail"}}} }
+ccol{ = }
+ccol{ {TH to {hphantom {roman "fail"}} hphantom {roman "fail"}} }
+}

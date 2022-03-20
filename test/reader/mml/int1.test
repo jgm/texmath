@@ -1,0 +1,22 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x222B;</mo> 
+  <mi>f</mi> 
+  <mrow>
+    <mo>(</mo> 
+    <mi>x</mi> 
+    <mo>)</mo> 
+  </mrow> 
+  <mtext>&#x200A;</mtext> 
+  <mo>&#x2146;</mo> 
+  <mi>x</mi> </math>
+>>> native
+[ ESymbol Op "\8747"
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, ESpace (1 % 9)
+, ESymbol Ord "\8518"
+, EIdentifier "x"
+]

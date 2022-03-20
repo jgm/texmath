@@ -1,0 +1,114 @@
+<<< native
+[ EUnderover
+    False
+    (EUnderover
+       False
+       (EIdentifier "BASE")
+       (EIdentifier "first under script")
+       (EIdentifier "second overscript"))
+    (EIdentifier "second one")
+    (EIdentifier "first overscript")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (EOver
+       False
+       (EUnder
+          False (EIdentifier "BASE") (EIdentifier "first under script"))
+       (EIdentifier "second overscript"))
+    (EIdentifier "second one")
+    (EIdentifier "first overscript")
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:limLow>
+      <m:e>
+        <m:limUpp>
+          <m:e>
+            <m:limLow>
+              <m:e>
+                <m:limUpp>
+                  <m:e>
+                    <m:r>
+                      <m:t>BASE</m:t>
+                    </m:r>
+                  </m:e>
+                  <m:lim>
+                    <m:r>
+                      <m:t>second overscript</m:t>
+                    </m:r>
+                  </m:lim>
+                </m:limUpp>
+              </m:e>
+              <m:lim>
+                <m:r>
+                  <m:t>first under script</m:t>
+                </m:r>
+              </m:lim>
+            </m:limLow>
+          </m:e>
+          <m:lim>
+            <m:r>
+              <m:t>first overscript</m:t>
+            </m:r>
+          </m:lim>
+        </m:limUpp>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>second one</m:t>
+        </m:r>
+      </m:lim>
+    </m:limLow>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>=</m:t>
+    </m:r>
+    <m:limLow>
+      <m:e>
+        <m:limUpp>
+          <m:e>
+            <m:limUpp>
+              <m:e>
+                <m:limLow>
+                  <m:e>
+                    <m:r>
+                      <m:t>BASE</m:t>
+                    </m:r>
+                  </m:e>
+                  <m:lim>
+                    <m:r>
+                      <m:t>first under script</m:t>
+                    </m:r>
+                  </m:lim>
+                </m:limLow>
+              </m:e>
+              <m:lim>
+                <m:r>
+                  <m:t>second overscript</m:t>
+                </m:r>
+              </m:lim>
+            </m:limUpp>
+          </m:e>
+          <m:lim>
+            <m:r>
+              <m:t>first overscript</m:t>
+            </m:r>
+          </m:lim>
+        </m:limUpp>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>second one</m:t>
+        </m:r>
+      </m:lim>
+    </m:limLow>
+  </m:oMath>
+</m:oMathPara>

@@ -1,0 +1,10 @@
+<<< native
+[ ESubsup (EIdentifier "p") (EIdentifier "x") (ENumber "3")
+, ESymbol Rel "="
+, EUnder
+    False
+    (ESubsup (EIdentifier "p") (EIdentifier "x") (ENumber "3"))
+    (EPhantom (EText TextNormal "l"))
+]
+>>> eqn
+p sub x sup 3 = {p sub x sup 3} from {hphantom {roman "l"}}

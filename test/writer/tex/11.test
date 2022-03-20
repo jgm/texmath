@@ -1,0 +1,26 @@
+<<< native
+[ ESub (EIdentifier "\981") (EIdentifier "n")
+, EDelimited "(" ")" [ Right (EIdentifier "\954") ]
+, ESymbol Rel "="
+, ENumber "0.033"
+, ESubsup (EIdentifier "C") (EIdentifier "n") (ENumber "2")
+, ESuper
+    (EIdentifier "\954")
+    (EGrouped
+       [ ESymbol Op "\8722"
+       , ENumber "11"
+       , ESymbol Ord "/"
+       , ENumber "3"
+       ])
+, ESymbol Pun ","
+, ESpace (1 % 1)
+, EFraction
+    NormalFrac (ENumber "1") (ESub (EIdentifier "L") (ENumber "0"))
+, ESymbol Rel "\8810"
+, EIdentifier "\954"
+, ESymbol Rel "\8810"
+, EFraction
+    NormalFrac (ENumber "1") (ESub (EIdentifier "l") (ENumber "0"))
+]
+>>> tex
+\phi_{n}(\kappa) = 0.033C_{n}^{2}\kappa^{-11/3},\quad\frac{1}{L_{0}} \ll \kappa \ll \frac{1}{l_{0}}

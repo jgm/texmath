@@ -1,0 +1,6 @@
+[ ESub (EIdentifier "U") (EIdentifier "t")
+, ESymbol Rel "="
+, ESub (EIdentifier "U") (EIdentifier "t")
+, EPhantom
+    (EFraction NormalFrac (EIdentifier "test") (EIdentifier "failed"))
+]

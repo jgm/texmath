@@ -1,0 +1,40 @@
+[ EText
+    TextNormal
+    "Displayed nested fractions are normal size at the first level,\160"
+, EFraction
+    NormalFrac
+    (ESuper (ENumber "1") (ESqrt (ENumber "6")))
+    (EGrouped
+       [ ESqrt (ENumber "2")
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (ENumber "1")
+           (EGrouped
+              [ ESqrt (ENumber "3")
+              , ESymbol Bin "+"
+              , EFraction
+                  NormalFrac
+                  (ENumber "1")
+                  (EGrouped
+                     [ ESqrt (ENumber "4")
+                     , ESymbol Bin "+"
+                     , EFraction
+                         NormalFrac
+                         (ENumber "1")
+                         (EGrouped
+                            [ ESqrt (ENumber "5")
+                            , ESymbol Bin "+"
+                            , EFraction
+                                NormalFrac
+                                (ENumber "1")
+                                (EGrouped
+                                   [ ESqrt (ENumber "6") , ESymbol Bin "+" , EIdentifier "\8230" ])
+                            ])
+                     ])
+              ])
+       ])
+, EText
+    TextNormal
+    "\160script size at second level, and script-script size at all more nested levels."
+]

@@ -1,0 +1,474 @@
+<<< native
+[ EArray
+    [ AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    ]
+    [ [ []
+      , [ EText TextNormal "210" ]
+      , [ EText TextNormal "211" ]
+      , [ EText TextNormal "212" ]
+      , [ EText TextNormal "213" ]
+      , [ EText TextNormal "214" ]
+      ]
+    , [ [ EText TextNormal "0" ]
+      , [ ESymbol Ord "\8448" ]
+      , [ ESymbol Alpha "\8464" ]
+      , [ ESymbol Ord "\8480" ]
+      , [ ESymbol Alpha "\8496" ]
+      , [ ESymbol Op "\8512" ]
+      ]
+    , [ [ EText TextNormal "1" ]
+      , [ ESymbol Ord "\8449" ]
+      , [ ESymbol Alpha "\8465" ]
+      , [ ESymbol Ord "\8481" ]
+      , [ ESymbol Alpha "\8497" ]
+      , [ ESymbol Ord "\8513" ]
+      ]
+    , [ [ EText TextNormal "2" ]
+      , [ ESymbol Alpha "\8450" ]
+      , [ ESymbol Alpha "\8466" ]
+      , [ ESymbol Ord "\8482" ]
+      , [ ESymbol Ord "\8498" ]
+      , [ ESymbol Ord "\8514" ]
+      ]
+    , [ [ EText TextNormal "3" ]
+      , [ ESymbol Ord "\8451" ]
+      , [ ESymbol Alpha "\8467" ]
+      , [ ESymbol Ord "\8483" ]
+      , [ ESymbol Alpha "\8499" ]
+      , [ ESymbol Ord "\8515" ]
+      ]
+    , [ [ EText TextNormal "4" ]
+      , [ ESymbol Ord "\8452" ]
+      , [ ESymbol Ord "\8468" ]
+      , [ ESymbol Alpha "\8484" ]
+      , [ ESymbol Alpha "\8500" ]
+      , [ ESymbol Ord "\8516" ]
+      ]
+    , [ [ EText TextNormal "5" ]
+      , [ ESymbol Ord "\8453" ]
+      , [ ESymbol Alpha "\8469" ]
+      , [ ESymbol Ord "\8485" ]
+      , [ ESymbol Alpha "\8501" ]
+      , [ ESymbol Ord "\8517" ]
+      ]
+    , [ [ EText TextNormal "6" ]
+      , [ ESymbol Ord "\8454" ]
+      , [ ESymbol Ord "\8470" ]
+      , [ ESymbol Alpha "\8486" ]
+      , [ ESymbol Alpha "\8502" ]
+      , [ ESymbol Ord "\8518" ]
+      ]
+    , [ [ EText TextNormal "7" ]
+      , [ ESymbol Ord "\8455" ]
+      , [ ESymbol Ord "\8471" ]
+      , [ ESymbol Ord "\8487" ]
+      , [ ESymbol Alpha "\8503" ]
+      , [ ESymbol Ord "\8519" ]
+      ]
+    , [ [ EText TextNormal "8" ]
+      , [ ESymbol Ord "\8456" ]
+      , [ ESymbol Alpha "\8472" ]
+      , [ ESymbol Alpha "\8488" ]
+      , [ ESymbol Alpha "\8504" ]
+      , [ ESymbol Ord "\8520" ]
+      ]
+    , [ [ EText TextNormal "9" ]
+      , [ ESymbol Ord "\8457" ]
+      , [ ESymbol Alpha "\8473" ]
+      , [ ESymbol Alpha "\8489" ]
+      , [ ESymbol Ord "\8505" ]
+      , [ ESymbol Ord "\8521" ]
+      ]
+    , [ [ EText TextNormal "A" ]
+      , [ ESymbol Alpha "\8458" ]
+      , [ ESymbol Alpha "\8474" ]
+      , [ ESymbol Ord "\8490" ]
+      , [ ESymbol Ord "\8506" ]
+      , [ ESymbol Ord "\8522" ]
+      ]
+    , [ [ EText TextNormal "B" ]
+      , [ ESymbol Alpha "\8459" ]
+      , [ ESymbol Alpha "\8475" ]
+      , [ ESymbol Alpha "\8491" ]
+      , [ ESymbol Ord "\8507" ]
+      , [ ESymbol Bin "\8523" ]
+      ]
+    , [ [ EText TextNormal "C" ]
+      , [ ESymbol Alpha "\8460" ]
+      , [ ESymbol Alpha "\8476" ]
+      , [ ESymbol Alpha "\8492" ]
+      , [ ESymbol Ord "\8508" ]
+      , [ ESymbol Ord "\8524" ]
+      ]
+    , [ [ EText TextNormal "D" ]
+      , [ ESymbol Alpha "\8461" ]
+      , [ ESymbol Alpha "\8477" ]
+      , [ ESymbol Alpha "\8493" ]
+      , [ ESymbol Alpha "\8509" ]
+      , [ ESymbol Ord "\8525" ]
+      ]
+    , [ [ EText TextNormal "E" ]
+      , [ ESymbol Ord "\8462" ]
+      , [ ESymbol Ord "\8478" ]
+      , [ ESymbol Ord "\8494" ]
+      , [ ESymbol Alpha "\8510" ]
+      , [ ESymbol Ord "\8526" ]
+      ]
+    , [ [ EText TextNormal "F" ]
+      , [ ESymbol Alpha "\8463" ]
+      , [ ESymbol Ord "\8479" ]
+      , [ ESymbol Alpha "\8495" ]
+      , [ ESymbol Alpha "\8511" ]
+      , [ ESymbol Ord "\8527" ]
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">210</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">211</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">212</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">213</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">214</mtext>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">0</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℀</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℐ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℠</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℰ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⅀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℁</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℑ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℡</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℱ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅁</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">2</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℂ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℒ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>™</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ⅎ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅂</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">3</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℃</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℓ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℣</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℳ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅃</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">4</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℄</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℔</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℤ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℴ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅄</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">5</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℅</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℕ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℥</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℵ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅅ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">6</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℆</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>№</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>Ω</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℶ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅆ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">7</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ℇ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℗</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℧</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℷ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅇ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">8</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℈</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>℘</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℨ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℸ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅈ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">9</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℉</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℙ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>℩</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ℹ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅉ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">A</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℊ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℚ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>K</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℺</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅊</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">B</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℋ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℛ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>Å</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℻</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⅋</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">C</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℌ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℜ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℬ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ℼ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅌</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">D</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℍ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℝ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℭ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℽ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅍</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">E</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ℎ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℞</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℮</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℾ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅎ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">F</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℏ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℟</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℯ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℿ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅏</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

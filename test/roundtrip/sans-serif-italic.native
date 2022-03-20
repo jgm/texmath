@@ -1,0 +1,27 @@
+[ EStyled
+    TextSansSerifItalic
+    [ EArray
+        [ AlignLeft ]
+        [ [ [ EText TextNormal "!\"#$%&'()*+,-./0123456789:;<=>?" ] ]
+        , [ [ EText TextNormal "@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_" ] ]
+        , [ [ EText TextNormal "`abcdefghijklmnopqrstuvwxyz{|}~" ] ]
+        , [ [ EText TextNormal "\305\567" ] ]
+        , [ [ EText
+                TextNormal
+                "\913\914\915\916\917\918\919\920\921\922\923\924\925\926\927\928\929\1012\931\932\933\934\935\936\937\8711"
+            ]
+          ]
+        , [ [ EText
+                TextNormal
+                "\945\946\947\948\949\950\951\952\953\954\955\956\957\958\959\960\961\962\963\964\965\966\967\968\969\8706"
+            ]
+          ]
+        , [ [ EText TextNormal "\1013\977\1008\981\1009\982\988\989" ] ]
+        , [ [ EText
+                TextNormal
+                "\177\183\215\247\8216\8217\8220\8221\8226\8722\8723\8725\8727\8729\8800\8804\8805\8901"
+            ]
+          ]
+        ]
+    ]
+]

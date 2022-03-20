@@ -1,0 +1,20 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mover>    <mi mathvariant="normal">BASE</mi>     <mrow>      <mfrac linethickness="0">        <mi mathvariant="normal">first</mi>         <mi mathvariant="normal">second</mi>       </mfrac>     </mrow>   </mover>   <mo>=</mo>   <mover>    <mrow>      <mover>        <mi mathvariant="normal">BASE</mi>         <mrow>          <mfrac linethickness="0">            <mi mathvariant="normal">first</mi>             <mi mathvariant="normal">second</mi>           </mfrac>         </mrow>       </mover>     </mrow>     <mphantom>      <mi mathvariant="normal">over</mi>
+    </mphantom>   </mover> </math>
+>>> native
+[ EOver
+    False
+    (EIdentifier "BASE")
+    (EFraction NormalFrac (EIdentifier "first") (EIdentifier "second"))
+, ESymbol Rel "="
+, EOver
+    False
+    (EOver
+       False
+       (EIdentifier "BASE")
+       (EFraction
+          NormalFrac (EIdentifier "first") (EIdentifier "second")))
+    (EPhantom (EIdentifier "over"))
+]

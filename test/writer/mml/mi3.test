@@ -1,0 +1,17 @@
+<<< native
+[ EIdentifier "x"
+, EOver False (ESymbol Accent "\8594") (EText TextNormal "maps to")
+, EIdentifier "y"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>x</mi>
+    <mover>
+      <mo>→</mo>
+      <mtext mathvariant="normal">maps to</mtext>
+    </mover>
+    <mi>y</mi>
+  </mrow>
+</math>

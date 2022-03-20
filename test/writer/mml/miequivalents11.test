@@ -1,0 +1,270 @@
+<<< native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EIdentifier "A" , ESymbol Rel "=" , EIdentifier "A" ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\119808"
+            , ESymbol Rel "="
+            , EStyled TextBold [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\119860"
+            , ESymbol Rel "="
+            , EStyled TextItalic [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\119912"
+            , ESymbol Rel "="
+            , EStyled TextBoldItalic [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120120"
+            , ESymbol Rel "="
+            , EStyled TextDoubleStruck [ EIdentifier "A" ]
+            , ESymbol Rel "="
+            , EIdentifier "\120120"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\119964"
+            , ESymbol Rel "="
+            , EStyled TextScript [ EIdentifier "A" ]
+            , ESymbol Rel "="
+            , EIdentifier "\119964"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120016"
+            , ESymbol Rel "="
+            , EStyled TextBoldScript [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120068"
+            , ESymbol Rel "="
+            , EStyled TextFraktur [ EIdentifier "A" ]
+            , ESymbol Rel "="
+            , EIdentifier "\120068"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120172"
+            , ESymbol Rel "="
+            , EStyled TextBoldFraktur [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120224"
+            , ESymbol Rel "="
+            , EStyled TextSansSerif [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120276"
+            , ESymbol Rel "="
+            , EStyled TextSansSerifBold [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120328"
+            , ESymbol Rel "="
+            , EStyled TextSansSerifItalic [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120380"
+            , ESymbol Rel "="
+            , EStyled TextSansSerifBoldItalic [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120432"
+            , ESymbol Rel "="
+            , EStyled TextMonospace [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mi>A</mi>
+          <mo>=</mo>
+          <mi>A</mi>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mi>𝐀</mi>
+          <mo>=</mo>
+          <mstyle mathvariant="bold">
+            <mi>𝐀</mi>
+          </mstyle>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mi>𝐴</mi>
+          <mo>=</mo>
+          <mstyle mathvariant="italic">
+            <mi>𝐴</mi>
+          </mstyle>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mi>𝑨</mi>
+          <mo>=</mo>
+          <mstyle mathvariant="bold-italic">
+            <mi>𝑨</mi>
+          </mstyle>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mi>𝔸</mi>
+          <mo>=</mo>
+          <mstyle mathvariant="double-struck">
+            <mi>𝔸</mi>
+          </mstyle>
+          <mo>=</mo>
+          <mi>𝔸</mi>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mi>𝒜</mi>
+          <mo>=</mo>
+          <mstyle mathvariant="script">
+            <mi>𝒜</mi>
+          </mstyle>
+          <mo>=</mo>
+          <mi>𝒜</mi>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mi>𝓐</mi>
+          <mo>=</mo>
+          <mstyle mathvariant="bold-script">
+            <mi>𝓐</mi>
+          </mstyle>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mi>𝔄</mi>
+          <mo>=</mo>
+          <mstyle mathvariant="fraktur">
+            <mi>𝔄</mi>
+          </mstyle>
+          <mo>=</mo>
+          <mi>𝔄</mi>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mi>𝕬</mi>
+          <mo>=</mo>
+          <mstyle mathvariant="bold-fraktur">
+            <mi>𝕬</mi>
+          </mstyle>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mi>𝖠</mi>
+          <mo>=</mo>
+          <mstyle mathvariant="sans-serif">
+            <mi>𝖠</mi>
+          </mstyle>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mi>𝗔</mi>
+          <mo>=</mo>
+          <mstyle mathvariant="bold-sans-serif">
+            <mi>𝗔</mi>
+          </mstyle>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mi>𝘈</mi>
+          <mo>=</mo>
+          <mstyle mathvariant="sans-serif-italic">
+            <mi>𝘈</mi>
+          </mstyle>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mi>𝘼</mi>
+          <mo>=</mo>
+          <mstyle mathvariant="sans-serif-bold-italic">
+            <mi>𝘼</mi>
+          </mstyle>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mi>𝙰</mi>
+          <mo>=</mo>
+          <mstyle mathvariant="monospace">
+            <mi>𝙰</mi>
+          </mstyle>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

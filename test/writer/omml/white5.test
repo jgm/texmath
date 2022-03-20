@@ -1,0 +1,23 @@
+<<< native
+[ EIdentifier "\945"
+, EIdentifier "\8201\65024"
+, EIdentifier "\945"
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:t>α</m:t>
+    </m:r>
+    <m:r>
+      <m:t> ︀</m:t>
+    </m:r>
+    <m:r>
+      <m:t>α</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

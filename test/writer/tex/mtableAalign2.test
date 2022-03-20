@@ -1,0 +1,76 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "Top" ]
+      , [ ENumber "3" ]
+      , [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+            (ENumber "2")
+        ]
+      , [ EOver
+            False
+            (EIdentifier "y")
+            (EFraction
+               NormalFrac
+               (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+               (ENumber "2"))
+        ]
+      ]
+    , [ [ EText TextNormal "Bottom" ]
+      , [ ENumber "3" ]
+      , [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+            (ENumber "2")
+        ]
+      , [ EOver
+            False
+            (EIdentifier "y")
+            (EFraction
+               NormalFrac
+               (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+               (ENumber "2"))
+        ]
+      ]
+    , [ [ EText TextNormal "Center" ]
+      , [ ENumber "3" ]
+      , [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+            (ENumber "2")
+        ]
+      , [ EOver
+            False
+            (EIdentifier "y")
+            (EFraction
+               NormalFrac
+               (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+               (ENumber "2"))
+        ]
+      ]
+    , [ [ EText TextNormal "Baseline" ]
+      , [ ENumber "3" ]
+      , [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+            (ENumber "2")
+        ]
+      , [ EOver
+            False
+            (EIdentifier "y")
+            (EFraction
+               NormalFrac
+               (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+               (ENumber "2"))
+        ]
+      ]
+    ]
+]
+>>> tex
+\begin{matrix}
+\text{Top} & 3 & \frac{a + 1}{2} & \overset{\frac{a + 1}{2}}{y} \\
+\text{Bottom} & 3 & \frac{a + 1}{2} & \overset{\frac{a + 1}{2}}{y} \\
+\text{Center} & 3 & \frac{a + 1}{2} & \overset{\frac{a + 1}{2}}{y} \\
+\text{Baseline} & 3 & \frac{a + 1}{2} & \overset{\frac{a + 1}{2}}{y} \\
+\end{matrix}

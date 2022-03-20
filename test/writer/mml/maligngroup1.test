@@ -1,0 +1,81 @@
+<<< native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EGrouped
+                [ EGrouped
+                    [ ENumber "8.44" , ESymbol Ord "\8290" , EIdentifier "x" ]
+                , ESymbol Bin "+"
+                , EGrouped [ ENumber "55" , ESymbol Ord "\8290" , EIdentifier "y" ]
+                ]
+            , ESymbol Rel "="
+            , ENumber "0"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EGrouped
+                [ EGrouped
+                    [ ENumber "3.1" , ESymbol Ord "\8290" , EIdentifier "x" ]
+                , ESymbol Bin "-"
+                , EGrouped
+                    [ ENumber "0.7" , ESymbol Ord "\8290" , EIdentifier "y" ]
+                ]
+            , ESymbol Rel "="
+            , EGrouped [ ESymbol Bin "-" , ENumber "1.1" ]
+            ]
+        ]
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mrow>
+            <mrow>
+              <mn>8.44</mn>
+              <mi>&#8290;</mi>
+              <mi>x</mi>
+            </mrow>
+            <mo>+</mo>
+            <mrow>
+              <mn>55</mn>
+              <mi>&#8290;</mi>
+              <mi>y</mi>
+            </mrow>
+          </mrow>
+          <mo>=</mo>
+          <mn>0</mn>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mrow>
+            <mrow>
+              <mn>3.1</mn>
+              <mi>&#8290;</mi>
+              <mi>x</mi>
+            </mrow>
+            <mo>-</mo>
+            <mrow>
+              <mn>0.7</mn>
+              <mi>&#8290;</mi>
+              <mi>y</mi>
+            </mrow>
+          </mrow>
+          <mo>=</mo>
+          <mrow>
+            <mo>-</mo>
+            <mn>1.1</mn>
+          </mrow>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

@@ -1,0 +1,157 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle displaystyle="true">
+    <msubsup>
+      <mo>&#x222B;</mo> 
+      <mn>0</mn> 
+      <mn>1</mn> 
+    </msubsup> 
+    <mi>f</mi> 
+    <mrow>
+      <mo>(</mo> 
+      <mi>x</mi> 
+      <mo>)</mo> 
+    </mrow> 
+    <mtext>&#x200A;</mtext> 
+    <mo>&#x2146;</mo> 
+    <mi>x</mi> 
+    <mo>=</mo> 
+    <munderover>
+      <mo>&#x2211;</mo> 
+      <mrow>
+        <mi>i</mi> 
+        <mo>=</mo> 
+        <mn>0</mn> 
+      </mrow> 
+      <mi>&#x221E;</mi> 
+    </munderover> 
+    <msub>
+      <mi>x</mi> 
+      <mi>i</mi> 
+    </msub> 
+    <mo>=</mo> 
+    <munderover>
+      <mo>&#x220F;</mo> 
+      <mrow>
+        <mi>i</mi> 
+        <mo>=</mo> 
+        <mn>0</mn> 
+      </mrow> 
+      <mi>&#x221E;</mi> 
+    </munderover> 
+    <msub>
+      <mi>x</mi> 
+      <mi>i</mi> 
+    </msub> 
+    <mo>=</mo> 
+    <munderover>
+      <mo>&#x2210;</mo> 
+      <mrow>
+        <mi>i</mi> 
+        <mo>=</mo> 
+        <mn>0</mn> 
+      </mrow> 
+      <mi>&#x221E;</mi> 
+    </munderover> 
+    <msub>
+      <mi>x</mi> 
+      <mi>i</mi> 
+    </msub> 
+    <mo>=</mo> 
+    <msubsup>
+      <mo>&#x222E;</mo> 
+      <mn>0</mn> 
+      <mn>1</mn> 
+    </msubsup> 
+    <mi>f</mi> 
+    <mrow>
+      <mo>(</mo> 
+      <mi>x</mi> 
+      <mo>)</mo> 
+    </mrow> 
+    <mtext>&#x200A;</mtext> 
+    <mo>&#x2146;</mo> 
+    <mi>x</mi> 
+    <mo>=</mo> 
+    <msubsup>
+      <mo>&#x222C;</mo> 
+      <mn>0</mn> 
+      <mn>1</mn> 
+    </msubsup> 
+    <mi>f</mi> 
+    <mrow>
+      <mo>(</mo> 
+      <mi>x</mi> 
+      <mo>)</mo> 
+    </mrow> 
+    <mtext>&#x200A;</mtext> 
+    <mo>&#x2146;</mo> 
+    <mi>x</mi> 
+    <mo>=</mo> 
+    <msubsup>
+      <mo>&#x222D;</mo> 
+      <mn>0</mn> 
+      <mn>1</mn> 
+    </msubsup> 
+    <mi>f</mi> 
+    <mrow>
+      <mo>(</mo> 
+      <mi>x</mi> 
+      <mo>)</mo> 
+    </mrow> 
+    <mtext>&#x200A;</mtext> 
+    <mo>&#x2146;</mo> 
+    <mi>x</mi> 
+  </mstyle> </math>
+>>> native
+[ ESubsup (ESymbol Op "\8747") (ENumber "0") (ENumber "1")
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, ESpace (1 % 9)
+, ESymbol Ord "\8518"
+, EIdentifier "x"
+, ESymbol Rel "="
+, EUnderover
+    False
+    (ESymbol Op "\8721")
+    (EGrouped [ EIdentifier "i" , ESymbol Rel "=" , ENumber "0" ])
+    (EIdentifier "\8734")
+, ESub (EIdentifier "x") (EIdentifier "i")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (ESymbol Op "\8719")
+    (EGrouped [ EIdentifier "i" , ESymbol Rel "=" , ENumber "0" ])
+    (EIdentifier "\8734")
+, ESub (EIdentifier "x") (EIdentifier "i")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (ESymbol Op "\8720")
+    (EGrouped [ EIdentifier "i" , ESymbol Rel "=" , ENumber "0" ])
+    (EIdentifier "\8734")
+, ESub (EIdentifier "x") (EIdentifier "i")
+, ESymbol Rel "="
+, ESubsup (ESymbol Op "\8750") (ENumber "0") (ENumber "1")
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, ESpace (1 % 9)
+, ESymbol Ord "\8518"
+, EIdentifier "x"
+, ESymbol Rel "="
+, ESubsup (ESymbol Op "\8748") (ENumber "0") (ENumber "1")
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, ESpace (1 % 9)
+, ESymbol Ord "\8518"
+, EIdentifier "x"
+, ESymbol Rel "="
+, ESubsup (ESymbol Op "\8749") (ENumber "0") (ENumber "1")
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, ESpace (1 % 9)
+, ESymbol Ord "\8518"
+, EIdentifier "x"
+]

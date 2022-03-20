@@ -1,0 +1,22 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EPhantom (EFraction NormalFrac (ENumber "1") (ENumber "2")))
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo stretchy="true" form="prefix">(</mo>
+    <mphantom>
+      <mfrac>
+        <mn>1</mn>
+        <mn>2</mn>
+      </mfrac>
+    </mphantom>
+    <mo stretchy="true" form="postfix">)</mo>
+  </mrow>
+</math>

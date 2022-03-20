@@ -1,0 +1,23 @@
+<<< native
+[ EIdentifier "H"
+, ESymbol Ord "\8202"
+, EIdentifier "H"
+, ESymbol Ord "\8201"
+, EIdentifier "H"
+, ESymbol Ord "\8287"
+, EIdentifier "H"
+, ESymbol Ord "\8197"
+, EIdentifier "H"
+, EMathOperator "\8202\65024"
+, EIdentifier "H"
+, EMathOperator "\8201\65024"
+, EIdentifier "H"
+, EMathOperator "\8287\65024"
+, EIdentifier "H"
+, EMathOperator "\8197\65024"
+, EIdentifier "H"
+, EMathOperator ""
+, EIdentifier "H"
+]
+>>> tex
+H\,H\, H\: H\:H\operatorname{\,}H\operatorname{\,}H\operatorname{\:}H\operatorname{\:}H\operatorname{}H

@@ -1,0 +1,8 @@
+[ EUnderover
+    False
+    (ESymbol Op "\8898")
+    (EGrouped [ EIdentifier "i" , ESymbol Rel "=" , ENumber "0" ])
+    (EIdentifier "\8734")
+, EGrouped
+    [ EIdentifier "A" , ESymbol Bin "\8745" , EIdentifier "B" ]
+]

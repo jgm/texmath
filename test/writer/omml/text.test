@@ -1,0 +1,29 @@
+<<< native
+[ EText TextNormal "(\321ukasiewicz, G\246del, and G\246del)"
+, EText
+    TextItalic
+    "\8230\8211\8220double quotes\8221\8212\8216single quotes\8217"
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>(Łukasiewicz, Gödel, and Gödel)</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="i" />
+      </m:rPr>
+      <m:t>…–“double quotes”—‘single quotes’</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

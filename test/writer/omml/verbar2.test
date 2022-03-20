@@ -1,0 +1,41 @@
+<<< native
+[ EDelimited
+    "|"
+    "|"
+    [ Right (EFraction NormalFrac (EIdentifier "H") (EIdentifier "K"))
+    ]
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="|" />
+        <m:endChr m:val="|" />
+        <m:sepChr m:val="" />
+        <m:grow />
+      </m:dPr>
+      <m:e>
+        <m:f>
+          <m:fPr>
+            <m:type m:val="bar" />
+          </m:fPr>
+          <m:num>
+            <m:r>
+              <m:t>H</m:t>
+            </m:r>
+          </m:num>
+          <m:den>
+            <m:r>
+              <m:t>K</m:t>
+            </m:r>
+          </m:den>
+        </m:f>
+      </m:e>
+    </m:d>
+  </m:oMath>
+</m:oMathPara>

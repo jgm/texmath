@@ -1,0 +1,4 @@
+<<< native
+[ EDelimited "(" ")" [ Right (EIdentifier "x") ] ]
+>>> tex
+(x)

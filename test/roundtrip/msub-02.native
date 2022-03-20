@@ -1,0 +1,6 @@
+[ ESub
+    (EGrouped [ EPhantom (EIdentifier "fail") , EIdentifier "X" ])
+    (ENumber "0")
+, ESymbol Rel "="
+, ESub (EIdentifier "X") (ENumber "0")
+]

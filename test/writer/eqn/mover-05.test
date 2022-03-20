@@ -1,0 +1,8 @@
+<<< native
+[ EIdentifier "_ baseline _"
+, ESymbol Rel "="
+, EOver
+    False (EIdentifier "_ baseline _") (EPhantom (EIdentifier "fail"))
+]
+>>> eqn
+_ baseline _ = {_ baseline _} to {hphantom fail}

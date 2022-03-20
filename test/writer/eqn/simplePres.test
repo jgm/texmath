@@ -1,0 +1,38 @@
+<<< native
+[ EDelimited
+    "{"
+    ")"
+    [ Right
+        (EGrouped
+           [ EFraction NormalFrac (ENumber "1") (ENumber "78")
+           , ESymbol Pun ","
+           , EGrouped [ EMathOperator "sin" , EIdentifier "x" ]
+           , ESymbol Alpha "."
+           , EIdentifier "y"
+           ])
+    ]
+, ESymbol Bin "\215"
+, ESuper
+    (EIdentifier "\120094")
+    (EGrouped [ ENumber "2" , EIdentifier "x" ])
+, ESymbol Bin "+"
+, ESub (ENumber "2") (EIdentifier "j")
+, EIdentifier "x"
+, ESymbol Bin "+"
+, EFraction
+    NormalFrac
+    (ENumber "45")
+    (EFraction NormalFrac (ENumber "1") (ENumber "78"))
+, ESymbol Ord "*"
+, ESubsup (EIdentifier "x") (ENumber "2") (ENumber "3")
+, ESymbol Rel "="
+, ERoot
+    (ENumber "3")
+    (EFraction
+       NormalFrac
+       (ENumber "1")
+       (EGrouped [ ENumber "23" , ESymbol Bin "+" , ENumber "\946" ]))
+, EText TextNormal "#This is my string!'"
+]
+>>> eqn
+left { {1 over 78 , {sin x} . y} right ) times \[u1D51E] sup {2 x} + 2 sub j x + 45 over {1 over 78} * x sub 2 sup 3 = "" sup 3 sqrt {1 over {23 + β}} roman "#This is my string!'"

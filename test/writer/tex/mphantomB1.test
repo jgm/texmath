@@ -1,0 +1,23 @@
+<<< native
+[ EIdentifier "A"
+, EPhantom (EIdentifier "A")
+, EIdentifier "A"
+, ESymbol Bin "+"
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ENumber "1"
+       , ESymbol Bin "+"
+       , ENumber "2"
+       , ESymbol Bin "+"
+       , ENumber "3"
+       ])
+    (EGrouped
+       [ ENumber "1"
+       , ESymbol Bin "+"
+       , EPhantom (EGrouped [ ENumber "2" , ESymbol Bin "+" ])
+       , ENumber "3"
+       ])
+]
+>>> tex
+A\phantom{A}A + \frac{1 + 2 + 3}{1 + \phantom{2 +}3}

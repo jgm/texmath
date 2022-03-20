@@ -1,0 +1,57 @@
+<<< native
+[ EDelimited
+    "\10216"
+    "\10217"
+    [ Right (EIdentifier "\968")
+    , Right
+        (EDelimited
+           "|"
+           "|"
+           [ Right (EStyled TextScript [ EIdentifier "T" ])
+           , Right
+               (EDelimited
+                  "{"
+                  "}"
+                  [ Right
+                      (EFraction
+                         NormalFrac
+                         (EIdentifier "\948")
+                         (EGrouped [ EIdentifier "\948" , EIdentifier "\981" ]))
+                  , Right (EIdentifier "F")
+                  , Right (EDelimited "[" "]" [ Right (EIdentifier "\981") ])
+                  ])
+           ])
+    , Right (EIdentifier "\968")
+    ]
+, ESymbol Rel "="
+, ESymbol Bin "\8722"
+, EStyled TextNormal [ EIdentifier "i" ]
+, EDelimited
+    "\10216"
+    "\10217"
+    [ Right (EIdentifier "\968")
+    , Right
+        (EDelimited
+           "|"
+           "|"
+           [ Right (EStyled TextScript [ EIdentifier "T" ])
+           , Right
+               (EDelimited
+                  "{"
+                  "}"
+                  [ Right (EIdentifier "F")
+                  , Right (EDelimited "[" "]" [ Right (EIdentifier "\981") ])
+                  , Right
+                      (EFraction
+                         NormalFrac
+                         (EIdentifier "\948")
+                         (EGrouped [ EIdentifier "\948" , EIdentifier "\981" ]))
+                  , Right (EIdentifier "S")
+                  , Right (EDelimited "[" "]" [ Right (EIdentifier "\981") ])
+                  ])
+           ])
+    , Right (EIdentifier "\968")
+    ]
+]
+>>> eqn
+left ⟨ psi left | {T} left { delta over {delta phi} F left [ phi right ] right } right | psi right ⟩ = \[u2212] roman {i} left ⟨ psi left | {T} left { F left [ phi right ] delta over {delta phi} S left [ phi right ] right } right | psi right ⟩

@@ -1,0 +1,15 @@
+<<< native
+[ ESqrt
+    (EArray
+       [ AlignCenter ]
+       [ [ [ EPhantom (EIdentifier "ABCD") ] ]
+       , [ [ EPhantom (EIdentifier "ABCD") ] ]
+       , [ [ EPhantom (EIdentifier "ABCD") ] ]
+       ])
+]
+>>> tex
+\sqrt{\begin{matrix}
+\phantom{ABCD} \\
+\phantom{ABCD} \\
+\phantom{ABCD} \\
+\end{matrix}}

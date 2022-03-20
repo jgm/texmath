@@ -1,0 +1,7 @@
+<<< native
+[ EFraction NormalFrac (ENumber "1") (ENumber "42")
+, ESymbol Rel "="
+, EFraction NormalFrac (ENumber "1") (ENumber "42")
+]
+>>> eqn
+1 over 42 = 1 over 42

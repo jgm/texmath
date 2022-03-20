@@ -1,0 +1,10 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn mathbackground="quagmire">2</mn> 
+  <mo color="potato">+</mo> 
+  <mn>5</mn> 
+</math>
+>>> native
+[ ENumber "2" , ESymbol Bin "+" , ENumber "5" ]

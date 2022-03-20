@@ -1,0 +1,35 @@
+<<< native
+[ EUnder False (EIdentifier "B") (EIdentifier "long under script")
+, ESymbol Rel "="
+, EUnder
+    False
+    (EGrouped
+       [ EPhantom (EText TextNormal "x")
+       , EIdentifier "B"
+       , EPhantom (EText TextNormal "x")
+       ])
+    (EIdentifier "long under script")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <munder>
+      <mi>B</mi>
+      <mi>long under script</mi>
+    </munder>
+    <mo>=</mo>
+    <munder>
+      <mrow>
+        <mphantom>
+          <mtext mathvariant="normal">x</mtext>
+        </mphantom>
+        <mi>B</mi>
+        <mphantom>
+          <mtext mathvariant="normal">x</mtext>
+        </mphantom>
+      </mrow>
+      <mi>long under script</mi>
+    </munder>
+  </mrow>
+</math>

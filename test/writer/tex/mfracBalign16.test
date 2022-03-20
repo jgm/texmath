@@ -1,0 +1,55 @@
+<<< native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "-"
+            , EFraction NormalFrac (EIdentifier "a") (EIdentifier "b")
+            , EIdentifier "x"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "-"
+            , EFraction NormalFrac (ENumber "1") (EIdentifier "b")
+            , EIdentifier "x"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "-"
+            , EFraction NormalFrac (ENumber "1") (ENumber "2")
+            , EIdentifier "x"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "-"
+            , EFraction
+                NormalFrac (ESuper (ENumber "1") (ENumber "2")) (EIdentifier "z")
+            , EIdentifier "x"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "-"
+            , EFraction
+                NormalFrac (EIdentifier "z") (ESuper (ENumber "1") (ENumber "2"))
+            , EIdentifier "x"
+            ]
+        ]
+      ]
+    ]
+]
+>>> tex
+\begin{matrix}
+{x - \frac{a}{b}x} \\
+{x - \frac{1}{b}x} \\
+{x - \frac{1}{2}x} \\
+{x - \frac{1^{2}}{z}x} \\
+{x - \frac{z}{1^{2}}x} \\
+\end{matrix}

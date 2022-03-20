@@ -1,0 +1,10 @@
+<<< tex
+f : X → Y
+
+>>> native
+[ EIdentifier "f"
+, ESymbol Rel ":"
+, EIdentifier "X"
+, ESymbol Rel "\8594"
+, EIdentifier "Y"
+]

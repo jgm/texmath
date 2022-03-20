@@ -1,0 +1,25 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "jcirc" ] , [ ESymbol Ord "\309" ] ]
+    , [ [ EText TextNormal "Jcirc" ] , [ ESymbol Ord "\308" ] ]
+    , [ [ EText TextNormal "jcy" ] , [ ESymbol Ord "\1081" ] ]
+    , [ [ EText TextNormal "Jcy" ] , [ ESymbol Ord "\1049" ] ]
+    , [ [ EText TextNormal "jfr" ] , [ ESymbol Alpha "\120103" ] ]
+    , [ [ EText TextNormal "Jfr" ] , [ ESymbol Alpha "\120077" ] ]
+    , [ [ EText TextNormal "jmath" ] , [ ESymbol Alpha "\567" ] ]
+    , [ [ EText TextNormal "jopf" ] , [ ESymbol Alpha "\120155" ] ]
+    , [ [ EText TextNormal "Jopf" ] , [ ESymbol Alpha "\120129" ] ]
+    , [ [ EText TextNormal "jscr" ] , [ ESymbol Alpha "\119999" ] ]
+    , [ [ EText TextNormal "Jscr" ] , [ ESymbol Alpha "\119973" ] ]
+    , [ [ EText TextNormal "jsercy" ] , [ ESymbol Ord "\1112" ] ]
+    , [ [ EText TextNormal "Jsercy" ] , [ ESymbol Ord "\1032" ] ]
+    , [ [ EText TextNormal "jukcy" ] , [ ESymbol Ord "\1108" ] ]
+    , [ [ EText TextNormal "Jukcy" ] , [ ESymbol Ord "\1028" ] ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ {roman "jcirc"} above {roman "Jcirc"} above {roman "jcy"} above {roman "Jcy"} above {roman "jfr"} above {roman "Jfr"} above {roman "jmath"} above {roman "jopf"} above {roman "Jopf"} above {roman "jscr"} above {roman "Jscr"} above {roman "jsercy"} above {roman "Jsercy"} above {roman "jukcy"} above {roman "Jukcy"} }
+ccol{ \[u0135] above \[u0134] above \[u0439] above \[u0419] above \[u1D527] above \[u1D50D] above \[u0237] above \[u1D55B] above \[u1D541] above \[u1D4BF] above \[u1D4A5] above \[u0458] above \[u0408] above \[u0454] above \[u0404] }
+}

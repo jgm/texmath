@@ -1,0 +1,11 @@
+<<< native
+[ EUnder False (EIdentifier "x") (ESymbol Accent "`")
+, ESymbol Rel "\8800"
+, EUnder False (EIdentifier "x") (ESymbol Ord "`")
+, ESymbol Rel "="
+, EUnder False (EIdentifier "x") (ESymbol Ord "`")
+, ESymbol Rel "="
+, EUnder False (EIdentifier "x") (ESymbol Ord "`")
+]
+>>> eqn
+x from ` != x from ` = x from ` = x from `

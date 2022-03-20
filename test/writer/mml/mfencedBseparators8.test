@@ -1,0 +1,38 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EGrouped
+           [ ESub (EIdentifier "a") (ENumber "1")
+           , ESymbol Pun ","
+           , ESub (EIdentifier "a") (ENumber "2")
+           , ESymbol Pun ","
+           , ESub (EIdentifier "a") (ENumber "3")
+           ])
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo stretchy="true" form="prefix">(</mo>
+    <mrow>
+      <msub>
+        <mi>a</mi>
+        <mn>1</mn>
+      </msub>
+      <mo>,</mo>
+      <msub>
+        <mi>a</mi>
+        <mn>2</mn>
+      </msub>
+      <mo>,</mo>
+      <msub>
+        <mi>a</mi>
+        <mn>3</mn>
+      </msub>
+    </mrow>
+    <mo stretchy="true" form="postfix">)</mo>
+  </mrow>
+</math>

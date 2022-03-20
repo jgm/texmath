@@ -1,0 +1,1158 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable>
+    <mtr>
+      <mtd>
+        <mtext>dagger</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>†</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dagger</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>†</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Dagger</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>‡</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Dagger</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>‡</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>daleth</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ℸ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>darr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>↓</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dArr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⇓</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Darr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>↡</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dash</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>‐</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dashv</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊣</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Dashv</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⫤</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dbkarow</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⤏</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dblac</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>˝</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dcaron</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ď</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Dcaron</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Ď</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dcy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>д</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Dcy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Д</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dd</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ⅆ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DD</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ⅅ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>ddagger</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>‡</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>ddarr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⇊</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DDotrahd</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⤑</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>ddotseq</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⩷</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>deg</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>°</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Del</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>∇</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>delta</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>δ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Delta</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Δ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>demptyv</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⦱</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dfisht</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⥿</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dfr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝔡</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Dfr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝔇</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dHar</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⥥</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dharl</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⇃</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dharr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⇂</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DiacriticalAcute</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>´</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DiacriticalDot</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>˙</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DiacriticalDoubleAcute</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>˝</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DiacriticalGrave</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>`</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DiacriticalTilde</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>˜</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>diam</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⋄</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>diamond</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⋄</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Diamond</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⋄</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>diamondsuit</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>♦</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>diams</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>♦</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>die</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>¨</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DifferentialD</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ⅆ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>digamma</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ϝ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>disin</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⋲</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>div</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>÷</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>divide</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>÷</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>divideontimes</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⋇</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>divonx</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⋇</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>djcy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ђ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DJcy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Ђ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dlcorn</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⌞</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dlcrop</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⌍</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dollar</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>$</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dopf</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝕕</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Dopf</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝔻</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dot</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>˙</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Dot</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>¨</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DotDot</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⃜</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>doteq</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>≐</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>doteqdot</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>≑</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DotEqual</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>≐</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dotminus</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>∸</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dotplus</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>∔</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dotsquare</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊡</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>doublebarwedge</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⌆</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DoubleContourIntegral</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>∯</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DoubleDot</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>¨</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DoubleDownArrow</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⇓</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DoubleLeftArrow</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⇐</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DoubleLeftRightArrow</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⇔</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DoubleLeftTee</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⫤</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DoubleLongLeftArrow</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⟸</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DoubleLongLeftRightArrow</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⟺</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DoubleLongRightArrow</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⟹</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DoubleRightArrow</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⇒</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DoubleRightTee</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊨</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DoubleUpArrow</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⇑</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DoubleUpDownArrow</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⇕</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DoubleVerticalBar</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>∥</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>downarrow</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>↓</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Downarrow</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⇓</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DownArrow</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>↓</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DownArrowBar</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⤓</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DownArrowUpArrow</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⇵</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DownBreve</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>̑</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>downdownarrows</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⇊</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>downharpoonleft</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⇃</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>downharpoonright</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⇂</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DownLeftRightVector</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⥐</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DownLeftTeeVector</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⥞</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DownLeftVector</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>↽</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DownLeftVectorBar</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⥖</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DownRightTeeVector</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⥟</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DownRightVector</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⇁</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DownRightVectorBar</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⥗</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DownTee</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊤</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DownTeeArrow</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>↧</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>drbkarow</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⤐</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>drcorn</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⌟</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>drcrop</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⌌</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dscr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝒹</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Dscr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝒟</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dscy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ѕ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DScy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Ѕ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dsol</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⧶</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dstrok</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>đ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Dstrok</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Đ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dtdot</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⋱</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dtri</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>▿</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dtrif</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>▾</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>duarr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⇵</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>duhar</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⥯</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dwangle</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⦦</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dzcy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>џ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>DZcy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Џ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>dzigrarr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⟿</mo> 
+      </mtd> 
+    </mtr> 
+  </mtable> 
+</math>
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "dagger" ] , [ ESymbol Bin "\8224" ] ]
+    , [ [ EText TextNormal "dagger" ] , [ ESymbol Bin "\8224" ] ]
+    , [ [ EText TextNormal "Dagger" ] , [ ESymbol Bin "\8225" ] ]
+    , [ [ EText TextNormal "Dagger" ] , [ ESymbol Bin "\8225" ] ]
+    , [ [ EText TextNormal "daleth" ] , [ ESymbol Alpha "\8504" ] ]
+    , [ [ EText TextNormal "darr" ] , [ ESymbol Rel "\8595" ] ]
+    , [ [ EText TextNormal "dArr" ] , [ ESymbol Rel "\8659" ] ]
+    , [ [ EText TextNormal "Darr" ] , [ ESymbol Rel "\8609" ] ]
+    , [ [ EText TextNormal "dash" ] , [ ESymbol Ord "\8208" ] ]
+    , [ [ EText TextNormal "dashv" ] , [ ESymbol Rel "\8867" ] ]
+    , [ [ EText TextNormal "Dashv" ] , [ ESymbol Rel "\10980" ] ]
+    , [ [ EText TextNormal "dbkarow" ] , [ ESymbol Accent "\10511" ] ]
+    , [ [ EText TextNormal "dblac" ] , [ ESymbol Accent "\733" ] ]
+    , [ [ EText TextNormal "dcaron" ] , [ ESymbol Ord "\271" ] ]
+    , [ [ EText TextNormal "Dcaron" ] , [ ESymbol Ord "\270" ] ]
+    , [ [ EText TextNormal "dcy" ] , [ ESymbol Ord "\1076" ] ]
+    , [ [ EText TextNormal "Dcy" ] , [ ESymbol Ord "\1044" ] ]
+    , [ [ EText TextNormal "dd" ] , [ ESymbol Ord "\8518" ] ]
+    , [ [ EText TextNormal "DD" ] , [ ESymbol Ord "\8517" ] ]
+    , [ [ EText TextNormal "ddagger" ] , [ ESymbol Bin "\8225" ] ]
+    , [ [ EText TextNormal "ddarr" ] , [ ESymbol Rel "\8650" ] ]
+    , [ [ EText TextNormal "DDotrahd" ] , [ ESymbol Accent "\10513" ] ]
+    , [ [ EText TextNormal "ddotseq" ] , [ ESymbol Rel "\10871" ] ]
+    , [ [ EText TextNormal "deg" ] , [ ESymbol Ord "\176" ] ]
+    , [ [ EText TextNormal "Del" ] , [ ESymbol Ord "\8711" ] ]
+    , [ [ EText TextNormal "delta" ] , [ ESymbol Alpha "\948" ] ]
+    , [ [ EText TextNormal "Delta" ] , [ ESymbol Alpha "\916" ] ]
+    , [ [ EText TextNormal "demptyv" ] , [ ESymbol Ord "\10673" ] ]
+    , [ [ EText TextNormal "dfisht" ] , [ ESymbol Rel "\10623" ] ]
+    , [ [ EText TextNormal "dfr" ] , [ ESymbol Alpha "\120097" ] ]
+    , [ [ EText TextNormal "Dfr" ] , [ ESymbol Alpha "\120071" ] ]
+    , [ [ EText TextNormal "dHar" ] , [ ESymbol Rel "\10597" ] ]
+    , [ [ EText TextNormal "dharl" ] , [ ESymbol Rel "\8643" ] ]
+    , [ [ EText TextNormal "dharr" ] , [ ESymbol Rel "\8642" ] ]
+    , [ [ EText TextNormal "DiacriticalAcute" ]
+      , [ ESymbol Accent "\180" ]
+      ]
+    , [ [ EText TextNormal "DiacriticalDot" ]
+      , [ ESymbol Accent "\729" ]
+      ]
+    , [ [ EText TextNormal "DiacriticalDoubleAcute" ]
+      , [ ESymbol Accent "\733" ]
+      ]
+    , [ [ EText TextNormal "DiacriticalGrave" ]
+      , [ ESymbol Accent "`" ]
+      ]
+    , [ [ EText TextNormal "DiacriticalTilde" ]
+      , [ ESymbol Accent "\732" ]
+      ]
+    , [ [ EText TextNormal "diam" ] , [ ESymbol Bin "\8900" ] ]
+    , [ [ EText TextNormal "diamond" ] , [ ESymbol Bin "\8900" ] ]
+    , [ [ EText TextNormal "Diamond" ] , [ ESymbol Bin "\8900" ] ]
+    , [ [ EText TextNormal "diamondsuit" ] , [ ESymbol Ord "\9830" ] ]
+    , [ [ EText TextNormal "diams" ] , [ ESymbol Ord "\9830" ] ]
+    , [ [ EText TextNormal "die" ] , [ ESymbol Accent "\168" ] ]
+    , [ [ EText TextNormal "DifferentialD" ]
+      , [ ESymbol Ord "\8518" ]
+      ]
+    , [ [ EText TextNormal "digamma" ] , [ ESymbol Alpha "\989" ] ]
+    , [ [ EText TextNormal "disin" ] , [ ESymbol Rel "\8946" ] ]
+    , [ [ EText TextNormal "div" ] , [ ESymbol Bin "\247" ] ]
+    , [ [ EText TextNormal "divide" ] , [ ESymbol Bin "\247" ] ]
+    , [ [ EText TextNormal "divideontimes" ]
+      , [ ESymbol Bin "\8903" ]
+      ]
+    , [ [ EText TextNormal "divonx" ] , [ ESymbol Bin "\8903" ] ]
+    , [ [ EText TextNormal "djcy" ] , [ ESymbol Ord "\1106" ] ]
+    , [ [ EText TextNormal "DJcy" ] , [ ESymbol Ord "\1026" ] ]
+    , [ [ EText TextNormal "dlcorn" ] , [ ESymbol Open "\8990" ] ]
+    , [ [ EText TextNormal "dlcrop" ] , [ ESymbol Ord "\8973" ] ]
+    , [ [ EText TextNormal "dollar" ] , [ ESymbol Ord "$" ] ]
+    , [ [ EText TextNormal "dopf" ] , [ ESymbol Alpha "\120149" ] ]
+    , [ [ EText TextNormal "Dopf" ] , [ ESymbol Alpha "\120123" ] ]
+    , [ [ EText TextNormal "dot" ] , [ ESymbol Accent "\729" ] ]
+    , [ [ EText TextNormal "Dot" ] , [ ESymbol Accent "\168" ] ]
+    , [ [ EText TextNormal "DotDot" ] , [ ESymbol Accent "\8412" ] ]
+    , [ [ EText TextNormal "doteq" ] , [ ESymbol Rel "\8784" ] ]
+    , [ [ EText TextNormal "doteqdot" ] , [ ESymbol Rel "\8785" ] ]
+    , [ [ EText TextNormal "DotEqual" ] , [ ESymbol Rel "\8784" ] ]
+    , [ [ EText TextNormal "dotminus" ] , [ ESymbol Bin "\8760" ] ]
+    , [ [ EText TextNormal "dotplus" ] , [ ESymbol Bin "\8724" ] ]
+    , [ [ EText TextNormal "dotsquare" ] , [ ESymbol Bin "\8865" ] ]
+    , [ [ EText TextNormal "doublebarwedge" ]
+      , [ ESymbol Bin "\8966" ]
+      ]
+    , [ [ EText TextNormal "DoubleContourIntegral" ]
+      , [ ESymbol Op "\8751" ]
+      ]
+    , [ [ EText TextNormal "DoubleDot" ] , [ ESymbol Accent "\168" ] ]
+    , [ [ EText TextNormal "DoubleDownArrow" ]
+      , [ ESymbol Rel "\8659" ]
+      ]
+    , [ [ EText TextNormal "DoubleLeftArrow" ]
+      , [ ESymbol Accent "\8656" ]
+      ]
+    , [ [ EText TextNormal "DoubleLeftRightArrow" ]
+      , [ ESymbol Accent "\8660" ]
+      ]
+    , [ [ EText TextNormal "DoubleLeftTee" ]
+      , [ ESymbol Rel "\10980" ]
+      ]
+    , [ [ EText TextNormal "DoubleLongLeftArrow" ]
+      , [ ESymbol Accent "\10232" ]
+      ]
+    , [ [ EText TextNormal "DoubleLongLeftRightArrow" ]
+      , [ ESymbol Accent "\10234" ]
+      ]
+    , [ [ EText TextNormal "DoubleLongRightArrow" ]
+      , [ ESymbol Accent "\10233" ]
+      ]
+    , [ [ EText TextNormal "DoubleRightArrow" ]
+      , [ ESymbol Accent "\8658" ]
+      ]
+    , [ [ EText TextNormal "DoubleRightTee" ]
+      , [ ESymbol Rel "\8872" ]
+      ]
+    , [ [ EText TextNormal "DoubleUpArrow" ]
+      , [ ESymbol Rel "\8657" ]
+      ]
+    , [ [ EText TextNormal "DoubleUpDownArrow" ]
+      , [ ESymbol Rel "\8661" ]
+      ]
+    , [ [ EText TextNormal "DoubleVerticalBar" ]
+      , [ ESymbol Rel "\8741" ]
+      ]
+    , [ [ EText TextNormal "downarrow" ] , [ ESymbol Rel "\8595" ] ]
+    , [ [ EText TextNormal "Downarrow" ] , [ ESymbol Rel "\8659" ] ]
+    , [ [ EText TextNormal "DownArrow" ] , [ ESymbol Rel "\8595" ] ]
+    , [ [ EText TextNormal "DownArrowBar" ]
+      , [ ESymbol Rel "\10515" ]
+      ]
+    , [ [ EText TextNormal "DownArrowUpArrow" ]
+      , [ ESymbol Rel "\8693" ]
+      ]
+    , [ [ EText TextNormal "DownBreve" ] , [ ESymbol Accent "\785" ] ]
+    , [ [ EText TextNormal "downdownarrows" ]
+      , [ ESymbol Rel "\8650" ]
+      ]
+    , [ [ EText TextNormal "downharpoonleft" ]
+      , [ ESymbol Rel "\8643" ]
+      ]
+    , [ [ EText TextNormal "downharpoonright" ]
+      , [ ESymbol Rel "\8642" ]
+      ]
+    , [ [ EText TextNormal "DownLeftRightVector" ]
+      , [ ESymbol Accent "\10576" ]
+      ]
+    , [ [ EText TextNormal "DownLeftTeeVector" ]
+      , [ ESymbol Accent "\10590" ]
+      ]
+    , [ [ EText TextNormal "DownLeftVector" ]
+      , [ ESymbol Accent "\8637" ]
+      ]
+    , [ [ EText TextNormal "DownLeftVectorBar" ]
+      , [ ESymbol Rel "\10582" ]
+      ]
+    , [ [ EText TextNormal "DownRightTeeVector" ]
+      , [ ESymbol Accent "\10591" ]
+      ]
+    , [ [ EText TextNormal "DownRightVector" ]
+      , [ ESymbol Accent "\8641" ]
+      ]
+    , [ [ EText TextNormal "DownRightVectorBar" ]
+      , [ ESymbol Rel "\10583" ]
+      ]
+    , [ [ EText TextNormal "DownTee" ] , [ ESymbol Ord "\8868" ] ]
+    , [ [ EText TextNormal "DownTeeArrow" ] , [ ESymbol Rel "\8615" ] ]
+    , [ [ EText TextNormal "drbkarow" ] , [ ESymbol Accent "\10512" ] ]
+    , [ [ EText TextNormal "drcorn" ] , [ ESymbol Close "\8991" ] ]
+    , [ [ EText TextNormal "drcrop" ] , [ ESymbol Ord "\8972" ] ]
+    , [ [ EText TextNormal "dscr" ] , [ ESymbol Alpha "\119993" ] ]
+    , [ [ EText TextNormal "Dscr" ] , [ ESymbol Alpha "\119967" ] ]
+    , [ [ EText TextNormal "dscy" ] , [ ESymbol Ord "\1109" ] ]
+    , [ [ EText TextNormal "DScy" ] , [ ESymbol Ord "\1029" ] ]
+    , [ [ EText TextNormal "dsol" ] , [ ESymbol Bin "\10742" ] ]
+    , [ [ EText TextNormal "dstrok" ] , [ ESymbol Ord "\273" ] ]
+    , [ [ EText TextNormal "Dstrok" ] , [ ESymbol Ord "\272" ] ]
+    , [ [ EText TextNormal "dtdot" ] , [ ESymbol Rel "\8945" ] ]
+    , [ [ EText TextNormal "dtri" ] , [ ESymbol Bin "\9663" ] ]
+    , [ [ EText TextNormal "dtrif" ] , [ ESymbol Bin "\9662" ] ]
+    , [ [ EText TextNormal "duarr" ] , [ ESymbol Rel "\8693" ] ]
+    , [ [ EText TextNormal "duhar" ] , [ ESymbol Rel "\10607" ] ]
+    , [ [ EText TextNormal "dwangle" ] , [ ESymbol Ord "\10662" ] ]
+    , [ [ EText TextNormal "dzcy" ] , [ ESymbol Ord "\1119" ] ]
+    , [ [ EText TextNormal "DZcy" ] , [ ESymbol Ord "\1039" ] ]
+    , [ [ EText TextNormal "dzigrarr" ] , [ ESymbol Accent "\10239" ] ]
+    ]
+]

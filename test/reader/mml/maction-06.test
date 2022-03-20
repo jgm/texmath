@@ -1,0 +1,12 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <maction actiontype="tooltip">    <mrow>      <mn>100</mn>       <mtext>m</mtext>
+      <mo>/</mo>
+      <mtext>s</mtext>     </mrow>     <mrow>      <mtext>360 km/h</mtext>     </mrow>   </maction> </math>
+>>> native
+[ ENumber "100"
+, EText TextNormal "m"
+, ESymbol Ord "/"
+, EText TextNormal "s"
+]

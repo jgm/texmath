@@ -1,0 +1,43 @@
+<<< native
+[ EFraction NormalFrac (ENumber "1") (EIdentifier "a")
+, ESymbol Bin "-"
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped
+       [ EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       ])
+, ESymbol Bin "-"
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped
+       [ EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       ])
+]
+>>> eqn
+1 over a - 1 over {a + a + a + a} - 1 over {a + a + a + a + a + a + a + a + a + a}

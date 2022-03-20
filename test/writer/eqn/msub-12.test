@@ -1,0 +1,11 @@
+<<< native
+[ ESub (EIdentifier "P") (ENumber "0")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (ESub (EIdentifier "P") (ENumber "0"))
+    (EPhantom (EIdentifier "x"))
+    (EPhantom (EIdentifier "x"))
+]
+>>> eqn
+P sub 0 = {P sub 0} from {hphantom x} to {hphantom x}

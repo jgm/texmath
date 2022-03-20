@@ -1,0 +1,11 @@
+[ EUnder False (EIdentifier "B") (EIdentifier "underscript")
+, ESymbol Rel "="
+, EUnder
+    False
+    (EGrouped
+       [ EPhantom (ENumber "1")
+       , EIdentifier "B"
+       , EPhantom (ENumber "1")
+       ])
+    (EIdentifier "underscript")
+]

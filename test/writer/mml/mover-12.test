@@ -1,0 +1,35 @@
+<<< native
+[ EOver False (EIdentifier "B") (EIdentifier "overscript")
+, ESymbol Rel "="
+, EOver
+    False
+    (EGrouped
+       [ EPhantom (ENumber "1")
+       , EIdentifier "B"
+       , EPhantom (ENumber "1")
+       ])
+    (EIdentifier "overscript")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mover>
+      <mi>B</mi>
+      <mi>overscript</mi>
+    </mover>
+    <mo>=</mo>
+    <mover>
+      <mrow>
+        <mphantom>
+          <mn>1</mn>
+        </mphantom>
+        <mi>B</mi>
+        <mphantom>
+          <mn>1</mn>
+        </mphantom>
+      </mrow>
+      <mi>overscript</mi>
+    </mover>
+  </mrow>
+</math>

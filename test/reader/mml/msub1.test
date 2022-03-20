@@ -1,0 +1,17 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>m</mi> 
+    <mrow>
+      <mn>1</mn> 
+      <mo> &#x2063;</mo> 
+      <mn>2</mn> 
+    </mrow> 
+  </msub> </math>
+>>> native
+[ ESub
+    (EIdentifier "m")
+    (EGrouped [ ENumber "1" , ESymbol Ord "\8291" , ENumber "2" ])
+]

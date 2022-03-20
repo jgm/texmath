@@ -1,0 +1,15 @@
+[ EMathOperator "there exists"
+, EGrouped
+    [ EGrouped [ EIdentifier "\948" , ESymbol Rel ">" , ENumber "0" ]
+    , EMathOperator "such that"
+    , EGrouped
+        [ EGrouped
+            [ EIdentifier "f"
+            , ESymbol Ord "\8289"
+            , EDelimited "(" ")" [ Right (EIdentifier "x") ]
+            ]
+        , ESymbol Rel "<"
+        , ENumber "1"
+        ]
+    ]
+]

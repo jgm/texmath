@@ -1,0 +1,26 @@
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ ENumber "3" ] , [ ENumber "0" ] , [ ENumber "0" ] ]
+    , [ [ EArray
+            [ AlignCenter ]
+            [ [ [ ENumber "2" ] ] , [ [ ENumber "2" ] ] , [ [ ENumber "2" ] ] ]
+        ]
+      , [ ENumber "3" ]
+      , [ ENumber "0" ]
+      ]
+    , [ [ ENumber "0" ] , [ ENumber "3" ] , [] ]
+    ]
+, ESpace (0 % 1)
+, EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ ENumber "3" ] , [ ENumber "0" ] , [ ENumber "0" ] ]
+    , [ [ EArray
+            [ AlignCenter ]
+            [ [ [ ENumber "2" ] ] , [ [ ENumber "2" ] ] , [ [ ENumber "2" ] ] ]
+        ]
+      , [ ENumber "3" ]
+      , [ ENumber "0" ]
+      ]
+    , [ [ ENumber "0" ] , [ ENumber "3" ] , [] ]
+    ]
+]

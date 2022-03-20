@@ -1,0 +1,22 @@
+[ ESubsup (ESymbol Op "\8747") (ENumber "0") (ENumber "1")
+, ESuper (EIdentifier "x") (EIdentifier "x")
+, ESpace (1 % 6)
+, EStyled TextNormal [ EIdentifier "d" ]
+, EIdentifier "x"
+, ESymbol Rel "="
+, EUnderover
+    True
+    (ESymbol Op "\8721")
+    (EGrouped [ EIdentifier "n" , ESymbol Rel "=" , ENumber "1" ])
+    (ESymbol Ord "\8734")
+, EGrouped
+    [ ESuper
+        (EDelimited
+           "(" ")" [ Right (ESymbol Op "\8722") , Right (ENumber "1") ])
+        (EGrouped [ EIdentifier "n" , ESymbol Bin "+" , ENumber "1" ])
+    , ESpace (1 % 6)
+    , ESuper
+        (EIdentifier "n")
+        (EGrouped [ ESymbol Op "\8722" , EIdentifier "n" ])
+    ]
+]

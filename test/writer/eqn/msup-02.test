@@ -1,0 +1,9 @@
+<<< native
+[ ESuper
+    (EGrouped [ EPhantom (EIdentifier "fail") , EIdentifier "k" ])
+    (ENumber "2")
+, ESymbol Rel "="
+, ESuper (EIdentifier "k") (ENumber "2")
+]
+>>> eqn
+{hphantom fail k} sup 2 = k sup 2

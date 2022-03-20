@@ -1,0 +1,11 @@
+<<< native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EArray [ AlignCenter ] [ [ [ EIdentifier "x" ] ] ] ] ] ]
+]
+>>> tex
+\begin{matrix}
+\begin{matrix}
+x \\
+\end{matrix} \\
+\end{matrix}

@@ -1,0 +1,921 @@
+<<< native
+[ EArray
+    [ AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    ]
+    [ [ []
+      , [ EText TextNormal "1D5A" ]
+      , [ EText TextNormal "1D5B" ]
+      , [ EText TextNormal "1D5C" ]
+      , [ EText TextNormal "1D5D" ]
+      , [ EText TextNormal "1D7E" ]
+      ]
+    , [ [ EText TextNormal "0" ]
+      , [ ESymbol Alpha "\120224" ]
+      , [ ESymbol Alpha "\120240" ]
+      , [ ESymbol Alpha "\120256" ]
+      , [ ESymbol Alpha "\120272" ]
+      , []
+      ]
+    , [ [ EText TextNormal "1" ]
+      , [ ESymbol Alpha "\120225" ]
+      , [ ESymbol Alpha "\120241" ]
+      , [ ESymbol Alpha "\120257" ]
+      , [ ESymbol Alpha "\120273" ]
+      , []
+      ]
+    , [ [ EText TextNormal "2" ]
+      , [ ESymbol Alpha "\120226" ]
+      , [ ESymbol Alpha "\120242" ]
+      , [ ESymbol Alpha "\120258" ]
+      , [ ESymbol Alpha "\120274" ]
+      , [ ESymbol Ord "\120802" ]
+      ]
+    , [ [ EText TextNormal "3" ]
+      , [ ESymbol Alpha "\120227" ]
+      , [ ESymbol Alpha "\120243" ]
+      , [ ESymbol Alpha "\120259" ]
+      , [ ESymbol Alpha "\120275" ]
+      , [ ESymbol Ord "\120803" ]
+      ]
+    , [ [ EText TextNormal "4" ]
+      , [ ESymbol Alpha "\120228" ]
+      , [ ESymbol Alpha "\120244" ]
+      , [ ESymbol Alpha "\120260" ]
+      , []
+      , [ ESymbol Ord "\120804" ]
+      ]
+    , [ [ EText TextNormal "5" ]
+      , [ ESymbol Alpha "\120229" ]
+      , [ ESymbol Alpha "\120245" ]
+      , [ ESymbol Alpha "\120261" ]
+      , []
+      , [ ESymbol Ord "\120805" ]
+      ]
+    , [ [ EText TextNormal "6" ]
+      , [ ESymbol Alpha "\120230" ]
+      , [ ESymbol Alpha "\120246" ]
+      , [ ESymbol Alpha "\120262" ]
+      , []
+      , [ ESymbol Ord "\120806" ]
+      ]
+    , [ [ EText TextNormal "7" ]
+      , [ ESymbol Alpha "\120231" ]
+      , [ ESymbol Alpha "\120247" ]
+      , [ ESymbol Alpha "\120263" ]
+      , []
+      , [ ESymbol Ord "\120807" ]
+      ]
+    , [ [ EText TextNormal "8" ]
+      , [ ESymbol Alpha "\120232" ]
+      , [ ESymbol Alpha "\120248" ]
+      , [ ESymbol Alpha "\120264" ]
+      , []
+      , [ ESymbol Ord "\120808" ]
+      ]
+    , [ [ EText TextNormal "9" ]
+      , [ ESymbol Alpha "\120233" ]
+      , [ ESymbol Alpha "\120249" ]
+      , [ ESymbol Alpha "\120265" ]
+      , []
+      , [ ESymbol Ord "\120809" ]
+      ]
+    , [ [ EText TextNormal "A" ]
+      , [ ESymbol Alpha "\120234" ]
+      , [ ESymbol Alpha "\120250" ]
+      , [ ESymbol Alpha "\120266" ]
+      , []
+      , [ ESymbol Ord "\120810" ]
+      ]
+    , [ [ EText TextNormal "B" ]
+      , [ ESymbol Alpha "\120235" ]
+      , [ ESymbol Alpha "\120251" ]
+      , [ ESymbol Alpha "\120267" ]
+      , []
+      , [ ESymbol Ord "\120811" ]
+      ]
+    , [ [ EText TextNormal "C" ]
+      , [ ESymbol Alpha "\120236" ]
+      , [ ESymbol Alpha "\120252" ]
+      , [ ESymbol Alpha "\120268" ]
+      , []
+      , []
+      ]
+    , [ [ EText TextNormal "D" ]
+      , [ ESymbol Alpha "\120237" ]
+      , [ ESymbol Alpha "\120253" ]
+      , [ ESymbol Alpha "\120269" ]
+      , []
+      , []
+      ]
+    , [ [ EText TextNormal "E" ]
+      , [ ESymbol Alpha "\120238" ]
+      , [ ESymbol Alpha "\120254" ]
+      , [ ESymbol Alpha "\120270" ]
+      , []
+      , []
+      ]
+    , [ [ EText TextNormal "F" ]
+      , [ ESymbol Alpha "\120239" ]
+      , [ ESymbol Alpha "\120255" ]
+      , [ ESymbol Alpha "\120271" ]
+      , []
+      , []
+      ]
+    ]
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:m>
+      <m:mPr>
+        <m:baseJc m:val="center" />
+        <m:plcHide m:val="1" />
+        <m:mcs>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="center" />
+              <m:count m:val="1" />
+            </m:mcPr>
+          </m:mc>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="center" />
+              <m:count m:val="1" />
+            </m:mcPr>
+          </m:mc>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="center" />
+              <m:count m:val="1" />
+            </m:mcPr>
+          </m:mc>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="center" />
+              <m:count m:val="1" />
+            </m:mcPr>
+          </m:mc>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="center" />
+              <m:count m:val="1" />
+            </m:mcPr>
+          </m:mc>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="center" />
+              <m:count m:val="1" />
+            </m:mcPr>
+          </m:mc>
+        </m:mcs>
+      </m:mPr>
+      <m:mr>
+        <m:e />
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>1D5A</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>1D5B</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>1D5C</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>1D5D</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>1D7E</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>0</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖠</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖰</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗀</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗐</m:t>
+          </m:r>
+        </m:e>
+        <m:e />
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>1</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖡</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖱</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗁</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗑</m:t>
+          </m:r>
+        </m:e>
+        <m:e />
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>2</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖢</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖲</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗂</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗒</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝟢</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>3</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖣</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖳</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗃</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗓</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝟣</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>4</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖤</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖴</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗄</m:t>
+          </m:r>
+        </m:e>
+        <m:e />
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝟤</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>5</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖥</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖵</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗅</m:t>
+          </m:r>
+        </m:e>
+        <m:e />
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝟥</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>6</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖦</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖶</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗆</m:t>
+          </m:r>
+        </m:e>
+        <m:e />
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝟦</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>7</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖧</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖷</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗇</m:t>
+          </m:r>
+        </m:e>
+        <m:e />
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝟧</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>8</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖨</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖸</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗈</m:t>
+          </m:r>
+        </m:e>
+        <m:e />
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝟨</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>9</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖩</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖹</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗉</m:t>
+          </m:r>
+        </m:e>
+        <m:e />
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝟩</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>A</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖪</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖺</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗊</m:t>
+          </m:r>
+        </m:e>
+        <m:e />
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝟪</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>B</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖫</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖻</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗋</m:t>
+          </m:r>
+        </m:e>
+        <m:e />
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝟫</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>C</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖬</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖼</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗌</m:t>
+          </m:r>
+        </m:e>
+        <m:e />
+        <m:e />
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>D</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖭</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖽</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗍</m:t>
+          </m:r>
+        </m:e>
+        <m:e />
+        <m:e />
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>E</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖮</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖾</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗎</m:t>
+          </m:r>
+        </m:e>
+        <m:e />
+        <m:e />
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>F</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖯</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝖿</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝗏</m:t>
+          </m:r>
+        </m:e>
+        <m:e />
+        <m:e />
+      </m:mr>
+    </m:m>
+  </m:oMath>
+</m:oMathPara>

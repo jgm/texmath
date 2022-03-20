@@ -1,0 +1,594 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "xcap" ] , [ ESymbol Op "\8898" ] ]
+    , [ [ EText TextNormal "xcirc" ] , [ ESymbol Ord "\9711" ] ]
+    , [ [ EText TextNormal "xcup" ] , [ ESymbol Op "\8899" ] ]
+    , [ [ EText TextNormal "xdtri" ] , [ ESymbol Bin "\9661" ] ]
+    , [ [ EText TextNormal "xfr" ] , [ ESymbol Alpha "\120117" ] ]
+    , [ [ EText TextNormal "Xfr" ] , [ ESymbol Alpha "\120091" ] ]
+    , [ [ EText TextNormal "xharr" ] , [ ESymbol Accent "\10231" ] ]
+    , [ [ EText TextNormal "xhArr" ] , [ ESymbol Accent "\10234" ] ]
+    , [ [ EText TextNormal "xi" ] , [ ESymbol Alpha "\958" ] ]
+    , [ [ EText TextNormal "Xi" ] , [ ESymbol Alpha "\926" ] ]
+    , [ [ EText TextNormal "xlarr" ] , [ ESymbol Accent "\10229" ] ]
+    , [ [ EText TextNormal "xlArr" ] , [ ESymbol Accent "\10232" ] ]
+    , [ [ EText TextNormal "xmap" ] , [ ESymbol Accent "\10236" ] ]
+    , [ [ EText TextNormal "xnis" ] , [ ESymbol Rel "\8955" ] ]
+    , [ [ EText TextNormal "xodot" ] , [ ESymbol Op "\10752" ] ]
+    , [ [ EText TextNormal "xopf" ] , [ ESymbol Alpha "\120169" ] ]
+    , [ [ EText TextNormal "Xopf" ] , [ ESymbol Alpha "\120143" ] ]
+    , [ [ EText TextNormal "xoplus" ] , [ ESymbol Op "\10753" ] ]
+    , [ [ EText TextNormal "xotime" ] , [ ESymbol Op "\10754" ] ]
+    , [ [ EText TextNormal "xrarr" ] , [ ESymbol Accent "\10230" ] ]
+    , [ [ EText TextNormal "xrArr" ] , [ ESymbol Accent "\10233" ] ]
+    , [ [ EText TextNormal "xscr" ] , [ ESymbol Alpha "\120013" ] ]
+    , [ [ EText TextNormal "Xscr" ] , [ ESymbol Alpha "\119987" ] ]
+    , [ [ EText TextNormal "xsqcup" ] , [ ESymbol Op "\10758" ] ]
+    , [ [ EText TextNormal "xuplus" ] , [ ESymbol Op "\10756" ] ]
+    , [ [ EText TextNormal "xutri" ] , [ ESymbol Bin "\9651" ] ]
+    , [ [ EText TextNormal "xvee" ] , [ ESymbol Op "\8897" ] ]
+    , [ [ EText TextNormal "xwedge" ] , [ ESymbol Op "\8896" ] ]
+    ]
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:m>
+      <m:mPr>
+        <m:baseJc m:val="center" />
+        <m:plcHide m:val="1" />
+        <m:mcs>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="center" />
+              <m:count m:val="1" />
+            </m:mcPr>
+          </m:mc>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="center" />
+              <m:count m:val="1" />
+            </m:mcPr>
+          </m:mc>
+        </m:mcs>
+      </m:mPr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xcap</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⋂</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xcirc</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>◯</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xcup</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⋃</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xdtri</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>▽</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xfr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝔵</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Xfr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝔛</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xharr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⟷</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xhArr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⟺</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xi</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ξ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Xi</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ξ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xlarr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⟵</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xlArr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⟸</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xmap</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⟼</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xnis</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⋻</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xodot</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⨀</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xopf</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝕩</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Xopf</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝕏</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xoplus</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⨁</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xotime</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⨂</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xrarr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⟶</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xrArr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⟹</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xscr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝓍</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Xscr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝒳</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xsqcup</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⨆</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xuplus</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⨄</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xutri</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>△</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xvee</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⋁</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>xwedge</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⋀</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+    </m:m>
+  </m:oMath>
+</m:oMathPara>

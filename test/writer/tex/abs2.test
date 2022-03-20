@@ -1,0 +1,9 @@
+<<< native
+[ EDelimited
+    "|"
+    "|"
+    [ Right (EFraction NormalFrac (EIdentifier "H") (EIdentifier "K"))
+    ]
+]
+>>> tex
+\left| \frac{H}{K} \right|

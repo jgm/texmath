@@ -1,0 +1,22 @@
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ ENumber "1" ]
+      , [ ESymbol Accent "\8594" ]
+      , [ ENumber "2" ]
+      ]
+    , [ [ ESymbol Rel "\8595" ]
+      , [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "+"
+            , EFraction
+                NormalFrac (ENumber "2") (ESuper (EIdentifier "y") (ENumber "3"))
+            ]
+        ]
+      , [ ESymbol Rel "\8595" ]
+      ]
+    , [ [ ENumber "3" ]
+      , [ ESymbol Accent "\8594" ]
+      , [ ENumber "4" ]
+      ]
+    ]
+]

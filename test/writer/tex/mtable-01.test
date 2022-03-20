@@ -1,0 +1,25 @@
+<<< native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EIdentifier "H" ] ]
+    , [ [ EIdentifier "T" ] ]
+    , [ [ EIdentifier "U" ] ]
+    ]
+, ESymbol Rel "="
+, EArray
+    [ AlignCenter ]
+    [ [ [ EIdentifier "H" ] ]
+    , [ [ EIdentifier "T" ] ]
+    , [ [ EIdentifier "U" ] ]
+    ]
+]
+>>> tex
+\begin{matrix}
+H \\
+T \\
+U \\
+\end{matrix} = \begin{matrix}
+H \\
+T \\
+U \\
+\end{matrix}

@@ -1,0 +1,370 @@
+<<< omml
+<?xml version="1.0" encoding="UTF-8"?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:sSub>
+      <m:e>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>ϕ</m:t>
+        </m:r>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>n</m:t>
+        </m:r>
+      </m:sub>
+    </m:sSub>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>(</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>κ</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>)</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>=</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>1</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>4</m:t>
+        </m:r>
+        <m:sSup>
+          <m:e>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>π</m:t>
+            </m:r>
+          </m:e>
+          <m:sup>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>2</m:t>
+            </m:r>
+          </m:sup>
+        </m:sSup>
+        <m:sSup>
+          <m:e>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>κ</m:t>
+            </m:r>
+          </m:e>
+          <m:sup>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>2</m:t>
+            </m:r>
+          </m:sup>
+        </m:sSup>
+      </m:den>
+    </m:f>
+    <m:nary>
+      <m:naryPr>
+        <m:chr m:val="∫" />
+        <m:limLoc m:val="subSup" />
+        <m:supHide m:val="off" />
+        <m:supHide m:val="off" />
+      </m:naryPr>
+      <m:e>
+        <m:f>
+          <m:fPr>
+            <m:type m:val="bar" />
+          </m:fPr>
+          <m:num>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>sin</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>(</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>κ</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>R</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>)</m:t>
+            </m:r>
+          </m:num>
+          <m:den>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>κ</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>R</m:t>
+            </m:r>
+          </m:den>
+        </m:f>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>0</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>∞</m:t>
+        </m:r>
+      </m:sup>
+    </m:nary>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>∂</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>∂</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>R</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="[" />
+        <m:endChr m:val="]" />
+        <m:grow />
+      </m:dPr>
+      <m:e>
+        <m:sSup>
+          <m:e>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>R</m:t>
+            </m:r>
+          </m:e>
+          <m:sup>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>2</m:t>
+            </m:r>
+          </m:sup>
+        </m:sSup>
+        <m:f>
+          <m:fPr>
+            <m:type m:val="bar" />
+          </m:fPr>
+          <m:num>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>∂</m:t>
+            </m:r>
+            <m:sSub>
+              <m:e>
+                <m:r>
+                  <m:rPr>
+                    <m:sty m:val="p" />
+                  </m:rPr>
+                  <m:t>D</m:t>
+                </m:r>
+              </m:e>
+              <m:sub>
+                <m:r>
+                  <m:rPr>
+                    <m:sty m:val="p" />
+                  </m:rPr>
+                  <m:t>n</m:t>
+                </m:r>
+              </m:sub>
+            </m:sSub>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>(</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>R</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>)</m:t>
+            </m:r>
+          </m:num>
+          <m:den>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>∂</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>R</m:t>
+            </m:r>
+          </m:den>
+        </m:f>
+      </m:e>
+    </m:d>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t> </m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>d</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>R</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+
+>>> native
+[ ESub (EIdentifier "\981") (EIdentifier "n")
+, ESymbol Open "("
+, EIdentifier "\954"
+, ESymbol Close ")"
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped
+       [ ENumber "4"
+       , ESuper (EIdentifier "\960") (ENumber "2")
+       , ESuper (EIdentifier "\954") (ENumber "2")
+       ])
+, ESubsup (ESymbol Op "\8747") (ENumber "0") (ESymbol Ord "\8734")
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ EMathOperator "sin"
+       , ESymbol Open "("
+       , EIdentifier "\954"
+       , EIdentifier "R"
+       , ESymbol Close ")"
+       ])
+    (EGrouped [ EIdentifier "\954" , EIdentifier "R" ])
+, EFraction
+    NormalFrac
+    (ESymbol Ord "\8706")
+    (EGrouped [ ESymbol Ord "\8706" , EIdentifier "R" ])
+, EDelimited
+    "["
+    "]"
+    [ Right (ESuper (EIdentifier "R") (ENumber "2"))
+    , Right
+        (EFraction
+           NormalFrac
+           (EGrouped
+              [ ESymbol Ord "\8706"
+              , ESub (EIdentifier "D") (EIdentifier "n")
+              , ESymbol Open "("
+              , EIdentifier "R"
+              , ESymbol Close ")"
+              ])
+           (EGrouped [ ESymbol Ord "\8706" , EIdentifier "R" ]))
+    ]
+, ESpace (1 % 6)
+, EIdentifier "d"
+, EIdentifier "R"
+]

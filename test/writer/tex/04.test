@@ -1,0 +1,20 @@
+<<< native
+[ ESub (EIdentifier "S") (EText TextNormal "new")
+, ESymbol Rel "="
+, ESub (EIdentifier "S") (EText TextNormal "old")
+, ESymbol Bin "\8722"
+, EFraction
+    NormalFrac
+    (ESuper
+       (EDelimited
+          "("
+          ")"
+          [ Right (ENumber "5")
+          , Right (ESymbol Bin "\8722")
+          , Right (EIdentifier "T")
+          ])
+       (ENumber "2"))
+    (ENumber "2")
+]
+>>> tex
+S_{\text{new}} = S_{\text{old}} - \frac{(5 - T)^{2}}{2}

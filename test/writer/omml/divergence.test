@@ -1,0 +1,180 @@
+<<< native
+[ ESymbol Ord "\8711"
+, ESymbol Bin "\8901"
+, EOver False (EIdentifier "v") (ESymbol Accent "\8407")
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESymbol Ord "\8706" , ESub (EIdentifier "v") (EIdentifier "x") ])
+    (EGrouped [ ESymbol Ord "\8706" , EIdentifier "x" ])
+, ESymbol Bin "+"
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESymbol Ord "\8706" , ESub (EIdentifier "v") (EIdentifier "y") ])
+    (EGrouped [ ESymbol Ord "\8706" , EIdentifier "y" ])
+, ESymbol Bin "+"
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESymbol Ord "\8706" , ESub (EIdentifier "v") (EIdentifier "z") ])
+    (EGrouped [ ESymbol Ord "\8706" , EIdentifier "z" ])
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>∇</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>⋅</m:t>
+    </m:r>
+    <m:acc>
+      <m:accPr>
+        <m:chr m:val="⃗" />
+      </m:accPr>
+      <m:e>
+        <m:r>
+          <m:t>v</m:t>
+        </m:r>
+      </m:e>
+    </m:acc>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>=</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>∂</m:t>
+        </m:r>
+        <m:sSub>
+          <m:e>
+            <m:r>
+              <m:t>v</m:t>
+            </m:r>
+          </m:e>
+          <m:sub>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:sub>
+        </m:sSub>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>∂</m:t>
+        </m:r>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>∂</m:t>
+        </m:r>
+        <m:sSub>
+          <m:e>
+            <m:r>
+              <m:t>v</m:t>
+            </m:r>
+          </m:e>
+          <m:sub>
+            <m:r>
+              <m:t>y</m:t>
+            </m:r>
+          </m:sub>
+        </m:sSub>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>∂</m:t>
+        </m:r>
+        <m:r>
+          <m:t>y</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>∂</m:t>
+        </m:r>
+        <m:sSub>
+          <m:e>
+            <m:r>
+              <m:t>v</m:t>
+            </m:r>
+          </m:e>
+          <m:sub>
+            <m:r>
+              <m:t>z</m:t>
+            </m:r>
+          </m:sub>
+        </m:sSub>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>∂</m:t>
+        </m:r>
+        <m:r>
+          <m:t>z</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+  </m:oMath>
+</m:oMathPara>

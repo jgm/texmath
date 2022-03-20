@@ -1,0 +1,201 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable>
+    <mtr>
+      <mtd>
+        <mtext>yacute</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ý</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Yacute</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Ý</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>yacy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>я</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>YAcy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Я</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>ycirc</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ŷ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Ycirc</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Ŷ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>ycy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ы</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Ycy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Ы</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>yen</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>¥</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>yfr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝔶</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Yfr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝔜</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>yicy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ї</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>YIcy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Ї</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>yopf</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝕪</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Yopf</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝕐</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>yscr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝓎</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Yscr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝒴</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>yucy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ю</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>YUcy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Ю</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>yuml</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ÿ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Yuml</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Ÿ</mo> 
+      </mtd> 
+    </mtr> 
+  </mtable> 
+</math>
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "yacute" ] , [ ESymbol Ord "\253" ] ]
+    , [ [ EText TextNormal "Yacute" ] , [ ESymbol Ord "\221" ] ]
+    , [ [ EText TextNormal "yacy" ] , [ ESymbol Ord "\1103" ] ]
+    , [ [ EText TextNormal "YAcy" ] , [ ESymbol Ord "\1071" ] ]
+    , [ [ EText TextNormal "ycirc" ] , [ ESymbol Ord "\375" ] ]
+    , [ [ EText TextNormal "Ycirc" ] , [ ESymbol Ord "\374" ] ]
+    , [ [ EText TextNormal "ycy" ] , [ ESymbol Ord "\1099" ] ]
+    , [ [ EText TextNormal "Ycy" ] , [ ESymbol Ord "\1067" ] ]
+    , [ [ EText TextNormal "yen" ] , [ ESymbol Ord "\165" ] ]
+    , [ [ EText TextNormal "yfr" ] , [ ESymbol Alpha "\120118" ] ]
+    , [ [ EText TextNormal "Yfr" ] , [ ESymbol Alpha "\120092" ] ]
+    , [ [ EText TextNormal "yicy" ] , [ ESymbol Ord "\1111" ] ]
+    , [ [ EText TextNormal "YIcy" ] , [ ESymbol Ord "\1031" ] ]
+    , [ [ EText TextNormal "yopf" ] , [ ESymbol Alpha "\120170" ] ]
+    , [ [ EText TextNormal "Yopf" ] , [ ESymbol Alpha "\120144" ] ]
+    , [ [ EText TextNormal "yscr" ] , [ ESymbol Alpha "\120014" ] ]
+    , [ [ EText TextNormal "Yscr" ] , [ ESymbol Alpha "\119988" ] ]
+    , [ [ EText TextNormal "yucy" ] , [ ESymbol Ord "\1102" ] ]
+    , [ [ EText TextNormal "YUcy" ] , [ ESymbol Ord "\1070" ] ]
+    , [ [ EText TextNormal "yuml" ] , [ ESymbol Ord "\255" ] ]
+    , [ [ EText TextNormal "Yuml" ] , [ ESymbol Ord "\376" ] ]
+    ]
+]

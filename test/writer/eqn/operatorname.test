@@ -1,0 +1,74 @@
+<<< native
+[ EDelimited
+    "{"
+    ""
+    [ Right
+        (EArray
+           [ AlignLeft , AlignLeft ]
+           [ [ [ ESub (EMathOperator "div") (EIdentifier "x")
+               , EIdentifier "u"
+               , ESuper (EMathOperator "div") (EIdentifier "x")
+               , EIdentifier "u"
+               , ESubsup (EMathOperator "div") (EIdentifier "x") (EIdentifier "y")
+               , EIdentifier "u"
+               , ESubsup (EMathOperator "div") (EIdentifier "x") (EIdentifier "y")
+               , EIdentifier "u"
+               ]
+             , [ EText TextNormal "operatorname" ]
+             ]
+           , [ [ EUnder
+                   True
+                   (EMathOperator "\8902-lim'sup")
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+               , EIdentifier "u"
+               , EOver True (EMathOperator "\8902-lim'sup") (EIdentifier "w")
+               , EIdentifier "u"
+               , EUnderover
+                   True
+                   (EMathOperator "\8902-lim'sup")
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+                   (EIdentifier "w")
+               , EIdentifier "u"
+               , EUnderover
+                   True
+                   (EMathOperator "\8902-lim'sup")
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+                   (EIdentifier "w")
+               , EIdentifier "u"
+               ]
+             , [ EText TextNormal "operatorname*" ]
+             ]
+           , [ [ ESub
+                   (EMathOperator "\8902-lim'sup")
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+               , EIdentifier "u"
+               , ESuper (EMathOperator "\8902-lim'sup") (EIdentifier "w")
+               , EIdentifier "u"
+               , ESubsup
+                   (EMathOperator "\8902-lim'sup")
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+                   (EIdentifier "w")
+               , EIdentifier "u"
+               , ESubsup
+                   (EMathOperator "\8902-lim'sup")
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+                   (EIdentifier "w")
+               , EIdentifier "u"
+               ]
+             , [ EText TextNormal "operatorname*:nolimits" ]
+             ]
+           , [ [ ESub (EMathOperator "curl") (EIdentifier "x")
+               , EIdentifier "v"
+               , EUnder True (EMathOperator "argmax") (EIdentifier "K")
+               , EIdentifier "u"
+               ]
+             , [ EText TextNormal "DeclareMathOperator" ]
+             ]
+           ])
+    ]
+]
+>>> eqn
+left { matrix{
+lcol{ {"div" sub x u "div" sup x u "div" sub x sup y u "div" sub x sup y u} above {"⋆-lim'sup" from {x -> 0} u "⋆-lim'sup" to w u "⋆-lim'sup" from {x -> 0} to w u "⋆-lim'sup" from {x -> 0} to w u} above {"⋆-lim'sup" sub {x -> 0} u "⋆-lim'sup" sup w u "⋆-lim'sup" sub {x -> 0} sup w u "⋆-lim'sup" sub {x -> 0} sup w u} above {"curl" sub x v "argmax" from K u} }
+lcol{ {roman "operatorname"} above {roman "operatorname*"} above {roman "operatorname*:nolimits"} above {roman "DeclareMathOperator"} }
+} right ""

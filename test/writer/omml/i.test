@@ -1,0 +1,1518 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "iacute" ] , [ ESymbol Ord "\237" ] ]
+    , [ [ EText TextNormal "Iacute" ] , [ ESymbol Ord "\205" ] ]
+    , [ [ EText TextNormal "ic" ] , [ ESymbol Ord "\8291" ] ]
+    , [ [ EText TextNormal "icirc" ] , [ ESymbol Ord "\238" ] ]
+    , [ [ EText TextNormal "Icirc" ] , [ ESymbol Ord "\206" ] ]
+    , [ [ EText TextNormal "icy" ] , [ ESymbol Ord "\1080" ] ]
+    , [ [ EText TextNormal "Icy" ] , [ ESymbol Ord "\1048" ] ]
+    , [ [ EText TextNormal "Idot" ] , [ ESymbol Ord "\304" ] ]
+    , [ [ EText TextNormal "iecy" ] , [ ESymbol Ord "\1077" ] ]
+    , [ [ EText TextNormal "IEcy" ] , [ ESymbol Ord "\1045" ] ]
+    , [ [ EText TextNormal "iexcl" ] , [ ESymbol Ord "\161" ] ]
+    , [ [ EText TextNormal "iff" ] , [ ESymbol Accent "\8660" ] ]
+    , [ [ EText TextNormal "ifr" ] , [ ESymbol Alpha "\120102" ] ]
+    , [ [ EText TextNormal "Ifr" ] , [ ESymbol Alpha "\8465" ] ]
+    , [ [ EText TextNormal "igrave" ] , [ ESymbol Ord "\236" ] ]
+    , [ [ EText TextNormal "Igrave" ] , [ ESymbol Ord "\204" ] ]
+    , [ [ EText TextNormal "ii" ] , [ ESymbol Ord "\8520" ] ]
+    , [ [ EText TextNormal "iiiint" ] , [ ESymbol Op "\10764" ] ]
+    , [ [ EText TextNormal "iiint" ] , [ ESymbol Op "\8749" ] ]
+    , [ [ EText TextNormal "iinfin" ] , [ ESymbol Ord "\10716" ] ]
+    , [ [ EText TextNormal "iiota" ] , [ ESymbol Alpha "\8489" ] ]
+    , [ [ EText TextNormal "ijlig" ] , [ ESymbol Ord "\307" ] ]
+    , [ [ EText TextNormal "IJlig" ] , [ ESymbol Ord "\306" ] ]
+    , [ [ EText TextNormal "Im" ] , [ ESymbol Alpha "\8465" ] ]
+    , [ [ EText TextNormal "imacr" ] , [ ESymbol Ord "\299" ] ]
+    , [ [ EText TextNormal "Imacr" ] , [ ESymbol Ord "\298" ] ]
+    , [ [ EText TextNormal "image" ] , [ ESymbol Alpha "\8465" ] ]
+    , [ [ EText TextNormal "ImaginaryI" ] , [ ESymbol Ord "\8520" ] ]
+    , [ [ EText TextNormal "imagline" ] , [ ESymbol Alpha "\8464" ] ]
+    , [ [ EText TextNormal "imagpart" ] , [ ESymbol Alpha "\8465" ] ]
+    , [ [ EText TextNormal "imath" ] , [ ESymbol Alpha "\305" ] ]
+    , [ [ EText TextNormal "imof" ] , [ ESymbol Rel "\8887" ] ]
+    , [ [ EText TextNormal "imped" ] , [ ESymbol Ord "\437" ] ]
+    , [ [ EText TextNormal "Implies" ] , [ ESymbol Accent "\8658" ] ]
+    , [ [ EText TextNormal "in" ] , [ ESymbol Rel "\8712" ] ]
+    , [ [ EText TextNormal "incare" ] , [ ESymbol Ord "\8453" ] ]
+    , [ [ EText TextNormal "infin" ] , [ ESymbol Ord "\8734" ] ]
+    , [ [ EText TextNormal "infintie" ] , [ ESymbol Ord "\10717" ] ]
+    , [ [ EText TextNormal "inodot" ] , [ ESymbol Alpha "\305" ] ]
+    , [ [ EText TextNormal "int" ] , [ ESymbol Op "\8747" ] ]
+    , [ [ EText TextNormal "Int" ] , [ ESymbol Op "\8748" ] ]
+    , [ [ EText TextNormal "intcal" ] , [ ESymbol Bin "\8890" ] ]
+    , [ [ EText TextNormal "integers" ] , [ ESymbol Alpha "\8484" ] ]
+    , [ [ EText TextNormal "Integral" ] , [ ESymbol Op "\8747" ] ]
+    , [ [ EText TextNormal "intercal" ] , [ ESymbol Bin "\8890" ] ]
+    , [ [ EText TextNormal "Intersection" ] , [ ESymbol Op "\8898" ] ]
+    , [ [ EText TextNormal "intlarhk" ] , [ ESymbol Op "\10775" ] ]
+    , [ [ EText TextNormal "intprod" ] , [ ESymbol Bin "\10812" ] ]
+    , [ [ EText TextNormal "InvisibleComma" ]
+      , [ ESymbol Ord "\8291" ]
+      ]
+    , [ [ EText TextNormal "InvisibleTimes" ]
+      , [ ESymbol Ord "\8290" ]
+      ]
+    , [ [ EText TextNormal "iocy" ] , [ ESymbol Ord "\1105" ] ]
+    , [ [ EText TextNormal "IOcy" ] , [ ESymbol Ord "\1025" ] ]
+    , [ [ EText TextNormal "iogon" ] , [ ESymbol Ord "\303" ] ]
+    , [ [ EText TextNormal "Iogon" ] , [ ESymbol Ord "\302" ] ]
+    , [ [ EText TextNormal "iopf" ] , [ ESymbol Alpha "\120154" ] ]
+    , [ [ EText TextNormal "Iopf" ] , [ ESymbol Alpha "\120128" ] ]
+    , [ [ EText TextNormal "iota" ] , [ ESymbol Alpha "\953" ] ]
+    , [ [ EText TextNormal "iprod" ] , [ ESymbol Bin "\10812" ] ]
+    , [ [ EText TextNormal "iquest" ] , [ ESymbol Ord "\191" ] ]
+    , [ [ EText TextNormal "iscr" ] , [ ESymbol Alpha "\119998" ] ]
+    , [ [ EText TextNormal "Iscr" ] , [ ESymbol Alpha "\8464" ] ]
+    , [ [ EText TextNormal "isin" ] , [ ESymbol Rel "\8712" ] ]
+    , [ [ EText TextNormal "isindot" ] , [ ESymbol Rel "\8949" ] ]
+    , [ [ EText TextNormal "isinE" ] , [ ESymbol Rel "\8953" ] ]
+    , [ [ EText TextNormal "isins" ] , [ ESymbol Rel "\8948" ] ]
+    , [ [ EText TextNormal "isinsv" ] , [ ESymbol Rel "\8947" ] ]
+    , [ [ EText TextNormal "isinv" ] , [ ESymbol Rel "\8712" ] ]
+    , [ [ EText TextNormal "it" ] , [ ESymbol Ord "\8290" ] ]
+    , [ [ EText TextNormal "itilde" ] , [ ESymbol Ord "\297" ] ]
+    , [ [ EText TextNormal "Itilde" ] , [ ESymbol Ord "\296" ] ]
+    , [ [ EText TextNormal "iukcy" ] , [ ESymbol Ord "\1110" ] ]
+    , [ [ EText TextNormal "Iukcy" ] , [ ESymbol Ord "\1030" ] ]
+    , [ [ EText TextNormal "iuml" ] , [ ESymbol Ord "\239" ] ]
+    , [ [ EText TextNormal "Iuml" ] , [ ESymbol Ord "\207" ] ]
+    ]
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:m>
+      <m:mPr>
+        <m:baseJc m:val="center" />
+        <m:plcHide m:val="1" />
+        <m:mcs>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="center" />
+              <m:count m:val="1" />
+            </m:mcPr>
+          </m:mc>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="center" />
+              <m:count m:val="1" />
+            </m:mcPr>
+          </m:mc>
+        </m:mcs>
+      </m:mPr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>iacute</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>í</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Iacute</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Í</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ic</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>&#8291;</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>icirc</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>î</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Icirc</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Î</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>icy</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>и</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Icy</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>И</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Idot</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>İ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>iecy</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>е</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>IEcy</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Е</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>iexcl</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>¡</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>iff</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⇔</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ifr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝔦</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ifr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ℑ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>igrave</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ì</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Igrave</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ì</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ii</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ⅈ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>iiiint</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⨌</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>iiint</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∭</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>iinfin</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⧜</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>iiota</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>℩</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ijlig</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ĳ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>IJlig</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ĳ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Im</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ℑ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>imacr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ī</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Imacr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ī</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>image</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ℑ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ImaginaryI</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ⅈ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>imagline</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ℐ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>imagpart</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ℑ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>imath</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ı</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>imof</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⊷</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>imped</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ƶ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Implies</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⇒</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>in</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∈</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>incare</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>℅</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>infin</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∞</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>infintie</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⧝</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>inodot</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ı</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>int</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∫</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Int</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∬</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>intcal</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⊺</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>integers</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ℤ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Integral</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∫</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>intercal</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⊺</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Intersection</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⋂</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>intlarhk</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⨗</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>intprod</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⨼</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>InvisibleComma</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>&#8291;</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>InvisibleTimes</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>&#8290;</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>iocy</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ё</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>IOcy</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ё</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>iogon</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>į</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Iogon</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Į</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>iopf</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝕚</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Iopf</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝕀</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>iota</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ι</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>iprod</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⨼</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>iquest</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>¿</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>iscr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝒾</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Iscr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ℐ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>isin</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∈</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>isindot</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⋵</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>isinE</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⋹</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>isins</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⋴</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>isinsv</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⋳</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>isinv</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∈</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>it</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>&#8290;</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>itilde</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ĩ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Itilde</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ĩ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>iukcy</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>і</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Iukcy</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>І</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>iuml</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ï</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Iuml</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ï</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+    </m:m>
+  </m:oMath>
+</m:oMathPara>

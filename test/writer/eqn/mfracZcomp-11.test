@@ -1,0 +1,15 @@
+<<< native
+[ EText TextNormal "Inline binomial, display style, no line\160"
+, EDelimited
+    "("
+    ")"
+    [ Right
+        (EFraction
+           NormalFrac
+           (EGrouped [ EIdentifier "n" , ESymbol Bin "-" , EIdentifier "k" ])
+           (EIdentifier "n"))
+    ]
+, EText TextNormal "\160the end."
+]
+>>> eqn
+roman "Inline binomial, display style, no line " left ( {n - k} over n right ) roman " the end."

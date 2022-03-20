@@ -1,0 +1,13 @@
+[ EOver
+    False
+    (EIdentifier "mover baseline")
+    (EIdentifier "mover over script")
+, ESymbol Rel "="
+, EOver
+    False
+    (EOver
+       False
+       (EIdentifier "mover baseline")
+       (EIdentifier "mover over script"))
+    (EPhantom (EIdentifier "fail"))
+]

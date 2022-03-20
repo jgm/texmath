@@ -1,0 +1,46 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>&#x222B;</mo> 
+    <mi>x</mi> 
+    <mo>=</mo> 
+    <mo largeop="true">&#x222B;</mo> 
+    <mi>x</mi> 
+    <mo>=</mo> 
+    <mo largeop="false">&#x222B;</mo> 
+    <mi>x</mi> 
+    <mo>=</mo> 
+    <mstyle displaystyle="true">
+      <mo>&#x222B;</mo> 
+      <mi>x</mi> 
+      <mo>=</mo> 
+      <mo largeop="true">&#x222B;</mo> 
+      <mi>x</mi> 
+      <mo>=</mo> 
+      <mo largeop="false">&#x222B;</mo> 
+      <mi>x</mi> 
+    </mstyle> 
+  </mrow> </math>
+>>> native
+[ ESymbol Op "\8747"
+, EIdentifier "x"
+, ESymbol Rel "="
+, ESymbol Op "\8747"
+, EIdentifier "x"
+, ESymbol Rel "="
+, ESymbol Op "\8747"
+, EIdentifier "x"
+, ESymbol Rel "="
+, EGrouped
+    [ ESymbol Op "\8747"
+    , EIdentifier "x"
+    , ESymbol Rel "="
+    , ESymbol Op "\8747"
+    , EIdentifier "x"
+    , ESymbol Rel "="
+    , ESymbol Op "\8747"
+    , EIdentifier "x"
+    ]
+]

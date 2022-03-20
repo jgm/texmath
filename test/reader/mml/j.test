@@ -1,0 +1,147 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable>
+    <mtr>
+      <mtd>
+        <mtext>jcirc</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ĵ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Jcirc</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Ĵ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>jcy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>й</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Jcy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Й</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>jfr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝔧</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Jfr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝔍</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>jmath</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ȷ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>jopf</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝕛</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Jopf</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝕁</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>jscr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝒿</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Jscr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝒥</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>jsercy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ј</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Jsercy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Ј</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>jukcy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>є</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Jukcy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Є</mo> 
+      </mtd> 
+    </mtr> 
+  </mtable> 
+</math>
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "jcirc" ] , [ ESymbol Ord "\309" ] ]
+    , [ [ EText TextNormal "Jcirc" ] , [ ESymbol Ord "\308" ] ]
+    , [ [ EText TextNormal "jcy" ] , [ ESymbol Ord "\1081" ] ]
+    , [ [ EText TextNormal "Jcy" ] , [ ESymbol Ord "\1049" ] ]
+    , [ [ EText TextNormal "jfr" ] , [ ESymbol Alpha "\120103" ] ]
+    , [ [ EText TextNormal "Jfr" ] , [ ESymbol Alpha "\120077" ] ]
+    , [ [ EText TextNormal "jmath" ] , [ ESymbol Alpha "\567" ] ]
+    , [ [ EText TextNormal "jopf" ] , [ ESymbol Alpha "\120155" ] ]
+    , [ [ EText TextNormal "Jopf" ] , [ ESymbol Alpha "\120129" ] ]
+    , [ [ EText TextNormal "jscr" ] , [ ESymbol Alpha "\119999" ] ]
+    , [ [ EText TextNormal "Jscr" ] , [ ESymbol Alpha "\119973" ] ]
+    , [ [ EText TextNormal "jsercy" ] , [ ESymbol Ord "\1112" ] ]
+    , [ [ EText TextNormal "Jsercy" ] , [ ESymbol Ord "\1032" ] ]
+    , [ [ EText TextNormal "jukcy" ] , [ ESymbol Ord "\1108" ] ]
+    , [ [ EText TextNormal "Jukcy" ] , [ ESymbol Ord "\1028" ] ]
+    ]
+]

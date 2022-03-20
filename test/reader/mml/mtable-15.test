@@ -1,0 +1,23 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mtable frame="solid" rowalign="center">    <mtr>      <mtd>        <mphantom>          <mtext>F</mtext>
+        </mphantom>
+        <mspace linebreak="newline"></mspace>         <mi mathvariant="normal">HT</mi>         <mspace linebreak="newline"></mspace>        <mphantom>          <mtext>F</mtext>
+        </mphantom>       </mtd>       <mtd>        <mo>=</mo>       </mtd>       <mtd>        <mi mathvariant="normal">TH</mi>       </mtd>     </mtr>   </mtable> </math>
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EGrouped
+            [ EPhantom (EText TextNormal "F")
+            , ESpace (0 % 1)
+            , EIdentifier "HT"
+            , ESpace (0 % 1)
+            , EPhantom (EText TextNormal "F")
+            ]
+        ]
+      , [ ESymbol Rel "=" ]
+      , [ EIdentifier "TH" ]
+      ]
+    ]
+]

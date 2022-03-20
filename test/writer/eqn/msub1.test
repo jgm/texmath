@@ -1,0 +1,7 @@
+<<< native
+[ ESub
+    (EIdentifier "m")
+    (EGrouped [ ENumber "1" , ESymbol Ord "\8291" , ENumber "2" ])
+]
+>>> eqn
+m sub {1  2}

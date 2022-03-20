@@ -1,0 +1,41 @@
+[ EText TextNormal "Inline fenced nested fractions\160"
+, EGrouped
+    [ EDelimited
+        "["
+        "]"
+        [ Right
+            (EFraction
+               NormalFrac
+               (EGrouped
+                  [ EDelimited
+                      ""
+                      ""
+                      [ Left "\8741"
+                      , Right
+                          (EFraction
+                             NormalFrac
+                             (EGrouped
+                                [ EGrouped
+                                    [ EMathOperator "sin"
+                                    , ESymbol Ord "\8289"
+                                    , EIdentifier "\952"
+                                    ]
+                                , ESymbol Bin "+"
+                                , ENumber "1"
+                                ])
+                             (ENumber "11"))
+                      , Left "\8741"
+                      ]
+                  , ESymbol Bin "-"
+                  , EIdentifier "x"
+                  ])
+               (EFraction
+                  NormalFrac
+                  (ESuper (EIdentifier "x") (ENumber "2"))
+                  (ESub (EIdentifier "a") (ENumber "1"))))
+        ]
+    , ESymbol Bin "+"
+    , EGrouped [ ESymbol Open "[" , ENumber "1.0" , ESymbol Close "]" ]
+    ]
+, EText TextNormal "\160etc."
+]

@@ -1,0 +1,18 @@
+<<< native
+[ EText TextNormal "Inline double up arrows, auto, thick line\160"
+, EDelimited
+    ""
+    ""
+    [ Left "\8657"
+    , Right
+        (EFraction
+           NormalFrac
+           (EGrouped
+              [ EMathOperator "sin" , ESymbol Ord "\8289" , EIdentifier "\952" ])
+           (EIdentifier "M"))
+    , Left "\8657"
+    ]
+, EText TextNormal "\160the end."
+]
+>>> tex
+\text{Inline\ double\ up\ arrows,\ auto,\ thick\ line~}\left. \Uparrow\frac{\sin\theta}{M}\Uparrow \right.\text{~the\ end.}

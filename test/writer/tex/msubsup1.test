@@ -1,0 +1,10 @@
+<<< native
+[ ESubsup (ESymbol Op "\8747") (ENumber "0") (ENumber "1")
+, EGrouped
+    [ ESuper (EIdentifier "\8519") (EIdentifier "x")
+    , ESymbol Ord "\8290"
+    , EGrouped [ ESymbol Ord "\8518" , EIdentifier "x" ]
+    ]
+]
+>>> tex
+\int_{0}^{1}{{\mathbb{e}}^{x}{\mathbb{d}x}}

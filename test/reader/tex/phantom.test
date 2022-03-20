@@ -1,0 +1,11 @@
+<<< tex
+\left(\phantom{\frac{1}{2}}\right)
+
+>>> native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EPhantom (EFraction NormalFrac (ENumber "1") (ENumber "2")))
+    ]
+]

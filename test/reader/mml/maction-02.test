@@ -1,0 +1,28 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <maction actiontype="tooltip">    <mrow>      <mfenced>        <mrow>          <mtable>            <mtr>              <mtd>                <mi>n</mi>
+              </mtd>
+            </mtr>             <mtr>              <mtd>                <mi>k</mi>
+              </mtd>
+            </mtr>           </mtable>         </mrow>       </mfenced>     </mrow>     <mrow>      <mfrac>        <mrow>          <mi>n</mi>
+          <mo form="postfix">!</mo>
+        </mrow>         <mrow>          <mi>k</mi>
+          <mo form="postfix">!</mo>
+          <mo fence="true">(</mo>
+          <mi>n</mi>
+          <mo>−</mo>
+          <mi>k</mi>
+          <mo fence="true">)</mo>
+          <mo form="postfix">!</mo>
+        </mrow>       </mfrac>     </mrow>   </maction> </math>
+>>> native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ EIdentifier "n" ] ] , [ [ EIdentifier "k" ] ] ])
+    ]
+]

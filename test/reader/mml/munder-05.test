@@ -1,0 +1,11 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mi mathvariant="normal">_ baseline _</mi>   <mo>=</mo>   <munder>    <mi mathvariant="normal">_ baseline _</mi>     <mphantom>      <mi mathvariant="normal">fail</mi>
+    </mphantom>   </munder> </math>
+>>> native
+[ EIdentifier "_ baseline _"
+, ESymbol Rel "="
+, EUnder
+    False (EIdentifier "_ baseline _") (EPhantom (EIdentifier "fail"))
+]

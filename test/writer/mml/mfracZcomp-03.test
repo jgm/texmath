@@ -1,0 +1,26 @@
+<<< native
+[ EText TextNormal "Inline, text style, normal line\160"
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ EMathOperator "tan" , ESymbol Ord "\8289" , EIdentifier "\952" ])
+    (ENumber "67")
+, EText
+    TextNormal ", numerator and denominator should render script size."
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext mathvariant="normal">Inline, text style, normal line </mtext>
+    <mfrac>
+      <mrow>
+        <mo>tan</mo>
+        <mi>&#8289;</mi>
+        <mi>θ</mi>
+      </mrow>
+      <mn>67</mn>
+    </mfrac>
+    <mtext mathvariant="normal">, numerator and denominator should render script size.</mtext>
+  </mrow>
+</math>

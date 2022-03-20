@@ -1,0 +1,7 @@
+<<< native
+[ EFraction NormalFrac (EIdentifier "x") (ENumber "4")
+, ESymbol Rel "="
+, EFraction NormalFrac (EIdentifier "x") (ENumber "4")
+]
+>>> tex
+\frac{x}{4} = \frac{x}{4}

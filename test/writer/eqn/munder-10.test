@@ -1,0 +1,14 @@
+<<< native
+[ EUnder False (EIdentifier "B") (EIdentifier "long under script")
+, ESymbol Rel "="
+, EUnder
+    False
+    (EGrouped
+       [ EPhantom (EText TextNormal "x")
+       , EIdentifier "B"
+       , EPhantom (EText TextNormal "x")
+       ])
+    (EIdentifier "long under script")
+]
+>>> eqn
+B from {long under script} = {hphantom {roman "x"} B hphantom {roman "x"}} from {long under script}

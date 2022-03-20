@@ -1,0 +1,107 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>LaTeX renders continued fractions </mtext> 
+  <mstyle displaystyle="true" scriptlevel="0">
+    <mfrac>
+      <mn>1</mn> 
+      <mrow>
+        <msqrt>
+          <mn>2</mn> 
+        </msqrt> 
+        <mo form="infix">+</mo> 
+        <mrow>
+          <mstyle displaystyle="true" scriptlevel="0">
+            <mfrac>
+              <mn>1</mn> 
+              <mrow>
+                <msqrt>
+                  <mn>3</mn> 
+                </msqrt> 
+                <mo form="infix">+</mo> 
+                <mrow>
+                  <mstyle displaystyle="true" scriptlevel="0">
+                    <mfrac>
+                      <mn>1</mn> 
+                      <mrow>
+                        <msqrt>
+                          <mn>4</mn> 
+                        </msqrt> 
+                        <mo form="infix">+</mo> 
+                        <mrow>
+                          <mstyle displaystyle="true" scriptlevel="0">
+                            <mfrac>
+                              <mn>1</mn> 
+                              <mrow>
+                                <msqrt>
+                                  <mn>5</mn> 
+                                </msqrt> 
+                                <mo form="infix">+</mo> 
+                                <mrow>
+                                  <mstyle displaystyle="true" scriptlevel="0">
+                                    <mfrac>
+                                      <mn>1</mn> 
+                                      <mrow>
+                                        <msqrt>
+                                          <mn>6</mn> 
+                                        </msqrt> 
+                                        <mo form="infix">+</mo> 
+                                        <mi>&#x02026;</mi> 
+                                      </mrow> 
+                                    </mfrac> 
+                                  </mstyle> 
+                                </mrow> 
+                              </mrow> 
+                            </mfrac> 
+                          </mstyle> 
+                        </mrow> 
+                      </mrow> 
+                    </mfrac> 
+                  </mstyle> 
+                </mrow> 
+              </mrow> 
+            </mfrac> 
+          </mstyle> 
+        </mrow> 
+      </mrow> 
+    </mfrac> 
+  </mstyle> 
+  <mtext> normal size at all levels in all contexts</mtext> </math>
+>>> native
+[ EText TextNormal "LaTeX renders continued fractions\160"
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped
+       [ ESqrt (ENumber "2")
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (ENumber "1")
+           (EGrouped
+              [ ESqrt (ENumber "3")
+              , ESymbol Bin "+"
+              , EFraction
+                  NormalFrac
+                  (ENumber "1")
+                  (EGrouped
+                     [ ESqrt (ENumber "4")
+                     , ESymbol Bin "+"
+                     , EFraction
+                         NormalFrac
+                         (ENumber "1")
+                         (EGrouped
+                            [ ESqrt (ENumber "5")
+                            , ESymbol Bin "+"
+                            , EFraction
+                                NormalFrac
+                                (ENumber "1")
+                                (EGrouped
+                                   [ ESqrt (ENumber "6") , ESymbol Bin "+" , EIdentifier "\8230" ])
+                            ])
+                     ])
+              ])
+       ])
+, EText TextNormal "\160normal size at all levels in all contexts"
+]

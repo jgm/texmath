@@ -1,0 +1,41 @@
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EStyled TextScript [ EIdentifier "A" ]
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EStyled TextScript [ EIdentifier "A" ]
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            ]
+        ]
+      ]
+    ]
+]

@@ -1,0 +1,65 @@
+<<< tex
+   \gamma_1\equiv \gamma_2 \iff \left\{ \begin{array}{l} \gamma_1(0)=\gamma_2(0)=p, \text{ and }\\ [1.0ex]
+   \left.\frac{\mathrm{d}}{\mathrm{d}t}\phi\circ\gamma_1(t)\right|_{t=0} = \left.\frac{\mathrm{d}}{\mathrm{d}t}\phi\circ\gamma_2(t)\right|_{t=0}
+   \end{array} \right.
+
+>>> native
+[ ESub (EIdentifier "\947") (ENumber "1")
+, ESymbol Rel "\8801"
+, ESub (EIdentifier "\947") (ENumber "2")
+, ESymbol Rel "\8660"
+, EDelimited
+    "{"
+    ""
+    [ Right
+        (EArray
+           [ AlignLeft ]
+           [ [ [ ESub (EIdentifier "\947") (ENumber "1")
+               , EDelimited "(" ")" [ Right (ENumber "0") ]
+               , ESymbol Rel "="
+               , ESub (EIdentifier "\947") (ENumber "2")
+               , EDelimited "(" ")" [ Right (ENumber "0") ]
+               , ESymbol Rel "="
+               , EIdentifier "p"
+               , ESymbol Pun ","
+               , EText TextNormal " and "
+               ]
+             ]
+           , [ [ ESub
+                   (EDelimited
+                      ""
+                      "|"
+                      [ Right
+                          (EFraction
+                             NormalFrac
+                             (EStyled TextNormal [ EIdentifier "d" ])
+                             (EGrouped
+                                [ EStyled TextNormal [ EIdentifier "d" ] , EIdentifier "t" ]))
+                      , Right (EIdentifier "\981")
+                      , Right (ESymbol Bin "\8728")
+                      , Right (ESub (EIdentifier "\947") (ENumber "1"))
+                      , Right (EDelimited "(" ")" [ Right (EIdentifier "t") ])
+                      ])
+                   (EGrouped [ EIdentifier "t" , ESymbol Rel "=" , ENumber "0" ])
+               , ESymbol Rel "="
+               , ESub
+                   (EDelimited
+                      ""
+                      "|"
+                      [ Right
+                          (EFraction
+                             NormalFrac
+                             (EStyled TextNormal [ EIdentifier "d" ])
+                             (EGrouped
+                                [ EStyled TextNormal [ EIdentifier "d" ] , EIdentifier "t" ]))
+                      , Right (EIdentifier "\981")
+                      , Right (ESymbol Bin "\8728")
+                      , Right (ESub (EIdentifier "\947") (ENumber "2"))
+                      , Right (EDelimited "(" ")" [ Right (EIdentifier "t") ])
+                      ])
+                   (EGrouped [ EIdentifier "t" , ESymbol Rel "=" , ENumber "0" ])
+               ]
+             ]
+           ])
+    ]
+]

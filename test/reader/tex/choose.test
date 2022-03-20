@@ -1,0 +1,22 @@
+<<< tex
+a \choose {b \brace c + 2}
+
+>>> native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EFraction
+           NoLineFrac
+           (EIdentifier "a")
+           (EDelimited
+              "{"
+              "}"
+              [ Right
+                  (EFraction
+                     NoLineFrac
+                     (EIdentifier "b")
+                     (EGrouped [ EIdentifier "c" , ESymbol Bin "+" , ENumber "2" ]))
+              ]))
+    ]
+]

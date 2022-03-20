@@ -1,0 +1,9 @@
+<<< native
+[ ESub (EIdentifier "D") (EIdentifier "y")
+, ESymbol Rel "="
+, ESub
+    (EIdentifier "D")
+    (EUnder False (EIdentifier "y") (EPhantom (EIdentifier "s")))
+]
+>>> tex
+D_{y} = D_{\underset{\phantom{s}}{y}}

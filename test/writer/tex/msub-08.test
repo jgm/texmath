@@ -1,0 +1,11 @@
+<<< native
+[ ESub (EIdentifier "A") (ESub (EIdentifier "B") (EIdentifier "C"))
+, ESymbol Rel "="
+, ESub
+    (EIdentifier "A")
+    (ESub
+       (EIdentifier "B")
+       (EUnder False (EIdentifier "C") (EPhantom (EIdentifier "D"))))
+]
+>>> tex
+A_{B_{C}} = A_{B_{\underset{\phantom{D}}{C}}}

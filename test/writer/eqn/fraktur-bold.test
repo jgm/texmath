@@ -1,0 +1,14 @@
+<<< native
+[ EStyled
+    TextBoldFraktur
+    [ EArray
+        [ AlignLeft ]
+        [ [ [ EText TextNormal "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ] ]
+        , [ [ EText TextNormal "abcdefghijklmnopqrstuvwxyz" ] ]
+        ]
+    ]
+]
+>>> eqn
+{matrix{
+lcol{ {roman "ABCDEFGHIJKLMNOPQRSTUVWXYZ"} above {roman "abcdefghijklmnopqrstuvwxyz"} }
+}}

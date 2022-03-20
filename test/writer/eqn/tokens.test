@@ -1,0 +1,12 @@
+<<< native
+[ EOver False (EIdentifier "\981") (ESymbol Accent "\771")
+, ESqrt (EIdentifier "\981")
+, EFraction NormalFrac (EIdentifier "\981") (EIdentifier "\958")
+, EFraction NormalFrac (EIdentifier "\981") (EIdentifier "\958")
+, EFraction NormalFrac (EIdentifier "\981") (EIdentifier "\958")
+, EDelimited "(" ")" [ Right (EIdentifier "\981") ]
+, EDelimited "(" ")" [ Right (EIdentifier "\981") ]
+, EIdentifier "\958"
+]
+>>> eqn
+phi to \[u0303] sqrt phi phi over xi phi over xi phi over xi left ( phi right ) left ( phi right ) xi

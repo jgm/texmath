@@ -1,0 +1,10 @@
+<<< native
+[ ESubsup (ESymbol Op "\8747") (ENumber "0") (ENumber "1")
+, EGrouped
+    [ ESuper (EIdentifier "\8519") (EIdentifier "x")
+    , ESymbol Ord "\8290"
+    , EGrouped [ ESymbol Ord "\8518" , EIdentifier "x" ]
+    ]
+]
+>>> eqn
+int sub 0 sup 1 {\[u2147] sup x  {\[u2146] x}}

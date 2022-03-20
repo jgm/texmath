@@ -1,0 +1,78 @@
+<<< native
+[ ESuper (EIdentifier "f") (ESymbol Accent "'")
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, ESymbol Rel "="
+, ESuper (EIdentifier "f") (ESymbol Ord "\8242")
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:sSup>
+      <m:e>
+        <m:r>
+          <m:t>f</m:t>
+        </m:r>
+      </m:e>
+      <m:sup>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>&#39;</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSup>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="(" />
+        <m:endChr m:val=")" />
+        <m:sepChr m:val="" />
+        <m:grow />
+      </m:dPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+    </m:d>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>=</m:t>
+    </m:r>
+    <m:sSup>
+      <m:e>
+        <m:r>
+          <m:t>f</m:t>
+        </m:r>
+      </m:e>
+      <m:sup>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>′</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSup>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="(" />
+        <m:endChr m:val=")" />
+        <m:sepChr m:val="" />
+        <m:grow />
+      </m:dPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+    </m:d>
+  </m:oMath>
+</m:oMathPara>

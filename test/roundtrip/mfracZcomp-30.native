@@ -1,0 +1,53 @@
+[ EGrouped
+    [ EIdentifier "HypergeomDist"
+    , ESymbol Ord "\8289"
+    , EDelimited
+        "("
+        ")"
+        [ Right
+            (EGrouped
+               [ EIdentifier "x"
+               , ESymbol Pun ";"
+               , EGrouped
+                   [ EIdentifier "M"
+                   , ESymbol Pun ","
+                   , EIdentifier "K"
+                   , ESymbol Pun ","
+                   , EIdentifier "n"
+                   ]
+               ])
+        ]
+    ]
+, ESymbol Rel "="
+, EGrouped
+    [ EUnderover
+        False
+        (ESymbol Op "\8721")
+        (EGrouped [ EIdentifier "k" , ESymbol Rel "=" , ENumber "0" ])
+        (EIdentifier "x")
+    , EFraction
+        NormalFrac
+        (EGrouped
+           [ EDelimited
+               "("
+               ")"
+               [ Right (EFraction NormalFrac (EIdentifier "K") (EIdentifier "k"))
+               ]
+           , ESymbol Ord "\8290"
+           , EDelimited
+               "("
+               ")"
+               [ Right
+                   (EFraction
+                      NormalFrac
+                      (EGrouped [ EIdentifier "M" , ESymbol Bin "-" , EIdentifier "K" ])
+                      (EGrouped [ EIdentifier "n" , ESymbol Bin "-" , EIdentifier "k" ]))
+               ]
+           ])
+        (EDelimited
+           "("
+           ")"
+           [ Right (EFraction NormalFrac (EIdentifier "M") (EIdentifier "n"))
+           ])
+    ]
+]

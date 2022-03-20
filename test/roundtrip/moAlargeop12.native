@@ -1,0 +1,20 @@
+[ ESymbol Op "\8747"
+, EIdentifier "x"
+, ESymbol Rel "="
+, ESymbol Op "\8747"
+, EIdentifier "x"
+, ESymbol Rel "="
+, ESymbol Op "\8747"
+, EIdentifier "x"
+, ESymbol Rel "="
+, EGrouped
+    [ ESymbol Op "\8747"
+    , EIdentifier "x"
+    , ESymbol Rel "="
+    , ESymbol Op "\8747"
+    , EIdentifier "x"
+    , ESymbol Rel "="
+    , ESymbol Op "\8747"
+    , EIdentifier "x"
+    ]
+]

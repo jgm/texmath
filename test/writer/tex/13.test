@@ -1,0 +1,57 @@
+<<< native
+[ ESub (EGrouped []) (EIdentifier "p")
+, ESub (EIdentifier "F") (EIdentifier "q")
+, EDelimited
+    "("
+    ")"
+    [ Right (ESub (EIdentifier "a") (ENumber "1"))
+    , Right (ESymbol Pun ",")
+    , Right (ESymbol Ord "\8230")
+    , Right (ESymbol Pun ",")
+    , Right (ESub (EIdentifier "a") (EIdentifier "p"))
+    , Right (ESymbol Pun ";")
+    , Right (ESub (EIdentifier "c") (ENumber "1"))
+    , Right (ESymbol Pun ",")
+    , Right (ESymbol Ord "\8230")
+    , Right (ESymbol Pun ",")
+    , Right (ESub (EIdentifier "c") (EIdentifier "q"))
+    , Right (ESymbol Pun ";")
+    , Right (EIdentifier "z")
+    ]
+, ESymbol Rel "="
+, EUnderover
+    True
+    (ESymbol Op "\8721")
+    (EGrouped [ EIdentifier "n" , ESymbol Rel "=" , ENumber "0" ])
+    (ESymbol Ord "\8734")
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESub
+           (EDelimited
+              "(" ")" [ Right (ESub (EIdentifier "a") (ENumber "1")) ])
+           (EIdentifier "n")
+       , ESymbol Ord "\8943"
+       , ESub
+           (EDelimited
+              "(" ")" [ Right (ESub (EIdentifier "a") (EIdentifier "p")) ])
+           (EIdentifier "n")
+       ])
+    (EGrouped
+       [ ESub
+           (EDelimited
+              "(" ")" [ Right (ESub (EIdentifier "c") (ENumber "1")) ])
+           (EIdentifier "n")
+       , ESymbol Ord "\8943"
+       , ESub
+           (EDelimited
+              "(" ")" [ Right (ESub (EIdentifier "c") (EIdentifier "q")) ])
+           (EIdentifier "n")
+       ])
+, EFraction
+    NormalFrac
+    (ESuper (EIdentifier "z") (EIdentifier "n"))
+    (EGrouped [ EIdentifier "n" , ESymbol Ord "!" ])
+]
+>>> tex
+{}_{p}F_{q}\left( a_{1},\ldots,a_{p};c_{1},\ldots,c_{q};z \right) = \sum_{n = 0}^{\infty}\frac{\left( a_{1} \right)_{n}\cdots\left( a_{p} \right)_{n}}{\left( c_{1} \right)_{n}\cdots\left( c_{q} \right)_{n}}\frac{z^{n}}{n!}

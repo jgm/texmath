@@ -1,0 +1,6 @@
+[ ESub (EIdentifier "V") (ESymbol Bin "+")
+, ESymbol Rel "="
+, ESub
+    (EIdentifier "V")
+    (ESub (ESymbol Bin "+") (EPhantom (EIdentifier "fail")))
+]

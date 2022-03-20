@@ -1,0 +1,11 @@
+<<< native
+[ EOver False (EIdentifier "x") (ESymbol Accent "\710")
+, ESymbol Rel "\8800"
+, EOver False (EIdentifier "x") (ESymbol Alpha "\710")
+, ESymbol Rel "="
+, EOver False (EIdentifier "x") (ESymbol Alpha "\710")
+, ESymbol Rel "="
+, EOver False (EIdentifier "x") (ESymbol Alpha "\710")
+]
+>>> tex
+\widehat{x} \neq \overset{\hat{}}{x} = \overset{\hat{}}{x} = \overset{\hat{}}{x}

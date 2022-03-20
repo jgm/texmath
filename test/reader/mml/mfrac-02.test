@@ -1,0 +1,24 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mfrac>    <mn>1</mn>     <mrow>      <mn>2</mn>
+      <mi>π</mi>
+    </mrow>   </mfrac>   <mo>=</mo>   <mfrac>    <mrow>      <mover>        <mn>1</mn>
+        <mphantom>
+          <mn>0</mn>
+        </mphantom>
+      </mover>
+    </mrow>     <mrow>      <mn>2</mn>
+      <mi>π</mi>
+    </mrow>   </mfrac> </math>
+>>> native
+[ EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped [ ENumber "2" , EIdentifier "\960" ])
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EOver False (ENumber "1") (EPhantom (ENumber "0")))
+    (EGrouped [ ENumber "2" , EIdentifier "\960" ])
+]

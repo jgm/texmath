@@ -1,0 +1,106 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mtable frame="solid" rowlines="solid" columnlines="solid" columnalign="right">    <mtr>      <mtd>        <mrow>          <mphantom>            <mtext>fail</mtext>
+          </mphantom>
+          <mi mathvariant="normal">H</mi>
+        </mrow>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mi mathvariant="normal">A</mi>
+        </mrow>
+      </mtd>
+    </mtr>     <mtr>      <mtd>        <mrow>          <mphantom>            <mtext>fail</mtext>
+          </mphantom>
+          <mi mathvariant="normal">T</mi>
+        </mrow>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mi mathvariant="normal">I</mi>
+        </mrow>
+      </mtd>
+    </mtr>     <mtr>      <mtd>        <mrow>          <mphantom>            <mtext>fail</mtext>
+          </mphantom>
+          <mi mathvariant="normal">U</mi>
+        </mrow>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mi mathvariant="normal">Y</mi>
+        </mrow>
+      </mtd>
+    </mtr>   </mtable>   <mo>=</mo>   <mtable frame="solid" rowlines="solid" columnlines="solid" columnalign="left">    <mtr>      <mtd>        <mrow>          <mi mathvariant="normal">A</mi>
+        </mrow>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mi mathvariant="normal">H</mi>
+          <mphantom>
+            <mtext>fail</mtext>
+          </mphantom>
+        </mrow>
+      </mtd>
+    </mtr>     <mtr>      <mtd>        <mrow>          <mi mathvariant="normal">I</mi>
+        </mrow>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mi mathvariant="normal">T</mi>
+          <mphantom>
+            <mtext>fail</mtext>
+          </mphantom>
+        </mrow>
+      </mtd>
+    </mtr>     <mtr>      <mtd>        <mrow>          <mi mathvariant="normal">Y</mi>
+        </mrow>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mi mathvariant="normal">U</mi>
+          <mphantom>
+            <mtext>fail</mtext>
+          </mphantom>
+        </mrow>
+      </mtd>
+    </mtr>   </mtable> </math>
+>>> native
+[ EArray
+    [ AlignRight , AlignRight ]
+    [ [ [ EGrouped
+            [ EPhantom (EText TextNormal "fail") , EIdentifier "H" ]
+        ]
+      , [ EIdentifier "A" ]
+      ]
+    , [ [ EGrouped
+            [ EPhantom (EText TextNormal "fail") , EIdentifier "T" ]
+        ]
+      , [ EIdentifier "I" ]
+      ]
+    , [ [ EGrouped
+            [ EPhantom (EText TextNormal "fail") , EIdentifier "U" ]
+        ]
+      , [ EIdentifier "Y" ]
+      ]
+    ]
+, ESymbol Rel "="
+, EArray
+    [ AlignLeft , AlignLeft ]
+    [ [ [ EIdentifier "A" ]
+      , [ EGrouped
+            [ EIdentifier "H" , EPhantom (EText TextNormal "fail") ]
+        ]
+      ]
+    , [ [ EIdentifier "I" ]
+      , [ EGrouped
+            [ EIdentifier "T" , EPhantom (EText TextNormal "fail") ]
+        ]
+      ]
+    , [ [ EIdentifier "Y" ]
+      , [ EGrouped
+            [ EIdentifier "U" , EPhantom (EText TextNormal "fail") ]
+        ]
+      ]
+    ]
+]

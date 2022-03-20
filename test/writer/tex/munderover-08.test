@@ -1,0 +1,18 @@
+<<< native
+[ EUnderover
+    False
+    (EUnderover
+       False
+       (EIdentifier "BASE")
+       (EIdentifier "under-1")
+       (EPhantom (EIdentifier "fail")))
+    (EIdentifier "under-2")
+    (EPhantom (EIdentifier "fail"))
+, ESymbol Rel "="
+, EUnder
+    False
+    (EUnder False (EIdentifier "BASE") (EIdentifier "under-1"))
+    (EIdentifier "under-2")
+]
+>>> tex
+\underset{under-2}{\overset{\phantom{fail}}{\underset{under-1}{\overset{\phantom{fail}}{BASE}}}} = \underset{under-2}{\underset{under-1}{BASE}}

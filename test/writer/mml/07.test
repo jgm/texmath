@@ -1,0 +1,58 @@
+<<< native
+[ EIdentifier "u"
+, ESymbol Ord "\8243"
+, ESymbol Bin "+"
+, EIdentifier "p"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, EIdentifier "u"
+, ESymbol Ord "\8242"
+, ESymbol Bin "+"
+, EIdentifier "q"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, EIdentifier "u"
+, ESymbol Rel "="
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, ESymbol Pun ","
+, ESpace (1 % 1)
+, EIdentifier "x"
+, ESymbol Rel ">"
+, EIdentifier "a"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>u</mi>
+    <mi>″</mi>
+    <mo>+</mo>
+    <mi>p</mi>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>x</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mi>u</mi>
+    <mi>′</mi>
+    <mo>+</mo>
+    <mi>q</mi>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>x</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mi>u</mi>
+    <mo>=</mo>
+    <mi>f</mi>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>x</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mo>,</mo>
+    <mspace width="1.0em" />
+    <mi>x</mi>
+    <mo>&gt;</mo>
+    <mi>a</mi>
+  </mrow>
+</math>

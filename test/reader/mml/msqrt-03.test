@@ -1,0 +1,54 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <msqrt>    <mtable frame="solid">      <mtr>        <mtd>          <mphantom>            <mi>A</mi>
+          </mphantom>
+        </mtd>         <mtd>          <mphantom>            <mi>A</mi>
+          </mphantom>
+        </mtd>         <mtd>          <mphantom>            <mi>A</mi>
+          </mphantom>
+        </mtd>         <mtd>          <mphantom>            <mi>A</mi>
+          </mphantom>
+        </mtd>         <mtd>          <mphantom>            <mi>A</mi>
+          </mphantom>
+        </mtd>         <mtd>          <mphantom>            <mi>A</mi>
+          </mphantom>
+        </mtd>       </mtr>       <mtr>        <mtd>          <mphantom>            <mi>A</mi>
+          </mphantom>
+        </mtd>         <mtd>          <mphantom>            <mi>A</mi>
+          </mphantom>
+        </mtd>         <mtd>          <mphantom>            <mi>A</mi>
+          </mphantom>
+        </mtd>         <mtd>          <mphantom>            <mi>A</mi>
+          </mphantom>
+        </mtd>         <mtd>          <mphantom>            <mi>A</mi>
+          </mphantom>
+        </mtd>         <mtd>          <mphantom>            <mi>A</mi>
+          </mphantom>
+        </mtd>       </mtr>     </mtable>   </msqrt> </math>
+>>> native
+[ ESqrt
+    (EArray
+       [ AlignCenter
+       , AlignCenter
+       , AlignCenter
+       , AlignCenter
+       , AlignCenter
+       , AlignCenter
+       ]
+       [ [ [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         ]
+       , [ [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         ]
+       ])
+]

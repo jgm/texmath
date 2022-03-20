@@ -1,0 +1,676 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "oacute" ] , [ ESymbol Ord "\243" ] ]
+    , [ [ EText TextNormal "Oacute" ] , [ ESymbol Ord "\211" ] ]
+    , [ [ EText TextNormal "oast" ] , [ ESymbol Bin "\8859" ] ]
+    , [ [ EText TextNormal "ocir" ] , [ ESymbol Bin "\8858" ] ]
+    , [ [ EText TextNormal "ocirc" ] , [ ESymbol Ord "\244" ] ]
+    , [ [ EText TextNormal "Ocirc" ] , [ ESymbol Ord "\212" ] ]
+    , [ [ EText TextNormal "ocy" ] , [ ESymbol Ord "\1086" ] ]
+    , [ [ EText TextNormal "Ocy" ] , [ ESymbol Ord "\1054" ] ]
+    , [ [ EText TextNormal "odash" ] , [ ESymbol Bin "\8861" ] ]
+    , [ [ EText TextNormal "odblac" ] , [ ESymbol Ord "\337" ] ]
+    , [ [ EText TextNormal "Odblac" ] , [ ESymbol Ord "\336" ] ]
+    , [ [ EText TextNormal "odiv" ] , [ ESymbol Bin "\10808" ] ]
+    , [ [ EText TextNormal "odot" ] , [ ESymbol Bin "\8857" ] ]
+    , [ [ EText TextNormal "odsold" ] , [ ESymbol Ord "\10684" ] ]
+    , [ [ EText TextNormal "oelig" ] , [ ESymbol Ord "\339" ] ]
+    , [ [ EText TextNormal "OElig" ] , [ ESymbol Ord "\338" ] ]
+    , [ [ EText TextNormal "ofcir" ] , [ ESymbol Ord "\10687" ] ]
+    , [ [ EText TextNormal "ofr" ] , [ ESymbol Alpha "\120108" ] ]
+    , [ [ EText TextNormal "Ofr" ] , [ ESymbol Alpha "\120082" ] ]
+    , [ [ EText TextNormal "ogon" ] , [ ESymbol Ord "\731" ] ]
+    , [ [ EText TextNormal "ograve" ] , [ ESymbol Ord "\242" ] ]
+    , [ [ EText TextNormal "Ograve" ] , [ ESymbol Ord "\210" ] ]
+    , [ [ EText TextNormal "ogt" ] , [ ESymbol Bin "\10689" ] ]
+    , [ [ EText TextNormal "ohbar" ] , [ ESymbol Bin "\10677" ] ]
+    , [ [ EText TextNormal "ohm" ] , [ ESymbol Alpha "\937" ] ]
+    , [ [ EText TextNormal "oint" ] , [ ESymbol Op "\8750" ] ]
+    , [ [ EText TextNormal "olarr" ] , [ ESymbol Ord "\8634" ] ]
+    , [ [ EText TextNormal "olcir" ] , [ ESymbol Ord "\10686" ] ]
+    , [ [ EText TextNormal "olcross" ] , [ ESymbol Ord "\10683" ] ]
+    , [ [ EText TextNormal "olt" ] , [ ESymbol Bin "\10688" ] ]
+    , [ [ EText TextNormal "omacr" ] , [ ESymbol Ord "\333" ] ]
+    , [ [ EText TextNormal "Omacr" ] , [ ESymbol Ord "\332" ] ]
+    , [ [ EText TextNormal "omega" ] , [ ESymbol Alpha "\969" ] ]
+    , [ [ EText TextNormal "Omega" ] , [ ESymbol Alpha "\937" ] ]
+    , [ [ EText TextNormal "omid" ] , [ ESymbol Bin "\10678" ] ]
+    , [ [ EText TextNormal "ominus" ] , [ ESymbol Bin "\8854" ] ]
+    , [ [ EText TextNormal "oopf" ] , [ ESymbol Alpha "\120160" ] ]
+    , [ [ EText TextNormal "Oopf" ] , [ ESymbol Alpha "\120134" ] ]
+    , [ [ EText TextNormal "opar" ] , [ ESymbol Bin "\10679" ] ]
+    , [ [ EText TextNormal "OpenCurlyDoubleQuote" ]
+      , [ ESymbol Open "\8220" ]
+      ]
+    , [ [ EText TextNormal "OpenCurlyQuote" ]
+      , [ ESymbol Open "\8216" ]
+      ]
+    , [ [ EText TextNormal "operp" ] , [ ESymbol Bin "\10681" ] ]
+    , [ [ EText TextNormal "oplus" ] , [ ESymbol Bin "\8853" ] ]
+    , [ [ EText TextNormal "or" ] , [ ESymbol Bin "\8744" ] ]
+    , [ [ EText TextNormal "Or" ] , [ ESymbol Bin "\10836" ] ]
+    , [ [ EText TextNormal "orarr" ] , [ ESymbol Ord "\8635" ] ]
+    , [ [ EText TextNormal "ord" ] , [ ESymbol Bin "\10845" ] ]
+    , [ [ EText TextNormal "order" ] , [ ESymbol Alpha "\8500" ] ]
+    , [ [ EText TextNormal "orderof" ] , [ ESymbol Alpha "\8500" ] ]
+    , [ [ EText TextNormal "ordf" ] , [ ESymbol Accent "\170" ] ]
+    , [ [ EText TextNormal "ordm" ] , [ ESymbol Accent "\186" ] ]
+    , [ [ EText TextNormal "origof" ] , [ ESymbol Rel "\8886" ] ]
+    , [ [ EText TextNormal "oror" ] , [ ESymbol Bin "\10838" ] ]
+    , [ [ EText TextNormal "orslope" ] , [ ESymbol Bin "\10839" ] ]
+    , [ [ EText TextNormal "orv" ] , [ ESymbol Bin "\10843" ] ]
+    , [ [ EText TextNormal "oS" ] , [ ESymbol Ord "\9416" ] ]
+    , [ [ EText TextNormal "oscr" ] , [ ESymbol Alpha "\8500" ] ]
+    , [ [ EText TextNormal "Oscr" ] , [ ESymbol Alpha "\119978" ] ]
+    , [ [ EText TextNormal "oslash" ] , [ ESymbol Ord "\248" ] ]
+    , [ [ EText TextNormal "Oslash" ] , [ ESymbol Ord "\216" ] ]
+    , [ [ EText TextNormal "osol" ] , [ ESymbol Bin "\8856" ] ]
+    , [ [ EText TextNormal "otilde" ] , [ ESymbol Ord "\245" ] ]
+    , [ [ EText TextNormal "Otilde" ] , [ ESymbol Ord "\213" ] ]
+    , [ [ EText TextNormal "otimes" ] , [ ESymbol Bin "\8855" ] ]
+    , [ [ EText TextNormal "Otimes" ] , [ ESymbol Bin "\10807" ] ]
+    , [ [ EText TextNormal "otimesas" ] , [ ESymbol Bin "\10806" ] ]
+    , [ [ EText TextNormal "ouml" ] , [ ESymbol Ord "\246" ] ]
+    , [ [ EText TextNormal "Ouml" ] , [ ESymbol Ord "\214" ] ]
+    , [ [ EText TextNormal "ovbar" ] , [ ESymbol Bin "\9021" ] ]
+    , [ [ EText TextNormal "OverBar" ] , [ ESymbol Accent "\8254" ] ]
+    , [ [ EText TextNormal "OverBrace" ] , [ ESymbol Accent "\9182" ] ]
+    , [ [ EText TextNormal "OverBracket" ]
+      , [ ESymbol Accent "\9140" ]
+      ]
+    , [ [ EText TextNormal "OverParenthesis" ]
+      , [ ESymbol Accent "\9180" ]
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">oacute</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ó</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Oacute</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ó</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">oast</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊛</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ocir</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊚</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ocirc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ô</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Ocirc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ô</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ocy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>о</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Ocy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>О</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">odash</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊝</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">odblac</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ő</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Odblac</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ő</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">odiv</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⨸</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">odot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊙</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">odsold</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦼</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">oelig</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>œ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">OElig</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Œ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ofcir</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦿</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ofr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔬</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Ofr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔒</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ogon</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˛</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ograve</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ò</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Ograve</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ò</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ogt</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⧁</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ohbar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⦵</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ohm</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>Ω</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">oint</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∮</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">olarr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>↺</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">olcir</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦾</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">olcross</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦻</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">olt</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⧀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">omacr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ō</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Omacr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ō</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">omega</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ω</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Omega</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>Ω</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">omid</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⦶</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ominus</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊖</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">oopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕠</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Oopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕆</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">opar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⦷</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">OpenCurlyDoubleQuote</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="prefix">“</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">OpenCurlyQuote</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="prefix">‘</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">operp</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⦹</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">oplus</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊕</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">or</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∨</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Or</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩔</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">orarr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>↻</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ord</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩝</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">order</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℴ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">orderof</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℴ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ordf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ª</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ordm</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>º</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">origof</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊶</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">oror</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩖</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">orslope</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩗</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">orv</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩛</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">oS</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ⓢ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">oscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℴ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Oscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝒪</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">oslash</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ø</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Oslash</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ø</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">osol</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊘</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">otilde</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>õ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Otilde</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Õ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">otimes</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊗</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Otimes</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⨷</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">otimesas</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⨶</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ouml</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ö</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Ouml</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ö</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ovbar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⌽</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">OverBar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>‾</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">OverBrace</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⏞</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">OverBracket</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⎴</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">OverParenthesis</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⏜</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

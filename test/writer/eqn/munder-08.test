@@ -1,0 +1,12 @@
+<<< native
+[ EUnder
+    False (EIdentifier "_ baseline _") (EIdentifier "under script")
+, ESymbol Rel "="
+, EUnder
+    False
+    (EOver
+       False (EIdentifier "_ baseline _") (EPhantom (EIdentifier "fail")))
+    (EIdentifier "under script")
+]
+>>> eqn
+{_ baseline _} from {under script} = {{_ baseline _} to {hphantom fail}} from {under script}

@@ -1,0 +1,33 @@
+<<< native
+[ EText TextNormal "Inline binomial, display style, no line\160"
+, EDelimited
+    "("
+    ")"
+    [ Right
+        (EFraction
+           NormalFrac
+           (EGrouped [ EIdentifier "n" , ESymbol Bin "-" , EIdentifier "k" ])
+           (EIdentifier "n"))
+    ]
+, EText TextNormal "\160the end."
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext mathvariant="normal">Inline binomial, display style, no line </mtext>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mfrac>
+        <mrow>
+          <mi>n</mi>
+          <mo>-</mo>
+          <mi>k</mi>
+        </mrow>
+        <mi>n</mi>
+      </mfrac>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mtext mathvariant="normal"> the end.</mtext>
+  </mrow>
+</math>

@@ -1,0 +1,34 @@
+<<< native
+[ EDelimited
+    "|"
+    ""
+    [ Right (EIdentifier "H")
+    , Left "|"
+    , Right (ESymbol Bin "+")
+    , Right
+        (EDelimited
+           "\10216"
+           "\10217"
+           [ Right (EIdentifier "H")
+           , Right (ESymbol Rel "\8739")
+           , Right (EIdentifier "H")
+           ])
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo stretchy="true" form="prefix">|</mo>
+    <mi>H</mi>
+    <mo stretchy="true" form="infix">|</mo>
+    <mo>+</mo>
+    <mrow>
+      <mo stretchy="true" form="prefix">⟨</mo>
+      <mi>H</mi>
+      <mo>∣</mo>
+      <mi>H</mi>
+      <mo stretchy="true" form="postfix">⟩</mo>
+    </mrow>
+  </mrow>
+</math>

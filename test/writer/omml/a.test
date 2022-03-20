@@ -1,0 +1,1556 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "aacute" ] , [ ESymbol Ord "\225" ] ]
+    , [ [ EText TextNormal "Aacute" ] , [ ESymbol Ord "\193" ] ]
+    , [ [ EText TextNormal "abreve" ] , [ ESymbol Ord "\259" ] ]
+    , [ [ EText TextNormal "Abreve" ] , [ ESymbol Ord "\258" ] ]
+    , [ [ EText TextNormal "ac" ] , [ ESymbol Bin "\8766" ] ]
+    , [ [ EText TextNormal "acd" ] , [ ESymbol Ord "\8767" ] ]
+    , [ [ EText TextNormal "acE" ] , [ EMathOperator "\8766\819" ] ]
+    , [ [ EText TextNormal "acirc" ] , [ ESymbol Ord "\226" ] ]
+    , [ [ EText TextNormal "Acirc" ] , [ ESymbol Ord "\194" ] ]
+    , [ [ EText TextNormal "acute" ] , [ ESymbol Accent "\180" ] ]
+    , [ [ EText TextNormal "acy" ] , [ ESymbol Ord "\1072" ] ]
+    , [ [ EText TextNormal "Acy" ] , [ ESymbol Ord "\1040" ] ]
+    , [ [ EText TextNormal "aelig" ] , [ ESymbol Ord "\230" ] ]
+    , [ [ EText TextNormal "AElig" ] , [ ESymbol Ord "\198" ] ]
+    , [ [ EText TextNormal "af" ] , [ ESymbol Ord "\8289" ] ]
+    , [ [ EText TextNormal "afr" ] , [ ESymbol Alpha "\120094" ] ]
+    , [ [ EText TextNormal "Afr" ] , [ ESymbol Alpha "\120068" ] ]
+    , [ [ EText TextNormal "agrave" ] , [ ESymbol Ord "\224" ] ]
+    , [ [ EText TextNormal "Agrave" ] , [ ESymbol Ord "\192" ] ]
+    , [ [ EText TextNormal "aleph" ] , [ ESymbol Alpha "\8501" ] ]
+    , [ [ EText TextNormal "alpha" ] , [ ESymbol Alpha "\945" ] ]
+    , [ [ EText TextNormal "amacr" ] , [ ESymbol Ord "\257" ] ]
+    , [ [ EText TextNormal "Amacr" ] , [ ESymbol Ord "\256" ] ]
+    , [ [ EText TextNormal "amalg" ] , [ ESymbol Bin "\10815" ] ]
+    , [ [ EText TextNormal "amp" ] , [ ESymbol Ord "&" ] ]
+    , [ [ EText TextNormal "and" ] , [ ESymbol Bin "\8743" ] ]
+    , [ [ EText TextNormal "And" ] , [ ESymbol Bin "\10835" ] ]
+    , [ [ EText TextNormal "andand" ] , [ ESymbol Bin "\10837" ] ]
+    , [ [ EText TextNormal "andd" ] , [ ESymbol Bin "\10844" ] ]
+    , [ [ EText TextNormal "andslope" ] , [ ESymbol Bin "\10840" ] ]
+    , [ [ EText TextNormal "andv" ] , [ ESymbol Bin "\10842" ] ]
+    , [ [ EText TextNormal "ang" ] , [ ESymbol Ord "\8736" ] ]
+    , [ [ EText TextNormal "ange" ] , [ ESymbol Ord "\10660" ] ]
+    , [ [ EText TextNormal "angle" ] , [ ESymbol Ord "\8736" ] ]
+    , [ [ EText TextNormal "angmsd" ] , [ ESymbol Ord "\8737" ] ]
+    , [ [ EText TextNormal "angmsdaa" ] , [ ESymbol Ord "\10664" ] ]
+    , [ [ EText TextNormal "angmsdab" ] , [ ESymbol Ord "\10665" ] ]
+    , [ [ EText TextNormal "angmsdac" ] , [ ESymbol Ord "\10666" ] ]
+    , [ [ EText TextNormal "angmsdad" ] , [ ESymbol Ord "\10667" ] ]
+    , [ [ EText TextNormal "angmsdae" ] , [ ESymbol Ord "\10668" ] ]
+    , [ [ EText TextNormal "angmsdaf" ] , [ ESymbol Ord "\10669" ] ]
+    , [ [ EText TextNormal "angmsdag" ] , [ ESymbol Ord "\10670" ] ]
+    , [ [ EText TextNormal "angmsdah" ] , [ ESymbol Ord "\10671" ] ]
+    , [ [ EText TextNormal "angrt" ] , [ ESymbol Ord "\8735" ] ]
+    , [ [ EText TextNormal "angrtvb" ] , [ ESymbol Ord "\8894" ] ]
+    , [ [ EText TextNormal "angrtvbd" ] , [ ESymbol Ord "\10653" ] ]
+    , [ [ EText TextNormal "angsph" ] , [ ESymbol Ord "\8738" ] ]
+    , [ [ EText TextNormal "angst" ] , [ ESymbol Ord "\197" ] ]
+    , [ [ EText TextNormal "angzarr" ] , [ ESymbol Ord "\9084" ] ]
+    , [ [ EText TextNormal "aogon" ] , [ ESymbol Ord "\261" ] ]
+    , [ [ EText TextNormal "Aogon" ] , [ ESymbol Ord "\260" ] ]
+    , [ [ EText TextNormal "aopf" ] , [ ESymbol Alpha "\120146" ] ]
+    , [ [ EText TextNormal "Aopf" ] , [ ESymbol Alpha "\120120" ] ]
+    , [ [ EText TextNormal "ap" ] , [ ESymbol Rel "\8776" ] ]
+    , [ [ EText TextNormal "apacir" ] , [ ESymbol Rel "\10863" ] ]
+    , [ [ EText TextNormal "ape" ] , [ ESymbol Rel "\8778" ] ]
+    , [ [ EText TextNormal "apE" ] , [ ESymbol Rel "\10864" ] ]
+    , [ [ EText TextNormal "apid" ] , [ ESymbol Rel "\8779" ] ]
+    , [ [ EText TextNormal "apos" ] , [ ESymbol Accent "'" ] ]
+    , [ [ EText TextNormal "ApplyFunction" ]
+      , [ ESymbol Ord "\8289" ]
+      ]
+    , [ [ EText TextNormal "approx" ] , [ ESymbol Rel "\8776" ] ]
+    , [ [ EText TextNormal "approxeq" ] , [ ESymbol Rel "\8778" ] ]
+    , [ [ EText TextNormal "aring" ] , [ ESymbol Ord "\229" ] ]
+    , [ [ EText TextNormal "Aring" ] , [ ESymbol Ord "\197" ] ]
+    , [ [ EText TextNormal "ascr" ] , [ ESymbol Alpha "\119990" ] ]
+    , [ [ EText TextNormal "Ascr" ] , [ ESymbol Alpha "\119964" ] ]
+    , [ [ EText TextNormal "Assign" ] , [ ESymbol Rel "\8788" ] ]
+    , [ [ EText TextNormal "ast" ] , [ ESymbol Ord "*" ] ]
+    , [ [ EText TextNormal "asymp" ] , [ ESymbol Rel "\8776" ] ]
+    , [ [ EText TextNormal "asympeq" ] , [ ESymbol Rel "\8781" ] ]
+    , [ [ EText TextNormal "atilde" ] , [ ESymbol Ord "\227" ] ]
+    , [ [ EText TextNormal "Atilde" ] , [ ESymbol Ord "\195" ] ]
+    , [ [ EText TextNormal "auml" ] , [ ESymbol Ord "\228" ] ]
+    , [ [ EText TextNormal "Auml" ] , [ ESymbol Ord "\196" ] ]
+    , [ [ EText TextNormal "awconint" ] , [ ESymbol Op "\8755" ] ]
+    , [ [ EText TextNormal "awint" ] , [ ESymbol Op "\10769" ] ]
+    ]
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:m>
+      <m:mPr>
+        <m:baseJc m:val="center" />
+        <m:plcHide m:val="1" />
+        <m:mcs>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="center" />
+              <m:count m:val="1" />
+            </m:mcPr>
+          </m:mc>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="center" />
+              <m:count m:val="1" />
+            </m:mcPr>
+          </m:mc>
+        </m:mcs>
+      </m:mPr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>aacute</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>á</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Aacute</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Á</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>abreve</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ă</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Abreve</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ă</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ac</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∾</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>acd</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∿</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>acE</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∾̳</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>acirc</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>â</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Acirc</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Â</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>acute</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>´</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>acy</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>а</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Acy</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>А</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>aelig</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>æ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>AElig</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Æ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>af</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>&#8289;</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>afr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝔞</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Afr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝔄</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>agrave</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>à</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Agrave</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>À</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>aleph</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ℵ</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>alpha</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>α</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>amacr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ā</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Amacr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ā</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>amalg</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⨿</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>amp</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>&amp;</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>and</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∧</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>And</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⩓</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>andand</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⩕</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>andd</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⩜</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>andslope</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⩘</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>andv</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⩚</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ang</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∠</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ange</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⦤</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>angle</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∠</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>angmsd</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∡</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>angmsdaa</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⦨</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>angmsdab</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⦩</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>angmsdac</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⦪</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>angmsdad</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⦫</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>angmsdae</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⦬</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>angmsdaf</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⦭</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>angmsdag</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⦮</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>angmsdah</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⦯</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>angrt</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∟</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>angrtvb</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⊾</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>angrtvbd</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⦝</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>angsph</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∢</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>angst</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Å</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>angzarr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⍼</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>aogon</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ą</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Aogon</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ą</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>aopf</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝕒</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Aopf</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝔸</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ap</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>≈</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>apacir</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⩯</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ape</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>≊</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>apE</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⩰</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>apid</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>≋</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>apos</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>&#39;</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ApplyFunction</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>&#8289;</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>approx</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>≈</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>approxeq</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>≊</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>aring</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>å</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Aring</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Å</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ascr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝒶</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ascr</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>𝒜</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Assign</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>≔</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ast</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>*</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>asymp</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>≈</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>asympeq</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>≍</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>atilde</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ã</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Atilde</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ã</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>auml</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>ä</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Auml</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Ä</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>awconint</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>∳</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>awint</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>⨑</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+    </m:m>
+  </m:oMath>
+</m:oMathPara>

@@ -1,0 +1,20 @@
+<<< native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EIdentifier "E"
+            , ESymbol Rel "="
+            , EGrouped
+                [ EIdentifier "m"
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "c") (ENumber "2")
+                ]
+            ]
+        ]
+      ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ {E = {m  c sup 2}} }
+}

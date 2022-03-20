@@ -1,0 +1,23 @@
+<<< native
+[ EUnderover
+    False
+    (EUnderover
+       False
+       (EIdentifier "BASE")
+       (EIdentifier "first under script")
+       (EIdentifier "second overscript"))
+    (EIdentifier "second one")
+    (EIdentifier "first overscript")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (EOver
+       False
+       (EUnder
+          False (EIdentifier "BASE") (EIdentifier "first under script"))
+       (EIdentifier "second overscript"))
+    (EIdentifier "second one")
+    (EIdentifier "first overscript")
+]
+>>> tex
+\underset{second\ one}{\overset{first\ overscript}{\underset{first\ under\ script}{\overset{second\ overscript}{BASE}}}} = \underset{second\ one}{\overset{first\ overscript}{\overset{second\ overscript}{\underset{first\ under\ script}{BASE}}}}

@@ -1,0 +1,9 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE math PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" "http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd">
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>&foo;</mn> 
+</math>
+>>> native
+[ ENumber "foo" ]

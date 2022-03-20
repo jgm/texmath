@@ -1,0 +1,95 @@
+<<< native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EStyled TextScript [ EIdentifier "A" ]
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EStyled TextScript [ EIdentifier "A" ]
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            ]
+        ]
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mi>A</mi>
+          <mo>+</mo>
+          <mi>A</mi>
+          <mo>+</mo>
+          <mi>A</mi>
+          <mo>+</mo>
+          <mi>A</mi>
+          <mo>+</mo>
+          <mi>A</mi>
+          <mo>+</mo>
+          <mi>A</mi>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mstyle mathvariant="script">
+            <mi>𝒜</mi>
+          </mstyle>
+          <mo>+</mo>
+          <mi>A</mi>
+          <mo>+</mo>
+          <mi>A</mi>
+          <mo>+</mo>
+          <mi>A</mi>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mstyle mathvariant="script">
+            <mi>𝒜</mi>
+          </mstyle>
+          <mo>+</mo>
+          <mi>A</mi>
+          <mo>+</mo>
+          <mi>A</mi>
+          <mo>+</mo>
+          <mi>A</mi>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

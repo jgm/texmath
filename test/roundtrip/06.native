@@ -1,0 +1,32 @@
+[ EUnderover
+    True
+    (ESymbol Op "\8721")
+    (EGrouped [ EIdentifier "m" , ESymbol Rel "=" , ENumber "1" ])
+    (ESymbol Ord "\8734")
+, EUnderover
+    True
+    (ESymbol Op "\8721")
+    (EGrouped [ EIdentifier "n" , ESymbol Rel "=" , ENumber "1" ])
+    (ESymbol Ord "\8734")
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESuper (EIdentifier "m") (ENumber "2")
+       , ESpace (1 % 6)
+       , EIdentifier "n"
+       ])
+    (EGrouped
+       [ ESuper (ENumber "3") (EIdentifier "m")
+       , EDelimited
+           "("
+           ")"
+           [ Right (EIdentifier "m")
+           , Right (ESpace (1 % 6))
+           , Right (ESuper (ENumber "3") (EIdentifier "n"))
+           , Right (ESymbol Bin "+")
+           , Right (EIdentifier "n")
+           , Right (ESpace (1 % 6))
+           , Right (ESuper (ENumber "3") (EIdentifier "m"))
+           ]
+       ])
+]

@@ -1,0 +1,9 @@
+[ EOver False (EIdentifier "\981") (ESymbol Accent "\771")
+, ESqrt (EIdentifier "\981")
+, EFraction NormalFrac (EIdentifier "\981") (EIdentifier "\958")
+, EFraction NormalFrac (EIdentifier "\981") (EIdentifier "\958")
+, EFraction NormalFrac (EIdentifier "\981") (EIdentifier "\958")
+, EDelimited "(" ")" [ Right (EIdentifier "\981") ]
+, EDelimited "(" ")" [ Right (EIdentifier "\981") ]
+, EIdentifier "\958"
+]

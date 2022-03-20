@@ -1,0 +1,30 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+            (ENumber "2")
+        ]
+      , [ EIdentifier "b" ]
+      , [ EIdentifier "c" ]
+      ]
+    , [ [ EIdentifier "x" ]
+      , [ EGrouped
+            [ EFraction NormalFrac (ENumber "2") (ENumber "3")
+            , EIdentifier "y"
+            , ESymbol Bin "+"
+            , ENumber "5"
+            ]
+        ]
+      , [ EIdentifier "z" ]
+      ]
+    , [ [ ENumber "1" ] , [ ENumber "2" ] , [ ENumber "5" ] ]
+    ]
+]
+>>> tex
+\begin{matrix}
+\frac{a + 1}{2} & b & c \\
+x & {\frac{2}{3}y + 5} & z \\
+1 & 2 & 5 \\
+\end{matrix}

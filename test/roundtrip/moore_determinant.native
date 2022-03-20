@@ -1,0 +1,51 @@
+[ EIdentifier "M"
+, ESymbol Rel "="
+, EDelimited
+    "["
+    "]"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter , AlignCenter , AlignCenter ]
+           [ [ [ ESub (EIdentifier "\945") (ENumber "1") ]
+             , [ ESubsup (EIdentifier "\945") (ENumber "1") (EIdentifier "q") ]
+             , [ ESymbol Ord "\8943" ]
+             , [ ESubsup
+                   (EIdentifier "\945")
+                   (ENumber "1")
+                   (ESuper
+                      (EIdentifier "q")
+                      (EGrouped [ EIdentifier "n" , ESymbol Bin "\8722" , ENumber "1" ]))
+               ]
+             ]
+           , [ [ ESub (EIdentifier "\945") (ENumber "2") ]
+             , [ ESubsup (EIdentifier "\945") (ENumber "2") (EIdentifier "q") ]
+             , [ ESymbol Ord "\8943" ]
+             , [ ESubsup
+                   (EIdentifier "\945")
+                   (ENumber "2")
+                   (ESuper
+                      (EIdentifier "q")
+                      (EGrouped [ EIdentifier "n" , ESymbol Bin "\8722" , ENumber "1" ]))
+               ]
+             ]
+           , [ [ ESymbol Ord "\8942" ]
+             , [ ESymbol Ord "\8942" ]
+             , [ ESymbol Rel "\8945" ]
+             , [ ESymbol Ord "\8942" ]
+             ]
+           , [ [ ESub (EIdentifier "\945") (EIdentifier "m") ]
+             , [ ESubsup
+                   (EIdentifier "\945") (EIdentifier "m") (EIdentifier "q")
+               ]
+             , [ ESymbol Ord "\8943" ]
+             , [ ESubsup
+                   (EIdentifier "\945")
+                   (EIdentifier "m")
+                   (ESuper
+                      (EIdentifier "q")
+                      (EGrouped [ EIdentifier "n" , ESymbol Bin "\8722" , ENumber "1" ]))
+               ]
+             ]
+           ])
+    ]
+]

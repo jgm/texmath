@@ -1,0 +1,17 @@
+<<< native
+[ ESuper (ENumber "2") (ENumber "5")
+, ESymbol Bin "+"
+, EIdentifier "x"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msup>
+      <mn>2</mn>
+      <mn>5</mn>
+    </msup>
+    <mo>+</mo>
+    <mi>x</mi>
+  </mrow>
+</math>

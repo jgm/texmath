@@ -1,0 +1,30 @@
+<<< native
+[ ESubsup (EIdentifier "p") (EIdentifier "x") (ENumber "3")
+, ESymbol Rel "="
+, EUnder
+    False
+    (ESubsup (EIdentifier "p") (EIdentifier "x") (ENumber "3"))
+    (EPhantom (EText TextNormal "l"))
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msubsup>
+      <mi>p</mi>
+      <mi>x</mi>
+      <mn>3</mn>
+    </msubsup>
+    <mo>=</mo>
+    <munder>
+      <msubsup>
+        <mi>p</mi>
+        <mi>x</mi>
+        <mn>3</mn>
+      </msubsup>
+      <mphantom>
+        <mtext mathvariant="normal">l</mtext>
+      </mphantom>
+    </munder>
+  </mrow>
+</math>

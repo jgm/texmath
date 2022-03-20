@@ -1,0 +1,15 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ EIdentifier "n" ] ] , [ [ EIdentifier "k" ] ] ])
+    ]
+]
+>>> tex
+\begin{pmatrix}
+n \\
+k \\
+\end{pmatrix}

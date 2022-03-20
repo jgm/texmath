@@ -1,0 +1,155 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "wcirc" ] , [ ESymbol Ord "\373" ] ]
+    , [ [ EText TextNormal "Wcirc" ] , [ ESymbol Ord "\372" ] ]
+    , [ [ EText TextNormal "wedbar" ] , [ ESymbol Bin "\10847" ] ]
+    , [ [ EText TextNormal "wedge" ] , [ ESymbol Bin "\8743" ] ]
+    , [ [ EText TextNormal "Wedge" ] , [ ESymbol Op "\8896" ] ]
+    , [ [ EText TextNormal "wedgeq" ] , [ ESymbol Rel "\8793" ] ]
+    , [ [ EText TextNormal "weierp" ] , [ ESymbol Alpha "\8472" ] ]
+    , [ [ EText TextNormal "wfr" ] , [ ESymbol Alpha "\120116" ] ]
+    , [ [ EText TextNormal "Wfr" ] , [ ESymbol Alpha "\120090" ] ]
+    , [ [ EText TextNormal "wopf" ] , [ ESymbol Alpha "\120168" ] ]
+    , [ [ EText TextNormal "Wopf" ] , [ ESymbol Alpha "\120142" ] ]
+    , [ [ EText TextNormal "wp" ] , [ ESymbol Alpha "\8472" ] ]
+    , [ [ EText TextNormal "wr" ] , [ ESymbol Bin "\8768" ] ]
+    , [ [ EText TextNormal "wreath" ] , [ ESymbol Bin "\8768" ] ]
+    , [ [ EText TextNormal "wscr" ] , [ ESymbol Alpha "\120012" ] ]
+    , [ [ EText TextNormal "Wscr" ] , [ ESymbol Alpha "\119986" ] ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">wcirc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ŵ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Wcirc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ŵ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">wedbar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩟</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">wedge</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∧</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Wedge</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">wedgeq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≙</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">weierp</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>℘</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">wfr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔴</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Wfr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔚</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">wopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕨</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Wopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕎</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">wp</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>℘</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">wr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">wreath</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">wscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝓌</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Wscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝒲</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

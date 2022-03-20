@@ -1,0 +1,12 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EIdentifier "a" ] , [ EIdentifier "b" ] ]
+    , [ [ EIdentifier "x" ] , [ EIdentifier "y" ] ]
+    ]
+]
+>>> tex
+\begin{matrix}
+a & b \\
+x & y \\
+\end{matrix}

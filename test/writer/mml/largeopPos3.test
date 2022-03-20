@@ -1,0 +1,29 @@
+<<< native
+[ EUnderover
+    False
+    (ESymbol Op "\8898")
+    (EGrouped [ EIdentifier "i" , ESymbol Rel "=" , ENumber "0" ])
+    (EIdentifier "\8734")
+, EGrouped
+    [ EIdentifier "A" , ESymbol Bin "\8745" , EIdentifier "B" ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <munderover>
+      <mo>⋂</mo>
+      <mrow>
+        <mi>i</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+      </mrow>
+      <mi>∞</mi>
+    </munderover>
+    <mrow>
+      <mi>A</mi>
+      <mo>∩</mo>
+      <mi>B</mi>
+    </mrow>
+  </mrow>
+</math>

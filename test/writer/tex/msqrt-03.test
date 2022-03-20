@@ -1,0 +1,31 @@
+<<< native
+[ ESqrt
+    (EArray
+       [ AlignCenter
+       , AlignCenter
+       , AlignCenter
+       , AlignCenter
+       , AlignCenter
+       , AlignCenter
+       ]
+       [ [ [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         ]
+       , [ [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         ]
+       ])
+]
+>>> tex
+\sqrt{\begin{matrix}
+\phantom{A} & \phantom{A} & \phantom{A} & \phantom{A} & \phantom{A} & \phantom{A} \\
+\phantom{A} & \phantom{A} & \phantom{A} & \phantom{A} & \phantom{A} & \phantom{A} \\
+\end{matrix}}

@@ -1,0 +1,32 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>(</mo> 
+    <mfrac>
+      <mi>y</mi> 
+      <mi>z</mi> 
+    </mfrac> 
+    <mo minsize="2cm">)</mo> 
+    <mo>+</mo> 
+    <mo maxsize=".9">(</mo> 
+    <mfrac>
+      <mi>y</mi> 
+      <mi>z</mi> 
+    </mfrac> 
+    <mo maxsize="infinity">)</mo> 
+  </mrow> </math>
+>>> native
+[ EDelimited
+    "("
+    ")"
+    [ Right (EFraction NormalFrac (EIdentifier "y") (EIdentifier "z"))
+    ]
+, ESymbol Bin "+"
+, EDelimited
+    "("
+    ")"
+    [ Right (EFraction NormalFrac (EIdentifier "y") (EIdentifier "z"))
+    ]
+]

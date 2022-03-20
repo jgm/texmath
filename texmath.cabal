@@ -42,17 +42,14 @@ Extra-source-files:  README.markdown
                      man/Makefile
                      man/man1/texmath.1
                      cgi/texmath.html
-                     tests/src/*.mml
-                     tests/src/*.tex
-                     tests/src/*.omml
-                     tests/readers/mml/*.native
-                     tests/readers/mml/*.error
-                     tests/readers/tex/*.native
-                     tests/readers/omml/*.native
-                     tests/writers/*.mml
-                     tests/writers/*.tex
-                     tests/writers/*.omml
-                     tests/writers/*.eqn
+                     test/writer/mml/*.test
+                     test/writer/omml/*.test
+                     test/writer/tex/*.test
+                     test/writer/eqn/*.test
+                     test/reader/mml/*.test
+                     test/reader/tex/*.test
+                     test/reader/omml/*.test
+                     test/roundtrip/*.native
                      lib/totexmath/unicodetotex.hs
                      lib/totexmath/unimathsymbols.txt
                      lib/totexmath/Makefile
@@ -128,6 +125,7 @@ Executable texmath
                          aeson,
                          bytestring,
                          text,
+                         pretty-show,
                          network-uri >= 2.6
     else
       Buildable:         False
@@ -135,16 +133,17 @@ Executable texmath
 Test-Suite test-texmath
     Type:                exitcode-stdio-1.0
     Main-Is:             test-texmath.hs
-    Hs-Source-Dirs:      tests
+    Hs-Source-Dirs:      test
     Build-Depends:       base >= 4.11 && < 5,
-                         directory,
-                         filepath,
                          texmath,
-                         xml,
-                         utf8-string,
+                         directory > 1.2.5,
+                         filepath,
+                         pretty-show,
                          bytestring,
-                         process,
-                         temporary,
-                         text
+                         xml,
+                         text,
+                         tasty,
+                         tasty-golden,
+                         tagged
     Default-Language:    Haskell2010
-    Ghc-Options:         -Wall
+    Ghc-Options:         -Wall -threaded

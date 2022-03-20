@@ -1,0 +1,16 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <apply>
+    <plus></plus> 
+    <ci>a</ci> 
+    <apply>
+      <minus></minus> 
+      <ci>b</ci> 
+      <ci>c</ci> 
+    </apply> 
+  </apply> 
+</math>
+>>> native
+Unexpected element apply line 4

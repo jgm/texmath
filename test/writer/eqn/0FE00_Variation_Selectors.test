@@ -1,0 +1,27 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [] , [ EText TextNormal "FE0" ] ]
+    , [ [ EText TextNormal "0" ] , [ ESymbol Accent "\65024" ] ]
+    , [ [ EText TextNormal "1" ] , [ ESymbol Ord "\65025" ] ]
+    , [ [ EText TextNormal "2" ] , [ ESymbol Ord "\65026" ] ]
+    , [ [ EText TextNormal "3" ] , [ ESymbol Ord "\65027" ] ]
+    , [ [ EText TextNormal "4" ] , [ ESymbol Ord "\65028" ] ]
+    , [ [ EText TextNormal "5" ] , [ ESymbol Ord "\65029" ] ]
+    , [ [ EText TextNormal "6" ] , [ ESymbol Ord "\65030" ] ]
+    , [ [ EText TextNormal "7" ] , [ ESymbol Ord "\65031" ] ]
+    , [ [ EText TextNormal "8" ] , [ ESymbol Ord "\65032" ] ]
+    , [ [ EText TextNormal "9" ] , [ ESymbol Ord "\65033" ] ]
+    , [ [ EText TextNormal "A" ] , [ ESymbol Ord "\65034" ] ]
+    , [ [ EText TextNormal "B" ] , [ ESymbol Ord "\65035" ] ]
+    , [ [ EText TextNormal "C" ] , [ ESymbol Ord "\65036" ] ]
+    , [ [ EText TextNormal "D" ] , [ ESymbol Ord "\65037" ] ]
+    , [ [ EText TextNormal "E" ] , [ ESymbol Ord "\65038" ] ]
+    , [ [ EText TextNormal "F" ] , [ ESymbol Ord "\65039" ] ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ {} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
+ccol{ {roman "FE0"} above \[uFE00] above \[uFE01] above \[uFE02] above \[uFE03] above \[uFE04] above \[uFE05] above \[uFE06] above \[uFE07] above \[uFE08] above \[uFE09] above \[uFE0A] above \[uFE0B] above \[uFE0C] above \[uFE0D] above \[uFE0E] above \[uFE0F] }
+}

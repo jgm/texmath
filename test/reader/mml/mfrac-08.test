@@ -1,0 +1,35 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mfrac>    <mrow>      <mphantom>        <mi>a</mi>
+      </mphantom>
+      <mn>12</mn>
+      <mphantom>
+        <mi>a</mi>
+      </mphantom>
+    </mrow>     <mn>13</mn>   </mfrac>   <mo>=</mo>   <mfrac>    <mn>12</mn>     <mrow>      <mphantom>        <mi>a</mi>
+      </mphantom>
+      <mn>13</mn>
+      <mphantom>
+        <mi>a</mi>
+      </mphantom>
+    </mrow>   </mfrac> </math>
+>>> native
+[ EFraction
+    NormalFrac
+    (EGrouped
+       [ EPhantom (EIdentifier "a")
+       , ENumber "12"
+       , EPhantom (EIdentifier "a")
+       ])
+    (ENumber "13")
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (ENumber "12")
+    (EGrouped
+       [ EPhantom (EIdentifier "a")
+       , ENumber "13"
+       , EPhantom (EIdentifier "a")
+       ])
+]

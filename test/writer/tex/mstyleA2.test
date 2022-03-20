@@ -1,0 +1,7 @@
+<<< native
+[ EStyled
+    TextBoldItalic
+    [ EGrouped [ ENumber "2" , ESymbol Bin "+" , EIdentifier "x" ] ]
+]
+>>> tex
+\mathbf{2 + x}

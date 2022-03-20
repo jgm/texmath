@@ -1,0 +1,30 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <ms>dog</ms> 
+    <mo>+</mo> 
+    <ms fontweight="bold">cat</ms> 
+    <mo>+</mo> 
+    <ms fontsize="36pt">dog</ms> 
+    <mo>+</mo> 
+    <ms fontstyle="normal">cat</ms> 
+    <mo>+</mo> 
+    <ms color="#9c0fff">pig</ms> 
+    <mo>+</mo> 
+    <ms fontfamily="Helvetica">goat</ms> 
+  </mrow> </math>
+>>> native
+[ EText TextNormal "\8220dog\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220cat\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220dog\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220cat\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220pig\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220goat\8221"
+]

@@ -1,0 +1,582 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable columnwidth="auto 9em fit" rowspacing="3ex" columnalign="left">
+    <mtr>
+      <mtd>
+        <mn>1</mn> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mi>x</mi> 
+          <mo>+</mo> 
+          <mi>y</mi> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>2</mn> 
+          </msup> 
+          <mo>+</mo> 
+          <mrow>
+            <mn>2</mn> 
+            <mo>&#x2062;</mo> 
+            <mi>y</mi> 
+            <mo>&#x2062;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+          <mo>+</mo> 
+          <msup>
+            <mi>y</mi> 
+            <mn>2</mn> 
+          </msup> 
+        </mrow> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mrow>
+          <mi>x</mi> 
+          <mo>+</mo> 
+          <mi>y</mi> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>2</mn> 
+          </msup> 
+          <mo>+</mo> 
+          <mrow>
+            <mn>2</mn> 
+            <mo>&#x2062;</mo> 
+            <mi>y</mi> 
+            <mo>&#x2062;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+          <mo>+</mo> 
+          <msup>
+            <mi>y</mi> 
+            <mn>2</mn> 
+          </msup> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>3</mn> 
+          </msup> 
+          <mo>+</mo> 
+          <mrow>
+            <mn>3</mn> 
+            <mo>&#x2062;</mo> 
+            <mi>y</mi> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>x</mi> 
+              <mn>2</mn> 
+            </msup> 
+          </mrow> 
+          <mo>+</mo> 
+          <mrow>
+            <mn>3</mn> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>y</mi> 
+              <mn>2</mn> 
+            </msup> 
+            <mo>&#x2062;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+          <mo>+</mo> 
+          <msup>
+            <mi>y</mi> 
+            <mn>3</mn> 
+          </msup> 
+        </mrow> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>2</mn> 
+          </msup> 
+          <mo>+</mo> 
+          <mrow>
+            <mn>2</mn> 
+            <mo>&#x2062;</mo> 
+            <mi>y</mi> 
+            <mo>&#x2062;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+          <mo>+</mo> 
+          <msup>
+            <mi>y</mi> 
+            <mn>2</mn> 
+          </msup> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>3</mn> 
+          </msup> 
+          <mo>+</mo> 
+          <mrow>
+            <mn>3</mn> 
+            <mo>&#x2062;</mo> 
+            <mi>y</mi> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>x</mi> 
+              <mn>2</mn> 
+            </msup> 
+          </mrow> 
+          <mo>+</mo> 
+          <mrow>
+            <mn>3</mn> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>y</mi> 
+              <mn>2</mn> 
+            </msup> 
+            <mo>&#x2062;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+          <mo>+</mo> 
+          <msup>
+            <mi>y</mi> 
+            <mn>3</mn> 
+          </msup> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>4</mn> 
+          </msup> 
+          <mo>+</mo> 
+          <mrow>
+            <mn>4</mn> 
+            <mo>&#x2062;</mo> 
+            <mi>y</mi> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>x</mi> 
+              <mn>3</mn> 
+            </msup> 
+          </mrow> 
+          <mo>+</mo> 
+          <mrow>
+            <mn>6</mn> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>y</mi> 
+              <mn>2</mn> 
+            </msup> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>x</mi> 
+              <mn>2</mn> 
+            </msup> 
+          </mrow> 
+          <mo>+</mo> 
+          <mrow>
+            <mn>4</mn> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>y</mi> 
+              <mn>3</mn> 
+            </msup> 
+            <mo>&#x2062;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+          <mo>+</mo> 
+          <msup>
+            <mi>y</mi> 
+            <mn>4</mn> 
+          </msup> 
+        </mrow> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>3</mn> 
+          </msup> 
+          <mo>+</mo> 
+          <mrow>
+            <mn>3</mn> 
+            <mo>&#x2062;</mo> 
+            <mi>y</mi> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>x</mi> 
+              <mn>2</mn> 
+            </msup> 
+          </mrow> 
+          <mo>+</mo> 
+          <mrow>
+            <mn>3</mn> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>y</mi> 
+              <mn>2</mn> 
+            </msup> 
+            <mo>&#x2062;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+          <mo>+</mo> 
+          <msup>
+            <mi>y</mi> 
+            <mn>3</mn> 
+          </msup> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>4</mn> 
+          </msup> 
+          <mo>+</mo> 
+          <mrow>
+            <mn>4</mn> 
+            <mo>&#x2062;</mo> 
+            <mi>y</mi> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>x</mi> 
+              <mn>3</mn> 
+            </msup> 
+          </mrow> 
+          <mo>+</mo> 
+          <mrow>
+            <mn>6</mn> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>y</mi> 
+              <mn>2</mn> 
+            </msup> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>x</mi> 
+              <mn>2</mn> 
+            </msup> 
+          </mrow> 
+          <mo>+</mo> 
+          <mrow>
+            <mn>4</mn> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>y</mi> 
+              <mn>3</mn> 
+            </msup> 
+            <mo>&#x2062;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+          <mo>+</mo> 
+          <msup>
+            <mi>y</mi> 
+            <mn>4</mn> 
+          </msup> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>5</mn> 
+          </msup> 
+          <mo>+</mo> 
+          <mrow>
+            <mn>5</mn> 
+            <mo>&#x2062;</mo> 
+            <mi>y</mi> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>x</mi> 
+              <mn>4</mn> 
+            </msup> 
+          </mrow> 
+          <mo>+</mo> 
+          <mrow>
+            <mn>10</mn> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>y</mi> 
+              <mn>2</mn> 
+            </msup> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>x</mi> 
+              <mn>3</mn> 
+            </msup> 
+          </mrow> 
+          <mo>+</mo> 
+          <mrow>
+            <mn>10</mn> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>y</mi> 
+              <mn>3</mn> 
+            </msup> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>x</mi> 
+              <mn>2</mn> 
+            </msup> 
+          </mrow> 
+          <mo>+</mo> 
+          <mrow>
+            <mn>5</mn> 
+            <mo>&#x2062;</mo> 
+            <msup>
+              <mi>y</mi> 
+              <mn>4</mn> 
+            </msup> 
+            <mo>&#x2062;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+          <mo>+</mo> 
+          <msup>
+            <mi>y</mi> 
+            <mn>5</mn> 
+          </msup> 
+        </mrow> 
+      </mtd> 
+    </mtr> 
+  </mtable> </math>
+>>> native
+[ EArray
+    [ AlignLeft , AlignLeft , AlignLeft ]
+    [ [ [ ENumber "1" ]
+      , [ EGrouped
+            [ EIdentifier "x" , ESymbol Bin "+" , EIdentifier "y" ]
+        ]
+      , [ EGrouped
+            [ ESuper (EIdentifier "x") (ENumber "2")
+            , ESymbol Bin "+"
+            , EGrouped
+                [ ENumber "2"
+                , ESymbol Ord "\8290"
+                , EIdentifier "y"
+                , ESymbol Ord "\8290"
+                , EIdentifier "x"
+                ]
+            , ESymbol Bin "+"
+            , ESuper (EIdentifier "y") (ENumber "2")
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "x" , ESymbol Bin "+" , EIdentifier "y" ]
+        ]
+      , [ EGrouped
+            [ ESuper (EIdentifier "x") (ENumber "2")
+            , ESymbol Bin "+"
+            , EGrouped
+                [ ENumber "2"
+                , ESymbol Ord "\8290"
+                , EIdentifier "y"
+                , ESymbol Ord "\8290"
+                , EIdentifier "x"
+                ]
+            , ESymbol Bin "+"
+            , ESuper (EIdentifier "y") (ENumber "2")
+            ]
+        ]
+      , [ EGrouped
+            [ ESuper (EIdentifier "x") (ENumber "3")
+            , ESymbol Bin "+"
+            , EGrouped
+                [ ENumber "3"
+                , ESymbol Ord "\8290"
+                , EIdentifier "y"
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "x") (ENumber "2")
+                ]
+            , ESymbol Bin "+"
+            , EGrouped
+                [ ENumber "3"
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "y") (ENumber "2")
+                , ESymbol Ord "\8290"
+                , EIdentifier "x"
+                ]
+            , ESymbol Bin "+"
+            , ESuper (EIdentifier "y") (ENumber "3")
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ ESuper (EIdentifier "x") (ENumber "2")
+            , ESymbol Bin "+"
+            , EGrouped
+                [ ENumber "2"
+                , ESymbol Ord "\8290"
+                , EIdentifier "y"
+                , ESymbol Ord "\8290"
+                , EIdentifier "x"
+                ]
+            , ESymbol Bin "+"
+            , ESuper (EIdentifier "y") (ENumber "2")
+            ]
+        ]
+      , [ EGrouped
+            [ ESuper (EIdentifier "x") (ENumber "3")
+            , ESymbol Bin "+"
+            , EGrouped
+                [ ENumber "3"
+                , ESymbol Ord "\8290"
+                , EIdentifier "y"
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "x") (ENumber "2")
+                ]
+            , ESymbol Bin "+"
+            , EGrouped
+                [ ENumber "3"
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "y") (ENumber "2")
+                , ESymbol Ord "\8290"
+                , EIdentifier "x"
+                ]
+            , ESymbol Bin "+"
+            , ESuper (EIdentifier "y") (ENumber "3")
+            ]
+        ]
+      , [ EGrouped
+            [ ESuper (EIdentifier "x") (ENumber "4")
+            , ESymbol Bin "+"
+            , EGrouped
+                [ ENumber "4"
+                , ESymbol Ord "\8290"
+                , EIdentifier "y"
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "x") (ENumber "3")
+                ]
+            , ESymbol Bin "+"
+            , EGrouped
+                [ ENumber "6"
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "y") (ENumber "2")
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "x") (ENumber "2")
+                ]
+            , ESymbol Bin "+"
+            , EGrouped
+                [ ENumber "4"
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "y") (ENumber "3")
+                , ESymbol Ord "\8290"
+                , EIdentifier "x"
+                ]
+            , ESymbol Bin "+"
+            , ESuper (EIdentifier "y") (ENumber "4")
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ ESuper (EIdentifier "x") (ENumber "3")
+            , ESymbol Bin "+"
+            , EGrouped
+                [ ENumber "3"
+                , ESymbol Ord "\8290"
+                , EIdentifier "y"
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "x") (ENumber "2")
+                ]
+            , ESymbol Bin "+"
+            , EGrouped
+                [ ENumber "3"
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "y") (ENumber "2")
+                , ESymbol Ord "\8290"
+                , EIdentifier "x"
+                ]
+            , ESymbol Bin "+"
+            , ESuper (EIdentifier "y") (ENumber "3")
+            ]
+        ]
+      , [ EGrouped
+            [ ESuper (EIdentifier "x") (ENumber "4")
+            , ESymbol Bin "+"
+            , EGrouped
+                [ ENumber "4"
+                , ESymbol Ord "\8290"
+                , EIdentifier "y"
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "x") (ENumber "3")
+                ]
+            , ESymbol Bin "+"
+            , EGrouped
+                [ ENumber "6"
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "y") (ENumber "2")
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "x") (ENumber "2")
+                ]
+            , ESymbol Bin "+"
+            , EGrouped
+                [ ENumber "4"
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "y") (ENumber "3")
+                , ESymbol Ord "\8290"
+                , EIdentifier "x"
+                ]
+            , ESymbol Bin "+"
+            , ESuper (EIdentifier "y") (ENumber "4")
+            ]
+        ]
+      , [ EGrouped
+            [ ESuper (EIdentifier "x") (ENumber "5")
+            , ESymbol Bin "+"
+            , EGrouped
+                [ ENumber "5"
+                , ESymbol Ord "\8290"
+                , EIdentifier "y"
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "x") (ENumber "4")
+                ]
+            , ESymbol Bin "+"
+            , EGrouped
+                [ ENumber "10"
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "y") (ENumber "2")
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "x") (ENumber "3")
+                ]
+            , ESymbol Bin "+"
+            , EGrouped
+                [ ENumber "10"
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "y") (ENumber "3")
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "x") (ENumber "2")
+                ]
+            , ESymbol Bin "+"
+            , EGrouped
+                [ ENumber "5"
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "y") (ENumber "4")
+                , ESymbol Ord "\8290"
+                , EIdentifier "x"
+                ]
+            , ESymbol Bin "+"
+            , ESuper (EIdentifier "y") (ENumber "5")
+            ]
+        ]
+      ]
+    ]
+]

@@ -1,0 +1,23 @@
+<<< native
+[ EUnderover
+    False (ESymbol Op "\8721") (EIdentifier "x") (ENumber "0")
+, ESymbol Rel "="
+, EUnderover
+    False (ESymbol Op "\8721") (EIdentifier "x") (ENumber "0")
+, ESymbol Rel "="
+, EUnderover
+    False (ESymbol Op "\8721") (EIdentifier "x") (ENumber "0")
+, ESymbol Rel "="
+, EGrouped
+    [ EUnderover
+        False (ESymbol Op "\8721") (EIdentifier "x") (ENumber "0")
+    , ESymbol Rel "="
+    , EUnderover
+        False (ESymbol Op "\8721") (EIdentifier "x") (ENumber "0")
+    , ESymbol Rel "="
+    , EUnderover
+        False (ESymbol Op "\8721") (EIdentifier "x") (ENumber "0")
+    ]
+]
+>>> eqn
+sum from x to 0 = sum from x to 0 = sum from x to 0 = {sum from x to 0 = sum from x to 0 = sum from x to 0}

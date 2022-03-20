@@ -1,0 +1,15 @@
+<<< native
+[ EIdentifier "a"
+, ESymbol Bin "+"
+, EIdentifier "b"
+, ESymbol Bin "+"
+, EIdentifier "c"
+, ESymbol Bin "+"
+, EIdentifier "f"
+, ESymbol Bin "+"
+, EIdentifier "\915"
+, ESymbol Bin "+"
+, EIdentifier "d"
+]
+>>> tex
+a + b + c + f + \Gamma + d

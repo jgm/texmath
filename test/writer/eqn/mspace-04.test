@@ -1,0 +1,16 @@
+<<< native
+[ EBoxed (ENumber "0")
+, EBoxed (ENumber "1")
+, ESpace (1 % 9)
+, EBoxed (ENumber "2")
+, ESpace (1 % 6)
+, EBoxed (ENumber "3")
+, ESpace (2 % 9)
+, EBoxed (ENumber "4")
+, ESpace (5 % 18)
+, EBoxed (ENumber "5")
+, ESpace (1 % 3)
+, EBoxed (ENumber "6")
+]
+>>> eqn
+0 1 ^ 2 ^ 3 ~ 4 ~ 5 fwd 33 6

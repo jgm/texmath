@@ -1,0 +1,132 @@
+<<< native
+[ EDelimited
+    "\10216"
+    "\10217"
+    [ Right (EIdentifier "\968")
+    , Right
+        (EDelimited
+           "|"
+           "|"
+           [ Right (EStyled TextScript [ EIdentifier "T" ])
+           , Right
+               (EDelimited
+                  "{"
+                  "}"
+                  [ Right
+                      (EFraction
+                         NormalFrac
+                         (EIdentifier "\948")
+                         (EGrouped [ EIdentifier "\948" , EIdentifier "\981" ]))
+                  , Right (EIdentifier "F")
+                  , Right (EDelimited "[" "]" [ Right (EIdentifier "\981") ])
+                  ])
+           ])
+    , Right (EIdentifier "\968")
+    ]
+, ESymbol Rel "="
+, ESymbol Bin "\8722"
+, EStyled TextNormal [ EIdentifier "i" ]
+, EDelimited
+    "\10216"
+    "\10217"
+    [ Right (EIdentifier "\968")
+    , Right
+        (EDelimited
+           "|"
+           "|"
+           [ Right (EStyled TextScript [ EIdentifier "T" ])
+           , Right
+               (EDelimited
+                  "{"
+                  "}"
+                  [ Right (EIdentifier "F")
+                  , Right (EDelimited "[" "]" [ Right (EIdentifier "\981") ])
+                  , Right
+                      (EFraction
+                         NormalFrac
+                         (EIdentifier "\948")
+                         (EGrouped [ EIdentifier "\948" , EIdentifier "\981" ]))
+                  , Right (EIdentifier "S")
+                  , Right (EDelimited "[" "]" [ Right (EIdentifier "\981") ])
+                  ])
+           ])
+    , Right (EIdentifier "\968")
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mo stretchy="true" form="prefix">⟨</mo>
+      <mi>ψ</mi>
+      <mrow>
+        <mo stretchy="true" form="prefix">|</mo>
+        <mstyle mathvariant="script">
+          <mi>𝒯</mi>
+        </mstyle>
+        <mrow>
+          <mo stretchy="true" form="prefix">{</mo>
+          <mfrac>
+            <mi>δ</mi>
+            <mrow>
+              <mi>δ</mi>
+              <mi>ϕ</mi>
+            </mrow>
+          </mfrac>
+          <mi>F</mi>
+          <mrow>
+            <mo stretchy="true" form="prefix">[</mo>
+            <mi>ϕ</mi>
+            <mo stretchy="true" form="postfix">]</mo>
+          </mrow>
+          <mo stretchy="true" form="postfix">}</mo>
+        </mrow>
+        <mo stretchy="true" form="postfix">|</mo>
+      </mrow>
+      <mi>ψ</mi>
+      <mo stretchy="true" form="postfix">⟩</mo>
+    </mrow>
+    <mo>=</mo>
+    <mo>−</mo>
+    <mstyle mathvariant="normal">
+      <mi>i</mi>
+    </mstyle>
+    <mrow>
+      <mo stretchy="true" form="prefix">⟨</mo>
+      <mi>ψ</mi>
+      <mrow>
+        <mo stretchy="true" form="prefix">|</mo>
+        <mstyle mathvariant="script">
+          <mi>𝒯</mi>
+        </mstyle>
+        <mrow>
+          <mo stretchy="true" form="prefix">{</mo>
+          <mi>F</mi>
+          <mrow>
+            <mo stretchy="true" form="prefix">[</mo>
+            <mi>ϕ</mi>
+            <mo stretchy="true" form="postfix">]</mo>
+          </mrow>
+          <mfrac>
+            <mi>δ</mi>
+            <mrow>
+              <mi>δ</mi>
+              <mi>ϕ</mi>
+            </mrow>
+          </mfrac>
+          <mi>S</mi>
+          <mrow>
+            <mo stretchy="true" form="prefix">[</mo>
+            <mi>ϕ</mi>
+            <mo stretchy="true" form="postfix">]</mo>
+          </mrow>
+          <mo stretchy="true" form="postfix">}</mo>
+        </mrow>
+        <mo stretchy="true" form="postfix">|</mo>
+      </mrow>
+      <mi>ψ</mi>
+      <mo stretchy="true" form="postfix">⟩</mo>
+    </mrow>
+  </mrow>
+</math>

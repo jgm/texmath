@@ -1,0 +1,11 @@
+<<< native
+[ ESuper (EIdentifier "x") (ENumber "1")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (EIdentifier "a")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "H") (EIdentifier "a")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "H") (ENumber "1")
+]
+>>> tex
+x^{1} + x^{a} + H^{a} + H^{1}

@@ -1,0 +1,68 @@
+<<< native
+[ ESubsup (EIdentifier "x") (EIdentifier "b") (EIdentifier "a")
+, ESpace (1 % 1)
+, ESubsup (EIdentifier "x") (EIdentifier "b") (EIdentifier "a")
+, ESpace (1 % 1)
+, EUnder True (EMathOperator "min") (EIdentifier "A")
+, ESpace (1 % 1)
+, EUnder True (EMathOperator "max") (EIdentifier "B")
+, ESpace (1 % 1)
+, EUnder True (EMathOperator "det") (EIdentifier "C")
+, ESpace (1 % 1)
+, EUnder True (EMathOperator "Pr") (EIdentifier "A")
+, ESpace (1 % 1)
+, EUnder True (EMathOperator "gcd") (EIdentifier "A")
+, ESpace (1 % 1)
+, ESuper
+    (EOver False (EIdentifier "u") (ESymbol Accent "\775"))
+    (ENumber "2")
+, ESpace (1 % 1)
+, ESub
+    (EOver False (EIdentifier "u") (ESymbol TOver "\175"))
+    (EIdentifier "\949")
+, ESpace (1 % 1)
+, ESubsup
+    (EUnder False (EIdentifier "u") (ESymbol TUnder "_"))
+    (EIdentifier "b")
+    (EIdentifier "a")
+, ESpace (1 % 1)
+, EOver
+    False
+    (EOver
+       False
+       (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+       (ESymbol TOver "\9182"))
+    (EText TextNormal "term")
+, ESpace (1 % 1)
+, EOver
+    False
+    (EOver
+       False
+       (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+       (ESymbol TOver "\9140"))
+    (EIdentifier "c")
+, ESpace (1 % 1)
+, EUnder
+    False
+    (EUnder
+       False
+       (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+       (ESymbol TUnder "\9183"))
+    (EIdentifier "c")
+, ESpace (1 % 1)
+, EUnder
+    False
+    (EUnder
+       False
+       (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+       (ESymbol TUnder "\9141"))
+    (EIdentifier "c")
+, ESuper (ESpace (1 % 1)) (EIdentifier "H")
+, EIdentifier "e"
+, ENumber "3"
+, ESub (ESpace (1 % 1)) (EIdentifier "x")
+, EIdentifier "A"
+, ESubsup (ESpace (1 % 1)) (EIdentifier "x") (ENumber "3")
+]
+>>> eqn
+x sub b sup a fwd 100 x sub b sup a fwd 100 min from A fwd 100 max from B fwd 100 "det" from C fwd 100 "Pr" from A fwd 100 "gcd" from A fwd 100 {u to \[u0307]} sup 2 fwd 100 {u to \[u00AF]} sub \[u03B5] fwd 100 {u from _} sub b sup a fwd 100 {{a + b} to \[u23DE]} to {roman "term"} fwd 100 {{a + b} to \[u23B4]} to c fwd 100 {{a + b} from \[u23DF]} from c fwd 100 {{a + b} from \[u23B5]} from c {fwd 100} sup H e 3 {fwd 100} sub x A {fwd 100} sub x sup 3

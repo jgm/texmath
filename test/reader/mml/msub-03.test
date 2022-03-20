@@ -1,0 +1,12 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <msub>    <mi>V</mi>     <mo>+</mo>   </msub>   <mo>=</mo>   <msub>    <mi>V</mi>     <mrow>      <msub>        <mo>+</mo>         <mphantom>          <mi mathvariant="normal">fail</mi>
+        </mphantom>       </msub>     </mrow>   </msub> </math>
+>>> native
+[ ESub (EIdentifier "V") (ESymbol Bin "+")
+, ESymbol Rel "="
+, ESub
+    (EIdentifier "V")
+    (ESub (ESymbol Bin "+") (EPhantom (EIdentifier "fail")))
+]

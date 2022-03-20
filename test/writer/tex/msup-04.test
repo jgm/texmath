@@ -1,0 +1,11 @@
+<<< native
+[ ESuper (ENumber "2") (ESuper (ENumber "3") (ENumber "4"))
+, ESymbol Rel "="
+, ESuper
+    (ENumber "2")
+    (ESuper
+       (ENumber "3")
+       (ESuper (ENumber "4") (EPhantom (EIdentifier "fail"))))
+]
+>>> tex
+2^{3^{4}} = 2^{3^{4^{\phantom{fail}}}}

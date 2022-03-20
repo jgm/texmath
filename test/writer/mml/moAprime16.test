@@ -1,0 +1,32 @@
+<<< native
+[ ESuper (EIdentifier "f") (ESymbol Accent "'")
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, ESymbol Rel "="
+, ESuper (EIdentifier "f") (ESymbol Ord "\8242")
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msup>
+      <mi>f</mi>
+      <mo>&#39;</mo>
+    </msup>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>x</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mo>=</mo>
+    <msup>
+      <mi>f</mi>
+      <mi>′</mi>
+    </msup>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>x</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+  </mrow>
+</math>

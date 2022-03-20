@@ -1,0 +1,17 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <maction actiontype="tooltip">
+    <maction actiontype="statusline">
+      <mrow>
+        <mi>x</mi> 
+        <mo> &gt;</mo> 
+        <mn>4</mn> 
+      </mrow> 
+      <mtext>X is greater than 4</mtext> 
+    </maction> 
+    <mtext>X is greater than 4</mtext> 
+  </maction> </math>
+>>> native
+[ EIdentifier "x" , ESymbol Rel ">" , ENumber "4" ]

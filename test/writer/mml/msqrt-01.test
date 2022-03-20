@@ -1,0 +1,44 @@
+<<< native
+[ ESqrt
+    (EArray
+       [ AlignCenter , AlignCenter ]
+       [ [ [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         ]
+       , [ [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         ]
+       ])
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <msqrt>
+    <mtable>
+      <mtr>
+        <mtd columnalign="center">
+          <mphantom>
+            <mi>A</mi>
+          </mphantom>
+        </mtd>
+        <mtd columnalign="center">
+          <mphantom>
+            <mi>A</mi>
+          </mphantom>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="center">
+          <mphantom>
+            <mi>A</mi>
+          </mphantom>
+        </mtd>
+        <mtd columnalign="center">
+          <mphantom>
+            <mi>A</mi>
+          </mphantom>
+        </mtd>
+      </mtr>
+    </mtable>
+  </msqrt>
+</math>

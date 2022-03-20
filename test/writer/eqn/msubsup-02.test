@@ -1,0 +1,10 @@
+<<< native
+[ ESubsup
+    (EGrouped [ EPhantom (EIdentifier "z") , EIdentifier "S" ])
+    (EIdentifier "t")
+    (ENumber "7")
+, ESymbol Rel "="
+, ESubsup (EIdentifier "S") (EIdentifier "t") (ENumber "7")
+]
+>>> eqn
+{hphantom z S} sub t sup 7 = S sub t sup 7

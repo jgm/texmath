@@ -1,0 +1,26 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>x</mi> 
+    <mstyle mathbackground="#000099">
+      <mspace height="1ex" width="1ex"></mspace> 
+    </mstyle> 
+    <mi>M</mi> 
+    <mstyle mathbackground="#000099">
+      <mspace height="1ex" depth="1em" width="1ex"></mspace> 
+    </mstyle> 
+    <mi>x</mi> 
+    <mstyle mathbackground="#000099">
+      <mspace depth="2mm" width=".2in"></mspace> 
+    </mstyle> 
+  </mrow> </math>
+>>> native
+[ EIdentifier "x"
+, ESpace (58 % 25)
+, EIdentifier "M"
+, ESpace (58 % 25)
+, EIdentifier "x"
+, ESpace (0 % 1)
+]

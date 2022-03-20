@@ -1,0 +1,45 @@
+<<< native
+[ ESub (EIdentifier "\981") (EIdentifier "n")
+, EDelimited "(" ")" [ Right (EIdentifier "\954") ]
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped
+       [ ENumber "4"
+       , ESuper (EIdentifier "\960") (ENumber "2")
+       , ESuper (EIdentifier "\954") (ENumber "2")
+       ])
+, ESubsup (ESymbol Op "\8747") (ENumber "0") (ESymbol Ord "\8734")
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ EMathOperator "sin"
+       , EDelimited
+           "(" ")" [ Right (EIdentifier "\954") , Right (EIdentifier "R") ]
+       ])
+    (EGrouped [ EIdentifier "\954" , EIdentifier "R" ])
+, EFraction
+    NormalFrac
+    (ESymbol Ord "\8706")
+    (EGrouped [ ESymbol Ord "\8706" , EIdentifier "R" ])
+, EDelimited
+    "["
+    "]"
+    [ Right (ESuper (EIdentifier "R") (ENumber "2"))
+    , Right
+        (EFraction
+           NormalFrac
+           (EGrouped
+              [ ESymbol Ord "\8706"
+              , ESub (EIdentifier "D") (EIdentifier "n")
+              , EDelimited "(" ")" [ Right (EIdentifier "R") ]
+              ])
+           (EGrouped [ ESymbol Ord "\8706" , EIdentifier "R" ]))
+    ]
+, ESpace (1 % 6)
+, EIdentifier "d"
+, EIdentifier "R"
+]
+>>> tex
+\phi_{n}(\kappa) = \frac{1}{4\pi^{2}\kappa^{2}}\int_{0}^{\infty}\frac{\sin(\kappa R)}{\kappa R}\frac{\partial}{\partial R}\left\lbrack R^{2}\frac{\partial D_{n}(R)}{\partial R} \right\rbrack\, dR

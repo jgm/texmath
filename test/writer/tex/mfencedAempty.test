@@ -1,0 +1,6 @@
+<<< native
+[ EGrouped [ EIdentifier "x" , EIdentifier "y" ]
+, EMathOperator ""
+]
+>>> tex
+{xy}\operatorname{}

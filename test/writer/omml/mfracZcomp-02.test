@@ -1,0 +1,60 @@
+<<< native
+[ EText TextNormal "Inline, display style, normal line\160"
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ EMathOperator "ln" , ESymbol Ord "\8289" , EIdentifier "x" ])
+    (EIdentifier "y")
+, EText
+    TextNormal ", numerator and denominator should render normal size."
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>Inline, display style, normal line </m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>ln</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>&#8289;</m:t>
+        </m:r>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:t>y</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>, numerator and denominator should render normal size.</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

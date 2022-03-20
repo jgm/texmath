@@ -1,0 +1,41 @@
+<<< native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EArray
+            [ AlignCenter , AlignCenter ]
+            [ [ [ ENumber "1" ] , [ ENumber "2" ] ]
+            , [ [ EIdentifier "x" ] , [ EIdentifier "y" ] ]
+            ]
+        ]
+      ]
+    , [ [ EArray
+            [ AlignCenter , AlignCenter ]
+            [ [ [ ENumber "1" ] , [ ENumber "2" ] ]
+            , [ [ EIdentifier "x" ] , [ EIdentifier "y" ] ]
+            ]
+        ]
+      ]
+    , [ [ EArray
+            [ AlignCenter , AlignCenter ]
+            [ [ [ ENumber "1" ] , [ ENumber "2" ] ]
+            , [ [ EIdentifier "x" ] , [ EIdentifier "y" ] ]
+            ]
+        ]
+      ]
+    ]
+]
+>>> tex
+\begin{matrix}
+\begin{matrix}
+1 & 2 \\
+x & y \\
+\end{matrix} \\
+\begin{matrix}
+1 & 2 \\
+x & y \\
+\end{matrix} \\
+\begin{matrix}
+1 & 2 \\
+x & y \\
+\end{matrix} \\
+\end{matrix}

@@ -1,0 +1,98 @@
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ []
+      , [ EText TextNormal "ds=true" ]
+      , [ EText TextNormal "ds=false" ]
+      ]
+    , [ [ EText TextNormal "stretch=t, large=t" ]
+      , [ EGrouped
+            [ EDelimited
+                "\8747"
+                ""
+                [ Right (EFraction NormalFrac (EIdentifier "x") (ENumber "5")) ]
+            , ESymbol Rel "="
+            , EDelimited "\8747" "" [ Right (EIdentifier "x") ]
+            ]
+        ]
+      , [ EGrouped
+            [ EDelimited
+                "\8747"
+                ""
+                [ Right (EFraction NormalFrac (EIdentifier "x") (ENumber "5")) ]
+            , ESymbol Rel "="
+            , EDelimited "\8747" "" [ Right (EIdentifier "x") ]
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "stretch=f, large=t" ]
+      , [ EGrouped
+            [ EGrouped
+                [ ESymbol Op "\8747"
+                , EFraction NormalFrac (EIdentifier "x") (ENumber "5")
+                ]
+            , ESymbol Rel "="
+            , EGrouped [ ESymbol Op "\8747" , EIdentifier "x" ]
+            ]
+        ]
+      , [ EGrouped
+            [ EGrouped
+                [ ESymbol Op "\8747"
+                , EFraction NormalFrac (EIdentifier "x") (ENumber "5")
+                ]
+            , ESymbol Rel "="
+            , EGrouped [ ESymbol Op "\8747" , EIdentifier "x" ]
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "stretch=t, large=f" ]
+      , [ EGrouped
+            [ EDelimited
+                "\8747"
+                ""
+                [ Right (EFraction NormalFrac (EIdentifier "x") (ENumber "5")) ]
+            , ESymbol Rel "="
+            , EDelimited
+                "\8747"
+                ""
+                [ Right (EFraction NormalFrac (EIdentifier "A") (ENumber "5")) ]
+            , ESymbol Rel "="
+            , EDelimited "\8747" "" [ Right (EIdentifier "x") ]
+            ]
+        ]
+      , [ EGrouped
+            [ EDelimited
+                "\8747"
+                ""
+                [ Right (EFraction NormalFrac (EIdentifier "x") (ENumber "5")) ]
+            , ESymbol Rel "="
+            , EDelimited
+                "\8747"
+                ""
+                [ Right (EFraction NormalFrac (EIdentifier "A") (ENumber "5")) ]
+            , ESymbol Rel "="
+            , EDelimited "\8747" "" [ Right (EIdentifier "x") ]
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "stretch=f, large=f" ]
+      , [ EGrouped
+            [ EGrouped
+                [ ESymbol Op "\8747"
+                , EFraction NormalFrac (EIdentifier "x") (ENumber "5")
+                ]
+            , ESymbol Rel "="
+            , EGrouped [ ESymbol Op "\8747" , EIdentifier "x" ]
+            ]
+        ]
+      , [ EGrouped
+            [ EGrouped
+                [ ESymbol Op "\8747"
+                , EFraction NormalFrac (EIdentifier "x") (ENumber "5")
+                ]
+            , ESymbol Rel "="
+            , EGrouped [ ESymbol Op "\8747" , EIdentifier "x" ]
+            ]
+        ]
+      ]
+    ]
+]

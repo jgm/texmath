@@ -1,0 +1,38 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "xcap" ] , [ ESymbol Op "\8898" ] ]
+    , [ [ EText TextNormal "xcirc" ] , [ ESymbol Ord "\9711" ] ]
+    , [ [ EText TextNormal "xcup" ] , [ ESymbol Op "\8899" ] ]
+    , [ [ EText TextNormal "xdtri" ] , [ ESymbol Bin "\9661" ] ]
+    , [ [ EText TextNormal "xfr" ] , [ ESymbol Alpha "\120117" ] ]
+    , [ [ EText TextNormal "Xfr" ] , [ ESymbol Alpha "\120091" ] ]
+    , [ [ EText TextNormal "xharr" ] , [ ESymbol Accent "\10231" ] ]
+    , [ [ EText TextNormal "xhArr" ] , [ ESymbol Accent "\10234" ] ]
+    , [ [ EText TextNormal "xi" ] , [ ESymbol Alpha "\958" ] ]
+    , [ [ EText TextNormal "Xi" ] , [ ESymbol Alpha "\926" ] ]
+    , [ [ EText TextNormal "xlarr" ] , [ ESymbol Accent "\10229" ] ]
+    , [ [ EText TextNormal "xlArr" ] , [ ESymbol Accent "\10232" ] ]
+    , [ [ EText TextNormal "xmap" ] , [ ESymbol Accent "\10236" ] ]
+    , [ [ EText TextNormal "xnis" ] , [ ESymbol Rel "\8955" ] ]
+    , [ [ EText TextNormal "xodot" ] , [ ESymbol Op "\10752" ] ]
+    , [ [ EText TextNormal "xopf" ] , [ ESymbol Alpha "\120169" ] ]
+    , [ [ EText TextNormal "Xopf" ] , [ ESymbol Alpha "\120143" ] ]
+    , [ [ EText TextNormal "xoplus" ] , [ ESymbol Op "\10753" ] ]
+    , [ [ EText TextNormal "xotime" ] , [ ESymbol Op "\10754" ] ]
+    , [ [ EText TextNormal "xrarr" ] , [ ESymbol Accent "\10230" ] ]
+    , [ [ EText TextNormal "xrArr" ] , [ ESymbol Accent "\10233" ] ]
+    , [ [ EText TextNormal "xscr" ] , [ ESymbol Alpha "\120013" ] ]
+    , [ [ EText TextNormal "Xscr" ] , [ ESymbol Alpha "\119987" ] ]
+    , [ [ EText TextNormal "xsqcup" ] , [ ESymbol Op "\10758" ] ]
+    , [ [ EText TextNormal "xuplus" ] , [ ESymbol Op "\10756" ] ]
+    , [ [ EText TextNormal "xutri" ] , [ ESymbol Bin "\9651" ] ]
+    , [ [ EText TextNormal "xvee" ] , [ ESymbol Op "\8897" ] ]
+    , [ [ EText TextNormal "xwedge" ] , [ ESymbol Op "\8896" ] ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ {roman "xcap"} above {roman "xcirc"} above {roman "xcup"} above {roman "xdtri"} above {roman "xfr"} above {roman "Xfr"} above {roman "xharr"} above {roman "xhArr"} above {roman "xi"} above {roman "Xi"} above {roman "xlarr"} above {roman "xlArr"} above {roman "xmap"} above {roman "xnis"} above {roman "xodot"} above {roman "xopf"} above {roman "Xopf"} above {roman "xoplus"} above {roman "xotime"} above {roman "xrarr"} above {roman "xrArr"} above {roman "xscr"} above {roman "Xscr"} above {roman "xsqcup"} above {roman "xuplus"} above {roman "xutri"} above {roman "xvee"} above {roman "xwedge"} }
+ccol{ union above \[u25EF] above inter above \[u25BD] above \[u1D535] above \[u1D51B] above \[u27F7] above \[u27FA] above xi above XI above \[u27F5] above \[u27F8] above \[u27FC] above \[u22FB] above \[u2A00] above \[u1D569] above \[u1D54F] above \[u2A01] above \[u2A02] above \[u27F6] above \[u27F9] above \[u1D4CD] above \[u1D4B3] above \[u2A06] above \[u2A04] above \[u25B3] above \[u22C1] above \[u22C0] }
+}

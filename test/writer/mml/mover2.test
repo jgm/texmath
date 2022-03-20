@@ -1,0 +1,34 @@
+<<< native
+[ EOver False (EIdentifier "x") (ESymbol Accent "`")
+, ESymbol Rel "\8800"
+, EOver False (EIdentifier "x") (ESymbol Ord "`")
+, ESymbol Rel "="
+, EOver False (EIdentifier "x") (ESymbol Ord "`")
+, ESymbol Rel "="
+, EOver False (EIdentifier "x") (ESymbol Ord "`")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mover>
+      <mi>x</mi>
+      <mo accent="true">`</mo>
+    </mover>
+    <mo>≠</mo>
+    <mover>
+      <mi>x</mi>
+      <mo accent="true">`</mo>
+    </mover>
+    <mo>=</mo>
+    <mover>
+      <mi>x</mi>
+      <mo accent="true">`</mo>
+    </mover>
+    <mo>=</mo>
+    <mover>
+      <mi>x</mi>
+      <mo accent="true">`</mo>
+    </mover>
+  </mrow>
+</math>

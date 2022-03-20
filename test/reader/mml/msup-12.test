@@ -1,0 +1,15 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <msup>    <mi>a</mi>     <mo>+</mo>   </msup>   <mo>=</mo>   <munderover>    <mrow>      <msup>        <mi>a</mi>         <mo>+</mo>       </msup>     </mrow>     <mphantom>      <mi>x</mi>
+    </mphantom>     <mphantom>      <mi>x</mi>
+    </mphantom>   </munderover> </math>
+>>> native
+[ ESuper (EIdentifier "a") (ESymbol Bin "+")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (ESuper (EIdentifier "a") (ESymbol Bin "+"))
+    (EPhantom (EIdentifier "x"))
+    (EPhantom (EIdentifier "x"))
+]

@@ -1,0 +1,260 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd></mtd> 
+      <mtd>
+        <mtext>FE3</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>FE4</mtext>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>0</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65072;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65088;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>1</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65073;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65089;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>2</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65074;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65090;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>3</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65075;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65091;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>4</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65076;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65092;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>5</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65077;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65093;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>6</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65078;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65094;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>7</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65079;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65095;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>8</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65080;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65096;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>9</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65081;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65097;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>A</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65082;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65098;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>B</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65083;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65099;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>C</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65084;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65100;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>D</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65085;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65101;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>E</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65086;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65102;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>F</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65087;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65103;</mo>
+      </mtd> 
+    </mtr>   </mtable></math>
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [] , [ EText TextNormal "FE3" ] , [ EText TextNormal "FE4" ] ]
+    , [ [ EText TextNormal "0" ]
+      , [ ESymbol Ord "\65072" ]
+      , [ ESymbol Ord "\65088" ]
+      ]
+    , [ [ EText TextNormal "1" ]
+      , [ ESymbol Ord "\65073" ]
+      , [ ESymbol Ord "\65089" ]
+      ]
+    , [ [ EText TextNormal "2" ]
+      , [ ESymbol Ord "\65074" ]
+      , [ ESymbol Ord "\65090" ]
+      ]
+    , [ [ EText TextNormal "3" ]
+      , [ ESymbol Ord "\65075" ]
+      , [ ESymbol Ord "\65091" ]
+      ]
+    , [ [ EText TextNormal "4" ]
+      , [ ESymbol Ord "\65076" ]
+      , [ ESymbol Ord "\65092" ]
+      ]
+    , [ [ EText TextNormal "5" ]
+      , [ ESymbol Ord "\65077" ]
+      , [ ESymbol Ord "\65093" ]
+      ]
+    , [ [ EText TextNormal "6" ]
+      , [ ESymbol Ord "\65078" ]
+      , [ ESymbol Ord "\65094" ]
+      ]
+    , [ [ EText TextNormal "7" ]
+      , [ ESymbol Accent "\65079" ]
+      , [ ESymbol Ord "\65095" ]
+      ]
+    , [ [ EText TextNormal "8" ]
+      , [ ESymbol Accent "\65080" ]
+      , [ ESymbol Ord "\65096" ]
+      ]
+    , [ [ EText TextNormal "9" ]
+      , [ ESymbol Ord "\65081" ]
+      , [ ESymbol Ord "\65097" ]
+      ]
+    , [ [ EText TextNormal "A" ]
+      , [ ESymbol Ord "\65082" ]
+      , [ ESymbol Ord "\65098" ]
+      ]
+    , [ [ EText TextNormal "B" ]
+      , [ ESymbol Ord "\65083" ]
+      , [ ESymbol Ord "\65099" ]
+      ]
+    , [ [ EText TextNormal "C" ]
+      , [ ESymbol Ord "\65084" ]
+      , [ ESymbol Ord "\65100" ]
+      ]
+    , [ [ EText TextNormal "D" ]
+      , [ ESymbol Ord "\65085" ]
+      , [ ESymbol Ord "\65101" ]
+      ]
+    , [ [ EText TextNormal "E" ]
+      , [ ESymbol Ord "\65086" ]
+      , [ ESymbol Ord "\65102" ]
+      ]
+    , [ [ EText TextNormal "F" ]
+      , [ ESymbol Ord "\65087" ]
+      , [ ESymbol Ord "\65103" ]
+      ]
+    ]
+]

@@ -1,0 +1,21 @@
+<<< native
+[ ENumber "5"
+, ESymbol Bin "+"
+, ENumber "23"
+, ESymbol Bin "+"
+, ENumber "0.5"
+, ESymbol Bin "+"
+, ENumber "5.0"
+, ESymbol Bin "+"
+, ENumber ".1"
+, ESymbol Bin "+"
+, ENumber "100"
+, ESymbol Bin "+"
+, ENumber "0xFFEF"
+, ESymbol Bin "+"
+, ENumber "5"
+, ESymbol Bin "+"
+, ENumber "5"
+]
+>>> eqn
+5 + 23 + 0.5 + 5.0 + .1 + 100 + 0xFFEF + 5 + 5

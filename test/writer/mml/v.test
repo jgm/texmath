@@ -1,0 +1,568 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "vangrt" ] , [ ESymbol Ord "\10652" ] ]
+    , [ [ EText TextNormal "varepsilon" ] , [ ESymbol Alpha "\1013" ] ]
+    , [ [ EText TextNormal "varkappa" ] , [ ESymbol Alpha "\1008" ] ]
+    , [ [ EText TextNormal "varnothing" ] , [ ESymbol Ord "\8709" ] ]
+    , [ [ EText TextNormal "varphi" ] , [ ESymbol Alpha "\981" ] ]
+    , [ [ EText TextNormal "varpi" ] , [ ESymbol Alpha "\982" ] ]
+    , [ [ EText TextNormal "varpropto" ] , [ ESymbol Rel "\8733" ] ]
+    , [ [ EText TextNormal "varr" ] , [ ESymbol Rel "\8597" ] ]
+    , [ [ EText TextNormal "vArr" ] , [ ESymbol Rel "\8661" ] ]
+    , [ [ EText TextNormal "varrho" ] , [ ESymbol Alpha "\1009" ] ]
+    , [ [ EText TextNormal "varsigma" ] , [ ESymbol Alpha "\962" ] ]
+    , [ [ EText TextNormal "varsubsetneq" ]
+      , [ EMathOperator "\8842\65024" ]
+      ]
+    , [ [ EText TextNormal "varsubsetneqq" ]
+      , [ EMathOperator "\10955\65024" ]
+      ]
+    , [ [ EText TextNormal "varsupsetneq" ]
+      , [ EMathOperator "\8843\65024" ]
+      ]
+    , [ [ EText TextNormal "varsupsetneqq" ]
+      , [ EMathOperator "\10956\65024" ]
+      ]
+    , [ [ EText TextNormal "vartheta" ] , [ ESymbol Alpha "\977" ] ]
+    , [ [ EText TextNormal "vartriangleleft" ]
+      , [ ESymbol Rel "\8882" ]
+      ]
+    , [ [ EText TextNormal "vartriangleright" ]
+      , [ ESymbol Rel "\8883" ]
+      ]
+    , [ [ EText TextNormal "vBar" ] , [ ESymbol Rel "\10984" ] ]
+    , [ [ EText TextNormal "Vbar" ] , [ ESymbol Rel "\10987" ] ]
+    , [ [ EText TextNormal "vBarv" ] , [ ESymbol Rel "\10985" ] ]
+    , [ [ EText TextNormal "vcy" ] , [ ESymbol Ord "\1074" ] ]
+    , [ [ EText TextNormal "Vcy" ] , [ ESymbol Ord "\1042" ] ]
+    , [ [ EText TextNormal "vdash" ] , [ ESymbol Rel "\8866" ] ]
+    , [ [ EText TextNormal "vDash" ] , [ ESymbol Rel "\8872" ] ]
+    , [ [ EText TextNormal "Vdash" ] , [ ESymbol Rel "\8873" ] ]
+    , [ [ EText TextNormal "VDash" ] , [ ESymbol Rel "\8875" ] ]
+    , [ [ EText TextNormal "Vdashl" ] , [ ESymbol Rel "\10982" ] ]
+    , [ [ EText TextNormal "vee" ] , [ ESymbol Bin "\8744" ] ]
+    , [ [ EText TextNormal "Vee" ] , [ ESymbol Op "\8897" ] ]
+    , [ [ EText TextNormal "veebar" ] , [ ESymbol Bin "\8891" ] ]
+    , [ [ EText TextNormal "veeeq" ] , [ ESymbol Rel "\8794" ] ]
+    , [ [ EText TextNormal "vellip" ] , [ ESymbol Rel "\8942" ] ]
+    , [ [ EText TextNormal "verbar" ] , [ ESymbol Op "|" ] ]
+    , [ [ EText TextNormal "Verbar" ] , [ ESymbol Close "\8214" ] ]
+    , [ [ EText TextNormal "vert" ] , [ ESymbol Op "|" ] ]
+    , [ [ EText TextNormal "Vert" ] , [ ESymbol Close "\8214" ] ]
+    , [ [ EText TextNormal "VerticalBar" ] , [ ESymbol Rel "\8739" ] ]
+    , [ [ EText TextNormal "VerticalLine" ] , [ ESymbol Op "|" ] ]
+    , [ [ EText TextNormal "VerticalSeparator" ]
+      , [ ESymbol Ord "\10072" ]
+      ]
+    , [ [ EText TextNormal "VerticalTilde" ]
+      , [ ESymbol Bin "\8768" ]
+      ]
+    , [ [ EText TextNormal "VeryThinSpace" ]
+      , [ ESymbol Ord "\8202" ]
+      ]
+    , [ [ EText TextNormal "vfr" ] , [ ESymbol Alpha "\120115" ] ]
+    , [ [ EText TextNormal "Vfr" ] , [ ESymbol Alpha "\120089" ] ]
+    , [ [ EText TextNormal "vltri" ] , [ ESymbol Rel "\8882" ] ]
+    , [ [ EText TextNormal "vnsub" ] , [ ESymbol Ord "\8834\8402" ] ]
+    , [ [ EText TextNormal "vnsup" ] , [ ESymbol Ord "\8835\8402" ] ]
+    , [ [ EText TextNormal "vopf" ] , [ ESymbol Alpha "\120167" ] ]
+    , [ [ EText TextNormal "Vopf" ] , [ ESymbol Alpha "\120141" ] ]
+    , [ [ EText TextNormal "vprop" ] , [ ESymbol Rel "\8733" ] ]
+    , [ [ EText TextNormal "vrtri" ] , [ ESymbol Rel "\8883" ] ]
+    , [ [ EText TextNormal "vscr" ] , [ ESymbol Alpha "\120011" ] ]
+    , [ [ EText TextNormal "Vscr" ] , [ ESymbol Alpha "\119985" ] ]
+    , [ [ EText TextNormal "vsubne" ]
+      , [ EMathOperator "\8842\65024" ]
+      ]
+    , [ [ EText TextNormal "vsubnE" ]
+      , [ EMathOperator "\10955\65024" ]
+      ]
+    , [ [ EText TextNormal "vsupne" ]
+      , [ EMathOperator "\8843\65024" ]
+      ]
+    , [ [ EText TextNormal "vsupnE" ]
+      , [ EMathOperator "\10956\65024" ]
+      ]
+    , [ [ EText TextNormal "Vvdash" ] , [ ESymbol Rel "\8874" ] ]
+    , [ [ EText TextNormal "vzigzag" ] , [ ESymbol Ord "\10650" ] ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vangrt</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦜</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">varepsilon</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ϵ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">varkappa</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ϰ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">varnothing</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>∅</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">varphi</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ϕ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">varpi</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ϖ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">varpropto</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∝</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">varr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↕</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vArr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇕</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">varrho</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ϱ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">varsigma</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ς</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">varsubsetneq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊊︀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">varsubsetneqq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⫋︀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">varsupsetneq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊋︀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">varsupsetneqq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⫌︀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vartheta</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ϑ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vartriangleleft</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊲</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vartriangleright</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊳</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vBar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⫨</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Vbar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⫫</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vBarv</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⫩</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>в</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Vcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>В</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vdash</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊢</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vDash</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊨</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Vdash</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊩</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">VDash</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊫</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Vdashl</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⫦</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vee</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∨</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Vee</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋁</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">veebar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊻</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">veeeq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≚</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vellip</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋮</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">verbar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>|</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Verbar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="postfix">‖</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vert</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>|</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Vert</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="postfix">‖</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">VerticalBar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∣</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">VerticalLine</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>|</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">VerticalSeparator</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>❘</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">VerticalTilde</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">VeryThinSpace</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi> </mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vfr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔳</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Vfr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔙</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vltri</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊲</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vnsub</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⊂⃒</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vnsup</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⊃⃒</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕧</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Vopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕍</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vprop</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∝</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vrtri</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊳</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝓋</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Vscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝒱</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vsubne</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊊︀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vsubnE</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⫋︀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vsupne</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊋︀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vsupnE</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⫌︀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Vvdash</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊪</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">vzigzag</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦚</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

@@ -1,0 +1,133 @@
+<<< native
+[ EIdentifier "c"
+, ESymbol Rel "="
+, EOver
+    False
+    (EOver
+       False
+       (EGrouped
+          [ EUnder
+              False
+              (EUnder False (EIdentifier "a") (ESymbol TUnder "\9183"))
+              (EText TextNormal "real")
+          , ESymbol Bin "+"
+          , EUnder
+              False
+              (EUnder
+                 False
+                 (EGrouped
+                    [ EIdentifier "b" , EStyled TextNormal [ EIdentifier "i" ] ])
+                 (ESymbol TUnder "\9183"))
+              (EText TextNormal "imaginary")
+          ])
+       (ESymbol TOver "\9182"))
+    (EText TextNormal "complex number")
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:t>c</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>=</m:t>
+    </m:r>
+    <m:limUpp>
+      <m:e>
+        <m:groupChr>
+          <m:groupChrPr>
+            <m:chr m:val="⏞" />
+            <m:pos m:val="top" />
+            <m:vertJc m:val="bot" />
+          </m:groupChrPr>
+          <m:e>
+            <m:limLow>
+              <m:e>
+                <m:limLow>
+                  <m:e>
+                    <m:r>
+                      <m:t>a</m:t>
+                    </m:r>
+                  </m:e>
+                  <m:lim>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>⏟</m:t>
+                    </m:r>
+                  </m:lim>
+                </m:limLow>
+              </m:e>
+              <m:lim>
+                <m:r>
+                  <m:rPr>
+                    <m:nor />
+                    <m:sty m:val="p" />
+                  </m:rPr>
+                  <m:t>real</m:t>
+                </m:r>
+              </m:lim>
+            </m:limLow>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>+</m:t>
+            </m:r>
+            <m:limLow>
+              <m:e>
+                <m:limLow>
+                  <m:e>
+                    <m:r>
+                      <m:t>b</m:t>
+                    </m:r>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>i</m:t>
+                    </m:r>
+                  </m:e>
+                  <m:lim>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>⏟</m:t>
+                    </m:r>
+                  </m:lim>
+                </m:limLow>
+              </m:e>
+              <m:lim>
+                <m:r>
+                  <m:rPr>
+                    <m:nor />
+                    <m:sty m:val="p" />
+                  </m:rPr>
+                  <m:t>imaginary</m:t>
+                </m:r>
+              </m:lim>
+            </m:limLow>
+          </m:e>
+        </m:groupChr>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:rPr>
+            <m:nor />
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>complex number</m:t>
+        </m:r>
+      </m:lim>
+    </m:limUpp>
+  </m:oMath>
+</m:oMathPara>

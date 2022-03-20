@@ -1,0 +1,45 @@
+<<< tex
+\newcommand{\abc}{5}
+\newcommand{\xyz}[2][x]{%
+#1 + #2%
+}
+\renewcommand{%
+\phi%
+}{%
+\theta%
+}
+% comment
+\newcommand{\aaa}{\b{2}}
+\renewcommand{\phi}{\aaa}
+\newcommand{\b}[1]{#1}
+
+\newenvironment{ary}
+{\begin{array}{cc}
+\hline}
+{\hline
+\end{array}}
+
+\phi
+\abc
+\xyz[y] {3}
+\xyz 3
+\xyz \alpha
+
+\begin{ary}
+2 & 3\\
+4 & 5
+\end{ary}
+
+>>> native
+[ ENumber "2"
+, ENumber "5"
+, EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ]
+, EGrouped [ EIdentifier "x" , ESymbol Bin "+" , ENumber "3" ]
+, EGrouped
+    [ EIdentifier "x" , ESymbol Bin "+" , EIdentifier "\945" ]
+, EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ ENumber "2" ] , [ ENumber "3" ] ]
+    , [ [ ENumber "4" ] , [ ENumber "5" ] ]
+    ]
+]

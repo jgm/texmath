@@ -1,0 +1,94 @@
+<<< native
+[ EDelimited
+    "|"
+    "|"
+    [ Right (EOver False (EIdentifier "z") (ESymbol Accent "\8254")) ]
+, ESymbol Rel "="
+, EDelimited "|" "|" [ Right (EIdentifier "z") ]
+, ESymbol Pun ","
+, EDelimited
+    "|"
+    "|"
+    [ Right
+        (ESuper
+           (EDelimited
+              "("
+              ")"
+              [ Right (EOver False (EIdentifier "z") (ESymbol Accent "\8254")) ])
+           (EIdentifier "n"))
+    ]
+, ESymbol Rel "="
+, ESuper
+    (EDelimited "|" "|" [ Right (EIdentifier "z") ]) (EIdentifier "n")
+, ESymbol Pun ","
+, EMathOperator "arg"
+, EDelimited
+    "(" ")" [ Right (ESuper (EIdentifier "z") (EIdentifier "n")) ]
+, ESymbol Rel "="
+, EIdentifier "n"
+, EMathOperator "arg"
+, EDelimited "(" ")" [ Right (EIdentifier "z") ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mo stretchy="true" form="prefix">|</mo>
+      <mover>
+        <mi>z</mi>
+        <mo accent="true">‾</mo>
+      </mover>
+      <mo stretchy="true" form="postfix">|</mo>
+    </mrow>
+    <mo>=</mo>
+    <mrow>
+      <mo stretchy="true" form="prefix">|</mo>
+      <mi>z</mi>
+      <mo stretchy="true" form="postfix">|</mo>
+    </mrow>
+    <mo>,</mo>
+    <mrow>
+      <mo stretchy="true" form="prefix">|</mo>
+      <msup>
+        <mrow>
+          <mo stretchy="true" form="prefix">(</mo>
+          <mover>
+            <mi>z</mi>
+            <mo accent="true">‾</mo>
+          </mover>
+          <mo stretchy="true" form="postfix">)</mo>
+        </mrow>
+        <mi>n</mi>
+      </msup>
+      <mo stretchy="true" form="postfix">|</mo>
+    </mrow>
+    <mo>=</mo>
+    <msup>
+      <mrow>
+        <mo stretchy="true" form="prefix">|</mo>
+        <mi>z</mi>
+        <mo stretchy="true" form="postfix">|</mo>
+      </mrow>
+      <mi>n</mi>
+    </msup>
+    <mo>,</mo>
+    <mo>arg</mo>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <msup>
+        <mi>z</mi>
+        <mi>n</mi>
+      </msup>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mo>=</mo>
+    <mi>n</mi>
+    <mo>arg</mo>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>z</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+  </mrow>
+</math>

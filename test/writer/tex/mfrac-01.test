@@ -1,0 +1,10 @@
+<<< native
+[ EFraction NormalFrac (ENumber "1") (ENumber "8")
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EUnder False (ENumber "8") (EPhantom (ENumber "0")))
+]
+>>> tex
+\frac{1}{8} = \frac{1}{\underset{\phantom{0}}{8}}

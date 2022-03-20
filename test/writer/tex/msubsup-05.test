@@ -1,0 +1,19 @@
+<<< native
+[ ESubsup
+    (EIdentifier "S")
+    (ESubsup (EIdentifier "Q") (ENumber "4") (ENumber "3"))
+    (ESubsup (EIdentifier "P") (ENumber "2") (ENumber "1"))
+, ESymbol Rel "="
+, ESubsup
+    (EIdentifier "S")
+    (ESubsup
+       (EIdentifier "Q")
+       (EGrouped [ ENumber "4" , EPhantom (EText TextNormal "z") ])
+       (ENumber "3"))
+    (ESubsup
+       (EIdentifier "P")
+       (ENumber "2")
+       (EGrouped [ ENumber "1" , EPhantom (EText TextNormal "z") ]))
+]
+>>> tex
+S_{Q_{4}^{3}}^{P_{2}^{1}} = S_{Q_{4\phantom{\text{z}}}^{3}}^{P_{2}^{1\phantom{\text{z}}}}

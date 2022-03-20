@@ -1,0 +1,42 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EFraction
+           NoLineFrac
+           (EIdentifier "a")
+           (EDelimited
+              "{"
+              "}"
+              [ Right
+                  (EFraction
+                     NoLineFrac
+                     (EIdentifier "b")
+                     (EGrouped [ EIdentifier "c" , ESymbol Bin "+" , ENumber "2" ]))
+              ]))
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo stretchy="true" form="prefix">(</mo>
+    <mfrac linethickness="0">
+      <mi>a</mi>
+      <mrow>
+        <mo stretchy="true" form="prefix">{</mo>
+        <mfrac linethickness="0">
+          <mi>b</mi>
+          <mrow>
+            <mi>c</mi>
+            <mo>+</mo>
+            <mn>2</mn>
+          </mrow>
+        </mfrac>
+        <mo stretchy="true" form="postfix">}</mo>
+      </mrow>
+    </mfrac>
+    <mo stretchy="true" form="postfix">)</mo>
+  </mrow>
+</math>

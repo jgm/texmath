@@ -1,0 +1,13 @@
+[ EText TextNormal "Inline binomial, text style, no line\160"
+, EDelimited
+    "("
+    ")"
+    [ Right
+        (EFraction
+           NormalFrac
+           (EGrouped
+              [ EMathOperator "log" , ESymbol Ord "\8289" , EIdentifier "x" ])
+           (EIdentifier "y"))
+    ]
+, EText TextNormal "\160the end."
+]

@@ -1,0 +1,24 @@
+<<< native
+[ EText TextNormal "Inline, text style, thick line\160"
+, EGrouped
+    [ EFraction
+        NormalFrac
+        (EGrouped
+           [ ESuper (EIdentifier "x") (ENumber "2")
+           , ESymbol Bin "+"
+           , ENumber "1"
+           ])
+        (EIdentifier "x")
+    , EFraction
+        NormalFrac
+        (EGrouped
+           [ ESuper (EIdentifier "x") (ENumber "2")
+           , ESymbol Bin "+"
+           , ENumber "1"
+           ])
+        (EIdentifier "x")
+    ]
+, EText TextNormal "\160the end."
+]
+>>> tex
+\text{Inline,\ text\ style,\ thick\ line~}{\frac{x^{2} + 1}{x}\frac{x^{2} + 1}{x}}\text{~the\ end.}

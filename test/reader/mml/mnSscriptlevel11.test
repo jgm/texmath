@@ -1,0 +1,62 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mstyle scriptlevel="+1">
+      <mrow>
+        <mn>5</mn> 
+        <mo>+</mo> 
+        <mn fontweight="bold">3</mn> 
+        <mo>+</mo> 
+        <mn fontstyle="normal">12.3</mn> 
+        <mo>+</mo> 
+        <mn fontfamily="Helvetica" color="#009900">10000</mn> 
+        <mo>+</mo> 
+        <mn fontsize="36pt">0.01</mn> 
+        <mo>+</mo> 
+        <mn fontweight="bold" fontstyle="normal">2</mn> 
+      </mrow> 
+    </mstyle> 
+    <mrow>
+      <mn>5</mn> 
+      <mo>+</mo> 
+      <mn fontweight="bold">3</mn> 
+      <mo>+</mo> 
+      <mn fontstyle="normal">12.3</mn> 
+      <mo>+</mo> 
+      <mn fontfamily="Times" color="#009900">10000</mn> 
+      <mo>+</mo> 
+      <mn fontsize="36pt">0.01</mn> 
+      <mo>+</mo> 
+      <mn fontweight="bold" fontstyle="normal">2</mn> 
+    </mrow> 
+  </mrow> </math>
+>>> native
+[ EGrouped
+    [ ENumber "5"
+    , ESymbol Bin "+"
+    , ENumber "3"
+    , ESymbol Bin "+"
+    , ENumber "12.3"
+    , ESymbol Bin "+"
+    , ENumber "10000"
+    , ESymbol Bin "+"
+    , ENumber "0.01"
+    , ESymbol Bin "+"
+    , ENumber "2"
+    ]
+, EGrouped
+    [ ENumber "5"
+    , ESymbol Bin "+"
+    , ENumber "3"
+    , ESymbol Bin "+"
+    , ENumber "12.3"
+    , ESymbol Bin "+"
+    , ENumber "10000"
+    , ESymbol Bin "+"
+    , ENumber "0.01"
+    , ESymbol Bin "+"
+    , ENumber "2"
+    ]
+]

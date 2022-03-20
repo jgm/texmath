@@ -1,0 +1,18 @@
+<<< native
+[ EOver
+    False
+    (EGrouped [ EIdentifier "G" , ESymbol Bin "-" , ENumber "1" ])
+    (ESymbol Ord "\8254")
+, ESymbol Bin "+"
+, EOver
+    False
+    (EGrouped [ EIdentifier "G" , ESymbol Accent "-" , ENumber "1" ])
+    (ESymbol Ord "\8254")
+, ESymbol Accent "+"
+, EOver
+    False
+    (EGrouped [ EIdentifier "G" , ESymbol Bin "-" , ENumber "1" ])
+    (ESymbol Ord "\8254")
+]
+>>> eqn
+{G - 1} to \[u203E] + {G - 1} to \[u203E] + {G - 1} to \[u203E]

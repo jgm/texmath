@@ -1,0 +1,25 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <munder>    <mi mathvariant="normal">BASE</mi>     <mrow>      <mfrac linethickness="0">        <mi mathvariant="normal">first under script</mi>         <mi mathvariant="normal">second one</mi>       </mfrac>     </mrow>   </munder>   <mo>=</mo>   <munder>    <mrow>      <munder>        <mi mathvariant="normal">BASE</mi>         <mrow>          <mfrac linethickness="0">            <mi mathvariant="normal">first under script</mi>             <mi mathvariant="normal">second one</mi>           </mfrac>         </mrow>       </munder>     </mrow>     <mphantom>      <mi mathvariant="normal">fail</mi>
+    </mphantom>   </munder> </math>
+>>> native
+[ EUnder
+    False
+    (EIdentifier "BASE")
+    (EFraction
+       NormalFrac
+       (EIdentifier "first under script")
+       (EIdentifier "second one"))
+, ESymbol Rel "="
+, EUnder
+    False
+    (EUnder
+       False
+       (EIdentifier "BASE")
+       (EFraction
+          NormalFrac
+          (EIdentifier "first under script")
+          (EIdentifier "second one")))
+    (EPhantom (EIdentifier "fail"))
+]

@@ -1,0 +1,47 @@
+<<< native
+[ EUnderover
+    False
+    (EUnderover
+       False
+       (EIdentifier "BASE")
+       (EIdentifier "under-1")
+       (EIdentifier "over-2"))
+    (EIdentifier "under-2")
+    (EIdentifier "over-1")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (EUnder
+       False
+       (EOver False (EIdentifier "BASE") (EIdentifier "over-2"))
+       (EIdentifier "under-1"))
+    (EIdentifier "under-2")
+    (EIdentifier "over-1")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <munderover>
+      <munderover>
+        <mi>BASE</mi>
+        <mi>under-1</mi>
+        <mi>over-2</mi>
+      </munderover>
+      <mi>under-2</mi>
+      <mi>over-1</mi>
+    </munderover>
+    <mo>=</mo>
+    <munderover>
+      <munder>
+        <mover>
+          <mi>BASE</mi>
+          <mi>over-2</mi>
+        </mover>
+        <mi>under-1</mi>
+      </munder>
+      <mi>under-2</mi>
+      <mi>over-1</mi>
+    </munderover>
+  </mrow>
+</math>

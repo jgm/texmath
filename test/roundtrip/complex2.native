@@ -1,0 +1,391 @@
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "Quadratic Equation" ]
+      , [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Rel "="
+            , EFraction
+                NormalFrac
+                (EGrouped
+                   [ ESymbol Bin "-"
+                   , EIdentifier "b"
+                   , ESymbol Bin "\177"
+                   , ESqrt
+                       (EGrouped
+                          [ ESubsup (EIdentifier "b") (EGrouped []) (ENumber "2")
+                          , ESymbol Bin "-"
+                          , ENumber "4"
+                          , EIdentifier "a"
+                          , EIdentifier "c"
+                          ])
+                   ])
+                (EGrouped [ ENumber "2" , EIdentifier "a" ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "DisplayQuadratic Equation" ]
+      , [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Rel "="
+            , EFraction
+                NormalFrac
+                (EGrouped
+                   [ ESymbol Bin "-"
+                   , EIdentifier "b"
+                   , ESymbol Bin "\177"
+                   , ESqrt
+                       (EGrouped
+                          [ ESubsup (EIdentifier "b") (EGrouped []) (ENumber "2")
+                          , ESymbol Bin "-"
+                          , ENumber "4"
+                          , EIdentifier "a"
+                          , EIdentifier "c"
+                          ])
+                   ])
+                (EGrouped [ ENumber "2" , EIdentifier "a" ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Rational Function" ]
+      , [ EGrouped
+            [ EIdentifier "f"
+            , ESymbol Open "("
+            , EIdentifier "x"
+            , ESymbol Close ")"
+            , ESymbol Rel "="
+            , EFraction
+                NormalFrac
+                (EGrouped
+                   [ ENumber "1"
+                   , ESymbol Bin "-"
+                   , ESubsup (EIdentifier "x") (EGrouped []) (ENumber "2")
+                   ])
+                (EGrouped
+                   [ ENumber "1"
+                   , ESymbol Bin "-"
+                   , ESubsup (EIdentifier "x") (EGrouped []) (ENumber "3")
+                   ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Rational Function" ]
+      , [ EGrouped
+            [ EIdentifier "f"
+            , ESymbol Open "("
+            , EIdentifier "x"
+            , ESymbol Close ")"
+            , ESymbol Rel "="
+            , EFraction
+                NormalFrac
+                (EGrouped
+                   [ ESymbol Open "("
+                   , ENumber "1"
+                   , ESymbol Bin "-"
+                   , ESubsup (EIdentifier "x") (EGrouped []) (ENumber "2")
+                   , ESymbol Close ")"
+                   , ESubsup (EIdentifier "x") (EGrouped []) (ENumber "3")
+                   ])
+                (EGrouped
+                   [ ENumber "1"
+                   , ESymbol Bin "-"
+                   , ESubsup (EIdentifier "x") (EGrouped []) (ENumber "3")
+                   ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Rational Function" ]
+      , [ EGrouped
+            [ EIdentifier "f"
+            , ESymbol Open "("
+            , EIdentifier "x"
+            , ESymbol Close ")"
+            , ESymbol Rel "="
+            , EFraction
+                NormalFrac
+                (EGrouped
+                   [ ESymbol Open "("
+                   , ENumber "1"
+                   , ESymbol Bin "-"
+                   , ESubsup (EIdentifier "x") (EGrouped []) (ENumber "2")
+                   , ESymbol Close ")"
+                   , ESymbol Open "("
+                   , ESubsup (EIdentifier "x") (EGrouped []) (ENumber "3")
+                   , ESymbol Bin "-"
+                   , ENumber "5"
+                   , EIdentifier "x"
+                   , ESymbol Close ")"
+                   ])
+                (EGrouped
+                   [ ENumber "1"
+                   , ESymbol Bin "-"
+                   , ESubsup (EIdentifier "x") (EGrouped []) (ENumber "3")
+                   ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Parametrize Rational Function" ]
+      , [ EGrouped
+            [ EIdentifier "f"
+            , ESymbol Open "("
+            , EIdentifier "x"
+            , ESymbol Close ")"
+            , ESymbol Rel "="
+            , EFraction
+                NormalFrac
+                (EGrouped
+                   [ ESymbol Open "("
+                   , ESubsup (EIdentifier "a") (EIdentifier "i") (EGrouped [])
+                   , ESymbol Bin "-"
+                   , ESubsup (EIdentifier "x") (EGrouped []) (ENumber "2")
+                   , ESubsup (ESymbol Close ")") (EGrouped []) (ENumber "5")
+                   ])
+                (EGrouped
+                   [ ENumber "1"
+                   , ESymbol Bin "-"
+                   , ESubsup (EIdentifier "x") (EGrouped []) (ENumber "3")
+                   ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Stacked exponents" ]
+      , [ EGrouped
+            [ EIdentifier "g"
+            , ESymbol Open "("
+            , EIdentifier "z"
+            , ESymbol Close ")"
+            , ESymbol Rel "="
+            , ESubsup
+                (EIdentifier "e")
+                (EGrouped [])
+                (EGrouped
+                   [ ESymbol Bin "-"
+                   , ESubsup (EIdentifier "x") (EGrouped []) (ENumber "2")
+                   ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Stacked exponents" ]
+      , [ EGrouped
+            [ EIdentifier "g"
+            , ESymbol Open "("
+            , EIdentifier "z"
+            , ESymbol Close ")"
+            , ESymbol Rel "="
+            , ESubsup
+                (EIdentifier "e")
+                (EGrouped [])
+                (EGrouped
+                   [ ESymbol Bin "-"
+                   , ESymbol Open "("
+                   , EIdentifier "z"
+                   , ESymbol Bin "-"
+                   , EIdentifier "a"
+                   , ESubsup (ESymbol Close ")") (EGrouped []) (ENumber "2")
+                   ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Stacked exponents" ]
+      , [ EGrouped
+            [ EIdentifier "g"
+            , ESymbol Open "("
+            , EIdentifier "z"
+            , ESymbol Close ")"
+            , ESymbol Rel "="
+            , ESubsup
+                (EIdentifier "e")
+                (EGrouped [])
+                (EGrouped
+                   [ ESymbol Bin "-"
+                   , EUnderover
+                       False
+                       (ESymbol Op "\8721")
+                       (EGrouped [ EIdentifier "i" , ESymbol Rel "=" , ENumber "0" ])
+                       (EIdentifier "\8734")
+                   , ESubsup (EIdentifier "z") (EIdentifier "i") (ENumber "2")
+                   ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Stacked exponents" ]
+      , [ EGrouped
+            [ EIdentifier "g"
+            , ESymbol Open "("
+            , EIdentifier "y"
+            , ESymbol Close ")"
+            , ESymbol Rel "="
+            , ESubsup
+                (EIdentifier "e")
+                (EGrouped [])
+                (EGrouped
+                   [ ESymbol Bin "-"
+                   , EUnderover
+                       False
+                       (ESymbol Op "\8721")
+                       (EGrouped [ EIdentifier "i" , ESymbol Rel "=" , ENumber "0" ])
+                       (EIdentifier "\8734")
+                   , ESubsup (EIdentifier "y") (EIdentifier "i") (ENumber "2")
+                   ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Stacked exponents" ]
+      , [ EGrouped
+            [ EIdentifier "g"
+            , ESymbol Open "("
+            , EIdentifier "z"
+            , ESymbol Close ")"
+            , ESymbol Rel "="
+            , ESubsup
+                (EIdentifier "e")
+                (EGrouped [])
+                (EGrouped
+                   [ ESymbol Bin "-"
+                   , EUnderover
+                       False
+                       (ESymbol Op "\8721")
+                       (EGrouped [ EIdentifier "i" , ESymbol Rel "=" , ENumber "0" ])
+                       (EIdentifier "\8734")
+                   , ESubsup
+                       (EIdentifier "z")
+                       (EGrouped [])
+                       (EFraction
+                          NormalFrac
+                          (ENumber "2")
+                          (EGrouped [ EIdentifier "a" , ESymbol Bin "-" , EIdentifier "i" ]))
+                   ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Cross Product" ]
+      , [ EGrouped
+            [ EFraction
+                NormalFrac
+                (EGrouped
+                   [ ESubsup (EIdentifier "x") (ENumber "1") (EGrouped [])
+                   , ESymbol Bin "-"
+                   , ESubsup (EIdentifier "x") (ENumber "2") (EGrouped [])
+                   ])
+                (EGrouped
+                   [ ESubsup (EIdentifier "x") (ENumber "3") (EGrouped [])
+                   , ESymbol Bin "-"
+                   , ESubsup (EIdentifier "x") (ENumber "4") (EGrouped [])
+                   ])
+            , EFraction
+                NormalFrac
+                (EGrouped
+                   [ ESubsup (EIdentifier "x") (ENumber "1") (EGrouped [])
+                   , ESymbol Bin "-"
+                   , ESubsup (EIdentifier "x") (ENumber "4") (EGrouped [])
+                   ])
+                (EGrouped
+                   [ ESubsup (EIdentifier "x") (ENumber "2") (EGrouped [])
+                   , ESymbol Bin "-"
+                   , ESubsup (EIdentifier "x") (ENumber "3") (EGrouped [])
+                   ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Cross Product" ]
+      , [ EGrouped
+            [ ESymbol Open "("
+            , EFraction
+                NormalFrac
+                (EGrouped
+                   [ ESubsup (EIdentifier "x") (ENumber "1") (EGrouped [])
+                   , ESymbol Bin "-"
+                   , ESubsup (EIdentifier "x") (ENumber "2") (EGrouped [])
+                   ])
+                (EGrouped
+                   [ ESubsup (EIdentifier "x") (ENumber "3") (EGrouped [])
+                   , ESymbol Bin "-"
+                   , ESubsup (EIdentifier "x") (ENumber "4") (EGrouped [])
+                   ])
+            , ESymbol Close ")"
+            , ESymbol Open "("
+            , EFraction
+                NormalFrac
+                (EGrouped
+                   [ ESubsup (EIdentifier "x") (ENumber "1") (EGrouped [])
+                   , ESymbol Bin "-"
+                   , ESubsup (EIdentifier "x") (ENumber "4") (EGrouped [])
+                   ])
+                (EGrouped
+                   [ ESubsup (EIdentifier "x") (ENumber "2") (EGrouped [])
+                   , ESymbol Bin "-"
+                   , ESubsup (EIdentifier "x") (ENumber "3") (EGrouped [])
+                   ])
+            , ESymbol Close ")"
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Cross Product" ]
+      , [ EGrouped
+            [ EDelimited
+                "("
+                ")"
+                [ Right
+                    (EFraction
+                       NormalFrac
+                       (EGrouped
+                          [ ESubsup (EIdentifier "x") (ENumber "1") (EGrouped [])
+                          , ESymbol Bin "-"
+                          , ESubsup (EIdentifier "x") (ENumber "2") (EGrouped [])
+                          ])
+                       (EGrouped
+                          [ ESubsup (EIdentifier "x") (ENumber "3") (EGrouped [])
+                          , ESymbol Bin "-"
+                          , ESubsup (EIdentifier "x") (ENumber "4") (EGrouped [])
+                          ]))
+                ]
+            , EDelimited
+                "("
+                ")"
+                [ Right
+                    (EFraction
+                       NormalFrac
+                       (EGrouped
+                          [ ESubsup (EIdentifier "x") (ENumber "1") (EGrouped [])
+                          , ESymbol Bin "-"
+                          , ESubsup (EIdentifier "x") (ENumber "4") (EGrouped [])
+                          ])
+                       (EGrouped
+                          [ ESubsup (EIdentifier "x") (ENumber "2") (EGrouped [])
+                          , ESymbol Bin "-"
+                          , ESubsup (EIdentifier "x") (ENumber "3") (EGrouped [])
+                          ]))
+                ]
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Cross Product" ]
+      , [ EFraction
+            NormalFrac
+            (EGrouped
+               [ ESymbol Open "("
+               , ESubsup (EIdentifier "x") (ENumber "1") (EGrouped [])
+               , ESymbol Bin "-"
+               , ESubsup (EIdentifier "x") (ENumber "2") (EGrouped [])
+               , ESymbol Close ")"
+               , ESymbol Open "("
+               , ESubsup (EIdentifier "x") (ENumber "3") (EGrouped [])
+               , ESymbol Bin "-"
+               , ESubsup (EIdentifier "x") (ENumber "4") (EGrouped [])
+               , ESymbol Close ")"
+               ])
+            (EGrouped
+               [ ESymbol Open "("
+               , ESubsup (EIdentifier "x") (ENumber "1") (EGrouped [])
+               , ESymbol Bin "-"
+               , ESubsup (EIdentifier "x") (ENumber "4") (EGrouped [])
+               , ESymbol Close ")"
+               , ESymbol Open "("
+               , ESubsup (EIdentifier "x") (ENumber "2") (EGrouped [])
+               , ESymbol Bin "-"
+               , ESubsup (EIdentifier "x") (ENumber "3") (EGrouped [])
+               , ESymbol Close ")"
+               ])
+        ]
+      ]
+    ]
+]

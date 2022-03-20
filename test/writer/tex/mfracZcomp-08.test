@@ -1,0 +1,10 @@
+<<< native
+[ EText TextNormal "Inline, display style, no line\160"
+, EFraction
+    NormalFrac
+    (ENumber "1.234567")
+    (EGrouped [ ENumber "89" , ESymbol Bin "+" , EIdentifier "x" ])
+, EText TextNormal "\160the end."
+]
+>>> tex
+\text{Inline,\ display\ style,\ no\ line~}\frac{1.234567}{89 + x}\text{~the\ end.}

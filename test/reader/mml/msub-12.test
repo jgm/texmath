@@ -1,0 +1,15 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <msub>    <mi>P</mi>     <mn>0</mn>   </msub>   <mo>=</mo>   <munderover>    <mrow>      <msub>        <mi>P</mi>         <mn>0</mn>       </msub>     </mrow>     <mphantom>      <mi>x</mi>
+    </mphantom>     <mphantom>      <mi>x</mi>
+    </mphantom>   </munderover> </math>
+>>> native
+[ ESub (EIdentifier "P") (ENumber "0")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (ESub (EIdentifier "P") (ENumber "0"))
+    (EPhantom (EIdentifier "x"))
+    (EPhantom (EIdentifier "x"))
+]

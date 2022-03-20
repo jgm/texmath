@@ -1,0 +1,51 @@
+<<< native
+[ EUnderover
+    False (EIdentifier "BASE") (EIdentifier "s") (EIdentifier "t")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (EIdentifier "BASE")
+    (EGrouped
+       [ EPhantom (ENumber "1")
+       , EIdentifier "s"
+       , EPhantom (ENumber "1")
+       ])
+    (EGrouped
+       [ EPhantom (ENumber "1")
+       , EIdentifier "t"
+       , EPhantom (ENumber "1")
+       ])
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <munderover>
+      <mi>BASE</mi>
+      <mi>s</mi>
+      <mi>t</mi>
+    </munderover>
+    <mo>=</mo>
+    <munderover>
+      <mi>BASE</mi>
+      <mrow>
+        <mphantom>
+          <mn>1</mn>
+        </mphantom>
+        <mi>s</mi>
+        <mphantom>
+          <mn>1</mn>
+        </mphantom>
+      </mrow>
+      <mrow>
+        <mphantom>
+          <mn>1</mn>
+        </mphantom>
+        <mi>t</mi>
+        <mphantom>
+          <mn>1</mn>
+        </mphantom>
+      </mrow>
+    </munderover>
+  </mrow>
+</math>

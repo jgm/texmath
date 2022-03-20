@@ -1,0 +1,11 @@
+<<< native
+[ ESuper (EIdentifier "a") (ESymbol Bin "+")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (ESuper (EIdentifier "a") (ESymbol Bin "+"))
+    (EPhantom (EIdentifier "x"))
+    (EPhantom (EIdentifier "x"))
+]
+>>> eqn
+a sup + = {a sup +} from {hphantom x} to {hphantom x}

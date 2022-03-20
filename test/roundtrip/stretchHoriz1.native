@@ -1,0 +1,40 @@
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ []
+      , [ EText TextNormal "Stetching in base" ]
+      , [ EText TextNormal "Stretching in script" ]
+      ]
+    , [ [ EText TextNormal "no mrows" ]
+      , [ EOver
+            False (ESymbol Accent "\8594") (EText TextNormal "maps to")
+        ]
+      , [ EOver
+            False (EText TextNormal "maps to") (ESymbol Accent "\8594")
+        ]
+      ]
+    , [ [ EText TextNormal "all in row" ]
+      , [ EOver
+            False (ESymbol Accent "\8594") (EText TextNormal "maps to")
+        ]
+      , [ EOver
+            False (EText TextNormal "maps to") (ESymbol Accent "\8594")
+        ]
+      ]
+    , [ [ EText TextNormal "op in row" ]
+      , [ EOver
+            False (ESymbol Accent "\8594") (EText TextNormal "maps to")
+        ]
+      , [ EOver
+            False (EText TextNormal "maps to") (ESymbol Accent "\8594")
+        ]
+      ]
+    , [ [ EText TextNormal "text in row" ]
+      , [ EOver
+            False (ESymbol Accent "\8594") (EText TextNormal "maps to")
+        ]
+      , [ EOver
+            False (EText TextNormal "maps to") (ESymbol Accent "\8594")
+        ]
+      ]
+    ]
+]

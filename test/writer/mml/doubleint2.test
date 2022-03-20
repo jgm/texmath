@@ -1,0 +1,28 @@
+<<< native
+[ ESubsup (ESymbol Op "\8748") (ENumber "0") (ENumber "1")
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, ESpace (1 % 9)
+, ESymbol Ord "\8518"
+, EIdentifier "x"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msubsup>
+      <mo>∬</mo>
+      <mn>0</mn>
+      <mn>1</mn>
+    </msubsup>
+    <mi>f</mi>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>x</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mspace width="0.111em" />
+    <mi>ⅆ</mi>
+    <mi>x</mi>
+  </mrow>
+</math>

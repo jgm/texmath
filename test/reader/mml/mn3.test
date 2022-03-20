@@ -1,0 +1,19 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>2</mn> 
+    <mo>+</mo> 
+    <mrow>
+      <mn>3</mn> 
+      <mo> &#x2062;</mo> 
+      <mi> &#x2148;</mi> 
+    </mrow> 
+  </mrow> </math>
+>>> native
+[ ENumber "2"
+, ESymbol Bin "+"
+, EGrouped
+    [ ENumber "3" , ESymbol Ord "\8290" , EIdentifier "\8520" ]
+]

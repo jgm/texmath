@@ -1,0 +1,26 @@
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EPhantom (EText TextNormal "fail")
+            , EIdentifier "H"
+            , EPhantom (EText TextNormal "fail")
+            ]
+        ]
+      ]
+    , [ [ EIdentifier "T" ] ]
+    , [ [ EIdentifier "U" ] ]
+    ]
+, ESymbol Rel "="
+, EArray
+    [ AlignCenter ]
+    [ [ [ EIdentifier "H" ] ]
+    , [ [ EIdentifier "T" ] ]
+    , [ [ EGrouped
+            [ EPhantom (EText TextNormal "fail")
+            , EIdentifier "U"
+            , EPhantom (EText TextNormal "fail")
+            ]
+        ]
+      ]
+    ]
+]

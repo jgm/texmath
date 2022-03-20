@@ -1,0 +1,17 @@
+[ EText
+    TextNormal
+    "Inline double down arrows, display style, thick line\160"
+, EDelimited
+    ""
+    ""
+    [ Left "\8659"
+    , Right
+        (EFraction
+           NormalFrac
+           (EGrouped
+              [ EMathOperator "sin" , ESymbol Ord "\8289" , EIdentifier "\952" ])
+           (EIdentifier "M"))
+    , Left "\8659"
+    ]
+, EText TextNormal "\160the end."
+]

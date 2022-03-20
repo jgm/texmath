@@ -1,0 +1,13 @@
+<<< native
+[ ENumber "5"
+, ESymbol Bin "+"
+, ENumber "31"
+, ESymbol Bin "+"
+, ENumber "0"
+, ESymbol Bin "+"
+, ENumber "14"
+, ESymbol Bin "+"
+, ENumber "123456789"
+]
+>>> tex
+5 + 31 + 0 + 14 + 123456789

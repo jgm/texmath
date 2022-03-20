@@ -1,0 +1,21 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EFraction
+           NoLineFrac
+           (EIdentifier "a")
+           (EDelimited
+              "{"
+              "}"
+              [ Right
+                  (EFraction
+                     NoLineFrac
+                     (EIdentifier "b")
+                     (EGrouped [ EIdentifier "c" , ESymbol Bin "+" , ENumber "2" ]))
+              ]))
+    ]
+]
+>>> eqn
+left ( a / {left { b / {c + 2} right }} right )

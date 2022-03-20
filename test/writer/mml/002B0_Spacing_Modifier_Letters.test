@@ -1,0 +1,474 @@
+<<< native
+[ EArray
+    [ AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    ]
+    [ [ []
+      , [ EText TextNormal "2B" ]
+      , [ EText TextNormal "2C" ]
+      , [ EText TextNormal "2D" ]
+      , [ EText TextNormal "2E" ]
+      , [ EText TextNormal "2F" ]
+      ]
+    , [ [ EText TextNormal "0" ]
+      , [ ESymbol Ord "\688" ]
+      , [ ESymbol Ord "\704" ]
+      , [ ESymbol Ord "\720" ]
+      , [ ESymbol Ord "\736" ]
+      , [ ESymbol Ord "\752" ]
+      ]
+    , [ [ EText TextNormal "1" ]
+      , [ ESymbol Ord "\689" ]
+      , [ ESymbol Ord "\705" ]
+      , [ ESymbol Ord "\721" ]
+      , [ ESymbol Ord "\737" ]
+      , [ ESymbol Ord "\753" ]
+      ]
+    , [ [ EText TextNormal "2" ]
+      , [ ESymbol Ord "\690" ]
+      , [ ESymbol Ord "\706" ]
+      , [ ESymbol Ord "\722" ]
+      , [ ESymbol Ord "\738" ]
+      , [ ESymbol Ord "\754" ]
+      ]
+    , [ [ EText TextNormal "3" ]
+      , [ ESymbol Ord "\691" ]
+      , [ ESymbol Ord "\707" ]
+      , [ ESymbol Ord "\723" ]
+      , [ ESymbol Ord "\739" ]
+      , [ ESymbol Ord "\755" ]
+      ]
+    , [ [ EText TextNormal "4" ]
+      , [ ESymbol Ord "\692" ]
+      , [ ESymbol Ord "\708" ]
+      , [ ESymbol Ord "\724" ]
+      , [ ESymbol Ord "\740" ]
+      , [ ESymbol Ord "\756" ]
+      ]
+    , [ [ EText TextNormal "5" ]
+      , [ ESymbol Ord "\693" ]
+      , [ ESymbol Ord "\709" ]
+      , [ ESymbol Ord "\725" ]
+      , [ ESymbol Ord "\741" ]
+      , [ ESymbol Ord "\757" ]
+      ]
+    , [ [ EText TextNormal "6" ]
+      , [ ESymbol Ord "\694" ]
+      , [ ESymbol Accent "\710" ]
+      , [ ESymbol Ord "\726" ]
+      , [ ESymbol Ord "\742" ]
+      , [ ESymbol Ord "\758" ]
+      ]
+    , [ [ EText TextNormal "7" ]
+      , [ ESymbol Ord "\695" ]
+      , [ ESymbol Accent "\711" ]
+      , [ ESymbol Ord "\727" ]
+      , [ ESymbol Ord "\743" ]
+      , [ ESymbol Accent "\759" ]
+      ]
+    , [ [ EText TextNormal "8" ]
+      , [ ESymbol Ord "\696" ]
+      , [ ESymbol Ord "\712" ]
+      , [ ESymbol Accent "\728" ]
+      , [ ESymbol Ord "\744" ]
+      , [ ESymbol Ord "\760" ]
+      ]
+    , [ [ EText TextNormal "9" ]
+      , [ ESymbol Ord "\697" ]
+      , [ ESymbol Accent "\713" ]
+      , [ ESymbol Accent "\729" ]
+      , [ ESymbol Ord "\745" ]
+      , [ ESymbol Ord "\761" ]
+      ]
+    , [ [ EText TextNormal "A" ]
+      , [ ESymbol Ord "\698" ]
+      , [ ESymbol Accent "\714" ]
+      , [ ESymbol Accent "\730" ]
+      , [ ESymbol Ord "\746" ]
+      , [ ESymbol Ord "\762" ]
+      ]
+    , [ [ EText TextNormal "B" ]
+      , [ ESymbol Ord "\699" ]
+      , [ ESymbol Accent "\715" ]
+      , [ ESymbol Ord "\731" ]
+      , [ ESymbol Ord "\747" ]
+      , [ ESymbol Ord "\763" ]
+      ]
+    , [ [ EText TextNormal "C" ]
+      , [ ESymbol Ord "\700" ]
+      , [ ESymbol Ord "\716" ]
+      , [ ESymbol Accent "\732" ]
+      , [ ESymbol Ord "\748" ]
+      , [ ESymbol Ord "\764" ]
+      ]
+    , [ [ EText TextNormal "D" ]
+      , [ ESymbol Ord "\701" ]
+      , [ ESymbol Accent "\717" ]
+      , [ ESymbol Accent "\733" ]
+      , [ ESymbol Ord "\749" ]
+      , [ ESymbol Ord "\765" ]
+      ]
+    , [ [ EText TextNormal "E" ]
+      , [ ESymbol Ord "\702" ]
+      , [ ESymbol Ord "\718" ]
+      , [ ESymbol Ord "\734" ]
+      , [ ESymbol Ord "\750" ]
+      , [ ESymbol Ord "\766" ]
+      ]
+    , [ [ EText TextNormal "F" ]
+      , [ ESymbol Ord "\703" ]
+      , [ ESymbol Ord "\719" ]
+      , [ ESymbol Ord "\735" ]
+      , [ ESymbol Ord "\751" ]
+      , [ ESymbol Ord "\767" ]
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">2B</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">2C</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">2D</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">2E</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">2F</mtext>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">0</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ʰ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ˀ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ː</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ˠ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˰</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ʱ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ˁ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ˑ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ˡ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˱</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">2</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ʲ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˂</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˒</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ˢ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˲</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">3</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ʳ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˃</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˓</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ˣ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˳</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">4</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ʴ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˄</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˔</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ˤ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˴</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">5</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ʵ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˅</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˕</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˥</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˵</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">6</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ʶ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ˆ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˖</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˦</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˶</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">7</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ʷ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ˇ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˗</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˧</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>˷</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">8</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ʸ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ˈ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>˘</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˨</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˸</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">9</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ʹ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ˉ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>˙</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˩</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˹</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">A</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ʺ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ˊ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>˚</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˪</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˺</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">B</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ʻ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ˋ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˛</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˫</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˻</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">C</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ʼ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ˌ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>˜</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ˬ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˼</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">D</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ʽ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ˍ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>˝</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˭</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˽</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">E</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ʾ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ˎ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˞</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ˮ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˾</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">F</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ʿ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ˏ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˟</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˯</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>˿</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

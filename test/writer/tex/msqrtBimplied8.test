@@ -1,0 +1,11 @@
+<<< native
+[ ESqrt
+    (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ])
+, ESymbol Bin "+"
+, ESqrt
+    (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ])
+, ESymbol Bin "+"
+, ESqrt (EGrouped [])
+]
+>>> tex
+\sqrt{x - 3} + \sqrt{x - 3} + \sqrt{}

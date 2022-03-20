@@ -1,0 +1,4 @@
+<<< native
+[ EFraction NormalFrac (EIdentifier "y") (EIdentifier "x") ]
+>>> tex
+\frac{y}{x}

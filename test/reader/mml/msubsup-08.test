@@ -1,0 +1,13 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <msubsup>    <mi>A</mi>     <mi>B</mi>     <mi>C</mi>   </msubsup>   <mo>=</mo>   <msubsup>    <mi>A</mi>     <mi>B</mi>     <mi>C</mi>   </msubsup>   <mphantom>    <mfrac>      <mi>test</mi>
+      <mi>failed</mi>
+    </mfrac>   </mphantom> </math>
+>>> native
+[ ESubsup (EIdentifier "A") (EIdentifier "B") (EIdentifier "C")
+, ESymbol Rel "="
+, ESubsup (EIdentifier "A") (EIdentifier "B") (EIdentifier "C")
+, EPhantom
+    (EFraction NormalFrac (EIdentifier "test") (EIdentifier "failed"))
+]

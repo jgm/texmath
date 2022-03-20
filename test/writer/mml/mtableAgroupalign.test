@@ -1,0 +1,13 @@
+<<< native
+[ EArray [ AlignCenter ] [ [ [ EIdentifier "x" ] ] ] ]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mi>x</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

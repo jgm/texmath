@@ -1,0 +1,32 @@
+<<< native
+[ ESub (EIdentifier "P") (ENumber "0")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (ESub (EIdentifier "P") (ENumber "0"))
+    (EPhantom (EIdentifier "x"))
+    (EPhantom (EIdentifier "x"))
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub>
+      <mi>P</mi>
+      <mn>0</mn>
+    </msub>
+    <mo>=</mo>
+    <munderover>
+      <msub>
+        <mi>P</mi>
+        <mn>0</mn>
+      </msub>
+      <mphantom>
+        <mi>x</mi>
+      </mphantom>
+      <mphantom>
+        <mi>x</mi>
+      </mphantom>
+    </munderover>
+  </mrow>
+</math>

@@ -1,0 +1,139 @@
+<<< native
+[ EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>“A”</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>“A”</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>“A”</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>“A”</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>“A”</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>“A”</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>“A”</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>“A”</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>“A”</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

@@ -1,0 +1,55 @@
+<<< native
+[ EText
+    TextNormal
+    "And this shows a combination with a background image at a desired opacity\160"
+, EGrouped
+    [ ESub (EIdentifier "Z") (EIdentifier "\945")
+    , EDelimited "(" ")" [ Right (EIdentifier "f") ]
+    , ESymbol Rel "="
+    , EFraction
+        NormalFrac
+        (ENumber "1")
+        (EGrouped
+           [ ENumber "2"
+           , EIdentifier "i"
+           , ESymbol Ord "\8201"
+           , EMathOperator "cos"
+           , EDelimited
+               "("
+               ")"
+               [ Right
+                   (EFraction
+                      NormalFrac
+                      (EGrouped [ EIdentifier "\945" , EIdentifier "\960" ])
+                      (ENumber "2"))
+               ]
+           ])
+    , EGrouped
+        [ ESub (ESymbol Op "\8747") (EIdentifier "C")
+        , EFraction
+            NormalFrac
+            (EGrouped
+               [ EIdentifier "f"
+               , ESymbol Open "("
+               , EIdentifier "i"
+               , EIdentifier "z"
+               , ESymbol Close ")"
+               , ESuper
+                   (EDelimited
+                      "(" ")" [ Right (ESymbol Bin "-") , Right (EIdentifier "z") ])
+                   (EIdentifier "\945")
+               ])
+            (EGrouped
+               [ ESuper
+                   (EIdentifier "e")
+                   (EGrouped [ ENumber "2" , EIdentifier "\960" , EIdentifier "z" ])
+               , ESymbol Bin "-"
+               , ENumber "1"
+               ])
+        ]
+    , ESymbol Ord "\8518"
+    , EIdentifier "z"
+    ]
+]
+>>> eqn
+roman "And this shows a combination with a background image at a desired opacity " {Z sub alpha left ( f right ) = 1 over {2 i \[u2009] cos left ( {alpha pi} over 2 right )} {int sub C {f ( i z ) {left ( - z right )} sup alpha} over {e sup {2 pi z} - 1}} \[u2146] z}

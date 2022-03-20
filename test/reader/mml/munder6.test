@@ -1,0 +1,36 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle mathsize="200%" displaystyle="false">
+    <munder>
+      <mi>x</mi> 
+      <mo> &#x02D9;</mo> 
+    </munder> 
+    <mo> &#x2260;</mo> 
+    <mstyle accentunder="false">
+      <munder>
+        <mi>x</mi> 
+        <mo> &#x02D9;</mo> 
+      </munder> 
+    </mstyle> 
+    <mo> &#x003D;</mo> 
+    <munder accentunder="false">
+      <mi>x</mi> 
+      <mo> &#x02D9;</mo> 
+    </munder> 
+    <mo> &#x003D;</mo> 
+    <munder>
+      <mi>x</mi> 
+      <mo accent="false"> &#x02D9;</mo> 
+    </munder> 
+  </mstyle> </math>
+>>> native
+[ EUnder False (EIdentifier "x") (ESymbol Accent "\729")
+, ESymbol Rel "\8800"
+, EUnder False (EIdentifier "x") (ESymbol Ord "\729")
+, ESymbol Rel "="
+, EUnder False (EIdentifier "x") (ESymbol Ord "\729")
+, ESymbol Rel "="
+, EUnder False (EIdentifier "x") (ESymbol Ord "\729")
+]

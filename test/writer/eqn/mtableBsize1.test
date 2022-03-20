@@ -1,0 +1,12 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ ESymbol Accent "\8592" ] , [ ENumber "1" ] ]
+    , [ [ EText TextNormal "a long cell" ] , [ ENumber "1" ] ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ <- above {roman "a long cell"} }
+ccol{ 1 above 1 }
+}

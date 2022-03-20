@@ -1,0 +1,16 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mtable rowalign="top">    <mtr>      <mtd>        <munder>          <mi mathvariant="normal">HT</mi>           <mphantom>            <mtext>fail</mtext>
+          </mphantom>         </munder>       </mtd>       <mtd>        <mo>=</mo>       </mtd>       <mtd>        <mi mathvariant="normal">TH</mi>       </mtd>     </mtr>   </mtable> </math>
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EUnder
+            False (EIdentifier "HT") (EPhantom (EText TextNormal "fail"))
+        ]
+      , [ ESymbol Rel "=" ]
+      , [ EIdentifier "TH" ]
+      ]
+    ]
+]

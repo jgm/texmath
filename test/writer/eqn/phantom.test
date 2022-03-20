@@ -1,0 +1,10 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EPhantom (EFraction NormalFrac (ENumber "1") (ENumber "2")))
+    ]
+]
+>>> eqn
+left ( hphantom {1 over 2} right )

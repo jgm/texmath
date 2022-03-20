@@ -1,0 +1,14 @@
+<<< native
+[ EText TextNormal "\"string\8221"
+, ESymbol Rel "="
+, EText TextNormal "\8220string\""
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext mathvariant="normal">&quot;string”</mtext>
+    <mo>=</mo>
+    <mtext mathvariant="normal">“string&quot;</mtext>
+  </mrow>
+</math>

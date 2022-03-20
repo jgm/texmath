@@ -1,0 +1,14 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <maction actiontype="statusline">
+    <mrow>
+      <mn>2</mn> 
+      <mo>+</mo> 
+      <mi>x</mi> 
+    </mrow> 
+    <mtext>Add 2 to the value of x</mtext> 
+  </maction> </math>
+>>> native
+[ ENumber "2" , ESymbol Bin "+" , EIdentifier "x" ]

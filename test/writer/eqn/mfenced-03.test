@@ -1,0 +1,28 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter , AlignCenter ]
+           [ [ [ EIdentifier "A" ]
+             , [ EIdentifier "B" ]
+             , [ EIdentifier "C" ]
+             ]
+           , [ [ EIdentifier "D" ]
+             , [ EIdentifier "E" ]
+             , [ EIdentifier "F" ]
+             ]
+           , [ [ EIdentifier "G" ]
+             , [ EIdentifier "H" ]
+             , [ EIdentifier "I" ]
+             ]
+           ])
+    ]
+]
+>>> eqn
+left ( matrix{
+ccol{ A above D above G }
+ccol{ B above E above H }
+ccol{ C above F above I }
+} right )

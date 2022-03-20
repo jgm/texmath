@@ -1,0 +1,21 @@
+[ EDelimited
+    "["
+    "]"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter , AlignCenter ]
+           [ [ [ EIdentifier "A" ]
+             , [ EIdentifier "B" ]
+             , [ EIdentifier "C" ]
+             ]
+           , [ [ EIdentifier "D" ]
+             , [ EIdentifier "E" ]
+             , [ EIdentifier "F" ]
+             ]
+           , [ [ EIdentifier "G" ]
+             , [ EIdentifier "H" ]
+             , [ EIdentifier "I" ]
+             ]
+           ])
+    ]
+]

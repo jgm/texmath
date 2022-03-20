@@ -1,0 +1,22 @@
+<<< native
+[ EIdentifier "x"
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESymbol Op "\8722"
+       , EIdentifier "b"
+       , ESymbol Bin "\177"
+       , ESqrt
+           (EGrouped
+              [ ESuper (EIdentifier "b") (ENumber "2")
+              , ESymbol Bin "\8722"
+              , ENumber "4"
+              , EIdentifier "a"
+              , EIdentifier "c"
+              ])
+       ])
+    (EGrouped [ ENumber "2" , EIdentifier "a" ])
+]
+>>> tex
+x = \frac{-b \pm \sqrt{b^{2} - 4ac}}{2a}

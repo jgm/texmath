@@ -1,0 +1,10 @@
+<<< native
+[ ESymbol Op "\8747"
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, ESpace (1 % 9)
+, ESymbol Ord "\8518"
+, EIdentifier "x"
+]
+>>> tex
+\int f(x)\mspace{2mu}\mathbb{d}x

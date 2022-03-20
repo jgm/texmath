@@ -1,0 +1,23 @@
+<<< native
+[ EUnderover
+    False
+    (EUnderover
+       False
+       (EIdentifier "BASE")
+       (EIdentifier "first under script")
+       (EIdentifier "second overscript"))
+    (EIdentifier "second one")
+    (EIdentifier "first overscript")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (EOver
+       False
+       (EUnder
+          False (EIdentifier "BASE") (EIdentifier "first under script"))
+       (EIdentifier "second overscript"))
+    (EIdentifier "second one")
+    (EIdentifier "first overscript")
+]
+>>> eqn
+{BASE from {first under script} to {second overscript}} from {second one} to {first overscript} = {{BASE from {first under script}} to {second overscript}} from {second one} to {first overscript}

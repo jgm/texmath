@@ -1,0 +1,14 @@
+<<< native
+[ EOver False (EIdentifier "BASE") (EIdentifier "x")
+, ESymbol Rel "="
+, EOver
+    False
+    (EIdentifier "BASE")
+    (EGrouped
+       [ EPhantom (ENumber "1")
+       , EIdentifier "x"
+       , EPhantom (ENumber "1")
+       ])
+]
+>>> tex
+\overset{x}{BASE} = \overset{\phantom{1}x\phantom{1}}{BASE}

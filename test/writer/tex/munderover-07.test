@@ -1,0 +1,22 @@
+<<< native
+[ EUnderover
+    False
+    (EUnderover
+       False
+       (EIdentifier "BASE")
+       (EIdentifier "under-1")
+       (EIdentifier "over-2"))
+    (EIdentifier "under-2")
+    (EIdentifier "over-1")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (EUnder
+       False
+       (EOver False (EIdentifier "BASE") (EIdentifier "over-2"))
+       (EIdentifier "under-1"))
+    (EIdentifier "under-2")
+    (EIdentifier "over-1")
+]
+>>> tex
+\underset{under-2}{\overset{over-1}{\underset{under-1}{\overset{over-2}{BASE}}}} = \underset{under-2}{\overset{over-1}{\underset{under-1}{\overset{over-2}{BASE}}}}

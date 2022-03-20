@@ -1,0 +1,8 @@
+[ ESub (EIdentifier "P") (ENumber "0")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (ESub (EIdentifier "P") (ENumber "0"))
+    (EPhantom (EIdentifier "x"))
+    (EPhantom (EIdentifier "x"))
+]

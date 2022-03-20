@@ -1,0 +1,4 @@
+<<< native
+[ EDelimited "(" ")" [ Right (EGrouped []) ] ]
+>>> tex
+\left( {} \right)

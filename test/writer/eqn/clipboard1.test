@@ -1,0 +1,8 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (EIdentifier "x")
+    (EGrouped [ EIdentifier "x" , ESymbol Bin "+" , ENumber "1" ])
+]
+>>> eqn
+x over {x + 1}

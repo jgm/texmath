@@ -1,0 +1,21 @@
+<<< native
+[ EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+]
+>>> tex
+\text{“A”} + \text{“A”} + \text{“A”} + \text{“A”} + \text{“A”} + \text{“A”} + \text{“A”} + \text{“A”} + \text{“A”}

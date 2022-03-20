@@ -1,0 +1,51 @@
+<<< native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "-"
+            , EFraction NormalFrac (EIdentifier "a") (EIdentifier "b")
+            , EIdentifier "x"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "-"
+            , EFraction NormalFrac (ENumber "1") (EIdentifier "b")
+            , EIdentifier "x"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "-"
+            , EFraction NormalFrac (ENumber "1") (ENumber "2")
+            , EIdentifier "x"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "-"
+            , EFraction
+                NormalFrac (ESuper (ENumber "1") (ENumber "2")) (EIdentifier "z")
+            , EIdentifier "x"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "-"
+            , EFraction
+                NormalFrac (EIdentifier "z") (ESuper (ENumber "1") (ENumber "2"))
+            , EIdentifier "x"
+            ]
+        ]
+      ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ {x - a over b x} above {x - 1 over b x} above {x - 1 over 2 x} above {x - {1 sup 2} over z x} above {x - z over {1 sup 2} x} }
+}

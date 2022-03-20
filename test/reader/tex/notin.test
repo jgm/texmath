@@ -1,0 +1,14 @@
+<<< tex
+x \in y
+\wedge
+x \not\in y
+
+>>> native
+[ EIdentifier "x"
+, ESymbol Rel "\8712"
+, EIdentifier "y"
+, ESymbol Bin "\8743"
+, EIdentifier "x"
+, ESymbol Rel "\8713"
+, EIdentifier "y"
+]

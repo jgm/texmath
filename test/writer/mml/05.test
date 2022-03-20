@@ -1,0 +1,82 @@
+<<< native
+[ ESubsup (ESymbol Op "\8747") (EIdentifier "a") (EIdentifier "x")
+, ESpace ((-1) % 6)
+, ESpace ((-1) % 6)
+, ESpace ((-1) % 6)
+, ESubsup (ESymbol Op "\8747") (EIdentifier "a") (EIdentifier "s")
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "y") ]
+, ESpace (1 % 6)
+, EIdentifier "d"
+, EIdentifier "y"
+, ESpace (1 % 6)
+, EIdentifier "d"
+, EIdentifier "s"
+, ESymbol Rel "="
+, ESubsup (ESymbol Op "\8747") (EIdentifier "a") (EIdentifier "x")
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "y") ]
+, EDelimited
+    "("
+    ")"
+    [ Right (EIdentifier "x")
+    , Right (ESymbol Bin "\8722")
+    , Right (EIdentifier "y")
+    ]
+, ESpace (1 % 6)
+, EIdentifier "d"
+, EIdentifier "y"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msubsup>
+      <mo>∫</mo>
+      <mi>a</mi>
+      <mi>x</mi>
+    </msubsup>
+    <mspace width="-0.167em" />
+    <mspace width="-0.167em" />
+    <mspace width="-0.167em" />
+    <msubsup>
+      <mo>∫</mo>
+      <mi>a</mi>
+      <mi>s</mi>
+    </msubsup>
+    <mi>f</mi>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>y</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mspace width="0.167em" />
+    <mi>d</mi>
+    <mi>y</mi>
+    <mspace width="0.167em" />
+    <mi>d</mi>
+    <mi>s</mi>
+    <mo>=</mo>
+    <msubsup>
+      <mo>∫</mo>
+      <mi>a</mi>
+      <mi>x</mi>
+    </msubsup>
+    <mi>f</mi>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>y</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>x</mi>
+      <mo>−</mo>
+      <mi>y</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mspace width="0.167em" />
+    <mi>d</mi>
+    <mi>y</mi>
+  </mrow>
+</math>

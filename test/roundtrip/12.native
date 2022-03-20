@@ -1,0 +1,30 @@
+[ EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, ESymbol Rel "="
+, EDelimited
+    "{"
+    ""
+    [ Right
+        (EArray
+           [ AlignLeft , AlignLeft ]
+           [ [ [ ENumber "1" ]
+             , [ ESymbol Bin "\8722"
+               , ENumber "1"
+               , ESymbol Rel "\8804"
+               , EIdentifier "x"
+               , ESymbol Rel "<"
+               , ENumber "0"
+               ]
+             ]
+           , [ [ EFraction NormalFrac (ENumber "1") (ENumber "2") ]
+             , [ EIdentifier "x" , ESymbol Rel "=" , ENumber "0" ]
+             ]
+           , [ [ ENumber "1"
+               , ESymbol Bin "\8722"
+               , ESuper (EIdentifier "x") (ENumber "2")
+               ]
+             , [ EText TextNormal "otherwise" ]
+             ]
+           ])
+    ]
+]

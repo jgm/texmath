@@ -1,0 +1,140 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable frame="solid">
+    <mtr>
+      <mtd></mtd> 
+      <mtd>
+        <mtext>Stetching in base</mtext> 
+      </mtd> 
+      <mtd>
+        <mtext>Stretching in script</mtext> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>no mrows</mtext> 
+      </mtd> 
+      <mtd>
+        <mover>
+          <mo> &#x2192;</mo> 
+          <mtext>maps to</mtext> 
+        </mover> 
+      </mtd> 
+      <mtd>
+        <mover>
+          <mtext>maps to</mtext> 
+          <mo> &#x2192;</mo> 
+        </mover> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>all in row</mtext> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mover>
+            <mo> &#x2192;</mo> 
+            <mtext>maps to</mtext> 
+          </mover> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mover>
+            <mtext>maps to</mtext> 
+            <mo> &#x2192;</mo> 
+          </mover> 
+        </mrow> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>op in row</mtext> 
+      </mtd> 
+      <mtd>
+        <mover>
+          <mrow>
+            <mo> &#x2192;</mo> 
+          </mrow> 
+          <mtext>maps to</mtext> 
+        </mover> 
+      </mtd> 
+      <mtd>
+        <mover>
+          <mtext>maps to</mtext> 
+          <mrow>
+            <mo> &#x2192;</mo> 
+          </mrow> 
+        </mover> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>text in row</mtext> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mover>
+            <mrow>
+              <mo> &#x2192;</mo> 
+            </mrow> 
+            <mtext>maps to</mtext> 
+          </mover> 
+        </mrow> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mover>
+            <mtext>maps to</mtext> 
+            <mrow>
+              <mo> &#x2192;</mo> 
+            </mrow> 
+          </mover> 
+        </mrow> 
+      </mtd> 
+    </mtr> 
+  </mtable> </math>
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ []
+      , [ EText TextNormal "Stetching in base" ]
+      , [ EText TextNormal "Stretching in script" ]
+      ]
+    , [ [ EText TextNormal "no mrows" ]
+      , [ EOver
+            False (ESymbol Accent "\8594") (EText TextNormal "maps to")
+        ]
+      , [ EOver
+            False (EText TextNormal "maps to") (ESymbol Accent "\8594")
+        ]
+      ]
+    , [ [ EText TextNormal "all in row" ]
+      , [ EOver
+            False (ESymbol Accent "\8594") (EText TextNormal "maps to")
+        ]
+      , [ EOver
+            False (EText TextNormal "maps to") (ESymbol Accent "\8594")
+        ]
+      ]
+    , [ [ EText TextNormal "op in row" ]
+      , [ EOver
+            False (ESymbol Accent "\8594") (EText TextNormal "maps to")
+        ]
+      , [ EOver
+            False (EText TextNormal "maps to") (ESymbol Accent "\8594")
+        ]
+      ]
+    , [ [ EText TextNormal "text in row" ]
+      , [ EOver
+            False (ESymbol Accent "\8594") (EText TextNormal "maps to")
+        ]
+      , [ EOver
+            False (EText TextNormal "maps to") (ESymbol Accent "\8594")
+        ]
+      ]
+    ]
+]

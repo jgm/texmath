@@ -1,0 +1,6 @@
+[ EDelimited
+    "{"
+    "}"
+    [ Right (EFraction NoLineFrac (EIdentifier "x") (EIdentifier "y"))
+    ]
+]

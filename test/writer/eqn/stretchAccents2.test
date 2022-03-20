@@ -1,0 +1,10 @@
+<<< native
+[ EOver False (EIdentifier "xxx") (ESymbol Accent "\175")
+, ESymbol Rel "="
+, EOver
+    False
+    (EStyled TextItalic [ EIdentifier "xxx" ])
+    (ESymbol Accent "\175")
+]
+>>> eqn
+xxx to \[u00AF] = {italic {xxx}} to \[u00AF]

@@ -1,0 +1,13 @@
+<<< native
+[ ESymbol Op "\8747"
+, EIdentifier "f"
+, EDelimited
+    "("
+    ")"
+    [ Right (EFraction NormalFrac (EIdentifier "x") (ENumber "2")) ]
+, ESpace (1 % 9)
+, ESymbol Ord "\8518"
+, EIdentifier "x"
+]
+>>> tex
+\int f\left( \frac{x}{2} \right)\mspace{2mu}\mathbb{d}x

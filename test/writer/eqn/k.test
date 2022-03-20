@@ -1,0 +1,27 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "kappa" ] , [ ESymbol Alpha "\954" ] ]
+    , [ [ EText TextNormal "kappav" ] , [ ESymbol Alpha "\1008" ] ]
+    , [ [ EText TextNormal "kcedil" ] , [ ESymbol Ord "\311" ] ]
+    , [ [ EText TextNormal "Kcedil" ] , [ ESymbol Ord "\310" ] ]
+    , [ [ EText TextNormal "kcy" ] , [ ESymbol Ord "\1082" ] ]
+    , [ [ EText TextNormal "Kcy" ] , [ ESymbol Ord "\1050" ] ]
+    , [ [ EText TextNormal "kfr" ] , [ ESymbol Alpha "\120104" ] ]
+    , [ [ EText TextNormal "Kfr" ] , [ ESymbol Alpha "\120078" ] ]
+    , [ [ EText TextNormal "kgreen" ] , [ ESymbol Ord "\312" ] ]
+    , [ [ EText TextNormal "khcy" ] , [ ESymbol Ord "\1093" ] ]
+    , [ [ EText TextNormal "KHcy" ] , [ ESymbol Ord "\1061" ] ]
+    , [ [ EText TextNormal "kjcy" ] , [ ESymbol Ord "\1116" ] ]
+    , [ [ EText TextNormal "KJcy" ] , [ ESymbol Ord "\1036" ] ]
+    , [ [ EText TextNormal "kopf" ] , [ ESymbol Alpha "\120156" ] ]
+    , [ [ EText TextNormal "Kopf" ] , [ ESymbol Alpha "\120130" ] ]
+    , [ [ EText TextNormal "kscr" ] , [ ESymbol Alpha "\120000" ] ]
+    , [ [ EText TextNormal "Kscr" ] , [ ESymbol Alpha "\119974" ] ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ {roman "kappa"} above {roman "kappav"} above {roman "kcedil"} above {roman "Kcedil"} above {roman "kcy"} above {roman "Kcy"} above {roman "kfr"} above {roman "Kfr"} above {roman "kgreen"} above {roman "khcy"} above {roman "KHcy"} above {roman "kjcy"} above {roman "KJcy"} above {roman "kopf"} above {roman "Kopf"} above {roman "kscr"} above {roman "Kscr"} }
+ccol{ kappa above \[u03F0] above \[u0137] above \[u0136] above \[u043A] above \[u041A] above \[u1D528] above \[u1D50E] above \[u0138] above \[u0445] above \[u0425] above \[u045C] above \[u040C] above \[u1D55C] above \[u1D542] above \[u1D4C0] above \[u1D4A6] }
+}

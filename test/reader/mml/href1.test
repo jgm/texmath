@@ -1,0 +1,30 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" href="http://en.wikipedia.org/wiki/Euler%27s_identity">
+  <mrow>
+    <mrow>
+      <msup>
+        <mi>&#8519;</mi> 
+        <mrow>
+          <mi>&#8520;</mi> 
+          <mi>&#960;</mi> 
+        </mrow> 
+      </msup> 
+      <mo>+</mo> 
+      <mn>1</mn> 
+    </mrow> 
+    <mo>=</mo> 
+    <mn>0</mn> 
+  </mrow> </math>
+>>> native
+[ EGrouped
+    [ ESuper
+        (EIdentifier "\8519")
+        (EGrouped [ EIdentifier "\8520" , EIdentifier "\960" ])
+    , ESymbol Bin "+"
+    , ENumber "1"
+    ]
+, ESymbol Rel "="
+, ENumber "0"
+]

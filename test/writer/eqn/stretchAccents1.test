@@ -1,0 +1,17 @@
+<<< native
+[ EOver False (EIdentifier "xxx") (ESymbol Accent "\710")
+, ESymbol Bin "+"
+, EOver False (EIdentifier "xxx") (ESymbol Accent "\175")
+, ESymbol Bin "+"
+, EOver False (EIdentifier "xxx") (ESymbol Accent "\711")
+, ESymbol Bin "+"
+, EOver False (EIdentifier "xxx") (ESymbol Accent "\732")
+, ESymbol Bin "+"
+, EOver False (EIdentifier "xxx") (ESymbol Accent "\9182")
+, ESymbol Bin "+"
+, EUnder False (EIdentifier "xxx") (ESymbol Accent "\9183")
+, ESymbol Bin "+"
+, EIdentifier "xxx"
+]
+>>> eqn
+xxx to \[u02C6] + xxx to \[u00AF] + xxx to \[u02C7] + xxx to \[u02DC] + xxx to \[u23DE] + xxx from \[u23DF] + xxx

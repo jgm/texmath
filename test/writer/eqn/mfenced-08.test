@@ -1,0 +1,25 @@
+<<< native
+[ EDelimited
+    "|"
+    "|"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ EIdentifier "U" ] ] , [ [ EIdentifier "V" ] ] ])
+    ]
+, ESymbol Rel "="
+, EDelimited
+    "\8214"
+    "\8214"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ EIdentifier "U" ] ] , [ [ EIdentifier "V" ] ] ])
+    ]
+]
+>>> eqn
+left | matrix{
+ccol{ U above V }
+} right | = left ‖ matrix{
+ccol{ U above V }
+} right ‖

@@ -1,0 +1,12 @@
+<<< native
+[ EText TextNormal "Inline, text style, normal line\160"
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ EMathOperator "tan" , ESymbol Ord "\8289" , EIdentifier "\952" ])
+    (ENumber "67")
+, EText
+    TextNormal ", numerator and denominator should render script size."
+]
+>>> eqn
+roman "Inline, text style, normal line " {tan  theta} over 67 roman ", numerator and denominator should render script size."

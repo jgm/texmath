@@ -1,0 +1,681 @@
+<<< native
+[ EArray
+    [ AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    ]
+    [ [ []
+      , [ EText TextNormal "10" ]
+      , [ EText TextNormal "11" ]
+      , [ EText TextNormal "12" ]
+      , [ EText TextNormal "13" ]
+      , [ EText TextNormal "14" ]
+      , [ EText TextNormal "15" ]
+      , [ EText TextNormal "16" ]
+      , [ EText TextNormal "17" ]
+      ]
+    , [ [ EText TextNormal "0" ]
+      , [ ESymbol Ord "\256" ]
+      , [ ESymbol Ord "\272" ]
+      , [ ESymbol Ord "\288" ]
+      , [ ESymbol Ord "\304" ]
+      , [ ESymbol Ord "\320" ]
+      , [ ESymbol Ord "\336" ]
+      , [ ESymbol Ord "\352" ]
+      , [ ESymbol Ord "\368" ]
+      ]
+    , [ [ EText TextNormal "1" ]
+      , [ ESymbol Ord "\257" ]
+      , [ ESymbol Ord "\273" ]
+      , [ ESymbol Ord "\289" ]
+      , [ ESymbol Alpha "\305" ]
+      , [ ESymbol Ord "\321" ]
+      , [ ESymbol Ord "\337" ]
+      , [ ESymbol Ord "\353" ]
+      , [ ESymbol Ord "\369" ]
+      ]
+    , [ [ EText TextNormal "2" ]
+      , [ ESymbol Ord "\258" ]
+      , [ ESymbol Ord "\274" ]
+      , [ ESymbol Ord "\290" ]
+      , [ ESymbol Ord "\306" ]
+      , [ ESymbol Ord "\322" ]
+      , [ ESymbol Ord "\338" ]
+      , [ ESymbol Ord "\354" ]
+      , [ ESymbol Ord "\370" ]
+      ]
+    , [ [ EText TextNormal "3" ]
+      , [ ESymbol Ord "\259" ]
+      , [ ESymbol Ord "\275" ]
+      , [ ESymbol Ord "\291" ]
+      , [ ESymbol Ord "\307" ]
+      , [ ESymbol Ord "\323" ]
+      , [ ESymbol Ord "\339" ]
+      , [ ESymbol Ord "\355" ]
+      , [ ESymbol Ord "\371" ]
+      ]
+    , [ [ EText TextNormal "4" ]
+      , [ ESymbol Ord "\260" ]
+      , [ ESymbol Ord "\276" ]
+      , [ ESymbol Ord "\292" ]
+      , [ ESymbol Ord "\308" ]
+      , [ ESymbol Ord "\324" ]
+      , [ ESymbol Ord "\340" ]
+      , [ ESymbol Ord "\356" ]
+      , [ ESymbol Ord "\372" ]
+      ]
+    , [ [ EText TextNormal "5" ]
+      , [ ESymbol Ord "\261" ]
+      , [ ESymbol Ord "\277" ]
+      , [ ESymbol Ord "\293" ]
+      , [ ESymbol Ord "\309" ]
+      , [ ESymbol Ord "\325" ]
+      , [ ESymbol Ord "\341" ]
+      , [ ESymbol Ord "\357" ]
+      , [ ESymbol Ord "\373" ]
+      ]
+    , [ [ EText TextNormal "6" ]
+      , [ ESymbol Ord "\262" ]
+      , [ ESymbol Ord "\278" ]
+      , [ ESymbol Ord "\294" ]
+      , [ ESymbol Ord "\310" ]
+      , [ ESymbol Ord "\326" ]
+      , [ ESymbol Ord "\342" ]
+      , [ ESymbol Ord "\358" ]
+      , [ ESymbol Ord "\374" ]
+      ]
+    , [ [ EText TextNormal "7" ]
+      , [ ESymbol Ord "\263" ]
+      , [ ESymbol Ord "\279" ]
+      , [ ESymbol Ord "\295" ]
+      , [ ESymbol Ord "\311" ]
+      , [ ESymbol Ord "\327" ]
+      , [ ESymbol Ord "\343" ]
+      , [ ESymbol Ord "\359" ]
+      , [ ESymbol Ord "\375" ]
+      ]
+    , [ [ EText TextNormal "8" ]
+      , [ ESymbol Ord "\264" ]
+      , [ ESymbol Ord "\280" ]
+      , [ ESymbol Ord "\296" ]
+      , [ ESymbol Ord "\312" ]
+      , [ ESymbol Ord "\328" ]
+      , [ ESymbol Ord "\344" ]
+      , [ ESymbol Ord "\360" ]
+      , [ ESymbol Ord "\376" ]
+      ]
+    , [ [ EText TextNormal "9" ]
+      , [ ESymbol Ord "\265" ]
+      , [ ESymbol Ord "\281" ]
+      , [ ESymbol Ord "\297" ]
+      , [ ESymbol Ord "\313" ]
+      , [ ESymbol Ord "\329" ]
+      , [ ESymbol Ord "\345" ]
+      , [ ESymbol Ord "\361" ]
+      , [ ESymbol Ord "\377" ]
+      ]
+    , [ [ EText TextNormal "A" ]
+      , [ ESymbol Ord "\266" ]
+      , [ ESymbol Ord "\282" ]
+      , [ ESymbol Ord "\298" ]
+      , [ ESymbol Ord "\314" ]
+      , [ ESymbol Ord "\330" ]
+      , [ ESymbol Ord "\346" ]
+      , [ ESymbol Ord "\362" ]
+      , [ ESymbol Ord "\378" ]
+      ]
+    , [ [ EText TextNormal "B" ]
+      , [ ESymbol Ord "\267" ]
+      , [ ESymbol Ord "\283" ]
+      , [ ESymbol Ord "\299" ]
+      , [ ESymbol Ord "\315" ]
+      , [ ESymbol Ord "\331" ]
+      , [ ESymbol Ord "\347" ]
+      , [ ESymbol Ord "\363" ]
+      , [ ESymbol Ord "\379" ]
+      ]
+    , [ [ EText TextNormal "C" ]
+      , [ ESymbol Ord "\268" ]
+      , [ ESymbol Ord "\284" ]
+      , [ ESymbol Ord "\300" ]
+      , [ ESymbol Ord "\316" ]
+      , [ ESymbol Ord "\332" ]
+      , [ ESymbol Ord "\348" ]
+      , [ ESymbol Ord "\364" ]
+      , [ ESymbol Ord "\380" ]
+      ]
+    , [ [ EText TextNormal "D" ]
+      , [ ESymbol Ord "\269" ]
+      , [ ESymbol Ord "\285" ]
+      , [ ESymbol Ord "\301" ]
+      , [ ESymbol Ord "\317" ]
+      , [ ESymbol Ord "\333" ]
+      , [ ESymbol Ord "\349" ]
+      , [ ESymbol Ord "\365" ]
+      , [ ESymbol Ord "\381" ]
+      ]
+    , [ [ EText TextNormal "E" ]
+      , [ ESymbol Ord "\270" ]
+      , [ ESymbol Ord "\286" ]
+      , [ ESymbol Ord "\302" ]
+      , [ ESymbol Ord "\318" ]
+      , [ ESymbol Ord "\334" ]
+      , [ ESymbol Ord "\350" ]
+      , [ ESymbol Ord "\366" ]
+      , [ ESymbol Ord "\382" ]
+      ]
+    , [ [ EText TextNormal "F" ]
+      , [ ESymbol Ord "\271" ]
+      , [ ESymbol Ord "\287" ]
+      , [ ESymbol Ord "\303" ]
+      , [ ESymbol Ord "\319" ]
+      , [ ESymbol Ord "\335" ]
+      , [ ESymbol Ord "\351" ]
+      , [ ESymbol Ord "\367" ]
+      , [ ESymbol Ord "\383" ]
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">10</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">11</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">12</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">13</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">14</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">15</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">16</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">17</mtext>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">0</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ā</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Đ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ġ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>İ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ŀ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ő</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Š</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ű</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ā</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>đ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ġ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ı</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ł</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ő</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>š</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ű</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">2</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ă</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ē</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ģ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ĳ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ł</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Œ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ţ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ų</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">3</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ă</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ē</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ģ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ĳ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ń</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>œ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ţ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ų</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">4</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ą</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ĕ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ĥ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ĵ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ń</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ŕ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ť</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ŵ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">5</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ą</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ĕ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ĥ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ĵ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ņ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ŕ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ť</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ŵ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">6</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ć</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ė</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ħ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ķ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ņ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ŗ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ŧ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ŷ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">7</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ć</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ė</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ħ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ķ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ň</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ŗ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ŧ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ŷ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">8</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ĉ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ę</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ĩ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ĸ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ň</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ř</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ũ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ÿ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">9</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ĉ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ę</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ĩ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ĺ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ŉ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ř</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ũ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ź</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">A</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ċ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ě</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ī</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ĺ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ŋ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ś</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ū</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ź</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">B</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ċ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ě</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ī</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ļ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ŋ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ś</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ū</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ż</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">C</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Č</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ĝ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ĭ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ļ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ō</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ŝ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ŭ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ż</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">D</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>č</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ĝ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ĭ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ľ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ō</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ŝ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ŭ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ž</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">E</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ď</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ğ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Į</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ľ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ŏ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ş</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ů</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ž</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">F</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ď</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ğ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>į</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ŀ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ŏ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ş</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ů</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ſ</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

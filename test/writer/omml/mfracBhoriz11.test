@@ -1,0 +1,215 @@
+<<< native
+[ EFraction NormalFrac (ENumber "1") (EIdentifier "a")
+, ESymbol Bin "-"
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped
+       [ EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       ])
+, ESymbol Bin "-"
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped
+       [ EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       , ESymbol Bin "+"
+       , EIdentifier "a"
+       ])
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:t>1</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:t>a</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>-</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:t>1</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:t>a</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>+</m:t>
+        </m:r>
+        <m:r>
+          <m:t>a</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>+</m:t>
+        </m:r>
+        <m:r>
+          <m:t>a</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>+</m:t>
+        </m:r>
+        <m:r>
+          <m:t>a</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>-</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:t>1</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:t>a</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>+</m:t>
+        </m:r>
+        <m:r>
+          <m:t>a</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>+</m:t>
+        </m:r>
+        <m:r>
+          <m:t>a</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>+</m:t>
+        </m:r>
+        <m:r>
+          <m:t>a</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>+</m:t>
+        </m:r>
+        <m:r>
+          <m:t>a</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>+</m:t>
+        </m:r>
+        <m:r>
+          <m:t>a</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>+</m:t>
+        </m:r>
+        <m:r>
+          <m:t>a</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>+</m:t>
+        </m:r>
+        <m:r>
+          <m:t>a</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>+</m:t>
+        </m:r>
+        <m:r>
+          <m:t>a</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>+</m:t>
+        </m:r>
+        <m:r>
+          <m:t>a</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+  </m:oMath>
+</m:oMathPara>

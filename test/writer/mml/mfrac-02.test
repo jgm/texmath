@@ -1,0 +1,37 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped [ ENumber "2" , EIdentifier "\960" ])
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EOver False (ENumber "1") (EPhantom (ENumber "0")))
+    (EGrouped [ ENumber "2" , EIdentifier "\960" ])
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <mn>1</mn>
+      <mrow>
+        <mn>2</mn>
+        <mi>π</mi>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mover>
+        <mn>1</mn>
+        <mphantom>
+          <mn>0</mn>
+        </mphantom>
+      </mover>
+      <mrow>
+        <mn>2</mn>
+        <mi>π</mi>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>

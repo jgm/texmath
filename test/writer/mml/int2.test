@@ -1,0 +1,30 @@
+<<< native
+[ ESymbol Op "\8747"
+, EIdentifier "f"
+, EDelimited
+    "("
+    ")"
+    [ Right (EFraction NormalFrac (EIdentifier "x") (ENumber "2")) ]
+, ESpace (1 % 9)
+, ESymbol Ord "\8518"
+, EIdentifier "x"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>∫</mo>
+    <mi>f</mi>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mfrac>
+        <mi>x</mi>
+        <mn>2</mn>
+      </mfrac>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mspace width="0.111em" />
+    <mi>ⅆ</mi>
+    <mi>x</mi>
+  </mrow>
+</math>

@@ -1,0 +1,9 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle fontsize="18pt" fontweight="bold" fontstyle="italic" fontfamily="Helvetica">
+    <mtext>Theorem 1:</mtext> 
+  </mstyle> </math>
+>>> native
+[ EText TextNormal "Theorem 1:" ]

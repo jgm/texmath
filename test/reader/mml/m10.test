@@ -1,0 +1,301 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable columnalign="left">
+    <mtr>
+      <mtd>
+        <mtext>Consider the equation&#x00A0;</mtext> 
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>0</mn> 
+          </msup> 
+          <mo>+</mo> 
+          <mn>0</mn> 
+          <mo>=</mo> 
+          <mi>&#x003B1;</mi> 
+        </mrow> 
+        <mtext>.</mtext> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Consider the equation&#x00A0;</mtext> 
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>1</mn> 
+          </msup> 
+          <mo>+</mo> 
+          <mn>1</mn> 
+          <mo>=</mo> 
+          <mi>&#x003B2;</mi> 
+        </mrow> 
+        <mtext>.</mtext> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Consider the equation&#x00A0;</mtext> 
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>2</mn> 
+          </msup> 
+          <mo>+</mo> 
+          <mn>2</mn> 
+          <mo>=</mo> 
+          <mi>&#x003B3;</mi> 
+        </mrow> 
+        <mtext>.</mtext> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Consider the equation&#x00A0;</mtext> 
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>3</mn> 
+          </msup> 
+          <mo>+</mo> 
+          <mn>3</mn> 
+          <mo>=</mo> 
+          <mi>&#x003B4;</mi> 
+        </mrow> 
+        <mtext>.</mtext> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Consider the equation&#x00A0;</mtext> 
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>4</mn> 
+          </msup> 
+          <mo>+</mo> 
+          <mn>4</mn> 
+          <mo>=</mo> 
+          <mi>&#x003B1;</mi> 
+        </mrow> 
+        <mtext>.</mtext> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Consider the equation&#x00A0;</mtext> 
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>5</mn> 
+          </msup> 
+          <mo>+</mo> 
+          <mn>5</mn> 
+          <mo>=</mo> 
+          <mi>&#x003B2;</mi> 
+        </mrow> 
+        <mtext>.</mtext> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Consider the equation&#x00A0;</mtext> 
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>6</mn> 
+          </msup> 
+          <mo>+</mo> 
+          <mn>6</mn> 
+          <mo>=</mo> 
+          <mi>&#x003B3;</mi> 
+        </mrow> 
+        <mtext>.</mtext> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Consider the equation&#x00A0;</mtext> 
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>7</mn> 
+          </msup> 
+          <mo>+</mo> 
+          <mn>7</mn> 
+          <mo>=</mo> 
+          <mi>&#x003B4;</mi> 
+        </mrow> 
+        <mtext>.</mtext> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Consider the equation&#x00A0;</mtext> 
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>8</mn> 
+          </msup> 
+          <mo>+</mo> 
+          <mn>8</mn> 
+          <mo>=</mo> 
+          <mi>&#x003B1;</mi> 
+        </mrow> 
+        <mtext>.</mtext> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Consider the equation&#x00A0;</mtext> 
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>9</mn> 
+          </msup> 
+          <mo>+</mo> 
+          <mn>9</mn> 
+          <mo>=</mo> 
+          <mi>&#x003B2;</mi> 
+        </mrow> 
+        <mtext>.</mtext> 
+      </mtd> 
+    </mtr> 
+  </mtable> </math>
+>>> native
+[ EArray
+    [ AlignLeft ]
+    [ [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "0")
+                , ESymbol Bin "+"
+                , ENumber "0"
+                , ESymbol Rel "="
+                , EIdentifier "\945"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "1")
+                , ESymbol Bin "+"
+                , ENumber "1"
+                , ESymbol Rel "="
+                , EIdentifier "\946"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "2")
+                , ESymbol Bin "+"
+                , ENumber "2"
+                , ESymbol Rel "="
+                , EIdentifier "\947"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "3")
+                , ESymbol Bin "+"
+                , ENumber "3"
+                , ESymbol Rel "="
+                , EIdentifier "\948"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "4")
+                , ESymbol Bin "+"
+                , ENumber "4"
+                , ESymbol Rel "="
+                , EIdentifier "\945"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "5")
+                , ESymbol Bin "+"
+                , ENumber "5"
+                , ESymbol Rel "="
+                , EIdentifier "\946"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "6")
+                , ESymbol Bin "+"
+                , ENumber "6"
+                , ESymbol Rel "="
+                , EIdentifier "\947"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "7")
+                , ESymbol Bin "+"
+                , ENumber "7"
+                , ESymbol Rel "="
+                , EIdentifier "\948"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "8")
+                , ESymbol Bin "+"
+                , ENumber "8"
+                , ESymbol Rel "="
+                , EIdentifier "\945"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "9")
+                , ESymbol Bin "+"
+                , ENumber "9"
+                , ESymbol Rel "="
+                , EIdentifier "\946"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    ]
+]

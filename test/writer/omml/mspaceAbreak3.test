@@ -1,0 +1,118 @@
+<<< native
+[ EIdentifier
+    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+, ESymbol Bin "+"
+, ESpace (0 % 1)
+, EIdentifier
+    "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+, ESymbol Bin "+"
+, ESpace (0 % 1)
+, EIdentifier
+    "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+, ESymbol Bin "+"
+, ESpace (0 % 1)
+, EIdentifier
+    "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+, ESymbol Bin "+"
+, ESpace (0 % 1)
+, EIdentifier
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+, ESymbol Bin "+"
+, ESpace (0 % 1)
+, EIdentifier "fffffffffffffffffffffffffff"
+, ESymbol Bin "+"
+, ESpace (0 % 1)
+, EIdentifier
+    "gggggggggggggggggggggggggggggggggggggggggggggggggggggg"
+, ESymbol Bin "+"
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:t>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>cccccccccccccccccccccccccccccccccccccccccccccccccccccccccc</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>fffffffffffffffffffffffffff</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>gggggggggggggggggggggggggggggggggggggggggggggggggggggg</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

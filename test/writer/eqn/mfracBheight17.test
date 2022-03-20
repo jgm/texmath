@@ -1,0 +1,46 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "taller num" ]
+      , [ EGrouped
+            [ ESuper (EIdentifier "x") (ENumber "2")
+            , ESymbol Bin "+"
+            , ESuper
+                (EFraction NormalFrac (EIdentifier "h") (EIdentifier "x"))
+                (ENumber "2")
+            , ESymbol Bin "+"
+            , ESuper
+                (EDelimited
+                   "("
+                   ")"
+                   [ Right (EFraction NormalFrac (EIdentifier "h") (EIdentifier "x"))
+                   ])
+                (ENumber "2")
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "taller denom" ]
+      , [ EGrouped
+            [ ESuper (EIdentifier "x") (ENumber "2")
+            , ESymbol Bin "+"
+            , ESuper
+                (EFraction NormalFrac (EIdentifier "x") (EIdentifier "y"))
+                (ENumber "2")
+            , ESymbol Bin "+"
+            , ESuper
+                (EDelimited
+                   "("
+                   ")"
+                   [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "y"))
+                   ])
+                (ENumber "2")
+            ]
+        ]
+      ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ {roman "taller num"} above {roman "taller denom"} }
+ccol{ {x sup 2 + {h over x} sup 2 + {left ( h over x right )} sup 2} above {x sup 2 + {x over y} sup 2 + {left ( x over y right )} sup 2} }
+}

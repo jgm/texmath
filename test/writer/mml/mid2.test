@@ -1,0 +1,17 @@
+<<< native
+[ ESymbol Rel "\8739"
+, EFraction NormalFrac (EIdentifier "H") (EIdentifier "K")
+, ESymbol Rel "\8739"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>∣</mo>
+    <mfrac>
+      <mi>H</mi>
+      <mi>K</mi>
+    </mfrac>
+    <mo>∣</mo>
+  </mrow>
+</math>

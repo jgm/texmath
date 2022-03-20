@@ -1,0 +1,94 @@
+<<< native
+[ ESuper (EIdentifier "X") (ENumber "2")
+, ESymbol Rel "="
+, EIdentifier "y"
+, EGrouped
+    [ EText TextNormal " under "
+    , ESub (EIdentifier "H") (ENumber "0")
+    , EText TextNormal " except when "
+    , EGrouped
+        [ EIdentifier "x"
+        , EGrouped
+            [ EText TextBold " is less than "
+            , EIdentifier "z"
+            , EText TextBold "."
+            ]
+        ]
+    ]
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:sSup>
+      <m:e>
+        <m:r>
+          <m:t>X</m:t>
+        </m:r>
+      </m:e>
+      <m:sup>
+        <m:r>
+          <m:t>2</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSup>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>=</m:t>
+    </m:r>
+    <m:r>
+      <m:t>y</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t> under </m:t>
+    </m:r>
+    <m:sSub>
+      <m:e>
+        <m:r>
+          <m:t>H</m:t>
+        </m:r>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:t>0</m:t>
+        </m:r>
+      </m:sub>
+    </m:sSub>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t> except when </m:t>
+    </m:r>
+    <m:r>
+      <m:t>x</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="b" />
+      </m:rPr>
+      <m:t> is less than </m:t>
+    </m:r>
+    <m:r>
+      <m:t>z</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="b" />
+      </m:rPr>
+      <m:t>.</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

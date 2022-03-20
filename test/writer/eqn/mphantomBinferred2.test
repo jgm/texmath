@@ -1,0 +1,10 @@
+<<< native
+[ EIdentifier "A"
+, EPhantom (EIdentifier "A")
+, EIdentifier "A"
+, EPhantom
+    (EGrouped [ EIdentifier "A" , ESymbol Bin "+" , EIdentifier "A" ])
+, EIdentifier "A"
+]
+>>> eqn
+A hphantom A A hphantom {A + A} A

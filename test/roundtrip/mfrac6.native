@@ -1,0 +1,16 @@
+[ EFraction
+    NormalFrac
+    (EGrouped
+       [ EIdentifier "x"
+       , ESymbol Bin "+"
+       , EIdentifier "y"
+       , ESymbol Bin "+"
+       , EIdentifier "z"
+       ])
+    (EGrouped
+       [ EIdentifier "x"
+       , EPhantom (EGrouped [ ESymbol Bin "+" , EIdentifier "y" ])
+       , ESymbol Bin "+"
+       , EIdentifier "z"
+       ])
+]

@@ -1,0 +1,71 @@
+<<< native
+[ EOver False (EIdentifier "B") (EIdentifier "overscript")
+, ESymbol Rel "="
+, EOver
+    False
+    (EGrouped
+       [ EPhantom (ENumber "1")
+       , EIdentifier "B"
+       , EPhantom (ENumber "1")
+       ])
+    (EIdentifier "overscript")
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:limUpp>
+      <m:e>
+        <m:r>
+          <m:t>B</m:t>
+        </m:r>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>overscript</m:t>
+        </m:r>
+      </m:lim>
+    </m:limUpp>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>=</m:t>
+    </m:r>
+    <m:limUpp>
+      <m:e>
+        <m:phant>
+          <m:phantPr>
+            <m:show m:val="0" />
+          </m:phantPr>
+          <m:e>
+            <m:r>
+              <m:t>1</m:t>
+            </m:r>
+          </m:e>
+        </m:phant>
+        <m:r>
+          <m:t>B</m:t>
+        </m:r>
+        <m:phant>
+          <m:phantPr>
+            <m:show m:val="0" />
+          </m:phantPr>
+          <m:e>
+            <m:r>
+              <m:t>1</m:t>
+            </m:r>
+          </m:e>
+        </m:phant>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>overscript</m:t>
+        </m:r>
+      </m:lim>
+    </m:limUpp>
+  </m:oMath>
+</m:oMathPara>

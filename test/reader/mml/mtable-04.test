@@ -1,0 +1,58 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mtable frame="solid">    <mtr>      <mtd>        <mi mathvariant="normal">H</mi>
+      </mtd>
+      <mtd>
+        <mi mathvariant="normal">A</mi>
+      </mtd>
+    </mtr>     <mtr>      <mtd>        <mi mathvariant="normal">T</mi>
+      </mtd>
+      <mtd>
+        <mi mathvariant="normal">I</mi>
+      </mtd>
+    </mtr>     <mtr>      <mtd>        <mi mathvariant="normal">U</mi>
+      </mtd>
+      <mtd>
+        <mi mathvariant="normal">Y</mi>
+      </mtd>
+    </mtr>   </mtable>   <mo>=</mo>   <mtable frame="solid">    <mtr>      <mtd>        <mrow>          <mi mathvariant="normal">A</mi>
+        </mrow>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mi mathvariant="normal">H</mi>
+        </mrow>
+      </mtd>
+    </mtr>     <mtr>      <mtd>        <mrow>          <mi mathvariant="normal">I</mi>
+        </mrow>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mi mathvariant="normal">T</mi>
+        </mrow>
+      </mtd>
+    </mtr>     <mtr>      <mtd>        <mrow>          <mi mathvariant="normal">Y</mi>
+        </mrow>
+      </mtd>
+      <mtd>
+        <mrow>
+          <mi mathvariant="normal">U</mi>
+        </mrow>
+      </mtd>
+    </mtr>   </mtable> </math>
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EIdentifier "H" ] , [ EIdentifier "A" ] ]
+    , [ [ EIdentifier "T" ] , [ EIdentifier "I" ] ]
+    , [ [ EIdentifier "U" ] , [ EIdentifier "Y" ] ]
+    ]
+, ESymbol Rel "="
+, EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EIdentifier "A" ] , [ EIdentifier "H" ] ]
+    , [ [ EIdentifier "I" ] , [ EIdentifier "T" ] ]
+    , [ [ EIdentifier "Y" ] , [ EIdentifier "U" ] ]
+    ]
+]

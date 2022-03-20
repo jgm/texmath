@@ -1,0 +1,260 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd></mtd> 
+      <mtd>
+        <mtext>244</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>245</mtext>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>0</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9280;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>1</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9281;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>2</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9282;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>3</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9283;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>4</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9284;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>5</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9285;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>6</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9286;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>7</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9287;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>8</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9288;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>9</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9289;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>A</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9290;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>B</mtext>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>C</mtext>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>D</mtext>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>E</mtext>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>F</mtext>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr>   </mtable></math>
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [] , [ EText TextNormal "244" ] , [ EText TextNormal "245" ] ]
+    , [ [ EText TextNormal "0" ]
+      , [ ESymbol Ord "\9280" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "1" ]
+      , [ ESymbol Ord "\9281" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "2" ]
+      , [ ESymbol Ord "\9282" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "3" ]
+      , [ ESymbol Ord "\9283" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "4" ]
+      , [ ESymbol Ord "\9284" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "5" ]
+      , [ ESymbol Ord "\9285" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "6" ]
+      , [ ESymbol Ord "\9286" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "7" ]
+      , [ ESymbol Ord "\9287" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "8" ]
+      , [ ESymbol Ord "\9288" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "9" ]
+      , [ ESymbol Ord "\9289" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "A" ]
+      , [ ESymbol Ord "\9290" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "B" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "C" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "D" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "E" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "F" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    ]
+]

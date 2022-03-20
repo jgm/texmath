@@ -1,0 +1,91 @@
+<<< native
+[ EArray
+    [ AlignLeft ]
+    [ [ [ EText TextNormal "default: (accent=true)" ] ]
+    , [ [ EGrouped
+            [ EOver False (EIdentifier "H") (ESymbol Accent "'")
+            , EOver False (EIdentifier "H") (ESymbol Accent "^")
+            , EOver False (EIdentifier "H") (ESymbol Accent "_")
+            , EOver False (EIdentifier "H") (ESymbol Accent "`")
+            , EOver False (EIdentifier "H") (ESymbol Accent "~")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\168")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\175")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\180")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\184")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\710")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\711")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\728")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\729")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\730")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\732")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\733")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\770")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\785")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8254")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8411")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8412")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8592")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8594")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8596")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8636")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8637")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8640")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8641")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\9140")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\9141")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\9180")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\9181")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\9182")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\9183")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\10574")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\10576")
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "accent=false:" ] ]
+    , [ [ EGrouped
+            [ EOver False (EIdentifier "H") (ESymbol Ord "'")
+            , EOver False (EIdentifier "H") (ESymbol Ord "^")
+            , EOver False (EIdentifier "H") (ESymbol Ord "_")
+            , EOver False (EIdentifier "H") (ESymbol Ord "`")
+            , EOver False (EIdentifier "H") (ESymbol Ord "~")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\168")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\175")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\180")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\184")
+            , EOver False (EIdentifier "H") (ESymbol Alpha "\710")
+            , EOver False (EIdentifier "H") (ESymbol Alpha "\711")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\728")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\729")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\730")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\732")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\733")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\770")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\785")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\8254")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8411")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8412")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8592")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8594")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8596")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8636")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8637")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8640")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8641")
+            , EOver False (EIdentifier "H") (ESymbol TOver "\9140")
+            , EOver False (EIdentifier "H") (ESymbol TUnder "\9141")
+            , EOver False (EIdentifier "H") (ESymbol TOver "\9180")
+            , EOver False (EIdentifier "H") (ESymbol TUnder "\9181")
+            , EOver False (EIdentifier "H") (ESymbol TOver "\9182")
+            , EOver False (EIdentifier "H") (ESymbol TUnder "\9183")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\10574")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\10576")
+            ]
+        ]
+      ]
+    ]
+]
+>>> eqn
+matrix{
+lcol{ {roman "default: (accent=true)"} above {H to ' H to ^ H to _ H to ` H to ~ H to \[u00A8] H to \[u00AF] H to \[u00B4] H to \[u00B8] H to \[u02C6] H to \[u02C7] H to \[u02D8] H to \[u02D9] H to \[u02DA] H to \[u02DC] H to \[u02DD] H to \[u0302] H to \[u0311] H to \[u203E] H to \[u20DB] H to \[u20DC] H to <- H to -> H to \[u2194] H to \[u21BC] H to \[u21BD] H to \[u21C0] H to \[u21C1] H to \[u23B4] H to \[u23B5] H to \[u23DC] H to \[u23DD] H to \[u23DE] H to \[u23DF] H to \[u294E] H to \[u2950]} above {roman "accent=false:"} above {H to ' H to ^ H to _ H to ` H to ~ H to \[u00A8] H to \[u00AF] H to \[u00B4] H to \[u00B8] H to \[u02C6] H to \[u02C7] H to \[u02D8] H to \[u02D9] H to \[u02DA] H to \[u02DC] H to \[u02DD] H to \[u0302] H to \[u0311] H to \[u203E] H to \[u20DB] H to \[u20DC] H to <- H to -> H to \[u2194] H to \[u21BC] H to \[u21BD] H to \[u21C0] H to \[u21C1] H to \[u23B4] H to \[u23B5] H to \[u23DC] H to \[u23DD] H to \[u23DE] H to \[u23DF] H to \[u294E] H to \[u2950]} }
+}

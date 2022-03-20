@@ -1,0 +1,260 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd></mtd> 
+      <mtd>
+        <mtext>FE5</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>FE6</mtext>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>0</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65104;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65120;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>1</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65105;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65121;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>2</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65106;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65122;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>3</mtext>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65123;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>4</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65108;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65124;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>5</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65109;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65125;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>6</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65110;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65126;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>7</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65111;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>8</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65112;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65128;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>9</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65113;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65129;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>A</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65114;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65130;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>B</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65115;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#65131;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>C</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65116;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>D</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65117;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>E</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65118;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>F</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65119;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr>   </mtable></math>
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [] , [ EText TextNormal "FE5" ] , [ EText TextNormal "FE6" ] ]
+    , [ [ EText TextNormal "0" ]
+      , [ ESymbol Ord "\65104" ]
+      , [ ESymbol Ord "\65120" ]
+      ]
+    , [ [ EText TextNormal "1" ]
+      , [ ESymbol Ord "\65105" ]
+      , [ ESymbol Ord "\65121" ]
+      ]
+    , [ [ EText TextNormal "2" ]
+      , [ ESymbol Ord "\65106" ]
+      , [ ESymbol Ord "\65122" ]
+      ]
+    , [ [ EText TextNormal "3" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "\65123" ]
+      ]
+    , [ [ EText TextNormal "4" ]
+      , [ ESymbol Ord "\65108" ]
+      , [ ESymbol Ord "\65124" ]
+      ]
+    , [ [ EText TextNormal "5" ]
+      , [ ESymbol Ord "\65109" ]
+      , [ ESymbol Ord "\65125" ]
+      ]
+    , [ [ EText TextNormal "6" ]
+      , [ ESymbol Ord "\65110" ]
+      , [ ESymbol Ord "\65126" ]
+      ]
+    , [ [ EText TextNormal "7" ]
+      , [ ESymbol Ord "\65111" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "8" ]
+      , [ ESymbol Ord "\65112" ]
+      , [ ESymbol Ord "\65128" ]
+      ]
+    , [ [ EText TextNormal "9" ]
+      , [ ESymbol Ord "\65113" ]
+      , [ ESymbol Ord "\65129" ]
+      ]
+    , [ [ EText TextNormal "A" ]
+      , [ ESymbol Ord "\65114" ]
+      , [ ESymbol Ord "\65130" ]
+      ]
+    , [ [ EText TextNormal "B" ]
+      , [ ESymbol Ord "\65115" ]
+      , [ ESymbol Ord "\65131" ]
+      ]
+    , [ [ EText TextNormal "C" ]
+      , [ ESymbol Ord "\65116" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "D" ]
+      , [ ESymbol Ord "\65117" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "E" ]
+      , [ ESymbol Ord "\65118" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "F" ]
+      , [ ESymbol Ord "\65119" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    ]
+]

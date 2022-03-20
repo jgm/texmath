@@ -1,0 +1,49 @@
+<<< native
+[ EUnder
+    True
+    (EMathOperator "lim")
+    (EGrouped
+       [ EIdentifier "z"
+       , ESymbol Rel "\8594"
+       , ESub (EIdentifier "z") (ENumber "0")
+       ])
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "z") ]
+, ESymbol Rel "="
+, EIdentifier "f"
+, EDelimited
+    "(" ")" [ Right (ESub (EIdentifier "z") (ENumber "0")) ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <munder>
+      <mo>lim</mo>
+      <mrow>
+        <mi>z</mi>
+        <mo>→</mo>
+        <msub>
+          <mi>z</mi>
+          <mn>0</mn>
+        </msub>
+      </mrow>
+    </munder>
+    <mi>f</mi>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>z</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mo>=</mo>
+    <mi>f</mi>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <msub>
+        <mi>z</mi>
+        <mn>0</mn>
+      </msub>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+  </mrow>
+</math>

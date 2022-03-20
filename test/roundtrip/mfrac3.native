@@ -1,0 +1,5 @@
+[ EFraction
+    NormalFrac
+    (EFraction NormalFrac (EIdentifier "a") (EIdentifier "b"))
+    (EFraction NormalFrac (EIdentifier "c") (EIdentifier "d"))
+]

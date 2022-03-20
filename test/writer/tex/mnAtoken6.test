@@ -1,0 +1,17 @@
+<<< native
+[ ENumber "5"
+, ESymbol Bin "+"
+, ENumber "5"
+, ESymbol Bin "+"
+, ENumber "1"
+, ESymbol Bin "+"
+, ENumber "1"
+, ESymbol Bin "+"
+, ENumber "5"
+, ESymbol Bin "+"
+, ENumber "3"
+, ESymbol Bin "+"
+, ENumber "9"
+]
+>>> tex
+5 + 5 + 1 + 1 + 5 + 3 + 9

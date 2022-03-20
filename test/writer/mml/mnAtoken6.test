@@ -1,0 +1,34 @@
+<<< native
+[ ENumber "5"
+, ESymbol Bin "+"
+, ENumber "5"
+, ESymbol Bin "+"
+, ENumber "1"
+, ESymbol Bin "+"
+, ENumber "1"
+, ESymbol Bin "+"
+, ENumber "5"
+, ESymbol Bin "+"
+, ENumber "3"
+, ESymbol Bin "+"
+, ENumber "9"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>5</mn>
+    <mo>+</mo>
+    <mn>5</mn>
+    <mo>+</mo>
+    <mn>1</mn>
+    <mo>+</mo>
+    <mn>1</mn>
+    <mo>+</mo>
+    <mn>5</mn>
+    <mo>+</mo>
+    <mn>3</mn>
+    <mo>+</mo>
+    <mn>9</mn>
+  </mrow>
+</math>

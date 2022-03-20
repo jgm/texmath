@@ -1,0 +1,64 @@
+<<< native
+[ EOver
+    False
+    (EGrouped
+       [ EIdentifier "H" , ESymbol Bin "\215" , EIdentifier "G" ])
+    (ESymbol Accent "\9182")
+, EUnder
+    False
+    (EGrouped
+       [ EIdentifier "H" , ESymbol Bin "\215" , EIdentifier "G" ])
+    (ESymbol Accent "\9183")
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:acc>
+      <m:accPr>
+        <m:chr m:val="⏞" />
+      </m:accPr>
+      <m:e>
+        <m:r>
+          <m:t>H</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>×</m:t>
+        </m:r>
+        <m:r>
+          <m:t>G</m:t>
+        </m:r>
+      </m:e>
+    </m:acc>
+    <m:limLow>
+      <m:e>
+        <m:r>
+          <m:t>H</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>×</m:t>
+        </m:r>
+        <m:r>
+          <m:t>G</m:t>
+        </m:r>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>⏟</m:t>
+        </m:r>
+      </m:lim>
+    </m:limLow>
+  </m:oMath>
+</m:oMathPara>

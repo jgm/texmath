@@ -1,0 +1,48 @@
+<<< native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EStyled TextScript [ EIdentifier "A" ]
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EStyled TextScript [ EIdentifier "A" ]
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            ]
+        ]
+      ]
+    ]
+]
+>>> tex
+\begin{matrix}
+{A + A + A + A + A + A} \\
+{\mathcal{A} + A + A + A} \\
+{\mathcal{A} + A + A + A} \\
+\end{matrix}

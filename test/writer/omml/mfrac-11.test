@@ -1,0 +1,193 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (EIdentifier "A")
+    (EGrouped
+       [ EIdentifier "B"
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (EIdentifier "C")
+           (EGrouped
+              [ EIdentifier "D"
+              , ESymbol Bin "+"
+              , EFraction NormalFrac (EIdentifier "E") (EIdentifier "F")
+              ])
+       ])
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ EPhantom (ENumber "1") , ESpace (0 % 1) , EIdentifier "A" ])
+    (EGrouped
+       [ EIdentifier "B"
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (EIdentifier "C")
+           (EGrouped
+              [ EIdentifier "D"
+              , ESymbol Bin "+"
+              , EFraction
+                  NormalFrac
+                  (EIdentifier "E")
+                  (EGrouped
+                     [ EIdentifier "F" , ESpace (0 % 1) , EPhantom (ENumber "1") ])
+              ])
+       ])
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:t>A</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:t>B</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>+</m:t>
+        </m:r>
+        <m:f>
+          <m:fPr>
+            <m:type m:val="bar" />
+          </m:fPr>
+          <m:num>
+            <m:r>
+              <m:t>C</m:t>
+            </m:r>
+          </m:num>
+          <m:den>
+            <m:r>
+              <m:t>D</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>+</m:t>
+            </m:r>
+            <m:f>
+              <m:fPr>
+                <m:type m:val="bar" />
+              </m:fPr>
+              <m:num>
+                <m:r>
+                  <m:t>E</m:t>
+                </m:r>
+              </m:num>
+              <m:den>
+                <m:r>
+                  <m:t>F</m:t>
+                </m:r>
+              </m:den>
+            </m:f>
+          </m:den>
+        </m:f>
+      </m:den>
+    </m:f>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>=</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:phant>
+          <m:phantPr>
+            <m:show m:val="0" />
+          </m:phantPr>
+          <m:e>
+            <m:r>
+              <m:t>1</m:t>
+            </m:r>
+          </m:e>
+        </m:phant>
+        <m:r>
+          <m:t>&#8203;</m:t>
+        </m:r>
+        <m:r>
+          <m:t>A</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:t>B</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>+</m:t>
+        </m:r>
+        <m:f>
+          <m:fPr>
+            <m:type m:val="bar" />
+          </m:fPr>
+          <m:num>
+            <m:r>
+              <m:t>C</m:t>
+            </m:r>
+          </m:num>
+          <m:den>
+            <m:r>
+              <m:t>D</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>+</m:t>
+            </m:r>
+            <m:f>
+              <m:fPr>
+                <m:type m:val="bar" />
+              </m:fPr>
+              <m:num>
+                <m:r>
+                  <m:t>E</m:t>
+                </m:r>
+              </m:num>
+              <m:den>
+                <m:r>
+                  <m:t>F</m:t>
+                </m:r>
+                <m:r>
+                  <m:t>&#8203;</m:t>
+                </m:r>
+                <m:phant>
+                  <m:phantPr>
+                    <m:show m:val="0" />
+                  </m:phantPr>
+                  <m:e>
+                    <m:r>
+                      <m:t>1</m:t>
+                    </m:r>
+                  </m:e>
+                </m:phant>
+              </m:den>
+            </m:f>
+          </m:den>
+        </m:f>
+      </m:den>
+    </m:f>
+  </m:oMath>
+</m:oMathPara>

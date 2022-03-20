@@ -1,0 +1,266 @@
+<<< native
+[ EIdentifier "x"
+, ESymbol Bin "-"
+, EFraction NormalFrac (ENumber "1") (ENumber "3")
+, ESymbol Bin "-"
+, EFraction NormalFrac (EIdentifier "x") (ENumber "3")
+, ESymbol Bin "-"
+, EFraction NormalFrac (ENumber "3") (EIdentifier "x")
+, ESymbol Bin "-"
+, EFraction NormalFrac (EIdentifier "a") (EIdentifier "x")
+, ESymbol Bin "-"
+, EFraction NormalFrac (EIdentifier "y") (EIdentifier "x")
+, ESymbol Bin "-"
+, EFraction
+    NormalFrac (ESub (EIdentifier "y") (ENumber "2")) (EIdentifier "x")
+, ESymbol Bin "-"
+, EFraction
+    NormalFrac (ESub (EIdentifier "x") (ENumber "2")) (EIdentifier "x")
+, ESymbol Bin "-"
+, EFraction
+    NormalFrac
+    (EIdentifier "y")
+    (ESuper (EIdentifier "x") (ENumber "2"))
+, ESymbol Bin "-"
+, EFraction
+    NormalFrac
+    (EIdentifier "y")
+    (ESuper (EIdentifier "H") (ENumber "2"))
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:t>x</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>-</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:t>1</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:t>3</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>-</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:t>3</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>-</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:t>3</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>-</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:t>a</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>-</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:t>y</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>-</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:sSub>
+          <m:e>
+            <m:r>
+              <m:t>y</m:t>
+            </m:r>
+          </m:e>
+          <m:sub>
+            <m:r>
+              <m:t>2</m:t>
+            </m:r>
+          </m:sub>
+        </m:sSub>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>-</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:sSub>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+          <m:sub>
+            <m:r>
+              <m:t>2</m:t>
+            </m:r>
+          </m:sub>
+        </m:sSub>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>-</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:t>y</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:sSup>
+          <m:e>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:e>
+          <m:sup>
+            <m:r>
+              <m:t>2</m:t>
+            </m:r>
+          </m:sup>
+        </m:sSup>
+      </m:den>
+    </m:f>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>-</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:t>y</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:sSup>
+          <m:e>
+            <m:r>
+              <m:t>H</m:t>
+            </m:r>
+          </m:e>
+          <m:sup>
+            <m:r>
+              <m:t>2</m:t>
+            </m:r>
+          </m:sup>
+        </m:sSup>
+      </m:den>
+    </m:f>
+  </m:oMath>
+</m:oMathPara>

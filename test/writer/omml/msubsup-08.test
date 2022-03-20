@@ -1,0 +1,78 @@
+<<< native
+[ ESubsup (EIdentifier "A") (EIdentifier "B") (EIdentifier "C")
+, ESymbol Rel "="
+, ESubsup (EIdentifier "A") (EIdentifier "B") (EIdentifier "C")
+, EPhantom
+    (EFraction NormalFrac (EIdentifier "test") (EIdentifier "failed"))
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:sSubSup>
+      <m:e>
+        <m:r>
+          <m:t>A</m:t>
+        </m:r>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:t>B</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:t>C</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSubSup>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>=</m:t>
+    </m:r>
+    <m:sSubSup>
+      <m:e>
+        <m:r>
+          <m:t>A</m:t>
+        </m:r>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:t>B</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:t>C</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSubSup>
+    <m:phant>
+      <m:phantPr>
+        <m:show m:val="0" />
+      </m:phantPr>
+      <m:e>
+        <m:f>
+          <m:fPr>
+            <m:type m:val="bar" />
+          </m:fPr>
+          <m:num>
+            <m:r>
+              <m:t>test</m:t>
+            </m:r>
+          </m:num>
+          <m:den>
+            <m:r>
+              <m:t>failed</m:t>
+            </m:r>
+          </m:den>
+        </m:f>
+      </m:e>
+    </m:phant>
+  </m:oMath>
+</m:oMathPara>

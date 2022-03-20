@@ -1,0 +1,293 @@
+[ EArray
+    [ AlignLeft ]
+    [ [ [ EText TextNormal "default: (accent=true)" ] ]
+    , [ [ EGrouped
+            [ EUnderover
+                False (EIdentifier "x") (ESymbol Accent "'") (ESymbol Accent "'")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Accent "^") (ESymbol Accent "^")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Accent "_") (ESymbol Accent "_")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Accent "`") (ESymbol Accent "`")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Accent "~") (ESymbol Accent "~")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\168")
+                (ESymbol Accent "\168")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\175")
+                (ESymbol Accent "\175")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\180")
+                (ESymbol Accent "\180")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\184")
+                (ESymbol Accent "\184")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\710")
+                (ESymbol Accent "\710")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\711")
+                (ESymbol Accent "\711")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\728")
+                (ESymbol Accent "\728")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\729")
+                (ESymbol Accent "\729")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\730")
+                (ESymbol Accent "\730")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\732")
+                (ESymbol Accent "\732")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\733")
+                (ESymbol Accent "\733")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\770")
+                (ESymbol Accent "\770")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\785")
+                (ESymbol Accent "\785")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\8254")
+                (ESymbol Accent "\8254")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\8411")
+                (ESymbol Accent "\8411")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\8412")
+                (ESymbol Accent "\8412")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\8592")
+                (ESymbol Accent "\8592")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\8594")
+                (ESymbol Accent "\8594")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\8596")
+                (ESymbol Accent "\8596")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\8636")
+                (ESymbol Accent "\8636")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\8637")
+                (ESymbol Accent "\8637")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\8640")
+                (ESymbol Accent "\8640")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\8641")
+                (ESymbol Accent "\8641")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\9140")
+                (ESymbol Accent "\9140")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\9141")
+                (ESymbol Accent "\9141")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\9180")
+                (ESymbol Accent "\9180")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\9181")
+                (ESymbol Accent "\9181")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\9182")
+                (ESymbol Accent "\9182")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\9183")
+                (ESymbol Accent "\9183")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\10574")
+                (ESymbol Accent "\10574")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\10576")
+                (ESymbol Accent "\10576")
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "accent=false:" ] ]
+    , [ [ EGrouped
+            [ EUnderover
+                False (EIdentifier "x") (ESymbol Ord "'") (ESymbol Ord "'")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Ord "^") (ESymbol Ord "^")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Ord "_") (ESymbol Ord "_")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Ord "`") (ESymbol Ord "`")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Ord "~") (ESymbol Ord "~")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Ord "\168") (ESymbol Ord "\168")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Ord "\175") (ESymbol Ord "\175")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Ord "\180") (ESymbol Ord "\180")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Ord "\184") (ESymbol Ord "\184")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Alpha "\710")
+                (ESymbol Alpha "\710")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Alpha "\711")
+                (ESymbol Alpha "\711")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Ord "\728") (ESymbol Ord "\728")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Ord "\729") (ESymbol Ord "\729")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Ord "\730") (ESymbol Ord "\730")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Ord "\732") (ESymbol Ord "\732")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Ord "\733") (ESymbol Ord "\733")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\770")
+                (ESymbol Accent "\770")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\785")
+                (ESymbol Accent "\785")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Ord "\8254") (ESymbol Ord "\8254")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\8411")
+                (ESymbol Accent "\8411")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Accent "\8412")
+                (ESymbol Accent "\8412")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Rel "\8592") (ESymbol Rel "\8592")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Rel "\8594") (ESymbol Rel "\8594")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Rel "\8596") (ESymbol Rel "\8596")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Rel "\8636") (ESymbol Rel "\8636")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Rel "\8637") (ESymbol Rel "\8637")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Rel "\8640") (ESymbol Rel "\8640")
+            , EUnderover
+                False (EIdentifier "x") (ESymbol Rel "\8641") (ESymbol Rel "\8641")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol TOver "\9140")
+                (ESymbol TOver "\9140")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol TUnder "\9141")
+                (ESymbol TUnder "\9141")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol TOver "\9180")
+                (ESymbol TOver "\9180")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol TUnder "\9181")
+                (ESymbol TUnder "\9181")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol TOver "\9182")
+                (ESymbol TOver "\9182")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol TUnder "\9183")
+                (ESymbol TUnder "\9183")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Rel "\10574")
+                (ESymbol Rel "\10574")
+            , EUnderover
+                False
+                (EIdentifier "x")
+                (ESymbol Rel "\10576")
+                (ESymbol Rel "\10576")
+            ]
+        ]
+      ]
+    ]
+]

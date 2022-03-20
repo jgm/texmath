@@ -1,0 +1,27 @@
+<<< native
+[ ESuper (EIdentifier "c") (ENumber "4")
+, ESymbol Rel "="
+, ESuper
+    (EIdentifier "c")
+    (EGrouped [ ENumber "4" , EPhantom (EIdentifier "fail") ])
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msup>
+      <mi>c</mi>
+      <mn>4</mn>
+    </msup>
+    <mo>=</mo>
+    <msup>
+      <mi>c</mi>
+      <mrow>
+        <mn>4</mn>
+        <mphantom>
+          <mi>fail</mi>
+        </mphantom>
+      </mrow>
+    </msup>
+  </mrow>
+</math>

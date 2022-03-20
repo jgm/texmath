@@ -1,0 +1,6 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <maction actiontype="tooltip">    <mrow>      <menclose notation="box">        <mtext>Place mouse pointer over this box</mtext>       </menclose>     </mrow>     <mtext>PASS</mtext>   </maction> </math>
+>>> native
+[ EBoxed (EText TextNormal "Place mouse pointer over this box") ]

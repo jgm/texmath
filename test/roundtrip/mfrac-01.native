@@ -1,0 +1,7 @@
+[ EFraction NormalFrac (ENumber "1") (ENumber "8")
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EUnder False (ENumber "8") (EPhantom (ENumber "0")))
+]

@@ -1,0 +1,18 @@
+<<< native
+[ EText TextNormal "\8220Minneapolis\8221" ]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>“Minneapolis”</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

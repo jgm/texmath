@@ -1,0 +1,7 @@
+<<< native
+[ ESuper (EIdentifier "x") (ENumber "3")
+, ESymbol Rel "="
+, ESuper (EIdentifier "x") (ENumber "3")
+]
+>>> tex
+x^{3} = x^{3}

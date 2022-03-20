@@ -1,0 +1,34 @@
+<<< native
+[ EFraction NormalFrac (ENumber "1") (ENumber "2")
+, ESymbol Bin "+"
+, EFraction NormalFrac (ENumber "1") (ENumber "2")
+, ESymbol Bin "+"
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped
+       [ ENumber "1"
+       , ESymbol Bin "+"
+       , EFraction NormalFrac (EIdentifier "x") (ENumber "3")
+       ])
+, ESymbol Bin "+"
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped
+       [ ENumber "1"
+       , ESymbol Bin "+"
+       , EFraction NormalFrac (EIdentifier "x") (ENumber "3")
+       ])
+, ESymbol Bin "+"
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped
+       [ ENumber "1"
+       , ESymbol Bin "+"
+       , EFraction NormalFrac (EIdentifier "x") (ENumber "3")
+       ])
+]
+>>> tex
+\frac{1}{2} + \frac{1}{2} + \frac{1}{1 + \frac{x}{3}} + \frac{1}{1 + \frac{x}{3}} + \frac{1}{1 + \frac{x}{3}}

@@ -1,0 +1,13 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (EFraction NormalFrac (EIdentifier "a") (EIdentifier "b"))
+    (EFraction NormalFrac (EIdentifier "c") (EIdentifier "d"))
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EFraction NormalFrac (EIdentifier "a") (EIdentifier "b"))
+    (EFraction NormalFrac (EIdentifier "c") (EIdentifier "d"))
+]
+>>> tex
+\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{\frac{a}{b}}{\frac{c}{d}}

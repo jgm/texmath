@@ -1,0 +1,20 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>[</mo> 
+    <mrow>
+      <mn>0</mn> 
+      <mo>,</mo> 
+      <mn>1</mn> 
+    </mrow> 
+    <mo>)</mo> 
+  </mrow> </math>
+>>> native
+[ EDelimited
+    "["
+    ")"
+    [ Right (EGrouped [ ENumber "0" , ESymbol Pun "," , ENumber "1" ])
+    ]
+]

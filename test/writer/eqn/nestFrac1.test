@@ -1,0 +1,37 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped
+       [ ESqrt (ENumber "2")
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (ENumber "1")
+           (EGrouped
+              [ ESqrt (ENumber "3")
+              , ESymbol Bin "+"
+              , EFraction
+                  NormalFrac
+                  (ENumber "1")
+                  (EGrouped
+                     [ ESqrt (ENumber "4")
+                     , ESymbol Bin "+"
+                     , EFraction
+                         NormalFrac
+                         (ENumber "1")
+                         (EGrouped
+                            [ ESqrt (ENumber "5")
+                            , ESymbol Bin "+"
+                            , EFraction
+                                NormalFrac
+                                (ENumber "1")
+                                (EGrouped
+                                   [ ESqrt (ENumber "6") , ESymbol Bin "+" , EIdentifier "\8230" ])
+                            ])
+                     ])
+              ])
+       ])
+]
+>>> eqn
+1 over {sqrt 2 + 1 over {sqrt 3 + 1 over {sqrt 4 + 1 over {sqrt 5 + 1 over {sqrt 6 + ...}}}}}

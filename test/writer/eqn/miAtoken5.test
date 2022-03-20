@@ -1,0 +1,46 @@
+<<< native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EStyled TextScript [ EIdentifier "A" ]
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EStyled TextScript [ EIdentifier "A" ]
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            ]
+        ]
+      ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ {A + A + A + A + A + A} above {{A} + A + A + A} above {{A} + A + A + A} }
+}

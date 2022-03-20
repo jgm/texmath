@@ -1,0 +1,197 @@
+<<< native
+[ ESubsup (EIdentifier "x") (EIdentifier "b") (EIdentifier "a")
+, ESpace (1 % 1)
+, ESubsup (EIdentifier "x") (EIdentifier "b") (EIdentifier "a")
+, ESpace (1 % 1)
+, EUnder True (EMathOperator "min") (EIdentifier "A")
+, ESpace (1 % 1)
+, EUnder True (EMathOperator "max") (EIdentifier "B")
+, ESpace (1 % 1)
+, EUnder True (EMathOperator "det") (EIdentifier "C")
+, ESpace (1 % 1)
+, EUnder True (EMathOperator "Pr") (EIdentifier "A")
+, ESpace (1 % 1)
+, EUnder True (EMathOperator "gcd") (EIdentifier "A")
+, ESpace (1 % 1)
+, ESuper
+    (EOver False (EIdentifier "u") (ESymbol Accent "\775"))
+    (ENumber "2")
+, ESpace (1 % 1)
+, ESub
+    (EOver False (EIdentifier "u") (ESymbol TOver "\175"))
+    (EIdentifier "\949")
+, ESpace (1 % 1)
+, ESubsup
+    (EUnder False (EIdentifier "u") (ESymbol TUnder "_"))
+    (EIdentifier "b")
+    (EIdentifier "a")
+, ESpace (1 % 1)
+, EOver
+    False
+    (EOver
+       False
+       (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+       (ESymbol TOver "\9182"))
+    (EText TextNormal "term")
+, ESpace (1 % 1)
+, EOver
+    False
+    (EOver
+       False
+       (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+       (ESymbol TOver "\9140"))
+    (EIdentifier "c")
+, ESpace (1 % 1)
+, EUnder
+    False
+    (EUnder
+       False
+       (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+       (ESymbol TUnder "\9183"))
+    (EIdentifier "c")
+, ESpace (1 % 1)
+, EUnder
+    False
+    (EUnder
+       False
+       (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+       (ESymbol TUnder "\9141"))
+    (EIdentifier "c")
+, ESuper (ESpace (1 % 1)) (EIdentifier "H")
+, EIdentifier "e"
+, ENumber "3"
+, ESub (ESpace (1 % 1)) (EIdentifier "x")
+, EIdentifier "A"
+, ESubsup (ESpace (1 % 1)) (EIdentifier "x") (ENumber "3")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msubsup>
+      <mi>x</mi>
+      <mi>b</mi>
+      <mi>a</mi>
+    </msubsup>
+    <mspace width="1.0em" />
+    <msubsup>
+      <mi>x</mi>
+      <mi>b</mi>
+      <mi>a</mi>
+    </msubsup>
+    <mspace width="1.0em" />
+    <munder>
+      <mo>min</mo>
+      <mi>A</mi>
+    </munder>
+    <mspace width="1.0em" />
+    <munder>
+      <mo>max</mo>
+      <mi>B</mi>
+    </munder>
+    <mspace width="1.0em" />
+    <munder>
+      <mo>det</mo>
+      <mi>C</mi>
+    </munder>
+    <mspace width="1.0em" />
+    <munder>
+      <mo>Pr</mo>
+      <mi>A</mi>
+    </munder>
+    <mspace width="1.0em" />
+    <munder>
+      <mo>gcd</mo>
+      <mi>A</mi>
+    </munder>
+    <mspace width="1.0em" />
+    <msup>
+      <mover>
+        <mi>u</mi>
+        <mo accent="true">̇</mo>
+      </mover>
+      <mn>2</mn>
+    </msup>
+    <mspace width="1.0em" />
+    <msub>
+      <mover>
+        <mi>u</mi>
+        <mo accent="true">¯</mo>
+      </mover>
+      <mi>ε</mi>
+    </msub>
+    <mspace width="1.0em" />
+    <msubsup>
+      <munder>
+        <mi>u</mi>
+        <mo accent="true">_</mo>
+      </munder>
+      <mi>b</mi>
+      <mi>a</mi>
+    </msubsup>
+    <mspace width="1.0em" />
+    <mover>
+      <mover>
+        <mrow>
+          <mi>a</mi>
+          <mo>+</mo>
+          <mi>b</mi>
+        </mrow>
+        <mo accent="true">⏞</mo>
+      </mover>
+      <mtext mathvariant="normal">term</mtext>
+    </mover>
+    <mspace width="1.0em" />
+    <mover>
+      <mover>
+        <mrow>
+          <mi>a</mi>
+          <mo>+</mo>
+          <mi>b</mi>
+        </mrow>
+        <mo accent="true">⎴</mo>
+      </mover>
+      <mi>c</mi>
+    </mover>
+    <mspace width="1.0em" />
+    <munder>
+      <munder>
+        <mrow>
+          <mi>a</mi>
+          <mo>+</mo>
+          <mi>b</mi>
+        </mrow>
+        <mo accent="true">⏟</mo>
+      </munder>
+      <mi>c</mi>
+    </munder>
+    <mspace width="1.0em" />
+    <munder>
+      <munder>
+        <mrow>
+          <mi>a</mi>
+          <mo>+</mo>
+          <mi>b</mi>
+        </mrow>
+        <mo accent="true">⎵</mo>
+      </munder>
+      <mi>c</mi>
+    </munder>
+    <msup>
+      <mspace width="1.0em" />
+      <mi>H</mi>
+    </msup>
+    <mi>e</mi>
+    <mn>3</mn>
+    <msub>
+      <mspace width="1.0em" />
+      <mi>x</mi>
+    </msub>
+    <mi>A</mi>
+    <msubsup>
+      <mspace width="1.0em" />
+      <mi>x</mi>
+      <mn>3</mn>
+    </msubsup>
+  </mrow>
+</math>

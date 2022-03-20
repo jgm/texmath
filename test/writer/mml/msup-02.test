@@ -1,0 +1,27 @@
+<<< native
+[ ESuper
+    (EGrouped [ EPhantom (EIdentifier "fail") , EIdentifier "k" ])
+    (ENumber "2")
+, ESymbol Rel "="
+, ESuper (EIdentifier "k") (ENumber "2")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msup>
+      <mrow>
+        <mphantom>
+          <mi>fail</mi>
+        </mphantom>
+        <mi>k</mi>
+      </mrow>
+      <mn>2</mn>
+    </msup>
+    <mo>=</mo>
+    <msup>
+      <mi>k</mi>
+      <mn>2</mn>
+    </msup>
+  </mrow>
+</math>

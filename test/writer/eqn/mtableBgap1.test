@@ -1,0 +1,19 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EIdentifier "B" ] , [ EIdentifier "C" ] , [] , [] ]
+    , [ [] , [] , [] , [] ]
+    , [ [ ENumber "1" ]
+      , [ ENumber "2" ]
+      , [ ENumber "3" ]
+      , [ ENumber "4" ]
+      ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ B above {} above 1 }
+ccol{ C above {} above 2 }
+ccol{ {} above {} above 3 }
+ccol{ {} above {} above 4 }
+}

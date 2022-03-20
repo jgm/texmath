@@ -1,0 +1,15 @@
+<<< native
+[ EFraction NormalFrac (ENumber "9") (ENumber "14")
+, ESymbol Rel "="
+, EFraction NormalFrac (ENumber "9") (ENumber "14")
+, EFraction
+    NormalFrac
+    (EPhantom
+       (EFraction
+          NormalFrac (EPhantom (ENumber "1")) (EPhantom (ENumber "2"))))
+    (EPhantom
+       (EFraction
+          NormalFrac (EPhantom (ENumber "1")) (EPhantom (ENumber "2"))))
+]
+>>> tex
+\frac{9}{14} = \frac{9}{14}\frac{\phantom{\frac{\phantom{1}}{\phantom{2}}}}{\phantom{\frac{\phantom{1}}{\phantom{2}}}}

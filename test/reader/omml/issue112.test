@@ -1,0 +1,43 @@
+<<< omml
+<?xml version="1.0" encoding="UTF-8"?>
+<m:oMath>
+  <w:hyperlink r:id="rId6" w:history="1">
+    <m:sSub>
+      <m:sSubPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rStyle w:val="aa"/>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:sz w:val="24"/>
+            <w:szCs w:val="24"/>
+          </w:rPr>
+        </m:ctrlPr>
+      </m:sSubPr>
+      <m:e>
+        <m:r>
+          <w:rPr>
+            <w:rStyle w:val="aa"/>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:sz w:val="24"/>
+            <w:szCs w:val="24"/>
+          </w:rPr>
+          <m:t>A</m:t>
+        </m:r>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <w:rPr>
+            <w:rStyle w:val="aa"/>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"/>
+            <w:sz w:val="24"/>
+            <w:szCs w:val="24"/>
+          </w:rPr>
+          <m:t>2</m:t>
+        </m:r>
+      </m:sub>
+    </m:sSub>
+  </w:hyperlink>
+</m:oMath>
+
+>>> native
+[ ESub (EIdentifier "A") (ENumber "2") ]

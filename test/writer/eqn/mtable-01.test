@@ -1,0 +1,21 @@
+<<< native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EIdentifier "H" ] ]
+    , [ [ EIdentifier "T" ] ]
+    , [ [ EIdentifier "U" ] ]
+    ]
+, ESymbol Rel "="
+, EArray
+    [ AlignCenter ]
+    [ [ [ EIdentifier "H" ] ]
+    , [ [ EIdentifier "T" ] ]
+    , [ [ EIdentifier "U" ] ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ H above T above U }
+} = matrix{
+ccol{ H above T above U }
+}

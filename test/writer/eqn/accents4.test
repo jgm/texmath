@@ -1,0 +1,91 @@
+<<< native
+[ EArray
+    [ AlignLeft ]
+    [ [ [ EText TextNormal "default: (accent=true)" ] ]
+    , [ [ EGrouped
+            [ EUnder False (EIdentifier "x") (ESymbol Accent "'")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "^")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "_")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "`")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "~")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\168")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\175")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\180")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\184")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\710")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\711")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\728")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\729")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\730")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\732")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\733")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\770")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\785")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8254")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8411")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8412")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8592")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8594")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8596")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8636")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8637")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8640")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8641")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\9140")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\9141")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\9180")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\9181")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\9182")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\9183")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\10574")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\10576")
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "accent=false:" ] ]
+    , [ [ EGrouped
+            [ EUnder False (EIdentifier "x") (ESymbol Ord "'")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "^")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "_")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "`")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "~")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\168")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\175")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\180")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\184")
+            , EUnder False (EIdentifier "x") (ESymbol Alpha "\710")
+            , EUnder False (EIdentifier "x") (ESymbol Alpha "\711")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\728")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\729")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\730")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\732")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\733")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\770")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\785")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\8254")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8411")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8412")
+            , EUnder False (EIdentifier "x") (ESymbol Rel "\8592")
+            , EUnder False (EIdentifier "x") (ESymbol Rel "\8594")
+            , EUnder False (EIdentifier "x") (ESymbol Rel "\8596")
+            , EUnder False (EIdentifier "x") (ESymbol Rel "\8636")
+            , EUnder False (EIdentifier "x") (ESymbol Rel "\8637")
+            , EUnder False (EIdentifier "x") (ESymbol Rel "\8640")
+            , EUnder False (EIdentifier "x") (ESymbol Rel "\8641")
+            , EUnder False (EIdentifier "x") (ESymbol TOver "\9140")
+            , EUnder False (EIdentifier "x") (ESymbol TUnder "\9141")
+            , EUnder False (EIdentifier "x") (ESymbol TOver "\9180")
+            , EUnder False (EIdentifier "x") (ESymbol TUnder "\9181")
+            , EUnder False (EIdentifier "x") (ESymbol TOver "\9182")
+            , EUnder False (EIdentifier "x") (ESymbol TUnder "\9183")
+            , EUnder False (EIdentifier "x") (ESymbol Rel "\10574")
+            , EUnder False (EIdentifier "x") (ESymbol Rel "\10576")
+            ]
+        ]
+      ]
+    ]
+]
+>>> eqn
+matrix{
+lcol{ {roman "default: (accent=true)"} above {x from ' x from ^ x from _ x from ` x from ~ x from \[u00A8] x from \[u00AF] x from \[u00B4] x from \[u00B8] x from \[u02C6] x from \[u02C7] x from \[u02D8] x from \[u02D9] x from \[u02DA] x from \[u02DC] x from \[u02DD] x from \[u0302] x from \[u0311] x from \[u203E] x from \[u20DB] x from \[u20DC] x from <- x from -> x from \[u2194] x from \[u21BC] x from \[u21BD] x from \[u21C0] x from \[u21C1] x from \[u23B4] x from \[u23B5] x from \[u23DC] x from \[u23DD] x from \[u23DE] x from \[u23DF] x from \[u294E] x from \[u2950]} above {roman "accent=false:"} above {x from ' x from ^ x from _ x from ` x from ~ x from \[u00A8] x from \[u00AF] x from \[u00B4] x from \[u00B8] x from \[u02C6] x from \[u02C7] x from \[u02D8] x from \[u02D9] x from \[u02DA] x from \[u02DC] x from \[u02DD] x from \[u0302] x from \[u0311] x from \[u203E] x from \[u20DB] x from \[u20DC] x from <- x from -> x from \[u2194] x from \[u21BC] x from \[u21BD] x from \[u21C0] x from \[u21C1] x from \[u23B4] x from \[u23B5] x from \[u23DC] x from \[u23DD] x from \[u23DE] x from \[u23DF] x from \[u294E] x from \[u2950]} }
+}

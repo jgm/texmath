@@ -1,0 +1,75 @@
+[ EArray
+    [ AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    ]
+    [ [ []
+      , []
+      , [ EText TextNormal "symm" ]
+      , [ EText TextNormal "stretch" ]
+      , [ EText TextNormal "symm/stretch" ]
+      ]
+    , [ [ EText TextNormal "small op" ]
+      , [ EGrouped [ ESymbol Op "\8747" , EIdentifier "x" ] ]
+      , [ EGrouped [ ESymbol Op "\8747" , EIdentifier "x" ] ]
+      , [ EDelimited "\8747" "" [ Right (EIdentifier "x") ] ]
+      , [ EDelimited "\8747" "" [ Right (EIdentifier "x") ] ]
+      ]
+    , [ [ EText TextNormal "large op" ]
+      , [ EGrouped [ ESymbol Op "\8747" , EIdentifier "x" ] ]
+      , [ EGrouped [ ESymbol Op "\8747" , EIdentifier "x" ] ]
+      , [ EDelimited "\8747" "" [ Right (EIdentifier "x") ] ]
+      , [ EDelimited "\8747" "" [ Right (EIdentifier "x") ] ]
+      ]
+    , [ [ EText TextNormal "small op" ]
+      , [ EGrouped
+            [ ESymbol Op "\8747"
+            , EFraction NormalFrac (EIdentifier "x") (EIdentifier "y")
+            ]
+        ]
+      , [ EGrouped
+            [ ESymbol Op "\8747"
+            , EFraction NormalFrac (EIdentifier "x") (EIdentifier "y")
+            ]
+        ]
+      , [ EDelimited
+            "\8747"
+            ""
+            [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "y"))
+            ]
+        ]
+      , [ EDelimited
+            "\8747"
+            ""
+            [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "y"))
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "large op" ]
+      , [ EGrouped
+            [ ESymbol Op "\8747"
+            , EFraction NormalFrac (EIdentifier "x") (EIdentifier "y")
+            ]
+        ]
+      , [ EGrouped
+            [ ESymbol Op "\8747"
+            , EFraction NormalFrac (EIdentifier "x") (EIdentifier "y")
+            ]
+        ]
+      , [ EDelimited
+            "\8747"
+            ""
+            [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "y"))
+            ]
+        ]
+      , [ EDelimited
+            "\8747"
+            ""
+            [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "y"))
+            ]
+        ]
+      ]
+    ]
+]

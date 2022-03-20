@@ -1,0 +1,7 @@
+<<< native
+[ EFraction NormalFrac (EIdentifier "a") (EIdentifier "b")
+, ESpace (2 % 9)
+, EFraction InlineFrac (EIdentifier "a") (EIdentifier "b")
+]
+>>> eqn
+a over b ~ a over b

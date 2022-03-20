@@ -1,0 +1,16 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <msub>    <mi>D</mi>     <mi>y</mi>   </msub>   <mo>=</mo>   <msub>    <mi>D</mi>     <mrow>      <munder>        <mi>y</mi>
+        <mphantom>
+          <mi>s</mi>
+        </mphantom>
+      </munder>
+    </mrow>   </msub> </math>
+>>> native
+[ ESub (EIdentifier "D") (EIdentifier "y")
+, ESymbol Rel "="
+, ESub
+    (EIdentifier "D")
+    (EUnder False (EIdentifier "y") (EPhantom (EIdentifier "s")))
+]

@@ -1,0 +1,33 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>Inline, auto, no line </mtext> 
+  <mstyle displaystyle="false" scriptlevel="0">
+    <mrow>
+      <mfrac linethickness="0">
+        <mrow>
+          <msup>
+            <mi>x</mi> 
+            <mn>2</mn> 
+          </msup> 
+          <mo form="infix">+</mo> 
+          <mn>1</mn> 
+        </mrow> 
+        <mi>x</mi> 
+      </mfrac> 
+    </mrow> 
+  </mstyle> 
+  <mtext> the end.</mtext> </math>
+>>> native
+[ EText TextNormal "Inline, auto, no line\160"
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESuper (EIdentifier "x") (ENumber "2")
+       , ESymbol Bin "+"
+       , ENumber "1"
+       ])
+    (EIdentifier "x")
+, EText TextNormal "\160the end."
+]

@@ -1,0 +1,17 @@
+<<< native
+[ ESuper (ESymbol Op "\8747") (ENumber "1")
+, ESymbol Bin "+"
+, ESuper
+    (EFraction NormalFrac (EIdentifier "x") (EIdentifier "y"))
+    (EIdentifier "a")
+, ESymbol Bin "+"
+, ESuper
+    (EFraction NormalFrac (EIdentifier "x") (EIdentifier "y"))
+    (ENumber "1")
+, ESymbol Bin "+"
+, ESuper (ESymbol Op "\8747") (EIdentifier "a")
+, ESymbol Bin "+"
+, ESuper (ESymbol Op "\8747") (EIdentifier "a")
+]
+>>> eqn
+int sup 1 + {x over y} sup a + {x over y} sup 1 + int sup a + int sup a

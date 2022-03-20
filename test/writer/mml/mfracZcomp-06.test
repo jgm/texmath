@@ -1,0 +1,54 @@
+<<< native
+[ EText TextNormal "Inline, text style, thick line\160"
+, EGrouped
+    [ EFraction
+        NormalFrac
+        (EGrouped
+           [ ESuper (EIdentifier "x") (ENumber "2")
+           , ESymbol Bin "+"
+           , ENumber "1"
+           ])
+        (EIdentifier "x")
+    , EFraction
+        NormalFrac
+        (EGrouped
+           [ ESuper (EIdentifier "x") (ENumber "2")
+           , ESymbol Bin "+"
+           , ENumber "1"
+           ])
+        (EIdentifier "x")
+    ]
+, EText TextNormal "\160the end."
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext mathvariant="normal">Inline, text style, thick line </mtext>
+    <mrow>
+      <mfrac>
+        <mrow>
+          <msup>
+            <mi>x</mi>
+            <mn>2</mn>
+          </msup>
+          <mo>+</mo>
+          <mn>1</mn>
+        </mrow>
+        <mi>x</mi>
+      </mfrac>
+      <mfrac>
+        <mrow>
+          <msup>
+            <mi>x</mi>
+            <mn>2</mn>
+          </msup>
+          <mo>+</mo>
+          <mn>1</mn>
+        </mrow>
+        <mi>x</mi>
+      </mfrac>
+    </mrow>
+    <mtext mathvariant="normal"> the end.</mtext>
+  </mrow>
+</math>

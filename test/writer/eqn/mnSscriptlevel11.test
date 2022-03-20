@@ -1,0 +1,30 @@
+<<< native
+[ EGrouped
+    [ ENumber "5"
+    , ESymbol Bin "+"
+    , ENumber "3"
+    , ESymbol Bin "+"
+    , ENumber "12.3"
+    , ESymbol Bin "+"
+    , ENumber "10000"
+    , ESymbol Bin "+"
+    , ENumber "0.01"
+    , ESymbol Bin "+"
+    , ENumber "2"
+    ]
+, EGrouped
+    [ ENumber "5"
+    , ESymbol Bin "+"
+    , ENumber "3"
+    , ESymbol Bin "+"
+    , ENumber "12.3"
+    , ESymbol Bin "+"
+    , ENumber "10000"
+    , ESymbol Bin "+"
+    , ENumber "0.01"
+    , ESymbol Bin "+"
+    , ENumber "2"
+    ]
+]
+>>> eqn
+{5 + 3 + 12.3 + 10000 + 0.01 + 2} {5 + 3 + 12.3 + 10000 + 0.01 + 2}

@@ -1,0 +1,17 @@
+<<< native
+[ EText TextNormal "\8220big\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220bog\8221"
+, ESymbol Bin "+"
+, EGrouped
+    [ EText TextNormal "\8220new\8221"
+    , ESymbol Bin "+"
+    , EText TextNormal "\8220net\8221"
+    , ESymbol Bin "+"
+    , EText TextNormal "\8220nod\8221"
+    ]
+, ESymbol Bin "+"
+, EText TextNormal "\8220nix\8221"
+]
+>>> eqn
+roman "“big”" + roman "“bog”" + {roman "“new”" + roman "“net”" + roman "“nod”"} + roman "“nix”"

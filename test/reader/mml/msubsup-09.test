@@ -1,0 +1,31 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <msubsup>    <mi>M</mi>     <mrow>      <msubsup>        <mi>B</mi>         <mn>4</mn>         <mn>3</mn>       </msubsup>     </mrow>     <mrow>      <msubsup>        <mi>T</mi>         <mn>2</mn>         <mn>1</mn>       </msubsup>     </mrow>   </msubsup>   <mo>=</mo>   <msubsup>    <mi>M</mi>     <mrow>      <msubsup>        <mi>B</mi>         <mrow>          <munder>            <mn>4</mn>
+            <mphantom>
+              <mtext>0</mtext>
+            </mphantom>
+          </munder>
+        </mrow>         <mn>3</mn>       </msubsup>     </mrow>     <mrow>      <msubsup>        <mi>T</mi>         <mn>2</mn>         <mrow>          <mover>            <mn>1</mn>
+            <mphantom>
+              <mtext>0</mtext>
+            </mphantom>
+          </mover>
+        </mrow>       </msubsup>     </mrow>   </msubsup> </math>
+>>> native
+[ ESubsup
+    (EIdentifier "M")
+    (ESubsup (EIdentifier "B") (ENumber "4") (ENumber "3"))
+    (ESubsup (EIdentifier "T") (ENumber "2") (ENumber "1"))
+, ESymbol Rel "="
+, ESubsup
+    (EIdentifier "M")
+    (ESubsup
+       (EIdentifier "B")
+       (EUnder False (ENumber "4") (EPhantom (EText TextNormal "0")))
+       (ENumber "3"))
+    (ESubsup
+       (EIdentifier "T")
+       (ENumber "2")
+       (EOver False (ENumber "1") (EPhantom (EText TextNormal "0"))))
+]

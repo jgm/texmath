@@ -1,0 +1,18 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext color="#f05">Theorem 1:</mtext> 
+    <mtext fontweight="bold">Now is</mtext> 
+    <mtext fontstyle="italic">the time</mtext> 
+    <mtext fontfamily="Helvetica">for</mtext> 
+    <mtext fontsize="10pt">MathML</mtext> 
+  </mrow> </math>
+>>> native
+[ EText TextNormal "Theorem 1:"
+, EText TextNormal "Now is"
+, EText TextNormal "the time"
+, EText TextNormal "for"
+, EText TextNormal "MathML"
+]

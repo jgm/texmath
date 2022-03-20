@@ -1,0 +1,14 @@
+<<< native
+[ EText TextNormal "First line"
+, ESpace (0 % 1)
+, EText TextNormal "Second line"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext mathvariant="normal">First line</mtext>
+    <mspace width="0.0em" />
+    <mtext mathvariant="normal">Second line</mtext>
+  </mrow>
+</math>

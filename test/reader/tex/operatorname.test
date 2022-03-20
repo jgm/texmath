@@ -1,0 +1,82 @@
+<<< tex
+\newcommand\Div{\operatorname{div}}
+\newcommand\hl{\operatorname*{\star-lim'sup}}
+\DeclareMathOperator\curl{curl}
+\DeclareMathOperator*\argmax{argmax}
+\begin{cases}
+\Div_x u \Div^x u\Div_x^y u \Div^y_x u & \text{operatorname}\\
+\hl_{x\to0} u \hl^w u \hl_{x\to0}^w u \hl^w_{x\to0} u & \text{operatorname*}\\
+\hl\nolimits_{x\to0} u \hl\nolimits^w u
+\hl\nolimits_{x\to0}^w u \hl\nolimits^w_{x\to0} u & \text{operatorname*:nolimits}\\
+\curl_x v \argmax_K u & \text{DeclareMathOperator}
+\end{cases}
+
+>>> native
+[ EDelimited
+    "{"
+    ""
+    [ Right
+        (EArray
+           [ AlignLeft , AlignLeft ]
+           [ [ [ ESub (EMathOperator "div") (EIdentifier "x")
+               , EIdentifier "u"
+               , ESuper (EMathOperator "div") (EIdentifier "x")
+               , EIdentifier "u"
+               , ESubsup (EMathOperator "div") (EIdentifier "x") (EIdentifier "y")
+               , EIdentifier "u"
+               , ESubsup (EMathOperator "div") (EIdentifier "x") (EIdentifier "y")
+               , EIdentifier "u"
+               ]
+             , [ EText TextNormal "operatorname" ]
+             ]
+           , [ [ EUnder
+                   True
+                   (EMathOperator "\8902-lim'sup")
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+               , EIdentifier "u"
+               , EOver True (EMathOperator "\8902-lim'sup") (EIdentifier "w")
+               , EIdentifier "u"
+               , EUnderover
+                   True
+                   (EMathOperator "\8902-lim'sup")
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+                   (EIdentifier "w")
+               , EIdentifier "u"
+               , EUnderover
+                   True
+                   (EMathOperator "\8902-lim'sup")
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+                   (EIdentifier "w")
+               , EIdentifier "u"
+               ]
+             , [ EText TextNormal "operatorname*" ]
+             ]
+           , [ [ ESub
+                   (EMathOperator "\8902-lim'sup")
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+               , EIdentifier "u"
+               , ESuper (EMathOperator "\8902-lim'sup") (EIdentifier "w")
+               , EIdentifier "u"
+               , ESubsup
+                   (EMathOperator "\8902-lim'sup")
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+                   (EIdentifier "w")
+               , EIdentifier "u"
+               , ESubsup
+                   (EMathOperator "\8902-lim'sup")
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+                   (EIdentifier "w")
+               , EIdentifier "u"
+               ]
+             , [ EText TextNormal "operatorname*:nolimits" ]
+             ]
+           , [ [ ESub (EMathOperator "curl") (EIdentifier "x")
+               , EIdentifier "v"
+               , EUnder True (EMathOperator "argmax") (EIdentifier "K")
+               , EIdentifier "u"
+               ]
+             , [ EText TextNormal "DeclareMathOperator" ]
+             ]
+           ])
+    ]
+]

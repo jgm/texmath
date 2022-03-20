@@ -1,0 +1,77 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable columnalign="left">
+    <mtr>
+      <mtd>
+        <mi mathvariant="fraktur">ABCDEFGHIJKLMNOPQRSTUVWXYZ</mi> 
+        <mi mathvariant="fraktur">abcdefghijklmnopqrstuvwxyz</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mi mathvariant="bold-fraktur">ABCDEFGHIJKLMNOPQRSTUVWXYZ</mi> 
+        <mi mathvariant="bold-fraktur">abcdefghijklmnopqrstuvwxyz</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mi mathvariant="double-struck">ABCDEFGHIJKLMNOPQRSTUVWXYZ</mi> 
+        <mi mathvariant="double-struck">abcdefghijklmnopqrstuvwxyz</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mi mathvariant="script">ABCDEFGHIJKLMNOPQRSTUVWXYZ</mi> 
+        <mi mathvariant="script">abcdefghijklmnopqrstuvwxyz</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mi mathvariant="bold-script">ABCDEFGHIJKLMNOPQRSTUVWXYZ</mi> 
+        <mi mathvariant="bold-script">abcdefghijklmnopqrstuvwxyz</mi> 
+      </mtd> 
+    </mtr> 
+  </mtable> </math>
+>>> native
+[ EArray
+    [ AlignLeft ]
+    [ [ [ EGrouped
+            [ EStyled TextFraktur [ EIdentifier "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ]
+            , EStyled TextFraktur [ EIdentifier "abcdefghijklmnopqrstuvwxyz" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EStyled
+                TextBoldFraktur [ EIdentifier "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ]
+            , EStyled
+                TextBoldFraktur [ EIdentifier "abcdefghijklmnopqrstuvwxyz" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EStyled
+                TextDoubleStruck [ EIdentifier "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ]
+            , EStyled
+                TextDoubleStruck [ EIdentifier "abcdefghijklmnopqrstuvwxyz" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EStyled TextScript [ EIdentifier "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ]
+            , EStyled TextScript [ EIdentifier "abcdefghijklmnopqrstuvwxyz" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EStyled
+                TextBoldScript [ EIdentifier "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ]
+            , EStyled
+                TextBoldScript [ EIdentifier "abcdefghijklmnopqrstuvwxyz" ]
+            ]
+        ]
+      ]
+    ]
+]

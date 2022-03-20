@@ -1,0 +1,13 @@
+<<< native
+[ EUnder False (EIdentifier "BASE") (EIdentifier "under script")
+, ESymbol Rel "="
+, EUnder
+    False
+    (EUnder
+       False
+       (EUnder False (EIdentifier "BASE") (EIdentifier "under script"))
+       (EPhantom (EIdentifier "fail")))
+    (EPhantom (EIdentifier "fail"))
+]
+>>> tex
+\underset{under\ script}{BASE} = \underset{\phantom{fail}}{\underset{\phantom{fail}}{\underset{under\ script}{BASE}}}

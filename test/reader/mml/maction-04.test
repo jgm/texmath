@@ -1,0 +1,8 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <maction actiontype="tooltip">    <mrow>      <mfrac>        <mi>a</mi>
+        <mi>b</mi>
+      </mfrac>     </mrow>     <mtext>&lt;mfrac&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;/mfrac&gt;</mtext>   </maction> </math>
+>>> native
+[ EFraction NormalFrac (EIdentifier "a") (EIdentifier "b") ]

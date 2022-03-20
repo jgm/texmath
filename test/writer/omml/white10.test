@@ -1,0 +1,114 @@
+<<< native
+[ EIdentifier "H"
+, ESymbol Ord "\8202"
+, EIdentifier "H"
+, ESymbol Ord "\8201"
+, EIdentifier "H"
+, ESymbol Ord "\8287"
+, EIdentifier "H"
+, ESymbol Ord "\8197"
+, EIdentifier "H"
+, EMathOperator "\8202\65024"
+, EIdentifier "H"
+, EMathOperator "\8201\65024"
+, EIdentifier "H"
+, EMathOperator "\8287\65024"
+, EIdentifier "H"
+, EMathOperator "\8197\65024"
+, EIdentifier "H"
+, EMathOperator ""
+, EIdentifier "H"
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t> </m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t> </m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t> </m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t> </m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t> ︀</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t> ︀</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t> ︀</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t> ︀</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t></m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

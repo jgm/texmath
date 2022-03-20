@@ -1,0 +1,43 @@
+<<< native
+[ EText TextNormal "Inline, display style, thick line\160"
+, EFraction
+    NormalFrac
+    (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "1" ])
+    (EGrouped
+       [ EGrouped
+           [ ENumber "0.98"
+           , ESymbol Bin "\215"
+           , ESuper (ENumber "10") (ENumber "2")
+           ]
+       , ESymbol Bin "+"
+       , EIdentifier "y"
+       ])
+, EText TextNormal ", the superscripted 2 should be script size."
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext mathvariant="normal">Inline, display style, thick line </mtext>
+    <mfrac>
+      <mrow>
+        <mi>x</mi>
+        <mo>-</mo>
+        <mn>1</mn>
+      </mrow>
+      <mrow>
+        <mrow>
+          <mn>0.98</mn>
+          <mo>×</mo>
+          <msup>
+            <mn>10</mn>
+            <mn>2</mn>
+          </msup>
+        </mrow>
+        <mo>+</mo>
+        <mi>y</mi>
+      </mrow>
+    </mfrac>
+    <mtext mathvariant="normal">, the superscripted 2 should be script size.</mtext>
+  </mrow>
+</math>

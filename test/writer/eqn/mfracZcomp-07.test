@@ -1,0 +1,14 @@
+<<< native
+[ EText TextNormal "Inline, auto, no line\160"
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESuper (EIdentifier "x") (ENumber "2")
+       , ESymbol Bin "+"
+       , ENumber "1"
+       ])
+    (EIdentifier "x")
+, EText TextNormal "\160the end."
+]
+>>> eqn
+roman "Inline, auto, no line " {x sup 2 + 1} over x roman " the end."

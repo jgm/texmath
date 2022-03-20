@@ -1,0 +1,14 @@
+<<< native
+[ EOver False (EIdentifier "B") (EIdentifier "overscript")
+, ESymbol Rel "="
+, EOver
+    False
+    (EGrouped
+       [ EPhantom (ENumber "1")
+       , EIdentifier "B"
+       , EPhantom (ENumber "1")
+       ])
+    (EIdentifier "overscript")
+]
+>>> tex
+\overset{overscript}{B} = \overset{overscript}{\phantom{1}B\phantom{1}}

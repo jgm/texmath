@@ -1,0 +1,30 @@
+<<< native
+[ ESubsup (EIdentifier "T") (EIdentifier "m") (EIdentifier "n")
+, ESymbol Rel "="
+, EOver
+    False
+    (ESubsup (EIdentifier "T") (EIdentifier "m") (EIdentifier "n"))
+    (EPhantom (EText TextNormal "x"))
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msubsup>
+      <mi>T</mi>
+      <mi>m</mi>
+      <mi>n</mi>
+    </msubsup>
+    <mo>=</mo>
+    <mover>
+      <msubsup>
+        <mi>T</mi>
+        <mi>m</mi>
+        <mi>n</mi>
+      </msubsup>
+      <mphantom>
+        <mtext mathvariant="normal">x</mtext>
+      </mphantom>
+    </mover>
+  </mrow>
+</math>

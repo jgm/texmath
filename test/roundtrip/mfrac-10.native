@@ -1,0 +1,32 @@
+[ EFraction
+    NormalFrac
+    (ENumber "4")
+    (EGrouped
+       [ ENumber "2"
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (ENumber "3")
+           (EGrouped
+              [ ENumber "1"
+              , ESymbol Bin "+"
+              , EFraction NormalFrac (ENumber "1") (ENumber "2")
+              ])
+       ])
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ENumber "1"
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (ENumber "9")
+           (EGrouped
+              [ ENumber "2"
+              , ESymbol Bin "+"
+              , EFraction NormalFrac (ENumber "1") (ENumber "4")
+              ])
+       ])
+    (ENumber "5")
+]

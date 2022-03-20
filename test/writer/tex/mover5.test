@@ -1,0 +1,11 @@
+<<< native
+[ EOver False (EIdentifier "x") (ESymbol Accent "\732")
+, ESymbol Rel "\8800"
+, EOver False (EIdentifier "x") (ESymbol Ord "\732")
+, ESymbol Rel "="
+, EOver False (EIdentifier "x") (ESymbol Ord "\732")
+, ESymbol Rel "="
+, EOver False (EIdentifier "x") (ESymbol Ord "\732")
+]
+>>> tex
+\widetilde{x} \neq \overset{˜}{x} = \overset{˜}{x} = \overset{˜}{x}

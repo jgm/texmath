@@ -1,0 +1,1902 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE math PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" "http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd">
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd>
+        <mtext>Bernoulli Trials</mtext> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <maction actiontype="statusline">
+            <mrow>
+              <mi>P</mi> 
+              <mo stretchy="false">(</mo> 
+              <mi>E</mi> 
+              <mo stretchy="false">)</mo> 
+            </mrow> 
+            <mtext>Probability of event E: Get exactly k heads in n coin flips.</mtext> 
+          </maction> 
+          <mo>=</mo> 
+          <maction actiontype="statusline">
+            <mrow>
+              <mo>(</mo> 
+              <mfrac linethickness="0">
+                <mi>n</mi> 
+                <mi>k</mi> 
+              </mfrac> 
+              <mo>)</mo> 
+            </mrow> 
+            <mtext>Number of ways to get exactly k heads in n coin flips</mtext> 
+          </maction> 
+          <msubsup>
+            <maction actiontype="statusline">
+              <mi>p</mi> 
+              <mtext>Probability of getting heads in one flip</mtext> 
+            </maction> 
+            <mrow></mrow> 
+            <maction actiontype="statusline">
+              <mi>k</mi> 
+              <mtext>Number of heads</mtext> 
+            </maction> 
+          </msubsup> 
+          <msubsup>
+            <maction actiontype="statusline">
+              <mrow>
+                <mo stretchy="false">(</mo> 
+                <mn>1</mn> 
+                <mo>-</mo> 
+                <mi>p</mi> 
+                <mo stretchy="false">)</mo> 
+              </mrow> 
+              <mtext>Probability of getting tails in one flip</mtext> 
+            </maction> 
+            <mrow></mrow> 
+            <maction actiontype="statusline">
+              <mrow>
+                <mi>n</mi> 
+                <mo>-</mo> 
+                <mi>k</mi> 
+              </mrow> 
+              <mtext>Number of tails</mtext> 
+            </maction> 
+          </msubsup> 
+        </mrow> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Cauchy-Schwarz Inequality</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle displaystyle="true">
+          <mrow>
+            <msubsup>
+              <mrow>
+                <mo>(</mo> 
+                <munderover>
+                  <mo>&#x2211;</mo> 
+                  <mrow>
+                    <mi>k</mi> 
+                    <mo>=</mo> 
+                    <mn>1</mn> 
+                  </mrow> 
+                  <mi>n</mi> 
+                </munderover> 
+                <msubsup>
+                  <mi>a</mi> 
+                  <mi>k</mi> 
+                  <mrow></mrow> 
+                </msubsup> 
+                <msubsup>
+                  <mi>b</mi> 
+                  <mi>k</mi> 
+                  <mrow></mrow> 
+                </msubsup> 
+                <mo>)</mo> 
+              </mrow> 
+              <mrow></mrow> 
+              <mn>2</mn> 
+            </msubsup> 
+            <mo>&#x2264;</mo> 
+            <mrow>
+              <mo>(</mo> 
+              <munderover>
+                <mo>&#x2211;</mo> 
+                <mrow>
+                  <mi>k</mi> 
+                  <mo>=</mo> 
+                  <mn>1</mn> 
+                </mrow> 
+                <mi>n</mi> 
+              </munderover> 
+              <msubsup>
+                <mi>a</mi> 
+                <mi>k</mi> 
+                <mn>2</mn> 
+              </msubsup> 
+              <mo>)</mo> 
+            </mrow> 
+            <mrow>
+              <mo>(</mo> 
+              <munderover>
+                <mo>&#x2211;</mo> 
+                <mrow>
+                  <mi>k</mi> 
+                  <mo>=</mo> 
+                  <mn>1</mn> 
+                </mrow> 
+                <mi>n</mi> 
+              </munderover> 
+              <msubsup>
+                <mi>b</mi> 
+                <mi>k</mi> 
+                <mn>2</mn> 
+              </msubsup> 
+              <mo>)</mo> 
+            </mrow> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Cauchy Formula</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle displaystyle="true">
+          <mrow>
+            <mi>f</mi> 
+            <mo stretchy="false">(</mo> 
+            <mi>z</mi> 
+            <mo stretchy="false">)</mo> 
+            <mtext>&#x2009;</mtext> 
+            <mo>&#x00B7;</mo> 
+            <msubsup>
+              <mi>Ind</mi> 
+              <mi>&#x03B3;</mi> 
+              <mrow></mrow> 
+            </msubsup> 
+            <mo stretchy="false">(</mo> 
+            <mi>z</mi> 
+            <mo stretchy="false">)</mo> 
+            <mo>=</mo> 
+            <mfrac>
+              <mn>1</mn> 
+              <mrow>
+                <mn>2</mn> 
+                <mi>&#x03C0;</mi> 
+                <mi>i</mi> 
+              </mrow> 
+            </mfrac> 
+            <munderover>
+              <mo>&#x222E;</mo> 
+              <mi>&#x03B3;</mi> 
+              <mrow></mrow> 
+            </munderover> 
+            <mfrac>
+              <mrow>
+                <mi>f</mi> 
+                <mo stretchy="false">(</mo> 
+                <mstyle scriptlevel="1">
+                  <mi>&#x03BE;</mi> 
+                </mstyle> 
+                <mo stretchy="false">)</mo> 
+              </mrow> 
+              <mrow>
+                <mstyle scriptlevel="1">
+                  <mi>&#x03BE;</mi> 
+                </mstyle> 
+                <mo>-</mo> 
+                <mi>z</mi> 
+              </mrow> 
+            </mfrac> 
+            <mtext>&#x2009;</mtext> 
+            <mi>d</mi> 
+            <mstyle scriptlevel="1">
+              <mi>&#x03BE;</mi> 
+            </mstyle> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Cross Product</mtext> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <msubsup>
+            <mstyle fontweight="bold">
+              <mi>V</mi> 
+            </mstyle> 
+            <mn>1</mn> 
+            <mrow></mrow> 
+          </msubsup> 
+          <mo>&#x00D7;</mo> 
+          <msubsup>
+            <mstyle fontweight="bold">
+              <mi>V</mi> 
+            </mstyle> 
+            <mn>2</mn> 
+            <mrow></mrow> 
+          </msubsup> 
+          <mo>=</mo> 
+          <mrow>
+            <mo>|</mo> 
+            <mtable equalrows="false">
+              <mtr>
+                <mtd>
+                  <mstyle fontweight="bold">
+                    <mi>i</mi> 
+                  </mstyle> 
+                </mtd> 
+                <mtd>
+                  <mstyle fontweight="bold">
+                    <mi>j</mi> 
+                  </mstyle> 
+                </mtd> 
+                <mtd>
+                  <mstyle fontweight="bold">
+                    <mi>k</mi> 
+                  </mstyle> 
+                </mtd> 
+              </mtr> 
+              <mtr>
+                <mtd>
+                  <mfrac>
+                    <mrow>
+                      <mo>&#x2202;</mo> 
+                      <mi>X</mi> 
+                    </mrow> 
+                    <mrow>
+                      <mo>&#x2202;</mo> 
+                      <mi>u</mi> 
+                    </mrow> 
+                  </mfrac> 
+                </mtd> 
+                <mtd>
+                  <mfrac>
+                    <mrow>
+                      <mo>&#x2202;</mo> 
+                      <mi>Y</mi> 
+                    </mrow> 
+                    <mrow>
+                      <mo>&#x2202;</mo> 
+                      <mi>u</mi> 
+                    </mrow> 
+                  </mfrac> 
+                </mtd> 
+                <mtd>
+                  <mn>0</mn> 
+                </mtd> 
+              </mtr> 
+              <mtr>
+                <mtd>
+                  <mfrac>
+                    <mrow>
+                      <mo>&#x2202;</mo> 
+                      <mi>X</mi> 
+                    </mrow> 
+                    <mrow>
+                      <mo>&#x2202;</mo> 
+                      <mi>v</mi> 
+                    </mrow> 
+                  </mfrac> 
+                </mtd> 
+                <mtd>
+                  <mfrac>
+                    <mrow>
+                      <mo>&#x2202;</mo> 
+                      <mi>Y</mi> 
+                    </mrow> 
+                    <mrow>
+                      <mo>&#x2202;</mo> 
+                      <mi>v</mi> 
+                    </mrow> 
+                  </mfrac> 
+                </mtd> 
+                <mtd>
+                  <mn>0</mn> 
+                </mtd> 
+              </mtr> 
+            </mtable> 
+            <mo>|</mo> 
+          </mrow> 
+        </mrow> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Vandermonde Determinant</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle displaystyle="true">
+          <mrow>
+            <mrow>
+              <mo>|</mo> 
+              <mtable equalrows="false">
+                <mtr>
+                  <mtd>
+                    <mn>1</mn> 
+                  </mtd> 
+                  <mtd>
+                    <mn>1</mn> 
+                  </mtd> 
+                  <mtd>
+                    <mo>&#x22EF;</mo> 
+                  </mtd> 
+                  <mtd>
+                    <mn>1</mn> 
+                  </mtd> 
+                </mtr> 
+                <mtr>
+                  <mtd>
+                    <msubsup>
+                      <mi>v</mi> 
+                      <mn>1</mn> 
+                      <mrow></mrow> 
+                    </msubsup> 
+                  </mtd> 
+                  <mtd>
+                    <msubsup>
+                      <mi>v</mi> 
+                      <mn>2</mn> 
+                      <mrow></mrow> 
+                    </msubsup> 
+                  </mtd> 
+                  <mtd>
+                    <mo>&#x22EF;</mo> 
+                  </mtd> 
+                  <mtd>
+                    <msubsup>
+                      <mi>v</mi> 
+                      <mi>n</mi> 
+                      <mrow></mrow> 
+                    </msubsup> 
+                  </mtd> 
+                </mtr> 
+                <mtr>
+                  <mtd>
+                    <msubsup>
+                      <mi>v</mi> 
+                      <mn>1</mn> 
+                      <mn>2</mn> 
+                    </msubsup> 
+                  </mtd> 
+                  <mtd>
+                    <msubsup>
+                      <mi>v</mi> 
+                      <mn>2</mn> 
+                      <mn>2</mn> 
+                    </msubsup> 
+                  </mtd> 
+                  <mtd>
+                    <mo>&#x22EF;</mo> 
+                  </mtd> 
+                  <mtd>
+                    <msubsup>
+                      <mi>v</mi> 
+                      <mi>n</mi> 
+                      <mn>2</mn> 
+                    </msubsup> 
+                  </mtd> 
+                </mtr> 
+                <mtr>
+                  <mtd>
+                    <mo>&#x22EE;</mo> 
+                  </mtd> 
+                  <mtd>
+                    <mo>&#x22EE;</mo> 
+                  </mtd> 
+                  <mtd>
+                    <mo>&#x22F1;</mo> 
+                  </mtd> 
+                  <mtd>
+                    <mo>&#x22EE;</mo> 
+                  </mtd> 
+                </mtr> 
+                <mtr>
+                  <mtd>
+                    <msubsup>
+                      <mi>v</mi> 
+                      <mn>1</mn> 
+                      <mrow>
+                        <mi>n</mi> 
+                        <mo>-</mo> 
+                        <mn>1</mn> 
+                      </mrow> 
+                    </msubsup> 
+                  </mtd> 
+                  <mtd>
+                    <msubsup>
+                      <mi>v</mi> 
+                      <mn>2</mn> 
+                      <mrow>
+                        <mi>n</mi> 
+                        <mo>-</mo> 
+                        <mn>1</mn> 
+                      </mrow> 
+                    </msubsup> 
+                  </mtd> 
+                  <mtd>
+                    <mo>&#x22EF;</mo> 
+                  </mtd> 
+                  <mtd>
+                    <msubsup>
+                      <mi>v</mi> 
+                      <mi>n</mi> 
+                      <mrow>
+                        <mi>n</mi> 
+                        <mo>-</mo> 
+                        <mn>1</mn> 
+                      </mrow> 
+                    </msubsup> 
+                  </mtd> 
+                </mtr> 
+              </mtable> 
+              <mo>|</mo> 
+            </mrow> 
+            <mo>=</mo> 
+            <munderover>
+              <mo>&#x220F;</mo> 
+              <mrow>
+                <mn>1</mn> 
+                <mo>&#x2264;</mo> 
+                <mi>i</mi> 
+                <mo>&lt;</mo> 
+                <mi>j</mi> 
+                <mo>&#x2264;</mo> 
+                <mi>n</mi> 
+              </mrow> 
+              <mrow></mrow> 
+            </munderover> 
+            <mo stretchy="false">(</mo> 
+            <msubsup>
+              <mi>v</mi> 
+              <mi>j</mi> 
+              <mrow></mrow> 
+            </msubsup> 
+            <mo>-</mo> 
+            <msubsup>
+              <mi>v</mi> 
+              <mi>i</mi> 
+              <mrow></mrow> 
+            </msubsup> 
+            <mo stretchy="false">)</mo> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Lorenz Equations</mtext> 
+      </mtd> 
+      <mtd>
+        <mtable columnalign="right center left" equalcolumns="false">
+          <mtr>
+            <mtd>
+              <munderover accent="true">
+                <mi>x</mi> 
+                <mrow></mrow> 
+                <mo>&#x02D9;</mo> 
+              </munderover> 
+            </mtd> 
+            <mtd>
+              <mo>=</mo> 
+            </mtd> 
+            <mtd>
+              <mrow>
+                <mi>&#x03C3;</mi> 
+                <mo stretchy="false">(</mo> 
+                <mi>y</mi> 
+                <mo>-</mo> 
+                <mi>x</mi> 
+                <mo stretchy="false">)</mo> 
+              </mrow> 
+            </mtd> 
+          </mtr> 
+          <mtr>
+            <mtd>
+              <munderover accent="true">
+                <mi>y</mi> 
+                <mrow></mrow> 
+                <mo>&#x02D9;</mo> 
+              </munderover> 
+            </mtd> 
+            <mtd>
+              <mo>=</mo> 
+            </mtd> 
+            <mtd>
+              <mrow>
+                <mi>&#x03C1;</mi> 
+                <mi>x</mi> 
+                <mo>-</mo> 
+                <mi>y</mi> 
+                <mo>-</mo> 
+                <mi>x</mi> 
+                <mi>z</mi> 
+              </mrow> 
+            </mtd> 
+          </mtr> 
+          <mtr>
+            <mtd>
+              <munderover accent="true">
+                <mi>z</mi> 
+                <mrow></mrow> 
+                <mo>&#x02D9;</mo> 
+              </munderover> 
+            </mtd> 
+            <mtd>
+              <mo>=</mo> 
+            </mtd> 
+            <mtd>
+              <mrow>
+                <mo>-</mo> 
+                <mi>&#x03B2;</mi> 
+                <mi>z</mi> 
+                <mo>+</mo> 
+                <mi>x</mi> 
+                <mi>y</mi> 
+              </mrow> 
+            </mtd> 
+          </mtr> 
+        </mtable> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Maxwell's Equations</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle displaystyle="true">
+          <mrow>
+            <mo>{</mo> 
+            <mtable columnalign="right center left" equalrows="false" equalcolumns="false">
+              <mtr>
+                <mtd>
+                  <mrow>
+                    <mo>&#x2207;</mo> 
+                    <mtext>&#x200B;</mtext> 
+                    <mo>&#x00D7;</mo> 
+                    <munderover accent="true">
+                      <mstyle fontweight="bold">
+                        <mi>B</mi> 
+                      </mstyle> 
+                      <mrow></mrow> 
+                      <mo stretchy="true">&#x21BC;</mo> 
+                    </munderover> 
+                    <mo>-</mo> 
+                    <mtext>&#x2009;</mtext> 
+                    <mfrac>
+                      <mn>1</mn> 
+                      <mi>c</mi> 
+                    </mfrac> 
+                    <mtext>&#x2009;</mtext> 
+                    <mfrac>
+                      <mrow>
+                        <mo>&#x2202;</mo> 
+                        <mtext>&#x200B;</mtext> 
+                        <munderover accent="true">
+                          <mstyle fontweight="bold">
+                            <mi>E</mi> 
+                          </mstyle> 
+                          <mrow></mrow> 
+                          <mo stretchy="true">&#x21BC;</mo> 
+                        </munderover> 
+                      </mrow> 
+                      <mrow>
+                        <mo>&#x2202;</mo> 
+                        <mtext>&#x200B;</mtext> 
+                        <mi>t</mi> 
+                      </mrow> 
+                    </mfrac> 
+                  </mrow> 
+                </mtd> 
+                <mtd>
+                  <mo>=</mo> 
+                </mtd> 
+                <mtd>
+                  <mrow>
+                    <mfrac>
+                      <mrow>
+                        <mn>4</mn> 
+                        <mi>&#x03C0;</mi> 
+                      </mrow> 
+                      <mi>c</mi> 
+                    </mfrac> 
+                    <mtext>&#x2009;</mtext> 
+                    <munderover accent="true">
+                      <mstyle fontweight="bold">
+                        <mi>j</mi> 
+                      </mstyle> 
+                      <mrow></mrow> 
+                      <mo stretchy="true">&#x21BC;</mo> 
+                    </munderover> 
+                  </mrow> 
+                </mtd> 
+              </mtr> 
+              <mtr>
+                <mtd>
+                  <mrow>
+                    <mo>&#x2207;</mo> 
+                    <mtext>&#x200B;</mtext> 
+                    <mo>&#x00B7;</mo> 
+                    <munderover accent="true">
+                      <mstyle fontweight="bold">
+                        <mi>E</mi> 
+                      </mstyle> 
+                      <mrow></mrow> 
+                      <mo stretchy="true">&#x21BC;</mo> 
+                    </munderover> 
+                  </mrow> 
+                </mtd> 
+                <mtd>
+                  <mo>=</mo> 
+                </mtd> 
+                <mtd>
+                  <mrow>
+                    <mn>4</mn> 
+                    <mi>&#x03C0;</mi> 
+                    <mi>&#x03C1;</mi> 
+                  </mrow> 
+                </mtd> 
+              </mtr> 
+              <mtr>
+                <mtd>
+                  <mrow>
+                    <mo>&#x2207;</mo> 
+                    <mtext>&#x200B;</mtext> 
+                    <mo>&#x00D7;</mo> 
+                    <munderover accent="true">
+                      <mstyle fontweight="bold">
+                        <mi>E</mi> 
+                      </mstyle> 
+                      <mrow></mrow> 
+                      <mo stretchy="true">&#x21BC;</mo> 
+                    </munderover> 
+                    <mtext>&#x2009;</mtext> 
+                    <mo>+</mo> 
+                    <mtext>&#x2009;</mtext> 
+                    <mfrac>
+                      <mn>1</mn> 
+                      <mi>c</mi> 
+                    </mfrac> 
+                    <mtext>&#x2009;</mtext> 
+                    <mfrac>
+                      <mrow>
+                        <mo>&#x2202;</mo> 
+                        <mtext>&#x200B;</mtext> 
+                        <munderover accent="true">
+                          <mstyle fontweight="bold">
+                            <mi>B</mi> 
+                          </mstyle> 
+                          <mrow></mrow> 
+                          <mo stretchy="true">&#x21BC;</mo> 
+                        </munderover> 
+                      </mrow> 
+                      <mrow>
+                        <mo>&#x2202;</mo> 
+                        <mtext>&#x200B;</mtext> 
+                        <mi>t</mi> 
+                      </mrow> 
+                    </mfrac> 
+                  </mrow> 
+                </mtd> 
+                <mtd>
+                  <mo>=</mo> 
+                </mtd> 
+                <mtd>
+                  <munderover accent="true">
+                    <mstyle fontweight="bold">
+                      <mn>0</mn> 
+                    </mstyle> 
+                    <mrow></mrow> 
+                    <mo stretchy="true">&#x21BC;</mo> 
+                  </munderover> 
+                </mtd> 
+              </mtr> 
+              <mtr>
+                <mtd>
+                  <mrow>
+                    <mo>&#x2207;</mo> 
+                    <mtext>&#x200B;</mtext> 
+                    <mo>&#x00B7;</mo> 
+                    <munderover accent="true">
+                      <mstyle fontweight="bold">
+                        <mi>B</mi> 
+                      </mstyle> 
+                      <mrow></mrow> 
+                      <mo stretchy="true">&#x21BC;</mo> 
+                    </munderover> 
+                  </mrow> 
+                </mtd> 
+                <mtd>
+                  <mo>=</mo> 
+                </mtd> 
+                <mtd>
+                  <mn>0</mn> 
+                </mtd> 
+              </mtr> 
+            </mtable> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Einstein Field Equations</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle displaystyle="true">
+          <mrow>
+            <msubsup>
+              <mstyle fontstyle="normal">
+                <mi>R</mi> 
+              </mstyle> 
+              <mstyle scriptlevel="1">
+                <mrow>
+                  <mi>&#x03BC;</mi> 
+                  <mi>&#x03BD;</mi> 
+                </mrow> 
+              </mstyle> 
+              <mrow></mrow> 
+            </msubsup> 
+            <mo>-</mo> 
+            <mfrac>
+              <mn>1</mn> 
+              <mn>2</mn> 
+            </mfrac> 
+            <mtext>&#x2009;</mtext> 
+            <msubsup>
+              <mi>g</mi> 
+              <mstyle scriptlevel="1">
+                <mrow>
+                  <mi>&#x03BC;</mi> 
+                  <mi>&#x03BD;</mi> 
+                </mrow> 
+              </mstyle> 
+              <mrow></mrow> 
+            </msubsup> 
+            <mtext>&#x2009;</mtext> 
+            <mstyle fontstyle="normal">
+              <mi>R</mi> 
+            </mstyle> 
+            <mo>=</mo> 
+            <mfrac>
+              <mrow>
+                <mn>8</mn> 
+                <mi>&#x03C0;</mi> 
+                <mstyle fontstyle="normal">
+                  <mi>G</mi> 
+                </mstyle> 
+              </mrow> 
+              <msubsup>
+                <mi>c</mi> 
+                <mrow></mrow> 
+                <mn>4</mn> 
+              </msubsup> 
+            </mfrac> 
+            <mtext>&#x2009;</mtext> 
+            <msubsup>
+              <mstyle fontstyle="normal">
+                <mi>T</mi> 
+              </mstyle> 
+              <mstyle scriptlevel="1">
+                <mrow>
+                  <mi>&#x03BC;</mi> 
+                  <mi>&#x03BD;</mi> 
+                </mrow> 
+              </mstyle> 
+              <mrow></mrow> 
+            </msubsup> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Ramanujan Identity</mtext> 
+      </mtd> 
+      <mtd>
+        <mrow>
+          <mfrac>
+            <mn>1</mn> 
+            <mrow>
+              <mo stretchy="false">(</mo> 
+              <msqrt>
+                <mrow>
+                  <mi>&#x03C6;</mi> 
+                  <msqrt>
+                    <mn>5</mn> 
+                  </msqrt> 
+                </mrow> 
+              </msqrt> 
+              <mo>-</mo> 
+              <mi>&#x03C6;</mi> 
+              <mo stretchy="false">)</mo> 
+              <msubsup>
+                <mi>e</mi> 
+                <mrow></mrow> 
+                <mfrac>
+                  <mn>25</mn> 
+                  <mi>&#x03C0;</mi> 
+                </mfrac> 
+              </msubsup> 
+            </mrow> 
+          </mfrac> 
+          <mo>=</mo> 
+          <mn>1</mn> 
+          <mo>+</mo> 
+          <mstyle scriptlevel="1">
+            <mfrac>
+              <msubsup>
+                <mi>e</mi> 
+                <mrow></mrow> 
+                <mstyle scriptlevel="2">
+                  <mrow>
+                    <mo>-</mo> 
+                    <mn>2</mn> 
+                    <mi>&#x03C0;</mi> 
+                  </mrow> 
+                </mstyle> 
+              </msubsup> 
+              <mrow>
+                <mn>1</mn> 
+                <mo>+</mo> 
+                <mfrac>
+                  <msubsup>
+                    <mi>e</mi> 
+                    <mrow></mrow> 
+                    <mstyle scriptlevel="2">
+                      <mrow>
+                        <mo>-</mo> 
+                        <mn>4</mn> 
+                        <mi>&#x03C0;</mi> 
+                      </mrow> 
+                    </mstyle> 
+                  </msubsup> 
+                  <mrow>
+                    <mn>1</mn> 
+                    <mo>+</mo> 
+                    <mfrac>
+                      <msubsup>
+                        <mi>e</mi> 
+                        <mrow></mrow> 
+                        <mstyle scriptlevel="2">
+                          <mrow>
+                            <mo>-</mo> 
+                            <mn>6</mn> 
+                            <mi>&#x03C0;</mi> 
+                          </mrow> 
+                        </mstyle> 
+                      </msubsup> 
+                      <mrow>
+                        <mn>1</mn> 
+                        <mo>+</mo> 
+                        <mfrac>
+                          <msubsup>
+                            <mi>e</mi> 
+                            <mrow></mrow> 
+                            <mstyle scriptlevel="2">
+                              <mrow>
+                                <mo>-</mo> 
+                                <mn>8</mn> 
+                                <mi>&#x03C0;</mi> 
+                              </mrow> 
+                            </mstyle> 
+                          </msubsup> 
+                          <mrow>
+                            <mn>1</mn> 
+                            <mo>+</mo> 
+                            <mo>&#x2026;</mo> 
+                          </mrow> 
+                        </mfrac> 
+                      </mrow> 
+                    </mfrac> 
+                  </mrow> 
+                </mfrac> 
+              </mrow> 
+            </mfrac> 
+          </mstyle> 
+        </mrow> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Another Ramanujan identity</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle displaystyle="true">
+          <mrow>
+            <munderover>
+              <mo>&#x2211;</mo> 
+              <mrow>
+                <mi>k</mi> 
+                <mo>=</mo> 
+                <mn>1</mn> 
+              </mrow> 
+              <mi>&#x221E;</mi> 
+            </munderover> 
+            <mfrac>
+              <mn>1</mn> 
+              <msubsup>
+                <mn>2</mn> 
+                <mrow></mrow> 
+                <mrow>
+                  <mo stretchy="false">&#x230A;</mo> 
+                  <mi>k</mi> 
+                  <mo>&#x00B7;</mo> 
+                  <mtext>&#x200B;</mtext> 
+                  <mi>&#x03C6;</mi> 
+                  <mo stretchy="false">&#x230B;</mo> 
+                </mrow> 
+              </msubsup> 
+            </mfrac> 
+            <mo>=</mo> 
+            <mstyle scriptlevel="1">
+              <mfrac>
+                <mn>1</mn> 
+                <mrow>
+                  <msubsup>
+                    <mn>2</mn> 
+                    <mrow></mrow> 
+                    <mstyle scriptlevel="2">
+                      <mn>0</mn> 
+                    </mstyle> 
+                  </msubsup> 
+                  <mo>+</mo> 
+                  <mfrac>
+                    <mn>1</mn> 
+                    <mrow>
+                      <msubsup>
+                        <mn>2</mn> 
+                        <mrow></mrow> 
+                        <mstyle scriptlevel="2">
+                          <mn>1</mn> 
+                        </mstyle> 
+                      </msubsup> 
+                      <mo>+</mo> 
+                      <maction actiontype="toggle">
+                        <mo>&#x22EF;</mo> 
+                        <mfrac>
+                          <mn>1</mn> 
+                          <mrow>
+                            <msubsup>
+                              <mn>2</mn> 
+                              <mrow></mrow> 
+                              <mstyle scriptlevel="2">
+                                <mn>1</mn> 
+                              </mstyle> 
+                            </msubsup> 
+                            <mo>+</mo> 
+                            <mfrac>
+                              <mn>1</mn> 
+                              <mrow>
+                                <msubsup>
+                                  <mn>2</mn> 
+                                  <mrow></mrow> 
+                                  <mstyle scriptlevel="2">
+                                    <mn>2</mn> 
+                                  </mstyle> 
+                                </msubsup> 
+                                <mo>+</mo> 
+                                <maction actiontype="toggle">
+                                  <mo>&#x22EF;</mo> 
+                                  <mfrac>
+                                    <mn>1</mn> 
+                                    <mrow>
+                                      <msubsup>
+                                        <mn>2</mn> 
+                                        <mrow></mrow> 
+                                        <mstyle scriptlevel="2">
+                                          <mn>3</mn> 
+                                        </mstyle> 
+                                      </msubsup> 
+                                      <mo>+</mo> 
+                                      <mfrac>
+                                        <mn>1</mn> 
+                                        <mrow>
+                                          <msubsup>
+                                            <mn>2</mn> 
+                                            <mrow></mrow> 
+                                            <mstyle scriptlevel="2">
+                                              <mn>5</mn> 
+                                            </mstyle> 
+                                          </msubsup> 
+                                          <mo>+</mo> 
+                                          <mo>&#x2026;</mo> 
+                                        </mrow> 
+                                      </mfrac> 
+                                    </mrow> 
+                                  </mfrac> 
+                                </maction> 
+                              </mrow> 
+                            </mfrac> 
+                          </mrow> 
+                        </mfrac> 
+                      </maction> 
+                    </mrow> 
+                  </mfrac> 
+                </mrow> 
+              </mfrac> 
+            </mstyle> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Rogers-Ramanujan Identity</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle displaystyle="true">
+          <mrow>
+            <mn>1</mn> 
+            <mo>+</mo> 
+            <maction xmlns:dsi="http://www.dessci.com/mathml" actiontype="highlight" dsi:background="#0000ff">
+              <maction actiontype="toggle">
+                <mrow>
+                  <munderover>
+                    <mo>&#x2211;</mo> 
+                    <mrow>
+                      <mi>k</mi> 
+                      <mo>=</mo> 
+                      <mn>1</mn> 
+                    </mrow> 
+                    <mi>&#x221E;</mi> 
+                  </munderover> 
+                  <mfrac>
+                    <msubsup>
+                      <mi>q</mi> 
+                      <mrow></mrow> 
+                      <mrow>
+                        <msubsup>
+                          <mi>k</mi> 
+                          <mrow></mrow> 
+                          <mn>2</mn> 
+                        </msubsup> 
+                        <mo>+</mo> 
+                        <mi>k</mi> 
+                      </mrow> 
+                    </msubsup> 
+                    <mrow>
+                      <mo stretchy="false">(</mo> 
+                      <mn>1</mn> 
+                      <mo>-</mo> 
+                      <mi>q</mi> 
+                      <mo stretchy="false">)</mo> 
+                      <mo stretchy="false">(</mo> 
+                      <mn>1</mn> 
+                      <mo>-</mo> 
+                      <msubsup>
+                        <mi>q</mi> 
+                        <mrow></mrow> 
+                        <mn>2</mn> 
+                      </msubsup> 
+                      <mo stretchy="false">)</mo> 
+                      <mo>&#x22EF;</mo> 
+                      <mo stretchy="false">(</mo> 
+                      <mn>1</mn> 
+                      <mo>-</mo> 
+                      <msubsup>
+                        <mi>q</mi> 
+                        <mrow></mrow> 
+                        <mi>k</mi> 
+                      </msubsup> 
+                      <mo stretchy="false">)</mo> 
+                    </mrow> 
+                  </mfrac> 
+                </mrow> 
+                <mrow>
+                  <mfrac>
+                    <msubsup>
+                      <mi>q</mi> 
+                      <mrow></mrow> 
+                      <mn>2</mn> 
+                    </msubsup> 
+                    <mrow>
+                      <mo stretchy="false">(</mo> 
+                      <mn>1</mn> 
+                      <mo>-</mo> 
+                      <mi>q</mi> 
+                      <mo stretchy="false">)</mo> 
+                    </mrow> 
+                  </mfrac> 
+                  <mo>+</mo> 
+                  <mfrac>
+                    <msubsup>
+                      <mi>q</mi> 
+                      <mrow></mrow> 
+                      <mn>6</mn> 
+                    </msubsup> 
+                    <mrow>
+                      <mo stretchy="false">(</mo> 
+                      <mn>1</mn> 
+                      <mo>-</mo> 
+                      <mi>q</mi> 
+                      <mo stretchy="false">)</mo> 
+                      <mo stretchy="false">(</mo> 
+                      <mn>1</mn> 
+                      <mo>-</mo> 
+                      <msubsup>
+                        <mi>q</mi> 
+                        <mrow></mrow> 
+                        <mn>2</mn> 
+                      </msubsup> 
+                      <mo stretchy="false">)</mo> 
+                    </mrow> 
+                  </mfrac> 
+                  <mo>+</mo> 
+                  <mo>&#x22EF;</mo> 
+                </mrow> 
+              </maction> 
+            </maction> 
+            <mo>=</mo> 
+            <maction xmlns:dsi="http://www.dessci.com/mathml" actiontype="highlight" dsi:background="#0000ff">
+              <maction actiontype="toggle">
+                <mrow>
+                  <munderover>
+                    <mo>&#x220F;</mo> 
+                    <mrow>
+                      <mi>j</mi> 
+                      <mo>=</mo> 
+                      <mn>0</mn> 
+                    </mrow> 
+                    <mi>&#x221E;</mi> 
+                  </munderover> 
+                  <mfrac>
+                    <mn>1</mn> 
+                    <mrow>
+                      <mo stretchy="false">(</mo> 
+                      <mn>1</mn> 
+                      <mo>-</mo> 
+                      <msubsup>
+                        <mi>q</mi> 
+                        <mrow></mrow> 
+                        <mrow>
+                          <mn>5</mn> 
+                          <mi>j</mi> 
+                          <mo>+</mo> 
+                          <mn>2</mn> 
+                        </mrow> 
+                      </msubsup> 
+                      <mo stretchy="false">)</mo> 
+                      <mo stretchy="false">(</mo> 
+                      <mn>1</mn> 
+                      <mo>-</mo> 
+                      <msubsup>
+                        <mi>q</mi> 
+                        <mrow></mrow> 
+                        <mrow>
+                          <mn>5</mn> 
+                          <mi>j</mi> 
+                          <mo>+</mo> 
+                          <mn>3</mn> 
+                        </mrow> 
+                      </msubsup> 
+                      <mo stretchy="false">)</mo> 
+                    </mrow> 
+                  </mfrac> 
+                </mrow> 
+                <mrow>
+                  <mfrac>
+                    <mn>1</mn> 
+                    <mrow>
+                      <mo stretchy="false">(</mo> 
+                      <mn>1</mn> 
+                      <mo>-</mo> 
+                      <msubsup>
+                        <mi>q</mi> 
+                        <mrow></mrow> 
+                        <mn>2</mn> 
+                      </msubsup> 
+                      <mo stretchy="false">)</mo> 
+                      <mo stretchy="false">(</mo> 
+                      <mn>1</mn> 
+                      <mo>-</mo> 
+                      <msubsup>
+                        <mi>q</mi> 
+                        <mrow></mrow> 
+                        <mn>3</mn> 
+                      </msubsup> 
+                      <mo stretchy="false">)</mo> 
+                    </mrow> 
+                  </mfrac> 
+                  <mo>&#x00D7;</mo> 
+                  <mfrac>
+                    <mn>1</mn> 
+                    <mrow>
+                      <mo stretchy="false">(</mo> 
+                      <mn>1</mn> 
+                      <mo>-</mo> 
+                      <msubsup>
+                        <mi>q</mi> 
+                        <mrow></mrow> 
+                        <mn>7</mn> 
+                      </msubsup> 
+                      <mo stretchy="false">)</mo> 
+                      <mo stretchy="false">(</mo> 
+                      <mn>1</mn> 
+                      <mo>-</mo> 
+                      <msubsup>
+                        <mi>q</mi> 
+                        <mrow></mrow> 
+                        <mn>8</mn> 
+                      </msubsup> 
+                      <mo stretchy="false">)</mo> 
+                    </mrow> 
+                  </mfrac> 
+                  <mo>&#x00D7;</mo> 
+                  <mo>&#x22EF;</mo> 
+                </mrow> 
+              </maction> 
+            </maction> 
+            <mo>,</mo> 
+            <mtext>&#x205F;&#x0200A;</mtext> 
+            <mtext>&#x205F;&#x0200A;</mtext> 
+            <mstyle fontstyle="normal">
+              <mrow>
+                <mi>f</mi> 
+                <mi>o</mi> 
+                <mi>r</mi> 
+              </mrow> 
+            </mstyle> 
+            <mtext>&#x205F;</mtext> 
+            <mo stretchy="false">|</mo> 
+            <mi>q</mi> 
+            <mo stretchy="false">|</mo> 
+            <mo>&lt;</mo> 
+            <mn>1</mn> 
+            <mi>.</mi> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Commutative Diagram</mtext> 
+      </mtd> 
+      <mtd>
+        <mtable equalcolumns="false" equalrows="false">
+          <mtr>
+            <mtd>
+              <mi>H</mi> 
+            </mtd> 
+            <mtd>
+              <mo>&#x2190;</mo> 
+            </mtd> 
+            <mtd>
+              <mi>K</mi> 
+            </mtd> 
+          </mtr> 
+          <mtr>
+            <mtd>
+              <mo>&#x2193;</mo> 
+            </mtd> 
+            <mtd>
+              <mspace height="100px" width="150px"></mspace> 
+            </mtd> 
+            <mtd>
+              <mo>&#x2191;</mo> 
+            </mtd> 
+          </mtr> 
+          <mtr>
+            <mtd>
+              <mi>H</mi> 
+            </mtd> 
+            <mtd>
+              <mo>&#x2192;</mo> 
+            </mtd> 
+            <mtd>
+              <mi>K</mi> 
+            </mtd> 
+          </mtr> 
+        </mtable> 
+      </mtd> 
+    </mtr> 
+  </mtable> </math>
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "Bernoulli Trials" ]
+      , [ EGrouped
+            [ EGrouped
+                [ EIdentifier "P"
+                , ESymbol Open "("
+                , EIdentifier "E"
+                , ESymbol Close ")"
+                ]
+            , ESymbol Rel "="
+            , EDelimited
+                "("
+                ")"
+                [ Right (EFraction NormalFrac (EIdentifier "n") (EIdentifier "k"))
+                ]
+            , ESubsup (EIdentifier "p") (EGrouped []) (EIdentifier "k")
+            , ESubsup
+                (EGrouped
+                   [ ESymbol Open "("
+                   , ENumber "1"
+                   , ESymbol Bin "-"
+                   , EIdentifier "p"
+                   , ESymbol Close ")"
+                   ])
+                (EGrouped [])
+                (EGrouped [ EIdentifier "n" , ESymbol Bin "-" , EIdentifier "k" ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Cauchy-Schwarz Inequality" ]
+      , [ EGrouped
+            [ ESubsup
+                (EDelimited
+                   "("
+                   ")"
+                   [ Right
+                       (EUnderover
+                          False
+                          (ESymbol Op "\8721")
+                          (EGrouped [ EIdentifier "k" , ESymbol Rel "=" , ENumber "1" ])
+                          (EIdentifier "n"))
+                   , Right (ESubsup (EIdentifier "a") (EIdentifier "k") (EGrouped []))
+                   , Right (ESubsup (EIdentifier "b") (EIdentifier "k") (EGrouped []))
+                   ])
+                (EGrouped [])
+                (ENumber "2")
+            , ESymbol Rel "\8804"
+            , EDelimited
+                "("
+                ")"
+                [ Right
+                    (EUnderover
+                       False
+                       (ESymbol Op "\8721")
+                       (EGrouped [ EIdentifier "k" , ESymbol Rel "=" , ENumber "1" ])
+                       (EIdentifier "n"))
+                , Right (ESubsup (EIdentifier "a") (EIdentifier "k") (ENumber "2"))
+                ]
+            , EDelimited
+                "("
+                ")"
+                [ Right
+                    (EUnderover
+                       False
+                       (ESymbol Op "\8721")
+                       (EGrouped [ EIdentifier "k" , ESymbol Rel "=" , ENumber "1" ])
+                       (EIdentifier "n"))
+                , Right (ESubsup (EIdentifier "b") (EIdentifier "k") (ENumber "2"))
+                ]
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Cauchy Formula" ]
+      , [ EGrouped
+            [ EIdentifier "f"
+            , ESymbol Open "("
+            , EIdentifier "z"
+            , ESymbol Close ")"
+            , ESpace (1 % 6)
+            , ESymbol Bin "\183"
+            , ESubsup (EIdentifier "Ind") (EIdentifier "\947") (EGrouped [])
+            , ESymbol Open "("
+            , EIdentifier "z"
+            , ESymbol Close ")"
+            , ESymbol Rel "="
+            , EFraction
+                NormalFrac
+                (ENumber "1")
+                (EGrouped [ ENumber "2" , EIdentifier "\960" , EIdentifier "i" ])
+            , EUnderover
+                False (ESymbol Op "\8750") (EIdentifier "\947") (EGrouped [])
+            , EFraction
+                NormalFrac
+                (EGrouped
+                   [ EIdentifier "f"
+                   , ESymbol Open "("
+                   , EIdentifier "\958"
+                   , ESymbol Close ")"
+                   ])
+                (EGrouped
+                   [ EIdentifier "\958" , ESymbol Bin "-" , EIdentifier "z" ])
+            , ESpace (1 % 6)
+            , EIdentifier "d"
+            , EIdentifier "\958"
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Cross Product" ]
+      , [ EGrouped
+            [ ESubsup (EIdentifier "V") (ENumber "1") (EGrouped [])
+            , ESymbol Bin "\215"
+            , ESubsup (EIdentifier "V") (ENumber "2") (EGrouped [])
+            , ESymbol Rel "="
+            , EDelimited
+                "|"
+                "|"
+                [ Right
+                    (EArray
+                       [ AlignCenter , AlignCenter , AlignCenter ]
+                       [ [ [ EIdentifier "i" ]
+                         , [ EIdentifier "j" ]
+                         , [ EIdentifier "k" ]
+                         ]
+                       , [ [ EFraction
+                               NormalFrac
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "X" ])
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "u" ])
+                           ]
+                         , [ EFraction
+                               NormalFrac
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "Y" ])
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "u" ])
+                           ]
+                         , [ ENumber "0" ]
+                         ]
+                       , [ [ EFraction
+                               NormalFrac
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "X" ])
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "v" ])
+                           ]
+                         , [ EFraction
+                               NormalFrac
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "Y" ])
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "v" ])
+                           ]
+                         , [ ENumber "0" ]
+                         ]
+                       ])
+                ]
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Vandermonde Determinant" ]
+      , [ EGrouped
+            [ EDelimited
+                "|"
+                "|"
+                [ Right
+                    (EArray
+                       [ AlignCenter , AlignCenter , AlignCenter , AlignCenter ]
+                       [ [ [ ENumber "1" ]
+                         , [ ENumber "1" ]
+                         , [ ESymbol Ord "\8943" ]
+                         , [ ENumber "1" ]
+                         ]
+                       , [ [ ESubsup (EIdentifier "v") (ENumber "1") (EGrouped []) ]
+                         , [ ESubsup (EIdentifier "v") (ENumber "2") (EGrouped []) ]
+                         , [ ESymbol Ord "\8943" ]
+                         , [ ESubsup (EIdentifier "v") (EIdentifier "n") (EGrouped []) ]
+                         ]
+                       , [ [ ESubsup (EIdentifier "v") (ENumber "1") (ENumber "2") ]
+                         , [ ESubsup (EIdentifier "v") (ENumber "2") (ENumber "2") ]
+                         , [ ESymbol Ord "\8943" ]
+                         , [ ESubsup (EIdentifier "v") (EIdentifier "n") (ENumber "2") ]
+                         ]
+                       , [ [ ESymbol Rel "\8942" ]
+                         , [ ESymbol Rel "\8942" ]
+                         , [ ESymbol Rel "\8945" ]
+                         , [ ESymbol Rel "\8942" ]
+                         ]
+                       , [ [ ESubsup
+                               (EIdentifier "v")
+                               (ENumber "1")
+                               (EGrouped [ EIdentifier "n" , ESymbol Bin "-" , ENumber "1" ])
+                           ]
+                         , [ ESubsup
+                               (EIdentifier "v")
+                               (ENumber "2")
+                               (EGrouped [ EIdentifier "n" , ESymbol Bin "-" , ENumber "1" ])
+                           ]
+                         , [ ESymbol Ord "\8943" ]
+                         , [ ESubsup
+                               (EIdentifier "v")
+                               (EIdentifier "n")
+                               (EGrouped [ EIdentifier "n" , ESymbol Bin "-" , ENumber "1" ])
+                           ]
+                         ]
+                       ])
+                ]
+            , ESymbol Rel "="
+            , EUnderover
+                False
+                (ESymbol Op "\8719")
+                (EGrouped
+                   [ ENumber "1"
+                   , ESymbol Rel "\8804"
+                   , EIdentifier "i"
+                   , ESymbol Rel "<"
+                   , EIdentifier "j"
+                   , ESymbol Rel "\8804"
+                   , EIdentifier "n"
+                   ])
+                (EGrouped [])
+            , ESymbol Open "("
+            , ESubsup (EIdentifier "v") (EIdentifier "j") (EGrouped [])
+            , ESymbol Bin "-"
+            , ESubsup (EIdentifier "v") (EIdentifier "i") (EGrouped [])
+            , ESymbol Close ")"
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Lorenz Equations" ]
+      , [ EArray
+            [ AlignCenter , AlignCenter , AlignCenter ]
+            [ [ [ EUnderover
+                    False (EIdentifier "x") (EGrouped []) (ESymbol Accent "\729")
+                ]
+              , [ ESymbol Rel "=" ]
+              , [ EGrouped
+                    [ EIdentifier "\963"
+                    , ESymbol Open "("
+                    , EIdentifier "y"
+                    , ESymbol Bin "-"
+                    , EIdentifier "x"
+                    , ESymbol Close ")"
+                    ]
+                ]
+              ]
+            , [ [ EUnderover
+                    False (EIdentifier "y") (EGrouped []) (ESymbol Accent "\729")
+                ]
+              , [ ESymbol Rel "=" ]
+              , [ EGrouped
+                    [ EIdentifier "\961"
+                    , EIdentifier "x"
+                    , ESymbol Bin "-"
+                    , EIdentifier "y"
+                    , ESymbol Bin "-"
+                    , EIdentifier "x"
+                    , EIdentifier "z"
+                    ]
+                ]
+              ]
+            , [ [ EUnderover
+                    False (EIdentifier "z") (EGrouped []) (ESymbol Accent "\729")
+                ]
+              , [ ESymbol Rel "=" ]
+              , [ EGrouped
+                    [ ESymbol Bin "-"
+                    , EIdentifier "\946"
+                    , EIdentifier "z"
+                    , ESymbol Bin "+"
+                    , EIdentifier "x"
+                    , EIdentifier "y"
+                    ]
+                ]
+              ]
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Maxwell's Equations" ]
+      , [ EDelimited
+            "{"
+            ""
+            [ Right
+                (EArray
+                   [ AlignCenter , AlignCenter , AlignCenter ]
+                   [ [ [ EGrouped
+                           [ ESymbol Ord "\8711"
+                           , ESpace (0 % 1)
+                           , ESymbol Bin "\215"
+                           , EUnderover
+                               False (EIdentifier "B") (EGrouped []) (ESymbol Accent "\8636")
+                           , ESymbol Bin "-"
+                           , ESpace (1 % 6)
+                           , EFraction NormalFrac (ENumber "1") (EIdentifier "c")
+                           , ESpace (1 % 6)
+                           , EFraction
+                               NormalFrac
+                               (EGrouped
+                                  [ ESymbol Ord "\8706"
+                                  , ESpace (0 % 1)
+                                  , EUnderover
+                                      False (EIdentifier "E") (EGrouped []) (ESymbol Accent "\8636")
+                                  ])
+                               (EGrouped
+                                  [ ESymbol Ord "\8706" , ESpace (0 % 1) , EIdentifier "t" ])
+                           ]
+                       ]
+                     , [ ESymbol Rel "=" ]
+                     , [ EGrouped
+                           [ EFraction
+                               NormalFrac
+                               (EGrouped [ ENumber "4" , EIdentifier "\960" ])
+                               (EIdentifier "c")
+                           , ESpace (1 % 6)
+                           , EUnderover
+                               False (EIdentifier "j") (EGrouped []) (ESymbol Accent "\8636")
+                           ]
+                       ]
+                     ]
+                   , [ [ EGrouped
+                           [ ESymbol Ord "\8711"
+                           , ESpace (0 % 1)
+                           , ESymbol Bin "\183"
+                           , EUnderover
+                               False (EIdentifier "E") (EGrouped []) (ESymbol Accent "\8636")
+                           ]
+                       ]
+                     , [ ESymbol Rel "=" ]
+                     , [ EGrouped
+                           [ ENumber "4" , EIdentifier "\960" , EIdentifier "\961" ]
+                       ]
+                     ]
+                   , [ [ EGrouped
+                           [ ESymbol Ord "\8711"
+                           , ESpace (0 % 1)
+                           , ESymbol Bin "\215"
+                           , EUnderover
+                               False (EIdentifier "E") (EGrouped []) (ESymbol Accent "\8636")
+                           , ESpace (1 % 6)
+                           , ESymbol Bin "+"
+                           , ESpace (1 % 6)
+                           , EFraction NormalFrac (ENumber "1") (EIdentifier "c")
+                           , ESpace (1 % 6)
+                           , EFraction
+                               NormalFrac
+                               (EGrouped
+                                  [ ESymbol Ord "\8706"
+                                  , ESpace (0 % 1)
+                                  , EUnderover
+                                      False (EIdentifier "B") (EGrouped []) (ESymbol Accent "\8636")
+                                  ])
+                               (EGrouped
+                                  [ ESymbol Ord "\8706" , ESpace (0 % 1) , EIdentifier "t" ])
+                           ]
+                       ]
+                     , [ ESymbol Rel "=" ]
+                     , [ EUnderover
+                           False (ENumber "0") (EGrouped []) (ESymbol Accent "\8636")
+                       ]
+                     ]
+                   , [ [ EGrouped
+                           [ ESymbol Ord "\8711"
+                           , ESpace (0 % 1)
+                           , ESymbol Bin "\183"
+                           , EUnderover
+                               False (EIdentifier "B") (EGrouped []) (ESymbol Accent "\8636")
+                           ]
+                       ]
+                     , [ ESymbol Rel "=" ]
+                     , [ ENumber "0" ]
+                     ]
+                   ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Einstein Field Equations" ]
+      , [ EGrouped
+            [ ESubsup
+                (EIdentifier "R")
+                (EGrouped [ EIdentifier "\956" , EIdentifier "\957" ])
+                (EGrouped [])
+            , ESymbol Bin "-"
+            , EFraction NormalFrac (ENumber "1") (ENumber "2")
+            , ESpace (1 % 6)
+            , ESubsup
+                (EIdentifier "g")
+                (EGrouped [ EIdentifier "\956" , EIdentifier "\957" ])
+                (EGrouped [])
+            , ESpace (1 % 6)
+            , EIdentifier "R"
+            , ESymbol Rel "="
+            , EFraction
+                NormalFrac
+                (EGrouped [ ENumber "8" , EIdentifier "\960" , EIdentifier "G" ])
+                (ESubsup (EIdentifier "c") (EGrouped []) (ENumber "4"))
+            , ESpace (1 % 6)
+            , ESubsup
+                (EIdentifier "T")
+                (EGrouped [ EIdentifier "\956" , EIdentifier "\957" ])
+                (EGrouped [])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Ramanujan Identity" ]
+      , [ EGrouped
+            [ EFraction
+                NormalFrac
+                (ENumber "1")
+                (EGrouped
+                   [ ESymbol Open "("
+                   , ESqrt (EGrouped [ EIdentifier "\966" , ESqrt (ENumber "5") ])
+                   , ESymbol Bin "-"
+                   , EIdentifier "\966"
+                   , ESymbol Close ")"
+                   , ESubsup
+                       (EIdentifier "e")
+                       (EGrouped [])
+                       (EFraction NormalFrac (ENumber "25") (EIdentifier "\960"))
+                   ])
+            , ESymbol Rel "="
+            , ENumber "1"
+            , ESymbol Bin "+"
+            , EFraction
+                NormalFrac
+                (ESubsup
+                   (EIdentifier "e")
+                   (EGrouped [])
+                   (EGrouped [ ESymbol Bin "-" , ENumber "2" , EIdentifier "\960" ]))
+                (EGrouped
+                   [ ENumber "1"
+                   , ESymbol Bin "+"
+                   , EFraction
+                       NormalFrac
+                       (ESubsup
+                          (EIdentifier "e")
+                          (EGrouped [])
+                          (EGrouped [ ESymbol Bin "-" , ENumber "4" , EIdentifier "\960" ]))
+                       (EGrouped
+                          [ ENumber "1"
+                          , ESymbol Bin "+"
+                          , EFraction
+                              NormalFrac
+                              (ESubsup
+                                 (EIdentifier "e")
+                                 (EGrouped [])
+                                 (EGrouped [ ESymbol Bin "-" , ENumber "6" , EIdentifier "\960" ]))
+                              (EGrouped
+                                 [ ENumber "1"
+                                 , ESymbol Bin "+"
+                                 , EFraction
+                                     NormalFrac
+                                     (ESubsup
+                                        (EIdentifier "e")
+                                        (EGrouped [])
+                                        (EGrouped
+                                           [ ESymbol Bin "-" , ENumber "8" , EIdentifier "\960" ]))
+                                     (EGrouped
+                                        [ ENumber "1" , ESymbol Bin "+" , ESymbol Ord "\8230" ])
+                                 ])
+                          ])
+                   ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Another Ramanujan identity" ]
+      , [ EGrouped
+            [ EUnderover
+                False
+                (ESymbol Op "\8721")
+                (EGrouped [ EIdentifier "k" , ESymbol Rel "=" , ENumber "1" ])
+                (EIdentifier "\8734")
+            , EFraction
+                NormalFrac
+                (ENumber "1")
+                (ESubsup
+                   (ENumber "2")
+                   (EGrouped [])
+                   (EGrouped
+                      [ ESymbol Open "\8970"
+                      , EIdentifier "k"
+                      , ESymbol Bin "\183"
+                      , ESpace (0 % 1)
+                      , EIdentifier "\966"
+                      , ESymbol Close "\8971"
+                      ]))
+            , ESymbol Rel "="
+            , EFraction
+                NormalFrac
+                (ENumber "1")
+                (EGrouped
+                   [ ESubsup (ENumber "2") (EGrouped []) (ENumber "0")
+                   , ESymbol Bin "+"
+                   , EFraction
+                       NormalFrac
+                       (ENumber "1")
+                       (EGrouped
+                          [ ESubsup (ENumber "2") (EGrouped []) (ENumber "1")
+                          , ESymbol Bin "+"
+                          , ESymbol Ord "\8943"
+                          ])
+                   ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Rogers-Ramanujan Identity" ]
+      , [ EGrouped
+            [ ENumber "1"
+            , ESymbol Bin "+"
+            , EGrouped
+                [ EUnderover
+                    False
+                    (ESymbol Op "\8721")
+                    (EGrouped [ EIdentifier "k" , ESymbol Rel "=" , ENumber "1" ])
+                    (EIdentifier "\8734")
+                , EFraction
+                    NormalFrac
+                    (ESubsup
+                       (EIdentifier "q")
+                       (EGrouped [])
+                       (EGrouped
+                          [ ESubsup (EIdentifier "k") (EGrouped []) (ENumber "2")
+                          , ESymbol Bin "+"
+                          , EIdentifier "k"
+                          ]))
+                    (EGrouped
+                       [ ESymbol Open "("
+                       , ENumber "1"
+                       , ESymbol Bin "-"
+                       , EIdentifier "q"
+                       , ESymbol Close ")"
+                       , ESymbol Open "("
+                       , ENumber "1"
+                       , ESymbol Bin "-"
+                       , ESubsup (EIdentifier "q") (EGrouped []) (ENumber "2")
+                       , ESymbol Close ")"
+                       , ESymbol Ord "\8943"
+                       , ESymbol Open "("
+                       , ENumber "1"
+                       , ESymbol Bin "-"
+                       , ESubsup (EIdentifier "q") (EGrouped []) (EIdentifier "k")
+                       , ESymbol Close ")"
+                       ])
+                ]
+            , ESymbol Rel "="
+            , EGrouped
+                [ EUnderover
+                    False
+                    (ESymbol Op "\8719")
+                    (EGrouped [ EIdentifier "j" , ESymbol Rel "=" , ENumber "0" ])
+                    (EIdentifier "\8734")
+                , EFraction
+                    NormalFrac
+                    (ENumber "1")
+                    (EGrouped
+                       [ ESymbol Open "("
+                       , ENumber "1"
+                       , ESymbol Bin "-"
+                       , ESubsup
+                           (EIdentifier "q")
+                           (EGrouped [])
+                           (EGrouped
+                              [ ENumber "5" , EIdentifier "j" , ESymbol Bin "+" , ENumber "2" ])
+                       , ESymbol Close ")"
+                       , ESymbol Open "("
+                       , ENumber "1"
+                       , ESymbol Bin "-"
+                       , ESubsup
+                           (EIdentifier "q")
+                           (EGrouped [])
+                           (EGrouped
+                              [ ENumber "5" , EIdentifier "j" , ESymbol Bin "+" , ENumber "3" ])
+                       , ESymbol Close ")"
+                       ])
+                ]
+            , ESymbol Pun ","
+            , EText TextNormal "\8287\8202"
+            , EText TextNormal "\8287\8202"
+            , EGrouped [ EIdentifier "f" , EIdentifier "o" , EIdentifier "r" ]
+            , ESpace (2 % 9)
+            , ESymbol Op "|"
+            , EIdentifier "q"
+            , ESymbol Op "|"
+            , ESymbol Rel "<"
+            , ENumber "1"
+            , EIdentifier "."
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Commutative Diagram" ]
+      , [ EArray
+            [ AlignCenter , AlignCenter , AlignCenter ]
+            [ [ [ EIdentifier "H" ]
+              , [ ESymbol Accent "\8592" ]
+              , [ EIdentifier "K" ]
+              ]
+            , [ [ ESymbol Rel "\8595" ]
+              , [ ESpace (0 % 1) ]
+              , [ ESymbol Rel "\8593" ]
+              ]
+            , [ [ EIdentifier "H" ]
+              , [ ESymbol Accent "\8594" ]
+              , [ EIdentifier "K" ]
+              ]
+            ]
+        ]
+      ]
+    ]
+]

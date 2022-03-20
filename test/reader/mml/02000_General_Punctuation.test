@@ -1,0 +1,611 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd></mtd> 
+      <mtd>
+        <mtext>200</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>201</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>202</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>203</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>204</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>205</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>206</mtext>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>0</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#8192;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8208;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8224;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8240;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8256;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8272;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8288;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>1</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#8193;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8209;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8225;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8241;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8257;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8273;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8289;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>2</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#8194;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8210;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8226;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8242;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8258;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8274;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8290;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>3</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#8195;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8211;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8227;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8243;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8259;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8275;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8291;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>4</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#8196;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8212;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8228;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8244;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8260;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8276;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8292;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>5</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#8197;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8213;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8229;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8245;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8261;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8277;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>6</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#8198;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8214;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8230;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8246;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8262;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8278;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>7</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#8199;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8215;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8231;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8247;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8263;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8279;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>8</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#8200;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8216;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8232;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8248;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8264;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8280;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>9</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#8201;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8217;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8233;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8249;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8265;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8281;</mo>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>A</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#8202;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8218;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8234;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8250;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8266;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8282;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8298;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>B</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#8203;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8219;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8235;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8251;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8267;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8283;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8299;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>C</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#8204;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8220;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8236;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8252;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8268;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8284;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8300;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>D</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#8205;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8221;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8237;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8253;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8269;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8285;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8301;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>E</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#8206;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8222;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8238;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8254;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8270;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8286;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8302;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>F</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#8207;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8223;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8239;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8255;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8271;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8287;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#8303;</mo>
+      </mtd> 
+    </mtr>   </mtable></math>
+>>> native
+[ EArray
+    [ AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    ]
+    [ [ []
+      , [ EText TextNormal "200" ]
+      , [ EText TextNormal "201" ]
+      , [ EText TextNormal "202" ]
+      , [ EText TextNormal "203" ]
+      , [ EText TextNormal "204" ]
+      , [ EText TextNormal "205" ]
+      , [ EText TextNormal "206" ]
+      ]
+    , [ [ EText TextNormal "0" ]
+      , [ ESymbol Ord "\8192" ]
+      , [ ESymbol Ord "\8208" ]
+      , [ ESymbol Bin "\8224" ]
+      , [ ESymbol Ord "\8240" ]
+      , [ ESymbol Bin "\8256" ]
+      , [ ESymbol Rel "\8272" ]
+      , [ ESymbol Ord "\8288" ]
+      ]
+    , [ [ EText TextNormal "1" ]
+      , [ ESymbol Ord "\8193" ]
+      , [ ESymbol Ord "\8209" ]
+      , [ ESymbol Bin "\8225" ]
+      , [ ESymbol Ord "\8241" ]
+      , [ ESymbol Ord "\8257" ]
+      , [ ESymbol Ord "\8273" ]
+      , [ ESymbol Ord "\8289" ]
+      ]
+    , [ [ EText TextNormal "2" ]
+      , [ ESymbol Ord "\8194" ]
+      , [ ESymbol Ord "\8210" ]
+      , [ ESymbol Bin "\8226" ]
+      , [ ESymbol Ord "\8242" ]
+      , [ ESymbol Ord "\8258" ]
+      , [ ESymbol Ord "\8274" ]
+      , [ ESymbol Ord "\8290" ]
+      ]
+    , [ [ EText TextNormal "3" ]
+      , [ ESymbol Ord "\8195" ]
+      , [ ESymbol Ord "\8211" ]
+      , [ ESymbol Ord "\8227" ]
+      , [ ESymbol Accent "\8243" ]
+      , [ ESymbol Ord "\8259" ]
+      , [ ESymbol Ord "\8275" ]
+      , [ ESymbol Ord "\8291" ]
+      ]
+    , [ [ EText TextNormal "4" ]
+      , [ ESymbol Ord "\8196" ]
+      , [ ESymbol Ord "\8212" ]
+      , [ ESymbol Ord "\8228" ]
+      , [ ESymbol Accent "\8244" ]
+      , [ ESymbol Bin "\8260" ]
+      , [ ESymbol Ord "\8276" ]
+      , [ ESymbol Ord "\8292" ]
+      ]
+    , [ [ EText TextNormal "5" ]
+      , [ ESymbol Ord "\8197" ]
+      , [ ESymbol Ord "\8213" ]
+      , [ ESymbol Ord "\8229" ]
+      , [ ESymbol Accent "\8245" ]
+      , [ ESymbol Ord "\8261" ]
+      , [ ESymbol Ord "\8277" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "6" ]
+      , [ ESymbol Ord "\8198" ]
+      , [ ESymbol Close "\8214" ]
+      , [ ESymbol Ord "\8230" ]
+      , [ ESymbol Accent "\8246" ]
+      , [ ESymbol Ord "\8262" ]
+      , [ ESymbol Ord "\8278" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "7" ]
+      , [ ESymbol Ord "\8199" ]
+      , [ ESymbol Ord "\8215" ]
+      , [ ESymbol Ord "\8231" ]
+      , [ ESymbol Accent "\8247" ]
+      , [ ESymbol Ord "\8263" ]
+      , [ ESymbol Accent "\8279" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "8" ]
+      , [ ESymbol Ord "\8200" ]
+      , [ ESymbol Open "\8216" ]
+      , [ ESymbol Ord "\8232" ]
+      , [ ESymbol Ord "\8248" ]
+      , [ ESymbol Ord "\8264" ]
+      , [ ESymbol Ord "\8280" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "9" ]
+      , [ ESymbol Ord "\8201" ]
+      , [ ESymbol Close "\8217" ]
+      , [ ESymbol Ord "\8233" ]
+      , [ ESymbol Ord "\8249" ]
+      , [ ESymbol Ord "\8265" ]
+      , [ ESymbol Ord "\8281" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "A" ]
+      , [ ESymbol Ord "\8202" ]
+      , [ ESymbol Accent "\8218" ]
+      , [ ESymbol Ord "\8234" ]
+      , [ ESymbol Ord "\8250" ]
+      , [ ESymbol Ord "\8266" ]
+      , [ ESymbol Ord "\8282" ]
+      , [ ESymbol Ord "\8298" ]
+      ]
+    , [ [ EText TextNormal "B" ]
+      , [ ESymbol Ord "\8203" ]
+      , [ ESymbol Accent "\8219" ]
+      , [ ESymbol Ord "\8235" ]
+      , [ ESymbol Ord "\8251" ]
+      , [ ESymbol Ord "\8267" ]
+      , [ ESymbol Ord "\8283" ]
+      , [ ESymbol Ord "\8299" ]
+      ]
+    , [ [ EText TextNormal "C" ]
+      , [ ESymbol Ord "\8204" ]
+      , [ ESymbol Open "\8220" ]
+      , [ ESymbol Ord "\8236" ]
+      , [ ESymbol Ord "\8252" ]
+      , [ ESymbol Ord "\8268" ]
+      , [ ESymbol Ord "\8284" ]
+      , [ ESymbol Ord "\8300" ]
+      ]
+    , [ [ EText TextNormal "D" ]
+      , [ ESymbol Ord "\8205" ]
+      , [ ESymbol Close "\8221" ]
+      , [ ESymbol Ord "\8237" ]
+      , [ ESymbol Ord "\8253" ]
+      , [ ESymbol Ord "\8269" ]
+      , [ ESymbol Ord "\8285" ]
+      , [ ESymbol Ord "\8301" ]
+      ]
+    , [ [ EText TextNormal "E" ]
+      , [ ESymbol Ord "\8206" ]
+      , [ ESymbol Accent "\8222" ]
+      , [ ESymbol Ord "\8238" ]
+      , [ ESymbol Accent "\8254" ]
+      , [ ESymbol Bin "\8270" ]
+      , [ ESymbol Ord "\8286" ]
+      , [ ESymbol Ord "\8302" ]
+      ]
+    , [ [ EText TextNormal "F" ]
+      , [ ESymbol Ord "\8207" ]
+      , [ ESymbol Accent "\8223" ]
+      , [ ESymbol Ord "\8239" ]
+      , [ ESymbol Ord "\8255" ]
+      , [ ESymbol Ord "\8271" ]
+      , [ ESymbol Ord "\8287" ]
+      , [ ESymbol Ord "\8303" ]
+      ]
+    ]
+]

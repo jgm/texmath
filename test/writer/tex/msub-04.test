@@ -1,0 +1,11 @@
+<<< native
+[ ESub (EIdentifier "L") (ESub (EIdentifier "X") (EIdentifier "h"))
+, ESymbol Rel "="
+, ESub
+    (EIdentifier "L")
+    (ESub
+       (EIdentifier "X")
+       (ESub (EIdentifier "h") (EPhantom (EIdentifier "fail"))))
+]
+>>> tex
+L_{X_{h}} = L_{X_{h_{\phantom{fail}}}}

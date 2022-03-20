@@ -1,0 +1,10 @@
+<<< native
+[ ESuper (EIdentifier "S") (ENumber "2")
+, ESymbol Rel "="
+, EUnder
+    False
+    (ESuper (EIdentifier "S") (ENumber "2"))
+    (EPhantom (EIdentifier "fail"))
+]
+>>> tex
+S^{2} = \underset{\phantom{fail}}{S^{2}}

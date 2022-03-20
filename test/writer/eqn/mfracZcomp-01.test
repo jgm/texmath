@@ -1,0 +1,12 @@
+<<< native
+[ EText TextNormal "Inline, auto, normal line\160"
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ EMathOperator "sin" , ESymbol Ord "\8289" , EIdentifier "\952" ])
+    (EIdentifier "\960")
+, EText
+    TextNormal ", numerator and denominator should render script size."
+]
+>>> eqn
+roman "Inline, auto, normal line " {sin  theta} over pi roman ", numerator and denominator should render script size."

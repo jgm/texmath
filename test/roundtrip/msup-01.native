@@ -1,0 +1,6 @@
+[ ESuper (EIdentifier "c") (ENumber "4")
+, ESymbol Rel "="
+, ESuper
+    (EIdentifier "c")
+    (EGrouped [ ENumber "4" , EPhantom (EIdentifier "fail") ])
+]

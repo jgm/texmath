@@ -1,0 +1,13 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped [ ENumber "2" , EIdentifier "\960" ])
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EOver False (ENumber "1") (EPhantom (ENumber "0")))
+    (EGrouped [ ENumber "2" , EIdentifier "\960" ])
+]
+>>> tex
+\frac{1}{2\pi} = \frac{\overset{\phantom{0}}{1}}{2\pi}

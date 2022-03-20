@@ -1,0 +1,18 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (EGrouped [ EIdentifier "x" , ESpace (7 % 20) , EIdentifier "y" ])
+    (ENumber "2")
+, ESymbol Bin "+"
+, EFraction
+    NormalFrac
+    (ENumber "2")
+    (EGrouped [ EIdentifier "x" , ESpace (0 % 1) , EIdentifier "y" ])
+, ESymbol Bin "+"
+, EFraction
+    NormalFrac
+    (EGrouped [ EIdentifier "x" , ESpace (0 % 1) , EIdentifier "y" ])
+    (ENumber "2")
+]
+>>> tex
+\frac{x\mspace{6mu} y}{2} + \frac{2}{x y} + \frac{x y}{2}

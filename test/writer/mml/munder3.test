@@ -1,0 +1,34 @@
+<<< native
+[ EUnder False (EIdentifier "x") (ESymbol Accent "\710")
+, ESymbol Rel "\8800"
+, EUnder False (EIdentifier "x") (ESymbol Alpha "\710")
+, ESymbol Rel "="
+, EUnder False (EIdentifier "x") (ESymbol Alpha "\710")
+, ESymbol Rel "="
+, EUnder False (EIdentifier "x") (ESymbol Alpha "\710")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <munder>
+      <mi>x</mi>
+      <mo accent="true">ˆ</mo>
+    </munder>
+    <mo>≠</mo>
+    <munder>
+      <mi>x</mi>
+      <mo accent="true">ˆ</mo>
+    </munder>
+    <mo>=</mo>
+    <munder>
+      <mi>x</mi>
+      <mo accent="true">ˆ</mo>
+    </munder>
+    <mo>=</mo>
+    <munder>
+      <mi>x</mi>
+      <mo accent="true">ˆ</mo>
+    </munder>
+  </mrow>
+</math>

@@ -1,0 +1,15 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <msubsup>    <mrow>      <mphantom>        <mi>z</mi>
+      </mphantom>
+      <mi>S</mi>
+    </mrow>     <mi>t</mi>     <mn>7</mn>   </msubsup>   <mo>=</mo>   <msubsup>    <mi>S</mi>     <mi>t</mi>     <mn>7</mn>   </msubsup> </math>
+>>> native
+[ ESubsup
+    (EGrouped [ EPhantom (EIdentifier "z") , EIdentifier "S" ])
+    (EIdentifier "t")
+    (ENumber "7")
+, ESymbol Rel "="
+, ESubsup (EIdentifier "S") (EIdentifier "t") (ENumber "7")
+]

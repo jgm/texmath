@@ -1,0 +1,19 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right (EFraction NormalFrac (EIdentifier "a") (EIdentifier "b"))
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo stretchy="true" form="prefix">(</mo>
+    <mfrac>
+      <mi>a</mi>
+      <mi>b</mi>
+    </mfrac>
+    <mo stretchy="true" form="postfix">)</mo>
+  </mrow>
+</math>

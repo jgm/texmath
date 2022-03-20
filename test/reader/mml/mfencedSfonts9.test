@@ -1,0 +1,54 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle mathbackground="#88cc88">
+    <mfenced>
+      <mrow>
+        <mi>a</mi> 
+        <mo>+</mo> 
+        <mi>b</mi> 
+      </mrow> 
+    </mfenced> 
+  </mstyle> 
+  <mo>=</mo> 
+  <mstyle fontweight="bold">
+    <mfenced>
+      <mfrac>
+        <mi>&#x03B1;</mi> 
+        <mi>&#x03B2;</mi> 
+      </mfrac> 
+    </mfenced> 
+  </mstyle> 
+  <mo>=</mo> 
+  <mstyle fontfamily="Helvetica">
+    <mfenced open="[">
+      <mrow>
+        <mi>a</mi> 
+        <mo>+</mo> 
+        <mi>b</mi> 
+      </mrow> 
+    </mfenced> 
+  </mstyle> </math>
+>>> native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+    ]
+, ESymbol Rel "="
+, EDelimited
+    "("
+    ")"
+    [ Right
+        (EFraction NormalFrac (EIdentifier "\945") (EIdentifier "\946"))
+    ]
+, ESymbol Rel "="
+, EDelimited
+    "["
+    ")"
+    [ Right
+        (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+    ]
+]

@@ -1,0 +1,6 @@
+<<< tex
+2 + 2
+\label{myeq}
+
+>>> native
+[ ENumber "2" , ESymbol Bin "+" , ENumber "2" ]

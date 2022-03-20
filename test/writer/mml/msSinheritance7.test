@@ -1,0 +1,34 @@
+<<< native
+[ EText TextNormal "\8220big\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220bog\8221"
+, ESymbol Bin "+"
+, EGrouped
+    [ EText TextNormal "\8220new\8221"
+    , ESymbol Bin "+"
+    , EText TextNormal "\8220net\8221"
+    , ESymbol Bin "+"
+    , EText TextNormal "\8220nod\8221"
+    ]
+, ESymbol Bin "+"
+, EText TextNormal "\8220nix\8221"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext mathvariant="normal">“big”</mtext>
+    <mo>+</mo>
+    <mtext mathvariant="normal">“bog”</mtext>
+    <mo>+</mo>
+    <mrow>
+      <mtext mathvariant="normal">“new”</mtext>
+      <mo>+</mo>
+      <mtext mathvariant="normal">“net”</mtext>
+      <mo>+</mo>
+      <mtext mathvariant="normal">“nod”</mtext>
+    </mrow>
+    <mo>+</mo>
+    <mtext mathvariant="normal">“nix”</mtext>
+  </mrow>
+</math>

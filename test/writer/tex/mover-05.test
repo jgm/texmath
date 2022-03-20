@@ -1,0 +1,8 @@
+<<< native
+[ EIdentifier "_ baseline _"
+, ESymbol Rel "="
+, EOver
+    False (EIdentifier "_ baseline _") (EPhantom (EIdentifier "fail"))
+]
+>>> tex
+{\_\ baseline\ \_} = \overset{\phantom{fail}}{\_\ baseline\ \_}

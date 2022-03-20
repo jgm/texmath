@@ -1,0 +1,10 @@
+<<< native
+[ ESuper (EIdentifier "e") (EIdentifier "x")
+, ESymbol Rel "="
+, EOver
+    False
+    (ESuper (EIdentifier "e") (EIdentifier "x"))
+    (EPhantom (EIdentifier "z"))
+]
+>>> tex
+e^{x} = \overset{\phantom{z}}{e^{x}}

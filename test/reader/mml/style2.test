@@ -1,0 +1,9 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" style="color:#9933CC">
+  <msqrt style="background:yellow">
+    <mn style="font-size:24pt; font-weight:bold">2</mn> 
+  </msqrt> </math>
+>>> native
+[ ESqrt (ENumber "2") ]

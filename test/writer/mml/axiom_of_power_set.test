@@ -1,0 +1,71 @@
+<<< native
+[ ESymbol Op "\8704"
+, EIdentifier "A"
+, ESpace (1 % 6)
+, ESymbol Op "\8707"
+, EIdentifier "P"
+, ESpace (1 % 6)
+, ESymbol Op "\8704"
+, EIdentifier "B"
+, ESpace (1 % 6)
+, EDelimited
+    "["
+    "]"
+    [ Right (EIdentifier "B")
+    , Right (ESymbol Rel "\8712")
+    , Right (EIdentifier "P")
+    , Right (ESymbol Rel "\8660")
+    , Right (ESymbol Op "\8704")
+    , Right (EIdentifier "C")
+    , Right (ESpace (1 % 6))
+    , Right
+        (EDelimited
+           "("
+           ")"
+           [ Right (EIdentifier "C")
+           , Right (ESymbol Rel "\8712")
+           , Right (EIdentifier "B")
+           , Right (ESymbol Rel "\8658")
+           , Right (EIdentifier "C")
+           , Right (ESymbol Rel "\8712")
+           , Right (EIdentifier "A")
+           ])
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>∀</mo>
+    <mi>A</mi>
+    <mspace width="0.167em" />
+    <mo>∃</mo>
+    <mi>P</mi>
+    <mspace width="0.167em" />
+    <mo>∀</mo>
+    <mi>B</mi>
+    <mspace width="0.167em" />
+    <mrow>
+      <mo stretchy="true" form="prefix">[</mo>
+      <mi>B</mi>
+      <mo>∈</mo>
+      <mi>P</mi>
+      <mo>⇔</mo>
+      <mo>∀</mo>
+      <mi>C</mi>
+      <mspace width="0.167em" />
+      <mrow>
+        <mo stretchy="true" form="prefix">(</mo>
+        <mi>C</mi>
+        <mo>∈</mo>
+        <mi>B</mi>
+        <mo>⇒</mo>
+        <mi>C</mi>
+        <mo>∈</mo>
+        <mi>A</mi>
+        <mo stretchy="true" form="postfix">)</mo>
+      </mrow>
+      <mo stretchy="true" form="postfix">]</mo>
+    </mrow>
+  </mrow>
+</math>

@@ -1,0 +1,10 @@
+<<< native
+[ ESubsup (EIdentifier "p") (EIdentifier "x") (ENumber "3")
+, ESymbol Rel "="
+, EUnder
+    False
+    (ESubsup (EIdentifier "p") (EIdentifier "x") (ENumber "3"))
+    (EPhantom (EText TextNormal "l"))
+]
+>>> tex
+p_{x}^{3} = \underset{\phantom{\text{l}}}{p_{x}^{3}}

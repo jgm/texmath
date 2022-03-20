@@ -1,0 +1,681 @@
+<<< native
+[ EArray
+    [ AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    ]
+    [ [ []
+      , [ EText TextNormal "8" ]
+      , [ EText TextNormal "9" ]
+      , [ EText TextNormal "A" ]
+      , [ EText TextNormal "B" ]
+      , [ EText TextNormal "C" ]
+      , [ EText TextNormal "D" ]
+      , [ EText TextNormal "E" ]
+      , [ EText TextNormal "F" ]
+      ]
+    , [ [ EText TextNormal "0" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "\160" ]
+      , [ ESymbol Ord "\176" ]
+      , [ ESymbol Ord "\192" ]
+      , [ ESymbol Ord "\208" ]
+      , [ ESymbol Ord "\224" ]
+      , [ ESymbol Alpha "\240" ]
+      ]
+    , [ [ EText TextNormal "1" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "\161" ]
+      , [ ESymbol Bin "\177" ]
+      , [ ESymbol Ord "\193" ]
+      , [ ESymbol Ord "\209" ]
+      , [ ESymbol Ord "\225" ]
+      , [ ESymbol Ord "\241" ]
+      ]
+    , [ [ EText TextNormal "2" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "\162" ]
+      , [ ESymbol Accent "\178" ]
+      , [ ESymbol Ord "\194" ]
+      , [ ESymbol Ord "\210" ]
+      , [ ESymbol Ord "\226" ]
+      , [ ESymbol Ord "\242" ]
+      ]
+    , [ [ EText TextNormal "3" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "\163" ]
+      , [ ESymbol Accent "\179" ]
+      , [ ESymbol Ord "\195" ]
+      , [ ESymbol Ord "\211" ]
+      , [ ESymbol Ord "\227" ]
+      , [ ESymbol Ord "\243" ]
+      ]
+    , [ [ EText TextNormal "4" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "\164" ]
+      , [ ESymbol Accent "\180" ]
+      , [ ESymbol Ord "\196" ]
+      , [ ESymbol Ord "\212" ]
+      , [ ESymbol Ord "\228" ]
+      , [ ESymbol Ord "\244" ]
+      ]
+    , [ [ EText TextNormal "5" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "\165" ]
+      , [ ESymbol Alpha "\181" ]
+      , [ ESymbol Ord "\197" ]
+      , [ ESymbol Ord "\213" ]
+      , [ ESymbol Ord "\229" ]
+      , [ ESymbol Ord "\245" ]
+      ]
+    , [ [ EText TextNormal "6" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "\166" ]
+      , [ ESymbol Ord "\182" ]
+      , [ ESymbol Ord "\198" ]
+      , [ ESymbol Ord "\214" ]
+      , [ ESymbol Ord "\230" ]
+      , [ ESymbol Ord "\246" ]
+      ]
+    , [ [ EText TextNormal "7" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "\167" ]
+      , [ ESymbol Bin "\183" ]
+      , [ ESymbol Ord "\199" ]
+      , [ ESymbol Bin "\215" ]
+      , [ ESymbol Ord "\231" ]
+      , [ ESymbol Bin "\247" ]
+      ]
+    , [ [ EText TextNormal "8" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Accent "\168" ]
+      , [ ESymbol Accent "\184" ]
+      , [ ESymbol Ord "\200" ]
+      , [ ESymbol Ord "\216" ]
+      , [ ESymbol Ord "\232" ]
+      , [ ESymbol Ord "\248" ]
+      ]
+    , [ [ EText TextNormal "9" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "\169" ]
+      , [ ESymbol Accent "\185" ]
+      , [ ESymbol Ord "\201" ]
+      , [ ESymbol Ord "\217" ]
+      , [ ESymbol Ord "\233" ]
+      , [ ESymbol Ord "\249" ]
+      ]
+    , [ [ EText TextNormal "A" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Accent "\170" ]
+      , [ ESymbol Accent "\186" ]
+      , [ ESymbol Ord "\202" ]
+      , [ ESymbol Ord "\218" ]
+      , [ ESymbol Ord "\234" ]
+      , [ ESymbol Ord "\250" ]
+      ]
+    , [ [ EText TextNormal "B" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "\171" ]
+      , [ ESymbol Ord "\187" ]
+      , [ ESymbol Ord "\203" ]
+      , [ ESymbol Ord "\219" ]
+      , [ ESymbol Ord "\235" ]
+      , [ ESymbol Ord "\251" ]
+      ]
+    , [ [ EText TextNormal "C" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "\172" ]
+      , [ ESymbol Ord "\188" ]
+      , [ ESymbol Ord "\204" ]
+      , [ ESymbol Ord "\220" ]
+      , [ ESymbol Ord "\236" ]
+      , [ ESymbol Ord "\252" ]
+      ]
+    , [ [ EText TextNormal "D" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "\173" ]
+      , [ ESymbol Ord "\189" ]
+      , [ ESymbol Ord "\205" ]
+      , [ ESymbol Ord "\221" ]
+      , [ ESymbol Ord "\237" ]
+      , [ ESymbol Ord "\253" ]
+      ]
+    , [ [ EText TextNormal "E" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "\174" ]
+      , [ ESymbol Ord "\190" ]
+      , [ ESymbol Ord "\206" ]
+      , [ ESymbol Ord "\222" ]
+      , [ ESymbol Ord "\238" ]
+      , [ ESymbol Ord "\254" ]
+      ]
+    , [ [ EText TextNormal "F" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Accent "\175" ]
+      , [ ESymbol Ord "\191" ]
+      , [ ESymbol Ord "\207" ]
+      , [ ESymbol Ord "\223" ]
+      , [ ESymbol Ord "\239" ]
+      , [ ESymbol Ord "\255" ]
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">8</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">9</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">A</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">B</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">C</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">D</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">E</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">F</mtext>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">0</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi> </mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>°</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>À</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ð</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>à</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ð</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>¡</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>±</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Á</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ñ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>á</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ñ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">2</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>¢</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>²</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Â</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ò</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>â</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ò</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">3</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>£</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>³</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ã</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ó</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ã</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ó</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">4</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>¤</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>´</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ä</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ô</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ä</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ô</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">5</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>¥</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>µ</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Å</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Õ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>å</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>õ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">6</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>¦</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>¶</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Æ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ö</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>æ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ö</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">7</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>§</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>·</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ç</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>×</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ç</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>÷</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">8</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>¨</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>¸</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>È</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ø</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>è</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ø</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">9</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>©</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>¹</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>É</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ù</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>é</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ù</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">A</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ª</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>º</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ê</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ú</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ê</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ú</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">B</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>«</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>»</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ë</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Û</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ë</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>û</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">C</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>¬</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>¼</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ì</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ü</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ì</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ü</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">D</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>&#173;</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>½</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Í</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ý</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>í</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ý</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">E</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>®</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>¾</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Î</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Þ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>î</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>þ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">F</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>¯</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>¿</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ï</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ß</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ï</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ÿ</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

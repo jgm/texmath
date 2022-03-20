@@ -1,0 +1,15 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EUnder
+            False (EIdentifier "HT") (EPhantom (EText TextNormal "fail"))
+        ]
+      , [ ESymbol Rel "=" ]
+      , [ EIdentifier "TH" ]
+      ]
+    ]
+]
+>>> tex
+\begin{matrix}
+\underset{\phantom{\text{fail}}}{HT} & = & {TH} \\
+\end{matrix}

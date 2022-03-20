@@ -1,0 +1,27 @@
+<<< native
+[ EDelimited
+    "["
+    "|"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ EIdentifier "U" ] ] , [ [ EIdentifier "V" ] ] ])
+    ]
+, ESymbol Rel "="
+, EDelimited
+    "|"
+    "]"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ EIdentifier "U" ] ] , [ [ EIdentifier "V" ] ] ])
+    ]
+]
+>>> tex
+\left\lbrack \begin{matrix}
+U \\
+V \\
+\end{matrix} \right| = \left| \begin{matrix}
+U \\
+V \\
+\end{matrix} \right\rbrack

@@ -1,0 +1,17 @@
+<<< native
+[ EDelimited
+    ""
+    ""
+    [ Right (EIdentifier "g")
+    , Right (ESymbol Rel "=")
+    , Right (EIdentifier "A")
+    , Left "\8592"
+    , Right (EIdentifier "x")
+    , Left "\8594"
+    , Right (EIdentifier "H")
+    , Left "\8596"
+    , Right (EIdentifier "H")
+    ]
+]
+>>> tex
+\left. g = A\leftarrow x\rightarrow H\leftrightarrow H \right.

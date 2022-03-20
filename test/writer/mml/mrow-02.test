@@ -1,0 +1,20 @@
+<<< native
+[ ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Rel "="
+, ESuper (EIdentifier "x") (ENumber "2")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msup>
+      <mi>x</mi>
+      <mn>2</mn>
+    </msup>
+    <mo>=</mo>
+    <msup>
+      <mi>x</mi>
+      <mn>2</mn>
+    </msup>
+  </mrow>
+</math>

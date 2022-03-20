@@ -1,0 +1,9 @@
+<<< native
+[ EDelimited
+    "|"
+    "|"
+    [ Right (EFraction NormalFrac (EIdentifier "H") (EIdentifier "K"))
+    ]
+]
+>>> eqn
+left | H over K right |

@@ -1,0 +1,9 @@
+<<< native
+[ ESub (EIdentifier "V") (ESymbol Bin "+")
+, ESymbol Rel "="
+, ESub
+    (EIdentifier "V")
+    (ESub (ESymbol Bin "+") (EPhantom (EIdentifier "fail")))
+]
+>>> tex
+V_{+} = V_{+_{\phantom{fail}}}

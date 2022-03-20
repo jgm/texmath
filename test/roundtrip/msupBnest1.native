@@ -1,0 +1,4 @@
+[ EIdentifier "x"
+, ESymbol Bin "+"
+, ESuper (EIdentifier "y") (EIdentifier "n")
+]

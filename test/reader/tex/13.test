@@ -1,0 +1,62 @@
+<<< tex
+{}_pF_q(a_1,\dots,a_p;c_1,\dots,c_q;z)
+ = \sum_{n=0}^\infty
+ \frac{(a_1)_n\cdots(a_p)_n}{(c_1)_n\cdots(c_q)_n}
+ \frac{z^n}{n!}
+
+
+>>> native
+[ ESub (EGrouped []) (EIdentifier "p")
+, ESub (EIdentifier "F") (EIdentifier "q")
+, EDelimited
+    "("
+    ")"
+    [ Right (ESub (EIdentifier "a") (ENumber "1"))
+    , Right (ESymbol Pun ",")
+    , Right (ESymbol Ord "\8230")
+    , Right (ESymbol Pun ",")
+    , Right (ESub (EIdentifier "a") (EIdentifier "p"))
+    , Right (ESymbol Pun ";")
+    , Right (ESub (EIdentifier "c") (ENumber "1"))
+    , Right (ESymbol Pun ",")
+    , Right (ESymbol Ord "\8230")
+    , Right (ESymbol Pun ",")
+    , Right (ESub (EIdentifier "c") (EIdentifier "q"))
+    , Right (ESymbol Pun ";")
+    , Right (EIdentifier "z")
+    ]
+, ESymbol Rel "="
+, EUnderover
+    True
+    (ESymbol Op "\8721")
+    (EGrouped [ EIdentifier "n" , ESymbol Rel "=" , ENumber "0" ])
+    (ESymbol Ord "\8734")
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESub
+           (EDelimited
+              "(" ")" [ Right (ESub (EIdentifier "a") (ENumber "1")) ])
+           (EIdentifier "n")
+       , ESymbol Ord "\8943"
+       , ESub
+           (EDelimited
+              "(" ")" [ Right (ESub (EIdentifier "a") (EIdentifier "p")) ])
+           (EIdentifier "n")
+       ])
+    (EGrouped
+       [ ESub
+           (EDelimited
+              "(" ")" [ Right (ESub (EIdentifier "c") (ENumber "1")) ])
+           (EIdentifier "n")
+       , ESymbol Ord "\8943"
+       , ESub
+           (EDelimited
+              "(" ")" [ Right (ESub (EIdentifier "c") (EIdentifier "q")) ])
+           (EIdentifier "n")
+       ])
+, EFraction
+    NormalFrac
+    (ESuper (EIdentifier "z") (EIdentifier "n"))
+    (EGrouped [ EIdentifier "n" , ESymbol Ord "!" ])
+]

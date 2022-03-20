@@ -1,0 +1,30 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle displaystyle="false">
+    <mo largeop="false">&#x22C1;</mo> 
+  </mstyle> 
+  <mstyle displaystyle="false">
+    <mo largeop="true">&#x22C1;</mo> 
+  </mstyle> 
+  <mstyle displaystyle="true">
+    <mo largeop="false">&#x22C1;</mo> 
+  </mstyle> 
+  <mstyle displaystyle="true">
+    <mo largeop="true">&#x22C1;</mo> 
+  </mstyle> 
+  <mstyle displaystyle="false">
+    <mo>&#x22C1;</mo> 
+  </mstyle> 
+  <mstyle displaystyle="true">
+    <mo>&#x22C1;</mo> 
+  </mstyle> </math>
+>>> native
+[ ESymbol Op "\8897"
+, ESymbol Op "\8897"
+, ESymbol Op "\8897"
+, ESymbol Op "\8897"
+, ESymbol Op "\8897"
+, ESymbol Op "\8897"
+]

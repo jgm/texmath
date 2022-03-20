@@ -1,0 +1,8 @@
+[ EUnder False (EIdentifier "middle") (EIdentifier "bottom")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (EIdentifier "middle")
+    (EIdentifier "bottom")
+    (EPhantom (EIdentifier "fail"))
+]

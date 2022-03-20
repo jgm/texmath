@@ -1,0 +1,10 @@
+<<< native
+[ ESubsup (EIdentifier "D") (EIdentifier "x") (ENumber "2")
+, ESymbol Rel "="
+, ESubsup
+    (EIdentifier "D")
+    (EUnder False (EIdentifier "x") (EPhantom (ENumber "0")))
+    (EOver False (ENumber "2") (EPhantom (ENumber "0")))
+]
+>>> tex
+D_{x}^{2} = D_{\underset{\phantom{0}}{x}}^{\overset{\phantom{0}}{2}}

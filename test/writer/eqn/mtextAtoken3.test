@@ -1,0 +1,9 @@
+<<< native
+[ EText TextNormal "Theorem 1:"
+, EText TextNormal "Now is"
+, EText TextNormal "the time"
+, EText TextNormal "for"
+, EText TextNormal "MathML"
+]
+>>> eqn
+roman "Theorem 1:" roman "Now is" roman "the time" roman "for" roman "MathML"

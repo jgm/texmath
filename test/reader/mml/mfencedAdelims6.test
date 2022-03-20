@@ -1,0 +1,48 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfenced open="[">
+    <mrow>
+      <mi>a</mi> 
+      <mo>+</mo> 
+      <mi>b</mi> 
+    </mrow> 
+  </mfenced> 
+  <mfenced open="{" close="}" separators="|;+">
+    <mfrac>
+      <mi>a</mi> 
+      <mi>b</mi> 
+    </mfrac> 
+    <mfrac>
+      <mi>d</mi> 
+      <mi>e</mi> 
+    </mfrac> 
+    <mi>a</mi> 
+    <mi>b</mi> 
+    <mi>a</mi> 
+    <mi>b</mi> 
+  </mfenced> </math>
+>>> native
+[ EDelimited
+    "["
+    ")"
+    [ Right
+        (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+    ]
+, EDelimited
+    "{"
+    "}"
+    [ Right (EFraction NormalFrac (EIdentifier "a") (EIdentifier "b"))
+    , Left "|"
+    , Right (EFraction NormalFrac (EIdentifier "d") (EIdentifier "e"))
+    , Right (ESymbol Pun ";")
+    , Right (EIdentifier "a")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "b")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "a")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "b")
+    ]
+]

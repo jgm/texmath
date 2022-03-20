@@ -1,0 +1,21 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mfrac>
+      <mn>1</mn>
+      <mi>x</mi>
+    </mfrac> 
+    <annotation-xml encoding="MathML-Content">
+      <apply>
+        <divide></divide> 
+        <cn>1</cn> 
+        <ci>x</ci> 
+      </apply> 
+    </annotation-xml> 
+    <annotation encoding="TeX">{1 \over x}</annotation> 
+    <annotation encoding="image/png" href="clipboard2.png"></annotation> 
+  </semantics> </math>
+>>> native
+[ EFraction NormalFrac (ENumber "1") (EIdentifier "x") ]

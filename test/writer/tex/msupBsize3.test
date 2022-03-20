@@ -1,0 +1,17 @@
+<<< native
+[ ESuper (ESymbol Op "\8747") (ENumber "1")
+, ESymbol Bin "+"
+, ESuper
+    (EFraction NormalFrac (EIdentifier "x") (EIdentifier "y"))
+    (EIdentifier "a")
+, ESymbol Bin "+"
+, ESuper
+    (EFraction NormalFrac (EIdentifier "x") (EIdentifier "y"))
+    (ENumber "1")
+, ESymbol Bin "+"
+, ESuper (ESymbol Op "\8747") (EIdentifier "a")
+, ESymbol Bin "+"
+, ESuper (ESymbol Op "\8747") (EIdentifier "a")
+]
+>>> tex
+\int^{1} + \frac{x}{y}^{a} + \frac{x}{y}^{1} + \int^{a} + \int^{a}

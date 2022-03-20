@@ -1,0 +1,72 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>(</mo> 
+    <mrow>
+      <mi>x</mi> 
+      <mo>,</mo> 
+      <mfrac>
+        <mi>y</mi> 
+        <mi>z</mi> 
+      </mfrac> 
+    </mrow> 
+    <mo>)</mo> 
+    <mo>+</mo> 
+    <mo fence="true">(</mo> 
+    <mrow>
+      <mi>x</mi> 
+      <mo separator="true">,</mo> 
+      <mfrac>
+        <mi>y</mi> 
+        <mi>z</mi> 
+      </mfrac> 
+    </mrow> 
+    <mo fence="true">)</mo> 
+    <mo>+</mo> 
+    <mo fence="false">(</mo> 
+    <mrow>
+      <mi>x</mi> 
+      <mo separator="false">,</mo> 
+      <mfrac>
+        <mi>y</mi> 
+        <mi>z</mi> 
+      </mfrac> 
+    </mrow> 
+    <mo fence="false">)</mo> 
+  </mrow> </math>
+>>> native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EGrouped
+           [ EIdentifier "x"
+           , ESymbol Pun ","
+           , EFraction NormalFrac (EIdentifier "y") (EIdentifier "z")
+           ])
+    ]
+, ESymbol Bin "+"
+, EDelimited
+    "("
+    ")"
+    [ Right
+        (EGrouped
+           [ EIdentifier "x"
+           , ESymbol Pun ","
+           , EFraction NormalFrac (EIdentifier "y") (EIdentifier "z")
+           ])
+    ]
+, ESymbol Bin "+"
+, EDelimited
+    "("
+    ")"
+    [ Right
+        (EGrouped
+           [ EIdentifier "x"
+           , ESymbol Pun ","
+           , EFraction NormalFrac (EIdentifier "y") (EIdentifier "z")
+           ])
+    ]
+]

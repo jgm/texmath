@@ -1,0 +1,28 @@
+<<< native
+[ ESub (EIdentifier "H") (ESymbol Ord "2")
+, ESymbol Rel "="
+, EOver
+    False
+    (ESub (EIdentifier "H") (ESymbol Ord "2"))
+    (EPhantom (EIdentifier "x"))
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub>
+      <mi>H</mi>
+      <mi>2</mi>
+    </msub>
+    <mo>=</mo>
+    <mover>
+      <msub>
+        <mi>H</mi>
+        <mi>2</mi>
+      </msub>
+      <mphantom>
+        <mi>x</mi>
+      </mphantom>
+    </mover>
+  </mrow>
+</math>

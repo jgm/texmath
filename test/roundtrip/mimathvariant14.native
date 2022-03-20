@@ -1,0 +1,40 @@
+[ EArray
+    [ AlignLeft ]
+    [ [ [ EGrouped
+            [ EStyled TextFraktur [ EIdentifier "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ]
+            , EStyled TextFraktur [ EIdentifier "abcdefghijklmnopqrstuvwxyz" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EStyled
+                TextBoldFraktur [ EIdentifier "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ]
+            , EStyled
+                TextBoldFraktur [ EIdentifier "abcdefghijklmnopqrstuvwxyz" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EStyled
+                TextDoubleStruck [ EIdentifier "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ]
+            , EStyled
+                TextDoubleStruck [ EIdentifier "abcdefghijklmnopqrstuvwxyz" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EStyled TextScript [ EIdentifier "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ]
+            , EStyled TextScript [ EIdentifier "abcdefghijklmnopqrstuvwxyz" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EStyled
+                TextBoldScript [ EIdentifier "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ]
+            , EStyled
+                TextBoldScript [ EIdentifier "abcdefghijklmnopqrstuvwxyz" ]
+            ]
+        ]
+      ]
+    ]
+]

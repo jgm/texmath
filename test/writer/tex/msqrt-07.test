@@ -1,0 +1,13 @@
+<<< native
+[ ESqrt (EIdentifier "content")
+, ESymbol Rel "="
+, ESqrt
+    (EUnder
+       False (EIdentifier "content") (EPhantom (EIdentifier "fail")))
+, ESymbol Rel "="
+, ESqrt
+    (EOver
+       False (EIdentifier "content") (EPhantom (EIdentifier "fail")))
+]
+>>> tex
+\sqrt{content} = \sqrt{\underset{\phantom{fail}}{content}} = \sqrt{\overset{\phantom{fail}}{content}}

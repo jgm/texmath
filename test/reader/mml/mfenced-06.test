@@ -1,0 +1,31 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mfenced open="[" close="|">    <mrow>      <mtable>        <mtr>          <mtd>            <mi mathvariant="normal">U</mi>
+          </mtd>
+        </mtr>         <mtr>          <mtd>            <mi mathvariant="normal">V</mi>
+          </mtd>
+        </mtr>       </mtable>     </mrow>   </mfenced>   <mo>=</mo>   <mfenced open="|" close="]">    <mrow>      <mtable>        <mtr>          <mtd>            <mi mathvariant="normal">U</mi>
+          </mtd>
+        </mtr>         <mtr>          <mtd>            <mi mathvariant="normal">V</mi>
+          </mtd>
+        </mtr>       </mtable>     </mrow>   </mfenced> </math>
+>>> native
+[ EDelimited
+    "["
+    "|"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ EIdentifier "U" ] ] , [ [ EIdentifier "V" ] ] ])
+    ]
+, ESymbol Rel "="
+, EDelimited
+    "|"
+    "]"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ EIdentifier "U" ] ] , [ [ EIdentifier "V" ] ] ])
+    ]
+]

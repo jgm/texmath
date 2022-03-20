@@ -1,0 +1,34 @@
+<<< native
+[ ESuper (EIdentifier "x") (ENumber "1")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (EIdentifier "a")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "H") (EIdentifier "a")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "H") (ENumber "1")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msup>
+      <mi>x</mi>
+      <mn>1</mn>
+    </msup>
+    <mo>+</mo>
+    <msup>
+      <mi>x</mi>
+      <mi>a</mi>
+    </msup>
+    <mo>+</mo>
+    <msup>
+      <mi>H</mi>
+      <mi>a</mi>
+    </msup>
+    <mo>+</mo>
+    <msup>
+      <mi>H</mi>
+      <mn>1</mn>
+    </msup>
+  </mrow>
+</math>

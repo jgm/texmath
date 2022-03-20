@@ -1,0 +1,16 @@
+<<< native
+[ ENumber "100"
+, EText TextNormal "m"
+, ESymbol Ord "/"
+, EText TextNormal "s"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>100</mn>
+    <mtext mathvariant="normal">m</mtext>
+    <mi>/</mi>
+    <mtext mathvariant="normal">s</mtext>
+  </mrow>
+</math>

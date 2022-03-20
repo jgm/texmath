@@ -1,0 +1,217 @@
+<<< native
+[ EArray
+    [ AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    ]
+    [ [ [ EIdentifier "a" ]
+      , [ EIdentifier "a" ]
+      , [ EStyled TextBold [ EIdentifier "a" ] ]
+      , [ EStyled TextItalic [ EIdentifier "a" ] ]
+      , [ EStyled TextBoldItalic [ EIdentifier "a" ] ]
+      , [ EStyled TextDoubleStruck [ EIdentifier "a" ] ]
+      , [ EStyled TextBoldFraktur [ EIdentifier "a" ] ]
+      , [ EStyled TextScript [ EIdentifier "a" ] ]
+      , [ EStyled TextBoldScript [ EIdentifier "a" ] ]
+      , [ EStyled TextFraktur [ EIdentifier "a" ] ]
+      , [ EStyled TextSansSerif [ EIdentifier "a" ] ]
+      , [ EStyled TextSansSerifBold [ EIdentifier "a" ] ]
+      , [ EStyled TextSansSerifItalic [ EIdentifier "a" ] ]
+      , [ EStyled TextSansSerifBoldItalic [ EIdentifier "a" ] ]
+      , [ EStyled TextMonospace [ EIdentifier "a" ] ]
+      , [ EStyled TextBold [ EIdentifier "ab" ] ]
+      ]
+    , [ [ EIdentifier "A" ]
+      , [ EIdentifier "A" ]
+      , [ EStyled TextBold [ EIdentifier "A" ] ]
+      , [ EStyled TextItalic [ EIdentifier "A" ] ]
+      , [ EStyled TextBoldItalic [ EIdentifier "A" ] ]
+      , [ EStyled TextDoubleStruck [ EIdentifier "A" ] ]
+      , [ EStyled TextBoldFraktur [ EIdentifier "A" ] ]
+      , [ EStyled TextScript [ EIdentifier "A" ] ]
+      , [ EStyled TextBoldScript [ EIdentifier "A" ] ]
+      , [ EStyled TextFraktur [ EIdentifier "A" ] ]
+      , [ EStyled TextSansSerif [ EIdentifier "A" ] ]
+      , [ EStyled TextSansSerifBold [ EIdentifier "A" ] ]
+      , [ EStyled TextSansSerifItalic [ EIdentifier "A" ] ]
+      , [ EStyled TextSansSerifBoldItalic [ EIdentifier "A" ] ]
+      , [ EStyled TextMonospace [ EIdentifier "A" ] ]
+      , [ EStyled TextBold [ EIdentifier "\945" ] ]
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mi>a</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>a</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="bold">
+          <mi>𝐚</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="italic">
+          <mi>𝑎</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="bold-italic">
+          <mi>𝒂</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="double-struck">
+          <mi>𝕒</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="bold-fraktur">
+          <mi>𝖆</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="script">
+          <mi>𝒶</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="bold-script">
+          <mi>𝓪</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="fraktur">
+          <mi>𝔞</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="sans-serif">
+          <mi>𝖺</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="bold-sans-serif">
+          <mi>𝗮</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="sans-serif-italic">
+          <mi>𝘢</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="sans-serif-bold-italic">
+          <mi>𝙖</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="monospace">
+          <mi>𝚊</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="bold">
+          <mi>𝐚𝐛</mi>
+        </mstyle>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mi>A</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>A</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="bold">
+          <mi>𝐀</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="italic">
+          <mi>𝐴</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="bold-italic">
+          <mi>𝑨</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="double-struck">
+          <mi>𝔸</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="bold-fraktur">
+          <mi>𝕬</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="script">
+          <mi>𝒜</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="bold-script">
+          <mi>𝓐</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="fraktur">
+          <mi>𝔄</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="sans-serif">
+          <mi>𝖠</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="bold-sans-serif">
+          <mi>𝗔</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="sans-serif-italic">
+          <mi>𝘈</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="sans-serif-bold-italic">
+          <mi>𝘼</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="monospace">
+          <mi>𝙰</mi>
+        </mstyle>
+      </mtd>
+      <mtd columnalign="center">
+        <mstyle mathvariant="bold">
+          <mi>𝛂</mi>
+        </mstyle>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

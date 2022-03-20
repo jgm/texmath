@@ -1,0 +1,9 @@
+<<< native
+[ ESuper (EIdentifier "c") (ENumber "4")
+, ESymbol Rel "="
+, ESuper
+    (EIdentifier "c")
+    (EGrouped [ ENumber "4" , EPhantom (EIdentifier "fail") ])
+]
+>>> tex
+c^{4} = c^{4\phantom{fail}}

@@ -1,0 +1,15 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right (EFraction NormalFrac (EIdentifier "y") (EIdentifier "z"))
+    ]
+, ESymbol Bin "+"
+, EDelimited
+    "("
+    ")"
+    [ Right (EFraction NormalFrac (EIdentifier "y") (EIdentifier "z"))
+    ]
+]
+>>> eqn
+left ( y over z right ) + left ( y over z right )

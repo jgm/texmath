@@ -1,0 +1,19 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter , AlignCenter ]
+           [ [ [ ENumber "1" ] , [ ENumber "0" ] , [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] , [ ENumber "1" ] , [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] , [ ENumber "0" ] , [ ENumber "1" ] ]
+           ])
+    ]
+]
+>>> eqn
+left ( matrix{
+ccol{ 1 above 0 above 0 }
+ccol{ 0 above 1 above 0 }
+ccol{ 0 above 0 above 1 }
+} right )

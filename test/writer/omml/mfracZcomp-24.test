@@ -1,0 +1,195 @@
+<<< native
+[ EText TextNormal "Inline fenced nested fractions\160"
+, EGrouped
+    [ EDelimited
+        "["
+        "]"
+        [ Right
+            (EFraction
+               NormalFrac
+               (EGrouped
+                  [ EDelimited
+                      ""
+                      ""
+                      [ Left "\8741"
+                      , Right
+                          (EFraction
+                             NormalFrac
+                             (EGrouped
+                                [ EGrouped
+                                    [ EMathOperator "sin"
+                                    , ESymbol Ord "\8289"
+                                    , EIdentifier "\952"
+                                    ]
+                                , ESymbol Bin "+"
+                                , ENumber "1"
+                                ])
+                             (ENumber "11"))
+                      , Left "\8741"
+                      ]
+                  , ESymbol Bin "-"
+                  , EIdentifier "x"
+                  ])
+               (EFraction
+                  NormalFrac
+                  (ESuper (EIdentifier "x") (ENumber "2"))
+                  (ESub (EIdentifier "a") (ENumber "1"))))
+        ]
+    , ESymbol Bin "+"
+    , EGrouped [ ESymbol Open "[" , ENumber "1.0" , ESymbol Close "]" ]
+    ]
+, EText TextNormal "\160etc."
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>Inline fenced nested fractions </m:t>
+    </m:r>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="[" />
+        <m:endChr m:val="]" />
+        <m:sepChr m:val="" />
+        <m:grow />
+      </m:dPr>
+      <m:e>
+        <m:f>
+          <m:fPr>
+            <m:type m:val="bar" />
+          </m:fPr>
+          <m:num>
+            <m:d>
+              <m:dPr>
+                <m:begChr m:val="" />
+                <m:endChr m:val="" />
+                <m:sepChr m:val="∥" />
+                <m:grow />
+              </m:dPr>
+              <m:e />
+              <m:e>
+                <m:f>
+                  <m:fPr>
+                    <m:type m:val="bar" />
+                  </m:fPr>
+                  <m:num>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>sin</m:t>
+                    </m:r>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>&#8289;</m:t>
+                    </m:r>
+                    <m:r>
+                      <m:t>θ</m:t>
+                    </m:r>
+                    <m:r>
+                      <m:rPr>
+                        <m:sty m:val="p" />
+                      </m:rPr>
+                      <m:t>+</m:t>
+                    </m:r>
+                    <m:r>
+                      <m:t>1</m:t>
+                    </m:r>
+                  </m:num>
+                  <m:den>
+                    <m:r>
+                      <m:t>11</m:t>
+                    </m:r>
+                  </m:den>
+                </m:f>
+              </m:e>
+              <m:e />
+            </m:d>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>-</m:t>
+            </m:r>
+            <m:r>
+              <m:t>x</m:t>
+            </m:r>
+          </m:num>
+          <m:den>
+            <m:f>
+              <m:fPr>
+                <m:type m:val="bar" />
+              </m:fPr>
+              <m:num>
+                <m:sSup>
+                  <m:e>
+                    <m:r>
+                      <m:t>x</m:t>
+                    </m:r>
+                  </m:e>
+                  <m:sup>
+                    <m:r>
+                      <m:t>2</m:t>
+                    </m:r>
+                  </m:sup>
+                </m:sSup>
+              </m:num>
+              <m:den>
+                <m:sSub>
+                  <m:e>
+                    <m:r>
+                      <m:t>a</m:t>
+                    </m:r>
+                  </m:e>
+                  <m:sub>
+                    <m:r>
+                      <m:t>1</m:t>
+                    </m:r>
+                  </m:sub>
+                </m:sSub>
+              </m:den>
+            </m:f>
+          </m:den>
+        </m:f>
+      </m:e>
+    </m:d>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>[</m:t>
+    </m:r>
+    <m:r>
+      <m:t>1.0</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>]</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t> etc.</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

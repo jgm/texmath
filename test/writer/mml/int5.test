@@ -1,0 +1,24 @@
+<<< native
+[ ESymbol Op "\8747"
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, ESpace (1 % 9)
+, ESymbol Ord "\8518"
+, EIdentifier "x"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>∫</mo>
+    <mi>f</mi>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>x</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mspace width="0.111em" />
+    <mi>ⅆ</mi>
+    <mi>x</mi>
+  </mrow>
+</math>

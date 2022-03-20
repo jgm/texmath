@@ -1,0 +1,61 @@
+<<< native
+[ EDelimited
+    ""
+    ""
+    [ Right (EIdentifier "g")
+    , Right (ESymbol Rel "=")
+    , Right (EIdentifier "A")
+    , Left "\8592"
+    , Right (EIdentifier "x")
+    , Left "\8594"
+    , Right (EIdentifier "H")
+    , Left "\8596"
+    , Right (EIdentifier "H")
+    ]
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="" />
+        <m:endChr m:val="" />
+        <m:sepChr m:val="←" />
+        <m:grow />
+      </m:dPr>
+      <m:e>
+        <m:r>
+          <m:t>g</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>=</m:t>
+        </m:r>
+        <m:r>
+          <m:t>A</m:t>
+        </m:r>
+      </m:e>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+      <m:e>
+        <m:r>
+          <m:t>H</m:t>
+        </m:r>
+      </m:e>
+      <m:e>
+        <m:r>
+          <m:t>H</m:t>
+        </m:r>
+      </m:e>
+    </m:d>
+  </m:oMath>
+</m:oMathPara>

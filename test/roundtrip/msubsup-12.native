@@ -1,0 +1,8 @@
+[ ESubsup (EIdentifier "V") (EIdentifier "m") (EIdentifier "n")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (ESubsup (EIdentifier "V") (EIdentifier "m") (EIdentifier "n"))
+    (EPhantom (EText TextNormal "d"))
+    (EPhantom (EText TextNormal "d"))
+]

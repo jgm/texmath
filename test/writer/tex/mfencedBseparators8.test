@@ -1,0 +1,16 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EGrouped
+           [ ESub (EIdentifier "a") (ENumber "1")
+           , ESymbol Pun ","
+           , ESub (EIdentifier "a") (ENumber "2")
+           , ESymbol Pun ","
+           , ESub (EIdentifier "a") (ENumber "3")
+           ])
+    ]
+]
+>>> tex
+\left( {a_{1},a_{2},a_{3}} \right)

@@ -1,0 +1,16 @@
+<<< native
+[ EUnder
+    False
+    (EIdentifier "munder baseline")
+    (EIdentifier "munder under script")
+, ESymbol Rel "="
+, EOver
+    False
+    (EUnder
+       False
+       (EIdentifier "munder baseline")
+       (EIdentifier "munder under script"))
+    (EPhantom (EIdentifier "fail"))
+]
+>>> tex
+\underset{munder\ under\ script}{munder\ baseline} = \overset{\phantom{fail}}{\underset{munder\ under\ script}{munder\ baseline}}

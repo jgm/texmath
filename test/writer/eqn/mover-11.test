@@ -1,0 +1,14 @@
+<<< native
+[ EOver False (EIdentifier "BASE") (EIdentifier "x")
+, ESymbol Rel "="
+, EOver
+    False
+    (EIdentifier "BASE")
+    (EGrouped
+       [ EPhantom (ENumber "1")
+       , EIdentifier "x"
+       , EPhantom (ENumber "1")
+       ])
+]
+>>> eqn
+BASE to x = BASE to {hphantom 1 x hphantom 1}

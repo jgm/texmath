@@ -1,0 +1,17 @@
+<<< native
+[ ESubsup (ESymbol Op "\8747") (ENumber "0") (ENumber "1")
+, ESymbol Bin "+"
+, ESubsup
+    (EFraction NormalFrac (EIdentifier "x") (EIdentifier "y"))
+    (ENumber "0")
+    (EIdentifier "a")
+, ESymbol Bin "+"
+, ESubsup
+    (EFraction NormalFrac (EIdentifier "x") (EIdentifier "y"))
+    (ENumber "0")
+    (ENumber "1")
+, ESymbol Bin "+"
+, ESubsup (ESymbol Op "\8747") (ENumber "0") (EIdentifier "a")
+]
+>>> tex
+\int_{0}^{1} + \frac{x}{y}_{0}^{a} + \frac{x}{y}_{0}^{1} + \int_{0}^{a}

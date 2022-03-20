@@ -1,0 +1,21 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (EGrouped
+       [ EPhantom (EIdentifier "a")
+       , ENumber "12"
+       , EPhantom (EIdentifier "a")
+       ])
+    (ENumber "13")
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (ENumber "12")
+    (EGrouped
+       [ EPhantom (EIdentifier "a")
+       , ENumber "13"
+       , EPhantom (EIdentifier "a")
+       ])
+]
+>>> eqn
+{hphantom a 12 hphantom a} over 13 = 12 over {hphantom a 13 hphantom a}

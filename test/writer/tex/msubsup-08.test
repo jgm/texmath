@@ -1,0 +1,9 @@
+<<< native
+[ ESubsup (EIdentifier "A") (EIdentifier "B") (EIdentifier "C")
+, ESymbol Rel "="
+, ESubsup (EIdentifier "A") (EIdentifier "B") (EIdentifier "C")
+, EPhantom
+    (EFraction NormalFrac (EIdentifier "test") (EIdentifier "failed"))
+]
+>>> tex
+A_{B}^{C} = A_{B}^{C}\phantom{\frac{test}{failed}}

@@ -1,0 +1,11 @@
+<<< native
+[ EOver False (EIdentifier "x") (ESymbol Accent "\729")
+, ESymbol Rel "\8800"
+, EOver False (EIdentifier "x") (ESymbol Ord "\729")
+, ESymbol Rel "="
+, EOver False (EIdentifier "x") (ESymbol Ord "\729")
+, ESymbol Rel "="
+, EOver False (EIdentifier "x") (ESymbol Ord "\729")
+]
+>>> eqn
+x to \[u02D9] != x to \[u02D9] = x to \[u02D9] = x to \[u02D9]

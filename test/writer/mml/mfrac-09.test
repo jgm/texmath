@@ -1,0 +1,50 @@
+<<< native
+[ EFraction NormalFrac (ENumber "9") (ENumber "14")
+, ESymbol Rel "="
+, EFraction NormalFrac (ENumber "9") (ENumber "14")
+, EFraction
+    NormalFrac
+    (EPhantom
+       (EFraction
+          NormalFrac (EPhantom (ENumber "1")) (EPhantom (ENumber "2"))))
+    (EPhantom
+       (EFraction
+          NormalFrac (EPhantom (ENumber "1")) (EPhantom (ENumber "2"))))
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <mn>9</mn>
+      <mn>14</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>9</mn>
+      <mn>14</mn>
+    </mfrac>
+    <mfrac>
+      <mphantom>
+        <mfrac>
+          <mphantom>
+            <mn>1</mn>
+          </mphantom>
+          <mphantom>
+            <mn>2</mn>
+          </mphantom>
+        </mfrac>
+      </mphantom>
+      <mphantom>
+        <mfrac>
+          <mphantom>
+            <mn>1</mn>
+          </mphantom>
+          <mphantom>
+            <mn>2</mn>
+          </mphantom>
+        </mfrac>
+      </mphantom>
+    </mfrac>
+  </mrow>
+</math>

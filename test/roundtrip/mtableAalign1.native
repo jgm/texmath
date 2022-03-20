@@ -1,0 +1,13 @@
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EIdentifier "a" ]
+      , [ EIdentifier "b" ]
+      , [ EIdentifier "c" ]
+      ]
+    , [ [ EIdentifier "x" ]
+      , [ EIdentifier "y" ]
+      , [ EIdentifier "z" ]
+      ]
+    , [ [ ENumber "1" ] , [ ENumber "2" ] , [ ENumber "3" ] ]
+    ]
+]

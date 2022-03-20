@@ -1,0 +1,5 @@
+[ EFraction
+    NormalFrac
+    (EGrouped [ ENumber "1" , ESymbol Bin "+" , ESqrt (ENumber "5") ])
+    (ENumber "2")
+]

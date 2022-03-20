@@ -1,0 +1,10 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mover>
+    <mi>caledonia</mi> 
+    <mo>&#x02DC;</mo> 
+  </mover> </math>
+>>> native
+[ EOver False (EIdentifier "caledonia") (ESymbol Accent "\732") ]

@@ -1,0 +1,15 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <msqrt>    <mi>content</mi>   </msqrt>   <mo>=</mo>   <msqrt>    <msub>      <mi>content</mi>       <mphantom>        <mi>fail</mi>
+      </mphantom>     </msub>   </msqrt>   <mo>=</mo>   <msqrt>    <msup>      <mi>content</mi>       <mphantom>        <mi>fail</mi>
+      </mphantom>     </msup>   </msqrt> </math>
+>>> native
+[ ESqrt (EIdentifier "content")
+, ESymbol Rel "="
+, ESqrt
+    (ESub (EIdentifier "content") (EPhantom (EIdentifier "fail")))
+, ESymbol Rel "="
+, ESqrt
+    (ESuper (EIdentifier "content") (EPhantom (EIdentifier "fail")))
+]

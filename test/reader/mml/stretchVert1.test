@@ -1,0 +1,65 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle fontsize="130%" displaystyle="true">
+    <mtable>
+      <mtr>
+        <mtd>
+          <mrow>
+            <mi>x</mi> 
+            <mo>+</mo> 
+              <mo>(</mo> 
+            <mfrac>
+              <mn>2</mn> 
+              <mn>3</mn> 
+            </mfrac> 
+            <mo>)</mo> 
+          </mrow> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mrow>
+            <mi>x</mi> 
+            <mo>+</mo> 
+              <mover>
+                <mo>(</mo> 
+                <mo>-</mo> 
+              </mover> 
+            <mfrac>
+              <mn>2</mn> 
+              <mn>3</mn> 
+            </mfrac> 
+            <mo>)</mo> 
+          </mrow> 
+        </mtd> 
+      </mtr> 
+    </mtable> 
+  </mstyle> </math>
+
+>>> native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "+"
+            , EDelimited
+                "("
+                ")"
+                [ Right (EFraction NormalFrac (ENumber "2") (ENumber "3")) ]
+            ]
+        ]
+      ]
+    , [ [ EDelimited
+            ""
+            ")"
+            [ Right (EIdentifier "x")
+            , Right (ESymbol Bin "+")
+            , Right (EOver False (ESymbol Open "(") (ESymbol Bin "-"))
+            , Right (EFraction NormalFrac (ENumber "2") (ENumber "3"))
+            ]
+        ]
+      ]
+    ]
+]

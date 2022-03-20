@@ -1,0 +1,10 @@
+<<< native
+[ ESubsup (EIdentifier "T") (EIdentifier "m") (EIdentifier "n")
+, ESymbol Rel "="
+, EOver
+    False
+    (ESubsup (EIdentifier "T") (EIdentifier "m") (EIdentifier "n"))
+    (EPhantom (EText TextNormal "x"))
+]
+>>> tex
+T_{m}^{n} = \overset{\phantom{\text{x}}}{T_{m}^{n}}

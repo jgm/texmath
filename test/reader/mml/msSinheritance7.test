@@ -1,0 +1,36 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle fontweight="bold" color="#ff0000">
+    <mrow>
+      <ms>big</ms> 
+      <mo>+</mo> 
+      <ms fontweight="normal" fontstyle="italic">bog</ms> 
+      <mo>+</mo> 
+      <mstyle fontsize="0.05in">
+        <ms>new</ms> 
+        <mo>+</mo> 
+        <ms fontsize="2em">net</ms> 
+        <mo>+</mo> 
+        <ms fontsize="36pt">nod</ms> 
+      </mstyle> 
+      <mo>+</mo> 
+      <ms fontsize="20mm">nix</ms> 
+    </mrow> 
+  </mstyle> </math>
+>>> native
+[ EText TextNormal "\8220big\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220bog\8221"
+, ESymbol Bin "+"
+, EGrouped
+    [ EText TextNormal "\8220new\8221"
+    , ESymbol Bin "+"
+    , EText TextNormal "\8220net\8221"
+    , ESymbol Bin "+"
+    , EText TextNormal "\8220nod\8221"
+    ]
+, ESymbol Bin "+"
+, EText TextNormal "\8220nix\8221"
+]

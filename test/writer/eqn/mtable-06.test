@@ -1,0 +1,47 @@
+<<< native
+[ EArray
+    [ AlignRight , AlignRight ]
+    [ [ [ EGrouped
+            [ EPhantom (EText TextNormal "fail") , EIdentifier "H" ]
+        ]
+      , [ EIdentifier "A" ]
+      ]
+    , [ [ EGrouped
+            [ EPhantom (EText TextNormal "fail") , EIdentifier "T" ]
+        ]
+      , [ EIdentifier "I" ]
+      ]
+    , [ [ EGrouped
+            [ EPhantom (EText TextNormal "fail") , EIdentifier "U" ]
+        ]
+      , [ EIdentifier "Y" ]
+      ]
+    ]
+, ESymbol Rel "="
+, EArray
+    [ AlignLeft , AlignLeft ]
+    [ [ [ EIdentifier "A" ]
+      , [ EGrouped
+            [ EIdentifier "H" , EPhantom (EText TextNormal "fail") ]
+        ]
+      ]
+    , [ [ EIdentifier "I" ]
+      , [ EGrouped
+            [ EIdentifier "T" , EPhantom (EText TextNormal "fail") ]
+        ]
+      ]
+    , [ [ EIdentifier "Y" ]
+      , [ EGrouped
+            [ EIdentifier "U" , EPhantom (EText TextNormal "fail") ]
+        ]
+      ]
+    ]
+]
+>>> eqn
+matrix{
+rcol{ {hphantom {roman "fail"} H} above {hphantom {roman "fail"} T} above {hphantom {roman "fail"} U} }
+rcol{ A above I above Y }
+} = matrix{
+lcol{ A above I above Y }
+lcol{ {H hphantom {roman "fail"}} above {T hphantom {roman "fail"}} above {U hphantom {roman "fail"}} }
+}

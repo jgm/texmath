@@ -1,0 +1,27 @@
+<<< native
+[ ESuper (EIdentifier "x") (ENumber "1")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (EIdentifier "a")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "H") (EIdentifier "a")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "H") (ENumber "1")
+, ESymbol Bin "+"
+, ESubsup (EIdentifier "x") (ENumber "1") (ENumber "2")
+, ESymbol Bin "+"
+, ESubsup (EIdentifier "x") (EIdentifier "a") (ENumber "2")
+, ESymbol Bin "+"
+, ESubsup (EIdentifier "x") (ENumber "1") (EIdentifier "x")
+, ESymbol Bin "+"
+, ESubsup (EIdentifier "x") (EIdentifier "a") (EIdentifier "x")
+, ESymbol Bin "+"
+, ESubsup (EIdentifier "H") (ENumber "1") (ENumber "2")
+, ESymbol Bin "+"
+, ESubsup (EIdentifier "H") (EIdentifier "a") (ENumber "2")
+, ESymbol Bin "+"
+, ESubsup (EIdentifier "H") (ENumber "1") (EIdentifier "x")
+, ESymbol Bin "+"
+, ESubsup (EIdentifier "H") (EIdentifier "a") (EIdentifier "x")
+]
+>>> tex
+x^{1} + x^{a} + H^{a} + H^{1} + x_{1}^{2} + x_{a}^{2} + x_{1}^{x} + x_{a}^{x} + H_{1}^{2} + H_{a}^{2} + H_{1}^{x} + H_{a}^{x}

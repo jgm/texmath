@@ -1,0 +1,7 @@
+<<< native
+[ EOver False (EIdentifier "B") (EIdentifier "long over script")
+, ESymbol Rel "="
+, EOver False (EIdentifier "B") (EIdentifier "long over script")
+]
+>>> eqn
+B to {long over script} = B to {long over script}

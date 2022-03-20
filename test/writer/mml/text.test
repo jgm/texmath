@@ -1,0 +1,14 @@
+<<< native
+[ EText TextNormal "(\321ukasiewicz, G\246del, and G\246del)"
+, EText
+    TextItalic
+    "\8230\8211\8220double quotes\8221\8212\8216single quotes\8217"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext mathvariant="normal">(Łukasiewicz, Gödel, and Gödel)</mtext>
+    <mtext mathvariant="italic">…–“𝑑𝑜𝑢𝑏𝑙𝑒 𝑞𝑢𝑜𝑡𝑒𝑠”—‘𝑠𝑖𝑛𝑔𝑙𝑒 𝑞𝑢𝑜𝑡𝑒𝑠’</mtext>
+  </mrow>
+</math>

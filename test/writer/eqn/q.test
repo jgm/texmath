@@ -1,0 +1,25 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "qfr" ] , [ ESymbol Alpha "\120110" ] ]
+    , [ [ EText TextNormal "Qfr" ] , [ ESymbol Alpha "\120084" ] ]
+    , [ [ EText TextNormal "qint" ] , [ ESymbol Op "\10764" ] ]
+    , [ [ EText TextNormal "qopf" ] , [ ESymbol Alpha "\120162" ] ]
+    , [ [ EText TextNormal "Qopf" ] , [ ESymbol Alpha "\8474" ] ]
+    , [ [ EText TextNormal "qprime" ] , [ ESymbol Accent "\8279" ] ]
+    , [ [ EText TextNormal "qscr" ] , [ ESymbol Alpha "\120006" ] ]
+    , [ [ EText TextNormal "Qscr" ] , [ ESymbol Alpha "\119980" ] ]
+    , [ [ EText TextNormal "quaternions" ]
+      , [ ESymbol Alpha "\8461" ]
+      ]
+    , [ [ EText TextNormal "quatint" ] , [ ESymbol Op "\10774" ] ]
+    , [ [ EText TextNormal "quest" ] , [ ESymbol Ord "?" ] ]
+    , [ [ EText TextNormal "questeq" ] , [ ESymbol Rel "\8799" ] ]
+    , [ [ EText TextNormal "quot" ] , [ ESymbol Accent "\"" ] ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ {roman "qfr"} above {roman "Qfr"} above {roman "qint"} above {roman "qopf"} above {roman "Qopf"} above {roman "qprime"} above {roman "qscr"} above {roman "Qscr"} above {roman "quaternions"} above {roman "quatint"} above {roman "quest"} above {roman "questeq"} above {roman "quot"} }
+ccol{ \[u1D52E] above \[u1D514] above \[u2A0C] above \[u1D562] above \[u211A] above \[u2057] above \[u1D4C6] above \[u1D4AC] above \[u210D] above \[u2A16] above ? above \[u225F] above " }
+}

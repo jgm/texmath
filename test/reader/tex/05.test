@@ -1,0 +1,34 @@
+<<< tex
+\int_a^x \!\!\!\int_a^s f(y)\,dy\,ds
+ = \int_a^x f(y)(x-y)\,dy
+
+
+>>> native
+[ ESubsup (ESymbol Op "\8747") (EIdentifier "a") (EIdentifier "x")
+, ESpace ((-1) % 6)
+, ESpace ((-1) % 6)
+, ESpace ((-1) % 6)
+, ESubsup (ESymbol Op "\8747") (EIdentifier "a") (EIdentifier "s")
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "y") ]
+, ESpace (1 % 6)
+, EIdentifier "d"
+, EIdentifier "y"
+, ESpace (1 % 6)
+, EIdentifier "d"
+, EIdentifier "s"
+, ESymbol Rel "="
+, ESubsup (ESymbol Op "\8747") (EIdentifier "a") (EIdentifier "x")
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "y") ]
+, EDelimited
+    "("
+    ")"
+    [ Right (EIdentifier "x")
+    , Right (ESymbol Bin "\8722")
+    , Right (EIdentifier "y")
+    ]
+, ESpace (1 % 6)
+, EIdentifier "d"
+, EIdentifier "y"
+]

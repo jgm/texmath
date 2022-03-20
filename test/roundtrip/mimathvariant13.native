@@ -1,0 +1,54 @@
+[ EArray
+    [ AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    ]
+    [ [ [ EIdentifier "a" ]
+      , [ EIdentifier "a" ]
+      , [ EStyled TextBold [ EIdentifier "a" ] ]
+      , [ EStyled TextItalic [ EIdentifier "a" ] ]
+      , [ EStyled TextBoldItalic [ EIdentifier "a" ] ]
+      , [ EStyled TextDoubleStruck [ EIdentifier "a" ] ]
+      , [ EStyled TextBoldFraktur [ EIdentifier "a" ] ]
+      , [ EStyled TextScript [ EIdentifier "a" ] ]
+      , [ EStyled TextBoldScript [ EIdentifier "a" ] ]
+      , [ EStyled TextFraktur [ EIdentifier "a" ] ]
+      , [ EStyled TextSansSerif [ EIdentifier "a" ] ]
+      , [ EStyled TextSansSerifBold [ EIdentifier "a" ] ]
+      , [ EStyled TextSansSerifItalic [ EIdentifier "a" ] ]
+      , [ EStyled TextSansSerifBoldItalic [ EIdentifier "a" ] ]
+      , [ EStyled TextMonospace [ EIdentifier "a" ] ]
+      , [ EStyled TextBold [ EIdentifier "ab" ] ]
+      ]
+    , [ [ EIdentifier "A" ]
+      , [ EIdentifier "A" ]
+      , [ EStyled TextBold [ EIdentifier "A" ] ]
+      , [ EStyled TextItalic [ EIdentifier "A" ] ]
+      , [ EStyled TextBoldItalic [ EIdentifier "A" ] ]
+      , [ EStyled TextDoubleStruck [ EIdentifier "A" ] ]
+      , [ EStyled TextBoldFraktur [ EIdentifier "A" ] ]
+      , [ EStyled TextScript [ EIdentifier "A" ] ]
+      , [ EStyled TextBoldScript [ EIdentifier "A" ] ]
+      , [ EStyled TextFraktur [ EIdentifier "A" ] ]
+      , [ EStyled TextSansSerif [ EIdentifier "A" ] ]
+      , [ EStyled TextSansSerifBold [ EIdentifier "A" ] ]
+      , [ EStyled TextSansSerifItalic [ EIdentifier "A" ] ]
+      , [ EStyled TextSansSerifBoldItalic [ EIdentifier "A" ] ]
+      , [ EStyled TextMonospace [ EIdentifier "A" ] ]
+      , [ EStyled TextBold [ EIdentifier "\945" ] ]
+      ]
+    ]
+]

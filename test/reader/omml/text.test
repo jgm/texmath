@@ -1,0 +1,91 @@
+<<< omml
+<?xml version="1.0" encoding="UTF-8"?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>(Łukasiewicz, Gödel, and Gödel)</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="i" />
+      </m:rPr>
+      <m:t>…–“double quotes”—‘single quotes’</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+
+>>> native
+[ ESymbol Open "("
+, ESymbol Ord "\321"
+, EIdentifier "u"
+, EIdentifier "k"
+, EIdentifier "a"
+, EIdentifier "s"
+, EIdentifier "i"
+, EIdentifier "e"
+, EIdentifier "w"
+, EIdentifier "i"
+, EIdentifier "c"
+, EIdentifier "z"
+, ESymbol Pun ","
+, ESpace (2 % 9)
+, EIdentifier "G"
+, ESymbol Ord "\246"
+, EIdentifier "d"
+, EIdentifier "e"
+, EIdentifier "l"
+, ESymbol Pun ","
+, ESpace (2 % 9)
+, EIdentifier "a"
+, EIdentifier "n"
+, EIdentifier "d"
+, ESpace (2 % 9)
+, EIdentifier "G"
+, ESymbol Ord "\246"
+, EIdentifier "d"
+, EIdentifier "e"
+, EIdentifier "l"
+, ESymbol Close ")"
+, EStyled
+    TextItalic
+    [ ESymbol Ord "\8230"
+    , ESymbol Ord "\8211"
+    , ESymbol Pun "\8220"
+    , EIdentifier "d"
+    , EIdentifier "o"
+    , EIdentifier "u"
+    , EIdentifier "b"
+    , EIdentifier "l"
+    , EIdentifier "e"
+    , ESpace (2 % 9)
+    , EIdentifier "q"
+    , EIdentifier "u"
+    , EIdentifier "o"
+    , EIdentifier "t"
+    , EIdentifier "e"
+    , EIdentifier "s"
+    , ESymbol Pun "\8221"
+    , ESymbol Ord "\8212"
+    , ESymbol Ord "\8216"
+    , EIdentifier "s"
+    , EIdentifier "i"
+    , EIdentifier "n"
+    , EIdentifier "g"
+    , EIdentifier "l"
+    , EIdentifier "e"
+    , ESpace (2 % 9)
+    , EIdentifier "q"
+    , EIdentifier "u"
+    , EIdentifier "o"
+    , EIdentifier "t"
+    , EIdentifier "e"
+    , EIdentifier "s"
+    , ESymbol Ord "\8217"
+    ]
+]

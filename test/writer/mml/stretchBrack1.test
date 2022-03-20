@@ -1,0 +1,34 @@
+<<< native
+[ EOver
+    False
+    (EGrouped
+       [ EIdentifier "H" , ESymbol Bin "\215" , EIdentifier "G" ])
+    (ESymbol Accent "\9182")
+, EUnder
+    False
+    (EGrouped
+       [ EIdentifier "H" , ESymbol Bin "\215" , EIdentifier "G" ])
+    (ESymbol Accent "\9183")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mover>
+      <mrow>
+        <mi>H</mi>
+        <mo>×</mo>
+        <mi>G</mi>
+      </mrow>
+      <mo accent="true">⏞</mo>
+    </mover>
+    <munder>
+      <mrow>
+        <mi>H</mi>
+        <mo>×</mo>
+        <mi>G</mi>
+      </mrow>
+      <mo accent="true">⏟</mo>
+    </munder>
+  </mrow>
+</math>

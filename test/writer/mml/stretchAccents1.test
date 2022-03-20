@@ -1,0 +1,52 @@
+<<< native
+[ EOver False (EIdentifier "xxx") (ESymbol Accent "\710")
+, ESymbol Bin "+"
+, EOver False (EIdentifier "xxx") (ESymbol Accent "\175")
+, ESymbol Bin "+"
+, EOver False (EIdentifier "xxx") (ESymbol Accent "\711")
+, ESymbol Bin "+"
+, EOver False (EIdentifier "xxx") (ESymbol Accent "\732")
+, ESymbol Bin "+"
+, EOver False (EIdentifier "xxx") (ESymbol Accent "\9182")
+, ESymbol Bin "+"
+, EUnder False (EIdentifier "xxx") (ESymbol Accent "\9183")
+, ESymbol Bin "+"
+, EIdentifier "xxx"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mover>
+      <mi>xxx</mi>
+      <mo accent="true">ˆ</mo>
+    </mover>
+    <mo>+</mo>
+    <mover>
+      <mi>xxx</mi>
+      <mo accent="true">¯</mo>
+    </mover>
+    <mo>+</mo>
+    <mover>
+      <mi>xxx</mi>
+      <mo accent="true">ˇ</mo>
+    </mover>
+    <mo>+</mo>
+    <mover>
+      <mi>xxx</mi>
+      <mo accent="true">˜</mo>
+    </mover>
+    <mo>+</mo>
+    <mover>
+      <mi>xxx</mi>
+      <mo accent="true">⏞</mo>
+    </mover>
+    <mo>+</mo>
+    <munder>
+      <mi>xxx</mi>
+      <mo accent="true">⏟</mo>
+    </munder>
+    <mo>+</mo>
+    <mi>xxx</mi>
+  </mrow>
+</math>

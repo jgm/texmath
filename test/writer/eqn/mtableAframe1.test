@@ -1,0 +1,12 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ ENumber "1" ] , [ ENumber "2" ] ]
+    , [ [ EIdentifier "x" ] , [ EIdentifier "y" ] ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ 1 above x }
+ccol{ 2 above y }
+}

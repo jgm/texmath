@@ -1,0 +1,21 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (EGrouped
+       [ EPhantom (EIdentifier "a")
+       , ENumber "12"
+       , EPhantom (EIdentifier "a")
+       ])
+    (ENumber "13")
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (ENumber "12")
+    (EGrouped
+       [ EPhantom (EIdentifier "a")
+       , ENumber "13"
+       , EPhantom (EIdentifier "a")
+       ])
+]
+>>> tex
+\frac{\phantom{a}12\phantom{a}}{13} = \frac{12}{\phantom{a}13\phantom{a}}

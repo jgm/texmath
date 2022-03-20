@@ -1,0 +1,29 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <msubsup>    <mi>S</mi>     <mrow>      <msubsup>        <mi>Q</mi>         <mn>4</mn>         <mn>3</mn>       </msubsup>     </mrow>     <mrow>      <msubsup>        <mi>P</mi>         <mn>2</mn>         <mn>1</mn>       </msubsup>     </mrow>   </msubsup>   <mo>=</mo>   <msubsup>    <mi>S</mi>     <mrow>      <msubsup>        <mi>Q</mi>         <mrow>          <mn>4</mn>
+          <mphantom>
+            <mtext>z</mtext>
+          </mphantom>
+        </mrow>         <mn>3</mn>       </msubsup>     </mrow>     <mrow>      <msubsup>        <mi>P</mi>         <mn>2</mn>         <mrow>          <mn>1</mn>
+          <mphantom>
+            <mtext>z</mtext>
+          </mphantom>
+        </mrow>       </msubsup>     </mrow>   </msubsup> </math>
+>>> native
+[ ESubsup
+    (EIdentifier "S")
+    (ESubsup (EIdentifier "Q") (ENumber "4") (ENumber "3"))
+    (ESubsup (EIdentifier "P") (ENumber "2") (ENumber "1"))
+, ESymbol Rel "="
+, ESubsup
+    (EIdentifier "S")
+    (ESubsup
+       (EIdentifier "Q")
+       (EGrouped [ ENumber "4" , EPhantom (EText TextNormal "z") ])
+       (ENumber "3"))
+    (ESubsup
+       (EIdentifier "P")
+       (ENumber "2")
+       (EGrouped [ ENumber "1" , EPhantom (EText TextNormal "z") ]))
+]

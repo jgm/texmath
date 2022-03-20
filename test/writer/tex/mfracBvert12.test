@@ -1,0 +1,31 @@
+<<< native
+[ EIdentifier "x"
+, ESymbol Bin "-"
+, EFraction NormalFrac (ENumber "1") (ENumber "3")
+, ESymbol Bin "-"
+, EFraction NormalFrac (EIdentifier "x") (ENumber "3")
+, ESymbol Bin "-"
+, EFraction NormalFrac (ENumber "3") (EIdentifier "x")
+, ESymbol Bin "-"
+, EFraction NormalFrac (EIdentifier "a") (EIdentifier "x")
+, ESymbol Bin "-"
+, EFraction NormalFrac (EIdentifier "y") (EIdentifier "x")
+, ESymbol Bin "-"
+, EFraction
+    NormalFrac (ESub (EIdentifier "y") (ENumber "2")) (EIdentifier "x")
+, ESymbol Bin "-"
+, EFraction
+    NormalFrac (ESub (EIdentifier "x") (ENumber "2")) (EIdentifier "x")
+, ESymbol Bin "-"
+, EFraction
+    NormalFrac
+    (EIdentifier "y")
+    (ESuper (EIdentifier "x") (ENumber "2"))
+, ESymbol Bin "-"
+, EFraction
+    NormalFrac
+    (EIdentifier "y")
+    (ESuper (EIdentifier "H") (ENumber "2"))
+]
+>>> tex
+x - \frac{1}{3} - \frac{x}{3} - \frac{3}{x} - \frac{a}{x} - \frac{y}{x} - \frac{y_{2}}{x} - \frac{x_{2}}{x} - \frac{y}{x^{2}} - \frac{y}{H^{2}}

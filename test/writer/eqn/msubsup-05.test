@@ -1,0 +1,19 @@
+<<< native
+[ ESubsup
+    (EIdentifier "S")
+    (ESubsup (EIdentifier "Q") (ENumber "4") (ENumber "3"))
+    (ESubsup (EIdentifier "P") (ENumber "2") (ENumber "1"))
+, ESymbol Rel "="
+, ESubsup
+    (EIdentifier "S")
+    (ESubsup
+       (EIdentifier "Q")
+       (EGrouped [ ENumber "4" , EPhantom (EText TextNormal "z") ])
+       (ENumber "3"))
+    (ESubsup
+       (EIdentifier "P")
+       (ENumber "2")
+       (EGrouped [ ENumber "1" , EPhantom (EText TextNormal "z") ]))
+]
+>>> eqn
+S sub {Q sub 4 sup 3} sup {P sub 2 sup 1} = S sub {Q sub {4 hphantom {roman "z"}} sup 3} sup {P sub 2 sup {1 hphantom {roman "z"}}}

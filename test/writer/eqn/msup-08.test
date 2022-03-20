@@ -1,0 +1,10 @@
+<<< native
+[ ESuper (ENumber "2") (ESuper (ENumber "3") (ENumber "4"))
+, ESymbol Rel "="
+, ESuper
+    (ENumber "2")
+    (ESuper
+       (ENumber "3") (EOver False (ENumber "4") (EPhantom (ENumber "5"))))
+]
+>>> eqn
+2 sup {3 sup 4} = 2 sup {3 sup {4 to {hphantom 5}}}

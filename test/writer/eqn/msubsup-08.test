@@ -1,0 +1,9 @@
+<<< native
+[ ESubsup (EIdentifier "A") (EIdentifier "B") (EIdentifier "C")
+, ESymbol Rel "="
+, ESubsup (EIdentifier "A") (EIdentifier "B") (EIdentifier "C")
+, EPhantom
+    (EFraction NormalFrac (EIdentifier "test") (EIdentifier "failed"))
+]
+>>> eqn
+A sub B sup C = A sub B sup C hphantom {test over failed}

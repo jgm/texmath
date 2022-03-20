@@ -1,0 +1,48 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mover>
+      <mrow>
+        <mi>G</mi> 
+        <mo>-</mo> 
+        <mn>1</mn> 
+      </mrow> 
+      <mo accent="false">&#x203E;</mo> 
+    </mover> 
+    <mo accent="false">+</mo> 
+    <mover accent="true">
+      <mrow>
+        <mi>G</mi> 
+        <mo>-</mo> 
+        <mn>1</mn> 
+      </mrow> 
+      <mo accent="false">&#x203E;</mo> 
+    </mover> 
+    <mo accent="true">+</mo> 
+    <mover accent="false">
+      <mrow>
+        <mi>G</mi> 
+        <mo>-</mo> 
+        <mn>1</mn> 
+      </mrow> 
+      <mo accent="false">&#x203E;</mo> 
+    </mover> 
+  </mrow> </math>
+>>> native
+[ EOver
+    False
+    (EGrouped [ EIdentifier "G" , ESymbol Bin "-" , ENumber "1" ])
+    (ESymbol Ord "\8254")
+, ESymbol Bin "+"
+, EOver
+    False
+    (EGrouped [ EIdentifier "G" , ESymbol Accent "-" , ENumber "1" ])
+    (ESymbol Ord "\8254")
+, ESymbol Accent "+"
+, EOver
+    False
+    (EGrouped [ EIdentifier "G" , ESymbol Bin "-" , ENumber "1" ])
+    (ESymbol Ord "\8254")
+]

@@ -1,0 +1,38 @@
+<<< native
+[ EDelimited
+    "{"
+    ")"
+    [ Right
+        (EGrouped
+           [ EFraction NormalFrac (ENumber "1") (ENumber "78")
+           , ESymbol Pun ","
+           , EGrouped [ EMathOperator "sin" , EIdentifier "x" ]
+           , ESymbol Alpha "."
+           , EIdentifier "y"
+           ])
+    ]
+, ESymbol Bin "\215"
+, ESuper
+    (EIdentifier "\120094")
+    (EGrouped [ ENumber "2" , EIdentifier "x" ])
+, ESymbol Bin "+"
+, ESub (ENumber "2") (EIdentifier "j")
+, EIdentifier "x"
+, ESymbol Bin "+"
+, EFraction
+    NormalFrac
+    (ENumber "45")
+    (EFraction NormalFrac (ENumber "1") (ENumber "78"))
+, ESymbol Ord "*"
+, ESubsup (EIdentifier "x") (ENumber "2") (ENumber "3")
+, ESymbol Rel "="
+, ERoot
+    (ENumber "3")
+    (EFraction
+       NormalFrac
+       (ENumber "1")
+       (EGrouped [ ENumber "23" , ESymbol Bin "+" , ENumber "\946" ]))
+, EText TextNormal "#This is my string!'"
+]
+>>> tex
+\left\{ {\frac{1}{78},{\sin x}.y} \right) \times {\mathfrak{a}}^{2x} + 2_{j}x + \frac{45}{\frac{1}{78}}*x_{2}^{3} = \sqrt[3]{\frac{1}{23 + \beta}}\text{\#This\ is\ my\ string!'}

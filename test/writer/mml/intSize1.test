@@ -1,0 +1,78 @@
+<<< native
+[ EGrouped [ ESymbol Op "\8747" , EIdentifier "x" ]
+, EGrouped [ ESymbol Op "\8747" , EIdentifier "M" ]
+, EDelimited
+    "\8747"
+    ""
+    [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "o"))
+    ]
+, EDelimited
+    "\8747"
+    ""
+    [ Right (EFraction NormalFrac (EIdentifier "A") (EIdentifier "o"))
+    ]
+, EDelimited
+    "\8747"
+    ""
+    [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "A"))
+    ]
+, EDelimited
+    "\8747"
+    ""
+    [ Right (EFraction NormalFrac (EIdentifier "A") (EIdentifier "M"))
+    ]
+, EDelimited
+    "\8747"
+    ""
+    [ Right (EFraction NormalFrac (EIdentifier ".") (EIdentifier "''"))
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mo>∫</mo>
+      <mi>x</mi>
+    </mrow>
+    <mrow>
+      <mo>∫</mo>
+      <mi>M</mi>
+    </mrow>
+    <mrow>
+      <mo stretchy="true" form="prefix">∫</mo>
+      <mfrac>
+        <mi>x</mi>
+        <mi>o</mi>
+      </mfrac>
+    </mrow>
+    <mrow>
+      <mo stretchy="true" form="prefix">∫</mo>
+      <mfrac>
+        <mi>A</mi>
+        <mi>o</mi>
+      </mfrac>
+    </mrow>
+    <mrow>
+      <mo stretchy="true" form="prefix">∫</mo>
+      <mfrac>
+        <mi>x</mi>
+        <mi>A</mi>
+      </mfrac>
+    </mrow>
+    <mrow>
+      <mo stretchy="true" form="prefix">∫</mo>
+      <mfrac>
+        <mi>A</mi>
+        <mi>M</mi>
+      </mfrac>
+    </mrow>
+    <mrow>
+      <mo stretchy="true" form="prefix">∫</mo>
+      <mfrac>
+        <mi>.</mi>
+        <mi>&#39;&#39;</mi>
+      </mfrac>
+    </mrow>
+  </mrow>
+</math>

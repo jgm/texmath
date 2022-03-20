@@ -1,0 +1,14 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EDelimited
+           "("
+           ")"
+           [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "y"))
+           ])
+    ]
+]
+>>> eqn
+left ( left ( x over y right ) right )

@@ -1,0 +1,22 @@
+<<< native
+[ EIdentifier "x"
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESymbol Op "\8722"
+       , EIdentifier "b"
+       , ESymbol Bin "\177"
+       , ESqrt
+           (EGrouped
+              [ ESuper (EIdentifier "b") (ENumber "2")
+              , ESymbol Bin "\8722"
+              , ENumber "4"
+              , EIdentifier "a"
+              , EIdentifier "c"
+              ])
+       ])
+    (EGrouped [ ENumber "2" , EIdentifier "a" ])
+]
+>>> eqn
+x = {\[u2212] b +- sqrt {b sup 2 \[u2212] 4 a c}} over {2 a}

@@ -1,0 +1,4 @@
+<<< native
+[ EText TextNormal "This is \8201some \8287text with spaces." ]
+>>> eqn
+roman "This is  some  text with spaces."

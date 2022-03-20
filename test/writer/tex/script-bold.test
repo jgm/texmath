@@ -1,0 +1,15 @@
+<<< native
+[ EStyled
+    TextBoldScript
+    [ EArray
+        [ AlignLeft ]
+        [ [ [ EText TextNormal "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ] ]
+        , [ [ EText TextNormal "abcdefghijklmnopqrstuvwxyz" ] ]
+        ]
+    ]
+]
+>>> tex
+\mathcal{\begin{array}{l}
+\text{ABCDEFGHIJKLMNOPQRSTUVWXYZ} \\
+\text{abcdefghijklmnopqrstuvwxyz} \\
+\end{array}}

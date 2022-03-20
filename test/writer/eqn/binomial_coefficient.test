@@ -1,0 +1,43 @@
+<<< native
+[ EStyled TextBold [ EIdentifier "C" ]
+, EDelimited
+    "("
+    ")"
+    [ Right (EIdentifier "n")
+    , Right (ESymbol Pun ",")
+    , Right (EIdentifier "k")
+    ]
+, ESymbol Rel "="
+, ESubsup
+    (EStyled TextBold [ EIdentifier "C" ])
+    (EIdentifier "k")
+    (EIdentifier "n")
+, ESymbol Rel "="
+, ESub (EGrouped []) (EIdentifier "n")
+, ESub (EStyled TextBold [ EIdentifier "C" ]) (EIdentifier "k")
+, ESymbol Rel "="
+, EDelimited
+    "("
+    ")"
+    [ Right (EFraction NoLineFrac (EIdentifier "n") (EIdentifier "k"))
+    ]
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EGrouped [ EIdentifier "n" , ESymbol Ord "!" ])
+    (EGrouped
+       [ EIdentifier "k"
+       , ESymbol Ord "!"
+       , ESpace (1 % 6)
+       , EDelimited
+           "("
+           ")"
+           [ Right (EIdentifier "n")
+           , Right (ESymbol Bin "\8722")
+           , Right (EIdentifier "k")
+           ]
+       , ESymbol Ord "!"
+       ])
+]
+>>> eqn
+bold {C} left ( n , k right ) = {bold {C}} sub k sup n = {} sub n {bold {C}} sub k = left ( n / k right ) = {n !} over {k ! ^ left ( n \[u2212] k right ) !}

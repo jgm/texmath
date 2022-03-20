@@ -1,0 +1,32 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfenced>
+    <msub>
+      <mi>a</mi> 
+      <mn>1</mn> 
+    </msub> 
+    <msub>
+      <mi>a</mi> 
+      <mn>2</mn> 
+    </msub> 
+    <msub>
+      <mi>a</mi> 
+      <mn>3</mn> 
+    </msub> 
+  </mfenced> </math>
+>>> native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EGrouped
+           [ ESub (EIdentifier "a") (ENumber "1")
+           , ESymbol Pun ","
+           , ESub (EIdentifier "a") (ENumber "2")
+           , ESymbol Pun ","
+           , ESub (EIdentifier "a") (ENumber "3")
+           ])
+    ]
+]

@@ -1,0 +1,34 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle displaystyle="true">
+    <msubsup>
+      <mo>&#x222B;</mo> 
+      <mn>0</mn> 
+      <mn>1</mn> 
+    </msubsup> 
+    <mi>f</mi> 
+    <mrow>
+      <mo>(</mo> 
+      <mfrac>
+        <mi>x</mi> 
+        <mn>2</mn> 
+      </mfrac> 
+      <mo>)</mo> 
+    </mrow> 
+    <mtext>&#x200A;</mtext> 
+    <mo>&#x2146;</mo> 
+    <mi>x</mi> 
+  </mstyle> </math>
+>>> native
+[ ESubsup (ESymbol Op "\8747") (ENumber "0") (ENumber "1")
+, EIdentifier "f"
+, EDelimited
+    "("
+    ")"
+    [ Right (EFraction NormalFrac (EIdentifier "x") (ENumber "2")) ]
+, ESpace (1 % 9)
+, ESymbol Ord "\8518"
+, EIdentifier "x"
+]

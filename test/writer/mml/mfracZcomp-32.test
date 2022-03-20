@@ -1,0 +1,84 @@
+<<< native
+[ EText
+    TextNormal
+    "And this is an example where the bevelled attribute is set inside the radical\160"
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESuper (EIdentifier "y") (ENumber "2")
+       , ESymbol Bin "-"
+       , ESuper (EIdentifier "t") (ENumber "2")
+       ])
+    (ESqrt
+       (EFraction
+          NormalFrac
+          (ENumber "1")
+          (EDelimited
+             "("
+             ")"
+             [ Right (ENumber "1")
+             , Right (ESymbol Bin "+")
+             , Right
+                 (ESuper
+                    (EDelimited
+                       "|"
+                       "|"
+                       [ Right
+                           (EGrouped
+                              [ ESuper (EIdentifier "y") (ENumber "2")
+                              , ESymbol Bin "-"
+                              , ESuper (EIdentifier "t") (ENumber "2")
+                              ])
+                       ])
+                    (ENumber "2"))
+             ])))
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext mathvariant="normal">And this is an example where the bevelled attribute is set inside the radical </mtext>
+    <mfrac>
+      <mrow>
+        <msup>
+          <mi>y</mi>
+          <mn>2</mn>
+        </msup>
+        <mo>-</mo>
+        <msup>
+          <mi>t</mi>
+          <mn>2</mn>
+        </msup>
+      </mrow>
+      <msqrt>
+        <mfrac>
+          <mn>1</mn>
+          <mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <mn>1</mn>
+            <mo>+</mo>
+            <msup>
+              <mrow>
+                <mo stretchy="true" form="prefix">|</mo>
+                <mrow>
+                  <msup>
+                    <mi>y</mi>
+                    <mn>2</mn>
+                  </msup>
+                  <mo>-</mo>
+                  <msup>
+                    <mi>t</mi>
+                    <mn>2</mn>
+                  </msup>
+                </mrow>
+                <mo stretchy="true" form="postfix">|</mo>
+              </mrow>
+              <mn>2</mn>
+            </msup>
+            <mo stretchy="true" form="postfix">)</mo>
+          </mrow>
+        </mfrac>
+      </msqrt>
+    </mfrac>
+  </mrow>
+</math>

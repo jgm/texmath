@@ -1,0 +1,12 @@
+<<< native
+[ ESuper
+    (EDelimited
+       "("
+       ")"
+       [ Right
+           (EGrouped [ EIdentifier "x" , ESymbol Bin "+" , EIdentifier "y" ])
+       ])
+    (ENumber "2")
+]
+>>> eqn
+{left ( {x + y} right )} sup 2

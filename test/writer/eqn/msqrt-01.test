@@ -1,0 +1,17 @@
+<<< native
+[ ESqrt
+    (EArray
+       [ AlignCenter , AlignCenter ]
+       [ [ [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         ]
+       , [ [ EPhantom (EIdentifier "A") ]
+         , [ EPhantom (EIdentifier "A") ]
+         ]
+       ])
+]
+>>> eqn
+sqrt {matrix{
+ccol{ {hphantom A} above {hphantom A} }
+ccol{ {hphantom A} above {hphantom A} }
+}}

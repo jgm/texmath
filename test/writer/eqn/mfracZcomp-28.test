@@ -1,0 +1,41 @@
+<<< native
+[ EText TextNormal "Inline nested fracs\160"
+, EFraction
+    NormalFrac
+    (ESuper (ENumber "1") (ESqrt (ENumber "6")))
+    (EGrouped
+       [ ESqrt (ENumber "2")
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (ENumber "1")
+           (EGrouped
+              [ ESqrt (ENumber "3")
+              , ESymbol Bin "+"
+              , EFraction
+                  NormalFrac
+                  (ENumber "1")
+                  (EGrouped
+                     [ ESqrt (ENumber "4")
+                     , ESymbol Bin "+"
+                     , EFraction
+                         NormalFrac
+                         (ENumber "1")
+                         (EGrouped
+                            [ ESqrt (ENumber "5")
+                            , ESymbol Bin "+"
+                            , EFraction
+                                NormalFrac
+                                (ENumber "1")
+                                (EGrouped
+                                   [ ESqrt (ENumber "6") , ESymbol Bin "+" , EIdentifier "\8230" ])
+                            ])
+                     ])
+              ])
+       ])
+, EText
+    TextNormal
+    "\160are script size at the first level and decrease to script script size for all more nested levels."
+]
+>>> eqn
+roman "Inline nested fracs " {1 sup {sqrt 6}} over {sqrt 2 + 1 over {sqrt 3 + 1 over {sqrt 4 + 1 over {sqrt 5 + 1 over {sqrt 6 + ...}}}}} roman " are script size at the first level and decrease to script script size for all more nested levels."

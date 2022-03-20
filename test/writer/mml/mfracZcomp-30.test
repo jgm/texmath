@@ -1,0 +1,128 @@
+<<< native
+[ EGrouped
+    [ EIdentifier "HypergeomDist"
+    , ESymbol Ord "\8289"
+    , EDelimited
+        "("
+        ")"
+        [ Right
+            (EGrouped
+               [ EIdentifier "x"
+               , ESymbol Pun ";"
+               , EGrouped
+                   [ EIdentifier "M"
+                   , ESymbol Pun ","
+                   , EIdentifier "K"
+                   , ESymbol Pun ","
+                   , EIdentifier "n"
+                   ]
+               ])
+        ]
+    ]
+, ESymbol Rel "="
+, EGrouped
+    [ EUnderover
+        False
+        (ESymbol Op "\8721")
+        (EGrouped [ EIdentifier "k" , ESymbol Rel "=" , ENumber "0" ])
+        (EIdentifier "x")
+    , EFraction
+        NormalFrac
+        (EGrouped
+           [ EDelimited
+               "("
+               ")"
+               [ Right (EFraction NormalFrac (EIdentifier "K") (EIdentifier "k"))
+               ]
+           , ESymbol Ord "\8290"
+           , EDelimited
+               "("
+               ")"
+               [ Right
+                   (EFraction
+                      NormalFrac
+                      (EGrouped [ EIdentifier "M" , ESymbol Bin "-" , EIdentifier "K" ])
+                      (EGrouped [ EIdentifier "n" , ESymbol Bin "-" , EIdentifier "k" ]))
+               ]
+           ])
+        (EDelimited
+           "("
+           ")"
+           [ Right (EFraction NormalFrac (EIdentifier "M") (EIdentifier "n"))
+           ])
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mi>HypergeomDist</mi>
+      <mi>&#8289;</mi>
+      <mrow>
+        <mo stretchy="true" form="prefix">(</mo>
+        <mrow>
+          <mi>x</mi>
+          <mo>;</mo>
+          <mrow>
+            <mi>M</mi>
+            <mo>,</mo>
+            <mi>K</mi>
+            <mo>,</mo>
+            <mi>n</mi>
+          </mrow>
+        </mrow>
+        <mo stretchy="true" form="postfix">)</mo>
+      </mrow>
+    </mrow>
+    <mo>=</mo>
+    <mrow>
+      <munderover>
+        <mo>∑</mo>
+        <mrow>
+          <mi>k</mi>
+          <mo>=</mo>
+          <mn>0</mn>
+        </mrow>
+        <mi>x</mi>
+      </munderover>
+      <mfrac>
+        <mrow>
+          <mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <mfrac>
+              <mi>K</mi>
+              <mi>k</mi>
+            </mfrac>
+            <mo stretchy="true" form="postfix">)</mo>
+          </mrow>
+          <mi>&#8290;</mi>
+          <mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <mfrac>
+              <mrow>
+                <mi>M</mi>
+                <mo>-</mo>
+                <mi>K</mi>
+              </mrow>
+              <mrow>
+                <mi>n</mi>
+                <mo>-</mo>
+                <mi>k</mi>
+              </mrow>
+            </mfrac>
+            <mo stretchy="true" form="postfix">)</mo>
+          </mrow>
+        </mrow>
+        <mrow>
+          <mo stretchy="true" form="prefix">(</mo>
+          <mfrac>
+            <mi>M</mi>
+            <mi>n</mi>
+          </mfrac>
+          <mo stretchy="true" form="postfix">)</mo>
+        </mrow>
+      </mfrac>
+    </mrow>
+  </mrow>
+</math>

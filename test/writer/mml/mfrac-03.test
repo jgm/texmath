@@ -1,0 +1,89 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (EIdentifier "A")
+    (EGrouped
+       [ EIdentifier "B"
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (EIdentifier "C")
+           (EGrouped
+              [ EIdentifier "D"
+              , ESymbol Bin "+"
+              , EFraction NormalFrac (EIdentifier "E") (EIdentifier "F")
+              ])
+       ])
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EOver False (EIdentifier "A") (EPhantom (ENumber "0")))
+    (EGrouped
+       [ EIdentifier "B"
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (EIdentifier "C")
+           (EGrouped
+              [ EIdentifier "D"
+              , ESymbol Bin "+"
+              , EFraction
+                  NormalFrac
+                  (EIdentifier "E")
+                  (EUnder False (EIdentifier "F") (EPhantom (ENumber "0")))
+              ])
+       ])
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <mi>A</mi>
+      <mrow>
+        <mi>B</mi>
+        <mo>+</mo>
+        <mfrac>
+          <mi>C</mi>
+          <mrow>
+            <mi>D</mi>
+            <mo>+</mo>
+            <mfrac>
+              <mi>E</mi>
+              <mi>F</mi>
+            </mfrac>
+          </mrow>
+        </mfrac>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mover>
+        <mi>A</mi>
+        <mphantom>
+          <mn>0</mn>
+        </mphantom>
+      </mover>
+      <mrow>
+        <mi>B</mi>
+        <mo>+</mo>
+        <mfrac>
+          <mi>C</mi>
+          <mrow>
+            <mi>D</mi>
+            <mo>+</mo>
+            <mfrac>
+              <mi>E</mi>
+              <munder>
+                <mi>F</mi>
+                <mphantom>
+                  <mn>0</mn>
+                </mphantom>
+              </munder>
+            </mfrac>
+          </mrow>
+        </mfrac>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>

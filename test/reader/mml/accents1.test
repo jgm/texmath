@@ -1,0 +1,403 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable columnalign="left">
+    <mtr>
+      <mtd>
+        <mtext>default: (accent=true)</mtext>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mrow>
+          <mover>
+            <mi>H</mi> 
+            <mo>'</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>^</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>_</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>`</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>~</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x00A8;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x00AF;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x00B4;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x00B8;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x02C6;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x02C7;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x02D8;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x02D9;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x02DA;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x02DC;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x02DD;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x0302;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x0311;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x203E;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x20DB;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x20DC;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x2190;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x2192;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x2194;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x21BC;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x21BD;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x21C0;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x21C1;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x23B4;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x23B5;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x23DC;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x23DD;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x23DE;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x23DF;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x294E;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x2950;</mo> 
+          </mover> 
+        </mrow> 
+      </mtd>
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>accent=false:</mtext>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mstyle accent="false">
+          <mover>
+            <mi>H</mi> 
+            <mo>'</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>^</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>_</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>`</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>~</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x00A8;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x00AF;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x00B4;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x00B8;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x02C6;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x02C7;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x02D8;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x02D9;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x02DA;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x02DC;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x02DD;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x0302;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x0311;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x203E;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x20DB;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x20DC;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x2190;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x2192;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x2194;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x21BC;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x21BD;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x21C0;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x21C1;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x23B4;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x23B5;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x23DC;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x23DD;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x23DE;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x23DF;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x294E;</mo> 
+          </mover> 
+          <mover>
+            <mi>H</mi> 
+            <mo>&#x2950;</mo> 
+          </mover> 
+        </mstyle> 
+      </mtd>
+    </mtr> 
+  </mtable> </math>
+>>> native
+[ EArray
+    [ AlignLeft ]
+    [ [ [ EText TextNormal "default: (accent=true)" ] ]
+    , [ [ EGrouped
+            [ EOver False (EIdentifier "H") (ESymbol Accent "'")
+            , EOver False (EIdentifier "H") (ESymbol Accent "^")
+            , EOver False (EIdentifier "H") (ESymbol Accent "_")
+            , EOver False (EIdentifier "H") (ESymbol Accent "`")
+            , EOver False (EIdentifier "H") (ESymbol Accent "~")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\168")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\175")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\180")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\184")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\710")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\711")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\728")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\729")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\730")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\732")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\733")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\770")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\785")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8254")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8411")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8412")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8592")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8594")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8596")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8636")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8637")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8640")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8641")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\9140")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\9141")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\9180")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\9181")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\9182")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\9183")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\10574")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\10576")
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "accent=false:" ] ]
+    , [ [ EGrouped
+            [ EOver False (EIdentifier "H") (ESymbol Ord "'")
+            , EOver False (EIdentifier "H") (ESymbol Ord "^")
+            , EOver False (EIdentifier "H") (ESymbol Ord "_")
+            , EOver False (EIdentifier "H") (ESymbol Ord "`")
+            , EOver False (EIdentifier "H") (ESymbol Ord "~")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\168")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\175")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\180")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\184")
+            , EOver False (EIdentifier "H") (ESymbol Alpha "\710")
+            , EOver False (EIdentifier "H") (ESymbol Alpha "\711")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\728")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\729")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\730")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\732")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\733")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\770")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\785")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\8254")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8411")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8412")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8592")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8594")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8596")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8636")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8637")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8640")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8641")
+            , EOver False (EIdentifier "H") (ESymbol TOver "\9140")
+            , EOver False (EIdentifier "H") (ESymbol TUnder "\9141")
+            , EOver False (EIdentifier "H") (ESymbol TOver "\9180")
+            , EOver False (EIdentifier "H") (ESymbol TUnder "\9181")
+            , EOver False (EIdentifier "H") (ESymbol TOver "\9182")
+            , EOver False (EIdentifier "H") (ESymbol TUnder "\9183")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\10574")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\10576")
+            ]
+        ]
+      ]
+    ]
+]

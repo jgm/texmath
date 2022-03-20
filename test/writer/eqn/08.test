@@ -1,0 +1,33 @@
+<<< native
+[ EDelimited
+    "|"
+    "|"
+    [ Right (EOver False (EIdentifier "z") (ESymbol Accent "\8254")) ]
+, ESymbol Rel "="
+, EDelimited "|" "|" [ Right (EIdentifier "z") ]
+, ESymbol Pun ","
+, EDelimited
+    "|"
+    "|"
+    [ Right
+        (ESuper
+           (EDelimited
+              "("
+              ")"
+              [ Right (EOver False (EIdentifier "z") (ESymbol Accent "\8254")) ])
+           (EIdentifier "n"))
+    ]
+, ESymbol Rel "="
+, ESuper
+    (EDelimited "|" "|" [ Right (EIdentifier "z") ]) (EIdentifier "n")
+, ESymbol Pun ","
+, EMathOperator "arg"
+, EDelimited
+    "(" ")" [ Right (ESuper (EIdentifier "z") (EIdentifier "n")) ]
+, ESymbol Rel "="
+, EIdentifier "n"
+, EMathOperator "arg"
+, EDelimited "(" ")" [ Right (EIdentifier "z") ]
+]
+>>> eqn
+left | z to \[u203E] right | = left | z right | , left | {left ( z to \[u203E] right )} sup n right | = {left | z right |} sup n , "arg" left ( z sup n right ) = n "arg" left ( z right )

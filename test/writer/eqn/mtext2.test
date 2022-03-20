@@ -1,0 +1,11 @@
+<<< native
+[ EText TextNormal "Theorem 1:"
+, ESymbol Pun ","
+, ESpace (1 % 6)
+, ESymbol Pun ","
+, EText TextNormal "\8287\8202"
+, ESymbol Pun ","
+, EText TextNormal "/* a comment */"
+]
+>>> eqn
+roman "Theorem 1:" , ^ , roman "  " , roman "/* a comment */"

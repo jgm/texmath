@@ -1,0 +1,11 @@
+<<< native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EArray [ AlignCenter ] [ [ [ EIdentifier "x" ] ] ] ] ] ]
+]
+>>> eqn
+matrix{
+ccol{ {matrix{
+ccol{ x }
+}} }
+}

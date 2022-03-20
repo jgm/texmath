@@ -1,0 +1,40 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <maction actiontype="toggle">
+    <mrow>
+      <mfrac>
+        <mi>x</mi> 
+        <mn>2</mn> 
+      </mfrac> 
+      <mo>+</mo> 
+      <mn>2</mn> 
+    </mrow> 
+    <mrow>
+      <mfrac>
+        <mi>x</mi> 
+        <mn>2</mn> 
+      </mfrac> 
+      <mo>+</mo> 
+      <mfrac>
+        <mn>2</mn> 
+        <mn>2</mn> 
+      </mfrac> 
+    </mrow> 
+    <mrow>
+      <mfrac>
+        <mrow>
+          <mi>x</mi> 
+          <mo>+</mo> 
+          <mn>2</mn> 
+        </mrow> 
+        <mn>2</mn> 
+      </mfrac> 
+    </mrow> 
+  </maction> </math>
+>>> native
+[ EFraction NormalFrac (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ENumber "2"
+]

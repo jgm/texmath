@@ -1,0 +1,54 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (EFraction
+       NormalFrac
+       (EOver False (EIdentifier "a") (EPhantom (EText TextNormal "!")))
+       (EIdentifier "b"))
+    (EFraction NormalFrac (EIdentifier "c") (EIdentifier "d"))
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EFraction NormalFrac (EIdentifier "a") (EIdentifier "b"))
+    (EFraction
+       NormalFrac
+       (EIdentifier "c")
+       (EUnder False (EIdentifier "d") (EPhantom (EText TextNormal "!"))))
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <mfrac>
+        <mover>
+          <mi>a</mi>
+          <mphantom>
+            <mtext mathvariant="normal">!</mtext>
+          </mphantom>
+        </mover>
+        <mi>b</mi>
+      </mfrac>
+      <mfrac>
+        <mi>c</mi>
+        <mi>d</mi>
+      </mfrac>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mfrac>
+        <mi>a</mi>
+        <mi>b</mi>
+      </mfrac>
+      <mfrac>
+        <mi>c</mi>
+        <munder>
+          <mi>d</mi>
+          <mphantom>
+            <mtext mathvariant="normal">!</mtext>
+          </mphantom>
+        </munder>
+      </mfrac>
+    </mfrac>
+  </mrow>
+</math>

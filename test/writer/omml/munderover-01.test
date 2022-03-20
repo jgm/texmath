@@ -1,0 +1,69 @@
+<<< native
+[ EUnderover
+    False
+    (EIdentifier "BASE")
+    (EIdentifier "under")
+    (EIdentifier "over")
+, ESymbol Rel "="
+, EOver
+    False
+    (EUnder False (EIdentifier "BASE") (EIdentifier "under"))
+    (EIdentifier "over")
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:limLow>
+      <m:e>
+        <m:limUpp>
+          <m:e>
+            <m:r>
+              <m:t>BASE</m:t>
+            </m:r>
+          </m:e>
+          <m:lim>
+            <m:r>
+              <m:t>over</m:t>
+            </m:r>
+          </m:lim>
+        </m:limUpp>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>under</m:t>
+        </m:r>
+      </m:lim>
+    </m:limLow>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>=</m:t>
+    </m:r>
+    <m:limUpp>
+      <m:e>
+        <m:limLow>
+          <m:e>
+            <m:r>
+              <m:t>BASE</m:t>
+            </m:r>
+          </m:e>
+          <m:lim>
+            <m:r>
+              <m:t>under</m:t>
+            </m:r>
+          </m:lim>
+        </m:limLow>
+      </m:e>
+      <m:lim>
+        <m:r>
+          <m:t>over</m:t>
+        </m:r>
+      </m:lim>
+    </m:limUpp>
+  </m:oMath>
+</m:oMathPara>

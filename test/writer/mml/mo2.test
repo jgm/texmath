@@ -1,0 +1,11 @@
+<<< native
+[ EDelimited "(" ")" [ Right (EIdentifier "x") ] ]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo stretchy="true" form="prefix">(</mo>
+    <mi>x</mi>
+    <mo stretchy="true" form="postfix">)</mo>
+  </mrow>
+</math>

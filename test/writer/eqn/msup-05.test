@@ -1,0 +1,7 @@
+<<< native
+[ ESuper (EIdentifier "x") (ENumber "3")
+, ESymbol Rel "="
+, ESuper (EIdentifier "x") (ENumber "3")
+]
+>>> eqn
+x sup 3 = x sup 3

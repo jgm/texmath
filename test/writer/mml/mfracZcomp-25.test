@@ -1,0 +1,94 @@
+<<< native
+[ EText TextNormal "The same expression\160"
+, EGrouped
+    [ EDelimited
+        "["
+        "]"
+        [ Right
+            (EFraction
+               NormalFrac
+               (EGrouped
+                  [ EDelimited
+                      ""
+                      ""
+                      [ Left "\8741"
+                      , Right
+                          (EFraction
+                             NormalFrac
+                             (EGrouped
+                                [ EGrouped
+                                    [ EMathOperator "sin"
+                                    , ESymbol Ord "\8289"
+                                    , EIdentifier "\952"
+                                    ]
+                                , ESymbol Bin "+"
+                                , ENumber "1"
+                                ])
+                             (ENumber "11"))
+                      , Left "\8741"
+                      ]
+                  , ESymbol Bin "-"
+                  , EIdentifier "x"
+                  ])
+               (EFraction
+                  NormalFrac
+                  (ESuper (EIdentifier "x") (ENumber "2"))
+                  (ESub (EIdentifier "a") (ENumber "1"))))
+        ]
+    , ESymbol Bin "+"
+    , EGrouped [ ESymbol Open "[" , ENumber "1.0" , ESymbol Close "]" ]
+    ]
+, EText TextNormal "\160in a display."
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext mathvariant="normal">The same expression </mtext>
+    <mrow>
+      <mrow>
+        <mo stretchy="true" form="prefix">[</mo>
+        <mfrac>
+          <mrow>
+            <mrow>
+              <mo stretchy="true" form="infix">∥</mo>
+              <mfrac>
+                <mrow>
+                  <mrow>
+                    <mo>sin</mo>
+                    <mi>&#8289;</mi>
+                    <mi>θ</mi>
+                  </mrow>
+                  <mo>+</mo>
+                  <mn>1</mn>
+                </mrow>
+                <mn>11</mn>
+              </mfrac>
+              <mo stretchy="true" form="infix">∥</mo>
+            </mrow>
+            <mo>-</mo>
+            <mi>x</mi>
+          </mrow>
+          <mfrac>
+            <msup>
+              <mi>x</mi>
+              <mn>2</mn>
+            </msup>
+            <msub>
+              <mi>a</mi>
+              <mn>1</mn>
+            </msub>
+          </mfrac>
+        </mfrac>
+        <mo stretchy="true" form="postfix">]</mo>
+      </mrow>
+      <mo>+</mo>
+      <mrow>
+        <mo stretchy="false" form="prefix">[</mo>
+        <mn>1.0</mn>
+        <mo stretchy="false" form="postfix">]</mo>
+      </mrow>
+    </mrow>
+    <mtext mathvariant="normal"> in a display.</mtext>
+  </mrow>
+</math>

@@ -1,0 +1,44 @@
+<<< native
+[ ESuper
+    (ENumber "2")
+    (ESuper (ENumber "3") (ESuper (ENumber "4") (ENumber "5")))
+, ESymbol Rel "="
+, ESuper
+    (ENumber "2")
+    (ESuper
+       (ENumber "3")
+       (ESuper
+          (ENumber "4") (ESuper (ENumber "5") (EPhantom (ENumber "6")))))
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msup>
+      <mn>2</mn>
+      <msup>
+        <mn>3</mn>
+        <msup>
+          <mn>4</mn>
+          <mn>5</mn>
+        </msup>
+      </msup>
+    </msup>
+    <mo>=</mo>
+    <msup>
+      <mn>2</mn>
+      <msup>
+        <mn>3</mn>
+        <msup>
+          <mn>4</mn>
+          <msup>
+            <mn>5</mn>
+            <mphantom>
+              <mn>6</mn>
+            </mphantom>
+          </msup>
+        </msup>
+      </msup>
+    </msup>
+  </mrow>
+</math>

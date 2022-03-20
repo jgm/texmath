@@ -1,0 +1,20 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (EGrouped
+       [ EIdentifier "x"
+       , ESymbol Bin "+"
+       , EIdentifier "y"
+       , ESymbol Bin "+"
+       , EIdentifier "z"
+       ])
+    (EGrouped
+       [ EIdentifier "x"
+       , EPhantom (ESymbol Bin "+")
+       , EPhantom (EIdentifier "y")
+       , ESymbol Bin "+"
+       , EIdentifier "z"
+       ])
+]
+>>> tex
+\frac{x + y + z}{x\phantom{+}\phantom{y} + z}

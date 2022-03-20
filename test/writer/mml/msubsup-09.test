@@ -1,0 +1,60 @@
+<<< native
+[ ESubsup
+    (EIdentifier "M")
+    (ESubsup (EIdentifier "B") (ENumber "4") (ENumber "3"))
+    (ESubsup (EIdentifier "T") (ENumber "2") (ENumber "1"))
+, ESymbol Rel "="
+, ESubsup
+    (EIdentifier "M")
+    (ESubsup
+       (EIdentifier "B")
+       (EUnder False (ENumber "4") (EPhantom (EText TextNormal "0")))
+       (ENumber "3"))
+    (ESubsup
+       (EIdentifier "T")
+       (ENumber "2")
+       (EOver False (ENumber "1") (EPhantom (EText TextNormal "0"))))
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msubsup>
+      <mi>M</mi>
+      <msubsup>
+        <mi>B</mi>
+        <mn>4</mn>
+        <mn>3</mn>
+      </msubsup>
+      <msubsup>
+        <mi>T</mi>
+        <mn>2</mn>
+        <mn>1</mn>
+      </msubsup>
+    </msubsup>
+    <mo>=</mo>
+    <msubsup>
+      <mi>M</mi>
+      <msubsup>
+        <mi>B</mi>
+        <munder>
+          <mn>4</mn>
+          <mphantom>
+            <mtext mathvariant="normal">0</mtext>
+          </mphantom>
+        </munder>
+        <mn>3</mn>
+      </msubsup>
+      <msubsup>
+        <mi>T</mi>
+        <mn>2</mn>
+        <mover>
+          <mn>1</mn>
+          <mphantom>
+            <mtext mathvariant="normal">0</mtext>
+          </mphantom>
+        </mover>
+      </msubsup>
+    </msubsup>
+  </mrow>
+</math>

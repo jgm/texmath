@@ -1,0 +1,24 @@
+[ EIdentifier "c"
+, ESymbol Rel "="
+, EOver
+    False
+    (EOver
+       False
+       (EGrouped
+          [ EUnder
+              False
+              (EUnder False (EIdentifier "a") (ESymbol TUnder "\9183"))
+              (EText TextNormal "real")
+          , ESymbol Bin "+"
+          , EUnder
+              False
+              (EUnder
+                 False
+                 (EGrouped
+                    [ EIdentifier "b" , EStyled TextNormal [ EIdentifier "i" ] ])
+                 (ESymbol TUnder "\9183"))
+              (EText TextNormal "imaginary")
+          ])
+       (ESymbol TOver "\9182"))
+    (EText TextNormal "complex number")
+]

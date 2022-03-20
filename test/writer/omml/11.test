@@ -1,0 +1,183 @@
+<<< native
+[ ESub (EIdentifier "\981") (EIdentifier "n")
+, EDelimited "(" ")" [ Right (EIdentifier "\954") ]
+, ESymbol Rel "="
+, ENumber "0.033"
+, ESubsup (EIdentifier "C") (EIdentifier "n") (ENumber "2")
+, ESuper
+    (EIdentifier "\954")
+    (EGrouped
+       [ ESymbol Op "\8722"
+       , ENumber "11"
+       , ESymbol Ord "/"
+       , ENumber "3"
+       ])
+, ESymbol Pun ","
+, ESpace (1 % 1)
+, EFraction
+    NormalFrac (ENumber "1") (ESub (EIdentifier "L") (ENumber "0"))
+, ESymbol Rel "\8810"
+, EIdentifier "\954"
+, ESymbol Rel "\8810"
+, EFraction
+    NormalFrac (ENumber "1") (ESub (EIdentifier "l") (ENumber "0"))
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:sSub>
+      <m:e>
+        <m:r>
+          <m:t>ϕ</m:t>
+        </m:r>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:t>n</m:t>
+        </m:r>
+      </m:sub>
+    </m:sSub>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="(" />
+        <m:endChr m:val=")" />
+        <m:sepChr m:val="" />
+        <m:grow />
+      </m:dPr>
+      <m:e>
+        <m:r>
+          <m:t>κ</m:t>
+        </m:r>
+      </m:e>
+    </m:d>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>=</m:t>
+    </m:r>
+    <m:r>
+      <m:t>0.033</m:t>
+    </m:r>
+    <m:sSubSup>
+      <m:e>
+        <m:r>
+          <m:t>C</m:t>
+        </m:r>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:t>n</m:t>
+        </m:r>
+      </m:sub>
+      <m:sup>
+        <m:r>
+          <m:t>2</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSubSup>
+    <m:sSup>
+      <m:e>
+        <m:r>
+          <m:t>κ</m:t>
+        </m:r>
+      </m:e>
+      <m:sup>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>−</m:t>
+        </m:r>
+        <m:r>
+          <m:t>11</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>/</m:t>
+        </m:r>
+        <m:r>
+          <m:t>3</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSup>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>,</m:t>
+    </m:r>
+    <m:r>
+      <m:t> </m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:t>1</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:sSub>
+          <m:e>
+            <m:r>
+              <m:t>L</m:t>
+            </m:r>
+          </m:e>
+          <m:sub>
+            <m:r>
+              <m:t>0</m:t>
+            </m:r>
+          </m:sub>
+        </m:sSub>
+      </m:den>
+    </m:f>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>≪</m:t>
+    </m:r>
+    <m:r>
+      <m:t>κ</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>≪</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:t>1</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:sSub>
+          <m:e>
+            <m:r>
+              <m:t>l</m:t>
+            </m:r>
+          </m:e>
+          <m:sub>
+            <m:r>
+              <m:t>0</m:t>
+            </m:r>
+          </m:sub>
+        </m:sSub>
+      </m:den>
+    </m:f>
+  </m:oMath>
+</m:oMathPara>

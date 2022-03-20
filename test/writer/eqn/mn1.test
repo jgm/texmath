@@ -1,0 +1,9 @@
+<<< native
+[ ENumber "1"
+, ESymbol Bin "+"
+, EIdentifier "..."
+, ESymbol Bin "+"
+, EIdentifier "n"
+]
+>>> eqn
+1 + ... + n

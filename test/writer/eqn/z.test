@@ -1,0 +1,32 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "zacute" ] , [ ESymbol Ord "\378" ] ]
+    , [ [ EText TextNormal "Zacute" ] , [ ESymbol Ord "\377" ] ]
+    , [ [ EText TextNormal "zcaron" ] , [ ESymbol Ord "\382" ] ]
+    , [ [ EText TextNormal "Zcaron" ] , [ ESymbol Ord "\381" ] ]
+    , [ [ EText TextNormal "zcy" ] , [ ESymbol Ord "\1079" ] ]
+    , [ [ EText TextNormal "Zcy" ] , [ ESymbol Ord "\1047" ] ]
+    , [ [ EText TextNormal "zdot" ] , [ ESymbol Ord "\380" ] ]
+    , [ [ EText TextNormal "Zdot" ] , [ ESymbol Ord "\379" ] ]
+    , [ [ EText TextNormal "zeetrf" ] , [ ESymbol Alpha "\8488" ] ]
+    , [ [ EText TextNormal "ZeroWidthSpace" ]
+      , [ ESymbol Ord "\8203" ]
+      ]
+    , [ [ EText TextNormal "zeta" ] , [ ESymbol Alpha "\950" ] ]
+    , [ [ EText TextNormal "zfr" ] , [ ESymbol Alpha "\120119" ] ]
+    , [ [ EText TextNormal "Zfr" ] , [ ESymbol Alpha "\8488" ] ]
+    , [ [ EText TextNormal "zhcy" ] , [ ESymbol Ord "\1078" ] ]
+    , [ [ EText TextNormal "ZHcy" ] , [ ESymbol Ord "\1046" ] ]
+    , [ [ EText TextNormal "zigrarr" ] , [ ESymbol Accent "\8669" ] ]
+    , [ [ EText TextNormal "zopf" ] , [ ESymbol Alpha "\120171" ] ]
+    , [ [ EText TextNormal "Zopf" ] , [ ESymbol Alpha "\8484" ] ]
+    , [ [ EText TextNormal "zscr" ] , [ ESymbol Alpha "\120015" ] ]
+    , [ [ EText TextNormal "Zscr" ] , [ ESymbol Alpha "\119989" ] ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ {roman "zacute"} above {roman "Zacute"} above {roman "zcaron"} above {roman "Zcaron"} above {roman "zcy"} above {roman "Zcy"} above {roman "zdot"} above {roman "Zdot"} above {roman "zeetrf"} above {roman "ZeroWidthSpace"} above {roman "zeta"} above {roman "zfr"} above {roman "Zfr"} above {roman "zhcy"} above {roman "ZHcy"} above {roman "zigrarr"} above {roman "zopf"} above {roman "Zopf"} above {roman "zscr"} above {roman "Zscr"} }
+ccol{ \[u017A] above \[u0179] above \[u017E] above \[u017D] above \[u0437] above \[u0417] above \[u017C] above \[u017B] above \[u2128] above \[u200B] above zeta above \[u1D537] above \[u2128] above \[u0436] above \[u0416] above \[u21DD] above \[u1D56B] above \[u2124] above \[u1D4CF] above \[u1D4B5] }
+}

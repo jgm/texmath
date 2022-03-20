@@ -1,0 +1,15 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfenced open="[">
+    <mn>0</mn> 
+    <mn>1</mn> 
+  </mfenced> </math>
+>>> native
+[ EDelimited
+    "["
+    ")"
+    [ Right (EGrouped [ ENumber "0" , ESymbol Pun "," , ENumber "1" ])
+    ]
+]

@@ -1,0 +1,10 @@
+[ EText TextNormal "The same expression\160"
+, EGrouped
+    [ EFraction NormalFrac (ENumber "1") (ENumber "2")
+    , ESymbol Bin "-"
+    , EFraction NormalFrac (ENumber "1") (ENumber "2")
+    , ESymbol Bin "+"
+    , EFraction NormalFrac (ENumber "1.23456") (ENumber "7890")
+    ]
+, EText TextNormal "\160in a display."
+]

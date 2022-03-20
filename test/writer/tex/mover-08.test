@@ -1,0 +1,12 @@
+<<< native
+[ EOver
+    False (EIdentifier "_ baseline _") (EIdentifier "over script")
+, ESymbol Rel "="
+, EOver
+    False
+    (EUnder
+       False (EIdentifier "_ baseline _") (EPhantom (EIdentifier "fail")))
+    (EIdentifier "over script")
+]
+>>> tex
+\overset{over\ script}{\_\ baseline\ \_} = \overset{over\ script}{\underset{\phantom{fail}}{\_\ baseline\ \_}}

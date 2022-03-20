@@ -1,0 +1,33 @@
+[ ESymbol Op "\8704"
+, EIdentifier "A"
+, ESpace (1 % 6)
+, ESymbol Op "\8707"
+, EIdentifier "P"
+, ESpace (1 % 6)
+, ESymbol Op "\8704"
+, EIdentifier "B"
+, ESpace (1 % 6)
+, EDelimited
+    "["
+    "]"
+    [ Right (EIdentifier "B")
+    , Right (ESymbol Rel "\8712")
+    , Right (EIdentifier "P")
+    , Right (ESymbol Rel "\8660")
+    , Right (ESymbol Op "\8704")
+    , Right (EIdentifier "C")
+    , Right (ESpace (1 % 6))
+    , Right
+        (EDelimited
+           "("
+           ")"
+           [ Right (EIdentifier "C")
+           , Right (ESymbol Rel "\8712")
+           , Right (EIdentifier "B")
+           , Right (ESymbol Rel "\8658")
+           , Right (EIdentifier "C")
+           , Right (ESymbol Rel "\8712")
+           , Right (EIdentifier "A")
+           ])
+    ]
+]

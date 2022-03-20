@@ -1,0 +1,136 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>H</mi>
+    <mo>&#x0022;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x0027;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x002A;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x0060;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x00AA;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x00B0;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x00B2;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x00B3;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x00B4;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x00B9;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x00BA;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x2018;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x2019;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x201A;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x201B;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x201C;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x201D;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x201E;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x201F;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x2032;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x2033;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x2034;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x2035;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x2036;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x2037;</mo>
+  </msup> 
+  <msup>
+    <mi>H</mi>
+    <mo>&#x2057;</mo>
+  </msup> </math>
+>>> native
+[ ESuper (EIdentifier "H") (ESymbol Accent "\"")
+, ESuper (EIdentifier "H") (ESymbol Accent "'")
+, ESuper (EIdentifier "H") (ESymbol Ord "*")
+, ESuper (EIdentifier "H") (ESymbol Accent "`")
+, ESuper (EIdentifier "H") (ESymbol Accent "\170")
+, ESuper (EIdentifier "H") (ESymbol Ord "\176")
+, ESuper (EIdentifier "H") (ESymbol Accent "\178")
+, ESuper (EIdentifier "H") (ESymbol Accent "\179")
+, ESuper (EIdentifier "H") (ESymbol Accent "\180")
+, ESuper (EIdentifier "H") (ESymbol Accent "\185")
+, ESuper (EIdentifier "H") (ESymbol Accent "\186")
+, ESuper (EIdentifier "H") (ESymbol Open "\8216")
+, ESuper (EIdentifier "H") (ESymbol Close "\8217")
+, ESuper (EIdentifier "H") (ESymbol Accent "\8218")
+, ESuper (EIdentifier "H") (ESymbol Accent "\8219")
+, ESuper (EIdentifier "H") (ESymbol Open "\8220")
+, ESuper (EIdentifier "H") (ESymbol Close "\8221")
+, ESuper (EIdentifier "H") (ESymbol Accent "\8222")
+, ESuper (EIdentifier "H") (ESymbol Accent "\8223")
+, ESuper (EIdentifier "H") (ESymbol Ord "\8242")
+, ESuper (EIdentifier "H") (ESymbol Accent "\8243")
+, ESuper (EIdentifier "H") (ESymbol Accent "\8244")
+, ESuper (EIdentifier "H") (ESymbol Accent "\8245")
+, ESuper (EIdentifier "H") (ESymbol Accent "\8246")
+, ESuper (EIdentifier "H") (ESymbol Accent "\8247")
+, ESuper (EIdentifier "H") (ESymbol Accent "\8279")
+]

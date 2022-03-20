@@ -1,0 +1,30 @@
+<<< native
+[ EText TextNormal "\8220a\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220b\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220c\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220f\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220\915\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220d\8221"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext mathvariant="normal">“a”</mtext>
+    <mo>+</mo>
+    <mtext mathvariant="normal">“b”</mtext>
+    <mo>+</mo>
+    <mtext mathvariant="normal">“c”</mtext>
+    <mo>+</mo>
+    <mtext mathvariant="normal">“f”</mtext>
+    <mo>+</mo>
+    <mtext mathvariant="normal">“Γ”</mtext>
+    <mo>+</mo>
+    <mtext mathvariant="normal">“d”</mtext>
+  </mrow>
+</math>

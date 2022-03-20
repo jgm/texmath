@@ -1,0 +1,7 @@
+[ ESubsup (EIdentifier "T") (EIdentifier "m") (EIdentifier "n")
+, ESymbol Rel "="
+, EOver
+    False
+    (ESubsup (EIdentifier "T") (EIdentifier "m") (EIdentifier "n"))
+    (EPhantom (EText TextNormal "x"))
+]

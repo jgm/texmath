@@ -1,0 +1,80 @@
+<<< native
+[ ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper
+    (EGrouped [ EIdentifier "M" , EIdentifier "x" ]) (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msup>
+      <mi>x</mi>
+      <mn>2</mn>
+    </msup>
+    <mo>+</mo>
+    <msup>
+      <mi>x</mi>
+      <mn>2</mn>
+    </msup>
+    <mo>+</mo>
+    <msup>
+      <mi>x</mi>
+      <mn>2</mn>
+    </msup>
+    <mo>+</mo>
+    <msup>
+      <mrow>
+        <mi>M</mi>
+        <mi>x</mi>
+      </mrow>
+      <mn>2</mn>
+    </msup>
+    <mo>+</mo>
+    <msup>
+      <mi>x</mi>
+      <mn>2</mn>
+    </msup>
+    <mo>+</mo>
+    <msup>
+      <mi>x</mi>
+      <mn>2</mn>
+    </msup>
+    <mo>+</mo>
+    <msup>
+      <mi>x</mi>
+      <mn>2</mn>
+    </msup>
+    <mo>+</mo>
+    <msup>
+      <mi>x</mi>
+      <mn>2</mn>
+    </msup>
+    <mo>+</mo>
+    <msup>
+      <mi>x</mi>
+      <mn>2</mn>
+    </msup>
+    <mo>+</mo>
+    <msup>
+      <mi>x</mi>
+      <mn>2</mn>
+    </msup>
+  </mrow>
+</math>

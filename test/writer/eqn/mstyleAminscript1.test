@@ -1,0 +1,7 @@
+<<< native
+[ EFraction NormalFrac (ENumber "2") (EIdentifier "x")
+, ESymbol Rel "="
+, EFraction NormalFrac (ENumber "2") (EIdentifier "x")
+]
+>>> eqn
+2 over x = 2 over x

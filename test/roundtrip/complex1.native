@@ -1,0 +1,601 @@
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "Bernoulli Trials" ]
+      , [ EGrouped
+            [ EGrouped
+                [ EIdentifier "P"
+                , ESymbol Open "("
+                , EIdentifier "E"
+                , ESymbol Close ")"
+                ]
+            , ESymbol Rel "="
+            , EDelimited
+                "("
+                ")"
+                [ Right (EFraction NormalFrac (EIdentifier "n") (EIdentifier "k"))
+                ]
+            , ESubsup (EIdentifier "p") (EGrouped []) (EIdentifier "k")
+            , ESubsup
+                (EGrouped
+                   [ ESymbol Open "("
+                   , ENumber "1"
+                   , ESymbol Bin "-"
+                   , EIdentifier "p"
+                   , ESymbol Close ")"
+                   ])
+                (EGrouped [])
+                (EGrouped [ EIdentifier "n" , ESymbol Bin "-" , EIdentifier "k" ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Cauchy-Schwarz Inequality" ]
+      , [ EGrouped
+            [ ESubsup
+                (EDelimited
+                   "("
+                   ")"
+                   [ Right
+                       (EUnderover
+                          False
+                          (ESymbol Op "\8721")
+                          (EGrouped [ EIdentifier "k" , ESymbol Rel "=" , ENumber "1" ])
+                          (EIdentifier "n"))
+                   , Right (ESubsup (EIdentifier "a") (EIdentifier "k") (EGrouped []))
+                   , Right (ESubsup (EIdentifier "b") (EIdentifier "k") (EGrouped []))
+                   ])
+                (EGrouped [])
+                (ENumber "2")
+            , ESymbol Rel "\8804"
+            , EDelimited
+                "("
+                ")"
+                [ Right
+                    (EUnderover
+                       False
+                       (ESymbol Op "\8721")
+                       (EGrouped [ EIdentifier "k" , ESymbol Rel "=" , ENumber "1" ])
+                       (EIdentifier "n"))
+                , Right (ESubsup (EIdentifier "a") (EIdentifier "k") (ENumber "2"))
+                ]
+            , EDelimited
+                "("
+                ")"
+                [ Right
+                    (EUnderover
+                       False
+                       (ESymbol Op "\8721")
+                       (EGrouped [ EIdentifier "k" , ESymbol Rel "=" , ENumber "1" ])
+                       (EIdentifier "n"))
+                , Right (ESubsup (EIdentifier "b") (EIdentifier "k") (ENumber "2"))
+                ]
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Cauchy Formula" ]
+      , [ EGrouped
+            [ EIdentifier "f"
+            , ESymbol Open "("
+            , EIdentifier "z"
+            , ESymbol Close ")"
+            , ESpace (1 % 6)
+            , ESymbol Bin "\183"
+            , ESubsup (EIdentifier "Ind") (EIdentifier "\947") (EGrouped [])
+            , ESymbol Open "("
+            , EIdentifier "z"
+            , ESymbol Close ")"
+            , ESymbol Rel "="
+            , EFraction
+                NormalFrac
+                (ENumber "1")
+                (EGrouped [ ENumber "2" , EIdentifier "\960" , EIdentifier "i" ])
+            , EUnderover
+                False (ESymbol Op "\8750") (EIdentifier "\947") (EGrouped [])
+            , EFraction
+                NormalFrac
+                (EGrouped
+                   [ EIdentifier "f"
+                   , ESymbol Open "("
+                   , EIdentifier "\958"
+                   , ESymbol Close ")"
+                   ])
+                (EGrouped
+                   [ EIdentifier "\958" , ESymbol Bin "-" , EIdentifier "z" ])
+            , ESpace (1 % 6)
+            , EIdentifier "d"
+            , EIdentifier "\958"
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Cross Product" ]
+      , [ EGrouped
+            [ ESubsup (EIdentifier "V") (ENumber "1") (EGrouped [])
+            , ESymbol Bin "\215"
+            , ESubsup (EIdentifier "V") (ENumber "2") (EGrouped [])
+            , ESymbol Rel "="
+            , EDelimited
+                "|"
+                "|"
+                [ Right
+                    (EArray
+                       [ AlignCenter , AlignCenter , AlignCenter ]
+                       [ [ [ EIdentifier "i" ]
+                         , [ EIdentifier "j" ]
+                         , [ EIdentifier "k" ]
+                         ]
+                       , [ [ EFraction
+                               NormalFrac
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "X" ])
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "u" ])
+                           ]
+                         , [ EFraction
+                               NormalFrac
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "Y" ])
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "u" ])
+                           ]
+                         , [ ENumber "0" ]
+                         ]
+                       , [ [ EFraction
+                               NormalFrac
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "X" ])
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "v" ])
+                           ]
+                         , [ EFraction
+                               NormalFrac
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "Y" ])
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "v" ])
+                           ]
+                         , [ ENumber "0" ]
+                         ]
+                       ])
+                ]
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Vandermonde Determinant" ]
+      , [ EGrouped
+            [ EDelimited
+                "|"
+                "|"
+                [ Right
+                    (EArray
+                       [ AlignCenter , AlignCenter , AlignCenter , AlignCenter ]
+                       [ [ [ ENumber "1" ]
+                         , [ ENumber "1" ]
+                         , [ ESymbol Ord "\8943" ]
+                         , [ ENumber "1" ]
+                         ]
+                       , [ [ ESubsup (EIdentifier "v") (ENumber "1") (EGrouped []) ]
+                         , [ ESubsup (EIdentifier "v") (ENumber "2") (EGrouped []) ]
+                         , [ ESymbol Ord "\8943" ]
+                         , [ ESubsup (EIdentifier "v") (EIdentifier "n") (EGrouped []) ]
+                         ]
+                       , [ [ ESubsup (EIdentifier "v") (ENumber "1") (ENumber "2") ]
+                         , [ ESubsup (EIdentifier "v") (ENumber "2") (ENumber "2") ]
+                         , [ ESymbol Ord "\8943" ]
+                         , [ ESubsup (EIdentifier "v") (EIdentifier "n") (ENumber "2") ]
+                         ]
+                       , [ [ ESymbol Rel "\8942" ]
+                         , [ ESymbol Rel "\8942" ]
+                         , [ ESymbol Rel "\8945" ]
+                         , [ ESymbol Rel "\8942" ]
+                         ]
+                       , [ [ ESubsup
+                               (EIdentifier "v")
+                               (ENumber "1")
+                               (EGrouped [ EIdentifier "n" , ESymbol Bin "-" , ENumber "1" ])
+                           ]
+                         , [ ESubsup
+                               (EIdentifier "v")
+                               (ENumber "2")
+                               (EGrouped [ EIdentifier "n" , ESymbol Bin "-" , ENumber "1" ])
+                           ]
+                         , [ ESymbol Ord "\8943" ]
+                         , [ ESubsup
+                               (EIdentifier "v")
+                               (EIdentifier "n")
+                               (EGrouped [ EIdentifier "n" , ESymbol Bin "-" , ENumber "1" ])
+                           ]
+                         ]
+                       ])
+                ]
+            , ESymbol Rel "="
+            , EUnderover
+                False
+                (ESymbol Op "\8719")
+                (EGrouped
+                   [ ENumber "1"
+                   , ESymbol Rel "\8804"
+                   , EIdentifier "i"
+                   , ESymbol Rel "<"
+                   , EIdentifier "j"
+                   , ESymbol Rel "\8804"
+                   , EIdentifier "n"
+                   ])
+                (EGrouped [])
+            , ESymbol Open "("
+            , ESubsup (EIdentifier "v") (EIdentifier "j") (EGrouped [])
+            , ESymbol Bin "-"
+            , ESubsup (EIdentifier "v") (EIdentifier "i") (EGrouped [])
+            , ESymbol Close ")"
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Lorenz Equations" ]
+      , [ EArray
+            [ AlignCenter , AlignCenter , AlignCenter ]
+            [ [ [ EUnderover
+                    False (EIdentifier "x") (EGrouped []) (ESymbol Accent "\729")
+                ]
+              , [ ESymbol Rel "=" ]
+              , [ EGrouped
+                    [ EIdentifier "\963"
+                    , ESymbol Open "("
+                    , EIdentifier "y"
+                    , ESymbol Bin "-"
+                    , EIdentifier "x"
+                    , ESymbol Close ")"
+                    ]
+                ]
+              ]
+            , [ [ EUnderover
+                    False (EIdentifier "y") (EGrouped []) (ESymbol Accent "\729")
+                ]
+              , [ ESymbol Rel "=" ]
+              , [ EGrouped
+                    [ EIdentifier "\961"
+                    , EIdentifier "x"
+                    , ESymbol Bin "-"
+                    , EIdentifier "y"
+                    , ESymbol Bin "-"
+                    , EIdentifier "x"
+                    , EIdentifier "z"
+                    ]
+                ]
+              ]
+            , [ [ EUnderover
+                    False (EIdentifier "z") (EGrouped []) (ESymbol Accent "\729")
+                ]
+              , [ ESymbol Rel "=" ]
+              , [ EGrouped
+                    [ ESymbol Bin "-"
+                    , EIdentifier "\946"
+                    , EIdentifier "z"
+                    , ESymbol Bin "+"
+                    , EIdentifier "x"
+                    , EIdentifier "y"
+                    ]
+                ]
+              ]
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Maxwell's Equations" ]
+      , [ EDelimited
+            "{"
+            ""
+            [ Right
+                (EArray
+                   [ AlignCenter , AlignCenter , AlignCenter ]
+                   [ [ [ EGrouped
+                           [ ESymbol Ord "\8711"
+                           , ESpace (0 % 1)
+                           , ESymbol Bin "\215"
+                           , EUnderover
+                               False (EIdentifier "B") (EGrouped []) (ESymbol Accent "\8636")
+                           , ESymbol Bin "-"
+                           , ESpace (1 % 6)
+                           , EFraction NormalFrac (ENumber "1") (EIdentifier "c")
+                           , ESpace (1 % 6)
+                           , EFraction
+                               NormalFrac
+                               (EGrouped
+                                  [ ESymbol Ord "\8706"
+                                  , ESpace (0 % 1)
+                                  , EUnderover
+                                      False (EIdentifier "E") (EGrouped []) (ESymbol Accent "\8636")
+                                  ])
+                               (EGrouped
+                                  [ ESymbol Ord "\8706" , ESpace (0 % 1) , EIdentifier "t" ])
+                           ]
+                       ]
+                     , [ ESymbol Rel "=" ]
+                     , [ EGrouped
+                           [ EFraction
+                               NormalFrac
+                               (EGrouped [ ENumber "4" , EIdentifier "\960" ])
+                               (EIdentifier "c")
+                           , ESpace (1 % 6)
+                           , EUnderover
+                               False (EIdentifier "j") (EGrouped []) (ESymbol Accent "\8636")
+                           ]
+                       ]
+                     ]
+                   , [ [ EGrouped
+                           [ ESymbol Ord "\8711"
+                           , ESpace (0 % 1)
+                           , ESymbol Bin "\183"
+                           , EUnderover
+                               False (EIdentifier "E") (EGrouped []) (ESymbol Accent "\8636")
+                           ]
+                       ]
+                     , [ ESymbol Rel "=" ]
+                     , [ EGrouped
+                           [ ENumber "4" , EIdentifier "\960" , EIdentifier "\961" ]
+                       ]
+                     ]
+                   , [ [ EGrouped
+                           [ ESymbol Ord "\8711"
+                           , ESpace (0 % 1)
+                           , ESymbol Bin "\215"
+                           , EUnderover
+                               False (EIdentifier "E") (EGrouped []) (ESymbol Accent "\8636")
+                           , ESpace (1 % 6)
+                           , ESymbol Bin "+"
+                           , ESpace (1 % 6)
+                           , EFraction NormalFrac (ENumber "1") (EIdentifier "c")
+                           , ESpace (1 % 6)
+                           , EFraction
+                               NormalFrac
+                               (EGrouped
+                                  [ ESymbol Ord "\8706"
+                                  , ESpace (0 % 1)
+                                  , EUnderover
+                                      False (EIdentifier "B") (EGrouped []) (ESymbol Accent "\8636")
+                                  ])
+                               (EGrouped
+                                  [ ESymbol Ord "\8706" , ESpace (0 % 1) , EIdentifier "t" ])
+                           ]
+                       ]
+                     , [ ESymbol Rel "=" ]
+                     , [ EUnderover
+                           False (ENumber "0") (EGrouped []) (ESymbol Accent "\8636")
+                       ]
+                     ]
+                   , [ [ EGrouped
+                           [ ESymbol Ord "\8711"
+                           , ESpace (0 % 1)
+                           , ESymbol Bin "\183"
+                           , EUnderover
+                               False (EIdentifier "B") (EGrouped []) (ESymbol Accent "\8636")
+                           ]
+                       ]
+                     , [ ESymbol Rel "=" ]
+                     , [ ENumber "0" ]
+                     ]
+                   ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Einstein Field Equations" ]
+      , [ EGrouped
+            [ ESubsup
+                (EIdentifier "R")
+                (EGrouped [ EIdentifier "\956" , EIdentifier "\957" ])
+                (EGrouped [])
+            , ESymbol Bin "-"
+            , EFraction NormalFrac (ENumber "1") (ENumber "2")
+            , ESpace (1 % 6)
+            , ESubsup
+                (EIdentifier "g")
+                (EGrouped [ EIdentifier "\956" , EIdentifier "\957" ])
+                (EGrouped [])
+            , ESpace (1 % 6)
+            , EIdentifier "R"
+            , ESymbol Rel "="
+            , EFraction
+                NormalFrac
+                (EGrouped [ ENumber "8" , EIdentifier "\960" , EIdentifier "G" ])
+                (ESubsup (EIdentifier "c") (EGrouped []) (ENumber "4"))
+            , ESpace (1 % 6)
+            , ESubsup
+                (EIdentifier "T")
+                (EGrouped [ EIdentifier "\956" , EIdentifier "\957" ])
+                (EGrouped [])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Ramanujan Identity" ]
+      , [ EGrouped
+            [ EFraction
+                NormalFrac
+                (ENumber "1")
+                (EGrouped
+                   [ ESymbol Open "("
+                   , ESqrt (EGrouped [ EIdentifier "\966" , ESqrt (ENumber "5") ])
+                   , ESymbol Bin "-"
+                   , EIdentifier "\966"
+                   , ESymbol Close ")"
+                   , ESubsup
+                       (EIdentifier "e")
+                       (EGrouped [])
+                       (EFraction NormalFrac (ENumber "25") (EIdentifier "\960"))
+                   ])
+            , ESymbol Rel "="
+            , ENumber "1"
+            , ESymbol Bin "+"
+            , EFraction
+                NormalFrac
+                (ESubsup
+                   (EIdentifier "e")
+                   (EGrouped [])
+                   (EGrouped [ ESymbol Bin "-" , ENumber "2" , EIdentifier "\960" ]))
+                (EGrouped
+                   [ ENumber "1"
+                   , ESymbol Bin "+"
+                   , EFraction
+                       NormalFrac
+                       (ESubsup
+                          (EIdentifier "e")
+                          (EGrouped [])
+                          (EGrouped [ ESymbol Bin "-" , ENumber "4" , EIdentifier "\960" ]))
+                       (EGrouped
+                          [ ENumber "1"
+                          , ESymbol Bin "+"
+                          , EFraction
+                              NormalFrac
+                              (ESubsup
+                                 (EIdentifier "e")
+                                 (EGrouped [])
+                                 (EGrouped [ ESymbol Bin "-" , ENumber "6" , EIdentifier "\960" ]))
+                              (EGrouped
+                                 [ ENumber "1"
+                                 , ESymbol Bin "+"
+                                 , EFraction
+                                     NormalFrac
+                                     (ESubsup
+                                        (EIdentifier "e")
+                                        (EGrouped [])
+                                        (EGrouped
+                                           [ ESymbol Bin "-" , ENumber "8" , EIdentifier "\960" ]))
+                                     (EGrouped
+                                        [ ENumber "1" , ESymbol Bin "+" , ESymbol Ord "\8230" ])
+                                 ])
+                          ])
+                   ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Another Ramanujan identity" ]
+      , [ EGrouped
+            [ EUnderover
+                False
+                (ESymbol Op "\8721")
+                (EGrouped [ EIdentifier "k" , ESymbol Rel "=" , ENumber "1" ])
+                (EIdentifier "\8734")
+            , EFraction
+                NormalFrac
+                (ENumber "1")
+                (ESubsup
+                   (ENumber "2")
+                   (EGrouped [])
+                   (EGrouped
+                      [ ESymbol Open "\8970"
+                      , EIdentifier "k"
+                      , ESymbol Bin "\183"
+                      , ESpace (0 % 1)
+                      , EIdentifier "\966"
+                      , ESymbol Close "\8971"
+                      ]))
+            , ESymbol Rel "="
+            , EFraction
+                NormalFrac
+                (ENumber "1")
+                (EGrouped
+                   [ ESubsup (ENumber "2") (EGrouped []) (ENumber "0")
+                   , ESymbol Bin "+"
+                   , EFraction
+                       NormalFrac
+                       (ENumber "1")
+                       (EGrouped
+                          [ ESubsup (ENumber "2") (EGrouped []) (ENumber "1")
+                          , ESymbol Bin "+"
+                          , ESymbol Ord "\8943"
+                          ])
+                   ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Rogers-Ramanujan Identity" ]
+      , [ EGrouped
+            [ ENumber "1"
+            , ESymbol Bin "+"
+            , EGrouped
+                [ EUnderover
+                    False
+                    (ESymbol Op "\8721")
+                    (EGrouped [ EIdentifier "k" , ESymbol Rel "=" , ENumber "1" ])
+                    (EIdentifier "\8734")
+                , EFraction
+                    NormalFrac
+                    (ESubsup
+                       (EIdentifier "q")
+                       (EGrouped [])
+                       (EGrouped
+                          [ ESubsup (EIdentifier "k") (EGrouped []) (ENumber "2")
+                          , ESymbol Bin "+"
+                          , EIdentifier "k"
+                          ]))
+                    (EGrouped
+                       [ ESymbol Open "("
+                       , ENumber "1"
+                       , ESymbol Bin "-"
+                       , EIdentifier "q"
+                       , ESymbol Close ")"
+                       , ESymbol Open "("
+                       , ENumber "1"
+                       , ESymbol Bin "-"
+                       , ESubsup (EIdentifier "q") (EGrouped []) (ENumber "2")
+                       , ESymbol Close ")"
+                       , ESymbol Ord "\8943"
+                       , ESymbol Open "("
+                       , ENumber "1"
+                       , ESymbol Bin "-"
+                       , ESubsup (EIdentifier "q") (EGrouped []) (EIdentifier "k")
+                       , ESymbol Close ")"
+                       ])
+                ]
+            , ESymbol Rel "="
+            , EGrouped
+                [ EUnderover
+                    False
+                    (ESymbol Op "\8719")
+                    (EGrouped [ EIdentifier "j" , ESymbol Rel "=" , ENumber "0" ])
+                    (EIdentifier "\8734")
+                , EFraction
+                    NormalFrac
+                    (ENumber "1")
+                    (EGrouped
+                       [ ESymbol Open "("
+                       , ENumber "1"
+                       , ESymbol Bin "-"
+                       , ESubsup
+                           (EIdentifier "q")
+                           (EGrouped [])
+                           (EGrouped
+                              [ ENumber "5" , EIdentifier "j" , ESymbol Bin "+" , ENumber "2" ])
+                       , ESymbol Close ")"
+                       , ESymbol Open "("
+                       , ENumber "1"
+                       , ESymbol Bin "-"
+                       , ESubsup
+                           (EIdentifier "q")
+                           (EGrouped [])
+                           (EGrouped
+                              [ ENumber "5" , EIdentifier "j" , ESymbol Bin "+" , ENumber "3" ])
+                       , ESymbol Close ")"
+                       ])
+                ]
+            , ESymbol Pun ","
+            , EText TextNormal "\8287\8202"
+            , EText TextNormal "\8287\8202"
+            , EGrouped [ EIdentifier "f" , EIdentifier "o" , EIdentifier "r" ]
+            , ESpace (2 % 9)
+            , ESymbol Op "|"
+            , EIdentifier "q"
+            , ESymbol Op "|"
+            , ESymbol Rel "<"
+            , ENumber "1"
+            , EIdentifier "."
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Commutative Diagram" ]
+      , [ EArray
+            [ AlignCenter , AlignCenter , AlignCenter ]
+            [ [ [ EIdentifier "H" ]
+              , [ ESymbol Accent "\8592" ]
+              , [ EIdentifier "K" ]
+              ]
+            , [ [ ESymbol Rel "\8595" ]
+              , [ ESpace (0 % 1) ]
+              , [ ESymbol Rel "\8593" ]
+              ]
+            , [ [ EIdentifier "H" ]
+              , [ ESymbol Accent "\8594" ]
+              , [ EIdentifier "K" ]
+              ]
+            ]
+        ]
+      ]
+    ]
+]

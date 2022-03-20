@@ -1,0 +1,14 @@
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EIdentifier "H" ] , [ EIdentifier "A" ] ]
+    , [ [ EIdentifier "T" ] , [ EIdentifier "I" ] ]
+    , [ [ EIdentifier "U" ] , [ EIdentifier "Y" ] ]
+    ]
+, ESymbol Rel "="
+, EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EIdentifier "A" ] , [ EIdentifier "H" ] ]
+    , [ [ EIdentifier "I" ] , [ EIdentifier "T" ] ]
+    , [ [ EIdentifier "Y" ] , [ EIdentifier "U" ] ]
+    ]
+]

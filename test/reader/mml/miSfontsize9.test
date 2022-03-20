@@ -1,0 +1,99 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd>
+        <mstyle fontweight="bold" color="#ff0000">
+          <mrow>
+            <mi>A</mi> 
+            <mo>+</mo> 
+            <mi fontweight="normal" fontstyle="italic">A</mi> 
+            <mo>+</mo> 
+            <mstyle fontsize="0.1in">
+              <mi>A</mi> 
+              <mo>+</mo> 
+              <mi fontsize="2em">A</mi> 
+              <mo>+</mo> 
+              <mi fontsize="36pt">A</mi> 
+            </mstyle> 
+            <mo>+</mo> 
+            <mi fontsize="20mm">A</mi> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mstyle mathcolor="#ff0000">
+          <mrow>
+            <mi>A</mi> 
+            <mo>+</mo> 
+            <mstyle mathsize="0.1in">
+              <mi>A</mi> 
+              <mo>+</mo> 
+              <mi mathsize="2em">A</mi> 
+              <mo>+</mo> 
+              <mi mathsize="36pt">A</mi> 
+            </mstyle> 
+            <mo>+</mo> 
+            <mi mathsize="20mm">A</mi> 
+            <mo>+</mo> 
+            <mstyle mathsize="big">
+              <mi>A</mi> 
+              <mo>+</mo> 
+              <mi mathsize="small">A</mi> 
+              <mo>+</mo> 
+              <mi mathsize="normal">A</mi> 
+            </mstyle> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+  </mtable> </math>
+>>> native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EGrouped
+                [ EIdentifier "A"
+                , ESymbol Bin "+"
+                , EIdentifier "A"
+                , ESymbol Bin "+"
+                , EIdentifier "A"
+                ]
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "A"
+            , ESymbol Bin "+"
+            , EGrouped
+                [ EIdentifier "A"
+                , ESymbol Bin "+"
+                , EIdentifier "A"
+                , ESymbol Bin "+"
+                , EIdentifier "A"
+                ]
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EGrouped
+                [ EIdentifier "A"
+                , ESymbol Bin "+"
+                , EIdentifier "A"
+                , ESymbol Bin "+"
+                , EIdentifier "A"
+                ]
+            ]
+        ]
+      ]
+    ]
+]

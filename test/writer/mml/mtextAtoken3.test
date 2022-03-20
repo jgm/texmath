@@ -1,0 +1,18 @@
+<<< native
+[ EText TextNormal "Theorem 1:"
+, EText TextNormal "Now is"
+, EText TextNormal "the time"
+, EText TextNormal "for"
+, EText TextNormal "MathML"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext mathvariant="normal">Theorem 1:</mtext>
+    <mtext mathvariant="normal">Now is</mtext>
+    <mtext mathvariant="normal">the time</mtext>
+    <mtext mathvariant="normal">for</mtext>
+    <mtext mathvariant="normal">MathML</mtext>
+  </mrow>
+</math>

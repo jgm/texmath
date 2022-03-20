@@ -1,0 +1,12 @@
+[ EText TextNormal "Inline, auto, thick line\160"
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESuper (EIdentifier "x") (ENumber "2")
+       , ESymbol Bin "+"
+       , ENumber "1"
+       ])
+    (EIdentifier "x")
+, EText
+    TextNormal ", the superscripted 2 should be script-script size."
+]

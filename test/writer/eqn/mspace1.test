@@ -1,0 +1,10 @@
+<<< native
+[ EIdentifier "x"
+, ESpace (58 % 25)
+, EIdentifier "M"
+, ESpace (58 % 25)
+, EIdentifier "x"
+, ESpace (0 % 1)
+]
+>>> eqn
+x fwd 232 M fwd 232 x fwd 0

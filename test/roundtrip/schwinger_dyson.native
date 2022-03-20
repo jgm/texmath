@@ -1,0 +1,54 @@
+[ EDelimited
+    "\10216"
+    "\10217"
+    [ Right (EIdentifier "\968")
+    , Right
+        (EDelimited
+           "|"
+           "|"
+           [ Right (EStyled TextScript [ EIdentifier "T" ])
+           , Right
+               (EDelimited
+                  "{"
+                  "}"
+                  [ Right
+                      (EFraction
+                         NormalFrac
+                         (EIdentifier "\948")
+                         (EGrouped [ EIdentifier "\948" , EIdentifier "\981" ]))
+                  , Right (EIdentifier "F")
+                  , Right (EDelimited "[" "]" [ Right (EIdentifier "\981") ])
+                  ])
+           ])
+    , Right (EIdentifier "\968")
+    ]
+, ESymbol Rel "="
+, ESymbol Bin "\8722"
+, EStyled TextNormal [ EIdentifier "i" ]
+, EDelimited
+    "\10216"
+    "\10217"
+    [ Right (EIdentifier "\968")
+    , Right
+        (EDelimited
+           "|"
+           "|"
+           [ Right (EStyled TextScript [ EIdentifier "T" ])
+           , Right
+               (EDelimited
+                  "{"
+                  "}"
+                  [ Right (EIdentifier "F")
+                  , Right (EDelimited "[" "]" [ Right (EIdentifier "\981") ])
+                  , Right
+                      (EFraction
+                         NormalFrac
+                         (EIdentifier "\948")
+                         (EGrouped [ EIdentifier "\948" , EIdentifier "\981" ]))
+                  , Right (EIdentifier "S")
+                  , Right (EDelimited "[" "]" [ Right (EIdentifier "\981") ])
+                  ])
+           ])
+    , Right (EIdentifier "\968")
+    ]
+]

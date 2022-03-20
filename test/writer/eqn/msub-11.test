@@ -1,0 +1,10 @@
+<<< native
+[ ESub (EIdentifier "H") (ESymbol Ord "2")
+, ESymbol Rel "="
+, EOver
+    False
+    (ESub (EIdentifier "H") (ESymbol Ord "2"))
+    (EPhantom (EIdentifier "x"))
+]
+>>> eqn
+H sub 2 = {H sub 2} to {hphantom x}

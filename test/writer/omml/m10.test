@@ -1,0 +1,638 @@
+<<< native
+[ EArray
+    [ AlignLeft ]
+    [ [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "0")
+                , ESymbol Bin "+"
+                , ENumber "0"
+                , ESymbol Rel "="
+                , EIdentifier "\945"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "1")
+                , ESymbol Bin "+"
+                , ENumber "1"
+                , ESymbol Rel "="
+                , EIdentifier "\946"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "2")
+                , ESymbol Bin "+"
+                , ENumber "2"
+                , ESymbol Rel "="
+                , EIdentifier "\947"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "3")
+                , ESymbol Bin "+"
+                , ENumber "3"
+                , ESymbol Rel "="
+                , EIdentifier "\948"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "4")
+                , ESymbol Bin "+"
+                , ENumber "4"
+                , ESymbol Rel "="
+                , EIdentifier "\945"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "5")
+                , ESymbol Bin "+"
+                , ENumber "5"
+                , ESymbol Rel "="
+                , EIdentifier "\946"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "6")
+                , ESymbol Bin "+"
+                , ENumber "6"
+                , ESymbol Rel "="
+                , EIdentifier "\947"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "7")
+                , ESymbol Bin "+"
+                , ENumber "7"
+                , ESymbol Rel "="
+                , EIdentifier "\948"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "8")
+                , ESymbol Bin "+"
+                , ENumber "8"
+                , ESymbol Rel "="
+                , EIdentifier "\945"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EText TextNormal "Consider the equation\160"
+            , EGrouped
+                [ ESuper (EIdentifier "x") (ENumber "9")
+                , ESymbol Bin "+"
+                , ENumber "9"
+                , ESymbol Rel "="
+                , EIdentifier "\946"
+                ]
+            , EText TextNormal "."
+            ]
+        ]
+      ]
+    ]
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:m>
+      <m:mPr>
+        <m:baseJc m:val="center" />
+        <m:plcHide m:val="1" />
+        <m:mcs>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="left" />
+              <m:count m:val="1" />
+            </m:mcPr>
+          </m:mc>
+        </m:mcs>
+      </m:mPr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Consider the equation </m:t>
+          </m:r>
+          <m:sSup>
+            <m:e>
+              <m:r>
+                <m:t>x</m:t>
+              </m:r>
+            </m:e>
+            <m:sup>
+              <m:r>
+                <m:t>0</m:t>
+              </m:r>
+            </m:sup>
+          </m:sSup>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>+</m:t>
+          </m:r>
+          <m:r>
+            <m:t>0</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:t>α</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>.</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Consider the equation </m:t>
+          </m:r>
+          <m:sSup>
+            <m:e>
+              <m:r>
+                <m:t>x</m:t>
+              </m:r>
+            </m:e>
+            <m:sup>
+              <m:r>
+                <m:t>1</m:t>
+              </m:r>
+            </m:sup>
+          </m:sSup>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>+</m:t>
+          </m:r>
+          <m:r>
+            <m:t>1</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:t>β</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>.</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Consider the equation </m:t>
+          </m:r>
+          <m:sSup>
+            <m:e>
+              <m:r>
+                <m:t>x</m:t>
+              </m:r>
+            </m:e>
+            <m:sup>
+              <m:r>
+                <m:t>2</m:t>
+              </m:r>
+            </m:sup>
+          </m:sSup>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>+</m:t>
+          </m:r>
+          <m:r>
+            <m:t>2</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:t>γ</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>.</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Consider the equation </m:t>
+          </m:r>
+          <m:sSup>
+            <m:e>
+              <m:r>
+                <m:t>x</m:t>
+              </m:r>
+            </m:e>
+            <m:sup>
+              <m:r>
+                <m:t>3</m:t>
+              </m:r>
+            </m:sup>
+          </m:sSup>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>+</m:t>
+          </m:r>
+          <m:r>
+            <m:t>3</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:t>δ</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>.</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Consider the equation </m:t>
+          </m:r>
+          <m:sSup>
+            <m:e>
+              <m:r>
+                <m:t>x</m:t>
+              </m:r>
+            </m:e>
+            <m:sup>
+              <m:r>
+                <m:t>4</m:t>
+              </m:r>
+            </m:sup>
+          </m:sSup>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>+</m:t>
+          </m:r>
+          <m:r>
+            <m:t>4</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:t>α</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>.</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Consider the equation </m:t>
+          </m:r>
+          <m:sSup>
+            <m:e>
+              <m:r>
+                <m:t>x</m:t>
+              </m:r>
+            </m:e>
+            <m:sup>
+              <m:r>
+                <m:t>5</m:t>
+              </m:r>
+            </m:sup>
+          </m:sSup>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>+</m:t>
+          </m:r>
+          <m:r>
+            <m:t>5</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:t>β</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>.</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Consider the equation </m:t>
+          </m:r>
+          <m:sSup>
+            <m:e>
+              <m:r>
+                <m:t>x</m:t>
+              </m:r>
+            </m:e>
+            <m:sup>
+              <m:r>
+                <m:t>6</m:t>
+              </m:r>
+            </m:sup>
+          </m:sSup>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>+</m:t>
+          </m:r>
+          <m:r>
+            <m:t>6</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:t>γ</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>.</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Consider the equation </m:t>
+          </m:r>
+          <m:sSup>
+            <m:e>
+              <m:r>
+                <m:t>x</m:t>
+              </m:r>
+            </m:e>
+            <m:sup>
+              <m:r>
+                <m:t>7</m:t>
+              </m:r>
+            </m:sup>
+          </m:sSup>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>+</m:t>
+          </m:r>
+          <m:r>
+            <m:t>7</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:t>δ</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>.</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Consider the equation </m:t>
+          </m:r>
+          <m:sSup>
+            <m:e>
+              <m:r>
+                <m:t>x</m:t>
+              </m:r>
+            </m:e>
+            <m:sup>
+              <m:r>
+                <m:t>8</m:t>
+              </m:r>
+            </m:sup>
+          </m:sSup>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>+</m:t>
+          </m:r>
+          <m:r>
+            <m:t>8</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:t>α</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>.</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>Consider the equation </m:t>
+          </m:r>
+          <m:sSup>
+            <m:e>
+              <m:r>
+                <m:t>x</m:t>
+              </m:r>
+            </m:e>
+            <m:sup>
+              <m:r>
+                <m:t>9</m:t>
+              </m:r>
+            </m:sup>
+          </m:sSup>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>+</m:t>
+          </m:r>
+          <m:r>
+            <m:t>9</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>=</m:t>
+          </m:r>
+          <m:r>
+            <m:t>β</m:t>
+          </m:r>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>.</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+    </m:m>
+  </m:oMath>
+</m:oMathPara>

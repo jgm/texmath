@@ -1,0 +1,18 @@
+<<< native
+[ EFraction NormalFrac (EIdentifier "x") (EIdentifier "y")
+, EFraction NormalFrac (EIdentifier "x") (EIdentifier "y")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <mi>x</mi>
+      <mi>y</mi>
+    </mfrac>
+    <mfrac>
+      <mi>x</mi>
+      <mi>y</mi>
+    </mfrac>
+  </mrow>
+</math>

@@ -1,0 +1,10 @@
+<<< native
+[ ESubsup (EIdentifier "L") (EIdentifier "x") (ENumber "2")
+, ESymbol Rel "="
+, ESubsup
+    (EIdentifier "L")
+    (ESub (EIdentifier "x") (EPhantom (EIdentifier "z")))
+    (ESuper (ENumber "2") (EPhantom (EIdentifier "z")))
+]
+>>> eqn
+L sub x sup 2 = L sub {x sub {hphantom z}} sup {2 sup {hphantom z}}

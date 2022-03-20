@@ -1,0 +1,109 @@
+<<< tex
+\begin{bmatrix}
+   \dfrac{\partial x_1}{\partial y_1} & \dfrac{\partial x_2}{\partial y_1}
+\\ ~
+\\ \dfrac{\partial x_1}{\partial y_2} & \dfrac{\partial x_2}{\partial y_2}
+\end{bmatrix}
+
+\begin{pmatrix}
+   1 & 2 \\
+   3 & 4
+\end{pmatrix}
+
+\begin{Bmatrix}
+   1 & 2 \\
+   3 & 4
+\end{Bmatrix}
+
+\begin{vmatrix}
+   1 & 2 \\
+   3 & 4
+\end{vmatrix}
+
+\begin{Vmatrix}
+   1 & 2 \\
+   3 & 4
+\end{Vmatrix}
+
+
+>>> native
+[ EDelimited
+    "["
+    "]"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter ]
+           [ [ [ EFraction
+                   DisplayFrac
+                   (EGrouped
+                      [ ESymbol Ord "\8706" , ESub (EIdentifier "x") (ENumber "1") ])
+                   (EGrouped
+                      [ ESymbol Ord "\8706" , ESub (EIdentifier "y") (ENumber "1") ])
+               ]
+             , [ EFraction
+                   DisplayFrac
+                   (EGrouped
+                      [ ESymbol Ord "\8706" , ESub (EIdentifier "x") (ENumber "2") ])
+                   (EGrouped
+                      [ ESymbol Ord "\8706" , ESub (EIdentifier "y") (ENumber "1") ])
+               ]
+             ]
+           , [ [ ESpace (2 % 9) ] ]
+           , [ [ EFraction
+                   DisplayFrac
+                   (EGrouped
+                      [ ESymbol Ord "\8706" , ESub (EIdentifier "x") (ENumber "1") ])
+                   (EGrouped
+                      [ ESymbol Ord "\8706" , ESub (EIdentifier "y") (ENumber "2") ])
+               ]
+             , [ EFraction
+                   DisplayFrac
+                   (EGrouped
+                      [ ESymbol Ord "\8706" , ESub (EIdentifier "x") (ENumber "2") ])
+                   (EGrouped
+                      [ ESymbol Ord "\8706" , ESub (EIdentifier "y") (ENumber "2") ])
+               ]
+             ]
+           ])
+    ]
+, EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter ]
+           [ [ [ ENumber "1" ] , [ ENumber "2" ] ]
+           , [ [ ENumber "3" ] , [ ENumber "4" ] ]
+           ])
+    ]
+, EDelimited
+    "{"
+    "}"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter ]
+           [ [ [ ENumber "1" ] , [ ENumber "2" ] ]
+           , [ [ ENumber "3" ] , [ ENumber "4" ] ]
+           ])
+    ]
+, EDelimited
+    "\8739"
+    "\8739"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter ]
+           [ [ [ ENumber "1" ] , [ ENumber "2" ] ]
+           , [ [ ENumber "3" ] , [ ENumber "4" ] ]
+           ])
+    ]
+, EDelimited
+    "\8741"
+    "\8741"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter ]
+           [ [ [ ENumber "1" ] , [ ENumber "2" ] ]
+           , [ [ ENumber "3" ] , [ ENumber "4" ] ]
+           ])
+    ]
+]

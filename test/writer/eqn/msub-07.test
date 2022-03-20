@@ -1,0 +1,9 @@
+<<< native
+[ ESub (EIdentifier "D") (EIdentifier "y")
+, ESymbol Rel "="
+, ESub
+    (EIdentifier "D")
+    (EUnder False (EIdentifier "y") (EPhantom (EIdentifier "s")))
+]
+>>> eqn
+D sub y = D sub {y from {hphantom s}}

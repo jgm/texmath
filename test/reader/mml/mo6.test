@@ -1,0 +1,44 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>there exists</mo> 
+    <mrow>
+      <mrow>
+        <mi> &#x003B4;</mi> 
+        <mo>&gt;</mo> 
+        <mn>0</mn> 
+      </mrow> 
+      <mo>such that</mo> 
+      <mrow>
+        <mrow>
+          <mi>f</mi> 
+          <mo> &#x02061;</mo> 
+          <mrow>
+            <mo>(</mo> 
+            <mi>x</mi> 
+            <mo>)</mo> 
+          </mrow> 
+        </mrow> 
+        <mo>&lt;</mo> 
+        <mn>1</mn> 
+      </mrow> 
+    </mrow> 
+  </mrow> </math>
+>>> native
+[ EMathOperator "there exists"
+, EGrouped
+    [ EGrouped [ EIdentifier "\948" , ESymbol Rel ">" , ENumber "0" ]
+    , EMathOperator "such that"
+    , EGrouped
+        [ EGrouped
+            [ EIdentifier "f"
+            , ESymbol Ord "\8289"
+            , EDelimited "(" ")" [ Right (EIdentifier "x") ]
+            ]
+        , ESymbol Rel "<"
+        , ENumber "1"
+        ]
+    ]
+]

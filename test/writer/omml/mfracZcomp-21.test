@@ -1,0 +1,80 @@
+<<< native
+[ EText
+    TextNormal
+    "Inline double up down arrows, text style, thick line\160"
+, EDelimited
+    ""
+    ""
+    [ Left "\8661"
+    , Right
+        (EFraction
+           NormalFrac
+           (EGrouped
+              [ EMathOperator "sin" , ESymbol Ord "\8289" , EIdentifier "\952" ])
+           (EIdentifier "M"))
+    , Left "\8661"
+    ]
+, EText TextNormal "\160the end."
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>Inline double up down arrows, text style, thick line </m:t>
+    </m:r>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="" />
+        <m:endChr m:val="" />
+        <m:sepChr m:val="⇕" />
+        <m:grow />
+      </m:dPr>
+      <m:e />
+      <m:e>
+        <m:f>
+          <m:fPr>
+            <m:type m:val="bar" />
+          </m:fPr>
+          <m:num>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>sin</m:t>
+            </m:r>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>&#8289;</m:t>
+            </m:r>
+            <m:r>
+              <m:t>θ</m:t>
+            </m:r>
+          </m:num>
+          <m:den>
+            <m:r>
+              <m:t>M</m:t>
+            </m:r>
+          </m:den>
+        </m:f>
+      </m:e>
+      <m:e />
+    </m:d>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t> the end.</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

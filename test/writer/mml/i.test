@@ -1,0 +1,681 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "iacute" ] , [ ESymbol Ord "\237" ] ]
+    , [ [ EText TextNormal "Iacute" ] , [ ESymbol Ord "\205" ] ]
+    , [ [ EText TextNormal "ic" ] , [ ESymbol Ord "\8291" ] ]
+    , [ [ EText TextNormal "icirc" ] , [ ESymbol Ord "\238" ] ]
+    , [ [ EText TextNormal "Icirc" ] , [ ESymbol Ord "\206" ] ]
+    , [ [ EText TextNormal "icy" ] , [ ESymbol Ord "\1080" ] ]
+    , [ [ EText TextNormal "Icy" ] , [ ESymbol Ord "\1048" ] ]
+    , [ [ EText TextNormal "Idot" ] , [ ESymbol Ord "\304" ] ]
+    , [ [ EText TextNormal "iecy" ] , [ ESymbol Ord "\1077" ] ]
+    , [ [ EText TextNormal "IEcy" ] , [ ESymbol Ord "\1045" ] ]
+    , [ [ EText TextNormal "iexcl" ] , [ ESymbol Ord "\161" ] ]
+    , [ [ EText TextNormal "iff" ] , [ ESymbol Accent "\8660" ] ]
+    , [ [ EText TextNormal "ifr" ] , [ ESymbol Alpha "\120102" ] ]
+    , [ [ EText TextNormal "Ifr" ] , [ ESymbol Alpha "\8465" ] ]
+    , [ [ EText TextNormal "igrave" ] , [ ESymbol Ord "\236" ] ]
+    , [ [ EText TextNormal "Igrave" ] , [ ESymbol Ord "\204" ] ]
+    , [ [ EText TextNormal "ii" ] , [ ESymbol Ord "\8520" ] ]
+    , [ [ EText TextNormal "iiiint" ] , [ ESymbol Op "\10764" ] ]
+    , [ [ EText TextNormal "iiint" ] , [ ESymbol Op "\8749" ] ]
+    , [ [ EText TextNormal "iinfin" ] , [ ESymbol Ord "\10716" ] ]
+    , [ [ EText TextNormal "iiota" ] , [ ESymbol Alpha "\8489" ] ]
+    , [ [ EText TextNormal "ijlig" ] , [ ESymbol Ord "\307" ] ]
+    , [ [ EText TextNormal "IJlig" ] , [ ESymbol Ord "\306" ] ]
+    , [ [ EText TextNormal "Im" ] , [ ESymbol Alpha "\8465" ] ]
+    , [ [ EText TextNormal "imacr" ] , [ ESymbol Ord "\299" ] ]
+    , [ [ EText TextNormal "Imacr" ] , [ ESymbol Ord "\298" ] ]
+    , [ [ EText TextNormal "image" ] , [ ESymbol Alpha "\8465" ] ]
+    , [ [ EText TextNormal "ImaginaryI" ] , [ ESymbol Ord "\8520" ] ]
+    , [ [ EText TextNormal "imagline" ] , [ ESymbol Alpha "\8464" ] ]
+    , [ [ EText TextNormal "imagpart" ] , [ ESymbol Alpha "\8465" ] ]
+    , [ [ EText TextNormal "imath" ] , [ ESymbol Alpha "\305" ] ]
+    , [ [ EText TextNormal "imof" ] , [ ESymbol Rel "\8887" ] ]
+    , [ [ EText TextNormal "imped" ] , [ ESymbol Ord "\437" ] ]
+    , [ [ EText TextNormal "Implies" ] , [ ESymbol Accent "\8658" ] ]
+    , [ [ EText TextNormal "in" ] , [ ESymbol Rel "\8712" ] ]
+    , [ [ EText TextNormal "incare" ] , [ ESymbol Ord "\8453" ] ]
+    , [ [ EText TextNormal "infin" ] , [ ESymbol Ord "\8734" ] ]
+    , [ [ EText TextNormal "infintie" ] , [ ESymbol Ord "\10717" ] ]
+    , [ [ EText TextNormal "inodot" ] , [ ESymbol Alpha "\305" ] ]
+    , [ [ EText TextNormal "int" ] , [ ESymbol Op "\8747" ] ]
+    , [ [ EText TextNormal "Int" ] , [ ESymbol Op "\8748" ] ]
+    , [ [ EText TextNormal "intcal" ] , [ ESymbol Bin "\8890" ] ]
+    , [ [ EText TextNormal "integers" ] , [ ESymbol Alpha "\8484" ] ]
+    , [ [ EText TextNormal "Integral" ] , [ ESymbol Op "\8747" ] ]
+    , [ [ EText TextNormal "intercal" ] , [ ESymbol Bin "\8890" ] ]
+    , [ [ EText TextNormal "Intersection" ] , [ ESymbol Op "\8898" ] ]
+    , [ [ EText TextNormal "intlarhk" ] , [ ESymbol Op "\10775" ] ]
+    , [ [ EText TextNormal "intprod" ] , [ ESymbol Bin "\10812" ] ]
+    , [ [ EText TextNormal "InvisibleComma" ]
+      , [ ESymbol Ord "\8291" ]
+      ]
+    , [ [ EText TextNormal "InvisibleTimes" ]
+      , [ ESymbol Ord "\8290" ]
+      ]
+    , [ [ EText TextNormal "iocy" ] , [ ESymbol Ord "\1105" ] ]
+    , [ [ EText TextNormal "IOcy" ] , [ ESymbol Ord "\1025" ] ]
+    , [ [ EText TextNormal "iogon" ] , [ ESymbol Ord "\303" ] ]
+    , [ [ EText TextNormal "Iogon" ] , [ ESymbol Ord "\302" ] ]
+    , [ [ EText TextNormal "iopf" ] , [ ESymbol Alpha "\120154" ] ]
+    , [ [ EText TextNormal "Iopf" ] , [ ESymbol Alpha "\120128" ] ]
+    , [ [ EText TextNormal "iota" ] , [ ESymbol Alpha "\953" ] ]
+    , [ [ EText TextNormal "iprod" ] , [ ESymbol Bin "\10812" ] ]
+    , [ [ EText TextNormal "iquest" ] , [ ESymbol Ord "\191" ] ]
+    , [ [ EText TextNormal "iscr" ] , [ ESymbol Alpha "\119998" ] ]
+    , [ [ EText TextNormal "Iscr" ] , [ ESymbol Alpha "\8464" ] ]
+    , [ [ EText TextNormal "isin" ] , [ ESymbol Rel "\8712" ] ]
+    , [ [ EText TextNormal "isindot" ] , [ ESymbol Rel "\8949" ] ]
+    , [ [ EText TextNormal "isinE" ] , [ ESymbol Rel "\8953" ] ]
+    , [ [ EText TextNormal "isins" ] , [ ESymbol Rel "\8948" ] ]
+    , [ [ EText TextNormal "isinsv" ] , [ ESymbol Rel "\8947" ] ]
+    , [ [ EText TextNormal "isinv" ] , [ ESymbol Rel "\8712" ] ]
+    , [ [ EText TextNormal "it" ] , [ ESymbol Ord "\8290" ] ]
+    , [ [ EText TextNormal "itilde" ] , [ ESymbol Ord "\297" ] ]
+    , [ [ EText TextNormal "Itilde" ] , [ ESymbol Ord "\296" ] ]
+    , [ [ EText TextNormal "iukcy" ] , [ ESymbol Ord "\1110" ] ]
+    , [ [ EText TextNormal "Iukcy" ] , [ ESymbol Ord "\1030" ] ]
+    , [ [ EText TextNormal "iuml" ] , [ ESymbol Ord "\239" ] ]
+    , [ [ EText TextNormal "Iuml" ] , [ ESymbol Ord "\207" ] ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">iacute</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>í</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Iacute</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Í</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ic</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>&#8291;</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">icirc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>î</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Icirc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Î</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">icy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>и</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Icy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>И</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Idot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>İ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">iecy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>е</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">IEcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Е</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">iexcl</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>¡</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">iff</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇔</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ifr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔦</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Ifr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℑ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">igrave</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ì</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Igrave</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ì</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ii</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅈ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">iiiint</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⨌</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">iiint</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∭</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">iinfin</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⧜</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">iiota</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>℩</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ijlig</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ĳ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">IJlig</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ĳ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Im</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℑ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">imacr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ī</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Imacr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ī</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">image</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℑ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ImaginaryI</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅈ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">imagline</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℐ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">imagpart</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℑ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">imath</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ı</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">imof</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊷</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">imped</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ƶ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Implies</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇒</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">in</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∈</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">incare</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℅</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">infin</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>∞</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">infintie</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⧝</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">inodot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ı</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">int</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∫</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Int</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∬</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">intcal</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊺</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">integers</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℤ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Integral</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∫</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">intercal</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊺</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Intersection</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋂</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">intlarhk</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⨗</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">intprod</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⨼</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">InvisibleComma</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>&#8291;</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">InvisibleTimes</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>&#8290;</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">iocy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ё</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">IOcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ё</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">iogon</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>į</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Iogon</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Į</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">iopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕚</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Iopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">iota</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ι</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">iprod</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⨼</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">iquest</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>¿</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">iscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝒾</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Iscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℐ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">isin</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∈</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">isindot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋵</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">isinE</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋹</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">isins</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋴</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">isinsv</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋳</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">isinv</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∈</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">it</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>&#8290;</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">itilde</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ĩ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Itilde</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ĩ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">iukcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>і</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Iukcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>І</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">iuml</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ï</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Iuml</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ï</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

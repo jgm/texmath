@@ -1,0 +1,17 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <munder>    <mi mathvariant="normal">BASE</mi>     <mi mathvariant="normal">under script</mi>   </munder>   <mo>=</mo>   <munder>    <mrow>      <munder>        <mrow>          <munder>            <mi mathvariant="normal">BASE</mi>             <mi mathvariant="normal">under script</mi>           </munder>         </mrow>         <mphantom>          <mi mathvariant="normal">fail</mi>
+        </mphantom>       </munder>     </mrow>     <mphantom>      <mi mathvariant="normal">fail</mi>
+    </mphantom>   </munder> </math>
+>>> native
+[ EUnder False (EIdentifier "BASE") (EIdentifier "under script")
+, ESymbol Rel "="
+, EUnder
+    False
+    (EUnder
+       False
+       (EUnder False (EIdentifier "BASE") (EIdentifier "under script"))
+       (EPhantom (EIdentifier "fail")))
+    (EPhantom (EIdentifier "fail"))
+]

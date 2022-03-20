@@ -1,0 +1,23 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EIdentifier "H" ]
+      , [ ESymbol Accent "\8594" ]
+      , [ EIdentifier "G" ]
+      ]
+    , [ [ ESymbol Rel "\8595" ]
+      , [ ESpace (3 % 1) ]
+      , [ ESymbol Rel "\8595" ]
+      ]
+    , [ [ EIdentifier "K" ]
+      , [ ESymbol Accent "\8594" ]
+      , [ EIdentifier "L" ]
+      ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ H above \[u2193] above K }
+ccol{ -> above {fwd 300} above -> }
+ccol{ G above \[u2193] above L }
+}

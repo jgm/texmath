@@ -1,0 +1,24 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+    ]
+, ESymbol Rel "="
+, EDelimited
+    "("
+    ")"
+    [ Right
+        (EFraction NormalFrac (EIdentifier "\945") (EIdentifier "\946"))
+    ]
+, ESymbol Rel "="
+, EDelimited
+    "["
+    ")"
+    [ Right
+        (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+    ]
+]
+>>> eqn
+left ( {a + b} right ) = left ( alpha over beta right ) = left [ {a + b} right )

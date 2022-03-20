@@ -1,0 +1,1002 @@
+<<< native
+[ EArray
+    [ AlignLeft ]
+    [ [ [ EText TextNormal "default: (accent=true)" ] ]
+    , [ [ EGrouped
+            [ EOver False (EIdentifier "H") (ESymbol Accent "'")
+            , EOver False (EIdentifier "H") (ESymbol Accent "^")
+            , EOver False (EIdentifier "H") (ESymbol Accent "_")
+            , EOver False (EIdentifier "H") (ESymbol Accent "`")
+            , EOver False (EIdentifier "H") (ESymbol Accent "~")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\168")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\175")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\180")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\184")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\710")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\711")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\728")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\729")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\730")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\732")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\733")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\770")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\785")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8254")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8411")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8412")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8592")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8594")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8596")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8636")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8637")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8640")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8641")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\9140")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\9141")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\9180")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\9181")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\9182")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\9183")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\10574")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\10576")
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "accent=false:" ] ]
+    , [ [ EGrouped
+            [ EOver False (EIdentifier "H") (ESymbol Ord "'")
+            , EOver False (EIdentifier "H") (ESymbol Ord "^")
+            , EOver False (EIdentifier "H") (ESymbol Ord "_")
+            , EOver False (EIdentifier "H") (ESymbol Ord "`")
+            , EOver False (EIdentifier "H") (ESymbol Ord "~")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\168")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\175")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\180")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\184")
+            , EOver False (EIdentifier "H") (ESymbol Alpha "\710")
+            , EOver False (EIdentifier "H") (ESymbol Alpha "\711")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\728")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\729")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\730")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\732")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\733")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\770")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\785")
+            , EOver False (EIdentifier "H") (ESymbol Ord "\8254")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8411")
+            , EOver False (EIdentifier "H") (ESymbol Accent "\8412")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8592")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8594")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8596")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8636")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8637")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8640")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\8641")
+            , EOver False (EIdentifier "H") (ESymbol TOver "\9140")
+            , EOver False (EIdentifier "H") (ESymbol TUnder "\9141")
+            , EOver False (EIdentifier "H") (ESymbol TOver "\9180")
+            , EOver False (EIdentifier "H") (ESymbol TUnder "\9181")
+            , EOver False (EIdentifier "H") (ESymbol TOver "\9182")
+            , EOver False (EIdentifier "H") (ESymbol TUnder "\9183")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\10574")
+            , EOver False (EIdentifier "H") (ESymbol Rel "\10576")
+            ]
+        ]
+      ]
+    ]
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:m>
+      <m:mPr>
+        <m:baseJc m:val="center" />
+        <m:plcHide m:val="1" />
+        <m:mcs>
+          <m:mc>
+            <m:mcPr>
+              <m:mcJc m:val="left" />
+              <m:count m:val="1" />
+            </m:mcPr>
+          </m:mc>
+        </m:mcs>
+      </m:mPr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>default: (accent=true)</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="&#39;" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="^" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="_" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="`" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="~" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="¨" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="¯" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="´" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="¸" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="ˆ" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="ˇ" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="˘" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="˙" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="˚" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="˜" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="˝" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="̂" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="̑" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="‾" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⃛" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⃜" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="←" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="→" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="↔" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="↼" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="↽" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⇀" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⇁" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⎴" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⎵" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⏜" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⏝" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⏞" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⏟" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⥎" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⥐" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:nor />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>accent=false:</m:t>
+          </m:r>
+        </m:e>
+      </m:mr>
+      <m:mr>
+        <m:e>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>&#39;</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>^</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>_</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>`</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>~</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>¨</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>¯</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>´</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>¸</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>ˆ</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>ˇ</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>˘</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>˙</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>˚</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>˜</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>˝</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="̂" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="̑" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>‾</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⃛" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:acc>
+            <m:accPr>
+              <m:chr m:val="⃜" />
+            </m:accPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:acc>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>←</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>→</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>↔</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>↼</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>↽</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>⇀</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>⇁</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:groupChr>
+            <m:groupChrPr>
+              <m:chr m:val="⎴" />
+              <m:pos m:val="top" />
+              <m:vertJc m:val="bot" />
+            </m:groupChrPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:groupChr>
+          <m:groupChr>
+            <m:groupChrPr>
+              <m:chr m:val="⎵" />
+              <m:pos m:val="bot" />
+              <m:vertJc m:val="top" />
+            </m:groupChrPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:groupChr>
+          <m:groupChr>
+            <m:groupChrPr>
+              <m:chr m:val="⏜" />
+              <m:pos m:val="top" />
+              <m:vertJc m:val="bot" />
+            </m:groupChrPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:groupChr>
+          <m:groupChr>
+            <m:groupChrPr>
+              <m:chr m:val="⏝" />
+              <m:pos m:val="bot" />
+              <m:vertJc m:val="top" />
+            </m:groupChrPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:groupChr>
+          <m:groupChr>
+            <m:groupChrPr>
+              <m:chr m:val="⏞" />
+              <m:pos m:val="top" />
+              <m:vertJc m:val="bot" />
+            </m:groupChrPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:groupChr>
+          <m:groupChr>
+            <m:groupChrPr>
+              <m:chr m:val="⏟" />
+              <m:pos m:val="bot" />
+              <m:vertJc m:val="top" />
+            </m:groupChrPr>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+          </m:groupChr>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>⥎</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+          <m:limUpp>
+            <m:e>
+              <m:r>
+                <m:t>H</m:t>
+              </m:r>
+            </m:e>
+            <m:lim>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>⥐</m:t>
+              </m:r>
+            </m:lim>
+          </m:limUpp>
+        </m:e>
+      </m:mr>
+    </m:m>
+  </m:oMath>
+</m:oMathPara>

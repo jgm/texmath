@@ -1,0 +1,11 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mover>    <mi mathvariant="normal">B</mi>     <mi mathvariant="normal">long over script</mi>   </mover>   <mo>=</mo>   <mover>    <mrow>      <mi mathvariant="normal">B</mi>
+    </mrow>     <mrow>      <mi mathvariant="normal">long over script</mi>
+    </mrow>   </mover> </math>
+>>> native
+[ EOver False (EIdentifier "B") (EIdentifier "long over script")
+, ESymbol Rel "="
+, EOver False (EIdentifier "B") (EIdentifier "long over script")
+]

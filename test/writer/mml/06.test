@@ -1,0 +1,90 @@
+<<< native
+[ EUnderover
+    True
+    (ESymbol Op "\8721")
+    (EGrouped [ EIdentifier "m" , ESymbol Rel "=" , ENumber "1" ])
+    (ESymbol Ord "\8734")
+, EUnderover
+    True
+    (ESymbol Op "\8721")
+    (EGrouped [ EIdentifier "n" , ESymbol Rel "=" , ENumber "1" ])
+    (ESymbol Ord "\8734")
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESuper (EIdentifier "m") (ENumber "2")
+       , ESpace (1 % 6)
+       , EIdentifier "n"
+       ])
+    (EGrouped
+       [ ESuper (ENumber "3") (EIdentifier "m")
+       , EDelimited
+           "("
+           ")"
+           [ Right (EIdentifier "m")
+           , Right (ESpace (1 % 6))
+           , Right (ESuper (ENumber "3") (EIdentifier "n"))
+           , Right (ESymbol Bin "+")
+           , Right (EIdentifier "n")
+           , Right (ESpace (1 % 6))
+           , Right (ESuper (ENumber "3") (EIdentifier "m"))
+           ]
+       ])
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <munderover>
+      <mo>∑</mo>
+      <mrow>
+        <mi>m</mi>
+        <mo>=</mo>
+        <mn>1</mn>
+      </mrow>
+      <mo accent="false">∞</mo>
+    </munderover>
+    <munderover>
+      <mo>∑</mo>
+      <mrow>
+        <mi>n</mi>
+        <mo>=</mo>
+        <mn>1</mn>
+      </mrow>
+      <mo accent="false">∞</mo>
+    </munderover>
+    <mfrac>
+      <mrow>
+        <msup>
+          <mi>m</mi>
+          <mn>2</mn>
+        </msup>
+        <mspace width="0.167em" />
+        <mi>n</mi>
+      </mrow>
+      <mrow>
+        <msup>
+          <mn>3</mn>
+          <mi>m</mi>
+        </msup>
+        <mrow>
+          <mo stretchy="true" form="prefix">(</mo>
+          <mi>m</mi>
+          <mspace width="0.167em" />
+          <msup>
+            <mn>3</mn>
+            <mi>n</mi>
+          </msup>
+          <mo>+</mo>
+          <mi>n</mi>
+          <mspace width="0.167em" />
+          <msup>
+            <mn>3</mn>
+            <mi>m</mi>
+          </msup>
+          <mo stretchy="true" form="postfix">)</mo>
+        </mrow>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>

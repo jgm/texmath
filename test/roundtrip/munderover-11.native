@@ -1,0 +1,17 @@
+[ EUnderover
+    False (EIdentifier "BASE") (EIdentifier "s") (EIdentifier "t")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (EIdentifier "BASE")
+    (EGrouped
+       [ EPhantom (ENumber "1")
+       , EIdentifier "s"
+       , EPhantom (ENumber "1")
+       ])
+    (EGrouped
+       [ EPhantom (ENumber "1")
+       , EIdentifier "t"
+       , EPhantom (ENumber "1")
+       ])
+]

@@ -1,0 +1,18 @@
+<<< native
+[ EUnder
+    True
+    (EMathOperator "lim")
+    (EGrouped
+       [ EIdentifier "z"
+       , ESymbol Rel "\8594"
+       , ESub (EIdentifier "z") (ENumber "0")
+       ])
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "z") ]
+, ESymbol Rel "="
+, EIdentifier "f"
+, EDelimited
+    "(" ")" [ Right (ESub (EIdentifier "z") (ENumber "0")) ]
+]
+>>> eqn
+lim from {z -> z sub 0} f left ( z right ) = f left ( z sub 0 right )

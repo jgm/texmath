@@ -1,0 +1,40 @@
+<<< native
+[ ENumber "2"
+, ESymbol Bin "+"
+, ESqrt
+    (EGrouped [ EIdentifier "x" , ESymbol Bin "+" , ENumber "1" ])
+, ESpace (0 % 1)
+, EGrouped
+    [ ENumber "2"
+    , ESymbol Bin "+"
+    , ESqrt
+        (EGrouped [ EIdentifier "x" , ESymbol Bin "+" , ENumber "1" ])
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>2</mn>
+    <mo>+</mo>
+    <msqrt>
+      <mrow>
+        <mi>x</mi>
+        <mo>+</mo>
+        <mn>1</mn>
+      </mrow>
+    </msqrt>
+    <mspace width="0.0em" />
+    <mrow>
+      <mn>2</mn>
+      <mo>+</mo>
+      <msqrt>
+        <mrow>
+          <mi>x</mi>
+          <mo>+</mo>
+          <mn>1</mn>
+        </mrow>
+      </msqrt>
+    </mrow>
+  </mrow>
+</math>

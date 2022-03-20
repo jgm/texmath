@@ -1,0 +1,18 @@
+<<< native
+[ EIdentifier "f"
+, ESymbol Ord "\8289"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>f</mi>
+    <mi>&#8289;</mi>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>x</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+  </mrow>
+</math>

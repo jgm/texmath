@@ -1,0 +1,10 @@
+<<< native
+[ EIdentifier "x"
+, ESpace (58 % 25)
+, EIdentifier "M"
+, ESpace (58 % 25)
+, EIdentifier "x"
+, ESpace (0 % 1)
+]
+>>> tex
+x\mspace{41mu} M\mspace{41mu} x

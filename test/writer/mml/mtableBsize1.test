@@ -1,0 +1,29 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ ESymbol Accent "\8592" ] , [ ENumber "1" ] ]
+    , [ [ EText TextNormal "a long cell" ] , [ ENumber "1" ] ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mo>←</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mn>1</mn>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">a long cell</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mn>1</mn>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

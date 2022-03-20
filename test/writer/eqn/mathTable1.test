@@ -1,0 +1,23 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EFraction NormalFrac (EIdentifier "xxx") (EIdentifier "y") ]
+      , [ EIdentifier "bbbb" ]
+      , [ EIdentifier "c" ]
+      ]
+    , [ [ EFraction NormalFrac (EIdentifier "x") (EIdentifier "y") ]
+      , [ EIdentifier "y" ]
+      , [ EIdentifier "z" ]
+      ]
+    , [ [ EFraction NormalFrac (EIdentifier "x") (EIdentifier "y") ]
+      , [ ENumber "2" ]
+      , [ ENumber "333333" ]
+      ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ {xxx over y} above {x over y} above {x over y} }
+ccol{ bbbb above y above 2 }
+ccol{ c above z above 333333 }
+}

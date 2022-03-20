@@ -1,0 +1,30 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msqrt>
+      <mi>x</mi> 
+      <mo>-</mo> 
+      <mn>3</mn> 
+    </msqrt> 
+    <mo>+</mo> 
+    <msqrt>
+      <mrow>
+        <mi>x</mi> 
+        <mo>-</mo> 
+        <mn>3</mn> 
+      </mrow> 
+    </msqrt> 
+    <mo>+</mo> 
+    <msqrt></msqrt> 
+  </mrow> </math>
+>>> native
+[ ESqrt
+    (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ])
+, ESymbol Bin "+"
+, ESqrt
+    (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ])
+, ESymbol Bin "+"
+, ESqrt (EGrouped [])
+]

@@ -1,0 +1,48 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (EGrouped [ EIdentifier "x" , ESpace (7 % 20) , EIdentifier "y" ])
+    (ENumber "2")
+, ESymbol Bin "+"
+, EFraction
+    NormalFrac
+    (ENumber "2")
+    (EGrouped [ EIdentifier "x" , ESpace (0 % 1) , EIdentifier "y" ])
+, ESymbol Bin "+"
+, EFraction
+    NormalFrac
+    (EGrouped [ EIdentifier "x" , ESpace (0 % 1) , EIdentifier "y" ])
+    (ENumber "2")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <mrow>
+        <mi>x</mi>
+        <mspace width="0.35em" />
+        <mi>y</mi>
+      </mrow>
+      <mn>2</mn>
+    </mfrac>
+    <mo>+</mo>
+    <mfrac>
+      <mn>2</mn>
+      <mrow>
+        <mi>x</mi>
+        <mspace width="0.0em" />
+        <mi>y</mi>
+      </mrow>
+    </mfrac>
+    <mo>+</mo>
+    <mfrac>
+      <mrow>
+        <mi>x</mi>
+        <mspace width="0.0em" />
+        <mi>y</mi>
+      </mrow>
+      <mn>2</mn>
+    </mfrac>
+  </mrow>
+</math>

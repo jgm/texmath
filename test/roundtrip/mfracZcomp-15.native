@@ -1,0 +1,15 @@
+[ EText TextNormal "Inline down arrows, text style, no line\160"
+, EDelimited
+    ""
+    ""
+    [ Left "\8595"
+    , Right
+        (EFraction
+           NormalFrac
+           (EGrouped
+              [ EMathOperator "sin" , ESymbol Ord "\8289" , EIdentifier "\952" ])
+           (EIdentifier "M"))
+    , Left "\8595"
+    ]
+, EText TextNormal "\160the end."
+]

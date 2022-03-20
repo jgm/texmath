@@ -1,0 +1,739 @@
+<<< native
+[ EArray
+    [ AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    ]
+    [ [ []
+      , [ EText TextNormal "1D5D" ]
+      , [ EText TextNormal "1D5E" ]
+      , [ EText TextNormal "1D5F" ]
+      , [ EText TextNormal "1D60" ]
+      , [ EText TextNormal "1D75" ]
+      , [ EText TextNormal "1D76" ]
+      , [ EText TextNormal "1D77" ]
+      , [ EText TextNormal "1D78" ]
+      , [ EText TextNormal "1D7E" ]
+      , [ EText TextNormal "1D7F" ]
+      ]
+    , [ [ EText TextNormal "0" ]
+      , []
+      , [ ESymbol Alpha "\120288" ]
+      , [ ESymbol Alpha "\120304" ]
+      , [ ESymbol Alpha "\120320" ]
+      , []
+      , [ ESymbol Alpha "\120672" ]
+      , [ ESymbol Alpha "\120688" ]
+      , [ ESymbol Alpha "\120704" ]
+      , []
+      , [ ESymbol Ord "\120816" ]
+      ]
+    , [ [ EText TextNormal "1" ]
+      , []
+      , [ ESymbol Alpha "\120289" ]
+      , [ ESymbol Alpha "\120305" ]
+      , [ ESymbol Alpha "\120321" ]
+      , []
+      , [ ESymbol Alpha "\120673" ]
+      , [ ESymbol Alpha "\120689" ]
+      , [ ESymbol Alpha "\120705" ]
+      , []
+      , [ ESymbol Ord "\120817" ]
+      ]
+    , [ [ EText TextNormal "2" ]
+      , []
+      , [ ESymbol Alpha "\120290" ]
+      , [ ESymbol Alpha "\120306" ]
+      , [ ESymbol Alpha "\120322" ]
+      , []
+      , [ ESymbol Alpha "\120674" ]
+      , [ ESymbol Alpha "\120690" ]
+      , [ ESymbol Alpha "\120706" ]
+      , []
+      , [ ESymbol Ord "\120818" ]
+      ]
+    , [ [ EText TextNormal "3" ]
+      , []
+      , [ ESymbol Alpha "\120291" ]
+      , [ ESymbol Alpha "\120307" ]
+      , [ ESymbol Alpha "\120323" ]
+      , []
+      , [ ESymbol Alpha "\120675" ]
+      , [ ESymbol Alpha "\120691" ]
+      , [ ESymbol Alpha "\120707" ]
+      , []
+      , [ ESymbol Ord "\120819" ]
+      ]
+    , [ [ EText TextNormal "4" ]
+      , [ ESymbol Alpha "\120276" ]
+      , [ ESymbol Alpha "\120292" ]
+      , [ ESymbol Alpha "\120308" ]
+      , [ ESymbol Alpha "\120324" ]
+      , []
+      , [ ESymbol Alpha "\120676" ]
+      , [ ESymbol Alpha "\120692" ]
+      , [ ESymbol Alpha "\120708" ]
+      , []
+      , [ ESymbol Ord "\120820" ]
+      ]
+    , [ [ EText TextNormal "5" ]
+      , [ ESymbol Alpha "\120277" ]
+      , [ ESymbol Alpha "\120293" ]
+      , [ ESymbol Alpha "\120309" ]
+      , [ ESymbol Alpha "\120325" ]
+      , []
+      , [ ESymbol Alpha "\120677" ]
+      , [ ESymbol Alpha "\120693" ]
+      , [ ESymbol Alpha "\120709" ]
+      , []
+      , [ ESymbol Ord "\120821" ]
+      ]
+    , [ [ EText TextNormal "6" ]
+      , [ ESymbol Alpha "\120278" ]
+      , [ ESymbol Alpha "\120294" ]
+      , [ ESymbol Alpha "\120310" ]
+      , [ ESymbol Alpha "\120326" ]
+      , [ ESymbol Alpha "\120662" ]
+      , [ ESymbol Alpha "\120678" ]
+      , [ ESymbol Alpha "\120694" ]
+      , [ ESymbol Alpha "\120710" ]
+      , []
+      , []
+      ]
+    , [ [ EText TextNormal "7" ]
+      , [ ESymbol Alpha "\120279" ]
+      , [ ESymbol Alpha "\120295" ]
+      , [ ESymbol Alpha "\120311" ]
+      , [ ESymbol Alpha "\120327" ]
+      , [ ESymbol Alpha "\120663" ]
+      , [ ESymbol Alpha "\120679" ]
+      , [ ESymbol Alpha "\120695" ]
+      , [ ESymbol Alpha "\120711" ]
+      , []
+      , []
+      ]
+    , [ [ EText TextNormal "8" ]
+      , [ ESymbol Alpha "\120280" ]
+      , [ ESymbol Alpha "\120296" ]
+      , [ ESymbol Alpha "\120312" ]
+      , []
+      , [ ESymbol Alpha "\120664" ]
+      , [ ESymbol Alpha "\120680" ]
+      , [ ESymbol Alpha "\120696" ]
+      , [ ESymbol Alpha "\120712" ]
+      , []
+      , []
+      ]
+    , [ [ EText TextNormal "9" ]
+      , [ ESymbol Alpha "\120281" ]
+      , [ ESymbol Alpha "\120297" ]
+      , [ ESymbol Alpha "\120313" ]
+      , []
+      , [ ESymbol Alpha "\120665" ]
+      , [ ESymbol Alpha "\120681" ]
+      , [ ESymbol Alpha "\120697" ]
+      , [ ESymbol Ord "\120713" ]
+      , []
+      , []
+      ]
+    , [ [ EText TextNormal "A" ]
+      , [ ESymbol Alpha "\120282" ]
+      , [ ESymbol Alpha "\120298" ]
+      , [ ESymbol Alpha "\120314" ]
+      , []
+      , [ ESymbol Alpha "\120666" ]
+      , [ ESymbol Alpha "\120682" ]
+      , [ ESymbol Alpha "\120698" ]
+      , [ ESymbol Alpha "\120714" ]
+      , []
+      , []
+      ]
+    , [ [ EText TextNormal "B" ]
+      , [ ESymbol Alpha "\120283" ]
+      , [ ESymbol Alpha "\120299" ]
+      , [ ESymbol Alpha "\120315" ]
+      , []
+      , [ ESymbol Alpha "\120667" ]
+      , [ ESymbol Alpha "\120683" ]
+      , [ ESymbol Alpha "\120699" ]
+      , [ ESymbol Alpha "\120715" ]
+      , []
+      , []
+      ]
+    , [ [ EText TextNormal "C" ]
+      , [ ESymbol Alpha "\120284" ]
+      , [ ESymbol Alpha "\120300" ]
+      , [ ESymbol Alpha "\120316" ]
+      , []
+      , [ ESymbol Alpha "\120668" ]
+      , [ ESymbol Alpha "\120684" ]
+      , [ ESymbol Alpha "\120700" ]
+      , [ ESymbol Alpha "\120716" ]
+      , [ ESymbol Ord "\120812" ]
+      , []
+      ]
+    , [ [ EText TextNormal "D" ]
+      , [ ESymbol Alpha "\120285" ]
+      , [ ESymbol Alpha "\120301" ]
+      , [ ESymbol Alpha "\120317" ]
+      , []
+      , [ ESymbol Alpha "\120669" ]
+      , [ ESymbol Alpha "\120685" ]
+      , [ ESymbol Alpha "\120701" ]
+      , [ ESymbol Alpha "\120717" ]
+      , [ ESymbol Ord "\120813" ]
+      , []
+      ]
+    , [ [ EText TextNormal "E" ]
+      , [ ESymbol Alpha "\120286" ]
+      , [ ESymbol Alpha "\120302" ]
+      , [ ESymbol Alpha "\120318" ]
+      , []
+      , [ ESymbol Alpha "\120670" ]
+      , [ ESymbol Alpha "\120686" ]
+      , [ ESymbol Alpha "\120702" ]
+      , [ ESymbol Alpha "\120718" ]
+      , [ ESymbol Ord "\120814" ]
+      , []
+      ]
+    , [ [ EText TextNormal "F" ]
+      , [ ESymbol Alpha "\120287" ]
+      , [ ESymbol Alpha "\120303" ]
+      , [ ESymbol Alpha "\120319" ]
+      , []
+      , [ ESymbol Alpha "\120671" ]
+      , [ ESymbol Ord "\120687" ]
+      , [ ESymbol Alpha "\120703" ]
+      , [ ESymbol Alpha "\120719" ]
+      , [ ESymbol Ord "\120815" ]
+      , []
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1D5D</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1D5E</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1D5F</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1D60</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1D75</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1D76</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1D77</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1D78</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1D7E</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1D7F</mtext>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">0</mtext>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝗠</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗰</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝘀</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝝠</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝰</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝞀</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mi>𝟰</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1</mtext>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝗡</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗱</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝘁</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝝡</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝱</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝞁</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mi>𝟱</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">2</mtext>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝗢</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗲</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝘂</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝝢</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝲</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝞂</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mi>𝟲</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">3</mtext>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝗣</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗳</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝘃</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝝣</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝳</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝞃</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mi>𝟳</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">4</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗔</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗤</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗴</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝘄</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝝤</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝴</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝞄</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mi>𝟴</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">5</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗕</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗥</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗵</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝘅</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝝥</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝵</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝞅</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mi>𝟵</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">6</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗖</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗦</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗶</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝘆</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝖</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝦</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝶</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝞆</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center" />
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">7</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗗</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗧</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗷</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝘇</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝗</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝧</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝷</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝞇</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center" />
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">8</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗘</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗨</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗸</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝝘</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝨</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝸</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝞈</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center" />
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">9</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗙</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗩</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗹</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝝙</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝩</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝹</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>𝞉</mi>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center" />
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">A</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗚</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗪</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗺</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝝚</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝪</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝺</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝞊</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center" />
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">B</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗛</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗫</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗻</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝝛</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝫</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝻</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝞋</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center" />
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">C</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗜</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗬</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗼</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝝜</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝬</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝼</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝞌</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>𝟬</mi>
+      </mtd>
+      <mtd columnalign="center" />
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">D</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗝</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗭</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗽</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝝝</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝭</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝽</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝞍</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>𝟭</mi>
+      </mtd>
+      <mtd columnalign="center" />
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">E</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗞</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗮</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗾</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝝞</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝮</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝾</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝞎</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>𝟮</mi>
+      </mtd>
+      <mtd columnalign="center" />
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">F</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗟</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗯</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝗿</mo>
+      </mtd>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mo>𝝟</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>𝝯</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝝿</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝞏</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>𝟯</mi>
+      </mtd>
+      <mtd columnalign="center" />
+    </mtr>
+  </mtable>
+</math>

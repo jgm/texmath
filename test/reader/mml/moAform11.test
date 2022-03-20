@@ -1,0 +1,34 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>-</mo> 
+    <mi>x</mi> 
+  </mrow> 
+  <mrow>
+    <mo form="infix">-</mo> 
+    <mi>x</mi> 
+  </mrow> 
+  <mrow>
+    <mo form="prefix">-</mo> 
+    <mi>x</mi> 
+  </mrow> 
+  <mrow>
+    <mo form="postfix">-</mo> 
+    <mi>x</mi> 
+  </mrow> 
+  <mo>-</mo> 
+  <mi>x</mi> 
+  <mo form="prefix">-</mo> 
+  <mi>x</mi> </math>
+>>> native
+[ EGrouped [ ESymbol Bin "-" , EIdentifier "x" ]
+, EGrouped [ ESymbol Bin "-" , EIdentifier "x" ]
+, EGrouped [ ESymbol Bin "-" , EIdentifier "x" ]
+, EGrouped [ ESymbol Bin "-" , EIdentifier "x" ]
+, ESymbol Bin "-"
+, EIdentifier "x"
+, ESymbol Bin "-"
+, EIdentifier "x"
+]

@@ -1,0 +1,26 @@
+<<< native
+[ EText TextNormal "Inline, display style, normal line\160"
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ EMathOperator "ln" , ESymbol Ord "\8289" , EIdentifier "x" ])
+    (EIdentifier "y")
+, EText
+    TextNormal ", numerator and denominator should render normal size."
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext mathvariant="normal">Inline, display style, normal line </mtext>
+    <mfrac>
+      <mrow>
+        <mo>ln</mo>
+        <mi>&#8289;</mi>
+        <mi>x</mi>
+      </mrow>
+      <mi>y</mi>
+    </mfrac>
+    <mtext mathvariant="normal">, numerator and denominator should render normal size.</mtext>
+  </mrow>
+</math>

@@ -1,0 +1,22 @@
+<<< native
+[ EUnder
+    False
+    (EIdentifier "BASE")
+    (EFraction
+       NormalFrac
+       (EIdentifier "first under script")
+       (EIdentifier "second one"))
+, ESymbol Rel "="
+, EUnder
+    False
+    (EUnder
+       False
+       (EIdentifier "BASE")
+       (EFraction
+          NormalFrac
+          (EIdentifier "first under script")
+          (EIdentifier "second one")))
+    (EPhantom (EIdentifier "fail"))
+]
+>>> tex
+\underset{\frac{first\ under\ script}{second\ one}}{BASE} = \underset{\phantom{fail}}{\underset{\frac{first\ under\ script}{second\ one}}{BASE}}

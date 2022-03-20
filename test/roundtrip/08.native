@@ -1,0 +1,30 @@
+[ EDelimited
+    "|"
+    "|"
+    [ Right (EOver False (EIdentifier "z") (ESymbol Accent "\8254")) ]
+, ESymbol Rel "="
+, EDelimited "|" "|" [ Right (EIdentifier "z") ]
+, ESymbol Pun ","
+, EDelimited
+    "|"
+    "|"
+    [ Right
+        (ESuper
+           (EDelimited
+              "("
+              ")"
+              [ Right (EOver False (EIdentifier "z") (ESymbol Accent "\8254")) ])
+           (EIdentifier "n"))
+    ]
+, ESymbol Rel "="
+, ESuper
+    (EDelimited "|" "|" [ Right (EIdentifier "z") ]) (EIdentifier "n")
+, ESymbol Pun ","
+, EMathOperator "arg"
+, EDelimited
+    "(" ")" [ Right (ESuper (EIdentifier "z") (EIdentifier "n")) ]
+, ESymbol Rel "="
+, EIdentifier "n"
+, EMathOperator "arg"
+, EDelimited "(" ")" [ Right (EIdentifier "z") ]
+]

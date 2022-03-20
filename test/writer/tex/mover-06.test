@@ -1,0 +1,11 @@
+<<< native
+[ EIdentifier "- middle -"
+, ESymbol Rel "="
+, EOver
+    False
+    (EOver
+       False (EIdentifier "- middle -") (EPhantom (EIdentifier "fail")))
+    (EPhantom (EIdentifier "fail"))
+]
+>>> tex
+{-\ middle\ -} = \overset{\phantom{fail}}{\overset{\phantom{fail}}{-\ middle\ -}}

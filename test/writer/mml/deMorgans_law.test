@@ -1,0 +1,100 @@
+<<< native
+[ ESymbol Op "\172"
+, EDelimited
+    "("
+    ")"
+    [ Right (EIdentifier "p")
+    , Right (ESymbol Bin "\8743")
+    , Right (EIdentifier "q")
+    ]
+, ESymbol Rel "\8660"
+, EDelimited
+    "(" ")" [ Right (ESymbol Op "\172") , Right (EIdentifier "p") ]
+, ESymbol Bin "\8744"
+, EDelimited
+    "(" ")" [ Right (ESymbol Op "\172") , Right (EIdentifier "q") ]
+, EOver
+    False
+    (EGrouped
+       [ EUnderover
+           True
+           (ESymbol Op "\8899")
+           (EGrouped [ EIdentifier "i" , ESymbol Rel "=" , ENumber "1" ])
+           (EIdentifier "n")
+       , ESub (EIdentifier "A") (EIdentifier "i")
+       ])
+    (ESymbol TOver "\175")
+, ESymbol Rel "="
+, EUnderover
+    True
+    (ESymbol Op "\8898")
+    (EGrouped [ EIdentifier "i" , ESymbol Rel "=" , ENumber "1" ])
+    (EIdentifier "n")
+, EOver
+    False
+    (ESub (EIdentifier "A") (EIdentifier "i"))
+    (ESymbol TOver "\175")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>¬</mo>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>p</mi>
+      <mo>∧</mo>
+      <mi>q</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mo>⇔</mo>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mo>¬</mo>
+      <mi>p</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mo>∨</mo>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mo>¬</mo>
+      <mi>q</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mover>
+      <mrow>
+        <munderover>
+          <mo>⋃</mo>
+          <mrow>
+            <mi>i</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mi>n</mi>
+        </munderover>
+        <msub>
+          <mi>A</mi>
+          <mi>i</mi>
+        </msub>
+      </mrow>
+      <mo accent="true">¯</mo>
+    </mover>
+    <mo>=</mo>
+    <munderover>
+      <mo>⋂</mo>
+      <mrow>
+        <mi>i</mi>
+        <mo>=</mo>
+        <mn>1</mn>
+      </mrow>
+      <mi>n</mi>
+    </munderover>
+    <mover>
+      <msub>
+        <mi>A</mi>
+        <mi>i</mi>
+      </msub>
+      <mo accent="true">¯</mo>
+    </mover>
+  </mrow>
+</math>

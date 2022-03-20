@@ -1,0 +1,13 @@
+<<< native
+[ ESymbol Op "\8747"
+, EIdentifier "f"
+, EDelimited
+    "("
+    ")"
+    [ Right (EFraction NormalFrac (EIdentifier "x") (ENumber "2")) ]
+, ESpace (1 % 9)
+, ESymbol Ord "\8518"
+, EIdentifier "x"
+]
+>>> eqn
+int f left ( x over 2 right ) ^ \[u2146] x

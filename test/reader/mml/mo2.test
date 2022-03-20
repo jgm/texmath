@@ -1,0 +1,11 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>(</mo> 
+    <mi>x</mi> 
+    <mo>)</mo> 
+  </mrow> </math>
+>>> native
+[ EDelimited "(" ")" [ Right (EIdentifier "x") ] ]

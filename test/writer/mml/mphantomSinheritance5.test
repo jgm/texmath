@@ -1,0 +1,53 @@
+<<< native
+[ EGrouped
+    [ EIdentifier "A"
+    , EPhantom (EIdentifier "A")
+    , EIdentifier "A"
+    , EGrouped
+        [ EPhantom
+            (EGrouped [ EIdentifier "A" , ESymbol Bin "+" , EIdentifier "A" ])
+        , EIdentifier "A"
+        ]
+    ]
+, EIdentifier "A"
+, EIdentifier "A"
+, EIdentifier "A"
+, EGrouped
+    [ EIdentifier "A"
+    , ESymbol Bin "+"
+    , EIdentifier "A"
+    , EIdentifier "A"
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mi>A</mi>
+      <mphantom>
+        <mi>A</mi>
+      </mphantom>
+      <mi>A</mi>
+      <mrow>
+        <mphantom>
+          <mrow>
+            <mi>A</mi>
+            <mo>+</mo>
+            <mi>A</mi>
+          </mrow>
+        </mphantom>
+        <mi>A</mi>
+      </mrow>
+    </mrow>
+    <mi>A</mi>
+    <mi>A</mi>
+    <mi>A</mi>
+    <mrow>
+      <mi>A</mi>
+      <mo>+</mo>
+      <mi>A</mi>
+      <mi>A</mi>
+    </mrow>
+  </mrow>
+</math>

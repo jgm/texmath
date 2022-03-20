@@ -1,0 +1,16 @@
+<<< native
+[ ERoot
+    (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ])
+    (ENumber "3")
+, ESymbol Bin "+"
+, ERoot (EIdentifier "x") (ENumber "3")
+, ESymbol Bin "+"
+, ERoot
+    (EFraction NormalFrac (ENumber "3") (ENumber "2"))
+    (EFraction
+       NormalFrac
+       (ERoot (ENumber "3") (EGrouped [ ENumber "3" , EIdentifier "x" ]))
+       (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ]))
+]
+>>> eqn
+"" sup {x - 3} sqrt 3 + "" sup x sqrt 3 + "" sup {3 over 2} sqrt {{"" sup 3 sqrt {3 x}} over {x - 3}}

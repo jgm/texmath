@@ -1,0 +1,90 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [] , [ EText TextNormal "258" ] , [ EText TextNormal "259" ] ]
+    , [ [ EText TextNormal "0" ]
+      , [ ESymbol Ord "\9600" ]
+      , [ ESymbol Ord "\9616" ]
+      ]
+    , [ [ EText TextNormal "1" ]
+      , [ ESymbol Ord "\9601" ]
+      , [ ESymbol Ord "\9617" ]
+      ]
+    , [ [ EText TextNormal "2" ]
+      , [ ESymbol Ord "\9602" ]
+      , [ ESymbol Ord "\9618" ]
+      ]
+    , [ [ EText TextNormal "3" ]
+      , [ ESymbol Ord "\9603" ]
+      , [ ESymbol Ord "\9619" ]
+      ]
+    , [ [ EText TextNormal "4" ]
+      , [ ESymbol Ord "\9604" ]
+      , [ ESymbol Ord "\9620" ]
+      ]
+    , [ [ EText TextNormal "5" ]
+      , [ ESymbol Ord "\9605" ]
+      , [ ESymbol Ord "\9621" ]
+      ]
+    , [ [ EText TextNormal "6" ]
+      , [ ESymbol Ord "\9606" ]
+      , [ ESymbol Ord "\9622" ]
+      ]
+    , [ [ EText TextNormal "7" ]
+      , [ ESymbol Ord "\9607" ]
+      , [ ESymbol Ord "\9623" ]
+      ]
+    , [ [ EText TextNormal "8" ]
+      , [ ESymbol Ord "\9608" ]
+      , [ ESymbol Ord "\9624" ]
+      ]
+    , [ [ EText TextNormal "9" ]
+      , [ ESymbol Ord "\9609" ]
+      , [ ESymbol Ord "\9625" ]
+      ]
+    , [ [ EText TextNormal "A" ]
+      , [ ESymbol Ord "\9610" ]
+      , [ ESymbol Ord "\9626" ]
+      ]
+    , [ [ EText TextNormal "B" ]
+      , [ ESymbol Ord "\9611" ]
+      , [ ESymbol Ord "\9627" ]
+      ]
+    , [ [ EText TextNormal "C" ]
+      , [ ESymbol Ord "\9612" ]
+      , [ ESymbol Ord "\9628" ]
+      ]
+    , [ [ EText TextNormal "D" ]
+      , [ ESymbol Ord "\9613" ]
+      , [ ESymbol Ord "\9629" ]
+      ]
+    , [ [ EText TextNormal "E" ]
+      , [ ESymbol Ord "\9614" ]
+      , [ ESymbol Ord "\9630" ]
+      ]
+    , [ [ EText TextNormal "F" ]
+      , [ ESymbol Ord "\9615" ]
+      , [ ESymbol Ord "\9631" ]
+      ]
+    ]
+]
+>>> tex
+\begin{matrix}
+ & \text{258} & \text{259} \\
+\text{0} & ▀ & ▐ \\
+\text{1} & ▁ & ░ \\
+\text{2} & ▂ & ▒ \\
+\text{3} & ▃ & ▓ \\
+\text{4} & ▄ & ▔ \\
+\text{5} & ▅ & ▕ \\
+\text{6} & ▆ & ▖ \\
+\text{7} & ▇ & ▗ \\
+\text{8} & █ & ▘ \\
+\text{9} & ▉ & ▙ \\
+\text{A} & ▊ & ▚ \\
+\text{B} & ▋ & ▛ \\
+\text{C} & ▌ & ▜ \\
+\text{D} & ▍ & ▝ \\
+\text{E} & ▎ & ▞ \\
+\text{F} & ▏ & ▟ \\
+\end{matrix}

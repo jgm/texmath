@@ -1,0 +1,84 @@
+<<< native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EPhantom (EText TextNormal "fail")
+            , EIdentifier "H"
+            , EPhantom (EText TextNormal "fail")
+            ]
+        ]
+      ]
+    , [ [ EIdentifier "T" ] ]
+    , [ [ EIdentifier "U" ] ]
+    ]
+, ESymbol Rel "="
+, EArray
+    [ AlignCenter ]
+    [ [ [ EIdentifier "H" ] ]
+    , [ [ EIdentifier "T" ] ]
+    , [ [ EGrouped
+            [ EPhantom (EText TextNormal "fail")
+            , EIdentifier "U"
+            , EPhantom (EText TextNormal "fail")
+            ]
+        ]
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtable>
+      <mtr>
+        <mtd columnalign="center">
+          <mrow>
+            <mphantom>
+              <mtext mathvariant="normal">fail</mtext>
+            </mphantom>
+            <mi>H</mi>
+            <mphantom>
+              <mtext mathvariant="normal">fail</mtext>
+            </mphantom>
+          </mrow>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="center">
+          <mi>T</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="center">
+          <mi>U</mi>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo>=</mo>
+    <mtable>
+      <mtr>
+        <mtd columnalign="center">
+          <mi>H</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="center">
+          <mi>T</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="center">
+          <mrow>
+            <mphantom>
+              <mtext mathvariant="normal">fail</mtext>
+            </mphantom>
+            <mi>U</mi>
+            <mphantom>
+              <mtext mathvariant="normal">fail</mtext>
+            </mphantom>
+          </mrow>
+        </mtd>
+      </mtr>
+    </mtable>
+  </mrow>
+</math>

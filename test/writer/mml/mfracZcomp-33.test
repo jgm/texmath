@@ -1,0 +1,130 @@
+<<< native
+[ EText
+    TextNormal
+    "And this shows a combination with a background image at a desired opacity\160"
+, EGrouped
+    [ ESub (EIdentifier "Z") (EIdentifier "\945")
+    , EDelimited "(" ")" [ Right (EIdentifier "f") ]
+    , ESymbol Rel "="
+    , EFraction
+        NormalFrac
+        (ENumber "1")
+        (EGrouped
+           [ ENumber "2"
+           , EIdentifier "i"
+           , ESymbol Ord "\8201"
+           , EMathOperator "cos"
+           , EDelimited
+               "("
+               ")"
+               [ Right
+                   (EFraction
+                      NormalFrac
+                      (EGrouped [ EIdentifier "\945" , EIdentifier "\960" ])
+                      (ENumber "2"))
+               ]
+           ])
+    , EGrouped
+        [ ESub (ESymbol Op "\8747") (EIdentifier "C")
+        , EFraction
+            NormalFrac
+            (EGrouped
+               [ EIdentifier "f"
+               , ESymbol Open "("
+               , EIdentifier "i"
+               , EIdentifier "z"
+               , ESymbol Close ")"
+               , ESuper
+                   (EDelimited
+                      "(" ")" [ Right (ESymbol Bin "-") , Right (EIdentifier "z") ])
+                   (EIdentifier "\945")
+               ])
+            (EGrouped
+               [ ESuper
+                   (EIdentifier "e")
+                   (EGrouped [ ENumber "2" , EIdentifier "\960" , EIdentifier "z" ])
+               , ESymbol Bin "-"
+               , ENumber "1"
+               ])
+        ]
+    , ESymbol Ord "\8518"
+    , EIdentifier "z"
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext mathvariant="normal">And this shows a combination with a background image at a desired opacity </mtext>
+    <mrow>
+      <msub>
+        <mi>Z</mi>
+        <mi>α</mi>
+      </msub>
+      <mrow>
+        <mo stretchy="true" form="prefix">(</mo>
+        <mi>f</mi>
+        <mo stretchy="true" form="postfix">)</mo>
+      </mrow>
+      <mo>=</mo>
+      <mfrac>
+        <mn>1</mn>
+        <mrow>
+          <mn>2</mn>
+          <mi>i</mi>
+          <mi> </mi>
+          <mo>cos</mo>
+          <mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <mfrac>
+              <mrow>
+                <mi>α</mi>
+                <mi>π</mi>
+              </mrow>
+              <mn>2</mn>
+            </mfrac>
+            <mo stretchy="true" form="postfix">)</mo>
+          </mrow>
+        </mrow>
+      </mfrac>
+      <mrow>
+        <msub>
+          <mo>∫</mo>
+          <mi>C</mi>
+        </msub>
+        <mfrac>
+          <mrow>
+            <mi>f</mi>
+            <mo stretchy="false" form="prefix">(</mo>
+            <mi>i</mi>
+            <mi>z</mi>
+            <mo stretchy="false" form="postfix">)</mo>
+            <msup>
+              <mrow>
+                <mo stretchy="true" form="prefix">(</mo>
+                <mo>-</mo>
+                <mi>z</mi>
+                <mo stretchy="true" form="postfix">)</mo>
+              </mrow>
+              <mi>α</mi>
+            </msup>
+          </mrow>
+          <mrow>
+            <msup>
+              <mi>e</mi>
+              <mrow>
+                <mn>2</mn>
+                <mi>π</mi>
+                <mi>z</mi>
+              </mrow>
+            </msup>
+            <mo>-</mo>
+            <mn>1</mn>
+          </mrow>
+        </mfrac>
+      </mrow>
+      <mi>ⅆ</mi>
+      <mi>z</mi>
+    </mrow>
+  </mrow>
+</math>

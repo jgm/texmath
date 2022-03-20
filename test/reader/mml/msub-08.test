@@ -1,0 +1,18 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <msub>    <mi>A</mi>     <mrow>      <msub>        <mi>B</mi>         <mi>C</mi>       </msub>     </mrow>   </msub>   <mo>=</mo>   <msub>    <mi>A</mi>     <mrow>      <msub>        <mi>B</mi>         <mrow>          <munder>            <mi>C</mi>
+            <mphantom>
+              <mi>D</mi>
+            </mphantom>
+          </munder>
+        </mrow>       </msub>     </mrow>   </msub> </math>
+>>> native
+[ ESub (EIdentifier "A") (ESub (EIdentifier "B") (EIdentifier "C"))
+, ESymbol Rel "="
+, ESub
+    (EIdentifier "A")
+    (ESub
+       (EIdentifier "B")
+       (EUnder False (EIdentifier "C") (EPhantom (EIdentifier "D"))))
+]

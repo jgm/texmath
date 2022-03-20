@@ -1,0 +1,98 @@
+<<< native
+[ EDelimited
+    "["
+    "]"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter ]
+           [ [ [ EFraction
+                   DisplayFrac
+                   (EGrouped
+                      [ ESymbol Ord "\8706" , ESub (EIdentifier "x") (ENumber "1") ])
+                   (EGrouped
+                      [ ESymbol Ord "\8706" , ESub (EIdentifier "y") (ENumber "1") ])
+               ]
+             , [ EFraction
+                   DisplayFrac
+                   (EGrouped
+                      [ ESymbol Ord "\8706" , ESub (EIdentifier "x") (ENumber "2") ])
+                   (EGrouped
+                      [ ESymbol Ord "\8706" , ESub (EIdentifier "y") (ENumber "1") ])
+               ]
+             ]
+           , [ [ ESpace (2 % 9) ] ]
+           , [ [ EFraction
+                   DisplayFrac
+                   (EGrouped
+                      [ ESymbol Ord "\8706" , ESub (EIdentifier "x") (ENumber "1") ])
+                   (EGrouped
+                      [ ESymbol Ord "\8706" , ESub (EIdentifier "y") (ENumber "2") ])
+               ]
+             , [ EFraction
+                   DisplayFrac
+                   (EGrouped
+                      [ ESymbol Ord "\8706" , ESub (EIdentifier "x") (ENumber "2") ])
+                   (EGrouped
+                      [ ESymbol Ord "\8706" , ESub (EIdentifier "y") (ENumber "2") ])
+               ]
+             ]
+           ])
+    ]
+, EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter ]
+           [ [ [ ENumber "1" ] , [ ENumber "2" ] ]
+           , [ [ ENumber "3" ] , [ ENumber "4" ] ]
+           ])
+    ]
+, EDelimited
+    "{"
+    "}"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter ]
+           [ [ [ ENumber "1" ] , [ ENumber "2" ] ]
+           , [ [ ENumber "3" ] , [ ENumber "4" ] ]
+           ])
+    ]
+, EDelimited
+    "\8739"
+    "\8739"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter ]
+           [ [ [ ENumber "1" ] , [ ENumber "2" ] ]
+           , [ [ ENumber "3" ] , [ ENumber "4" ] ]
+           ])
+    ]
+, EDelimited
+    "\8741"
+    "\8741"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter ]
+           [ [ [ ENumber "1" ] , [ ENumber "2" ] ]
+           , [ [ ENumber "3" ] , [ ENumber "4" ] ]
+           ])
+    ]
+]
+>>> eqn
+left [ matrix{
+ccol{ {{partial x sub 1} over {partial y sub 1}} above ~ above {{partial x sub 1} over {partial y sub 2}} }
+ccol{ {{partial x sub 2} over {partial y sub 1}} above {{partial x sub 2} over {partial y sub 2}} }
+} right ] left ( matrix{
+ccol{ 1 above 3 }
+ccol{ 2 above 4 }
+} right ) left { matrix{
+ccol{ 1 above 3 }
+ccol{ 2 above 4 }
+} right } left ∣ matrix{
+ccol{ 1 above 3 }
+ccol{ 2 above 4 }
+} right ∣ left ∥ matrix{
+ccol{ 1 above 3 }
+ccol{ 2 above 4 }
+} right ∥

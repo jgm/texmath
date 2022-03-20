@@ -1,0 +1,13 @@
+<<< native
+[ EGrouped
+    [ ESuper
+        (EIdentifier "\8519")
+        (EGrouped [ EIdentifier "\8520" , EIdentifier "\960" ])
+    , ESymbol Bin "+"
+    , ENumber "1"
+    ]
+, ESymbol Rel "="
+, ENumber "0"
+]
+>>> eqn
+{\[u2147] sup {\[u2148] pi} + 1} = 0

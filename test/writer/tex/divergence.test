@@ -1,0 +1,25 @@
+<<< native
+[ ESymbol Ord "\8711"
+, ESymbol Bin "\8901"
+, EOver False (EIdentifier "v") (ESymbol Accent "\8407")
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESymbol Ord "\8706" , ESub (EIdentifier "v") (EIdentifier "x") ])
+    (EGrouped [ ESymbol Ord "\8706" , EIdentifier "x" ])
+, ESymbol Bin "+"
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESymbol Ord "\8706" , ESub (EIdentifier "v") (EIdentifier "y") ])
+    (EGrouped [ ESymbol Ord "\8706" , EIdentifier "y" ])
+, ESymbol Bin "+"
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESymbol Ord "\8706" , ESub (EIdentifier "v") (EIdentifier "z") ])
+    (EGrouped [ ESymbol Ord "\8706" , EIdentifier "z" ])
+]
+>>> tex
+\nabla \cdot \overrightarrow{v} = \frac{\partial v_{x}}{\partial x} + \frac{\partial v_{y}}{\partial y} + \frac{\partial v_{z}}{\partial z}

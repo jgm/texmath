@@ -1,0 +1,12 @@
+<<< native
+[ EFraction NormalFrac (ENumber "1") (ENumber "2")
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ EPhantom (ENumber "1") , ESpace (0 % 1) , ENumber "1" ])
+    (EGrouped
+       [ ENumber "2" , ESpace (0 % 1) , EPhantom (ENumber "1") ])
+]
+>>> tex
+\frac{1}{2} = \frac{\phantom{1} 1}{2\phantom{1}}

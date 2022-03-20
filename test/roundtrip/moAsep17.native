@@ -1,0 +1,33 @@
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EGrouped
+           [ EIdentifier "x"
+           , ESymbol Pun ","
+           , EFraction NormalFrac (EIdentifier "y") (EIdentifier "z")
+           ])
+    ]
+, ESymbol Bin "+"
+, EDelimited
+    "("
+    ")"
+    [ Right
+        (EGrouped
+           [ EIdentifier "x"
+           , ESymbol Pun ","
+           , EFraction NormalFrac (EIdentifier "y") (EIdentifier "z")
+           ])
+    ]
+, ESymbol Bin "+"
+, EDelimited
+    "("
+    ")"
+    [ Right
+        (EGrouped
+           [ EIdentifier "x"
+           , ESymbol Pun ","
+           , EFraction NormalFrac (EIdentifier "y") (EIdentifier "z")
+           ])
+    ]
+]

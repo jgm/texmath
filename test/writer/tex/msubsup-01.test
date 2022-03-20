@@ -1,0 +1,10 @@
+<<< native
+[ ESubsup (EIdentifier "R") (ENumber "0") (ENumber "4")
+, ESymbol Rel "="
+, ESubsup
+    (EIdentifier "R")
+    (EGrouped [ ENumber "0" , EPhantom (EIdentifier "fail") ])
+    (EGrouped [ ENumber "4" , EPhantom (EIdentifier "fail") ])
+]
+>>> tex
+R_{0}^{4} = R_{0\phantom{fail}}^{4\phantom{fail}}

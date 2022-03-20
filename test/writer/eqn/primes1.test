@@ -1,0 +1,40 @@
+<<< native
+[ ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (ENumber "2") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ESymbol Ord "\8242")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ESymbol Accent "'")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (EMathOperator "''")
+, ESymbol Bin "+"
+, EIdentifier "x"
+, EIdentifier "\8242"
+, ESymbol Bin "+"
+, ESuper
+    (ESuper (EIdentifier "x") (ESymbol Accent "'"))
+    (ESymbol Accent "'")
+, ESymbol Bin "+"
+, ESuper
+    (ESuper (EIdentifier "x") (ESymbol Accent "'")) (ENumber "2")
+, ESymbol Bin "+"
+, ESuper
+    (EIdentifier "x")
+    (EGrouped
+       [ ESymbol Accent "'" , ESymbol Bin "+" , ESymbol Accent "'" ])
+, ESymbol Bin "+"
+, ESuper
+    (ESuper (EIdentifier "x") (ESymbol Accent "'"))
+    (ESymbol Accent "'")
+, ESymbol Bin "+"
+, ESuper
+    (EIdentifier "x")
+    (ESuper (ESymbol Accent "'") (ESymbol Accent "'"))
+, ESymbol Bin "+"
+, ESuper (ESymbol Accent "'") (ESymbol Accent "'")
+, ESymbol Bin "+"
+, ESuper (ESymbol Accent "'") (ESymbol Accent "'")
+]
+>>> eqn
+x sup 2 + 2 sup 2 + x sup prime + x sup ' + x sup "''" + x prime + {x sup '} sup ' + {x sup '} sup 2 + x sup {' + '} + {x sup '} sup ' + x sup {' sup '} + ' sup ' + ' sup '

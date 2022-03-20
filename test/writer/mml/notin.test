@@ -1,0 +1,22 @@
+<<< native
+[ EIdentifier "x"
+, ESymbol Rel "\8712"
+, EIdentifier "y"
+, ESymbol Bin "\8743"
+, EIdentifier "x"
+, ESymbol Rel "\8713"
+, EIdentifier "y"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>x</mi>
+    <mo>∈</mo>
+    <mi>y</mi>
+    <mo>∧</mo>
+    <mi>x</mi>
+    <mo>∉</mo>
+    <mi>y</mi>
+  </mrow>
+</math>

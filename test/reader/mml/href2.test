@@ -1,0 +1,9 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi href="http://en.wikipedia.org/wiki/Pi">&#x03c0;</mi> 
+  <mo>+</mo> 
+  <mn href="http://www.youtube.com/watch?v=pUlw3ACdN5s">1</mn> </math>
+>>> native
+[ EIdentifier "\960" , ESymbol Bin "+" , ENumber "1" ]

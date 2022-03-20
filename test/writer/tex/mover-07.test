@@ -1,0 +1,16 @@
+<<< native
+[ EOver
+    False
+    (EIdentifier "mover baseline")
+    (EIdentifier "mover over script")
+, ESymbol Rel "="
+, EOver
+    False
+    (EOver
+       False
+       (EIdentifier "mover baseline")
+       (EIdentifier "mover over script"))
+    (EPhantom (EIdentifier "fail"))
+]
+>>> tex
+\overset{mover\ over\ script}{mover\ baseline} = \overset{\phantom{fail}}{\overset{mover\ over\ script}{mover\ baseline}}

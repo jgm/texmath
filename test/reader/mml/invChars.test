@@ -1,0 +1,20 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn></mn> 
+  <mo></mo> 
+  <mi></mi> 
+  <mo>&#x2062;</mo> 
+  <mn>&#x0009;</mn> 
+  <mo>&#x2061;</mo> 
+  <mtext> &#x200B;</mtext> </math>
+>>> native
+[ ENumber ""
+, EMathOperator ""
+, EIdentifier ""
+, ESymbol Ord "\8290"
+, ENumber ""
+, ESymbol Ord "\8289"
+, ESpace (0 % 1)
+]

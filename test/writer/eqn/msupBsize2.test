@@ -1,0 +1,11 @@
+<<< native
+[ ESuper (EIdentifier "x") (ENumber "1")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (EIdentifier "a")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "H") (EIdentifier "a")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "H") (ENumber "1")
+]
+>>> eqn
+x sup 1 + x sup a + H sup a + H sup 1

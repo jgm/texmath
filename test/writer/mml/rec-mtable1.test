@@ -1,0 +1,56 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter , AlignCenter ]
+           [ [ [ ENumber "1" ] , [ ENumber "0" ] , [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] , [ ENumber "1" ] , [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] , [ ENumber "0" ] , [ ENumber "1" ] ]
+           ])
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo stretchy="true" form="prefix">(</mo>
+    <mtable>
+      <mtr>
+        <mtd columnalign="center">
+          <mn>1</mn>
+        </mtd>
+        <mtd columnalign="center">
+          <mn>0</mn>
+        </mtd>
+        <mtd columnalign="center">
+          <mn>0</mn>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="center">
+          <mn>0</mn>
+        </mtd>
+        <mtd columnalign="center">
+          <mn>1</mn>
+        </mtd>
+        <mtd columnalign="center">
+          <mn>0</mn>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="center">
+          <mn>0</mn>
+        </mtd>
+        <mtd columnalign="center">
+          <mn>0</mn>
+        </mtd>
+        <mtd columnalign="center">
+          <mn>1</mn>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo stretchy="true" form="postfix">)</mo>
+  </mrow>
+</math>

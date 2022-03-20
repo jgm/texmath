@@ -1,0 +1,11 @@
+<<< native
+[ EUnder False (EIdentifier "x") (ESymbol Accent "\710")
+, ESymbol Rel "\8800"
+, EUnder False (EIdentifier "x") (ESymbol Alpha "\710")
+, ESymbol Rel "="
+, EUnder False (EIdentifier "x") (ESymbol Alpha "\710")
+, ESymbol Rel "="
+, EUnder False (EIdentifier "x") (ESymbol Alpha "\710")
+]
+>>> tex
+\underset{\hat{}}{x} \neq \underset{\hat{}}{x} = \underset{\hat{}}{x} = \underset{\hat{}}{x}

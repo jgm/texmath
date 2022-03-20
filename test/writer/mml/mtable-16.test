@@ -1,0 +1,43 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EGrouped
+            [ EPhantom (EText TextNormal "F")
+            , ESpace (0 % 1)
+            , EIdentifier "HT"
+            , ESpace (0 % 1)
+            , EPhantom (EText TextNormal "F")
+            ]
+        ]
+      , [ ESymbol Rel "=" ]
+      , [ EIdentifier "TH" ]
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mphantom>
+            <mtext mathvariant="normal">F</mtext>
+          </mphantom>
+          <mspace width="0.0em" />
+          <mi>HT</mi>
+          <mspace width="0.0em" />
+          <mphantom>
+            <mtext mathvariant="normal">F</mtext>
+          </mphantom>
+        </mrow>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>=</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>TH</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

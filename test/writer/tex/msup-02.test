@@ -1,0 +1,9 @@
+<<< native
+[ ESuper
+    (EGrouped [ EPhantom (EIdentifier "fail") , EIdentifier "k" ])
+    (ENumber "2")
+, ESymbol Rel "="
+, ESuper (EIdentifier "k") (ENumber "2")
+]
+>>> tex
+{\phantom{fail}k}^{2} = k^{2}

@@ -1,0 +1,131 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>(</mo> 
+    <mtable>
+      <mtr>
+        <mtd>
+          <mn>0</mn> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mn>0</mn> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mn>0</mn> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mn>0</mn> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mn>0</mn> 
+        </mtd> 
+      </mtr> 
+    </mtable> 
+    <mo>)</mo> 
+    <mo stretchy="false">(</mo> 
+    <mtable>
+      <mtr>
+        <mtd>
+          <mn>0</mn> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mn>0</mn> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mn>0</mn> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mn>0</mn> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mn>0</mn> 
+        </mtd> 
+      </mtr> 
+    </mtable> 
+    <mo stretchy="false">)</mo> 
+    <mo stretchy="true">(</mo> 
+    <mtable>
+      <mtr>
+        <mtd>
+          <mn>0</mn> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mn>0</mn> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mn>0</mn> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mn>0</mn> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mn>0</mn> 
+        </mtd> 
+      </mtr> 
+    </mtable> 
+    <mo stretchy="true">)</mo> 
+  </mrow> </math>
+>>> native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           ])
+    ]
+, ESymbol Open "("
+, EArray
+    [ AlignCenter ]
+    [ [ [ ENumber "0" ] ]
+    , [ [ ENumber "0" ] ]
+    , [ [ ENumber "0" ] ]
+    , [ [ ENumber "0" ] ]
+    , [ [ ENumber "0" ] ]
+    ]
+, ESymbol Close ")"
+, EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           ])
+    ]
+]

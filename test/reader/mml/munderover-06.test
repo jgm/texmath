@@ -1,0 +1,25 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <munderover>    <mrow>      <munderover>        <mi mathvariant="normal">BASE</mi>         <mi mathvariant="normal">first under script</mi>         <mi mathvariant="normal">second overscript</mi>       </munderover>     </mrow>     <mi mathvariant="normal">second one</mi>     <mi mathvariant="normal">first overscript</mi>   </munderover>   <mo>=</mo>   <munderover>    <mrow>      <mover>        <mrow>          <munder>            <mi mathvariant="normal">BASE</mi>             <mi mathvariant="normal">first under script</mi>           </munder>         </mrow>         <mi mathvariant="normal">second overscript</mi>       </mover>     </mrow>     <mi mathvariant="normal">second one</mi>     <mi mathvariant="normal">first overscript</mi>   </munderover> </math>
+>>> native
+[ EUnderover
+    False
+    (EUnderover
+       False
+       (EIdentifier "BASE")
+       (EIdentifier "first under script")
+       (EIdentifier "second overscript"))
+    (EIdentifier "second one")
+    (EIdentifier "first overscript")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (EOver
+       False
+       (EUnder
+          False (EIdentifier "BASE") (EIdentifier "first under script"))
+       (EIdentifier "second overscript"))
+    (EIdentifier "second one")
+    (EIdentifier "first overscript")
+]

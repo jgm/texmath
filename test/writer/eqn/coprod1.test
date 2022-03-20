@@ -1,0 +1,10 @@
+<<< native
+[ EUnderover
+    False
+    (ESymbol Op "\8720")
+    (EGrouped [ EIdentifier "i" , ESymbol Rel "=" , ENumber "0" ])
+    (EIdentifier "\8734")
+, ESub (EIdentifier "x") (EIdentifier "i")
+]
+>>> eqn
+\[u2210] from {i = 0} to inf x sub i

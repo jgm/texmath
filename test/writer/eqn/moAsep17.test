@@ -1,0 +1,36 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EGrouped
+           [ EIdentifier "x"
+           , ESymbol Pun ","
+           , EFraction NormalFrac (EIdentifier "y") (EIdentifier "z")
+           ])
+    ]
+, ESymbol Bin "+"
+, EDelimited
+    "("
+    ")"
+    [ Right
+        (EGrouped
+           [ EIdentifier "x"
+           , ESymbol Pun ","
+           , EFraction NormalFrac (EIdentifier "y") (EIdentifier "z")
+           ])
+    ]
+, ESymbol Bin "+"
+, EDelimited
+    "("
+    ")"
+    [ Right
+        (EGrouped
+           [ EIdentifier "x"
+           , ESymbol Pun ","
+           , EFraction NormalFrac (EIdentifier "y") (EIdentifier "z")
+           ])
+    ]
+]
+>>> eqn
+left ( {x , y over z} right ) + left ( {x , y over z} right ) + left ( {x , y over z} right )

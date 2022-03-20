@@ -1,0 +1,59 @@
+<<< omml
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <w:rPr>
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" />
+      </w:rPr>
+      <m:t>A</m:t>
+    </m:r>
+    <m:box>
+      <m:boxPr>
+        <m:opEmu m:val="1" />
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math"
+            w:hAnsi="Cambria Math" />
+            <w:i />
+          </w:rPr>
+        </m:ctrlPr>
+      </m:boxPr>
+      <m:e>
+        <m:groupChr>
+          <m:groupChrPr>
+            <m:chr m:val="⇒" />
+            <m:vertJc m:val="bot" />
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math"
+                w:hAnsi="Cambria Math" />
+                <w:i />
+              </w:rPr>
+            </m:ctrlPr>
+          </m:groupChrPr>
+          <m:e>
+            <m:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math"
+                w:hAnsi="Cambria Math" />
+              </w:rPr>
+              <m:t>f</m:t>
+            </m:r>
+          </m:e>
+        </m:groupChr>
+      </m:e>
+    </m:box>
+    <m:r>
+      <w:rPr>
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" />
+      </w:rPr>
+      <m:t>B</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>
+
+>>> native
+[ EIdentifier "A"
+, EOver False (ESymbol TUnder "\8658") (EIdentifier "f")
+, EIdentifier "B"
+]

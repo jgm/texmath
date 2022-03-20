@@ -1,0 +1,21 @@
+<<< tex
+X^2 = y \text{ under $H_0$ except when $x \textbf{ is less than \(z\).}$}
+
+>>> native
+[ ESuper (EIdentifier "X") (ENumber "2")
+, ESymbol Rel "="
+, EIdentifier "y"
+, EGrouped
+    [ EText TextNormal " under "
+    , ESub (EIdentifier "H") (ENumber "0")
+    , EText TextNormal " except when "
+    , EGrouped
+        [ EIdentifier "x"
+        , EGrouped
+            [ EText TextBold " is less than "
+            , EIdentifier "z"
+            , EText TextBold "."
+            ]
+        ]
+    ]
+]

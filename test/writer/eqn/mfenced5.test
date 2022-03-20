@@ -1,0 +1,9 @@
+<<< native
+[ EDelimited
+    "["
+    ")"
+    [ Right (EGrouped [ ENumber "0" , ESymbol Pun "," , ENumber "1" ])
+    ]
+]
+>>> eqn
+left [ {0 , 1} right )

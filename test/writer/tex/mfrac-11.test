@@ -1,0 +1,40 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (EIdentifier "A")
+    (EGrouped
+       [ EIdentifier "B"
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (EIdentifier "C")
+           (EGrouped
+              [ EIdentifier "D"
+              , ESymbol Bin "+"
+              , EFraction NormalFrac (EIdentifier "E") (EIdentifier "F")
+              ])
+       ])
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ EPhantom (ENumber "1") , ESpace (0 % 1) , EIdentifier "A" ])
+    (EGrouped
+       [ EIdentifier "B"
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (EIdentifier "C")
+           (EGrouped
+              [ EIdentifier "D"
+              , ESymbol Bin "+"
+              , EFraction
+                  NormalFrac
+                  (EIdentifier "E")
+                  (EGrouped
+                     [ EIdentifier "F" , ESpace (0 % 1) , EPhantom (ENumber "1") ])
+              ])
+       ])
+]
+>>> tex
+\frac{A}{B + \frac{C}{D + \frac{E}{F}}} = \frac{\phantom{1} A}{B + \frac{C}{D + \frac{E}{F\phantom{1}}}}

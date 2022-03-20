@@ -1,0 +1,42 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [] , [ EText TextNormal "FE2" ] ]
+    , [ [ EText TextNormal "0" ] , [ ESymbol Ord "\65056" ] ]
+    , [ [ EText TextNormal "1" ] , [ ESymbol Ord "\65057" ] ]
+    , [ [ EText TextNormal "2" ] , [ ESymbol Ord "\65058" ] ]
+    , [ [ EText TextNormal "3" ] , [ ESymbol Ord "\65059" ] ]
+    , [ [ EText TextNormal "4" ] , [ ESymbol Ord "\65060" ] ]
+    , [ [ EText TextNormal "5" ] , [ ESymbol Ord "\65061" ] ]
+    , [ [ EText TextNormal "6" ] , [ ESymbol Ord "\65062" ] ]
+    , [ [ EText TextNormal "7" ] , [ ESymbol Ord "@" ] ]
+    , [ [ EText TextNormal "8" ] , [ ESymbol Ord "@" ] ]
+    , [ [ EText TextNormal "9" ] , [ ESymbol Ord "@" ] ]
+    , [ [ EText TextNormal "A" ] , [ ESymbol Ord "@" ] ]
+    , [ [ EText TextNormal "B" ] , [ ESymbol Ord "@" ] ]
+    , [ [ EText TextNormal "C" ] , [ ESymbol Ord "@" ] ]
+    , [ [ EText TextNormal "D" ] , [ ESymbol Ord "@" ] ]
+    , [ [ EText TextNormal "E" ] , [ ESymbol Ord "@" ] ]
+    , [ [ EText TextNormal "F" ] , [ ESymbol Ord "@" ] ]
+    ]
+]
+>>> tex
+\begin{matrix}
+ & \text{FE2} \\
+\text{0} & ︠ \\
+\text{1} & ︡ \\
+\text{2} & ︢ \\
+\text{3} & ︣ \\
+\text{4} & ︤ \\
+\text{5} & ︥ \\
+\text{6} & ︦ \\
+\text{7} & @ \\
+\text{8} & @ \\
+\text{9} & @ \\
+\text{A} & @ \\
+\text{B} & @ \\
+\text{C} & @ \\
+\text{D} & @ \\
+\text{E} & @ \\
+\text{F} & @ \\
+\end{matrix}

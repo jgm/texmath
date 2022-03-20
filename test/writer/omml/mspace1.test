@@ -1,0 +1,35 @@
+<<< native
+[ EIdentifier "x"
+, ESpace (58 % 25)
+, EIdentifier "M"
+, ESpace (58 % 25)
+, EIdentifier "x"
+, ESpace (0 % 1)
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:t>x</m:t>
+    </m:r>
+    <m:r>
+      <m:t>  </m:t>
+    </m:r>
+    <m:r>
+      <m:t>M</m:t>
+    </m:r>
+    <m:r>
+      <m:t>  </m:t>
+    </m:r>
+    <m:r>
+      <m:t>x</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

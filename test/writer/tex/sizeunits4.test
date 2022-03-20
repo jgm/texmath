@@ -1,0 +1,24 @@
+<<< native
+[ ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper
+    (EGrouped [ EIdentifier "M" , EIdentifier "x" ]) (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+]
+>>> tex
+x^{2} + x^{2} + x^{2} + {Mx}^{2} + x^{2} + x^{2} + x^{2} + x^{2} + x^{2} + x^{2}

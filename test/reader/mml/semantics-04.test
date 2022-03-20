@@ -1,0 +1,6 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <semantics>    <semantics>      <mn>1.0</mn>       <annotation-xml encoding="MathML-Content">        <cn>1</cn>       </annotation-xml>       <annotation encoding="TeX">1</annotation>     </semantics>     <annotation-xml encoding="MathML-Content">      <cn>1</cn>     </annotation-xml>   </semantics>   <mo>=</mo>   <mn>1.0</mn> </math>
+>>> native
+[ ENumber "1.0" , ESymbol Rel "=" , ENumber "1.0" ]

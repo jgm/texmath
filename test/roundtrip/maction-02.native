@@ -1,0 +1,9 @@
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ EIdentifier "n" ] ] , [ [ EIdentifier "k" ] ] ])
+    ]
+]

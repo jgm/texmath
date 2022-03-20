@@ -1,0 +1,65 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter , AlignCenter ]
+           [ [ [ EIdentifier "A" ]
+             , [ EIdentifier "B" ]
+             , [ EIdentifier "C" ]
+             ]
+           , [ [ EIdentifier "D" ]
+             , [ EIdentifier "E" ]
+             , [ EIdentifier "F" ]
+             ]
+           , [ [ EIdentifier "G" ]
+             , [ EIdentifier "H" ]
+             , [ EIdentifier "I" ]
+             ]
+           ])
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo stretchy="true" form="prefix">(</mo>
+    <mtable>
+      <mtr>
+        <mtd columnalign="center">
+          <mi>A</mi>
+        </mtd>
+        <mtd columnalign="center">
+          <mi>B</mi>
+        </mtd>
+        <mtd columnalign="center">
+          <mi>C</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="center">
+          <mi>D</mi>
+        </mtd>
+        <mtd columnalign="center">
+          <mi>E</mi>
+        </mtd>
+        <mtd columnalign="center">
+          <mi>F</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="center">
+          <mi>G</mi>
+        </mtd>
+        <mtd columnalign="center">
+          <mi>H</mi>
+        </mtd>
+        <mtd columnalign="center">
+          <mi>I</mi>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo stretchy="true" form="postfix">)</mo>
+  </mrow>
+</math>

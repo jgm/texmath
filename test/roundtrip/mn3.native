@@ -1,0 +1,5 @@
+[ ENumber "2"
+, ESymbol Bin "+"
+, EGrouped
+    [ ENumber "3" , ESymbol Ord "\8290" , EIdentifier "\8520" ]
+]

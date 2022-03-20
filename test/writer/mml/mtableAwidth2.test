@@ -1,0 +1,29 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EIdentifier "a" ] , [ EIdentifier "b" ] ]
+    , [ [ EIdentifier "x" ] , [ EIdentifier "y" ] ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mi>a</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>b</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mi>x</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>y</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

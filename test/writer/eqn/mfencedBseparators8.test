@@ -1,0 +1,16 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EGrouped
+           [ ESub (EIdentifier "a") (ENumber "1")
+           , ESymbol Pun ","
+           , ESub (EIdentifier "a") (ENumber "2")
+           , ESymbol Pun ","
+           , ESub (EIdentifier "a") (ENumber "3")
+           ])
+    ]
+]
+>>> eqn
+left ( {a sub 1 , a sub 2 , a sub 3} right )

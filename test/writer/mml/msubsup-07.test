@@ -1,0 +1,35 @@
+<<< native
+[ ESubsup (EIdentifier "D") (EIdentifier "x") (ENumber "2")
+, ESymbol Rel "="
+, ESubsup
+    (EIdentifier "D")
+    (EUnder False (EIdentifier "x") (EPhantom (ENumber "0")))
+    (EOver False (ENumber "2") (EPhantom (ENumber "0")))
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msubsup>
+      <mi>D</mi>
+      <mi>x</mi>
+      <mn>2</mn>
+    </msubsup>
+    <mo>=</mo>
+    <msubsup>
+      <mi>D</mi>
+      <munder>
+        <mi>x</mi>
+        <mphantom>
+          <mn>0</mn>
+        </mphantom>
+      </munder>
+      <mover>
+        <mn>2</mn>
+        <mphantom>
+          <mn>0</mn>
+        </mphantom>
+      </mover>
+    </msubsup>
+  </mrow>
+</math>

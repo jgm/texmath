@@ -1,0 +1,260 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd></mtd> 
+      <mtd>
+        <mtext>258</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>259</mtext>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>0</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9600;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9616;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>1</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9601;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9617;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>2</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9602;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9618;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>3</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9603;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9619;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>4</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9604;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9620;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>5</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9605;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9621;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>6</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9606;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9622;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>7</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9607;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9623;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>8</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9608;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9624;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>9</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9609;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9625;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>A</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9610;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9626;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>B</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9611;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9627;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>C</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9612;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9628;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>D</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9613;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9629;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>E</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9614;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9630;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>F</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9615;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9631;</mo>
+      </mtd> 
+    </mtr>   </mtable></math>
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [] , [ EText TextNormal "258" ] , [ EText TextNormal "259" ] ]
+    , [ [ EText TextNormal "0" ]
+      , [ ESymbol Ord "\9600" ]
+      , [ ESymbol Ord "\9616" ]
+      ]
+    , [ [ EText TextNormal "1" ]
+      , [ ESymbol Ord "\9601" ]
+      , [ ESymbol Ord "\9617" ]
+      ]
+    , [ [ EText TextNormal "2" ]
+      , [ ESymbol Ord "\9602" ]
+      , [ ESymbol Ord "\9618" ]
+      ]
+    , [ [ EText TextNormal "3" ]
+      , [ ESymbol Ord "\9603" ]
+      , [ ESymbol Ord "\9619" ]
+      ]
+    , [ [ EText TextNormal "4" ]
+      , [ ESymbol Ord "\9604" ]
+      , [ ESymbol Ord "\9620" ]
+      ]
+    , [ [ EText TextNormal "5" ]
+      , [ ESymbol Ord "\9605" ]
+      , [ ESymbol Ord "\9621" ]
+      ]
+    , [ [ EText TextNormal "6" ]
+      , [ ESymbol Ord "\9606" ]
+      , [ ESymbol Ord "\9622" ]
+      ]
+    , [ [ EText TextNormal "7" ]
+      , [ ESymbol Ord "\9607" ]
+      , [ ESymbol Ord "\9623" ]
+      ]
+    , [ [ EText TextNormal "8" ]
+      , [ ESymbol Ord "\9608" ]
+      , [ ESymbol Ord "\9624" ]
+      ]
+    , [ [ EText TextNormal "9" ]
+      , [ ESymbol Ord "\9609" ]
+      , [ ESymbol Ord "\9625" ]
+      ]
+    , [ [ EText TextNormal "A" ]
+      , [ ESymbol Ord "\9610" ]
+      , [ ESymbol Ord "\9626" ]
+      ]
+    , [ [ EText TextNormal "B" ]
+      , [ ESymbol Ord "\9611" ]
+      , [ ESymbol Ord "\9627" ]
+      ]
+    , [ [ EText TextNormal "C" ]
+      , [ ESymbol Ord "\9612" ]
+      , [ ESymbol Ord "\9628" ]
+      ]
+    , [ [ EText TextNormal "D" ]
+      , [ ESymbol Ord "\9613" ]
+      , [ ESymbol Ord "\9629" ]
+      ]
+    , [ [ EText TextNormal "E" ]
+      , [ ESymbol Ord "\9614" ]
+      , [ ESymbol Ord "\9630" ]
+      ]
+    , [ [ EText TextNormal "F" ]
+      , [ ESymbol Ord "\9615" ]
+      , [ ESymbol Ord "\9631" ]
+      ]
+    ]
+]

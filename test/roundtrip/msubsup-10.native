@@ -1,0 +1,7 @@
+[ ESubsup (EIdentifier "p") (EIdentifier "x") (ENumber "3")
+, ESymbol Rel "="
+, EUnder
+    False
+    (ESubsup (EIdentifier "p") (EIdentifier "x") (ENumber "3"))
+    (EPhantom (EText TextNormal "l"))
+]

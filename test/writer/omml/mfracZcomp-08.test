@@ -1,0 +1,55 @@
+<<< native
+[ EText TextNormal "Inline, display style, no line\160"
+, EFraction
+    NormalFrac
+    (ENumber "1.234567")
+    (EGrouped [ ENumber "89" , ESymbol Bin "+" , EIdentifier "x" ])
+, EText TextNormal "\160the end."
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>Inline, display style, no line </m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:r>
+          <m:t>1.234567</m:t>
+        </m:r>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:t>89</m:t>
+        </m:r>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>+</m:t>
+        </m:r>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t> the end.</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

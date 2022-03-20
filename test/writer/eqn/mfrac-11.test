@@ -1,0 +1,40 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (EIdentifier "A")
+    (EGrouped
+       [ EIdentifier "B"
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (EIdentifier "C")
+           (EGrouped
+              [ EIdentifier "D"
+              , ESymbol Bin "+"
+              , EFraction NormalFrac (EIdentifier "E") (EIdentifier "F")
+              ])
+       ])
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ EPhantom (ENumber "1") , ESpace (0 % 1) , EIdentifier "A" ])
+    (EGrouped
+       [ EIdentifier "B"
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (EIdentifier "C")
+           (EGrouped
+              [ EIdentifier "D"
+              , ESymbol Bin "+"
+              , EFraction
+                  NormalFrac
+                  (EIdentifier "E")
+                  (EGrouped
+                     [ EIdentifier "F" , ESpace (0 % 1) , EPhantom (ENumber "1") ])
+              ])
+       ])
+]
+>>> eqn
+A over {B + C over {D + E over F}} = {hphantom 1 fwd 0 A} over {B + C over {D + E over {F fwd 0 hphantom 1}}}

@@ -1,0 +1,68 @@
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "Top" ]
+      , [ ENumber "3" ]
+      , [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+            (ENumber "2")
+        ]
+      , [ EOver
+            False
+            (EIdentifier "y")
+            (EFraction
+               NormalFrac
+               (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+               (ENumber "2"))
+        ]
+      ]
+    , [ [ EText TextNormal "Bottom" ]
+      , [ ENumber "3" ]
+      , [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+            (ENumber "2")
+        ]
+      , [ EOver
+            False
+            (EIdentifier "y")
+            (EFraction
+               NormalFrac
+               (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+               (ENumber "2"))
+        ]
+      ]
+    , [ [ EText TextNormal "Center" ]
+      , [ ENumber "3" ]
+      , [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+            (ENumber "2")
+        ]
+      , [ EOver
+            False
+            (EIdentifier "y")
+            (EFraction
+               NormalFrac
+               (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+               (ENumber "2"))
+        ]
+      ]
+    , [ [ EText TextNormal "Baseline" ]
+      , [ ENumber "3" ]
+      , [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+            (ENumber "2")
+        ]
+      , [ EOver
+            False
+            (EIdentifier "y")
+            (EFraction
+               NormalFrac
+               (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+               (ENumber "2"))
+        ]
+      ]
+    ]
+]

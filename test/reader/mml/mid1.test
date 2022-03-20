@@ -1,0 +1,9 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>&#x2223;</mo> 
+  <mi>x</mi> 
+  <mo>&#x2223;</mo> </math>
+>>> native
+[ ESymbol Rel "\8739" , EIdentifier "x" , ESymbol Rel "\8739" ]

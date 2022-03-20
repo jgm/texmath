@@ -1,0 +1,7 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>This is &#x2009;some &#x205F;text with spaces.</mtext> </math>
+>>> native
+[ EText TextNormal "This is \8201some \8287text with spaces." ]

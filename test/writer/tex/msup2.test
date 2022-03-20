@@ -1,0 +1,12 @@
+<<< native
+[ ESuper
+    (EDelimited
+       "("
+       ")"
+       [ Right
+           (EGrouped [ EIdentifier "x" , ESymbol Bin "+" , EIdentifier "y" ])
+       ])
+    (ENumber "2")
+]
+>>> tex
+\left( {x + y} \right)^{2}

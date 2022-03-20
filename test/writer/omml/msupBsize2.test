@@ -1,0 +1,84 @@
+<<< native
+[ ESuper (EIdentifier "x") (ENumber "1")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (EIdentifier "a")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "H") (EIdentifier "a")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "H") (ENumber "1")
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:sSup>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+      <m:sup>
+        <m:r>
+          <m:t>1</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSup>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:sSup>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+      <m:sup>
+        <m:r>
+          <m:t>a</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSup>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:sSup>
+      <m:e>
+        <m:r>
+          <m:t>H</m:t>
+        </m:r>
+      </m:e>
+      <m:sup>
+        <m:r>
+          <m:t>a</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSup>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>+</m:t>
+    </m:r>
+    <m:sSup>
+      <m:e>
+        <m:r>
+          <m:t>H</m:t>
+        </m:r>
+      </m:e>
+      <m:sup>
+        <m:r>
+          <m:t>1</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSup>
+  </m:oMath>
+</m:oMathPara>

@@ -1,0 +1,146 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "jcirc" ] , [ ESymbol Ord "\309" ] ]
+    , [ [ EText TextNormal "Jcirc" ] , [ ESymbol Ord "\308" ] ]
+    , [ [ EText TextNormal "jcy" ] , [ ESymbol Ord "\1081" ] ]
+    , [ [ EText TextNormal "Jcy" ] , [ ESymbol Ord "\1049" ] ]
+    , [ [ EText TextNormal "jfr" ] , [ ESymbol Alpha "\120103" ] ]
+    , [ [ EText TextNormal "Jfr" ] , [ ESymbol Alpha "\120077" ] ]
+    , [ [ EText TextNormal "jmath" ] , [ ESymbol Alpha "\567" ] ]
+    , [ [ EText TextNormal "jopf" ] , [ ESymbol Alpha "\120155" ] ]
+    , [ [ EText TextNormal "Jopf" ] , [ ESymbol Alpha "\120129" ] ]
+    , [ [ EText TextNormal "jscr" ] , [ ESymbol Alpha "\119999" ] ]
+    , [ [ EText TextNormal "Jscr" ] , [ ESymbol Alpha "\119973" ] ]
+    , [ [ EText TextNormal "jsercy" ] , [ ESymbol Ord "\1112" ] ]
+    , [ [ EText TextNormal "Jsercy" ] , [ ESymbol Ord "\1032" ] ]
+    , [ [ EText TextNormal "jukcy" ] , [ ESymbol Ord "\1108" ] ]
+    , [ [ EText TextNormal "Jukcy" ] , [ ESymbol Ord "\1028" ] ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">jcirc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ĵ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Jcirc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ĵ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">jcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>й</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Jcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Й</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">jfr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔧</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Jfr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔍</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">jmath</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ȷ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">jopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕛</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Jopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕁</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">jscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝒿</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Jscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝒥</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">jsercy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ј</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Jsercy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ј</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">jukcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>є</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Jukcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Є</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

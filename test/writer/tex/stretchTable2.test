@@ -1,0 +1,12 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ ESymbol Accent "\8592" ] , [ ENumber "1" ] ]
+    , [ [ EText TextNormal "a long cell" ] , [ ENumber "1" ] ]
+    ]
+]
+>>> tex
+\begin{matrix}
+\leftarrow & 1 \\
+\text{a\ long\ cell} & 1 \\
+\end{matrix}

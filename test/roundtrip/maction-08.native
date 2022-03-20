@@ -1,0 +1,13 @@
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter ]
+           [ [ [ EGrouped [ ENumber "12" , EIdentifier "x" ] ]
+             , [ ENumber "0" ]
+             ]
+           , [ [ ENumber "0" ] , [ ENumber "117" ] ]
+           ])
+    ]
+]

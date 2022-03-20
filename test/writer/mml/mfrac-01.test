@@ -1,0 +1,28 @@
+<<< native
+[ EFraction NormalFrac (ENumber "1") (ENumber "8")
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EUnder False (ENumber "8") (EPhantom (ENumber "0")))
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <mn>1</mn>
+      <mn>8</mn>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1</mn>
+      <munder>
+        <mn>8</mn>
+        <mphantom>
+          <mn>0</mn>
+        </mphantom>
+      </munder>
+    </mfrac>
+  </mrow>
+</math>

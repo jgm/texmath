@@ -1,0 +1,11 @@
+<<< native
+[ ESqrt (EIdentifier "content")
+, ESymbol Rel "="
+, ESqrt
+    (ESub (EIdentifier "content") (EPhantom (EIdentifier "fail")))
+, ESymbol Rel "="
+, ESqrt
+    (ESuper (EIdentifier "content") (EPhantom (EIdentifier "fail")))
+]
+>>> tex
+\sqrt{content} = \sqrt{{content}_{\phantom{fail}}} = \sqrt{{content}^{\phantom{fail}}}

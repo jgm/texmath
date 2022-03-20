@@ -1,0 +1,199 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "Top" ]
+      , [ ENumber "3" ]
+      , [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+            (ENumber "2")
+        ]
+      , [ EOver
+            False
+            (EIdentifier "y")
+            (EFraction
+               NormalFrac
+               (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+               (ENumber "2"))
+        ]
+      ]
+    , [ [ EText TextNormal "Bottom" ]
+      , [ ENumber "3" ]
+      , [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+            (ENumber "2")
+        ]
+      , [ EOver
+            False
+            (EIdentifier "y")
+            (EFraction
+               NormalFrac
+               (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+               (ENumber "2"))
+        ]
+      ]
+    , [ [ EText TextNormal "Center" ]
+      , [ ENumber "3" ]
+      , [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+            (ENumber "2")
+        ]
+      , [ EOver
+            False
+            (EIdentifier "y")
+            (EFraction
+               NormalFrac
+               (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+               (ENumber "2"))
+        ]
+      ]
+    , [ [ EText TextNormal "Baseline" ]
+      , [ ENumber "3" ]
+      , [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+            (ENumber "2")
+        ]
+      , [ EOver
+            False
+            (EIdentifier "y")
+            (EFraction
+               NormalFrac
+               (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+               (ENumber "2"))
+        ]
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Top</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mn>3</mn>
+      </mtd>
+      <mtd columnalign="center">
+        <mfrac>
+          <mrow>
+            <mi>a</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+          </mrow>
+          <mn>2</mn>
+        </mfrac>
+      </mtd>
+      <mtd columnalign="center">
+        <mover>
+          <mi>y</mi>
+          <mfrac>
+            <mrow>
+              <mi>a</mi>
+              <mo>+</mo>
+              <mn>1</mn>
+            </mrow>
+            <mn>2</mn>
+          </mfrac>
+        </mover>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Bottom</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mn>3</mn>
+      </mtd>
+      <mtd columnalign="center">
+        <mfrac>
+          <mrow>
+            <mi>a</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+          </mrow>
+          <mn>2</mn>
+        </mfrac>
+      </mtd>
+      <mtd columnalign="center">
+        <mover>
+          <mi>y</mi>
+          <mfrac>
+            <mrow>
+              <mi>a</mi>
+              <mo>+</mo>
+              <mn>1</mn>
+            </mrow>
+            <mn>2</mn>
+          </mfrac>
+        </mover>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Center</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mn>3</mn>
+      </mtd>
+      <mtd columnalign="center">
+        <mfrac>
+          <mrow>
+            <mi>a</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+          </mrow>
+          <mn>2</mn>
+        </mfrac>
+      </mtd>
+      <mtd columnalign="center">
+        <mover>
+          <mi>y</mi>
+          <mfrac>
+            <mrow>
+              <mi>a</mi>
+              <mo>+</mo>
+              <mn>1</mn>
+            </mrow>
+            <mn>2</mn>
+          </mfrac>
+        </mover>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Baseline</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mn>3</mn>
+      </mtd>
+      <mtd columnalign="center">
+        <mfrac>
+          <mrow>
+            <mi>a</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+          </mrow>
+          <mn>2</mn>
+        </mfrac>
+      </mtd>
+      <mtd columnalign="center">
+        <mover>
+          <mi>y</mi>
+          <mfrac>
+            <mrow>
+              <mi>a</mi>
+              <mo>+</mo>
+              <mn>1</mn>
+            </mrow>
+            <mn>2</mn>
+          </mfrac>
+        </mover>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

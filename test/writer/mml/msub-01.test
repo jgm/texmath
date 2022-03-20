@@ -1,0 +1,27 @@
+<<< native
+[ ESub (EIdentifier "L") (EIdentifier "x")
+, ESymbol Rel "="
+, ESub
+    (EIdentifier "L")
+    (EGrouped [ EIdentifier "x" , EPhantom (EIdentifier "fail") ])
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub>
+      <mi>L</mi>
+      <mi>x</mi>
+    </msub>
+    <mo>=</mo>
+    <msub>
+      <mi>L</mi>
+      <mrow>
+        <mi>x</mi>
+        <mphantom>
+          <mi>fail</mi>
+        </mphantom>
+      </mrow>
+    </msub>
+  </mrow>
+</math>

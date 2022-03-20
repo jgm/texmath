@@ -1,0 +1,10 @@
+<<< native
+[ ESubsup (EIdentifier "D") (EIdentifier "x") (ENumber "2")
+, ESymbol Rel "="
+, ESubsup
+    (EIdentifier "D")
+    (EUnder False (EIdentifier "x") (EPhantom (ENumber "0")))
+    (EOver False (ENumber "2") (EPhantom (ENumber "0")))
+]
+>>> eqn
+D sub x sup 2 = D sub {x from {hphantom 0}} sup {2 to {hphantom 0}}

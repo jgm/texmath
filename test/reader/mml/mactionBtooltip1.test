@@ -1,0 +1,13 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <maction actiontype="tooltip">
+    <mfrac>
+      <mi>y</mi> 
+      <mi>x</mi> 
+    </mfrac> 
+    <mtext>Divide y by x</mtext> 
+  </maction> </math>
+>>> native
+[ EFraction NormalFrac (EIdentifier "y") (EIdentifier "x") ]

@@ -1,0 +1,22 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable frame="solid" framespacing="4em 4em">
+    <mtr>
+      <mtd>
+        <mtable>
+          <mtr>
+            <mtd>
+              <mi>x</mi> 
+            </mtd> 
+          </mtr> 
+        </mtable> 
+      </mtd> 
+    </mtr> 
+  </mtable> </math>
+>>> native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EArray [ AlignCenter ] [ [ [ EIdentifier "x" ] ] ] ] ] ]
+]

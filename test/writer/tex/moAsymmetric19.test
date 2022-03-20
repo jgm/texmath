@@ -1,0 +1,38 @@
+<<< native
+[ EIdentifier "x"
+, ESymbol Rel "="
+, EGrouped
+    [ EDelimited
+        "("
+        ")"
+        [ Right
+            (EArray
+               [ AlignCenter ] [ [ [ ENumber "0" ] ] , [ [ ENumber "0" ] ] ])
+        ]
+    , EDelimited
+        "("
+        ")"
+        [ Right
+            (EArray
+               [ AlignCenter ] [ [ [ ENumber "0" ] ] , [ [ ENumber "0" ] ] ])
+        ]
+    , EDelimited
+        "("
+        ")"
+        [ Right
+            (EArray
+               [ AlignCenter ] [ [ [ ENumber "0" ] ] , [ [ ENumber "0" ] ] ])
+        ]
+    ]
+]
+>>> tex
+x = {\begin{pmatrix}
+0 \\
+0 \\
+\end{pmatrix}\begin{pmatrix}
+0 \\
+0 \\
+\end{pmatrix}\begin{pmatrix}
+0 \\
+0 \\
+\end{pmatrix}}

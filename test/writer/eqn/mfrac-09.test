@@ -1,0 +1,15 @@
+<<< native
+[ EFraction NormalFrac (ENumber "9") (ENumber "14")
+, ESymbol Rel "="
+, EFraction NormalFrac (ENumber "9") (ENumber "14")
+, EFraction
+    NormalFrac
+    (EPhantom
+       (EFraction
+          NormalFrac (EPhantom (ENumber "1")) (EPhantom (ENumber "2"))))
+    (EPhantom
+       (EFraction
+          NormalFrac (EPhantom (ENumber "1")) (EPhantom (ENumber "2"))))
+]
+>>> eqn
+9 over 14 = 9 over 14 {hphantom {{hphantom 1} over {hphantom 2}}} over {hphantom {{hphantom 1} over {hphantom 2}}}

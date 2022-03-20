@@ -1,0 +1,11 @@
+<<< native
+[ EUnder False (EIdentifier "middle") (EIdentifier "bottom")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (EIdentifier "middle")
+    (EIdentifier "bottom")
+    (EPhantom (EIdentifier "fail"))
+]
+>>> eqn
+middle from bottom = middle from bottom to {hphantom fail}

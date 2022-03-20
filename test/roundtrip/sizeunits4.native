@@ -1,0 +1,21 @@
+[ ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper
+    (EGrouped [ EIdentifier "M" , EIdentifier "x" ]) (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "2")
+]

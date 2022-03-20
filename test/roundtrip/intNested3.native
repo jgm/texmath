@@ -1,0 +1,162 @@
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "single integral" ]
+      , [ EGrouped
+            [ EGrouped [ ESymbol Op "\8747" , EIdentifier "x" ]
+            , EGrouped [ ESymbol Op "\8747" , EIdentifier "M" ]
+            , EDelimited
+                "\8747"
+                ""
+                [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "o"))
+                ]
+            , EDelimited
+                "\8747"
+                ""
+                [ Right (EFraction NormalFrac (EIdentifier "A") (EIdentifier "o"))
+                ]
+            , EDelimited
+                "\8747"
+                ""
+                [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "A"))
+                ]
+            , EDelimited
+                "\8747"
+                ""
+                [ Right (EFraction NormalFrac (EIdentifier "A") (EIdentifier "M"))
+                ]
+            , EDelimited
+                "\8747"
+                ""
+                [ Right (EFraction NormalFrac (EIdentifier ".") (EIdentifier "''"))
+                ]
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "double integral" ]
+      , [ EGrouped
+            [ EDelimited
+                "\8747"
+                ""
+                [ Right (EDelimited "\8747" "" [ Right (EIdentifier "x") ]) ]
+            , EDelimited
+                "\8747"
+                ""
+                [ Right (EDelimited "\8747" "" [ Right (EIdentifier "M") ]) ]
+            , EDelimited
+                "\8747"
+                ""
+                [ Right
+                    (EDelimited
+                       "\8747"
+                       ""
+                       [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "o"))
+                       ])
+                ]
+            , EDelimited
+                "\8747"
+                ""
+                [ Right
+                    (EDelimited
+                       "\8747"
+                       ""
+                       [ Right (EFraction NormalFrac (EIdentifier "A") (EIdentifier "o"))
+                       ])
+                ]
+            , EDelimited
+                "\8747"
+                ""
+                [ Right
+                    (EDelimited
+                       "\8747"
+                       ""
+                       [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "A"))
+                       ])
+                ]
+            , EDelimited
+                "\8747"
+                ""
+                [ Right
+                    (EDelimited
+                       "\8747"
+                       ""
+                       [ Right (EFraction NormalFrac (EIdentifier "A") (EIdentifier "M"))
+                       ])
+                ]
+            , EDelimited
+                "\8747"
+                ""
+                [ Right
+                    (EDelimited
+                       "\8747"
+                       ""
+                       [ Right (EFraction NormalFrac (EIdentifier ".") (EIdentifier "''"))
+                       ])
+                ]
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "double nested integral" ]
+      , [ EGrouped
+            [ EDelimited
+                "\8747"
+                ""
+                [ Right (EDelimited "\8747" "" [ Right (EIdentifier "x") ]) ]
+            , EDelimited
+                "\8747"
+                ""
+                [ Right (EDelimited "\8747" "" [ Right (EIdentifier "M") ]) ]
+            , EDelimited
+                "\8747"
+                ""
+                [ Right
+                    (EDelimited
+                       "\8747"
+                       ""
+                       [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "o"))
+                       ])
+                ]
+            , EDelimited
+                "\8747"
+                ""
+                [ Right
+                    (EDelimited
+                       "\8747"
+                       ""
+                       [ Right (EFraction NormalFrac (EIdentifier "A") (EIdentifier "o"))
+                       ])
+                ]
+            , EDelimited
+                "\8747"
+                ""
+                [ Right
+                    (EDelimited
+                       "\8747"
+                       ""
+                       [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "A"))
+                       ])
+                ]
+            , EDelimited
+                "\8747"
+                ""
+                [ Right
+                    (EDelimited
+                       "\8747"
+                       ""
+                       [ Right (EFraction NormalFrac (EIdentifier "A") (EIdentifier "M"))
+                       ])
+                ]
+            , EDelimited
+                "\8747"
+                ""
+                [ Right
+                    (EDelimited
+                       "\8747"
+                       ""
+                       [ Right (EFraction NormalFrac (EIdentifier ".") (EIdentifier "''"))
+                       ])
+                ]
+            ]
+        ]
+      ]
+    ]
+]

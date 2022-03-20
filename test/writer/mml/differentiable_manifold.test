@@ -1,0 +1,181 @@
+<<< native
+[ ESub (EIdentifier "\947") (ENumber "1")
+, ESymbol Rel "\8801"
+, ESub (EIdentifier "\947") (ENumber "2")
+, ESymbol Rel "\8660"
+, EDelimited
+    "{"
+    ""
+    [ Right
+        (EArray
+           [ AlignLeft ]
+           [ [ [ ESub (EIdentifier "\947") (ENumber "1")
+               , EDelimited "(" ")" [ Right (ENumber "0") ]
+               , ESymbol Rel "="
+               , ESub (EIdentifier "\947") (ENumber "2")
+               , EDelimited "(" ")" [ Right (ENumber "0") ]
+               , ESymbol Rel "="
+               , EIdentifier "p"
+               , ESymbol Pun ","
+               , EText TextNormal " and "
+               ]
+             ]
+           , [ [ ESub
+                   (EDelimited
+                      ""
+                      "|"
+                      [ Right
+                          (EFraction
+                             NormalFrac
+                             (EStyled TextNormal [ EIdentifier "d" ])
+                             (EGrouped
+                                [ EStyled TextNormal [ EIdentifier "d" ] , EIdentifier "t" ]))
+                      , Right (EIdentifier "\981")
+                      , Right (ESymbol Bin "\8728")
+                      , Right (ESub (EIdentifier "\947") (ENumber "1"))
+                      , Right (EDelimited "(" ")" [ Right (EIdentifier "t") ])
+                      ])
+                   (EGrouped [ EIdentifier "t" , ESymbol Rel "=" , ENumber "0" ])
+               , ESymbol Rel "="
+               , ESub
+                   (EDelimited
+                      ""
+                      "|"
+                      [ Right
+                          (EFraction
+                             NormalFrac
+                             (EStyled TextNormal [ EIdentifier "d" ])
+                             (EGrouped
+                                [ EStyled TextNormal [ EIdentifier "d" ] , EIdentifier "t" ]))
+                      , Right (EIdentifier "\981")
+                      , Right (ESymbol Bin "\8728")
+                      , Right (ESub (EIdentifier "\947") (ENumber "2"))
+                      , Right (EDelimited "(" ")" [ Right (EIdentifier "t") ])
+                      ])
+                   (EGrouped [ EIdentifier "t" , ESymbol Rel "=" , ENumber "0" ])
+               ]
+             ]
+           ])
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub>
+      <mi>γ</mi>
+      <mn>1</mn>
+    </msub>
+    <mo>≡</mo>
+    <msub>
+      <mi>γ</mi>
+      <mn>2</mn>
+    </msub>
+    <mo>⇔</mo>
+    <mrow>
+      <mo stretchy="true" form="prefix">{</mo>
+      <mtable>
+        <mtr>
+          <mtd columnalign="left">
+            <msub>
+              <mi>γ</mi>
+              <mn>1</mn>
+            </msub>
+            <mrow>
+              <mo stretchy="true" form="prefix">(</mo>
+              <mn>0</mn>
+              <mo stretchy="true" form="postfix">)</mo>
+            </mrow>
+            <mo>=</mo>
+            <msub>
+              <mi>γ</mi>
+              <mn>2</mn>
+            </msub>
+            <mrow>
+              <mo stretchy="true" form="prefix">(</mo>
+              <mn>0</mn>
+              <mo stretchy="true" form="postfix">)</mo>
+            </mrow>
+            <mo>=</mo>
+            <mi>p</mi>
+            <mo>,</mo>
+            <mrow>
+              <mspace width="0.333em" />
+              <mtext mathvariant="normal"> and </mtext>
+              <mspace width="0.333em" />
+            </mrow>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd columnalign="left">
+            <msub>
+              <mrow>
+                <mfrac>
+                  <mstyle mathvariant="normal">
+                    <mi>d</mi>
+                  </mstyle>
+                  <mrow>
+                    <mstyle mathvariant="normal">
+                      <mi>d</mi>
+                    </mstyle>
+                    <mi>t</mi>
+                  </mrow>
+                </mfrac>
+                <mi>ϕ</mi>
+                <mo>∘</mo>
+                <msub>
+                  <mi>γ</mi>
+                  <mn>1</mn>
+                </msub>
+                <mrow>
+                  <mo stretchy="true" form="prefix">(</mo>
+                  <mi>t</mi>
+                  <mo stretchy="true" form="postfix">)</mo>
+                </mrow>
+                <mo stretchy="true" form="postfix">|</mo>
+              </mrow>
+              <mrow>
+                <mi>t</mi>
+                <mo>=</mo>
+                <mn>0</mn>
+              </mrow>
+            </msub>
+            <mo>=</mo>
+            <msub>
+              <mrow>
+                <mfrac>
+                  <mstyle mathvariant="normal">
+                    <mi>d</mi>
+                  </mstyle>
+                  <mrow>
+                    <mstyle mathvariant="normal">
+                      <mi>d</mi>
+                    </mstyle>
+                    <mi>t</mi>
+                  </mrow>
+                </mfrac>
+                <mi>ϕ</mi>
+                <mo>∘</mo>
+                <msub>
+                  <mi>γ</mi>
+                  <mn>2</mn>
+                </msub>
+                <mrow>
+                  <mo stretchy="true" form="prefix">(</mo>
+                  <mi>t</mi>
+                  <mo stretchy="true" form="postfix">)</mo>
+                </mrow>
+                <mo stretchy="true" form="postfix">|</mo>
+              </mrow>
+              <mrow>
+                <mi>t</mi>
+                <mo>=</mo>
+                <mn>0</mn>
+              </mrow>
+            </msub>
+          </mtd>
+        </mtr>
+      </mtable>
+    </mrow>
+  </mrow>
+</math>

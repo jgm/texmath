@@ -1,0 +1,7 @@
+<<< native
+[ EIdentifier "x"
+, ESymbol Bin "+"
+, EGrouped [ EIdentifier "a" , ESymbol Ord "/" , EIdentifier "b" ]
+]
+>>> eqn
+x + {a / b}

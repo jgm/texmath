@@ -1,0 +1,11 @@
+<<< native
+[ EUnder False (EIdentifier "middle") (EIdentifier "bottom")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (EIdentifier "middle")
+    (EIdentifier "bottom")
+    (EPhantom (EIdentifier "fail"))
+]
+>>> tex
+\underset{bottom}{middle} = \underset{bottom}{\overset{\phantom{fail}}{middle}}

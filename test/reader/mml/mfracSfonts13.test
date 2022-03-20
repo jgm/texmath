@@ -1,0 +1,50 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mstyle fontweight="bold" fontsize="7px">
+      <mfrac>
+        <mn>1</mn> 
+        <mrow>
+          <mi>y</mi> 
+          <mo>+</mo> 
+          <mn>3</mn> 
+        </mrow> 
+      </mfrac> 
+    </mstyle> 
+    <mstyle fontstyle="normal">
+      <mfrac>
+        <mn>1</mn> 
+        <mrow>
+          <mi>y</mi> 
+          <mo>+</mo> 
+          <mn>3</mn> 
+        </mrow> 
+      </mfrac> 
+    </mstyle> 
+    <mstyle fontsize="12pt">
+      <mfrac>
+        <mn>1</mn> 
+        <mrow>
+          <mi>y</mi> 
+          <mo>+</mo> 
+          <mn>3</mn> 
+        </mrow> 
+      </mfrac> 
+    </mstyle> 
+  </mrow> </math>
+>>> native
+[ EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ])
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ])
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ])
+]

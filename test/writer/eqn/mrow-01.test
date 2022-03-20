@@ -1,0 +1,7 @@
+<<< native
+[ EFraction NormalFrac (EIdentifier "x") (ENumber "4")
+, ESymbol Rel "="
+, EFraction NormalFrac (EIdentifier "x") (ENumber "4")
+]
+>>> eqn
+x over 4 = x over 4

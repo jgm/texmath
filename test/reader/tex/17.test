@@ -1,0 +1,12 @@
+<<< tex
+x*4 = 4*x
+
+>>> native
+[ EIdentifier "x"
+, ESymbol Bin "*"
+, ENumber "4"
+, ESymbol Rel "="
+, ENumber "4"
+, ESymbol Bin "*"
+, EIdentifier "x"
+]

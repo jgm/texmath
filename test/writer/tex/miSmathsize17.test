@@ -1,0 +1,11 @@
+<<< native
+[ EIdentifier "A"
+, ESymbol Bin "+"
+, EIdentifier "A"
+, ESymbol Bin "+"
+, EIdentifier "A"
+, ESymbol Bin "+"
+, EIdentifier "B"
+]
+>>> tex
+A + A + A + B

@@ -1,0 +1,76 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle mathvariant="sans-serif">
+    <mtable columnalign="left">
+      <mtr>
+        <mtd>
+          <mtext>!"#$%&amp;'()*+,-./0123456789:;&lt;=&gt;?</mtext> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mtext>@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_</mtext> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mtext>`abcdefghijklmnopqrstuvwxyz{|}~</mtext> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mtext>&#x0131;&#x0237;</mtext> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mtext>&#x0391;&#x0392;&#x0393;&#x0394;&#x0395;&#x0396;&#x0397;&#x0398;&#x0399;&#x039A;&#x039B;&#x039C;&#x039D;&#x039E;&#x039F;&#x03A0;&#x03A1;&#x03F4;&#x03A3;&#x03A4;&#x03A5;&#x03A6;&#x03A7;&#x03A8;&#x03A9;&#x2207;</mtext> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mtext>&#x03B1;&#x03B2;&#x03B3;&#x03B4;&#x03B5;&#x03B6;&#x03B7;&#x03B8;&#x03B9;&#x03BA;&#x03BB;&#x03BC;&#x03BD;&#x03BE;&#x03BF;&#x03C0;&#x03C1;&#x03C2;&#x03C3;&#x03C4;&#x03C5;&#x03C6;&#x03C7;&#x03C8;&#x03C9;&#x2202;</mtext> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mtext>&#x03F5;&#x03D1;&#x03F0;&#x03D5;&#x03F1;&#x03D6;&#x03DC;&#x03DD;</mtext> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mtext>&#x00B1;&#x00B7;&#x00D7;&#x00F7;&#x2018;&#x2019;&#x201C;&#x201D;&#x2022;&#x2212;&#x2213;&#x2215;&#x2217;&#x2219;&#x2260;&#x2264;&#x2265;&#x22C5;</mtext> 
+        </mtd> 
+      </mtr> 
+    </mtable> 
+  </mstyle> </math>
+>>> native
+[ EStyled
+    TextSansSerif
+    [ EArray
+        [ AlignLeft ]
+        [ [ [ EText TextNormal "!\"#$%&'()*+,-./0123456789:;<=>?" ] ]
+        , [ [ EText TextNormal "@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_" ] ]
+        , [ [ EText TextNormal "`abcdefghijklmnopqrstuvwxyz{|}~" ] ]
+        , [ [ EText TextNormal "\305\567" ] ]
+        , [ [ EText
+                TextNormal
+                "\913\914\915\916\917\918\919\920\921\922\923\924\925\926\927\928\929\1012\931\932\933\934\935\936\937\8711"
+            ]
+          ]
+        , [ [ EText
+                TextNormal
+                "\945\946\947\948\949\950\951\952\953\954\955\956\957\958\959\960\961\962\963\964\965\966\967\968\969\8706"
+            ]
+          ]
+        , [ [ EText TextNormal "\1013\977\1008\981\1009\982\988\989" ] ]
+        , [ [ EText
+                TextNormal
+                "\177\183\215\247\8216\8217\8220\8221\8226\8722\8723\8725\8727\8729\8800\8804\8805\8901"
+            ]
+          ]
+        ]
+    ]
+]

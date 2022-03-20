@@ -1,0 +1,38 @@
+<<< native
+[ ESqrt (EIdentifier "content")
+, ESymbol Rel "="
+, ESqrt
+    (EUnder
+       False (EIdentifier "content") (EPhantom (EIdentifier "fail")))
+, ESymbol Rel "="
+, ESqrt
+    (EOver
+       False (EIdentifier "content") (EPhantom (EIdentifier "fail")))
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msqrt>
+      <mi>content</mi>
+    </msqrt>
+    <mo>=</mo>
+    <msqrt>
+      <munder>
+        <mi>content</mi>
+        <mphantom>
+          <mi>fail</mi>
+        </mphantom>
+      </munder>
+    </msqrt>
+    <mo>=</mo>
+    <msqrt>
+      <mover>
+        <mi>content</mi>
+        <mphantom>
+          <mi>fail</mi>
+        </mphantom>
+      </mover>
+    </msqrt>
+  </mrow>
+</math>

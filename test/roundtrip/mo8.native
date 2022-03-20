@@ -1,0 +1,6 @@
+[ EDelimited
+    "("
+    ")"
+    [ Right (EFraction NormalFrac (EIdentifier "a") (EIdentifier "b"))
+    ]
+]

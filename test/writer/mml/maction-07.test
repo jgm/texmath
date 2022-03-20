@@ -1,0 +1,10 @@
+<<< native
+[ EFraction NormalFrac (ENumber "43867") (ENumber "798") ]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mn>43867</mn>
+    <mn>798</mn>
+  </mfrac>
+</math>

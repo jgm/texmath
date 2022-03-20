@@ -1,0 +1,569 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable>
+    <mtr>
+      <mtd>
+        <mtext>vangrt</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⦜</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>varepsilon</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ϵ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>varkappa</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ϰ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>varnothing</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>∅</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>varphi</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ϕ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>varpi</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ϖ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>varpropto</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>∝</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>varr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>↕</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vArr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⇕</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>varrho</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ϱ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>varsigma</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ς</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>varsubsetneq</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊊︀</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>varsubsetneqq</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⫋︀</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>varsupsetneq</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊋︀</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>varsupsetneqq</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⫌︀</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vartheta</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ϑ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vartriangleleft</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊲</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vartriangleright</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊳</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vBar</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⫨</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Vbar</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⫫</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vBarv</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⫩</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vcy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>в</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Vcy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>В</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vdash</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊢</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vDash</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊨</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Vdash</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊩</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>VDash</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊫</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Vdashl</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⫦</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vee</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>∨</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Vee</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⋁</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>veebar</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊻</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>veeeq</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>≚</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vellip</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⋮</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>verbar</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>|</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Verbar</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>‖</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vert</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>|</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Vert</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>‖</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>VerticalBar</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>∣</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>VerticalLine</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>|</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>VerticalSeparator</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>❘</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>VerticalTilde</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>≀</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>VeryThinSpace</mtext> 
+      </mtd> 
+      <mtd>
+        <mo> </mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vfr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝔳</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Vfr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝔙</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vltri</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊲</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vnsub</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊂⃒</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vnsup</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊃⃒</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vopf</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝕧</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Vopf</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝕍</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vprop</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>∝</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vrtri</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊳</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vscr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝓋</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Vscr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝒱</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vsubne</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊊︀</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vsubnE</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⫋︀</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vsupne</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊋︀</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vsupnE</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⫌︀</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Vvdash</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊪</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>vzigzag</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⦚</mo> 
+      </mtd> 
+    </mtr> 
+  </mtable> 
+</math>
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "vangrt" ] , [ ESymbol Ord "\10652" ] ]
+    , [ [ EText TextNormal "varepsilon" ] , [ ESymbol Alpha "\1013" ] ]
+    , [ [ EText TextNormal "varkappa" ] , [ ESymbol Alpha "\1008" ] ]
+    , [ [ EText TextNormal "varnothing" ] , [ ESymbol Ord "\8709" ] ]
+    , [ [ EText TextNormal "varphi" ] , [ ESymbol Alpha "\981" ] ]
+    , [ [ EText TextNormal "varpi" ] , [ ESymbol Alpha "\982" ] ]
+    , [ [ EText TextNormal "varpropto" ] , [ ESymbol Rel "\8733" ] ]
+    , [ [ EText TextNormal "varr" ] , [ ESymbol Rel "\8597" ] ]
+    , [ [ EText TextNormal "vArr" ] , [ ESymbol Rel "\8661" ] ]
+    , [ [ EText TextNormal "varrho" ] , [ ESymbol Alpha "\1009" ] ]
+    , [ [ EText TextNormal "varsigma" ] , [ ESymbol Alpha "\962" ] ]
+    , [ [ EText TextNormal "varsubsetneq" ]
+      , [ EMathOperator "\8842\65024" ]
+      ]
+    , [ [ EText TextNormal "varsubsetneqq" ]
+      , [ EMathOperator "\10955\65024" ]
+      ]
+    , [ [ EText TextNormal "varsupsetneq" ]
+      , [ EMathOperator "\8843\65024" ]
+      ]
+    , [ [ EText TextNormal "varsupsetneqq" ]
+      , [ EMathOperator "\10956\65024" ]
+      ]
+    , [ [ EText TextNormal "vartheta" ] , [ ESymbol Alpha "\977" ] ]
+    , [ [ EText TextNormal "vartriangleleft" ]
+      , [ ESymbol Rel "\8882" ]
+      ]
+    , [ [ EText TextNormal "vartriangleright" ]
+      , [ ESymbol Rel "\8883" ]
+      ]
+    , [ [ EText TextNormal "vBar" ] , [ ESymbol Rel "\10984" ] ]
+    , [ [ EText TextNormal "Vbar" ] , [ ESymbol Rel "\10987" ] ]
+    , [ [ EText TextNormal "vBarv" ] , [ ESymbol Rel "\10985" ] ]
+    , [ [ EText TextNormal "vcy" ] , [ ESymbol Ord "\1074" ] ]
+    , [ [ EText TextNormal "Vcy" ] , [ ESymbol Ord "\1042" ] ]
+    , [ [ EText TextNormal "vdash" ] , [ ESymbol Rel "\8866" ] ]
+    , [ [ EText TextNormal "vDash" ] , [ ESymbol Rel "\8872" ] ]
+    , [ [ EText TextNormal "Vdash" ] , [ ESymbol Rel "\8873" ] ]
+    , [ [ EText TextNormal "VDash" ] , [ ESymbol Rel "\8875" ] ]
+    , [ [ EText TextNormal "Vdashl" ] , [ ESymbol Rel "\10982" ] ]
+    , [ [ EText TextNormal "vee" ] , [ ESymbol Bin "\8744" ] ]
+    , [ [ EText TextNormal "Vee" ] , [ ESymbol Op "\8897" ] ]
+    , [ [ EText TextNormal "veebar" ] , [ ESymbol Bin "\8891" ] ]
+    , [ [ EText TextNormal "veeeq" ] , [ ESymbol Rel "\8794" ] ]
+    , [ [ EText TextNormal "vellip" ] , [ ESymbol Rel "\8942" ] ]
+    , [ [ EText TextNormal "verbar" ] , [ ESymbol Op "|" ] ]
+    , [ [ EText TextNormal "Verbar" ] , [ ESymbol Close "\8214" ] ]
+    , [ [ EText TextNormal "vert" ] , [ ESymbol Op "|" ] ]
+    , [ [ EText TextNormal "Vert" ] , [ ESymbol Close "\8214" ] ]
+    , [ [ EText TextNormal "VerticalBar" ] , [ ESymbol Rel "\8739" ] ]
+    , [ [ EText TextNormal "VerticalLine" ] , [ ESymbol Op "|" ] ]
+    , [ [ EText TextNormal "VerticalSeparator" ]
+      , [ ESymbol Ord "\10072" ]
+      ]
+    , [ [ EText TextNormal "VerticalTilde" ]
+      , [ ESymbol Bin "\8768" ]
+      ]
+    , [ [ EText TextNormal "VeryThinSpace" ]
+      , [ ESymbol Ord "\8202" ]
+      ]
+    , [ [ EText TextNormal "vfr" ] , [ ESymbol Alpha "\120115" ] ]
+    , [ [ EText TextNormal "Vfr" ] , [ ESymbol Alpha "\120089" ] ]
+    , [ [ EText TextNormal "vltri" ] , [ ESymbol Rel "\8882" ] ]
+    , [ [ EText TextNormal "vnsub" ] , [ ESymbol Ord "\8834\8402" ] ]
+    , [ [ EText TextNormal "vnsup" ] , [ ESymbol Ord "\8835\8402" ] ]
+    , [ [ EText TextNormal "vopf" ] , [ ESymbol Alpha "\120167" ] ]
+    , [ [ EText TextNormal "Vopf" ] , [ ESymbol Alpha "\120141" ] ]
+    , [ [ EText TextNormal "vprop" ] , [ ESymbol Rel "\8733" ] ]
+    , [ [ EText TextNormal "vrtri" ] , [ ESymbol Rel "\8883" ] ]
+    , [ [ EText TextNormal "vscr" ] , [ ESymbol Alpha "\120011" ] ]
+    , [ [ EText TextNormal "Vscr" ] , [ ESymbol Alpha "\119985" ] ]
+    , [ [ EText TextNormal "vsubne" ]
+      , [ EMathOperator "\8842\65024" ]
+      ]
+    , [ [ EText TextNormal "vsubnE" ]
+      , [ EMathOperator "\10955\65024" ]
+      ]
+    , [ [ EText TextNormal "vsupne" ]
+      , [ EMathOperator "\8843\65024" ]
+      ]
+    , [ [ EText TextNormal "vsupnE" ]
+      , [ EMathOperator "\10956\65024" ]
+      ]
+    , [ [ EText TextNormal "Vvdash" ] , [ ESymbol Rel "\8874" ] ]
+    , [ [ EText TextNormal "vzigzag" ] , [ ESymbol Ord "\10650" ] ]
+    ]
+]

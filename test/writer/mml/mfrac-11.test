@@ -1,0 +1,93 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (EIdentifier "A")
+    (EGrouped
+       [ EIdentifier "B"
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (EIdentifier "C")
+           (EGrouped
+              [ EIdentifier "D"
+              , ESymbol Bin "+"
+              , EFraction NormalFrac (EIdentifier "E") (EIdentifier "F")
+              ])
+       ])
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ EPhantom (ENumber "1") , ESpace (0 % 1) , EIdentifier "A" ])
+    (EGrouped
+       [ EIdentifier "B"
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (EIdentifier "C")
+           (EGrouped
+              [ EIdentifier "D"
+              , ESymbol Bin "+"
+              , EFraction
+                  NormalFrac
+                  (EIdentifier "E")
+                  (EGrouped
+                     [ EIdentifier "F" , ESpace (0 % 1) , EPhantom (ENumber "1") ])
+              ])
+       ])
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <mi>A</mi>
+      <mrow>
+        <mi>B</mi>
+        <mo>+</mo>
+        <mfrac>
+          <mi>C</mi>
+          <mrow>
+            <mi>D</mi>
+            <mo>+</mo>
+            <mfrac>
+              <mi>E</mi>
+              <mi>F</mi>
+            </mfrac>
+          </mrow>
+        </mfrac>
+      </mrow>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <mphantom>
+          <mn>1</mn>
+        </mphantom>
+        <mspace width="0.0em" />
+        <mi>A</mi>
+      </mrow>
+      <mrow>
+        <mi>B</mi>
+        <mo>+</mo>
+        <mfrac>
+          <mi>C</mi>
+          <mrow>
+            <mi>D</mi>
+            <mo>+</mo>
+            <mfrac>
+              <mi>E</mi>
+              <mrow>
+                <mi>F</mi>
+                <mspace width="0.0em" />
+                <mphantom>
+                  <mn>1</mn>
+                </mphantom>
+              </mrow>
+            </mfrac>
+          </mrow>
+        </mfrac>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>

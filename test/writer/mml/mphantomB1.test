@@ -1,0 +1,53 @@
+<<< native
+[ EIdentifier "A"
+, EPhantom (EIdentifier "A")
+, EIdentifier "A"
+, ESymbol Bin "+"
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ENumber "1"
+       , ESymbol Bin "+"
+       , ENumber "2"
+       , ESymbol Bin "+"
+       , ENumber "3"
+       ])
+    (EGrouped
+       [ ENumber "1"
+       , ESymbol Bin "+"
+       , EPhantom (EGrouped [ ENumber "2" , ESymbol Bin "+" ])
+       , ENumber "3"
+       ])
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>A</mi>
+    <mphantom>
+      <mi>A</mi>
+    </mphantom>
+    <mi>A</mi>
+    <mo>+</mo>
+    <mfrac>
+      <mrow>
+        <mn>1</mn>
+        <mo>+</mo>
+        <mn>2</mn>
+        <mo>+</mo>
+        <mn>3</mn>
+      </mrow>
+      <mrow>
+        <mn>1</mn>
+        <mo>+</mo>
+        <mphantom>
+          <mrow>
+            <mn>2</mn>
+            <mo>+</mo>
+          </mrow>
+        </mphantom>
+        <mn>3</mn>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>

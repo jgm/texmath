@@ -1,0 +1,50 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mfrac>    <mi>A</mi>     <mrow>      <mi>B</mi>       <mo>+</mo>       <mfrac>        <mi>C</mi>         <mrow>          <mi>D</mi>           <mo>+</mo>           <mfrac>            <mi>E</mi>             <mi>F</mi>           </mfrac>         </mrow>       </mfrac>     </mrow>   </mfrac>   <mo>=</mo>   <mfrac>    <mrow>      <mover>        <mi>A</mi>
+        <mphantom>
+          <mn>0</mn>
+        </mphantom>
+      </mover>
+    </mrow>     <mrow>      <mi>B</mi>       <mo>+</mo>       <mfrac>        <mi>C</mi>         <mrow>          <mi>D</mi>           <mo>+</mo>           <mfrac>            <mi>E</mi>             <mrow>              <munder>                <mi>F</mi>
+                <mphantom>
+                  <mn>0</mn>
+                </mphantom>
+              </munder>
+            </mrow>           </mfrac>         </mrow>       </mfrac>     </mrow>   </mfrac> </math>
+>>> native
+[ EFraction
+    NormalFrac
+    (EIdentifier "A")
+    (EGrouped
+       [ EIdentifier "B"
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (EIdentifier "C")
+           (EGrouped
+              [ EIdentifier "D"
+              , ESymbol Bin "+"
+              , EFraction NormalFrac (EIdentifier "E") (EIdentifier "F")
+              ])
+       ])
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EOver False (EIdentifier "A") (EPhantom (ENumber "0")))
+    (EGrouped
+       [ EIdentifier "B"
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (EIdentifier "C")
+           (EGrouped
+              [ EIdentifier "D"
+              , ESymbol Bin "+"
+              , EFraction
+                  NormalFrac
+                  (EIdentifier "E")
+                  (EUnder False (EIdentifier "F") (EPhantom (ENumber "0")))
+              ])
+       ])
+]

@@ -1,0 +1,13 @@
+<<< native
+[ EIdentifier "a"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, EIdentifier "b"
+, EIdentifier "x"
+, ESymbol Bin "+"
+, EIdentifier "c"
+, ESymbol Rel "="
+, ENumber "0"
+]
+>>> eqn
+a x sup 2 + b x + c = 0

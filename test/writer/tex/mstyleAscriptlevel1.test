@@ -1,0 +1,10 @@
+<<< native
+[ EFraction NormalFrac (ENumber "2") (ESymbol Ord "4")
+, EFraction NormalFrac (ENumber "2") (ESymbol Ord "4")
+, EFraction NormalFrac (ENumber "2") (ESymbol Ord "4")
+, EFraction NormalFrac (ENumber "2") (ESymbol Ord "4")
+, EFraction NormalFrac (ENumber "2") (ESymbol Ord "4")
+, EFraction NormalFrac (ENumber "2") (ESymbol Ord "4")
+]
+>>> tex
+\frac{2}{4}\frac{2}{4}\frac{2}{4}\frac{2}{4}\frac{2}{4}\frac{2}{4}

@@ -1,0 +1,76 @@
+<<< native
+[ EOver False (EIdentifier "x") (ESymbol Accent "\8411")
+, ESymbol Rel "\8800"
+, EOver False (EIdentifier "x") (ESymbol Accent "\8411")
+, ESymbol Rel "="
+, EOver False (EIdentifier "x") (ESymbol Accent "\8411")
+, ESymbol Rel "="
+, EOver False (EIdentifier "x") (ESymbol Accent "\8411")
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:acc>
+      <m:accPr>
+        <m:chr m:val="⃛" />
+      </m:accPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+    </m:acc>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>≠</m:t>
+    </m:r>
+    <m:acc>
+      <m:accPr>
+        <m:chr m:val="⃛" />
+      </m:accPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+    </m:acc>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>=</m:t>
+    </m:r>
+    <m:acc>
+      <m:accPr>
+        <m:chr m:val="⃛" />
+      </m:accPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+    </m:acc>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>=</m:t>
+    </m:r>
+    <m:acc>
+      <m:accPr>
+        <m:chr m:val="⃛" />
+      </m:accPr>
+      <m:e>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+    </m:acc>
+  </m:oMath>
+</m:oMathPara>

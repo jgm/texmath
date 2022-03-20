@@ -1,0 +1,34 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>2</mn> 
+    <mo>,</mo> 
+    <mn>0.123</mn> 
+    <mo>,</mo> 
+    <mn>1,000,000</mn> 
+    <mo>,</mo> 
+    <mn>2.1e10</mn> 
+    <mo>,</mo> 
+    <mn>0xFFEF</mn> 
+    <mo>,</mo> 
+    <mn>MCMLXIX</mn> 
+    <mo>,</mo> 
+    <mn>twenty one</mn> 
+  </mrow> </math>
+>>> native
+[ ENumber "2"
+, ESymbol Pun ","
+, ENumber "0.123"
+, ESymbol Pun ","
+, ENumber "1,000,000"
+, ESymbol Pun ","
+, ENumber "2.1e10"
+, ESymbol Pun ","
+, ENumber "0xFFEF"
+, ESymbol Pun ","
+, ENumber "MCMLXIX"
+, ESymbol Pun ","
+, ENumber "twenty one"
+]

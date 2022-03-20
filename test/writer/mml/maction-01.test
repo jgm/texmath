@@ -1,0 +1,9 @@
+<<< native
+[ EBoxed (EText TextNormal "Place mouse pointer over this box") ]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <menclose notation="box">
+    <mtext mathvariant="normal">Place mouse pointer over this box</mtext>
+  </menclose>
+</math>

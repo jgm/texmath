@@ -1,0 +1,30 @@
+<<< native
+[ EIdentifier "a"
+, ESymbol Bin "+"
+, EIdentifier "b"
+, ESymbol Bin "+"
+, EIdentifier "c"
+, ESymbol Bin "+"
+, EIdentifier "f"
+, ESymbol Bin "+"
+, EIdentifier "\915"
+, ESymbol Bin "+"
+, EIdentifier "d"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>a</mi>
+    <mo>+</mo>
+    <mi>b</mi>
+    <mo>+</mo>
+    <mi>c</mi>
+    <mo>+</mo>
+    <mi>f</mi>
+    <mo>+</mo>
+    <mi>Γ</mi>
+    <mo>+</mo>
+    <mi>d</mi>
+  </mrow>
+</math>

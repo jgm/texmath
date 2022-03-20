@@ -1,0 +1,7 @@
+<<< native
+[ EIdentifier "f"
+, ESymbol Ord "\8289"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+]
+>>> eqn
+f  left ( x right )

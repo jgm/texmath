@@ -1,0 +1,11 @@
+<<< native
+[ EIdentifier "\945" , EIdentifier "" , EIdentifier "\945" ]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>α</mi>
+    <mi></mi>
+    <mi>α</mi>
+  </mrow>
+</math>

@@ -1,0 +1,11 @@
+<<< native
+[ EUnderover
+    False (EIdentifier "B") (EIdentifier "under") (EIdentifier "over")
+, ESymbol Rel "="
+, EOver
+    False
+    (EUnder False (EIdentifier "B") (EIdentifier "under"))
+    (EIdentifier "over")
+]
+>>> tex
+\underset{under}{\overset{over}{B}} = \overset{over}{\underset{under}{B}}

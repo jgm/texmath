@@ -1,0 +1,170 @@
+<<< native
+[ ESub (EGrouped []) (EIdentifier "p")
+, ESub (EIdentifier "F") (EIdentifier "q")
+, EDelimited
+    "("
+    ")"
+    [ Right (ESub (EIdentifier "a") (ENumber "1"))
+    , Right (ESymbol Pun ",")
+    , Right (ESymbol Ord "\8230")
+    , Right (ESymbol Pun ",")
+    , Right (ESub (EIdentifier "a") (EIdentifier "p"))
+    , Right (ESymbol Pun ";")
+    , Right (ESub (EIdentifier "c") (ENumber "1"))
+    , Right (ESymbol Pun ",")
+    , Right (ESymbol Ord "\8230")
+    , Right (ESymbol Pun ",")
+    , Right (ESub (EIdentifier "c") (EIdentifier "q"))
+    , Right (ESymbol Pun ";")
+    , Right (EIdentifier "z")
+    ]
+, ESymbol Rel "="
+, EUnderover
+    True
+    (ESymbol Op "\8721")
+    (EGrouped [ EIdentifier "n" , ESymbol Rel "=" , ENumber "0" ])
+    (ESymbol Ord "\8734")
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESub
+           (EDelimited
+              "(" ")" [ Right (ESub (EIdentifier "a") (ENumber "1")) ])
+           (EIdentifier "n")
+       , ESymbol Ord "\8943"
+       , ESub
+           (EDelimited
+              "(" ")" [ Right (ESub (EIdentifier "a") (EIdentifier "p")) ])
+           (EIdentifier "n")
+       ])
+    (EGrouped
+       [ ESub
+           (EDelimited
+              "(" ")" [ Right (ESub (EIdentifier "c") (ENumber "1")) ])
+           (EIdentifier "n")
+       , ESymbol Ord "\8943"
+       , ESub
+           (EDelimited
+              "(" ")" [ Right (ESub (EIdentifier "c") (EIdentifier "q")) ])
+           (EIdentifier "n")
+       ])
+, EFraction
+    NormalFrac
+    (ESuper (EIdentifier "z") (EIdentifier "n"))
+    (EGrouped [ EIdentifier "n" , ESymbol Ord "!" ])
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub>
+      <mrow />
+      <mi>p</mi>
+    </msub>
+    <msub>
+      <mi>F</mi>
+      <mi>q</mi>
+    </msub>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <msub>
+        <mi>a</mi>
+        <mn>1</mn>
+      </msub>
+      <mo>,</mo>
+      <mi>…</mi>
+      <mo>,</mo>
+      <msub>
+        <mi>a</mi>
+        <mi>p</mi>
+      </msub>
+      <mo>;</mo>
+      <msub>
+        <mi>c</mi>
+        <mn>1</mn>
+      </msub>
+      <mo>,</mo>
+      <mi>…</mi>
+      <mo>,</mo>
+      <msub>
+        <mi>c</mi>
+        <mi>q</mi>
+      </msub>
+      <mo>;</mo>
+      <mi>z</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mo>=</mo>
+    <munderover>
+      <mo>∑</mo>
+      <mrow>
+        <mi>n</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+      </mrow>
+      <mo accent="false">∞</mo>
+    </munderover>
+    <mfrac>
+      <mrow>
+        <msub>
+          <mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <msub>
+              <mi>a</mi>
+              <mn>1</mn>
+            </msub>
+            <mo stretchy="true" form="postfix">)</mo>
+          </mrow>
+          <mi>n</mi>
+        </msub>
+        <mi>⋯</mi>
+        <msub>
+          <mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <msub>
+              <mi>a</mi>
+              <mi>p</mi>
+            </msub>
+            <mo stretchy="true" form="postfix">)</mo>
+          </mrow>
+          <mi>n</mi>
+        </msub>
+      </mrow>
+      <mrow>
+        <msub>
+          <mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <msub>
+              <mi>c</mi>
+              <mn>1</mn>
+            </msub>
+            <mo stretchy="true" form="postfix">)</mo>
+          </mrow>
+          <mi>n</mi>
+        </msub>
+        <mi>⋯</mi>
+        <msub>
+          <mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <msub>
+              <mi>c</mi>
+              <mi>q</mi>
+            </msub>
+            <mo stretchy="true" form="postfix">)</mo>
+          </mrow>
+          <mi>n</mi>
+        </msub>
+      </mrow>
+    </mfrac>
+    <mfrac>
+      <msup>
+        <mi>z</mi>
+        <mi>n</mi>
+      </msup>
+      <mrow>
+        <mi>n</mi>
+        <mi>!</mi>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>

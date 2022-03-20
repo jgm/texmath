@@ -1,0 +1,27 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ EIdentifier "U" ] ] , [ [ EIdentifier "V" ] ] ])
+    ]
+, ESymbol Rel "="
+, EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ EIdentifier "U" ] ] , [ [ EIdentifier "V" ] ] ])
+    ]
+]
+>>> tex
+\begin{pmatrix}
+U \\
+V \\
+\end{pmatrix} = \begin{pmatrix}
+U \\
+V \\
+\end{pmatrix}

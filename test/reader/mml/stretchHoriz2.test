@@ -1,0 +1,28 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>g</mi> 
+  <mo>=</mo> 
+  <mi>A</mi> 
+  <mo>&#x2190;</mo> 
+  <mi>x</mi> 
+  <mo>&#x2192;</mo> 
+  <mi>H</mi> 
+  <mo>&#x2194;</mo> 
+  <mi>H</mi> </math>
+>>> native
+[ EDelimited
+    ""
+    ""
+    [ Right (EIdentifier "g")
+    , Right (ESymbol Rel "=")
+    , Right (EIdentifier "A")
+    , Left "\8592"
+    , Right (EIdentifier "x")
+    , Left "\8594"
+    , Right (EIdentifier "H")
+    , Left "\8596"
+    , Right (EIdentifier "H")
+    ]
+]

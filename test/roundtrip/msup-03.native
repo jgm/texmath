@@ -1,0 +1,6 @@
+[ ESuper (ENumber "2") (ENumber "3")
+, ESymbol Rel "="
+, ESuper
+    (ENumber "2")
+    (ESuper (ENumber "3") (EPhantom (EIdentifier "fail")))
+]

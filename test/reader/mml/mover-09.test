@@ -1,0 +1,18 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <munder>    <mrow>      <mover>        <mi mathvariant="normal">- middle -</mi>         <mi mathvariant="normal">top</mi>       </mover>     </mrow>     <mphantom>      <mi mathvariant="normal">fail</mi>
+    </mphantom>   </munder>   <mo>=</mo>   <mover>    <mrow>      <munder>        <mi mathvariant="normal">- middle -</mi>         <mphantom>          <mi mathvariant="normal">fail</mi>
+        </mphantom>       </munder>     </mrow>     <mi mathvariant="normal">top</mi>   </mover> </math>
+>>> native
+[ EUnder
+    False
+    (EOver False (EIdentifier "- middle -") (EIdentifier "top"))
+    (EPhantom (EIdentifier "fail"))
+, ESymbol Rel "="
+, EOver
+    False
+    (EUnder
+       False (EIdentifier "- middle -") (EPhantom (EIdentifier "fail")))
+    (EIdentifier "top")
+]

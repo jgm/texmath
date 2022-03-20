@@ -1,0 +1,20 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mfenced>    <mrow>      <mtable>        <mtr>          <mtd>            <maction actiontype="tooltip">              <mrow>                <mn>12</mn>
+                <mi>x</mi>
+              </mrow>               <mtext>First row, first column</mtext>             </maction>           </mtd>           <mtd>            <maction actiontype="tooltip">              <mn>0</mn>               <mtext>First row, last column</mtext>             </maction>           </mtd>         </mtr>         <mtr>          <mtd>            <maction actiontype="tooltip">              <mn>0</mn>               <mtext>Last row, first column</mtext>             </maction>           </mtd>           <mtd>            <maction actiontype="tooltip">              <mn>117</mn>               <mtext>Last row, last column</mtext>             </maction>           </mtd>         </mtr>       </mtable>     </mrow>   </mfenced> </math>
+>>> native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter ]
+           [ [ [ EGrouped [ ENumber "12" , EIdentifier "x" ] ]
+             , [ ENumber "0" ]
+             ]
+           , [ [ ENumber "0" ] , [ ENumber "117" ] ]
+           ])
+    ]
+]

@@ -1,0 +1,20 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>Theorem 1:</mtext> 
+  <mo>,</mo> 
+  <mtext> &#x2009;</mtext> 
+  <mo>,</mo> 
+  <mtext> &#x205F;&#x200A;</mtext> 
+  <mo>,</mo> 
+  <mtext>/* a comment */</mtext> </math>
+>>> native
+[ EText TextNormal "Theorem 1:"
+, ESymbol Pun ","
+, ESpace (1 % 6)
+, ESymbol Pun ","
+, EText TextNormal "\8287\8202"
+, ESymbol Pun ","
+, EText TextNormal "/* a comment */"
+]

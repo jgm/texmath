@@ -1,0 +1,41 @@
+<<< native
+[ EText TextNormal "Inline nested fracs\160"
+, EFraction
+    NormalFrac
+    (ESuper (ENumber "1") (ESqrt (ENumber "6")))
+    (EGrouped
+       [ ESqrt (ENumber "2")
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (ENumber "1")
+           (EGrouped
+              [ ESqrt (ENumber "3")
+              , ESymbol Bin "+"
+              , EFraction
+                  NormalFrac
+                  (ENumber "1")
+                  (EGrouped
+                     [ ESqrt (ENumber "4")
+                     , ESymbol Bin "+"
+                     , EFraction
+                         NormalFrac
+                         (ENumber "1")
+                         (EGrouped
+                            [ ESqrt (ENumber "5")
+                            , ESymbol Bin "+"
+                            , EFraction
+                                NormalFrac
+                                (ENumber "1")
+                                (EGrouped
+                                   [ ESqrt (ENumber "6") , ESymbol Bin "+" , EIdentifier "\8230" ])
+                            ])
+                     ])
+              ])
+       ])
+, EText
+    TextNormal
+    "\160are script size at the first level and decrease to script script size for all more nested levels."
+]
+>>> tex
+\text{Inline\ nested\ fracs~}\frac{1^{\sqrt{6}}}{\sqrt{2} + \frac{1}{\sqrt{3} + \frac{1}{\sqrt{4} + \frac{1}{\sqrt{5} + \frac{1}{\sqrt{6} + \ldots}}}}}\text{~are\ script\ size\ at\ the\ first\ level\ and\ decrease\ to\ script\ script\ size\ for\ all\ more\ nested\ levels.}

@@ -1,0 +1,25 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mfrac linethickness="thick">    <mrow>      <mfrac>        <mrow>          <mi>a</mi>
+        </mrow>         <mrow>          <mi>b</mi>
+        </mrow>       </mfrac>     </mrow>     <mrow>      <mfrac>        <mrow>          <mi>c</mi>
+        </mrow>         <mrow>          <mi>d</mi>
+        </mrow>       </mfrac>     </mrow>   </mfrac>   <mo>=</mo>   <mfrac linethickness="thick">    <mrow>      <mfrac>        <mi>a</mi>
+        <mi>b</mi>
+      </mfrac>
+    </mrow>     <mrow>      <mfrac>        <mi>c</mi>
+        <mi>d</mi>
+      </mfrac>
+    </mrow>   </mfrac> </math>
+>>> native
+[ EFraction
+    NormalFrac
+    (EFraction NormalFrac (EIdentifier "a") (EIdentifier "b"))
+    (EFraction NormalFrac (EIdentifier "c") (EIdentifier "d"))
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EFraction NormalFrac (EIdentifier "a") (EIdentifier "b"))
+    (EFraction NormalFrac (EIdentifier "c") (EIdentifier "d"))
+]

@@ -1,0 +1,19 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE math PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0//EN" "http://www.w3.org/Math/DTD/mathml2/xhtml-math11-f.dtd">
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <merror>
+    <mtext>Unrecognized element: &lt;mfraction&gt;arguments were:</mtext> 
+    <mrow>
+      <mn>1</mn> 
+      <mo>+</mo> 
+      <msqrt>
+        <mn>5</mn> 
+      </msqrt> 
+    </mrow> 
+    <mtext> &#x0205F;and &#x0205F;</mtext> 
+    <mn>2</mn> 
+  </merror> </math>
+>>> native
+[]

@@ -1,0 +1,58 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           ])
+    ]
+, ESymbol Open "("
+, EArray
+    [ AlignCenter ]
+    [ [ [ ENumber "0" ] ]
+    , [ [ ENumber "0" ] ]
+    , [ [ ENumber "0" ] ]
+    , [ [ ENumber "0" ] ]
+    , [ [ ENumber "0" ] ]
+    ]
+, ESymbol Close ")"
+, EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           ])
+    ]
+]
+>>> tex
+\begin{pmatrix}
+0 \\
+0 \\
+0 \\
+0 \\
+0 \\
+\end{pmatrix}(\begin{matrix}
+0 \\
+0 \\
+0 \\
+0 \\
+0 \\
+\end{matrix})\begin{pmatrix}
+0 \\
+0 \\
+0 \\
+0 \\
+0 \\
+\end{pmatrix}

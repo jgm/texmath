@@ -1,0 +1,13 @@
+[ EText TextNormal "Inline floor, auto, normal line\160"
+, EDelimited
+    "\8970"
+    "\8971"
+    [ Right
+        (EFraction
+           NormalFrac
+           (EGrouped
+              [ EMathOperator "sin" , ESymbol Ord "\8289" , EIdentifier "\952" ])
+           (EIdentifier "M"))
+    ]
+, EText TextNormal "\160the end."
+]

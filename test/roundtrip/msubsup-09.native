@@ -1,0 +1,16 @@
+[ ESubsup
+    (EIdentifier "M")
+    (ESubsup (EIdentifier "B") (ENumber "4") (ENumber "3"))
+    (ESubsup (EIdentifier "T") (ENumber "2") (ENumber "1"))
+, ESymbol Rel "="
+, ESubsup
+    (EIdentifier "M")
+    (ESubsup
+       (EIdentifier "B")
+       (EUnder False (ENumber "4") (EPhantom (EText TextNormal "0")))
+       (ENumber "3"))
+    (ESubsup
+       (EIdentifier "T")
+       (ENumber "2")
+       (EOver False (ENumber "1") (EPhantom (EText TextNormal "0"))))
+]

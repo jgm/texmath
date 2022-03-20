@@ -1,0 +1,17 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mo>|</mo> 
+  <mfrac>
+    <mi>H</mi> 
+    <mi>K</mi> 
+  </mfrac> 
+  <mo>|</mo> </math>
+>>> native
+[ EDelimited
+    "|"
+    "|"
+    [ Right (EFraction NormalFrac (EIdentifier "H") (EIdentifier "K"))
+    ]
+]

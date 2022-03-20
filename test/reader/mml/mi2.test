@@ -1,0 +1,11 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>sin</mi> 
+    <mo> &#x2061;</mo> 
+    <mi>x</mi> 
+  </mrow> </math>
+>>> native
+[ EMathOperator "sin" , ESymbol Ord "\8289" , EIdentifier "x" ]

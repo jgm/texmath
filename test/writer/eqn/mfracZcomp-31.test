@@ -1,0 +1,54 @@
+<<< native
+[ EText TextNormal "Here's a display\160"
+, EGrouped
+    [ EGrouped
+        [ EIdentifier "F"
+        , ESymbol Ord "\8289"
+        , EDelimited
+            "("
+            ")"
+            [ Right
+                (EGrouped [ EIdentifier "t" , ESymbol Pun "," , EIdentifier "y" ])
+            ]
+        ]
+    , ESymbol Rel "="
+    , EFraction
+        NormalFrac
+        (EDelimited
+           "("
+           ")"
+           [ Right
+               (EGrouped
+                  [ ENumber "1"
+                  , ESymbol Pun ","
+                  , EFraction
+                      NormalFrac
+                      (EGrouped [ ESymbol Ord "\8518" , EIdentifier "y" ])
+                      (EGrouped [ ESymbol Ord "\8518" , EIdentifier "t" ])
+                  ])
+           ])
+        (EDelimited
+           ""
+           ""
+           [ Left "\8741"
+           , Right
+               (EDelimited
+                  "("
+                  ")"
+                  [ Right
+                      (EGrouped
+                         [ ENumber "1"
+                         , ESymbol Pun ","
+                         , EFraction
+                             NormalFrac
+                             (EGrouped [ ESymbol Ord "\8518" , EIdentifier "y" ])
+                             (EGrouped [ ESymbol Ord "\8518" , EIdentifier "t" ])
+                         ])
+                  ])
+           , Left "\8741"
+           ])
+    ]
+, EText TextNormal "\160with some real math in it."
+]
+>>> eqn
+roman "Here's a display " {{F  left ( {t , y} right )} = {left ( {1 , {\[u2146] y} over {\[u2146] t}} right )} over {left "" "∥" left ( {1 , {\[u2146] y} over {\[u2146] t}} right ) "∥" right ""}} roman " with some real math in it."

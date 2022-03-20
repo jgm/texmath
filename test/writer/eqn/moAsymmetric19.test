@@ -1,0 +1,35 @@
+<<< native
+[ EIdentifier "x"
+, ESymbol Rel "="
+, EGrouped
+    [ EDelimited
+        "("
+        ")"
+        [ Right
+            (EArray
+               [ AlignCenter ] [ [ [ ENumber "0" ] ] , [ [ ENumber "0" ] ] ])
+        ]
+    , EDelimited
+        "("
+        ")"
+        [ Right
+            (EArray
+               [ AlignCenter ] [ [ [ ENumber "0" ] ] , [ [ ENumber "0" ] ] ])
+        ]
+    , EDelimited
+        "("
+        ")"
+        [ Right
+            (EArray
+               [ AlignCenter ] [ [ [ ENumber "0" ] ] , [ [ ENumber "0" ] ] ])
+        ]
+    ]
+]
+>>> eqn
+x = {left ( matrix{
+ccol{ 0 above 0 }
+} right ) left ( matrix{
+ccol{ 0 above 0 }
+} right ) left ( matrix{
+ccol{ 0 above 0 }
+} right )}

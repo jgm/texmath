@@ -1,0 +1,24 @@
+<<< native
+[ EText TextNormal "Inline binomial, auto, no line\160"
+, EDelimited
+    "("
+    ")"
+    [ Right (EFraction NormalFrac (ENumber "5") (ENumber "8")) ]
+, EText TextNormal "\160the end."
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext mathvariant="normal">Inline binomial, auto, no line </mtext>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mfrac>
+        <mn>5</mn>
+        <mn>8</mn>
+      </mfrac>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mtext mathvariant="normal"> the end.</mtext>
+  </mrow>
+</math>

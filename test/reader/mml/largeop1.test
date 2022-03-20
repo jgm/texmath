@@ -1,0 +1,179 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd>
+        <mtext>displaystyle: false largeop: false</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle displaystyle="false">
+          <mo largeop="false">&#x22C0;</mo> 
+          <mo largeop="false">&#x22C1;</mo> 
+          <mo largeop="false">&#x222B;</mo> 
+          <mo largeop="false">&#x2211;</mo> 
+          <mo largeop="false">&#x220F;</mo> 
+          <mo largeop="false">&#x22C3;</mo> 
+          <mo largeop="false">&#x22C2;</mo> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>displaystyle: false largeop: true</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle displaystyle="false">
+          <mo largeop="true">&#x22C0;</mo> 
+          <mo largeop="true">&#x22C1;</mo> 
+          <mo largeop="true">&#x222B;</mo> 
+          <mo largeop="true">&#x2211;</mo> 
+          <mo largeop="true">&#x220F;</mo> 
+          <mo largeop="true">&#x22C3;</mo> 
+          <mo largeop="true">&#x22C2;</mo> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>displaystyle: true largeop: false</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle displaystyle="true">
+          <mo largeop="false">&#x22C0;</mo> 
+          <mo largeop="false">&#x22C1;</mo> 
+          <mo largeop="false">&#x222B;</mo> 
+          <mo largeop="false">&#x2211;</mo> 
+          <mo largeop="false">&#x220F;</mo> 
+          <mo largeop="false">&#x22C3;</mo> 
+          <mo largeop="false">&#x22C2;</mo> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>displaystyle: true largeop: true</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle displaystyle="true">
+          <mo largeop="true">&#x22C0;</mo> 
+          <mo largeop="true">&#x22C1;</mo> 
+          <mo largeop="true">&#x222B;</mo> 
+          <mo largeop="true">&#x2211;</mo> 
+          <mo largeop="true">&#x220F;</mo> 
+          <mo largeop="true">&#x22C3;</mo> 
+          <mo largeop="true">&#x22C2;</mo> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>displaystyle: false largeop: default</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle displaystyle="false">
+          <mo>&#x22C0;</mo> 
+          <mo>&#x22C1;</mo> 
+          <mo>&#x222B;</mo> 
+          <mo>&#x2211;</mo> 
+          <mo>&#x220F;</mo> 
+          <mo>&#x22C3;</mo> 
+          <mo>&#x22C2;</mo> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>displaystyle: true largeop: default</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle displaystyle="true">
+          <mo>&#x22C0;</mo> 
+          <mo>&#x22C1;</mo> 
+          <mo>&#x222B;</mo> 
+          <mo>&#x2211;</mo> 
+          <mo>&#x220F;</mo> 
+          <mo>&#x22C3;</mo> 
+          <mo>&#x22C2;</mo> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+  </mtable> </math>
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "displaystyle: false largeop: false" ]
+      , [ EGrouped
+            [ ESymbol Op "\8896"
+            , ESymbol Op "\8897"
+            , ESymbol Op "\8747"
+            , ESymbol Op "\8721"
+            , ESymbol Op "\8719"
+            , ESymbol Op "\8899"
+            , ESymbol Op "\8898"
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "displaystyle: false largeop: true" ]
+      , [ EGrouped
+            [ ESymbol Op "\8896"
+            , ESymbol Op "\8897"
+            , ESymbol Op "\8747"
+            , ESymbol Op "\8721"
+            , ESymbol Op "\8719"
+            , ESymbol Op "\8899"
+            , ESymbol Op "\8898"
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "displaystyle: true largeop: false" ]
+      , [ EGrouped
+            [ ESymbol Op "\8896"
+            , ESymbol Op "\8897"
+            , ESymbol Op "\8747"
+            , ESymbol Op "\8721"
+            , ESymbol Op "\8719"
+            , ESymbol Op "\8899"
+            , ESymbol Op "\8898"
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "displaystyle: true largeop: true" ]
+      , [ EGrouped
+            [ ESymbol Op "\8896"
+            , ESymbol Op "\8897"
+            , ESymbol Op "\8747"
+            , ESymbol Op "\8721"
+            , ESymbol Op "\8719"
+            , ESymbol Op "\8899"
+            , ESymbol Op "\8898"
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "displaystyle: false largeop: default" ]
+      , [ EGrouped
+            [ ESymbol Op "\8896"
+            , ESymbol Op "\8897"
+            , ESymbol Op "\8747"
+            , ESymbol Op "\8721"
+            , ESymbol Op "\8719"
+            , ESymbol Op "\8899"
+            , ESymbol Op "\8898"
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "displaystyle: true largeop: default" ]
+      , [ EGrouped
+            [ ESymbol Op "\8896"
+            , ESymbol Op "\8897"
+            , ESymbol Op "\8747"
+            , ESymbol Op "\8721"
+            , ESymbol Op "\8719"
+            , ESymbol Op "\8899"
+            , ESymbol Op "\8898"
+            ]
+        ]
+      ]
+    ]
+]

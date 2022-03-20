@@ -1,0 +1,50 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mover>
+    <mi>xxx</mi> 
+    <mo>&#x02C6;</mo> 
+  </mover> 
+  <mo>+</mo> 
+  <mover>
+    <mi>xxx</mi> 
+    <mo>&#x00AF;</mo> 
+  </mover> 
+  <mo>+</mo> 
+  <mover>
+    <mi>xxx</mi> 
+    <mo>&#x02C7;</mo> 
+  </mover> 
+  <mo>+</mo> 
+  <mover>
+    <mi>xxx</mi> 
+    <mo>&#x02DC;</mo> 
+  </mover> 
+  <mo>+</mo> 
+  <mover>
+    <mi>xxx</mi> 
+    <mo>&#x23DE;</mo> 
+  </mover> 
+  <mo>+</mo> 
+  <munder>
+    <mi>xxx</mi> 
+    <mo>&#x23DF;</mo> 
+  </munder> 
+  <mo>+</mo> 
+  <mi>xxx</mi> </math>
+>>> native
+[ EOver False (EIdentifier "xxx") (ESymbol Accent "\710")
+, ESymbol Bin "+"
+, EOver False (EIdentifier "xxx") (ESymbol Accent "\175")
+, ESymbol Bin "+"
+, EOver False (EIdentifier "xxx") (ESymbol Accent "\711")
+, ESymbol Bin "+"
+, EOver False (EIdentifier "xxx") (ESymbol Accent "\732")
+, ESymbol Bin "+"
+, EOver False (EIdentifier "xxx") (ESymbol Accent "\9182")
+, ESymbol Bin "+"
+, EUnder False (EIdentifier "xxx") (ESymbol Accent "\9183")
+, ESymbol Bin "+"
+, EIdentifier "xxx"
+]

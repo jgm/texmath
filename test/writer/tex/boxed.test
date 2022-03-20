@@ -1,0 +1,12 @@
+<<< native
+[ EBoxed
+    (EGrouped
+       [ ESuper (EIdentifier "x") (ENumber "2")
+       , ESymbol Bin "+"
+       , ESuper (EIdentifier "y") (ENumber "2")
+       , ESymbol Bin "+"
+       , ESuper (EIdentifier "z") (ENumber "2")
+       ])
+]
+>>> tex
+\boxed{x^{2} + y^{2} + z^{2}}

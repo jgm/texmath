@@ -1,0 +1,8 @@
+[ ESuper (EIdentifier "a") (ESymbol Bin "+")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (ESuper (EIdentifier "a") (ESymbol Bin "+"))
+    (EPhantom (EIdentifier "x"))
+    (EPhantom (EIdentifier "x"))
+]

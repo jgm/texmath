@@ -1,0 +1,9 @@
+<<< native
+[ EIdentifier "A"
+, ESymbol Bin "+"
+, EIdentifier "A"
+, EPhantom (ESymbol Bin "+")
+, EIdentifier "A"
+]
+>>> tex
+A + A\phantom{+}A

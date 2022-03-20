@@ -1,0 +1,19 @@
+<<< native
+[ ESuper
+    (EDelimited
+       "("
+       ")"
+       [ Right
+           (EArray
+              [ AlignCenter , AlignCenter ]
+              [ [ [ ENumber "0" ] , [ ENumber "1" ] ]
+              , [ [ ENumber "2" ] , [ ENumber "3" ] ]
+              ])
+       ])
+    (ESymbol Alpha "T")
+]
+>>> tex
+\begin{pmatrix}
+0 & 1 \\
+2 & 3 \\
+\end{pmatrix}^{T}

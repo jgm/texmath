@@ -1,0 +1,54 @@
+<<< native
+[ ENumber "2"
+, ENumber "5"
+, EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ]
+, EGrouped [ EIdentifier "x" , ESymbol Bin "+" , ENumber "3" ]
+, EGrouped
+    [ EIdentifier "x" , ESymbol Bin "+" , EIdentifier "\945" ]
+, EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ ENumber "2" ] , [ ENumber "3" ] ]
+    , [ [ ENumber "4" ] , [ ENumber "5" ] ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>2</mn>
+    <mn>5</mn>
+    <mrow>
+      <mi>y</mi>
+      <mo>+</mo>
+      <mn>3</mn>
+    </mrow>
+    <mrow>
+      <mi>x</mi>
+      <mo>+</mo>
+      <mn>3</mn>
+    </mrow>
+    <mrow>
+      <mi>x</mi>
+      <mo>+</mo>
+      <mi>α</mi>
+    </mrow>
+    <mtable>
+      <mtr>
+        <mtd columnalign="center">
+          <mn>2</mn>
+        </mtd>
+        <mtd columnalign="center">
+          <mn>3</mn>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="center">
+          <mn>4</mn>
+        </mtd>
+        <mtd columnalign="center">
+          <mn>5</mn>
+        </mtd>
+      </mtr>
+    </mtable>
+  </mrow>
+</math>

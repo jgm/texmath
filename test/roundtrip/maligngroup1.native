@@ -1,0 +1,29 @@
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EGrouped
+                [ EGrouped
+                    [ ENumber "8.44" , ESymbol Ord "\8290" , EIdentifier "x" ]
+                , ESymbol Bin "+"
+                , EGrouped [ ENumber "55" , ESymbol Ord "\8290" , EIdentifier "y" ]
+                ]
+            , ESymbol Rel "="
+            , ENumber "0"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EGrouped
+                [ EGrouped
+                    [ ENumber "3.1" , ESymbol Ord "\8290" , EIdentifier "x" ]
+                , ESymbol Bin "-"
+                , EGrouped
+                    [ ENumber "0.7" , ESymbol Ord "\8290" , EIdentifier "y" ]
+                ]
+            , ESymbol Rel "="
+            , EGrouped [ ESymbol Bin "-" , ENumber "1.1" ]
+            ]
+        ]
+      ]
+    ]
+]

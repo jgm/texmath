@@ -1,0 +1,13 @@
+[ ERoot
+    (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ])
+    (ENumber "3")
+, ESymbol Bin "+"
+, ERoot (EIdentifier "x") (ENumber "3")
+, ESymbol Bin "+"
+, ERoot
+    (EFraction NormalFrac (ENumber "3") (ENumber "2"))
+    (EFraction
+       NormalFrac
+       (ERoot (ENumber "3") (EGrouped [ ENumber "3" , EIdentifier "x" ]))
+       (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ]))
+]

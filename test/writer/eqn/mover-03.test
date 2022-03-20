@@ -1,0 +1,17 @@
+<<< native
+[ EOver
+    False
+    (EIdentifier "BASE")
+    (EFraction NormalFrac (EIdentifier "first") (EIdentifier "second"))
+, ESymbol Rel "="
+, EOver
+    False
+    (EOver
+       False
+       (EIdentifier "BASE")
+       (EFraction
+          NormalFrac (EIdentifier "first") (EIdentifier "second")))
+    (EPhantom (EIdentifier "over"))
+]
+>>> eqn
+BASE to {first over second} = {BASE to {first over second}} to {hphantom over}

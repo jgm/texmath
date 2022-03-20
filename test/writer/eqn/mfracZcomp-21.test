@@ -1,0 +1,20 @@
+<<< native
+[ EText
+    TextNormal
+    "Inline double up down arrows, text style, thick line\160"
+, EDelimited
+    ""
+    ""
+    [ Left "\8661"
+    , Right
+        (EFraction
+           NormalFrac
+           (EGrouped
+              [ EMathOperator "sin" , ESymbol Ord "\8289" , EIdentifier "\952" ])
+           (EIdentifier "M"))
+    , Left "\8661"
+    ]
+, EText TextNormal "\160the end."
+]
+>>> eqn
+roman "Inline double up down arrows, text style, thick line " left "" "⇕" {sin  theta} over M "⇕" right "" roman " the end."

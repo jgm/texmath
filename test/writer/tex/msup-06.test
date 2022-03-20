@@ -1,0 +1,9 @@
+<<< native
+[ ESuper (EIdentifier "S") (ENumber "3")
+, ESymbol Rel "="
+, ESuper (EIdentifier "S") (ENumber "3")
+, EPhantom
+    (EFraction NormalFrac (EIdentifier "test") (EIdentifier "failed"))
+]
+>>> tex
+S^{3} = S^{3}\phantom{\frac{test}{failed}}

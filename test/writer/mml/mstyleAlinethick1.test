@@ -1,0 +1,45 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (EIdentifier "x")
+    (EFraction NormalFrac (EIdentifier "y") (ENumber "2"))
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EIdentifier "x")
+    (EFraction NormalFrac (EIdentifier "y") (ENumber "2"))
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EIdentifier "x")
+    (EFraction NormalFrac (EIdentifier "y") (ENumber "2"))
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <mi>x</mi>
+      <mfrac>
+        <mi>y</mi>
+        <mn>2</mn>
+      </mfrac>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mi>x</mi>
+      <mfrac>
+        <mi>y</mi>
+        <mn>2</mn>
+      </mfrac>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mi>x</mi>
+      <mfrac>
+        <mi>y</mi>
+        <mn>2</mn>
+      </mfrac>
+    </mfrac>
+  </mrow>
+</math>

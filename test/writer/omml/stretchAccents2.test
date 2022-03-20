@@ -1,0 +1,46 @@
+<<< native
+[ EOver False (EIdentifier "xxx") (ESymbol Accent "\175")
+, ESymbol Rel "="
+, EOver
+    False
+    (EStyled TextItalic [ EIdentifier "xxx" ])
+    (ESymbol Accent "\175")
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:acc>
+      <m:accPr>
+        <m:chr m:val="¯" />
+      </m:accPr>
+      <m:e>
+        <m:r>
+          <m:t>xxx</m:t>
+        </m:r>
+      </m:e>
+    </m:acc>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>=</m:t>
+    </m:r>
+    <m:acc>
+      <m:accPr>
+        <m:chr m:val="¯" />
+      </m:accPr>
+      <m:e>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="i" />
+          </m:rPr>
+          <m:t>xxx</m:t>
+        </m:r>
+      </m:e>
+    </m:acc>
+  </m:oMath>
+</m:oMathPara>

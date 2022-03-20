@@ -1,0 +1,30 @@
+<<< native
+[ EUnder
+    False (EIdentifier "_ baseline _") (EIdentifier "under script")
+, ESymbol Rel "="
+, EUnder
+    False
+    (EOver
+       False (EIdentifier "_ baseline _") (EPhantom (EIdentifier "fail")))
+    (EIdentifier "under script")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <munder>
+      <mi>_ baseline _</mi>
+      <mi>under script</mi>
+    </munder>
+    <mo>=</mo>
+    <munder>
+      <mover>
+        <mi>_ baseline _</mi>
+        <mphantom>
+          <mi>fail</mi>
+        </mphantom>
+      </mover>
+      <mi>under script</mi>
+    </munder>
+  </mrow>
+</math>

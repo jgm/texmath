@@ -1,0 +1,13 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <msub>    <mi mathvariant="normal">H</mi>     <mo>2</mo>   </msub>   <mo>=</mo>   <mover>    <mrow>      <msub>        <mi mathvariant="normal">H</mi>         <mo>2</mo>       </msub>     </mrow>     <mphantom>      <mi>x</mi>
+    </mphantom>   </mover> </math>
+>>> native
+[ ESub (EIdentifier "H") (ESymbol Ord "2")
+, ESymbol Rel "="
+, EOver
+    False
+    (ESub (EIdentifier "H") (ESymbol Ord "2"))
+    (EPhantom (EIdentifier "x"))
+]

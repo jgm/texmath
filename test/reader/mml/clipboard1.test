@@ -1,0 +1,18 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac>
+    <mi>x</mi> 
+    <mrow>
+      <mi>x</mi>
+      <mo>+</mo>
+      <mn>1</mn>
+    </mrow> 
+  </mfrac> </math>
+>>> native
+[ EFraction
+    NormalFrac
+    (EIdentifier "x")
+    (EGrouped [ EIdentifier "x" , ESymbol Bin "+" , ENumber "1" ])
+]

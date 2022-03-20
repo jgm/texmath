@@ -1,0 +1,49 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ []
+      , [ EText TextNormal "Stetching in base" ]
+      , [ EText TextNormal "Stretching in script" ]
+      ]
+    , [ [ EText TextNormal "no mrows" ]
+      , [ EOver
+            False (ESymbol Accent "\8594") (EText TextNormal "maps to")
+        ]
+      , [ EOver
+            False (EText TextNormal "maps to") (ESymbol Accent "\8594")
+        ]
+      ]
+    , [ [ EText TextNormal "all in row" ]
+      , [ EOver
+            False (ESymbol Accent "\8594") (EText TextNormal "maps to")
+        ]
+      , [ EOver
+            False (EText TextNormal "maps to") (ESymbol Accent "\8594")
+        ]
+      ]
+    , [ [ EText TextNormal "op in row" ]
+      , [ EOver
+            False (ESymbol Accent "\8594") (EText TextNormal "maps to")
+        ]
+      , [ EOver
+            False (EText TextNormal "maps to") (ESymbol Accent "\8594")
+        ]
+      ]
+    , [ [ EText TextNormal "text in row" ]
+      , [ EOver
+            False (ESymbol Accent "\8594") (EText TextNormal "maps to")
+        ]
+      , [ EOver
+            False (EText TextNormal "maps to") (ESymbol Accent "\8594")
+        ]
+      ]
+    ]
+]
+>>> tex
+\begin{matrix}
+ & \text{Stetching\ in\ base} & \text{Stretching\ in\ script} \\
+\text{no\ mrows} & \overset{\text{maps\ to}}{\rightarrow} & \overset{\rightarrow}{\text{maps\ to}} \\
+\text{all\ in\ row} & \overset{\text{maps\ to}}{\rightarrow} & \overset{\rightarrow}{\text{maps\ to}} \\
+\text{op\ in\ row} & \overset{\text{maps\ to}}{\rightarrow} & \overset{\rightarrow}{\text{maps\ to}} \\
+\text{text\ in\ row} & \overset{\text{maps\ to}}{\rightarrow} & \overset{\rightarrow}{\text{maps\ to}} \\
+\end{matrix}

@@ -1,0 +1,44 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle displaystyle="true">
+    <mrow>
+      <ms>A</ms> 
+      <mo>+</mo> 
+      <ms fontweight="bold">A</ms> 
+      <mo>+</mo> 
+      <ms fontweight="normal" fontstyle="italic">A</ms> 
+      <mo>+</mo> 
+      <ms fontstyle="normal">A</ms> 
+      <mo>+</mo> 
+      <ms fontweight="bold" fontstyle="normal">A</ms> 
+      <mo>+</mo> 
+      <ms color="#9c0fff">A</ms> 
+      <mo>+</mo> 
+      <ms color="#0ee">A</ms> 
+      <mo>+</mo> 
+      <ms color="Green">A</ms> 
+      <mo>+</mo> 
+      <ms fontfamily="Helvetica">A</ms> 
+    </mrow> 
+  </mstyle> </math>
+>>> native
+[ EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220A\8221"
+]

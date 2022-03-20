@@ -1,0 +1,30 @@
+<<< native
+[ EText TextNormal "\8220dog\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220cat\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220pig\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220fish\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220\954\945\964\8221"
+, ESymbol Bin "+"
+, EText TextNormal "\8220goat\8221"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext mathvariant="normal">“dog”</mtext>
+    <mo>+</mo>
+    <mtext mathvariant="normal">“cat”</mtext>
+    <mo>+</mo>
+    <mtext mathvariant="normal">“pig”</mtext>
+    <mo>+</mo>
+    <mtext mathvariant="normal">“fish”</mtext>
+    <mo>+</mo>
+    <mtext mathvariant="normal">“κατ”</mtext>
+    <mo>+</mo>
+    <mtext mathvariant="normal">“goat”</mtext>
+  </mrow>
+</math>

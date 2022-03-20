@@ -1,0 +1,17 @@
+<<< native
+[ EOver False (EIdentifier "xxx") (ESymbol Accent "\710")
+, ESymbol Bin "+"
+, EOver False (EIdentifier "xxx") (ESymbol Accent "\175")
+, ESymbol Bin "+"
+, EOver False (EIdentifier "xxx") (ESymbol Accent "\711")
+, ESymbol Bin "+"
+, EOver False (EIdentifier "xxx") (ESymbol Accent "\732")
+, ESymbol Bin "+"
+, EOver False (EIdentifier "xxx") (ESymbol Accent "\9182")
+, ESymbol Bin "+"
+, EUnder False (EIdentifier "xxx") (ESymbol Accent "\9183")
+, ESymbol Bin "+"
+, EIdentifier "xxx"
+]
+>>> tex
+\widehat{xxx} + \overline{xxx} + \check{xxx} + \widetilde{xxx} + \overbrace{xxx} + \underbrace{xxx} + {xxx}

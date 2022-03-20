@@ -1,0 +1,8 @@
+<<< native
+[ ENumber "100"
+, EText TextNormal "m"
+, ESymbol Ord "/"
+, EText TextNormal "s"
+]
+>>> tex
+100\text{m}/\text{s}

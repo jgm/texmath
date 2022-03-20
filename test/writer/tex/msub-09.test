@@ -1,0 +1,15 @@
+<<< native
+[ ESub
+    (EIdentifier "A")
+    (ESub (EIdentifier "B") (ESub (EIdentifier "C") (EIdentifier "D")))
+, ESymbol Rel "="
+, ESub
+    (EIdentifier "A")
+    (ESub
+       (EIdentifier "B")
+       (ESub
+          (EIdentifier "C")
+          (ESub (EIdentifier "D") (EPhantom (EIdentifier "E")))))
+]
+>>> tex
+A_{B_{C_{D}}} = A_{B_{C_{D_{\phantom{E}}}}}

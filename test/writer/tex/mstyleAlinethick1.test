@@ -1,0 +1,18 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (EIdentifier "x")
+    (EFraction NormalFrac (EIdentifier "y") (ENumber "2"))
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EIdentifier "x")
+    (EFraction NormalFrac (EIdentifier "y") (ENumber "2"))
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EIdentifier "x")
+    (EFraction NormalFrac (EIdentifier "y") (ENumber "2"))
+]
+>>> tex
+\frac{x}{\frac{y}{2}} = \frac{x}{\frac{y}{2}} = \frac{x}{\frac{y}{2}}

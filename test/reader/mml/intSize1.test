@@ -1,0 +1,76 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo stretchy="false" largeop="true">&#x222B;</mo> 
+    <mi>x</mi> 
+  </mrow> 
+  <mrow>
+    <mo stretchy="false" largeop="false">&#x222B;</mo> 
+    <mi>M</mi> 
+  </mrow> 
+  <mrow>
+    <mo stretchy="true" largeop="true">&#x222B;</mo> 
+    <mfrac>
+      <mi>x</mi> 
+      <mi>o</mi> 
+    </mfrac> 
+  </mrow> 
+  <mrow>
+    <mo stretchy="true" largeop="true">&#x222B;</mo> 
+    <mfrac>
+      <mi>A</mi> 
+      <mi>o</mi> 
+    </mfrac> 
+  </mrow> 
+  <mrow>
+    <mo stretchy="true" largeop="true">&#x222B;</mo> 
+    <mfrac>
+      <mi>x</mi> 
+      <mi>A</mi> 
+    </mfrac> 
+  </mrow> 
+  <mrow>
+    <mo stretchy="true" largeop="true">&#x222B;</mo> 
+    <mfrac>
+      <mi>A</mi> 
+      <mi>M</mi> 
+    </mfrac> 
+  </mrow> 
+  <mrow>
+    <mo stretchy="true" largeop="true">&#x222B;</mo> 
+    <mfrac>
+      <mi>.</mi> 
+      <mi>''</mi> 
+    </mfrac> 
+  </mrow> </math>
+>>> native
+[ EGrouped [ ESymbol Op "\8747" , EIdentifier "x" ]
+, EGrouped [ ESymbol Op "\8747" , EIdentifier "M" ]
+, EDelimited
+    "\8747"
+    ""
+    [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "o"))
+    ]
+, EDelimited
+    "\8747"
+    ""
+    [ Right (EFraction NormalFrac (EIdentifier "A") (EIdentifier "o"))
+    ]
+, EDelimited
+    "\8747"
+    ""
+    [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "A"))
+    ]
+, EDelimited
+    "\8747"
+    ""
+    [ Right (EFraction NormalFrac (EIdentifier "A") (EIdentifier "M"))
+    ]
+, EDelimited
+    "\8747"
+    ""
+    [ Right (EFraction NormalFrac (EIdentifier ".") (EIdentifier "''"))
+    ]
+]

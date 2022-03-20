@@ -1,0 +1,15 @@
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EIdentifier "E"
+            , ESymbol Rel "="
+            , EGrouped
+                [ EIdentifier "m"
+                , ESymbol Ord "\8290"
+                , ESuper (EIdentifier "c") (ENumber "2")
+                ]
+            ]
+        ]
+      ]
+    ]
+]

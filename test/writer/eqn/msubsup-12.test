@@ -1,0 +1,11 @@
+<<< native
+[ ESubsup (EIdentifier "V") (EIdentifier "m") (EIdentifier "n")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (ESubsup (EIdentifier "V") (EIdentifier "m") (EIdentifier "n"))
+    (EPhantom (EText TextNormal "d"))
+    (EPhantom (EText TextNormal "d"))
+]
+>>> eqn
+V sub m sup n = {V sub m sup n} from {hphantom {roman "d"}} to {hphantom {roman "d"}}

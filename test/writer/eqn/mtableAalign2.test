@@ -1,0 +1,76 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "Top" ]
+      , [ ENumber "3" ]
+      , [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+            (ENumber "2")
+        ]
+      , [ EOver
+            False
+            (EIdentifier "y")
+            (EFraction
+               NormalFrac
+               (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+               (ENumber "2"))
+        ]
+      ]
+    , [ [ EText TextNormal "Bottom" ]
+      , [ ENumber "3" ]
+      , [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+            (ENumber "2")
+        ]
+      , [ EOver
+            False
+            (EIdentifier "y")
+            (EFraction
+               NormalFrac
+               (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+               (ENumber "2"))
+        ]
+      ]
+    , [ [ EText TextNormal "Center" ]
+      , [ ENumber "3" ]
+      , [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+            (ENumber "2")
+        ]
+      , [ EOver
+            False
+            (EIdentifier "y")
+            (EFraction
+               NormalFrac
+               (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+               (ENumber "2"))
+        ]
+      ]
+    , [ [ EText TextNormal "Baseline" ]
+      , [ ENumber "3" ]
+      , [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+            (ENumber "2")
+        ]
+      , [ EOver
+            False
+            (EIdentifier "y")
+            (EFraction
+               NormalFrac
+               (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+               (ENumber "2"))
+        ]
+      ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ {roman "Top"} above {roman "Bottom"} above {roman "Center"} above {roman "Baseline"} }
+ccol{ 3 above 3 above 3 above 3 }
+ccol{ {{a + 1} over 2} above {{a + 1} over 2} above {{a + 1} over 2} above {{a + 1} over 2} }
+ccol{ {y to {{a + 1} over 2}} above {y to {{a + 1} over 2}} above {y to {{a + 1} over 2}} above {y to {{a + 1} over 2}} }
+}

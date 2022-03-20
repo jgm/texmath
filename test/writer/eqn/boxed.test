@@ -1,0 +1,12 @@
+<<< native
+[ EBoxed
+    (EGrouped
+       [ ESuper (EIdentifier "x") (ENumber "2")
+       , ESymbol Bin "+"
+       , ESuper (EIdentifier "y") (ENumber "2")
+       , ESymbol Bin "+"
+       , ESuper (EIdentifier "z") (ENumber "2")
+       ])
+]
+>>> eqn
+{x sup 2 + y sup 2 + z sup 2}

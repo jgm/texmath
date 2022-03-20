@@ -1,0 +1,14 @@
+<<< native
+[ ESqrt
+    (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ])
+, ESymbol Bin "+"
+, ESqrt (EGrouped [ ENumber "3" , EIdentifier "x" ])
+, ESymbol Bin "+"
+, ESqrt
+    (EFraction
+       NormalFrac
+       (ESqrt (EGrouped [ ENumber "3" , EIdentifier "x" ]))
+       (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ]))
+]
+>>> tex
+\sqrt{x - 3} + \sqrt{3x} + \sqrt{\frac{\sqrt{3x}}{x - 3}}

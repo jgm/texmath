@@ -1,0 +1,1156 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "cacute" ] , [ ESymbol Ord "\263" ] ]
+    , [ [ EText TextNormal "Cacute" ] , [ ESymbol Ord "\262" ] ]
+    , [ [ EText TextNormal "cap" ] , [ ESymbol Bin "\8745" ] ]
+    , [ [ EText TextNormal "Cap" ] , [ ESymbol Bin "\8914" ] ]
+    , [ [ EText TextNormal "capand" ] , [ ESymbol Bin "\10820" ] ]
+    , [ [ EText TextNormal "capbrcup" ] , [ ESymbol Bin "\10825" ] ]
+    , [ [ EText TextNormal "capcap" ] , [ ESymbol Bin "\10827" ] ]
+    , [ [ EText TextNormal "capcup" ] , [ ESymbol Bin "\10823" ] ]
+    , [ [ EText TextNormal "capdot" ] , [ ESymbol Bin "\10816" ] ]
+    , [ [ EText TextNormal "CapitalDifferentialD" ]
+      , [ ESymbol Ord "\8517" ]
+      ]
+    , [ [ EText TextNormal "caps" ] , [ EMathOperator "\8745\65024" ] ]
+    , [ [ EText TextNormal "caret" ] , [ ESymbol Ord "\8257" ] ]
+    , [ [ EText TextNormal "caron" ] , [ ESymbol Accent "\711" ] ]
+    , [ [ EText TextNormal "Cayleys" ] , [ ESymbol Alpha "\8493" ] ]
+    , [ [ EText TextNormal "ccaps" ] , [ ESymbol Bin "\10829" ] ]
+    , [ [ EText TextNormal "ccaron" ] , [ ESymbol Ord "\269" ] ]
+    , [ [ EText TextNormal "Ccaron" ] , [ ESymbol Ord "\268" ] ]
+    , [ [ EText TextNormal "ccedil" ] , [ ESymbol Ord "\231" ] ]
+    , [ [ EText TextNormal "Ccedil" ] , [ ESymbol Ord "\199" ] ]
+    , [ [ EText TextNormal "ccirc" ] , [ ESymbol Ord "\265" ] ]
+    , [ [ EText TextNormal "Ccirc" ] , [ ESymbol Ord "\264" ] ]
+    , [ [ EText TextNormal "Cconint" ] , [ ESymbol Op "\8752" ] ]
+    , [ [ EText TextNormal "ccups" ] , [ ESymbol Bin "\10828" ] ]
+    , [ [ EText TextNormal "ccupssm" ] , [ ESymbol Bin "\10832" ] ]
+    , [ [ EText TextNormal "cdot" ] , [ ESymbol Ord "\267" ] ]
+    , [ [ EText TextNormal "Cdot" ] , [ ESymbol Ord "\266" ] ]
+    , [ [ EText TextNormal "cedil" ] , [ ESymbol Accent "\184" ] ]
+    , [ [ EText TextNormal "Cedilla" ] , [ ESymbol Accent "\184" ] ]
+    , [ [ EText TextNormal "cemptyv" ] , [ ESymbol Ord "\10674" ] ]
+    , [ [ EText TextNormal "cent" ] , [ ESymbol Ord "\162" ] ]
+    , [ [ EText TextNormal "centerdot" ] , [ ESymbol Bin "\183" ] ]
+    , [ [ EText TextNormal "CenterDot" ] , [ ESymbol Bin "\183" ] ]
+    , [ [ EText TextNormal "cfr" ] , [ ESymbol Alpha "\120096" ] ]
+    , [ [ EText TextNormal "Cfr" ] , [ ESymbol Alpha "\8493" ] ]
+    , [ [ EText TextNormal "chcy" ] , [ ESymbol Ord "\1095" ] ]
+    , [ [ EText TextNormal "CHcy" ] , [ ESymbol Ord "\1063" ] ]
+    , [ [ EText TextNormal "check" ] , [ ESymbol Ord "\10003" ] ]
+    , [ [ EText TextNormal "checkmark" ] , [ ESymbol Ord "\10003" ] ]
+    , [ [ EText TextNormal "chi" ] , [ ESymbol Alpha "\967" ] ]
+    , [ [ EText TextNormal "cir" ] , [ ESymbol Bin "\9675" ] ]
+    , [ [ EText TextNormal "circ" ] , [ ESymbol Accent "\710" ] ]
+    , [ [ EText TextNormal "circeq" ] , [ ESymbol Rel "\8791" ] ]
+    , [ [ EText TextNormal "circlearrowleft" ]
+      , [ ESymbol Ord "\8634" ]
+      ]
+    , [ [ EText TextNormal "circlearrowright" ]
+      , [ ESymbol Ord "\8635" ]
+      ]
+    , [ [ EText TextNormal "circledast" ] , [ ESymbol Bin "\8859" ] ]
+    , [ [ EText TextNormal "circledcirc" ] , [ ESymbol Bin "\8858" ] ]
+    , [ [ EText TextNormal "circleddash" ] , [ ESymbol Bin "\8861" ] ]
+    , [ [ EText TextNormal "CircleDot" ] , [ ESymbol Bin "\8857" ] ]
+    , [ [ EText TextNormal "circledR" ] , [ ESymbol Ord "\174" ] ]
+    , [ [ EText TextNormal "circledS" ] , [ ESymbol Ord "\9416" ] ]
+    , [ [ EText TextNormal "CircleMinus" ] , [ ESymbol Bin "\8854" ] ]
+    , [ [ EText TextNormal "CirclePlus" ] , [ ESymbol Bin "\8853" ] ]
+    , [ [ EText TextNormal "CircleTimes" ] , [ ESymbol Bin "\8855" ] ]
+    , [ [ EText TextNormal "cire" ] , [ ESymbol Rel "\8791" ] ]
+    , [ [ EText TextNormal "cirE" ] , [ ESymbol Ord "\10691" ] ]
+    , [ [ EText TextNormal "cirfnint" ] , [ ESymbol Op "\10768" ] ]
+    , [ [ EText TextNormal "cirmid" ] , [ ESymbol Rel "\10991" ] ]
+    , [ [ EText TextNormal "cirscir" ] , [ ESymbol Ord "\10690" ] ]
+    , [ [ EText TextNormal "ClockwiseContourIntegral" ]
+      , [ ESymbol Op "\8754" ]
+      ]
+    , [ [ EText TextNormal "CloseCurlyDoubleQuote" ]
+      , [ ESymbol Close "\8221" ]
+      ]
+    , [ [ EText TextNormal "CloseCurlyQuote" ]
+      , [ ESymbol Close "\8217" ]
+      ]
+    , [ [ EText TextNormal "clubs" ] , [ ESymbol Ord "\9827" ] ]
+    , [ [ EText TextNormal "clubsuit" ] , [ ESymbol Ord "\9827" ] ]
+    , [ [ EText TextNormal "colon" ] , [ ESymbol Pun ":" ] ]
+    , [ [ EText TextNormal "Colon" ] , [ ESymbol Rel "\8759" ] ]
+    , [ [ EText TextNormal "colone" ] , [ ESymbol Rel "\8788" ] ]
+    , [ [ EText TextNormal "Colone" ] , [ ESymbol Rel "\10868" ] ]
+    , [ [ EText TextNormal "coloneq" ] , [ ESymbol Rel "\8788" ] ]
+    , [ [ EText TextNormal "comma" ] , [ ESymbol Pun "," ] ]
+    , [ [ EText TextNormal "commat" ] , [ ESymbol Ord "@" ] ]
+    , [ [ EText TextNormal "comp" ] , [ ESymbol Ord "\8705" ] ]
+    , [ [ EText TextNormal "compfn" ] , [ ESymbol Bin "\8728" ] ]
+    , [ [ EText TextNormal "complement" ] , [ ESymbol Ord "\8705" ] ]
+    , [ [ EText TextNormal "complexes" ] , [ ESymbol Alpha "\8450" ] ]
+    , [ [ EText TextNormal "cong" ] , [ ESymbol Rel "\8773" ] ]
+    , [ [ EText TextNormal "congdot" ] , [ ESymbol Rel "\10861" ] ]
+    , [ [ EText TextNormal "Congruent" ] , [ ESymbol Rel "\8801" ] ]
+    , [ [ EText TextNormal "conint" ] , [ ESymbol Op "\8750" ] ]
+    , [ [ EText TextNormal "Conint" ] , [ ESymbol Op "\8751" ] ]
+    , [ [ EText TextNormal "ContourIntegral" ]
+      , [ ESymbol Op "\8750" ]
+      ]
+    , [ [ EText TextNormal "copf" ] , [ ESymbol Alpha "\120148" ] ]
+    , [ [ EText TextNormal "Copf" ] , [ ESymbol Alpha "\8450" ] ]
+    , [ [ EText TextNormal "coprod" ] , [ ESymbol Op "\8720" ] ]
+    , [ [ EText TextNormal "Coproduct" ] , [ ESymbol Op "\8720" ] ]
+    , [ [ EText TextNormal "copy" ] , [ ESymbol Ord "\169" ] ]
+    , [ [ EText TextNormal "copysr" ] , [ ESymbol Ord "\8471" ] ]
+    , [ [ EText TextNormal "CounterClockwiseContourIntegral" ]
+      , [ ESymbol Op "\8755" ]
+      ]
+    , [ [ EText TextNormal "cross" ] , [ ESymbol Ord "\10007" ] ]
+    , [ [ EText TextNormal "Cross" ] , [ ESymbol Bin "\10799" ] ]
+    , [ [ EText TextNormal "cscr" ] , [ ESymbol Alpha "\119992" ] ]
+    , [ [ EText TextNormal "Cscr" ] , [ ESymbol Alpha "\119966" ] ]
+    , [ [ EText TextNormal "csub" ] , [ ESymbol Rel "\10959" ] ]
+    , [ [ EText TextNormal "csube" ] , [ ESymbol Rel "\10961" ] ]
+    , [ [ EText TextNormal "csup" ] , [ ESymbol Rel "\10960" ] ]
+    , [ [ EText TextNormal "csupe" ] , [ ESymbol Rel "\10962" ] ]
+    , [ [ EText TextNormal "ctdot" ] , [ ESymbol Ord "\8943" ] ]
+    , [ [ EText TextNormal "cudarrl" ] , [ ESymbol Rel "\10552" ] ]
+    , [ [ EText TextNormal "cudarrr" ] , [ ESymbol Ord "\10549" ] ]
+    , [ [ EText TextNormal "cuepr" ] , [ ESymbol Rel "\8926" ] ]
+    , [ [ EText TextNormal "cuesc" ] , [ ESymbol Rel "\8927" ] ]
+    , [ [ EText TextNormal "cularr" ] , [ ESymbol Accent "\8630" ] ]
+    , [ [ EText TextNormal "cularrp" ] , [ ESymbol Accent "\10557" ] ]
+    , [ [ EText TextNormal "cup" ] , [ ESymbol Bin "\8746" ] ]
+    , [ [ EText TextNormal "Cup" ] , [ ESymbol Bin "\8915" ] ]
+    , [ [ EText TextNormal "cupbrcap" ] , [ ESymbol Bin "\10824" ] ]
+    , [ [ EText TextNormal "cupcap" ] , [ ESymbol Bin "\10822" ] ]
+    , [ [ EText TextNormal "CupCap" ] , [ ESymbol Rel "\8781" ] ]
+    , [ [ EText TextNormal "cupcup" ] , [ ESymbol Bin "\10826" ] ]
+    , [ [ EText TextNormal "cupdot" ] , [ ESymbol Bin "\8845" ] ]
+    , [ [ EText TextNormal "cupor" ] , [ ESymbol Bin "\10821" ] ]
+    , [ [ EText TextNormal "cups" ] , [ EMathOperator "\8746\65024" ] ]
+    , [ [ EText TextNormal "curarr" ] , [ ESymbol Accent "\8631" ] ]
+    , [ [ EText TextNormal "curarrm" ] , [ ESymbol Accent "\10556" ] ]
+    , [ [ EText TextNormal "curlyeqprec" ] , [ ESymbol Rel "\8926" ] ]
+    , [ [ EText TextNormal "curlyeqsucc" ] , [ ESymbol Rel "\8927" ] ]
+    , [ [ EText TextNormal "curlyvee" ] , [ ESymbol Bin "\8910" ] ]
+    , [ [ EText TextNormal "curlywedge" ] , [ ESymbol Bin "\8911" ] ]
+    , [ [ EText TextNormal "curren" ] , [ ESymbol Ord "\164" ] ]
+    , [ [ EText TextNormal "curvearrowleft" ]
+      , [ ESymbol Accent "\8630" ]
+      ]
+    , [ [ EText TextNormal "curvearrowright" ]
+      , [ ESymbol Accent "\8631" ]
+      ]
+    , [ [ EText TextNormal "cuvee" ] , [ ESymbol Bin "\8910" ] ]
+    , [ [ EText TextNormal "cuwed" ] , [ ESymbol Bin "\8911" ] ]
+    , [ [ EText TextNormal "cwconint" ] , [ ESymbol Op "\8754" ] ]
+    , [ [ EText TextNormal "cwint" ] , [ ESymbol Op "\8753" ] ]
+    , [ [ EText TextNormal "cylcty" ] , [ ESymbol Ord "\9005" ] ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cacute</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ć</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Cacute</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ć</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cap</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∩</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Cap</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋒</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">capand</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩄</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">capbrcup</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩉</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">capcap</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩋</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">capcup</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩇</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">capdot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">CapitalDifferentialD</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅅ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">caps</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∩︀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">caret</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⁁</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">caron</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ˇ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Cayleys</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℭ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ccaps</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩍</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ccaron</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>č</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Ccaron</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Č</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ccedil</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ç</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Ccedil</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ç</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ccirc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ĉ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Ccirc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ĉ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Cconint</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∰</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ccups</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩌</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ccupssm</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩐</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cdot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ċ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Cdot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ċ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cedil</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>¸</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Cedilla</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>¸</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cemptyv</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦲</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cent</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>¢</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">centerdot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>·</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">CenterDot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>·</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cfr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔠</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Cfr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℭ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">chcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ч</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">CHcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ч</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">check</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>✓</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">checkmark</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>✓</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">chi</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>χ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cir</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>○</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">circ</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ˆ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">circeq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≗</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">circlearrowleft</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>↺</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">circlearrowright</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>↻</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">circledast</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊛</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">circledcirc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊚</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">circleddash</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊝</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">CircleDot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊙</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">circledR</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>®</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">circledS</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ⓢ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">CircleMinus</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊖</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">CirclePlus</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊕</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">CircleTimes</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊗</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cire</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≗</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cirE</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⧃</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cirfnint</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⨐</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cirmid</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⫯</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cirscir</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⧂</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ClockwiseContourIntegral</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∲</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">CloseCurlyDoubleQuote</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="postfix">”</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">CloseCurlyQuote</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="postfix">’</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">clubs</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>♣</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">clubsuit</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>♣</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">colon</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>:</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Colon</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∷</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">colone</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≔</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Colone</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩴</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">coloneq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≔</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">comma</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>,</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">commat</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">comp</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>∁</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">compfn</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∘</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">complement</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>∁</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">complexes</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℂ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cong</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≅</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">congdot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩭</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Congruent</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≡</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">conint</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∮</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Conint</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∯</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ContourIntegral</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∮</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">copf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕔</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Copf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℂ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">coprod</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∐</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Coproduct</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∐</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">copy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>©</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">copysr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>℗</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">CounterClockwiseContourIntegral</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∳</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cross</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>✗</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Cross</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⨯</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝒸</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Cscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝒞</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">csub</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⫏</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">csube</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⫑</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">csup</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⫐</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">csupe</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⫒</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ctdot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⋯</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cudarrl</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⤸</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cudarrr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⤵</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cuepr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋞</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cuesc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋟</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cularr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↶</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cularrp</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⤽</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cup</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∪</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Cup</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋓</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cupbrcap</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩈</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cupcap</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩆</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">CupCap</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≍</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cupcup</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩊</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cupdot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊍</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cupor</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩅</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cups</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∪︀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">curarr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↷</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">curarrm</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⤼</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">curlyeqprec</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋞</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">curlyeqsucc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋟</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">curlyvee</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋎</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">curlywedge</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋏</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">curren</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>¤</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">curvearrowleft</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↶</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">curvearrowright</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↷</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cuvee</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋎</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cuwed</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋏</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cwconint</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∲</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cwint</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∱</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">cylcty</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⌭</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

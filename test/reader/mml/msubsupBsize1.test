@@ -1,0 +1,96 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mi>x</mi> 
+    <mn>1</mn> 
+  </msup> 
+  <mo>+</mo> 
+  <msup>
+    <mi>x</mi> 
+    <mi>a</mi> 
+  </msup> 
+  <mo>+</mo> 
+  <msup>
+    <mi>H</mi> 
+    <mi>a</mi> 
+  </msup> 
+  <mo>+</mo> 
+  <msup>
+    <mi>H</mi> 
+    <mn>1</mn> 
+  </msup> 
+  <mo>+</mo> 
+  <msubsup>
+    <mi>x</mi> 
+    <mn>1</mn> 
+    <mn>2</mn> 
+  </msubsup> 
+  <mo>+</mo> 
+  <msubsup>
+    <mi>x</mi> 
+    <mi>a</mi> 
+    <mn>2</mn> 
+  </msubsup> 
+  <mo>+</mo> 
+  <msubsup>
+    <mi>x</mi> 
+    <mn>1</mn> 
+    <mi>x</mi> 
+  </msubsup> 
+  <mo>+</mo> 
+  <msubsup>
+    <mi>x</mi> 
+    <mi>a</mi> 
+    <mi>x</mi> 
+  </msubsup> 
+  <mo>+</mo> 
+  <msubsup>
+    <mi>H</mi> 
+    <mn>1</mn> 
+    <mn>2</mn> 
+  </msubsup> 
+  <mo>+</mo> 
+  <msubsup>
+    <mi>H</mi> 
+    <mi>a</mi> 
+    <mn>2</mn> 
+  </msubsup> 
+  <mo>+</mo> 
+  <msubsup>
+    <mi>H</mi> 
+    <mn>1</mn> 
+    <mi>x</mi> 
+  </msubsup> 
+  <mo>+</mo> 
+  <msubsup>
+    <mi>H</mi> 
+    <mi>a</mi> 
+    <mi>x</mi> 
+  </msubsup> </math>
+>>> native
+[ ESuper (EIdentifier "x") (ENumber "1")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (EIdentifier "a")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "H") (EIdentifier "a")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "H") (ENumber "1")
+, ESymbol Bin "+"
+, ESubsup (EIdentifier "x") (ENumber "1") (ENumber "2")
+, ESymbol Bin "+"
+, ESubsup (EIdentifier "x") (EIdentifier "a") (ENumber "2")
+, ESymbol Bin "+"
+, ESubsup (EIdentifier "x") (ENumber "1") (EIdentifier "x")
+, ESymbol Bin "+"
+, ESubsup (EIdentifier "x") (EIdentifier "a") (EIdentifier "x")
+, ESymbol Bin "+"
+, ESubsup (EIdentifier "H") (ENumber "1") (ENumber "2")
+, ESymbol Bin "+"
+, ESubsup (EIdentifier "H") (EIdentifier "a") (ENumber "2")
+, ESymbol Bin "+"
+, ESubsup (EIdentifier "H") (ENumber "1") (EIdentifier "x")
+, ESymbol Bin "+"
+, ESubsup (EIdentifier "H") (EIdentifier "a") (EIdentifier "x")
+]

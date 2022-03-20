@@ -1,0 +1,13 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped [ ENumber "2" , EIdentifier "\960" ])
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EOver False (ENumber "1") (EPhantom (ENumber "0")))
+    (EGrouped [ ENumber "2" , EIdentifier "\960" ])
+]
+>>> eqn
+1 over {2 pi} = {1 to {hphantom 0}} over {2 pi}

@@ -1,0 +1,10 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+    ]
+]
+>>> eqn
+left ( {a + b} right )

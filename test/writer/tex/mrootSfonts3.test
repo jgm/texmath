@@ -1,0 +1,13 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (ERoot
+       (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ])
+       (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ]))
+    (ERoot
+       (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ])
+       (EGrouped [ ENumber "3" , EIdentifier "x" ]))
+, ERoot (EIdentifier "x") (ENumber "3")
+]
+>>> tex
+\frac{\sqrt[{x - 3}]{x - 3}}{\sqrt[{x - 3}]{3x}}\sqrt[x]{3}

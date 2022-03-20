@@ -1,0 +1,26 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "wcirc" ] , [ ESymbol Ord "\373" ] ]
+    , [ [ EText TextNormal "Wcirc" ] , [ ESymbol Ord "\372" ] ]
+    , [ [ EText TextNormal "wedbar" ] , [ ESymbol Bin "\10847" ] ]
+    , [ [ EText TextNormal "wedge" ] , [ ESymbol Bin "\8743" ] ]
+    , [ [ EText TextNormal "Wedge" ] , [ ESymbol Op "\8896" ] ]
+    , [ [ EText TextNormal "wedgeq" ] , [ ESymbol Rel "\8793" ] ]
+    , [ [ EText TextNormal "weierp" ] , [ ESymbol Alpha "\8472" ] ]
+    , [ [ EText TextNormal "wfr" ] , [ ESymbol Alpha "\120116" ] ]
+    , [ [ EText TextNormal "Wfr" ] , [ ESymbol Alpha "\120090" ] ]
+    , [ [ EText TextNormal "wopf" ] , [ ESymbol Alpha "\120168" ] ]
+    , [ [ EText TextNormal "Wopf" ] , [ ESymbol Alpha "\120142" ] ]
+    , [ [ EText TextNormal "wp" ] , [ ESymbol Alpha "\8472" ] ]
+    , [ [ EText TextNormal "wr" ] , [ ESymbol Bin "\8768" ] ]
+    , [ [ EText TextNormal "wreath" ] , [ ESymbol Bin "\8768" ] ]
+    , [ [ EText TextNormal "wscr" ] , [ ESymbol Alpha "\120012" ] ]
+    , [ [ EText TextNormal "Wscr" ] , [ ESymbol Alpha "\119986" ] ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ {roman "wcirc"} above {roman "Wcirc"} above {roman "wedbar"} above {roman "wedge"} above {roman "Wedge"} above {roman "wedgeq"} above {roman "weierp"} above {roman "wfr"} above {roman "Wfr"} above {roman "wopf"} above {roman "Wopf"} above {roman "wp"} above {roman "wr"} above {roman "wreath"} above {roman "wscr"} above {roman "Wscr"} }
+ccol{ \[u0175] above \[u0174] above \[u2A5F] above \[u2227] above \[u22C0] above \[u2259] above \[u2118] above \[u1D534] above \[u1D51A] above \[u1D568] above \[u1D54E] above \[u2118] above \[u2240] above \[u2240] above \[u1D4CC] above \[u1D4B2] }
+}

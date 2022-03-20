@@ -1,0 +1,9 @@
+<<< native
+[ ESub (EIdentifier "L") (EIdentifier "x")
+, ESymbol Rel "="
+, ESub
+    (EIdentifier "L")
+    (EGrouped [ EIdentifier "x" , EPhantom (EIdentifier "fail") ])
+]
+>>> tex
+L_{x} = L_{x\phantom{fail}}

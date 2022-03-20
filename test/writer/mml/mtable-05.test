@@ -1,0 +1,74 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EIdentifier "H" ] , [ EIdentifier "A" ] ]
+    , [ [ EIdentifier "T" ] , [ EIdentifier "I" ] ]
+    , [ [ EIdentifier "U" ] , [ EIdentifier "Y" ] ]
+    ]
+, ESymbol Rel "="
+, EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EIdentifier "A" ] , [ EIdentifier "H" ] ]
+    , [ [ EIdentifier "I" ] , [ EIdentifier "T" ] ]
+    , [ [ EIdentifier "Y" ] , [ EIdentifier "U" ] ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtable>
+      <mtr>
+        <mtd columnalign="center">
+          <mi>H</mi>
+        </mtd>
+        <mtd columnalign="center">
+          <mi>A</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="center">
+          <mi>T</mi>
+        </mtd>
+        <mtd columnalign="center">
+          <mi>I</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="center">
+          <mi>U</mi>
+        </mtd>
+        <mtd columnalign="center">
+          <mi>Y</mi>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo>=</mo>
+    <mtable>
+      <mtr>
+        <mtd columnalign="center">
+          <mi>A</mi>
+        </mtd>
+        <mtd columnalign="center">
+          <mi>H</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="center">
+          <mi>I</mi>
+        </mtd>
+        <mtd columnalign="center">
+          <mi>T</mi>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd columnalign="center">
+          <mi>Y</mi>
+        </mtd>
+        <mtd columnalign="center">
+          <mi>U</mi>
+        </mtd>
+      </mtr>
+    </mtable>
+  </mrow>
+</math>

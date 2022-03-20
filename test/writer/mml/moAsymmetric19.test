@@ -1,0 +1,85 @@
+<<< native
+[ EIdentifier "x"
+, ESymbol Rel "="
+, EGrouped
+    [ EDelimited
+        "("
+        ")"
+        [ Right
+            (EArray
+               [ AlignCenter ] [ [ [ ENumber "0" ] ] , [ [ ENumber "0" ] ] ])
+        ]
+    , EDelimited
+        "("
+        ")"
+        [ Right
+            (EArray
+               [ AlignCenter ] [ [ [ ENumber "0" ] ] , [ [ ENumber "0" ] ] ])
+        ]
+    , EDelimited
+        "("
+        ")"
+        [ Right
+            (EArray
+               [ AlignCenter ] [ [ [ ENumber "0" ] ] , [ [ ENumber "0" ] ] ])
+        ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>x</mi>
+    <mo>=</mo>
+    <mrow>
+      <mrow>
+        <mo stretchy="true" form="prefix">(</mo>
+        <mtable>
+          <mtr>
+            <mtd columnalign="center">
+              <mn>0</mn>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd columnalign="center">
+              <mn>0</mn>
+            </mtd>
+          </mtr>
+        </mtable>
+        <mo stretchy="true" form="postfix">)</mo>
+      </mrow>
+      <mrow>
+        <mo stretchy="true" form="prefix">(</mo>
+        <mtable>
+          <mtr>
+            <mtd columnalign="center">
+              <mn>0</mn>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd columnalign="center">
+              <mn>0</mn>
+            </mtd>
+          </mtr>
+        </mtable>
+        <mo stretchy="true" form="postfix">)</mo>
+      </mrow>
+      <mrow>
+        <mo stretchy="true" form="prefix">(</mo>
+        <mtable>
+          <mtr>
+            <mtd columnalign="center">
+              <mn>0</mn>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd columnalign="center">
+              <mn>0</mn>
+            </mtd>
+          </mtr>
+        </mtable>
+        <mo stretchy="true" form="postfix">)</mo>
+      </mrow>
+    </mrow>
+  </mrow>
+</math>

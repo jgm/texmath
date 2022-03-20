@@ -1,0 +1,30 @@
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+            (ENumber "2")
+        ]
+      , [ EIdentifier "b" ]
+      , [ EIdentifier "c" ]
+      ]
+    , [ [ EIdentifier "x" ]
+      , [ EGrouped
+            [ EFraction NormalFrac (ENumber "2") (ENumber "3")
+            , EIdentifier "y"
+            , ESymbol Bin "+"
+            , ENumber "5"
+            ]
+        ]
+      , [ EIdentifier "z" ]
+      ]
+    , [ [ ENumber "1" ]
+      , [ ENumber "2" ]
+      , [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "5" ])
+            (ENumber "3")
+        ]
+      ]
+    ]
+]

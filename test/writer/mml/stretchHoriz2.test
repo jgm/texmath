@@ -1,0 +1,30 @@
+<<< native
+[ EDelimited
+    ""
+    ""
+    [ Right (EIdentifier "g")
+    , Right (ESymbol Rel "=")
+    , Right (EIdentifier "A")
+    , Left "\8592"
+    , Right (EIdentifier "x")
+    , Left "\8594"
+    , Right (EIdentifier "H")
+    , Left "\8596"
+    , Right (EIdentifier "H")
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>g</mi>
+    <mo>=</mo>
+    <mi>A</mi>
+    <mo stretchy="true" form="infix">←</mo>
+    <mi>x</mi>
+    <mo stretchy="true" form="infix">→</mo>
+    <mi>H</mi>
+    <mo stretchy="true" form="infix">↔</mo>
+    <mi>H</mi>
+  </mrow>
+</math>

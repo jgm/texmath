@@ -1,0 +1,14 @@
+[ EOver
+    False
+    (EIdentifier "BASE")
+    (EFraction NormalFrac (EIdentifier "first") (EIdentifier "second"))
+, ESymbol Rel "="
+, EOver
+    False
+    (EOver
+       False
+       (EIdentifier "BASE")
+       (EFraction
+          NormalFrac (EIdentifier "first") (EIdentifier "second")))
+    (EPhantom (EIdentifier "over"))
+]

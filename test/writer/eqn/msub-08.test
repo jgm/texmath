@@ -1,0 +1,11 @@
+<<< native
+[ ESub (EIdentifier "A") (ESub (EIdentifier "B") (EIdentifier "C"))
+, ESymbol Rel "="
+, ESub
+    (EIdentifier "A")
+    (ESub
+       (EIdentifier "B")
+       (EUnder False (EIdentifier "C") (EPhantom (EIdentifier "D"))))
+]
+>>> eqn
+A sub {B sub C} = A sub {B sub {C from {hphantom D}}}

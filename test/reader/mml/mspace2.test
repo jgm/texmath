@@ -1,0 +1,11 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle mathbackground="#ccffff">
+    <mi>H</mi> 
+    <mspace width="-10px"></mspace> 
+    <mi>H</mi> 
+  </mstyle> </math>
+>>> native
+[ EIdentifier "H" , ESpace (0 % 1) , EIdentifier "H" ]

@@ -1,0 +1,54 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</mi> 
+    <mo>+</mo> 
+    <mspace linebreak="auto"></mspace> 
+    <mi>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</mi> 
+    <mo>+</mo> 
+    <mspace linebreak="newline"></mspace> 
+    <mi>cccccccccccccccccccccccccccccccccccccccccccccccccccccccccc</mi> 
+    <mo>+</mo> 
+    <mspace linebreak="indentingnewline"></mspace> 
+    <mi>dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</mi> 
+    <mo>+</mo> 
+    <mspace linebreak="nobreak"></mspace> 
+    <mi>eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</mi> 
+    <mo>+</mo> 
+    <mspace linebreak="goodbreak"></mspace> 
+    <mi>fffffffffffffffffffffffffff</mi> 
+    <mo>+</mo> 
+    <mspace linebreak="badbreak"></mspace> 
+    <mi>gggggggggggggggggggggggggggggggggggggggggggggggggggggg</mi> 
+    <mo>+</mo> 
+  </mrow> </math>
+>>> native
+[ EIdentifier
+    "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+, ESymbol Bin "+"
+, ESpace (0 % 1)
+, EIdentifier
+    "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+, ESymbol Bin "+"
+, ESpace (0 % 1)
+, EIdentifier
+    "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+, ESymbol Bin "+"
+, ESpace (0 % 1)
+, EIdentifier
+    "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+, ESymbol Bin "+"
+, ESpace (0 % 1)
+, EIdentifier
+    "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+, ESymbol Bin "+"
+, ESpace (0 % 1)
+, EIdentifier "fffffffffffffffffffffffffff"
+, ESymbol Bin "+"
+, ESpace (0 % 1)
+, EIdentifier
+    "gggggggggggggggggggggggggggggggggggggggggggggggggggggg"
+, ESymbol Bin "+"
+]

@@ -1,0 +1,64 @@
+<<< native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "+"
+            , EDelimited
+                "("
+                ")"
+                [ Right (EFraction NormalFrac (ENumber "2") (ENumber "3")) ]
+            ]
+        ]
+      ]
+    , [ [ EDelimited
+            ""
+            ")"
+            [ Right (EIdentifier "x")
+            , Right (ESymbol Bin "+")
+            , Right (EOver False (ESymbol Open "(") (ESymbol Bin "-"))
+            , Right (EFraction NormalFrac (ENumber "2") (ENumber "3"))
+            ]
+        ]
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mi>x</mi>
+          <mo>+</mo>
+          <mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <mfrac>
+              <mn>2</mn>
+              <mn>3</mn>
+            </mfrac>
+            <mo stretchy="true" form="postfix">)</mo>
+          </mrow>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mi>x</mi>
+          <mo>+</mo>
+          <mover>
+            <mo stretchy="false" form="prefix">(</mo>
+            <mo accent="false">-</mo>
+          </mover>
+          <mfrac>
+            <mn>2</mn>
+            <mn>3</mn>
+          </mfrac>
+          <mo stretchy="true" form="postfix">)</mo>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

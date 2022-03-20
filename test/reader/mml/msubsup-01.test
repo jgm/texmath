@@ -1,0 +1,20 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <msubsup>    <mi>R</mi>     <mn>0</mn>     <mn>4</mn>   </msubsup>   <mo>=</mo>   <msubsup>    <mi>R</mi>     <mrow>      <mn>0</mn>
+      <mphantom>
+        <mi>fail</mi>
+      </mphantom>
+    </mrow>     <mrow>      <mn>4</mn>
+      <mphantom>
+        <mi>fail</mi>
+      </mphantom>
+    </mrow>   </msubsup> </math>
+>>> native
+[ ESubsup (EIdentifier "R") (ENumber "0") (ENumber "4")
+, ESymbol Rel "="
+, ESubsup
+    (EIdentifier "R")
+    (EGrouped [ ENumber "0" , EPhantom (EIdentifier "fail") ])
+    (EGrouped [ ENumber "4" , EPhantom (EIdentifier "fail") ])
+]

@@ -1,0 +1,19 @@
+<<< native
+[ ESuper
+    (EDelimited
+       "("
+       ")"
+       [ Right
+           (EArray
+              [ AlignCenter , AlignCenter ]
+              [ [ [ ENumber "0" ] , [ ENumber "1" ] ]
+              , [ [ ENumber "2" ] , [ ENumber "3" ] ]
+              ])
+       ])
+    (ESymbol Alpha "T")
+]
+>>> eqn
+{left ( matrix{
+ccol{ 0 above 2 }
+ccol{ 1 above 3 }
+} right )} sup T

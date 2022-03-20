@@ -1,0 +1,536 @@
+<<< native
+[ EIdentifier "A"
+, EIdentifier "B"
+, EIdentifier "C"
+, EIdentifier "D"
+, EIdentifier "E"
+, EIdentifier "F"
+, EIdentifier "G"
+, EIdentifier "H"
+, EIdentifier "I"
+, EIdentifier "J"
+, EIdentifier "K"
+, EIdentifier "L"
+, EIdentifier "M"
+, EIdentifier "N"
+, EIdentifier "O"
+, EIdentifier "P"
+, EIdentifier "Q"
+, EIdentifier "R"
+, EIdentifier "S"
+, EIdentifier "T"
+, EIdentifier "U"
+, EIdentifier "V"
+, EIdentifier "W"
+, EIdentifier "X"
+, EIdentifier "Y"
+, EIdentifier "Z"
+, ENumber "1"
+, ENumber "2"
+, ENumber "3"
+, ENumber "4"
+, ENumber "5"
+, ENumber "6"
+, EIdentifier "a"
+, EIdentifier "b"
+, EIdentifier "c"
+, EIdentifier "d"
+, EIdentifier "e"
+, EIdentifier "f"
+, EIdentifier "g"
+, EIdentifier "h"
+, EIdentifier "i"
+, EIdentifier "j"
+, EIdentifier "k"
+, EIdentifier "l"
+, EIdentifier "m"
+, EIdentifier "n"
+, EIdentifier "o"
+, EIdentifier "p"
+, EIdentifier "q"
+, EIdentifier "r"
+, EIdentifier "s"
+, EIdentifier "t"
+, EIdentifier "u"
+, EIdentifier "v"
+, EIdentifier "w"
+, EIdentifier "x"
+, EIdentifier "y"
+, EIdentifier "z"
+, ENumber "1"
+, ENumber "2"
+, ENumber "3"
+, ENumber "4"
+, ENumber "5"
+, ENumber "6"
+, ESuper
+    (ENumber "2")
+    (EGrouped
+       [ EIdentifier "A"
+       , EIdentifier "B"
+       , EIdentifier "C"
+       , EIdentifier "D"
+       , EIdentifier "E"
+       , EIdentifier "F"
+       , EIdentifier "G"
+       , EIdentifier "H"
+       , EIdentifier "I"
+       , EIdentifier "J"
+       , EIdentifier "K"
+       , EIdentifier "L"
+       , EIdentifier "M"
+       , EIdentifier "N"
+       , EIdentifier "O"
+       , EIdentifier "P"
+       , EIdentifier "Q"
+       , EIdentifier "R"
+       , EIdentifier "S"
+       , EIdentifier "T"
+       , EIdentifier "U"
+       , EIdentifier "V"
+       , EIdentifier "W"
+       , EIdentifier "X"
+       , EIdentifier "Y"
+       , EIdentifier "Z"
+       , ENumber "1"
+       , ENumber "2"
+       , ENumber "3"
+       , ENumber "4"
+       , ENumber "5"
+       , ENumber "6"
+       , EIdentifier "a"
+       , EIdentifier "b"
+       , EIdentifier "c"
+       , EIdentifier "d"
+       , EIdentifier "e"
+       , EIdentifier "f"
+       , EIdentifier "g"
+       , EIdentifier "h"
+       , EIdentifier "i"
+       , EIdentifier "j"
+       , EIdentifier "k"
+       , EIdentifier "l"
+       , EIdentifier "m"
+       , EIdentifier "n"
+       , EIdentifier "o"
+       , EIdentifier "p"
+       , EIdentifier "q"
+       , EIdentifier "r"
+       , EIdentifier "s"
+       , EIdentifier "t"
+       , EIdentifier "u"
+       , EIdentifier "v"
+       , EIdentifier "w"
+       , EIdentifier "x"
+       , EIdentifier "y"
+       , EIdentifier "z"
+       , ENumber "1"
+       , ENumber "2"
+       , ENumber "3"
+       , ENumber "4"
+       , ENumber "5"
+       , ENumber "6"
+       ])
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:t>A</m:t>
+    </m:r>
+    <m:r>
+      <m:t>B</m:t>
+    </m:r>
+    <m:r>
+      <m:t>C</m:t>
+    </m:r>
+    <m:r>
+      <m:t>D</m:t>
+    </m:r>
+    <m:r>
+      <m:t>E</m:t>
+    </m:r>
+    <m:r>
+      <m:t>F</m:t>
+    </m:r>
+    <m:r>
+      <m:t>G</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:t>I</m:t>
+    </m:r>
+    <m:r>
+      <m:t>J</m:t>
+    </m:r>
+    <m:r>
+      <m:t>K</m:t>
+    </m:r>
+    <m:r>
+      <m:t>L</m:t>
+    </m:r>
+    <m:r>
+      <m:t>M</m:t>
+    </m:r>
+    <m:r>
+      <m:t>N</m:t>
+    </m:r>
+    <m:r>
+      <m:t>O</m:t>
+    </m:r>
+    <m:r>
+      <m:t>P</m:t>
+    </m:r>
+    <m:r>
+      <m:t>Q</m:t>
+    </m:r>
+    <m:r>
+      <m:t>R</m:t>
+    </m:r>
+    <m:r>
+      <m:t>S</m:t>
+    </m:r>
+    <m:r>
+      <m:t>T</m:t>
+    </m:r>
+    <m:r>
+      <m:t>U</m:t>
+    </m:r>
+    <m:r>
+      <m:t>V</m:t>
+    </m:r>
+    <m:r>
+      <m:t>W</m:t>
+    </m:r>
+    <m:r>
+      <m:t>X</m:t>
+    </m:r>
+    <m:r>
+      <m:t>Y</m:t>
+    </m:r>
+    <m:r>
+      <m:t>Z</m:t>
+    </m:r>
+    <m:r>
+      <m:t>1</m:t>
+    </m:r>
+    <m:r>
+      <m:t>2</m:t>
+    </m:r>
+    <m:r>
+      <m:t>3</m:t>
+    </m:r>
+    <m:r>
+      <m:t>4</m:t>
+    </m:r>
+    <m:r>
+      <m:t>5</m:t>
+    </m:r>
+    <m:r>
+      <m:t>6</m:t>
+    </m:r>
+    <m:r>
+      <m:t>a</m:t>
+    </m:r>
+    <m:r>
+      <m:t>b</m:t>
+    </m:r>
+    <m:r>
+      <m:t>c</m:t>
+    </m:r>
+    <m:r>
+      <m:t>d</m:t>
+    </m:r>
+    <m:r>
+      <m:t>e</m:t>
+    </m:r>
+    <m:r>
+      <m:t>f</m:t>
+    </m:r>
+    <m:r>
+      <m:t>g</m:t>
+    </m:r>
+    <m:r>
+      <m:t>h</m:t>
+    </m:r>
+    <m:r>
+      <m:t>i</m:t>
+    </m:r>
+    <m:r>
+      <m:t>j</m:t>
+    </m:r>
+    <m:r>
+      <m:t>k</m:t>
+    </m:r>
+    <m:r>
+      <m:t>l</m:t>
+    </m:r>
+    <m:r>
+      <m:t>m</m:t>
+    </m:r>
+    <m:r>
+      <m:t>n</m:t>
+    </m:r>
+    <m:r>
+      <m:t>o</m:t>
+    </m:r>
+    <m:r>
+      <m:t>p</m:t>
+    </m:r>
+    <m:r>
+      <m:t>q</m:t>
+    </m:r>
+    <m:r>
+      <m:t>r</m:t>
+    </m:r>
+    <m:r>
+      <m:t>s</m:t>
+    </m:r>
+    <m:r>
+      <m:t>t</m:t>
+    </m:r>
+    <m:r>
+      <m:t>u</m:t>
+    </m:r>
+    <m:r>
+      <m:t>v</m:t>
+    </m:r>
+    <m:r>
+      <m:t>w</m:t>
+    </m:r>
+    <m:r>
+      <m:t>x</m:t>
+    </m:r>
+    <m:r>
+      <m:t>y</m:t>
+    </m:r>
+    <m:r>
+      <m:t>z</m:t>
+    </m:r>
+    <m:r>
+      <m:t>1</m:t>
+    </m:r>
+    <m:r>
+      <m:t>2</m:t>
+    </m:r>
+    <m:r>
+      <m:t>3</m:t>
+    </m:r>
+    <m:r>
+      <m:t>4</m:t>
+    </m:r>
+    <m:r>
+      <m:t>5</m:t>
+    </m:r>
+    <m:r>
+      <m:t>6</m:t>
+    </m:r>
+    <m:sSup>
+      <m:e>
+        <m:r>
+          <m:t>2</m:t>
+        </m:r>
+      </m:e>
+      <m:sup>
+        <m:r>
+          <m:t>A</m:t>
+        </m:r>
+        <m:r>
+          <m:t>B</m:t>
+        </m:r>
+        <m:r>
+          <m:t>C</m:t>
+        </m:r>
+        <m:r>
+          <m:t>D</m:t>
+        </m:r>
+        <m:r>
+          <m:t>E</m:t>
+        </m:r>
+        <m:r>
+          <m:t>F</m:t>
+        </m:r>
+        <m:r>
+          <m:t>G</m:t>
+        </m:r>
+        <m:r>
+          <m:t>H</m:t>
+        </m:r>
+        <m:r>
+          <m:t>I</m:t>
+        </m:r>
+        <m:r>
+          <m:t>J</m:t>
+        </m:r>
+        <m:r>
+          <m:t>K</m:t>
+        </m:r>
+        <m:r>
+          <m:t>L</m:t>
+        </m:r>
+        <m:r>
+          <m:t>M</m:t>
+        </m:r>
+        <m:r>
+          <m:t>N</m:t>
+        </m:r>
+        <m:r>
+          <m:t>O</m:t>
+        </m:r>
+        <m:r>
+          <m:t>P</m:t>
+        </m:r>
+        <m:r>
+          <m:t>Q</m:t>
+        </m:r>
+        <m:r>
+          <m:t>R</m:t>
+        </m:r>
+        <m:r>
+          <m:t>S</m:t>
+        </m:r>
+        <m:r>
+          <m:t>T</m:t>
+        </m:r>
+        <m:r>
+          <m:t>U</m:t>
+        </m:r>
+        <m:r>
+          <m:t>V</m:t>
+        </m:r>
+        <m:r>
+          <m:t>W</m:t>
+        </m:r>
+        <m:r>
+          <m:t>X</m:t>
+        </m:r>
+        <m:r>
+          <m:t>Y</m:t>
+        </m:r>
+        <m:r>
+          <m:t>Z</m:t>
+        </m:r>
+        <m:r>
+          <m:t>1</m:t>
+        </m:r>
+        <m:r>
+          <m:t>2</m:t>
+        </m:r>
+        <m:r>
+          <m:t>3</m:t>
+        </m:r>
+        <m:r>
+          <m:t>4</m:t>
+        </m:r>
+        <m:r>
+          <m:t>5</m:t>
+        </m:r>
+        <m:r>
+          <m:t>6</m:t>
+        </m:r>
+        <m:r>
+          <m:t>a</m:t>
+        </m:r>
+        <m:r>
+          <m:t>b</m:t>
+        </m:r>
+        <m:r>
+          <m:t>c</m:t>
+        </m:r>
+        <m:r>
+          <m:t>d</m:t>
+        </m:r>
+        <m:r>
+          <m:t>e</m:t>
+        </m:r>
+        <m:r>
+          <m:t>f</m:t>
+        </m:r>
+        <m:r>
+          <m:t>g</m:t>
+        </m:r>
+        <m:r>
+          <m:t>h</m:t>
+        </m:r>
+        <m:r>
+          <m:t>i</m:t>
+        </m:r>
+        <m:r>
+          <m:t>j</m:t>
+        </m:r>
+        <m:r>
+          <m:t>k</m:t>
+        </m:r>
+        <m:r>
+          <m:t>l</m:t>
+        </m:r>
+        <m:r>
+          <m:t>m</m:t>
+        </m:r>
+        <m:r>
+          <m:t>n</m:t>
+        </m:r>
+        <m:r>
+          <m:t>o</m:t>
+        </m:r>
+        <m:r>
+          <m:t>p</m:t>
+        </m:r>
+        <m:r>
+          <m:t>q</m:t>
+        </m:r>
+        <m:r>
+          <m:t>r</m:t>
+        </m:r>
+        <m:r>
+          <m:t>s</m:t>
+        </m:r>
+        <m:r>
+          <m:t>t</m:t>
+        </m:r>
+        <m:r>
+          <m:t>u</m:t>
+        </m:r>
+        <m:r>
+          <m:t>v</m:t>
+        </m:r>
+        <m:r>
+          <m:t>w</m:t>
+        </m:r>
+        <m:r>
+          <m:t>x</m:t>
+        </m:r>
+        <m:r>
+          <m:t>y</m:t>
+        </m:r>
+        <m:r>
+          <m:t>z</m:t>
+        </m:r>
+        <m:r>
+          <m:t>1</m:t>
+        </m:r>
+        <m:r>
+          <m:t>2</m:t>
+        </m:r>
+        <m:r>
+          <m:t>3</m:t>
+        </m:r>
+        <m:r>
+          <m:t>4</m:t>
+        </m:r>
+        <m:r>
+          <m:t>5</m:t>
+        </m:r>
+        <m:r>
+          <m:t>6</m:t>
+        </m:r>
+      </m:sup>
+    </m:sSup>
+  </m:oMath>
+</m:oMathPara>

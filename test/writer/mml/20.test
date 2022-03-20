@@ -1,0 +1,468 @@
+<<< native
+[ EStyled TextScript [ EIdentifier "A" ]
+, EStyled TextScript [ EIdentifier "B" ]
+, EStyled TextScript [ EIdentifier "C" ]
+, EStyled TextScript [ EIdentifier "D" ]
+, EStyled TextScript [ EIdentifier "E" ]
+, EStyled TextScript [ EIdentifier "F" ]
+, EStyled TextScript [ EIdentifier "G" ]
+, EStyled TextScript [ EIdentifier "H" ]
+, EStyled TextScript [ EIdentifier "I" ]
+, EStyled TextScript [ EIdentifier "J" ]
+, EStyled TextScript [ EIdentifier "K" ]
+, EStyled TextScript [ EIdentifier "L" ]
+, EStyled TextScript [ EIdentifier "M" ]
+, EStyled TextScript [ EIdentifier "N" ]
+, EStyled TextScript [ EIdentifier "O" ]
+, EStyled TextScript [ EIdentifier "P" ]
+, EStyled TextScript [ EIdentifier "Q" ]
+, EStyled TextScript [ EIdentifier "R" ]
+, EStyled TextScript [ EIdentifier "S" ]
+, EStyled TextScript [ EIdentifier "T" ]
+, EStyled TextScript [ EIdentifier "U" ]
+, EStyled TextScript [ EIdentifier "V" ]
+, EStyled TextScript [ EIdentifier "W" ]
+, EStyled TextScript [ EIdentifier "X" ]
+, EStyled TextScript [ EIdentifier "Y" ]
+, EStyled TextScript [ EIdentifier "Z" ]
+, EStyled TextScript [ EIdentifier "a" ]
+, EStyled TextScript [ EIdentifier "b" ]
+, EStyled TextScript [ EIdentifier "c" ]
+, EStyled TextScript [ EIdentifier "d" ]
+, EStyled TextScript [ EIdentifier "e" ]
+, EStyled TextScript [ EIdentifier "f" ]
+, EStyled TextScript [ EIdentifier "g" ]
+, EStyled TextScript [ EIdentifier "h" ]
+, EStyled TextScript [ EIdentifier "i" ]
+, EStyled TextScript [ EIdentifier "j" ]
+, EStyled TextScript [ EIdentifier "k" ]
+, EStyled TextScript [ EIdentifier "l" ]
+, EStyled TextScript [ EIdentifier "m" ]
+, EStyled TextScript [ EIdentifier "n" ]
+, EStyled TextScript [ EIdentifier "o" ]
+, EStyled TextScript [ EIdentifier "p" ]
+, EStyled TextScript [ EIdentifier "q" ]
+, EStyled TextScript [ EIdentifier "r" ]
+, EStyled TextScript [ EIdentifier "s" ]
+, EStyled TextScript [ EIdentifier "t" ]
+, EStyled TextScript [ EIdentifier "u" ]
+, EStyled TextScript [ EIdentifier "v" ]
+, EStyled TextScript [ EIdentifier "w" ]
+, EStyled TextScript [ EIdentifier "x" ]
+, EStyled TextScript [ EIdentifier "y" ]
+, EStyled TextScript [ EIdentifier "z" ]
+, EStyled TextDoubleStruck [ EIdentifier "A" ]
+, EStyled TextDoubleStruck [ EIdentifier "B" ]
+, EStyled TextDoubleStruck [ EIdentifier "C" ]
+, EStyled TextDoubleStruck [ EIdentifier "D" ]
+, EStyled TextDoubleStruck [ EIdentifier "E" ]
+, EStyled TextDoubleStruck [ EIdentifier "F" ]
+, EStyled TextDoubleStruck [ EIdentifier "G" ]
+, EStyled TextDoubleStruck [ EIdentifier "H" ]
+, EStyled TextDoubleStruck [ EIdentifier "I" ]
+, EStyled TextDoubleStruck [ EIdentifier "J" ]
+, EStyled TextDoubleStruck [ EIdentifier "K" ]
+, EStyled TextDoubleStruck [ EIdentifier "L" ]
+, EStyled TextDoubleStruck [ EIdentifier "M" ]
+, EStyled TextDoubleStruck [ EIdentifier "N" ]
+, EStyled TextDoubleStruck [ EIdentifier "O" ]
+, EStyled TextDoubleStruck [ EIdentifier "P" ]
+, EStyled TextDoubleStruck [ EIdentifier "Q" ]
+, EStyled TextDoubleStruck [ EIdentifier "R" ]
+, EStyled TextDoubleStruck [ EIdentifier "S" ]
+, EStyled TextDoubleStruck [ EIdentifier "T" ]
+, EStyled TextDoubleStruck [ EIdentifier "U" ]
+, EStyled TextDoubleStruck [ EIdentifier "V" ]
+, EStyled TextDoubleStruck [ EIdentifier "W" ]
+, EStyled TextDoubleStruck [ EIdentifier "X" ]
+, EStyled TextDoubleStruck [ EIdentifier "Y" ]
+, EStyled TextDoubleStruck [ EIdentifier "Z" ]
+, EStyled TextDoubleStruck [ EIdentifier "a" ]
+, EStyled TextDoubleStruck [ EIdentifier "b" ]
+, EStyled TextDoubleStruck [ EIdentifier "c" ]
+, EStyled TextDoubleStruck [ EIdentifier "d" ]
+, EStyled TextDoubleStruck [ EIdentifier "e" ]
+, EStyled TextDoubleStruck [ EIdentifier "f" ]
+, EStyled TextDoubleStruck [ EIdentifier "g" ]
+, EStyled TextDoubleStruck [ EIdentifier "h" ]
+, EStyled TextDoubleStruck [ EIdentifier "i" ]
+, EStyled TextDoubleStruck [ EIdentifier "j" ]
+, EStyled TextDoubleStruck [ EIdentifier "k" ]
+, EStyled TextDoubleStruck [ EIdentifier "l" ]
+, EStyled TextDoubleStruck [ EIdentifier "m" ]
+, EStyled TextDoubleStruck [ EIdentifier "n" ]
+, EStyled TextDoubleStruck [ EIdentifier "o" ]
+, EStyled TextDoubleStruck [ EIdentifier "p" ]
+, EStyled TextDoubleStruck [ EIdentifier "q" ]
+, EStyled TextDoubleStruck [ EIdentifier "r" ]
+, EStyled TextDoubleStruck [ EIdentifier "s" ]
+, EStyled TextDoubleStruck [ EIdentifier "t" ]
+, EStyled TextDoubleStruck [ EIdentifier "u" ]
+, EStyled TextDoubleStruck [ EIdentifier "v" ]
+, EStyled TextDoubleStruck [ EIdentifier "w" ]
+, EStyled TextDoubleStruck [ EIdentifier "x" ]
+, EStyled TextDoubleStruck [ EIdentifier "y" ]
+, EStyled TextDoubleStruck [ EIdentifier "z" ]
+, EStyled TextDoubleStruck [ ENumber "0" ]
+, EStyled TextDoubleStruck [ ENumber "1" ]
+, EStyled TextDoubleStruck [ ENumber "2" ]
+, EStyled TextDoubleStruck [ ENumber "3" ]
+, EStyled TextDoubleStruck [ ENumber "4" ]
+, EStyled TextDoubleStruck [ ENumber "5" ]
+, EStyled TextDoubleStruck [ ENumber "6" ]
+, EStyled TextDoubleStruck [ ENumber "7" ]
+, EStyled TextDoubleStruck [ ENumber "8" ]
+, EStyled TextDoubleStruck [ ENumber "9" ]
+, EStyled TextDoubleStruck [ ENumber "0" ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mstyle mathvariant="script">
+      <mi>𝒜</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>ℬ</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒞</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒟</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>ℰ</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>ℱ</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒢</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>ℋ</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>ℐ</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒥</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒦</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>ℒ</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>ℳ</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒩</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒪</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒫</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒬</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>ℛ</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒮</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒯</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒰</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒱</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒲</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒳</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒴</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒵</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒶</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒷</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒸</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒹</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>ℯ</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒻</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>ℊ</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒽</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒾</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝒿</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝓀</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝓁</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝓂</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝓃</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>ℴ</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝓅</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝓆</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝓇</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝓈</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝓉</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝓊</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝓋</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝓌</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝓍</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝓎</mi>
+    </mstyle>
+    <mstyle mathvariant="script">
+      <mi>𝓏</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝔸</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝔹</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>ℂ</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝔻</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝔼</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝔽</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝔾</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>ℍ</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕀</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕁</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕂</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕃</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕄</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>ℕ</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕆</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>ℙ</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>ℚ</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>ℝ</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕊</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕋</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕌</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕍</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕎</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕏</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕐</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>ℤ</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕒</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕓</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕔</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕕</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕖</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕗</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕘</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕙</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕚</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕛</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕜</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕝</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕞</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕟</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕠</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕡</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕢</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕣</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕤</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕥</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕦</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕧</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕨</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕩</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕪</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mi>𝕫</mi>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mn>0</mn>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mn>1</mn>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mn>2</mn>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mn>3</mn>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mn>4</mn>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mn>5</mn>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mn>6</mn>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mn>7</mn>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mn>8</mn>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mn>9</mn>
+    </mstyle>
+    <mstyle mathvariant="double-struck">
+      <mn>0</mn>
+    </mstyle>
+  </mrow>
+</math>

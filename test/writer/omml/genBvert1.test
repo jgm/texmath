@@ -1,0 +1,180 @@
+<<< native
+[ ESymbol Open "("
+, EIdentifier "H"
+, ESymbol Close ")"
+, EIdentifier "H"
+, ESymbol Open "["
+, EIdentifier "H"
+, ESymbol Close "]"
+, ESymbol Open "\8970"
+, EIdentifier "H"
+, ESymbol Close "\8971"
+, EIdentifier "H"
+, ESymbol Open "\8968"
+, EIdentifier "H"
+, ESymbol Close "\8969"
+, EIdentifier "H"
+, ESymbol Close "\8214"
+, EIdentifier "H"
+, ESymbol Open "{"
+, EIdentifier "H"
+, ESymbol Close "}"
+, EIdentifier "H"
+, ESymbol Open "\10216"
+, EIdentifier "H"
+, ESymbol Close "\10217"
+, EIdentifier "H"
+, EIdentifier "\8640"
+, EIdentifier "H"
+, ESymbol Rel "\8945"
+, EIdentifier "H"
+, ESymbol Accent "\729"
+, EIdentifier "H"
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>(</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>)</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>[</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>]</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>⌊</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>⌋</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>⌈</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>⌉</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>‖</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>{</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>}</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>⟨</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>⟩</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:t>⇀</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>⋱</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>˙</m:t>
+    </m:r>
+    <m:r>
+      <m:t>H</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

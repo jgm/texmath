@@ -1,0 +1,13 @@
+<<< native
+[ ESqrt (EIdentifier "content")
+, ESymbol Rel "="
+, ESqrt
+    (EUnder
+       False (EIdentifier "content") (EPhantom (EIdentifier "fail")))
+, ESymbol Rel "="
+, ESqrt
+    (EOver
+       False (EIdentifier "content") (EPhantom (EIdentifier "fail")))
+]
+>>> eqn
+sqrt content = sqrt {content from {hphantom fail}} = sqrt {content to {hphantom fail}}

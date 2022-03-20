@@ -1,0 +1,16 @@
+<<< native
+[ EUnder
+    False
+    (EIdentifier "munder baseline")
+    (EIdentifier "munder under script")
+, ESymbol Rel "="
+, EOver
+    False
+    (EUnder
+       False
+       (EIdentifier "munder baseline")
+       (EIdentifier "munder under script"))
+    (EPhantom (EIdentifier "fail"))
+]
+>>> eqn
+{munder baseline} from {munder under script} = {{munder baseline} from {munder under script}} to {hphantom fail}

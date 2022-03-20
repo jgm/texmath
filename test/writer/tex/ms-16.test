@@ -1,0 +1,7 @@
+<<< native
+[ EText TextNormal "\"string\""
+, ESymbol Rel "="
+, EText TextNormal "\8220string\8221"
+]
+>>> tex
+\text{"string"} = \text{“string”}

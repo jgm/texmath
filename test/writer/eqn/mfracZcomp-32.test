@@ -1,0 +1,37 @@
+<<< native
+[ EText
+    TextNormal
+    "And this is an example where the bevelled attribute is set inside the radical\160"
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESuper (EIdentifier "y") (ENumber "2")
+       , ESymbol Bin "-"
+       , ESuper (EIdentifier "t") (ENumber "2")
+       ])
+    (ESqrt
+       (EFraction
+          NormalFrac
+          (ENumber "1")
+          (EDelimited
+             "("
+             ")"
+             [ Right (ENumber "1")
+             , Right (ESymbol Bin "+")
+             , Right
+                 (ESuper
+                    (EDelimited
+                       "|"
+                       "|"
+                       [ Right
+                           (EGrouped
+                              [ ESuper (EIdentifier "y") (ENumber "2")
+                              , ESymbol Bin "-"
+                              , ESuper (EIdentifier "t") (ENumber "2")
+                              ])
+                       ])
+                    (ENumber "2"))
+             ])))
+]
+>>> eqn
+roman "And this is an example where the bevelled attribute is set inside the radical " {y sup 2 - t sup 2} over {sqrt {1 over {left ( 1 + {left | {y sup 2 - t sup 2} right |} sup 2 right )}}}

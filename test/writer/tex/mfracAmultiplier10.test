@@ -1,0 +1,20 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ])
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ])
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ])
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ])
+]
+>>> tex
+\frac{1}{y + 3}\frac{1}{y + 3}\frac{1}{y + 3}\frac{1}{y + 3}

@@ -1,0 +1,32 @@
+<<< native
+[ EBoxed
+    (EGrouped
+       [ ESuper (EIdentifier "x") (ENumber "2")
+       , ESymbol Bin "+"
+       , ESuper (EIdentifier "y") (ENumber "2")
+       , ESymbol Bin "+"
+       , ESuper (EIdentifier "z") (ENumber "2")
+       ])
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <menclose notation="box">
+    <mrow>
+      <msup>
+        <mi>x</mi>
+        <mn>2</mn>
+      </msup>
+      <mo>+</mo>
+      <msup>
+        <mi>y</mi>
+        <mn>2</mn>
+      </msup>
+      <mo>+</mo>
+      <msup>
+        <mi>z</mi>
+        <mn>2</mn>
+      </msup>
+    </mrow>
+  </menclose>
+</math>

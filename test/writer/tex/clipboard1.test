@@ -1,0 +1,8 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (EIdentifier "x")
+    (EGrouped [ EIdentifier "x" , ESymbol Bin "+" , ENumber "1" ])
+]
+>>> tex
+\frac{x}{x + 1}

@@ -1,0 +1,24 @@
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "+"
+            , EDelimited
+                "("
+                ")"
+                [ Right (EFraction NormalFrac (ENumber "2") (ENumber "3")) ]
+            ]
+        ]
+      ]
+    , [ [ EDelimited
+            ""
+            ")"
+            [ Right (EIdentifier "x")
+            , Right (ESymbol Bin "+")
+            , Right (EOver False (ESymbol Open "(") (ESymbol Bin "-"))
+            , Right (EFraction NormalFrac (ENumber "2") (ENumber "3"))
+            ]
+        ]
+      ]
+    ]
+]

@@ -1,0 +1,15 @@
+<<< native
+[ EText TextNormal "Inline, styles auto, display and text\160"
+, EGrouped
+    [ EFraction NormalFrac (ENumber "1") (ENumber "2")
+    , ESymbol Bin "-"
+    , EFraction NormalFrac (ENumber "1") (ENumber "2")
+    , ESymbol Bin "+"
+    , EFraction NormalFrac (ENumber "1.23456") (ENumber "7890")
+    ]
+, EText
+    TextNormal
+    ", the rendering should be script-size, normal-size and script-size in this example. Fraction lines should align vertically with the math axis."
+]
+>>> eqn
+roman "Inline, styles auto, display and text " {1 over 2 - 1 over 2 + 1.23456 over 7890} roman ", the rendering should be script-size, normal-size and script-size in this example. Fraction lines should align vertically with the math axis."

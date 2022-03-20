@@ -1,0 +1,17 @@
+<<< native
+[ EOver
+    False
+    (EIdentifier "BASE")
+    (EFraction NormalFrac (EIdentifier "first") (EIdentifier "second"))
+, ESymbol Rel "="
+, EOver
+    False
+    (EOver
+       False
+       (EIdentifier "BASE")
+       (EFraction
+          NormalFrac (EIdentifier "first") (EIdentifier "second")))
+    (EPhantom (EIdentifier "over"))
+]
+>>> tex
+\overset{\frac{first}{second}}{BASE} = \overset{\phantom{over}}{\overset{\frac{first}{second}}{BASE}}

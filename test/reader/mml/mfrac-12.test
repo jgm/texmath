@@ -1,0 +1,23 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mfrac>    <mn>1</mn>     <mn>2</mn>   </mfrac>   <mo>=</mo>   <mfrac>    <mrow>      <mphantom>        <mn>1</mn>
+      </mphantom>
+      <mspace linebreak="newline"></mspace>
+      <mn>1</mn>
+    </mrow>     <mrow>      <mn>2</mn>
+      <mspace linebreak="newline"></mspace>
+      <mphantom>
+        <mn>1</mn>
+      </mphantom>
+    </mrow>   </mfrac> </math>
+>>> native
+[ EFraction NormalFrac (ENumber "1") (ENumber "2")
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ EPhantom (ENumber "1") , ESpace (0 % 1) , ENumber "1" ])
+    (EGrouped
+       [ ENumber "2" , ESpace (0 % 1) , EPhantom (ENumber "1") ])
+]

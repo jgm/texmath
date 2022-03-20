@@ -1,0 +1,9 @@
+[ EText TextNormal "Inline, display style, normal line\160"
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ EMathOperator "ln" , ESymbol Ord "\8289" , EIdentifier "x" ])
+    (EIdentifier "y")
+, EText
+    TextNormal ", numerator and denominator should render normal size."
+]

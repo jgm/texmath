@@ -1,0 +1,56 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac linethickness="0">
+      <mn>1</mn> 
+      <mrow>
+        <mi>y</mi> 
+        <mo>+</mo> 
+        <mn>3</mn> 
+      </mrow> 
+    </mfrac> 
+    <mfrac linethickness="0.5">
+      <mn>1</mn> 
+      <mrow>
+        <mi>y</mi> 
+        <mo>+</mo> 
+        <mn>3</mn> 
+      </mrow> 
+    </mfrac> 
+    <mfrac linethickness="2">
+      <mn>1</mn> 
+      <mrow>
+        <mi>y</mi> 
+        <mo>+</mo> 
+        <mn>3</mn> 
+      </mrow> 
+    </mfrac> 
+    <mfrac linethickness="3">
+      <mn>1</mn> 
+      <mrow>
+        <mi>y</mi> 
+        <mo>+</mo> 
+        <mn>3</mn> 
+      </mrow> 
+    </mfrac> 
+  </mrow> </math>
+>>> native
+[ EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ])
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ])
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ])
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ])
+]

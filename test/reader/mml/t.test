@@ -1,0 +1,701 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable>
+    <mtr>
+      <mtd>
+        <mtext>Tab</mtext> 
+      </mtd> 
+      <mtd>
+        <mo></mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>target</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⌖</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>tau</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>τ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>tbrk</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⎴</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>tcaron</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ť</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Tcaron</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Ť</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>tcedil</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ţ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Tcedil</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Ţ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>tcy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>т</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Tcy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Т</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>tdot</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⃛</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>telrec</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⌕</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>tfr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝔱</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Tfr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝔗</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>there4</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>∴</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>therefore</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>∴</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Therefore</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>∴</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>theta</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>θ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Theta</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Θ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>thetav</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ϑ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>thickapprox</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>≈</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>thicksim</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>∼</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>ThickSpace</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>  </mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>thinsp</mtext> 
+      </mtd> 
+      <mtd>
+        <mo> </mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>ThinSpace</mtext> 
+      </mtd> 
+      <mtd>
+        <mo> </mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>thkap</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>≈</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>thksim</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>∼</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>thorn</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>þ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>THORN</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Þ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>tilde</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>˜</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Tilde</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>∼</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>TildeEqual</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>≃</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>TildeFullEqual</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>≅</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>TildeTilde</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>≈</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>times</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>×</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>timesb</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊠</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>timesbar</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⨱</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>timesd</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⨰</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>tint</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>∭</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>toea</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⤨</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>top</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊤</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>topbot</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⌶</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>topcir</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⫱</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>topf</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝕥</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Topf</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝕋</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>topfork</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⫚</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>tosa</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⤩</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>tprime</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>‴</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>trade</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>™</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>triangle</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>▵</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>triangledown</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>▿</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>triangleleft</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>◃</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>trianglelefteq</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊴</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>triangleq</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>≜</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>triangleright</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>▹</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>trianglerighteq</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⊵</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>tridot</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>◬</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>trie</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>≜</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>triminus</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⨺</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>TripleDot</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⃛</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>triplus</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⨹</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>trisb</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⧍</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>tritime</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⨻</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>trpezium</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⏢</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>tscr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝓉</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Tscr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝒯</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>tscy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ц</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>TScy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Ц</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>tshcy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ћ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>TSHcy</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Ћ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>tstrok</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ŧ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Tstrok</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>Ŧ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>twixt</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>≬</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>twoheadleftarrow</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>↞</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>twoheadrightarrow</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>↠</mo> 
+      </mtd> 
+    </mtr> 
+  </mtable> 
+</math>
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "Tab" ] , [ EMathOperator "" ] ]
+    , [ [ EText TextNormal "target" ] , [ ESymbol Ord "\8982" ] ]
+    , [ [ EText TextNormal "tau" ] , [ ESymbol Alpha "\964" ] ]
+    , [ [ EText TextNormal "tbrk" ] , [ ESymbol Accent "\9140" ] ]
+    , [ [ EText TextNormal "tcaron" ] , [ ESymbol Ord "\357" ] ]
+    , [ [ EText TextNormal "Tcaron" ] , [ ESymbol Ord "\356" ] ]
+    , [ [ EText TextNormal "tcedil" ] , [ ESymbol Ord "\355" ] ]
+    , [ [ EText TextNormal "Tcedil" ] , [ ESymbol Ord "\354" ] ]
+    , [ [ EText TextNormal "tcy" ] , [ ESymbol Ord "\1090" ] ]
+    , [ [ EText TextNormal "Tcy" ] , [ ESymbol Ord "\1058" ] ]
+    , [ [ EText TextNormal "tdot" ] , [ ESymbol Accent "\8411" ] ]
+    , [ [ EText TextNormal "telrec" ] , [ ESymbol Ord "\8981" ] ]
+    , [ [ EText TextNormal "tfr" ] , [ ESymbol Alpha "\120113" ] ]
+    , [ [ EText TextNormal "Tfr" ] , [ ESymbol Alpha "\120087" ] ]
+    , [ [ EText TextNormal "there4" ] , [ ESymbol Ord "\8756" ] ]
+    , [ [ EText TextNormal "therefore" ] , [ ESymbol Ord "\8756" ] ]
+    , [ [ EText TextNormal "Therefore" ] , [ ESymbol Ord "\8756" ] ]
+    , [ [ EText TextNormal "theta" ] , [ ESymbol Alpha "\952" ] ]
+    , [ [ EText TextNormal "Theta" ] , [ ESymbol Alpha "\920" ] ]
+    , [ [ EText TextNormal "thetav" ] , [ ESymbol Alpha "\977" ] ]
+    , [ [ EText TextNormal "thickapprox" ] , [ ESymbol Rel "\8776" ] ]
+    , [ [ EText TextNormal "thicksim" ] , [ ESymbol Rel "\8764" ] ]
+    , [ [ EText TextNormal "ThickSpace" ]
+      , [ EMathOperator "\8287\8202" ]
+      ]
+    , [ [ EText TextNormal "thinsp" ] , [ ESymbol Ord "\8201" ] ]
+    , [ [ EText TextNormal "ThinSpace" ] , [ ESymbol Ord "\8201" ] ]
+    , [ [ EText TextNormal "thkap" ] , [ ESymbol Rel "\8776" ] ]
+    , [ [ EText TextNormal "thksim" ] , [ ESymbol Rel "\8764" ] ]
+    , [ [ EText TextNormal "thorn" ] , [ ESymbol Ord "\254" ] ]
+    , [ [ EText TextNormal "THORN" ] , [ ESymbol Ord "\222" ] ]
+    , [ [ EText TextNormal "tilde" ] , [ ESymbol Accent "\732" ] ]
+    , [ [ EText TextNormal "Tilde" ] , [ ESymbol Rel "\8764" ] ]
+    , [ [ EText TextNormal "TildeEqual" ] , [ ESymbol Rel "\8771" ] ]
+    , [ [ EText TextNormal "TildeFullEqual" ]
+      , [ ESymbol Rel "\8773" ]
+      ]
+    , [ [ EText TextNormal "TildeTilde" ] , [ ESymbol Rel "\8776" ] ]
+    , [ [ EText TextNormal "times" ] , [ ESymbol Bin "\215" ] ]
+    , [ [ EText TextNormal "timesb" ] , [ ESymbol Bin "\8864" ] ]
+    , [ [ EText TextNormal "timesbar" ] , [ ESymbol Bin "\10801" ] ]
+    , [ [ EText TextNormal "timesd" ] , [ ESymbol Bin "\10800" ] ]
+    , [ [ EText TextNormal "tint" ] , [ ESymbol Op "\8749" ] ]
+    , [ [ EText TextNormal "toea" ] , [ ESymbol Rel "\10536" ] ]
+    , [ [ EText TextNormal "top" ] , [ ESymbol Ord "\8868" ] ]
+    , [ [ EText TextNormal "topbot" ] , [ ESymbol Ord "\9014" ] ]
+    , [ [ EText TextNormal "topcir" ] , [ ESymbol Ord "\10993" ] ]
+    , [ [ EText TextNormal "topf" ] , [ ESymbol Alpha "\120165" ] ]
+    , [ [ EText TextNormal "Topf" ] , [ ESymbol Alpha "\120139" ] ]
+    , [ [ EText TextNormal "topfork" ] , [ ESymbol Rel "\10970" ] ]
+    , [ [ EText TextNormal "tosa" ] , [ ESymbol Rel "\10537" ] ]
+    , [ [ EText TextNormal "tprime" ] , [ ESymbol Accent "\8244" ] ]
+    , [ [ EText TextNormal "trade" ] , [ ESymbol Ord "\8482" ] ]
+    , [ [ EText TextNormal "triangle" ] , [ ESymbol Bin "\9653" ] ]
+    , [ [ EText TextNormal "triangledown" ] , [ ESymbol Bin "\9663" ] ]
+    , [ [ EText TextNormal "triangleleft" ] , [ ESymbol Bin "\9667" ] ]
+    , [ [ EText TextNormal "trianglelefteq" ]
+      , [ ESymbol Rel "\8884" ]
+      ]
+    , [ [ EText TextNormal "triangleq" ] , [ ESymbol Rel "\8796" ] ]
+    , [ [ EText TextNormal "triangleright" ]
+      , [ ESymbol Bin "\9657" ]
+      ]
+    , [ [ EText TextNormal "trianglerighteq" ]
+      , [ ESymbol Rel "\8885" ]
+      ]
+    , [ [ EText TextNormal "tridot" ] , [ ESymbol Ord "\9708" ] ]
+    , [ [ EText TextNormal "trie" ] , [ ESymbol Rel "\8796" ] ]
+    , [ [ EText TextNormal "triminus" ] , [ ESymbol Bin "\10810" ] ]
+    , [ [ EText TextNormal "TripleDot" ] , [ ESymbol Accent "\8411" ] ]
+    , [ [ EText TextNormal "triplus" ] , [ ESymbol Bin "\10809" ] ]
+    , [ [ EText TextNormal "trisb" ] , [ ESymbol Bin "\10701" ] ]
+    , [ [ EText TextNormal "tritime" ] , [ ESymbol Bin "\10811" ] ]
+    , [ [ EText TextNormal "trpezium" ] , [ ESymbol Ord "\9186" ] ]
+    , [ [ EText TextNormal "tscr" ] , [ ESymbol Alpha "\120009" ] ]
+    , [ [ EText TextNormal "Tscr" ] , [ ESymbol Alpha "\119983" ] ]
+    , [ [ EText TextNormal "tscy" ] , [ ESymbol Ord "\1094" ] ]
+    , [ [ EText TextNormal "TScy" ] , [ ESymbol Ord "\1062" ] ]
+    , [ [ EText TextNormal "tshcy" ] , [ ESymbol Ord "\1115" ] ]
+    , [ [ EText TextNormal "TSHcy" ] , [ ESymbol Ord "\1035" ] ]
+    , [ [ EText TextNormal "tstrok" ] , [ ESymbol Ord "\359" ] ]
+    , [ [ EText TextNormal "Tstrok" ] , [ ESymbol Ord "\358" ] ]
+    , [ [ EText TextNormal "twixt" ] , [ ESymbol Rel "\8812" ] ]
+    , [ [ EText TextNormal "twoheadleftarrow" ]
+      , [ ESymbol Accent "\8606" ]
+      ]
+    , [ [ EText TextNormal "twoheadrightarrow" ]
+      , [ ESymbol Accent "\8608" ]
+      ]
+    ]
+]

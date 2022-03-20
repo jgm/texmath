@@ -1,0 +1,18 @@
+[ EUnderover
+    False
+    (EIdentifier "B")
+    (EIdentifier "underscript")
+    (EIdentifier "overscript")
+, ESymbol Rel "="
+, EOver
+    False
+    (EUnder
+       False
+       (EGrouped
+          [ EPhantom (ENumber "1")
+          , EIdentifier "B"
+          , EPhantom (ENumber "1")
+          ])
+       (EIdentifier "underscript"))
+    (EIdentifier "overscript")
+]

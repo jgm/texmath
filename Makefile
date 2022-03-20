@@ -1,3 +1,5 @@
+TESTARGS ?= --hide-successes
+
 quick:
 	stack install --flag 'texmath:executable' --test --test-arguments='$(TESTARGS)'
 

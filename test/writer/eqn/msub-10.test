@@ -1,0 +1,10 @@
+<<< native
+[ ESub (EIdentifier "S") (ENumber "5")
+, ESymbol Rel "="
+, EUnder
+    False
+    (ESub (EIdentifier "S") (ENumber "5"))
+    (EPhantom (EIdentifier "t"))
+]
+>>> eqn
+S sub 5 = {S sub 5} from {hphantom t}

@@ -1,0 +1,116 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle fontsize="150%">
+    <mtable>
+      <mtr>
+        <mtd>
+          <mi>x</mi> 
+          <mo>-</mo> 
+          <mfrac>
+            <mi>a</mi> 
+            <mi>b</mi> 
+          </mfrac> 
+          <mi>x</mi> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mi>x</mi> 
+          <mo>-</mo> 
+          <mfrac>
+            <mn>1</mn> 
+            <mi>b</mi> 
+          </mfrac> 
+          <mi>x</mi> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mi>x</mi> 
+          <mo>-</mo> 
+          <mfrac>
+            <mn>1</mn> 
+            <mn>2</mn> 
+          </mfrac> 
+          <mi>x</mi> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mi>x</mi> 
+          <mo>-</mo> 
+          <mfrac>
+            <msup>
+              <mn>1</mn> 
+              <mn>2</mn> 
+            </msup> 
+            <mi>z</mi> 
+          </mfrac> 
+          <mi>x</mi> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mi>x</mi> 
+          <mo>-</mo> 
+          <mfrac>
+            <mi>z</mi> 
+            <msup>
+              <mn>1</mn> 
+              <mn>2</mn> 
+            </msup> 
+          </mfrac> 
+          <mi>x</mi> 
+        </mtd> 
+      </mtr> 
+    </mtable> 
+  </mstyle> </math>
+>>> native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "-"
+            , EFraction NormalFrac (EIdentifier "a") (EIdentifier "b")
+            , EIdentifier "x"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "-"
+            , EFraction NormalFrac (ENumber "1") (EIdentifier "b")
+            , EIdentifier "x"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "-"
+            , EFraction NormalFrac (ENumber "1") (ENumber "2")
+            , EIdentifier "x"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "-"
+            , EFraction
+                NormalFrac (ESuper (ENumber "1") (ENumber "2")) (EIdentifier "z")
+            , EIdentifier "x"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "-"
+            , EFraction
+                NormalFrac (EIdentifier "z") (ESuper (ENumber "1") (ENumber "2"))
+            , EIdentifier "x"
+            ]
+        ]
+      ]
+    ]
+]

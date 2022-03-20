@@ -1,0 +1,65 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" frame="solid" columnlines="dashed" rowlines="dashed" rowalign="top baseline bottom" columnalign="left right" columnspacing="4em" rowspacing="3ex">
+  <mtable>
+    <mtr>
+      <mtd>
+        <mfrac>
+          <mi>xxx</mi> 
+          <mi>y</mi> 
+        </mfrac> 
+      </mtd> 
+      <mtd>
+        <mi>bbbb</mi> 
+      </mtd> 
+      <mtd>
+        <mi>c</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mfrac>
+          <mi>x</mi> 
+          <mi>y</mi> 
+        </mfrac> 
+      </mtd> 
+      <mtd>
+        <mi>y</mi> 
+      </mtd> 
+      <mtd>
+        <mi>z</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mfrac>
+          <mi>x</mi> 
+          <mi>y</mi> 
+        </mfrac> 
+      </mtd> 
+      <mtd>
+        <mn>2</mn> 
+      </mtd> 
+      <mtd>
+        <mn>333333</mn> 
+      </mtd> 
+    </mtr> 
+  </mtable> </math>
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EFraction NormalFrac (EIdentifier "xxx") (EIdentifier "y") ]
+      , [ EIdentifier "bbbb" ]
+      , [ EIdentifier "c" ]
+      ]
+    , [ [ EFraction NormalFrac (EIdentifier "x") (EIdentifier "y") ]
+      , [ EIdentifier "y" ]
+      , [ EIdentifier "z" ]
+      ]
+    , [ [ EFraction NormalFrac (EIdentifier "x") (EIdentifier "y") ]
+      , [ ENumber "2" ]
+      , [ ENumber "333333" ]
+      ]
+    ]
+]

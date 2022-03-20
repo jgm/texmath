@@ -1,0 +1,11 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <ms lquote="&quot;">string</ms>
+  <mo>=</mo>
+  <ms rquote="&quot;">string</ms> </math>
+>>> native
+[ EText TextNormal "\"string\8221"
+, ESymbol Rel "="
+, EText TextNormal "\8220string\""
+]

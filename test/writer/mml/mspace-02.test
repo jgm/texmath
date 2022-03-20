@@ -1,0 +1,244 @@
+<<< native
+[ EGrouped
+    [ ENumber "1"
+    , ENumber "2"
+    , ESpace (0 % 1)
+    , ENumber "3"
+    , ENumber "4"
+    , ESpace (0 % 1)
+    , ENumber "5"
+    , ENumber "6"
+    , ESpace (0 % 1)
+    , ENumber "7"
+    , ENumber "8"
+    , ESpace (0 % 1)
+    , ENumber "9"
+    , ENumber "10"
+    , ESpace (0 % 1)
+    , ENumber "11"
+    , ENumber "12"
+    ]
+, EGrouped
+    [ ENumber "11"
+    , ENumber "12"
+    , ESpace (0 % 1)
+    , ENumber "13"
+    , ENumber "14"
+    , ESpace (0 % 1)
+    , ENumber "15"
+    , ENumber "16"
+    , ESpace (0 % 1)
+    , ENumber "17"
+    , ENumber "18"
+    , ESpace (0 % 1)
+    , ENumber "19"
+    , ENumber "20"
+    , ESpace (0 % 1)
+    , ENumber "21"
+    , ENumber "22"
+    , ESpace (0 % 1)
+    , ENumber "21"
+    , ENumber "22"
+    , ESpace (0 % 1)
+    , ENumber "23"
+    , ENumber "24"
+    ]
+, EGrouped
+    [ ENumber "25"
+    , ENumber "26"
+    , ESpace (0 % 1)
+    , ENumber "27"
+    , ENumber "28"
+    , ESpace (0 % 1)
+    , ENumber "29"
+    , ENumber "30"
+    , ESpace (0 % 1)
+    , ENumber "31"
+    , ENumber "32"
+    ]
+, EGrouped
+    [ ENumber "31"
+    , ENumber "32"
+    , ESpace (0 % 1)
+    , ENumber "33"
+    , ENumber "34"
+    , ESpace (0 % 1)
+    , ENumber "35"
+    , ENumber "36"
+    , ESpace (0 % 1)
+    , ENumber "37"
+    , ENumber "38"
+    , ESpace (0 % 1)
+    , ENumber "39"
+    , ENumber "40"
+    , ESpace (0 % 1)
+    , ENumber "41"
+    , ENumber "42"
+    , ESpace (0 % 1)
+    , ENumber "41"
+    , ENumber "42"
+    , ESpace (0 % 1)
+    , ENumber "43"
+    , ENumber "44"
+    , ESpace (0 % 1)
+    , ENumber "45"
+    , ENumber "46"
+    , ESpace (0 % 1)
+    , ENumber "47"
+    , ENumber "48"
+    , ESpace (0 % 1)
+    , ENumber "49"
+    , ENumber "50"
+    , ESpace (0 % 1)
+    , ENumber "51"
+    , ENumber "52"
+    , ESpace (0 % 1)
+    , ENumber "51"
+    , ENumber "52"
+    , ESpace (0 % 1)
+    , ENumber "53"
+    , ENumber "54"
+    , ESpace (0 % 1)
+    , ENumber "55"
+    , ENumber "56"
+    , ESpace (0 % 1)
+    , ENumber "57"
+    , ENumber "58"
+    , ESpace (0 % 1)
+    , ENumber "59"
+    , ENumber "60"
+    , ESpace (0 % 1)
+    , ENumber "61"
+    , ENumber "62"
+    , ESpace (0 % 1)
+    , ENumber "61"
+    , ENumber "62"
+    , ESpace (0 % 1)
+    , ENumber "63"
+    , ENumber "64"
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mn>1</mn>
+      <mn>2</mn>
+      <mspace width="0.0em" />
+      <mn>3</mn>
+      <mn>4</mn>
+      <mspace width="0.0em" />
+      <mn>5</mn>
+      <mn>6</mn>
+      <mspace width="0.0em" />
+      <mn>7</mn>
+      <mn>8</mn>
+      <mspace width="0.0em" />
+      <mn>9</mn>
+      <mn>10</mn>
+      <mspace width="0.0em" />
+      <mn>11</mn>
+      <mn>12</mn>
+    </mrow>
+    <mrow>
+      <mn>11</mn>
+      <mn>12</mn>
+      <mspace width="0.0em" />
+      <mn>13</mn>
+      <mn>14</mn>
+      <mspace width="0.0em" />
+      <mn>15</mn>
+      <mn>16</mn>
+      <mspace width="0.0em" />
+      <mn>17</mn>
+      <mn>18</mn>
+      <mspace width="0.0em" />
+      <mn>19</mn>
+      <mn>20</mn>
+      <mspace width="0.0em" />
+      <mn>21</mn>
+      <mn>22</mn>
+      <mspace width="0.0em" />
+      <mn>21</mn>
+      <mn>22</mn>
+      <mspace width="0.0em" />
+      <mn>23</mn>
+      <mn>24</mn>
+    </mrow>
+    <mrow>
+      <mn>25</mn>
+      <mn>26</mn>
+      <mspace width="0.0em" />
+      <mn>27</mn>
+      <mn>28</mn>
+      <mspace width="0.0em" />
+      <mn>29</mn>
+      <mn>30</mn>
+      <mspace width="0.0em" />
+      <mn>31</mn>
+      <mn>32</mn>
+    </mrow>
+    <mrow>
+      <mn>31</mn>
+      <mn>32</mn>
+      <mspace width="0.0em" />
+      <mn>33</mn>
+      <mn>34</mn>
+      <mspace width="0.0em" />
+      <mn>35</mn>
+      <mn>36</mn>
+      <mspace width="0.0em" />
+      <mn>37</mn>
+      <mn>38</mn>
+      <mspace width="0.0em" />
+      <mn>39</mn>
+      <mn>40</mn>
+      <mspace width="0.0em" />
+      <mn>41</mn>
+      <mn>42</mn>
+      <mspace width="0.0em" />
+      <mn>41</mn>
+      <mn>42</mn>
+      <mspace width="0.0em" />
+      <mn>43</mn>
+      <mn>44</mn>
+      <mspace width="0.0em" />
+      <mn>45</mn>
+      <mn>46</mn>
+      <mspace width="0.0em" />
+      <mn>47</mn>
+      <mn>48</mn>
+      <mspace width="0.0em" />
+      <mn>49</mn>
+      <mn>50</mn>
+      <mspace width="0.0em" />
+      <mn>51</mn>
+      <mn>52</mn>
+      <mspace width="0.0em" />
+      <mn>51</mn>
+      <mn>52</mn>
+      <mspace width="0.0em" />
+      <mn>53</mn>
+      <mn>54</mn>
+      <mspace width="0.0em" />
+      <mn>55</mn>
+      <mn>56</mn>
+      <mspace width="0.0em" />
+      <mn>57</mn>
+      <mn>58</mn>
+      <mspace width="0.0em" />
+      <mn>59</mn>
+      <mn>60</mn>
+      <mspace width="0.0em" />
+      <mn>61</mn>
+      <mn>62</mn>
+      <mspace width="0.0em" />
+      <mn>61</mn>
+      <mn>62</mn>
+      <mspace width="0.0em" />
+      <mn>63</mn>
+      <mn>64</mn>
+    </mrow>
+  </mrow>
+</math>

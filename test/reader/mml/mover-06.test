@@ -1,0 +1,15 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mi mathvariant="normal">- middle -</mi>   <mo>=</mo>   <mover>    <mrow>      <mover>        <mi mathvariant="normal">- middle -</mi>         <mphantom>          <mi mathvariant="normal">fail</mi>
+        </mphantom>       </mover>     </mrow>     <mphantom>      <mi mathvariant="normal">fail</mi>
+    </mphantom>   </mover> </math>
+>>> native
+[ EIdentifier "- middle -"
+, ESymbol Rel "="
+, EOver
+    False
+    (EOver
+       False (EIdentifier "- middle -") (EPhantom (EIdentifier "fail")))
+    (EPhantom (EIdentifier "fail"))
+]

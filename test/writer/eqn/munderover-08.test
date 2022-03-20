@@ -1,0 +1,18 @@
+<<< native
+[ EUnderover
+    False
+    (EUnderover
+       False
+       (EIdentifier "BASE")
+       (EIdentifier "under-1")
+       (EPhantom (EIdentifier "fail")))
+    (EIdentifier "under-2")
+    (EPhantom (EIdentifier "fail"))
+, ESymbol Rel "="
+, EUnder
+    False
+    (EUnder False (EIdentifier "BASE") (EIdentifier "under-1"))
+    (EIdentifier "under-2")
+]
+>>> eqn
+{BASE from under-1 to {hphantom fail}} from under-2 to {hphantom fail} = {BASE from under-1} from under-2

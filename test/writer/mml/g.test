@@ -1,0 +1,732 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "gacute" ] , [ ESymbol Ord "\501" ] ]
+    , [ [ EText TextNormal "gamma" ] , [ ESymbol Alpha "\947" ] ]
+    , [ [ EText TextNormal "Gamma" ] , [ ESymbol Alpha "\915" ] ]
+    , [ [ EText TextNormal "gammad" ] , [ ESymbol Alpha "\989" ] ]
+    , [ [ EText TextNormal "Gammad" ] , [ ESymbol Alpha "\988" ] ]
+    , [ [ EText TextNormal "gap" ] , [ ESymbol Rel "\10886" ] ]
+    , [ [ EText TextNormal "gbreve" ] , [ ESymbol Ord "\287" ] ]
+    , [ [ EText TextNormal "Gbreve" ] , [ ESymbol Ord "\286" ] ]
+    , [ [ EText TextNormal "Gcedil" ] , [ ESymbol Ord "\290" ] ]
+    , [ [ EText TextNormal "gcirc" ] , [ ESymbol Ord "\285" ] ]
+    , [ [ EText TextNormal "Gcirc" ] , [ ESymbol Ord "\284" ] ]
+    , [ [ EText TextNormal "gcy" ] , [ ESymbol Ord "\1075" ] ]
+    , [ [ EText TextNormal "Gcy" ] , [ ESymbol Ord "\1043" ] ]
+    , [ [ EText TextNormal "gdot" ] , [ ESymbol Ord "\289" ] ]
+    , [ [ EText TextNormal "Gdot" ] , [ ESymbol Ord "\288" ] ]
+    , [ [ EText TextNormal "ge" ] , [ ESymbol Rel "\8805" ] ]
+    , [ [ EText TextNormal "gE" ] , [ ESymbol Rel "\8807" ] ]
+    , [ [ EText TextNormal "gel" ] , [ ESymbol Rel "\8923" ] ]
+    , [ [ EText TextNormal "gEl" ] , [ ESymbol Rel "\10892" ] ]
+    , [ [ EText TextNormal "geq" ] , [ ESymbol Rel "\8805" ] ]
+    , [ [ EText TextNormal "geqq" ] , [ ESymbol Rel "\8807" ] ]
+    , [ [ EText TextNormal "geqslant" ] , [ ESymbol Rel "\10878" ] ]
+    , [ [ EText TextNormal "ges" ] , [ ESymbol Rel "\10878" ] ]
+    , [ [ EText TextNormal "gescc" ] , [ ESymbol Rel "\10921" ] ]
+    , [ [ EText TextNormal "gesdot" ] , [ ESymbol Rel "\10880" ] ]
+    , [ [ EText TextNormal "gesdoto" ] , [ ESymbol Rel "\10882" ] ]
+    , [ [ EText TextNormal "gesdotol" ] , [ ESymbol Rel "\10884" ] ]
+    , [ [ EText TextNormal "gesl" ] , [ EMathOperator "\8923\65024" ] ]
+    , [ [ EText TextNormal "gesles" ] , [ ESymbol Rel "\10900" ] ]
+    , [ [ EText TextNormal "gfr" ] , [ ESymbol Alpha "\120100" ] ]
+    , [ [ EText TextNormal "Gfr" ] , [ ESymbol Alpha "\120074" ] ]
+    , [ [ EText TextNormal "gg" ] , [ ESymbol Rel "\8811" ] ]
+    , [ [ EText TextNormal "Gg" ] , [ ESymbol Rel "\8921" ] ]
+    , [ [ EText TextNormal "ggg" ] , [ ESymbol Rel "\8921" ] ]
+    , [ [ EText TextNormal "gimel" ] , [ ESymbol Alpha "\8503" ] ]
+    , [ [ EText TextNormal "gjcy" ] , [ ESymbol Ord "\1107" ] ]
+    , [ [ EText TextNormal "GJcy" ] , [ ESymbol Ord "\1027" ] ]
+    , [ [ EText TextNormal "gl" ] , [ ESymbol Rel "\8823" ] ]
+    , [ [ EText TextNormal "gla" ] , [ ESymbol Rel "\10917" ] ]
+    , [ [ EText TextNormal "glE" ] , [ ESymbol Rel "\10898" ] ]
+    , [ [ EText TextNormal "glj" ] , [ ESymbol Rel "\10916" ] ]
+    , [ [ EText TextNormal "gnap" ] , [ ESymbol Rel "\10890" ] ]
+    , [ [ EText TextNormal "gnapprox" ] , [ ESymbol Rel "\10890" ] ]
+    , [ [ EText TextNormal "gne" ] , [ ESymbol Rel "\10888" ] ]
+    , [ [ EText TextNormal "gnE" ] , [ ESymbol Rel "\8809" ] ]
+    , [ [ EText TextNormal "gneq" ] , [ ESymbol Rel "\10888" ] ]
+    , [ [ EText TextNormal "gneqq" ] , [ ESymbol Rel "\8809" ] ]
+    , [ [ EText TextNormal "gnsim" ] , [ ESymbol Rel "\8935" ] ]
+    , [ [ EText TextNormal "gopf" ] , [ ESymbol Alpha "\120152" ] ]
+    , [ [ EText TextNormal "Gopf" ] , [ ESymbol Alpha "\120126" ] ]
+    , [ [ EText TextNormal "grave" ] , [ ESymbol Accent "`" ] ]
+    , [ [ EText TextNormal "GreaterEqual" ] , [ ESymbol Rel "\8805" ] ]
+    , [ [ EText TextNormal "GreaterEqualLess" ]
+      , [ ESymbol Rel "\8923" ]
+      ]
+    , [ [ EText TextNormal "GreaterFullEqual" ]
+      , [ ESymbol Rel "\8807" ]
+      ]
+    , [ [ EText TextNormal "GreaterGreater" ]
+      , [ ESymbol Rel "\10914" ]
+      ]
+    , [ [ EText TextNormal "GreaterLess" ] , [ ESymbol Rel "\8823" ] ]
+    , [ [ EText TextNormal "GreaterSlantEqual" ]
+      , [ ESymbol Rel "\10878" ]
+      ]
+    , [ [ EText TextNormal "GreaterTilde" ] , [ ESymbol Rel "\8819" ] ]
+    , [ [ EText TextNormal "gscr" ] , [ ESymbol Alpha "\8458" ] ]
+    , [ [ EText TextNormal "Gscr" ] , [ ESymbol Alpha "\119970" ] ]
+    , [ [ EText TextNormal "gsim" ] , [ ESymbol Rel "\8819" ] ]
+    , [ [ EText TextNormal "gsime" ] , [ ESymbol Rel "\10894" ] ]
+    , [ [ EText TextNormal "gsiml" ] , [ ESymbol Rel "\10896" ] ]
+    , [ [ EText TextNormal "gt" ] , [ ESymbol Rel ">" ] ]
+    , [ [ EText TextNormal "Gt" ] , [ ESymbol Rel "\8811" ] ]
+    , [ [ EText TextNormal "gtcc" ] , [ ESymbol Rel "\10919" ] ]
+    , [ [ EText TextNormal "gtcir" ] , [ ESymbol Rel "\10874" ] ]
+    , [ [ EText TextNormal "gtdot" ] , [ ESymbol Rel "\8919" ] ]
+    , [ [ EText TextNormal "gtlPar" ] , [ ESymbol Open "\10645" ] ]
+    , [ [ EText TextNormal "gtquest" ] , [ ESymbol Rel "\10876" ] ]
+    , [ [ EText TextNormal "gtrapprox" ] , [ ESymbol Rel "\10886" ] ]
+    , [ [ EText TextNormal "gtrarr" ] , [ ESymbol Accent "\10616" ] ]
+    , [ [ EText TextNormal "gtrdot" ] , [ ESymbol Rel "\8919" ] ]
+    , [ [ EText TextNormal "gtreqless" ] , [ ESymbol Rel "\8923" ] ]
+    , [ [ EText TextNormal "gtreqqless" ] , [ ESymbol Rel "\10892" ] ]
+    , [ [ EText TextNormal "gtrless" ] , [ ESymbol Rel "\8823" ] ]
+    , [ [ EText TextNormal "gtrsim" ] , [ ESymbol Rel "\8819" ] ]
+    , [ [ EText TextNormal "gvertneqq" ]
+      , [ EMathOperator "\8809\65024" ]
+      ]
+    , [ [ EText TextNormal "gvnE" ] , [ EMathOperator "\8809\65024" ] ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gacute</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ǵ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gamma</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>γ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Gamma</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>Γ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gammad</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ϝ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Gammad</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>Ϝ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gap</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪆</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gbreve</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ğ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Gbreve</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ğ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Gcedil</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ģ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gcirc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ĝ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Gcirc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ĝ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>г</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Gcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Г</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gdot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ġ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Gdot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ġ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ge</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≥</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gE</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≧</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gel</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋛</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gEl</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪌</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">geq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≥</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">geqq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≧</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">geqslant</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩾</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ges</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩾</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gescc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪩</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gesdot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gesdoto</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪂</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gesdotol</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪄</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gesl</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋛︀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gesles</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪔</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gfr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔤</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Gfr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔊</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gg</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≫</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Gg</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋙</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ggg</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋙</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gimel</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℷ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gjcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ѓ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">GJcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ѓ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gl</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≷</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gla</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪥</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">glE</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪒</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">glj</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪤</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gnap</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪊</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gnapprox</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪊</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gne</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪈</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gnE</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≩</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gneq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪈</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gneqq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≩</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gnsim</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋧</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕘</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Gopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔾</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">grave</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>`</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">GreaterEqual</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≥</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">GreaterEqualLess</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋛</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">GreaterFullEqual</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≧</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">GreaterGreater</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪢</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">GreaterLess</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≷</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">GreaterSlantEqual</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩾</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">GreaterTilde</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≳</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℊ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Gscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝒢</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gsim</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≳</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gsime</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪎</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gsiml</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪐</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gt</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>&gt;</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Gt</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≫</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gtcc</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪧</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gtcir</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩺</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gtdot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋗</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gtlPar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="prefix">⦕</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gtquest</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩼</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gtrapprox</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪆</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gtrarr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⥸</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gtrdot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋗</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gtreqless</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋛</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gtreqqless</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪌</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gtrless</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≷</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gtrsim</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≳</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gvertneqq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≩︀</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">gvnE</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≩︀</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

@@ -1,0 +1,41 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ ENumber "3" ] , [ ENumber "0" ] , [ ENumber "0" ] ]
+    , [ [ EArray
+            [ AlignCenter ]
+            [ [ [ ENumber "2" ] ] , [ [ ENumber "2" ] ] , [ [ ENumber "2" ] ] ]
+        ]
+      , [ ENumber "3" ]
+      , [ ENumber "0" ]
+      ]
+    , [ [ ENumber "0" ] , [ ENumber "3" ] , [] ]
+    ]
+, ESpace (0 % 1)
+, EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ ENumber "3" ] , [ ENumber "0" ] , [ ENumber "0" ] ]
+    , [ [ EArray
+            [ AlignCenter ]
+            [ [ [ ENumber "2" ] ] , [ [ ENumber "2" ] ] , [ [ ENumber "2" ] ] ]
+        ]
+      , [ ENumber "3" ]
+      , [ ENumber "0" ]
+      ]
+    , [ [ ENumber "0" ] , [ ENumber "3" ] , [] ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ 3 above {matrix{
+ccol{ 2 above 2 above 2 }
+}} above 0 }
+ccol{ 0 above 3 above 3 }
+ccol{ 0 above 0 above {} }
+} fwd 0 matrix{
+ccol{ 3 above {matrix{
+ccol{ 2 above 2 above 2 }
+}} above 0 }
+ccol{ 0 above 3 above 3 }
+ccol{ 0 above 0 above {} }
+}

@@ -1,0 +1,15 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+    ]
+, ESymbol Bin "+"
+, EDelimited
+    "("
+    ")"
+    [ Right (EFraction NormalFrac (ENumber "1") (ENumber "2")) ]
+]
+>>> eqn
+left ( {a + b} right ) + left ( 1 over 2 right )

@@ -1,0 +1,19 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (EFraction
+       NormalFrac
+       (EOver False (EIdentifier "a") (EPhantom (EText TextNormal "!")))
+       (EIdentifier "b"))
+    (EFraction NormalFrac (EIdentifier "c") (EIdentifier "d"))
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EFraction NormalFrac (EIdentifier "a") (EIdentifier "b"))
+    (EFraction
+       NormalFrac
+       (EIdentifier "c")
+       (EUnder False (EIdentifier "d") (EPhantom (EText TextNormal "!"))))
+]
+>>> eqn
+{{a to {hphantom {roman "!"}}} over b} over {c over d} = {a over b} over {c over {d from {hphantom {roman "!"}}}}

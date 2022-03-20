@@ -1,0 +1,48 @@
+<<< native
+[ ESqrt
+    (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ])
+, ESymbol Bin "+"
+, ESqrt (EGrouped [ ENumber "3" , EIdentifier "x" ])
+, ESymbol Bin "+"
+, ESqrt
+    (EFraction
+       NormalFrac
+       (ESqrt (EGrouped [ ENumber "3" , EIdentifier "x" ]))
+       (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ]))
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msqrt>
+      <mrow>
+        <mi>x</mi>
+        <mo>-</mo>
+        <mn>3</mn>
+      </mrow>
+    </msqrt>
+    <mo>+</mo>
+    <msqrt>
+      <mrow>
+        <mn>3</mn>
+        <mi>x</mi>
+      </mrow>
+    </msqrt>
+    <mo>+</mo>
+    <msqrt>
+      <mfrac>
+        <msqrt>
+          <mrow>
+            <mn>3</mn>
+            <mi>x</mi>
+          </mrow>
+        </msqrt>
+        <mrow>
+          <mi>x</mi>
+          <mo>-</mo>
+          <mn>3</mn>
+        </mrow>
+      </mfrac>
+    </msqrt>
+  </mrow>
+</math>

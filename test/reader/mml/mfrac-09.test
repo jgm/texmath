@@ -1,0 +1,21 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mfrac>    <mn>9</mn>     <mn>14</mn>   </mfrac>   <mo>=</mo>   <mfrac>    <mn>9</mn>     <mn>14</mn>   </mfrac>   <mfrac linethickness="0">    <mphantom>      <mfrac linethickness="0">        <mphantom>          <mn>1</mn>
+        </mphantom>         <mphantom>          <mn>2</mn>
+        </mphantom>       </mfrac>     </mphantom>     <mphantom>      <mfrac linethickness="0">        <mphantom>          <mn>1</mn>
+        </mphantom>         <mphantom>          <mn>2</mn>
+        </mphantom>       </mfrac>     </mphantom>   </mfrac> </math>
+>>> native
+[ EFraction NormalFrac (ENumber "9") (ENumber "14")
+, ESymbol Rel "="
+, EFraction NormalFrac (ENumber "9") (ENumber "14")
+, EFraction
+    NormalFrac
+    (EPhantom
+       (EFraction
+          NormalFrac (EPhantom (ENumber "1")) (EPhantom (ENumber "2"))))
+    (EPhantom
+       (EFraction
+          NormalFrac (EPhantom (ENumber "1")) (EPhantom (ENumber "2"))))
+]

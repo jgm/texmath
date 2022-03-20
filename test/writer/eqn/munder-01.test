@@ -1,0 +1,10 @@
+<<< native
+[ EUnder False (EIdentifier "BASE") (EIdentifier "under")
+, ESymbol Rel "="
+, EUnder
+    False
+    (EUnder False (EIdentifier "BASE") (EIdentifier "under"))
+    (EPhantom (EIdentifier "under"))
+]
+>>> eqn
+BASE from under = {BASE from under} from {hphantom under}

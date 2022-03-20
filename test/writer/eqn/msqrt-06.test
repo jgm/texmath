@@ -1,0 +1,7 @@
+<<< native
+[ ESqrt (ESqrt (ESqrt (ESqrt (ENumber "65536"))))
+, ESymbol Rel "="
+, ENumber "2"
+]
+>>> eqn
+sqrt {sqrt {sqrt {sqrt 65536}}} = 2

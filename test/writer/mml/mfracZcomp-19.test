@@ -1,0 +1,36 @@
+<<< native
+[ EText TextNormal "Inline double up arrows, auto, thick line\160"
+, EDelimited
+    ""
+    ""
+    [ Left "\8657"
+    , Right
+        (EFraction
+           NormalFrac
+           (EGrouped
+              [ EMathOperator "sin" , ESymbol Ord "\8289" , EIdentifier "\952" ])
+           (EIdentifier "M"))
+    , Left "\8657"
+    ]
+, EText TextNormal "\160the end."
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext mathvariant="normal">Inline double up arrows, auto, thick line </mtext>
+    <mrow>
+      <mo stretchy="true" form="infix">⇑</mo>
+      <mfrac>
+        <mrow>
+          <mo>sin</mo>
+          <mi>&#8289;</mi>
+          <mi>θ</mi>
+        </mrow>
+        <mi>M</mi>
+      </mfrac>
+      <mo stretchy="true" form="infix">⇑</mo>
+    </mrow>
+    <mtext mathvariant="normal"> the end.</mtext>
+  </mrow>
+</math>

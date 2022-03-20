@@ -1,0 +1,161 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd></mtd> 
+      <mtd>
+        <mtext>FE2</mtext>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>0</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65056;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>1</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65057;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>2</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65058;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>3</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65059;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>4</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65060;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>5</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65061;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>6</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#65062;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>7</mtext>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>8</mtext>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>9</mtext>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>A</mtext>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>B</mtext>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>C</mtext>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>D</mtext>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>E</mtext>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>F</mtext>
+      </mtd> 
+      <mtd>
+        <mo mathcolor="gray">@</mo>
+      </mtd> 
+    </mtr>   </mtable></math>
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [] , [ EText TextNormal "FE2" ] ]
+    , [ [ EText TextNormal "0" ] , [ ESymbol Ord "\65056" ] ]
+    , [ [ EText TextNormal "1" ] , [ ESymbol Ord "\65057" ] ]
+    , [ [ EText TextNormal "2" ] , [ ESymbol Ord "\65058" ] ]
+    , [ [ EText TextNormal "3" ] , [ ESymbol Ord "\65059" ] ]
+    , [ [ EText TextNormal "4" ] , [ ESymbol Ord "\65060" ] ]
+    , [ [ EText TextNormal "5" ] , [ ESymbol Ord "\65061" ] ]
+    , [ [ EText TextNormal "6" ] , [ ESymbol Ord "\65062" ] ]
+    , [ [ EText TextNormal "7" ] , [ ESymbol Ord "@" ] ]
+    , [ [ EText TextNormal "8" ] , [ ESymbol Ord "@" ] ]
+    , [ [ EText TextNormal "9" ] , [ ESymbol Ord "@" ] ]
+    , [ [ EText TextNormal "A" ] , [ ESymbol Ord "@" ] ]
+    , [ [ EText TextNormal "B" ] , [ ESymbol Ord "@" ] ]
+    , [ [ EText TextNormal "C" ] , [ ESymbol Ord "@" ] ]
+    , [ [ EText TextNormal "D" ] , [ ESymbol Ord "@" ] ]
+    , [ [ EText TextNormal "E" ] , [ ESymbol Ord "@" ] ]
+    , [ [ EText TextNormal "F" ] , [ ESymbol Ord "@" ] ]
+    ]
+]

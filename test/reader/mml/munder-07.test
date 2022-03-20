@@ -1,0 +1,19 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <munder>    <mi mathvariant="normal">munder baseline</mi>     <mi mathvariant="normal">munder under script</mi>   </munder>   <mo>=</mo>   <mover>    <mrow>      <munder>        <mi mathvariant="normal">munder baseline</mi>         <mi mathvariant="normal">munder under script</mi>       </munder>     </mrow>     <mphantom>      <mi mathvariant="normal">fail</mi>
+    </mphantom>   </mover> </math>
+>>> native
+[ EUnder
+    False
+    (EIdentifier "munder baseline")
+    (EIdentifier "munder under script")
+, ESymbol Rel "="
+, EOver
+    False
+    (EUnder
+       False
+       (EIdentifier "munder baseline")
+       (EIdentifier "munder under script"))
+    (EPhantom (EIdentifier "fail"))
+]

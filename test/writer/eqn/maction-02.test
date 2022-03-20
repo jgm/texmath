@@ -1,0 +1,14 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ EIdentifier "n" ] ] , [ [ EIdentifier "k" ] ] ])
+    ]
+]
+>>> eqn
+left ( matrix{
+ccol{ n above k }
+} right )

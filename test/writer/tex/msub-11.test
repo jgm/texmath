@@ -1,0 +1,10 @@
+<<< native
+[ ESub (EIdentifier "H") (ESymbol Ord "2")
+, ESymbol Rel "="
+, EOver
+    False
+    (ESub (EIdentifier "H") (ESymbol Ord "2"))
+    (EPhantom (EIdentifier "x"))
+]
+>>> tex
+H_{2} = \overset{\phantom{x}}{H_{2}}

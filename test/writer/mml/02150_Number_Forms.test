@@ -1,0 +1,405 @@
+<<< native
+[ EArray
+    [ AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    ]
+    [ [ []
+      , [ EText TextNormal "215" ]
+      , [ EText TextNormal "216" ]
+      , [ EText TextNormal "217" ]
+      , [ EText TextNormal "218" ]
+      ]
+    , [ [ EText TextNormal "0" ]
+      , [ ESymbol Ord "\8528" ]
+      , [ ESymbol Ord "\8544" ]
+      , [ ESymbol Ord "\8560" ]
+      , [ ESymbol Ord "\8576" ]
+      ]
+    , [ [ EText TextNormal "1" ]
+      , [ ESymbol Ord "\8529" ]
+      , [ ESymbol Ord "\8545" ]
+      , [ ESymbol Ord "\8561" ]
+      , [ ESymbol Ord "\8577" ]
+      ]
+    , [ [ EText TextNormal "2" ]
+      , [ ESymbol Ord "\8530" ]
+      , [ ESymbol Ord "\8546" ]
+      , [ ESymbol Ord "\8562" ]
+      , [ ESymbol Ord "\8578" ]
+      ]
+    , [ [ EText TextNormal "3" ]
+      , [ ESymbol Ord "\8531" ]
+      , [ ESymbol Ord "\8547" ]
+      , [ ESymbol Ord "\8563" ]
+      , [ ESymbol Ord "\8579" ]
+      ]
+    , [ [ EText TextNormal "4" ]
+      , [ ESymbol Ord "\8532" ]
+      , [ ESymbol Ord "\8548" ]
+      , [ ESymbol Ord "\8564" ]
+      , [ ESymbol Ord "\8580" ]
+      ]
+    , [ [ EText TextNormal "5" ]
+      , [ ESymbol Ord "\8533" ]
+      , [ ESymbol Ord "\8549" ]
+      , [ ESymbol Ord "\8565" ]
+      , [ ESymbol Ord "\8581" ]
+      ]
+    , [ [ EText TextNormal "6" ]
+      , [ ESymbol Ord "\8534" ]
+      , [ ESymbol Ord "\8550" ]
+      , [ ESymbol Ord "\8566" ]
+      , [ ESymbol Ord "\8582" ]
+      ]
+    , [ [ EText TextNormal "7" ]
+      , [ ESymbol Ord "\8535" ]
+      , [ ESymbol Ord "\8551" ]
+      , [ ESymbol Ord "\8567" ]
+      , [ ESymbol Ord "\8583" ]
+      ]
+    , [ [ EText TextNormal "8" ]
+      , [ ESymbol Ord "\8536" ]
+      , [ ESymbol Ord "\8552" ]
+      , [ ESymbol Ord "\8568" ]
+      , [ ESymbol Ord "\8584" ]
+      ]
+    , [ [ EText TextNormal "9" ]
+      , [ ESymbol Ord "\8537" ]
+      , [ ESymbol Ord "\8553" ]
+      , [ ESymbol Ord "\8569" ]
+      , [ ESymbol Ord "\8585" ]
+      ]
+    , [ [ EText TextNormal "A" ]
+      , [ ESymbol Ord "\8538" ]
+      , [ ESymbol Ord "\8554" ]
+      , [ ESymbol Ord "\8570" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "B" ]
+      , [ ESymbol Ord "\8539" ]
+      , [ ESymbol Ord "\8555" ]
+      , [ ESymbol Ord "\8571" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "C" ]
+      , [ ESymbol Ord "\8540" ]
+      , [ ESymbol Ord "\8556" ]
+      , [ ESymbol Ord "\8572" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "D" ]
+      , [ ESymbol Ord "\8541" ]
+      , [ ESymbol Ord "\8557" ]
+      , [ ESymbol Ord "\8573" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "E" ]
+      , [ ESymbol Ord "\8542" ]
+      , [ ESymbol Ord "\8558" ]
+      , [ ESymbol Ord "\8574" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    , [ [ EText TextNormal "F" ]
+      , [ ESymbol Ord "\8543" ]
+      , [ ESymbol Ord "\8559" ]
+      , [ ESymbol Ord "\8575" ]
+      , [ ESymbol Ord "@" ]
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">215</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">216</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">217</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">218</mtext>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">0</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅐</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ⅰ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅰ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ↀ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅑</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ⅱ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅱ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ↁ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">2</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅒</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ⅲ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅲ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ↂ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">3</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅓</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ⅳ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅳ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ↄ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">4</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅔</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ⅴ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅴ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ↄ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">5</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅕</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ⅵ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅵ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ↅ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">6</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅖</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ⅶ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅶ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ↆ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">7</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅗</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ⅷ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅷ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ↇ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">8</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅘</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ⅸ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅸ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ↈ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">9</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅙</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ⅹ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅹ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>↉</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">A</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅚</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ⅺ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅺ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">B</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅛</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ⅻ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅻ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">C</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅜</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ⅼ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅼ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">D</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅝</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ⅽ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅽ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">E</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅞</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ⅾ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅾ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">F</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⅟</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ⅿ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅿ</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

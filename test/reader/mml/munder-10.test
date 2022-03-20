@@ -1,0 +1,23 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <munder>    <mi mathvariant="normal">B</mi>     <mi mathvariant="normal">long under script</mi>   </munder>   <mo>=</mo>   <munder>    <mrow>      <mphantom>        <mtext>x</mtext>
+      </mphantom>
+      <mi mathvariant="normal">B</mi>
+      <mphantom>
+        <mtext>x</mtext>
+      </mphantom>
+    </mrow>     <mrow>      <mi mathvariant="normal">long under script</mi>
+    </mrow>   </munder> </math>
+>>> native
+[ EUnder False (EIdentifier "B") (EIdentifier "long under script")
+, ESymbol Rel "="
+, EUnder
+    False
+    (EGrouped
+       [ EPhantom (EText TextNormal "x")
+       , EIdentifier "B"
+       , EPhantom (EText TextNormal "x")
+       ])
+    (EIdentifier "long under script")
+]

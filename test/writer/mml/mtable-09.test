@@ -1,0 +1,56 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EGrouped
+            [ EPhantom (EText TextNormal "fail")
+            , EUnder
+                False (EIdentifier "HT") (EPhantom (EText TextNormal "fail"))
+            ]
+        ]
+      , [ ESymbol Rel "=" ]
+      , [ EGrouped
+            [ EOver
+                False (EIdentifier "TH") (EPhantom (EText TextNormal "fail"))
+            , EPhantom (EText TextNormal "fail")
+            ]
+        ]
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mrow>
+          <mphantom>
+            <mtext mathvariant="normal">fail</mtext>
+          </mphantom>
+          <munder>
+            <mi>HT</mi>
+            <mphantom>
+              <mtext mathvariant="normal">fail</mtext>
+            </mphantom>
+          </munder>
+        </mrow>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>=</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mrow>
+          <mover>
+            <mi>TH</mi>
+            <mphantom>
+              <mtext mathvariant="normal">fail</mtext>
+            </mphantom>
+          </mover>
+          <mphantom>
+            <mtext mathvariant="normal">fail</mtext>
+          </mphantom>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

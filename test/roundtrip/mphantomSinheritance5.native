@@ -1,0 +1,20 @@
+[ EGrouped
+    [ EIdentifier "A"
+    , EPhantom (EIdentifier "A")
+    , EIdentifier "A"
+    , EGrouped
+        [ EPhantom
+            (EGrouped [ EIdentifier "A" , ESymbol Bin "+" , EIdentifier "A" ])
+        , EIdentifier "A"
+        ]
+    ]
+, EIdentifier "A"
+, EIdentifier "A"
+, EIdentifier "A"
+, EGrouped
+    [ EIdentifier "A"
+    , ESymbol Bin "+"
+    , EIdentifier "A"
+    , EIdentifier "A"
+    ]
+]

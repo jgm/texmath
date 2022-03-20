@@ -1,0 +1,193 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "zacute" ] , [ ESymbol Ord "\378" ] ]
+    , [ [ EText TextNormal "Zacute" ] , [ ESymbol Ord "\377" ] ]
+    , [ [ EText TextNormal "zcaron" ] , [ ESymbol Ord "\382" ] ]
+    , [ [ EText TextNormal "Zcaron" ] , [ ESymbol Ord "\381" ] ]
+    , [ [ EText TextNormal "zcy" ] , [ ESymbol Ord "\1079" ] ]
+    , [ [ EText TextNormal "Zcy" ] , [ ESymbol Ord "\1047" ] ]
+    , [ [ EText TextNormal "zdot" ] , [ ESymbol Ord "\380" ] ]
+    , [ [ EText TextNormal "Zdot" ] , [ ESymbol Ord "\379" ] ]
+    , [ [ EText TextNormal "zeetrf" ] , [ ESymbol Alpha "\8488" ] ]
+    , [ [ EText TextNormal "ZeroWidthSpace" ]
+      , [ ESymbol Ord "\8203" ]
+      ]
+    , [ [ EText TextNormal "zeta" ] , [ ESymbol Alpha "\950" ] ]
+    , [ [ EText TextNormal "zfr" ] , [ ESymbol Alpha "\120119" ] ]
+    , [ [ EText TextNormal "Zfr" ] , [ ESymbol Alpha "\8488" ] ]
+    , [ [ EText TextNormal "zhcy" ] , [ ESymbol Ord "\1078" ] ]
+    , [ [ EText TextNormal "ZHcy" ] , [ ESymbol Ord "\1046" ] ]
+    , [ [ EText TextNormal "zigrarr" ] , [ ESymbol Accent "\8669" ] ]
+    , [ [ EText TextNormal "zopf" ] , [ ESymbol Alpha "\120171" ] ]
+    , [ [ EText TextNormal "Zopf" ] , [ ESymbol Alpha "\8484" ] ]
+    , [ [ EText TextNormal "zscr" ] , [ ESymbol Alpha "\120015" ] ]
+    , [ [ EText TextNormal "Zscr" ] , [ ESymbol Alpha "\119989" ] ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">zacute</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ź</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Zacute</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ź</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">zcaron</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ž</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Zcaron</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ž</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">zcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>з</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Zcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>З</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">zdot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ż</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Zdot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ż</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">zeetrf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℨ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ZeroWidthSpace</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>&#8203;</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">zeta</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ζ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">zfr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔷</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Zfr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℨ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">zhcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ж</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ZHcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ж</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">zigrarr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇝</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">zopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕫</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Zopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℤ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">zscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝓏</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Zscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝒵</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

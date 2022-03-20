@@ -1,0 +1,34 @@
+<<< native
+[ EText TextNormal "Inline built-in verts, auto, no line\160"
+, EDelimited
+    "|"
+    "|"
+    [ Right
+        (EFraction
+           NormalFrac
+           (EGrouped
+              [ EMathOperator "sin" , ESymbol Ord "\8289" , EIdentifier "\952" ])
+           (EIdentifier "M"))
+    ]
+, EText TextNormal "\160the end."
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext mathvariant="normal">Inline built-in verts, auto, no line </mtext>
+    <mrow>
+      <mo stretchy="true" form="prefix">|</mo>
+      <mfrac>
+        <mrow>
+          <mo>sin</mo>
+          <mi>&#8289;</mi>
+          <mi>θ</mi>
+        </mrow>
+        <mi>M</mi>
+      </mfrac>
+      <mo stretchy="true" form="postfix">|</mo>
+    </mrow>
+    <mtext mathvariant="normal"> the end.</mtext>
+  </mrow>
+</math>

@@ -1,0 +1,30 @@
+<<< native
+[ ESubsup (ESymbol Op "\8747") (ENumber "0") (ENumber "1")
+, EGrouped
+    [ ESuper (EIdentifier "\8519") (EIdentifier "x")
+    , ESymbol Ord "\8290"
+    , EGrouped [ ESymbol Ord "\8518" , EIdentifier "x" ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msubsup>
+      <mo>∫</mo>
+      <mn>0</mn>
+      <mn>1</mn>
+    </msubsup>
+    <mrow>
+      <msup>
+        <mi>ⅇ</mi>
+        <mi>x</mi>
+      </msup>
+      <mi>&#8290;</mi>
+      <mrow>
+        <mi>ⅆ</mi>
+        <mi>x</mi>
+      </mrow>
+    </mrow>
+  </mrow>
+</math>

@@ -1,0 +1,17 @@
+<<< native
+[ ENumber "2"
+, ESymbol Pun ","
+, ENumber "0.123"
+, ESymbol Pun ","
+, ENumber "1,000,000"
+, ESymbol Pun ","
+, ENumber "2.1e10"
+, ESymbol Pun ","
+, ENumber "0xFFEF"
+, ESymbol Pun ","
+, ENumber "MCMLXIX"
+, ESymbol Pun ","
+, ENumber "twenty one"
+]
+>>> eqn
+2 , 0.123 , 1,000,000 , 2.1e10 , 0xFFEF , MCMLXIX , twenty one

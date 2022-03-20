@@ -1,0 +1,17 @@
+<<< native
+[ EStyled
+    TextDoubleStruck
+    [ EArray
+        [ AlignLeft ]
+        [ [ [ EText TextNormal "0123456789" ] ]
+        , [ [ EText TextNormal "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ] ]
+        , [ [ EText TextNormal "abcdefghijklmnopqrstuvwxyz" ] ]
+        ]
+    ]
+]
+>>> tex
+\mathbb{\begin{array}{l}
+\text{0123456789} \\
+\text{ABCDEFGHIJKLMNOPQRSTUVWXYZ} \\
+\text{abcdefghijklmnopqrstuvwxyz} \\
+\end{array}}

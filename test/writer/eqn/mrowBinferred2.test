@@ -1,0 +1,15 @@
+<<< native
+[ ENumber "2"
+, ESymbol Bin "+"
+, ESqrt
+    (EGrouped [ EIdentifier "x" , ESymbol Bin "+" , ENumber "1" ])
+, ESpace (0 % 1)
+, EGrouped
+    [ ENumber "2"
+    , ESymbol Bin "+"
+    , ESqrt
+        (EGrouped [ EIdentifier "x" , ESymbol Bin "+" , ENumber "1" ])
+    ]
+]
+>>> eqn
+2 + sqrt {x + 1} fwd 0 {2 + sqrt {x + 1}}

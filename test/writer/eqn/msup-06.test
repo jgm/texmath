@@ -1,0 +1,9 @@
+<<< native
+[ ESuper (EIdentifier "S") (ENumber "3")
+, ESymbol Rel "="
+, ESuper (EIdentifier "S") (ENumber "3")
+, EPhantom
+    (EFraction NormalFrac (EIdentifier "test") (EIdentifier "failed"))
+]
+>>> eqn
+S sup 3 = S sup 3 hphantom {test over failed}

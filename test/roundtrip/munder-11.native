@@ -1,0 +1,11 @@
+[ EUnder False (EIdentifier "BASE") (EIdentifier "x")
+, ESymbol Rel "="
+, EUnder
+    False
+    (EIdentifier "BASE")
+    (EGrouped
+       [ EPhantom (ENumber "1")
+       , EIdentifier "x"
+       , EPhantom (ENumber "1")
+       ])
+]

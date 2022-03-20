@@ -1,0 +1,34 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle mathvariant="monospace">
+    <mtable columnalign="left">
+      <mtr>
+        <mtd>
+          <mtext>0123456789</mtext> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mtext>ABCDEFGHIJKLMNOPQRSTUVWXYZ</mtext> 
+        </mtd> 
+      </mtr> 
+      <mtr>
+        <mtd>
+          <mtext>abcdefghijklmnopqrstuvwxyz</mtext> 
+        </mtd> 
+      </mtr> 
+    </mtable> 
+  </mstyle> </math>
+>>> native
+[ EStyled
+    TextMonospace
+    [ EArray
+        [ AlignLeft ]
+        [ [ [ EText TextNormal "0123456789" ] ]
+        , [ [ EText TextNormal "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ] ]
+        , [ [ EText TextNormal "abcdefghijklmnopqrstuvwxyz" ] ]
+        ]
+    ]
+]

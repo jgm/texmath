@@ -1,0 +1,6 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mfrac>    <mrow>      <maction actiontype="tooltip">        <mn>43867</mn>         <mtext>Mouse pointer is over numerator</mtext>       </maction>     </mrow>     <mrow>      <maction actiontype="tooltip">        <mn>798</mn>         <mtext>Mouse pointer is over denominator</mtext>       </maction>     </mrow>   </mfrac> </math>
+>>> native
+[ EFraction NormalFrac (ENumber "43867") (ENumber "798") ]

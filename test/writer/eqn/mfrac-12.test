@@ -1,0 +1,12 @@
+<<< native
+[ EFraction NormalFrac (ENumber "1") (ENumber "2")
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ EPhantom (ENumber "1") , ESpace (0 % 1) , ENumber "1" ])
+    (EGrouped
+       [ ENumber "2" , ESpace (0 % 1) , EPhantom (ENumber "1") ])
+]
+>>> eqn
+1 over 2 = {hphantom 1 fwd 0 1} over {2 fwd 0 hphantom 1}

@@ -1,0 +1,27 @@
+<<< native
+[ EOver False (EIdentifier "middle") (EIdentifier "top")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (EIdentifier "middle")
+    (EPhantom (EIdentifier "fail"))
+    (EIdentifier "top")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mover>
+      <mi>middle</mi>
+      <mi>top</mi>
+    </mover>
+    <mo>=</mo>
+    <munderover>
+      <mi>middle</mi>
+      <mphantom>
+        <mi>fail</mi>
+      </mphantom>
+      <mi>top</mi>
+    </munderover>
+  </mrow>
+</math>

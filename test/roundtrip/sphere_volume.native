@@ -1,0 +1,126 @@
+[ EIdentifier "S"
+, ESymbol Rel "="
+, ESymbol Open "{"
+, ENumber "0"
+, ESymbol Rel "\8804"
+, EIdentifier "\981"
+, ESymbol Rel "\8804"
+, ENumber "2"
+, EIdentifier "\960"
+, ESymbol Pun ","
+, ESpace (2 % 9)
+, ENumber "0"
+, ESymbol Rel "\8804"
+, EIdentifier "\952"
+, ESymbol Rel "\8804"
+, EIdentifier "\960"
+, ESymbol Pun ","
+, ESpace (2 % 9)
+, ENumber "0"
+, ESymbol Rel "\8804"
+, EIdentifier "\961"
+, ESymbol Rel "\8804"
+, EIdentifier "R"
+, ESymbol Close "}"
+, EArray
+    [ AlignRight , AlignLeft ]
+    [ [ [ EStyled
+            TextNormal
+            [ EIdentifier "V"
+            , EIdentifier "o"
+            , EIdentifier "l"
+            , EIdentifier "u"
+            , EIdentifier "m"
+            , EIdentifier "e"
+            ]
+        ]
+      , [ ESymbol Rel "="
+        , EUnder False (ESymbol Op "\8749") (EIdentifier "S")
+        , ESpace ((-1) % 6)
+        , ESuper (EIdentifier "\961") (ENumber "2")
+        , EMathOperator "sin"
+        , EIdentifier "\952"
+        , ESpace (1 % 6)
+        , EStyled TextNormal [ EIdentifier "d" ]
+        , EIdentifier "\961"
+        , ESpace (1 % 6)
+        , EStyled TextNormal [ EIdentifier "d" ]
+        , EIdentifier "\952"
+        , ESpace (1 % 6)
+        , EStyled TextNormal [ EIdentifier "d" ]
+        , EIdentifier "\981"
+        ]
+      ]
+    , [ []
+      , [ ESymbol Rel "="
+        , ESubsup
+            (ESymbol Op "\8747")
+            (ENumber "0")
+            (EGrouped [ ENumber "2" , EIdentifier "\960" ])
+        , ESpace ((-1) % 6)
+        , EStyled TextNormal [ EIdentifier "d" ]
+        , EIdentifier "\981"
+        , ESpace (1 % 6)
+        , ESubsup (ESymbol Op "\8747") (ENumber "0") (EIdentifier "\960")
+        , ESpace ((-1) % 6)
+        , EMathOperator "sin"
+        , EIdentifier "\952"
+        , ESpace (1 % 6)
+        , EStyled TextNormal [ EIdentifier "d" ]
+        , EIdentifier "\952"
+        , ESpace (1 % 6)
+        , ESubsup (ESymbol Op "\8747") (ENumber "0") (EIdentifier "R")
+        , ESpace ((-1) % 6)
+        , ESuper (EIdentifier "\961") (ENumber "2")
+        , EStyled TextNormal [ EIdentifier "d" ]
+        , EIdentifier "\961"
+        ]
+      ]
+    , [ []
+      , [ ESymbol Rel "="
+        , EIdentifier "\981"
+        , ESubsup
+            (EScaled (9 % 5) (ESymbol Open "|"))
+            (ENumber "0")
+            (EGrouped [ ENumber "2" , EIdentifier "\960" ])
+        , ESpace (2 % 9)
+        , EDelimited
+            "("
+            ")"
+            [ Right (ESymbol Op "\8722")
+            , Right (EMathOperator "cos")
+            , Right (EIdentifier "\952")
+            ]
+        , ESubsup
+            (EScaled (9 % 5) (ESymbol Open "|"))
+            (ENumber "0")
+            (EIdentifier "\960")
+        , ESpace (2 % 9)
+        , EFraction InlineFrac (ENumber "1") (ENumber "3")
+        , ESuper (EIdentifier "\961") (ENumber "3")
+        , ESubsup
+            (EScaled (9 % 5) (ESymbol Open "|"))
+            (ENumber "0")
+            (EIdentifier "R")
+        ]
+      ]
+    , [ []
+      , [ ESymbol Rel "="
+        , ENumber "2"
+        , EIdentifier "\960"
+        , ESymbol Bin "\215"
+        , ENumber "2"
+        , ESymbol Bin "\215"
+        , EFraction InlineFrac (ENumber "1") (ENumber "3")
+        , ESuper (EIdentifier "R") (ENumber "3")
+        ]
+      ]
+    , [ []
+      , [ ESymbol Rel "="
+        , EFraction InlineFrac (ENumber "4") (ENumber "3")
+        , EIdentifier "\960"
+        , ESuper (EIdentifier "R") (ENumber "3")
+        ]
+      ]
+    ]
+]

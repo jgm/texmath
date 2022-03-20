@@ -1,0 +1,76 @@
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "displaystyle: false largeop: false" ]
+      , [ EGrouped
+            [ ESymbol Op "\8896"
+            , ESymbol Op "\8897"
+            , ESymbol Op "\8747"
+            , ESymbol Op "\8721"
+            , ESymbol Op "\8719"
+            , ESymbol Op "\8899"
+            , ESymbol Op "\8898"
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "displaystyle: false largeop: true" ]
+      , [ EGrouped
+            [ ESymbol Op "\8896"
+            , ESymbol Op "\8897"
+            , ESymbol Op "\8747"
+            , ESymbol Op "\8721"
+            , ESymbol Op "\8719"
+            , ESymbol Op "\8899"
+            , ESymbol Op "\8898"
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "displaystyle: true largeop: false" ]
+      , [ EGrouped
+            [ ESymbol Op "\8896"
+            , ESymbol Op "\8897"
+            , ESymbol Op "\8747"
+            , ESymbol Op "\8721"
+            , ESymbol Op "\8719"
+            , ESymbol Op "\8899"
+            , ESymbol Op "\8898"
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "displaystyle: true largeop: true" ]
+      , [ EGrouped
+            [ ESymbol Op "\8896"
+            , ESymbol Op "\8897"
+            , ESymbol Op "\8747"
+            , ESymbol Op "\8721"
+            , ESymbol Op "\8719"
+            , ESymbol Op "\8899"
+            , ESymbol Op "\8898"
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "displaystyle: false largeop: default" ]
+      , [ EGrouped
+            [ ESymbol Op "\8896"
+            , ESymbol Op "\8897"
+            , ESymbol Op "\8747"
+            , ESymbol Op "\8721"
+            , ESymbol Op "\8719"
+            , ESymbol Op "\8899"
+            , ESymbol Op "\8898"
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "displaystyle: true largeop: default" ]
+      , [ EGrouped
+            [ ESymbol Op "\8896"
+            , ESymbol Op "\8897"
+            , ESymbol Op "\8747"
+            , ESymbol Op "\8721"
+            , ESymbol Op "\8719"
+            , ESymbol Op "\8899"
+            , ESymbol Op "\8898"
+            ]
+        ]
+      ]
+    ]
+]

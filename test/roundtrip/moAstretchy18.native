@@ -1,0 +1,37 @@
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           ])
+    ]
+, ESymbol Open "("
+, EArray
+    [ AlignCenter ]
+    [ [ [ ENumber "0" ] ]
+    , [ [ ENumber "0" ] ]
+    , [ [ ENumber "0" ] ]
+    , [ [ ENumber "0" ] ]
+    , [ [ ENumber "0" ] ]
+    ]
+, ESymbol Close ")"
+, EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           ])
+    ]
+]

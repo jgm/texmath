@@ -1,0 +1,113 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "taller num" ]
+      , [ EGrouped
+            [ ESuper (EIdentifier "x") (ENumber "2")
+            , ESymbol Bin "+"
+            , ESuper
+                (EFraction NormalFrac (EIdentifier "h") (EIdentifier "x"))
+                (ENumber "2")
+            , ESymbol Bin "+"
+            , ESuper
+                (EDelimited
+                   "("
+                   ")"
+                   [ Right (EFraction NormalFrac (EIdentifier "h") (EIdentifier "x"))
+                   ])
+                (ENumber "2")
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "taller denom" ]
+      , [ EGrouped
+            [ ESuper (EIdentifier "x") (ENumber "2")
+            , ESymbol Bin "+"
+            , ESuper
+                (EFraction NormalFrac (EIdentifier "x") (EIdentifier "y"))
+                (ENumber "2")
+            , ESymbol Bin "+"
+            , ESuper
+                (EDelimited
+                   "("
+                   ")"
+                   [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "y"))
+                   ])
+                (ENumber "2")
+            ]
+        ]
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">taller num</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mrow>
+          <msup>
+            <mi>x</mi>
+            <mn>2</mn>
+          </msup>
+          <mo>+</mo>
+          <msup>
+            <mfrac>
+              <mi>h</mi>
+              <mi>x</mi>
+            </mfrac>
+            <mn>2</mn>
+          </msup>
+          <mo>+</mo>
+          <msup>
+            <mrow>
+              <mo stretchy="true" form="prefix">(</mo>
+              <mfrac>
+                <mi>h</mi>
+                <mi>x</mi>
+              </mfrac>
+              <mo stretchy="true" form="postfix">)</mo>
+            </mrow>
+            <mn>2</mn>
+          </msup>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">taller denom</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mrow>
+          <msup>
+            <mi>x</mi>
+            <mn>2</mn>
+          </msup>
+          <mo>+</mo>
+          <msup>
+            <mfrac>
+              <mi>x</mi>
+              <mi>y</mi>
+            </mfrac>
+            <mn>2</mn>
+          </msup>
+          <mo>+</mo>
+          <msup>
+            <mrow>
+              <mo stretchy="true" form="prefix">(</mo>
+              <mfrac>
+                <mi>x</mi>
+                <mi>y</mi>
+              </mfrac>
+              <mo stretchy="true" form="postfix">)</mo>
+            </mrow>
+            <mn>2</mn>
+          </msup>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

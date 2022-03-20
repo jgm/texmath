@@ -1,0 +1,18 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EIdentifier "B" ] , [ EIdentifier "C" ] , [] , [] ]
+    , [ [] , [] , [] , [] ]
+    , [ [ ENumber "1" ]
+      , [ ENumber "2" ]
+      , [ ENumber "3" ]
+      , [ ENumber "4" ]
+      ]
+    ]
+]
+>>> tex
+\begin{matrix}
+B & C & & \\
+ & & & \\
+1 & 2 & 3 & 4 \\
+\end{matrix}

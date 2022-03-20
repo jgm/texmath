@@ -1,0 +1,47 @@
+<<< native
+[ ESub (EIdentifier "S") (EText TextNormal "new")
+, ESymbol Rel "="
+, ESub (EIdentifier "S") (EText TextNormal "old")
+, ESymbol Bin "\8722"
+, EFraction
+    NormalFrac
+    (ESuper
+       (EDelimited
+          "("
+          ")"
+          [ Right (ENumber "5")
+          , Right (ESymbol Bin "\8722")
+          , Right (EIdentifier "T")
+          ])
+       (ENumber "2"))
+    (ENumber "2")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub>
+      <mi>S</mi>
+      <mtext mathvariant="normal">new</mtext>
+    </msub>
+    <mo>=</mo>
+    <msub>
+      <mi>S</mi>
+      <mtext mathvariant="normal">old</mtext>
+    </msub>
+    <mo>−</mo>
+    <mfrac>
+      <msup>
+        <mrow>
+          <mo stretchy="true" form="prefix">(</mo>
+          <mn>5</mn>
+          <mo>−</mo>
+          <mi>T</mi>
+          <mo stretchy="true" form="postfix">)</mo>
+        </mrow>
+        <mn>2</mn>
+      </msup>
+      <mn>2</mn>
+    </mfrac>
+  </mrow>
+</math>

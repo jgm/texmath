@@ -1,0 +1,10 @@
+[ EStyled
+    TextMonospace
+    [ EArray
+        [ AlignLeft ]
+        [ [ [ EText TextNormal "0123456789" ] ]
+        , [ [ EText TextNormal "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ] ]
+        , [ [ EText TextNormal "abcdefghijklmnopqrstuvwxyz" ] ]
+        ]
+    ]
+]

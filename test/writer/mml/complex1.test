@@ -1,0 +1,1646 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "Bernoulli Trials" ]
+      , [ EGrouped
+            [ EGrouped
+                [ EIdentifier "P"
+                , ESymbol Open "("
+                , EIdentifier "E"
+                , ESymbol Close ")"
+                ]
+            , ESymbol Rel "="
+            , EDelimited
+                "("
+                ")"
+                [ Right (EFraction NormalFrac (EIdentifier "n") (EIdentifier "k"))
+                ]
+            , ESubsup (EIdentifier "p") (EGrouped []) (EIdentifier "k")
+            , ESubsup
+                (EGrouped
+                   [ ESymbol Open "("
+                   , ENumber "1"
+                   , ESymbol Bin "-"
+                   , EIdentifier "p"
+                   , ESymbol Close ")"
+                   ])
+                (EGrouped [])
+                (EGrouped [ EIdentifier "n" , ESymbol Bin "-" , EIdentifier "k" ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Cauchy-Schwarz Inequality" ]
+      , [ EGrouped
+            [ ESubsup
+                (EDelimited
+                   "("
+                   ")"
+                   [ Right
+                       (EUnderover
+                          False
+                          (ESymbol Op "\8721")
+                          (EGrouped [ EIdentifier "k" , ESymbol Rel "=" , ENumber "1" ])
+                          (EIdentifier "n"))
+                   , Right (ESubsup (EIdentifier "a") (EIdentifier "k") (EGrouped []))
+                   , Right (ESubsup (EIdentifier "b") (EIdentifier "k") (EGrouped []))
+                   ])
+                (EGrouped [])
+                (ENumber "2")
+            , ESymbol Rel "\8804"
+            , EDelimited
+                "("
+                ")"
+                [ Right
+                    (EUnderover
+                       False
+                       (ESymbol Op "\8721")
+                       (EGrouped [ EIdentifier "k" , ESymbol Rel "=" , ENumber "1" ])
+                       (EIdentifier "n"))
+                , Right (ESubsup (EIdentifier "a") (EIdentifier "k") (ENumber "2"))
+                ]
+            , EDelimited
+                "("
+                ")"
+                [ Right
+                    (EUnderover
+                       False
+                       (ESymbol Op "\8721")
+                       (EGrouped [ EIdentifier "k" , ESymbol Rel "=" , ENumber "1" ])
+                       (EIdentifier "n"))
+                , Right (ESubsup (EIdentifier "b") (EIdentifier "k") (ENumber "2"))
+                ]
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Cauchy Formula" ]
+      , [ EGrouped
+            [ EIdentifier "f"
+            , ESymbol Open "("
+            , EIdentifier "z"
+            , ESymbol Close ")"
+            , ESpace (1 % 6)
+            , ESymbol Bin "\183"
+            , ESubsup (EIdentifier "Ind") (EIdentifier "\947") (EGrouped [])
+            , ESymbol Open "("
+            , EIdentifier "z"
+            , ESymbol Close ")"
+            , ESymbol Rel "="
+            , EFraction
+                NormalFrac
+                (ENumber "1")
+                (EGrouped [ ENumber "2" , EIdentifier "\960" , EIdentifier "i" ])
+            , EUnderover
+                False (ESymbol Op "\8750") (EIdentifier "\947") (EGrouped [])
+            , EFraction
+                NormalFrac
+                (EGrouped
+                   [ EIdentifier "f"
+                   , ESymbol Open "("
+                   , EIdentifier "\958"
+                   , ESymbol Close ")"
+                   ])
+                (EGrouped
+                   [ EIdentifier "\958" , ESymbol Bin "-" , EIdentifier "z" ])
+            , ESpace (1 % 6)
+            , EIdentifier "d"
+            , EIdentifier "\958"
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Cross Product" ]
+      , [ EGrouped
+            [ ESubsup (EIdentifier "V") (ENumber "1") (EGrouped [])
+            , ESymbol Bin "\215"
+            , ESubsup (EIdentifier "V") (ENumber "2") (EGrouped [])
+            , ESymbol Rel "="
+            , EDelimited
+                "|"
+                "|"
+                [ Right
+                    (EArray
+                       [ AlignCenter , AlignCenter , AlignCenter ]
+                       [ [ [ EIdentifier "i" ]
+                         , [ EIdentifier "j" ]
+                         , [ EIdentifier "k" ]
+                         ]
+                       , [ [ EFraction
+                               NormalFrac
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "X" ])
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "u" ])
+                           ]
+                         , [ EFraction
+                               NormalFrac
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "Y" ])
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "u" ])
+                           ]
+                         , [ ENumber "0" ]
+                         ]
+                       , [ [ EFraction
+                               NormalFrac
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "X" ])
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "v" ])
+                           ]
+                         , [ EFraction
+                               NormalFrac
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "Y" ])
+                               (EGrouped [ ESymbol Ord "\8706" , EIdentifier "v" ])
+                           ]
+                         , [ ENumber "0" ]
+                         ]
+                       ])
+                ]
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Vandermonde Determinant" ]
+      , [ EGrouped
+            [ EDelimited
+                "|"
+                "|"
+                [ Right
+                    (EArray
+                       [ AlignCenter , AlignCenter , AlignCenter , AlignCenter ]
+                       [ [ [ ENumber "1" ]
+                         , [ ENumber "1" ]
+                         , [ ESymbol Ord "\8943" ]
+                         , [ ENumber "1" ]
+                         ]
+                       , [ [ ESubsup (EIdentifier "v") (ENumber "1") (EGrouped []) ]
+                         , [ ESubsup (EIdentifier "v") (ENumber "2") (EGrouped []) ]
+                         , [ ESymbol Ord "\8943" ]
+                         , [ ESubsup (EIdentifier "v") (EIdentifier "n") (EGrouped []) ]
+                         ]
+                       , [ [ ESubsup (EIdentifier "v") (ENumber "1") (ENumber "2") ]
+                         , [ ESubsup (EIdentifier "v") (ENumber "2") (ENumber "2") ]
+                         , [ ESymbol Ord "\8943" ]
+                         , [ ESubsup (EIdentifier "v") (EIdentifier "n") (ENumber "2") ]
+                         ]
+                       , [ [ ESymbol Rel "\8942" ]
+                         , [ ESymbol Rel "\8942" ]
+                         , [ ESymbol Rel "\8945" ]
+                         , [ ESymbol Rel "\8942" ]
+                         ]
+                       , [ [ ESubsup
+                               (EIdentifier "v")
+                               (ENumber "1")
+                               (EGrouped [ EIdentifier "n" , ESymbol Bin "-" , ENumber "1" ])
+                           ]
+                         , [ ESubsup
+                               (EIdentifier "v")
+                               (ENumber "2")
+                               (EGrouped [ EIdentifier "n" , ESymbol Bin "-" , ENumber "1" ])
+                           ]
+                         , [ ESymbol Ord "\8943" ]
+                         , [ ESubsup
+                               (EIdentifier "v")
+                               (EIdentifier "n")
+                               (EGrouped [ EIdentifier "n" , ESymbol Bin "-" , ENumber "1" ])
+                           ]
+                         ]
+                       ])
+                ]
+            , ESymbol Rel "="
+            , EUnderover
+                False
+                (ESymbol Op "\8719")
+                (EGrouped
+                   [ ENumber "1"
+                   , ESymbol Rel "\8804"
+                   , EIdentifier "i"
+                   , ESymbol Rel "<"
+                   , EIdentifier "j"
+                   , ESymbol Rel "\8804"
+                   , EIdentifier "n"
+                   ])
+                (EGrouped [])
+            , ESymbol Open "("
+            , ESubsup (EIdentifier "v") (EIdentifier "j") (EGrouped [])
+            , ESymbol Bin "-"
+            , ESubsup (EIdentifier "v") (EIdentifier "i") (EGrouped [])
+            , ESymbol Close ")"
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Lorenz Equations" ]
+      , [ EArray
+            [ AlignCenter , AlignCenter , AlignCenter ]
+            [ [ [ EUnderover
+                    False (EIdentifier "x") (EGrouped []) (ESymbol Accent "\729")
+                ]
+              , [ ESymbol Rel "=" ]
+              , [ EGrouped
+                    [ EIdentifier "\963"
+                    , ESymbol Open "("
+                    , EIdentifier "y"
+                    , ESymbol Bin "-"
+                    , EIdentifier "x"
+                    , ESymbol Close ")"
+                    ]
+                ]
+              ]
+            , [ [ EUnderover
+                    False (EIdentifier "y") (EGrouped []) (ESymbol Accent "\729")
+                ]
+              , [ ESymbol Rel "=" ]
+              , [ EGrouped
+                    [ EIdentifier "\961"
+                    , EIdentifier "x"
+                    , ESymbol Bin "-"
+                    , EIdentifier "y"
+                    , ESymbol Bin "-"
+                    , EIdentifier "x"
+                    , EIdentifier "z"
+                    ]
+                ]
+              ]
+            , [ [ EUnderover
+                    False (EIdentifier "z") (EGrouped []) (ESymbol Accent "\729")
+                ]
+              , [ ESymbol Rel "=" ]
+              , [ EGrouped
+                    [ ESymbol Bin "-"
+                    , EIdentifier "\946"
+                    , EIdentifier "z"
+                    , ESymbol Bin "+"
+                    , EIdentifier "x"
+                    , EIdentifier "y"
+                    ]
+                ]
+              ]
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Maxwell's Equations" ]
+      , [ EDelimited
+            "{"
+            ""
+            [ Right
+                (EArray
+                   [ AlignCenter , AlignCenter , AlignCenter ]
+                   [ [ [ EGrouped
+                           [ ESymbol Ord "\8711"
+                           , ESpace (0 % 1)
+                           , ESymbol Bin "\215"
+                           , EUnderover
+                               False (EIdentifier "B") (EGrouped []) (ESymbol Accent "\8636")
+                           , ESymbol Bin "-"
+                           , ESpace (1 % 6)
+                           , EFraction NormalFrac (ENumber "1") (EIdentifier "c")
+                           , ESpace (1 % 6)
+                           , EFraction
+                               NormalFrac
+                               (EGrouped
+                                  [ ESymbol Ord "\8706"
+                                  , ESpace (0 % 1)
+                                  , EUnderover
+                                      False (EIdentifier "E") (EGrouped []) (ESymbol Accent "\8636")
+                                  ])
+                               (EGrouped
+                                  [ ESymbol Ord "\8706" , ESpace (0 % 1) , EIdentifier "t" ])
+                           ]
+                       ]
+                     , [ ESymbol Rel "=" ]
+                     , [ EGrouped
+                           [ EFraction
+                               NormalFrac
+                               (EGrouped [ ENumber "4" , EIdentifier "\960" ])
+                               (EIdentifier "c")
+                           , ESpace (1 % 6)
+                           , EUnderover
+                               False (EIdentifier "j") (EGrouped []) (ESymbol Accent "\8636")
+                           ]
+                       ]
+                     ]
+                   , [ [ EGrouped
+                           [ ESymbol Ord "\8711"
+                           , ESpace (0 % 1)
+                           , ESymbol Bin "\183"
+                           , EUnderover
+                               False (EIdentifier "E") (EGrouped []) (ESymbol Accent "\8636")
+                           ]
+                       ]
+                     , [ ESymbol Rel "=" ]
+                     , [ EGrouped
+                           [ ENumber "4" , EIdentifier "\960" , EIdentifier "\961" ]
+                       ]
+                     ]
+                   , [ [ EGrouped
+                           [ ESymbol Ord "\8711"
+                           , ESpace (0 % 1)
+                           , ESymbol Bin "\215"
+                           , EUnderover
+                               False (EIdentifier "E") (EGrouped []) (ESymbol Accent "\8636")
+                           , ESpace (1 % 6)
+                           , ESymbol Bin "+"
+                           , ESpace (1 % 6)
+                           , EFraction NormalFrac (ENumber "1") (EIdentifier "c")
+                           , ESpace (1 % 6)
+                           , EFraction
+                               NormalFrac
+                               (EGrouped
+                                  [ ESymbol Ord "\8706"
+                                  , ESpace (0 % 1)
+                                  , EUnderover
+                                      False (EIdentifier "B") (EGrouped []) (ESymbol Accent "\8636")
+                                  ])
+                               (EGrouped
+                                  [ ESymbol Ord "\8706" , ESpace (0 % 1) , EIdentifier "t" ])
+                           ]
+                       ]
+                     , [ ESymbol Rel "=" ]
+                     , [ EUnderover
+                           False (ENumber "0") (EGrouped []) (ESymbol Accent "\8636")
+                       ]
+                     ]
+                   , [ [ EGrouped
+                           [ ESymbol Ord "\8711"
+                           , ESpace (0 % 1)
+                           , ESymbol Bin "\183"
+                           , EUnderover
+                               False (EIdentifier "B") (EGrouped []) (ESymbol Accent "\8636")
+                           ]
+                       ]
+                     , [ ESymbol Rel "=" ]
+                     , [ ENumber "0" ]
+                     ]
+                   ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Einstein Field Equations" ]
+      , [ EGrouped
+            [ ESubsup
+                (EIdentifier "R")
+                (EGrouped [ EIdentifier "\956" , EIdentifier "\957" ])
+                (EGrouped [])
+            , ESymbol Bin "-"
+            , EFraction NormalFrac (ENumber "1") (ENumber "2")
+            , ESpace (1 % 6)
+            , ESubsup
+                (EIdentifier "g")
+                (EGrouped [ EIdentifier "\956" , EIdentifier "\957" ])
+                (EGrouped [])
+            , ESpace (1 % 6)
+            , EIdentifier "R"
+            , ESymbol Rel "="
+            , EFraction
+                NormalFrac
+                (EGrouped [ ENumber "8" , EIdentifier "\960" , EIdentifier "G" ])
+                (ESubsup (EIdentifier "c") (EGrouped []) (ENumber "4"))
+            , ESpace (1 % 6)
+            , ESubsup
+                (EIdentifier "T")
+                (EGrouped [ EIdentifier "\956" , EIdentifier "\957" ])
+                (EGrouped [])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Ramanujan Identity" ]
+      , [ EGrouped
+            [ EFraction
+                NormalFrac
+                (ENumber "1")
+                (EGrouped
+                   [ ESymbol Open "("
+                   , ESqrt (EGrouped [ EIdentifier "\966" , ESqrt (ENumber "5") ])
+                   , ESymbol Bin "-"
+                   , EIdentifier "\966"
+                   , ESymbol Close ")"
+                   , ESubsup
+                       (EIdentifier "e")
+                       (EGrouped [])
+                       (EFraction NormalFrac (ENumber "25") (EIdentifier "\960"))
+                   ])
+            , ESymbol Rel "="
+            , ENumber "1"
+            , ESymbol Bin "+"
+            , EFraction
+                NormalFrac
+                (ESubsup
+                   (EIdentifier "e")
+                   (EGrouped [])
+                   (EGrouped [ ESymbol Bin "-" , ENumber "2" , EIdentifier "\960" ]))
+                (EGrouped
+                   [ ENumber "1"
+                   , ESymbol Bin "+"
+                   , EFraction
+                       NormalFrac
+                       (ESubsup
+                          (EIdentifier "e")
+                          (EGrouped [])
+                          (EGrouped [ ESymbol Bin "-" , ENumber "4" , EIdentifier "\960" ]))
+                       (EGrouped
+                          [ ENumber "1"
+                          , ESymbol Bin "+"
+                          , EFraction
+                              NormalFrac
+                              (ESubsup
+                                 (EIdentifier "e")
+                                 (EGrouped [])
+                                 (EGrouped [ ESymbol Bin "-" , ENumber "6" , EIdentifier "\960" ]))
+                              (EGrouped
+                                 [ ENumber "1"
+                                 , ESymbol Bin "+"
+                                 , EFraction
+                                     NormalFrac
+                                     (ESubsup
+                                        (EIdentifier "e")
+                                        (EGrouped [])
+                                        (EGrouped
+                                           [ ESymbol Bin "-" , ENumber "8" , EIdentifier "\960" ]))
+                                     (EGrouped
+                                        [ ENumber "1" , ESymbol Bin "+" , ESymbol Ord "\8230" ])
+                                 ])
+                          ])
+                   ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Another Ramanujan identity" ]
+      , [ EGrouped
+            [ EUnderover
+                False
+                (ESymbol Op "\8721")
+                (EGrouped [ EIdentifier "k" , ESymbol Rel "=" , ENumber "1" ])
+                (EIdentifier "\8734")
+            , EFraction
+                NormalFrac
+                (ENumber "1")
+                (ESubsup
+                   (ENumber "2")
+                   (EGrouped [])
+                   (EGrouped
+                      [ ESymbol Open "\8970"
+                      , EIdentifier "k"
+                      , ESymbol Bin "\183"
+                      , ESpace (0 % 1)
+                      , EIdentifier "\966"
+                      , ESymbol Close "\8971"
+                      ]))
+            , ESymbol Rel "="
+            , EFraction
+                NormalFrac
+                (ENumber "1")
+                (EGrouped
+                   [ ESubsup (ENumber "2") (EGrouped []) (ENumber "0")
+                   , ESymbol Bin "+"
+                   , EFraction
+                       NormalFrac
+                       (ENumber "1")
+                       (EGrouped
+                          [ ESubsup (ENumber "2") (EGrouped []) (ENumber "1")
+                          , ESymbol Bin "+"
+                          , ESymbol Ord "\8943"
+                          ])
+                   ])
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Rogers-Ramanujan Identity" ]
+      , [ EGrouped
+            [ ENumber "1"
+            , ESymbol Bin "+"
+            , EGrouped
+                [ EUnderover
+                    False
+                    (ESymbol Op "\8721")
+                    (EGrouped [ EIdentifier "k" , ESymbol Rel "=" , ENumber "1" ])
+                    (EIdentifier "\8734")
+                , EFraction
+                    NormalFrac
+                    (ESubsup
+                       (EIdentifier "q")
+                       (EGrouped [])
+                       (EGrouped
+                          [ ESubsup (EIdentifier "k") (EGrouped []) (ENumber "2")
+                          , ESymbol Bin "+"
+                          , EIdentifier "k"
+                          ]))
+                    (EGrouped
+                       [ ESymbol Open "("
+                       , ENumber "1"
+                       , ESymbol Bin "-"
+                       , EIdentifier "q"
+                       , ESymbol Close ")"
+                       , ESymbol Open "("
+                       , ENumber "1"
+                       , ESymbol Bin "-"
+                       , ESubsup (EIdentifier "q") (EGrouped []) (ENumber "2")
+                       , ESymbol Close ")"
+                       , ESymbol Ord "\8943"
+                       , ESymbol Open "("
+                       , ENumber "1"
+                       , ESymbol Bin "-"
+                       , ESubsup (EIdentifier "q") (EGrouped []) (EIdentifier "k")
+                       , ESymbol Close ")"
+                       ])
+                ]
+            , ESymbol Rel "="
+            , EGrouped
+                [ EUnderover
+                    False
+                    (ESymbol Op "\8719")
+                    (EGrouped [ EIdentifier "j" , ESymbol Rel "=" , ENumber "0" ])
+                    (EIdentifier "\8734")
+                , EFraction
+                    NormalFrac
+                    (ENumber "1")
+                    (EGrouped
+                       [ ESymbol Open "("
+                       , ENumber "1"
+                       , ESymbol Bin "-"
+                       , ESubsup
+                           (EIdentifier "q")
+                           (EGrouped [])
+                           (EGrouped
+                              [ ENumber "5" , EIdentifier "j" , ESymbol Bin "+" , ENumber "2" ])
+                       , ESymbol Close ")"
+                       , ESymbol Open "("
+                       , ENumber "1"
+                       , ESymbol Bin "-"
+                       , ESubsup
+                           (EIdentifier "q")
+                           (EGrouped [])
+                           (EGrouped
+                              [ ENumber "5" , EIdentifier "j" , ESymbol Bin "+" , ENumber "3" ])
+                       , ESymbol Close ")"
+                       ])
+                ]
+            , ESymbol Pun ","
+            , EText TextNormal "\8287\8202"
+            , EText TextNormal "\8287\8202"
+            , EGrouped [ EIdentifier "f" , EIdentifier "o" , EIdentifier "r" ]
+            , ESpace (2 % 9)
+            , ESymbol Op "|"
+            , EIdentifier "q"
+            , ESymbol Op "|"
+            , ESymbol Rel "<"
+            , ENumber "1"
+            , EIdentifier "."
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "Commutative Diagram" ]
+      , [ EArray
+            [ AlignCenter , AlignCenter , AlignCenter ]
+            [ [ [ EIdentifier "H" ]
+              , [ ESymbol Accent "\8592" ]
+              , [ EIdentifier "K" ]
+              ]
+            , [ [ ESymbol Rel "\8595" ]
+              , [ ESpace (0 % 1) ]
+              , [ ESymbol Rel "\8593" ]
+              ]
+            , [ [ EIdentifier "H" ]
+              , [ ESymbol Accent "\8594" ]
+              , [ EIdentifier "K" ]
+              ]
+            ]
+        ]
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Bernoulli Trials</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mrow>
+          <mrow>
+            <mi>P</mi>
+            <mo stretchy="false" form="prefix">(</mo>
+            <mi>E</mi>
+            <mo stretchy="false" form="postfix">)</mo>
+          </mrow>
+          <mo>=</mo>
+          <mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <mfrac>
+              <mi>n</mi>
+              <mi>k</mi>
+            </mfrac>
+            <mo stretchy="true" form="postfix">)</mo>
+          </mrow>
+          <msubsup>
+            <mi>p</mi>
+            <mrow />
+            <mi>k</mi>
+          </msubsup>
+          <msubsup>
+            <mrow>
+              <mo stretchy="false" form="prefix">(</mo>
+              <mn>1</mn>
+              <mo>-</mo>
+              <mi>p</mi>
+              <mo stretchy="false" form="postfix">)</mo>
+            </mrow>
+            <mrow />
+            <mrow>
+              <mi>n</mi>
+              <mo>-</mo>
+              <mi>k</mi>
+            </mrow>
+          </msubsup>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Cauchy-Schwarz Inequality</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mrow>
+          <msubsup>
+            <mrow>
+              <mo stretchy="true" form="prefix">(</mo>
+              <munderover>
+                <mo>∑</mo>
+                <mrow>
+                  <mi>k</mi>
+                  <mo>=</mo>
+                  <mn>1</mn>
+                </mrow>
+                <mi>n</mi>
+              </munderover>
+              <msubsup>
+                <mi>a</mi>
+                <mi>k</mi>
+                <mrow />
+              </msubsup>
+              <msubsup>
+                <mi>b</mi>
+                <mi>k</mi>
+                <mrow />
+              </msubsup>
+              <mo stretchy="true" form="postfix">)</mo>
+            </mrow>
+            <mrow />
+            <mn>2</mn>
+          </msubsup>
+          <mo>≤</mo>
+          <mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <munderover>
+              <mo>∑</mo>
+              <mrow>
+                <mi>k</mi>
+                <mo>=</mo>
+                <mn>1</mn>
+              </mrow>
+              <mi>n</mi>
+            </munderover>
+            <msubsup>
+              <mi>a</mi>
+              <mi>k</mi>
+              <mn>2</mn>
+            </msubsup>
+            <mo stretchy="true" form="postfix">)</mo>
+          </mrow>
+          <mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <munderover>
+              <mo>∑</mo>
+              <mrow>
+                <mi>k</mi>
+                <mo>=</mo>
+                <mn>1</mn>
+              </mrow>
+              <mi>n</mi>
+            </munderover>
+            <msubsup>
+              <mi>b</mi>
+              <mi>k</mi>
+              <mn>2</mn>
+            </msubsup>
+            <mo stretchy="true" form="postfix">)</mo>
+          </mrow>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Cauchy Formula</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mrow>
+          <mi>f</mi>
+          <mo stretchy="false" form="prefix">(</mo>
+          <mi>z</mi>
+          <mo stretchy="false" form="postfix">)</mo>
+          <mspace width="0.167em" />
+          <mo>·</mo>
+          <msubsup>
+            <mi>Ind</mi>
+            <mi>γ</mi>
+            <mrow />
+          </msubsup>
+          <mo stretchy="false" form="prefix">(</mo>
+          <mi>z</mi>
+          <mo stretchy="false" form="postfix">)</mo>
+          <mo>=</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mrow>
+              <mn>2</mn>
+              <mi>π</mi>
+              <mi>i</mi>
+            </mrow>
+          </mfrac>
+          <munderover>
+            <mo>∮</mo>
+            <mi>γ</mi>
+            <mrow />
+          </munderover>
+          <mfrac>
+            <mrow>
+              <mi>f</mi>
+              <mo stretchy="false" form="prefix">(</mo>
+              <mi>ξ</mi>
+              <mo stretchy="false" form="postfix">)</mo>
+            </mrow>
+            <mrow>
+              <mi>ξ</mi>
+              <mo>-</mo>
+              <mi>z</mi>
+            </mrow>
+          </mfrac>
+          <mspace width="0.167em" />
+          <mi>d</mi>
+          <mi>ξ</mi>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Cross Product</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mrow>
+          <msubsup>
+            <mi>V</mi>
+            <mn>1</mn>
+            <mrow />
+          </msubsup>
+          <mo>×</mo>
+          <msubsup>
+            <mi>V</mi>
+            <mn>2</mn>
+            <mrow />
+          </msubsup>
+          <mo>=</mo>
+          <mrow>
+            <mo stretchy="true" form="prefix">|</mo>
+            <mtable>
+              <mtr>
+                <mtd columnalign="center">
+                  <mi>i</mi>
+                </mtd>
+                <mtd columnalign="center">
+                  <mi>j</mi>
+                </mtd>
+                <mtd columnalign="center">
+                  <mi>k</mi>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd columnalign="center">
+                  <mfrac>
+                    <mrow>
+                      <mi>∂</mi>
+                      <mi>X</mi>
+                    </mrow>
+                    <mrow>
+                      <mi>∂</mi>
+                      <mi>u</mi>
+                    </mrow>
+                  </mfrac>
+                </mtd>
+                <mtd columnalign="center">
+                  <mfrac>
+                    <mrow>
+                      <mi>∂</mi>
+                      <mi>Y</mi>
+                    </mrow>
+                    <mrow>
+                      <mi>∂</mi>
+                      <mi>u</mi>
+                    </mrow>
+                  </mfrac>
+                </mtd>
+                <mtd columnalign="center">
+                  <mn>0</mn>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd columnalign="center">
+                  <mfrac>
+                    <mrow>
+                      <mi>∂</mi>
+                      <mi>X</mi>
+                    </mrow>
+                    <mrow>
+                      <mi>∂</mi>
+                      <mi>v</mi>
+                    </mrow>
+                  </mfrac>
+                </mtd>
+                <mtd columnalign="center">
+                  <mfrac>
+                    <mrow>
+                      <mi>∂</mi>
+                      <mi>Y</mi>
+                    </mrow>
+                    <mrow>
+                      <mi>∂</mi>
+                      <mi>v</mi>
+                    </mrow>
+                  </mfrac>
+                </mtd>
+                <mtd columnalign="center">
+                  <mn>0</mn>
+                </mtd>
+              </mtr>
+            </mtable>
+            <mo stretchy="true" form="postfix">|</mo>
+          </mrow>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Vandermonde Determinant</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mrow>
+          <mrow>
+            <mo stretchy="true" form="prefix">|</mo>
+            <mtable>
+              <mtr>
+                <mtd columnalign="center">
+                  <mn>1</mn>
+                </mtd>
+                <mtd columnalign="center">
+                  <mn>1</mn>
+                </mtd>
+                <mtd columnalign="center">
+                  <mi>⋯</mi>
+                </mtd>
+                <mtd columnalign="center">
+                  <mn>1</mn>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd columnalign="center">
+                  <msubsup>
+                    <mi>v</mi>
+                    <mn>1</mn>
+                    <mrow />
+                  </msubsup>
+                </mtd>
+                <mtd columnalign="center">
+                  <msubsup>
+                    <mi>v</mi>
+                    <mn>2</mn>
+                    <mrow />
+                  </msubsup>
+                </mtd>
+                <mtd columnalign="center">
+                  <mi>⋯</mi>
+                </mtd>
+                <mtd columnalign="center">
+                  <msubsup>
+                    <mi>v</mi>
+                    <mi>n</mi>
+                    <mrow />
+                  </msubsup>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd columnalign="center">
+                  <msubsup>
+                    <mi>v</mi>
+                    <mn>1</mn>
+                    <mn>2</mn>
+                  </msubsup>
+                </mtd>
+                <mtd columnalign="center">
+                  <msubsup>
+                    <mi>v</mi>
+                    <mn>2</mn>
+                    <mn>2</mn>
+                  </msubsup>
+                </mtd>
+                <mtd columnalign="center">
+                  <mi>⋯</mi>
+                </mtd>
+                <mtd columnalign="center">
+                  <msubsup>
+                    <mi>v</mi>
+                    <mi>n</mi>
+                    <mn>2</mn>
+                  </msubsup>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd columnalign="center">
+                  <mo>⋮</mo>
+                </mtd>
+                <mtd columnalign="center">
+                  <mo>⋮</mo>
+                </mtd>
+                <mtd columnalign="center">
+                  <mo>⋱</mo>
+                </mtd>
+                <mtd columnalign="center">
+                  <mo>⋮</mo>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd columnalign="center">
+                  <msubsup>
+                    <mi>v</mi>
+                    <mn>1</mn>
+                    <mrow>
+                      <mi>n</mi>
+                      <mo>-</mo>
+                      <mn>1</mn>
+                    </mrow>
+                  </msubsup>
+                </mtd>
+                <mtd columnalign="center">
+                  <msubsup>
+                    <mi>v</mi>
+                    <mn>2</mn>
+                    <mrow>
+                      <mi>n</mi>
+                      <mo>-</mo>
+                      <mn>1</mn>
+                    </mrow>
+                  </msubsup>
+                </mtd>
+                <mtd columnalign="center">
+                  <mi>⋯</mi>
+                </mtd>
+                <mtd columnalign="center">
+                  <msubsup>
+                    <mi>v</mi>
+                    <mi>n</mi>
+                    <mrow>
+                      <mi>n</mi>
+                      <mo>-</mo>
+                      <mn>1</mn>
+                    </mrow>
+                  </msubsup>
+                </mtd>
+              </mtr>
+            </mtable>
+            <mo stretchy="true" form="postfix">|</mo>
+          </mrow>
+          <mo>=</mo>
+          <munderover>
+            <mo>∏</mo>
+            <mrow>
+              <mn>1</mn>
+              <mo>≤</mo>
+              <mi>i</mi>
+              <mo>&lt;</mo>
+              <mi>j</mi>
+              <mo>≤</mo>
+              <mi>n</mi>
+            </mrow>
+            <mrow />
+          </munderover>
+          <mo stretchy="false" form="prefix">(</mo>
+          <msubsup>
+            <mi>v</mi>
+            <mi>j</mi>
+            <mrow />
+          </msubsup>
+          <mo>-</mo>
+          <msubsup>
+            <mi>v</mi>
+            <mi>i</mi>
+            <mrow />
+          </msubsup>
+          <mo stretchy="false" form="postfix">)</mo>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Lorenz Equations</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtable>
+          <mtr>
+            <mtd columnalign="center">
+              <munderover>
+                <mi>x</mi>
+                <mrow />
+                <mo accent="true">˙</mo>
+              </munderover>
+            </mtd>
+            <mtd columnalign="center">
+              <mo>=</mo>
+            </mtd>
+            <mtd columnalign="center">
+              <mrow>
+                <mi>σ</mi>
+                <mo stretchy="false" form="prefix">(</mo>
+                <mi>y</mi>
+                <mo>-</mo>
+                <mi>x</mi>
+                <mo stretchy="false" form="postfix">)</mo>
+              </mrow>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd columnalign="center">
+              <munderover>
+                <mi>y</mi>
+                <mrow />
+                <mo accent="true">˙</mo>
+              </munderover>
+            </mtd>
+            <mtd columnalign="center">
+              <mo>=</mo>
+            </mtd>
+            <mtd columnalign="center">
+              <mrow>
+                <mi>ρ</mi>
+                <mi>x</mi>
+                <mo>-</mo>
+                <mi>y</mi>
+                <mo>-</mo>
+                <mi>x</mi>
+                <mi>z</mi>
+              </mrow>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd columnalign="center">
+              <munderover>
+                <mi>z</mi>
+                <mrow />
+                <mo accent="true">˙</mo>
+              </munderover>
+            </mtd>
+            <mtd columnalign="center">
+              <mo>=</mo>
+            </mtd>
+            <mtd columnalign="center">
+              <mrow>
+                <mo>-</mo>
+                <mi>β</mi>
+                <mi>z</mi>
+                <mo>+</mo>
+                <mi>x</mi>
+                <mi>y</mi>
+              </mrow>
+            </mtd>
+          </mtr>
+        </mtable>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Maxwell&#39;s Equations</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mrow>
+          <mo stretchy="true" form="prefix">{</mo>
+          <mtable>
+            <mtr>
+              <mtd columnalign="center">
+                <mrow>
+                  <mi>∇</mi>
+                  <mspace width="0.0em" />
+                  <mo>×</mo>
+                  <munderover>
+                    <mi>B</mi>
+                    <mrow />
+                    <mo accent="true">↼</mo>
+                  </munderover>
+                  <mo>-</mo>
+                  <mspace width="0.167em" />
+                  <mfrac>
+                    <mn>1</mn>
+                    <mi>c</mi>
+                  </mfrac>
+                  <mspace width="0.167em" />
+                  <mfrac>
+                    <mrow>
+                      <mi>∂</mi>
+                      <mspace width="0.0em" />
+                      <munderover>
+                        <mi>E</mi>
+                        <mrow />
+                        <mo accent="true">↼</mo>
+                      </munderover>
+                    </mrow>
+                    <mrow>
+                      <mi>∂</mi>
+                      <mspace width="0.0em" />
+                      <mi>t</mi>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+              </mtd>
+              <mtd columnalign="center">
+                <mo>=</mo>
+              </mtd>
+              <mtd columnalign="center">
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <mn>4</mn>
+                      <mi>π</mi>
+                    </mrow>
+                    <mi>c</mi>
+                  </mfrac>
+                  <mspace width="0.167em" />
+                  <munderover>
+                    <mi>j</mi>
+                    <mrow />
+                    <mo accent="true">↼</mo>
+                  </munderover>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd columnalign="center">
+                <mrow>
+                  <mi>∇</mi>
+                  <mspace width="0.0em" />
+                  <mo>·</mo>
+                  <munderover>
+                    <mi>E</mi>
+                    <mrow />
+                    <mo accent="true">↼</mo>
+                  </munderover>
+                </mrow>
+              </mtd>
+              <mtd columnalign="center">
+                <mo>=</mo>
+              </mtd>
+              <mtd columnalign="center">
+                <mrow>
+                  <mn>4</mn>
+                  <mi>π</mi>
+                  <mi>ρ</mi>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd columnalign="center">
+                <mrow>
+                  <mi>∇</mi>
+                  <mspace width="0.0em" />
+                  <mo>×</mo>
+                  <munderover>
+                    <mi>E</mi>
+                    <mrow />
+                    <mo accent="true">↼</mo>
+                  </munderover>
+                  <mspace width="0.167em" />
+                  <mo>+</mo>
+                  <mspace width="0.167em" />
+                  <mfrac>
+                    <mn>1</mn>
+                    <mi>c</mi>
+                  </mfrac>
+                  <mspace width="0.167em" />
+                  <mfrac>
+                    <mrow>
+                      <mi>∂</mi>
+                      <mspace width="0.0em" />
+                      <munderover>
+                        <mi>B</mi>
+                        <mrow />
+                        <mo accent="true">↼</mo>
+                      </munderover>
+                    </mrow>
+                    <mrow>
+                      <mi>∂</mi>
+                      <mspace width="0.0em" />
+                      <mi>t</mi>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+              </mtd>
+              <mtd columnalign="center">
+                <mo>=</mo>
+              </mtd>
+              <mtd columnalign="center">
+                <munderover>
+                  <mn>0</mn>
+                  <mrow />
+                  <mo accent="true">↼</mo>
+                </munderover>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd columnalign="center">
+                <mrow>
+                  <mi>∇</mi>
+                  <mspace width="0.0em" />
+                  <mo>·</mo>
+                  <munderover>
+                    <mi>B</mi>
+                    <mrow />
+                    <mo accent="true">↼</mo>
+                  </munderover>
+                </mrow>
+              </mtd>
+              <mtd columnalign="center">
+                <mo>=</mo>
+              </mtd>
+              <mtd columnalign="center">
+                <mn>0</mn>
+              </mtd>
+            </mtr>
+          </mtable>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Einstein Field Equations</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mrow>
+          <msubsup>
+            <mi>R</mi>
+            <mrow>
+              <mi>μ</mi>
+              <mi>ν</mi>
+            </mrow>
+            <mrow />
+          </msubsup>
+          <mo>-</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mn>2</mn>
+          </mfrac>
+          <mspace width="0.167em" />
+          <msubsup>
+            <mi>g</mi>
+            <mrow>
+              <mi>μ</mi>
+              <mi>ν</mi>
+            </mrow>
+            <mrow />
+          </msubsup>
+          <mspace width="0.167em" />
+          <mi>R</mi>
+          <mo>=</mo>
+          <mfrac>
+            <mrow>
+              <mn>8</mn>
+              <mi>π</mi>
+              <mi>G</mi>
+            </mrow>
+            <msubsup>
+              <mi>c</mi>
+              <mrow />
+              <mn>4</mn>
+            </msubsup>
+          </mfrac>
+          <mspace width="0.167em" />
+          <msubsup>
+            <mi>T</mi>
+            <mrow>
+              <mi>μ</mi>
+              <mi>ν</mi>
+            </mrow>
+            <mrow />
+          </msubsup>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Ramanujan Identity</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mrow>
+          <mfrac>
+            <mn>1</mn>
+            <mrow>
+              <mo stretchy="false" form="prefix">(</mo>
+              <msqrt>
+                <mrow>
+                  <mi>φ</mi>
+                  <msqrt>
+                    <mn>5</mn>
+                  </msqrt>
+                </mrow>
+              </msqrt>
+              <mo>-</mo>
+              <mi>φ</mi>
+              <mo stretchy="false" form="postfix">)</mo>
+              <msubsup>
+                <mi>e</mi>
+                <mrow />
+                <mfrac>
+                  <mn>25</mn>
+                  <mi>π</mi>
+                </mfrac>
+              </msubsup>
+            </mrow>
+          </mfrac>
+          <mo>=</mo>
+          <mn>1</mn>
+          <mo>+</mo>
+          <mfrac>
+            <msubsup>
+              <mi>e</mi>
+              <mrow />
+              <mrow>
+                <mo>-</mo>
+                <mn>2</mn>
+                <mi>π</mi>
+              </mrow>
+            </msubsup>
+            <mrow>
+              <mn>1</mn>
+              <mo>+</mo>
+              <mfrac>
+                <msubsup>
+                  <mi>e</mi>
+                  <mrow />
+                  <mrow>
+                    <mo>-</mo>
+                    <mn>4</mn>
+                    <mi>π</mi>
+                  </mrow>
+                </msubsup>
+                <mrow>
+                  <mn>1</mn>
+                  <mo>+</mo>
+                  <mfrac>
+                    <msubsup>
+                      <mi>e</mi>
+                      <mrow />
+                      <mrow>
+                        <mo>-</mo>
+                        <mn>6</mn>
+                        <mi>π</mi>
+                      </mrow>
+                    </msubsup>
+                    <mrow>
+                      <mn>1</mn>
+                      <mo>+</mo>
+                      <mfrac>
+                        <msubsup>
+                          <mi>e</mi>
+                          <mrow />
+                          <mrow>
+                            <mo>-</mo>
+                            <mn>8</mn>
+                            <mi>π</mi>
+                          </mrow>
+                        </msubsup>
+                        <mrow>
+                          <mn>1</mn>
+                          <mo>+</mo>
+                          <mi>…</mi>
+                        </mrow>
+                      </mfrac>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+              </mfrac>
+            </mrow>
+          </mfrac>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Another Ramanujan identity</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mrow>
+          <munderover>
+            <mo>∑</mo>
+            <mrow>
+              <mi>k</mi>
+              <mo>=</mo>
+              <mn>1</mn>
+            </mrow>
+            <mi>∞</mi>
+          </munderover>
+          <mfrac>
+            <mn>1</mn>
+            <msubsup>
+              <mn>2</mn>
+              <mrow />
+              <mrow>
+                <mo stretchy="false" form="prefix">⌊</mo>
+                <mi>k</mi>
+                <mo>·</mo>
+                <mspace width="0.0em" />
+                <mi>φ</mi>
+                <mo stretchy="false" form="postfix">⌋</mo>
+              </mrow>
+            </msubsup>
+          </mfrac>
+          <mo>=</mo>
+          <mfrac>
+            <mn>1</mn>
+            <mrow>
+              <msubsup>
+                <mn>2</mn>
+                <mrow />
+                <mn>0</mn>
+              </msubsup>
+              <mo>+</mo>
+              <mfrac>
+                <mn>1</mn>
+                <mrow>
+                  <msubsup>
+                    <mn>2</mn>
+                    <mrow />
+                    <mn>1</mn>
+                  </msubsup>
+                  <mo>+</mo>
+                  <mi>⋯</mi>
+                </mrow>
+              </mfrac>
+            </mrow>
+          </mfrac>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Rogers-Ramanujan Identity</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mrow>
+          <mn>1</mn>
+          <mo>+</mo>
+          <mrow>
+            <munderover>
+              <mo>∑</mo>
+              <mrow>
+                <mi>k</mi>
+                <mo>=</mo>
+                <mn>1</mn>
+              </mrow>
+              <mi>∞</mi>
+            </munderover>
+            <mfrac>
+              <msubsup>
+                <mi>q</mi>
+                <mrow />
+                <mrow>
+                  <msubsup>
+                    <mi>k</mi>
+                    <mrow />
+                    <mn>2</mn>
+                  </msubsup>
+                  <mo>+</mo>
+                  <mi>k</mi>
+                </mrow>
+              </msubsup>
+              <mrow>
+                <mo stretchy="false" form="prefix">(</mo>
+                <mn>1</mn>
+                <mo>-</mo>
+                <mi>q</mi>
+                <mo stretchy="false" form="postfix">)</mo>
+                <mo stretchy="false" form="prefix">(</mo>
+                <mn>1</mn>
+                <mo>-</mo>
+                <msubsup>
+                  <mi>q</mi>
+                  <mrow />
+                  <mn>2</mn>
+                </msubsup>
+                <mo stretchy="false" form="postfix">)</mo>
+                <mi>⋯</mi>
+                <mo stretchy="false" form="prefix">(</mo>
+                <mn>1</mn>
+                <mo>-</mo>
+                <msubsup>
+                  <mi>q</mi>
+                  <mrow />
+                  <mi>k</mi>
+                </msubsup>
+                <mo stretchy="false" form="postfix">)</mo>
+              </mrow>
+            </mfrac>
+          </mrow>
+          <mo>=</mo>
+          <mrow>
+            <munderover>
+              <mo>∏</mo>
+              <mrow>
+                <mi>j</mi>
+                <mo>=</mo>
+                <mn>0</mn>
+              </mrow>
+              <mi>∞</mi>
+            </munderover>
+            <mfrac>
+              <mn>1</mn>
+              <mrow>
+                <mo stretchy="false" form="prefix">(</mo>
+                <mn>1</mn>
+                <mo>-</mo>
+                <msubsup>
+                  <mi>q</mi>
+                  <mrow />
+                  <mrow>
+                    <mn>5</mn>
+                    <mi>j</mi>
+                    <mo>+</mo>
+                    <mn>2</mn>
+                  </mrow>
+                </msubsup>
+                <mo stretchy="false" form="postfix">)</mo>
+                <mo stretchy="false" form="prefix">(</mo>
+                <mn>1</mn>
+                <mo>-</mo>
+                <msubsup>
+                  <mi>q</mi>
+                  <mrow />
+                  <mrow>
+                    <mn>5</mn>
+                    <mi>j</mi>
+                    <mo>+</mo>
+                    <mn>3</mn>
+                  </mrow>
+                </msubsup>
+                <mo stretchy="false" form="postfix">)</mo>
+              </mrow>
+            </mfrac>
+          </mrow>
+          <mo>,</mo>
+          <mtext mathvariant="normal">  </mtext>
+          <mtext mathvariant="normal">  </mtext>
+          <mrow>
+            <mi>f</mi>
+            <mi>o</mi>
+            <mi>r</mi>
+          </mrow>
+          <mspace width="0.222em" />
+          <mo>|</mo>
+          <mi>q</mi>
+          <mo>|</mo>
+          <mo>&lt;</mo>
+          <mn>1</mn>
+          <mi>.</mi>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Commutative Diagram</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtable>
+          <mtr>
+            <mtd columnalign="center">
+              <mi>H</mi>
+            </mtd>
+            <mtd columnalign="center">
+              <mo>←</mo>
+            </mtd>
+            <mtd columnalign="center">
+              <mi>K</mi>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd columnalign="center">
+              <mo>↓</mo>
+            </mtd>
+            <mtd columnalign="center">
+              <mspace width="0.0em" />
+            </mtd>
+            <mtd columnalign="center">
+              <mo>↑</mo>
+            </mtd>
+          </mtr>
+          <mtr>
+            <mtd columnalign="center">
+              <mi>H</mi>
+            </mtd>
+            <mtd columnalign="center">
+              <mo>→</mo>
+            </mtd>
+            <mtd columnalign="center">
+              <mi>K</mi>
+            </mtd>
+          </mtr>
+        </mtable>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

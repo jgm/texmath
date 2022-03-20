@@ -1,0 +1,50 @@
+<<< native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EIdentifier "A"
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EGrouped
+                [ EIdentifier "A"
+                , ESymbol Bin "+"
+                , EIdentifier "A"
+                , ESymbol Bin "+"
+                , EIdentifier "A"
+                ]
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "A"
+            , ESymbol Bin "+"
+            , EGrouped
+                [ EIdentifier "A"
+                , ESymbol Bin "+"
+                , EIdentifier "A"
+                , ESymbol Bin "+"
+                , EIdentifier "A"
+                ]
+            , ESymbol Bin "+"
+            , EIdentifier "A"
+            , ESymbol Bin "+"
+            , EGrouped
+                [ EIdentifier "A"
+                , ESymbol Bin "+"
+                , EIdentifier "A"
+                , ESymbol Bin "+"
+                , EIdentifier "A"
+                ]
+            ]
+        ]
+      ]
+    ]
+]
+>>> tex
+\begin{matrix}
+{A + A + {A + A + A} + A} \\
+{A + {A + A + A} + A + {A + A + A}} \\
+\end{matrix}

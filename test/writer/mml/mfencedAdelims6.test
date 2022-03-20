@@ -1,0 +1,59 @@
+<<< native
+[ EDelimited
+    "["
+    ")"
+    [ Right
+        (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+    ]
+, EDelimited
+    "{"
+    "}"
+    [ Right (EFraction NormalFrac (EIdentifier "a") (EIdentifier "b"))
+    , Left "|"
+    , Right (EFraction NormalFrac (EIdentifier "d") (EIdentifier "e"))
+    , Right (ESymbol Pun ";")
+    , Right (EIdentifier "a")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "b")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "a")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "b")
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mo stretchy="true" form="prefix">[</mo>
+      <mrow>
+        <mi>a</mi>
+        <mo>+</mo>
+        <mi>b</mi>
+      </mrow>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mrow>
+      <mo stretchy="true" form="prefix">{</mo>
+      <mfrac>
+        <mi>a</mi>
+        <mi>b</mi>
+      </mfrac>
+      <mo stretchy="true" form="infix">|</mo>
+      <mfrac>
+        <mi>d</mi>
+        <mi>e</mi>
+      </mfrac>
+      <mo>;</mo>
+      <mi>a</mi>
+      <mo>+</mo>
+      <mi>b</mi>
+      <mo>+</mo>
+      <mi>a</mi>
+      <mo>+</mo>
+      <mi>b</mi>
+      <mo stretchy="true" form="postfix">}</mo>
+    </mrow>
+  </mrow>
+</math>

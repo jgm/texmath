@@ -18,10 +18,11 @@ import qualified Data.ByteString.Lazy as B
 import qualified Data.Text as T
 import qualified Data.Text.IO as T
 import Data.Version ( showVersion )
+import Text.Show.Pretty (ppShow)
 import Paths_texmath (version)
 
 tshow :: Show a => a -> T.Text
-tshow = T.pack . show
+tshow = T.pack . ppShow
 
 inHtml :: Element -> Element
 inHtml e =

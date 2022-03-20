@@ -1,0 +1,21 @@
+<<< native
+[ EText
+    TextNormal
+    "\120812\120813\120814\120815\120816\120817\120818\120819\120820\120821"
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:rPr>
+        <m:nor />
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>𝟬𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

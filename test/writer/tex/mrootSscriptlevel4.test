@@ -1,0 +1,21 @@
+<<< native
+[ ERoot
+    (EFraction NormalFrac (EIdentifier "x") (ENumber "3"))
+    (EGrouped
+       [ EIdentifier "x"
+       , ESymbol Bin "-"
+       , EFraction NormalFrac (EIdentifier "x") (ENumber "3")
+       ])
+, ESymbol Bin "+"
+, ERoot
+    (EFraction NormalFrac (EIdentifier "x") (ENumber "3"))
+    (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ])
+, ESymbol Bin "+"
+, ERoot
+    (EFraction NormalFrac (EIdentifier "x") (ENumber "3"))
+    (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ])
+, ESymbol Bin "+"
+, EFraction NormalFrac (EIdentifier "x") (ENumber "3")
+]
+>>> tex
+\sqrt[\frac{x}{3}]{x - \frac{x}{3}} + \sqrt[\frac{x}{3}]{x - 3} + \sqrt[\frac{x}{3}]{x - 3} + \frac{x}{3}

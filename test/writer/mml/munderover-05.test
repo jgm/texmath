@@ -1,0 +1,26 @@
+<<< native
+[ EUnderover
+    False
+    (EIdentifier "_ baseline _")
+    (EPhantom (EIdentifier "fail"))
+    (EPhantom (EIdentifier "fail"))
+, ESymbol Rel "="
+, EIdentifier "_ baseline _"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <munderover>
+      <mi>_ baseline _</mi>
+      <mphantom>
+        <mi>fail</mi>
+      </mphantom>
+      <mphantom>
+        <mi>fail</mi>
+      </mphantom>
+    </munderover>
+    <mo>=</mo>
+    <mi>_ baseline _</mi>
+  </mrow>
+</math>

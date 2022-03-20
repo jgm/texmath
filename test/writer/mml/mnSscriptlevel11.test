@@ -1,0 +1,60 @@
+<<< native
+[ EGrouped
+    [ ENumber "5"
+    , ESymbol Bin "+"
+    , ENumber "3"
+    , ESymbol Bin "+"
+    , ENumber "12.3"
+    , ESymbol Bin "+"
+    , ENumber "10000"
+    , ESymbol Bin "+"
+    , ENumber "0.01"
+    , ESymbol Bin "+"
+    , ENumber "2"
+    ]
+, EGrouped
+    [ ENumber "5"
+    , ESymbol Bin "+"
+    , ENumber "3"
+    , ESymbol Bin "+"
+    , ENumber "12.3"
+    , ESymbol Bin "+"
+    , ENumber "10000"
+    , ESymbol Bin "+"
+    , ENumber "0.01"
+    , ESymbol Bin "+"
+    , ENumber "2"
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mn>5</mn>
+      <mo>+</mo>
+      <mn>3</mn>
+      <mo>+</mo>
+      <mn>12.3</mn>
+      <mo>+</mo>
+      <mn>10000</mn>
+      <mo>+</mo>
+      <mn>0.01</mn>
+      <mo>+</mo>
+      <mn>2</mn>
+    </mrow>
+    <mrow>
+      <mn>5</mn>
+      <mo>+</mo>
+      <mn>3</mn>
+      <mo>+</mo>
+      <mn>12.3</mn>
+      <mo>+</mo>
+      <mn>10000</mn>
+      <mo>+</mo>
+      <mn>0.01</mn>
+      <mo>+</mo>
+      <mn>2</mn>
+    </mrow>
+  </mrow>
+</math>

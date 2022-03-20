@@ -1,0 +1,30 @@
+<<< native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EIdentifier "x"
+            , ESymbol Bin "+"
+            , EDelimited
+                "("
+                ")"
+                [ Right (EFraction NormalFrac (ENumber "2") (ENumber "3")) ]
+            ]
+        ]
+      ]
+    , [ [ EDelimited
+            ""
+            ")"
+            [ Right (EIdentifier "x")
+            , Right (ESymbol Bin "+")
+            , Right (EOver False (ESymbol Open "(") (ESymbol Bin "-"))
+            , Right (EFraction NormalFrac (ENumber "2") (ENumber "3"))
+            ]
+        ]
+      ]
+    ]
+]
+>>> tex
+\begin{matrix}
+{x + \left( \frac{2}{3} \right)} \\
+\left. x + \overset{-}{(}\frac{2}{3} \right) \\
+\end{matrix}

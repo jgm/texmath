@@ -1,0 +1,23 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EFraction NormalFrac (EIdentifier "xxx") (EIdentifier "y") ]
+      , [ EIdentifier "bbbb" ]
+      , [ EIdentifier "c" ]
+      ]
+    , [ [ EFraction NormalFrac (EIdentifier "x") (EIdentifier "y") ]
+      , [ EIdentifier "y" ]
+      , [ EIdentifier "z" ]
+      ]
+    , [ [ EFraction NormalFrac (EIdentifier "x") (EIdentifier "y") ]
+      , [ ENumber "2" ]
+      , [ ENumber "333333" ]
+      ]
+    ]
+]
+>>> tex
+\begin{matrix}
+\frac{xxx}{y} & {bbbb} & c \\
+\frac{x}{y} & y & z \\
+\frac{x}{y} & 2 & 333333 \\
+\end{matrix}

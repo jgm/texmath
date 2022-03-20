@@ -1,0 +1,58 @@
+<<< native
+[ ESuper (EIdentifier "X") (ENumber "2")
+, ESymbol Rel "="
+, EIdentifier "y"
+, EGrouped
+    [ EText TextNormal " under "
+    , ESub (EIdentifier "H") (ENumber "0")
+    , EText TextNormal " except when "
+    , EGrouped
+        [ EIdentifier "x"
+        , EGrouped
+            [ EText TextBold " is less than "
+            , EIdentifier "z"
+            , EText TextBold "."
+            ]
+        ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msup>
+      <mi>X</mi>
+      <mn>2</mn>
+    </msup>
+    <mo>=</mo>
+    <mi>y</mi>
+    <mrow>
+      <mrow>
+        <mspace width="0.333em" />
+        <mtext mathvariant="normal"> under </mtext>
+        <mspace width="0.333em" />
+      </mrow>
+      <msub>
+        <mi>H</mi>
+        <mn>0</mn>
+      </msub>
+      <mrow>
+        <mspace width="0.333em" />
+        <mtext mathvariant="normal"> except when </mtext>
+        <mspace width="0.333em" />
+      </mrow>
+      <mrow>
+        <mi>x</mi>
+        <mrow>
+          <mrow>
+            <mspace width="0.333em" />
+            <mtext mathvariant="bold"> 𝐢𝐬 𝐥𝐞𝐬𝐬 𝐭𝐡𝐚𝐧 </mtext>
+            <mspace width="0.333em" />
+          </mrow>
+          <mi>z</mi>
+          <mtext mathvariant="bold">.</mtext>
+        </mrow>
+      </mrow>
+    </mrow>
+  </mrow>
+</math>

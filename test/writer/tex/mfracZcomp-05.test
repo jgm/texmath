@@ -1,0 +1,18 @@
+<<< native
+[ EText TextNormal "Inline, display style, thick line\160"
+, EFraction
+    NormalFrac
+    (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "1" ])
+    (EGrouped
+       [ EGrouped
+           [ ENumber "0.98"
+           , ESymbol Bin "\215"
+           , ESuper (ENumber "10") (ENumber "2")
+           ]
+       , ESymbol Bin "+"
+       , EIdentifier "y"
+       ])
+, EText TextNormal ", the superscripted 2 should be script size."
+]
+>>> tex
+\text{Inline,\ display\ style,\ thick\ line~}\frac{x - 1}{{0.98 \times 10^{2}} + y}\text{,\ the\ superscripted\ 2\ should\ be\ script\ size.}

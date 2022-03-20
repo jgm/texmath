@@ -1,0 +1,1157 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "dagger" ] , [ ESymbol Bin "\8224" ] ]
+    , [ [ EText TextNormal "dagger" ] , [ ESymbol Bin "\8224" ] ]
+    , [ [ EText TextNormal "Dagger" ] , [ ESymbol Bin "\8225" ] ]
+    , [ [ EText TextNormal "Dagger" ] , [ ESymbol Bin "\8225" ] ]
+    , [ [ EText TextNormal "daleth" ] , [ ESymbol Alpha "\8504" ] ]
+    , [ [ EText TextNormal "darr" ] , [ ESymbol Rel "\8595" ] ]
+    , [ [ EText TextNormal "dArr" ] , [ ESymbol Rel "\8659" ] ]
+    , [ [ EText TextNormal "Darr" ] , [ ESymbol Rel "\8609" ] ]
+    , [ [ EText TextNormal "dash" ] , [ ESymbol Ord "\8208" ] ]
+    , [ [ EText TextNormal "dashv" ] , [ ESymbol Rel "\8867" ] ]
+    , [ [ EText TextNormal "Dashv" ] , [ ESymbol Rel "\10980" ] ]
+    , [ [ EText TextNormal "dbkarow" ] , [ ESymbol Accent "\10511" ] ]
+    , [ [ EText TextNormal "dblac" ] , [ ESymbol Accent "\733" ] ]
+    , [ [ EText TextNormal "dcaron" ] , [ ESymbol Ord "\271" ] ]
+    , [ [ EText TextNormal "Dcaron" ] , [ ESymbol Ord "\270" ] ]
+    , [ [ EText TextNormal "dcy" ] , [ ESymbol Ord "\1076" ] ]
+    , [ [ EText TextNormal "Dcy" ] , [ ESymbol Ord "\1044" ] ]
+    , [ [ EText TextNormal "dd" ] , [ ESymbol Ord "\8518" ] ]
+    , [ [ EText TextNormal "DD" ] , [ ESymbol Ord "\8517" ] ]
+    , [ [ EText TextNormal "ddagger" ] , [ ESymbol Bin "\8225" ] ]
+    , [ [ EText TextNormal "ddarr" ] , [ ESymbol Rel "\8650" ] ]
+    , [ [ EText TextNormal "DDotrahd" ] , [ ESymbol Accent "\10513" ] ]
+    , [ [ EText TextNormal "ddotseq" ] , [ ESymbol Rel "\10871" ] ]
+    , [ [ EText TextNormal "deg" ] , [ ESymbol Ord "\176" ] ]
+    , [ [ EText TextNormal "Del" ] , [ ESymbol Ord "\8711" ] ]
+    , [ [ EText TextNormal "delta" ] , [ ESymbol Alpha "\948" ] ]
+    , [ [ EText TextNormal "Delta" ] , [ ESymbol Alpha "\916" ] ]
+    , [ [ EText TextNormal "demptyv" ] , [ ESymbol Ord "\10673" ] ]
+    , [ [ EText TextNormal "dfisht" ] , [ ESymbol Rel "\10623" ] ]
+    , [ [ EText TextNormal "dfr" ] , [ ESymbol Alpha "\120097" ] ]
+    , [ [ EText TextNormal "Dfr" ] , [ ESymbol Alpha "\120071" ] ]
+    , [ [ EText TextNormal "dHar" ] , [ ESymbol Rel "\10597" ] ]
+    , [ [ EText TextNormal "dharl" ] , [ ESymbol Rel "\8643" ] ]
+    , [ [ EText TextNormal "dharr" ] , [ ESymbol Rel "\8642" ] ]
+    , [ [ EText TextNormal "DiacriticalAcute" ]
+      , [ ESymbol Accent "\180" ]
+      ]
+    , [ [ EText TextNormal "DiacriticalDot" ]
+      , [ ESymbol Accent "\729" ]
+      ]
+    , [ [ EText TextNormal "DiacriticalDoubleAcute" ]
+      , [ ESymbol Accent "\733" ]
+      ]
+    , [ [ EText TextNormal "DiacriticalGrave" ]
+      , [ ESymbol Accent "`" ]
+      ]
+    , [ [ EText TextNormal "DiacriticalTilde" ]
+      , [ ESymbol Accent "\732" ]
+      ]
+    , [ [ EText TextNormal "diam" ] , [ ESymbol Bin "\8900" ] ]
+    , [ [ EText TextNormal "diamond" ] , [ ESymbol Bin "\8900" ] ]
+    , [ [ EText TextNormal "Diamond" ] , [ ESymbol Bin "\8900" ] ]
+    , [ [ EText TextNormal "diamondsuit" ] , [ ESymbol Ord "\9830" ] ]
+    , [ [ EText TextNormal "diams" ] , [ ESymbol Ord "\9830" ] ]
+    , [ [ EText TextNormal "die" ] , [ ESymbol Accent "\168" ] ]
+    , [ [ EText TextNormal "DifferentialD" ]
+      , [ ESymbol Ord "\8518" ]
+      ]
+    , [ [ EText TextNormal "digamma" ] , [ ESymbol Alpha "\989" ] ]
+    , [ [ EText TextNormal "disin" ] , [ ESymbol Rel "\8946" ] ]
+    , [ [ EText TextNormal "div" ] , [ ESymbol Bin "\247" ] ]
+    , [ [ EText TextNormal "divide" ] , [ ESymbol Bin "\247" ] ]
+    , [ [ EText TextNormal "divideontimes" ]
+      , [ ESymbol Bin "\8903" ]
+      ]
+    , [ [ EText TextNormal "divonx" ] , [ ESymbol Bin "\8903" ] ]
+    , [ [ EText TextNormal "djcy" ] , [ ESymbol Ord "\1106" ] ]
+    , [ [ EText TextNormal "DJcy" ] , [ ESymbol Ord "\1026" ] ]
+    , [ [ EText TextNormal "dlcorn" ] , [ ESymbol Open "\8990" ] ]
+    , [ [ EText TextNormal "dlcrop" ] , [ ESymbol Ord "\8973" ] ]
+    , [ [ EText TextNormal "dollar" ] , [ ESymbol Ord "$" ] ]
+    , [ [ EText TextNormal "dopf" ] , [ ESymbol Alpha "\120149" ] ]
+    , [ [ EText TextNormal "Dopf" ] , [ ESymbol Alpha "\120123" ] ]
+    , [ [ EText TextNormal "dot" ] , [ ESymbol Accent "\729" ] ]
+    , [ [ EText TextNormal "Dot" ] , [ ESymbol Accent "\168" ] ]
+    , [ [ EText TextNormal "DotDot" ] , [ ESymbol Accent "\8412" ] ]
+    , [ [ EText TextNormal "doteq" ] , [ ESymbol Rel "\8784" ] ]
+    , [ [ EText TextNormal "doteqdot" ] , [ ESymbol Rel "\8785" ] ]
+    , [ [ EText TextNormal "DotEqual" ] , [ ESymbol Rel "\8784" ] ]
+    , [ [ EText TextNormal "dotminus" ] , [ ESymbol Bin "\8760" ] ]
+    , [ [ EText TextNormal "dotplus" ] , [ ESymbol Bin "\8724" ] ]
+    , [ [ EText TextNormal "dotsquare" ] , [ ESymbol Bin "\8865" ] ]
+    , [ [ EText TextNormal "doublebarwedge" ]
+      , [ ESymbol Bin "\8966" ]
+      ]
+    , [ [ EText TextNormal "DoubleContourIntegral" ]
+      , [ ESymbol Op "\8751" ]
+      ]
+    , [ [ EText TextNormal "DoubleDot" ] , [ ESymbol Accent "\168" ] ]
+    , [ [ EText TextNormal "DoubleDownArrow" ]
+      , [ ESymbol Rel "\8659" ]
+      ]
+    , [ [ EText TextNormal "DoubleLeftArrow" ]
+      , [ ESymbol Accent "\8656" ]
+      ]
+    , [ [ EText TextNormal "DoubleLeftRightArrow" ]
+      , [ ESymbol Accent "\8660" ]
+      ]
+    , [ [ EText TextNormal "DoubleLeftTee" ]
+      , [ ESymbol Rel "\10980" ]
+      ]
+    , [ [ EText TextNormal "DoubleLongLeftArrow" ]
+      , [ ESymbol Accent "\10232" ]
+      ]
+    , [ [ EText TextNormal "DoubleLongLeftRightArrow" ]
+      , [ ESymbol Accent "\10234" ]
+      ]
+    , [ [ EText TextNormal "DoubleLongRightArrow" ]
+      , [ ESymbol Accent "\10233" ]
+      ]
+    , [ [ EText TextNormal "DoubleRightArrow" ]
+      , [ ESymbol Accent "\8658" ]
+      ]
+    , [ [ EText TextNormal "DoubleRightTee" ]
+      , [ ESymbol Rel "\8872" ]
+      ]
+    , [ [ EText TextNormal "DoubleUpArrow" ]
+      , [ ESymbol Rel "\8657" ]
+      ]
+    , [ [ EText TextNormal "DoubleUpDownArrow" ]
+      , [ ESymbol Rel "\8661" ]
+      ]
+    , [ [ EText TextNormal "DoubleVerticalBar" ]
+      , [ ESymbol Rel "\8741" ]
+      ]
+    , [ [ EText TextNormal "downarrow" ] , [ ESymbol Rel "\8595" ] ]
+    , [ [ EText TextNormal "Downarrow" ] , [ ESymbol Rel "\8659" ] ]
+    , [ [ EText TextNormal "DownArrow" ] , [ ESymbol Rel "\8595" ] ]
+    , [ [ EText TextNormal "DownArrowBar" ]
+      , [ ESymbol Rel "\10515" ]
+      ]
+    , [ [ EText TextNormal "DownArrowUpArrow" ]
+      , [ ESymbol Rel "\8693" ]
+      ]
+    , [ [ EText TextNormal "DownBreve" ] , [ ESymbol Accent "\785" ] ]
+    , [ [ EText TextNormal "downdownarrows" ]
+      , [ ESymbol Rel "\8650" ]
+      ]
+    , [ [ EText TextNormal "downharpoonleft" ]
+      , [ ESymbol Rel "\8643" ]
+      ]
+    , [ [ EText TextNormal "downharpoonright" ]
+      , [ ESymbol Rel "\8642" ]
+      ]
+    , [ [ EText TextNormal "DownLeftRightVector" ]
+      , [ ESymbol Accent "\10576" ]
+      ]
+    , [ [ EText TextNormal "DownLeftTeeVector" ]
+      , [ ESymbol Accent "\10590" ]
+      ]
+    , [ [ EText TextNormal "DownLeftVector" ]
+      , [ ESymbol Accent "\8637" ]
+      ]
+    , [ [ EText TextNormal "DownLeftVectorBar" ]
+      , [ ESymbol Rel "\10582" ]
+      ]
+    , [ [ EText TextNormal "DownRightTeeVector" ]
+      , [ ESymbol Accent "\10591" ]
+      ]
+    , [ [ EText TextNormal "DownRightVector" ]
+      , [ ESymbol Accent "\8641" ]
+      ]
+    , [ [ EText TextNormal "DownRightVectorBar" ]
+      , [ ESymbol Rel "\10583" ]
+      ]
+    , [ [ EText TextNormal "DownTee" ] , [ ESymbol Ord "\8868" ] ]
+    , [ [ EText TextNormal "DownTeeArrow" ] , [ ESymbol Rel "\8615" ] ]
+    , [ [ EText TextNormal "drbkarow" ] , [ ESymbol Accent "\10512" ] ]
+    , [ [ EText TextNormal "drcorn" ] , [ ESymbol Close "\8991" ] ]
+    , [ [ EText TextNormal "drcrop" ] , [ ESymbol Ord "\8972" ] ]
+    , [ [ EText TextNormal "dscr" ] , [ ESymbol Alpha "\119993" ] ]
+    , [ [ EText TextNormal "Dscr" ] , [ ESymbol Alpha "\119967" ] ]
+    , [ [ EText TextNormal "dscy" ] , [ ESymbol Ord "\1109" ] ]
+    , [ [ EText TextNormal "DScy" ] , [ ESymbol Ord "\1029" ] ]
+    , [ [ EText TextNormal "dsol" ] , [ ESymbol Bin "\10742" ] ]
+    , [ [ EText TextNormal "dstrok" ] , [ ESymbol Ord "\273" ] ]
+    , [ [ EText TextNormal "Dstrok" ] , [ ESymbol Ord "\272" ] ]
+    , [ [ EText TextNormal "dtdot" ] , [ ESymbol Rel "\8945" ] ]
+    , [ [ EText TextNormal "dtri" ] , [ ESymbol Bin "\9663" ] ]
+    , [ [ EText TextNormal "dtrif" ] , [ ESymbol Bin "\9662" ] ]
+    , [ [ EText TextNormal "duarr" ] , [ ESymbol Rel "\8693" ] ]
+    , [ [ EText TextNormal "duhar" ] , [ ESymbol Rel "\10607" ] ]
+    , [ [ EText TextNormal "dwangle" ] , [ ESymbol Ord "\10662" ] ]
+    , [ [ EText TextNormal "dzcy" ] , [ ESymbol Ord "\1119" ] ]
+    , [ [ EText TextNormal "DZcy" ] , [ ESymbol Ord "\1039" ] ]
+    , [ [ EText TextNormal "dzigrarr" ] , [ ESymbol Accent "\10239" ] ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dagger</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>†</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dagger</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>†</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Dagger</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>‡</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Dagger</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>‡</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">daleth</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℸ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">darr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↓</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dArr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇓</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Darr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↡</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dash</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>‐</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dashv</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊣</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Dashv</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⫤</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dbkarow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⤏</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dblac</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>˝</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dcaron</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ď</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Dcaron</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ď</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>д</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Dcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Д</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dd</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅆ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DD</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅅ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ddagger</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>‡</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ddarr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇊</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DDotrahd</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⤑</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">ddotseq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩷</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">deg</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>°</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Del</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>∇</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">delta</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>δ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Delta</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>Δ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">demptyv</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦱</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dfisht</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⥿</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dfr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔡</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Dfr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔇</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dHar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⥥</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dharl</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇃</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dharr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇂</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DiacriticalAcute</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>´</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DiacriticalDot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>˙</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DiacriticalDoubleAcute</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>˝</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DiacriticalGrave</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>`</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DiacriticalTilde</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>˜</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">diam</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋄</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">diamond</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋄</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Diamond</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋄</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">diamondsuit</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>♦</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">diams</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>♦</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">die</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>¨</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DifferentialD</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ⅆ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">digamma</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ϝ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">disin</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋲</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">div</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>÷</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">divide</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>÷</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">divideontimes</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋇</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">divonx</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋇</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">djcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ђ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DJcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ђ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dlcorn</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="prefix">⌞</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dlcrop</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⌍</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dollar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>$</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕕</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Dopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔻</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>˙</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Dot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>¨</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DotDot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⃜</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">doteq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≐</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">doteqdot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≑</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DotEqual</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≐</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dotminus</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∸</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dotplus</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∔</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dotsquare</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊡</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">doublebarwedge</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⌆</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DoubleContourIntegral</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∯</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DoubleDot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>¨</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DoubleDownArrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇓</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DoubleLeftArrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇐</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DoubleLeftRightArrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇔</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DoubleLeftTee</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⫤</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DoubleLongLeftArrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟸</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DoubleLongLeftRightArrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟺</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DoubleLongRightArrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟹</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DoubleRightArrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇒</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DoubleRightTee</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊨</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DoubleUpArrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇑</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DoubleUpDownArrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇕</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DoubleVerticalBar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∥</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">downarrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↓</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Downarrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇓</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DownArrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↓</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DownArrowBar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⤓</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DownArrowUpArrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇵</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DownBreve</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>̑</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">downdownarrows</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇊</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">downharpoonleft</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇃</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">downharpoonright</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇂</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DownLeftRightVector</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⥐</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DownLeftTeeVector</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⥞</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DownLeftVector</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↽</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DownLeftVectorBar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⥖</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DownRightTeeVector</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⥟</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DownRightVector</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇁</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DownRightVectorBar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⥗</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DownTee</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⊤</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DownTeeArrow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>↧</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">drbkarow</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⤐</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">drcorn</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="postfix">⌟</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">drcrop</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⌌</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝒹</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Dscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝒟</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dscy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ѕ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DScy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Ѕ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dsol</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⧶</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dstrok</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>đ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Dstrok</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Đ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dtdot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋱</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dtri</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>▿</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dtrif</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>▾</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">duarr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⇵</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">duhar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⥯</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dwangle</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⦦</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dzcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>џ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">DZcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>Џ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">dzigrarr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟿</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

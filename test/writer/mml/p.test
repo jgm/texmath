@@ -1,0 +1,784 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "par" ] , [ ESymbol Rel "\8741" ] ]
+    , [ [ EText TextNormal "para" ] , [ ESymbol Ord "\182" ] ]
+    , [ [ EText TextNormal "parallel" ] , [ ESymbol Rel "\8741" ] ]
+    , [ [ EText TextNormal "parsim" ] , [ ESymbol Rel "\10995" ] ]
+    , [ [ EText TextNormal "parsl" ] , [ ESymbol Bin "\11005" ] ]
+    , [ [ EText TextNormal "part" ] , [ ESymbol Ord "\8706" ] ]
+    , [ [ EText TextNormal "PartialD" ] , [ ESymbol Ord "\8706" ] ]
+    , [ [ EText TextNormal "pcy" ] , [ ESymbol Ord "\1087" ] ]
+    , [ [ EText TextNormal "Pcy" ] , [ ESymbol Ord "\1055" ] ]
+    , [ [ EText TextNormal "percnt" ] , [ ESymbol Ord "%" ] ]
+    , [ [ EText TextNormal "period" ] , [ ESymbol Alpha "." ] ]
+    , [ [ EText TextNormal "permil" ] , [ ESymbol Ord "\8240" ] ]
+    , [ [ EText TextNormal "perp" ] , [ ESymbol Ord "\8869" ] ]
+    , [ [ EText TextNormal "pertenk" ] , [ ESymbol Ord "\8241" ] ]
+    , [ [ EText TextNormal "pfr" ] , [ ESymbol Alpha "\120109" ] ]
+    , [ [ EText TextNormal "Pfr" ] , [ ESymbol Alpha "\120083" ] ]
+    , [ [ EText TextNormal "phi" ] , [ ESymbol Alpha "\966" ] ]
+    , [ [ EText TextNormal "Phi" ] , [ ESymbol Alpha "\934" ] ]
+    , [ [ EText TextNormal "phiv" ] , [ ESymbol Alpha "\981" ] ]
+    , [ [ EText TextNormal "phmmat" ] , [ ESymbol Alpha "\8499" ] ]
+    , [ [ EText TextNormal "phone" ] , [ ESymbol Ord "\9742" ] ]
+    , [ [ EText TextNormal "pi" ] , [ ESymbol Alpha "\960" ] ]
+    , [ [ EText TextNormal "Pi" ] , [ ESymbol Alpha "\928" ] ]
+    , [ [ EText TextNormal "pitchfork" ] , [ ESymbol Rel "\8916" ] ]
+    , [ [ EText TextNormal "piv" ] , [ ESymbol Alpha "\982" ] ]
+    , [ [ EText TextNormal "planck" ] , [ ESymbol Alpha "\8463" ] ]
+    , [ [ EText TextNormal "planckh" ] , [ ESymbol Ord "\8462" ] ]
+    , [ [ EText TextNormal "plankv" ] , [ ESymbol Alpha "\8463" ] ]
+    , [ [ EText TextNormal "plus" ] , [ ESymbol Bin "+" ] ]
+    , [ [ EText TextNormal "plusacir" ] , [ ESymbol Bin "\10787" ] ]
+    , [ [ EText TextNormal "plusb" ] , [ ESymbol Bin "\8862" ] ]
+    , [ [ EText TextNormal "pluscir" ] , [ ESymbol Bin "\10786" ] ]
+    , [ [ EText TextNormal "plusdo" ] , [ ESymbol Bin "\8724" ] ]
+    , [ [ EText TextNormal "plusdu" ] , [ ESymbol Bin "\10789" ] ]
+    , [ [ EText TextNormal "pluse" ] , [ ESymbol Bin "\10866" ] ]
+    , [ [ EText TextNormal "PlusMinus" ] , [ ESymbol Bin "\177" ] ]
+    , [ [ EText TextNormal "plusmn" ] , [ ESymbol Bin "\177" ] ]
+    , [ [ EText TextNormal "plussim" ] , [ ESymbol Bin "\10790" ] ]
+    , [ [ EText TextNormal "plustwo" ] , [ ESymbol Bin "\10791" ] ]
+    , [ [ EText TextNormal "pm" ] , [ ESymbol Bin "\177" ] ]
+    , [ [ EText TextNormal "Poincareplane" ]
+      , [ ESymbol Alpha "\8460" ]
+      ]
+    , [ [ EText TextNormal "pointint" ] , [ ESymbol Op "\10773" ] ]
+    , [ [ EText TextNormal "popf" ] , [ ESymbol Alpha "\120161" ] ]
+    , [ [ EText TextNormal "Popf" ] , [ ESymbol Alpha "\8473" ] ]
+    , [ [ EText TextNormal "pound" ] , [ ESymbol Ord "\163" ] ]
+    , [ [ EText TextNormal "pr" ] , [ ESymbol Rel "\8826" ] ]
+    , [ [ EText TextNormal "Pr" ] , [ ESymbol Rel "\10939" ] ]
+    , [ [ EText TextNormal "prap" ] , [ ESymbol Rel "\10935" ] ]
+    , [ [ EText TextNormal "prcue" ] , [ ESymbol Rel "\8828" ] ]
+    , [ [ EText TextNormal "pre" ] , [ ESymbol Rel "\10927" ] ]
+    , [ [ EText TextNormal "prE" ] , [ ESymbol Rel "\10931" ] ]
+    , [ [ EText TextNormal "prec" ] , [ ESymbol Rel "\8826" ] ]
+    , [ [ EText TextNormal "precapprox" ] , [ ESymbol Rel "\10935" ] ]
+    , [ [ EText TextNormal "preccurlyeq" ] , [ ESymbol Rel "\8828" ] ]
+    , [ [ EText TextNormal "Precedes" ] , [ ESymbol Rel "\8826" ] ]
+    , [ [ EText TextNormal "PrecedesEqual" ]
+      , [ ESymbol Rel "\10927" ]
+      ]
+    , [ [ EText TextNormal "PrecedesSlantEqual" ]
+      , [ ESymbol Rel "\8828" ]
+      ]
+    , [ [ EText TextNormal "PrecedesTilde" ]
+      , [ ESymbol Rel "\8830" ]
+      ]
+    , [ [ EText TextNormal "preceq" ] , [ ESymbol Rel "\10927" ] ]
+    , [ [ EText TextNormal "precnapprox" ] , [ ESymbol Rel "\10937" ] ]
+    , [ [ EText TextNormal "precneqq" ] , [ ESymbol Rel "\10933" ] ]
+    , [ [ EText TextNormal "precnsim" ] , [ ESymbol Rel "\8936" ] ]
+    , [ [ EText TextNormal "precsim" ] , [ ESymbol Rel "\8830" ] ]
+    , [ [ EText TextNormal "prime" ] , [ ESymbol Ord "\8242" ] ]
+    , [ [ EText TextNormal "Prime" ] , [ ESymbol Accent "\8243" ] ]
+    , [ [ EText TextNormal "primes" ] , [ ESymbol Alpha "\8473" ] ]
+    , [ [ EText TextNormal "prnap" ] , [ ESymbol Rel "\10937" ] ]
+    , [ [ EText TextNormal "prnE" ] , [ ESymbol Rel "\10933" ] ]
+    , [ [ EText TextNormal "prnsim" ] , [ ESymbol Rel "\8936" ] ]
+    , [ [ EText TextNormal "prod" ] , [ ESymbol Op "\8719" ] ]
+    , [ [ EText TextNormal "Product" ] , [ ESymbol Op "\8719" ] ]
+    , [ [ EText TextNormal "profalar" ] , [ ESymbol Ord "\9006" ] ]
+    , [ [ EText TextNormal "profline" ] , [ ESymbol Ord "\8978" ] ]
+    , [ [ EText TextNormal "profsurf" ] , [ ESymbol Ord "\8979" ] ]
+    , [ [ EText TextNormal "prop" ] , [ ESymbol Rel "\8733" ] ]
+    , [ [ EText TextNormal "Proportion" ] , [ ESymbol Rel "\8759" ] ]
+    , [ [ EText TextNormal "Proportional" ] , [ ESymbol Rel "\8733" ] ]
+    , [ [ EText TextNormal "propto" ] , [ ESymbol Rel "\8733" ] ]
+    , [ [ EText TextNormal "prsim" ] , [ ESymbol Rel "\8830" ] ]
+    , [ [ EText TextNormal "prurel" ] , [ ESymbol Rel "\8880" ] ]
+    , [ [ EText TextNormal "pscr" ] , [ ESymbol Alpha "\120005" ] ]
+    , [ [ EText TextNormal "Pscr" ] , [ ESymbol Alpha "\119979" ] ]
+    , [ [ EText TextNormal "psi" ] , [ ESymbol Alpha "\968" ] ]
+    , [ [ EText TextNormal "Psi" ] , [ ESymbol Alpha "\936" ] ]
+    , [ [ EText TextNormal "puncsp" ] , [ ESymbol Ord "\8200" ] ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">par</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∥</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">para</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>¶</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">parallel</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∥</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">parsim</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⫳</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">parsl</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⫽</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">part</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>∂</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">PartialD</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>∂</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">pcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>п</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Pcy</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>П</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">percnt</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>%</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">period</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>.</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">permil</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>‰</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">perp</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⊥</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">pertenk</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>‱</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">pfr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔭</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Pfr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔓</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">phi</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>φ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Phi</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>Φ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">phiv</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ϕ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">phmmat</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℳ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">phone</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>☎</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">pi</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>π</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Pi</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>Π</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">pitchfork</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋔</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">piv</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ϖ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">planck</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℏ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">planckh</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>ℎ</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">plankv</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℏ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">plus</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>+</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">plusacir</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⨣</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">plusb</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊞</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">pluscir</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⨢</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">plusdo</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∔</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">plusdu</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⨥</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">pluse</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⩲</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">PlusMinus</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>±</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">plusmn</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>±</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">plussim</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⨦</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">plustwo</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⨧</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">pm</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>±</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Poincareplane</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℌ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">pointint</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⨕</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">popf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕡</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Popf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℙ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">pound</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>£</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">pr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≺</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Pr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪻</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">prap</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪷</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">prcue</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≼</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">pre</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪯</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">prE</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪳</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">prec</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≺</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">precapprox</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪷</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">preccurlyeq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≼</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Precedes</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≺</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">PrecedesEqual</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪯</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">PrecedesSlantEqual</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≼</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">PrecedesTilde</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≾</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">preceq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪯</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">precnapprox</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪹</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">precneqq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪵</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">precnsim</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋨</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">precsim</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≾</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">prime</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>′</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Prime</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>″</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">primes</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℙ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">prnap</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪹</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">prnE</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⪵</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">prnsim</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⋨</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">prod</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∏</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Product</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∏</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">profalar</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⌮</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">profline</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⌒</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">profsurf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⌓</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">prop</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∝</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Proportion</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∷</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Proportional</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∝</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">propto</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>∝</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">prsim</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≾</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">prurel</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⊰</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">pscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝓅</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Pscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝒫</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">psi</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ψ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Psi</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>Ψ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">puncsp</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi> </mi>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

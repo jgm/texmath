@@ -1,0 +1,278 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable columnlines="solid" rowlines="solid">
+    <mtr>
+      <mtd></mtd> 
+      <mtd>
+        <mtext>ds=true</mtext> 
+      </mtd> 
+      <mtd>
+        <mtext>ds=false</mtext> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>stretch=t, large=t</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle fontsize="150%" displaystyle="true">
+          <mrow>
+            <mo stretchy="true" largeop="true">&#x222B;</mo> 
+            <mfrac>
+              <mi>x</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="true" largeop="true">&#x222B;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+      <mtd>
+        <mstyle fontsize="150%" displaystyle="false">
+          <mrow>
+            <mo stretchy="true" largeop="true">&#x222B;</mo> 
+            <mfrac>
+              <mi>x</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="true" largeop="true">&#x222B;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>stretch=f, large=t</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle fontsize="150%" displaystyle="true">
+          <mrow>
+            <mo stretchy="false" largeop="true">&#x222B;</mo> 
+            <mfrac>
+              <mi>x</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="false" largeop="true">&#x222B;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+      <mtd>
+        <mstyle fontsize="150%" displaystyle="false">
+          <mrow>
+            <mo stretchy="false" largeop="true">&#x222B;</mo> 
+            <mfrac>
+              <mi>x</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="false" largeop="true">&#x222B;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>stretch=t, large=f</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle fontsize="150%" displaystyle="true">
+          <mrow>
+            <mo stretchy="true" largeop="false">&#x222B;</mo> 
+            <mfrac>
+              <mi>x</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="true" largeop="false">&#x222B;</mo> 
+            <mfrac>
+              <mi>A</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="true" largeop="false">&#x222B;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+      <mtd>
+        <mstyle fontsize="150%" displaystyle="false">
+          <mrow>
+            <mo stretchy="true" largeop="false">&#x222B;</mo> 
+            <mfrac>
+              <mi>x</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="true" largeop="false">&#x222B;</mo> 
+            <mfrac>
+              <mi>A</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="true" largeop="false">&#x222B;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>stretch=f, large=f</mtext> 
+      </mtd> 
+      <mtd>
+        <mstyle fontsize="150%" displaystyle="true">
+          <mrow>
+            <mo stretchy="false" largeop="false">&#x222B;</mo> 
+            <mfrac>
+              <mi>x</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="false" largeop="false">&#x222B;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+      <mtd>
+        <mstyle fontsize="150%" displaystyle="false">
+          <mrow>
+            <mo stretchy="false" largeop="false">&#x222B;</mo> 
+            <mfrac>
+              <mi>x</mi> 
+              <mn>5</mn> 
+            </mfrac> 
+          </mrow> 
+          <mo>=</mo> 
+          <mrow>
+            <mo stretchy="false" largeop="false">&#x222B;</mo> 
+            <mi>x</mi> 
+          </mrow> 
+        </mstyle> 
+      </mtd> 
+    </mtr> 
+  </mtable> </math>
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ []
+      , [ EText TextNormal "ds=true" ]
+      , [ EText TextNormal "ds=false" ]
+      ]
+    , [ [ EText TextNormal "stretch=t, large=t" ]
+      , [ EGrouped
+            [ EDelimited
+                "\8747"
+                ""
+                [ Right (EFraction NormalFrac (EIdentifier "x") (ENumber "5")) ]
+            , ESymbol Rel "="
+            , EDelimited "\8747" "" [ Right (EIdentifier "x") ]
+            ]
+        ]
+      , [ EGrouped
+            [ EDelimited
+                "\8747"
+                ""
+                [ Right (EFraction NormalFrac (EIdentifier "x") (ENumber "5")) ]
+            , ESymbol Rel "="
+            , EDelimited "\8747" "" [ Right (EIdentifier "x") ]
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "stretch=f, large=t" ]
+      , [ EGrouped
+            [ EGrouped
+                [ ESymbol Op "\8747"
+                , EFraction NormalFrac (EIdentifier "x") (ENumber "5")
+                ]
+            , ESymbol Rel "="
+            , EGrouped [ ESymbol Op "\8747" , EIdentifier "x" ]
+            ]
+        ]
+      , [ EGrouped
+            [ EGrouped
+                [ ESymbol Op "\8747"
+                , EFraction NormalFrac (EIdentifier "x") (ENumber "5")
+                ]
+            , ESymbol Rel "="
+            , EGrouped [ ESymbol Op "\8747" , EIdentifier "x" ]
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "stretch=t, large=f" ]
+      , [ EGrouped
+            [ EDelimited
+                "\8747"
+                ""
+                [ Right (EFraction NormalFrac (EIdentifier "x") (ENumber "5")) ]
+            , ESymbol Rel "="
+            , EDelimited
+                "\8747"
+                ""
+                [ Right (EFraction NormalFrac (EIdentifier "A") (ENumber "5")) ]
+            , ESymbol Rel "="
+            , EDelimited "\8747" "" [ Right (EIdentifier "x") ]
+            ]
+        ]
+      , [ EGrouped
+            [ EDelimited
+                "\8747"
+                ""
+                [ Right (EFraction NormalFrac (EIdentifier "x") (ENumber "5")) ]
+            , ESymbol Rel "="
+            , EDelimited
+                "\8747"
+                ""
+                [ Right (EFraction NormalFrac (EIdentifier "A") (ENumber "5")) ]
+            , ESymbol Rel "="
+            , EDelimited "\8747" "" [ Right (EIdentifier "x") ]
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "stretch=f, large=f" ]
+      , [ EGrouped
+            [ EGrouped
+                [ ESymbol Op "\8747"
+                , EFraction NormalFrac (EIdentifier "x") (ENumber "5")
+                ]
+            , ESymbol Rel "="
+            , EGrouped [ ESymbol Op "\8747" , EIdentifier "x" ]
+            ]
+        ]
+      , [ EGrouped
+            [ EGrouped
+                [ ESymbol Op "\8747"
+                , EFraction NormalFrac (EIdentifier "x") (ENumber "5")
+                ]
+            , ESymbol Rel "="
+            , EGrouped [ ESymbol Op "\8747" , EIdentifier "x" ]
+            ]
+        ]
+      ]
+    ]
+]

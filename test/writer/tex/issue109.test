@@ -1,0 +1,11 @@
+<<< native
+[ EIdentifier "a"
+, ESymbol Rel ">"
+, EIdentifier "b"
+, ESymbol Rel "or"
+, EIdentifier "a"
+, ESymbol Rel ">"
+, EIdentifier "c"
+]
+>>> tex
+a > b \mathrel{\text{or}} a > c

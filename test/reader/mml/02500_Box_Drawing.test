@@ -1,0 +1,680 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd></mtd> 
+      <mtd>
+        <mtext>250</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>251</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>252</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>253</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>254</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>255</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>256</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>257</mtext>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>0</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9472;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9488;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9504;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9520;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9536;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9552;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9568;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9584;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>1</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9473;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9489;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9505;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9521;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9537;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9553;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9569;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9585;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>2</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9474;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9490;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9506;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9522;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9538;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9554;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9570;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9586;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>3</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9475;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9491;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9507;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9523;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9539;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9555;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9571;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9587;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>4</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9476;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9492;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9508;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9524;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9540;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9556;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9572;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9588;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>5</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9477;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9493;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9509;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9525;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9541;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9557;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9573;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9589;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>6</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9478;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9494;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9510;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9526;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9542;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9558;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9574;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9590;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>7</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9479;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9495;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9511;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9527;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9543;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9559;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9575;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9591;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>8</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9480;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9496;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9512;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9528;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9544;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9560;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9576;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9592;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>9</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9481;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9497;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9513;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9529;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9545;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9561;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9577;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9593;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>A</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9482;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9498;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9514;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9530;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9546;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9562;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9578;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9594;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>B</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9483;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9499;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9515;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9531;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9547;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9563;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9579;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9595;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>C</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9484;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9500;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9516;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9532;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9548;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9564;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9580;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9596;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>D</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9485;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9501;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9517;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9533;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9549;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9565;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9581;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9597;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>E</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9486;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9502;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9518;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9534;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9550;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9566;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9582;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9598;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>F</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#9487;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9503;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9519;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9535;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9551;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9567;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9583;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#9599;</mo>
+      </mtd> 
+    </mtr>   </mtable></math>
+>>> native
+[ EArray
+    [ AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    ]
+    [ [ []
+      , [ EText TextNormal "250" ]
+      , [ EText TextNormal "251" ]
+      , [ EText TextNormal "252" ]
+      , [ EText TextNormal "253" ]
+      , [ EText TextNormal "254" ]
+      , [ EText TextNormal "255" ]
+      , [ EText TextNormal "256" ]
+      , [ EText TextNormal "257" ]
+      ]
+    , [ [ EText TextNormal "0" ]
+      , [ ESymbol Ord "\9472" ]
+      , [ ESymbol Ord "\9488" ]
+      , [ ESymbol Ord "\9504" ]
+      , [ ESymbol Ord "\9520" ]
+      , [ ESymbol Ord "\9536" ]
+      , [ ESymbol Ord "\9552" ]
+      , [ ESymbol Ord "\9568" ]
+      , [ ESymbol Ord "\9584" ]
+      ]
+    , [ [ EText TextNormal "1" ]
+      , [ ESymbol Ord "\9473" ]
+      , [ ESymbol Ord "\9489" ]
+      , [ ESymbol Ord "\9505" ]
+      , [ ESymbol Ord "\9521" ]
+      , [ ESymbol Ord "\9537" ]
+      , [ ESymbol Ord "\9553" ]
+      , [ ESymbol Ord "\9569" ]
+      , [ ESymbol Ord "\9585" ]
+      ]
+    , [ [ EText TextNormal "2" ]
+      , [ ESymbol Ord "\9474" ]
+      , [ ESymbol Ord "\9490" ]
+      , [ ESymbol Ord "\9506" ]
+      , [ ESymbol Ord "\9522" ]
+      , [ ESymbol Ord "\9538" ]
+      , [ ESymbol Ord "\9554" ]
+      , [ ESymbol Ord "\9570" ]
+      , [ ESymbol Ord "\9586" ]
+      ]
+    , [ [ EText TextNormal "3" ]
+      , [ ESymbol Ord "\9475" ]
+      , [ ESymbol Ord "\9491" ]
+      , [ ESymbol Ord "\9507" ]
+      , [ ESymbol Ord "\9523" ]
+      , [ ESymbol Ord "\9539" ]
+      , [ ESymbol Ord "\9555" ]
+      , [ ESymbol Ord "\9571" ]
+      , [ ESymbol Ord "\9587" ]
+      ]
+    , [ [ EText TextNormal "4" ]
+      , [ ESymbol Ord "\9476" ]
+      , [ ESymbol Ord "\9492" ]
+      , [ ESymbol Ord "\9508" ]
+      , [ ESymbol Ord "\9524" ]
+      , [ ESymbol Ord "\9540" ]
+      , [ ESymbol Ord "\9556" ]
+      , [ ESymbol Ord "\9572" ]
+      , [ ESymbol Ord "\9588" ]
+      ]
+    , [ [ EText TextNormal "5" ]
+      , [ ESymbol Ord "\9477" ]
+      , [ ESymbol Ord "\9493" ]
+      , [ ESymbol Ord "\9509" ]
+      , [ ESymbol Ord "\9525" ]
+      , [ ESymbol Ord "\9541" ]
+      , [ ESymbol Ord "\9557" ]
+      , [ ESymbol Ord "\9573" ]
+      , [ ESymbol Ord "\9589" ]
+      ]
+    , [ [ EText TextNormal "6" ]
+      , [ ESymbol Ord "\9478" ]
+      , [ ESymbol Ord "\9494" ]
+      , [ ESymbol Ord "\9510" ]
+      , [ ESymbol Ord "\9526" ]
+      , [ ESymbol Ord "\9542" ]
+      , [ ESymbol Ord "\9558" ]
+      , [ ESymbol Ord "\9574" ]
+      , [ ESymbol Ord "\9590" ]
+      ]
+    , [ [ EText TextNormal "7" ]
+      , [ ESymbol Ord "\9479" ]
+      , [ ESymbol Ord "\9495" ]
+      , [ ESymbol Ord "\9511" ]
+      , [ ESymbol Ord "\9527" ]
+      , [ ESymbol Ord "\9543" ]
+      , [ ESymbol Ord "\9559" ]
+      , [ ESymbol Ord "\9575" ]
+      , [ ESymbol Ord "\9591" ]
+      ]
+    , [ [ EText TextNormal "8" ]
+      , [ ESymbol Ord "\9480" ]
+      , [ ESymbol Ord "\9496" ]
+      , [ ESymbol Ord "\9512" ]
+      , [ ESymbol Ord "\9528" ]
+      , [ ESymbol Ord "\9544" ]
+      , [ ESymbol Ord "\9560" ]
+      , [ ESymbol Ord "\9576" ]
+      , [ ESymbol Ord "\9592" ]
+      ]
+    , [ [ EText TextNormal "9" ]
+      , [ ESymbol Ord "\9481" ]
+      , [ ESymbol Ord "\9497" ]
+      , [ ESymbol Ord "\9513" ]
+      , [ ESymbol Ord "\9529" ]
+      , [ ESymbol Ord "\9545" ]
+      , [ ESymbol Ord "\9561" ]
+      , [ ESymbol Ord "\9577" ]
+      , [ ESymbol Ord "\9593" ]
+      ]
+    , [ [ EText TextNormal "A" ]
+      , [ ESymbol Ord "\9482" ]
+      , [ ESymbol Ord "\9498" ]
+      , [ ESymbol Ord "\9514" ]
+      , [ ESymbol Ord "\9530" ]
+      , [ ESymbol Ord "\9546" ]
+      , [ ESymbol Ord "\9562" ]
+      , [ ESymbol Ord "\9578" ]
+      , [ ESymbol Ord "\9594" ]
+      ]
+    , [ [ EText TextNormal "B" ]
+      , [ ESymbol Ord "\9483" ]
+      , [ ESymbol Ord "\9499" ]
+      , [ ESymbol Ord "\9515" ]
+      , [ ESymbol Ord "\9531" ]
+      , [ ESymbol Ord "\9547" ]
+      , [ ESymbol Ord "\9563" ]
+      , [ ESymbol Ord "\9579" ]
+      , [ ESymbol Ord "\9595" ]
+      ]
+    , [ [ EText TextNormal "C" ]
+      , [ ESymbol Ord "\9484" ]
+      , [ ESymbol Ord "\9500" ]
+      , [ ESymbol Ord "\9516" ]
+      , [ ESymbol Ord "\9532" ]
+      , [ ESymbol Ord "\9548" ]
+      , [ ESymbol Ord "\9564" ]
+      , [ ESymbol Ord "\9580" ]
+      , [ ESymbol Ord "\9596" ]
+      ]
+    , [ [ EText TextNormal "D" ]
+      , [ ESymbol Ord "\9485" ]
+      , [ ESymbol Ord "\9501" ]
+      , [ ESymbol Ord "\9517" ]
+      , [ ESymbol Ord "\9533" ]
+      , [ ESymbol Ord "\9549" ]
+      , [ ESymbol Ord "\9565" ]
+      , [ ESymbol Ord "\9581" ]
+      , [ ESymbol Ord "\9597" ]
+      ]
+    , [ [ EText TextNormal "E" ]
+      , [ ESymbol Ord "\9486" ]
+      , [ ESymbol Ord "\9502" ]
+      , [ ESymbol Ord "\9518" ]
+      , [ ESymbol Ord "\9534" ]
+      , [ ESymbol Ord "\9550" ]
+      , [ ESymbol Ord "\9566" ]
+      , [ ESymbol Ord "\9582" ]
+      , [ ESymbol Ord "\9598" ]
+      ]
+    , [ [ EText TextNormal "F" ]
+      , [ ESymbol Ord "\9487" ]
+      , [ ESymbol Ord "\9503" ]
+      , [ ESymbol Ord "\9519" ]
+      , [ ESymbol Ord "\9535" ]
+      , [ ESymbol Ord "\9551" ]
+      , [ ESymbol Ord "\9567" ]
+      , [ ESymbol Ord "\9583" ]
+      , [ ESymbol Ord "\9599" ]
+      ]
+    ]
+]

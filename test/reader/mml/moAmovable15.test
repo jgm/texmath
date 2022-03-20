@@ -1,0 +1,64 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <munderover>
+      <mo>&#x2211;</mo> 
+      <mi>x</mi> 
+      <mn>0</mn> 
+    </munderover> 
+    <mo>=</mo> 
+    <munderover>
+      <mo movablelimits="true">&#x2211;</mo> 
+      <mi>x</mi> 
+      <mn>0</mn> 
+    </munderover> 
+    <mo>=</mo> 
+    <munderover>
+      <mo movablelimits="false">&#x2211;</mo> 
+      <mi>x</mi> 
+      <mn>0</mn> 
+    </munderover> 
+    <mo>=</mo> 
+    <mstyle displaystyle="true">
+      <munderover>
+        <mo>&#x2211;</mo> 
+        <mi>x</mi> 
+        <mn>0</mn> 
+      </munderover> 
+      <mo>=</mo> 
+      <munderover>
+        <mo movablelimits="true">&#x2211;</mo> 
+        <mi>x</mi> 
+        <mn>0</mn> 
+      </munderover> 
+      <mo>=</mo> 
+      <munderover>
+        <mo movablelimits="false">&#x2211;</mo> 
+        <mi>x</mi> 
+        <mn>0</mn> 
+      </munderover> 
+    </mstyle> 
+  </mrow> </math>
+>>> native
+[ EUnderover
+    False (ESymbol Op "\8721") (EIdentifier "x") (ENumber "0")
+, ESymbol Rel "="
+, EUnderover
+    False (ESymbol Op "\8721") (EIdentifier "x") (ENumber "0")
+, ESymbol Rel "="
+, EUnderover
+    False (ESymbol Op "\8721") (EIdentifier "x") (ENumber "0")
+, ESymbol Rel "="
+, EGrouped
+    [ EUnderover
+        False (ESymbol Op "\8721") (EIdentifier "x") (ENumber "0")
+    , ESymbol Rel "="
+    , EUnderover
+        False (ESymbol Op "\8721") (EIdentifier "x") (ENumber "0")
+    , ESymbol Rel "="
+    , EUnderover
+        False (ESymbol Op "\8721") (EIdentifier "x") (ENumber "0")
+    ]
+]

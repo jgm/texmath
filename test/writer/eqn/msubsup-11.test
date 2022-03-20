@@ -1,0 +1,10 @@
+<<< native
+[ ESubsup (EIdentifier "T") (EIdentifier "m") (EIdentifier "n")
+, ESymbol Rel "="
+, EOver
+    False
+    (ESubsup (EIdentifier "T") (EIdentifier "m") (EIdentifier "n"))
+    (EPhantom (EText TextNormal "x"))
+]
+>>> eqn
+T sub m sup n = {T sub m sup n} to {hphantom {roman "x"}}

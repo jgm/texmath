@@ -1,0 +1,36 @@
+<<< native
+[ ESymbol Op "\8704"
+, EIdentifier "A"
+, ESpace (1 % 6)
+, ESymbol Op "\8707"
+, EIdentifier "P"
+, ESpace (1 % 6)
+, ESymbol Op "\8704"
+, EIdentifier "B"
+, ESpace (1 % 6)
+, EDelimited
+    "["
+    "]"
+    [ Right (EIdentifier "B")
+    , Right (ESymbol Rel "\8712")
+    , Right (EIdentifier "P")
+    , Right (ESymbol Rel "\8660")
+    , Right (ESymbol Op "\8704")
+    , Right (EIdentifier "C")
+    , Right (ESpace (1 % 6))
+    , Right
+        (EDelimited
+           "("
+           ")"
+           [ Right (EIdentifier "C")
+           , Right (ESymbol Rel "\8712")
+           , Right (EIdentifier "B")
+           , Right (ESymbol Rel "\8658")
+           , Right (EIdentifier "C")
+           , Right (ESymbol Rel "\8712")
+           , Right (EIdentifier "A")
+           ])
+    ]
+]
+>>> eqn
+\[u2200] A ^ \[u2203] P ^ \[u2200] B ^ left [ B \[u2208] P \[u21D4] \[u2200] C ^ left ( C \[u2208] B \[u21D2] C \[u2208] A right ) right ]

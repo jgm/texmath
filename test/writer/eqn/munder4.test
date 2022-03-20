@@ -1,0 +1,11 @@
+<<< native
+[ EUnder False (EIdentifier "x") (ESymbol Accent "\711")
+, ESymbol Rel "\8800"
+, EUnder False (EIdentifier "x") (ESymbol Alpha "\711")
+, ESymbol Rel "="
+, EUnder False (EIdentifier "x") (ESymbol Alpha "\711")
+, ESymbol Rel "="
+, EUnder False (EIdentifier "x") (ESymbol Alpha "\711")
+]
+>>> eqn
+x from \[u02C7] != x from \[u02C7] = x from \[u02C7] = x from \[u02C7]

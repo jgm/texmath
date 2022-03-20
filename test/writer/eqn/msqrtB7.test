@@ -1,0 +1,14 @@
+<<< native
+[ ESqrt
+    (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ])
+, ESymbol Bin "+"
+, ESqrt (EGrouped [ ENumber "3" , EIdentifier "x" ])
+, ESymbol Bin "+"
+, ESqrt
+    (EFraction
+       NormalFrac
+       (ESqrt (EGrouped [ ENumber "3" , EIdentifier "x" ]))
+       (EGrouped [ EIdentifier "x" , ESymbol Bin "-" , ENumber "3" ]))
+]
+>>> eqn
+sqrt {x - 3} + sqrt {3 x} + sqrt {{sqrt {3 x}} over {x - 3}}

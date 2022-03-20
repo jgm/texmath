@@ -1,0 +1,6 @@
+<<< native
+[ EFraction NormalFrac (EIdentifier "x") (EIdentifier "y")
+, EFraction NormalFrac (EIdentifier "x") (EIdentifier "y")
+]
+>>> eqn
+x over y x over y

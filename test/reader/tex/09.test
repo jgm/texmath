@@ -1,0 +1,20 @@
+<<< tex
+\lim_{z\rightarrow z_0} f(z)=f(z_0)
+
+
+>>> native
+[ EUnder
+    True
+    (EMathOperator "lim")
+    (EGrouped
+       [ EIdentifier "z"
+       , ESymbol Rel "\8594"
+       , ESub (EIdentifier "z") (ENumber "0")
+       ])
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "z") ]
+, ESymbol Rel "="
+, EIdentifier "f"
+, EDelimited
+    "(" ")" [ Right (ESub (EIdentifier "z") (ENumber "0")) ]
+]

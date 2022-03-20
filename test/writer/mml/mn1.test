@@ -1,0 +1,18 @@
+<<< native
+[ ENumber "1"
+, ESymbol Bin "+"
+, EIdentifier "..."
+, ESymbol Bin "+"
+, EIdentifier "n"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mn>1</mn>
+    <mo>+</mo>
+    <mi>...</mi>
+    <mo>+</mo>
+    <mi>n</mi>
+  </mrow>
+</math>

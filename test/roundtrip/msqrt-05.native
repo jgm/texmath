@@ -1,0 +1,8 @@
+[ ESqrt
+    (EArray
+       [ AlignCenter ]
+       [ [ [ EPhantom (EIdentifier "ABCD") ] ]
+       , [ [ EPhantom (EIdentifier "ABCD") ] ]
+       , [ [ EPhantom (EIdentifier "ABCD") ] ]
+       ])
+]

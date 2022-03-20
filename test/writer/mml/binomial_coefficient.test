@@ -1,0 +1,105 @@
+<<< native
+[ EStyled TextBold [ EIdentifier "C" ]
+, EDelimited
+    "("
+    ")"
+    [ Right (EIdentifier "n")
+    , Right (ESymbol Pun ",")
+    , Right (EIdentifier "k")
+    ]
+, ESymbol Rel "="
+, ESubsup
+    (EStyled TextBold [ EIdentifier "C" ])
+    (EIdentifier "k")
+    (EIdentifier "n")
+, ESymbol Rel "="
+, ESub (EGrouped []) (EIdentifier "n")
+, ESub (EStyled TextBold [ EIdentifier "C" ]) (EIdentifier "k")
+, ESymbol Rel "="
+, EDelimited
+    "("
+    ")"
+    [ Right (EFraction NoLineFrac (EIdentifier "n") (EIdentifier "k"))
+    ]
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EGrouped [ EIdentifier "n" , ESymbol Ord "!" ])
+    (EGrouped
+       [ EIdentifier "k"
+       , ESymbol Ord "!"
+       , ESpace (1 % 6)
+       , EDelimited
+           "("
+           ")"
+           [ Right (EIdentifier "n")
+           , Right (ESymbol Bin "\8722")
+           , Right (EIdentifier "k")
+           ]
+       , ESymbol Ord "!"
+       ])
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mstyle mathvariant="bold">
+      <mi>𝐂</mi>
+    </mstyle>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>n</mi>
+      <mo>,</mo>
+      <mi>k</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mo>=</mo>
+    <msubsup>
+      <mstyle mathvariant="bold">
+        <mi>𝐂</mi>
+      </mstyle>
+      <mi>k</mi>
+      <mi>n</mi>
+    </msubsup>
+    <mo>=</mo>
+    <msub>
+      <mrow />
+      <mi>n</mi>
+    </msub>
+    <msub>
+      <mstyle mathvariant="bold">
+        <mi>𝐂</mi>
+      </mstyle>
+      <mi>k</mi>
+    </msub>
+    <mo>=</mo>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mfrac linethickness="0">
+        <mi>n</mi>
+        <mi>k</mi>
+      </mfrac>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mo>=</mo>
+    <mfrac>
+      <mrow>
+        <mi>n</mi>
+        <mi>!</mi>
+      </mrow>
+      <mrow>
+        <mi>k</mi>
+        <mi>!</mi>
+        <mspace width="0.167em" />
+        <mrow>
+          <mo stretchy="true" form="prefix">(</mo>
+          <mi>n</mi>
+          <mo>−</mo>
+          <mi>k</mi>
+          <mo stretchy="true" form="postfix">)</mo>
+        </mrow>
+        <mi>!</mi>
+      </mrow>
+    </mfrac>
+  </mrow>
+</math>

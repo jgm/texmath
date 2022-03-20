@@ -1,0 +1,14 @@
+<<< native
+[ EUnder False (EIdentifier "B") (EIdentifier "long under script")
+, ESymbol Rel "="
+, EUnder
+    False
+    (EGrouped
+       [ EPhantom (EText TextNormal "x")
+       , EIdentifier "B"
+       , EPhantom (EText TextNormal "x")
+       ])
+    (EIdentifier "long under script")
+]
+>>> tex
+\underset{long\ under\ script}{B} = \underset{long\ under\ script}{\phantom{\text{x}}B\phantom{\text{x}}}

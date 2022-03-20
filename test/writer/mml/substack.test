@@ -1,0 +1,75 @@
+<<< native
+[ EUnder
+    True
+    (ESymbol Op "\8721")
+    (EArray
+       [ AlignCenter ]
+       [ [ [ EGrouped
+               [ ENumber "0"
+               , ESymbol Rel "<"
+               , EIdentifier "i"
+               , ESymbol Rel "<"
+               , EIdentifier "m"
+               ]
+           ]
+         ]
+       , [ [ EGrouped
+               [ ENumber "0"
+               , ESymbol Rel "<"
+               , EIdentifier "j"
+               , ESymbol Rel "<"
+               , EIdentifier "n"
+               ]
+           ]
+         ]
+       ])
+, EIdentifier "P"
+, EDelimited
+    "("
+    ")"
+    [ Right (EIdentifier "i")
+    , Right (ESymbol Pun ",")
+    , Right (EIdentifier "j")
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <munder>
+      <mo>∑</mo>
+      <mtable>
+        <mtr>
+          <mtd columnalign="center">
+            <mrow>
+              <mn>0</mn>
+              <mo>&lt;</mo>
+              <mi>i</mi>
+              <mo>&lt;</mo>
+              <mi>m</mi>
+            </mrow>
+          </mtd>
+        </mtr>
+        <mtr>
+          <mtd columnalign="center">
+            <mrow>
+              <mn>0</mn>
+              <mo>&lt;</mo>
+              <mi>j</mi>
+              <mo>&lt;</mo>
+              <mi>n</mi>
+            </mrow>
+          </mtd>
+        </mtr>
+      </mtable>
+    </munder>
+    <mi>P</mi>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>i</mi>
+      <mo>,</mo>
+      <mi>j</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+  </mrow>
+</math>

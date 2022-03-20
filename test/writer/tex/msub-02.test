@@ -1,0 +1,9 @@
+<<< native
+[ ESub
+    (EGrouped [ EPhantom (EIdentifier "fail") , EIdentifier "X" ])
+    (ENumber "0")
+, ESymbol Rel "="
+, ESub (EIdentifier "X") (ENumber "0")
+]
+>>> tex
+{\phantom{fail}X}_{0} = X_{0}

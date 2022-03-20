@@ -1,0 +1,28 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle fontweight="bold">
+    <mrow>
+      <mn>5</mn> 
+      <mo>+</mo> 
+      <mn fontweight="bold">5</mn> 
+      <mo>+</mo> 
+      <mn fontweight="normal">5</mn> 
+      <mo>+</mo> 
+      <mn fontstyle="italic">5</mn> 
+      <mo>+</mo> 
+      <mn fontfamily="Helvetica">5</mn> 
+    </mrow> 
+  </mstyle> </math>
+>>> native
+[ ENumber "5"
+, ESymbol Bin "+"
+, ENumber "5"
+, ESymbol Bin "+"
+, ENumber "5"
+, ESymbol Bin "+"
+, ENumber "5"
+, ESymbol Bin "+"
+, ENumber "5"
+]

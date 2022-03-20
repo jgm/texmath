@@ -1,0 +1,134 @@
+<<< omml
+<?xml version="1.0" encoding="UTF-8"?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:sSub>
+      <m:e>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>S</m:t>
+        </m:r>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>new</m:t>
+        </m:r>
+      </m:sub>
+    </m:sSub>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>=</m:t>
+    </m:r>
+    <m:sSub>
+      <m:e>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>S</m:t>
+        </m:r>
+      </m:e>
+      <m:sub>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>old</m:t>
+        </m:r>
+      </m:sub>
+    </m:sSub>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>−</m:t>
+    </m:r>
+    <m:f>
+      <m:fPr>
+        <m:type m:val="bar" />
+      </m:fPr>
+      <m:num>
+        <m:sSup>
+          <m:e>
+            <m:d>
+              <m:dPr>
+                <m:begChr m:val="(" />
+                <m:endChr m:val=")" />
+                <m:grow />
+              </m:dPr>
+              <m:e>
+                <m:r>
+                  <m:rPr>
+                    <m:sty m:val="p" />
+                  </m:rPr>
+                  <m:t>5</m:t>
+                </m:r>
+                <m:r>
+                  <m:rPr>
+                    <m:sty m:val="p" />
+                  </m:rPr>
+                  <m:t>−</m:t>
+                </m:r>
+                <m:r>
+                  <m:rPr>
+                    <m:sty m:val="p" />
+                  </m:rPr>
+                  <m:t>T</m:t>
+                </m:r>
+              </m:e>
+            </m:d>
+          </m:e>
+          <m:sup>
+            <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
+              <m:t>2</m:t>
+            </m:r>
+          </m:sup>
+        </m:sSup>
+      </m:num>
+      <m:den>
+        <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
+          <m:t>2</m:t>
+        </m:r>
+      </m:den>
+    </m:f>
+  </m:oMath>
+</m:oMathPara>
+
+>>> native
+[ ESub
+    (EIdentifier "S")
+    (EGrouped [ EIdentifier "n" , EIdentifier "e" , EIdentifier "w" ])
+, ESymbol Rel "="
+, ESub
+    (EIdentifier "S")
+    (EGrouped [ EIdentifier "o" , EIdentifier "l" , EIdentifier "d" ])
+, ESymbol Bin "\8722"
+, EFraction
+    NormalFrac
+    (ESuper
+       (EDelimited
+          "("
+          ")"
+          [ Right (ENumber "5")
+          , Right (ESymbol Bin "\8722")
+          , Right (EIdentifier "T")
+          ])
+       (ENumber "2"))
+    (ENumber "2")
+]

@@ -1,0 +1,17 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EOver
+            False (EIdentifier "HT") (EPhantom (EText TextNormal "fail"))
+        ]
+      , [ ESymbol Rel "=" ]
+      , [ EIdentifier "TH" ]
+      ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ {HT to {hphantom {roman "fail"}}} }
+ccol{ = }
+ccol{ TH }
+}

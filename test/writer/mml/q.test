@@ -1,0 +1,130 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "qfr" ] , [ ESymbol Alpha "\120110" ] ]
+    , [ [ EText TextNormal "Qfr" ] , [ ESymbol Alpha "\120084" ] ]
+    , [ [ EText TextNormal "qint" ] , [ ESymbol Op "\10764" ] ]
+    , [ [ EText TextNormal "qopf" ] , [ ESymbol Alpha "\120162" ] ]
+    , [ [ EText TextNormal "Qopf" ] , [ ESymbol Alpha "\8474" ] ]
+    , [ [ EText TextNormal "qprime" ] , [ ESymbol Accent "\8279" ] ]
+    , [ [ EText TextNormal "qscr" ] , [ ESymbol Alpha "\120006" ] ]
+    , [ [ EText TextNormal "Qscr" ] , [ ESymbol Alpha "\119980" ] ]
+    , [ [ EText TextNormal "quaternions" ]
+      , [ ESymbol Alpha "\8461" ]
+      ]
+    , [ [ EText TextNormal "quatint" ] , [ ESymbol Op "\10774" ] ]
+    , [ [ EText TextNormal "quest" ] , [ ESymbol Ord "?" ] ]
+    , [ [ EText TextNormal "questeq" ] , [ ESymbol Rel "\8799" ] ]
+    , [ [ EText TextNormal "quot" ] , [ ESymbol Accent "\"" ] ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">qfr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔮</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Qfr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝔔</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">qint</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⨌</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">qopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝕢</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Qopf</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℚ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">qprime</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⁗</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">qscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝓆</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">Qscr</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>𝒬</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">quaternions</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>ℍ</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">quatint</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⨖</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">quest</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>?</mi>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">questeq</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>≟</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">quot</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>&quot;</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

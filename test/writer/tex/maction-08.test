@@ -1,0 +1,19 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter ]
+           [ [ [ EGrouped [ ENumber "12" , EIdentifier "x" ] ]
+             , [ ENumber "0" ]
+             ]
+           , [ [ ENumber "0" ] , [ ENumber "117" ] ]
+           ])
+    ]
+]
+>>> tex
+\begin{pmatrix}
+{12x} & 0 \\
+0 & 117 \\
+\end{pmatrix}

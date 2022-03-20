@@ -1,0 +1,14 @@
+<<< native
+[ EOver
+    False
+    (EGrouped
+       [ EIdentifier "H" , ESymbol Bin "\215" , EIdentifier "G" ])
+    (ESymbol Accent "\9182")
+, EUnder
+    False
+    (EGrouped
+       [ EIdentifier "H" , ESymbol Bin "\215" , EIdentifier "G" ])
+    (ESymbol Accent "\9183")
+]
+>>> eqn
+{H times G} to \[u23DE] {H times G} from \[u23DF]

@@ -1,0 +1,23 @@
+<<< native
+[ ESuper
+    (EDelimited
+       "("
+       ")"
+       [ Right (EFraction NormalFrac (ENumber "2") (EIdentifier "x")) ])
+    (ESymbol Bin "-")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <msup>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mfrac>
+        <mn>2</mn>
+        <mi>x</mi>
+      </mfrac>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mo>-</mo>
+  </msup>
+</math>

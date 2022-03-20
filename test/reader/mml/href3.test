@@ -1,0 +1,51 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mi>x</mi> 
+    <mo>=</mo> 
+    <mfrac href="http://mathworld.wolfram.com/QuadraticEquation.html">
+      <mrow>
+        <mo>&#x2212;</mo> 
+        <mi>b</mi> 
+        <mo>&#x00B1;</mo> 
+        <msqrt>
+          <mrow>
+            <msup>
+              <mi>b</mi> 
+              <mn>2</mn> 
+            </msup> 
+            <mo>&#x2212;</mo> 
+            <mn>4</mn> 
+            <mi>a</mi> 
+            <mi>c</mi> 
+          </mrow> 
+        </msqrt> 
+      </mrow> 
+      <mrow>
+        <mn>2</mn> 
+        <mi>a</mi> 
+      </mrow> 
+    </mfrac> 
+  </mrow> </math>
+>>> native
+[ EIdentifier "x"
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESymbol Bin "\8722"
+       , EIdentifier "b"
+       , ESymbol Bin "\177"
+       , ESqrt
+           (EGrouped
+              [ ESuper (EIdentifier "b") (ENumber "2")
+              , ESymbol Bin "\8722"
+              , ENumber "4"
+              , EIdentifier "a"
+              , EIdentifier "c"
+              ])
+       ])
+    (EGrouped [ ENumber "2" , EIdentifier "a" ])
+]

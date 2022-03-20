@@ -1,0 +1,216 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd>
+        <mi>&#x00041;</mi> 
+        <mo>=</mo> 
+        <mi mathvariant="normal">A</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mi>&#x1D400;</mi> 
+        <mo>=</mo> 
+        <mi mathvariant="bold">A</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mi>&#x1D434;</mi> 
+        <mo>=</mo> 
+        <mi mathvariant="italic">A</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mi>&#x1D468;</mi> 
+        <mo>=</mo> 
+        <mi mathvariant="bold-italic">A</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mi>&#x1D538;</mi> 
+        <mo>=</mo> 
+        <mi mathvariant="double-struck">A</mi> 
+        <mo>=</mo> 
+        <mi>&#x1D538;</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mi>&#x1D49C;</mi> 
+        <mo>=</mo> 
+        <mi mathvariant="script">A</mi> 
+        <mo>=</mo> 
+        <mi>&#x1D49C;</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mi>&#x1D4D0;</mi> 
+        <mo>=</mo> 
+        <mi mathvariant="bold-script">A</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mi>&#x1D504;</mi> 
+        <mo>=</mo> 
+        <mi mathvariant="fraktur">A</mi> 
+        <mo>=</mo> 
+        <mi>&#x1D504;</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mi>&#x1D56C;</mi> 
+        <mo>=</mo> 
+        <mi mathvariant="bold-fraktur">A</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mi>&#x1D5A0;</mi> 
+        <mo>=</mo> 
+        <mi mathvariant="sans-serif">A</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mi>&#x1D5D4;</mi> 
+        <mo>=</mo> 
+        <mi mathvariant="bold-sans-serif">A</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mi>&#x1D608;</mi> 
+        <mo>=</mo> 
+        <mi mathvariant="sans-serif-italic">A</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mi>&#x1D63C;</mi> 
+        <mo>=</mo> 
+        <mi mathvariant="sans-serif-bold-italic">A</mi> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mi>&#x1D670;</mi> 
+        <mo>=</mo> 
+        <mi mathvariant="monospace">A</mi> 
+      </mtd> 
+    </mtr> 
+  </mtable> </math>
+>>> native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EIdentifier "A" , ESymbol Rel "=" , EIdentifier "A" ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\119808"
+            , ESymbol Rel "="
+            , EStyled TextBold [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\119860"
+            , ESymbol Rel "="
+            , EStyled TextItalic [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\119912"
+            , ESymbol Rel "="
+            , EStyled TextBoldItalic [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120120"
+            , ESymbol Rel "="
+            , EStyled TextDoubleStruck [ EIdentifier "A" ]
+            , ESymbol Rel "="
+            , EIdentifier "\120120"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\119964"
+            , ESymbol Rel "="
+            , EStyled TextScript [ EIdentifier "A" ]
+            , ESymbol Rel "="
+            , EIdentifier "\119964"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120016"
+            , ESymbol Rel "="
+            , EStyled TextBoldScript [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120068"
+            , ESymbol Rel "="
+            , EStyled TextFraktur [ EIdentifier "A" ]
+            , ESymbol Rel "="
+            , EIdentifier "\120068"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120172"
+            , ESymbol Rel "="
+            , EStyled TextBoldFraktur [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120224"
+            , ESymbol Rel "="
+            , EStyled TextSansSerif [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120276"
+            , ESymbol Rel "="
+            , EStyled TextSansSerifBold [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120328"
+            , ESymbol Rel "="
+            , EStyled TextSansSerifItalic [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120380"
+            , ESymbol Rel "="
+            , EStyled TextSansSerifBoldItalic [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120432"
+            , ESymbol Rel "="
+            , EStyled TextMonospace [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    ]
+]

@@ -1,0 +1,49 @@
+[ ESubsup (ESymbol Op "\8747") (ENumber "0") (ENumber "1")
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, ESpace (1 % 9)
+, ESymbol Ord "\8518"
+, EIdentifier "x"
+, ESymbol Rel "="
+, EUnderover
+    False
+    (ESymbol Op "\8721")
+    (EGrouped [ EIdentifier "i" , ESymbol Rel "=" , ENumber "0" ])
+    (EIdentifier "\8734")
+, ESub (EIdentifier "x") (EIdentifier "i")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (ESymbol Op "\8719")
+    (EGrouped [ EIdentifier "i" , ESymbol Rel "=" , ENumber "0" ])
+    (EIdentifier "\8734")
+, ESub (EIdentifier "x") (EIdentifier "i")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (ESymbol Op "\8720")
+    (EGrouped [ EIdentifier "i" , ESymbol Rel "=" , ENumber "0" ])
+    (EIdentifier "\8734")
+, ESub (EIdentifier "x") (EIdentifier "i")
+, ESymbol Rel "="
+, ESubsup (ESymbol Op "\8750") (ENumber "0") (ENumber "1")
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, ESpace (1 % 9)
+, ESymbol Ord "\8518"
+, EIdentifier "x"
+, ESymbol Rel "="
+, ESubsup (ESymbol Op "\8748") (ENumber "0") (ENumber "1")
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, ESpace (1 % 9)
+, ESymbol Ord "\8518"
+, EIdentifier "x"
+, ESymbol Rel "="
+, ESubsup (ESymbol Op "\8749") (ENumber "0") (ENumber "1")
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, ESpace (1 % 9)
+, ESymbol Ord "\8518"
+, EIdentifier "x"
+]

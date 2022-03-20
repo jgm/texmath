@@ -1,0 +1,7 @@
+<<< native
+[ ESub (EIdentifier "A") (EIdentifier "B")
+, ESymbol Rel "="
+, ESub (EIdentifier "A") (EIdentifier "B")
+]
+>>> eqn
+A sub B = A sub B

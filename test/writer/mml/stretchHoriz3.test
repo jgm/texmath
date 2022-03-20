@@ -1,0 +1,20 @@
+<<< native
+[ EIdentifier "H"
+, EOver
+    False
+    (ESymbol Accent "\8594")
+    (EText TextNormal "This is a long stretched arrow")
+, EIdentifier "H"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>H</mi>
+    <mover>
+      <mo>→</mo>
+      <mtext mathvariant="normal">This is a long stretched arrow</mtext>
+    </mover>
+    <mi>H</mi>
+  </mrow>
+</math>

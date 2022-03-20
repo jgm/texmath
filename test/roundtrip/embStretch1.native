@@ -1,0 +1,7 @@
+[ ESuper
+    (EDelimited
+       "("
+       ")"
+       [ Right (EFraction NormalFrac (ENumber "2") (EIdentifier "x")) ])
+    (ESymbol Bin "-")
+]

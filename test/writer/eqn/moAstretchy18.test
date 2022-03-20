@@ -1,0 +1,46 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           ])
+    ]
+, ESymbol Open "("
+, EArray
+    [ AlignCenter ]
+    [ [ [ ENumber "0" ] ]
+    , [ [ ENumber "0" ] ]
+    , [ [ ENumber "0" ] ]
+    , [ [ ENumber "0" ] ]
+    , [ [ ENumber "0" ] ]
+    ]
+, ESymbol Close ")"
+, EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter ]
+           [ [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           , [ [ ENumber "0" ] ]
+           ])
+    ]
+]
+>>> eqn
+left ( matrix{
+ccol{ 0 above 0 above 0 above 0 above 0 }
+} right ) ( matrix{
+ccol{ 0 above 0 above 0 above 0 above 0 }
+} ) left ( matrix{
+ccol{ 0 above 0 above 0 above 0 above 0 }
+} right )

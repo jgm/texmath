@@ -1,0 +1,22 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (EFraction
+       NormalFrac
+       (ENumber "1")
+       (EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ]))
+    (EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ])
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ])
+, EFraction
+    NormalFrac
+    (EFraction
+       NormalFrac
+       (ENumber "1")
+       (EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ]))
+    (EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ])
+]
+>>> eqn
+{1 over {y + 3}} over {y + 3} 1 over {y + 3} {1 over {y + 3}} over {y + 3}

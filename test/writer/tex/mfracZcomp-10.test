@@ -1,0 +1,10 @@
+<<< native
+[ EText TextNormal "Inline binomial, auto, no line\160"
+, EDelimited
+    "("
+    ")"
+    [ Right (EFraction NormalFrac (ENumber "5") (ENumber "8")) ]
+, EText TextNormal "\160the end."
+]
+>>> tex
+\text{Inline\ binomial,\ auto,\ no\ line~}\left( \frac{5}{8} \right)\text{~the\ end.}

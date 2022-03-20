@@ -1,0 +1,6 @@
+[ ESuper (EIdentifier "S") (ENumber "3")
+, ESymbol Rel "="
+, ESuper (EIdentifier "S") (ENumber "3")
+, EPhantom
+    (EFraction NormalFrac (EIdentifier "test") (EIdentifier "failed"))
+]

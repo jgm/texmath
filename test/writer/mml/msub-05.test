@@ -1,0 +1,20 @@
+<<< native
+[ ESub (EIdentifier "A") (EIdentifier "B")
+, ESymbol Rel "="
+, ESub (EIdentifier "A") (EIdentifier "B")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub>
+      <mi>A</mi>
+      <mi>B</mi>
+    </msub>
+    <mo>=</mo>
+    <msub>
+      <mi>A</mi>
+      <mi>B</mi>
+    </msub>
+  </mrow>
+</math>

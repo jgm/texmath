@@ -1,0 +1,332 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter , AlignCenter ]
+    [ [ []
+      , [ EText TextNormal "27C" ]
+      , [ EText TextNormal "27D" ]
+      , [ EText TextNormal "27E" ]
+      ]
+    , [ [ EText TextNormal "0" ]
+      , [ ESymbol Ord "\10176" ]
+      , [ ESymbol Ord "\10192" ]
+      , [ ESymbol Bin "\10208" ]
+      ]
+    , [ [ EText TextNormal "1" ]
+      , [ ESymbol Ord "\10177" ]
+      , [ ESymbol Bin "\10193" ]
+      , [ ESymbol Bin "\10209" ]
+      ]
+    , [ [ EText TextNormal "2" ]
+      , [ ESymbol Rel "\10178" ]
+      , [ ESymbol Rel "\10194" ]
+      , [ ESymbol Bin "\10210" ]
+      ]
+    , [ [ EText TextNormal "3" ]
+      , [ ESymbol Ord "\10179" ]
+      , [ ESymbol Rel "\10195" ]
+      , [ ESymbol Bin "\10211" ]
+      ]
+    , [ [ EText TextNormal "4" ]
+      , [ ESymbol Ord "\10180" ]
+      , [ ESymbol Rel "\10196" ]
+      , [ ESymbol Bin "\10212" ]
+      ]
+    , [ [ EText TextNormal "5" ]
+      , [ ESymbol Open "\10181" ]
+      , [ ESymbol Op "\10197" ]
+      , [ ESymbol Bin "\10213" ]
+      ]
+    , [ [ EText TextNormal "6" ]
+      , [ ESymbol Close "\10182" ]
+      , [ ESymbol Op "\10198" ]
+      , [ ESymbol Open "\10214" ]
+      ]
+    , [ [ EText TextNormal "7" ]
+      , [ ESymbol Bin "\10183" ]
+      , [ ESymbol Op "\10199" ]
+      , [ ESymbol Close "\10215" ]
+      ]
+    , [ [ EText TextNormal "8" ]
+      , [ ESymbol Rel "\10184" ]
+      , [ ESymbol Op "\10200" ]
+      , [ ESymbol Open "\10216" ]
+      ]
+    , [ [ EText TextNormal "9" ]
+      , [ ESymbol Rel "\10185" ]
+      , [ ESymbol Op "\10201" ]
+      , [ ESymbol Close "\10217" ]
+      ]
+    , [ [ EText TextNormal "A" ]
+      , [ ESymbol Ord "\10186" ]
+      , [ ESymbol Rel "\10202" ]
+      , [ ESymbol Open "\10218" ]
+      ]
+    , [ [ EText TextNormal "B" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Rel "\10203" ]
+      , [ ESymbol Close "\10219" ]
+      ]
+    , [ [ EText TextNormal "C" ]
+      , [ ESymbol Open "\10188" ]
+      , [ ESymbol Rel "\10204" ]
+      , [ ESymbol Open "\10220" ]
+      ]
+    , [ [ EText TextNormal "D" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Rel "\10205" ]
+      , [ ESymbol Close "\10221" ]
+      ]
+    , [ [ EText TextNormal "E" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Rel "\10206" ]
+      , [ ESymbol Open "\10222" ]
+      ]
+    , [ [ EText TextNormal "F" ]
+      , [ ESymbol Ord "@" ]
+      , [ ESymbol Rel "\10207" ]
+      , [ ESymbol Close "\10223" ]
+      ]
+    ]
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd columnalign="center" />
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">27C</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">27D</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">27E</mtext>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">0</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⟀</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⟐</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟠</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">1</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⟁</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟑</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟡</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">2</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟂</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟒</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟢</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">3</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⟃</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟓</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟣</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">4</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⟄</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟔</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟤</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">5</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="prefix">⟅</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟕</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟥</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">6</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="postfix">⟆</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟖</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="prefix">⟦</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">7</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟇</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟗</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="postfix">⟧</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">8</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟈</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟘</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="prefix">⟨</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">9</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟉</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟙</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="postfix">⟩</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">A</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>⟊</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟚</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="prefix">⟪</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">B</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟛</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="postfix">⟫</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">C</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="prefix">⟌</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟜</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="prefix">⟬</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">D</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟝</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="postfix">⟭</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">E</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟞</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="prefix">⟮</mo>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center">
+        <mtext mathvariant="normal">F</mtext>
+      </mtd>
+      <mtd columnalign="center">
+        <mi>@</mi>
+      </mtd>
+      <mtd columnalign="center">
+        <mo>⟟</mo>
+      </mtd>
+      <mtd columnalign="center">
+        <mo stretchy="false" form="postfix">⟯</mo>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>

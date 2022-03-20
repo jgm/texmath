@@ -1,0 +1,22 @@
+<<< native
+[ EUnderover
+    False
+    (EUnderover
+       False
+       (EIdentifier "BASE")
+       (EIdentifier "under-1")
+       (EIdentifier "over-2"))
+    (EIdentifier "under-2")
+    (EIdentifier "over-1")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (EUnder
+       False
+       (EOver False (EIdentifier "BASE") (EIdentifier "over-2"))
+       (EIdentifier "under-1"))
+    (EIdentifier "under-2")
+    (EIdentifier "over-1")
+]
+>>> eqn
+{BASE from under-1 to over-2} from under-2 to over-1 = {{BASE to over-2} from under-1} from under-2 to over-1

@@ -1,0 +1,779 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable>
+    <mtr>
+      <mtd></mtd> 
+      <mtd>
+        <mtext>1D40</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>1D41</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>1D42</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>1D43</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>1D6A</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>1D6B</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>1D6C</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>1D6D</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>1D6E</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>1D7C</mtext>
+      </mtd> 
+      <mtd>
+        <mtext>1D7D</mtext>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>0</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#119808;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119824;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119840;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119856;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120496;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120512;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120528;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120544;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120784;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>1</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#119809;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119825;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119841;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119857;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120497;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120513;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120529;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120545;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120785;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>2</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#119810;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119826;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119842;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119858;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120498;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120514;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120530;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120786;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>3</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#119811;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119827;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119843;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119859;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120499;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120515;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120531;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120787;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>4</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#119812;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119828;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119844;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120500;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120516;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120532;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120788;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>5</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#119813;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119829;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119845;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120501;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120517;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120533;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120789;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>6</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#119814;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119830;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119846;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120502;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120518;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120534;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120790;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>7</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#119815;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119831;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119847;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120503;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120519;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120535;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120791;</mo>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>8</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#119816;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119832;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119848;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120488;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120504;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120520;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120536;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd></mtd> 
+      <mtd></mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>9</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#119817;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119833;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119849;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120489;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120505;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120521;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120537;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd></mtd> 
+      <mtd></mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>A</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#119818;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119834;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119850;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120490;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120506;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120522;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120538;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120778;</mo>
+      </mtd> 
+      <mtd></mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>B</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#119819;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119835;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119851;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120491;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120507;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120523;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120539;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120779;</mo>
+      </mtd> 
+      <mtd></mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>C</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#119820;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119836;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119852;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120492;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120508;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120524;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120540;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd></mtd> 
+      <mtd></mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>D</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#119821;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119837;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119853;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120493;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120509;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120525;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120541;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd></mtd> 
+      <mtd></mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>E</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#119822;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119838;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119854;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120494;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120510;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120526;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120542;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120782;</mo>
+      </mtd> 
+      <mtd></mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>F</mtext>
+      </mtd> 
+      <mtd>
+        <mo>&#119823;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119839;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#119855;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120495;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120511;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120527;</mo>
+      </mtd> 
+      <mtd>
+        <mo>&#120543;</mo>
+      </mtd> 
+      <mtd></mtd> 
+      <mtd>
+        <mo>&#120783;</mo>
+      </mtd> 
+      <mtd></mtd> 
+    </mtr>   </mtable></math>
+>>> native
+[ EArray
+    [ AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    , AlignCenter
+    ]
+    [ [ []
+      , [ EText TextNormal "1D40" ]
+      , [ EText TextNormal "1D41" ]
+      , [ EText TextNormal "1D42" ]
+      , [ EText TextNormal "1D43" ]
+      , [ EText TextNormal "1D6A" ]
+      , [ EText TextNormal "1D6B" ]
+      , [ EText TextNormal "1D6C" ]
+      , [ EText TextNormal "1D6D" ]
+      , [ EText TextNormal "1D6E" ]
+      , [ EText TextNormal "1D7C" ]
+      , [ EText TextNormal "1D7D" ]
+      ]
+    , [ [ EText TextNormal "0" ]
+      , [ ESymbol Alpha "\119808" ]
+      , [ ESymbol Alpha "\119824" ]
+      , [ ESymbol Alpha "\119840" ]
+      , [ ESymbol Alpha "\119856" ]
+      , []
+      , [ ESymbol Alpha "\120496" ]
+      , [ ESymbol Alpha "\120512" ]
+      , [ ESymbol Alpha "\120528" ]
+      , [ ESymbol Alpha "\120544" ]
+      , []
+      , [ ESymbol Ord "\120784" ]
+      ]
+    , [ [ EText TextNormal "1" ]
+      , [ ESymbol Alpha "\119809" ]
+      , [ ESymbol Alpha "\119825" ]
+      , [ ESymbol Alpha "\119841" ]
+      , [ ESymbol Alpha "\119857" ]
+      , []
+      , [ ESymbol Alpha "\120497" ]
+      , [ ESymbol Ord "\120513" ]
+      , [ ESymbol Alpha "\120529" ]
+      , [ ESymbol Alpha "\120545" ]
+      , []
+      , [ ESymbol Ord "\120785" ]
+      ]
+    , [ [ EText TextNormal "2" ]
+      , [ ESymbol Alpha "\119810" ]
+      , [ ESymbol Alpha "\119826" ]
+      , [ ESymbol Alpha "\119842" ]
+      , [ ESymbol Alpha "\119858" ]
+      , []
+      , [ ESymbol Alpha "\120498" ]
+      , [ ESymbol Alpha "\120514" ]
+      , [ ESymbol Alpha "\120530" ]
+      , []
+      , []
+      , [ ESymbol Ord "\120786" ]
+      ]
+    , [ [ EText TextNormal "3" ]
+      , [ ESymbol Alpha "\119811" ]
+      , [ ESymbol Alpha "\119827" ]
+      , [ ESymbol Alpha "\119843" ]
+      , [ ESymbol Alpha "\119859" ]
+      , []
+      , [ ESymbol Alpha "\120499" ]
+      , [ ESymbol Alpha "\120515" ]
+      , [ ESymbol Alpha "\120531" ]
+      , []
+      , []
+      , [ ESymbol Ord "\120787" ]
+      ]
+    , [ [ EText TextNormal "4" ]
+      , [ ESymbol Alpha "\119812" ]
+      , [ ESymbol Alpha "\119828" ]
+      , [ ESymbol Alpha "\119844" ]
+      , []
+      , []
+      , [ ESymbol Alpha "\120500" ]
+      , [ ESymbol Alpha "\120516" ]
+      , [ ESymbol Alpha "\120532" ]
+      , []
+      , []
+      , [ ESymbol Ord "\120788" ]
+      ]
+    , [ [ EText TextNormal "5" ]
+      , [ ESymbol Alpha "\119813" ]
+      , [ ESymbol Alpha "\119829" ]
+      , [ ESymbol Alpha "\119845" ]
+      , []
+      , []
+      , [ ESymbol Alpha "\120501" ]
+      , [ ESymbol Alpha "\120517" ]
+      , [ ESymbol Alpha "\120533" ]
+      , []
+      , []
+      , [ ESymbol Ord "\120789" ]
+      ]
+    , [ [ EText TextNormal "6" ]
+      , [ ESymbol Alpha "\119814" ]
+      , [ ESymbol Alpha "\119830" ]
+      , [ ESymbol Alpha "\119846" ]
+      , []
+      , []
+      , [ ESymbol Alpha "\120502" ]
+      , [ ESymbol Alpha "\120518" ]
+      , [ ESymbol Alpha "\120534" ]
+      , []
+      , []
+      , [ ESymbol Ord "\120790" ]
+      ]
+    , [ [ EText TextNormal "7" ]
+      , [ ESymbol Alpha "\119815" ]
+      , [ ESymbol Alpha "\119831" ]
+      , [ ESymbol Alpha "\119847" ]
+      , []
+      , []
+      , [ ESymbol Alpha "\120503" ]
+      , [ ESymbol Alpha "\120519" ]
+      , [ ESymbol Alpha "\120535" ]
+      , []
+      , []
+      , [ ESymbol Ord "\120791" ]
+      ]
+    , [ [ EText TextNormal "8" ]
+      , [ ESymbol Alpha "\119816" ]
+      , [ ESymbol Alpha "\119832" ]
+      , [ ESymbol Alpha "\119848" ]
+      , []
+      , [ ESymbol Alpha "\120488" ]
+      , [ ESymbol Alpha "\120504" ]
+      , [ ESymbol Alpha "\120520" ]
+      , [ ESymbol Alpha "\120536" ]
+      , []
+      , []
+      , []
+      ]
+    , [ [ EText TextNormal "9" ]
+      , [ ESymbol Alpha "\119817" ]
+      , [ ESymbol Alpha "\119833" ]
+      , [ ESymbol Alpha "\119849" ]
+      , []
+      , [ ESymbol Alpha "\120489" ]
+      , [ ESymbol Alpha "\120505" ]
+      , [ ESymbol Alpha "\120521" ]
+      , [ ESymbol Alpha "\120537" ]
+      , []
+      , []
+      , []
+      ]
+    , [ [ EText TextNormal "A" ]
+      , [ ESymbol Alpha "\119818" ]
+      , [ ESymbol Alpha "\119834" ]
+      , [ ESymbol Alpha "\119850" ]
+      , []
+      , [ ESymbol Alpha "\120490" ]
+      , [ ESymbol Alpha "\120506" ]
+      , [ ESymbol Alpha "\120522" ]
+      , [ ESymbol Alpha "\120538" ]
+      , []
+      , [ ESymbol Alpha "\120778" ]
+      , []
+      ]
+    , [ [ EText TextNormal "B" ]
+      , [ ESymbol Alpha "\119819" ]
+      , [ ESymbol Alpha "\119835" ]
+      , [ ESymbol Alpha "\119851" ]
+      , []
+      , [ ESymbol Alpha "\120491" ]
+      , [ ESymbol Alpha "\120507" ]
+      , [ ESymbol Alpha "\120523" ]
+      , [ ESymbol Ord "\120539" ]
+      , []
+      , [ ESymbol Alpha "\120779" ]
+      , []
+      ]
+    , [ [ EText TextNormal "C" ]
+      , [ ESymbol Alpha "\119820" ]
+      , [ ESymbol Alpha "\119836" ]
+      , [ ESymbol Alpha "\119852" ]
+      , []
+      , [ ESymbol Alpha "\120492" ]
+      , [ ESymbol Alpha "\120508" ]
+      , [ ESymbol Alpha "\120524" ]
+      , [ ESymbol Alpha "\120540" ]
+      , []
+      , []
+      , []
+      ]
+    , [ [ EText TextNormal "D" ]
+      , [ ESymbol Alpha "\119821" ]
+      , [ ESymbol Alpha "\119837" ]
+      , [ ESymbol Alpha "\119853" ]
+      , []
+      , [ ESymbol Alpha "\120493" ]
+      , [ ESymbol Alpha "\120509" ]
+      , [ ESymbol Alpha "\120525" ]
+      , [ ESymbol Alpha "\120541" ]
+      , []
+      , []
+      , []
+      ]
+    , [ [ EText TextNormal "E" ]
+      , [ ESymbol Alpha "\119822" ]
+      , [ ESymbol Alpha "\119838" ]
+      , [ ESymbol Alpha "\119854" ]
+      , []
+      , [ ESymbol Alpha "\120494" ]
+      , [ ESymbol Alpha "\120510" ]
+      , [ ESymbol Alpha "\120526" ]
+      , [ ESymbol Alpha "\120542" ]
+      , []
+      , [ ESymbol Ord "\120782" ]
+      , []
+      ]
+    , [ [ EText TextNormal "F" ]
+      , [ ESymbol Alpha "\119823" ]
+      , [ ESymbol Alpha "\119839" ]
+      , [ ESymbol Alpha "\119855" ]
+      , []
+      , [ ESymbol Alpha "\120495" ]
+      , [ ESymbol Alpha "\120511" ]
+      , [ ESymbol Alpha "\120527" ]
+      , [ ESymbol Alpha "\120543" ]
+      , []
+      , [ ESymbol Ord "\120783" ]
+      , []
+      ]
+    ]
+]

@@ -1,0 +1,33 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right (EIdentifier "x")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "x")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "x")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "x")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "x")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "x")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "x")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "x")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "x")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "x")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "x")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "x")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "x")
+    ]
+]
+>>> eqn
+left ( x + x + x + x + x + x + x + x + x + x + x + x + x right )

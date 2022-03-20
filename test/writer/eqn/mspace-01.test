@@ -1,0 +1,7 @@
+<<< native
+[ EText TextNormal "First line"
+, ESpace (0 % 1)
+, EText TextNormal "Second line"
+]
+>>> eqn
+roman "First line" fwd 0 roman "Second line"

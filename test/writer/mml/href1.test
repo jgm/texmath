@@ -1,0 +1,30 @@
+<<< native
+[ EGrouped
+    [ ESuper
+        (EIdentifier "\8519")
+        (EGrouped [ EIdentifier "\8520" , EIdentifier "\960" ])
+    , ESymbol Bin "+"
+    , ENumber "1"
+    ]
+, ESymbol Rel "="
+, ENumber "0"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <msup>
+        <mi>ⅇ</mi>
+        <mrow>
+          <mi>ⅈ</mi>
+          <mi>π</mi>
+        </mrow>
+      </msup>
+      <mo>+</mo>
+      <mn>1</mn>
+    </mrow>
+    <mo>=</mo>
+    <mn>0</mn>
+  </mrow>
+</math>

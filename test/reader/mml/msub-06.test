@@ -1,0 +1,15 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <msub>    <mi>U</mi>     <mi>t</mi>   </msub>   <mo>=</mo>   <msub>    <mrow>      <mi>U</mi>
+    </mrow>     <mrow>      <mi>t</mi>
+    </mrow>   </msub>   <mphantom>    <mfrac>      <mi>test</mi>
+      <mi>failed</mi>
+    </mfrac>   </mphantom> </math>
+>>> native
+[ ESub (EIdentifier "U") (EIdentifier "t")
+, ESymbol Rel "="
+, ESub (EIdentifier "U") (EIdentifier "t")
+, EPhantom
+    (EFraction NormalFrac (EIdentifier "test") (EIdentifier "failed"))
+]

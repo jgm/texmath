@@ -1,0 +1,7 @@
+[ ESuper
+    (EIdentifier "v")
+    (ESuper
+       (EIdentifier "w")
+       (ESuper
+          (EIdentifier "x") (ESuper (EIdentifier "y") (EIdentifier "z"))))
+]

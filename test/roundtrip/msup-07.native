@@ -1,0 +1,6 @@
+[ ESuper (EIdentifier "a") (ENumber "2")
+, ESymbol Rel "="
+, ESuper
+    (EIdentifier "a")
+    (EOver False (ENumber "2") (EPhantom (EIdentifier "x")))
+]

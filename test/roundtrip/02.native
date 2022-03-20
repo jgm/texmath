@@ -1,0 +1,22 @@
+[ ENumber "2"
+, ESymbol Rel "="
+, EDelimited
+    "("
+    ")"
+    [ Right
+        (EFraction
+           NormalFrac
+           (EGrouped
+              [ EDelimited
+                  "("
+                  ")"
+                  [ Right (ENumber "3")
+                  , Right (ESymbol Bin "\8722")
+                  , Right (EIdentifier "x")
+                  ]
+              , ESymbol Bin "\215"
+              , ENumber "2"
+              ])
+           (EGrouped [ ENumber "3" , ESymbol Bin "\8722" , EIdentifier "x" ]))
+    ]
+]

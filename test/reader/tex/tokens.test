@@ -1,0 +1,29 @@
+<<< tex
+\newcommand{\my}[1]{(#1)}
+
+
+% diacritics
+\tilde\phi
+
+% unary operators
+\sqrt\phi
+
+% binary operators
+\frac\phi\xi
+\frac \phi {\xi}
+\frac {\phi} \xi
+
+% custom
+\my\phi
+\my{\phi}\xi
+
+>>> native
+[ EOver False (EIdentifier "\981") (ESymbol Accent "\771")
+, ESqrt (EIdentifier "\981")
+, EFraction NormalFrac (EIdentifier "\981") (EIdentifier "\958")
+, EFraction NormalFrac (EIdentifier "\981") (EIdentifier "\958")
+, EFraction NormalFrac (EIdentifier "\981") (EIdentifier "\958")
+, EDelimited "(" ")" [ Right (EIdentifier "\981") ]
+, EDelimited "(" ")" [ Right (EIdentifier "\981") ]
+, EIdentifier "\958"
+]

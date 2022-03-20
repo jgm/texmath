@@ -1,0 +1,29 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>
+    <mglyph fontfamily="Arial" index="97" alt="lowercase 'a'"></mglyph> 
+  </mn> 
+  <mspace width="10px"></mspace> 
+  <mi>
+    <mglyph fontfamily="Arial" index="105"></mglyph> 
+  </mi> 
+  <mspace width="10px"></mspace> 
+  <mn>
+    <mglyph fontfamily="fake-font" index="105"></mglyph> 
+  </mn> 
+  <mspace width="10px"></mspace> 
+  <mi>
+    <mglyph index="97" alt="lowercase 'a'"></mglyph> 
+  </mi> 
+</math>
+>>> native
+[ ENumber ""
+, ESpace (0 % 1)
+, EIdentifier ""
+, ESpace (0 % 1)
+, ENumber ""
+, ESpace (0 % 1)
+, EIdentifier ""
+]

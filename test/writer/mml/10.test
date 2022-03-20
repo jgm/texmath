@@ -1,0 +1,129 @@
+<<< native
+[ ESub (EIdentifier "\981") (EIdentifier "n")
+, EDelimited "(" ")" [ Right (EIdentifier "\954") ]
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped
+       [ ENumber "4"
+       , ESuper (EIdentifier "\960") (ENumber "2")
+       , ESuper (EIdentifier "\954") (ENumber "2")
+       ])
+, ESubsup (ESymbol Op "\8747") (ENumber "0") (ESymbol Ord "\8734")
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ EMathOperator "sin"
+       , EDelimited
+           "(" ")" [ Right (EIdentifier "\954") , Right (EIdentifier "R") ]
+       ])
+    (EGrouped [ EIdentifier "\954" , EIdentifier "R" ])
+, EFraction
+    NormalFrac
+    (ESymbol Ord "\8706")
+    (EGrouped [ ESymbol Ord "\8706" , EIdentifier "R" ])
+, EDelimited
+    "["
+    "]"
+    [ Right (ESuper (EIdentifier "R") (ENumber "2"))
+    , Right
+        (EFraction
+           NormalFrac
+           (EGrouped
+              [ ESymbol Ord "\8706"
+              , ESub (EIdentifier "D") (EIdentifier "n")
+              , EDelimited "(" ")" [ Right (EIdentifier "R") ]
+              ])
+           (EGrouped [ ESymbol Ord "\8706" , EIdentifier "R" ]))
+    ]
+, ESpace (1 % 6)
+, EIdentifier "d"
+, EIdentifier "R"
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msub>
+      <mi>ϕ</mi>
+      <mi>n</mi>
+    </msub>
+    <mrow>
+      <mo stretchy="true" form="prefix">(</mo>
+      <mi>κ</mi>
+      <mo stretchy="true" form="postfix">)</mo>
+    </mrow>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1</mn>
+      <mrow>
+        <mn>4</mn>
+        <msup>
+          <mi>π</mi>
+          <mn>2</mn>
+        </msup>
+        <msup>
+          <mi>κ</mi>
+          <mn>2</mn>
+        </msup>
+      </mrow>
+    </mfrac>
+    <msubsup>
+      <mo>∫</mo>
+      <mn>0</mn>
+      <mi>∞</mi>
+    </msubsup>
+    <mfrac>
+      <mrow>
+        <mo>sin</mo>
+        <mrow>
+          <mo stretchy="true" form="prefix">(</mo>
+          <mi>κ</mi>
+          <mi>R</mi>
+          <mo stretchy="true" form="postfix">)</mo>
+        </mrow>
+      </mrow>
+      <mrow>
+        <mi>κ</mi>
+        <mi>R</mi>
+      </mrow>
+    </mfrac>
+    <mfrac>
+      <mi>∂</mi>
+      <mrow>
+        <mi>∂</mi>
+        <mi>R</mi>
+      </mrow>
+    </mfrac>
+    <mrow>
+      <mo stretchy="true" form="prefix">[</mo>
+      <msup>
+        <mi>R</mi>
+        <mn>2</mn>
+      </msup>
+      <mfrac>
+        <mrow>
+          <mi>∂</mi>
+          <msub>
+            <mi>D</mi>
+            <mi>n</mi>
+          </msub>
+          <mrow>
+            <mo stretchy="true" form="prefix">(</mo>
+            <mi>R</mi>
+            <mo stretchy="true" form="postfix">)</mo>
+          </mrow>
+        </mrow>
+        <mrow>
+          <mi>∂</mi>
+          <mi>R</mi>
+        </mrow>
+      </mfrac>
+      <mo stretchy="true" form="postfix">]</mo>
+    </mrow>
+    <mspace width="0.167em" />
+    <mi>d</mi>
+    <mi>R</mi>
+  </mrow>
+</math>

@@ -1,0 +1,28 @@
+<<< native
+[ ESuper (EIdentifier "e") (EIdentifier "x")
+, ESymbol Rel "="
+, EOver
+    False
+    (ESuper (EIdentifier "e") (EIdentifier "x"))
+    (EPhantom (EIdentifier "z"))
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <msup>
+      <mi>e</mi>
+      <mi>x</mi>
+    </msup>
+    <mo>=</mo>
+    <mover>
+      <msup>
+        <mi>e</mi>
+        <mi>x</mi>
+      </msup>
+      <mphantom>
+        <mi>z</mi>
+      </mphantom>
+    </mover>
+  </mrow>
+</math>

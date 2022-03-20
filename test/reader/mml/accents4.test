@@ -1,0 +1,403 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable columnalign="left">
+    <mtr>
+      <mtd>
+        <mtext>default: (accent=true)</mtext>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mrow>
+          <munder>
+            <mi>x</mi> 
+            <mo>'</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>^</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>_</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>`</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>~</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x00A8;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x00AF;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x00B4;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x00B8;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x02C6;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x02C7;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x02D8;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x02D9;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x02DA;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x02DC;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x02DD;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x0302;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x0311;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x203E;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x20DB;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x20DC;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x2190;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x2192;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x2194;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x21BC;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x21BD;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x21C0;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x21C1;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x23B4;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x23B5;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x23DC;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x23DD;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x23DE;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x23DF;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x294E;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x2950;</mo> 
+          </munder> 
+        </mrow> 
+      </mtd>
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>accent=false:</mtext>
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mstyle accent="false">
+          <munder>
+            <mi>x</mi> 
+            <mo>'</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>^</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>_</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>`</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>~</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x00A8;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x00AF;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x00B4;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x00B8;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x02C6;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x02C7;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x02D8;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x02D9;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x02DA;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x02DC;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x02DD;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x0302;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x0311;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x203E;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x20DB;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x20DC;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x2190;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x2192;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x2194;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x21BC;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x21BD;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x21C0;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x21C1;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x23B4;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x23B5;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x23DC;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x23DD;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x23DE;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x23DF;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x294E;</mo> 
+          </munder> 
+          <munder>
+            <mi>x</mi> 
+            <mo>&#x2950;</mo> 
+          </munder> 
+        </mstyle> 
+      </mtd>
+    </mtr> 
+  </mtable> </math>
+>>> native
+[ EArray
+    [ AlignLeft ]
+    [ [ [ EText TextNormal "default: (accent=true)" ] ]
+    , [ [ EGrouped
+            [ EUnder False (EIdentifier "x") (ESymbol Accent "'")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "^")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "_")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "`")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "~")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\168")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\175")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\180")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\184")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\710")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\711")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\728")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\729")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\730")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\732")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\733")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\770")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\785")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8254")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8411")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8412")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8592")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8594")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8596")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8636")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8637")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8640")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8641")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\9140")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\9141")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\9180")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\9181")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\9182")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\9183")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\10574")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\10576")
+            ]
+        ]
+      ]
+    , [ [ EText TextNormal "accent=false:" ] ]
+    , [ [ EGrouped
+            [ EUnder False (EIdentifier "x") (ESymbol Ord "'")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "^")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "_")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "`")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "~")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\168")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\175")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\180")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\184")
+            , EUnder False (EIdentifier "x") (ESymbol Alpha "\710")
+            , EUnder False (EIdentifier "x") (ESymbol Alpha "\711")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\728")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\729")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\730")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\732")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\733")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\770")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\785")
+            , EUnder False (EIdentifier "x") (ESymbol Ord "\8254")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8411")
+            , EUnder False (EIdentifier "x") (ESymbol Accent "\8412")
+            , EUnder False (EIdentifier "x") (ESymbol Rel "\8592")
+            , EUnder False (EIdentifier "x") (ESymbol Rel "\8594")
+            , EUnder False (EIdentifier "x") (ESymbol Rel "\8596")
+            , EUnder False (EIdentifier "x") (ESymbol Rel "\8636")
+            , EUnder False (EIdentifier "x") (ESymbol Rel "\8637")
+            , EUnder False (EIdentifier "x") (ESymbol Rel "\8640")
+            , EUnder False (EIdentifier "x") (ESymbol Rel "\8641")
+            , EUnder False (EIdentifier "x") (ESymbol TOver "\9140")
+            , EUnder False (EIdentifier "x") (ESymbol TUnder "\9141")
+            , EUnder False (EIdentifier "x") (ESymbol TOver "\9180")
+            , EUnder False (EIdentifier "x") (ESymbol TUnder "\9181")
+            , EUnder False (EIdentifier "x") (ESymbol TOver "\9182")
+            , EUnder False (EIdentifier "x") (ESymbol TUnder "\9183")
+            , EUnder False (EIdentifier "x") (ESymbol Rel "\10574")
+            , EUnder False (EIdentifier "x") (ESymbol Rel "\10576")
+            ]
+        ]
+      ]
+    ]
+]

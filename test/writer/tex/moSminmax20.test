@@ -1,0 +1,15 @@
+<<< native
+[ EDelimited
+    "("
+    ")"
+    [ Right (EFraction NormalFrac (EIdentifier "y") (EIdentifier "z"))
+    ]
+, ESymbol Bin "+"
+, EDelimited
+    "("
+    ")"
+    [ Right (EFraction NormalFrac (EIdentifier "y") (EIdentifier "z"))
+    ]
+]
+>>> tex
+\left( \frac{y}{z} \right) + \left( \frac{y}{z} \right)

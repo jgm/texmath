@@ -1,0 +1,22 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  <mover>    <mi mathvariant="normal">B</mi>     <mi mathvariant="normal">overscript</mi>   </mover>   <mo>=</mo>   <mover>    <mrow>      <mphantom>        <mn>1</mn>
+      </mphantom>
+      <mi mathvariant="normal">B</mi>
+      <mphantom>
+        <mn>1</mn>
+      </mphantom>
+    </mrow>     <mi mathvariant="normal">overscript</mi>   </mover> </math>
+>>> native
+[ EOver False (EIdentifier "B") (EIdentifier "overscript")
+, ESymbol Rel "="
+, EOver
+    False
+    (EGrouped
+       [ EPhantom (ENumber "1")
+       , EIdentifier "B"
+       , EPhantom (ENumber "1")
+       ])
+    (EIdentifier "overscript")
+]

@@ -1,0 +1,11 @@
+<<< native
+[ ESub (EIdentifier "P") (ENumber "0")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (ESub (EIdentifier "P") (ENumber "0"))
+    (EPhantom (EIdentifier "x"))
+    (EPhantom (EIdentifier "x"))
+]
+>>> tex
+P_{0} = \underset{\phantom{x}}{\overset{\phantom{x}}{P_{0}}}

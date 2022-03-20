@@ -1,0 +1,25 @@
+<<< native
+[ EDelimited
+    "["
+    ")"
+    [ Right
+        (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+    ]
+, EDelimited
+    "{"
+    "}"
+    [ Right (EFraction NormalFrac (EIdentifier "a") (EIdentifier "b"))
+    , Left "|"
+    , Right (EFraction NormalFrac (EIdentifier "d") (EIdentifier "e"))
+    , Right (ESymbol Pun ";")
+    , Right (EIdentifier "a")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "b")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "a")
+    , Right (ESymbol Bin "+")
+    , Right (EIdentifier "b")
+    ]
+]
+>>> eqn
+left [ {a + b} right ) left { a over b "|" d over e ; a + b + a + b right }

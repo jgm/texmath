@@ -1,0 +1,48 @@
+<<< native
+[ ENumber ""
+, EMathOperator ""
+, EIdentifier ""
+, ESymbol Ord "\8290"
+, ENumber ""
+, ESymbol Ord "\8289"
+, ESpace (0 % 1)
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:t></m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t></m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>&#8290;</m:t>
+    </m:r>
+    <m:r>
+      <m:t></m:t>
+    </m:r>
+    <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
+      <m:t>&#8289;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

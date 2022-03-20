@@ -1,0 +1,22 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>h</mi> 
+    <mo>+</mo> 
+    <mi>hhh</mi> 
+    <mo>+</mo> 
+    <mi fontstyle="normal">h</mi> 
+    <mo>+</mo> 
+    <mi fontstyle="normal">hhh</mi> 
+  </mrow> </math>
+>>> native
+[ EIdentifier "h"
+, ESymbol Bin "+"
+, EIdentifier "hhh"
+, ESymbol Bin "+"
+, EIdentifier "h"
+, ESymbol Bin "+"
+, EIdentifier "hhh"
+]

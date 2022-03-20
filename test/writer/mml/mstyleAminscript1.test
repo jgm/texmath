@@ -1,0 +1,20 @@
+<<< native
+[ EFraction NormalFrac (ENumber "2") (EIdentifier "x")
+, ESymbol Rel "="
+, EFraction NormalFrac (ENumber "2") (EIdentifier "x")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mfrac>
+      <mn>2</mn>
+      <mi>x</mi>
+    </mfrac>
+    <mo>=</mo>
+    <mfrac>
+      <mn>2</mn>
+      <mi>x</mi>
+    </mfrac>
+  </mrow>
+</math>

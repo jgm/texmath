@@ -1,0 +1,44 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>H</mi> 
+  <mo>&#x0200A;</mo> 
+  <mi>H</mi> 
+  <mo>&#x02009;</mo> 
+  <mi>H</mi> 
+  <mo>&#x0205F;</mo> 
+  <mi>H</mi> 
+  <mo>&#x02005;</mo> 
+  <mi>H</mi> 
+  <mo>&#x0200A;&#x0FE00;</mo> 
+  <mi>H</mi> 
+  <mo>&#x02009;&#x0FE00;</mo> 
+  <mi>H</mi> 
+  <mo>&#x0205F;&#x0FE00;</mo> 
+  <mi>H</mi> 
+  <mo>&#x02005;&#x0FE00;</mo> 
+  <mi>H</mi> 
+  <mo>&#x0000A;</mo> 
+  <mi>H</mi> </math>
+>>> native
+[ EIdentifier "H"
+, ESymbol Ord "\8202"
+, EIdentifier "H"
+, ESymbol Ord "\8201"
+, EIdentifier "H"
+, ESymbol Ord "\8287"
+, EIdentifier "H"
+, ESymbol Ord "\8197"
+, EIdentifier "H"
+, EMathOperator "\8202\65024"
+, EIdentifier "H"
+, EMathOperator "\8201\65024"
+, EIdentifier "H"
+, EMathOperator "\8287\65024"
+, EIdentifier "H"
+, EMathOperator "\8197\65024"
+, EIdentifier "H"
+, EMathOperator ""
+, EIdentifier "H"
+]

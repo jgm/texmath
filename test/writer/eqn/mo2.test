@@ -1,0 +1,4 @@
+<<< native
+[ EDelimited "(" ")" [ Right (EIdentifier "x") ] ]
+>>> eqn
+left ( x right )

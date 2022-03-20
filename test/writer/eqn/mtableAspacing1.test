@@ -1,0 +1,37 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ [ [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])
+            (ENumber "2")
+        ]
+      , [ EIdentifier "b" ]
+      , [ EIdentifier "c" ]
+      ]
+    , [ [ EIdentifier "x" ]
+      , [ EGrouped
+            [ EFraction NormalFrac (ENumber "2") (ENumber "3")
+            , EIdentifier "y"
+            , ESymbol Bin "+"
+            , ENumber "5"
+            ]
+        ]
+      , [ EIdentifier "z" ]
+      ]
+    , [ [ ENumber "1" ]
+      , [ ENumber "2" ]
+      , [ EFraction
+            NormalFrac
+            (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "5" ])
+            (ENumber "3")
+        ]
+      ]
+    ]
+]
+>>> eqn
+matrix{
+ccol{ {{a + 1} over 2} above x above 1 }
+ccol{ b above {2 over 3 y + 5} above 2 }
+ccol{ c above z above {{a + 5} over 3} }
+}

@@ -1,0 +1,122 @@
+<<< native
+[ EGrouped
+    [ ENumber "1"
+    , ENumber "2"
+    , ESpace (0 % 1)
+    , ENumber "3"
+    , ENumber "4"
+    , ESpace (0 % 1)
+    , ENumber "5"
+    , ENumber "6"
+    , ESpace (0 % 1)
+    , ENumber "7"
+    , ENumber "8"
+    , ESpace (0 % 1)
+    , ENumber "9"
+    , ENumber "10"
+    , ESpace (0 % 1)
+    , ENumber "11"
+    , ENumber "12"
+    ]
+, EGrouped
+    [ ENumber "11"
+    , ENumber "12"
+    , ESpace (0 % 1)
+    , ENumber "13"
+    , ENumber "14"
+    , ESpace (0 % 1)
+    , ENumber "15"
+    , ENumber "16"
+    , ESpace (0 % 1)
+    , ENumber "17"
+    , ENumber "18"
+    , ESpace (0 % 1)
+    , ENumber "19"
+    , ENumber "20"
+    , ESpace (0 % 1)
+    , ENumber "21"
+    , ENumber "22"
+    , ESpace (0 % 1)
+    , ENumber "21"
+    , ENumber "22"
+    , ESpace (0 % 1)
+    , ENumber "23"
+    , ENumber "24"
+    ]
+, EGrouped
+    [ ENumber "25"
+    , ENumber "26"
+    , ESpace (0 % 1)
+    , ENumber "27"
+    , ENumber "28"
+    , ESpace (0 % 1)
+    , ENumber "29"
+    , ENumber "30"
+    , ESpace (0 % 1)
+    , ENumber "31"
+    , ENumber "32"
+    ]
+, EGrouped
+    [ ENumber "31"
+    , ENumber "32"
+    , ESpace (0 % 1)
+    , ENumber "33"
+    , ENumber "34"
+    , ESpace (0 % 1)
+    , ENumber "35"
+    , ENumber "36"
+    , ESpace (0 % 1)
+    , ENumber "37"
+    , ENumber "38"
+    , ESpace (0 % 1)
+    , ENumber "39"
+    , ENumber "40"
+    , ESpace (0 % 1)
+    , ENumber "41"
+    , ENumber "42"
+    , ESpace (0 % 1)
+    , ENumber "41"
+    , ENumber "42"
+    , ESpace (0 % 1)
+    , ENumber "43"
+    , ENumber "44"
+    , ESpace (0 % 1)
+    , ENumber "45"
+    , ENumber "46"
+    , ESpace (0 % 1)
+    , ENumber "47"
+    , ENumber "48"
+    , ESpace (0 % 1)
+    , ENumber "49"
+    , ENumber "50"
+    , ESpace (0 % 1)
+    , ENumber "51"
+    , ENumber "52"
+    , ESpace (0 % 1)
+    , ENumber "51"
+    , ENumber "52"
+    , ESpace (0 % 1)
+    , ENumber "53"
+    , ENumber "54"
+    , ESpace (0 % 1)
+    , ENumber "55"
+    , ENumber "56"
+    , ESpace (0 % 1)
+    , ENumber "57"
+    , ENumber "58"
+    , ESpace (0 % 1)
+    , ENumber "59"
+    , ENumber "60"
+    , ESpace (0 % 1)
+    , ENumber "61"
+    , ENumber "62"
+    , ESpace (0 % 1)
+    , ENumber "61"
+    , ENumber "62"
+    , ESpace (0 % 1)
+    , ENumber "63"
+    , ENumber "64"
+    ]
+]
+>>> eqn
+{1 2 fwd 0 3 4 fwd 0 5 6 fwd 0 7 8 fwd 0 9 10 fwd 0 11 12} {11 12 fwd 0 13 14 fwd 0 15 16 fwd 0 17 18 fwd 0 19 20 fwd 0 21 22 fwd 0 21 22 fwd 0 23 24} {25 26 fwd 0 27 28 fwd 0 29 30 fwd 0 31 32} {31 32 fwd 0 33 34 fwd 0 35 36 fwd 0 37 38 fwd 0 39 40 fwd 0 41 42 fwd 0 41 42 fwd 0 43 44 fwd 0 45 46 fwd 0 47 48 fwd 0 49 50 fwd 0 51 52 fwd 0 51 52 fwd 0 53 54 fwd 0 55 56 fwd 0 57 58 fwd 0 59 60 fwd 0 61 62 fwd 0 61 62 fwd 0 63 64}

@@ -1,0 +1,459 @@
+<<< native
+[ EGrouped
+    [ ENumber "1"
+    , ENumber "2"
+    , ESpace (0 % 1)
+    , ENumber "3"
+    , ENumber "4"
+    , ESpace (0 % 1)
+    , ENumber "5"
+    , ENumber "6"
+    , ESpace (0 % 1)
+    , ENumber "7"
+    , ENumber "8"
+    , ESpace (0 % 1)
+    , ENumber "9"
+    , ENumber "10"
+    , ESpace (0 % 1)
+    , ENumber "11"
+    , ENumber "12"
+    ]
+, EGrouped
+    [ ENumber "11"
+    , ENumber "12"
+    , ESpace (0 % 1)
+    , ENumber "13"
+    , ENumber "14"
+    , ESpace (0 % 1)
+    , ENumber "15"
+    , ENumber "16"
+    , ESpace (0 % 1)
+    , ENumber "17"
+    , ENumber "18"
+    , ESpace (0 % 1)
+    , ENumber "19"
+    , ENumber "20"
+    , ESpace (0 % 1)
+    , ENumber "21"
+    , ENumber "22"
+    , ESpace (0 % 1)
+    , ENumber "21"
+    , ENumber "22"
+    , ESpace (0 % 1)
+    , ENumber "23"
+    , ENumber "24"
+    ]
+, EGrouped
+    [ ENumber "25"
+    , ENumber "26"
+    , ESpace (0 % 1)
+    , ENumber "27"
+    , ENumber "28"
+    , ESpace (0 % 1)
+    , ENumber "29"
+    , ENumber "30"
+    , ESpace (0 % 1)
+    , ENumber "31"
+    , ENumber "32"
+    ]
+, EGrouped
+    [ ENumber "31"
+    , ENumber "32"
+    , ESpace (0 % 1)
+    , ENumber "33"
+    , ENumber "34"
+    , ESpace (0 % 1)
+    , ENumber "35"
+    , ENumber "36"
+    , ESpace (0 % 1)
+    , ENumber "37"
+    , ENumber "38"
+    , ESpace (0 % 1)
+    , ENumber "39"
+    , ENumber "40"
+    , ESpace (0 % 1)
+    , ENumber "41"
+    , ENumber "42"
+    , ESpace (0 % 1)
+    , ENumber "41"
+    , ENumber "42"
+    , ESpace (0 % 1)
+    , ENumber "43"
+    , ENumber "44"
+    , ESpace (0 % 1)
+    , ENumber "45"
+    , ENumber "46"
+    , ESpace (0 % 1)
+    , ENumber "47"
+    , ENumber "48"
+    , ESpace (0 % 1)
+    , ENumber "49"
+    , ENumber "50"
+    , ESpace (0 % 1)
+    , ENumber "51"
+    , ENumber "52"
+    , ESpace (0 % 1)
+    , ENumber "51"
+    , ENumber "52"
+    , ESpace (0 % 1)
+    , ENumber "53"
+    , ENumber "54"
+    , ESpace (0 % 1)
+    , ENumber "55"
+    , ENumber "56"
+    , ESpace (0 % 1)
+    , ENumber "57"
+    , ENumber "58"
+    , ESpace (0 % 1)
+    , ENumber "59"
+    , ENumber "60"
+    , ESpace (0 % 1)
+    , ENumber "61"
+    , ENumber "62"
+    , ESpace (0 % 1)
+    , ENumber "61"
+    , ENumber "62"
+    , ESpace (0 % 1)
+    , ENumber "63"
+    , ENumber "64"
+    ]
+]
+>>> omml
+<?xml version='1.0' ?>
+<m:oMathPara>
+  <m:oMathParaPr>
+    <m:jc m:val="center" />
+  </m:oMathParaPr>
+  <m:oMath>
+    <m:r>
+      <m:t>1</m:t>
+    </m:r>
+    <m:r>
+      <m:t>2</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>3</m:t>
+    </m:r>
+    <m:r>
+      <m:t>4</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>5</m:t>
+    </m:r>
+    <m:r>
+      <m:t>6</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>7</m:t>
+    </m:r>
+    <m:r>
+      <m:t>8</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>9</m:t>
+    </m:r>
+    <m:r>
+      <m:t>10</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>11</m:t>
+    </m:r>
+    <m:r>
+      <m:t>12</m:t>
+    </m:r>
+    <m:r>
+      <m:t>11</m:t>
+    </m:r>
+    <m:r>
+      <m:t>12</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>13</m:t>
+    </m:r>
+    <m:r>
+      <m:t>14</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>15</m:t>
+    </m:r>
+    <m:r>
+      <m:t>16</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>17</m:t>
+    </m:r>
+    <m:r>
+      <m:t>18</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>19</m:t>
+    </m:r>
+    <m:r>
+      <m:t>20</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>21</m:t>
+    </m:r>
+    <m:r>
+      <m:t>22</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>21</m:t>
+    </m:r>
+    <m:r>
+      <m:t>22</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>23</m:t>
+    </m:r>
+    <m:r>
+      <m:t>24</m:t>
+    </m:r>
+    <m:r>
+      <m:t>25</m:t>
+    </m:r>
+    <m:r>
+      <m:t>26</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>27</m:t>
+    </m:r>
+    <m:r>
+      <m:t>28</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>29</m:t>
+    </m:r>
+    <m:r>
+      <m:t>30</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>31</m:t>
+    </m:r>
+    <m:r>
+      <m:t>32</m:t>
+    </m:r>
+    <m:r>
+      <m:t>31</m:t>
+    </m:r>
+    <m:r>
+      <m:t>32</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>33</m:t>
+    </m:r>
+    <m:r>
+      <m:t>34</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>35</m:t>
+    </m:r>
+    <m:r>
+      <m:t>36</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>37</m:t>
+    </m:r>
+    <m:r>
+      <m:t>38</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>39</m:t>
+    </m:r>
+    <m:r>
+      <m:t>40</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>41</m:t>
+    </m:r>
+    <m:r>
+      <m:t>42</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>41</m:t>
+    </m:r>
+    <m:r>
+      <m:t>42</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>43</m:t>
+    </m:r>
+    <m:r>
+      <m:t>44</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>45</m:t>
+    </m:r>
+    <m:r>
+      <m:t>46</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>47</m:t>
+    </m:r>
+    <m:r>
+      <m:t>48</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>49</m:t>
+    </m:r>
+    <m:r>
+      <m:t>50</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>51</m:t>
+    </m:r>
+    <m:r>
+      <m:t>52</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>51</m:t>
+    </m:r>
+    <m:r>
+      <m:t>52</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>53</m:t>
+    </m:r>
+    <m:r>
+      <m:t>54</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>55</m:t>
+    </m:r>
+    <m:r>
+      <m:t>56</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>57</m:t>
+    </m:r>
+    <m:r>
+      <m:t>58</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>59</m:t>
+    </m:r>
+    <m:r>
+      <m:t>60</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>61</m:t>
+    </m:r>
+    <m:r>
+      <m:t>62</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>61</m:t>
+    </m:r>
+    <m:r>
+      <m:t>62</m:t>
+    </m:r>
+    <m:r>
+      <m:t>&#8203;</m:t>
+    </m:r>
+    <m:r>
+      <m:t>63</m:t>
+    </m:r>
+    <m:r>
+      <m:t>64</m:t>
+    </m:r>
+  </m:oMath>
+</m:oMathPara>

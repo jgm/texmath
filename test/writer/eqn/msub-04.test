@@ -1,0 +1,11 @@
+<<< native
+[ ESub (EIdentifier "L") (ESub (EIdentifier "X") (EIdentifier "h"))
+, ESymbol Rel "="
+, ESub
+    (EIdentifier "L")
+    (ESub
+       (EIdentifier "X")
+       (ESub (EIdentifier "h") (EPhantom (EIdentifier "fail"))))
+]
+>>> eqn
+L sub {X sub h} = L sub {X sub {h sub {hphantom fail}}}

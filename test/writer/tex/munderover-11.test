@@ -1,0 +1,20 @@
+<<< native
+[ EUnderover
+    False (EIdentifier "BASE") (EIdentifier "s") (EIdentifier "t")
+, ESymbol Rel "="
+, EUnderover
+    False
+    (EIdentifier "BASE")
+    (EGrouped
+       [ EPhantom (ENumber "1")
+       , EIdentifier "s"
+       , EPhantom (ENumber "1")
+       ])
+    (EGrouped
+       [ EPhantom (ENumber "1")
+       , EIdentifier "t"
+       , EPhantom (ENumber "1")
+       ])
+]
+>>> tex
+\underset{s}{\overset{t}{BASE}} = \underset{\phantom{1}s\phantom{1}}{\overset{\phantom{1}t\phantom{1}}{BASE}}

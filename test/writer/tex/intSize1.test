@@ -1,0 +1,31 @@
+<<< native
+[ EGrouped [ ESymbol Op "\8747" , EIdentifier "x" ]
+, EGrouped [ ESymbol Op "\8747" , EIdentifier "M" ]
+, EDelimited
+    "\8747"
+    ""
+    [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "o"))
+    ]
+, EDelimited
+    "\8747"
+    ""
+    [ Right (EFraction NormalFrac (EIdentifier "A") (EIdentifier "o"))
+    ]
+, EDelimited
+    "\8747"
+    ""
+    [ Right (EFraction NormalFrac (EIdentifier "x") (EIdentifier "A"))
+    ]
+, EDelimited
+    "\8747"
+    ""
+    [ Right (EFraction NormalFrac (EIdentifier "A") (EIdentifier "M"))
+    ]
+, EDelimited
+    "\8747"
+    ""
+    [ Right (EFraction NormalFrac (EIdentifier ".") (EIdentifier "''"))
+    ]
+]
+>>> tex
+{\int x}{\int M}\left. \int\frac{x}{o} \right.\left. \int\frac{A}{o} \right.\left. \int\frac{x}{A} \right.\left. \int\frac{A}{M} \right.\left. \int\frac{.}{''} \right.

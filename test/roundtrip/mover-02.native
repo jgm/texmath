@@ -1,0 +1,10 @@
+[ EOver False (EIdentifier "BASE") (EIdentifier "over script")
+, ESymbol Rel "="
+, EOver
+    False
+    (EOver
+       False
+       (EOver False (EIdentifier "BASE") (EIdentifier "over script"))
+       (EPhantom (EIdentifier "over")))
+    (EPhantom (EIdentifier "over"))
+]

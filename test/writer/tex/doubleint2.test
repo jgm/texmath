@@ -1,0 +1,10 @@
+<<< native
+[ ESubsup (ESymbol Op "\8748") (ENumber "0") (ENumber "1")
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "x") ]
+, ESpace (1 % 9)
+, ESymbol Ord "\8518"
+, EIdentifier "x"
+]
+>>> tex
+\iint_{0}^{1}f(x)\mspace{2mu}\mathbb{d}x

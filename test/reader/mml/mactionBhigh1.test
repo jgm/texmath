@@ -1,0 +1,17 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <maction xmlns:dsi="http://www.dessci.com/mathml" actiontype="highlight" dsi:background="#dddd66" dsi:color="#bb2244">
+    <mfrac>
+      <mi>x</mi> 
+      <mn>2</mn> 
+    </mfrac> 
+  </maction> 
+  <mo>+</mo> 
+  <mn>2</mn> </math>
+>>> native
+[ EFraction NormalFrac (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, ENumber "2"
+]

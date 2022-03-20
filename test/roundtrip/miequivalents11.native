@@ -1,0 +1,105 @@
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EGrouped
+            [ EIdentifier "A" , ESymbol Rel "=" , EIdentifier "A" ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\119808"
+            , ESymbol Rel "="
+            , EStyled TextBold [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\119860"
+            , ESymbol Rel "="
+            , EStyled TextItalic [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\119912"
+            , ESymbol Rel "="
+            , EStyled TextBoldItalic [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120120"
+            , ESymbol Rel "="
+            , EStyled TextDoubleStruck [ EIdentifier "A" ]
+            , ESymbol Rel "="
+            , EIdentifier "\120120"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\119964"
+            , ESymbol Rel "="
+            , EStyled TextScript [ EIdentifier "A" ]
+            , ESymbol Rel "="
+            , EIdentifier "\119964"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120016"
+            , ESymbol Rel "="
+            , EStyled TextBoldScript [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120068"
+            , ESymbol Rel "="
+            , EStyled TextFraktur [ EIdentifier "A" ]
+            , ESymbol Rel "="
+            , EIdentifier "\120068"
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120172"
+            , ESymbol Rel "="
+            , EStyled TextBoldFraktur [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120224"
+            , ESymbol Rel "="
+            , EStyled TextSansSerif [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120276"
+            , ESymbol Rel "="
+            , EStyled TextSansSerifBold [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120328"
+            , ESymbol Rel "="
+            , EStyled TextSansSerifItalic [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120380"
+            , ESymbol Rel "="
+            , EStyled TextSansSerifBoldItalic [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    , [ [ EGrouped
+            [ EIdentifier "\120432"
+            , ESymbol Rel "="
+            , EStyled TextMonospace [ EIdentifier "A" ]
+            ]
+        ]
+      ]
+    ]
+]

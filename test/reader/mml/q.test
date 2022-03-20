@@ -1,0 +1,131 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable>
+    <mtr>
+      <mtd>
+        <mtext>qfr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝔮</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Qfr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝔔</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>qint</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⨌</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>qopf</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝕢</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Qopf</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ℚ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>qprime</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⁗</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>qscr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝓆</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>Qscr</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>𝒬</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>quaternions</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>ℍ</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>quatint</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>⨖</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>quest</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>?</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>questeq</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>≟</mo> 
+      </mtd> 
+    </mtr> 
+    <mtr>
+      <mtd>
+        <mtext>quot</mtext> 
+      </mtd> 
+      <mtd>
+        <mo>"</mo> 
+      </mtd> 
+    </mtr> 
+  </mtable> 
+</math>
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EText TextNormal "qfr" ] , [ ESymbol Alpha "\120110" ] ]
+    , [ [ EText TextNormal "Qfr" ] , [ ESymbol Alpha "\120084" ] ]
+    , [ [ EText TextNormal "qint" ] , [ ESymbol Op "\10764" ] ]
+    , [ [ EText TextNormal "qopf" ] , [ ESymbol Alpha "\120162" ] ]
+    , [ [ EText TextNormal "Qopf" ] , [ ESymbol Alpha "\8474" ] ]
+    , [ [ EText TextNormal "qprime" ] , [ ESymbol Accent "\8279" ] ]
+    , [ [ EText TextNormal "qscr" ] , [ ESymbol Alpha "\120006" ] ]
+    , [ [ EText TextNormal "Qscr" ] , [ ESymbol Alpha "\119980" ] ]
+    , [ [ EText TextNormal "quaternions" ]
+      , [ ESymbol Alpha "\8461" ]
+      ]
+    , [ [ EText TextNormal "quatint" ] , [ ESymbol Op "\10774" ] ]
+    , [ [ EText TextNormal "quest" ] , [ ESymbol Ord "?" ] ]
+    , [ [ EText TextNormal "questeq" ] , [ ESymbol Rel "\8799" ] ]
+    , [ [ EText TextNormal "quot" ] , [ ESymbol Accent "\"" ] ]
+    ]
+]
