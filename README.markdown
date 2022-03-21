@@ -97,7 +97,8 @@ To run the test suite, do `cabal test` or `stack test`.
 In its standard mode, the test suite will run golden tests of
 the individual readers and writers.  Reader tests can be found
 in `test/reader/{mml,omml,tex}`, and writer tests in
-`test/writer/{eqn,mml,omml,tex}`.
+`test/writer/{eqn,mml,omml,tex}`.  Regression tests linked
+to specific issues are in `test/regression`.
 
 Each test file consists of an input and an expected output.
 The input begins after a line `<<< FORMAT` and the output

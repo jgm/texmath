@@ -37,6 +37,7 @@ main = do
   mmlWriterTests <- getFiles "test/writer/mml"
   ommlWriterTests <- getFiles "test/writer/omml"
   eqnWriterTests <- getFiles "test/writer/eqn"
+  regressionTests <- getFiles "test/regression"
   roundtripTests <- getFiles "test/roundtrip"
   let ings = includingOptions [Option (Proxy :: Proxy RoundTrip)] :
                 defaultIngredients
@@ -55,13 +56,14 @@ main = do
              [ testGroup "tex" $ map toGoldenTest texReaderTests
              , testGroup "mml" $ map toGoldenTest mmlReaderTests
              , testGroup "omml" $ map toGoldenTest ommlReaderTests
-             ]
-      ,      testGroup "writer"
+             ],
+             testGroup "writer"
              [ testGroup "tex" $ map toGoldenTest texWriterTests
              , testGroup "mml" $ map toGoldenTest mmlWriterTests
              , testGroup "omml" $ map toGoldenTest ommlWriterTests
              , testGroup "eqn" $ map toGoldenTest eqnWriterTests
-             ]
+             ],
+             testGroup "regression" $ map toGoldenTest regressionTests
            ]
 
 toRoundtripTest :: T.Text -> FilePath -> TestTree

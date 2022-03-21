@@ -49,6 +49,7 @@ Extra-source-files:  README.markdown
                      test/reader/mml/*.test
                      test/reader/tex/*.test
                      test/reader/omml/*.test
+                     test/regression/*.test
                      test/roundtrip/*.native
                      lib/totexmath/unicodetotex.hs
                      lib/totexmath/unimathsymbols.txt

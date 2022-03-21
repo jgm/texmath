@@ -1,0 +1,15 @@
+<<< omml
+<?xml version="1.0" encoding="UTF-8"?>
+<m:oMathPara>
+  <m:oMath>
+    <m:bar>
+      <m:e>
+        <m:r>
+          <m:t>T</m:t>
+        </m:r>
+      </m:e>
+    </m:bar>
+  </m:oMath>
+</m:oMathPara>
+>>> tex
+\underline{T}
