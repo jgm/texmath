@@ -1,7 +1,0 @@
-<<< native
-[ EFraction NormalFrac (EIdentifier "x") (ENumber "2")
-, ESymbol Bin "+"
-, ENumber "2"
-]
->>> tex
-\frac{x}{2} + 2

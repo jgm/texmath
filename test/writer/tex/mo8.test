@@ -1,9 +1,0 @@
-<<< native
-[ EDelimited
-    "("
-    ")"
-    [ Right (EFraction NormalFrac (EIdentifier "a") (EIdentifier "b"))
-    ]
-]
->>> tex
-\left( \frac{a}{b} \right)
