@@ -18,8 +18,6 @@ the MathML operator dictionary is included.
 [pandoc]: http://github.com/jgm/pandoc
 
 You can [try it out online here](http://johnmacfarlane.net/texmath.html).
-(Note that the math it produces will be rendered correctly only
-if your browser supports MathML. Firefox does; Safari and Chrome do not.)
 
 By default, only the Haskell library is installed.  To install a
 test program, `texmath`, use the `executable` Cabal flag:
