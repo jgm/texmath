@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>texmath demo</title>
+  <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    var postConvert = function(body, onSuccess, onError) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '/texmath/convert', true);
+      xhr.setRequestHeader('Accept', 'application/json');
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.onreadystatechange = function () {
+        var res = null;
+        if (xhr.readyState === 4) {
+          if (xhr.status === 204 || xhr.status === 205) {
+            onSuccess();
+          } else if (xhr.status >= 200 && xhr.status < 300) {
+            try { res = JSON.parse(xhr.responseText); } catch (e) { onError(e); }
+            if (res) onSuccess(res);
+          } else {
+            onError(xhr.responseText);
+          }
+        }
+      };
+      xhr.send(JSON.stringify(body));
+    };
+    var convert = function() {
+          postConvert(
+             { 'text' : $('#input').val(),
+               'from': $('#from').val(),
+               'to': $('#to').val(),
+               'display': true },
+              function(res) {
+                     $('#result').text(res);
+                  },
+              function(err) {
+                    console.log(err);
+                     $('#result').text(err);
+              })
+    };
+    // Browsers do not always like self-closing tags
+    function removeSelfClosingTags(s){
+      return s.replace(/<([a-z][a-z0-9]*)([^<>]*?) *\/>/g, "<$1$2><\/$1>");
+    };
+
+    $(document).ready(function(){
+      $('#convert').click(convert);
+      $('#to').change(convert);
+      $('#from').change(convert);
+    });
+  </script>
+  <style type="text/css">
+  body { font-family: sans-serif; color: #444; font-size: 12pt; }
+  .main-container { display: flex; flex-wrap: wrap; }
+  .container { display: flex; flex-wrap: wrap; min-width: 24em; margin: 6pt; }
+  textarea { width: 100%; font-size: 12pt; }
+  pre { white-space: pre-wrap; color: blue; }
+  </style>
+  <script type="text/javascript">
+  </script>
+</head>
+<body>
+  <h1>texmath demo</h1>
+  <div id="controls">
+    <button id="convert">Convert</button>
+    <label for="from">from</label>
+    <select name="from" id="from">
+      <option value="tex" selected>tex</option>
+      <option value="mathml">mathml</option>
+      <option value="omml">omml</option>
+    </select>
+    <label for="to">to</label>
+    <select name="to" id="to">
+      <option value="tex">tex</option>
+      <option value="mathml" selected>mathml</option>
+      <option value="omml">omml</option>
+      <option value="eqn">eqn</option>
+    </select>
+  </div>
+
+  <div class="main-container">
+
+    <div class="container">
+      <textarea id="input">\int_0^1 x^x\,\mathrm{d}x = \sum_{n = 1}^\infty{(-1)^{n + 1}\,n^{-n}}</textarea>
+    </div>
+
+    <div class="container">
+      <pre id="result">
+      </pre>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -41,6 +41,7 @@ Extra-source-files:  README.markdown
                      man/texmath.1.md
                      man/Makefile
                      man/man1/texmath.1
+                     server/texmath.html
                      cgi/texmath.html
                      test/writer/mml/*.test
                      test/writer/omml/*.test
