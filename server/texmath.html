@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Online conversion between tex, MathML, OMML, and eqn math formats">
   <title>texmath demo</title>
   <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
@@ -30,13 +32,15 @@
              { 'text' : $('#input').val(),
                'from': $('#from').val(),
                'to': $('#to').val(),
-               'display': true },
+               'display': $('#display').val() == "true" },
               function(res) {
                      $('#result').text(res);
+	             $('#result').removeClass('error');
                   },
               function(err) {
                     console.log(err);
                      $('#result').text(err);
+		     $('#result').addClass('error');
               })
     };
     // Browsers do not always like self-closing tags
@@ -51,18 +55,23 @@
     });
   </script>
   <style type="text/css">
-  body { font-family: sans-serif; color: #444; font-size: 12pt; }
+  body { font-family: sans-serif; text-color: #555; font-size: 12pt; }
+  h1 { font-size: 20pt; max-width: 13em; margin-right: 1em; }
   .main-container { display: flex; flex-wrap: wrap; }
-  .container { display: flex; flex-wrap: wrap; min-width: 24em; margin: 6pt; }
-  textarea { width: 100%; font-size: 12pt; }
-  pre { white-space: pre-wrap; color: blue; }
+  .container { display: flex; flex: 1; flex-wrap: wrap; min-width: 300px; margin: 6pt; }
+  textarea { width: 100%; font-size: 11pt; padding: 6px; }
+  pre { white-space: pre-wrap; color: blue; font-size: 11pt; font-family: monospace; }
+  .error { color: red; }
   </style>
   <script type="text/javascript">
   </script>
 </head>
 <body>
   <h1>texmath demo</h1>
-  <div id="controls">
+  <p><a href="https://github.com/jgm/texmath">texmath</a> is a Haskell
+  library, command-line program, and web server that converts between
+  TeX, MathML, OMML, and eqn formats for mathematical formulas.</p>
+  <div id="controls" class="container">
     <button id="convert">Convert</button>
     <label for="from">from</label>
     <select name="from" id="from">
@@ -76,6 +85,10 @@
       <option value="mathml" selected>mathml</option>
       <option value="omml">omml</option>
       <option value="eqn">eqn</option>
+    </select>
+    <select name="display" id="display">
+      <option value="true" selected>display</option>
+      <option value="false">inline</option>
     </select>
   </div>
 
