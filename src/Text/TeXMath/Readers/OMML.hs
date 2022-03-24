@@ -300,9 +300,14 @@ elemToExps' element | isElem "m" "eqArr" element =
 elemToExps' element | isElem "m" "f" element = do
   num <- filterChildName (hasElemName "m" "num") element
   den <- filterChildName (hasElemName "m" "den") element
+  let barType = filterChildName (hasElemName "m" "fPr") element >>=
+            filterChildName (hasElemName "m" "type") >>=
+            findAttrBy (hasElemName "m" "val")
   let numExp = EGrouped $ concat $ mapMaybe (elemToExps) (elChildren num)
       denExp = EGrouped $ concat $ mapMaybe (elemToExps) (elChildren den)
-  return $ [EFraction NormalFrac numExp denExp]
+  case barType of
+    Just "noBar" -> Just [EFraction NoLineFrac numExp denExp]
+    _            -> Just [EFraction NormalFrac numExp denExp]
 elemToExps' element | isElem "m" "func" element = do
   fName <- filterChildName (hasElemName "m" "fName") element
   baseExp <- filterChildName (hasElemName "m" "e") element >>=

@@ -80,14 +80,14 @@
     ")"
     [ Right
         (EFraction
-           NormalFrac
+           NoLineFrac
            (EIdentifier "a")
            (EDelimited
               "{"
               "}"
               [ Right
                   (EFraction
-                     NormalFrac
+                     NoLineFrac
                      (EIdentifier "b")
                      (EGrouped [ EIdentifier "c" , ESymbol Bin "+" , ENumber "2" ]))
               ]))
