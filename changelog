@@ -1,3 +1,46 @@
+texmath (0.12.5)
+
+  * TeX reader: Improve treatment of `\operatorname` (#147).
+    We can now handle spaces, as in `\operatorname{arg\,max}`.
+    We also now have a better fallback when the operator name
+    contains content that can't be turned into plain text.
+    (In this case, we just pass through the contents, since EMathOperator
+    takes a text argument.)
+
+  * TeX: Support more `\var...` commands for greek letters (Albert
+    Krewinkel). AMSmath defines `\varGamma`, `\varDelta`, `\varTheta`,
+    `\varLambda`, `\varXi`, `\varPi`, `\varSigma`, `\varUpsilon`, `\varPhi`,
+    `\varPsi`, and `\varOmega`, all of which are now parsed as unicode
+    characters *MATHEMATICAL ITALIC CAPITAL ...*.  Also, `\varsigma` is
+    now parsed as *MATHEMATICAL SMALL FINAL SIGMA*.
+
+  * OMML writer: better handling for scaled delimeter symbols (#140).
+    We now try to represent these using m:d when possible.
+    This allows the parentheses to expand with the content;
+    previously we'd often get small parentheses with large
+    contents.
+
+  * OMML reader:
+
+    + Allow m:pos to be missing or lack an attribute in m:bar (#187).
+    + Set the default value of pos to "bot" (Maximilian Meier).
+    + Implement support for noBar fractions (#191, Meimax).
+
+  * Add servant-based server with a JSON API.
+
+  * Remove old cgi directory.
+
+  * Improve test suite (#189).  The existing test suite was a complicated
+    mess, so that it was hard to add new tests.  (One of the problems
+    was that the same files were used as golden files for reader
+    tests and as sources for writer tests.) This commit shifts
+    the same tests to a new, easier to understand format, so that
+    it will be simple to add new tests in the future.  We now use
+    the tasty test framework, and we use pretty-show to make the
+    native golden tests easier to comprehend.
+
+  * Add regression tests.
+
 texmath (0.12.4)
 
   * TeX reader: handle hyperref better (#186).  We don't parse it as a link,
