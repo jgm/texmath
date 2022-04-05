@@ -117,7 +117,9 @@ symbolMap = foldr go mempty records
    go r m =
      foldr (\(_,c) ->
               if T.take 1 c == "\\" && not (T.any (=='{') c)
-              then M.insert c (ESymbol (category r) (T.singleton (uchar r)))
+              then
+                let t = T.singleton $! uchar $! r
+                 in M.insert c (ESymbol (category r) t)
               else id)
            m
            (commands r)
