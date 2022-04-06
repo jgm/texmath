@@ -1,4 +1,5 @@
 {-# LANGUAGE ViewPatterns #-}
+{-# LANGUAGE BangPatterns #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-
 Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
@@ -115,10 +116,10 @@ symbolMap :: M.Map T.Text Exp
 symbolMap = foldr go mempty records
  where
    go r m =
-     foldr (\(_,c) ->
+     foldr (\(_,!c) ->
               if T.take 1 c == "\\" && not (T.any (=='{') c)
               then
-                let t = T.singleton $! uchar $! r
+                let !t = T.singleton $! uchar $! r
                  in M.insert c (ESymbol (category r) t)
               else id)
            m
