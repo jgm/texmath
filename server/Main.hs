@@ -7,6 +7,7 @@
 module Main where
 
 import Network.Wai.Handler.Warp
+import Network.Wai.Logger (withStdoutLogger)
 import Data.Aeson
 import Data.Aeson.TH
 import Data.Maybe (fromMaybe)
@@ -42,9 +43,9 @@ main = do
        <> header "texmath-server - an HTTP server for texmath" )
   opts <- execParser options
   putStrLn $ "Starting server on port " <> show (port opts)
-  let settings = setPort (port opts) defaultSettings
-  runSettings settings app
-
+  withStdoutLogger $ \logger -> do
+    let settings = setPort (port opts) $ setLogger logger defaultSettings
+    runSettings settings app
 -- This is the API.  The "/convert" endpoint takes a request body
 -- consisting of a JSON-encoded Params structure and responds to
 -- Get requests with either plain text or JSON, depending on the
