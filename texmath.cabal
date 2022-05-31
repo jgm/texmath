@@ -138,9 +138,9 @@ Executable texmath-server
     Main-is:             Main.hs
     Hs-Source-Dirs:      server
     if impl(ghc >= 6.12)
-      Ghc-Options:     -Wall -fno-warn-unused-do-bind
+      Ghc-Options:     -Wall -threaded -fno-warn-unused-do-bind
     else
-      Ghc-Options:     -Wall
+      Ghc-Options:     -Wall -threaded
     Ghc-Prof-Options:  -fprof-auto-exported
     if flag(server)
       Buildable:         True
