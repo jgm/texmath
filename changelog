@@ -1,3 +1,12 @@
+texmath (0.12.5.1)
+
+  * Compile texmath-server with `-threaded`.
+    This should fix the crashes we have experienced.
+
+  * Add apache style logging to web server.
+
+  * Add more strictness in Unicode.ToTeX.
+
 texmath (0.12.5)
 
   * TeX reader: Improve treatment of `\operatorname` (#147).
