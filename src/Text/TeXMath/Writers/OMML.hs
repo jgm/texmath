@@ -297,7 +297,8 @@ showExp props e =
 
 isBarChar :: Char -> Bool
 isBarChar c = c == '\x203E' || c == '\x00AF' ||
-              c == '\x0304' || c == '\x0333'
+              c == '\x0304' || c == '\x0333' ||
+              c == '_'
 
 -- | Checks whether an expression marks the start of an nary operator
 -- expression. These are different integrals, sums, products, and
