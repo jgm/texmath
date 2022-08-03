@@ -1,3 +1,7 @@
+texmath (0.12.5.2)
+
+  * Fix bug in implementation of `\mspace` (#195).
+
 texmath (0.12.5.1)
 
   * Compile texmath-server with `-threaded`.
