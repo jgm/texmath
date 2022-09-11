@@ -90,7 +90,7 @@
 ]
 >>> eqn
 matrix{
-ccol{ {} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
+ccol{ {""} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
 ccol{ {roman "27C"} above \[u27C0] above \[u27C1] above \[u27C2] above \[u27C3] above \[u27C4] above \[u27C5] above \[u27C6] above \[u27C7] above \[u27C8] above \[u27C9] above \[u27CA] above @ above \[u27CC] above @ above @ above @ }
 ccol{ {roman "27D"} above \[u27D0] above \[u27D1] above \[u27D2] above \[u27D3] above \[u27D4] above \[u27D5] above \[u27D6] above \[u27D7] above \[u27D8] above \[u27D9] above \[u27DA] above \[u27DB] above \[u27DC] above \[u27DD] above \[u27DE] above \[u27DF] }
 ccol{ {roman "27E"} above \[u27E0] above \[u27E1] above \[u27E2] above \[u27E3] above \[u27E4] above \[u27E5] above \[u27E6] above \[u27E7] above \[u27E8] above \[u27E9] above \[u27EA] above \[u27EB] above \[u27EC] above \[u27ED] above \[u27EE] above \[u27EF] }

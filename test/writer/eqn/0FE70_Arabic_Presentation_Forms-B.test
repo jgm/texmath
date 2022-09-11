@@ -202,7 +202,7 @@
 ]
 >>> eqn
 matrix{
-ccol{ {} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
+ccol{ {""} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
 ccol{ {roman "FE7"} above \[uFE70] above \[uFE71] above \[uFE72] above \[uFE73] above \[uFE74] above @ above \[uFE76] above \[uFE77] above \[uFE78] above \[uFE79] above \[uFE7A] above \[uFE7B] above \[uFE7C] above \[uFE7D] above \[uFE7E] above \[uFE7F] }
 ccol{ {roman "FE8"} above \[uFE80] above \[uFE81] above \[uFE82] above \[uFE83] above \[uFE84] above \[uFE85] above \[uFE86] above \[uFE87] above \[uFE88] above \[uFE89] above \[uFE8A] above \[uFE8B] above \[uFE8C] above \[uFE8D] above \[uFE8E] above \[uFE8F] }
 ccol{ {roman "FE9"} above \[uFE90] above \[uFE91] above \[uFE92] above \[uFE93] above \[uFE94] above \[uFE95] above \[uFE96] above \[uFE97] above \[uFE98] above \[uFE99] above \[uFE9A] above \[uFE9B] above \[uFE9C] above \[uFE9D] above \[uFE9E] above \[uFE9F] }

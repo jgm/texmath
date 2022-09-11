@@ -184,7 +184,7 @@
 ]
 >>> eqn
 matrix{
-ccol{ {} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
+ccol{ {""} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
 ccol{ {roman "10"} above \[u0100] above \[u0101] above \[u0102] above \[u0103] above \[u0104] above \[u0105] above \[u0106] above \[u0107] above \[u0108] above \[u0109] above \[u010A] above \[u010B] above \[u010C] above \[u010D] above \[u010E] above \[u010F] }
 ccol{ {roman "11"} above \[u0110] above \[u0111] above \[u0112] above \[u0113] above \[u0114] above \[u0115] above \[u0116] above \[u0117] above \[u0118] above \[u0119] above \[u011A] above \[u011B] above \[u011C] above \[u011D] above \[u011E] above \[u011F] }
 ccol{ {roman "12"} above \[u0120] above \[u0121] above \[u0122] above \[u0123] above \[u0124] above \[u0125] above \[u0126] above \[u0127] above \[u0128] above \[u0129] above \[u012A] above \[u012B] above \[u012C] above \[u012D] above \[u012E] above \[u012F] }

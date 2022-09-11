@@ -184,7 +184,7 @@
 ]
 >>> eqn
 matrix{
-ccol{ {} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
+ccol{ {""} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
 ccol{ {roman "8"} above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ }
 ccol{ {roman "9"} above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ }
 ccol{ {roman "A"} above \[u00A0] above \[u00A1] above \[u00A2] above \[u00A3] above \[u00A4] above \[u00A5] above \[u00A6] above \[u00A7] above \[u00A8] above \[u00A9] above \[u00AA] above \[u00AB] above \[u00AC] above \[u00AD] above \[u00AE] above \[u00AF] }

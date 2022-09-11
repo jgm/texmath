@@ -328,7 +328,7 @@
 ]
 >>> eqn
 matrix{
-ccol{ {} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
+ccol{ {""} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
 ccol{ {roman "260"} above \[u2600] above \[u2601] above \[u2602] above \[u2603] above \[u2604] above \[u2605] above \[u2606] above \[u2607] above \[u2608] above \[u2609] above \[u260A] above \[u260B] above \[u260C] above \[u260D] above \[u260E] above \[u260F] }
 ccol{ {roman "261"} above \[u2610] above \[u2611] above \[u2612] above \[u2613] above \[u2614] above \[u2615] above \[u2616] above \[u2617] above \[u2618] above \[u2619] above \[u261A] above \[u261B] above \[u261C] above \[u261D] above \[u261E] above \[u261F] }
 ccol{ {roman "262"} above \[u2620] above \[u2621] above \[u2622] above \[u2623] above \[u2624] above \[u2625] above \[u2626] above \[u2627] above \[u2628] above \[u2629] above \[u262A] above \[u262B] above \[u262C] above \[u262D] above \[u262E] above \[u262F] }

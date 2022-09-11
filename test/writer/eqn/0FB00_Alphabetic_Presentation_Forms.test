@@ -130,7 +130,7 @@
 ]
 >>> eqn
 matrix{
-ccol{ {} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
+ccol{ {""} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
 ccol{ {roman "FB0"} above \[uFB00] above \[uFB01] above \[uFB02] above \[uFB03] above \[uFB04] above \[uFB05] above \[uFB06] above @ above @ above @ above @ above @ above @ above @ above @ above @ }
 ccol{ {roman "FB1"} above @ above @ above @ above \[uFB13] above \[uFB14] above \[uFB15] above \[uFB16] above \[uFB17] above @ above @ above @ above @ above @ above \[uFB1D] above \[uFB1E] above \[uFB1F] }
 ccol{ {roman "FB2"} above \[uFB20] above \[uFB21] above \[uFB22] above \[uFB23] above \[uFB24] above \[uFB25] above \[uFB26] above \[uFB27] above \[uFB28] above \[uFB29] above \[uFB2A] above \[uFB2B] above \[uFB2C] above \[uFB2D] above \[uFB2E] above \[uFB2F] }

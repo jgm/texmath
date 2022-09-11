@@ -814,7 +814,7 @@
 ]
 >>> eqn
 matrix{
-ccol{ {} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
+ccol{ {""} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
 ccol{ {roman "FB5"} above \[uFB50] above \[uFB51] above \[uFB52] above \[uFB53] above \[uFB54] above \[uFB55] above \[uFB56] above \[uFB57] above \[uFB58] above \[uFB59] above \[uFB5A] above \[uFB5B] above \[uFB5C] above \[uFB5D] above \[uFB5E] above \[uFB5F] }
 ccol{ {roman "FB6"} above \[uFB60] above \[uFB61] above \[uFB62] above \[uFB63] above \[uFB64] above \[uFB65] above \[uFB66] above \[uFB67] above \[uFB68] above \[uFB69] above \[uFB6A] above \[uFB6B] above \[uFB6C] above \[uFB6D] above \[uFB6E] above \[uFB6F] }
 ccol{ {roman "FB7"} above \[uFB70] above \[uFB71] above \[uFB72] above \[uFB73] above \[uFB74] above \[uFB75] above \[uFB76] above \[uFB77] above \[uFB78] above \[uFB79] above \[uFB7A] above \[uFB7B] above \[uFB7C] above \[uFB7D] above \[uFB7E] above \[uFB7F] }

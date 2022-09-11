@@ -184,7 +184,7 @@
 ]
 >>> eqn
 matrix{
-ccol{ {} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
+ccol{ {""} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
 ccol{ {roman "290"} above \[u2900] above \[u2901] above \[u2902] above \[u2903] above \[u2904] above \[u2905] above \[u2906] above \[u2907] above \[u2908] above \[u2909] above \[u290A] above \[u290B] above \[u290C] above \[u290D] above \[u290E] above \[u290F] }
 ccol{ {roman "291"} above \[u2910] above \[u2911] above \[u2912] above \[u2913] above \[u2914] above \[u2915] above \[u2916] above \[u2917] above \[u2918] above \[u2919] above \[u291A] above \[u291B] above \[u291C] above \[u291D] above \[u291E] above \[u291F] }
 ccol{ {roman "292"} above \[u2920] above \[u2921] above \[u2922] above \[u2923] above \[u2924] above \[u2925] above \[u2926] above \[u2927] above \[u2928] above \[u2929] above \[u292A] above \[u292B] above \[u292C] above \[u292D] above \[u292E] above \[u292F] }

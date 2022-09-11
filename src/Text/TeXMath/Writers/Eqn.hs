@@ -28,6 +28,7 @@ import Text.TeXMath.Types
 import qualified Text.TeXMath.Shared as S
 import Data.Generics (everywhere, mkT)
 import Data.Ratio ((%))
+import Data.Text (Text)
 
 -- import Debug.Trace
 -- tr' x = trace (show x) x
@@ -42,16 +43,20 @@ writeEqn dt exprs =
 writeExp' :: Exp -> T.Text
 writeExp' e@(EGrouped _) = writeExp e
 writeExp' e = if T.any (== ' ') s
-                 then "{" <> s <> "}"
+                 then asgroup s
                  else s
                where s = writeExp e
 
 writeExps :: [Exp] -> T.Text
 writeExps = T.intercalate " " . map writeExp
 
+asgroup :: Text -> Text
+asgroup "" = "{\"\"}"  -- see #198
+asgroup t = "{" <> t <> "}"
+
 writeExp :: Exp -> T.Text
 writeExp (ENumber s) = s
-writeExp (EGrouped es) = "{" <> writeExps es <> "}"
+writeExp (EGrouped es) = asgroup $ writeExps es
 writeExp (EDelimited open close es) =
   "left " <> mbQuote open <> " " <> T.intercalate " " (map fromDelimited es) <>
   " right " <> mbQuote close
@@ -184,7 +189,7 @@ writeExp (EText ttype s) =
        TextBoldItalic -> "bold italic " <> quoted
        _   -> quoted
 writeExp (EStyled ttype es) =
-  let contents = "{" <> writeExps es <> "}"
+  let contents = asgroup $ writeExps es
   in case ttype of
        TextNormal -> "roman " <> contents
        TextItalic -> "italic " <> contents

@@ -202,14 +202,14 @@
 ]
 >>> eqn
 matrix{
-ccol{ {} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
-ccol{ {roman "1D46"} above {} above {} above {} above {} above {} above {} above {} above {} above \[u1D468] above \[u1D469] above \[u1D46A] above \[u1D46B] above \[u1D46C] above \[u1D46D] above \[u1D46E] above \[u1D46F] }
+ccol{ {""} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
+ccol{ {roman "1D46"} above {""} above {""} above {""} above {""} above {""} above {""} above {""} above {""} above \[u1D468] above \[u1D469] above \[u1D46A] above \[u1D46B] above \[u1D46C] above \[u1D46D] above \[u1D46E] above \[u1D46F] }
 ccol{ {roman "1D47"} above \[u1D470] above \[u1D471] above \[u1D472] above \[u1D473] above \[u1D474] above \[u1D475] above \[u1D476] above \[u1D477] above \[u1D478] above \[u1D479] above \[u1D47A] above \[u1D47B] above \[u1D47C] above \[u1D47D] above \[u1D47E] above \[u1D47F] }
 ccol{ {roman "1D48"} above \[u1D480] above \[u1D481] above \[u1D482] above \[u1D483] above \[u1D484] above \[u1D485] above \[u1D486] above \[u1D487] above \[u1D488] above \[u1D489] above \[u1D48A] above \[u1D48B] above \[u1D48C] above \[u1D48D] above \[u1D48E] above \[u1D48F] }
-ccol{ {roman "1D49"} above \[u1D490] above \[u1D491] above \[u1D492] above \[u1D493] above \[u1D494] above \[u1D495] above \[u1D496] above \[u1D497] above \[u1D498] above \[u1D499] above \[u1D49A] above \[u1D49B] above {} above {} above {} above {} }
-ccol{ {roman "1D71"} above {} above {} above {} above {} above {} above {} above {} above {} above {} above {} above {} above {} above \[u1D71C] above \[u1D71D] above \[u1D71E] above \[u1D71F] }
+ccol{ {roman "1D49"} above \[u1D490] above \[u1D491] above \[u1D492] above \[u1D493] above \[u1D494] above \[u1D495] above \[u1D496] above \[u1D497] above \[u1D498] above \[u1D499] above \[u1D49A] above \[u1D49B] above {""} above {""} above {""} above {""} }
+ccol{ {roman "1D71"} above {""} above {""} above {""} above {""} above {""} above {""} above {""} above {""} above {""} above {""} above {""} above {""} above \[u1D71C] above \[u1D71D] above \[u1D71E] above \[u1D71F] }
 ccol{ {roman "1D72"} above \[u1D720] above \[u1D721] above \[u1D722] above \[u1D723] above \[u1D724] above \[u1D725] above \[u1D726] above \[u1D727] above \[u1D728] above \[u1D729] above \[u1D72A] above \[u1D72B] above \[u1D72C] above \[u1D72D] above \[u1D72E] above \[u1D72F] }
 ccol{ {roman "1D73"} above \[u1D730] above \[u1D731] above \[u1D732] above \[u1D733] above \[u1D734] above \[u1D735] above \[u1D736] above \[u1D737] above \[u1D738] above \[u1D739] above \[u1D73A] above \[u1D73B] above \[u1D73C] above \[u1D73D] above \[u1D73E] above \[u1D73F] }
 ccol{ {roman "1D74"} above \[u1D740] above \[u1D741] above \[u1D742] above \[u1D743] above \[u1D744] above \[u1D745] above \[u1D746] above \[u1D747] above \[u1D748] above \[u1D749] above \[u1D74A] above \[u1D74B] above \[u1D74C] above \[u1D74D] above \[u1D74E] above \[u1D74F] }
-ccol{ {roman "1D75"} above \[u1D750] above \[u1D751] above \[u1D752] above \[u1D753] above \[u1D754] above \[u1D755] above {} above {} above {} above {} above {} above {} above {} above {} above {} above {} }
+ccol{ {roman "1D75"} above \[u1D750] above \[u1D751] above \[u1D752] above \[u1D753] above \[u1D754] above \[u1D755] above {""} above {""} above {""} above {""} above {""} above {""} above {""} above {""} above {""} above {""} }
 }

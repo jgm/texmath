@@ -603,24 +603,24 @@
 >>> eqn
 matrix{
 ccol{ {roman "Bernoulli Trials"} above {roman "Cauchy-Schwarz Inequality"} above {roman "Cauchy Formula"} above {roman "Cross Product"} above {roman "Vandermonde Determinant"} above {roman "Lorenz Equations"} above {roman "Maxwell's Equations"} above {roman "Einstein Field Equations"} above {roman "Ramanujan Identity"} above {roman "Another Ramanujan identity"} above {roman "Rogers-Ramanujan Identity"} above {roman "Commutative Diagram"} }
-ccol{ {{P ( E )} = left ( n over k right ) p sub {} sup k {( 1 - p )} sub {} sup {n - k}} above {{left ( sum from {k = 1} to n a sub k sup {} b sub k sup {} right )} sub {} sup 2 <= left ( sum from {k = 1} to n a sub k sup 2 right ) left ( sum from {k = 1} to n b sub k sup 2 right )} above {f ( z ) ^ cdot Ind sub gamma sup {} ( z ) = 1 over {2 pi i} \[u222E] from gamma to {} {f ( xi )} over {xi - z} ^ d xi} above {V sub 1 sup {} times V sub 2 sup {} = left | matrix{
+ccol{ {{P ( E )} = left ( n over k right ) p sub {""} sup k {( 1 - p )} sub {""} sup {n - k}} above {{left ( sum from {k = 1} to n a sub k sup {""} b sub k sup {""} right )} sub {""} sup 2 <= left ( sum from {k = 1} to n a sub k sup 2 right ) left ( sum from {k = 1} to n b sub k sup 2 right )} above {f ( z ) ^ cdot Ind sub gamma sup {""} ( z ) = 1 over {2 pi i} \[u222E] from gamma to {""} {f ( xi )} over {xi - z} ^ d xi} above {V sub 1 sup {""} times V sub 2 sup {""} = left | matrix{
 ccol{ i above {{partial X} over {partial u}} above {{partial X} over {partial v}} }
 ccol{ j above {{partial Y} over {partial u}} above {{partial Y} over {partial v}} }
 ccol{ k above 0 above 0 }
 } right |} above {left | matrix{
-ccol{ 1 above {v sub 1 sup {}} above {v sub 1 sup 2} above \[u22EE] above {v sub 1 sup {n - 1}} }
-ccol{ 1 above {v sub 2 sup {}} above {v sub 2 sup 2} above \[u22EE] above {v sub 2 sup {n - 1}} }
+ccol{ 1 above {v sub 1 sup {""}} above {v sub 1 sup 2} above \[u22EE] above {v sub 1 sup {n - 1}} }
+ccol{ 1 above {v sub 2 sup {""}} above {v sub 2 sup 2} above \[u22EE] above {v sub 2 sup {n - 1}} }
 ccol{ \[u22EF] above \[u22EF] above \[u22EF] above \[u22F1] above \[u22EF] }
-ccol{ 1 above {v sub n sup {}} above {v sub n sup 2} above \[u22EE] above {v sub n sup {n - 1}} }
-} right | = prod from {1 <= i < j <= n} to {} ( v sub j sup {} - v sub i sup {} )} above {matrix{
-ccol{ {{x from {}} to \[u02D9]} above {{y from {}} to \[u02D9]} above {{z from {}} to \[u02D9]} }
+ccol{ 1 above {v sub n sup {""}} above {v sub n sup 2} above \[u22EE] above {v sub n sup {n - 1}} }
+} right | = prod from {1 <= i < j <= n} to {""} ( v sub j sup {""} - v sub i sup {""} )} above {matrix{
+ccol{ {{x from {""}} to \[u02D9]} above {{y from {""}} to \[u02D9]} above {{z from {""}} to \[u02D9]} }
 ccol{ = above = above = }
 ccol{ {sigma ( y - x )} above {rho x - y - x z} above {- beta z + x y} }
 }} above {left { matrix{
-ccol{ {grad fwd 0 times {B from {}} to \[u21BC] - ^ 1 over c ^ {partial fwd 0 {E from {}} to \[u21BC]} over {partial fwd 0 t}} above {grad fwd 0 cdot {E from {}} to \[u21BC]} above {grad fwd 0 times {E from {}} to \[u21BC] ^ + ^ 1 over c ^ {partial fwd 0 {B from {}} to \[u21BC]} over {partial fwd 0 t}} above {grad fwd 0 cdot {B from {}} to \[u21BC]} }
+ccol{ {grad fwd 0 times {B from {""}} to \[u21BC] - ^ 1 over c ^ {partial fwd 0 {E from {""}} to \[u21BC]} over {partial fwd 0 t}} above {grad fwd 0 cdot {E from {""}} to \[u21BC]} above {grad fwd 0 times {E from {""}} to \[u21BC] ^ + ^ 1 over c ^ {partial fwd 0 {B from {""}} to \[u21BC]} over {partial fwd 0 t}} above {grad fwd 0 cdot {B from {""}} to \[u21BC]} }
 ccol{ = above = above = above = }
-ccol{ {{4 pi} over c ^ {j from {}} to \[u21BC]} above {4 pi rho} above {{0 from {}} to \[u21BC]} above 0 }
-} right ""} above {R sub {mu nu} sup {} - 1 over 2 ^ g sub {mu nu} sup {} ^ R = {8 pi G} over {c sub {} sup 4} ^ T sub {mu nu} sup {}} above {1 over {( sqrt {varphi sqrt 5} - varphi ) e sub {} sup {25 over pi}} = 1 + {e sub {} sup {- 2 pi}} over {1 + {e sub {} sup {- 4 pi}} over {1 + {e sub {} sup {- 6 pi}} over {1 + {e sub {} sup {- 8 pi}} over {1 + ...}}}}} above {sum from {k = 1} to inf 1 over {2 sub {} sup {\[u230A] k cdot fwd 0 varphi \[u230B]}} = 1 over {2 sub {} sup 0 + 1 over {2 sub {} sup 1 + \[u22EF]}}} above {1 + {sum from {k = 1} to inf {q sub {} sup {k sub {} sup 2 + k}} over {( 1 - q ) ( 1 - q sub {} sup 2 ) \[u22EF] ( 1 - q sub {} sup k )}} = {prod from {j = 0} to inf 1 over {( 1 - q sub {} sup {5 j + 2} ) ( 1 - q sub {} sup {5 j + 3} )}} , roman "  " roman "  " {f o r} ~ | q | < 1 .} above {matrix{
+ccol{ {{4 pi} over c ^ {j from {""}} to \[u21BC]} above {4 pi rho} above {{0 from {""}} to \[u21BC]} above 0 }
+} right ""} above {R sub {mu nu} sup {""} - 1 over 2 ^ g sub {mu nu} sup {""} ^ R = {8 pi G} over {c sub {""} sup 4} ^ T sub {mu nu} sup {""}} above {1 over {( sqrt {varphi sqrt 5} - varphi ) e sub {""} sup {25 over pi}} = 1 + {e sub {""} sup {- 2 pi}} over {1 + {e sub {""} sup {- 4 pi}} over {1 + {e sub {""} sup {- 6 pi}} over {1 + {e sub {""} sup {- 8 pi}} over {1 + ...}}}}} above {sum from {k = 1} to inf 1 over {2 sub {""} sup {\[u230A] k cdot fwd 0 varphi \[u230B]}} = 1 over {2 sub {""} sup 0 + 1 over {2 sub {""} sup 1 + \[u22EF]}}} above {1 + {sum from {k = 1} to inf {q sub {""} sup {k sub {""} sup 2 + k}} over {( 1 - q ) ( 1 - q sub {""} sup 2 ) \[u22EF] ( 1 - q sub {""} sup k )}} = {prod from {j = 0} to inf 1 over {( 1 - q sub {""} sup {5 j + 2} ) ( 1 - q sub {""} sup {5 j + 3} )}} , roman "  " roman "  " {f o r} ~ | q | < 1 .} above {matrix{
 ccol{ H above \[u2193] above H }
 ccol{ <- above {fwd 0} above -> }
 ccol{ K above \[u2191] above K }

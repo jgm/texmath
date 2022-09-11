@@ -220,15 +220,15 @@
 ]
 >>> eqn
 matrix{
-ccol{ {} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
-ccol{ {roman "1D5D"} above {} above {} above {} above {} above \[u1D5D4] above \[u1D5D5] above \[u1D5D6] above \[u1D5D7] above \[u1D5D8] above \[u1D5D9] above \[u1D5DA] above \[u1D5DB] above \[u1D5DC] above \[u1D5DD] above \[u1D5DE] above \[u1D5DF] }
+ccol{ {""} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
+ccol{ {roman "1D5D"} above {""} above {""} above {""} above {""} above \[u1D5D4] above \[u1D5D5] above \[u1D5D6] above \[u1D5D7] above \[u1D5D8] above \[u1D5D9] above \[u1D5DA] above \[u1D5DB] above \[u1D5DC] above \[u1D5DD] above \[u1D5DE] above \[u1D5DF] }
 ccol{ {roman "1D5E"} above \[u1D5E0] above \[u1D5E1] above \[u1D5E2] above \[u1D5E3] above \[u1D5E4] above \[u1D5E5] above \[u1D5E6] above \[u1D5E7] above \[u1D5E8] above \[u1D5E9] above \[u1D5EA] above \[u1D5EB] above \[u1D5EC] above \[u1D5ED] above \[u1D5EE] above \[u1D5EF] }
 ccol{ {roman "1D5F"} above \[u1D5F0] above \[u1D5F1] above \[u1D5F2] above \[u1D5F3] above \[u1D5F4] above \[u1D5F5] above \[u1D5F6] above \[u1D5F7] above \[u1D5F8] above \[u1D5F9] above \[u1D5FA] above \[u1D5FB] above \[u1D5FC] above \[u1D5FD] above \[u1D5FE] above \[u1D5FF] }
-ccol{ {roman "1D60"} above \[u1D600] above \[u1D601] above \[u1D602] above \[u1D603] above \[u1D604] above \[u1D605] above \[u1D606] above \[u1D607] above {} above {} above {} above {} above {} above {} above {} above {} }
-ccol{ {roman "1D75"} above {} above {} above {} above {} above {} above {} above \[u1D756] above \[u1D757] above \[u1D758] above \[u1D759] above \[u1D75A] above \[u1D75B] above \[u1D75C] above \[u1D75D] above \[u1D75E] above \[u1D75F] }
+ccol{ {roman "1D60"} above \[u1D600] above \[u1D601] above \[u1D602] above \[u1D603] above \[u1D604] above \[u1D605] above \[u1D606] above \[u1D607] above {""} above {""} above {""} above {""} above {""} above {""} above {""} above {""} }
+ccol{ {roman "1D75"} above {""} above {""} above {""} above {""} above {""} above {""} above \[u1D756] above \[u1D757] above \[u1D758] above \[u1D759] above \[u1D75A] above \[u1D75B] above \[u1D75C] above \[u1D75D] above \[u1D75E] above \[u1D75F] }
 ccol{ {roman "1D76"} above \[u1D760] above \[u1D761] above \[u1D762] above \[u1D763] above \[u1D764] above \[u1D765] above \[u1D766] above \[u1D767] above \[u1D768] above \[u1D769] above \[u1D76A] above \[u1D76B] above \[u1D76C] above \[u1D76D] above \[u1D76E] above \[u1D76F] }
 ccol{ {roman "1D77"} above \[u1D770] above \[u1D771] above \[u1D772] above \[u1D773] above \[u1D774] above \[u1D775] above \[u1D776] above \[u1D777] above \[u1D778] above \[u1D779] above \[u1D77A] above \[u1D77B] above \[u1D77C] above \[u1D77D] above \[u1D77E] above \[u1D77F] }
 ccol{ {roman "1D78"} above \[u1D780] above \[u1D781] above \[u1D782] above \[u1D783] above \[u1D784] above \[u1D785] above \[u1D786] above \[u1D787] above \[u1D788] above \[u1D789] above \[u1D78A] above \[u1D78B] above \[u1D78C] above \[u1D78D] above \[u1D78E] above \[u1D78F] }
-ccol{ {roman "1D7E"} above {} above {} above {} above {} above {} above {} above {} above {} above {} above {} above {} above {} above \[u1D7EC] above \[u1D7ED] above \[u1D7EE] above \[u1D7EF] }
-ccol{ {roman "1D7F"} above \[u1D7F0] above \[u1D7F1] above \[u1D7F2] above \[u1D7F3] above \[u1D7F4] above \[u1D7F5] above {} above {} above {} above {} above {} above {} above {} above {} above {} above {} }
+ccol{ {roman "1D7E"} above {""} above {""} above {""} above {""} above {""} above {""} above {""} above {""} above {""} above {""} above {""} above {""} above \[u1D7EC] above \[u1D7ED] above \[u1D7EE] above \[u1D7EF] }
+ccol{ {roman "1D7F"} above \[u1D7F0] above \[u1D7F1] above \[u1D7F2] above \[u1D7F3] above \[u1D7F4] above \[u1D7F5] above {""} above {""} above {""} above {""} above {""} above {""} above {""} above {""} above {""} above {""} }
 }

@@ -90,7 +90,7 @@
 ]
 >>> eqn
 matrix{
-ccol{ {} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
+ccol{ {""} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
 ccol{ {roman "20D"} above \[u20D0] above \[u20D1] above \[u20D2] above \[u20D3] above \[u20D4] above \[u20D5] above \[u20D6] above \[u20D7] above \[u20D8] above \[u20D9] above \[u20DA] above \[u20DB] above \[u20DC] above \[u20DD] above \[u20DE] above \[u20DF] }
 ccol{ {roman "20E"} above \[u20E0] above \[u20E1] above \[u20E2] above \[u20E3] above \[u20E4] above \[u20E5] above \[u20E6] above \[u20E7] above \[u20E8] above \[u20E9] above \[u20EA] above \[u20EB] above \[u20EC] above \[u20ED] above \[u20EE] above \[u20EF] }
 ccol{ {roman "20F"} above \[u20F0] above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ above @ }

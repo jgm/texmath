@@ -202,7 +202,7 @@
 ]
 >>> eqn
 matrix{
-ccol{ {} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
+ccol{ {""} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
 ccol{ {roman "37"} above \[u0370] above \[u0371] above \[u0372] above \[u0373] above \[u0374] above \[u0375] above \[u0376] above \[u0377] above @ above @ above \[u037A] above \[u037B] above \[u037C] above \[u037D] above \[u037E] above @ }
 ccol{ {roman "38"} above @ above @ above @ above @ above \[u0384] above \[u0385] above \[u0386] above \[u0387] above \[u0388] above \[u0389] above \[u038A] above @ above \[u038C] above @ above \[u038E] above \[u038F] }
 ccol{ {roman "39"} above \[u0390] above \[u0391] above \[u0392] above GAMMA above DELTA above \[u0395] above \[u0396] above \[u0397] above THETA above \[u0399] above \[u039A] above LAMBDA above \[u039C] above \[u039D] above XI above \[u039F] }

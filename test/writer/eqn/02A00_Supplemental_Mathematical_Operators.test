@@ -328,7 +328,7 @@
 ]
 >>> eqn
 matrix{
-ccol{ {} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
+ccol{ {""} above {roman "0"} above {roman "1"} above {roman "2"} above {roman "3"} above {roman "4"} above {roman "5"} above {roman "6"} above {roman "7"} above {roman "8"} above {roman "9"} above {roman "A"} above {roman "B"} above {roman "C"} above {roman "D"} above {roman "E"} above {roman "F"} }
 ccol{ {roman "2A0"} above \[u2A00] above \[u2A01] above \[u2A02] above \[u2A03] above \[u2A04] above \[u2A05] above \[u2A06] above \[u2A07] above \[u2A08] above \[u2A09] above \[u2A0A] above \[u2A0B] above \[u2A0C] above \[u2A0D] above \[u2A0E] above \[u2A0F] }
 ccol{ {roman "2A1"} above \[u2A10] above \[u2A11] above \[u2A12] above \[u2A13] above \[u2A14] above \[u2A15] above \[u2A16] above \[u2A17] above \[u2A18] above \[u2A19] above \[u2A1A] above \[u2A1B] above \[u2A1C] above \[u2A1D] above \[u2A1E] above \[u2A1F] }
 ccol{ {roman "2A2"} above \[u2A20] above \[u2A21] above \[u2A22] above \[u2A23] above \[u2A24] above \[u2A25] above \[u2A26] above \[u2A27] above \[u2A28] above \[u2A29] above \[u2A2A] above \[u2A2B] above \[u2A2C] above \[u2A2D] above \[u2A2E] above \[u2A2F] }

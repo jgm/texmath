@@ -1,4 +1,4 @@
 <<< native
 [ EDelimited "(" ")" [ Right (EGrouped []) ] ]
 >>> eqn
-left ( {} right )
+left ( {""} right )

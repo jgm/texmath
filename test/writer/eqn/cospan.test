@@ -8,4 +8,4 @@
 , EIdentifier "C"
 ]
 >>> eqn
-B -> from f to {} A <- from f to {} C
+B -> from f to {""} A <- from f to {""} C
