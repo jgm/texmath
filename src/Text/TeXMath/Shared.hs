@@ -171,8 +171,9 @@ parseLength = do
     frac <- option "" ((:) <$> char '.' <*> many1 digit)
     unit <- getInput
     -- This is safe as dec and frac must be a double of some kind
-    let [(n :: Double, [])] = reads (neg ++ dec ++ frac)
-    return (round (n * 18) % 18, unit)
+    case reads (neg ++ dec ++ frac) of
+       [(n :: Double, [])] -> return (round (n * 18) % 18, unit)
+       _ -> fail $ "Could not parse " ++ neg ++ dec ++ frac ++ " as Double"
 
 textTypesMap :: M.Map TextType (T.Text, T.Text)
 textTypesMap = M.fromList textTypes

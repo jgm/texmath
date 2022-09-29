@@ -486,8 +486,9 @@ getSymChar :: Element -> T.Text
 getSymChar element
   | Just s <- lowerFromPrivate <$> getCodepoint
   , Just font <- getFont =
-  let [(char, _)] = readLitChar ("\\x" ++ s) in
-    maybe "" T.singleton $ getUnicode font char
+  case readLitChar ("\\x" ++ s) of
+     [(char, _)] -> maybe "" T.singleton $ getUnicode font char
+     _ -> ""
   where
     getCodepoint = findAttrBy (hasElemName "w" "char") element
     getFont = (textToFont . T.pack) =<< findAttrBy (hasElemName "w" "font") element
