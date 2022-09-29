@@ -38,20 +38,20 @@ jobs:
           cabal v2-build --enable-tests --disable-optimization -fexecutable all
           cabal v2-test --disable-optimization all
 
-  macos:
+# macos:
 
-    runs-on: macOS-latest
+#   runs-on: macOS-latest
 
-    steps:
-    - uses: actions/checkout@v1
-    - name: Install stack
-      run: |
-          curl -L https://get.haskellstack.org/stable/osx-x86_64.tar.gz -o stack.tar.gz
-          tar xzvf stack.tar.gz --strip-components=1 'stack*/stack'
-    - name: Install dependencies
-      run: |
-          ./stack update
-          ./stack test --dependencies-only --fast
-    - name: Build and test
-      run: |
-          ./stack install --fast --test --haddock --no-haddock-deps
+#   steps:
+#   - uses: actions/checkout@v1
+#   - name: Install stack
+#     run: |
+#         curl -L https://get.haskellstack.org/stable/osx-x86_64.tar.gz -o stack.tar.gz
+#         tar xzvf stack.tar.gz --strip-components=1 'stack*/stack'
+#   - name: Install dependencies
+#     run: |
+#         ./stack update
+#         ./stack test --dependencies-only --fast
+#   - name: Build and test
+#     run: |
+#         ./stack install --fast --test --haddock --no-haddock-deps
