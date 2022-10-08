@@ -1,9 +1,15 @@
-TESTARGS ?= --hide-successes
-
-quick:
-	stack install --flag 'texmath:executable' --test --test-arguments='$(TESTARGS)'
+TESTARGS ?=--hide-successes --ansi-tricks=false
+CABALOPTS ?=--disable-optimization -fexecutable
 
 test:
-	stack test | tee testlog
+	cabal test $(CABALOPTS) --test-options="$(TESTARGS)"
+.PHONY: test
 
-.PHONY: quick test
+install:
+	cabal build $(CABALOPTS)
+	cp `cabal list-bin texmath $(CABALOPTS)` ~/.cabal/bin/
+.PHONY: install
+
+clean:
+	cabal clean
+.PHONY: clean
