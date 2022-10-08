@@ -23,4 +23,4 @@
     NormalFrac (ENumber "1") (ESub (EIdentifier "l") (ENumber "0"))
 ]
 >>> eqn
-phi sub n left ( kappa right ) = 0.033 C sub n sup 2 kappa sup {\[u2212] 11 / 3} , fwd 100 1 over {L sub 0} << kappa << 1 over {l sub 0}
+phi sub n left ( kappa right ) = 0.033 C sub n sup 2 kappa sup {- 11 / 3} , fwd 100 1 over {L sub 0} << kappa << 1 over {l sub 0}

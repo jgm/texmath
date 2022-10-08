@@ -19,4 +19,4 @@
     (EGrouped [ ENumber "2" , EIdentifier "a" ])
 ]
 >>> eqn
-x = {\[u2212] b +- sqrt {b sup 2 \[u2212] 4 a c}} over {2 a}
+x = {- b +- sqrt {b sup 2 - 4 a c}} over {2 a}

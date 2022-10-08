@@ -22,4 +22,4 @@
     ]
 ]
 >>> eqn
-int sub 0 sup 1 x sup x ^ roman {d} x = sum from {n = 1} to inf {{left ( \[u2212] 1 right )} sup {n + 1} ^ n sup {\[u2212] n}}
+int sub 0 sup 1 x sup x ^ roman {d} x = sum from {n = 1} to inf {{left ( - 1 right )} sup {n + 1} ^ n sup {- n}}

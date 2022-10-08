@@ -37,7 +37,7 @@ import Data.Text (Text)
 -- packages (amsmath and amssymb)
 writeEqn :: DisplayType -> [Exp] -> T.Text
 writeEqn dt exprs =
-  T.intercalate " " $ map writeExp $ everywhere (mkT $ S.handleDownup dt) exprs
+  T.unwords $ map writeExp $ everywhere (mkT $ S.handleDownup dt) exprs
 
 -- like writeExp but inserts {} if contents contain a space
 writeExp' :: Exp -> T.Text
@@ -77,6 +77,8 @@ writeExp (ESymbol t s) =
   case s of
     "{"     -> "\\[lC]"
     "}"     -> "\\[rC]"
+    "\8722" -> "-"  -- minus sign, see #200
+    "\8943" -> "cdots" -- centered ellipses, see #200
     "\8805" -> ">="
     "\8804" -> "<="
     "\8801" -> "=="
