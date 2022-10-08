@@ -1,3 +1,15 @@
+texmath (0.12.5.4)
+
+  * OMML reader: fix treatment of `eqArr` (#196).
+    This change also includes a change to the TeX writer: any array
+    with an alternating sequence of R,L alignments will be rendered
+    as an aligned environment (not just a single [R,L] as currently).
+
+  * OOML Writer: Add low line char ("_") to `isBarChar` (#193, Hagb).
+    Closes jgm/pandoc#8152.
+
+  * Eqn writer: use `-` for minus, `cdots` for cdots (#200).
+
 texmath (0.12.5.3)
 
   * Eqn writer: avoid empty `{}` (#198).
