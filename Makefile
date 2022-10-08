@@ -7,7 +7,8 @@ test:
 
 install:
 	cabal build $(CABALOPTS)
-	cp `cabal list-bin texmath $(CABALOPTS)` ~/.cabal/bin/
+	rm ~/.cabal/bin/texmath
+	cp `cabal list-bin texmath $(CABALOPTS)` ~/.cabal/bin/texmath
 .PHONY: install
 
 clean:
