@@ -42,6 +42,7 @@ import Text.TeXMath.Types
 import Text.TeXMath.Shared (fixTree, getSpaceWidth, getOperator)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Text.TeXMath.Unicode.Fonts (getUnicode, textToFont)
+import Data.List.Split (splitWhen)
 
 readOMML :: T.Text -> Either T.Text [Exp]
 readOMML s | Just e <- parseXMLDoc s =
@@ -127,15 +128,11 @@ elemToBases element | isElem "m" "e" element =
 elemToBases _ = Nothing
 
 
--- TODO: The right way to do this is to use the ampersand to break the
--- text lines into multiple columns. That's tricky, though, and this
--- will get us most of the way for the time being.
-filterAmpersand :: Exp -> Exp
-filterAmpersand (EIdentifier s)   = EIdentifier (T.filter ('&' /=) s)
-filterAmpersand (EText tt s)      = EText tt (T.filter ('&' /=) s)
-filterAmpersand (EStyled tt exps) = EStyled tt (map filterAmpersand exps)
-filterAmpersand (EGrouped exps)   = EGrouped (map filterAmpersand exps)
-filterAmpersand e                    = e
+breakOnAmpersand :: [Exp] -> [[Exp]]
+breakOnAmpersand = splitWhen isAmpersand
+ where
+  isAmpersand (ESymbol _ "&") = True
+  isAmpersand _ = False
 
 elemToOMathRunTextStyle :: Element -> OMathRunTextStyle
 elemToOMathRunTextStyle element
@@ -294,9 +291,11 @@ elemToExps' element | isElem "m" "d" element =
    Just [EDelimited beg end exps]
 elemToExps' element | isElem "m" "eqArr" element =
   let expLst = mapMaybe elemToBases (elChildren element)
-      expLst' = map (\es -> [map filterAmpersand es]) expLst
+      expLst' = map breakOnAmpersand expLst
+      cols = maximum (map length expLst')
+      colspecs = take cols $ cycle [AlignRight , AlignLeft]
   in
-   return [EArray [] expLst']
+   return [EArray colspecs expLst']
 elemToExps' element | isElem "m" "f" element = do
   num <- filterChildName (hasElemName "m" "num") element
   den <- filterChildName (hasElemName "m" "den") element

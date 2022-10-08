@@ -1,0 +1,96 @@
+<<< omml
+<m:oMathPara>
+  <m:oMath>
+    <m:r>
+      <w:rPr>
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"
+        w:cs="Times New Roman" />
+      </w:rPr>
+      <m:t>f</m:t>
+    </m:r>
+    <m:d>
+      <m:dPr>
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"
+            w:cs="Times New Roman" />
+            <w:i />
+          </w:rPr>
+        </m:ctrlPr>
+      </m:dPr>
+      <m:e>
+        <m:r>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"
+            w:cs="Times New Roman" />
+          </w:rPr>
+          <m:t>x</m:t>
+        </m:r>
+      </m:e>
+    </m:d>
+    <m:r>
+      <w:rPr>
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"
+        w:cs="Times New Roman" />
+      </w:rPr>
+      <m:t>=</m:t>
+    </m:r>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="{" />
+        <m:endChr m:val="" />
+        <m:ctrlPr>
+          <w:rPr>
+            <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math"
+            w:cs="Times New Roman" />
+            <w:i />
+          </w:rPr>
+        </m:ctrlPr>
+      </m:dPr>
+      <m:e>
+        <m:eqArr>
+          <m:eqArrPr>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math"
+                w:hAnsi="Cambria Math" w:cs="Times New Roman" />
+                <w:i />
+              </w:rPr>
+            </m:ctrlPr>
+          </m:eqArrPr>
+          <m:e>
+            <m:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math"
+                w:hAnsi="Cambria Math" w:cs="Times New Roman" />
+              </w:rPr>
+              <m:t>x&amp;=1 &amp; y&amp;=2</m:t>
+            </m:r>
+            <m:ctrlPr>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math"
+                w:eastAsia="Cambria Math" w:hAnsi="Cambria Math"
+                w:cs="Cambria Math" />
+                <w:i />
+              </w:rPr>
+            </m:ctrlPr>
+          </m:e>
+          <m:e>
+            <m:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Cambria Math"
+                w:hAnsi="Cambria Math" w:cs="Times New Roman" />
+              </w:rPr>
+              <m:t>xxx&amp;=111 &amp; yyy&amp;=222</m:t>
+            </m:r>
+          </m:e>
+        </m:eqArr>
+      </m:e>
+    </m:d>
+  </m:oMath>
+</m:oMathPara>
+>>> tex
+f(x) = \left\{ \begin{aligned}
+x & = 1\  & \ y & = 2 \\
+xxx & = 111\  & \ yyy & = 222 \\
+\end{aligned} \right.\ 
