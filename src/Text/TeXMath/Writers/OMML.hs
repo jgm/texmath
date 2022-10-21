@@ -66,6 +66,7 @@ showFraction props ft x y =
                              , mnode "num" x'
                              , mnode "den" y']
        DisplayFrac -> showFraction props NormalFrac x y
+       ContinuedFrac -> showFraction props NormalFrac x y
        InlineFrac -> mnode "f" [ mnode "fPr" $
                                  mnodeA "type" "lin" ()
                               , mnode "num" x'

@@ -38,10 +38,11 @@ data TeXSymbolType = Ord | Op | Bin | Rel | Open | Close | Pun | Accent
 data Alignment = AlignLeft | AlignCenter | AlignRight
                  deriving (Show, Read, Eq, Ord, Data, Typeable)
 
-data FractionType = NormalFrac   -- ^ Displayed or textual, acc to 'DisplayType'
-                  | DisplayFrac  -- ^ Force display mode
-                  | InlineFrac   -- ^ Force inline mode (textual)
-                  | NoLineFrac   -- ^ No line between top and bottom
+data FractionType = NormalFrac    -- ^ Displayed or textual, acc to 'DisplayType'
+                  | DisplayFrac   -- ^ Force display mode
+                  | InlineFrac    -- ^ Force inline mode (textual)
+                  | NoLineFrac    -- ^ No line between top and bottom
+                  | ContinuedFrac -- ^ Display as continued fraction
                   deriving (Show, Read, Eq, Ord, Data, Typeable)
 
 type ArrayLine = [[Exp]]

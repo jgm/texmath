@@ -51,13 +51,15 @@ mrow = unode "mrow"
 showFraction :: TextType -> FractionType -> Exp -> Exp -> Element
 showFraction tt ft x y =
   case ft of
-       NormalFrac   -> unode "mfrac" [x', y']
-       InlineFrac   -> withAttribute "displaystyle" "false" .
+       NormalFrac    -> unode "mfrac" [x', y']
+       InlineFrac    -> withAttribute "displaystyle" "false" .
                          unode "mstyle" . unode "mfrac" $ [x', y']
-       DisplayFrac  -> withAttribute "displaystyle" "true" .
+       DisplayFrac   -> withAttribute "displaystyle" "true" .
                          unode "mstyle" . unode "mfrac" $ [x', y']
-       NoLineFrac   -> withAttribute "linethickness" "0" .
+       NoLineFrac    -> withAttribute "linethickness" "0" .
                          unode "mfrac" $ [x', y']
+       ContinuedFrac -> withAttribute "scriptlevel" "0" .
+                         unode "mstyle" . unode "mfrac" $ [x', y']
   where x' = showExp tt x
         y' = showExp tt y
 

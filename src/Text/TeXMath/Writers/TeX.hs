@@ -184,10 +184,11 @@ writeExp (ESpace width) = do
   tell [ControlSeq $ getSpaceCommand ("amsmath" `elem` env) width]
 writeExp (EFraction fractype e1 e2) = do
   let cmd = case fractype of
-                 NormalFrac  -> "\\frac"
-                 DisplayFrac -> "\\dfrac"
-                 InlineFrac  -> "\\tfrac"
-                 NoLineFrac  -> "\\binom"  -- shouldn't happen because
+                 NormalFrac    -> "\\frac"
+                 DisplayFrac   -> "\\dfrac"
+                 InlineFrac    -> "\\tfrac"
+                 ContinuedFrac -> "\\cfrac"
+                 NoLineFrac    -> "\\binom"  -- shouldn't happen because
                          -- a binom will be in a delimited
   tell [ControlSeq cmd]
   tellGroup (writeExp e1)

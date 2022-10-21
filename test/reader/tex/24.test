@@ -1,0 +1,5 @@
+<<< tex
+\cfrac{1}{2}
+
+>>> native
+[ EFraction ContinuedFrac (ENumber "1") (ENumber "2") ]

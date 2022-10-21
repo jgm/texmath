@@ -1,0 +1,12 @@
+<<< native
+[EFraction ContinuedFrac (ENumber "1") (ENumber "2")]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle scriptlevel="0">
+    <mfrac>
+      <mn>1</mn>
+      <mn>2</mn>
+    </mfrac>
+  </mstyle>
+</math>
