@@ -655,6 +655,7 @@ root c = do
   (ERoot <$> inbrackets <*> texToken) <|> (ESqrt <$> texToken)
 
 xspace :: Text -> TP Exp
+xspace "\\enspace" = return $ ESpace (1/2)
 xspace "\\mspace" =
   braces $ do
     len <- many1 digit

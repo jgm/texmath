@@ -1,0 +1,4 @@
+<<< tex
+x\enspace y
+>>> native
+[ EIdentifier "x" , ESpace (1 % 2) , EIdentifier "y" ]
