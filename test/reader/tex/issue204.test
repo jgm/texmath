@@ -1,0 +1,8 @@
+<<< tex
+a \succcurlyeq_{i} b
+
+>>> native
+[ EIdentifier "a"
+, ESub (ESymbol Rel "\8829") (EIdentifier "i")
+, EIdentifier "b"
+]
