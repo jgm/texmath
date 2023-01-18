@@ -1,3 +1,16 @@
+texmath (0.12.5.5)
+
+  * Allow pandoc-types 1.23.
+
+  * TeX reader: remove false positives for isConvertible (#204).
+    "Convertible" symbols are those in which subscripts render
+    under the symbol in display environments, and as subscripts
+    in inline environments. Previously the TeX parser recognized
+    all relation and binary symbols as convertible, which does not
+    match TeX's behavior.
+
+  * TeX reader: Support `\enspace` (#203).
+
 texmath (0.12.5.4)
 
   * OMML reader: fix treatment of `eqArr` (#196).
