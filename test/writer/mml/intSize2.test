@@ -79,41 +79,41 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mtable>
     <mtr>
-      <mtd columnalign="center" />
-      <mtd columnalign="center" />
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center" />
+      <mtd columnalign="center" style="text-align: center" />
+      <mtd columnalign="center" style="text-align: center">
         <mtext mathvariant="normal">symm</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mtext mathvariant="normal">stretch</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mtext mathvariant="normal">symm/stretch</mtext>
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mtext mathvariant="normal">small op</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mo>∫</mo>
           <mi>x</mi>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mo>∫</mo>
           <mi>x</mi>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mo stretchy="true" form="prefix">∫</mo>
           <mi>x</mi>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mo stretchy="true" form="prefix">∫</mo>
           <mi>x</mi>
@@ -121,28 +121,28 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mtext mathvariant="normal">large op</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mo>∫</mo>
           <mi>x</mi>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mo>∫</mo>
           <mi>x</mi>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mo stretchy="true" form="prefix">∫</mo>
           <mi>x</mi>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mo stretchy="true" form="prefix">∫</mo>
           <mi>x</mi>
@@ -150,10 +150,10 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mtext mathvariant="normal">small op</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mo>∫</mo>
           <mfrac>
@@ -162,7 +162,7 @@
           </mfrac>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mo>∫</mo>
           <mfrac>
@@ -171,7 +171,7 @@
           </mfrac>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mo stretchy="true" form="prefix">∫</mo>
           <mfrac>
@@ -180,7 +180,7 @@
           </mfrac>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mo stretchy="true" form="prefix">∫</mo>
           <mfrac>
@@ -191,10 +191,10 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mtext mathvariant="normal">large op</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mo>∫</mo>
           <mfrac>
@@ -203,7 +203,7 @@
           </mfrac>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mo>∫</mo>
           <mfrac>
@@ -212,7 +212,7 @@
           </mfrac>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mo stretchy="true" form="prefix">∫</mo>
           <mfrac>
@@ -221,7 +221,7 @@
           </mfrac>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mo stretchy="true" form="prefix">∫</mo>
           <mfrac>

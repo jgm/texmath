@@ -22,7 +22,7 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mtable>
     <mtr>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mphantom>
             <mtext mathvariant="normal">fail</mtext>
@@ -35,10 +35,10 @@
           </munder>
         </mrow>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mo>=</mo>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mover>
             <mi>TH</mi>

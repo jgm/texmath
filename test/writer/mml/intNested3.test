@@ -166,10 +166,10 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mtable>
     <mtr>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mtext mathvariant="normal">single integral</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mrow>
             <mo>∫</mo>
@@ -218,10 +218,10 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mtext mathvariant="normal">double integral</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mrow>
             <mo stretchy="true" form="prefix">∫</mo>
@@ -291,10 +291,10 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mtext mathvariant="normal">double nested integral</mtext>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mrow>
             <mo stretchy="true" form="prefix">∫</mo>

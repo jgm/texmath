@@ -110,9 +110,16 @@ makeArray :: Maybe TextType -> [Alignment] -> [ArrayLine] -> Element
 makeArray tt as ls = unode "mtable" $
   map (unode "mtr" .
     zipWith (\a -> setAlignment a .  unode "mtd". map (showExp tt)) as') ls
-   where setAlignment AlignLeft    = withAttribute "columnalign" "left"
-         setAlignment AlignRight   = withAttribute "columnalign" "right"
-         setAlignment AlignCenter  = withAttribute "columnalign" "center"
+   -- see #205 on the need for style attributes:
+   where setAlignment AlignLeft    =
+           withAttribute "columnalign" "left" .
+           withAttribute "style" "text-align: left"
+         setAlignment AlignRight   =
+           withAttribute "columnalign" "right" .
+           withAttribute "style" "text-align: right"
+         setAlignment AlignCenter  =
+           withAttribute "columnalign" "center" .
+           withAttribute "style" "text-align: center"
          as'                       = as ++ cycle [AlignCenter]
 
 -- Kept as String for Text.XML.Light
