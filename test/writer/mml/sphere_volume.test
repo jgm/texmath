@@ -155,7 +155,7 @@
     <mo stretchy="false" form="postfix">}</mo>
     <mtable>
       <mtr>
-        <mtd columnalign="right">
+        <mtd columnalign="right" style="text-align: right">
           <mrow>
             <mi mathvariant="normal">V</mi>
             <mi mathvariant="normal">o</mi>
@@ -165,7 +165,7 @@
             <mi mathvariant="normal">e</mi>
           </mrow>
         </mtd>
-        <mtd columnalign="left">
+        <mtd columnalign="left" style="text-align: left">
           <mo>=</mo>
           <munder>
             <mo>∭</mo>
@@ -190,8 +190,8 @@
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="right" />
-        <mtd columnalign="left">
+        <mtd columnalign="right" style="text-align: right" />
+        <mtd columnalign="left" style="text-align: left">
           <mo>=</mo>
           <msubsup>
             <mo>∫</mo>
@@ -232,8 +232,8 @@
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="right" />
-        <mtd columnalign="left">
+        <mtd columnalign="right" style="text-align: right" />
+        <mtd columnalign="left" style="text-align: left">
           <mo>=</mo>
           <mi>ϕ</mi>
           <msubsup>
@@ -274,8 +274,8 @@
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="right" />
-        <mtd columnalign="left">
+        <mtd columnalign="right" style="text-align: right" />
+        <mtd columnalign="left" style="text-align: left">
           <mo>=</mo>
           <mn>2</mn>
           <mi>π</mi>
@@ -293,8 +293,8 @@
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="right" />
-        <mtd columnalign="left">
+        <mtd columnalign="right" style="text-align: right" />
+        <mtd columnalign="left" style="text-align: left">
           <mo>=</mo>
           <mfrac displaystyle="false">
             <mn>4</mn>

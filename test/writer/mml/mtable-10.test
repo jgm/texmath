@@ -14,7 +14,7 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mtable>
     <mtr>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <munder>
           <mi>HT</mi>
           <mphantom>
@@ -22,10 +22,10 @@
           </mphantom>
         </munder>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mo>=</mo>
       </mtd>
-      <mtd columnalign="center">
+      <mtd columnalign="center" style="text-align: center">
         <mi>TH</mi>
       </mtd>
     </mtr>

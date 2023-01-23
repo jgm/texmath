@@ -74,7 +74,7 @@
     <mo stretchy="true" form="prefix">{</mo>
     <mtable>
       <mtr>
-        <mtd columnalign="left">
+        <mtd columnalign="left" style="text-align: left">
           <msub>
             <mo>div</mo>
             <mi>x</mi>
@@ -98,12 +98,12 @@
           </msubsup>
           <mi>u</mi>
         </mtd>
-        <mtd columnalign="left">
+        <mtd columnalign="left" style="text-align: left">
           <mtext mathvariant="normal">operatorname</mtext>
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="left">
+        <mtd columnalign="left" style="text-align: left">
           <munder>
             <mo>⋆-lim&#39;sup</mo>
             <mrow>
@@ -139,12 +139,12 @@
           </munderover>
           <mi>u</mi>
         </mtd>
-        <mtd columnalign="left">
+        <mtd columnalign="left" style="text-align: left">
           <mtext mathvariant="normal">operatorname*</mtext>
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="left">
+        <mtd columnalign="left" style="text-align: left">
           <msub>
             <mo>⋆-lim&#39;sup</mo>
             <mrow>
@@ -180,12 +180,12 @@
           </msubsup>
           <mi>u</mi>
         </mtd>
-        <mtd columnalign="left">
+        <mtd columnalign="left" style="text-align: left">
           <mtext mathvariant="normal">operatorname*:nolimits</mtext>
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="left">
+        <mtd columnalign="left" style="text-align: left">
           <msub>
             <mo>curl</mo>
             <mi>x</mi>
@@ -197,7 +197,7 @@
           </munder>
           <mi>u</mi>
         </mtd>
-        <mtd columnalign="left">
+        <mtd columnalign="left" style="text-align: left">
           <mtext mathvariant="normal">DeclareMathOperator</mtext>
         </mtd>
       </mtr>

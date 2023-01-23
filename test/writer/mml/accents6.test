@@ -297,12 +297,12 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mtable>
     <mtr>
-      <mtd columnalign="left">
+      <mtd columnalign="left" style="text-align: left">
         <mtext mathvariant="normal">default: (accent=true)</mtext>
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="left">
+      <mtd columnalign="left" style="text-align: left">
         <mrow>
           <munderover>
             <mi>x</mi>
@@ -488,12 +488,12 @@
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="left">
+      <mtd columnalign="left" style="text-align: left">
         <mtext mathvariant="normal">accent=false:</mtext>
       </mtd>
     </mtr>
     <mtr>
-      <mtd columnalign="left">
+      <mtd columnalign="left" style="text-align: left">
         <mrow>
           <munderover>
             <mi>x</mi>

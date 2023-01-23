@@ -43,7 +43,7 @@
   <mrow>
     <mtable>
       <mtr>
-        <mtd columnalign="right">
+        <mtd columnalign="right" style="text-align: right">
           <mrow>
             <mphantom>
               <mtext mathvariant="normal">fail</mtext>
@@ -51,12 +51,12 @@
             <mi>H</mi>
           </mrow>
         </mtd>
-        <mtd columnalign="right">
+        <mtd columnalign="right" style="text-align: right">
           <mi>A</mi>
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="right">
+        <mtd columnalign="right" style="text-align: right">
           <mrow>
             <mphantom>
               <mtext mathvariant="normal">fail</mtext>
@@ -64,12 +64,12 @@
             <mi>T</mi>
           </mrow>
         </mtd>
-        <mtd columnalign="right">
+        <mtd columnalign="right" style="text-align: right">
           <mi>I</mi>
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="right">
+        <mtd columnalign="right" style="text-align: right">
           <mrow>
             <mphantom>
               <mtext mathvariant="normal">fail</mtext>
@@ -77,7 +77,7 @@
             <mi>U</mi>
           </mrow>
         </mtd>
-        <mtd columnalign="right">
+        <mtd columnalign="right" style="text-align: right">
           <mi>Y</mi>
         </mtd>
       </mtr>
@@ -85,10 +85,10 @@
     <mo>=</mo>
     <mtable>
       <mtr>
-        <mtd columnalign="left">
+        <mtd columnalign="left" style="text-align: left">
           <mi>A</mi>
         </mtd>
-        <mtd columnalign="left">
+        <mtd columnalign="left" style="text-align: left">
           <mrow>
             <mi>H</mi>
             <mphantom>
@@ -98,10 +98,10 @@
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="left">
+        <mtd columnalign="left" style="text-align: left">
           <mi>I</mi>
         </mtd>
-        <mtd columnalign="left">
+        <mtd columnalign="left" style="text-align: left">
           <mrow>
             <mi>T</mi>
             <mphantom>
@@ -111,10 +111,10 @@
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="left">
+        <mtd columnalign="left" style="text-align: left">
           <mi>Y</mi>
         </mtd>
-        <mtd columnalign="left">
+        <mtd columnalign="left" style="text-align: left">
           <mrow>
             <mi>U</mi>
             <mphantom>
