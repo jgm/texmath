@@ -156,14 +156,14 @@
     <mtable>
       <mtr>
         <mtd columnalign="right">
-          <mstyle mathvariant="normal">
-            <mi>V</mi>
-            <mi>o</mi>
-            <mi>l</mi>
-            <mi>u</mi>
-            <mi>m</mi>
-            <mi>e</mi>
-          </mstyle>
+          <mrow>
+            <mi mathvariant="normal">V</mi>
+            <mi mathvariant="normal">o</mi>
+            <mi mathvariant="normal">l</mi>
+            <mi mathvariant="normal">u</mi>
+            <mi mathvariant="normal">m</mi>
+            <mi mathvariant="normal">e</mi>
+          </mrow>
         </mtd>
         <mtd columnalign="left">
           <mo>=</mo>
@@ -179,19 +179,13 @@
           <mo>sin</mo>
           <mi>θ</mi>
           <mspace width="0.167em" />
-          <mstyle mathvariant="normal">
-            <mi>d</mi>
-          </mstyle>
+          <mi mathvariant="normal">d</mi>
           <mi>ρ</mi>
           <mspace width="0.167em" />
-          <mstyle mathvariant="normal">
-            <mi>d</mi>
-          </mstyle>
+          <mi mathvariant="normal">d</mi>
           <mi>θ</mi>
           <mspace width="0.167em" />
-          <mstyle mathvariant="normal">
-            <mi>d</mi>
-          </mstyle>
+          <mi mathvariant="normal">d</mi>
           <mi>ϕ</mi>
         </mtd>
       </mtr>
@@ -208,9 +202,7 @@
             </mrow>
           </msubsup>
           <mspace width="-0.167em" />
-          <mstyle mathvariant="normal">
-            <mi>d</mi>
-          </mstyle>
+          <mi mathvariant="normal">d</mi>
           <mi>ϕ</mi>
           <mspace width="0.167em" />
           <msubsup>
@@ -222,9 +214,7 @@
           <mo>sin</mo>
           <mi>θ</mi>
           <mspace width="0.167em" />
-          <mstyle mathvariant="normal">
-            <mi>d</mi>
-          </mstyle>
+          <mi mathvariant="normal">d</mi>
           <mi>θ</mi>
           <mspace width="0.167em" />
           <msubsup>
@@ -237,9 +227,7 @@
             <mi>ρ</mi>
             <mn>2</mn>
           </msup>
-          <mstyle mathvariant="normal">
-            <mi>d</mi>
-          </mstyle>
+          <mi mathvariant="normal">d</mi>
           <mi>ρ</mi>
         </mtd>
       </mtr>
@@ -270,12 +258,10 @@
             <mi>π</mi>
           </msubsup>
           <mspace width="0.222em" />
-          <mstyle displaystyle="false">
-            <mfrac>
-              <mn>1</mn>
-              <mn>3</mn>
-            </mfrac>
-          </mstyle>
+          <mfrac displaystyle="false">
+            <mn>1</mn>
+            <mn>3</mn>
+          </mfrac>
           <msup>
             <mi>ρ</mi>
             <mn>3</mn>
@@ -296,12 +282,10 @@
           <mo>×</mo>
           <mn>2</mn>
           <mo>×</mo>
-          <mstyle displaystyle="false">
-            <mfrac>
-              <mn>1</mn>
-              <mn>3</mn>
-            </mfrac>
-          </mstyle>
+          <mfrac displaystyle="false">
+            <mn>1</mn>
+            <mn>3</mn>
+          </mfrac>
           <msup>
             <mi>R</mi>
             <mn>3</mn>
@@ -312,12 +296,10 @@
         <mtd columnalign="right" />
         <mtd columnalign="left">
           <mo>=</mo>
-          <mstyle displaystyle="false">
-            <mfrac>
-              <mn>4</mn>
-              <mn>3</mn>
-            </mfrac>
-          </mstyle>
+          <mfrac displaystyle="false">
+            <mn>4</mn>
+            <mn>3</mn>
+          </mfrac>
           <mi>π</mi>
           <msup>
             <mi>R</mi>
