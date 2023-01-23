@@ -35,7 +35,7 @@ import Text.Printf
 -- | Transforms an expression tree to a MathML XML tree
 writeMathML :: DisplayType -> [Exp] -> Element
 writeMathML dt exprs =
-  add_attr dtattr $ math $ showExp TextNormal $ EGrouped
+  add_attr dtattr $ math $ showExp Nothing $ EGrouped
   $ everywhere (mkT $ handleDownup dt) exprs
     where dtattr = Attr (unqual "display") dt'
           dt' =  case dt of
@@ -48,14 +48,14 @@ math = add_attr (Attr (unqual "xmlns") "http://www.w3.org/1998/Math/MathML") . u
 mrow :: [Element] -> Element
 mrow = unode "mrow"
 
-showFraction :: TextType -> FractionType -> Exp -> Exp -> Element
+showFraction :: Maybe TextType -> FractionType -> Exp -> Exp -> Element
 showFraction tt ft x y =
   case ft of
        NormalFrac   -> unode "mfrac" [x', y']
        InlineFrac   -> withAttribute "displaystyle" "false" .
-                         unode "mstyle" . unode "mfrac" $ [x', y']
+                         unode "mfrac" $ [x', y']
        DisplayFrac  -> withAttribute "displaystyle" "true" .
-                         unode "mstyle" . unode "mfrac" $ [x', y']
+                         unode "mfrac" $ [x', y']
        NoLineFrac   -> withAttribute "linethickness" "0" .
                          unode "mfrac" $ [x', y']
   where x' = showExp tt x
@@ -89,11 +89,6 @@ dropTrailing0s t = case T.unsnoc t of -- T.spanEnd does not exist
       Just (_, '.') -> T.snoc x '0'
       _ -> x
 
-makeStyled :: TextType -> [Element] -> Element
-makeStyled a es = withAttribute "mathvariant" attr
-                $ unode "mstyle" es
-  where attr = getMMLType a
-
 -- Note: Converts strings to unicode directly, as few renderers support those mathvariants.
 makeText :: TextType -> T.Text -> Element
 makeText a s = case (leadingSp, trailingSp) of
@@ -111,7 +106,7 @@ makeText a s = case (leadingSp, trailingSp) of
           _           -> False
         attr = getMMLType a
 
-makeArray :: TextType -> [Alignment] -> [ArrayLine] -> Element
+makeArray :: Maybe TextType -> [Alignment] -> [ArrayLine] -> Element
 makeArray tt as ls = unode "mtable" $
   map (unode "mtr" .
     zipWith (\a -> setAlignment a .  unode "mtd". map (showExp tt)) as') ls
@@ -131,7 +126,7 @@ accent = add_attr (Attr (unqual "accent") "true") .
 makeFence :: FormType -> Element -> Element
 makeFence (fromForm -> t) = withAttribute "stretchy" "false" . withAttribute "form" t
 
-showExp' :: TextType -> Exp -> Element
+showExp' :: Maybe TextType -> Exp -> Element
 showExp' tt e =
   case e of
     ESymbol Accent x -> accent x
@@ -143,22 +138,32 @@ showExp' tt e =
       in  withAttribute "accent" isaccent $ tunode "mo" x
     _                -> showExp tt e
 
-showExp :: TextType -> Exp -> Element
+showExp :: Maybe TextType -> Exp -> Element
 showExp tt e =
- case e of
-   ENumber x        -> tunode "mn" x
+ let maybeAddVariant = maybe id (withAttribute "mathvariant" . getMMLType) tt
+     toVariant = case tt of
+                    Nothing -> id
+                    Just ts -> toUnicode ts
+  in case e of
+   ENumber x        -> maybeAddVariant $ tunode "mn" $ toVariant x
    EGrouped [x]     -> showExp tt x
    EGrouped xs      -> mrow $ map (showExp tt) xs
    EDelimited start end xs -> mrow $
-     [ makeStretchy FPrefix (tunode "mo" start) | not (T.null start) ] ++
-     map (either (makeStretchy FInfix . tunode "mo") (showExp tt)) xs ++
-     [ makeStretchy FPostfix (tunode "mo" end) | not (T.null end) ]
-   EIdentifier x    -> tunode "mi" $ toUnicode tt x
-   EMathOperator x  -> tunode "mo" x
-   ESymbol Open x   -> makeFence FPrefix $ tunode "mo" x
-   ESymbol Close x  -> makeFence FPostfix $ tunode "mo" x
-   ESymbol Ord x    -> tunode "mi" x
-   ESymbol _ x      -> tunode "mo" x
+     [ makeStretchy FPrefix (maybeAddVariant $ tunode "mo" $ toVariant start)
+        | not (T.null start) ] ++
+     map (either
+          (makeStretchy FInfix . maybeAddVariant . tunode "mo" . toVariant)
+          (showExp tt)) xs ++
+     [ makeStretchy FPostfix (maybeAddVariant $ tunode "mo" $ toVariant end)
+        | not (T.null end) ]
+   EIdentifier x    -> maybeAddVariant $ tunode "mi" $ toVariant x
+   EMathOperator x  -> maybeAddVariant $ tunode "mo" $ toVariant x
+   ESymbol Open x   -> makeFence FPrefix $ maybeAddVariant $
+                                           tunode "mo" $ toVariant x
+   ESymbol Close x  -> makeFence FPostfix $ maybeAddVariant $
+                                            tunode "mo" $ toVariant x
+   ESymbol Ord x    -> maybeAddVariant $ tunode "mi" $ toVariant x
+   ESymbol _ x      -> maybeAddVariant $ tunode "mo" $ toVariant x
    ESpace x         -> spaceWidth x
    EFraction ft x y -> showFraction tt ft x y
    ESub x y         -> unode "msub" $ map (showExp tt) [x, y]
@@ -175,8 +180,18 @@ showExp tt e =
    ERoot i x        -> unode "mroot" [showExp tt x, showExp tt i]
    EScaled s x      -> makeScaled s $ showExp tt x
    EArray as ls     -> makeArray tt as ls
-   EText a s        -> makeText a s
-   EStyled a es     -> makeStyled a $ map (showExp a) es
+   EText a s        -> case (tt, a) of
+                         (Just ty, TextNormal) -> makeText ty s
+                         _ -> makeText a s
+   EStyled a es     -> showExp (Just a) (EGrouped es)
+   -- see https://developer.mozilla.org/en-US/docs/Web/MathML/Element/mstyle
+   -- Historically, this element accepted almost all the MathML attributes and
+   -- it was used to override the default attribute values of its descendants.
+   -- It was later restricted to only a few relevant styling attributes that
+   -- were used in existing web pages. Nowadays, these styling attributes are
+   -- common to all MathML elements and so <mstyle> is really just equivalent
+   -- to an <mrow> element. However, <mstyle> may still be relevant for
+   -- compatibility with MathML implementations outside browsers.
 
 -- Kept as String for Text.XML.Light
 tunode :: String -> T.Text -> Element

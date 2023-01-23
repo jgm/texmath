@@ -119,350 +119,120 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mstyle mathvariant="script">
-      <mi>𝒜</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>ℬ</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒞</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒟</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>ℰ</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>ℱ</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒢</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>ℋ</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>ℐ</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒥</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒦</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>ℒ</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>ℳ</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒩</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒪</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒫</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒬</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>ℛ</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒮</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒯</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒰</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒱</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒲</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒳</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒴</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒵</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒶</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒷</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒸</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒹</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>ℯ</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒻</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>ℊ</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒽</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒾</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝒿</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝓀</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝓁</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝓂</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝓃</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>ℴ</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝓅</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝓆</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝓇</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝓈</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝓉</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝓊</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝓋</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝓌</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝓍</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝓎</mi>
-    </mstyle>
-    <mstyle mathvariant="script">
-      <mi>𝓏</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝔸</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝔹</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>ℂ</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝔻</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝔼</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝔽</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝔾</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>ℍ</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕀</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕁</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕂</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕃</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕄</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>ℕ</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕆</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>ℙ</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>ℚ</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>ℝ</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕊</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕋</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕌</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕍</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕎</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕏</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕐</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>ℤ</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕒</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕓</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕔</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕕</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕖</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕗</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕘</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕙</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕚</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕛</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕜</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕝</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕞</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕟</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕠</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕡</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕢</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕣</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕤</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕥</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕦</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕧</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕨</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕩</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕪</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mi>𝕫</mi>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mn>0</mn>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mn>1</mn>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mn>2</mn>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mn>3</mn>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mn>4</mn>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mn>5</mn>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mn>6</mn>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mn>7</mn>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mn>8</mn>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mn>9</mn>
-    </mstyle>
-    <mstyle mathvariant="double-struck">
-      <mn>0</mn>
-    </mstyle>
+    <mi mathvariant="script">𝒜</mi>
+    <mi mathvariant="script">ℬ</mi>
+    <mi mathvariant="script">𝒞</mi>
+    <mi mathvariant="script">𝒟</mi>
+    <mi mathvariant="script">ℰ</mi>
+    <mi mathvariant="script">ℱ</mi>
+    <mi mathvariant="script">𝒢</mi>
+    <mi mathvariant="script">ℋ</mi>
+    <mi mathvariant="script">ℐ</mi>
+    <mi mathvariant="script">𝒥</mi>
+    <mi mathvariant="script">𝒦</mi>
+    <mi mathvariant="script">ℒ</mi>
+    <mi mathvariant="script">ℳ</mi>
+    <mi mathvariant="script">𝒩</mi>
+    <mi mathvariant="script">𝒪</mi>
+    <mi mathvariant="script">𝒫</mi>
+    <mi mathvariant="script">𝒬</mi>
+    <mi mathvariant="script">ℛ</mi>
+    <mi mathvariant="script">𝒮</mi>
+    <mi mathvariant="script">𝒯</mi>
+    <mi mathvariant="script">𝒰</mi>
+    <mi mathvariant="script">𝒱</mi>
+    <mi mathvariant="script">𝒲</mi>
+    <mi mathvariant="script">𝒳</mi>
+    <mi mathvariant="script">𝒴</mi>
+    <mi mathvariant="script">𝒵</mi>
+    <mi mathvariant="script">𝒶</mi>
+    <mi mathvariant="script">𝒷</mi>
+    <mi mathvariant="script">𝒸</mi>
+    <mi mathvariant="script">𝒹</mi>
+    <mi mathvariant="script">ℯ</mi>
+    <mi mathvariant="script">𝒻</mi>
+    <mi mathvariant="script">ℊ</mi>
+    <mi mathvariant="script">𝒽</mi>
+    <mi mathvariant="script">𝒾</mi>
+    <mi mathvariant="script">𝒿</mi>
+    <mi mathvariant="script">𝓀</mi>
+    <mi mathvariant="script">𝓁</mi>
+    <mi mathvariant="script">𝓂</mi>
+    <mi mathvariant="script">𝓃</mi>
+    <mi mathvariant="script">ℴ</mi>
+    <mi mathvariant="script">𝓅</mi>
+    <mi mathvariant="script">𝓆</mi>
+    <mi mathvariant="script">𝓇</mi>
+    <mi mathvariant="script">𝓈</mi>
+    <mi mathvariant="script">𝓉</mi>
+    <mi mathvariant="script">𝓊</mi>
+    <mi mathvariant="script">𝓋</mi>
+    <mi mathvariant="script">𝓌</mi>
+    <mi mathvariant="script">𝓍</mi>
+    <mi mathvariant="script">𝓎</mi>
+    <mi mathvariant="script">𝓏</mi>
+    <mi mathvariant="double-struck">𝔸</mi>
+    <mi mathvariant="double-struck">𝔹</mi>
+    <mi mathvariant="double-struck">ℂ</mi>
+    <mi mathvariant="double-struck">𝔻</mi>
+    <mi mathvariant="double-struck">𝔼</mi>
+    <mi mathvariant="double-struck">𝔽</mi>
+    <mi mathvariant="double-struck">𝔾</mi>
+    <mi mathvariant="double-struck">ℍ</mi>
+    <mi mathvariant="double-struck">𝕀</mi>
+    <mi mathvariant="double-struck">𝕁</mi>
+    <mi mathvariant="double-struck">𝕂</mi>
+    <mi mathvariant="double-struck">𝕃</mi>
+    <mi mathvariant="double-struck">𝕄</mi>
+    <mi mathvariant="double-struck">ℕ</mi>
+    <mi mathvariant="double-struck">𝕆</mi>
+    <mi mathvariant="double-struck">ℙ</mi>
+    <mi mathvariant="double-struck">ℚ</mi>
+    <mi mathvariant="double-struck">ℝ</mi>
+    <mi mathvariant="double-struck">𝕊</mi>
+    <mi mathvariant="double-struck">𝕋</mi>
+    <mi mathvariant="double-struck">𝕌</mi>
+    <mi mathvariant="double-struck">𝕍</mi>
+    <mi mathvariant="double-struck">𝕎</mi>
+    <mi mathvariant="double-struck">𝕏</mi>
+    <mi mathvariant="double-struck">𝕐</mi>
+    <mi mathvariant="double-struck">ℤ</mi>
+    <mi mathvariant="double-struck">𝕒</mi>
+    <mi mathvariant="double-struck">𝕓</mi>
+    <mi mathvariant="double-struck">𝕔</mi>
+    <mi mathvariant="double-struck">𝕕</mi>
+    <mi mathvariant="double-struck">𝕖</mi>
+    <mi mathvariant="double-struck">𝕗</mi>
+    <mi mathvariant="double-struck">𝕘</mi>
+    <mi mathvariant="double-struck">𝕙</mi>
+    <mi mathvariant="double-struck">𝕚</mi>
+    <mi mathvariant="double-struck">𝕛</mi>
+    <mi mathvariant="double-struck">𝕜</mi>
+    <mi mathvariant="double-struck">𝕝</mi>
+    <mi mathvariant="double-struck">𝕞</mi>
+    <mi mathvariant="double-struck">𝕟</mi>
+    <mi mathvariant="double-struck">𝕠</mi>
+    <mi mathvariant="double-struck">𝕡</mi>
+    <mi mathvariant="double-struck">𝕢</mi>
+    <mi mathvariant="double-struck">𝕣</mi>
+    <mi mathvariant="double-struck">𝕤</mi>
+    <mi mathvariant="double-struck">𝕥</mi>
+    <mi mathvariant="double-struck">𝕦</mi>
+    <mi mathvariant="double-struck">𝕧</mi>
+    <mi mathvariant="double-struck">𝕨</mi>
+    <mi mathvariant="double-struck">𝕩</mi>
+    <mi mathvariant="double-struck">𝕪</mi>
+    <mi mathvariant="double-struck">𝕫</mi>
+    <mn mathvariant="double-struck">𝟘</mn>
+    <mn mathvariant="double-struck">𝟙</mn>
+    <mn mathvariant="double-struck">𝟚</mn>
+    <mn mathvariant="double-struck">𝟛</mn>
+    <mn mathvariant="double-struck">𝟜</mn>
+    <mn mathvariant="double-struck">𝟝</mn>
+    <mn mathvariant="double-struck">𝟞</mn>
+    <mn mathvariant="double-struck">𝟟</mn>
+    <mn mathvariant="double-struck">𝟠</mn>
+    <mn mathvariant="double-struck">𝟡</mn>
+    <mn mathvariant="double-struck">𝟘</mn>
   </mrow>
 </math>

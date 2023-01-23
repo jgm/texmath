@@ -29,48 +29,46 @@
 >>> mml
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mstyle mathvariant="italic">
-    <mtable>
-      <mtr>
-        <mtd columnalign="left">
-          <mtext mathvariant="normal">!&quot;#$%&amp;&#39;()*+,-./0123456789:;&lt;=&gt;?</mtext>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd columnalign="left">
-          <mtext mathvariant="normal">@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_</mtext>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd columnalign="left">
-          <mtext mathvariant="normal">`abcdefghijklmnopqrstuvwxyz{|}~</mtext>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd columnalign="left">
-          <mtext mathvariant="normal">ıȷ</mtext>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd columnalign="left">
-          <mtext mathvariant="normal">ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡϴΣΤΥΦΧΨΩ∇</mtext>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd columnalign="left">
-          <mtext mathvariant="normal">αβγδεζηθικλμνξοπρςστυφχψω∂</mtext>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd columnalign="left">
-          <mtext mathvariant="normal">ϵϑϰϕϱϖϜϝ</mtext>
-        </mtd>
-      </mtr>
-      <mtr>
-        <mtd columnalign="left">
-          <mtext mathvariant="normal">±·×÷‘’“”•−∓∕∗∙≠≤≥⋅</mtext>
-        </mtd>
-      </mtr>
-    </mtable>
-  </mstyle>
+  <mtable>
+    <mtr>
+      <mtd columnalign="left">
+        <mtext mathvariant="italic">!&quot;#$%&amp;&#39;()*+,-./0123456789:;&lt;=&gt;?</mtext>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="left">
+        <mtext mathvariant="italic">@𝐴𝐵𝐶𝐷𝐸𝐹𝐺𝐻𝐼𝐽𝐾𝐿𝑀𝑁𝑂𝑃𝑄𝑅𝑆𝑇𝑈𝑉𝑊𝑋𝑌𝑍[\]^_</mtext>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="left">
+        <mtext mathvariant="italic">`𝑎𝑏𝑐𝑑𝑒𝑓𝑔h𝑖𝑗𝑘𝑙𝑚𝑛𝑜𝑝𝑞𝑟𝑠𝑡𝑢𝑣𝑤𝑥𝑦𝑧{|}~</mtext>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="left">
+        <mtext mathvariant="italic">𝚤𝚥</mtext>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="left">
+        <mtext mathvariant="italic">𝛢𝛣𝛤𝛥𝛦𝛧𝛨𝛩𝛪𝛫𝛬𝛭𝛮𝛯𝛰𝛱𝛲𝛳𝛴𝛵𝛶𝛷𝛸𝛹𝛺𝛻</mtext>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="left">
+        <mtext mathvariant="italic">𝛼𝛽𝛾𝛿𝜀𝜁𝜂𝜃𝜄𝜅𝜆𝜇𝜈𝜉𝜊𝜋𝜌𝜍𝜎𝜏𝜐𝜑𝜒𝜓𝜔𝜕</mtext>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="left">
+        <mtext mathvariant="italic">𝜖𝜗𝜘𝜙𝜚𝜛Ϝϝ</mtext>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="left">
+        <mtext mathvariant="italic">±·×÷‘’“”•−∓∕∗∙≠≤≥⋅</mtext>
+      </mtd>
+    </mtr>
+  </mtable>
 </math>

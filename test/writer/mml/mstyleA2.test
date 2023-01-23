@@ -6,11 +6,9 @@
 >>> mml
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
-  <mstyle mathvariant="bold-italic">
-    <mrow>
-      <mn>2</mn>
-      <mo>+</mo>
-      <mi>𝒙</mi>
-    </mrow>
-  </mstyle>
+  <mrow>
+    <mn mathvariant="bold-italic">2</mn>
+    <mo mathvariant="bold-italic">+</mo>
+    <mi mathvariant="bold-italic">𝒙</mi>
+  </mrow>
 </math>
