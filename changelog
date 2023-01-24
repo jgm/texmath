@@ -1,3 +1,21 @@
+texmath (0.12.6)
+
+  * MathML writer:
+
+    + Use style with CSS as well as columnalign (#205).
+      This seems to be needed by browser implementations of MathML.
+    + Remove reliance on mstyle (#205). mstyle doesn't seem to be
+      supported any more, at least in browser implementations of MathML,
+      and the documentation indicates that it is treated like mrow now
+      that styles can go directly on child elements. This commit removes
+      our use of mstyle. Instead of using mstyle, we change mathvariant
+      attributes on descendent elements (and displaystyle attributes on
+      direct children, in the case of fractions).
+    + Extend our existing use of unicode replacements, since many
+      implementations don't properly handle mathvariant. We now get
+      variant characters for mo, mn, and all elements that can sensibly
+      take them, not just mi and mtext.
+
 texmath (0.12.5.5)
 
   * Allow pandoc-types 1.23.
