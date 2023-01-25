@@ -1,4 +1,5 @@
-{-# LANGUAGE ViewPatterns, ScopedTypeVariables, OverloadedStrings #-}
+{-# LANGUAGE ViewPatterns, ScopedTypeVariables, OverloadedStrings,
+   TupleSections #-}
 {-
 Copyright (C) 2009 John MacFarlane <jgm@berkeley.edu>
 
@@ -147,30 +148,38 @@ showExp' tt e =
 
 showExp :: Maybe TextType -> Exp -> Element
 showExp tt e =
- let maybeAddVariant = maybe id (withAttribute "mathvariant" . getMMLType) tt
-     toVariant = case tt of
-                    Nothing -> id
-                    Just ts -> toUnicode ts
+ let toUnicodeMaybe :: TextType -> T.Text -> Maybe T.Text
+     toUnicodeMaybe textStyle t =
+       T.pack <$> mapM (toUnicodeChar . (textStyle,)) (T.unpack t)
+     -- variant node: tries to convert text to appropriate unicode
+     -- characters depending on style
+     vnode :: String -> T.Text -> Element
+     vnode elname t
+       = case tt of
+           Nothing -> tunode elname t
+           Just TextNormal -> withAttribute "mathvariant" "normal" $
+                                tunode elname t
+           Just textStyle ->
+             case toUnicodeMaybe textStyle t of
+               -- if we can't find unicode equivalents, rely on mathvariant:
+               Nothing -> withAttribute "mathvariant" (getMMLType textStyle) $
+                             tunode elname t
+               Just t' -> tunode elname t'
   in case e of
-   ENumber x        -> maybeAddVariant $ tunode "mn" $ toVariant x
+   ENumber x        -> vnode "mn" x
    EGrouped [x]     -> showExp tt x
    EGrouped xs      -> mrow $ map (showExp tt) xs
    EDelimited start end xs -> mrow $
-     [ makeStretchy FPrefix (maybeAddVariant $ tunode "mo" $ toVariant start)
-        | not (T.null start) ] ++
-     map (either
-          (makeStretchy FInfix . maybeAddVariant . tunode "mo" . toVariant)
-          (showExp tt)) xs ++
-     [ makeStretchy FPostfix (maybeAddVariant $ tunode "mo" $ toVariant end)
+     [ makeStretchy FPrefix (vnode "mo" start) | not (T.null start) ] ++
+     map (either (makeStretchy FInfix . vnode "mo") (showExp tt)) xs ++
+     [ makeStretchy FPostfix (vnode "mo" end)
         | not (T.null end) ]
-   EIdentifier x    -> maybeAddVariant $ tunode "mi" $ toVariant x
-   EMathOperator x  -> maybeAddVariant $ tunode "mo" $ toVariant x
-   ESymbol Open x   -> makeFence FPrefix $ maybeAddVariant $
-                                           tunode "mo" $ toVariant x
-   ESymbol Close x  -> makeFence FPostfix $ maybeAddVariant $
-                                            tunode "mo" $ toVariant x
-   ESymbol Ord x    -> maybeAddVariant $ tunode "mi" $ toVariant x
-   ESymbol _ x      -> maybeAddVariant $ tunode "mo" $ toVariant x
+   EIdentifier x    -> vnode "mi" x
+   EMathOperator x  -> vnode "mo" x
+   ESymbol Open x   -> makeFence FPrefix $ vnode "mo" x
+   ESymbol Close x  -> makeFence FPostfix $ vnode "mo" x
+   ESymbol Ord x    -> vnode "mi" x
+   ESymbol _ x      -> vnode "mo" x
    ESpace x         -> spaceWidth x
    EFraction ft x y -> showFraction tt ft x y
    ESub x y         -> unode "msub" $ map (showExp tt) [x, y]
