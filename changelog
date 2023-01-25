@@ -15,6 +15,11 @@ texmath (0.12.6)
       implementations don't properly handle mathvariant. We now get
       variant characters for mo, mn, and all elements that can sensibly
       take them, not just mi and mtext.
+    + Omit mathvariant attribute unless we can't find appropriate Unicode.
+      When MathML is displayed by ODT, having BOTH a bold math Unicode
+      character and a mathvariant="bold" attribute seems to confuse it.
+      (Browsers don't care either way.) This gives us more compact and
+      readable output, as well.
 
 texmath (0.12.5.5)
 
