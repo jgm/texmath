@@ -14,14 +14,14 @@ jobs:
             cabal: '2.4'
           - ghc: '8.6.5'
             cabal: '2.4'
-          - ghc: '8.8.1'
+          - ghc: '8.8.4'
             cabal: '3.0'
-          - ghc: '8.10.4'
+          - ghc: '8.10.7'
             cabal: '3.2'
-          - ghc: '9.0.1'
+          - ghc: '9.2.7'
             cabal: '3.4'
-          - ghc: '9.2.1'
-            cabal: '3.4'
+          - ghc: '9.4.4'
+            cabal: 'latest'
     steps:
     - uses: actions/checkout@v1
     - name: Install cabal/ghc
