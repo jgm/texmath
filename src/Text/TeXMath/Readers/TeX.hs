@@ -477,6 +477,7 @@ environments = M.fromList
   , ("Vmatrix", matrixWith "\x2225" "\x2225")
   , ("split", align)
   , ("multline", gather)
+  , ("multlined", gather)
   , ("gather", gather)
   , ("gathered", gather)
   , ("equation", equation)
