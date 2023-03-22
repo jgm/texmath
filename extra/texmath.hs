@@ -58,6 +58,7 @@ writers = [
     ("native", StringWriter (\_ es -> tshow es) )
   , ("tex", StringWriter (\_ -> writeTeX))
   , ("eqn", StringWriter writeEqn)
+  , ("typst", StringWriter writeTypst)
   , ("omml",  XMLWriter writeOMML)
   , ("xhtml",   XMLWriter (\dt e -> inHtml (writeMathML dt e)))
   , ("mathml",   XMLWriter writeMathML)

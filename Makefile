@@ -2,7 +2,7 @@ TESTARGS ?=--hide-successes --ansi-tricks=false
 CABALOPTS ?=--disable-optimization -fexecutable
 
 test:
-	cabal test $(CABALOPTS) --test-options="$(TESTARGS)"
+	cabal build $(CABALOPTS) --test-options="$(TESTARGS)" --enable-tests --run-tests
 .PHONY: test
 
 install:
