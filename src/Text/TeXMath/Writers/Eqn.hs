@@ -1,6 +1,6 @@
 {-# LANGUAGE GeneralizedNewtypeDeriving, ViewPatterns, GADTs, OverloadedStrings #-}
 {-
-Copyright (C) 2014 Matthew Pickering <matthewtpickering@gmail.com>
+Copyright (C) 2016-2023 John MacFarlane <jgm@berkeley.edu>
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
