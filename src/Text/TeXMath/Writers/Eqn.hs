@@ -33,8 +33,7 @@ import Data.Text (Text)
 -- import Debug.Trace
 -- tr' x = trace (show x) x
 
--- | Transforms an expression tree to equivalent Eqn with the default
--- packages (amsmath and amssymb)
+-- | Transforms an expression tree to equivalent Eqn
 writeEqn :: DisplayType -> [Exp] -> T.Text
 writeEqn dt exprs =
   T.unwords $ map writeExp $ everywhere (mkT $ S.handleDownup dt) exprs
