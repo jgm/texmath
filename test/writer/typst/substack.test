@@ -1,0 +1,37 @@
+<<< native
+[ EUnder
+    True
+    (ESymbol Op "\8721")
+    (EArray
+       [ AlignCenter ]
+       [ [ [ EGrouped
+               [ ENumber "0"
+               , ESymbol Rel "<"
+               , EIdentifier "i"
+               , ESymbol Rel "<"
+               , EIdentifier "m"
+               ]
+           ]
+         ]
+       , [ [ EGrouped
+               [ ENumber "0"
+               , ESymbol Rel "<"
+               , EIdentifier "j"
+               , ESymbol Rel "<"
+               , EIdentifier "n"
+               ]
+           ]
+         ]
+       ])
+, EIdentifier "P"
+, EDelimited
+    "("
+    ")"
+    [ Right (EIdentifier "i")
+    , Right (ESymbol Pun ",")
+    , Right (EIdentifier "j")
+    ]
+]
+>>> typst
+sum_0 lt i lt m\
+0 lt j lt n P lr((i comma j))

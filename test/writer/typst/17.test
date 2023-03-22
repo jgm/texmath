@@ -1,0 +1,11 @@
+<<< native
+[ EIdentifier "x"
+, ESymbol Bin "*"
+, ENumber "4"
+, ESymbol Rel "="
+, ENumber "4"
+, ESymbol Bin "*"
+, EIdentifier "x"
+]
+>>> typst
+x ast 4 eq 4 ast x

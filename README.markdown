@@ -6,7 +6,7 @@ tests](https://github.com/jgm/texmath/workflows/CI%20tests/badge.svg)](https://g
 texmath is a Haskell library for converting between formats used to
 represent mathematics.  Currently it provides functions to read and
 write TeX math, presentation MathML, and OMML (Office Math Markup
-Language, used in Microsoft Office), and to write Gnu eqn and
+Language, used in Microsoft Office), and to write Gnu eqn, typst, and
 [pandoc]'s native format (allowing conversion, using pandoc, to
 a variety of different markup formats).  The TeX reader and
 writer supports basic LaTeX and AMS extensions, and it can parse

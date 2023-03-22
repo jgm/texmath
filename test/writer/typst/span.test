@@ -1,0 +1,9 @@
+<<< native
+[ EIdentifier "Y"
+, EOver False (ESymbol Op "\8592") (EIdentifier "f")
+, EIdentifier "X"
+, EOver False (ESymbol Op "\8594") (EIdentifier "g")
+, EIdentifier "Z"
+]
+>>> typst
+Y arrow.l^f X arrow.r^g Z

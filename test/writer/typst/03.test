@@ -1,0 +1,13 @@
+<<< native
+[ EIdentifier "a"
+, ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, EIdentifier "b"
+, EIdentifier "x"
+, ESymbol Bin "+"
+, EIdentifier "c"
+, ESymbol Rel "="
+, ENumber "0"
+]
+>>> typst
+a x^2 plus b x plus c eq 0

@@ -1,0 +1,33 @@
+<<< native
+[ EArray
+    [ AlignCenter ]
+    [ [ [ EArray
+            [ AlignCenter , AlignCenter ]
+            [ [ [ ENumber "1" ] , [ ENumber "2" ] ]
+            , [ [ EIdentifier "x" ] , [ EIdentifier "y" ] ]
+            ]
+        ]
+      ]
+    , [ [ EArray
+            [ AlignCenter , AlignCenter ]
+            [ [ [ ENumber "1" ] , [ ENumber "2" ] ]
+            , [ [ EIdentifier "x" ] , [ EIdentifier "y" ] ]
+            ]
+        ]
+      ]
+    , [ [ EArray
+            [ AlignCenter , AlignCenter ]
+            [ [ [ ENumber "1" ] , [ ENumber "2" ] ]
+            , [ [ EIdentifier "x" ] , [ EIdentifier "y" ] ]
+            ]
+        ]
+      ]
+    ]
+]
+>>> typst
+1 & 2\
+x & y\
+1 & 2\
+x & y\
+1 & 2\
+x & y

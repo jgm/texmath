@@ -1,0 +1,37 @@
+<<< native
+[ EFraction
+    NormalFrac
+    (ENumber "1")
+    (EGrouped
+       [ ESqrt (ENumber "2")
+       , ESymbol Bin "+"
+       , EFraction
+           NormalFrac
+           (ENumber "1")
+           (EGrouped
+              [ ESqrt (ENumber "3")
+              , ESymbol Bin "+"
+              , EFraction
+                  NormalFrac
+                  (ENumber "1")
+                  (EGrouped
+                     [ ESqrt (ENumber "4")
+                     , ESymbol Bin "+"
+                     , EFraction
+                         NormalFrac
+                         (ENumber "1")
+                         (EGrouped
+                            [ ESqrt (ENumber "5")
+                            , ESymbol Bin "+"
+                            , EFraction
+                                NormalFrac
+                                (ENumber "1")
+                                (EGrouped
+                                   [ ESqrt (ENumber "6") , ESymbol Bin "+" , EIdentifier "\8230" ])
+                            ])
+                     ])
+              ])
+       ])
+]
+>>> typst
+frac(1, sqrt(2) plus frac(1, sqrt(3) plus frac(1, sqrt(4) plus frac(1, sqrt(5) plus frac(1, sqrt(6) plus dots.h)))))

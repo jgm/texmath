@@ -6,7 +6,7 @@ Synopsis:            Conversion between math formats.
 Description:         The texmath library provides functions to read
   and write TeX math, presentation MathML, and OMML (Office
   Math Markup Language, used in Microsoft Office).  Support is also
-  included for converting math formats to Gnu eqn and to pandoc's
+  included for converting math formats to Gnu eqn, typst, and pandoc's
   native format (allowing conversion, via pandoc, to a variety of
   different markup formats).  The TeX reader supports basic LaTeX
   and AMS extensions, and it can parse and apply LaTeX macros.
@@ -43,6 +43,7 @@ Extra-source-files:  README.markdown
                      test/writer/mml/*.test
                      test/writer/omml/*.test
                      test/writer/tex/*.test
+                     test/writer/typst/*.test
                      test/writer/eqn/*.test
                      test/reader/mml/*.test
                      test/reader/tex/*.test
@@ -94,6 +95,7 @@ Library
                          Text.TeXMath.Writers.OMML,
                          Text.TeXMath.Writers.Pandoc,
                          Text.TeXMath.Writers.TeX,
+                         Text.TeXMath.Writers.Typst,
                          Text.TeXMath.Writers.Eqn,
                          Text.TeXMath.Unicode.ToUnicode,
                          Text.TeXMath.Unicode.ToTeX,

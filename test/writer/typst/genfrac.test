@@ -1,0 +1,9 @@
+<<< native
+[ EDelimited
+    "{"
+    "}"
+    [ Right (EFraction NoLineFrac (EIdentifier "x") (EIdentifier "y"))
+    ]
+]
+>>> typst
+lr({x / y})

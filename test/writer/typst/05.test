@@ -1,0 +1,31 @@
+<<< native
+[ ESubsup (ESymbol Op "\8747") (EIdentifier "a") (EIdentifier "x")
+, ESpace ((-1) % 6)
+, ESpace ((-1) % 6)
+, ESpace ((-1) % 6)
+, ESubsup (ESymbol Op "\8747") (EIdentifier "a") (EIdentifier "s")
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "y") ]
+, ESpace (1 % 6)
+, EIdentifier "d"
+, EIdentifier "y"
+, ESpace (1 % 6)
+, EIdentifier "d"
+, EIdentifier "s"
+, ESymbol Rel "="
+, ESubsup (ESymbol Op "\8747") (EIdentifier "a") (EIdentifier "x")
+, EIdentifier "f"
+, EDelimited "(" ")" [ Right (EIdentifier "y") ]
+, EDelimited
+    "("
+    ")"
+    [ Right (EIdentifier "x")
+    , Right (ESymbol Bin "\8722")
+    , Right (EIdentifier "y")
+    ]
+, ESpace (1 % 6)
+, EIdentifier "d"
+, EIdentifier "y"
+]
+>>> typst
+integral_a^x #h(-1em) #h(-1em) #h(-1em) integral_a^space f lr((y)) thin d y thin d space eq integral_a^x f lr((y)) lr((x minus y)) thin d y

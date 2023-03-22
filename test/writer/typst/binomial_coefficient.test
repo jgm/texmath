@@ -1,0 +1,43 @@
+<<< native
+[ EStyled TextBold [ EIdentifier "C" ]
+, EDelimited
+    "("
+    ")"
+    [ Right (EIdentifier "n")
+    , Right (ESymbol Pun ",")
+    , Right (EIdentifier "k")
+    ]
+, ESymbol Rel "="
+, ESubsup
+    (EStyled TextBold [ EIdentifier "C" ])
+    (EIdentifier "k")
+    (EIdentifier "n")
+, ESymbol Rel "="
+, ESub (EGrouped []) (EIdentifier "n")
+, ESub (EStyled TextBold [ EIdentifier "C" ]) (EIdentifier "k")
+, ESymbol Rel "="
+, EDelimited
+    "("
+    ")"
+    [ Right (EFraction NoLineFrac (EIdentifier "n") (EIdentifier "k"))
+    ]
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EGrouped [ EIdentifier "n" , ESymbol Ord "!" ])
+    (EGrouped
+       [ EIdentifier "k"
+       , ESymbol Ord "!"
+       , ESpace (1 % 6)
+       , EDelimited
+           "("
+           ")"
+           [ Right (EIdentifier "n")
+           , Right (ESymbol Bin "\8722")
+           , Right (EIdentifier "k")
+           ]
+       , ESymbol Ord "!"
+       ])
+]
+>>> typst
+bold(C) lr((n comma k)) eq bold(C)_k^n eq ()_n bold(C)_k eq lr((n / k)) eq frac(n excl, k excl thin lr((n minus k)) excl)
