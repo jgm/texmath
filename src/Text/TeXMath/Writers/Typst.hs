@@ -165,7 +165,6 @@ mkArray rows =
 tshow :: Show a => a -> Text
 tshow = T.pack . show
 
--- TODO combinations with negations?
 typstSymbols :: M.Map Text Text
 typstSymbols = M.fromList
   [ ("\x1d538","AA")
