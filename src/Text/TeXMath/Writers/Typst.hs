@@ -241,7 +241,7 @@ typstSymbols = M.fromList
   , ("⦛","angle.arc.rev")
   , ("⦣","angle.rev")
   , ("∟","angle.right")
-  , ("⯾","angle.right.rev")
+  , ("\11262","angle.right.rev")
   , ("⊾","angle.right.arc")
   , ("⦝","angle.right.dot")
   , ("⦜","angle.right.sq")
