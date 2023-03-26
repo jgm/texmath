@@ -1,3 +1,9 @@
+texmath (0.12.7)
+
+  * Add typst writer. New module: Text.TeXMath.Writers.Typst.
+
+  * TeX reader: Support multilined environment. Closes #210.
+
 texmath (0.12.6)
 
   * MathML writer:
