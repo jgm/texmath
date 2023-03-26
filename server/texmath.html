@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Convert between LaTeX, MathML, OMML, and eqn math formats.">
+  <meta name="description" content="Convert between LaTeX, MathML, OMML, eqn, and typst math formats.">
   <meta name="robots" content="index,follow">
   <title>texmath demo</title>
   <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -72,7 +72,7 @@
   <h1>texmath demo</h1>
   <p><a href="https://github.com/jgm/texmath">texmath</a> is a Haskell
   library, command-line program, and web server that converts between
-  TeX, MathML, OMML, and eqn formats for mathematical formulas.</p>
+  TeX, MathML, OMML, eqn, and typst formats for mathematical formulas.</p>
   <div id="controls" class="container">
     <button id="convert">Convert</button>
     <label for="from">from</label>
@@ -87,6 +87,7 @@
       <option value="mathml" selected>mathml</option>
       <option value="omml">omml</option>
       <option value="eqn">eqn</option>
+      <option value="typst">typst</option>
     </select>
     <select name="display" id="display">
       <option value="true" selected>display</option>

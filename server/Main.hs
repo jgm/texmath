@@ -22,6 +22,45 @@ import Text.XML.Light (ppElement)
 import Options.Applicative
 import Safe (readMay)
 
+-- This is the data to be supplied by the JSON payload
+-- of requests.
+data Params = Params
+  { text           :: Text
+  , from           :: Format
+  , to             :: Format
+  , display        :: Bool
+  } deriving (Show)
+
+data Format =
+  TeX | MathML | Eqn | OMML | Typst
+  deriving (Show, Ord, Eq)
+
+instance FromJSON Format where
+   parseJSON (String s) =
+               case T.toLower s of
+                 "tex" -> pure TeX
+                 "mathml" -> pure MathML
+                 "eqn" -> pure Eqn
+                 "typst" -> pure Typst
+                 "omml" -> pure OMML
+                 _ -> fail $ "Unknown format " <> T.unpack s
+   parseJSON _ = fail "Expecting string format"
+
+instance ToJSON Format where
+   toJSON x = String $ T.toLower $ T.pack $ show x
+
+instance FromHttpApiData Format where
+   parseQueryParam t =
+               case T.toLower t of
+                 "tex" -> pure TeX
+                 "mathml" -> pure MathML
+                 "eqn" -> pure Eqn
+                 "typst" -> pure Typst
+                 "omml" -> pure OMML
+                 _ -> Left $ "Unknown format " <> t
+
+-- Automatically derive code to convert to/from JSON.
+$(deriveJSON defaultOptions ''Params)
 data Opts = Opts
   { port      :: Int }
 
@@ -82,8 +121,10 @@ server = convert
                      TeX -> readTeX
                      MathML -> readMathML
                      Eqn -> \_ -> Left "eqn reader not implemented"
+                     Typst -> \_ -> Left "typst reader not implemented"
           writer = case to params of
                      Eqn -> writeEqn dt
+                     Typst -> writeTypst dt
                      OMML -> T.pack . ppElement . writeOMML dt
                      TeX -> writeTeX
                      MathML -> T.pack . ppElement . writeMathML dt
@@ -92,43 +133,4 @@ server = convert
   handleErr (Right t) = return t
   handleErr (Left err) = throwError $
     err500 { errBody = TLE.encodeUtf8 $ TL.fromStrict err }
-
--- This is the data to be supplied by the JSON payload
--- of requests.
-data Params = Params
-  { text           :: Text
-  , from           :: Format
-  , to             :: Format
-  , display        :: Bool
-  } deriving (Show)
-
-data Format =
-  TeX | MathML | Eqn | OMML
-  deriving (Show, Ord, Eq)
-
-instance FromJSON Format where
-   parseJSON (String s) =
-               case T.toLower s of
-                 "tex" -> pure TeX
-                 "mathml" -> pure MathML
-                 "eqn" -> pure Eqn
-                 "omml" -> pure OMML
-                 _ -> fail $ "Unknown format " <> T.unpack s
-   parseJSON _ = fail "Expecting string format"
-
-instance ToJSON Format where
-   toJSON x = String $ T.toLower $ T.pack $ show x
-
-instance FromHttpApiData Format where
-   parseQueryParam t =
-               case T.toLower t of
-                 "tex" -> pure TeX
-                 "mathml" -> pure MathML
-                 "eqn" -> pure Eqn
-                 "omml" -> pure OMML
-                 _ -> Left $ "Unknown format " <> t
-
--- Automatically derive code to convert to/from JSON.
-$(deriveJSON defaultOptions ''Params)
-
 
