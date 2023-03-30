@@ -1,3 +1,12 @@
+texmath (0.12.7.1)
+
+ * Typst writer:
+
+   + Improve under/overbrace/bracket/line.
+   + Fix bugs with super/subscript grouping (#212).
+   + Fix case where super/subscript is on an empty element,
+     by inserting a zws.
+
 texmath (0.12.7)
 
   * Add typst writer. New module: Text.TeXMath.Writers.Typst.
