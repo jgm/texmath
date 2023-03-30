@@ -7,4 +7,4 @@
           (EIdentifier "x") (ESuper (EIdentifier "y") (EIdentifier "z"))))
 ]
 >>> typst
-v^w^x^y^z
+v^(w^(x^(y^z)))

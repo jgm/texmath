@@ -27,6 +27,7 @@ import Text.TeXMath.Types
 import qualified Text.TeXMath.Shared as S
 import Data.Generics (everywhere, mkT)
 import Data.Text (Text)
+import Data.Char (isDigit, isAlpha)
 
 -- import Debug.Trace
 -- tr' x = trace (show x) x
@@ -64,9 +65,19 @@ esc t =
     needsEscape '_' = True
     needsEscape _ = False
 
-writeExp' :: Exp -> Text
-writeExp' (EGrouped es) = "(" <> writeExps es <> ")"
-writeExp' e = writeExp e
+writeExpS :: Exp -> Text
+writeExpS (EGrouped es) = "(" <> writeExps es <> ")"
+writeExpS e =
+  case writeExp e of
+    t | T.all (\c -> isDigit c || c == '.') t -> t
+      | T.all (\c -> isAlpha c || c == '.') t -> t
+      | otherwise -> "(" <> t <> ")"
+
+writeExpB :: Exp -> Text
+writeExpB e =
+  case writeExp e of
+    "" -> "zws"
+    t -> t
 
 writeExp :: Exp -> Text
 writeExp (ENumber s) = s
@@ -90,10 +101,10 @@ writeExp (EFraction _fractype e1 e2) =
     (EGrouped _, _) -> "frac(" <> writeExp e1 <> ", " <> writeExp e2 <> ")"
     (_, EGrouped _) -> "frac(" <> writeExp e1 <> ", " <> writeExp e2 <> ")"
     _ -> writeExp e1 <> " / " <> writeExp e2
-writeExp (ESub b e1) = writeExp' b <> "_" <> writeExp' e1
-writeExp (ESuper b e1) = writeExp' b <> "^" <> writeExp' e1
-writeExp (ESubsup b e1 e2) = writeExp' b <> "_" <> writeExp' e1 <>
-                                            "^" <> writeExp' e2
+writeExp (ESub b e1) = writeExpB b <> "_" <> writeExpS e1
+writeExp (ESuper b e1) = writeExpB b <> "^" <> writeExpS e1
+writeExp (ESubsup b e1 e2) = writeExpB b <> "_" <> writeExpS e1 <>
+                                           "^" <> writeExpS e2
 writeExp (EOver _convertible b e1) =
   case e1 of
     ESymbol Accent "`" -> "grave" <> inParens (writeExp b)
@@ -111,19 +122,19 @@ writeExp (EOver _convertible b e1) =
     ESymbol Accent "\x2190" -> "<-" <> inParens (writeExp b)
     ESymbol TOver "\9182" -> "overbrace(" <> writeExp b <> ")"
     ESymbol TOver "\9140" -> "overbracket(" <> writeExp b <> ")"
-    _ -> writeExp' b <> "^" <> writeExp' e1
+    _ -> writeExpB b <> "^" <> writeExpS e1
 writeExp (EUnder _convertible b e1) =
   case e1 of
     ESymbol TUnder "_" -> "underline(" <> writeExp b <> ")"
     ESymbol TUnder "\9182" -> "underbrace(" <> writeExp b <> ")"
     ESymbol TUnder "\9140" -> "underbracket(" <> writeExp b <> ")"
-    _ -> writeExp' b <> "_" <> writeExp' e1
+    _ -> writeExpB b <> "_" <> writeExpS e1
 writeExp (EUnderover convertible b e1 e2) =
   case (e1, e2) of
     (_, ESymbol Accent _) -> writeExp (EUnder convertible (EOver False b e2) e1)
     (_, ESymbol TOver _) -> writeExp (EUnder convertible (EOver False b e2) e1)
     (ESymbol TUnder _, _) -> writeExp (EOver convertible (EUnder False b e1) e2)
-    _ -> writeExp' b <> "_" <> writeExp' e1 <> "^" <> writeExp' e2
+    _ -> writeExpB b <> "_" <> writeExpS e1 <> "^" <> writeExpS e2
 writeExp (ESqrt e) = "sqrt(" <> writeExp e <> ")"
 writeExp (ERoot i e) = "root(" <> writeExp i <> ", " <> writeExp e <> ")"
 writeExp (ESpace width) =

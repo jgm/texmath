@@ -36,4 +36,4 @@
     (ESymbol TOver "\175")
 ]
 >>> typst
-not lr((p and q)) arrow.l.r.double lr((not p)) or lr((not q)) (union.big_(i eq 1)^n A_i)^macron eq sect.big_(i eq 1)^n A_i^macron
+not lr((p and q)) arrow.l.r.double lr((not p)) or lr((not q)) union.big_(i eq 1)^n A_i^macron eq sect.big_(i eq 1)^n A_i^macron
