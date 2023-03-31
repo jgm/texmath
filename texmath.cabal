@@ -99,6 +99,7 @@ Library
                          Text.TeXMath.Writers.Eqn,
                          Text.TeXMath.Unicode.ToUnicode,
                          Text.TeXMath.Unicode.ToTeX,
+                         Text.TeXMath.Unicode.ToTypst,
                          Text.TeXMath.Unicode.Fonts
     Other-modules:       Text.TeXMath.Shared,
                          Text.TeXMath.Readers.TeX.Commands
