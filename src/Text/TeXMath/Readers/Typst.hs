@@ -56,15 +56,21 @@ type TP = Parser
 expr1 :: TP Exp
 expr1 = choice
           [ word
+          , number
           ] <* ignorable
 
 ignorable :: TP ()
-ignorable = spaces
+ignorable = spaces -- TODO comments, line and block
+
+number :: TP Exp
+number = ENumber . T.pack <$> many1 digit
 
 word :: TP Exp
 word = do
   w <- T.pack <$> many1 letter
-  case fromTypstSymbol w of
-    Just c -> pure $ EIdentifier (T.singleton c) -- TODO most won't be identifiers
+  case w of
+    _ | T.length w == 1 -> pure $ EIdentifier w
+      | Just c <- fromTypstSymbol w ->
+          pure $ EIdentifier (T.singleton c) -- TODO most won't be identifiers
                 -- TODO how do we decide which are in which class?
-    Nothing -> undefined
+      | otherwise -> undefined
