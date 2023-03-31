@@ -40,8 +40,31 @@ import Data.Functor (($>))
 import qualified Text.TeXMath.Shared as S
 import Text.TeXMath.Shared (getSpaceChars)
 import Data.Generics (everywhere, mkT)
+import Text.TeXMath.Unicode.ToTypst (fromTypstSymbol)
 
 -- | Parse a formula, returning a list of 'Exp'.
 readTypst :: Text -> Either Text [Exp]
-readTypst = undefined
+readTypst t = case parse (many expr1 <* eof) "formula" t of
+                 Left e -> Left $ T.pack $ show e
+                 Right r -> Right r
 
+
+type TP = Parser
+
+-- The parser
+
+expr1 :: TP Exp
+expr1 = choice
+          [ word
+          ] <* ignorable
+
+ignorable :: TP ()
+ignorable = spaces
+
+word :: TP Exp
+word = do
+  w <- T.pack <$> many1 letter
+  case fromTypstSymbol w of
+    Just c -> pure $ EIdentifier (T.singleton c) -- TODO most won't be identifiers
+                -- TODO how do we decide which are in which class?
+    Nothing -> undefined
