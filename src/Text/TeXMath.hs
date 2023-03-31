@@ -58,6 +58,7 @@ texToMMLWithChangeIdent dt s =
 module Text.TeXMath ( readMathML,
                       readOMML,
                       readTeX,
+                      readTypst,
                       writeTeX,
                       writeTeXWith,
                       addLaTeXEnvironment,
@@ -71,6 +72,7 @@ module Text.TeXMath ( readMathML,
                       )
 where
 import Text.TeXMath.Readers.TeX
+import Text.TeXMath.Readers.Typst
 import Text.TeXMath.Readers.MathML
 import Text.TeXMath.Readers.OMML
 import Text.TeXMath.Writers.MathML

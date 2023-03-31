@@ -91,6 +91,7 @@ Library
                          Text.TeXMath.Readers.MathML.MMLDict,
                          Text.TeXMath.Readers.MathML.EntityMap,
                          Text.TeXMath.Readers.OMML,
+                         Text.TeXMath.Readers.Typst,
                          Text.TeXMath.Writers.MathML,
                          Text.TeXMath.Writers.OMML,
                          Text.TeXMath.Writers.Pandoc,
