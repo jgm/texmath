@@ -109,8 +109,6 @@ writeExp (EOver _ (EOver _ b (ESymbol TOver "\9182")) e1) =
   "overbrace(" <> writeExp b <> ", " <> writeExp e1 <> ")"
 writeExp (EOver _ (EOver _ b (ESymbol TOver "\9140")) e1) =
   "overbracket(" <> writeExp b <> ", " <> writeExp e1 <> ")"
-writeExp (EOver _ (EOver _ b (ESymbol TOver "_")) e1) =
-  "overline(" <> writeExp b <> ", " <> writeExp e1 <> ")"
 writeExp (EOver _convertible b e1) =
   case e1 of
     ESymbol Accent "`" -> "grave" <> inParens (writeExp b)
@@ -128,10 +126,8 @@ writeExp (EOver _convertible b e1) =
     ESymbol Accent "\x2190" -> "<-" <> inParens (writeExp b)
     ESymbol TOver "\9182" -> "overbrace(" <> writeExp b <> ")"
     ESymbol TOver "\9140" -> "overbracket(" <> writeExp b <> ")"
-    ESymbol TOver "_" -> "overline(" <> writeExp b <> ")"
+    ESymbol TOver "\175" -> "overline(" <> writeExp b <> ")"
     _ -> writeExpB b <> "^" <> writeExpS e1
-writeExp (EUnder _ (EUnder _ b (ESymbol TUnder "_")) e1) =
-  "underline(" <> writeExp b <> ", " <> writeExp e1 <> ")"
 writeExp (EUnder _ (EUnder _ b (ESymbol TUnder "\9182")) e1) =
   "underbrace(" <> writeExp b <> ", " <> writeExp e1 <> ")"
 writeExp (EUnder _ (EUnder _ b (ESymbol TUnder "\9140")) e1) =
