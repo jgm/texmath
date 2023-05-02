@@ -48,7 +48,10 @@ inQuotes s = "\"" <> s <> "\""
 
 writeExp' :: Exp -> Text
 writeExp' (EGrouped es) = "(" <> writeExps es <> ")"
-writeExp' e = writeExp e
+writeExp' e@(ENumber{}) = writeExp e
+writeExp' e@(ESymbol{}) = writeExp e
+writeExp' e@(EIdentifier{}) = writeExp e
+writeExp' e = "(" <> writeExp e <> ")"
 
 writeExp :: Exp -> Text
 writeExp (ENumber s) = s
