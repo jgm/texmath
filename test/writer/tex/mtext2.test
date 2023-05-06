@@ -8,4 +8,4 @@
 , EText TextNormal "/* a comment */"
 ]
 >>> tex
-\text{Theorem\ 1:},\,,\text{ \,},\text{/*\ a\ comment\ */}
+\text{Theorem 1:},\,,\text{ \,},\text{/* a comment */}

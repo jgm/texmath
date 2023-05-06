@@ -9,4 +9,4 @@
     TextNormal ", numerator and denominator should render normal size."
 ]
 >>> tex
-\text{Inline,\ display\ style,\ normal\ line~}\frac{\ln x}{y}\text{,\ numerator\ and\ denominator\ should\ render\ normal\ size.}
+\text{Inline, display style, normal line~}\frac{\ln x}{y}\text{, numerator and denominator should render normal size.}

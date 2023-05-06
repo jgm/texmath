@@ -1,4 +1,4 @@
 <<< native
 [ EText TextNormal "This is \8201some \8287text with spaces." ]
 >>> tex
-\text{This\ is\  some\  text\ with\ spaces.}
+\text{This is  some  text with spaces.}

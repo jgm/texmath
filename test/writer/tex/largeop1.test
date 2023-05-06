@@ -77,10 +77,10 @@
 ]
 >>> tex
 \begin{matrix}
-\text{displaystyle:\ false\ largeop:\ false} & {\bigwedge\bigvee\int\sum\prod\bigcup\bigcap} \\
-\text{displaystyle:\ false\ largeop:\ true} & {\bigwedge\bigvee\int\sum\prod\bigcup\bigcap} \\
-\text{displaystyle:\ true\ largeop:\ false} & {\bigwedge\bigvee\int\sum\prod\bigcup\bigcap} \\
-\text{displaystyle:\ true\ largeop:\ true} & {\bigwedge\bigvee\int\sum\prod\bigcup\bigcap} \\
-\text{displaystyle:\ false\ largeop:\ default} & {\bigwedge\bigvee\int\sum\prod\bigcup\bigcap} \\
-\text{displaystyle:\ true\ largeop:\ default} & {\bigwedge\bigvee\int\sum\prod\bigcup\bigcap} \\
+\text{displaystyle: false largeop: false} & {\bigwedge\bigvee\int\sum\prod\bigcup\bigcap} \\
+\text{displaystyle: false largeop: true} & {\bigwedge\bigvee\int\sum\prod\bigcup\bigcap} \\
+\text{displaystyle: true largeop: false} & {\bigwedge\bigvee\int\sum\prod\bigcup\bigcap} \\
+\text{displaystyle: true largeop: true} & {\bigwedge\bigvee\int\sum\prod\bigcup\bigcap} \\
+\text{displaystyle: false largeop: default} & {\bigwedge\bigvee\int\sum\prod\bigcup\bigcap} \\
+\text{displaystyle: true largeop: default} & {\bigwedge\bigvee\int\sum\prod\bigcup\bigcap} \\
 \end{matrix}

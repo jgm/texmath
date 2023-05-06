@@ -269,7 +269,9 @@ writeExp (EScaled size e)
   | otherwise = writeExp e
 writeExp (EText ttype s) = do
   let txtcmd = getTextCommand ttype
-  case map escapeLaTeX (T.unpack s) of
+  let fixSpace (Literal "\\ ") = Literal " "
+      fixSpace x = x
+  case map (fixSpace . escapeLaTeX) (T.unpack s) of
        []   -> return ()
        xs   -> tell $ txtcmd (Grouped xs)
 writeExp (EStyled ttype es) = do

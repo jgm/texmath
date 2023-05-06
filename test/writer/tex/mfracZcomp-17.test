@@ -13,4 +13,4 @@
 , EText TextNormal "\160the end."
 ]
 >>> tex
-\text{Inline\ ceiling,\ display\ style,\ normal\ line~}\left\lceil \frac{\sin\theta}{M} \right\rceil\text{~the\ end.}
+\text{Inline ceiling, display style, normal line~}\left\lceil \frac{\sin\theta}{M} \right\rceil\text{~the end.}

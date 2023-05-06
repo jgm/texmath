@@ -15,4 +15,4 @@
 , EText TextNormal ", the superscripted 2 should be script size."
 ]
 >>> tex
-\text{Inline,\ display\ style,\ thick\ line~}\frac{x - 1}{{0.98 \times 10^{2}} + y}\text{,\ the\ superscripted\ 2\ should\ be\ script\ size.}
+\text{Inline, display style, thick line~}\frac{x - 1}{{0.98 \times 10^{2}} + y}\text{, the superscripted 2 should be script size.}
