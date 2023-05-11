@@ -112,12 +112,16 @@ writeExp (EOver _ (EOver _ b (ESymbol TOver "\9140")) e1) =
 writeExp (EOver _convertible b e1) =
   case e1 of
     ESymbol Accent "`" -> "grave" <> inParens (writeExp b)
+    ESymbol Accent "\768" -> "grave" <> inParens (writeExp b)
     ESymbol Accent "\xb4" -> "acute" <> inParens (writeExp b)
     ESymbol Accent "^" -> "hat" <> inParens (writeExp b)
+    ESymbol Accent "\770" -> "hat" <> inParens (writeExp b)
     ESymbol Accent "~" -> "tilde" <> inParens (writeExp b)
+    ESymbol Accent "\771" -> "tilde" <> inParens (writeExp b)
     ESymbol Accent "\xaf" -> "macron" <> inParens (writeExp b)
     ESymbol Accent "\x2d8" -> "breve" <> inParens (writeExp b)
     ESymbol Accent "." -> "dot" <> inParens (writeExp b)
+    ESymbol Accent "\775" -> "dot" <> inParens (writeExp b)
     ESymbol Accent "\xa8" -> "diaer" <> inParens (writeExp b)
     ESymbol Accent "\x2218" -> "circle" <> inParens (writeExp b)
     ESymbol Accent "\x2dd" -> "acute.double" <> inParens (writeExp b)
