@@ -424,9 +424,9 @@ endLineAMS = lexeme $ try $ do
   return '\n'
 
 arrayLine :: TP ArrayLine
-arrayLine = notFollowedBy (ctrlseq "end" >> return '\n') >>
+arrayLine =
   sepBy1 (unGrouped <$>
-    manyExp (try (ignorable' *> notFollowedBy endLine) *>
+    manyExp (try (ignorable' *> notFollowedBy (('\n' <$ ctrlseq "end") <|> endLine)) *>
                expr <*
                ignorable')) (symbol "&")
   where ignorable' = ignorable >>
@@ -489,7 +489,7 @@ alignsFromRows defaultAlignment (r:_) = replicate (length r) defaultAlignment
 
 matrixWith :: Text -> Text -> TP Exp
 matrixWith opendelim closedelim = do
-  lines' <- sepEndBy1 arrayLine endLineAMS
+  lines' <- sepEndBy arrayLine endLineAMS
   let aligns = alignsFromRows AlignCenter lines'
   return $ if T.null opendelim && T.null closedelim
               then EArray aligns lines'
