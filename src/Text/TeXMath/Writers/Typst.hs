@@ -132,14 +132,14 @@ writeExp (EOver _convertible b e1) =
     ESymbol TOver "\9140" -> "overbracket(" <> writeExp b <> ")"
     ESymbol TOver "\175" -> "overline(" <> writeExp b <> ")"
     _ -> writeExpB b <> "^" <> writeExpS e1
-writeExp (EUnder _ (EUnder _ b (ESymbol TUnder "\9182")) e1) =
+writeExp (EUnder _ (EUnder _ b (ESymbol TUnder "\9183")) e1) =
   "underbrace(" <> writeExp b <> ", " <> writeExp e1 <> ")"
 writeExp (EUnder _ (EUnder _ b (ESymbol TUnder "\9140")) e1) =
   "underbrace(" <> writeExp b <> ", " <> writeExp e1 <> ")"
 writeExp (EUnder _convertible b e1) =
   case e1 of
     ESymbol TUnder "_" -> "underline(" <> writeExp b <> ")"
-    ESymbol TUnder "\9182" -> "underbrace(" <> writeExp b <> ")"
+    ESymbol TUnder "\9183" -> "underbrace(" <> writeExp b <> ")"
     ESymbol TUnder "\9140" -> "underbracket(" <> writeExp b <> ")"
     _ -> writeExpB b <> "_" <> writeExpS e1
 writeExp (EUnderover convertible b e1 e2) =
