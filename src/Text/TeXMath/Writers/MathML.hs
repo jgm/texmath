@@ -186,6 +186,8 @@ showExp tt e =
    ESuper x y       -> unode "msup" $ map (showExp tt) [x, y]
    ESubsup x y z    -> unode "msubsup" $ map (showExp tt) [x, y, z]
    EUnder _ x y     -> unode "munder" [showExp tt x, showExp' tt y]
+   EOver _ x (ESymbol Accent "\8407") -- see #218, gives better rendering for vectors
+                    -> unode "mover" [showExp tt x, showExp' tt (ESymbol Accent "\8594")]
    EOver _ x y      -> unode "mover" [showExp tt x, showExp' tt y]
    EUnderover _ x y z -> unode "munderover"
                           [showExp tt x, showExp' tt y, showExp' tt z]
