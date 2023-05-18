@@ -301,7 +301,7 @@ table name aligns rows = do
   unless (null aligns) $
      tell [Grouped [Literal columnAligns]]
   tell [Token '\n']
-  mapM_ row rows
+  doRows rows
   tell [ControlSeq "\\end", Grouped [Literal name]]
   where
     columnAligns = T.pack $ map alignmentToLetter aligns
@@ -309,10 +309,12 @@ table name aligns rows = do
     alignmentToLetter AlignCenter = 'c'
     alignmentToLetter AlignRight = 'r'
 
-row :: ArrayLine -> Math ()
-row []     = tell [Space, Literal "\\\\", Token '\n']
-row [c]    = cell c >> row []
-row (c:cs) = cell c >> tell [Space, Token '&', Space] >> row cs
+doRows :: [ArrayLine] -> Math ()
+doRows []          = return ()
+doRows ([]:[])     = tell [Token '\n']
+doRows ([]:ls)     = tell [Space, Literal "\\\\", Token '\n'] >> doRows ls
+doRows ([c]:ls)    = cell c >> doRows ([]:ls)
+doRows ((c:cs):ls) = cell c >> tell [Space, Token '&', Space] >> doRows (cs:ls)
 
 cell :: [Exp] -> Math ()
 cell = mapM_ writeExp
