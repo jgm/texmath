@@ -1,3 +1,26 @@
+texmath (0.12.8)
+
+  * Expose Text.TeXMath.Shared [API change]
+
+  * Typst writer: Fix bug where 's' turned into 'space' (#219).
+
+  * Typst writer: Fix handling of overline (#214).
+
+  * Typst writer: Fix underbrace (#217).
+
+  * Typst writer: Improve some accents (#216).
+
+  * TeX writer: don't include \\ on last line of matrix.
+
+  * TeX writer: Remove escaping of spaces inside \text{}.
+    It isn't needed, and it causes problems in MathJax rendering.
+
+  * TeX reader: allow empty matrices.
+
+  * MathML writer: Fix rendering of vectors (#218).
+
+  * Depend on external typst-symbols package.
+
 texmath (0.12.7.1)
 
  * Typst writer:
