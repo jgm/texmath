@@ -52,6 +52,36 @@ jobs:
           cabal v2-build --enable-tests --disable-optimization -fexecutable all
           cabal v2-test --disable-optimization all
 
+  linux-stack:
+
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+    steps:
+    - uses: actions/checkout@v3
+
+    # declare/restore cached things
+    - name: Cache stack global package db
+      id:   stack-global
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.stack
+        key: ${{ runner.os }}-stack-global-${{ secrets.CACHE_VERSION }}
+
+    - name: Cache stack work
+      id:   stack-local
+      uses: actions/cache@v3
+      with:
+        path: |
+          .stack-work
+        key: ${{ runner.os }}-stack-local-${{ secrets.CACHE_VERSION }}
+
+    - name: Build and test
+      run: |
+          stack test --fast
+
+
 # macos:
 
 #   runs-on: macOS-latest
