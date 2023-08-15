@@ -139,6 +139,7 @@ writeExp (EOver _convertible b e1) =
     ESymbol Accent "\x2c7" -> "caron" <> inParens (writeExp b)
     ESymbol Accent "\x2192" -> "->" <> inParens (writeExp b)
     ESymbol Accent "\x2190" -> "<-" <> inParens (writeExp b)
+    ESymbol Accent "\8407" -> "arrow" <> inParens (writeExp b)
     ESymbol TOver "\9182" -> "overbrace(" <> writeExp b <> ")"
     ESymbol TOver "\9140" -> "overbracket(" <> writeExp b <> ")"
     ESymbol TOver "\175" -> "overline(" <> writeExp b <> ")"
