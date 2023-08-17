@@ -45,7 +45,7 @@ inParens :: Text -> Text
 inParens s = "(" <> s <> ")"
 
 inQuotes :: Text -> Text
-inQuotes s = "\"" <> s <> "\""
+inQuotes s = "\"" <> escInQuotes s <> "\""
 
 esc :: Text -> Text
 esc t =
@@ -65,6 +65,16 @@ esc t =
     needsEscape ')' = True
     needsEscape '_' = True
     needsEscape _ = False
+
+escInQuotes :: Text -> Text
+escInQuotes t =
+  if T.any (== '"') t
+    then T.concatMap escapeChar t
+    else t
+  where
+    escapeChar c
+      | c == '"' = "\\" <> T.singleton c
+      | otherwise = T.singleton c
 
 writeExpS :: Exp -> Text
 writeExpS (EGrouped es) = "(" <> writeExps es <> ")"
