@@ -45,7 +45,7 @@ inParens :: Text -> Text
 inParens s = "(" <> s <> ")"
 
 inQuotes :: Text -> Text
-inQuotes s = "\"" <> s <> "\""
+inQuotes s = "\"" <> escInQuotes s <> "\""
 
 esc :: Text -> Text
 esc t =
@@ -65,6 +65,16 @@ esc t =
     needsEscape ')' = True
     needsEscape '_' = True
     needsEscape _ = False
+
+escInQuotes :: Text -> Text
+escInQuotes t =
+  if T.any (== '"') t
+    then T.concatMap escapeChar t
+    else t
+  where
+    escapeChar c
+      | c == '"' = "\\" <> T.singleton c
+      | otherwise = T.singleton c
 
 writeExpS :: Exp -> Text
 writeExpS (EGrouped es) = "(" <> writeExps es <> ")"
@@ -129,6 +139,7 @@ writeExp (EOver _convertible b e1) =
     ESymbol Accent "\x2c7" -> "caron" <> inParens (writeExp b)
     ESymbol Accent "\x2192" -> "->" <> inParens (writeExp b)
     ESymbol Accent "\x2190" -> "<-" <> inParens (writeExp b)
+    ESymbol Accent "\8407" -> "arrow" <> inParens (writeExp b)
     ESymbol TOver "\9182" -> "overbrace(" <> writeExp b <> ")"
     ESymbol TOver "\9140" -> "overbracket(" <> writeExp b <> ")"
     ESymbol TOver "\175" -> "overline(" <> writeExp b <> ")"
@@ -239,7 +250,11 @@ mkArray :: [[[Exp]]] -> Text
 mkArray rows =
   T.intercalate "; " $ map mkRow rows
  where
-   mkRow = T.intercalate ", " . map mkCell
+   mkRow = T.intercalate ", " . mkCells . map mkCell
+   mkCells cs =
+     case cs of
+       ("":rest) -> "#none" : rest
+       _ -> cs
    mkCell = writeExps
 
 tshow :: Show a => a -> Text
