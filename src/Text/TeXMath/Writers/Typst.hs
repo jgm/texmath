@@ -250,7 +250,11 @@ mkArray :: [[[Exp]]] -> Text
 mkArray rows =
   T.intercalate "; " $ map mkRow rows
  where
-   mkRow = T.intercalate ", " . map mkCell
+   mkRow = T.intercalate ", " . mkCells . map mkCell
+   mkCells cs =
+    if length cs <= 1 || head cs /= ""
+      then cs
+      else "#none" : tail cs
    mkCell = writeExps
 
 tshow :: Show a => a -> Text
