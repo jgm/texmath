@@ -252,9 +252,9 @@ mkArray rows =
  where
    mkRow = T.intercalate ", " . mkCells . map mkCell
    mkCells cs =
-    if length cs <= 1 || head cs /= ""
-      then cs
-      else "#none" : tail cs
+     case cs of
+       ("":rest) -> "#none" : rest
+       _ -> cs
    mkCell = writeExps
 
 tshow :: Show a => a -> Text
