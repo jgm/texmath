@@ -1,3 +1,11 @@
+texmath (0.12.8.1)
+
+  * Typst Writer: several fixes (#223, Lleu Yang).
+
+    + Escape quotes (") in inQuotes
+    + Accent `\8407` corresponds to `arrow()`
+    + Write `#none`'s for matrices with blanks at the beginning of a row
+
 texmath (0.12.8)
 
   * Expose Text.TeXMath.Shared [API change]
