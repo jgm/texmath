@@ -3,5 +3,6 @@ flags:
     executable: true
 packages:
 - '.'
-extra-deps: []
+extra-deps:
+- typst-symbols-0.1.4
 resolver: lts-21.7
