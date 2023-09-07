@@ -18,4 +18,4 @@
     ]
 ]
 >>> typst
-lr((a / lr({frac(b, c plus 2)})))
+binom(a, lr({frac(b, c plus 2)}))

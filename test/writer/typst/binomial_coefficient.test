@@ -40,4 +40,4 @@
        ])
 ]
 >>> typst
-bold(C) lr((n comma k)) eq bold(C)_k^n eq zws_n bold(C)_k eq lr((n / k)) eq frac(n excl, k excl thin lr((n minus k)) excl)
+bold(C) lr((n comma k)) eq bold(C)_k^n eq zws_n bold(C)_k eq binom(n, k) eq frac(n excl, k excl thin lr((n minus k)) excl)

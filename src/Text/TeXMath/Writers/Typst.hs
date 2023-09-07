@@ -212,6 +212,8 @@ writeExp (EScaled size e) =
   "#scale(x: " <> tshow (floor (100 * size) :: Int) <>
           "%, y: " <> tshow (floor (100 * size) :: Int) <>
           "%)[" <> writeExp e <> "]"
+writeExp (EDelimited "(" ")" [ Right (EFraction NoLineFrac x y) ]) =
+  "binom(" <> writeExp x <> ", " <> writeExp y <> ")"
 writeExp (EDelimited "(" ")" [Right (EArray _aligns rows)])
   | all (\row -> length row == 1) rows = -- vector
   "vec(" <> mkArray (transpose rows) <> ")"
