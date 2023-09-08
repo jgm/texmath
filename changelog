@@ -1,6 +1,10 @@
+texmath (0.12.8.2)
+
+ * Typst writer: use binom instead of a fraction (jgm/pandoc#9063).
+
 texmath (0.12.8.1)
 
-  * Typst Writer: several fixes (#223, Lleu Yang).
+  * Typst writer: several fixes (#223, Lleu Yang).
 
     + Escape quotes (") in inQuotes
     + Accent `\8407` corresponds to `arrow()`
