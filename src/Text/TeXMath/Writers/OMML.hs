@@ -86,7 +86,7 @@ makeArray :: [Element] -> [Alignment] -> [ArrayLine] -> Element
 makeArray props as rs = mnode "m" $ mProps : map toMr rs
   where mProps = mnode "mPr"
                   [ mnodeA "baseJc" "center" ()
-                  , mnodeA "plcHide" "1" ()
+                  , mnodeA "plcHide" "on" ()
                   , mnode "mcs" $ map toMc as' ]
         as'    = take (maximum' $ map length rs) $ as ++ cycle [AlignCenter]
         toMr r = mnode "mr" $ map (mnode "e" . concatMap (showExp props)) r
@@ -233,7 +233,7 @@ showExp props e =
     | ty `elem` [Op, Bin, Rel]
                     -> [mnode "box"
                         [ mnode "boxPr"
-                          [ mnodeA "opEmu" "1" () ]
+                          [ mnodeA "opEmu" "on" () ]
                         , mnode "e"
                           [str (defaultTo TextNormal props) xs]
                         ]]
@@ -280,14 +280,14 @@ showExp props e =
    EOver _ x y   -> [mnode "limUpp" [ mnode "e" $ showExp props x
                                        , mnode "lim" $ showExp props y]]
    EUnderover c x y z -> showExp props (EUnder c (EOver c x z) y)
-   ESqrt x       -> [mnode "rad" [ mnode "radPr" $ mnodeA "degHide" "1" ()
+   ESqrt x       -> [mnode "rad" [ mnode "radPr" $ mnodeA "degHide" "on" ()
                                       , mnode "deg" ()
                                       , mnode "e" $ showExp props x]]
    ERoot i x     -> [mnode "rad" [ mnode "deg" $ showExp props i
                                  , mnode "e" $ showExp props x]]
    EFraction ft x y -> [showFraction props ft x y]
    EPhantom x       -> [mnode "phant" [ mnode "phantPr"
-                                            [ mnodeA "show" "0" () ]
+                                            [ mnodeA "show" "off" () ]
                                           , mnode "e" $ showExp props x]]
    EBoxed   x       -> [mnode "borderBox" [ mnode "e" $ showExp props x]]
    EScaled _ x      -> showExp props x -- no support for scaler?
@@ -324,9 +324,9 @@ makeNary props t s y z w =
                  [ mnodeA "chr" (T.unpack s) ()
                  , mnodeA "limLoc" t ()
                  , mnodeA "subHide"
-                    (if y == EGrouped [] then "1" else "0") ()
+                    (if y == EGrouped [] then "on" else "off") ()
                  , mnodeA "supHide"
-                    (if z == EGrouped [] then "1" else "0") ()
+                    (if z == EGrouped [] then "on" else "off") ()
                  ]
                , mnode "sub" $ showExp props y
                , mnode "sup" $ showExp props z
