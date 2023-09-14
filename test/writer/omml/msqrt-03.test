@@ -33,14 +33,14 @@
   <m:oMath>
     <m:rad>
       <m:radPr>
-        <m:degHide m:val="1" />
+        <m:degHide m:val="on" />
       </m:radPr>
       <m:deg />
       <m:e>
         <m:m>
           <m:mPr>
             <m:baseJc m:val="center" />
-            <m:plcHide m:val="1" />
+            <m:plcHide m:val="on" />
             <m:mcs>
               <m:mc>
                 <m:mcPr>
@@ -84,7 +84,7 @@
             <m:e>
               <m:phant>
                 <m:phantPr>
-                  <m:show m:val="0" />
+                  <m:show m:val="off" />
                 </m:phantPr>
                 <m:e>
                   <m:r>
@@ -96,7 +96,7 @@
             <m:e>
               <m:phant>
                 <m:phantPr>
-                  <m:show m:val="0" />
+                  <m:show m:val="off" />
                 </m:phantPr>
                 <m:e>
                   <m:r>
@@ -108,7 +108,7 @@
             <m:e>
               <m:phant>
                 <m:phantPr>
-                  <m:show m:val="0" />
+                  <m:show m:val="off" />
                 </m:phantPr>
                 <m:e>
                   <m:r>
@@ -120,7 +120,7 @@
             <m:e>
               <m:phant>
                 <m:phantPr>
-                  <m:show m:val="0" />
+                  <m:show m:val="off" />
                 </m:phantPr>
                 <m:e>
                   <m:r>
@@ -132,7 +132,7 @@
             <m:e>
               <m:phant>
                 <m:phantPr>
-                  <m:show m:val="0" />
+                  <m:show m:val="off" />
                 </m:phantPr>
                 <m:e>
                   <m:r>
@@ -144,7 +144,7 @@
             <m:e>
               <m:phant>
                 <m:phantPr>
-                  <m:show m:val="0" />
+                  <m:show m:val="off" />
                 </m:phantPr>
                 <m:e>
                   <m:r>
@@ -158,7 +158,7 @@
             <m:e>
               <m:phant>
                 <m:phantPr>
-                  <m:show m:val="0" />
+                  <m:show m:val="off" />
                 </m:phantPr>
                 <m:e>
                   <m:r>
@@ -170,7 +170,7 @@
             <m:e>
               <m:phant>
                 <m:phantPr>
-                  <m:show m:val="0" />
+                  <m:show m:val="off" />
                 </m:phantPr>
                 <m:e>
                   <m:r>
@@ -182,7 +182,7 @@
             <m:e>
               <m:phant>
                 <m:phantPr>
-                  <m:show m:val="0" />
+                  <m:show m:val="off" />
                 </m:phantPr>
                 <m:e>
                   <m:r>
@@ -194,7 +194,7 @@
             <m:e>
               <m:phant>
                 <m:phantPr>
-                  <m:show m:val="0" />
+                  <m:show m:val="off" />
                 </m:phantPr>
                 <m:e>
                   <m:r>
@@ -206,7 +206,7 @@
             <m:e>
               <m:phant>
                 <m:phantPr>
-                  <m:show m:val="0" />
+                  <m:show m:val="off" />
                 </m:phantPr>
                 <m:e>
                   <m:r>
@@ -218,7 +218,7 @@
             <m:e>
               <m:phant>
                 <m:phantPr>
-                  <m:show m:val="0" />
+                  <m:show m:val="off" />
                 </m:phantPr>
                 <m:e>
                   <m:r>

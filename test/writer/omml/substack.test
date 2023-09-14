@@ -43,14 +43,14 @@
       <m:naryPr>
         <m:chr m:val="∑" />
         <m:limLoc m:val="undOvr" />
-        <m:subHide m:val="0" />
-        <m:supHide m:val="1" />
+        <m:subHide m:val="off" />
+        <m:supHide m:val="on" />
       </m:naryPr>
       <m:sub>
         <m:m>
           <m:mPr>
             <m:baseJc m:val="center" />
-            <m:plcHide m:val="1" />
+            <m:plcHide m:val="on" />
             <m:mcs>
               <m:mc>
                 <m:mcPr>

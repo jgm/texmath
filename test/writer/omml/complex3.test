@@ -7692,7 +7692,7 @@
     <m:m>
       <m:mPr>
         <m:baseJc m:val="center" />
-        <m:plcHide m:val="1" />
+        <m:plcHide m:val="on" />
         <m:mcs>
           <m:mc>
             <m:mcPr>
@@ -7882,8 +7882,8 @@
             <m:naryPr>
               <m:chr m:val="∑" />
               <m:limLoc m:val="undOvr" />
-              <m:subHide m:val="0" />
-              <m:supHide m:val="0" />
+              <m:subHide m:val="off" />
+              <m:supHide m:val="off" />
             </m:naryPr>
             <m:sub>
               <m:r>
@@ -8033,8 +8033,8 @@
                     <m:naryPr>
                       <m:chr m:val="∑" />
                       <m:limLoc m:val="undOvr" />
-                      <m:subHide m:val="0" />
-                      <m:supHide m:val="0" />
+                      <m:subHide m:val="off" />
+                      <m:supHide m:val="off" />
                     </m:naryPr>
                     <m:sub>
                       <m:r>
@@ -8117,8 +8117,8 @@
             <m:naryPr>
               <m:chr m:val="∑" />
               <m:limLoc m:val="undOvr" />
-              <m:subHide m:val="0" />
-              <m:supHide m:val="0" />
+              <m:subHide m:val="off" />
+              <m:supHide m:val="off" />
             </m:naryPr>
             <m:sub>
               <m:r>
@@ -8308,8 +8308,8 @@
                         <m:naryPr>
                           <m:chr m:val="∑" />
                           <m:limLoc m:val="undOvr" />
-                          <m:subHide m:val="0" />
-                          <m:supHide m:val="0" />
+                          <m:subHide m:val="off" />
+                          <m:supHide m:val="off" />
                         </m:naryPr>
                         <m:sub>
                           <m:r>
@@ -8483,8 +8483,8 @@
                     <m:naryPr>
                       <m:chr m:val="∑" />
                       <m:limLoc m:val="undOvr" />
-                      <m:subHide m:val="0" />
-                      <m:supHide m:val="0" />
+                      <m:subHide m:val="off" />
+                      <m:supHide m:val="off" />
                     </m:naryPr>
                     <m:sub>
                       <m:r>
@@ -12329,7 +12329,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -13131,7 +13131,7 @@
                   <m:m>
                     <m:mPr>
                       <m:baseJc m:val="center" />
-                      <m:plcHide m:val="1" />
+                      <m:plcHide m:val="on" />
                       <m:mcs>
                         <m:mc>
                           <m:mcPr>
@@ -13687,8 +13687,8 @@
             <m:naryPr>
               <m:chr m:val="∑" />
               <m:limLoc m:val="undOvr" />
-              <m:subHide m:val="0" />
-              <m:supHide m:val="0" />
+              <m:subHide m:val="off" />
+              <m:supHide m:val="off" />
             </m:naryPr>
             <m:sub>
               <m:r>
@@ -13715,14 +13715,14 @@
             <m:naryPr>
               <m:chr m:val="∑" />
               <m:limLoc m:val="undOvr" />
-              <m:subHide m:val="0" />
-              <m:supHide m:val="0" />
+              <m:subHide m:val="off" />
+              <m:supHide m:val="off" />
             </m:naryPr>
             <m:sub>
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -13842,7 +13842,7 @@
                       <m:m>
                         <m:mPr>
                           <m:baseJc m:val="center" />
-                          <m:plcHide m:val="1" />
+                          <m:plcHide m:val="on" />
                           <m:mcs>
                             <m:mc>
                               <m:mcPr>
@@ -13871,7 +13871,7 @@
                                     <m:m>
                                       <m:mPr>
                                         <m:baseJc m:val="center" />
-                                        <m:plcHide m:val="1" />
+                                        <m:plcHide m:val="on" />
                                         <m:mcs>
                                           <m:mc>
                                             <m:mcPr>
@@ -13926,7 +13926,7 @@
                                     <m:m>
                                       <m:mPr>
                                         <m:baseJc m:val="center" />
-                                        <m:plcHide m:val="1" />
+                                        <m:plcHide m:val="on" />
                                         <m:mcs>
                                           <m:mc>
                                             <m:mcPr>
@@ -13984,7 +13984,7 @@
                   <m:m>
                     <m:mPr>
                       <m:baseJc m:val="center" />
-                      <m:plcHide m:val="1" />
+                      <m:plcHide m:val="on" />
                       <m:mcs>
                         <m:mc>
                           <m:mcPr>
@@ -14006,7 +14006,7 @@
                             <m:m>
                               <m:mPr>
                                 <m:baseJc m:val="center" />
-                                <m:plcHide m:val="1" />
+                                <m:plcHide m:val="on" />
                                 <m:mcs>
                                   <m:mc>
                                     <m:mcPr>
@@ -14047,7 +14047,7 @@
                             <m:m>
                               <m:mPr>
                                 <m:baseJc m:val="center" />
-                                <m:plcHide m:val="1" />
+                                <m:plcHide m:val="on" />
                                 <m:mcs>
                                   <m:mc>
                                     <m:mcPr>
@@ -14239,7 +14239,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -14628,7 +14628,7 @@
           </m:r>
           <m:rad>
             <m:radPr>
-              <m:degHide m:val="1" />
+              <m:degHide m:val="on" />
             </m:radPr>
             <m:deg />
             <m:e>
@@ -14811,7 +14811,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -14964,7 +14964,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -15114,7 +15114,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -15174,7 +15174,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -16082,7 +16082,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -16182,7 +16182,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -16233,7 +16233,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -16300,7 +16300,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -16405,7 +16405,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -16456,7 +16456,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -16788,7 +16788,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -16862,7 +16862,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -16951,7 +16951,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -17038,7 +17038,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -17310,7 +17310,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -18614,7 +18614,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -19129,7 +19129,7 @@
                   </m:r>
                   <m:rad>
                     <m:radPr>
-                      <m:degHide m:val="1" />
+                      <m:degHide m:val="on" />
                     </m:radPr>
                     <m:deg />
                     <m:e>
@@ -19276,7 +19276,7 @@
                   </m:r>
                   <m:rad>
                     <m:radPr>
-                      <m:degHide m:val="1" />
+                      <m:degHide m:val="on" />
                     </m:radPr>
                     <m:deg />
                     <m:e>
@@ -19421,7 +19421,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -19656,7 +19656,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -19770,7 +19770,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -19913,7 +19913,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -20208,7 +20208,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -20404,7 +20404,7 @@
                       <m:m>
                         <m:mPr>
                           <m:baseJc m:val="center" />
-                          <m:plcHide m:val="1" />
+                          <m:plcHide m:val="on" />
                           <m:mcs>
                             <m:mc>
                               <m:mcPr>
@@ -20466,7 +20466,7 @@
                             </m:r>
                             <m:rad>
                               <m:radPr>
-                                <m:degHide m:val="1" />
+                                <m:degHide m:val="on" />
                               </m:radPr>
                               <m:deg />
                               <m:e>
@@ -20535,7 +20535,7 @@
               </m:r>
               <m:rad>
                 <m:radPr>
-                  <m:degHide m:val="1" />
+                  <m:degHide m:val="on" />
                 </m:radPr>
                 <m:deg />
                 <m:e>
@@ -20660,7 +20660,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -20792,7 +20792,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -20924,7 +20924,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -21180,7 +21180,7 @@
                   <m:m>
                     <m:mPr>
                       <m:baseJc m:val="center" />
-                      <m:plcHide m:val="1" />
+                      <m:plcHide m:val="on" />
                       <m:mcs>
                         <m:mc>
                           <m:mcPr>
@@ -21244,7 +21244,7 @@
                   <m:m>
                     <m:mPr>
                       <m:baseJc m:val="center" />
-                      <m:plcHide m:val="1" />
+                      <m:plcHide m:val="on" />
                       <m:mcs>
                         <m:mc>
                           <m:mcPr>
@@ -21320,7 +21320,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -21389,7 +21389,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -21486,8 +21486,8 @@
             <m:naryPr>
               <m:chr m:val="∑" />
               <m:limLoc m:val="undOvr" />
-              <m:subHide m:val="0" />
-              <m:supHide m:val="0" />
+              <m:subHide m:val="off" />
+              <m:supHide m:val="off" />
             </m:naryPr>
             <m:sub>
               <m:r>
@@ -21514,8 +21514,8 @@
             <m:naryPr>
               <m:chr m:val="∫" />
               <m:limLoc m:val="subSup" />
-              <m:subHide m:val="0" />
-              <m:supHide m:val="0" />
+              <m:subHide m:val="off" />
+              <m:supHide m:val="off" />
             </m:naryPr>
             <m:sub>
               <m:r>
@@ -21615,8 +21615,8 @@
             <m:naryPr>
               <m:chr m:val="∑" />
               <m:limLoc m:val="undOvr" />
-              <m:subHide m:val="0" />
-              <m:supHide m:val="0" />
+              <m:subHide m:val="off" />
+              <m:supHide m:val="off" />
             </m:naryPr>
             <m:sub>
               <m:r>
@@ -21711,8 +21711,8 @@
             <m:naryPr>
               <m:chr m:val="∫" />
               <m:limLoc m:val="subSup" />
-              <m:subHide m:val="0" />
-              <m:supHide m:val="0" />
+              <m:subHide m:val="off" />
+              <m:supHide m:val="off" />
             </m:naryPr>
             <m:sub>
               <m:r>
@@ -21830,8 +21830,8 @@
             <m:naryPr>
               <m:chr m:val="∑" />
               <m:limLoc m:val="undOvr" />
-              <m:subHide m:val="0" />
-              <m:supHide m:val="0" />
+              <m:subHide m:val="off" />
+              <m:supHide m:val="off" />
             </m:naryPr>
             <m:sub>
               <m:r>
@@ -21925,8 +21925,8 @@
             <m:naryPr>
               <m:chr m:val="∫" />
               <m:limLoc m:val="subSup" />
-              <m:subHide m:val="0" />
-              <m:supHide m:val="0" />
+              <m:subHide m:val="off" />
+              <m:supHide m:val="off" />
             </m:naryPr>
             <m:sub>
               <m:r>
@@ -21959,7 +21959,7 @@
               </m:r>
               <m:rad>
                 <m:radPr>
-                  <m:degHide m:val="1" />
+                  <m:degHide m:val="on" />
                 </m:radPr>
                 <m:deg />
                 <m:e>
@@ -22013,8 +22013,8 @@
             <m:naryPr>
               <m:chr m:val="∫" />
               <m:limLoc m:val="subSup" />
-              <m:subHide m:val="0" />
-              <m:supHide m:val="0" />
+              <m:subHide m:val="off" />
+              <m:supHide m:val="off" />
             </m:naryPr>
             <m:sub>
               <m:r>
@@ -22064,7 +22064,7 @@
                 <m:num>
                   <m:rad>
                     <m:radPr>
-                      <m:degHide m:val="1" />
+                      <m:degHide m:val="on" />
                     </m:radPr>
                     <m:deg />
                     <m:e>
@@ -22508,8 +22508,8 @@
             <m:naryPr>
               <m:chr m:val="∑" />
               <m:limLoc m:val="undOvr" />
-              <m:subHide m:val="0" />
-              <m:supHide m:val="0" />
+              <m:subHide m:val="off" />
+              <m:supHide m:val="off" />
             </m:naryPr>
             <m:sub>
               <m:r>
@@ -23320,7 +23320,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -24093,7 +24093,7 @@
                   <m:m>
                     <m:mPr>
                       <m:baseJc m:val="center" />
-                      <m:plcHide m:val="1" />
+                      <m:plcHide m:val="on" />
                       <m:mcs>
                         <m:mc>
                           <m:mcPr>
@@ -24304,7 +24304,7 @@
         <m:e>
           <m:rad>
             <m:radPr>
-              <m:degHide m:val="1" />
+              <m:degHide m:val="on" />
             </m:radPr>
             <m:deg />
             <m:e>
@@ -24321,7 +24321,7 @@
           </m:r>
           <m:rad>
             <m:radPr>
-              <m:degHide m:val="1" />
+              <m:degHide m:val="on" />
             </m:radPr>
             <m:deg />
             <m:e>
@@ -24639,7 +24639,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -24654,7 +24654,7 @@
                 <m:m>
                   <m:mPr>
                     <m:baseJc m:val="center" />
-                    <m:plcHide m:val="1" />
+                    <m:plcHide m:val="on" />
                     <m:mcs>
                       <m:mc>
                         <m:mcPr>
@@ -25250,7 +25250,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -25299,7 +25299,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -25329,7 +25329,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -25355,7 +25355,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -25385,7 +25385,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -26084,7 +26084,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -26315,8 +26315,8 @@
             <m:naryPr>
               <m:chr m:val="∑" />
               <m:limLoc m:val="undOvr" />
-              <m:subHide m:val="0" />
-              <m:supHide m:val="0" />
+              <m:subHide m:val="off" />
+              <m:supHide m:val="off" />
             </m:naryPr>
             <m:sub>
               <m:r>
@@ -26802,7 +26802,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -28211,7 +28211,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -29150,7 +29150,7 @@
           </m:r>
           <m:rad>
             <m:radPr>
-              <m:degHide m:val="1" />
+              <m:degHide m:val="on" />
             </m:radPr>
             <m:deg />
             <m:e>
@@ -30221,7 +30221,7 @@
           </m:r>
           <m:rad>
             <m:radPr>
-              <m:degHide m:val="1" />
+              <m:degHide m:val="on" />
             </m:radPr>
             <m:deg />
             <m:e>
@@ -31076,7 +31076,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -31091,7 +31091,7 @@
                 <m:m>
                   <m:mPr>
                     <m:baseJc m:val="center" />
-                    <m:plcHide m:val="1" />
+                    <m:plcHide m:val="on" />
                     <m:mcs>
                       <m:mc>
                         <m:mcPr>
@@ -31203,7 +31203,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -31260,7 +31260,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -31325,7 +31325,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -31390,7 +31390,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -31450,7 +31450,7 @@
               <m:m>
                 <m:mPr>
                   <m:baseJc m:val="center" />
-                  <m:plcHide m:val="1" />
+                  <m:plcHide m:val="on" />
                   <m:mcs>
                     <m:mc>
                       <m:mcPr>
@@ -31518,7 +31518,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -31590,7 +31590,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -32060,7 +32060,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -32255,7 +32255,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -32378,7 +32378,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -32501,7 +32501,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -32567,7 +32567,7 @@
                 </m:r>
                 <m:rad>
                   <m:radPr>
-                    <m:degHide m:val="1" />
+                    <m:degHide m:val="on" />
                   </m:radPr>
                   <m:deg />
                   <m:e>
@@ -32605,7 +32605,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -32818,7 +32818,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -32881,7 +32881,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -33042,7 +33042,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -33487,7 +33487,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -33553,7 +33553,7 @@
                 </m:r>
                 <m:rad>
                   <m:radPr>
-                    <m:degHide m:val="1" />
+                    <m:degHide m:val="on" />
                   </m:radPr>
                   <m:deg />
                   <m:e>
@@ -33593,7 +33593,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -33806,7 +33806,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -34067,7 +34067,7 @@
               </m:r>
               <m:rad>
                 <m:radPr>
-                  <m:degHide m:val="1" />
+                  <m:degHide m:val="on" />
                 </m:radPr>
                 <m:deg />
                 <m:e>
@@ -34646,7 +34646,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -34776,7 +34776,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -35225,7 +35225,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -35291,7 +35291,7 @@
           <m:m>
             <m:mPr>
               <m:baseJc m:val="center" />
-              <m:plcHide m:val="1" />
+              <m:plcHide m:val="on" />
               <m:mcs>
                 <m:mc>
                   <m:mcPr>
@@ -35468,8 +35468,8 @@
                 <m:naryPr>
                   <m:chr m:val="∑" />
                   <m:limLoc m:val="undOvr" />
-                  <m:subHide m:val="0" />
-                  <m:supHide m:val="0" />
+                  <m:subHide m:val="off" />
+                  <m:supHide m:val="off" />
                 </m:naryPr>
                 <m:sub>
                   <m:r>
@@ -35547,8 +35547,8 @@
                 <m:naryPr>
                   <m:chr m:val="∑" />
                   <m:limLoc m:val="undOvr" />
-                  <m:subHide m:val="0" />
-                  <m:supHide m:val="0" />
+                  <m:subHide m:val="off" />
+                  <m:supHide m:val="off" />
                 </m:naryPr>
                 <m:sub>
                   <m:r>
@@ -35626,8 +35626,8 @@
                 <m:naryPr>
                   <m:chr m:val="∑" />
                   <m:limLoc m:val="undOvr" />
-                  <m:subHide m:val="0" />
-                  <m:supHide m:val="0" />
+                  <m:subHide m:val="off" />
+                  <m:supHide m:val="off" />
                 </m:naryPr>
                 <m:sub>
                   <m:r>
@@ -35714,8 +35714,8 @@
                     <m:naryPr>
                       <m:chr m:val="∑" />
                       <m:limLoc m:val="undOvr" />
-                      <m:subHide m:val="0" />
-                      <m:supHide m:val="0" />
+                      <m:subHide m:val="off" />
+                      <m:supHide m:val="off" />
                     </m:naryPr>
                     <m:sub>
                       <m:r>
@@ -37321,7 +37321,7 @@
             <m:den>
               <m:rad>
                 <m:radPr>
-                  <m:degHide m:val="1" />
+                  <m:degHide m:val="on" />
                 </m:radPr>
                 <m:deg />
                 <m:e>
@@ -37348,7 +37348,7 @@
                 <m:den>
                   <m:rad>
                     <m:radPr>
-                      <m:degHide m:val="1" />
+                      <m:degHide m:val="on" />
                     </m:radPr>
                     <m:deg />
                     <m:e>
@@ -37375,7 +37375,7 @@
                     <m:den>
                       <m:rad>
                         <m:radPr>
-                          <m:degHide m:val="1" />
+                          <m:degHide m:val="on" />
                         </m:radPr>
                         <m:deg />
                         <m:e>
@@ -37402,7 +37402,7 @@
                         <m:den>
                           <m:rad>
                             <m:radPr>
-                              <m:degHide m:val="1" />
+                              <m:degHide m:val="on" />
                             </m:radPr>
                             <m:deg />
                             <m:e>
@@ -37429,7 +37429,7 @@
                             <m:den>
                               <m:rad>
                                 <m:radPr>
-                                  <m:degHide m:val="1" />
+                                  <m:degHide m:val="on" />
                                 </m:radPr>
                                 <m:deg />
                                 <m:e>
@@ -37474,7 +37474,7 @@
             <m:den>
               <m:rad>
                 <m:radPr>
-                  <m:degHide m:val="1" />
+                  <m:degHide m:val="on" />
                 </m:radPr>
                 <m:deg />
                 <m:e>
@@ -37501,7 +37501,7 @@
                 <m:den>
                   <m:rad>
                     <m:radPr>
-                      <m:degHide m:val="1" />
+                      <m:degHide m:val="on" />
                     </m:radPr>
                     <m:deg />
                     <m:e>
@@ -37528,7 +37528,7 @@
                     <m:den>
                       <m:rad>
                         <m:radPr>
-                          <m:degHide m:val="1" />
+                          <m:degHide m:val="on" />
                         </m:radPr>
                         <m:deg />
                         <m:e>
@@ -37555,7 +37555,7 @@
                         <m:den>
                           <m:rad>
                             <m:radPr>
-                              <m:degHide m:val="1" />
+                              <m:degHide m:val="on" />
                             </m:radPr>
                             <m:deg />
                             <m:e>
@@ -37582,7 +37582,7 @@
                             <m:den>
                               <m:rad>
                                 <m:radPr>
-                                  <m:degHide m:val="1" />
+                                  <m:degHide m:val="on" />
                                 </m:radPr>
                                 <m:deg />
                                 <m:e>
