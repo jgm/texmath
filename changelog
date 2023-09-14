@@ -1,6 +1,12 @@
+texmath (0.12.8.3)
+
+  * OMML writer: use "on" and "off" instead of "1" and "0" for
+    m:CT_OnOff type.  It is said that "1" and "0" work in Word
+    but not Powerpoint.
+
 texmath (0.12.8.2)
 
- * Typst writer: use binom instead of a fraction (jgm/pandoc#9063).
+  * Typst writer: use binom instead of a fraction (jgm/pandoc#9063).
 
 texmath (0.12.8.1)
 
