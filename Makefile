@@ -6,11 +6,14 @@ test:
 	cabal test $(CABALOPTS) --test-options="$(TESTARGS)"
 .PHONY: test
 
-install:
-	cabal build $(CABALOPTS)
-	rm ~/.cabal/bin/texmath
-	cp `cabal list-bin texmath $(CABALOPTS)` ~/.cabal/bin/texmath
-.PHONY: install
+texmath-server:
+	 cabal install exe:texmath-server -fserver --installdir . --install-method=copy --overwrite-policy=always
+
+server: texmath-server
+	sudo service texmath stop && \
+	sudo cp $< /usr/local/bin/texmath-server && \
+	sudo service texmath start
+.PHONY: server
 
 clean:
 	cabal clean
