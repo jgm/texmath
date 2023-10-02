@@ -34,7 +34,7 @@ Types and functions for conversion of OMML into TeXMath 'Exp's.
 module Text.TeXMath.Readers.OMML (readOMML) where
 
 import Text.XML.Light
-import Data.Maybe (isJust, mapMaybe, fromMaybe)
+import Data.Maybe (isJust, mapMaybe, fromMaybe, maybeToList)
 import Data.List (intercalate)
 import Data.Char (isDigit, readLitChar)
 import qualified Data.Text as T
@@ -385,19 +385,19 @@ elemToExps' element | isElem "m" "nary" element = do
          (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
   supExps <- filterChildName (hasElemName "m" "sup") element >>=
          (\e -> return $ concat $ mapMaybe (elemToExps) (elChildren e))
-  baseExp <- filterChildName (hasElemName "m" "e") element >>=
-             elemToBase
+  let baseExp = maybeToList $
+        filterChildName (hasElemName "m" "e") element >>= elemToBase
   case limLoc of
-    Just "undOvr" -> return [EUnderover True
+    Just "undOvr" -> return $ EUnderover True
                               (ESymbol Op opChr)
                               (EGrouped subExps)
                               (EGrouped supExps)
-                            , baseExp]
-    _             -> return [ESubsup
+                            : baseExp
+    _             -> return $ ESubsup
                               (ESymbol Op opChr)
                               (EGrouped subExps)
                               (EGrouped supExps)
-                            , baseExp]
+                            : baseExp
 
 elemToExps' element | isElem "m" "phant" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
