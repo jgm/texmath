@@ -1,0 +1,16 @@
+<<< tex
+\begin{array}{l*{2}{rc}}
+1 & 2 & 3 & 4 & 5
+\end{array}
+
+>>> native
+[ EArray
+    [ AlignLeft , AlignRight , AlignCenter , AlignRight , AlignCenter ]
+    [ [ [ ENumber "1" ]
+      , [ ENumber "2" ]
+      , [ ENumber "3" ]
+      , [ ENumber "4" ]
+      , [ ENumber "5" ]
+      ]
+    ]
+]

@@ -45,6 +45,7 @@ import Text.TeXMath.Shared (getSpaceChars)
 import Data.Generics (everywhere, mkT)
 import Text.TeXMath.Readers.TeX.Commands ( styleOps, textOps, enclosures,
                                            operators, symbols, siUnitMap )
+import Data.Text.Read (decimal)
 
 type TP = Parser
 
@@ -434,13 +435,22 @@ arrayLine =
   -- we don't represent the line, but it shouldn't crash parsing
 
 arrayAlignments :: TP [Alignment]
-arrayAlignments = try $ do
-  as <- braces (many (letter <|> char '|'))
-  let letterToAlignment 'l' = AlignLeft
-      letterToAlignment 'c' = AlignCenter
-      letterToAlignment 'r' = AlignRight
-      letterToAlignment _   = AlignCenter
-  return $ map letterToAlignment $ filter (/= '|') as
+arrayAlignments = mconcat <$>
+  braces (many (((:[]) . letterToAlignment <$> letter)
+            <|> ([] <$ char '|')
+            <|> (do char '*'
+                    num <- T.pack <$> braces (many1 digit)
+                    cols <- arrayAlignments
+                    case decimal num of
+                      Left msg -> fail msg
+                      Right (n :: Int, _)
+                               -> return $ mconcat $ replicate n cols)
+               ))
+ where
+   letterToAlignment 'l' = AlignLeft
+   letterToAlignment 'c' = AlignCenter
+   letterToAlignment 'r' = AlignRight
+   letterToAlignment _   = AlignCenter
 
 environment :: Text -> TP Exp
 environment "\\begin" = do
