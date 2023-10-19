@@ -143,6 +143,7 @@ ignorable = skipMany $
     <|> tag
     <|> () <$ ctrlseq "nonumber"
     <|> (skipMany1 space <?> "whitespace")
+    <|> (() <$ ctrlseq "allowbreak")
 
 comment :: TP ()
 comment = char '%' *> skipMany (noneOf "\n") *> optional newline
