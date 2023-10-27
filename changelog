@@ -1,3 +1,13 @@
+texmath (0.12.8.4)
+
+  * TeX reader: ignore `\allowbreak` (#230).
+
+  * TeX reader: handle `*{5}{lr}` in array column specifier (#229).
+
+  * OMML reader: allow `m:e` to be missing in `m:nary` (#228).
+    Technically this is not allowed, according to the spec, but
+    Word and LibreOffice seem to tolerate it.
+
 texmath (0.12.8.3)
 
   * OMML writer: use "on" and "off" instead of "1" and "0" for
