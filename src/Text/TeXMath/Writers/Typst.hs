@@ -263,4 +263,6 @@ tshow :: Show a => a -> Text
 tshow = T.pack . show
 
 typstSymbolMap :: M.Map Text Text
-typstSymbolMap = M.fromList [(s,name) | (name, _, s) <- typstSymbols]
+typstSymbolMap = M.fromList $
+  ("\776", "dot.double") -- see #231
+  : [(s,name) | (name, _, s) <- typstSymbols]
