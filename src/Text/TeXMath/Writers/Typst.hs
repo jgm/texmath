@@ -28,7 +28,8 @@ import qualified Text.TeXMath.Shared as S
 import Typst.Symbols (typstSymbols)
 import Data.Generics (everywhere, mkT)
 import Data.Text (Text)
-import Data.Char (isDigit, isAlpha)
+import Data.Char (isDigit, isAlpha, isAscii)
+import Data.Maybe (fromMaybe)
 
 -- import Debug.Trace
 -- tr' x = trace (show x) x
@@ -96,8 +97,10 @@ writeExpB e =
 
 writeExp :: Exp -> Text
 writeExp (ENumber s) = s
-writeExp (ESymbol _t s) =
-  maybe (esc s) id $ M.lookup s typstSymbolMap
+writeExp (ESymbol _t s)
+  | T.all isAscii s = esc s  -- use '+' not 'plus'
+  | s == "\x2212" = "-" -- use '-' not 'minus'
+  | otherwise = fromMaybe (esc s) $ M.lookup s typstSymbolMap
 writeExp (EIdentifier s) =
   if T.length s == 1
      then writeExp (ESymbol Ord s)
