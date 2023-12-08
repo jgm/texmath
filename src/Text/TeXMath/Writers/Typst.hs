@@ -206,7 +206,7 @@ writeExp (EStyled ttype es) =
        TextBoldScript -> "bold" <> inParens ("cal" <> inParens contents)
        TextBoldFraktur -> "bold" <> inParens ("frak" <> inParens contents)
        TextSansSerifItalic -> "italic" <> inParens ("sans" <> inParens contents)
-writeExp (EBoxed e) = "#box([" <> writeExp e <> "])"
+writeExp (EBoxed e) = "#box(stroke: black, inset: 3pt, [$ " <> writeExp e <> " $])"
 writeExp (EPhantom e) = "#hide[" <> writeExp e <> "]"
 writeExp (EScaled size e) =
   "#scale(x: " <> tshow (floor (100 * size) :: Int) <>
