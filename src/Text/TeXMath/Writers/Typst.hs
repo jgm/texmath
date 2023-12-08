@@ -69,6 +69,7 @@ esc t =
     needsEscape '^' = True
     needsEscape '"' = True
     needsEscape '/' = True
+    needsEscape '\\' = True
     needsEscape _ = False
 
 escInQuotes :: Text -> Text
