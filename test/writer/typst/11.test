@@ -23,4 +23,4 @@
     NormalFrac (ENumber "1") (ESub (EIdentifier "l") (ENumber "0"))
 ]
 >>> typst
-phi.alt_n lr((kappa)) eq 0.033 C_n^2 kappa^(minus 11 slash 3) comma quad 1 / L_0 lt.double kappa lt.double 1 / l_0
+phi.alt_n lr((kappa)) = 0.033 C_n^2 kappa^(- 11 \/ 3) , quad 1 / L_0 lt.double kappa lt.double 1 / l_0

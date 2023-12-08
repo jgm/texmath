@@ -12,4 +12,4 @@
     (ENumber "2")
 ]
 >>> typst
-sum_(i eq 1)^100 x eq frac(100 ast.basic 101, 2)
+sum_(i = 1)^100 x = frac(100 \* 101, 2)

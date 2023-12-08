@@ -51,4 +51,4 @@
     ]
 ]
 >>> typst
-M eq mat(delim: "[", alpha_1, alpha_1^q, dots.h.c, alpha_1^(q^(n minus 1)); alpha_2, alpha_2^q, dots.h.c, alpha_2^(q^(n minus 1)); dots.v, dots.v, dots.down, dots.v; alpha_m, alpha_m^q, dots.h.c, alpha_m^(q^(n minus 1)))
+M = mat(delim: "[", alpha_1, alpha_1^q, dots.h.c, alpha_1^(q^(n - 1)); alpha_2, alpha_2^q, dots.h.c, alpha_2^(q^(n - 1)); dots.v, dots.v, dots.down, dots.v; alpha_m, alpha_m^q, dots.h.c, alpha_m^(q^(n - 1)))

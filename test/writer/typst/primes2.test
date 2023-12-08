@@ -27,4 +27,4 @@
 , ESuper (EIdentifier "H") (ESymbol Accent "\8279")
 ]
 >>> typst
-H^quote.double H^quote.single H^ast.basic H^grave H^ª H^degree H^(²) H^(³) H^acute H^(¹) H^º H^quote.l.single H^quote.r.single H^quote.low.single H^quote.high.single H^quote.l.double H^quote.r.double H^quote.low.double H^quote.high.double H^prime H^prime.double H^prime.triple H^prime.rev H^prime.double.rev H^prime.triple.rev H^prime.quad
+H^(\") H^(') H^(\*) H^(`) H^ª H^degree H^(²) H^(³) H^acute H^(¹) H^º H^quote.l.single H^quote.r.single H^quote.low.single H^quote.high.single H^quote.l.double H^quote.r.double H^quote.low.double H^quote.high.double H^prime H^prime.double H^prime.triple H^prime.rev H^prime.double.rev H^prime.triple.rev H^prime.quad

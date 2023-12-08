@@ -65,4 +65,4 @@
 , ESubsup (ESpace (1 % 1)) (EIdentifier "x") (ENumber "3")
 ]
 >>> typst
-x_b^a quad x_b^a quad min_A quad max_B quad det_C quad Pr_A quad gcd_A quad dot(u)^2 quad overline(u)_epsilon quad underline(u)_b^a quad overbrace(a plus b, upright("term")) quad overbracket(a plus b, c) quad underbrace(a plus b, c) quad a plus b_bracket.b_c quad^H e 3 quad_x A quad_x^3
+x_b^a quad x_b^a quad min_A quad max_B quad det_C quad Pr_A quad gcd_A quad dot(u)^2 quad overline(u)_epsilon quad underline(u)_b^a quad overbrace(a + b, upright("term")) quad overbracket(a + b, c) quad underbrace(a + b, c) quad a + b_bracket.b_c quad^H e 3 quad_x A quad_x^3

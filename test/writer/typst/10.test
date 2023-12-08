@@ -42,4 +42,4 @@
 , EIdentifier "R"
 ]
 >>> typst
-phi.alt_n lr((kappa)) eq frac(1, 4 pi^2 kappa^2) integral_0^oo frac(sin lr((kappa R)), kappa R) frac(diff, diff R) lr([R^2 frac(diff D_n lr((R)), diff R)]) thin d R
+phi.alt_n lr((kappa)) = frac(1, 4 pi^2 kappa^2) integral_0^oo frac(sin lr((kappa R)), kappa R) frac(diff, diff R) lr([R^2 frac(diff D_n lr((R)), diff R)]) thin d R

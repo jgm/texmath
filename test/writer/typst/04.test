@@ -17,4 +17,4 @@
     (ENumber "2")
 ]
 >>> typst
-S_(upright("new")) eq S_(upright("old")) minus lr((5 minus T))^2 / 2
+S_(upright("new")) = S_(upright("old")) - lr((5 - T))^2 / 2

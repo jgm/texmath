@@ -19,4 +19,4 @@
     (EGrouped [ ENumber "2" , EIdentifier "a" ])
 ]
 >>> typst
-x eq frac(minus b plus.minus sqrt(b^2 minus 4 a c), 2 a)
+x = frac(- b plus.minus sqrt(b^2 - 4 a c), 2 a)

@@ -6,4 +6,4 @@
 , ESuper (EIdentifier "c") (ENumber "22")
 ]
 >>> typst
-e_1 eq b^2 plus c^22
+e_1 = b^2 + c^22

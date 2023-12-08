@@ -34,4 +34,4 @@
        ])
 ]
 >>> typst
-frac(1, sqrt(2) plus frac(1, sqrt(3) plus frac(1, sqrt(4) plus frac(1, sqrt(5) plus frac(1, sqrt(6) plus dots.h)))))
+frac(1, sqrt(2) + frac(1, sqrt(3) + frac(1, sqrt(4) + frac(1, sqrt(5) + frac(1, sqrt(6) + dots.h)))))

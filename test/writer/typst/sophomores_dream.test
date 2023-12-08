@@ -22,4 +22,4 @@
     ]
 ]
 >>> typst
-integral_0^1 x^x thin upright(d) x eq sum_(n eq 1)^oo lr((minus 1))^(n plus 1) thin n^(minus n)
+integral_0^1 x^x thin upright(d) x = sum_(n = 1)^oo lr((- 1))^(n + 1) thin n^(- n)

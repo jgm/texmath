@@ -30,4 +30,4 @@
 , EDelimited "(" ")" [ Right (EIdentifier "z") ]
 ]
 >>> typst
-lr(|z^(‾)|) eq lr(|z|) comma lr(|lr((z^(‾)))^n|) eq lr(|z|)^n comma arg lr((z^n)) eq n arg lr((z))
+lr(|z^(‾)|) = lr(|z|) , lr(|lr((z^(‾)))^n|) = lr(|z|)^n , arg lr((z^n)) = n arg lr((z))

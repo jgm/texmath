@@ -22,4 +22,4 @@
     ]
 ]
 >>> typst
-2 eq lr((frac(lr((3 minus x)) times 2, 3 minus x)))
+2 = lr((frac(lr((3 - x)) times 2, 3 - x)))

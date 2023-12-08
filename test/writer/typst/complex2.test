@@ -391,18 +391,18 @@
     ]
 ]
 >>> typst
-upright("Quadratic Equation") & x eq frac(hyph.minus b plus.minus sqrt(b_()^2 hyph.minus 4 a c), 2 a)\
-upright("DisplayQuadratic Equation") & x eq frac(hyph.minus b plus.minus sqrt(b_()^2 hyph.minus 4 a c), 2 a)\
-upright("Rational Function") & f paren.l x paren.r eq frac(1 hyph.minus x_()^2, 1 hyph.minus x_()^3)\
-upright("Rational Function") & f paren.l x paren.r eq frac(paren.l 1 hyph.minus x_()^2 paren.r x_()^3, 1 hyph.minus x_()^3)\
-upright("Rational Function") & f paren.l x paren.r eq frac(paren.l 1 hyph.minus x_()^2 paren.r paren.l x_()^3 hyph.minus 5 x paren.r, 1 hyph.minus x_()^3)\
-upright("Parametrize Rational Function") & f paren.l x paren.r eq frac(paren.l a_i^() hyph.minus x_()^2 paren.r_()^5, 1 hyph.minus x_()^3)\
-upright("Stacked exponents") & g paren.l z paren.r eq e_()^(hyph.minus x_()^2)\
-upright("Stacked exponents") & g paren.l z paren.r eq e_()^(hyph.minus paren.l z hyph.minus a paren.r_()^2)\
-upright("Stacked exponents") & g paren.l z paren.r eq e_()^(hyph.minus sum_(i eq 0)^oo z_i^2)\
-upright("Stacked exponents") & g paren.l y paren.r eq e_()^(hyph.minus sum_(i eq 0)^oo y_i^2)\
-upright("Stacked exponents") & g paren.l z paren.r eq e_()^(hyph.minus sum_(i eq 0)^oo z_()^(frac(2, a hyph.minus i)))\
-upright("Cross Product") & frac(x_1^() hyph.minus x_2^(), x_3^() hyph.minus x_4^()) frac(x_1^() hyph.minus x_4^(), x_2^() hyph.minus x_3^())\
-upright("Cross Product") & paren.l frac(x_1^() hyph.minus x_2^(), x_3^() hyph.minus x_4^()) paren.r paren.l frac(x_1^() hyph.minus x_4^(), x_2^() hyph.minus x_3^()) paren.r\
-upright("Cross Product") & lr((frac(x_1^() hyph.minus x_2^(), x_3^() hyph.minus x_4^()))) lr((frac(x_1^() hyph.minus x_4^(), x_2^() hyph.minus x_3^())))\
-upright("Cross Product") & frac(paren.l x_1^() hyph.minus x_2^() paren.r paren.l x_3^() hyph.minus x_4^() paren.r, paren.l x_1^() hyph.minus x_4^() paren.r paren.l x_2^() hyph.minus x_3^() paren.r)
+upright("Quadratic Equation") & x = frac(- b plus.minus sqrt(b_()^2 - 4 a c), 2 a)\
+upright("DisplayQuadratic Equation") & x = frac(- b plus.minus sqrt(b_()^2 - 4 a c), 2 a)\
+upright("Rational Function") & f \( x \) = frac(1 - x_()^2, 1 - x_()^3)\
+upright("Rational Function") & f \( x \) = frac(\( 1 - x_()^2 \) x_()^3, 1 - x_()^3)\
+upright("Rational Function") & f \( x \) = frac(\( 1 - x_()^2 \) \( x_()^3 - 5 x \), 1 - x_()^3)\
+upright("Parametrize Rational Function") & f \( x \) = frac(\( a_i^() - x_()^2 \)_()^5, 1 - x_()^3)\
+upright("Stacked exponents") & g \( z \) = e_()^(- x_()^2)\
+upright("Stacked exponents") & g \( z \) = e_()^(- \( z - a \)_()^2)\
+upright("Stacked exponents") & g \( z \) = e_()^(- sum_(i = 0)^oo z_i^2)\
+upright("Stacked exponents") & g \( y \) = e_()^(- sum_(i = 0)^oo y_i^2)\
+upright("Stacked exponents") & g \( z \) = e_()^(- sum_(i = 0)^oo z_()^(frac(2, a - i)))\
+upright("Cross Product") & frac(x_1^() - x_2^(), x_3^() - x_4^()) frac(x_1^() - x_4^(), x_2^() - x_3^())\
+upright("Cross Product") & \( frac(x_1^() - x_2^(), x_3^() - x_4^()) \) \( frac(x_1^() - x_4^(), x_2^() - x_3^()) \)\
+upright("Cross Product") & lr((frac(x_1^() - x_2^(), x_3^() - x_4^()))) lr((frac(x_1^() - x_4^(), x_2^() - x_3^())))\
+upright("Cross Product") & frac(\( x_1^() - x_2^() \) \( x_3^() - x_4^() \), \( x_1^() - x_4^() \) \( x_2^() - x_3^() \))

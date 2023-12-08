@@ -24,4 +24,4 @@
     (EText TextNormal "complex number")
 ]
 >>> typst
-c eq overbrace(underbrace(a, upright("real")) plus underbrace(b upright(i), upright("imaginary")), upright("complex number"))
+c = overbrace(underbrace(a, upright("real")) + underbrace(b upright(i), upright("imaginary")), upright("complex number"))

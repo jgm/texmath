@@ -9,4 +9,4 @@
        ])
 ]
 >>> typst
-#box([x^2 plus y^2 plus z^2])
+#box(stroke: black, inset: 3pt, [$ x^2 + y^2 + z^2 $])

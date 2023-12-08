@@ -33,5 +33,5 @@
     ]
 ]
 >>> typst
-sum_(0 lt i lt m\
-0 lt j lt n) P lr((i comma j))
+sum_(0 < i < m\
+0 < j < n) P lr((i , j))

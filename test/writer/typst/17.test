@@ -8,4 +8,4 @@
 , EIdentifier "x"
 ]
 >>> typst
-x ast.basic 4 eq 4 ast.basic x
+x \* 4 = 4 \* x

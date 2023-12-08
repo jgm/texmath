@@ -37,4 +37,4 @@
 , ESuper (ESymbol Accent "'") (ESymbol Accent "'")
 ]
 >>> typst
-x^2 plus 2^2 plus x^prime plus x^quote.single plus x^("''") plus x prime plus x^quote.single^quote.single plus x^quote.single^2 plus x^(quote.single plus quote.single) plus x^quote.single^quote.single plus x^(quote.single^quote.single) plus quote.single^quote.single plus quote.single^quote.single
+x^2 + 2^2 + x^prime + x^(') + x^("''") + x prime + x^(')^(') + x^(')^2 + x^(' + ') + x^(')^(') + x^('^(')) + '^(') + '^(')

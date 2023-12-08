@@ -7,4 +7,4 @@
 , ESub (EIdentifier "x") (EIdentifier "i")
 ]
 >>> typst
-product.co_(i eq 0)^oo x_i
+product.co_(i = 0)^oo x_i

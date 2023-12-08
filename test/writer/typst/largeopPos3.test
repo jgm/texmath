@@ -8,4 +8,4 @@
     [ EIdentifier "A" , ESymbol Bin "\8745" , EIdentifier "B" ]
 ]
 >>> typst
-sect.big_(i eq 0)^oo A sect B
+sect.big_(i = 0)^oo A sect B

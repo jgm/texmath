@@ -7,4 +7,4 @@
 , ESub (EIdentifier "x") (EIdentifier "i")
 ]
 >>> typst
-sum_(i eq 0)^oo x_i
+sum_(i = 0)^oo x_i
