@@ -1,3 +1,15 @@
+texmath (0.12.8.5)
+
+  * Typst writer: use ASCII symbols when possible instead of symbols (#232).
+    E.g., `+` instead of `plus`. Add `\` to characters needing escape.
+    Enhance list of characters that need escaping.
+
+  * Typst writer: fixed EBoxed output so it includes a border.
+
+  * Handle `\ddot` better in conversion to typst (#231).
+
+  * Use typst-symbols 0.1.5
+
 texmath (0.12.8.4)
 
   * TeX reader: ignore `\allowbreak` (#230).
