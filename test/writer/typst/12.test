@@ -30,4 +30,4 @@
     ]
 ]
 >>> typst
-f lr((x)) = cases(delim: "{", 1 & - 1 lt.eq x < 0, 1 / 2 & x = 0, 1 - x^2 & upright("otherwise"))
+f (x) = cases(delim: "{", 1 & - 1 lt.eq x < 0, 1 / 2 & x = 0, 1 - x^2 & upright("otherwise"))

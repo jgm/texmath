@@ -20,4 +20,4 @@
 , EIdentifier "a"
 ]
 >>> typst
-u prime.double + p lr((x)) u prime + q lr((x)) u = f lr((x)) , quad x > a
+u prime.double + p (x) u prime + q (x) u = f (x) , quad x > a

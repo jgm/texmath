@@ -30,4 +30,4 @@
 , EDelimited "(" ")" [ Right (EIdentifier "z") ]
 ]
 >>> typst
-lr(|z^(‾)|) = lr(|z|) , lr(|lr((z^(‾)))^n|) = lr(|z|)^n , arg lr((z^n)) = n arg lr((z))
+lr(|z^(‾)|) = lr(|z|) , lr(|(z^(‾))^n|) = lr(|z|)^n , arg (z^n) = n arg (z)

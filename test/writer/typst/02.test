@@ -22,4 +22,4 @@
     ]
 ]
 >>> typst
-2 = lr((frac(lr((3 - x)) times 2, 3 - x)))
+2 = (frac((3 - x) times 2, 3 - x))

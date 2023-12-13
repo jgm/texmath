@@ -33,4 +33,4 @@
     ]
 ]
 >>> typst
-forall A thin exists P thin forall B thin lr([B in P arrow.l.r.double forall C thin lr((C in B arrow.r.double C in A))])
+forall A thin exists P thin forall B thin [B in P arrow.l.r.double forall C thin (C in B arrow.r.double C in A)]

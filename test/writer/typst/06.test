@@ -32,4 +32,4 @@
        ])
 ]
 >>> typst
-sum_(m = 1)^oo sum_(n = 1)^oo frac(m^2 thin n, 3^m lr((m thin 3^n + n thin 3^m)))
+sum_(m = 1)^oo sum_(n = 1)^oo frac(m^2 thin n, 3^m (m thin 3^n + n thin 3^m))

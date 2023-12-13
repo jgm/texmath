@@ -7,4 +7,4 @@
 , EIdentifier "x"
 ]
 >>> typst
-integral.cont_0^1 f lr((x)) #h(0em) ⅆ x
+integral.cont_0^1 f (x) #h(0em) ⅆ x

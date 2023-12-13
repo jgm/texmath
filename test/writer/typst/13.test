@@ -54,4 +54,4 @@
     (EGrouped [ EIdentifier "n" , ESymbol Ord "!" ])
 ]
 >>> typst
-zws_p F_q lr((a_1 , dots.h , a_p ; c_1 , dots.h , c_q ; z)) = sum_(n = 0)^oo frac(lr((a_1))_n dots.h.c lr((a_p))_n, lr((c_1))_n dots.h.c lr((c_q))_n) frac(z^n, n !)
+zws_p F_q (a_1 , dots.h , a_p ; c_1 , dots.h , c_q ; z) = sum_(n = 0)^oo frac((a_1)_n dots.h.c (a_p)_n, (c_1)_n dots.h.c (c_q)_n) frac(z^n, n !)

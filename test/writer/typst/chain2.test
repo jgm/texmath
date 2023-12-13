@@ -49,4 +49,4 @@
 , EIdentifier "x"
 ]
 >>> typst
-integral_0^1 f lr((x)) #h(0em) ⅆ x = sum_(i = 0)^oo x_i = product_(i = 0)^oo x_i = product.co_(i = 0)^oo x_i = integral.cont_0^1 f lr((x)) #h(0em) ⅆ x = integral.double_0^1 f lr((x)) #h(0em) ⅆ x = integral.triple_0^1 f lr((x)) #h(0em) ⅆ x
+integral_0^1 f (x) #h(0em) ⅆ x = sum_(i = 0)^oo x_i = product_(i = 0)^oo x_i = product.co_(i = 0)^oo x_i = integral.cont_0^1 f (x) #h(0em) ⅆ x = integral.double_0^1 f (x) #h(0em) ⅆ x = integral.triple_0^1 f (x) #h(0em) ⅆ x

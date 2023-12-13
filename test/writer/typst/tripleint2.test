@@ -7,4 +7,4 @@
 , EIdentifier "x"
 ]
 >>> typst
-integral.triple_0^1 f lr((x)) #h(0em) ⅆ x
+integral.triple_0^1 f (x) #h(0em) ⅆ x

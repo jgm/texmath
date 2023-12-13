@@ -246,11 +246,19 @@ writeExp (EDelimited op "" [Right (EArray [AlignLeft, AlignLeft] rows)]) =
    where toCase = (", " <>) . T.intercalate " & " . map writeExps
 writeExp (EDelimited open close es) =
   if isDelim open && isDelim close
-     then "lr" <> inParens (open <> body <> close)
+     then
+       if matchedPair open close &&  -- see #233
+            not (any (\x -> x == Left open || x == Left close) es)
+          then open <> body <> close
+          else "lr" <> inParens (open <> body <> close)
      else esc open <> body <> esc close
   where fromDelimited (Left e)  = e
         fromDelimited (Right e) = writeExp e
         isDelim c = c `elem` ["(",")","[","]","{","}","|","||"]
+        matchedPair "(" ")" = True
+        matchedPair "[" "]" = True
+        matchedPair "{" "}" = True
+        matchedPair _ _ = False
         body = T.unwords (map fromDelimited es)
 writeExp (EArray _aligns rows)
   = T.intercalate "\\\n" $ map mkRow rows

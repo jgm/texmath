@@ -15,4 +15,4 @@
     "(" ")" [ Right (ESub (EIdentifier "z") (ENumber "0")) ]
 ]
 >>> typst
-lim_(z arrow.r z_0) f lr((z)) = f lr((z_0))
+lim_(z arrow.r z_0) f (z) = f (z_0)

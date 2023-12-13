@@ -601,8 +601,8 @@
     ]
 ]
 >>> typst
-upright("Bernoulli Trials") & P \( E \) = lr((n / k)) p_()^k \( 1 - p \)_()^(n - k)\
-upright("Cauchy-Schwarz Inequality") & lr((sum_(k = 1)^n a_k^() b_k^()))_()^2 lt.eq lr((sum_(k = 1)^n a_k^2)) lr((sum_(k = 1)^n b_k^2))\
+upright("Bernoulli Trials") & P \( E \) = (n / k) p_()^k \( 1 - p \)_()^(n - k)\
+upright("Cauchy-Schwarz Inequality") & (sum_(k = 1)^n a_k^() b_k^())_()^2 lt.eq (sum_(k = 1)^n a_k^2) (sum_(k = 1)^n b_k^2)\
 upright("Cauchy Formula") & f \( z \) thin dot.c "Ind"_gamma^() \( z \) = frac(1, 2 pi i) integral.cont_gamma^() frac(f \( xi \), xi - z) thin d xi\
 upright("Cross Product") & V_1^() times V_2^() = mat(delim: "|", i, j, k; frac(diff X, diff u), frac(diff Y, diff u), 0; frac(diff X, diff v), frac(diff Y, diff v), 0)\
 upright("Vandermonde Determinant") & mat(delim: "|", 1, 1, dots.h.c, 1; v_1^(), v_2^(), dots.h.c, v_n^(); v_1^2, v_2^2, dots.h.c, v_n^2; dots.v, dots.v, dots.down, dots.v; v_1^(n - 1), v_2^(n - 1), dots.h.c, v_n^(n - 1)) = product_(1 lt.eq i < j lt.eq n)^() \( v_j^() - v_i^() \)\

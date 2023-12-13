@@ -28,4 +28,4 @@
 , EIdentifier "y"
 ]
 >>> typst
-integral_a^x #h(-1em) #h(-1em) #h(-1em) integral_a^s f lr((y)) thin d y thin d s = integral_a^x f lr((y)) lr((x - y)) thin d y
+integral_a^x #h(-1em) #h(-1em) #h(-1em) integral_a^s f (y) thin d y thin d s = integral_a^x f (y) (x - y) thin d y

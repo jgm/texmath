@@ -40,4 +40,4 @@
        ])
 ]
 >>> typst
-bold(C) lr((n , k)) = bold(C)_k^n = zws_n bold(C)_k = binom(n, k) = frac(n !, k ! thin lr((n - k)) !)
+bold(C) (n , k) = bold(C)_k^n = zws_n bold(C)_k = binom(n, k) = frac(n !, k ! thin (n - k) !)

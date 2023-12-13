@@ -404,5 +404,5 @@ upright("Stacked exponents") & g \( y \) = e_()^(- sum_(i = 0)^oo y_i^2)\
 upright("Stacked exponents") & g \( z \) = e_()^(- sum_(i = 0)^oo z_()^(frac(2, a - i)))\
 upright("Cross Product") & frac(x_1^() - x_2^(), x_3^() - x_4^()) frac(x_1^() - x_4^(), x_2^() - x_3^())\
 upright("Cross Product") & \( frac(x_1^() - x_2^(), x_3^() - x_4^()) \) \( frac(x_1^() - x_4^(), x_2^() - x_3^()) \)\
-upright("Cross Product") & lr((frac(x_1^() - x_2^(), x_3^() - x_4^()))) lr((frac(x_1^() - x_4^(), x_2^() - x_3^())))\
+upright("Cross Product") & (frac(x_1^() - x_2^(), x_3^() - x_4^())) (frac(x_1^() - x_4^(), x_2^() - x_3^()))\
 upright("Cross Product") & frac(\( x_1^() - x_2^() \) \( x_3^() - x_4^() \), \( x_1^() - x_4^() \) \( x_2^() - x_3^() \))

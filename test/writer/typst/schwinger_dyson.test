@@ -54,4 +54,4 @@
     ]
 ]
 >>> typst
-⟨psi lr(|cal(T) lr({frac(delta, delta phi.alt) F lr([phi.alt])})|) psi⟩ = - upright(i) ⟨psi lr(|cal(T) lr({F lr([phi.alt]) frac(delta, delta phi.alt) S lr([phi.alt])})|) psi⟩
+⟨psi lr(|cal(T) {frac(delta, delta phi.alt) F [phi.alt]}|) psi⟩ = - upright(i) ⟨psi lr(|cal(T) {F [phi.alt] frac(delta, delta phi.alt) S [phi.alt]}|) psi⟩

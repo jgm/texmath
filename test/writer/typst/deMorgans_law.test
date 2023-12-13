@@ -36,4 +36,4 @@
     (ESymbol TOver "\175")
 ]
 >>> typst
-not lr((p and q)) arrow.l.r.double lr((not p)) or lr((not q)) overline(union.big_(i = 1)^n A_i) = sect.big_(i = 1)^n overline(A_i)
+not (p and q) arrow.l.r.double (not p) or (not q) overline(union.big_(i = 1)^n A_i) = sect.big_(i = 1)^n overline(A_i)
