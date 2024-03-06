@@ -16,11 +16,11 @@
 , EGrouped
     [ ESuper
         (EDelimited
-           "(" ")" [ Right (ESymbol Op "\8722") , Right (ENumber "1") ])
+           "(" ")" [ Right (ESymbol Ord "\8722") , Right (ENumber "1") ])
         (EGrouped [ EIdentifier "n" , ESymbol Bin "+" , ENumber "1" ])
     , ESpace (1 % 6)
     , ESuper
         (EIdentifier "n")
-        (EGrouped [ ESymbol Op "\8722" , EIdentifier "n" ])
+        (EGrouped [ ESymbol Ord "\8722" , EIdentifier "n" ])
     ]
 ]

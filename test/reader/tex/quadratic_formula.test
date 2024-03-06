@@ -7,7 +7,7 @@
 , EFraction
     NormalFrac
     (EGrouped
-       [ ESymbol Op "\8722"
+       [ ESymbol Ord "\8722"
        , EIdentifier "b"
        , ESymbol Bin "\177"
        , ESqrt

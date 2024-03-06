@@ -18,7 +18,7 @@ f(x) =
         (EArray
            [ AlignLeft , AlignLeft ]
            [ [ [ ENumber "1" ]
-             , [ ESymbol Bin "\8722"
+             , [ ESymbol Ord "\8722"
                , ENumber "1"
                , ESymbol Rel "\8804"
                , EIdentifier "x"

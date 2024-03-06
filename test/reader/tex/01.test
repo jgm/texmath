@@ -8,7 +8,7 @@ x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
 , EFraction
     NormalFrac
     (EGrouped
-       [ ESymbol Op "\8722"
+       [ ESymbol Ord "\8722"
        , EIdentifier "b"
        , ESymbol Bin "\177"
        , ESqrt

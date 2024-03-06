@@ -25,7 +25,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 module Text.TeXMath.Readers.TeX (readTeX)
 where
 
-import Data.List (intercalate, intersperse, find)
+import Data.List (intercalate, intersperse, find, foldl')
 import Control.Monad
 import Data.Char (isDigit, isAscii, isLetter)
 import qualified Data.Map as M
@@ -68,40 +68,57 @@ expr1 = choice
 readTeX :: Text -> Either Text [Exp]
 readTeX inp =
   let (ms, rest) = parseMacroDefinitions inp in
-  either (Left . showParseError inp) (Right . everywhere (mkT fixBins))
+  either (Left . showParseError inp) (Right . fixBinList)
     $ parse formula "formula" $ applyMacros ms rest
-
--- | Convert Bin after nothing, Open, Pun, or Op to Op (#176).
-fixBins :: Exp -> Exp
-fixBins e =
-  case e of
-    EGrouped es -> EGrouped (fixBinList True es)
-    EDelimited op cl des -> EDelimited op cl (fixBinListDel True des)
-    _ -> e
  where
-  fixBinList atBeginning xs =
-    case xs of
-      ESymbol Bin t : rest
-        | atBeginning
-        -> ESymbol Op t : fixBinList False rest
-      ESymbol Bin t : rest@(ESymbol ty _ : _)
-        | ty == Open || ty == Pun || ty == Op
-        -> ESymbol Op t : fixBinList False rest
-      x:rest -> x : fixBinList False rest
-      [] -> []
+  -- | Convert Bin symbol type in certain contexts (#176, #234).
+  fixBinList :: [Exp] -> [Exp]
+  fixBinList =
+    reverse . foldl' goExp [] . everywhere (mkT fixBins)
 
-  fixBinListDel atBeginning xs =
-    case xs of
-      Left x : rest
-        ->  Left x : fixBinListDel True rest
-      Right (ESymbol Bin t) : rest
-        | atBeginning
-        -> Right (ESymbol Op t) : fixBinListDel False rest
-      Right (ESymbol Bin t) : rest@(Right (ESymbol ty _):_)
-        | ty == Open || ty == Pun || ty == Op
-        -> Right (ESymbol Op t) : fixBinListDel False rest
-      x:rest -> x : fixBinListDel False rest
-      [] -> []
+  -- TeXBook:
+  -- 5. If the current item is a Bin atom, and if this was the first
+  -- atom in the list, or if the most recent previous atom was Bin, Op,
+  -- Rel, Open, or Punct, change the current Bin to Ord and continue with
+  -- Rule 14. Otherwise continue with Rule 17.
+  -- 6. If the current item is a Rel or Close or Punct atom, and if
+  -- the most recent previous atom was Bin, change that previous Bin
+  -- to Ord. Continue with Rule 17.
+
+  fixBins :: Exp -> Exp
+  fixBins e =
+    case e of
+      EGrouped es
+        -> EGrouped (reverse $ foldl' goExp [] es)
+      EDelimited op cl des
+        -> EDelimited op cl (reverse $ foldl' goInDel [] des)
+      EArray als alines
+        -> EArray als (map (map (reverse . foldl' goExp [])) alines)
+      EStyled tt es
+        -> EStyled tt (reverse $ foldl' goExp [] es)
+      _ -> e
+
+  goExp :: [Exp] -> Exp -> [Exp]
+  goExp [] (ESymbol Bin t) = [ESymbol Ord t]
+  goExp  accum@(ESymbol ty _ : _) (ESymbol Bin t)
+    | ty `elem` [Bin, Op, Rel, Open, Pun]
+      = ESymbol Ord t : accum
+  goExp (ESymbol Bin t' : rest) (ESymbol ty t)
+    | ty `elem` [Rel, Close, Pun]
+      = ESymbol ty t : ESymbol Ord t' : rest
+  goExp xs x = x : xs
+
+  goInDel :: [InEDelimited] -> InEDelimited -> [InEDelimited]
+  goInDel [] (Right (ESymbol Bin t)) = [Right (ESymbol Ord t)]
+  goInDel accum@(Left _ : _) (Right (ESymbol Bin t))
+    = Right (ESymbol Ord t) : accum
+  goInDel accum@(Right (ESymbol ty _) : _) (Right (ESymbol Bin t))
+    | ty `elem` [Bin, Op, Rel, Open, Pun]
+      = Right (ESymbol Ord t) : accum
+  goInDel (Right (ESymbol Bin t') : rest) (Right (ESymbol ty t))
+    | ty `elem` [Rel, Close, Pun]
+      = Right (ESymbol ty t) : Right (ESymbol Ord t') : rest
+  goInDel xs x = x : xs
 
 showParseError :: Text -> ParseError -> Text
 showParseError inp pe =

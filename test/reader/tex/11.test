@@ -13,7 +13,7 @@
 , ESuper
     (EIdentifier "\954")
     (EGrouped
-       [ ESymbol Op "\8722"
+       [ ESymbol Ord "\8722"
        , ENumber "11"
        , ESymbol Ord "/"
        , ENumber "3"

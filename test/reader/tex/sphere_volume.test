@@ -98,7 +98,7 @@ S = \{0 \leq \phi \leq 2\pi, \ 0 \leq \theta \leq \pi, \ 0 \leq \rho \leq R\}
         , EDelimited
             "("
             ")"
-            [ Right (ESymbol Op "\8722")
+            [ Right (ESymbol Ord "\8722")
             , Right (EMathOperator "cos")
             , Right (EIdentifier "\952")
             ]

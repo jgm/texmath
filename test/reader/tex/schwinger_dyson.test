@@ -27,7 +27,7 @@
     , Right (EIdentifier "\968")
     ]
 , ESymbol Rel "="
-, ESymbol Bin "\8722"
+, ESymbol Ord "\8722"
 , EStyled TextNormal [ EIdentifier "i" ]
 , EDelimited
     "\10216"
