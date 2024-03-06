@@ -99,8 +99,8 @@ expToInlines tt (EIdentifier s) = Just $ renderStr tt s
 expToInlines tt (EMathOperator s) = Just $ renderStr tt s
 expToInlines tt (ESymbol _ s) = Just $ renderStr tt s
 expToInlines tt (EDelimited start end xs) = do
-  xs' <- mapM (either (return . renderStr tt) (expToInlines tt)) xs
-  return $ renderStr tt start ++ concat xs' ++ renderStr tt end
+  xs' <- expsToInlines tt $ map (either (ESymbol Ord) id) xs
+  return $ renderStr tt start ++ xs' ++ renderStr tt end
 expToInlines tt (EGrouped xs)    = expsToInlines tt xs
 expToInlines _ (EStyled tt' xs)  = expsToInlines (Just tt') xs
 expToInlines _ (ESpace n)        = Just [Str $ getSpaceChars n]

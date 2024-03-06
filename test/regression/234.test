@@ -1,0 +1,24 @@
+<<< native
+[ ENumber "2"
+, ESymbol Bin "+"
+, EDelimited
+    "("
+    ")"
+    [ Right (ENumber "2")
+    , Right (ESymbol Bin "+")
+    , Right (ENumber "3")
+    ]
+]
+>>> pandoc
+[ Str "2"
+, Str "\8197"
+, Str "+"
+, Str "\8197"
+, Str "("
+, Str "2"
+, Str "\8197"
+, Str "+"
+, Str "\8197"
+, Str "3"
+, Str ")"
+]
