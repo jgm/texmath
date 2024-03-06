@@ -149,4 +149,5 @@ writers = [ ("mml", T.pack . ppTopElement . writeMathML DisplayBlock)
           , ("eqn", writeEqn DisplayBlock)
           , ("typst", writeTypst DisplayBlock)
           , ("native", T.pack . ppShow)
+          , ("pandoc", maybe "" (T.pack . ppShow) . writePandoc DisplayBlock)
           ]
