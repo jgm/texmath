@@ -1,3 +1,15 @@
+texmath (0.12.8.7)
+
+  * TeX reader: convert Bin symbols to Ord when appropriate (#234).
+    E.g. in '-3', we should have an Ord rather than a Bin, so
+    the spacing will be appropriate.
+
+  * Pandoc writer: fix spacing inside EDelimited (#234).
+    Previously spaces around binary operators were omitted when
+    they occurred inside parens or brackets.
+
+  * test-texmath: allow pandoc output.
+
 texmath (0.12.8.6)
 
   * Typst writer: avoid redundant `lr`s (#233).
