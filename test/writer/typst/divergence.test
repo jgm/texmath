@@ -22,4 +22,4 @@
     (EGrouped [ ESymbol Ord "\8706" , EIdentifier "z" ])
 ]
 >>> typst
-nabla dot.op arrow(v) = frac(diff v_x, diff x) + frac(diff v_y, diff y) + frac(diff v_z, diff z)
+nabla dot.op arrow(v) = frac(partial v_x, partial x) + frac(partial v_y, partial y) + frac(partial v_z, partial z)

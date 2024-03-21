@@ -42,4 +42,4 @@
 , EIdentifier "R"
 ]
 >>> typst
-phi.alt_n (kappa) = frac(1, 4 pi^2 kappa^2) integral_0^oo frac(sin (kappa R), kappa R) frac(diff, diff R) [R^2 frac(diff D_n (R), diff R)] thin d R
+phi.alt_n (kappa) = frac(1, 4 pi^2 kappa^2) integral_0^oo frac(sin (kappa R), kappa R) frac(partial, partial R) [R^2 frac(partial D_n (R), partial R)] thin d R

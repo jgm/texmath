@@ -80,4 +80,4 @@
     ]
 ]
 >>> typst
-mat(delim: "[", frac(diff x_1, diff y_1), frac(diff x_2, diff y_1); med; frac(diff x_1, diff y_2), frac(diff x_2, diff y_2)) mat(delim: "(", 1, 2; 3, 4) mat(delim: "{", 1, 2; 3, 4) mat(delim: "||", 1, 2; 3, 4) mat(delim: "||", 1, 2; 3, 4)
+mat(delim: "[", frac(partial x_1, partial y_1), frac(partial x_2, partial y_1); med; frac(partial x_1, partial y_2), frac(partial x_2, partial y_2)) mat(delim: "(", 1, 2; 3, 4) mat(delim: "{", 1, 2; 3, 4) mat(delim: "||", 1, 2; 3, 4) mat(delim: "||", 1, 2; 3, 4)
