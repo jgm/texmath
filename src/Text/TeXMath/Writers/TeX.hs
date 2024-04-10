@@ -274,6 +274,9 @@ writeExp (EText ttype s) = do
   case map (fixSpace . escapeLaTeX) (T.unpack s) of
        []   -> return ()
        xs   -> tell $ txtcmd (Grouped xs)
+writeExp (EStyled TextNormal [EStyled TextBold es]) = do
+  tell [ControlSeq "\\mathbf"]
+  tellGroup $ mapM_ writeExp $ everywhere (mkT (fromUnicode TextBold)) es
 writeExp (EStyled ttype es) = do
   txtcmd <- (flip S.getLaTeXTextCommand ttype) <$> asks mathEnv
   tell [ControlSeq txtcmd]

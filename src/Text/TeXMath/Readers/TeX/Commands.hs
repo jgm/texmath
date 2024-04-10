@@ -41,7 +41,7 @@ styleOps :: M.Map Text ([Exp] -> Exp)
 styleOps = M.fromList
           [ ("\\mathrm",     EStyled TextNormal)
           , ("\\mathup",     EStyled TextNormal)
-          , ("\\mathbf",     EStyled TextBold)
+          , ("\\mathbf",     EStyled TextNormal . (:[]) . EStyled TextBold)
           , ("\\boldsymbol", EStyled TextBold)
           , ("\\bm",         EStyled TextBold)
           , ("\\symbf",      EStyled TextBold)

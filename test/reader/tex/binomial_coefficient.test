@@ -2,7 +2,7 @@
    \mathbf{C}(n,k) = \mathbf{C}_k^n = {}_n\mathbf{C}_k = \binom{n}{k} = \frac{n!}{k!\,(n -k)!}
 
 >>> native
-[ EStyled TextBold [ EIdentifier "C" ]
+[ EStyled TextNormal [ EStyled TextBold [ EIdentifier "C" ] ]
 , EDelimited
     "("
     ")"
@@ -12,12 +12,14 @@
     ]
 , ESymbol Rel "="
 , ESubsup
-    (EStyled TextBold [ EIdentifier "C" ])
+    (EStyled TextNormal [ EStyled TextBold [ EIdentifier "C" ] ])
     (EIdentifier "k")
     (EIdentifier "n")
 , ESymbol Rel "="
 , ESub (EGrouped []) (EIdentifier "n")
-, ESub (EStyled TextBold [ EIdentifier "C" ]) (EIdentifier "k")
+, ESub
+    (EStyled TextNormal [ EStyled TextBold [ EIdentifier "C" ] ])
+    (EIdentifier "k")
 , ESymbol Rel "="
 , EDelimited
     "("

@@ -66,13 +66,16 @@
       ]
     , [ [ EText TextMonospace "mathbf" ]
       , [ EStyled
-            TextBold
-            [ EIdentifier "A"
-            , EIdentifier "B"
-            , EIdentifier "C"
-            , EIdentifier "a"
-            , EIdentifier "b"
-            , EIdentifier "c"
+            TextNormal
+            [ EStyled
+                TextBold
+                [ EIdentifier "A"
+                , EIdentifier "B"
+                , EIdentifier "C"
+                , EIdentifier "a"
+                , EIdentifier "b"
+                , EIdentifier "c"
+                ]
             ]
         ]
       ]
