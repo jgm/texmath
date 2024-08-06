@@ -247,15 +247,24 @@ writeExp (EDelimited op "" [Right (EArray [AlignLeft, AlignLeft] rows)]) =
 writeExp (EDelimited open close es) =
   if isDelim open && isDelim close
      then
-       if matchedPair open close &&  -- see #233
+       (if matchedPair open close &&  -- see #233
             not (any (\x -> x == Left open || x == Left close) es)
-          then open <> body <> close
-          else "lr" <> inParens (open <> body <> close)
+           then id
+           else ("lr" <>) . inParens)
+          (renderOpen open <> body <> renderClose close)
      else esc open <> body <> esc close
-  where fromDelimited (Left e)  =
-          "mid(" <> fromMaybe (esc e) (M.lookup e typstSymbolMap) <> ")"
+  where fromDelimited (Left e)  = "mid(" <> renderSymbol e <> ")"
         fromDelimited (Right e) = writeExp e
-        isDelim c = c `elem` ["(",")","[","]","{","}","|","||"]
+        isDelim c = c `elem` ["(",")","[","]","{","}","|","||","\x2016"]
+        renderOpen e =
+          if T.all isAscii e
+             then e
+             else renderSymbol e <> " "
+        renderClose e =
+          if T.all isAscii e
+             then e
+             else " " <> renderSymbol e
+        renderSymbol e = fromMaybe (esc e) (M.lookup e typstSymbolMap)
         matchedPair "(" ")" = True
         matchedPair "[" "]" = True
         matchedPair "{" "}" = True

@@ -1,4 +1,4 @@
 <<< tex
 \left\{ x \in \mathbb{R}^n \middle| \lVert x \rVert_2^2 = \sum_{i=1}^n x_i^2 = 1\right\}
 >>> typst
-{x in bb(R)^n mid(bar.v) parallel x parallel_2^2 = sum_(i = 1)^n x_i^2 = 1}
+{x in bb(R)^n mid(bar.v) lr(bar.v.double x bar.v.double)_2^2 = sum_(i = 1)^n x_i^2 = 1}
