@@ -407,19 +407,17 @@ delimited = do
 
 delimitedImplicit :: TP Exp
 delimitedImplicit = try $ do
-  openc <- lexeme $ oneOf "()[]|"
-  closec <- case openc of
-                 '(' -> return ')'
-                 '[' -> return ']'
-                 '|' -> return '|'
-                 _   -> mzero
-  let closer = lexeme $ char closec
+  (opent, closer) <-
+           (("(", symbol ")") <$ symbol "(")
+       <|> (("[", symbol "]") <$ symbol "[")
+       <|> (("|", symbol "|") <$ symbol "|")
+       <|> (("\x2016", "\x2016" <$ ctrlseq "rVert") <$ ctrlseq "lVert")
   contents <- concat <$>
               many (try $ ((:[]) . Left  <$> middle)
                       <|> (map Right . unGrouped <$>
                              many1Exp (notFollowedBy closer *> expr)))
-  _ <- closer
-  return $ EDelimited (T.singleton openc) (T.singleton closec) contents
+  closet <- T.pack <$> closer
+  return $ EDelimited opent closet contents
 
 scaled :: Text -> TP Exp
 scaled cmd = do
