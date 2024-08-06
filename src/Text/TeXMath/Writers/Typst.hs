@@ -252,7 +252,8 @@ writeExp (EDelimited open close es) =
           then open <> body <> close
           else "lr" <> inParens (open <> body <> close)
      else esc open <> body <> esc close
-  where fromDelimited (Left e)  = e
+  where fromDelimited (Left e)  =
+          "mid(" <> fromMaybe (esc e) (M.lookup e typstSymbolMap) <> ")"
         fromDelimited (Right e) = writeExp e
         isDelim c = c `elem` ["(",")","[","]","{","}","|","||"]
         matchedPair "(" ")" = True
