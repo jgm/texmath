@@ -39,14 +39,14 @@ jobs:
       run: |
           cabal v2-update
           cabal v2-build --dependencies-only --enable-tests --disable-optimization -fexecutable all
-    - name: Install docker
-      run: |
-          sudo curl -fsSL https://github.com/tech-shrimp/docker_installer/releases/download/latest/linux.sh| bash -s docker --mirror Aliyun
-          sudo service docker start
-          docker --version
     - name: Build and test
       run: |
           cabal v2-build --enable-tests --disable-optimization -fexecutable all
           cabal v2-test --disable-optimization all
           stack install --flag texmath:server
-          docker --version
+    - name: Upload Result
+      uses: actions/upload-artifact@v4
+      with:
+        name: texmath-server
+        path: /home/runner/.local/bin/texmath-server
+        
