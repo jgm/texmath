@@ -79,7 +79,7 @@ jobs:
 
     - name: Build and test
       run: |
-          stack test --fast
+          stack install --flag texmath:server
 
 
 # macos:
