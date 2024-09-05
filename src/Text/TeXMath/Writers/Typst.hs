@@ -37,10 +37,19 @@ import Data.Maybe (fromMaybe)
 -- | Transforms an expression tree to equivalent Typst
 writeTypst :: DisplayType -> [Exp] -> Text
 writeTypst dt exprs =
-  T.unwords $ map writeExp $ everywhere (mkT $ S.handleDownup dt) exprs
+  writeExps $ everywhere (mkT $ S.handleDownup dt) exprs
 
 writeExps :: [Exp] -> Text
-writeExps = T.intercalate " " . map writeExp
+writeExps = go . map writeExp
+ where
+   go (a : b : es)
+    | T.take 1 b == "'" -- avoid space before a prime #239
+     = a <> go (b:es)
+   go (a : as)
+     = a <> if null as
+               then mempty
+               else " " <> go as
+   go [] = mempty
 
 inParens :: Text -> Text
 inParens s = "(" <> s <> ")"
@@ -101,6 +110,10 @@ writeExp (ENumber s) = s
 writeExp (ESymbol _t s)
   | T.all isAscii s = esc s  -- use '+' not 'plus'
   | s == "\x2212" = "-" -- use '-' not 'minus'
+  | s == "\8242" = "'" -- use ' for prime, see #239
+  | s == "\8243" = "''"
+  | s == "\8244" = "'''"
+  | s == "\8279" = "''''"
   | otherwise = fromMaybe (esc s) $ M.lookup s typstSymbolMap
 writeExp (EIdentifier s) =
   if T.length s == 1
