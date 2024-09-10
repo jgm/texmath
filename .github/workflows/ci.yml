@@ -23,7 +23,7 @@ jobs:
           - ghc: '9.10'
             cabal: 'latest'
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Install cabal/ghc
       run: |
         ghcup install ghc --set ${{ matrix.versions.ghc }}
@@ -60,7 +60,7 @@ jobs:
     strategy:
       fail-fast: true
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     # declare/restore cached things
     - name: Cache stack global package db
@@ -89,7 +89,7 @@ jobs:
 #   runs-on: macOS-latest
 
 #   steps:
-#   - uses: actions/checkout@v1
+#   - uses: actions/checkout@v4
 #   - name: Install stack
 #     run: |
 #         curl -L https://get.haskellstack.org/stable/osx-x86_64.tar.gz -o stack.tar.gz
