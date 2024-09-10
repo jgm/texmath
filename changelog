@@ -1,3 +1,14 @@
+texmath (0.12.8.10)
+
+  * TeX reader: allow `\lVert .. \vVert` to create an EDelimited (#238).
+
+  * Typst writer: improved handling of primes (#239).
+    Use `'` instead of e.g. `prime`. Don't put a space before primes.
+
+  * Typst writer: improve rendering of EDelimited (#238).
+
+  * Typst writer: use `mid()` for middle delimiters (#238).
+
 texmath (0.12.8.9)
 
   * Parse TeX `\mathbf` as both bold and upright (#236).
