@@ -117,6 +117,7 @@ data TextType = TextNormal
               | TextBoldScript
               | TextBoldFraktur
               | TextSansSerifItalic
+              | TextColored T.Text
               deriving (Show, Read, Eq, Ord, Data, Typeable)
 
 data FormType = FPrefix | FPostfix | FInfix deriving (Show, Ord, Eq)

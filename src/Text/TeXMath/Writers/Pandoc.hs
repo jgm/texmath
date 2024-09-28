@@ -91,6 +91,8 @@ renderStr (Just tt) s =
        TextBoldFraktur   -> [Strong [Str $ toUnicode tt s]]
        TextSansSerifItalic -> [Emph [Str s]]
        TextSansSerifBoldItalic -> [Strong [Emph [Str s]]]
+       TextColored color ->
+         [Span ("",[],[("style","color: " <> color <> ";")]) [Str s]]
 
 expToInlines :: Maybe TextType -> Exp -> Maybe [Inline]
 expToInlines tt (ENumber s) = Just $ renderStr tt s

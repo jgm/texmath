@@ -79,6 +79,7 @@ getMMLType t = fromMaybe "normal" (fst <$> M.lookup t textTypesMap)
 
 -- | Maps TextType to corresponding LaTeX command
 getLaTeXTextCommand :: Env -> TextType -> T.Text
+getLaTeXTextCommand _ (TextColored color) = "\\color{" <> color <> "}"
 getLaTeXTextCommand e t =
   let textCmd = fromMaybe "\\mathrm"
                   (snd <$> M.lookup t textTypesMap) in

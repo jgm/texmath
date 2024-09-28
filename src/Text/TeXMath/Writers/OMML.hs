@@ -49,6 +49,9 @@ writeOMML dt = container . concatMap (showExp [])
 mnode :: Node t => String -> t -> Element
 mnode s = node (QName s Nothing (Just "m"))
 
+wnode :: Node t => String -> t -> Element
+wnode s = node (QName s Nothing (Just "w"))
+
 -- Kept as String for Text.XML.Light
 mnodeA :: Node t => String -> String -> t -> Element
 mnodeA s v = add_attr (Attr (QName "val" Nothing (Just "m")) v) . mnode s
@@ -122,6 +125,7 @@ setProps tt =
        TextBoldFraktur   -> [sty "b", scr "fraktur"]
        TextSansSerifItalic -> [sty "i", scr "sans-serif"]
        TextSansSerifBoldItalic -> [sty "bi", scr "sans-serif"]
+       TextColored color -> []  -- TODO
    where sty x = mnodeA "sty" x ()
          scr x = mnodeA "scr" x ()
 

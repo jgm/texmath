@@ -679,9 +679,10 @@ styled c = do
 
 colored :: Text -> TP Exp
 colored "\\color" = do
-  _ <- inbraces -- skip the color
+  color <- T.pack <$> braces (many1 letter)
   -- in the future we might add color to the types or to the styles
-  texSymbol <|> inbraces <|> texChar
+  contents <- unGrouped <$> (texSymbol <|> inbraces <|> texChar)
+  return $ EStyled (TextColored color) contents
 colored _ = mzero
 
 -- note: sqrt can be unary, \sqrt{2}, or binary, \sqrt[3]{2}
