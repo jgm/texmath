@@ -453,8 +453,10 @@ arrayLine =
 
 arrayAlignments :: TP [Alignment]
 arrayAlignments = mconcat <$>
-  braces (many (((:[]) . letterToAlignment <$> letter)
+  braces (many (
+                ((:[]) . letterToAlignment <$> letter)
             <|> ([] <$ char '|')
+            <|> ([] <$ ((char '@' <|> char '!') <* inbraces))
             <|> (do char '*'
                     num <- T.pack <$> braces (many1 digit)
                     cols <- arrayAlignments

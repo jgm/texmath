@@ -1,0 +1,30 @@
+<<< tex
+\begin{array}{l@{\qquad}l}
+\text{Infection/colonization episode} & \text{Waning immunity episode}\\
+b^{\prime}(t) = \mu_{0}b(t) - cy(t) & b(t) = 0 
+\end{array}
+>>> native
+[ EArray
+    [ AlignLeft , AlignLeft ]
+    [ [ [ EText TextNormal "Infection/colonization episode" ]
+      , [ EText TextNormal "Waning immunity episode" ]
+      ]
+    , [ [ ESuper (EIdentifier "b") (ESymbol Ord "\8242")
+        , EDelimited "(" ")" [ Right (EIdentifier "t") ]
+        , ESymbol Rel "="
+        , ESub (EIdentifier "\956") (ENumber "0")
+        , EIdentifier "b"
+        , EDelimited "(" ")" [ Right (EIdentifier "t") ]
+        , ESymbol Bin "\8722"
+        , EIdentifier "c"
+        , EIdentifier "y"
+        , EDelimited "(" ")" [ Right (EIdentifier "t") ]
+        ]
+      , [ EIdentifier "b"
+        , EDelimited "(" ")" [ Right (EIdentifier "t") ]
+        , ESymbol Rel "="
+        , ENumber "0"
+        ]
+      ]
+    ]
+]
