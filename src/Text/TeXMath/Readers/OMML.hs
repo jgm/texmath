@@ -1,5 +1,6 @@
 {-# LANGUAGE PatternGuards #-}
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE LambdaCase #-}
 
 {-
 Copyright (C) 2014 Jesse Rosenthal <jrosenthal@jhu.edu>
@@ -58,7 +59,9 @@ unGroup exps = exps
 elemToOMML :: Element -> Maybe [Exp]
 elemToOMML element  | isElem "m" "oMathPara" element = do
   let expList = mapMaybe elemToOMML (elChildren element)
-  return $ map (\l -> if length l == 1 then (head l) else EGrouped l) expList
+  return $ map (\case
+                   [x] -> x
+                   xs -> EGrouped xs) expList
 elemToOMML element  | isElem "m" "oMath" element =
   Just $ concat $ mapMaybe elemToExps $ unwrapWTags $ elChildren element
 elemToOMML _ = Nothing
@@ -238,11 +241,8 @@ elemToExps' :: Element -> Maybe [Exp]
 elemToExps' element | isElem "m" "acc" element = do
   let chr = filterChildName (hasElemName "m" "accPr") element >>=
             filterChildName (hasElemName "m" "chr") >>=
-            findAttrBy (hasElemName "m" "val") >>=
-            Just . head
-      chr' = case chr of
-        Just c -> T.singleton c
-        Nothing -> "\x302"       -- default to wide hat.
+            findAttrBy (hasElemName "m" "val")
+      chr' = maybe "\x302" T.pack chr  -- default to wide hat
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   return $ [EOver False baseExp (ESymbol Accent chr')]
@@ -271,18 +271,17 @@ elemToExps' element | isElem "m" "d" element =
                   (elChildren element)
       inDelimExps = map (map Right) baseExps
       dPr = filterChildName (hasElemName "m" "dPr") element
+      headOrSpace [] = Just ' '
+      headOrSpace (c:_) = Just c
       begChr = dPr >>=
                filterChildName (hasElemName "m" "begChr") >>=
-               findAttrBy (hasElemName "m" "val") >>=
-               (\c -> if null c then (Just ' ') else (Just $ head c))
+               findAttrBy (hasElemName "m" "val") >>= headOrSpace
       sepChr = dPr >>=
                filterChildName (hasElemName "m" "sepChr") >>=
-               findAttrBy (hasElemName "m" "val") >>=
-               (\c -> if null c then (Just ' ') else (Just $ head c))
+               findAttrBy (hasElemName "m" "val") >>= headOrSpace
       endChr = dPr >>=
                filterChildName (hasElemName "m" "endChr") >>=
-               findAttrBy (hasElemName "m" "val") >>=
-               (\c -> if null c then (Just ' ') else (Just $ head c))
+               findAttrBy (hasElemName "m" "val") >>= headOrSpace
       beg = maybe "(" T.singleton begChr
       end = maybe ")" T.singleton endChr
       sep = maybe "|" T.singleton sepChr
