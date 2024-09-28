@@ -202,6 +202,7 @@ command = try $ do
   choice
     [ text c
     , styled c
+    , colored c
     , root c
     , xspace c
     , mathop c
@@ -673,6 +674,13 @@ styled c = do
                        EGrouped xs -> f xs
                        _           -> f [x]
        Nothing  -> mzero
+
+colored :: Text -> TP Exp
+colored "\\color" = do
+  _ <- inbraces -- skip the color
+  -- in the future we might add color to the types or to the styles
+  texSymbol <|> inbraces <|> texChar
+colored _ = mzero
 
 -- note: sqrt can be unary, \sqrt{2}, or binary, \sqrt[3]{2}
 root :: Text -> TP Exp
