@@ -52,7 +52,7 @@ import Data.Monoid (First(..), getFirst)
 import Data.List (transpose)
 import Control.Applicative ((<|>))
 import qualified Data.Text as T
-import Control.Monad (filterM, guard)
+import Control.Monad (filterM, mzero)
 import Control.Monad.Reader (ReaderT, runReaderT, asks, local)
 import Data.Either (rights)
 
@@ -449,14 +449,14 @@ underover e = do
 -- Other
 
 semantics :: Element -> MML Exp
-semantics e = do
-  guard (not $ null cs)
-  first <- safeExpr (head cs)
-  if isEmpty first
-    then fromMaybe empty . getFirst . mconcat <$> mapM annotation (tail cs)
-    else return first
-  where
-    cs = elChildren e
+semantics e =
+  case elChildren e of
+    [] -> mzero
+    (c:cs) -> do
+      first <- safeExpr c
+      if isEmpty first
+        then fromMaybe empty . getFirst . mconcat <$> mapM annotation cs
+        else return first
 
 annotation :: Element -> MML (First Exp)
 annotation e = do
@@ -509,7 +509,7 @@ tableRow a e = do
   align <- maybe a toAlignment <$> (findAttrQ "columnalign" e)
   case name e of
     "mtr" -> mapM (tableCell align) (elChildren e)
-    "mlabeledtr" -> mapM (tableCell align) (tail $ elChildren e)
+    "mlabeledtr" -> mapM (tableCell align) (drop 1 $ elChildren e)
     _ -> throwError $ "Invalid Element: Only expecting mtr elements " <> err e
 
 tableCell :: Alignment -> Element -> MML (Alignment, [Exp])
