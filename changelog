@@ -1,3 +1,9 @@
+texmath (0.12.8.11)
+
+  * TeX reader: Ignore `@{..}` and `!{..}` in array alignment specifiers (#241).
+
+  * TeX reader: ignore `\color` instead of crashing (#225).
+
 texmath (0.12.8.10)
 
   * TeX reader: allow `\lVert .. \vVert` to create an EDelimited (#238).
