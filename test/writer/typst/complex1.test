@@ -615,7 +615,7 @@ nabla zws times E^harpoon.lt_() thin + thin 1 / c thin frac(partial zws B^harpoo
 nabla zws dot.c B^harpoon.lt_() & = & 0\
 upright("Einstein Field Equations") & R_(mu nu)^() - 1 / 2 thin g_(mu nu)^() thin R = frac(8 pi G, c_()^4) thin T_(mu nu)^()\
 upright("Ramanujan Identity") & frac(1, \( sqrt(phi sqrt(5)) - phi \) e_()^(25 / pi)) = 1 + frac(e_()^(- 2 pi), 1 + frac(e_()^(- 4 pi), 1 + frac(e_()^(- 6 pi), 1 + frac(e_()^(- 8 pi), 1 + dots.h))))\
-upright("Another Ramanujan identity") & sum_(k = 1)^oo 1 / 2_()^(⌊ k dot.c zws phi ⌋) = frac(1, 2_()^0 + frac(1, 2_()^1 + dots.h.c))\
+upright("Another Ramanujan identity") & sum_(k = 1)^oo 1 / 2_()^(floor.l k dot.c zws phi floor.r) = frac(1, 2_()^0 + frac(1, 2_()^1 + dots.h.c))\
 upright("Rogers-Ramanujan Identity") & 1 + sum_(k = 1)^oo frac(q_()^(k_()^2 + k), \( 1 - q \) \( 1 - q_()^2 \) dots.h.c \( 1 - q_()^k \)) = product_(j = 0)^oo frac(1, \( 1 - q_()^(5 j + 2) \) \( 1 - q_()^(5 j + 3) \)) , upright("  ") upright("  ") f o r med \| q \| < 1 .\
 upright("Commutative Diagram") & H & arrow.l & K\
 arrow.b & zws & arrow.t\
