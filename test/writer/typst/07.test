@@ -20,4 +20,4 @@
 , EIdentifier "a"
 ]
 >>> typst
-u'' + p (x) u' + q (x) u = f (x) , quad x > a
+u'' + p (x) u' + q (x) u = f (x) \, quad x > a
