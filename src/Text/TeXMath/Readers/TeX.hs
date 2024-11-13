@@ -443,12 +443,12 @@ endLineAMS = lexeme $ try $ do
 
 arrayLine :: TP ArrayLine
 arrayLine =
-  sepBy1 (unGrouped <$>
-    manyExp (try (ignorable' *> notFollowedBy (('\n' <$ ctrlseq "end") <|> endLine)) *>
-               expr <*
-               ignorable')) (symbol "&")
-  where ignorable' = ignorable >>
-                     optional (try (ctrlseq "hline" >> ignorable'))
+  sepBy1
+    (ignorable' *>
+      (unGrouped <$>
+        manyExp (try (notFollowedBy (('\n' <$ ctrlseq "end") <|> endLine)) *>
+                   expr <* ignorable'))) (symbol "&")
+  where ignorable' = ignorable >> optional (try (ctrlseq "hline" >> ignorable'))
   -- we don't represent the line, but it shouldn't crash parsing
 
 arrayAlignments :: TP [Alignment]
@@ -456,6 +456,7 @@ arrayAlignments = mconcat <$>
   braces (many (
                 ((:[]) . letterToAlignment <$> letter)
             <|> ([] <$ char '|')
+            <|> ([] <$ oneOf " \t")
             <|> ([] <$ ((char '@' <|> char '!') <* inbraces))
             <|> (do char '*'
                     num <- T.pack <$> braces (many1 digit)

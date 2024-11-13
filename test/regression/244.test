@@ -1,0 +1,13 @@
+<<< tex
+\begin{array}{l cr}
+1 & 2 & 3 \\\hline
+   & 5 & 6 \\
+\end{array}
+>>> native
+[ EArray
+    [ AlignLeft , AlignCenter , AlignRight ]
+    [ [ [ ENumber "1" ] , [ ENumber "2" ] , [ ENumber "3" ] ]
+    , [ [] , [ ENumber "5" ] , [ ENumber "6" ] ]
+    , [ [] ]
+    ]
+]
