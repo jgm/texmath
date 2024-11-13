@@ -209,8 +209,8 @@ showExp props e =
    EDelimited start end xs ->
                   [ mnode "d" $ mnode "dPr"
                                [ mnodeA "begChr" (T.unpack start) ()
-                               , mnodeA "endChr" (T.unpack end) ()
                                , mnodeA "sepChr" (T.unpack sepchr) ()
+                               , mnodeA "endChr" (T.unpack end) ()
                                , mnode "grow" () ]
                               : map (mnode "e" . concatMap (showExp props)) es
                   ]
