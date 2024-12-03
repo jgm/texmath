@@ -171,6 +171,7 @@ writeExp o@(EMathOperator s) = do
          tell [Grouped math]
 writeExp (ESymbol Ord (T.unpack -> [c]))  -- do not render "invisible operators"
   | c `elem` ['\x2061'..'\x2064'] = return () -- see 3.2.5.5 of mathml spec
+writeExp (ESymbol Ord "\8242") = tell [Literal "'"] -- render prime as ', #246
 writeExp (ESymbol t s) = do
   s' <- getTeXMathM s
   when (t == Bin || t == Rel) $ tell [Space]
