@@ -7686,7 +7686,7 @@
 \begin{matrix}
 {2{\sum{ab}}} & \\
 x^{'3} & \\
-{{{f^{'}{(x)}} + {\sin\cos\theta}} = 1} & \\
+{{{f'{(x)}} + {\sin\cos\theta}} = 1} & \\
 {{{f{(z)}} = {\sum\limits_{n = 0}^{\infty}{a_{n}z^{n}}}}\text{, }{{|z| < R}\hspace{0pt}{({R \neq 0})}}} & \\
 {\left. \int{}_{C}{\left( {\sum\limits_{n = 0}^{\infty}{a_{n}z^{n}}} \right){\mathbb{d}z}} \right. = {\sum\limits_{n = 0}^{\infty}{a_{n}\left. \int{}_{C}{z^{n}{\mathbb{d}z}} \right.}}} & \\
 {{\lim\limits_{n\rightarrow\infty}\left| \left. \int{}_{C}{\left\lbrack {{f{(z)}} - {\sum\limits_{k = 0}^{n}{a_{k}z^{k}}}} \right\rbrack{\mathbb{d}z}} \right. \right|} = 0} & \\
@@ -7782,7 +7782,7 @@ c & d
 \begin{array}{r}
 {{{\mathbb{D}_{x\hspace{0pt}x}y} - y} = 0} \\
 {{y{(0)}} = 1} \\
-{{y^{'}(0)} = 0}
+{{y'(0)} = 0}
 \end{array} & \\
 {{y(x)} = {{\frac{1}{3}e^{{- \sqrt[3]{({- 1})}}x}} + {\frac{2}{3}e^{\frac{1}{2}\sqrt[3]{({- 1})}x}{\cos{\frac{1}{2}\sqrt{3}\sqrt[3]{\left( {- 1} \right)}x}}}}} & \\
 {{y(t)} = {2{\tan\left( {{2t} - {\frac{1}{4}\pi}} \right)}}} & \\
@@ -7838,8 +7838,8 @@ t & x & y & z \\
 {1 = 3}
 \end{matrix} & \\
 \begin{matrix}
-{{A_{1} = {{N_{0}{({\lambda;\Omega^{'}})}} - {\varphi{({\lambda;\Omega^{'}})}}}}\text{,}} \\
-{{A_{2} = {{\varphi{({\lambda;\Omega^{'}})}} - {\varphi{({\lambda;\Omega})}}}}\text{,}} \\
+{{A_{1} = {{N_{0}{({\lambda;\Omega'})}} - {\varphi{({\lambda;\Omega'})}}}}\text{,}} \\
+{{A_{2} = {{\varphi{({\lambda;\Omega'})}} - {\varphi{({\lambda;\Omega})}}}}\text{,}} \\
 {{A_{3} = {\mathcal{N}{({\lambda;\omega})}}}\text{.}}
 \end{matrix} & \\
 \begin{matrix}
@@ -7936,7 +7936,7 @@ b_{2\hspace{0pt}1} & b_{2\hspace{0pt}2}
 {{\int_{a}^{b}{{f{(x)}}{\mathbb{d}x}}} = {\lim\limits_{{\parallel P\parallel}\rightarrow 0}{\sum\limits_{i = 1}^{n}{{f\left( {\overline{x}}_{i} \right)}{\Delta x_{i}}}}}} & \\
 {{\int_{a}^{b}{{f{(x)}}{\mathbb{d}x}}} = {\lim\limits_{n\rightarrow\infty}{\frac{b - a}{n}{\sum\limits_{i = 1}^{n}{f\left( {a + {i\frac{b - a}{n}}} \right)}}}}} & \\
 {{\int_{0}^{2}{x^{5}\sqrt{x^{3} + 1}{\mathbb{d}x}}} = {\int_{1}^{3}{\frac{2}{3}u\frac{\sqrt{\left( u^{2} \right)}}{\left( {u^{2} - 1} \right)^{\frac{2}{3}}}\left( {{u^{2}\left( {u^{2} - 1} \right)^{\frac{2}{3}}} - \left( {u^{2} - 1} \right)^{\frac{2}{3}}} \right){\mathbb{d}u}}}} & \\
-{\left. \int{{f{({g{(x)}})}}{g^{'}{(x)}}{\mathbb{d}x}} \right. = \left. \int{{f{(u)}}{\mathbb{d}u}} \right.} & \\
+{\left. \int{{f{({g{(x)}})}}{g'{(x)}}{\mathbb{d}x}} \right. = \left. \int{{f{(u)}}{\mathbb{d}u}} \right.} & \\
 {x = {2{\sum\limits_{n = 1}^{100}{n{({n - 1})}}}}} & \\
 {{\lim\limits_{x\rightarrow 0}{\sin\left( \frac{1}{x} \right)}} = {{- 1}..1}} & \\
 {{h{({i,j})}} = {{{({2 - j})}{g{(i)}}} + {{({j - 1})}{f{({g{(i)}})}}}}} & \\

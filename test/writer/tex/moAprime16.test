@@ -6,4 +6,4 @@
 , EDelimited "(" ")" [ Right (EIdentifier "x") ]
 ]
 >>> tex
-f^{'}(x) = f^{'}(x)
+f^{'}(x) = f'(x)

@@ -171,7 +171,7 @@ writeExp o@(EMathOperator s) = do
          tell [Grouped math]
 writeExp (ESymbol Ord (T.unpack -> [c]))  -- do not render "invisible operators"
   | c `elem` ['\x2061'..'\x2064'] = return () -- see 3.2.5.5 of mathml spec
-writeExp (ESymbol Ord "\8242") = tell [Literal "'"] -- render prime as ', #246
+writeExp (ESymbol Ord "\8242") = tell [Token '\''] -- render prime as ', #246
 writeExp (ESymbol t s) = do
   s' <- getTeXMathM s
   when (t == Bin || t == Rel) $ tell [Space]
@@ -199,8 +199,10 @@ writeExp (ESub b e1) = do
   tellGroup (writeExp e1)
 writeExp (ESuper b e1) = do
   (if isFancy b then tellGroup else id) $ writeExp b
-  tell [Token '^']
-  tellGroup (writeExp e1)
+  case e1 of
+    ESymbol Ord "\8242" -> tell [Token '\'']
+    _ -> do tell [Token '^']
+            tellGroup (writeExp e1)
 writeExp (ESubsup b e1 e2) = do
   (if isFancy b then tellGroup else id) $ writeExp b
   tell [Token '_']
