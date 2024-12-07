@@ -1,3 +1,23 @@
+texmath (0.12.8.12)
+
+  * TeX writer: render prime and superscripted prime as `'` (#246).
+
+  * TeX reader:
+
+    + Don't crash on array with `\hline` before blank cell (#244).
+    + Skip whitespace in array column specifier (#244).
+
+  * OMML writer:
+
+    + Fix order of dPr attributes (#243).
+
+  * Typst writer:
+
+    + Escape commas (#242). Otherwise we can get bad results e.g. in fractions,
+      when the commas separate arguments.
+
+  * Require typst-symbols 0.1.7, update tests.
+
 texmath (0.12.8.11)
 
   * TeX reader: Ignore `@{..}` and `!{..}` in array alignment specifiers (#241).
