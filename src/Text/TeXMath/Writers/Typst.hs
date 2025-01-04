@@ -84,13 +84,14 @@ esc t =
 
 escInQuotes :: Text -> Text
 escInQuotes t =
-  if T.any (== '"') t
+  if T.any needsEscape t
     then T.concatMap escapeChar t
     else t
   where
     escapeChar c
-      | c == '"' = "\\" <> T.singleton c
+      | needsEscape c = "\\" <> T.singleton c
       | otherwise = T.singleton c
+    needsEscape c = c == '\\' || c == '"'
 
 writeExpS :: Exp -> Text
 writeExpS (EGrouped es) = "(" <> writeExps es <> ")"
