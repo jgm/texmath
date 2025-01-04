@@ -146,26 +146,36 @@ writeExp (EOver _ (EOver _ b (ESymbol TOver "\9140")) e1) =
 writeExp (EOver _convertible b e1) =
   case e1 of
     ESymbol Accent "`" -> "grave" <> inParens (writeExp b)
-    ESymbol Accent "\768" -> "grave" <> inParens (writeExp b)
-    ESymbol Accent "\xb4" -> "acute" <> inParens (writeExp b)
+    ESymbol Accent "\180" -> "acute" <> inParens (writeExp b)
     ESymbol Accent "^" -> "hat" <> inParens (writeExp b)
-    ESymbol Accent "\770" -> "hat" <> inParens (writeExp b)
     ESymbol Accent "~" -> "tilde" <> inParens (writeExp b)
-    ESymbol Accent "\771" -> "tilde" <> inParens (writeExp b)
-    ESymbol Accent "\xaf" -> "macron" <> inParens (writeExp b)
-    ESymbol Accent "\x2d8" -> "breve" <> inParens (writeExp b)
     ESymbol Accent "." -> "dot" <> inParens (writeExp b)
+    ESymbol Accent "\168" -> "diaer" <> inParens (writeExp b)
+    ESymbol Accent "\175" -> "macron" <> inParens (writeExp b)
+    ESymbol Accent "\711" -> "caron" <> inParens (writeExp b)
+    ESymbol Accent "\728" -> "breve" <> inParens (writeExp b)
+    ESymbol Accent "\733" -> "acute.double" <> inParens (writeExp b)
+    ESymbol Accent "\768" -> "grave" <> inParens (writeExp b)
+    ESymbol Accent "\769" -> "acute" <> inParens (writeExp b)
+    ESymbol Accent "\770" -> "hat" <> inParens (writeExp b)
+    ESymbol Accent "\771" -> "tilde" <> inParens (writeExp b)
+    ESymbol Accent "\772" -> "macron" <> inParens (writeExp b)
+    ESymbol Accent "\773" -> "overline" <> inParens (writeExp b)
+    ESymbol Accent "\774" -> "breve" <> inParens (writeExp b)
     ESymbol Accent "\775" -> "dot" <> inParens (writeExp b)
-    ESymbol Accent "\xa8" -> "diaer" <> inParens (writeExp b)
+    ESymbol Accent "\776" -> "dot.double" <> inParens (writeExp b)
+    ESymbol Accent "\777" -> "harpoon" <> inParens (writeExp b)
+    ESymbol Accent "\778" -> "circle" <> inParens (writeExp b)
+    ESymbol Accent "\779" -> "acute.double" <> inParens (writeExp b)
+    ESymbol Accent "\780" -> "caron" <> inParens (writeExp b)
+    ESymbol Accent "\781" -> "overline" <> inParens (writeExp b)
     ESymbol Accent "\x2218" -> "circle" <> inParens (writeExp b)
-    ESymbol Accent "\x2dd" -> "acute.double" <> inParens (writeExp b)
-    ESymbol Accent "\x2c7" -> "caron" <> inParens (writeExp b)
     ESymbol Accent "\x2192" -> "->" <> inParens (writeExp b)
     ESymbol Accent "\x2190" -> "<-" <> inParens (writeExp b)
     ESymbol Accent "\8407" -> "arrow" <> inParens (writeExp b)
-    ESymbol TOver "\9182" -> "overbrace(" <> writeExp b <> ")"
-    ESymbol TOver "\9140" -> "overbracket(" <> writeExp b <> ")"
-    ESymbol TOver "\175" -> "overline(" <> writeExp b <> ")"
+    ESymbol TOver "\9182" -> "overbrace" <> inParens (writeExp b)
+    ESymbol TOver "\9140" -> "overbracket" <> inParens (writeExp b)
+    ESymbol TOver "\175" -> "overline" <> inParens (writeExp b)
     _ -> writeExpB b <> "^" <> writeExpS e1
 writeExp (EUnder _ (EUnder _ b (ESymbol TUnder "\9183")) e1) =
   "underbrace(" <> writeExp b <> ", " <> writeExp e1 <> ")"
