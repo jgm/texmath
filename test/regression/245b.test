@@ -1,0 +1,110 @@
+<<< tex
+\begin{array}{c}
+\text{Accents above:}\\
+\text{\textbackslash grave} \grave{x}\\
+\text{\textbackslash acute} \acute{x}\\
+\text{\textbackslash hat} \hat{x}\\
+\text{\textbackslash widehat} \widehat{x}\\
+\text{\textbackslash tilde} \tilde{x}\\
+\text{\textbackslash bar} \bar{x}\\
+\text{\textbackslash overbar} \overbar{x}\\
+\text{\textbackslash overline} \overline{x}\\
+\text{\textbackslash breve} \breve{x}\\
+\text{\textbackslash dot} \dot{x}\\
+\text{\textbackslash ddot} \ddot{x}\\
+\text{\textbackslash ovhook} \ovhook{x}\\
+\text{\textbackslash ocirc} \ocirc{x}\\
+\text{\textbackslash check} \check{x}\\
+\text{\textbackslash candra} \candra{x}\\
+\text{\textbackslash oturnedcomma} \oturnedcomma{x}\\
+\text{\textbackslash ocommatopright} \ocommatopright{x}\\
+\text{\textbackslash droang} \droang{x}\\
+\text{\textbackslash leftharpoonaccent} \leftharpoonaccent{x}\\
+\text{\textbackslash rightharpoonaccent} \rightharpoonaccent{x}\\
+\text{\textbackslash overleftarrow} \overleftarrow{x}\\
+\text{\textbackslash vec} \vec{x}\\
+\text{\textbackslash dddot} \dddot{x}\\
+\text{\textbackslash ddddot} \ddddot{x}\\
+\text{\textbackslash overleftrightarrow} \overleftrightarrow{x}\\
+\text{\textbackslash annuity} \annuity{x}\\
+\text{\textbackslash widebridgeabove} \widebridgeabove{x}\\
+\text{\textbackslash asteraccent} \asteraccent{x}\\
+\text{Accents below:}\\
+\text{\textbackslash wideutilde} \wideutilde{x}\\
+\text{\textbackslash underbar} \underbar{x}\\
+\text{\textbackslash underline} \underline{x}\\
+\text{\textbackslash threeunderdot} \threeunderdot{x}\\
+\text{\textbackslash underrightharpoondown} \underrightharpoondown{x}\\
+\text{\textbackslash underleftharpoondown} \underleftharpoondown{x}\\
+\text{\textbackslash underleftarrow} \underleftarrow{x}\\
+\text{\textbackslash underrightarrow} \underrightarrow{x}\\
+\text{\textbackslash underline} \underline{x}\\
+\text{Trailing signs:}\\
+\text{^\textbackslash prime} x^\prime\\
+\text{^\textbackslash dprime} x^\dprime\\
+\text{^\textbackslash trprime} x^\trprime\\
+\text{^\textbackslash qprime} x^\qprime\\
+\text{^\textbackslash backprime} x^\backprime\\
+\text{^\textbackslash backdprime} x^\backdprime\\
+\text{^\textbackslash backtrprime} x^\backtrprime\\
+\text{^\textbackslash hyphenbullet} x^\hyphenbullet\\
+\text{^\textbackslash ast} x^\ast\\
+\text{^\textbackslash vysmwhtcircle} x^\vysmwhtcircle\\
+\text{^\textbackslash vysmblkcircle} x^\vysmblkcircle\\
+\text{^\textbackslash llcorner} x^\llcorner\\
+\text{^\textbackslash ulcorner} x^\ulcorner\\
+\end{array}
+>>> typst
+upright("Accents above:")\
+upright("\\grave") grave(x)\
+upright("\\acute") acute(x)\
+upright("\\hat") hat(x)\
+upright("\\widehat") hat(x)\
+upright("\\tilde") tilde(x)\
+upright("\\bar") macron(x)\
+upright("\\overbar") macron(x)\
+upright("\\overline") overline(x)\
+upright("\\breve") breve(x)\
+upright("\\dot") dot(x)\
+upright("\\ddot") dot.double(x)\
+upright("\\ovhook") harpoon(x)\
+upright("\\ocirc") circle(x)\
+upright("\\check") caron(x)\
+upright("\\candra") accent(x, ̐)\
+upright("\\oturnedcomma") accent(x, ̒)\
+upright("\\ocommatopright") accent(x, ̕)\
+upright("\\droang") accent(x, ̚)\
+upright("\\leftharpoonaccent") harpoon.lt(x)\
+upright("\\rightharpoonaccent") harpoon(x)\
+upright("\\overleftarrow") arrow.l(x)\
+upright("\\vec") arrow(x)\
+upright("\\dddot") accent(x, ⃛)\
+upright("\\ddddot") accent(x, ⃜)\
+upright("\\overleftrightarrow") arrow.l.r(x)\
+upright("\\annuity") accent(x, ⃧)\
+upright("\\widebridgeabove") accent(x, ⃩)\
+upright("\\asteraccent") accent(x, ⃰)\
+upright("Accents below:")\
+upright("\\wideutilde") accent(x, ̰)\
+upright("\\underbar") underline(x)\
+upright("\\underline") underline(x)\
+upright("\\threeunderdot") accent(x, ⃨)\
+upright("\\underrightharpoondown") accent(x, ⃬)\
+upright("\\underleftharpoondown") accent(x, ⃭)\
+upright("\\underleftarrow") accent(x, ⃮)\
+upright("\\underrightarrow") accent(x, ⃯)\
+upright("\\underline") underline(x)\
+upright("Trailing signs:")\
+upright("^\\prime") x^(')\
+upright("^\\dprime") x^('')\
+upright("^\\trprime") x^(''')\
+upright("^\\qprime") x^('''')\
+upright("^\\backprime") x^prime.rev\
+upright("^\\backdprime") x^prime.double.rev\
+upright("^\\backtrprime") x^prime.triple.rev\
+upright("^\\hyphenbullet") x^(⁃)\
+upright("^\\ast") x^(\*)\
+upright("^\\vysmwhtcircle") x^circle.stroked.tiny\
+upright("^\\vysmblkcircle") x^circle.filled.small\
+upright("^\\llcorner") x^\⌞\
+upright("^\\ulcorner") x^\⌜\

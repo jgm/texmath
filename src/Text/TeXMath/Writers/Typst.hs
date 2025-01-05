@@ -94,9 +94,12 @@ escInQuotes t =
     needsEscape c = c == '\\' || c == '"'
 
 writeExpS :: Exp -> Text
-writeExpS (EGrouped es) = "(" <> writeExps es <> ")"
 writeExpS e =
   case writeExp e of
+    "" -> "()"
+    t | Just (c,_) <- T.uncons t
+      , c >= '\8988' && c <= '\8991'
+      -> "\\" <> t -- see #245
     t | T.all (\c -> isDigit c || c == '.') t -> t
       | T.all (\c -> isAlpha c || c == '.') t -> t
       | otherwise -> "(" <> t <> ")"
@@ -143,36 +146,13 @@ writeExp (EOver _ (EOver _ b (ESymbol TOver "\9182")) e1) =
   "overbrace(" <> writeExp b <> ", " <> writeExp e1 <> ")"
 writeExp (EOver _ (EOver _ b (ESymbol TOver "\9140")) e1) =
   "overbracket(" <> writeExp b <> ", " <> writeExp e1 <> ")"
+writeExp (EOver _convertible b (ESymbol Accent ac))
+  = case getAccentCommand ac of
+     Just accCommand
+       | not (isGrouped b) -> accCommand <> inParens (writeExp b)
+     _ -> "accent" <> inParens (writeExp b <> ", " <> ac)
 writeExp (EOver _convertible b e1) =
   case e1 of
-    ESymbol Accent "`" -> "grave" <> inParens (writeExp b)
-    ESymbol Accent "\180" -> "acute" <> inParens (writeExp b)
-    ESymbol Accent "^" -> "hat" <> inParens (writeExp b)
-    ESymbol Accent "~" -> "tilde" <> inParens (writeExp b)
-    ESymbol Accent "." -> "dot" <> inParens (writeExp b)
-    ESymbol Accent "\168" -> "diaer" <> inParens (writeExp b)
-    ESymbol Accent "\175" -> "macron" <> inParens (writeExp b)
-    ESymbol Accent "\711" -> "caron" <> inParens (writeExp b)
-    ESymbol Accent "\728" -> "breve" <> inParens (writeExp b)
-    ESymbol Accent "\733" -> "acute.double" <> inParens (writeExp b)
-    ESymbol Accent "\768" -> "grave" <> inParens (writeExp b)
-    ESymbol Accent "\769" -> "acute" <> inParens (writeExp b)
-    ESymbol Accent "\770" -> "hat" <> inParens (writeExp b)
-    ESymbol Accent "\771" -> "tilde" <> inParens (writeExp b)
-    ESymbol Accent "\772" -> "macron" <> inParens (writeExp b)
-    ESymbol Accent "\773" -> "overline" <> inParens (writeExp b)
-    ESymbol Accent "\774" -> "breve" <> inParens (writeExp b)
-    ESymbol Accent "\775" -> "dot" <> inParens (writeExp b)
-    ESymbol Accent "\776" -> "dot.double" <> inParens (writeExp b)
-    ESymbol Accent "\777" -> "harpoon" <> inParens (writeExp b)
-    ESymbol Accent "\778" -> "circle" <> inParens (writeExp b)
-    ESymbol Accent "\779" -> "acute.double" <> inParens (writeExp b)
-    ESymbol Accent "\780" -> "caron" <> inParens (writeExp b)
-    ESymbol Accent "\781" -> "overline" <> inParens (writeExp b)
-    ESymbol Accent "\x2218" -> "circle" <> inParens (writeExp b)
-    ESymbol Accent "\x2192" -> "->" <> inParens (writeExp b)
-    ESymbol Accent "\x2190" -> "<-" <> inParens (writeExp b)
-    ESymbol Accent "\8407" -> "arrow" <> inParens (writeExp b)
     ESymbol TOver "\9182" -> "overbrace" <> inParens (writeExp b)
     ESymbol TOver "\9140" -> "overbracket" <> inParens (writeExp b)
     ESymbol TOver "\175" -> "overline" <> inParens (writeExp b)
@@ -184,6 +164,7 @@ writeExp (EUnder _ (EUnder _ b (ESymbol TUnder "\9140")) e1) =
 writeExp (EUnder _convertible b e1) =
   case e1 of
     ESymbol TUnder "_" -> "underline(" <> writeExp b <> ")"
+    ESymbol TUnder "\817" -> "underline(" <> writeExp b <> ")"
     ESymbol TUnder "\9183" -> "underbrace(" <> writeExp b <> ")"
     ESymbol TUnder "\9140" -> "underbracket(" <> writeExp b <> ")"
     _ -> writeExpB b <> "_" <> writeExpS e1
@@ -317,3 +298,45 @@ typstSymbolMap :: M.Map Text Text
 typstSymbolMap = M.fromList $
   ("\776", "dot.double") -- see #231
   : [(s,name) | (name, _, s) <- typstSymbols]
+
+getAccentCommand :: Text -> Maybe Text
+getAccentCommand ac = do
+  case ac of
+    "`" -> Just "grave"
+    "\180" -> Just "acute"
+    "^" -> Just "hat"
+    "~" -> Just "tilde"
+    "." -> Just "dot"
+    "\168" -> Just "diaer"
+    "\175" -> Just "macron"
+    "\711" -> Just "caron"
+    "\728" -> Just "breve"
+    "\733" -> Just "acute.double"
+    "\768" -> Just "grave"
+    "\769" -> Just "acute"
+    "\770" -> Just "hat"
+    "\771" -> Just "tilde"
+    "\772" -> Just "macron"
+    "\773" -> Just "overline"
+    "\774" -> Just "breve"
+    "\775" -> Just "dot"
+    "\776" -> Just "dot.double"
+    "\777" -> Just "harpoon"
+    "\778" -> Just "circle"
+    "\779" -> Just "acute.double"
+    "\780" -> Just "caron"
+    "\781" -> Just "overline"
+    "\x2218" -> Just "circle"
+    "\x2192" -> Just "->"
+    "\x2190" -> Just "<-"
+    "\8254" -> Just "macron"
+    "\8400" -> Just "harpoon.lt"
+    "\8401" -> Just "harpoon"
+    "\8406" -> Just "arrow.l"
+    "\8407" -> Just "arrow"
+    "\8417" -> Just "arrow.l.r"
+    _ -> Nothing
+
+isGrouped :: Exp -> Bool
+isGrouped (EGrouped _) = True
+isGrouped _ = False
