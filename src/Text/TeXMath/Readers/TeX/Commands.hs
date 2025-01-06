@@ -272,7 +272,6 @@ symbolMapOverrides = M.fromList
   , ("\\overbar",ESymbol Accent "\175")
   , ("\\overline",ESymbol TOver "\175")
   , ("\\overrightarrow",ESymbol Accent "\8407")
-  , ("\\perp",ESymbol Rel "\8869")
   , ("\\phi",EIdentifier "\981")
   , ("\\pi",EIdentifier "\960")
   , ("\\preceq",ESymbol Rel "\8828")
