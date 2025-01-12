@@ -1,3 +1,16 @@
+texmath (0.12.8.13)
+
+  * Remove special override for `\perp` in Text.TeXMath.Readers.TeX.Commands
+    (#247). This caused `\perp` to be read as U+22A5 instead of U+27C2.  This
+    addresses the mismatch with the TeX writer (which associates `\bot` with
+    U+22A5 and `\perp` with U+27C2).
+
+  * Typst writer:
+
+    + Fix several issues with accents and attachments (#245).
+    + Fix handling of some EOver with combining accents (#245).
+    + Escape backslash in text context (#245).
+
 texmath (0.12.8.12)
 
   * TeX writer: render prime and superscripted prime as `'` (#246).
