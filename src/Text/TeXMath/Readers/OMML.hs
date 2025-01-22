@@ -117,19 +117,6 @@ data OMathTextStyle = OPlain
                     | OBoldItalic
                     deriving (Show, Eq)
 
-elemToBase :: Element -> Maybe Exp
-elemToBase element | isElem "m" "e" element = do
-  bs <- elemToBases element
-  return $ case bs of
-    (e : []) -> e
-    exps     -> EGrouped exps
-elemToBase _ = Nothing
-
-elemToBases :: Element -> Maybe [Exp]
-elemToBases element | isElem "m" "e" element =
-  return $ concat $ mapMaybe elemToExps' (elChildren element)
-elemToBases _ = Nothing
-
 
 breakOnAmpersand :: [Exp] -> [[Exp]]
 breakOnAmpersand = splitWhen isAmpersand
@@ -234,8 +221,26 @@ oMathRunTextStyleToTextType (Styled scr sty)
     Just $ TextBoldItalic
   | otherwise = Nothing
 
+elemsToExps :: [Element] -> [Exp]
+elemsToExps = concat . mapMaybe elemToExps
+
 elemToExps :: Element -> Maybe [Exp]
 elemToExps element = unGroup <$> elemToExps' element
+
+elemToBase :: Element -> Maybe Exp
+elemToBase element | isElem "m" "e" element = do
+  bs <- elemToBases element
+  return $ case bs of
+    (e : []) -> e
+    exps     -> EGrouped exps
+elemToBase _ = Nothing
+
+elemToBases :: Element -> Maybe [Exp]
+elemToBases element | isElem "m" "e" element =
+  return $ concat $ mapMaybe elemToExps' (elChildren element)
+elemToBases _ = Nothing
+
+
 
 elemToExps' :: Element -> Maybe [Exp]
 elemToExps' element | isElem "m" "acc" element = do
@@ -301,8 +306,8 @@ elemToExps' element | isElem "m" "f" element = do
   let barType = filterChildName (hasElemName "m" "fPr") element >>=
             filterChildName (hasElemName "m" "type") >>=
             findAttrBy (hasElemName "m" "val")
-  let numExp = EGrouped $ concat $ mapMaybe elemToExps (elChildren num)
-      denExp = EGrouped $ concat $ mapMaybe elemToExps (elChildren den)
+  let numExp = EGrouped $ elemsToExps (elChildren num)
+      denExp = EGrouped $ elemsToExps (elChildren den)
   case barType of
     Just "noBar" -> Just [EFraction NoLineFrac numExp denExp]
     _            -> Just [EFraction NormalFrac numExp denExp]
@@ -350,14 +355,14 @@ elemToExps' element | isElem "m" "limLow" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element
           >>= elemToBase
   limExp <- filterChildName (hasElemName "m" "lim") element
-            >>= (\e -> Just $ concat $ mapMaybe elemToExps (elChildren e))
+            >>= (\e -> Just $ elemsToExps (elChildren e))
             >>= (return . EGrouped)
   return [EUnder True baseExp limExp]
 elemToExps' element | isElem "m" "limUpp" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element
           >>= elemToBase
   limExp <- filterChildName (hasElemName "m" "lim") element
-            >>= (\e -> Just $ concat $ mapMaybe elemToExps (elChildren e))
+            >>= (\e -> Just $ elemsToExps (elChildren e))
             >>= (return . EGrouped)
   return [EOver True baseExp limExp]
 elemToExps' element | isElem "m" "m" element =
@@ -381,9 +386,9 @@ elemToExps' element | isElem "m" "nary" element = do
                filterChildName (hasElemName "m" "limLoc") >>=
                findAttrBy (hasElemName "m" "val")
   subExps <- filterChildName (hasElemName "m" "sub") element >>=
-         (\e -> return $ concat $ mapMaybe elemToExps (elChildren e))
+         return . elemsToExps . elChildren
   supExps <- filterChildName (hasElemName "m" "sup") element >>=
-         (\e -> return $ concat $ mapMaybe elemToExps (elChildren e))
+         return . elemsToExps . elChildren
   let baseExp = maybeToList $
         filterChildName (hasElemName "m" "e") element >>= elemToBase
   case limLoc of
@@ -404,7 +409,7 @@ elemToExps' element | isElem "m" "phant" element = do
   return [EPhantom baseExp]
 elemToExps' element | isElem "m" "rad" element = do
   degExps <- filterChildName (hasElemName "m" "deg") element >>=
-              (\e -> return $ concat $ mapMaybe elemToExps (elChildren e))
+              return . elemsToExps . elChildren
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   return $ case degExps of
@@ -412,9 +417,9 @@ elemToExps' element | isElem "m" "rad" element = do
     ds -> [ERoot (EGrouped ds) baseExp]
 elemToExps' element | isElem "m" "sPre" element = do
   subExps <- filterChildName (hasElemName "m" "sub") element >>=
-            (\e -> return $ concat $ mapMaybe elemToExps (elChildren e))
+            return . elemsToExps . elChildren
   supExps <- filterChildName (hasElemName "m" "sup") element >>=
-            (\e -> return $ concat $ mapMaybe elemToExps (elChildren e))
+            return . elemsToExps . elChildren
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   return [ESubsup
@@ -426,21 +431,21 @@ elemToExps' element | isElem "m" "sSub" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   subExps <- filterChildName (hasElemName "m" "sub") element >>=
-            (\e -> return $ concat $ mapMaybe elemToExps (elChildren e))
+            return . elemsToExps . elChildren
   return [ESub baseExp (EGrouped subExps)]
 elemToExps' element | isElem "m" "sSubSup" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   subExps <- filterChildName (hasElemName "m" "sub") element >>=
-             (\e -> return $ concat $ mapMaybe elemToExps (elChildren e))
+             return . elemsToExps . elChildren
   supExps <- filterChildName (hasElemName "m" "sup") element >>=
-             (\e -> return $ concat $ mapMaybe elemToExps (elChildren e))
+             return . elemsToExps . elChildren
   return [ESubsup baseExp (EGrouped subExps) (EGrouped supExps)]
 elemToExps' element | isElem "m" "sSup" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   supExps <- filterChildName (hasElemName "m" "sup") element >>=
-            (\e -> return $ concat $ mapMaybe elemToExps (elChildren e))
+            return . elemsToExps . elChildren
   return [ESuper baseExp (EGrouped supExps)]
 elemToExps' element | isElem "m" "r" element = do
   let mrPr = filterChildName (hasElemName "m" "rPr") element
