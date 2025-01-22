@@ -814,119 +814,125 @@
 </m:oMathPara>
 
 >>> native
-[ EStyled TextScript [ EIdentifier "A" ]
-, EStyled TextScript [ EIdentifier "B" ]
-, EStyled TextScript [ EIdentifier "C" ]
-, EStyled TextScript [ EIdentifier "D" ]
-, EStyled TextScript [ EIdentifier "E" ]
-, EStyled TextScript [ EIdentifier "F" ]
-, EStyled TextScript [ EIdentifier "G" ]
-, EStyled TextScript [ EIdentifier "H" ]
-, EStyled TextScript [ EIdentifier "I" ]
-, EStyled TextScript [ EIdentifier "J" ]
-, EStyled TextScript [ EIdentifier "K" ]
-, EStyled TextScript [ EIdentifier "L" ]
-, EStyled TextScript [ EIdentifier "M" ]
-, EStyled TextScript [ EIdentifier "N" ]
-, EStyled TextScript [ EIdentifier "O" ]
-, EStyled TextScript [ EIdentifier "P" ]
-, EStyled TextScript [ EIdentifier "Q" ]
-, EStyled TextScript [ EIdentifier "R" ]
-, EStyled TextScript [ EIdentifier "S" ]
-, EStyled TextScript [ EIdentifier "T" ]
-, EStyled TextScript [ EIdentifier "U" ]
-, EStyled TextScript [ EIdentifier "V" ]
-, EStyled TextScript [ EIdentifier "W" ]
-, EStyled TextScript [ EIdentifier "X" ]
-, EStyled TextScript [ EIdentifier "Y" ]
-, EStyled TextScript [ EIdentifier "Z" ]
-, EStyled TextScript [ EIdentifier "a" ]
-, EStyled TextScript [ EIdentifier "b" ]
-, EStyled TextScript [ EIdentifier "c" ]
-, EStyled TextScript [ EIdentifier "d" ]
-, EStyled TextScript [ EIdentifier "e" ]
-, EStyled TextScript [ EIdentifier "f" ]
-, EStyled TextScript [ EIdentifier "g" ]
-, EStyled TextScript [ EIdentifier "h" ]
-, EStyled TextScript [ EIdentifier "i" ]
-, EStyled TextScript [ EIdentifier "j" ]
-, EStyled TextScript [ EIdentifier "k" ]
-, EStyled TextScript [ EIdentifier "l" ]
-, EStyled TextScript [ EIdentifier "m" ]
-, EStyled TextScript [ EIdentifier "n" ]
-, EStyled TextScript [ EIdentifier "o" ]
-, EStyled TextScript [ EIdentifier "p" ]
-, EStyled TextScript [ EIdentifier "q" ]
-, EStyled TextScript [ EIdentifier "r" ]
-, EStyled TextScript [ EIdentifier "s" ]
-, EStyled TextScript [ EIdentifier "t" ]
-, EStyled TextScript [ EIdentifier "u" ]
-, EStyled TextScript [ EIdentifier "v" ]
-, EStyled TextScript [ EIdentifier "w" ]
-, EStyled TextScript [ EIdentifier "x" ]
-, EStyled TextScript [ EIdentifier "y" ]
-, EStyled TextScript [ EIdentifier "z" ]
-, EStyled TextDoubleStruck [ EIdentifier "A" ]
-, EStyled TextDoubleStruck [ EIdentifier "B" ]
-, EStyled TextDoubleStruck [ EIdentifier "C" ]
-, EStyled TextDoubleStruck [ EIdentifier "D" ]
-, EStyled TextDoubleStruck [ EIdentifier "E" ]
-, EStyled TextDoubleStruck [ EIdentifier "F" ]
-, EStyled TextDoubleStruck [ EIdentifier "G" ]
-, EStyled TextDoubleStruck [ EIdentifier "H" ]
-, EStyled TextDoubleStruck [ EIdentifier "I" ]
-, EStyled TextDoubleStruck [ EIdentifier "J" ]
-, EStyled TextDoubleStruck [ EIdentifier "K" ]
-, EStyled TextDoubleStruck [ EIdentifier "L" ]
-, EStyled TextDoubleStruck [ EIdentifier "M" ]
-, EStyled TextDoubleStruck [ EIdentifier "N" ]
-, EStyled TextDoubleStruck [ EIdentifier "O" ]
-, EStyled TextDoubleStruck [ EIdentifier "P" ]
-, EStyled TextDoubleStruck [ EIdentifier "Q" ]
-, EStyled TextDoubleStruck [ EIdentifier "R" ]
-, EStyled TextDoubleStruck [ EIdentifier "S" ]
-, EStyled TextDoubleStruck [ EIdentifier "T" ]
-, EStyled TextDoubleStruck [ EIdentifier "U" ]
-, EStyled TextDoubleStruck [ EIdentifier "V" ]
-, EStyled TextDoubleStruck [ EIdentifier "W" ]
-, EStyled TextDoubleStruck [ EIdentifier "X" ]
-, EStyled TextDoubleStruck [ EIdentifier "Y" ]
-, EStyled TextDoubleStruck [ EIdentifier "Z" ]
-, EStyled TextDoubleStruck [ EIdentifier "a" ]
-, EStyled TextDoubleStruck [ EIdentifier "b" ]
-, EStyled TextDoubleStruck [ EIdentifier "c" ]
-, EStyled TextDoubleStruck [ EIdentifier "d" ]
-, EStyled TextDoubleStruck [ EIdentifier "e" ]
-, EStyled TextDoubleStruck [ EIdentifier "f" ]
-, EStyled TextDoubleStruck [ EIdentifier "g" ]
-, EStyled TextDoubleStruck [ EIdentifier "h" ]
-, EStyled TextDoubleStruck [ EIdentifier "i" ]
-, EStyled TextDoubleStruck [ EIdentifier "j" ]
-, EStyled TextDoubleStruck [ EIdentifier "k" ]
-, EStyled TextDoubleStruck [ EIdentifier "l" ]
-, EStyled TextDoubleStruck [ EIdentifier "m" ]
-, EStyled TextDoubleStruck [ EIdentifier "n" ]
-, EStyled TextDoubleStruck [ EIdentifier "o" ]
-, EStyled TextDoubleStruck [ EIdentifier "p" ]
-, EStyled TextDoubleStruck [ EIdentifier "q" ]
-, EStyled TextDoubleStruck [ EIdentifier "r" ]
-, EStyled TextDoubleStruck [ EIdentifier "s" ]
-, EStyled TextDoubleStruck [ EIdentifier "t" ]
-, EStyled TextDoubleStruck [ EIdentifier "u" ]
-, EStyled TextDoubleStruck [ EIdentifier "v" ]
-, EStyled TextDoubleStruck [ EIdentifier "w" ]
-, EStyled TextDoubleStruck [ EIdentifier "x" ]
-, EStyled TextDoubleStruck [ EIdentifier "y" ]
-, EStyled TextDoubleStruck [ EIdentifier "z" ]
-, EStyled TextDoubleStruck [ ENumber "0" ]
-, EStyled TextDoubleStruck [ ENumber "1" ]
-, EStyled TextDoubleStruck [ ENumber "2" ]
-, EStyled TextDoubleStruck [ ENumber "3" ]
-, EStyled TextDoubleStruck [ ENumber "4" ]
-, EStyled TextDoubleStruck [ ENumber "5" ]
-, EStyled TextDoubleStruck [ ENumber "6" ]
-, EStyled TextDoubleStruck [ ENumber "7" ]
-, EStyled TextDoubleStruck [ ENumber "8" ]
-, EStyled TextDoubleStruck [ ENumber "9" ]
-, EStyled TextDoubleStruck [ ENumber "0" ]
+[ EStyled
+    TextScript
+    [ EIdentifier "A"
+    , EIdentifier "B"
+    , EIdentifier "C"
+    , EIdentifier "D"
+    , EIdentifier "E"
+    , EIdentifier "F"
+    , EIdentifier "G"
+    , EIdentifier "H"
+    , EIdentifier "I"
+    , EIdentifier "J"
+    , EIdentifier "K"
+    , EIdentifier "L"
+    , EIdentifier "M"
+    , EIdentifier "N"
+    , EIdentifier "O"
+    , EIdentifier "P"
+    , EIdentifier "Q"
+    , EIdentifier "R"
+    , EIdentifier "S"
+    , EIdentifier "T"
+    , EIdentifier "U"
+    , EIdentifier "V"
+    , EIdentifier "W"
+    , EIdentifier "X"
+    , EIdentifier "Y"
+    , EIdentifier "Z"
+    , EIdentifier "a"
+    , EIdentifier "b"
+    , EIdentifier "c"
+    , EIdentifier "d"
+    , EIdentifier "e"
+    , EIdentifier "f"
+    , EIdentifier "g"
+    , EIdentifier "h"
+    , EIdentifier "i"
+    , EIdentifier "j"
+    , EIdentifier "k"
+    , EIdentifier "l"
+    , EIdentifier "m"
+    , EIdentifier "n"
+    , EIdentifier "o"
+    , EIdentifier "p"
+    , EIdentifier "q"
+    , EIdentifier "r"
+    , EIdentifier "s"
+    , EIdentifier "t"
+    , EIdentifier "u"
+    , EIdentifier "v"
+    , EIdentifier "w"
+    , EIdentifier "x"
+    , EIdentifier "y"
+    , EIdentifier "z"
+    ]
+, EStyled
+    TextDoubleStruck
+    [ EIdentifier "A"
+    , EIdentifier "B"
+    , EIdentifier "C"
+    , EIdentifier "D"
+    , EIdentifier "E"
+    , EIdentifier "F"
+    , EIdentifier "G"
+    , EIdentifier "H"
+    , EIdentifier "I"
+    , EIdentifier "J"
+    , EIdentifier "K"
+    , EIdentifier "L"
+    , EIdentifier "M"
+    , EIdentifier "N"
+    , EIdentifier "O"
+    , EIdentifier "P"
+    , EIdentifier "Q"
+    , EIdentifier "R"
+    , EIdentifier "S"
+    , EIdentifier "T"
+    , EIdentifier "U"
+    , EIdentifier "V"
+    , EIdentifier "W"
+    , EIdentifier "X"
+    , EIdentifier "Y"
+    , EIdentifier "Z"
+    , EIdentifier "a"
+    , EIdentifier "b"
+    , EIdentifier "c"
+    , EIdentifier "d"
+    , EIdentifier "e"
+    , EIdentifier "f"
+    , EIdentifier "g"
+    , EIdentifier "h"
+    , EIdentifier "i"
+    , EIdentifier "j"
+    , EIdentifier "k"
+    , EIdentifier "l"
+    , EIdentifier "m"
+    , EIdentifier "n"
+    , EIdentifier "o"
+    , EIdentifier "p"
+    , EIdentifier "q"
+    , EIdentifier "r"
+    , EIdentifier "s"
+    , EIdentifier "t"
+    , EIdentifier "u"
+    , EIdentifier "v"
+    , EIdentifier "w"
+    , EIdentifier "x"
+    , EIdentifier "y"
+    , EIdentifier "z"
+    , ENumber "0"
+    , ENumber "1"
+    , ENumber "2"
+    , ENumber "3"
+    , ENumber "4"
+    , ENumber "5"
+    , ENumber "6"
+    , ENumber "7"
+    , ENumber "8"
+    , ENumber "9"
+    , ENumber "0"
+    ]
 ]

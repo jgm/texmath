@@ -63,7 +63,7 @@ elemToOMML element  | isElem "m" "oMathPara" element = do
                    [x] -> x
                    xs -> EGrouped xs) expList
 elemToOMML element  | isElem "m" "oMath" element =
-  Just $ concat $ mapMaybe elemToExps $ unwrapWTags $ elChildren element
+  Just $ elemsToExps $ unwrapWTags $ elChildren element
 elemToOMML _ = Nothing
 
 -- oMath can contain w:hyperlink, w:sdt, etc. I can't find a complete
@@ -221,8 +221,17 @@ oMathRunTextStyleToTextType (Styled scr sty)
     Just $ TextBoldItalic
   | otherwise = Nothing
 
+-- merge adjacent Exps with same style; see jgm/pandoc#10560:
+mergeExps :: [Exp] -> [Exp]
+mergeExps [] = []
+mergeExps (EStyled tt xs : EStyled tt' xs' : rest)
+  | tt == tt' = mergeExps (EStyled tt (xs <> xs') : rest)
+mergeExps (EText tt x : EText tt' x' : rest)
+  | tt == tt' = mergeExps (EText tt (x <> x') : rest)
+mergeExps (x:xs) = x : mergeExps xs
+
 elemsToExps :: [Element] -> [Exp]
-elemsToExps = concat . mapMaybe elemToExps
+elemsToExps = mergeExps . concat . mapMaybe elemToExps
 
 elemToExps :: Element -> Maybe [Exp]
 elemToExps element = unGroup <$> elemToExps' element
