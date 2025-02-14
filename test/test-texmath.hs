@@ -133,6 +133,7 @@ ensureFinalNewline xs = case T.unsnoc xs of
 readers :: [(T.Text, T.Text -> Either T.Text [Exp])]
 readers = [ ("tex", readTeX)
           , ("mml", readMathML)
+          , ("mathml", readMathML)
           , ("omml", readOMML)
           , ("native", readEither)
           ]
