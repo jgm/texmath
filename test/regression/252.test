@@ -1,0 +1,68 @@
+<<< mml
+<math display="block">
+  <mmultiscripts>
+    <mi>X</mi> <!-- base expression -->
+    <mn>1</mn> <!-- post-sub-script-1 -->
+    <mn>2</mn> <!-- post-sup-script-1 -->
+    <mn>3</mn> <!-- post-sub-script-2 -->
+    <mn>4</mn> <!-- post-sup-script-2 -->
+    <mprescripts />
+    <mn>5</mn> <!-- pre-sub-script-1 -->
+    <mn>6</mn> <!-- pre-sup-script-1 -->
+    <mn>7</mn> <!-- pre-sub-script-2 -->
+    <mn>8</mn> <!-- pre-sup-script-2 -->
+  </mmultiscripts>
+  <mmultiscripts>
+    <mi>X</mi> <!-- base expression -->
+    <mn>1</mn> <!-- post-sub-script -->
+    <mn>4</mn> <!-- post-sup-script -->
+    <mprescripts />
+    <mn>8</mn> <!-- pre-sub-script -->
+  </mmultiscripts>
+  <mmultiscripts>
+    <mi>X</mi> <!-- base expression -->
+    <none/>
+    <mn>4</mn> <!-- post-sup-script -->
+    <mprescripts />
+    <mn>8</mn> <!-- pre-sub-script -->
+  </mmultiscripts>
+  <mmultiscripts>
+    <mi>X</mi> <!-- base expression -->
+    <mn>1</mn> <!-- post-sub-script -->
+  </mmultiscripts>
+  <MMULTISCRIPTS>
+  <MROW><MI>F</MI></MROW>
+  <MROW><MN>2</MN></MROW>
+  <NONE>
+  </NONE>
+  <MPRESCRIPTS></MPRESCRIPTS>
+  <MROW><MN>3</MN></MROW>
+  <NONE>
+  </NONE>
+  </MMULTISCRIPTS>
+</math>
+>>> native
+[ EGrouped
+    [ ESubsup
+        (EGrouped [])
+        (EGrouped [ ENumber "5" , ENumber "7" ])
+        (EGrouped [ ENumber "6" , ENumber "8" ])
+    , ESubsup
+        (EIdentifier "X")
+        (EGrouped [ ENumber "1" , ENumber "3" ])
+        (EGrouped [ ENumber "2" , ENumber "4" ])
+    ]
+, EGrouped
+    [ ESub (EGrouped []) (ENumber "8")
+    , ESubsup (EIdentifier "X") (ENumber "1") (ENumber "4")
+    ]
+, EGrouped
+    [ ESub (EGrouped []) (ENumber "8")
+    , ESubsup (EIdentifier "X") (EGrouped []) (ENumber "4")
+    ]
+, ESub (EIdentifier "X") (ENumber "1")
+, EGrouped
+    [ ESubsup (EGrouped []) (ENumber "3") (EGrouped [])
+    , ESubsup (EIdentifier "F") (ENumber "2") (EGrouped [])
+    ]
+]

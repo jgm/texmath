@@ -471,22 +471,38 @@ annotation e = do
 multiscripts :: Element -> MML Exp
 multiscripts e = do
   let (xs, pres) = break ((== "mprescripts") . name) (elChildren e)
-  let row'' e' = if name e' == "none"
-                    then return $ EGrouped []
-                    else row e'
+  let row'' e' = case name e' of
+                   "none" -> return $ EGrouped []
+                   "mrow" -> row e'
+                   _ -> mkExp <$> expr e'
+  let maybeGroup [w] = w
+      maybeGroup ws = EGrouped ws
   xs' <- mapM row'' xs
-  let base =
-        case xs' of
-          [x]       -> x
-          [x,y]     -> ESub x y
-          (x:y:z:_) -> ESubsup x y z
-          []        -> EGrouped []
+  let getSubs [] = []
+      getSubs [w] = [w]
+      getSubs (w:_:ws) = w : getSubs ws
+  let getSups [] = []
+      getSups [_] = []
+      getSups (_:w:ws) = w : getSups ws
+  let (base, postSubs, postSups) =
+         case xs' of
+           [] -> (EGrouped [], [], [])
+           (w:ws) -> (w, getSubs ws, getSups ws)
+  let rightSide =
+        case (postSubs, postSups) of
+          ([],[])   -> base
+          (ws,[])   -> ESub base (maybeGroup ws)
+          ([],ws)   -> ESuper base (maybeGroup ws)
+          (ws,ys)   -> ESubsup base (maybeGroup ws) (maybeGroup ys)
   pres' <- mapM row'' $ drop 1 pres
-  return $
-    case pres' of
-        (x:y:_) -> EGrouped [ESubsup (EGrouped []) x y, base]
-        [x]     -> EGrouped [ESub x (EGrouped []), base]
-        []      -> base
+  let (preSubs, preSups) = (getSubs pres', getSups pres')
+  let leftSide =
+        case (preSubs, preSups) of
+          ([],[])   -> EGrouped []
+          (ws,[])   -> ESub (EGrouped []) (maybeGroup ws)
+          ([],ws)   -> ESuper (EGrouped []) (maybeGroup ws)
+          (ws,ys)   -> ESubsup (EGrouped []) (maybeGroup ws) (maybeGroup ys)
+  return $ EGrouped [leftSide, rightSide]
 
 
 -- Table
