@@ -201,8 +201,8 @@
         <m:e>
           <m:r>
             <m:rPr>
-              <m:sty m:val="p" />
               <m:scr m:val="double-struck" />
+              <m:sty m:val="p" />
             </m:rPr>
             <m:t>a</m:t>
           </m:r>
@@ -210,26 +210,8 @@
         <m:e>
           <m:r>
             <m:rPr>
-              <m:sty m:val="b" />
               <m:scr m:val="fraktur" />
-            </m:rPr>
-            <m:t>a</m:t>
-          </m:r>
-        </m:e>
-        <m:e>
-          <m:r>
-            <m:rPr>
-              <m:sty m:val="p" />
-              <m:scr m:val="script" />
-            </m:rPr>
-            <m:t>a</m:t>
-          </m:r>
-        </m:e>
-        <m:e>
-          <m:r>
-            <m:rPr>
               <m:sty m:val="b" />
-              <m:scr m:val="script" />
             </m:rPr>
             <m:t>a</m:t>
           </m:r>
@@ -237,17 +219,26 @@
         <m:e>
           <m:r>
             <m:rPr>
+              <m:scr m:val="script" />
               <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>a</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:scr m:val="script" />
+              <m:sty m:val="b" />
+            </m:rPr>
+            <m:t>a</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
               <m:scr m:val="fraktur" />
-            </m:rPr>
-            <m:t>a</m:t>
-          </m:r>
-        </m:e>
-        <m:e>
-          <m:r>
-            <m:rPr>
               <m:sty m:val="p" />
-              <m:scr m:val="sans-serif" />
             </m:rPr>
             <m:t>a</m:t>
           </m:r>
@@ -255,8 +246,17 @@
         <m:e>
           <m:r>
             <m:rPr>
+              <m:scr m:val="sans-serif" />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>a</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:scr m:val="sans-serif" />
               <m:sty m:val="b" />
-              <m:scr m:val="sans-serif" />
             </m:rPr>
             <m:t>a</m:t>
           </m:r>
@@ -264,8 +264,8 @@
         <m:e>
           <m:r>
             <m:rPr>
+              <m:scr m:val="sans-serif" />
               <m:sty m:val="i" />
-              <m:scr m:val="sans-serif" />
             </m:rPr>
             <m:t>a</m:t>
           </m:r>
@@ -282,8 +282,8 @@
         <m:e>
           <m:r>
             <m:rPr>
-              <m:sty m:val="p" />
               <m:scr m:val="monospace" />
+              <m:sty m:val="p" />
             </m:rPr>
             <m:t>a</m:t>
           </m:r>
@@ -335,8 +335,8 @@
         <m:e>
           <m:r>
             <m:rPr>
-              <m:sty m:val="p" />
               <m:scr m:val="double-struck" />
+              <m:sty m:val="p" />
             </m:rPr>
             <m:t>A</m:t>
           </m:r>
@@ -344,26 +344,8 @@
         <m:e>
           <m:r>
             <m:rPr>
-              <m:sty m:val="b" />
               <m:scr m:val="fraktur" />
-            </m:rPr>
-            <m:t>A</m:t>
-          </m:r>
-        </m:e>
-        <m:e>
-          <m:r>
-            <m:rPr>
-              <m:sty m:val="p" />
-              <m:scr m:val="script" />
-            </m:rPr>
-            <m:t>A</m:t>
-          </m:r>
-        </m:e>
-        <m:e>
-          <m:r>
-            <m:rPr>
               <m:sty m:val="b" />
-              <m:scr m:val="script" />
             </m:rPr>
             <m:t>A</m:t>
           </m:r>
@@ -371,17 +353,26 @@
         <m:e>
           <m:r>
             <m:rPr>
+              <m:scr m:val="script" />
               <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>A</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:scr m:val="script" />
+              <m:sty m:val="b" />
+            </m:rPr>
+            <m:t>A</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
               <m:scr m:val="fraktur" />
-            </m:rPr>
-            <m:t>A</m:t>
-          </m:r>
-        </m:e>
-        <m:e>
-          <m:r>
-            <m:rPr>
               <m:sty m:val="p" />
-              <m:scr m:val="sans-serif" />
             </m:rPr>
             <m:t>A</m:t>
           </m:r>
@@ -389,8 +380,17 @@
         <m:e>
           <m:r>
             <m:rPr>
+              <m:scr m:val="sans-serif" />
+              <m:sty m:val="p" />
+            </m:rPr>
+            <m:t>A</m:t>
+          </m:r>
+        </m:e>
+        <m:e>
+          <m:r>
+            <m:rPr>
+              <m:scr m:val="sans-serif" />
               <m:sty m:val="b" />
-              <m:scr m:val="sans-serif" />
             </m:rPr>
             <m:t>A</m:t>
           </m:r>
@@ -398,8 +398,8 @@
         <m:e>
           <m:r>
             <m:rPr>
+              <m:scr m:val="sans-serif" />
               <m:sty m:val="i" />
-              <m:scr m:val="sans-serif" />
             </m:rPr>
             <m:t>A</m:t>
           </m:r>
@@ -416,8 +416,8 @@
         <m:e>
           <m:r>
             <m:rPr>
-              <m:sty m:val="p" />
               <m:scr m:val="monospace" />
+              <m:sty m:val="p" />
             </m:rPr>
             <m:t>A</m:t>
           </m:r>
