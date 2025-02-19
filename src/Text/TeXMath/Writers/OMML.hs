@@ -121,7 +121,7 @@ setProps tt =
        TextBoldScript    -> [scr "script", sty "b"]
        TextBoldFraktur   -> [scr "fraktur", sty "b"]
        TextSansSerifItalic -> [scr "sans-serif", sty "i"]
-       TextSansSerifBoldItalic -> [sty "bi", scr "sans-serif"]
+       TextSansSerifBoldItalic -> [scr "sans-serif", sty "bi"]
    where sty x = mnodeA "sty" x ()
          scr x = mnodeA "scr" x ()
 
