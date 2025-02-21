@@ -88,40 +88,44 @@
       <mtable>
         <mtr>
           <mtd columnalign="center" style="text-align: center">
-            <mfrac displaystyle="true">
-              <mrow>
-                <mi>∂</mi>
-                <msub>
-                  <mi>x</mi>
-                  <mn>1</mn>
-                </msub>
-              </mrow>
-              <mrow>
-                <mi>∂</mi>
-                <msub>
-                  <mi>y</mi>
-                  <mn>1</mn>
-                </msub>
-              </mrow>
-            </mfrac>
+            <mstyle displaystyle="true">
+              <mfrac>
+                <mrow>
+                  <mi>∂</mi>
+                  <msub>
+                    <mi>x</mi>
+                    <mn>1</mn>
+                  </msub>
+                </mrow>
+                <mrow>
+                  <mi>∂</mi>
+                  <msub>
+                    <mi>y</mi>
+                    <mn>1</mn>
+                  </msub>
+                </mrow>
+              </mfrac>
+            </mstyle>
           </mtd>
           <mtd columnalign="center" style="text-align: center">
-            <mfrac displaystyle="true">
-              <mrow>
-                <mi>∂</mi>
-                <msub>
-                  <mi>x</mi>
-                  <mn>2</mn>
-                </msub>
-              </mrow>
-              <mrow>
-                <mi>∂</mi>
-                <msub>
-                  <mi>y</mi>
-                  <mn>1</mn>
-                </msub>
-              </mrow>
-            </mfrac>
+            <mstyle displaystyle="true">
+              <mfrac>
+                <mrow>
+                  <mi>∂</mi>
+                  <msub>
+                    <mi>x</mi>
+                    <mn>2</mn>
+                  </msub>
+                </mrow>
+                <mrow>
+                  <mi>∂</mi>
+                  <msub>
+                    <mi>y</mi>
+                    <mn>1</mn>
+                  </msub>
+                </mrow>
+              </mfrac>
+            </mstyle>
           </mtd>
         </mtr>
         <mtr>
@@ -131,40 +135,44 @@
         </mtr>
         <mtr>
           <mtd columnalign="center" style="text-align: center">
-            <mfrac displaystyle="true">
-              <mrow>
-                <mi>∂</mi>
-                <msub>
-                  <mi>x</mi>
-                  <mn>1</mn>
-                </msub>
-              </mrow>
-              <mrow>
-                <mi>∂</mi>
-                <msub>
-                  <mi>y</mi>
-                  <mn>2</mn>
-                </msub>
-              </mrow>
-            </mfrac>
+            <mstyle displaystyle="true">
+              <mfrac>
+                <mrow>
+                  <mi>∂</mi>
+                  <msub>
+                    <mi>x</mi>
+                    <mn>1</mn>
+                  </msub>
+                </mrow>
+                <mrow>
+                  <mi>∂</mi>
+                  <msub>
+                    <mi>y</mi>
+                    <mn>2</mn>
+                  </msub>
+                </mrow>
+              </mfrac>
+            </mstyle>
           </mtd>
           <mtd columnalign="center" style="text-align: center">
-            <mfrac displaystyle="true">
-              <mrow>
-                <mi>∂</mi>
-                <msub>
-                  <mi>x</mi>
-                  <mn>2</mn>
-                </msub>
-              </mrow>
-              <mrow>
-                <mi>∂</mi>
-                <msub>
-                  <mi>y</mi>
-                  <mn>2</mn>
-                </msub>
-              </mrow>
-            </mfrac>
+            <mstyle displaystyle="true">
+              <mfrac>
+                <mrow>
+                  <mi>∂</mi>
+                  <msub>
+                    <mi>x</mi>
+                    <mn>2</mn>
+                  </msub>
+                </mrow>
+                <mrow>
+                  <mi>∂</mi>
+                  <msub>
+                    <mi>y</mi>
+                    <mn>2</mn>
+                  </msub>
+                </mrow>
+              </mfrac>
+            </mstyle>
           </mtd>
         </mtr>
       </mtable>

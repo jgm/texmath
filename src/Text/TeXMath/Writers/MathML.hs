@@ -54,8 +54,10 @@ showFraction tt ft x y =
   case ft of
        NormalFrac   -> unode "mfrac" [x', y']
        InlineFrac   -> withAttribute "displaystyle" "false" .
+                         unode "mstyle" .
                          unode "mfrac" $ [x', y']
        DisplayFrac  -> withAttribute "displaystyle" "true" .
+                         unode "mstyle" .
                          unode "mfrac" $ [x', y']
        NoLineFrac   -> withAttribute "linethickness" "0" .
                          unode "mfrac" $ [x', y']

@@ -258,10 +258,12 @@
             <mi>π</mi>
           </msubsup>
           <mspace width="0.222em" />
-          <mfrac displaystyle="false">
-            <mn>1</mn>
-            <mn>3</mn>
-          </mfrac>
+          <mstyle displaystyle="false">
+            <mfrac>
+              <mn>1</mn>
+              <mn>3</mn>
+            </mfrac>
+          </mstyle>
           <msup>
             <mi>ρ</mi>
             <mn>3</mn>
@@ -282,10 +284,12 @@
           <mo>×</mo>
           <mn>2</mn>
           <mo>×</mo>
-          <mfrac displaystyle="false">
-            <mn>1</mn>
-            <mn>3</mn>
-          </mfrac>
+          <mstyle displaystyle="false">
+            <mfrac>
+              <mn>1</mn>
+              <mn>3</mn>
+            </mfrac>
+          </mstyle>
           <msup>
             <mi>R</mi>
             <mn>3</mn>
@@ -296,10 +300,12 @@
         <mtd columnalign="right" style="text-align: right" />
         <mtd columnalign="left" style="text-align: left">
           <mo>=</mo>
-          <mfrac displaystyle="false">
-            <mn>4</mn>
-            <mn>3</mn>
-          </mfrac>
+          <mstyle displaystyle="false">
+            <mfrac>
+              <mn>4</mn>
+              <mn>3</mn>
+            </mfrac>
+          </mstyle>
           <mi>π</mi>
           <msup>
             <mi>R</mi>

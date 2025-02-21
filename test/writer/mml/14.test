@@ -12,9 +12,11 @@
       <mi>b</mi>
     </mfrac>
     <mspace width="0.222em" />
-    <mfrac displaystyle="false">
-      <mi>a</mi>
-      <mi>b</mi>
-    </mfrac>
+    <mstyle displaystyle="false">
+      <mfrac>
+        <mi>a</mi>
+        <mi>b</mi>
+      </mfrac>
+    </mstyle>
   </mrow>
 </math>
