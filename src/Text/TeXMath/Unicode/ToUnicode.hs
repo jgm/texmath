@@ -186,6 +186,7 @@ unicodeTable = [ ((TextDoubleStruck,'C'),'\8450')  -- C -> ℂ
                , ((TextItalic,'e'),'\119890')  -- e -> 𝑒
                , ((TextItalic,'f'),'\119891')  -- f -> 𝑓
                , ((TextItalic,'g'),'\119892')  -- g -> 𝑔
+               , ((TextItalic,'h'),'\8462')  -- h -> ℎ (Planck constant)
                , ((TextItalic,'i'),'\119894')  -- i -> 𝑖
                , ((TextItalic,'j'),'\119895')  -- j -> 𝑗
                , ((TextItalic,'k'),'\119896')  -- k -> 𝑘
