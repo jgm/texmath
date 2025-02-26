@@ -26,6 +26,7 @@ where
 
 import Text.XML.Light
 import Text.TeXMath.Types
+import Text.TeXMath.Shared (isUppercaseGreek)
 import Data.Generics (everywhere, mkT)
 import Data.Char (isSymbol, isPunctuation)
 import Data.Either (lefts, isLeft, rights)
@@ -223,7 +224,10 @@ showExp props e =
 
    EIdentifier ""   -> [str props "\x200B"]  -- 0-width space
                        -- to avoid the dashed box we get otherwise; see #118
-   EIdentifier x    -> [str props x]
+   EIdentifier x
+     | isUppercaseGreek x
+     , null props -> [str [mnodeA "sty" "p" ()] x]
+     | otherwise  -> [str props x]
    EMathOperator x  -> [str (mnodeA "sty" "p" () : props) x]
    ESymbol ty xs
     | Just (c, xs') <- T.uncons xs
