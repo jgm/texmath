@@ -34,6 +34,7 @@ module Text.TeXMath.Shared
   , empty
   , handleDownup
   , isUppercaseGreek
+  , toPrimes
   ) where
 
 
@@ -360,3 +361,14 @@ isUppercaseGreek :: T.Text -> Bool
 isUppercaseGreek t = not (T.null t) && T.all isUGreek t
  where
   isUGreek c = c >= '\x0391' && c <= '\x03A9'
+
+toPrimes :: T.Text -> Maybe T.Text
+toPrimes t =
+  case T.uncons t of
+    Nothing -> Just ""
+    Just ('\'', t') -> ("'" <>) <$> toPrimes t'
+    Just ('\x2032', t') -> ("'" <>) <$> toPrimes t'
+    Just ('\x2033', t') -> ("''" <>) <$> toPrimes t'
+    Just ('\x2034', t') -> ("'''" <>) <$> toPrimes t'
+    Just ('\x2057', t') -> ("''''" <>) <$> toPrimes t'
+    _ -> Nothing
