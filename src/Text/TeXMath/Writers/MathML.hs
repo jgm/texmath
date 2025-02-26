@@ -28,7 +28,7 @@ import Text.XML.Light
 import Text.TeXMath.Types
 import Text.TeXMath.Unicode.ToUnicode
 import Data.Generics (everywhere, mkT)
-import Text.TeXMath.Shared (getMMLType, handleDownup)
+import Text.TeXMath.Shared (getMMLType, handleDownup, isUppercaseGreek)
 import Text.TeXMath.Readers.MathML.MMLDict (getMathMLOperator)
 import qualified Data.Text as T
 import Text.Printf
@@ -158,7 +158,10 @@ showExp tt e =
      vnode :: String -> T.Text -> Element
      vnode elname t
        = case tt of
-           Nothing -> tunode elname t
+           Nothing ->
+             if isUppercaseGreek t -- see #255
+                then withAttribute "mathvariant" "normal" $ tunode elname t
+                else tunode elname t
            Just TextNormal -> withAttribute "mathvariant" "normal" $
                                 tunode elname t
            Just textStyle ->
