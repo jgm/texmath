@@ -52,7 +52,27 @@ type TP = Parser
 -- The parser
 
 expr1 :: TP Exp
-expr1 = choice
+expr1 = do
+  e <- expr2
+  -- check for primes and add them as a subscript
+  -- in TeX ' is shorthand for ^{\prime}
+  primes <- many (char '\'')
+  let getPrimes cs = case cs of
+                       "" -> ""
+                       "'" -> "\x2032"
+                       "''" -> "\x2033"
+                       "'''" -> "\x2034"
+                       "''''" -> "\x2057"
+                       _ -> "\x2057" ++ getPrimes (drop 4 cs)
+  ignorable
+  case getPrimes primes of
+    "" -> return e
+    cs -> return $ case e of
+                     ESub b sub -> ESubsup b sub (ESymbol Ord (T.pack cs))
+                     _ -> ESuper e (ESymbol Ord (T.pack cs))
+
+expr2 :: TP Exp
+expr2 = choice
           [ inbraces
           , variable
           , number
@@ -62,7 +82,7 @@ expr1 = choice
           , enclosure
           , hyperref
           , command
-          ] <* ignorable
+          ]
 
 -- | Parse a formula, returning a list of 'Exp'.
 readTeX :: Text -> Either Text [Exp]
@@ -233,7 +253,7 @@ operatorname = do
     ctrlseq "operatorname"
     -- these are slightly different but we won't worry about that here...
     convertible <- (char '*' >> spaces >> return True) <|> return False
-    tok' <- texToken
+    tok' <- texSymbol <|> braces (manyExp expr2) <|> texChar
     tok'' <- (EMathOperator <$> (expToOperatorName tok'))
            <|> return (EStyled TextNormal [tok'])
     return (tok'', convertible)
