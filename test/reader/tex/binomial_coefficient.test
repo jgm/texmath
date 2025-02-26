@@ -3,13 +3,11 @@
 
 >>> native
 [ EStyled TextNormal [ EStyled TextBold [ EIdentifier "C" ] ]
-, EDelimited
-    "("
-    ")"
-    [ Right (EIdentifier "n")
-    , Right (ESymbol Pun ",")
-    , Right (EIdentifier "k")
-    ]
+, ESymbol Open "("
+, EIdentifier "n"
+, ESymbol Pun ","
+, EIdentifier "k"
+, ESymbol Close ")"
 , ESymbol Rel "="
 , ESubsup
     (EStyled TextNormal [ EStyled TextBold [ EIdentifier "C" ] ])
@@ -34,13 +32,11 @@
        [ EIdentifier "k"
        , ESymbol Ord "!"
        , ESpace (1 % 6)
-       , EDelimited
-           "("
-           ")"
-           [ Right (EIdentifier "n")
-           , Right (ESymbol Bin "\8722")
-           , Right (EIdentifier "k")
-           ]
+       , ESymbol Open "("
+       , EIdentifier "n"
+       , ESymbol Bin "\8722"
+       , EIdentifier "k"
+       , ESymbol Close ")"
        , ESymbol Ord "!"
        ])
 ]

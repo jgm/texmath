@@ -8,23 +8,21 @@
 >>> native
 [ ESub (EGrouped []) (EIdentifier "p")
 , ESub (EIdentifier "F") (EIdentifier "q")
-, EDelimited
-    "("
-    ")"
-    [ Right (ESub (EIdentifier "a") (ENumber "1"))
-    , Right (ESymbol Pun ",")
-    , Right (ESymbol Ord "\8230")
-    , Right (ESymbol Pun ",")
-    , Right (ESub (EIdentifier "a") (EIdentifier "p"))
-    , Right (ESymbol Pun ";")
-    , Right (ESub (EIdentifier "c") (ENumber "1"))
-    , Right (ESymbol Pun ",")
-    , Right (ESymbol Ord "\8230")
-    , Right (ESymbol Pun ",")
-    , Right (ESub (EIdentifier "c") (EIdentifier "q"))
-    , Right (ESymbol Pun ";")
-    , Right (EIdentifier "z")
-    ]
+, ESymbol Open "("
+, ESub (EIdentifier "a") (ENumber "1")
+, ESymbol Pun ","
+, ESymbol Ord "\8230"
+, ESymbol Pun ","
+, ESub (EIdentifier "a") (EIdentifier "p")
+, ESymbol Pun ";"
+, ESub (EIdentifier "c") (ENumber "1")
+, ESymbol Pun ","
+, ESymbol Ord "\8230"
+, ESymbol Pun ","
+, ESub (EIdentifier "c") (EIdentifier "q")
+, ESymbol Pun ";"
+, EIdentifier "z"
+, ESymbol Close ")"
 , ESymbol Rel "="
 , EUnderover
     True
@@ -34,26 +32,22 @@
 , EFraction
     NormalFrac
     (EGrouped
-       [ ESub
-           (EDelimited
-              "(" ")" [ Right (ESub (EIdentifier "a") (ENumber "1")) ])
-           (EIdentifier "n")
+       [ ESymbol Open "("
+       , ESub (EIdentifier "a") (ENumber "1")
+       , ESub (ESymbol Close ")") (EIdentifier "n")
        , ESymbol Ord "\8943"
-       , ESub
-           (EDelimited
-              "(" ")" [ Right (ESub (EIdentifier "a") (EIdentifier "p")) ])
-           (EIdentifier "n")
+       , ESymbol Open "("
+       , ESub (EIdentifier "a") (EIdentifier "p")
+       , ESub (ESymbol Close ")") (EIdentifier "n")
        ])
     (EGrouped
-       [ ESub
-           (EDelimited
-              "(" ")" [ Right (ESub (EIdentifier "c") (ENumber "1")) ])
-           (EIdentifier "n")
+       [ ESymbol Open "("
+       , ESub (EIdentifier "c") (ENumber "1")
+       , ESub (ESymbol Close ")") (EIdentifier "n")
        , ESymbol Ord "\8943"
-       , ESub
-           (EDelimited
-              "(" ")" [ Right (ESub (EIdentifier "c") (EIdentifier "q")) ])
-           (EIdentifier "n")
+       , ESymbol Open "("
+       , ESub (EIdentifier "c") (EIdentifier "q")
+       , ESub (ESymbol Close ")") (EIdentifier "n")
        ])
 , EFraction
     NormalFrac

@@ -408,11 +408,7 @@ delimited = do
 
 delimitedImplicit :: TP Exp
 delimitedImplicit = try $ do
-  (opent, closer) <-
-           (("(", symbol ")") <$ symbol "(")
-       <|> (("[", symbol "]") <$ symbol "[")
-       <|> (("|", symbol "|") <$ symbol "|")
-       <|> (("\x2016", "\x2016" <$ ctrlseq "rVert") <$ ctrlseq "lVert")
+  (opent, closer) <- (("\x2016", "\x2016" <$ ctrlseq "rVert") <$ ctrlseq "lVert")
   contents <- concat <$>
               many (try $ ((:[]) . Left  <$> middle)
                       <|> (map Right . unGrouped <$>

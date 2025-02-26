@@ -12,9 +12,12 @@
        , ESub (EIdentifier "z") (ENumber "0")
        ])
 , EIdentifier "f"
-, EDelimited "(" ")" [ Right (EIdentifier "z") ]
+, ESymbol Open "("
+, EIdentifier "z"
+, ESymbol Close ")"
 , ESymbol Rel "="
 , EIdentifier "f"
-, EDelimited
-    "(" ")" [ Right (ESub (EIdentifier "z") (ENumber "0")) ]
+, ESymbol Open "("
+, ESub (EIdentifier "z") (ENumber "0")
+, ESymbol Close ")"
 ]

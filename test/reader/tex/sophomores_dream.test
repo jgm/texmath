@@ -14,9 +14,11 @@
     (EGrouped [ EIdentifier "n" , ESymbol Rel "=" , ENumber "1" ])
     (ESymbol Ord "\8734")
 , EGrouped
-    [ ESuper
-        (EDelimited
-           "(" ")" [ Right (ESymbol Ord "\8722") , Right (ENumber "1") ])
+    [ ESymbol Open "("
+    , ESymbol Ord "\8722"
+    , ENumber "1"
+    , ESuper
+        (ESymbol Close ")")
         (EGrouped [ EIdentifier "n" , ESymbol Bin "+" , ENumber "1" ])
     , ESpace (1 % 6)
     , ESuper

@@ -6,7 +6,9 @@
 
 >>> native
 [ ESub (EIdentifier "\981") (EIdentifier "n")
-, EDelimited "(" ")" [ Right (EIdentifier "\954") ]
+, ESymbol Open "("
+, EIdentifier "\954"
+, ESymbol Close ")"
 , ESymbol Rel "="
 , ENumber "0.033"
 , ESubsup (EIdentifier "C") (EIdentifier "n") (ENumber "2")

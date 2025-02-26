@@ -5,33 +5,32 @@
 
 
 >>> native
-[ EDelimited
-    "|"
-    "|"
-    [ Right (EOver False (EIdentifier "z") (ESymbol Accent "\8254")) ]
+[ ESymbol Open "|"
+, EOver False (EIdentifier "z") (ESymbol Accent "\8254")
+, ESymbol Open "|"
 , ESymbol Rel "="
-, EDelimited "|" "|" [ Right (EIdentifier "z") ]
+, ESymbol Open "|"
+, EIdentifier "z"
+, ESymbol Open "|"
 , ESymbol Pun ","
-, EDelimited
-    "|"
-    "|"
-    [ Right
-        (ESuper
-           (EDelimited
-              "("
-              ")"
-              [ Right (EOver False (EIdentifier "z") (ESymbol Accent "\8254")) ])
-           (EIdentifier "n"))
-    ]
+, ESymbol Open "|"
+, ESymbol Open "("
+, EOver False (EIdentifier "z") (ESymbol Accent "\8254")
+, ESuper (ESymbol Close ")") (EIdentifier "n")
+, ESymbol Open "|"
 , ESymbol Rel "="
-, ESuper
-    (EDelimited "|" "|" [ Right (EIdentifier "z") ]) (EIdentifier "n")
+, ESymbol Open "|"
+, EIdentifier "z"
+, ESuper (ESymbol Open "|") (EIdentifier "n")
 , ESymbol Pun ","
 , EMathOperator "arg"
-, EDelimited
-    "(" ")" [ Right (ESuper (EIdentifier "z") (EIdentifier "n")) ]
+, ESymbol Open "("
+, ESuper (EIdentifier "z") (EIdentifier "n")
+, ESymbol Close ")"
 , ESymbol Rel "="
 , EIdentifier "n"
 , EMathOperator "arg"
-, EDelimited "(" ")" [ Right (EIdentifier "z") ]
+, ESymbol Open "("
+, EIdentifier "z"
+, ESymbol Close ")"
 ]

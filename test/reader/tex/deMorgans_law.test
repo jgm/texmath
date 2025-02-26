@@ -4,19 +4,21 @@
 
 >>> native
 [ ESymbol Op "\172"
-, EDelimited
-    "("
-    ")"
-    [ Right (EIdentifier "p")
-    , Right (ESymbol Bin "\8743")
-    , Right (EIdentifier "q")
-    ]
+, ESymbol Open "("
+, EIdentifier "p"
+, ESymbol Bin "\8743"
+, EIdentifier "q"
+, ESymbol Close ")"
 , ESymbol Rel "\8660"
-, EDelimited
-    "(" ")" [ Right (ESymbol Op "\172") , Right (EIdentifier "p") ]
+, ESymbol Open "("
+, ESymbol Op "\172"
+, EIdentifier "p"
+, ESymbol Close ")"
 , ESymbol Bin "\8744"
-, EDelimited
-    "(" ")" [ Right (ESymbol Op "\172") , Right (EIdentifier "q") ]
+, ESymbol Open "("
+, ESymbol Op "\172"
+, EIdentifier "q"
+, ESymbol Close ")"
 , EOver
     False
     (EGrouped

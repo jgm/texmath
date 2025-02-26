@@ -10,7 +10,9 @@
 , ESpace ((-1) % 6)
 , ESubsup (ESymbol Op "\8747") (EIdentifier "a") (EIdentifier "s")
 , EIdentifier "f"
-, EDelimited "(" ")" [ Right (EIdentifier "y") ]
+, ESymbol Open "("
+, EIdentifier "y"
+, ESymbol Close ")"
 , ESpace (1 % 6)
 , EIdentifier "d"
 , EIdentifier "y"
@@ -20,14 +22,14 @@
 , ESymbol Rel "="
 , ESubsup (ESymbol Op "\8747") (EIdentifier "a") (EIdentifier "x")
 , EIdentifier "f"
-, EDelimited "(" ")" [ Right (EIdentifier "y") ]
-, EDelimited
-    "("
-    ")"
-    [ Right (EIdentifier "x")
-    , Right (ESymbol Bin "\8722")
-    , Right (EIdentifier "y")
-    ]
+, ESymbol Open "("
+, EIdentifier "y"
+, ESymbol Close ")"
+, ESymbol Open "("
+, EIdentifier "x"
+, ESymbol Bin "\8722"
+, EIdentifier "y"
+, ESymbol Close ")"
 , ESpace (1 % 6)
 , EIdentifier "d"
 , EIdentifier "y"

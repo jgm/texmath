@@ -8,7 +8,9 @@
 
 >>> native
 [ ESub (EIdentifier "\981") (EIdentifier "n")
-, EDelimited "(" ")" [ Right (EIdentifier "\954") ]
+, ESymbol Open "("
+, EIdentifier "\954"
+, ESymbol Close ")"
 , ESymbol Rel "="
 , EFraction
     NormalFrac
@@ -23,8 +25,10 @@
     NormalFrac
     (EGrouped
        [ EMathOperator "sin"
-       , EDelimited
-           "(" ")" [ Right (EIdentifier "\954") , Right (EIdentifier "R") ]
+       , ESymbol Open "("
+       , EIdentifier "\954"
+       , EIdentifier "R"
+       , ESymbol Close ")"
        ])
     (EGrouped [ EIdentifier "\954" , EIdentifier "R" ])
 , EFraction
@@ -41,7 +45,9 @@
            (EGrouped
               [ ESymbol Ord "\8706"
               , ESub (EIdentifier "D") (EIdentifier "n")
-              , EDelimited "(" ")" [ Right (EIdentifier "R") ]
+              , ESymbol Open "("
+              , EIdentifier "R"
+              , ESymbol Close ")"
               ])
            (EGrouped [ ESymbol Ord "\8706" , EIdentifier "R" ]))
     ]

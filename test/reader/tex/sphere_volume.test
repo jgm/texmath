@@ -95,13 +95,11 @@ S = \{0 \leq \phi \leq 2\pi, \ 0 \leq \theta \leq \pi, \ 0 \leq \rho \leq R\}
             (ENumber "0")
             (EGrouped [ ENumber "2" , EIdentifier "\960" ])
         , ESpace (2 % 9)
-        , EDelimited
-            "("
-            ")"
-            [ Right (ESymbol Ord "\8722")
-            , Right (EMathOperator "cos")
-            , Right (EIdentifier "\952")
-            ]
+        , ESymbol Open "("
+        , ESymbol Ord "\8722"
+        , EMathOperator "cos"
+        , EIdentifier "\952"
+        , ESymbol Close ")"
         , ESubsup
             (EScaled (9 % 5) (ESymbol Open "|"))
             (ENumber "0")

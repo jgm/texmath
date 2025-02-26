@@ -31,11 +31,9 @@
          ]
        ])
 , EIdentifier "P"
-, EDelimited
-    "("
-    ")"
-    [ Right (EIdentifier "i")
-    , Right (ESymbol Pun ",")
-    , Right (EIdentifier "j")
-    ]
+, ESymbol Open "("
+, EIdentifier "i"
+, ESymbol Pun ","
+, EIdentifier "j"
+, ESymbol Close ")"
 ]

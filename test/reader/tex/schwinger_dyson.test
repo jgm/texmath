@@ -21,7 +21,9 @@
                          (EIdentifier "\948")
                          (EGrouped [ EIdentifier "\948" , EIdentifier "\981" ]))
                   , Right (EIdentifier "F")
-                  , Right (EDelimited "[" "]" [ Right (EIdentifier "\981") ])
+                  , Right (ESymbol Open "[")
+                  , Right (EIdentifier "\981")
+                  , Right (ESymbol Close "]")
                   ])
            ])
     , Right (EIdentifier "\968")
@@ -43,14 +45,18 @@
                   "{"
                   "}"
                   [ Right (EIdentifier "F")
-                  , Right (EDelimited "[" "]" [ Right (EIdentifier "\981") ])
+                  , Right (ESymbol Open "[")
+                  , Right (EIdentifier "\981")
+                  , Right (ESymbol Close "]")
                   , Right
                       (EFraction
                          NormalFrac
                          (EIdentifier "\948")
                          (EGrouped [ EIdentifier "\948" , EIdentifier "\981" ]))
                   , Right (EIdentifier "S")
-                  , Right (EDelimited "[" "]" [ Right (EIdentifier "\981") ])
+                  , Right (ESymbol Open "[")
+                  , Right (EIdentifier "\981")
+                  , Right (ESymbol Close "]")
                   ])
            ])
     , Right (EIdentifier "\968")
