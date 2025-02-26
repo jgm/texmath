@@ -199,18 +199,16 @@ writeExp (ESub b e1) = do
   tellGroup (writeExp e1)
 writeExp (ESuper b e1) = do
   (if isFancy b then tellGroup else id) $ writeExp b
-  case e1 of
-    ESymbol Ord s
-      | Just ps <- S.toPrimes s -> tell (replicate (T.length ps) (Token '\''))
+  case S.toPrimes e1 of
+    Just ps -> tell (replicate (T.length ps) (Token '\''))
     _ -> do tell [Token '^']
             tellGroup (writeExp e1)
 writeExp (ESubsup b e1 e2) = do
   (if isFancy b then tellGroup else id) $ writeExp b
   tell [Token '_']
   tellGroup (writeExp e1)
-  case e2 of
-    ESymbol Ord s
-      | Just ps <- S.toPrimes s -> tell (replicate (T.length ps) (Token '\''))
+  case S.toPrimes e2 of
+    Just ps -> tell (replicate (T.length ps) (Token '\''))
     _ -> do tell [Token '^']
             tellGroup (writeExp e2)
 writeExp (EOver convertible b e1) = do

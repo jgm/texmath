@@ -68,8 +68,8 @@ expr1 = do
   case getPrimes primes of
     "" -> return e
     cs -> return $ case e of
-                     ESub b sub -> ESubsup b sub (ESymbol Ord (T.pack cs))
-                     _ -> ESuper e (ESymbol Ord (T.pack cs))
+                     ESub b sub -> ESubsup b sub (ESymbol Pun (T.pack cs))
+                     _ -> ESuper e (ESymbol Pun (T.pack cs))
 
 expr2 :: TP Exp
 expr2 = choice

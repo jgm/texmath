@@ -140,14 +140,12 @@ writeExp (EFraction _fractype e1 e2) =
     _ -> writeExp e1 <> " / " <> writeExp e2
 writeExp (ESub b e1) = writeExpB b <> "_" <> writeExpS e1
 writeExp (ESuper b e1) = writeExpB b <>
-  case e1 of
-    ESymbol Ord t
-      | Just ps <- S.toPrimes t -> ps
+  case S.toPrimes e1 of
+    Just ps -> ps
     _ -> "^" <> writeExpS e1
 writeExp (ESubsup b e1 e2) = writeExpB b <> "_" <> writeExpS e1 <>
-  case e2 of
-    ESymbol Ord t
-      | Just ps <- S.toPrimes t -> ps
+  case S.toPrimes e2 of
+    Just ps -> ps
     _ -> "^" <> writeExpS e2
 writeExp (EOver _ (EOver _ b (ESymbol TOver "\9182")) e1) =
   "overbrace(" <> writeExp b <> ", " <> writeExp e1 <> ")"

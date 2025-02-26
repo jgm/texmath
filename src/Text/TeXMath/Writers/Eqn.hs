@@ -165,15 +165,13 @@ writeExp (EFraction fractype e1 e2) = writeExp' e1 <> op <> writeExp' e2
                 else " over "
 writeExp (ESub b e1) = writeExp' b <> " sub " <> writeExp' e1
 writeExp (ESuper b e1) = writeExp' b <>
-  case e1 of
-    ESymbol Ord s
-     | Just ps <- toPrimes s -> ps
+  case toPrimes e1 of
+    Just ps -> ps
     _ -> " sup " <> writeExp' e1
 writeExp (ESubsup b e1 e2) =
   writeExp' b <> " sub " <> writeExp' e1 <>
-  case e2 of
-    ESymbol Ord s
-     | Just cs <- toPrimes s -> writeExp' b <> cs
+  case toPrimes e2 of
+    Just ps -> ps
     _ -> " sup " <> writeExp' e2
 writeExp (EOver _convertible b e1) =
   writeExp' b <> " to " <> writeExp' e1
