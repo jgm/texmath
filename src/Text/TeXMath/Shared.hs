@@ -74,8 +74,8 @@ fixTree :: Exp -> Exp
 fixTree = everywhere (mkT removeNesting) . everywhere (mkT removeEmpty)
 
 -- | Maps TextType to the corresponding MathML mathvariant
-getMMLType :: TextType -> Maybe T.Text
-getMMLType t = fst <$> M.lookup t textTypesMap
+getMMLType :: TextType -> T.Text
+getMMLType t = fromMaybe "normal" (fst <$> M.lookup t textTypesMap)
 
 -- | Maps TextType to corresponding LaTeX command
 getLaTeXTextCommand :: Env -> TextType -> T.Text

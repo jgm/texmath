@@ -24,7 +24,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 module Text.TeXMath.Writers.MathML (writeMathML)
 where
 
-import Data.Maybe (fromMaybe)
 import Text.XML.Light
 import Text.TeXMath.Types
 import Text.TeXMath.Unicode.ToUnicode
@@ -108,7 +107,7 @@ makeText a s = case (leadingSp, trailingSp) of
         leadingSp  = case T.uncons s of
           Just (c, _) -> T.any (== c) " \t"
           _           -> False
-        attr = fromMaybe "normal" $ getMMLType a
+        attr = getMMLType a
 
 makeArray :: Maybe TextType -> [Alignment] -> [ArrayLine] -> Element
 makeArray tt as ls = unode "mtable" $
@@ -165,8 +164,7 @@ showExp tt e =
            Just textStyle ->
              case toUnicodeMaybe textStyle t of
                -- if we can't find unicode equivalents, rely on mathvariant:
-               Nothing -> withAttribute "mathvariant"
-                             (fromMaybe "normal" $ getMMLType textStyle) $
+               Nothing -> withAttribute "mathvariant" (getMMLType textStyle) $
                              tunode elname t
                Just t' -> tunode elname t'
   in case e of
