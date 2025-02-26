@@ -33,6 +33,7 @@ module Text.TeXMath.Shared
   , isEmpty
   , empty
   , handleDownup
+  , isUppercaseGreek
   ) where
 
 
@@ -354,3 +355,8 @@ handleDownup DisplayBlock  (EUnder True x y)       = EUnder False x y
 handleDownup DisplayBlock  (EOver True x y)        = EOver False  x y
 handleDownup DisplayBlock  (EUnderover True x y z) = EUnderover False x y z
 handleDownup _             x                       = x
+
+isUppercaseGreek :: T.Text -> Bool
+isUppercaseGreek t = not (T.null t) && T.all isUGreek t
+ where
+  isUGreek c = c >= '\x0391' && c <= '\x03A9'
