@@ -20,6 +20,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 module Text.TeXMath.Writers.Eqn (writeEqn) where
 
+import Text.TeXMath.Shared (toPrimes)
 import Data.List (transpose)
 import Data.Char (isAscii, ord)
 import qualified Data.Text as T
@@ -163,9 +164,17 @@ writeExp (EFraction fractype e1 e2) = writeExp' e1 <> op <> writeExp' e2
                 then " / "
                 else " over "
 writeExp (ESub b e1) = writeExp' b <> " sub " <> writeExp' e1
-writeExp (ESuper b e1) = writeExp' b <> " sup " <> writeExp' e1
+writeExp (ESuper b e1) = writeExp' b <>
+  case e1 of
+    ESymbol Ord s
+     | Just ps <- toPrimes s -> ps
+    _ -> " sup " <> writeExp' e1
 writeExp (ESubsup b e1 e2) =
-  writeExp' b <> " sub " <> writeExp' e1 <> " sup " <> writeExp' e2
+  writeExp' b <> " sub " <> writeExp' e1 <>
+  case e2 of
+    ESymbol Ord s
+     | Just cs <- toPrimes s -> writeExp' b <> cs
+    _ -> " sup " <> writeExp' e2
 writeExp (EOver _convertible b e1) =
   writeExp' b <> " to " <> writeExp' e1
 writeExp (EUnder _convertible b e1) =

@@ -6,4 +6,4 @@
 , EDelimited "(" ")" [ Right (EIdentifier "x") ]
 ]
 >>> eqn
-f sup ' left ( x right ) = f sup prime left ( x right )
+f sup ' left ( x right ) = f' left ( x right )

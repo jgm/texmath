@@ -200,15 +200,19 @@ writeExp (ESub b e1) = do
 writeExp (ESuper b e1) = do
   (if isFancy b then tellGroup else id) $ writeExp b
   case e1 of
-    ESymbol Ord "\8242" -> tell [Token '\'']
+    ESymbol Ord s
+      | Just ps <- S.toPrimes s -> tell (replicate (T.length ps) (Token '\''))
     _ -> do tell [Token '^']
             tellGroup (writeExp e1)
 writeExp (ESubsup b e1 e2) = do
   (if isFancy b then tellGroup else id) $ writeExp b
   tell [Token '_']
   tellGroup (writeExp e1)
-  tell [Token '^']
-  tellGroup (writeExp e2)
+  case e2 of
+    ESymbol Ord s
+      | Just ps <- S.toPrimes s -> tell (replicate (T.length ps) (Token '\''))
+    _ -> do tell [Token '^']
+            tellGroup (writeExp e2)
 writeExp (EOver convertible b e1) = do
   env <- asks mathEnv
   case xarrow b of

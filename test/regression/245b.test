@@ -95,10 +95,10 @@ upright("\\underleftarrow") accent(x, ⃮)\
 upright("\\underrightarrow") accent(x, ⃯)\
 upright("\\underline") underline(x)\
 upright("Trailing signs:")\
-upright("^\\prime") x^(')\
-upright("^\\dprime") x^('')\
-upright("^\\trprime") x^(''')\
-upright("^\\qprime") x^('''')\
+upright("^\\prime") x'\
+upright("^\\dprime") x''\
+upright("^\\trprime") x'''\
+upright("^\\qprime") x''''\
 upright("^\\backprime") x^prime.rev\
 upright("^\\backdprime") x^prime.double.rev\
 upright("^\\backtrprime") x^prime.triple.rev\
