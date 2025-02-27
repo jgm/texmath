@@ -878,6 +878,7 @@ tSymbol sym =
          (\t -> EUnder False t acc) <$> texToken
        Just acc@(ESymbol TOver _) ->
          (\t -> EOver False t acc) <$> texToken
+       Just (ESymbol Alpha t) -> return $ EIdentifier t -- see #256
        Just x  -> return x
        Nothing
          | sym == "\\mod" -> do
