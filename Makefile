@@ -13,6 +13,10 @@ server:
 	sudo service texmath start
 .PHONY: server
 
+binpath:
+	@cabal list-bin -v0 $(CABALOPTS) texmath
+.PHONY: binpath
+
 clean:
 	cabal clean
 .PHONY: clean
