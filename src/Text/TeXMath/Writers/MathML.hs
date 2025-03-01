@@ -112,7 +112,7 @@ makeText a s = case (leadingSp, trailingSp) of
 makeArray :: Maybe TextType -> [Alignment] -> [ArrayLine] -> Element
 makeArray tt as ls = unode "mtable" $
   map (unode "mtr" .
-    zipWith (\a -> setAlignment a .  unode "mtd". map (showExp tt)) as') ls
+    zipWith (\a -> setAlignment a .  unode "mtd". showExps tt) as') ls
    -- see #205 on the need for style attributes:
    where setAlignment AlignLeft    =
            withAttribute "columnalign" "left" .
@@ -148,6 +148,17 @@ showExp' tt e =
       in  withAttribute "accent" isaccent $ tunode "mo" x
     _                -> showExp tt e
 
+showExps :: Maybe TextType -> [Exp] -> [Element]
+showExps tt = map (showExp tt) . insertFunctionApps
+
+insertFunctionApps :: [Exp] -> [Exp]
+insertFunctionApps [] = []
+insertFunctionApps (e@EMathOperator{} : ESymbol _ "\x2061" : es) =
+  e : ESymbol Pun "\x2061" : insertFunctionApps es
+insertFunctionApps (e@EMathOperator{} : es) =
+  e : ESymbol Pun "\x2061" : insertFunctionApps es
+insertFunctionApps (e:es) = e : insertFunctionApps es
+
 showExp :: Maybe TextType -> Exp -> Element
 showExp tt e =
  let toUnicodeMaybe :: TextType -> T.Text -> Maybe T.Text
@@ -173,30 +184,32 @@ showExp tt e =
   in case e of
    ENumber x        -> vnode "mn" x
    EGrouped [x]     -> showExp tt x
-   EGrouped xs      -> mrow $ map (showExp tt) xs
+   EGrouped xs      -> mrow $ showExps tt xs
    EDelimited start end xs -> mrow $
      [ makeStretchy FPrefix (vnode "mo" start) | not (T.null start) ] ++
      map (either (makeStretchy FInfix . vnode "mo") (showExp tt)) xs ++
      [ makeStretchy FPostfix (vnode "mo" end)
         | not (T.null end) ]
    EIdentifier x    -> vnode "mi" x
-   EMathOperator x  -> vnode "mo" x
+   EMathOperator x  -> vnode "mi" x -- see #257
    ESymbol Open x   -> makeFence FPrefix $ vnode "mo" x
    ESymbol Close x  -> makeFence FPostfix $ vnode "mo" x
-   ESymbol Ord x    -> vnode "mi" x
+   ESymbol Ord x
+     | x == "\x2061" -> vnode "mo" x
+     | otherwise    -> vnode "mi" x
    ESymbol _ x      -> vnode "mo" x
    ESpace x         -> spaceWidth x
    EFraction ft x y -> showFraction tt ft x y
-   ESub x y         -> unode "msub" $ map (showExp tt) [x, y]
-   ESuper x y       -> unode "msup" $ map (showExp tt) [x, y]
-   ESubsup x y z    -> unode "msubsup" $ map (showExp tt) [x, y, z]
-   EUnder _ x y     -> unode "munder" [showExp tt x, showExp' tt y]
+   ESub x y         -> unode "msub" $ showExps tt [x, y]
+   ESuper x y       -> unode "msup" $ showExps tt [x, y]
+   ESubsup x y z    -> unode "msubsup" $ showExps tt [x, y, z]
+   EUnder _ x y     -> unode "munder" $ showExps tt [x] ++ [showExp' tt y]
    EOver _ x (ESymbol Accent "\8407") -- see #218, gives better rendering for vectors
-                    -> unode "mover" [showExp tt x, showExp' tt (ESymbol Accent "\8594")]
-   EOver _ x y      -> unode "mover" [showExp tt x, showExp' tt y]
-   EUnderover _ x y z -> unode "munderover"
-                          [showExp tt x, showExp' tt y, showExp' tt z]
-   EPhantom x       -> unode "mphantom" $ showExp tt x
+                    -> unode "mover" $ showExps tt [x] ++ [showExp' tt (ESymbol Accent "\8594")]
+   EOver _ x y      -> unode "mover" $ showExps tt [x] ++ [showExp' tt y]
+   EUnderover _ x y z -> unode "munderover" $
+                          showExps tt [x] ++ [showExp' tt y, showExp' tt z]
+   EPhantom x       -> unode "mphantom" $ showExps tt [x]
    EBoxed x         -> withAttribute "notation" "box" .
                        unode "menclose" $ showExp tt x
    ESqrt x          -> unode "msqrt" $ showExp tt x

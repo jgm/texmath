@@ -76,23 +76,27 @@
       <mtr>
         <mtd columnalign="left" style="text-align: left">
           <msub>
-            <mo>div</mo>
+            <mi>div</mi>
+            <mo>&#8289;</mo>
             <mi>x</mi>
           </msub>
           <mi>u</mi>
           <msup>
-            <mo>div</mo>
+            <mi>div</mi>
+            <mo>&#8289;</mo>
             <mi>x</mi>
           </msup>
           <mi>u</mi>
           <msubsup>
-            <mo>div</mo>
+            <mi>div</mi>
+            <mo>&#8289;</mo>
             <mi>x</mi>
             <mi>y</mi>
           </msubsup>
           <mi>u</mi>
           <msubsup>
-            <mo>div</mo>
+            <mi>div</mi>
+            <mo>&#8289;</mo>
             <mi>x</mi>
             <mi>y</mi>
           </msubsup>
@@ -105,7 +109,8 @@
       <mtr>
         <mtd columnalign="left" style="text-align: left">
           <munder>
-            <mo>⋆-lim&#39;sup</mo>
+            <mi>⋆-lim&#39;sup</mi>
+            <mo>&#8289;</mo>
             <mrow>
               <mi>x</mi>
               <mo>→</mo>
@@ -114,12 +119,14 @@
           </munder>
           <mi>u</mi>
           <mover>
-            <mo>⋆-lim&#39;sup</mo>
+            <mi>⋆-lim&#39;sup</mi>
+            <mo>&#8289;</mo>
             <mi>w</mi>
           </mover>
           <mi>u</mi>
           <munderover>
-            <mo>⋆-lim&#39;sup</mo>
+            <mi>⋆-lim&#39;sup</mi>
+            <mo>&#8289;</mo>
             <mrow>
               <mi>x</mi>
               <mo>→</mo>
@@ -129,7 +136,8 @@
           </munderover>
           <mi>u</mi>
           <munderover>
-            <mo>⋆-lim&#39;sup</mo>
+            <mi>⋆-lim&#39;sup</mi>
+            <mo>&#8289;</mo>
             <mrow>
               <mi>x</mi>
               <mo>→</mo>
@@ -146,7 +154,8 @@
       <mtr>
         <mtd columnalign="left" style="text-align: left">
           <msub>
-            <mo>⋆-lim&#39;sup</mo>
+            <mi>⋆-lim&#39;sup</mi>
+            <mo>&#8289;</mo>
             <mrow>
               <mi>x</mi>
               <mo>→</mo>
@@ -155,12 +164,14 @@
           </msub>
           <mi>u</mi>
           <msup>
-            <mo>⋆-lim&#39;sup</mo>
+            <mi>⋆-lim&#39;sup</mi>
+            <mo>&#8289;</mo>
             <mi>w</mi>
           </msup>
           <mi>u</mi>
           <msubsup>
-            <mo>⋆-lim&#39;sup</mo>
+            <mi>⋆-lim&#39;sup</mi>
+            <mo>&#8289;</mo>
             <mrow>
               <mi>x</mi>
               <mo>→</mo>
@@ -170,7 +181,8 @@
           </msubsup>
           <mi>u</mi>
           <msubsup>
-            <mo>⋆-lim&#39;sup</mo>
+            <mi>⋆-lim&#39;sup</mi>
+            <mo>&#8289;</mo>
             <mrow>
               <mi>x</mi>
               <mo>→</mo>
@@ -187,12 +199,14 @@
       <mtr>
         <mtd columnalign="left" style="text-align: left">
           <msub>
-            <mo>curl</mo>
+            <mi>curl</mi>
+            <mo>&#8289;</mo>
             <mi>x</mi>
           </msub>
           <mi>v</mi>
           <munder>
-            <mo>argmax</mo>
+            <mi>argmax</mi>
+            <mo>&#8289;</mo>
             <mi>K</mi>
           </munder>
           <mi>u</mi>
