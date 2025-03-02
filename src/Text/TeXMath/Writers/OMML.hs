@@ -26,12 +26,13 @@ where
 
 import Text.XML.Light
 import Text.TeXMath.Types
-import Text.TeXMath.Shared (isUppercaseGreek)
+import Text.TeXMath.Shared (isUppercaseGreek, isRLSequence)
 import Data.Generics (everywhere, mkT)
 import Data.Char (isSymbol, isPunctuation)
 import Data.Either (lefts, isLeft, rights)
 import qualified Data.Text as T
 import Data.List.Split  (splitWhen)
+import Data.List (intercalate)
 
 -- | Transforms an expression tree to an OMML XML Tree
 writeOMML :: DisplayType -> [Exp] -> Element
@@ -84,12 +85,17 @@ maximum' [] = 0
 maximum' xs = maximum xs
 
 makeArray :: [Element] -> [Alignment] -> [ArrayLine] -> Element
+makeArray props as rs
+  | isRLSequence as = mnode "eqArr" $ map toE rs
+  where toE r = mnode "e" (intercalate ampersand
+                            (map (concatMap (showExp props)) r))
+        ampersand = [mnode "r" [ mnode "t" ("&" :: String) ]]
 makeArray props as rs = mnode "m" $ mProps : map toMr rs
   where mProps = mnode "mPr"
                   [ mnodeA "baseJc" "center" ()
                   , mnodeA "plcHide" "on" ()
                   , mnode "mcs" $ map toMc as' ]
-        as'    = take (maximum' $ map length rs) $ as ++ cycle [AlignCenter]
+        as'    = take (maximum' $ map length rs) $ as ++ repeat AlignCenter
         toMr r = mnode "mr" $ map (mnode "e" . concatMap (showExp props)) r
         toMc a = mnode "mc" $ mnode "mcPr"
                             [ mnodeA "mcJc" (toAlign a) ()
