@@ -28,7 +28,8 @@ import Text.XML.Light
 import Text.TeXMath.Types
 import Text.TeXMath.Unicode.ToUnicode
 import Data.Generics (everywhere, mkT)
-import Text.TeXMath.Shared (getMMLType, handleDownup, isUppercaseGreek)
+import Text.TeXMath.Shared (getMMLType, handleDownup,
+                            isUppercaseGreek, isRLSequence)
 import Text.TeXMath.Readers.MathML.MMLDict (getMathMLOperator)
 import qualified Data.Text as T
 import Text.Printf
@@ -116,14 +117,20 @@ makeArray tt as ls = unode "mtable" $
    -- see #205 on the need for style attributes:
    where setAlignment AlignLeft    =
            withAttribute "columnalign" "left" .
-           withAttribute "style" "text-align: left"
+           withAttribute "style"
+             (if isRLSequence as
+                 then "text-align: left; padding-left: 0"
+                 else "text-align: left")
          setAlignment AlignRight   =
            withAttribute "columnalign" "right" .
-           withAttribute "style" "text-align: right"
+           withAttribute "style"
+             (if isRLSequence as
+                 then "text-align: right; padding-right: 0"
+                 else "text-align: right")
          setAlignment AlignCenter  =
            withAttribute "columnalign" "center" .
            withAttribute "style" "text-align: center"
-         as'                       = as ++ cycle [AlignCenter]
+         as'                       = as ++ repeat AlignCenter
 
 -- Kept as String for Text.XML.Light
 withAttribute :: String -> T.Text -> Element -> Element

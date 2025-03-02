@@ -155,7 +155,7 @@
     <mo stretchy="false" form="postfix">}</mo>
     <mtable>
       <mtr>
-        <mtd columnalign="right" style="text-align: right">
+        <mtd columnalign="right" style="text-align: right; padding-right: 0">
           <mrow>
             <mi mathvariant="normal">V</mi>
             <mi mathvariant="normal">o</mi>
@@ -165,7 +165,7 @@
             <mi mathvariant="normal">e</mi>
           </mrow>
         </mtd>
-        <mtd columnalign="left" style="text-align: left">
+        <mtd columnalign="left" style="text-align: left; padding-left: 0">
           <mo>=</mo>
           <munder>
             <mo>∭</mo>
@@ -191,8 +191,8 @@
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="right" style="text-align: right" />
-        <mtd columnalign="left" style="text-align: left">
+        <mtd columnalign="right" style="text-align: right; padding-right: 0" />
+        <mtd columnalign="left" style="text-align: left; padding-left: 0">
           <mo>=</mo>
           <msubsup>
             <mo>∫</mo>
@@ -234,8 +234,8 @@
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="right" style="text-align: right" />
-        <mtd columnalign="left" style="text-align: left">
+        <mtd columnalign="right" style="text-align: right; padding-right: 0" />
+        <mtd columnalign="left" style="text-align: left; padding-left: 0">
           <mo>=</mo>
           <mi>ϕ</mi>
           <msubsup>
@@ -278,8 +278,8 @@
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="right" style="text-align: right" />
-        <mtd columnalign="left" style="text-align: left">
+        <mtd columnalign="right" style="text-align: right; padding-right: 0" />
+        <mtd columnalign="left" style="text-align: left; padding-left: 0">
           <mo>=</mo>
           <mn>2</mn>
           <mi>π</mi>
@@ -299,8 +299,8 @@
         </mtd>
       </mtr>
       <mtr>
-        <mtd columnalign="right" style="text-align: right" />
-        <mtd columnalign="left" style="text-align: left">
+        <mtd columnalign="right" style="text-align: right; padding-right: 0" />
+        <mtd columnalign="left" style="text-align: left; padding-left: 0">
           <mo>=</mo>
           <mstyle displaystyle="false">
             <mfrac>
