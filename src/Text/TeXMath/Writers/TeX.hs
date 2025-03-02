@@ -287,7 +287,7 @@ writeExp (EStyled ttype es) = do
   tell [ControlSeq txtcmd]
   tellGroup (mapM_ writeExp $ everywhere (mkT (fromUnicode ttype)) es)
 writeExp (EArray as rows)
-  | isRLSequence as = do
+  | S.isRLSequence as = do
   env <- asks mathEnv
   if "amsmath" `elem` env
      then table "aligned" [] rows
@@ -297,11 +297,6 @@ writeExp (EArray aligns rows) = do
   if "amsmath" `elem` env && all (== AlignCenter) aligns
      then table "matrix" [] rows
      else table "array" aligns rows
-
-isRLSequence :: [Alignment] -> Bool
-isRLSequence [AlignRight, AlignLeft] = True
-isRLSequence (AlignRight : AlignLeft : as) = isRLSequence as
-isRLSequence _ = False
 
 table :: T.Text -> [Alignment] -> [ArrayLine] -> Math ()
 table name aligns rows = do

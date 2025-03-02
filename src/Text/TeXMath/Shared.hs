@@ -35,6 +35,7 @@ module Text.TeXMath.Shared
   , handleDownup
   , isUppercaseGreek
   , toPrimes
+  , isRLSequence
   ) where
 
 
@@ -375,3 +376,8 @@ toPrimes (ESymbol ty s) | ty == Pun || ty == Ord = go s
       Just ('\x2057', t') -> ("''''" <>) <$> go t'
       _ -> Nothing
 toPrimes _ = Nothing
+
+isRLSequence :: [Alignment] -> Bool
+isRLSequence [AlignRight, AlignLeft] = True
+isRLSequence (AlignRight : AlignLeft : as) = isRLSequence as
+isRLSequence _ = False
