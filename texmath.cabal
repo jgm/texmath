@@ -61,7 +61,7 @@ Extra-source-files:  README.md
 
 Source-repository head
   type:              git
-  location:          git://github.com/jgm/texmath.git
+  location:          https://github.com/jgm/texmath.git
 
 Flag executable
   description:       Compile test executable.
