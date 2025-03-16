@@ -1,3 +1,59 @@
+texmath (0.12.9)
+
+  * Better handling of primes in eqn, typst, and tex writers.
+    These writers now render a superscript containing prime
+    characters using a sequence of `'` characters, e.g.
+    `f''`. This syntax is supported by all three formats.
+
+  * Use Planck constant for italic h in unicodeTable. There is no
+    regular italic h in Unicode because this already existed in Planck
+    constant.
+
+  * Text.TeXMath.Shared: expose `isRLSequence` and `toPrimes` and
+    new function `isUpppercaseGreek` [API change, non-breaking].
+
+  * OMML reader: consolidate adjacent texts with same style.
+    This affects EStyled and EText elements. This way we get
+    `\mathbf{123abc456}` in LaTeX output instead of
+    `\mathbf{123}\mathbf{abc}\mathbf{456}`. See
+    https://github.com/jgm/pandoc/discussions/10560 for discussion.
+
+  * OMML writer:
+
+    + Use `m:eqArr` rather than `m:m` for arrays with alternating
+      right, left alignments (#209). (In other writers, TeX and MathML,
+      we presume that these are aligned equations.)
+    + Fix order of `scr` and `sty` elements (#253).
+    + Use upright style by default for uppercase Greek.
+
+  * MathML reader: properly handle `mmultiscripts` (#252).
+
+  * MathML writer:
+
+    + Improve formatting of aligned equations (#207).
+      An EArray with alternating R,L alignments will be assumed
+      to be aligned equations and rendered without padding.
+    + Use `mi` for EMathOperator. Also: insert the unicode 0x2061
+      "function application" character after a math operator, unless
+      it's already there. Ensure that all 0x2061 characters are in
+      `mo` rather than `mi`.
+    + Use upright style for uppercase Greek by default (#255).
+    + Fix invalid `displaystyle` attribute. The attribute goes on
+      enclosing mstyle, not directly on `mfrac`.
+
+  * TeX reader:
+
+    + Parse primes as superscripts (#254). This seems to be
+      how TeX behaves under the hood: `f'` is equivalent to `f^{\prime}`.
+    + Avoid implicit pairing of delimiters (reverts #172).
+    + Use `EIdentifier` instead of `ESymbol Alpha` for `\ell`, etc (#256).
+    + Use Pun for primes in TeX reader, revise type of `toPrimes`.
+      This will ensure that `mo` is used for primes in MathML.
+
+  * test-texmath: allow `mathml` in addition to `mml` to specify mathml.
+
+  * Add `binpath` Makefile target.
+
 texmath (0.12.8.13)
 
   * Remove special override for `\perp` in Text.TeXMath.Readers.TeX.Commands
