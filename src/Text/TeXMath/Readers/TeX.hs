@@ -31,6 +31,7 @@ import Data.Char (isDigit, isAscii, isLetter)
 import qualified Data.Map as M
 import qualified Data.Text as T
 import Data.Text (Text)
+import Data.Ratio ((%))
 import Data.Maybe (catMaybes, fromJust, mapMaybe)
 import Text.Parsec hiding (label)
 import Text.Parsec.Error
@@ -718,16 +719,26 @@ xspace "\\mspace" =
        _                     -> mzero
 xspace "\\hspace" = do
   braces $ do
-    len <- many1 digit
+    as <- option "" $ many1 digit
+    bs <- option "" $ char '.' *> many1 digit
+    let denominator = 10^(length bs)
+    as' <- if null as then pure 0 else stringToInteger as
+    bs' <- if null bs then pure 0 else stringToInteger bs
+    let numerator = (as' * denominator) + bs'
+    let n = numerator % denominator
     scaleFactor <-
            1      <$ (string "em")
       <|> (1/12)  <$ (string "pt")
       <|> 6       <$ (string "in")
       <|> (50/21) <$ (string "cm")
-    case reads len of
-       ((n :: Integer,[]):_) -> return $ ESpace (fromIntegral n * scaleFactor)
-       _                     -> mzero
+    return $ ESpace (n * scaleFactor)
 xspace _ = mzero
+
+stringToInteger :: String -> TP Integer
+stringToInteger s =
+  case reads s of
+    ((n :: Integer, []):_) -> pure n
+    _ -> fail $ "Could not read " <> s <> " as Integer."
 
 mathop :: Text -> TP Exp
 mathop c =
