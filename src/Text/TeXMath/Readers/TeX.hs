@@ -359,7 +359,7 @@ many1Exp :: TP Exp -> TP Exp
 many1Exp = manyExp' True
 
 inbraces :: TP Exp
-inbraces = braces (manyExp expr)
+inbraces = braces (ignorable *> manyExp expr)
 
 texToken :: TP Exp
 texToken = texSymbol <|> inbraces <|> texChar

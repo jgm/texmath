@@ -1,0 +1,13 @@
+<<< tex
+e^{
+ % below is the complex part:
+ \sum_i^n i^2 }
+>>> native
+[ ESuper
+    (EIdentifier "e")
+    (EGrouped
+       [ EUnderover
+           True (ESymbol Op "\8721") (EIdentifier "i") (EIdentifier "n")
+       , ESuper (EIdentifier "i") (ENumber "2")
+       ])
+]
