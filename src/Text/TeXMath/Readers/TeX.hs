@@ -993,6 +993,7 @@ textCommands = M.fromList
   , ("\\v", option "v" $ try $ hacek <$> tok)
   , ("\\u", option "u" $ try $ breve <$> tok)
   , ("\\ ", return " ")
+  , ("\\quad", return "\x2000")
   ]
 
 parseC :: TP Text
