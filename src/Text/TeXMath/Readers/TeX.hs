@@ -719,14 +719,15 @@ xspace "\\mspace" =
        _                     -> mzero
 xspace "\\hspace" = do
   braces $ do
+    neg <- option 1 $ (-1) <$ char '-'
     as <- option "" $ many1 digit
     bs <- option "" $ char '.' *> many1 digit
     let denominator = 10^(length bs)
     as' <- if null as then pure 0 else stringToInteger as
     bs' <- if null bs then pure 0 else stringToInteger bs
     let numerator = (as' * denominator) + bs'
-    let n = numerator % denominator
-    scaleFactor <-
+    let n = neg * (numerator % denominator)
+    scaleFactor <- lexeme $
            1      <$ (string "em")
       <|> (1/12)  <$ (string "pt")
       <|> 6       <$ (string "in")
