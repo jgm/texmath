@@ -42,8 +42,6 @@ Macro definitions may be included before a LaTeX formula.
 
 `texmath` will behave as a CGI script when called under the name
 `texmath-cgi` (e.g. through a symbolic link).
-The file `cgi/texmath.html` contains an example of how it can
-be used.
 
 But it is also possible to compile a full webserver with a JSON
 API.  To do this, set the `server` cabal flag, e.g.
@@ -96,6 +94,9 @@ Possible values for `to` are `tex`, `mathml`, `omml`, `eqn`, and
 Alternatively, you can use the `convert-batch` endpoint to pass
 in a JSON-encoded list of conversions and get back a JSON-encoded
 list of results.
+
+If you rename `pandoc-server` to `pandoc-server.cgi`, it will
+function as a CGI program that accepts POST requests.
 
 # Generating lookup tables
 

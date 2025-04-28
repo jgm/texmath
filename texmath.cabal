@@ -155,6 +155,7 @@ Executable texmath-server
                        , servant-server
                        , wai
                        , wai-logger
+                       , wai-extra
                        , warp
                        , optparse-applicative
                        , safe

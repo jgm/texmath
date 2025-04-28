@@ -6,8 +6,10 @@
 {-# LANGUAGE OverloadedStrings #-}
 module Main where
 
-import Network.Wai.Handler.Warp
+import qualified Network.Wai.Handler.Warp as Warp
 import Network.Wai.Logger (withStdoutLogger)
+import qualified Network.Wai.Handler.CGI as CGI
+import Network.Wai.Middleware.Timeout (timeout)
 import Data.Aeson
 import Data.Aeson.TH
 import Data.Maybe (fromMaybe)
@@ -19,6 +21,7 @@ import qualified Data.Text as T
 import qualified Data.Text.Lazy as TL
 import qualified Data.Text.Lazy.Encoding as TLE
 import Text.XML.Light (ppElement)
+import System.Environment (getProgName)
 import Options.Applicative
 import Safe (readMay)
 
@@ -76,15 +79,20 @@ optsSpec = Opts
 
 main :: IO ()
 main = do
-  let options = info (optsSpec <**> helper)
-        ( fullDesc
-       <> progDesc "Run a server for texmath"
-       <> header "texmath-server - an HTTP server for texmath" )
-  opts <- execParser options
-  putStrLn $ "Starting server on port " <> show (port opts)
-  withStdoutLogger $ \logger -> do
-    let settings = setPort (port opts) $ setLogger logger defaultSettings
-    runSettings settings app
+  prg <- getProgName
+  case prg of
+    "texmath-server.cgi" -> CGI.run (timeout 2 app)
+    _ -> do
+      let options = info (optsSpec <**> helper)
+            ( fullDesc
+           <> progDesc "Run a server for texmath"
+           <> header "texmath-server - an HTTP server for texmath" )
+      opts <- execParser options
+      putStrLn $ "Starting server on port " <> show (port opts)
+      withStdoutLogger $ \logger -> do
+        let settings = Warp.setPort (port opts) $ Warp.setLogger logger Warp.defaultSettings
+        Warp.runSettings settings app
+
 -- This is the API.  The "/convert" endpoint takes a request body
 -- consisting of a JSON-encoded Params structure and responds to
 -- Get requests with either plain text or JSON, depending on the
@@ -133,4 +141,3 @@ server = convert
   handleErr (Right t) = return t
   handleErr (Left err) = throwError $
     err500 { errBody = TLE.encodeUtf8 $ TL.fromStrict err }
-
