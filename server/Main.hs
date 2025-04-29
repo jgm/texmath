@@ -93,16 +93,18 @@ main = do
         let settings = Warp.setPort (port opts) $ Warp.setLogger logger Warp.defaultSettings
         Warp.runSettings settings app
 
--- This is the API.  The "/convert" endpoint takes a request body
+-- This is the API.  The root endpoint takes a request body
 -- consisting of a JSON-encoded Params structure and responds to
 -- Get requests with either plain text or JSON, depending on the
--- Accept header.
+-- Accept header. Alternatively, the "/batch" endpoint may be
+-- used, accepting a JSON-encoded array of Params and returning
+-- an array of results.
 type API =
-  "convert" :> ReqBody '[JSON] Params :> Post '[PlainText, JSON] Text
+  ReqBody '[JSON] Params :> Post '[PlainText, JSON] Text
   :<|>
-  "convert" :> QueryParam "text" Text :> QueryParam "from" Format :> QueryParam "to" Format :> QueryFlag "display" :> Get '[PlainText] Text
+  QueryParam "text" Text :> QueryParam "from" Format :> QueryParam "to" Format :> QueryFlag "display" :> Get '[PlainText] Text
   :<|>
-  "convert-batch" :> ReqBody '[JSON] [Params] :> Post '[JSON] [Text]
+  "batch" :> ReqBody '[JSON] [Params] :> Post '[JSON] [Text]
 
 app :: Application
 app = serve api server

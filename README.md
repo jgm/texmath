@@ -55,7 +55,7 @@ To run the server on port 3000:
 Sample of use, with `httpie`:
 
 ```
-% http --verbose localhost:3000/convert text='2^2' from=tex to=mathml display:=false Accept:'text/plain'
+% http --verbose localhost:3000 text='2^2' from=tex to=mathml display:=false Accept:'text/plain'
 POST /convert HTTP/1.1
 Accept: text/plain
 Accept-Encoding: gzip, deflate
@@ -91,9 +91,9 @@ Possible values for `from` are `tex`, `mathml`, and `omml`.
 Possible values for `to` are `tex`, `mathml`, `omml`, `eqn`, and
 `pandoc` (JSON-encoded Pandoc).
 
-Alternatively, you can use the `convert-batch` endpoint to pass
-in a JSON-encoded list of conversions and get back a JSON-encoded
-list of results.
+Alternatively, you can use the `/batch` endpoint, passing
+in in a JSON-encoded list of conversions and getting back a
+JSON-encoded list of results.
 
 If you rename `pandoc-server` to `pandoc-server.cgi`, it will
 function as a CGI program that accepts POST requests.
