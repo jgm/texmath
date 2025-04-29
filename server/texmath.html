@@ -10,7 +10,7 @@
   <script>
     var postConvert = function(body, onSuccess, onError) {
       var xhr = new XMLHttpRequest();
-      xhr.open('POST', '/texmath/convert', true);
+      xhr.open('POST', 'https://texmath.johnmacfarlane.net/', true);
       xhr.setRequestHeader('Accept', 'application/json');
       xhr.setRequestHeader('Content-Type', 'application/json');
       xhr.onreadystatechange = function () {
