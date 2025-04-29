@@ -88,8 +88,8 @@ Transfer-Encoding: chunked
 ```
 
 Possible values for `from` are `tex`, `mathml`, and `omml`.
-Possible values for `to` are `tex`, `mathml`, `omml`, `eqn`, and
-`pandoc` (JSON-encoded Pandoc).
+Possible values for `to` are `tex`, `mathml`, `omml`, `eqn`,
+`typst` and `pandoc` (JSON-encoded Pandoc).
 
 Alternatively, you can use the `/batch` endpoint, passing
 in in a JSON-encoded list of conversions and getting back a
