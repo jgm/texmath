@@ -1,3 +1,19 @@
+texmath (0.12.10)
+
+  * texmath-server:
+
+    + Change endpoints: `/convert` to root, and `/convert-batch` to `/batch`.
+    + Allow running as CGI if renamed pandoc-server.cgi. In this mode it
+      accepts JSON content with POST requests or parameters with GET requests,
+      just like pandoc-server itself.
+
+  * TeX reader:
+
+    + Fix parsing bug with comment at beginning of braced (#258).
+    + Support negative numbers in `\hspace` (#259).
+    + Allow decimals in `\hspace` (#259).
+    + Support `\quad` in `\text` (#260).
+
 texmath (0.12.9)
 
   * Better handling of primes in eqn, typst, and tex writers.
