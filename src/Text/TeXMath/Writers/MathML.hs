@@ -159,12 +159,18 @@ showExps :: Maybe TextType -> [Exp] -> [Element]
 showExps tt = map (showExp tt) . insertFunctionApps
 
 insertFunctionApps :: [Exp] -> [Exp]
-insertFunctionApps [] = []
-insertFunctionApps (e@EMathOperator{} : ESymbol _ "\x2061" : es) =
-  e : ESymbol Pun "\x2061" : insertFunctionApps es
-insertFunctionApps (e@EMathOperator{} : es) =
-  e : ESymbol Pun "\x2061" : insertFunctionApps es
-insertFunctionApps (e:es) = e : insertFunctionApps es
+-- handle this as a special case, or we get an infinite loop
+-- since we insert a new EGrouped to which insertFunctionApp will be applied.
+insertFunctionApps [e@EMathOperator{}, ESymbol _ "\x2061"] =
+  [e, ESymbol Pun "\x2061"]
+insertFunctionApps es' = go es'
+ where
+  go [] = []
+  go (e@EMathOperator{} : ESymbol _ "\x2061" : es) =
+    EGrouped [e , ESymbol Pun "\x2061"] : go es
+  go (e@EMathOperator{} : es@(_:_)) =
+    EGrouped [e, ESymbol Pun "\x2061"] : go es
+  go (e:es) = e : go es
 
 showExp :: Maybe TextType -> Exp -> Element
 showExp tt e =

@@ -18,16 +18,20 @@
 <?xml version='1.0' ?>
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
-    <mi>there exists</mi>
-    <mo>&#8289;</mo>
+    <mrow>
+      <mi>there exists</mi>
+      <mo>&#8289;</mo>
+    </mrow>
     <mrow>
       <mrow>
         <mi>δ</mi>
         <mo>&gt;</mo>
         <mn>0</mn>
       </mrow>
-      <mi>such that</mi>
-      <mo>&#8289;</mo>
+      <mrow>
+        <mi>such that</mi>
+        <mo>&#8289;</mo>
+      </mrow>
       <mrow>
         <mrow>
           <mi>f</mi>
