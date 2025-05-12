@@ -37,6 +37,7 @@
             zlib
             ghcid
             cabal-install
+            git
           ];
           inputsFrom = map (__getAttr "env") (__attrValues self.packages.${system});
         };
