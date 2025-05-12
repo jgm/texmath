@@ -1,3 +1,7 @@
+texmath (0.12.10.2)
+
+  * Use texmath-symbols 0.1.8 (supports typst 0.13 symbols).
+
 texmath (0.12.10.1)
 
   * MathML writer: group function application with operator name (#262).
