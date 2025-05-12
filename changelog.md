@@ -1,3 +1,11 @@
+texmath (0.12.10.1)
+
+  * MathML writer: group function application with operator name (#262).
+    This fixes an issue with munder/mover. Previously the mo
+    with the U+2061 was being put under the 'lim' operator
+    instead of 'n -> oo'. Grouping them ensures that munder/mover
+    will work properly.
+
 texmath (0.12.10)
 
   * texmath-server:
