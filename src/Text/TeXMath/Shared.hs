@@ -230,16 +230,18 @@ textPackage s e
 scalers :: [(T.Text, Rational)]
 scalers =
           [ ("\\bigg", widthbigg)
-          , ("\\Bigg", widthBigg)
-          , ("\\big", widthbig)
-          , ("\\Big", widthBig)
-          , ("\\biggr", widthbigg)
-          , ("\\Biggr", widthBigg)
-          , ("\\bigr", widthbig)
-          , ("\\Bigr", widthBig)
           , ("\\biggl", widthbigg)
+          , ("\\biggr", widthbigg)
+          , ("\\Bigg", widthBigg)
           , ("\\Biggl", widthBigg)
-          , ("\\bigl", widthbig)]
+          , ("\\Biggr", widthBigg)
+          , ("\\big", widthbig)
+          , ("\\bigl", widthbig)
+          , ("\\bigr", widthbig)
+          , ("\\Big", widthBig)
+          , ("\\Bigl", widthBig)
+          , ("\\Bigr", widthBig)
+          ]
   where widthbig = 6 / 5
         widthBig = 9 / 5
         widthbigg = 12 / 5
