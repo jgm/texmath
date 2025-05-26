@@ -80,8 +80,9 @@ fromForm FPostfix = "postfix"
 fromForm FPrefix  = "prefix"
 
 makeScaled :: Rational -> Element -> Element
-makeScaled x = withAttribute "minsize" s . withAttribute "maxsize" s
-  where s = dropTrailing0s $ T.pack $ printf "%.3f" (fromRational x :: Double)
+makeScaled x = withAttribute "minsize" p . withAttribute "maxsize" p 
+               . setAttribute "stretchy" "true"
+  where p = T.pack $ printf "%d%%" (round (100*x) :: Int)
 
 
 dropTrailing0s :: T.Text -> T.Text
@@ -136,6 +137,18 @@ makeArray tt as ls = unode "mtable" $
 withAttribute :: String -> T.Text -> Element -> Element
 withAttribute a = add_attr . Attr (unqual a) . T.unpack
 
+-- Preserves the order of any existing attributes
+setAttribute :: String -> T.Text -> Element -> Element
+setAttribute a v e = e { elAttribs = update (elAttribs e) }
+  where
+    newAttr = Attr (unqual a) (T.unpack v)
+    update [] = [newAttr]
+    update (x:xs)
+        | qName (attrKey x) == a = 
+            newAttr : xs
+        | otherwise = 
+            x : update xs
+            
 accent :: T.Text -> Element
 accent = add_attr (Attr (unqual "accent") "true") .
            tunode "mo"
