@@ -38,6 +38,7 @@
             ghcid
             cabal-install
             git
+            ripgrep
           ];
           inputsFrom = map (__getAttr "env") (__attrValues self.packages.${system});
         };
