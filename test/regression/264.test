@@ -1,0 +1,82 @@
+<<< native
+[ ESymbol Op "\8707"
+, EIdentifier "x"
+, ESymbol Op "\8704"
+, EIdentifier "y"
+, ESymbol Op "\8704"
+, EIdentifier "z"
+, EScaled (9 % 5) (ESymbol Open "(")
+, EScaled (6 % 5) (ESymbol Open "(")
+, EIdentifier "F"
+, ESymbol Open "("
+, EIdentifier "x"
+, ESymbol Pun ","
+, EIdentifier "y"
+, ESymbol Close ")"
+, ESymbol Bin "\8743"
+, EIdentifier "F"
+, ESymbol Open "("
+, EIdentifier "x"
+, ESymbol Pun ","
+, EIdentifier "z"
+, ESymbol Close ")"
+, ESymbol Bin "\8743"
+, ESymbol Open "("
+, EIdentifier "y"
+, ESymbol Rel "\8800"
+, EIdentifier "z"
+, ESymbol Close ")"
+, EScaled (6 % 5) (ESymbol Close ")")
+, ESymbol Rel "\8594"
+, ESymbol Op "\172"
+, EIdentifier "F"
+, ESymbol Open "("
+, EIdentifier "y"
+, ESymbol Pun ","
+, EIdentifier "z"
+, ESymbol Close ")"
+, EScaled (9 % 5) (ESymbol Close ")")
+]
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mo>∃</mo>
+    <mi>x</mi>
+    <mo>∀</mo>
+    <mi>y</mi>
+    <mo>∀</mo>
+    <mi>z</mi>
+    <mo minsize="180%" maxsize="180%" stretchy="true" form="prefix">(</mo>
+    <mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">(</mo>
+    <mi>F</mi>
+    <mo stretchy="false" form="prefix">(</mo>
+    <mi>x</mi>
+    <mo>,</mo>
+    <mi>y</mi>
+    <mo stretchy="false" form="postfix">)</mo>
+    <mo>∧</mo>
+    <mi>F</mi>
+    <mo stretchy="false" form="prefix">(</mo>
+    <mi>x</mi>
+    <mo>,</mo>
+    <mi>z</mi>
+    <mo stretchy="false" form="postfix">)</mo>
+    <mo>∧</mo>
+    <mo stretchy="false" form="prefix">(</mo>
+    <mi>y</mi>
+    <mo>≠</mo>
+    <mi>z</mi>
+    <mo stretchy="false" form="postfix">)</mo>
+    <mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">)</mo>
+    <mo>→</mo>
+    <mo>¬</mo>
+    <mi>F</mi>
+    <mo stretchy="false" form="prefix">(</mo>
+    <mi>y</mi>
+    <mo>,</mo>
+    <mi>z</mi>
+    <mo stretchy="false" form="postfix">)</mo>
+    <mo minsize="180%" maxsize="180%" stretchy="true" form="postfix">)</mo>
+  </mrow>
+</math>
