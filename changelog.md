@@ -1,3 +1,13 @@
+texmath (0.12.10.3)
+
+  * MathML writer: fix rendering of EScaled (#264, Ewan Davies).
+    Use `%` values for `maxwidth` and `minwidth`, and set `stretchy` to
+    `true`. Otherwise browsers do not rescale.
+
+  * TeX reader: Support all r/l variants of `\big`, `\bigg`, `\Big` (#266).
+
+  * Require typst-symbols >= 0.1.8.1.
+
 texmath (0.12.10.2)
 
   * Use texmath-symbols 0.1.8 (supports typst 0.13 symbols).
