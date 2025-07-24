@@ -110,7 +110,6 @@ getScalerValue command = lookup command scalers
 getDiacriticalCommand  :: Position -> T.Text -> Maybe T.Text
 getDiacriticalCommand pos symbol = do
   command <- M.lookup symbol diaMap
-  guard (not $ command `elem` unavailable)
   let below = command `elem` under
   case pos of
     Under -> if below then Just command else Nothing
@@ -288,11 +287,6 @@ getSpaceChars r
 -- Accents which go under the character
 under :: [T.Text]
 under = ["\\underbrace", "\\underline", "\\underbar", "\\underbracket"]
-
--- We want to parse these but we can't represent them in LaTeX
-unavailable :: [T.Text]
-unavailable = ["\\overbracket", "\\underbracket"]
-
 
 -- | Mapping between unicode combining character and LaTeX accent command
 diacriticals :: [(T.Text, T.Text)]
