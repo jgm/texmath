@@ -1,0 +1,23 @@
+<<< mml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">  
+  <menclose notation="box">    
+    <mn>0</mn>
+  </menclose>
+  <menclose notation="updiagonalstrike">
+    <mn>1</mn>
+  </menclose>
+  <menclose notation="downdiagonalstrike">
+    <mn>2</mn>
+  </menclose>
+  <menclose notation="updiagonalstrike downdiagonalstrike">
+    <mn>3</mn>
+  </menclose> 
+</math>
+>>> native
+[ EBoxed (ENumber "0")
+, ECancel ForwardSlash (ENumber "1")
+, ECancel BackSlash (ENumber "2")
+, ECancel XSlash (ENumber "3")
+]

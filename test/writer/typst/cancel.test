@@ -1,0 +1,9 @@
+<<< native
+[ ECancel ForwardSlash (EIdentifier "x")
+, ESymbol Bin "+"
+, ECancel BackSlash (EIdentifier "y")
+, ESymbol Rel "="
+, ECancel XSlash (EIdentifier "z")
+]
+>>> typst
+cancel(x) + cancel(y, inverted: #true) = cancel(z, cross: #true)
