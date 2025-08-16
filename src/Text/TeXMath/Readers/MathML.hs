@@ -392,6 +392,9 @@ enclosed e = do
   mbNotation <- findAttrQ "notation" e
   case mbNotation of
        Just "box" -> EBoxed <$> row e
+       Just "updiagonalstrike" -> ECancel ForwardSlash <$> row e
+       Just "downdiagonalstrike" -> ECancel BackSlash <$> row e
+       Just "updiagonalstrike downdiagonalstrike" -> ECancel XSlash <$> row e
        _ -> row e
 
 action :: Element -> MML Exp

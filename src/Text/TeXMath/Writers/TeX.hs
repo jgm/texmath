@@ -262,6 +262,17 @@ writeExp (EBoxed e) = do
         tell [ControlSeq "\\boxed"]
         tellGroup (writeExp e)
       else writeExp e
+writeExp (ECancel st e) = do
+    env <- asks mathEnv
+    if "cancel" `elem` env
+      then do
+        if st == XSlash
+          then tell [ControlSeq "\\xcancel"]
+          else if st == BackSlash
+            then tell [ControlSeq "\\bcancel"]
+            else tell [ControlSeq "\\cancel"]
+        tellGroup (writeExp e)
+      else writeExp e
 writeExp (EScaled size e)
   | case e of
          (ESymbol Open _)  -> True

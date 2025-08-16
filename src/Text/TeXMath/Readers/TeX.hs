@@ -229,6 +229,7 @@ command = try $ do
     , mathop c
     , phantom c
     , boxed c
+    , cancel c
     , binary c
     , genfrac c
     , substack c
@@ -659,6 +660,14 @@ phantom _ = mzero
 boxed :: Text -> TP Exp
 boxed "\\boxed" = EBoxed <$> texToken
 boxed _ = mzero
+
+cancel :: Text -> TP Exp
+cancel c = do
+  case c of
+    "\\cancel"  -> ECancel ForwardSlash <$> texToken
+    "\\bcancel" -> ECancel BackSlash <$> texToken
+    "\\xcancel" -> ECancel XSlash <$> texToken
+    _           -> mzero
 
 text :: Text -> TP Exp
 text c = do

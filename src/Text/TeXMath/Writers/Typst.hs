@@ -225,6 +225,9 @@ writeExp (EStyled ttype es) =
        TextBoldFraktur -> "bold" <> inParens ("frak" <> inParens contents)
        TextSansSerifItalic -> "italic" <> inParens ("sans" <> inParens contents)
 writeExp (EBoxed e) = "#box(stroke: black, inset: 3pt, [$ " <> writeExp e <> " $])"
+writeExp (ECancel ForwardSlash e) = "cancel(" <> writeExp e <> ")"
+writeExp (ECancel BackSlash e) = "cancel(" <> writeExp e <> ", inverted: #true)"
+writeExp (ECancel XSlash e) = "cancel(" <> writeExp e <> ", cross: #true)"
 writeExp (EPhantom e) = "#hide[" <> writeExp e <> "]"
 writeExp (EScaled size e) =
   "#scale(x: " <> tshow (floor (100 * size) :: Int) <>

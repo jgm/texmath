@@ -187,6 +187,7 @@ writeExp (ESqrt e) = "sqrt " <> writeExp' e
 writeExp (ERoot i e) = "\"\" sup " <> writeExp' i <> " sqrt " <> writeExp' e
 writeExp (EPhantom e) = "hphantom " <> writeExp' e
 writeExp (EBoxed e) = writeExp e -- TODO: any way to do this?
+writeExp (ECancel _ e) = writeExp e -- TODO 
 writeExp (EScaled _size e) = writeExp e -- TODO: any way?
 writeExp (EText ttype s) =
   let quoted = "\"" <> s <> "\""
