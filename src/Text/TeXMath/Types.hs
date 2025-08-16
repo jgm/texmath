@@ -24,8 +24,8 @@ module Text.TeXMath.Types (Exp(..), TeXSymbolType(..), ArrayLine,
                            FractionType(..), TextType(..),
                            Alignment(..), DisplayType(..),
                            Operator(..), FormType(..), Record(..),
-                           Property, Position(..), Env, defaultEnv,
-                           InEDelimited)
+                           Property, Position(..), StrokeType(..),
+                           Env, defaultEnv, InEDelimited)
 where
 
 import Data.Generics
@@ -42,6 +42,9 @@ data FractionType = NormalFrac   -- ^ Displayed or textual, acc to 'DisplayType'
                   | DisplayFrac  -- ^ Force display mode
                   | InlineFrac   -- ^ Force inline mode (textual)
                   | NoLineFrac   -- ^ No line between top and bottom
+                  deriving (Show, Read, Eq, Ord, Data, Typeable)
+
+data StrokeType = ForwardSlash | BackSlash | XSlash
                   deriving (Show, Read, Eq, Ord, Data, Typeable)
 
 type ArrayLine = [[Exp]]
@@ -79,6 +82,7 @@ data Exp =
                        -- something under it.
   | EPhantom Exp  -- ^ A "phantom" operator that takes space but doesn't display.
   | EBoxed Exp    -- ^ A boxed expression.
+  | ECancel StrokeType Exp -- ^ A cancelled expression.
   | EFraction FractionType Exp Exp  -- ^ A fraction.  First argument is
                        -- numerator, second denominator.
   | ERoot Exp Exp  -- ^ An nth root.  First argument is index, second is base.
@@ -152,6 +156,6 @@ data Position = Under | Over
 -- | List of available packages
 type Env = [T.Text]
 
--- | Contains @amsmath@ and @amssymbol@
+-- | Contains @amsmath@, @amssymbol@, and @cancel@
 defaultEnv :: [T.Text]
-defaultEnv = ["amsmath", "amssymb"]
+defaultEnv = ["amsmath", "amssymb", "cancel"]
