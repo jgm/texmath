@@ -37,7 +37,7 @@ import Data.Either (isRight)
 -- tr' x = trace (show x) x
 
 -- | Transforms an expression tree to equivalent LaTeX with the default
--- packages (amsmath and amssymb)
+-- packages (amsmath, amssymb, and cancel)
 writeTeX :: [Exp] -> T.Text
 writeTeX = writeTeXWith defaultEnv
 
