@@ -217,7 +217,10 @@ showExp tt e =
      [ makeStretchy FPostfix (vnode "mo" end)
         | not (T.null end) ]
    EIdentifier x    -> vnode "mi" x
-   EMathOperator x  -> vnode "mi" x -- see #257
+   EMathOperator x  -> -- see #257, #270
+     case tt of
+       Nothing -> withAttribute "mathvariant" "normal" $ tunode "mi" x
+       _ -> vnode "mi" x
    ESymbol Open x   -> makeFence FPrefix $ vnode "mo" x
    ESymbol Close x  -> makeFence FPostfix $ vnode "mo" x
    ESymbol Ord x

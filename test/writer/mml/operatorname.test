@@ -77,7 +77,7 @@
         <mtd columnalign="left" style="text-align: left">
           <msub>
             <mrow>
-              <mi>div</mi>
+              <mi mathvariant="normal">div</mi>
               <mo>&#8289;</mo>
             </mrow>
             <mi>x</mi>
@@ -85,7 +85,7 @@
           <mi>u</mi>
           <msup>
             <mrow>
-              <mi>div</mi>
+              <mi mathvariant="normal">div</mi>
               <mo>&#8289;</mo>
             </mrow>
             <mi>x</mi>
@@ -93,7 +93,7 @@
           <mi>u</mi>
           <msubsup>
             <mrow>
-              <mi>div</mi>
+              <mi mathvariant="normal">div</mi>
               <mo>&#8289;</mo>
             </mrow>
             <mi>x</mi>
@@ -102,7 +102,7 @@
           <mi>u</mi>
           <msubsup>
             <mrow>
-              <mi>div</mi>
+              <mi mathvariant="normal">div</mi>
               <mo>&#8289;</mo>
             </mrow>
             <mi>x</mi>
@@ -117,7 +117,7 @@
       <mtr>
         <mtd columnalign="left" style="text-align: left">
           <munder>
-            <mi>⋆-lim&#39;sup</mi>
+            <mi mathvariant="normal">⋆-lim&#39;sup</mi>
             <mrow>
               <mi>x</mi>
               <mo>→</mo>
@@ -126,12 +126,12 @@
           </munder>
           <mi>u</mi>
           <mover>
-            <mi>⋆-lim&#39;sup</mi>
+            <mi mathvariant="normal">⋆-lim&#39;sup</mi>
             <mi>w</mi>
           </mover>
           <mi>u</mi>
           <munderover>
-            <mi>⋆-lim&#39;sup</mi>
+            <mi mathvariant="normal">⋆-lim&#39;sup</mi>
             <mrow>
               <mi>x</mi>
               <mo>→</mo>
@@ -141,7 +141,7 @@
           </munderover>
           <mi>u</mi>
           <munderover>
-            <mi>⋆-lim&#39;sup</mi>
+            <mi mathvariant="normal">⋆-lim&#39;sup</mi>
             <mrow>
               <mi>x</mi>
               <mo>→</mo>
@@ -159,7 +159,7 @@
         <mtd columnalign="left" style="text-align: left">
           <msub>
             <mrow>
-              <mi>⋆-lim&#39;sup</mi>
+              <mi mathvariant="normal">⋆-lim&#39;sup</mi>
               <mo>&#8289;</mo>
             </mrow>
             <mrow>
@@ -171,7 +171,7 @@
           <mi>u</mi>
           <msup>
             <mrow>
-              <mi>⋆-lim&#39;sup</mi>
+              <mi mathvariant="normal">⋆-lim&#39;sup</mi>
               <mo>&#8289;</mo>
             </mrow>
             <mi>w</mi>
@@ -179,7 +179,7 @@
           <mi>u</mi>
           <msubsup>
             <mrow>
-              <mi>⋆-lim&#39;sup</mi>
+              <mi mathvariant="normal">⋆-lim&#39;sup</mi>
               <mo>&#8289;</mo>
             </mrow>
             <mrow>
@@ -192,7 +192,7 @@
           <mi>u</mi>
           <msubsup>
             <mrow>
-              <mi>⋆-lim&#39;sup</mi>
+              <mi mathvariant="normal">⋆-lim&#39;sup</mi>
               <mo>&#8289;</mo>
             </mrow>
             <mrow>
@@ -212,14 +212,14 @@
         <mtd columnalign="left" style="text-align: left">
           <msub>
             <mrow>
-              <mi>curl</mi>
+              <mi mathvariant="normal">curl</mi>
               <mo>&#8289;</mo>
             </mrow>
             <mi>x</mi>
           </msub>
           <mi>v</mi>
           <munder>
-            <mi>argmax</mi>
+            <mi mathvariant="normal">argmax</mi>
             <mi>K</mi>
           </munder>
           <mi>u</mi>
