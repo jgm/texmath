@@ -266,11 +266,10 @@ writeExp (ECancel st e) = do
     env <- asks mathEnv
     if "cancel" `elem` env
       then do
-        if st == XSlash
-          then tell [ControlSeq "\\xcancel"]
-          else if st == BackSlash
-            then tell [ControlSeq "\\bcancel"]
-            else tell [ControlSeq "\\cancel"]
+        case st of
+          ForwardSlash -> tell [ControlSeq "\\cancel"]
+          BackSlash -> tell [ControlSeq "\\bcancel"]
+          XSlash -> tell [ControlSeq "\\xcancel"]
         tellGroup (writeExp e)
       else writeExp e
 writeExp (EScaled size e)
