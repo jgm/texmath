@@ -1,0 +1,8 @@
+<<< native
+[ EBoxed (ENumber "0")
+, ECancel ForwardSlash (ENumber "1")
+, ECancel BackSlash (ENumber "2")
+, ECancel XSlash (ENumber "3")
+]
+>>> eqn
+0 1 2 3

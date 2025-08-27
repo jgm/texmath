@@ -241,6 +241,12 @@ showExp tt e =
    EPhantom x       -> unode "mphantom" $ showExps tt [x]
    EBoxed x         -> withAttribute "notation" "box" .
                        unode "menclose" $ showExp tt x
+   ECancel ForwardSlash x -> withAttribute "notation" "updiagonalstrike" .
+                             unode "menclose" $ showExp tt x
+   ECancel BackSlash x    -> withAttribute "notation" "downdiagonalstrike" .
+                             unode "menclose" $ showExp tt x
+   ECancel XSlash x       -> withAttribute "notation" "updiagonalstrike downdiagonalstrike" .
+                             unode "menclose" $ showExp tt x
    ESqrt x          -> unode "msqrt" $ showExp tt x
    ERoot i x        -> unode "mroot" [showExp tt x, showExp tt i]
    EScaled s x      -> makeScaled s $ showExp tt x

@@ -300,6 +300,7 @@ showExp props e =
                                             [ mnodeA "show" "off" () ]
                                           , mnode "e" $ showExp props x]]
    EBoxed   x       -> [mnode "borderBox" [ mnode "e" $ showExp props x]]
+   ECancel st x     -> [makeCancel props st x]
    EScaled _ x      -> showExp props x -- no support for scaler?
    EArray as ls     -> [makeArray props as ls]
    EText a s        -> [makeText a s]
@@ -342,3 +343,16 @@ makeNary props t s y z w =
                , mnode "sup" $ showExp props z
                , mnode "e" $ showExp props w ]
 
+makeCancel :: [Element] -> StrokeType -> Exp -> Element
+makeCancel props st x = do
+  let sn = case st of
+             ForwardSlash -> [ mnodeA "strikeBLTR" "1" () ]
+             BackSlash    -> [ mnodeA "strikeTLBR" "1" () ]
+             XSlash       -> [ mnodeA "strikeBLTR" "1" () 
+                             , mnodeA "strikeTLBR" "1" () ]
+  mnode "borderBox" [ mnode "borderBoxPr" $ 
+                      [ mnodeA "hideTop" "1" ()
+                      , mnodeA "hideBot" "1" ()
+                      , mnodeA "hideLeft" "1" ()
+                      , mnodeA "hideRight" "1" () ] ++ sn
+                    , mnode "e" $ showExp props x ]

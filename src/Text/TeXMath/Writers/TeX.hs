@@ -37,7 +37,7 @@ import Data.Either (isRight)
 -- tr' x = trace (show x) x
 
 -- | Transforms an expression tree to equivalent LaTeX with the default
--- packages (amsmath and amssymb)
+-- packages (amsmath, amssymb, and cancel)
 writeTeX :: [Exp] -> T.Text
 writeTeX = writeTeXWith defaultEnv
 
@@ -260,6 +260,16 @@ writeExp (EBoxed e) = do
     if "amsmath" `elem` env
       then do
         tell [ControlSeq "\\boxed"]
+        tellGroup (writeExp e)
+      else writeExp e
+writeExp (ECancel st e) = do
+    env <- asks mathEnv
+    if "cancel" `elem` env
+      then do
+        case st of
+          ForwardSlash -> tell [ControlSeq "\\cancel"]
+          BackSlash -> tell [ControlSeq "\\bcancel"]
+          XSlash -> tell [ControlSeq "\\xcancel"]
         tellGroup (writeExp e)
       else writeExp e
 writeExp (EScaled size e)

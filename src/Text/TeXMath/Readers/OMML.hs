@@ -278,7 +278,18 @@ elemToExps' element | isElem "m" "box" element = do
 elemToExps' element | isElem "m" "borderBox" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
-  return [EBoxed baseExp]
+  let bbPr = filterChildName (hasElemName "m" "borderBoxPr") element
+      bltr = bbPr >>= filterChildName (hasElemName "m" "strikeBLTR") >>=
+                      findAttrBy (hasElemName "m" "val")
+      tlbr = bbPr >>= filterChildName (hasElemName "m" "strikeTLBR") >>=
+                      findAttrBy (hasElemName "m" "val")
+  return $
+    case (bltr, tlbr) of
+      (Just "1", Just "1") -> [ECancel XSlash baseExp]
+      (Just "1", _)        -> [ECancel ForwardSlash baseExp]
+      (_, Just "1")        -> [ECancel BackSlash baseExp]
+      _                    -> [EBoxed baseExp]
+
 elemToExps' element | isElem "m" "d" element =
   let baseExps  = mapMaybe
                   elemToBases

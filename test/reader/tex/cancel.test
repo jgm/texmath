@@ -1,0 +1,13 @@
+<<< tex
+\boxed{\cancel{x} + \bcancel{y} = \xcancel{z}}
+
+>>> native
+[ EBoxed
+    (EGrouped
+       [ ECancel ForwardSlash (EIdentifier "x")
+       , ESymbol Bin "+"
+       , ECancel BackSlash (EIdentifier "y")
+       , ESymbol Rel "="
+       , ECancel XSlash (EIdentifier "z")
+       ])
+]
