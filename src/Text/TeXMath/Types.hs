@@ -156,6 +156,6 @@ data Position = Under | Over
 -- | List of available packages
 type Env = [T.Text]
 
--- | Contains @amsmath@, @amssymbol@, and @cancel@
+-- | Contains @amsmath@ and @amssymbol@
 defaultEnv :: [T.Text]
-defaultEnv = ["amsmath", "amssymb", "cancel"]
+defaultEnv = ["amsmath", "amssymb"]

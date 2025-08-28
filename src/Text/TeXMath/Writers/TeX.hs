@@ -263,15 +263,11 @@ writeExp (EBoxed e) = do
         tellGroup (writeExp e)
       else writeExp e
 writeExp (ECancel st e) = do
-    env <- asks mathEnv
-    if "cancel" `elem` env
-      then do
-        case st of
-          ForwardSlash -> tell [ControlSeq "\\cancel"]
-          BackSlash -> tell [ControlSeq "\\bcancel"]
-          XSlash -> tell [ControlSeq "\\xcancel"]
-        tellGroup (writeExp e)
-      else writeExp e
+  case st of
+    ForwardSlash -> tell [ControlSeq "\\cancel"]
+    BackSlash -> tell [ControlSeq "\\bcancel"]
+    XSlash -> tell [ControlSeq "\\xcancel"]
+  tellGroup (writeExp e)
 writeExp (EScaled size e)
   | case e of
          (ESymbol Open _)  -> True
