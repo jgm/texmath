@@ -1,3 +1,18 @@
+texmath (0.13)
+
+  * Add cancellation of terms for most formats. (#271, #251, #269).
+    This adds support for LaTeX `\cancel`, `\bcancel`, `\xcancel`,
+    and their equivalents in OMML, MathML, and Typst.
+
+    [API change]: add StrokeType and ECancel constructor on Exp.
+
+  * MathML writer: add `mathvariant="normal"` on math operators,
+    unless a different style is specifically called for (#270).
+
+  * Don't escape `*` in typst math output (#268).
+
+  * TeX writer: Use `\underbracket` instead of `\underset` U+23B5 (#267).
+
 texmath (0.12.10.3)
 
   * MathML writer: fix rendering of EScaled (#264, Ewan Davies).
