@@ -141,11 +141,12 @@ writeExp (ESub b e1) = writeExpB b <> "_" <> writeExpS e1
 writeExp (ESuper b e1) = writeExpB b <>
   case S.toPrimes e1 of
     Just ps -> ps
-    _ -> "^" <> writeExpS e1
-writeExp (ESubsup b e1 e2) = writeExpB b <> "_" <> writeExpS e1 <>
-  case S.toPrimes e2 of
-    Just ps -> ps
-    _ -> "^" <> writeExpS e2
+    Nothing -> "^" <> writeExpS e1
+writeExp (ESubsup b e1 e2) =
+  writeExpB b <>
+    case S.toPrimes e2 of
+      Just ps -> ps <> "_" <> writeExpS e1
+      Nothing -> "_" <> writeExpS e1 <> "^" <> writeExpS e2
 writeExp (EOver _ (EOver _ b (ESymbol TOver "\9182")) e1) =
   "overbrace(" <> writeExp b <> ", " <> writeExp e1 <> ")"
 writeExp (EOver _ (EOver _ b (ESymbol TOver "\9140")) e1) =
