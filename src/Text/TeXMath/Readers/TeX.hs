@@ -52,28 +52,22 @@ type TP = Parser
 
 -- The parser
 
-expr1 :: TP Exp
-expr1 = do
-  e <- expr2
-  -- check for primes and add them as a superscript
-  -- in TeX ' is shorthand for ^{\prime}
-  primes <- many (char '\'')
-  let getPrimes cs = case cs of
-                       "" -> ""
-                       "'" -> "\x2032"
-                       "''" -> "\x2033"
-                       "'''" -> "\x2034"
-                       "''''" -> "\x2057"
-                       _ -> "\x2057" ++ getPrimes (drop 4 cs)
-  ignorable
-  case getPrimes primes of
-    "" -> return e
-    cs -> return $ case e of
-                     ESub b sub -> ESubsup b sub (ESymbol Pun (T.pack cs))
-                     _ -> ESuper e (ESymbol Pun (T.pack cs))
+primes :: TP Exp
+primes = do
+  ESymbol Pun . getPrimes <$> (many1 (char '\'') <* ignorable)
 
-expr2 :: TP Exp
-expr2 = choice
+getPrimes :: [Char] -> Text
+getPrimes cs =
+  case cs of
+    "" -> ""
+    "'" -> "\x2032"
+    "''" -> "\x2033"
+    "'''" -> "\x2034"
+    "''''" -> "\x2057"
+    _ -> "\x2057" <> getPrimes (drop 4 cs)
+
+expr1 :: TP Exp
+expr1 = choice
           [ inbraces
           , variable
           , number
@@ -255,7 +249,7 @@ operatorname = do
     ctrlseq "operatorname"
     -- these are slightly different but we won't worry about that here...
     convertible <- (char '*' >> spaces >> return True) <|> return False
-    tok' <- texSymbol <|> braces (manyExp expr2) <|> texChar
+    tok' <- texSymbol <|> braces (manyExp expr1) <|> texChar
     tok'' <- (EMathOperator <$> (expToOperatorName tok'))
            <|> return (EStyled TextNormal [tok'])
     return (tok'', convertible)
@@ -613,8 +607,8 @@ isUnderover _ = False
 
 subSup :: Maybe Bool -> Bool -> Exp -> TP Exp
 subSup limits convertible a = try $ do
-  let sub1 = symbol "_" >> expr1
-  let sup1 = symbol "^" >> expr1
+  let sub1 = symbol "_" >> expr1  -- see #273
+  let sup1 = (symbol "^" >> expr1) <|> primes
   (b,c) <- try (do {m <- sub1; n <- sup1; return (m,n)})
        <|> (do {n <- sup1; m <- sub1; return (m,n)})
   return $ case limits of
@@ -625,9 +619,8 @@ subSup limits convertible a = try $ do
 
 superOrSubscripted :: Maybe Bool -> Bool -> Exp -> TP Exp
 superOrSubscripted limits convertible a = try $ do
-  c <- oneOf "^_"
-  spaces
-  b <- expr
+  (c,b) <- ((,) <$> oneOf "^_" <*> (spaces >> expr))
+          <|> (('^',) <$> primes)
   case c of
        '^' -> return $ case limits of
                         Just True  -> EOver False a b
