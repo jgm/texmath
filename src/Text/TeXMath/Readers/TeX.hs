@@ -55,7 +55,7 @@ type TP = Parser
 expr1 :: TP Exp
 expr1 = do
   e <- expr2
-  -- check for primes and add them as a subscript
+  -- check for primes and add them as a superscript
   -- in TeX ' is shorthand for ^{\prime}
   primes <- many (char '\'')
   let getPrimes cs = case cs of
