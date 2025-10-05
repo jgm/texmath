@@ -1,3 +1,11 @@
+texmath (0.13.0.1)
+
+  * TeX reader: fix parsing of primes (#273).
+    We previously misparsed `a_i'` as `a_{i'}` rather than `{a_i}'`.
+
+  * Typst writer: fix position of primes with ESubSup.
+    In typst, unlike tex, the primes must come after the base.
+
 texmath (0.13)
 
   * Add cancellation of terms for most formats. (#271, #251, #269).
