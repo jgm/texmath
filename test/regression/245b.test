@@ -102,9 +102,9 @@ upright("^\\qprime") x''''\
 upright("^\\backprime") x^prime.rev\
 upright("^\\backdprime") x^prime.double.rev\
 upright("^\\backtrprime") x^prime.triple.rev\
-upright("^\\hyphenbullet") x^(⁃)\
+upright("^\\hyphenbullet") x^bullet.hyph\
 upright("^\\ast") x^(*)\
 upright("^\\vysmwhtcircle") x^compose\
 upright("^\\vysmblkcircle") x^circle.filled.small\
-upright("^\\llcorner") x^\⌞\
-upright("^\\ulcorner") x^\⌜\
+upright("^\\llcorner") x^corner.l.b\
+upright("^\\ulcorner") x^corner.l.t\
