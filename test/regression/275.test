@@ -1,0 +1,14 @@
+<<< native
+[ EDelimited
+    "{"
+    ""
+    [ Right
+        (EArray
+           [ AlignLeft , AlignLeft ]
+           [ [ [ EIdentifier "a" ] , [ ESymbol Pun ";" ] ]
+           , [ [ EIdentifier "b" ] , [ EIdentifier "c" ] ]
+           ])
+    ]
+]
+>>> typst
+cases(delim: "{", a & \;, b & c)
