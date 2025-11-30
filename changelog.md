@@ -1,3 +1,11 @@
+texmath (0.13.0.2)
+
+  * Escape ; in typst output (#275).
+
+  * Update tests for latest typst symbols.
+
+  * Require typst-symbols 0.1.9.1.
+
 texmath (0.13.0.1)
 
   * TeX reader: fix parsing of primes (#273).
