@@ -662,14 +662,19 @@ cancel c = do
     "\\xcancel" -> ECancel XSlash <$> texToken
     _           -> mzero
 
+textContents :: (Text -> Exp) -> TP [Exp]
+textContents op = char '{' *> manyTill chunk (char '}')
+ where
+   chunk = (op . T.concat <$> many1 textual)
+            <|> (char '{' *> (asGroup <$> manyTill chunk (char '}')))
+            <|> innermath
+
 text :: Text -> TP Exp
 text c = do
   op <- maybe mzero return $ M.lookup c textOps
-  char '{'
-  let chunk = ((op . T.concat) <$> many1 textual)
-            <|> (char '{' *> (asGroup <$> manyTill chunk (char '}')))
-            <|> innermath
-  contents <- manyTill chunk (char '}')
+  contents <- textContents op
+           <|> ((:[]) . op <$> textCommand)
+           <|> ((:[]) . op . T.singleton <$> noneOf "\n\t\r \\{}")
   spaces
   case contents of
        []   -> return (op "")

@@ -1,0 +1,9 @@
+<<< tex
+x = y\text.x
+>>> native
+[ EIdentifier "x"
+, ESymbol Rel "="
+, EIdentifier "y"
+, EText TextNormal "."
+, EIdentifier "x"
+]
