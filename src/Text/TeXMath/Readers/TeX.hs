@@ -666,15 +666,31 @@ textContents :: (Text -> Exp) -> TP [Exp]
 textContents op = char '{' *> manyTill chunk (char '}')
  where
    chunk = (op . T.concat <$> many1 textual)
+            <|> textSpaceCommand
             <|> (char '{' *> (asGroup <$> manyTill chunk (char '}')))
             <|> innermath
+
+textSpaceCommand :: TP Exp
+textSpaceCommand = try $ do
+  char '\\'
+  choice
+   [ ESpace (2 % 9) <$ char ' '
+   , ESpace ((-1) % 6) <$ char '!'
+   , ESpace (1 % 6) <$ char ','
+   , ESpace (2 % 9) <$ char ':'
+   , ESpace (5 % 18) <$ char ';'
+   , ESpace (2 % 9) <$ char '>'
+   ]
 
 text :: Text -> TP Exp
 text c = do
   op <- maybe mzero return $ M.lookup c textOps
-  contents <- textContents op
-           <|> ((:[]) . op <$> textCommand)
-           <|> ((:[]) . op . T.singleton <$> noneOf "\n\t\r \\{}")
+  contents <- textContents op  -- braced
+           <|> ((:[]) <$>      -- nonbraced token
+                (  (op <$> textCommand)
+               <|> textSpaceCommand
+               <|> (op . T.singleton <$> noneOf "\n\t\r \\{}")
+                ))
   spaces
   case contents of
        []   -> return (op "")
