@@ -95,6 +95,7 @@ hasElemName prefix name qn =
 data OMathRunElem = TextRun T.Text
                   | LnBrk
                   | Tab
+                  | Inserted [OMathRunElem]
                     deriving Show
 
 data OMathRunTextStyle = NoStyle
@@ -165,6 +166,7 @@ elemToOMathRunElem element
   | isElem "w" "br" element = Just LnBrk
   | isElem "w" "tab" element = Just Tab
   | isElem "w" "sym" element = Just $ TextRun $ getSymChar element
+  | isElem "w" "ins" element = Just $ Inserted $ mapMaybe elemToOMathRunElem (elChildren element)
   | otherwise = Nothing
 
 elemToOMathRunElems :: Element -> Maybe [OMathRunElem]
@@ -180,6 +182,7 @@ oMathRunElemToText :: OMathRunElem -> T.Text
 oMathRunElemToText (TextRun s) = s
 oMathRunElemToText (LnBrk) = "\n"
 oMathRunElemToText (Tab) = "\t"
+oMathRunElemToText (Inserted es) = mconcat $ map oMathRunElemToText es
 
 oMathRunElemsToText :: [OMathRunElem] -> T.Text
 oMathRunElemsToText = T.concat . map oMathRunElemToText
