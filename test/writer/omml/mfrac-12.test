@@ -21,11 +21,17 @@
       </m:fPr>
       <m:num>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>1</m:t>
         </m:r>
       </m:num>
       <m:den>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>2</m:t>
         </m:r>
       </m:den>
@@ -47,6 +53,9 @@
           </m:phantPr>
           <m:e>
             <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>1</m:t>
             </m:r>
           </m:e>
@@ -55,11 +64,17 @@
           <m:t>&#8203;</m:t>
         </m:r>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>1</m:t>
         </m:r>
       </m:num>
       <m:den>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>2</m:t>
         </m:r>
         <m:r>
@@ -71,6 +86,9 @@
           </m:phantPr>
           <m:e>
             <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>1</m:t>
             </m:r>
           </m:e>

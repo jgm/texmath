@@ -412,17 +412,17 @@
                   <msubsup>
                     <mi>b</mi>
                     <mrow />
-                    <mn>2</mn>
+                    <mn mathvariant="normal">2</mn>
                   </msubsup>
                   <mo>-</mo>
-                  <mn>4</mn>
+                  <mn mathvariant="normal">4</mn>
                   <mi>a</mi>
                   <mi>c</mi>
                 </mrow>
               </msqrt>
             </mrow>
             <mrow>
-              <mn>2</mn>
+              <mn mathvariant="normal">2</mn>
               <mi>a</mi>
             </mrow>
           </mfrac>
@@ -447,17 +447,17 @@
                   <msubsup>
                     <mi>b</mi>
                     <mrow />
-                    <mn>2</mn>
+                    <mn mathvariant="normal">2</mn>
                   </msubsup>
                   <mo>-</mo>
-                  <mn>4</mn>
+                  <mn mathvariant="normal">4</mn>
                   <mi>a</mi>
                   <mi>c</mi>
                 </mrow>
               </msqrt>
             </mrow>
             <mrow>
-              <mn>2</mn>
+              <mn mathvariant="normal">2</mn>
               <mi>a</mi>
             </mrow>
           </mfrac>
@@ -477,62 +477,21 @@
           <mo>=</mo>
           <mfrac>
             <mrow>
-              <mn>1</mn>
+              <mn mathvariant="normal">1</mn>
               <mo>-</mo>
               <msubsup>
                 <mi>x</mi>
                 <mrow />
-                <mn>2</mn>
+                <mn mathvariant="normal">2</mn>
               </msubsup>
             </mrow>
             <mrow>
-              <mn>1</mn>
+              <mn mathvariant="normal">1</mn>
               <mo>-</mo>
               <msubsup>
                 <mi>x</mi>
                 <mrow />
-                <mn>3</mn>
-              </msubsup>
-            </mrow>
-          </mfrac>
-        </mrow>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd columnalign="center" style="text-align: center">
-        <mtext mathvariant="normal">Rational Function</mtext>
-      </mtd>
-      <mtd columnalign="center" style="text-align: center">
-        <mrow>
-          <mi>f</mi>
-          <mo stretchy="false" form="prefix">(</mo>
-          <mi>x</mi>
-          <mo stretchy="false" form="postfix">)</mo>
-          <mo>=</mo>
-          <mfrac>
-            <mrow>
-              <mo stretchy="false" form="prefix">(</mo>
-              <mn>1</mn>
-              <mo>-</mo>
-              <msubsup>
-                <mi>x</mi>
-                <mrow />
-                <mn>2</mn>
-              </msubsup>
-              <mo stretchy="false" form="postfix">)</mo>
-              <msubsup>
-                <mi>x</mi>
-                <mrow />
-                <mn>3</mn>
-              </msubsup>
-            </mrow>
-            <mrow>
-              <mn>1</mn>
-              <mo>-</mo>
-              <msubsup>
-                <mi>x</mi>
-                <mrow />
-                <mn>3</mn>
+                <mn mathvariant="normal">3</mn>
               </msubsup>
             </mrow>
           </mfrac>
@@ -553,32 +512,73 @@
           <mfrac>
             <mrow>
               <mo stretchy="false" form="prefix">(</mo>
-              <mn>1</mn>
+              <mn mathvariant="normal">1</mn>
               <mo>-</mo>
               <msubsup>
                 <mi>x</mi>
                 <mrow />
-                <mn>2</mn>
+                <mn mathvariant="normal">2</mn>
+              </msubsup>
+              <mo stretchy="false" form="postfix">)</mo>
+              <msubsup>
+                <mi>x</mi>
+                <mrow />
+                <mn mathvariant="normal">3</mn>
+              </msubsup>
+            </mrow>
+            <mrow>
+              <mn mathvariant="normal">1</mn>
+              <mo>-</mo>
+              <msubsup>
+                <mi>x</mi>
+                <mrow />
+                <mn mathvariant="normal">3</mn>
+              </msubsup>
+            </mrow>
+          </mfrac>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="center" style="text-align: center">
+        <mtext mathvariant="normal">Rational Function</mtext>
+      </mtd>
+      <mtd columnalign="center" style="text-align: center">
+        <mrow>
+          <mi>f</mi>
+          <mo stretchy="false" form="prefix">(</mo>
+          <mi>x</mi>
+          <mo stretchy="false" form="postfix">)</mo>
+          <mo>=</mo>
+          <mfrac>
+            <mrow>
+              <mo stretchy="false" form="prefix">(</mo>
+              <mn mathvariant="normal">1</mn>
+              <mo>-</mo>
+              <msubsup>
+                <mi>x</mi>
+                <mrow />
+                <mn mathvariant="normal">2</mn>
               </msubsup>
               <mo stretchy="false" form="postfix">)</mo>
               <mo stretchy="false" form="prefix">(</mo>
               <msubsup>
                 <mi>x</mi>
                 <mrow />
-                <mn>3</mn>
+                <mn mathvariant="normal">3</mn>
               </msubsup>
               <mo>-</mo>
-              <mn>5</mn>
+              <mn mathvariant="normal">5</mn>
               <mi>x</mi>
               <mo stretchy="false" form="postfix">)</mo>
             </mrow>
             <mrow>
-              <mn>1</mn>
+              <mn mathvariant="normal">1</mn>
               <mo>-</mo>
               <msubsup>
                 <mi>x</mi>
                 <mrow />
-                <mn>3</mn>
+                <mn mathvariant="normal">3</mn>
               </msubsup>
             </mrow>
           </mfrac>
@@ -608,21 +608,21 @@
               <msubsup>
                 <mi>x</mi>
                 <mrow />
-                <mn>2</mn>
+                <mn mathvariant="normal">2</mn>
               </msubsup>
               <msubsup>
                 <mo stretchy="false" form="postfix">)</mo>
                 <mrow />
-                <mn>5</mn>
+                <mn mathvariant="normal">5</mn>
               </msubsup>
             </mrow>
             <mrow>
-              <mn>1</mn>
+              <mn mathvariant="normal">1</mn>
               <mo>-</mo>
               <msubsup>
                 <mi>x</mi>
                 <mrow />
-                <mn>3</mn>
+                <mn mathvariant="normal">3</mn>
               </msubsup>
             </mrow>
           </mfrac>
@@ -648,7 +648,7 @@
               <msubsup>
                 <mi>x</mi>
                 <mrow />
-                <mn>2</mn>
+                <mn mathvariant="normal">2</mn>
               </msubsup>
             </mrow>
           </msubsup>
@@ -678,7 +678,7 @@
               <msubsup>
                 <mo stretchy="false" form="postfix">)</mo>
                 <mrow />
-                <mn>2</mn>
+                <mn mathvariant="normal">2</mn>
               </msubsup>
             </mrow>
           </msubsup>
@@ -706,14 +706,14 @@
                 <mrow>
                   <mi>i</mi>
                   <mo>=</mo>
-                  <mn>0</mn>
+                  <mn mathvariant="normal">0</mn>
                 </mrow>
                 <mi>∞</mi>
               </munderover>
               <msubsup>
                 <mi>z</mi>
                 <mi>i</mi>
-                <mn>2</mn>
+                <mn mathvariant="normal">2</mn>
               </msubsup>
             </mrow>
           </msubsup>
@@ -741,14 +741,14 @@
                 <mrow>
                   <mi>i</mi>
                   <mo>=</mo>
-                  <mn>0</mn>
+                  <mn mathvariant="normal">0</mn>
                 </mrow>
                 <mi>∞</mi>
               </munderover>
               <msubsup>
                 <mi>y</mi>
                 <mi>i</mi>
-                <mn>2</mn>
+                <mn mathvariant="normal">2</mn>
               </msubsup>
             </mrow>
           </msubsup>
@@ -776,7 +776,7 @@
                 <mrow>
                   <mi>i</mi>
                   <mo>=</mo>
-                  <mn>0</mn>
+                  <mn mathvariant="normal">0</mn>
                 </mrow>
                 <mi>∞</mi>
               </munderover>
@@ -784,7 +784,7 @@
                 <mi>z</mi>
                 <mrow />
                 <mfrac>
-                  <mn>2</mn>
+                  <mn mathvariant="normal">2</mn>
                   <mrow>
                     <mi>a</mi>
                     <mo>-</mo>
@@ -807,26 +807,26 @@
             <mrow>
               <msubsup>
                 <mi>x</mi>
-                <mn>1</mn>
+                <mn mathvariant="normal">1</mn>
                 <mrow />
               </msubsup>
               <mo>-</mo>
               <msubsup>
                 <mi>x</mi>
-                <mn>2</mn>
+                <mn mathvariant="normal">2</mn>
                 <mrow />
               </msubsup>
             </mrow>
             <mrow>
               <msubsup>
                 <mi>x</mi>
-                <mn>3</mn>
+                <mn mathvariant="normal">3</mn>
                 <mrow />
               </msubsup>
               <mo>-</mo>
               <msubsup>
                 <mi>x</mi>
-                <mn>4</mn>
+                <mn mathvariant="normal">4</mn>
                 <mrow />
               </msubsup>
             </mrow>
@@ -835,26 +835,26 @@
             <mrow>
               <msubsup>
                 <mi>x</mi>
-                <mn>1</mn>
+                <mn mathvariant="normal">1</mn>
                 <mrow />
               </msubsup>
               <mo>-</mo>
               <msubsup>
                 <mi>x</mi>
-                <mn>4</mn>
+                <mn mathvariant="normal">4</mn>
                 <mrow />
               </msubsup>
             </mrow>
             <mrow>
               <msubsup>
                 <mi>x</mi>
-                <mn>2</mn>
+                <mn mathvariant="normal">2</mn>
                 <mrow />
               </msubsup>
               <mo>-</mo>
               <msubsup>
                 <mi>x</mi>
-                <mn>3</mn>
+                <mn mathvariant="normal">3</mn>
                 <mrow />
               </msubsup>
             </mrow>
@@ -873,26 +873,26 @@
             <mrow>
               <msubsup>
                 <mi>x</mi>
-                <mn>1</mn>
+                <mn mathvariant="normal">1</mn>
                 <mrow />
               </msubsup>
               <mo>-</mo>
               <msubsup>
                 <mi>x</mi>
-                <mn>2</mn>
+                <mn mathvariant="normal">2</mn>
                 <mrow />
               </msubsup>
             </mrow>
             <mrow>
               <msubsup>
                 <mi>x</mi>
-                <mn>3</mn>
+                <mn mathvariant="normal">3</mn>
                 <mrow />
               </msubsup>
               <mo>-</mo>
               <msubsup>
                 <mi>x</mi>
-                <mn>4</mn>
+                <mn mathvariant="normal">4</mn>
                 <mrow />
               </msubsup>
             </mrow>
@@ -903,26 +903,26 @@
             <mrow>
               <msubsup>
                 <mi>x</mi>
-                <mn>1</mn>
+                <mn mathvariant="normal">1</mn>
                 <mrow />
               </msubsup>
               <mo>-</mo>
               <msubsup>
                 <mi>x</mi>
-                <mn>4</mn>
+                <mn mathvariant="normal">4</mn>
                 <mrow />
               </msubsup>
             </mrow>
             <mrow>
               <msubsup>
                 <mi>x</mi>
-                <mn>2</mn>
+                <mn mathvariant="normal">2</mn>
                 <mrow />
               </msubsup>
               <mo>-</mo>
               <msubsup>
                 <mi>x</mi>
-                <mn>3</mn>
+                <mn mathvariant="normal">3</mn>
                 <mrow />
               </msubsup>
             </mrow>
@@ -943,26 +943,26 @@
               <mrow>
                 <msubsup>
                   <mi>x</mi>
-                  <mn>1</mn>
+                  <mn mathvariant="normal">1</mn>
                   <mrow />
                 </msubsup>
                 <mo>-</mo>
                 <msubsup>
                   <mi>x</mi>
-                  <mn>2</mn>
+                  <mn mathvariant="normal">2</mn>
                   <mrow />
                 </msubsup>
               </mrow>
               <mrow>
                 <msubsup>
                   <mi>x</mi>
-                  <mn>3</mn>
+                  <mn mathvariant="normal">3</mn>
                   <mrow />
                 </msubsup>
                 <mo>-</mo>
                 <msubsup>
                   <mi>x</mi>
-                  <mn>4</mn>
+                  <mn mathvariant="normal">4</mn>
                   <mrow />
                 </msubsup>
               </mrow>
@@ -975,26 +975,26 @@
               <mrow>
                 <msubsup>
                   <mi>x</mi>
-                  <mn>1</mn>
+                  <mn mathvariant="normal">1</mn>
                   <mrow />
                 </msubsup>
                 <mo>-</mo>
                 <msubsup>
                   <mi>x</mi>
-                  <mn>4</mn>
+                  <mn mathvariant="normal">4</mn>
                   <mrow />
                 </msubsup>
               </mrow>
               <mrow>
                 <msubsup>
                   <mi>x</mi>
-                  <mn>2</mn>
+                  <mn mathvariant="normal">2</mn>
                   <mrow />
                 </msubsup>
                 <mo>-</mo>
                 <msubsup>
                   <mi>x</mi>
-                  <mn>3</mn>
+                  <mn mathvariant="normal">3</mn>
                   <mrow />
                 </msubsup>
               </mrow>
@@ -1014,26 +1014,26 @@
             <mo stretchy="false" form="prefix">(</mo>
             <msubsup>
               <mi>x</mi>
-              <mn>1</mn>
+              <mn mathvariant="normal">1</mn>
               <mrow />
             </msubsup>
             <mo>-</mo>
             <msubsup>
               <mi>x</mi>
-              <mn>2</mn>
+              <mn mathvariant="normal">2</mn>
               <mrow />
             </msubsup>
             <mo stretchy="false" form="postfix">)</mo>
             <mo stretchy="false" form="prefix">(</mo>
             <msubsup>
               <mi>x</mi>
-              <mn>3</mn>
+              <mn mathvariant="normal">3</mn>
               <mrow />
             </msubsup>
             <mo>-</mo>
             <msubsup>
               <mi>x</mi>
-              <mn>4</mn>
+              <mn mathvariant="normal">4</mn>
               <mrow />
             </msubsup>
             <mo stretchy="false" form="postfix">)</mo>
@@ -1042,26 +1042,26 @@
             <mo stretchy="false" form="prefix">(</mo>
             <msubsup>
               <mi>x</mi>
-              <mn>1</mn>
+              <mn mathvariant="normal">1</mn>
               <mrow />
             </msubsup>
             <mo>-</mo>
             <msubsup>
               <mi>x</mi>
-              <mn>4</mn>
+              <mn mathvariant="normal">4</mn>
               <mrow />
             </msubsup>
             <mo stretchy="false" form="postfix">)</mo>
             <mo stretchy="false" form="prefix">(</mo>
             <msubsup>
               <mi>x</mi>
-              <mn>2</mn>
+              <mn mathvariant="normal">2</mn>
               <mrow />
             </msubsup>
             <mo>-</mo>
             <msubsup>
               <mi>x</mi>
-              <mn>3</mn>
+              <mn mathvariant="normal">3</mn>
               <mrow />
             </msubsup>
             <mo stretchy="false" form="postfix">)</mo>

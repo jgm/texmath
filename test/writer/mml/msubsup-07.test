@@ -13,7 +13,7 @@
     <msubsup>
       <mi>D</mi>
       <mi>x</mi>
-      <mn>2</mn>
+      <mn mathvariant="normal">2</mn>
     </msubsup>
     <mo>=</mo>
     <msubsup>
@@ -21,13 +21,13 @@
       <munder>
         <mi>x</mi>
         <mphantom>
-          <mn>0</mn>
+          <mn mathvariant="normal">0</mn>
         </mphantom>
       </munder>
       <mover>
-        <mn>2</mn>
+        <mn mathvariant="normal">2</mn>
         <mphantom>
-          <mn>0</mn>
+          <mn mathvariant="normal">0</mn>
         </mphantom>
       </mover>
     </msubsup>

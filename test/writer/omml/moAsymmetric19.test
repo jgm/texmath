@@ -65,6 +65,9 @@
           <m:mr>
             <m:e>
               <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
                 <m:t>0</m:t>
               </m:r>
             </m:e>
@@ -72,44 +75,9 @@
           <m:mr>
             <m:e>
               <m:r>
-                <m:t>0</m:t>
-              </m:r>
-            </m:e>
-          </m:mr>
-        </m:m>
-      </m:e>
-    </m:d>
-    <m:d>
-      <m:dPr>
-        <m:begChr m:val="(" />
-        <m:sepChr m:val="" />
-        <m:endChr m:val=")" />
-        <m:grow />
-      </m:dPr>
-      <m:e>
-        <m:m>
-          <m:mPr>
-            <m:baseJc m:val="center" />
-            <m:plcHide m:val="on" />
-            <m:mcs>
-              <m:mc>
-                <m:mcPr>
-                  <m:mcJc m:val="center" />
-                  <m:count m:val="1" />
-                </m:mcPr>
-              </m:mc>
-            </m:mcs>
-          </m:mPr>
-          <m:mr>
-            <m:e>
-              <m:r>
-                <m:t>0</m:t>
-              </m:r>
-            </m:e>
-          </m:mr>
-          <m:mr>
-            <m:e>
-              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
                 <m:t>0</m:t>
               </m:r>
             </m:e>
@@ -141,6 +109,9 @@
           <m:mr>
             <m:e>
               <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
                 <m:t>0</m:t>
               </m:r>
             </m:e>
@@ -148,6 +119,53 @@
           <m:mr>
             <m:e>
               <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>0</m:t>
+              </m:r>
+            </m:e>
+          </m:mr>
+        </m:m>
+      </m:e>
+    </m:d>
+    <m:d>
+      <m:dPr>
+        <m:begChr m:val="(" />
+        <m:sepChr m:val="" />
+        <m:endChr m:val=")" />
+        <m:grow />
+      </m:dPr>
+      <m:e>
+        <m:m>
+          <m:mPr>
+            <m:baseJc m:val="center" />
+            <m:plcHide m:val="on" />
+            <m:mcs>
+              <m:mc>
+                <m:mcPr>
+                  <m:mcJc m:val="center" />
+                  <m:count m:val="1" />
+                </m:mcPr>
+              </m:mc>
+            </m:mcs>
+          </m:mPr>
+          <m:mr>
+            <m:e>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
+                <m:t>0</m:t>
+              </m:r>
+            </m:e>
+          </m:mr>
+          <m:mr>
+            <m:e>
+              <m:r>
+                <m:rPr>
+                  <m:sty m:val="p" />
+                </m:rPr>
                 <m:t>0</m:t>
               </m:r>
             </m:e>

@@ -31,11 +31,17 @@
           <m:t>-</m:t>
         </m:r>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>3</m:t>
         </m:r>
       </m:deg>
       <m:e>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>3</m:t>
         </m:r>
       </m:e>
@@ -54,6 +60,9 @@
       </m:deg>
       <m:e>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>3</m:t>
         </m:r>
       </m:e>
@@ -72,11 +81,17 @@
           </m:fPr>
           <m:num>
             <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>3</m:t>
             </m:r>
           </m:num>
           <m:den>
             <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>2</m:t>
             </m:r>
           </m:den>
@@ -91,11 +106,17 @@
             <m:rad>
               <m:deg>
                 <m:r>
+                  <m:rPr>
+                    <m:sty m:val="p" />
+                  </m:rPr>
                   <m:t>3</m:t>
                 </m:r>
               </m:deg>
               <m:e>
                 <m:r>
+                  <m:rPr>
+                    <m:sty m:val="p" />
+                  </m:rPr>
                   <m:t>3</m:t>
                 </m:r>
                 <m:r>
@@ -115,6 +136,9 @@
               <m:t>-</m:t>
             </m:r>
             <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>3</m:t>
             </m:r>
           </m:den>

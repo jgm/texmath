@@ -36,11 +36,17 @@
           <m:t>=</m:t>
         </m:r>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>1</m:t>
         </m:r>
       </m:sub>
       <m:sup>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>100</m:t>
         </m:r>
       </m:sup>
@@ -62,6 +68,9 @@
       </m:fPr>
       <m:num>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>100</m:t>
         </m:r>
         <m:r>
@@ -71,11 +80,17 @@
           <m:t>*</m:t>
         </m:r>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>101</m:t>
         </m:r>
       </m:num>
       <m:den>
         <m:r>
+          <m:rPr>
+            <m:sty m:val="p" />
+          </m:rPr>
           <m:t>2</m:t>
         </m:r>
       </m:den>

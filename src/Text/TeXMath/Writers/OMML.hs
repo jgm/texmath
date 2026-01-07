@@ -206,7 +206,9 @@ handleDownup' _ xs = xs
 showExp :: [Element] -> Exp -> [Element]
 showExp props e =
  case e of
-   ENumber x        -> [str props x]
+   ENumber x
+     | null props -> [str [mnodeA "sty" "p" ()] x]
+     | otherwise  -> [str props x]
    EGrouped [EUnderover _ (ESymbol Op s) y z, w] ->
      [makeNary props "undOvr" s y z w]
    EGrouped [ESubsup (ESymbol Op s) y z, w] ->

@@ -29,6 +29,9 @@
   </m:oMathParaPr>
   <m:oMath>
     <m:r>
+      <m:rPr>
+        <m:sty m:val="p" />
+      </m:rPr>
       <m:t>2</m:t>
     </m:r>
     <m:r>
@@ -59,6 +62,9 @@
               </m:dPr>
               <m:e>
                 <m:r>
+                  <m:rPr>
+                    <m:sty m:val="p" />
+                  </m:rPr>
                   <m:t>3</m:t>
                 </m:r>
                 <m:r>
@@ -79,11 +85,17 @@
               <m:t>×</m:t>
             </m:r>
             <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>2</m:t>
             </m:r>
           </m:num>
           <m:den>
             <m:r>
+              <m:rPr>
+                <m:sty m:val="p" />
+              </m:rPr>
               <m:t>3</m:t>
             </m:r>
             <m:r>

@@ -226,7 +226,7 @@
   <mtable>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mn>1</mn>
+        <mn mathvariant="normal">1</mn>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
@@ -239,11 +239,11 @@
         <mrow>
           <msup>
             <mi>x</mi>
-            <mn>2</mn>
+            <mn mathvariant="normal">2</mn>
           </msup>
           <mo>+</mo>
           <mrow>
-            <mn>2</mn>
+            <mn mathvariant="normal">2</mn>
             <mi>&#8290;</mi>
             <mi>y</mi>
             <mi>&#8290;</mi>
@@ -252,7 +252,7 @@
           <mo>+</mo>
           <msup>
             <mi>y</mi>
-            <mn>2</mn>
+            <mn mathvariant="normal">2</mn>
           </msup>
         </mrow>
       </mtd>
@@ -269,11 +269,11 @@
         <mrow>
           <msup>
             <mi>x</mi>
-            <mn>2</mn>
+            <mn mathvariant="normal">2</mn>
           </msup>
           <mo>+</mo>
           <mrow>
-            <mn>2</mn>
+            <mn mathvariant="normal">2</mn>
             <mi>&#8290;</mi>
             <mi>y</mi>
             <mi>&#8290;</mi>
@@ -282,65 +282,7 @@
           <mo>+</mo>
           <msup>
             <mi>y</mi>
-            <mn>2</mn>
-          </msup>
-        </mrow>
-      </mtd>
-      <mtd columnalign="left" style="text-align: left">
-        <mrow>
-          <msup>
-            <mi>x</mi>
-            <mn>3</mn>
-          </msup>
-          <mo>+</mo>
-          <mrow>
-            <mn>3</mn>
-            <mi>&#8290;</mi>
-            <mi>y</mi>
-            <mi>&#8290;</mi>
-            <msup>
-              <mi>x</mi>
-              <mn>2</mn>
-            </msup>
-          </mrow>
-          <mo>+</mo>
-          <mrow>
-            <mn>3</mn>
-            <mi>&#8290;</mi>
-            <msup>
-              <mi>y</mi>
-              <mn>2</mn>
-            </msup>
-            <mi>&#8290;</mi>
-            <mi>x</mi>
-          </mrow>
-          <mo>+</mo>
-          <msup>
-            <mi>y</mi>
-            <mn>3</mn>
-          </msup>
-        </mrow>
-      </mtd>
-    </mtr>
-    <mtr>
-      <mtd columnalign="left" style="text-align: left">
-        <mrow>
-          <msup>
-            <mi>x</mi>
-            <mn>2</mn>
-          </msup>
-          <mo>+</mo>
-          <mrow>
-            <mn>2</mn>
-            <mi>&#8290;</mi>
-            <mi>y</mi>
-            <mi>&#8290;</mi>
-            <mi>x</mi>
-          </mrow>
-          <mo>+</mo>
-          <msup>
-            <mi>y</mi>
-            <mn>2</mn>
+            <mn mathvariant="normal">2</mn>
           </msup>
         </mrow>
       </mtd>
@@ -348,26 +290,26 @@
         <mrow>
           <msup>
             <mi>x</mi>
-            <mn>3</mn>
+            <mn mathvariant="normal">3</mn>
           </msup>
           <mo>+</mo>
           <mrow>
-            <mn>3</mn>
+            <mn mathvariant="normal">3</mn>
             <mi>&#8290;</mi>
             <mi>y</mi>
             <mi>&#8290;</mi>
             <msup>
               <mi>x</mi>
-              <mn>2</mn>
+              <mn mathvariant="normal">2</mn>
             </msup>
           </mrow>
           <mo>+</mo>
           <mrow>
-            <mn>3</mn>
+            <mn mathvariant="normal">3</mn>
             <mi>&#8290;</mi>
             <msup>
               <mi>y</mi>
-              <mn>2</mn>
+              <mn mathvariant="normal">2</mn>
             </msup>
             <mi>&#8290;</mi>
             <mi>x</mi>
@@ -375,56 +317,7 @@
           <mo>+</mo>
           <msup>
             <mi>y</mi>
-            <mn>3</mn>
-          </msup>
-        </mrow>
-      </mtd>
-      <mtd columnalign="left" style="text-align: left">
-        <mrow>
-          <msup>
-            <mi>x</mi>
-            <mn>4</mn>
-          </msup>
-          <mo>+</mo>
-          <mrow>
-            <mn>4</mn>
-            <mi>&#8290;</mi>
-            <mi>y</mi>
-            <mi>&#8290;</mi>
-            <msup>
-              <mi>x</mi>
-              <mn>3</mn>
-            </msup>
-          </mrow>
-          <mo>+</mo>
-          <mrow>
-            <mn>6</mn>
-            <mi>&#8290;</mi>
-            <msup>
-              <mi>y</mi>
-              <mn>2</mn>
-            </msup>
-            <mi>&#8290;</mi>
-            <msup>
-              <mi>x</mi>
-              <mn>2</mn>
-            </msup>
-          </mrow>
-          <mo>+</mo>
-          <mrow>
-            <mn>4</mn>
-            <mi>&#8290;</mi>
-            <msup>
-              <mi>y</mi>
-              <mn>3</mn>
-            </msup>
-            <mi>&#8290;</mi>
-            <mi>x</mi>
-          </mrow>
-          <mo>+</mo>
-          <msup>
-            <mi>y</mi>
-            <mn>4</mn>
+            <mn mathvariant="normal">3</mn>
           </msup>
         </mrow>
       </mtd>
@@ -434,34 +327,20 @@
         <mrow>
           <msup>
             <mi>x</mi>
-            <mn>3</mn>
+            <mn mathvariant="normal">2</mn>
           </msup>
           <mo>+</mo>
           <mrow>
-            <mn>3</mn>
+            <mn mathvariant="normal">2</mn>
             <mi>&#8290;</mi>
             <mi>y</mi>
-            <mi>&#8290;</mi>
-            <msup>
-              <mi>x</mi>
-              <mn>2</mn>
-            </msup>
-          </mrow>
-          <mo>+</mo>
-          <mrow>
-            <mn>3</mn>
-            <mi>&#8290;</mi>
-            <msup>
-              <mi>y</mi>
-              <mn>2</mn>
-            </msup>
             <mi>&#8290;</mi>
             <mi>x</mi>
           </mrow>
           <mo>+</mo>
           <msup>
             <mi>y</mi>
-            <mn>3</mn>
+            <mn mathvariant="normal">2</mn>
           </msup>
         </mrow>
       </mtd>
@@ -469,40 +348,26 @@
         <mrow>
           <msup>
             <mi>x</mi>
-            <mn>4</mn>
+            <mn mathvariant="normal">3</mn>
           </msup>
           <mo>+</mo>
           <mrow>
-            <mn>4</mn>
+            <mn mathvariant="normal">3</mn>
             <mi>&#8290;</mi>
             <mi>y</mi>
             <mi>&#8290;</mi>
             <msup>
               <mi>x</mi>
-              <mn>3</mn>
+              <mn mathvariant="normal">2</mn>
             </msup>
           </mrow>
           <mo>+</mo>
           <mrow>
-            <mn>6</mn>
+            <mn mathvariant="normal">3</mn>
             <mi>&#8290;</mi>
             <msup>
               <mi>y</mi>
-              <mn>2</mn>
-            </msup>
-            <mi>&#8290;</mi>
-            <msup>
-              <mi>x</mi>
-              <mn>2</mn>
-            </msup>
-          </mrow>
-          <mo>+</mo>
-          <mrow>
-            <mn>4</mn>
-            <mi>&#8290;</mi>
-            <msup>
-              <mi>y</mi>
-              <mn>3</mn>
+              <mn mathvariant="normal">2</mn>
             </msup>
             <mi>&#8290;</mi>
             <mi>x</mi>
@@ -510,7 +375,7 @@
           <mo>+</mo>
           <msup>
             <mi>y</mi>
-            <mn>4</mn>
+            <mn mathvariant="normal">3</mn>
           </msup>
         </mrow>
       </mtd>
@@ -518,54 +383,40 @@
         <mrow>
           <msup>
             <mi>x</mi>
-            <mn>5</mn>
+            <mn mathvariant="normal">4</mn>
           </msup>
           <mo>+</mo>
           <mrow>
-            <mn>5</mn>
+            <mn mathvariant="normal">4</mn>
             <mi>&#8290;</mi>
             <mi>y</mi>
             <mi>&#8290;</mi>
             <msup>
               <mi>x</mi>
-              <mn>4</mn>
+              <mn mathvariant="normal">3</mn>
             </msup>
           </mrow>
           <mo>+</mo>
           <mrow>
-            <mn>10</mn>
+            <mn mathvariant="normal">6</mn>
             <mi>&#8290;</mi>
             <msup>
               <mi>y</mi>
-              <mn>2</mn>
+              <mn mathvariant="normal">2</mn>
             </msup>
             <mi>&#8290;</mi>
             <msup>
               <mi>x</mi>
-              <mn>3</mn>
+              <mn mathvariant="normal">2</mn>
             </msup>
           </mrow>
           <mo>+</mo>
           <mrow>
-            <mn>10</mn>
+            <mn mathvariant="normal">4</mn>
             <mi>&#8290;</mi>
             <msup>
               <mi>y</mi>
-              <mn>3</mn>
-            </msup>
-            <mi>&#8290;</mi>
-            <msup>
-              <mi>x</mi>
-              <mn>2</mn>
-            </msup>
-          </mrow>
-          <mo>+</mo>
-          <mrow>
-            <mn>5</mn>
-            <mi>&#8290;</mi>
-            <msup>
-              <mi>y</mi>
-              <mn>4</mn>
+              <mn mathvariant="normal">3</mn>
             </msup>
             <mi>&#8290;</mi>
             <mi>x</mi>
@@ -573,7 +424,156 @@
           <mo>+</mo>
           <msup>
             <mi>y</mi>
-            <mn>5</mn>
+            <mn mathvariant="normal">4</mn>
+          </msup>
+        </mrow>
+      </mtd>
+    </mtr>
+    <mtr>
+      <mtd columnalign="left" style="text-align: left">
+        <mrow>
+          <msup>
+            <mi>x</mi>
+            <mn mathvariant="normal">3</mn>
+          </msup>
+          <mo>+</mo>
+          <mrow>
+            <mn mathvariant="normal">3</mn>
+            <mi>&#8290;</mi>
+            <mi>y</mi>
+            <mi>&#8290;</mi>
+            <msup>
+              <mi>x</mi>
+              <mn mathvariant="normal">2</mn>
+            </msup>
+          </mrow>
+          <mo>+</mo>
+          <mrow>
+            <mn mathvariant="normal">3</mn>
+            <mi>&#8290;</mi>
+            <msup>
+              <mi>y</mi>
+              <mn mathvariant="normal">2</mn>
+            </msup>
+            <mi>&#8290;</mi>
+            <mi>x</mi>
+          </mrow>
+          <mo>+</mo>
+          <msup>
+            <mi>y</mi>
+            <mn mathvariant="normal">3</mn>
+          </msup>
+        </mrow>
+      </mtd>
+      <mtd columnalign="left" style="text-align: left">
+        <mrow>
+          <msup>
+            <mi>x</mi>
+            <mn mathvariant="normal">4</mn>
+          </msup>
+          <mo>+</mo>
+          <mrow>
+            <mn mathvariant="normal">4</mn>
+            <mi>&#8290;</mi>
+            <mi>y</mi>
+            <mi>&#8290;</mi>
+            <msup>
+              <mi>x</mi>
+              <mn mathvariant="normal">3</mn>
+            </msup>
+          </mrow>
+          <mo>+</mo>
+          <mrow>
+            <mn mathvariant="normal">6</mn>
+            <mi>&#8290;</mi>
+            <msup>
+              <mi>y</mi>
+              <mn mathvariant="normal">2</mn>
+            </msup>
+            <mi>&#8290;</mi>
+            <msup>
+              <mi>x</mi>
+              <mn mathvariant="normal">2</mn>
+            </msup>
+          </mrow>
+          <mo>+</mo>
+          <mrow>
+            <mn mathvariant="normal">4</mn>
+            <mi>&#8290;</mi>
+            <msup>
+              <mi>y</mi>
+              <mn mathvariant="normal">3</mn>
+            </msup>
+            <mi>&#8290;</mi>
+            <mi>x</mi>
+          </mrow>
+          <mo>+</mo>
+          <msup>
+            <mi>y</mi>
+            <mn mathvariant="normal">4</mn>
+          </msup>
+        </mrow>
+      </mtd>
+      <mtd columnalign="left" style="text-align: left">
+        <mrow>
+          <msup>
+            <mi>x</mi>
+            <mn mathvariant="normal">5</mn>
+          </msup>
+          <mo>+</mo>
+          <mrow>
+            <mn mathvariant="normal">5</mn>
+            <mi>&#8290;</mi>
+            <mi>y</mi>
+            <mi>&#8290;</mi>
+            <msup>
+              <mi>x</mi>
+              <mn mathvariant="normal">4</mn>
+            </msup>
+          </mrow>
+          <mo>+</mo>
+          <mrow>
+            <mn mathvariant="normal">10</mn>
+            <mi>&#8290;</mi>
+            <msup>
+              <mi>y</mi>
+              <mn mathvariant="normal">2</mn>
+            </msup>
+            <mi>&#8290;</mi>
+            <msup>
+              <mi>x</mi>
+              <mn mathvariant="normal">3</mn>
+            </msup>
+          </mrow>
+          <mo>+</mo>
+          <mrow>
+            <mn mathvariant="normal">10</mn>
+            <mi>&#8290;</mi>
+            <msup>
+              <mi>y</mi>
+              <mn mathvariant="normal">3</mn>
+            </msup>
+            <mi>&#8290;</mi>
+            <msup>
+              <mi>x</mi>
+              <mn mathvariant="normal">2</mn>
+            </msup>
+          </mrow>
+          <mo>+</mo>
+          <mrow>
+            <mn mathvariant="normal">5</mn>
+            <mi>&#8290;</mi>
+            <msup>
+              <mi>y</mi>
+              <mn mathvariant="normal">4</mn>
+            </msup>
+            <mi>&#8290;</mi>
+            <mi>x</mi>
+          </mrow>
+          <mo>+</mo>
+          <msup>
+            <mi>y</mi>
+            <mn mathvariant="normal">5</mn>
           </msup>
         </mrow>
       </mtd>

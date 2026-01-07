@@ -633,7 +633,7 @@
           <msubsup>
             <mrow>
               <mo stretchy="false" form="prefix">(</mo>
-              <mn>1</mn>
+              <mn mathvariant="normal">1</mn>
               <mo>-</mo>
               <mi>p</mi>
               <mo stretchy="false" form="postfix">)</mo>
@@ -662,7 +662,7 @@
                 <mrow>
                   <mi>k</mi>
                   <mo>=</mo>
-                  <mn>1</mn>
+                  <mn mathvariant="normal">1</mn>
                 </mrow>
                 <mi>n</mi>
               </munderover>
@@ -679,7 +679,7 @@
               <mo stretchy="true" form="postfix">)</mo>
             </mrow>
             <mrow />
-            <mn>2</mn>
+            <mn mathvariant="normal">2</mn>
           </msubsup>
           <mo>≤</mo>
           <mrow>
@@ -689,14 +689,14 @@
               <mrow>
                 <mi>k</mi>
                 <mo>=</mo>
-                <mn>1</mn>
+                <mn mathvariant="normal">1</mn>
               </mrow>
               <mi>n</mi>
             </munderover>
             <msubsup>
               <mi>a</mi>
               <mi>k</mi>
-              <mn>2</mn>
+              <mn mathvariant="normal">2</mn>
             </msubsup>
             <mo stretchy="true" form="postfix">)</mo>
           </mrow>
@@ -707,14 +707,14 @@
               <mrow>
                 <mi>k</mi>
                 <mo>=</mo>
-                <mn>1</mn>
+                <mn mathvariant="normal">1</mn>
               </mrow>
               <mi>n</mi>
             </munderover>
             <msubsup>
               <mi>b</mi>
               <mi>k</mi>
-              <mn>2</mn>
+              <mn mathvariant="normal">2</mn>
             </msubsup>
             <mo stretchy="true" form="postfix">)</mo>
           </mrow>
@@ -743,9 +743,9 @@
           <mo stretchy="false" form="postfix">)</mo>
           <mo>=</mo>
           <mfrac>
-            <mn>1</mn>
+            <mn mathvariant="normal">1</mn>
             <mrow>
-              <mn>2</mn>
+              <mn mathvariant="normal">2</mn>
               <mi>π</mi>
               <mi>i</mi>
             </mrow>
@@ -782,13 +782,13 @@
         <mrow>
           <msubsup>
             <mi>V</mi>
-            <mn>1</mn>
+            <mn mathvariant="normal">1</mn>
             <mrow />
           </msubsup>
           <mo>×</mo>
           <msubsup>
             <mi>V</mi>
-            <mn>2</mn>
+            <mn mathvariant="normal">2</mn>
             <mrow />
           </msubsup>
           <mo>=</mo>
@@ -832,7 +832,7 @@
                   </mfrac>
                 </mtd>
                 <mtd columnalign="center" style="text-align: center">
-                  <mn>0</mn>
+                  <mn mathvariant="normal">0</mn>
                 </mtd>
               </mtr>
               <mtr>
@@ -861,7 +861,7 @@
                   </mfrac>
                 </mtd>
                 <mtd columnalign="center" style="text-align: center">
-                  <mn>0</mn>
+                  <mn mathvariant="normal">0</mn>
                 </mtd>
               </mtr>
             </mtable>
@@ -881,30 +881,30 @@
             <mtable>
               <mtr>
                 <mtd columnalign="center" style="text-align: center">
-                  <mn>1</mn>
+                  <mn mathvariant="normal">1</mn>
                 </mtd>
                 <mtd columnalign="center" style="text-align: center">
-                  <mn>1</mn>
+                  <mn mathvariant="normal">1</mn>
                 </mtd>
                 <mtd columnalign="center" style="text-align: center">
                   <mi>⋯</mi>
                 </mtd>
                 <mtd columnalign="center" style="text-align: center">
-                  <mn>1</mn>
+                  <mn mathvariant="normal">1</mn>
                 </mtd>
               </mtr>
               <mtr>
                 <mtd columnalign="center" style="text-align: center">
                   <msubsup>
                     <mi>v</mi>
-                    <mn>1</mn>
+                    <mn mathvariant="normal">1</mn>
                     <mrow />
                   </msubsup>
                 </mtd>
                 <mtd columnalign="center" style="text-align: center">
                   <msubsup>
                     <mi>v</mi>
-                    <mn>2</mn>
+                    <mn mathvariant="normal">2</mn>
                     <mrow />
                   </msubsup>
                 </mtd>
@@ -923,15 +923,15 @@
                 <mtd columnalign="center" style="text-align: center">
                   <msubsup>
                     <mi>v</mi>
-                    <mn>1</mn>
-                    <mn>2</mn>
+                    <mn mathvariant="normal">1</mn>
+                    <mn mathvariant="normal">2</mn>
                   </msubsup>
                 </mtd>
                 <mtd columnalign="center" style="text-align: center">
                   <msubsup>
                     <mi>v</mi>
-                    <mn>2</mn>
-                    <mn>2</mn>
+                    <mn mathvariant="normal">2</mn>
+                    <mn mathvariant="normal">2</mn>
                   </msubsup>
                 </mtd>
                 <mtd columnalign="center" style="text-align: center">
@@ -941,7 +941,7 @@
                   <msubsup>
                     <mi>v</mi>
                     <mi>n</mi>
-                    <mn>2</mn>
+                    <mn mathvariant="normal">2</mn>
                   </msubsup>
                 </mtd>
               </mtr>
@@ -963,22 +963,22 @@
                 <mtd columnalign="center" style="text-align: center">
                   <msubsup>
                     <mi>v</mi>
-                    <mn>1</mn>
+                    <mn mathvariant="normal">1</mn>
                     <mrow>
                       <mi>n</mi>
                       <mo>-</mo>
-                      <mn>1</mn>
+                      <mn mathvariant="normal">1</mn>
                     </mrow>
                   </msubsup>
                 </mtd>
                 <mtd columnalign="center" style="text-align: center">
                   <msubsup>
                     <mi>v</mi>
-                    <mn>2</mn>
+                    <mn mathvariant="normal">2</mn>
                     <mrow>
                       <mi>n</mi>
                       <mo>-</mo>
-                      <mn>1</mn>
+                      <mn mathvariant="normal">1</mn>
                     </mrow>
                   </msubsup>
                 </mtd>
@@ -992,7 +992,7 @@
                     <mrow>
                       <mi>n</mi>
                       <mo>-</mo>
-                      <mn>1</mn>
+                      <mn mathvariant="normal">1</mn>
                     </mrow>
                   </msubsup>
                 </mtd>
@@ -1004,7 +1004,7 @@
           <munderover>
             <mo>∏</mo>
             <mrow>
-              <mn>1</mn>
+              <mn mathvariant="normal">1</mn>
               <mo>≤</mo>
               <mi>i</mi>
               <mo>&lt;</mo>
@@ -1128,7 +1128,7 @@
                   <mo>-</mo>
                   <mspace width="0.167em" />
                   <mfrac>
-                    <mn>1</mn>
+                    <mn mathvariant="normal">1</mn>
                     <mi>c</mi>
                   </mfrac>
                   <mspace width="0.167em" />
@@ -1157,7 +1157,7 @@
                 <mrow>
                   <mfrac>
                     <mrow>
-                      <mn>4</mn>
+                      <mn mathvariant="normal">4</mn>
                       <mi>π</mi>
                     </mrow>
                     <mi>c</mi>
@@ -1189,7 +1189,7 @@
               </mtd>
               <mtd columnalign="center" style="text-align: center">
                 <mrow>
-                  <mn>4</mn>
+                  <mn mathvariant="normal">4</mn>
                   <mi>π</mi>
                   <mi>ρ</mi>
                 </mrow>
@@ -1210,7 +1210,7 @@
                   <mo>+</mo>
                   <mspace width="0.167em" />
                   <mfrac>
-                    <mn>1</mn>
+                    <mn mathvariant="normal">1</mn>
                     <mi>c</mi>
                   </mfrac>
                   <mspace width="0.167em" />
@@ -1237,7 +1237,7 @@
               </mtd>
               <mtd columnalign="center" style="text-align: center">
                 <munderover>
-                  <mn>0</mn>
+                  <mn mathvariant="normal">0</mn>
                   <mrow />
                   <mo accent="true">↼</mo>
                 </munderover>
@@ -1260,7 +1260,7 @@
                 <mo>=</mo>
               </mtd>
               <mtd columnalign="center" style="text-align: center">
-                <mn>0</mn>
+                <mn mathvariant="normal">0</mn>
               </mtd>
             </mtr>
           </mtable>
@@ -1283,8 +1283,8 @@
           </msubsup>
           <mo>-</mo>
           <mfrac>
-            <mn>1</mn>
-            <mn>2</mn>
+            <mn mathvariant="normal">1</mn>
+            <mn mathvariant="normal">2</mn>
           </mfrac>
           <mspace width="0.167em" />
           <msubsup>
@@ -1300,14 +1300,14 @@
           <mo>=</mo>
           <mfrac>
             <mrow>
-              <mn>8</mn>
+              <mn mathvariant="normal">8</mn>
               <mi>π</mi>
               <mi>G</mi>
             </mrow>
             <msubsup>
               <mi>c</mi>
               <mrow />
-              <mn>4</mn>
+              <mn mathvariant="normal">4</mn>
             </msubsup>
           </mfrac>
           <mspace width="0.167em" />
@@ -1329,14 +1329,14 @@
       <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mfrac>
-            <mn>1</mn>
+            <mn mathvariant="normal">1</mn>
             <mrow>
               <mo stretchy="false" form="prefix">(</mo>
               <msqrt>
                 <mrow>
                   <mi>φ</mi>
                   <msqrt>
-                    <mn>5</mn>
+                    <mn mathvariant="normal">5</mn>
                   </msqrt>
                 </mrow>
               </msqrt>
@@ -1347,14 +1347,14 @@
                 <mi>e</mi>
                 <mrow />
                 <mfrac>
-                  <mn>25</mn>
+                  <mn mathvariant="normal">25</mn>
                   <mi>π</mi>
                 </mfrac>
               </msubsup>
             </mrow>
           </mfrac>
           <mo>=</mo>
-          <mn>1</mn>
+          <mn mathvariant="normal">1</mn>
           <mo>+</mo>
           <mfrac>
             <msubsup>
@@ -1362,12 +1362,12 @@
               <mrow />
               <mrow>
                 <mo>-</mo>
-                <mn>2</mn>
+                <mn mathvariant="normal">2</mn>
                 <mi>π</mi>
               </mrow>
             </msubsup>
             <mrow>
-              <mn>1</mn>
+              <mn mathvariant="normal">1</mn>
               <mo>+</mo>
               <mfrac>
                 <msubsup>
@@ -1375,12 +1375,12 @@
                   <mrow />
                   <mrow>
                     <mo>-</mo>
-                    <mn>4</mn>
+                    <mn mathvariant="normal">4</mn>
                     <mi>π</mi>
                   </mrow>
                 </msubsup>
                 <mrow>
-                  <mn>1</mn>
+                  <mn mathvariant="normal">1</mn>
                   <mo>+</mo>
                   <mfrac>
                     <msubsup>
@@ -1388,12 +1388,12 @@
                       <mrow />
                       <mrow>
                         <mo>-</mo>
-                        <mn>6</mn>
+                        <mn mathvariant="normal">6</mn>
                         <mi>π</mi>
                       </mrow>
                     </msubsup>
                     <mrow>
-                      <mn>1</mn>
+                      <mn mathvariant="normal">1</mn>
                       <mo>+</mo>
                       <mfrac>
                         <msubsup>
@@ -1401,12 +1401,12 @@
                           <mrow />
                           <mrow>
                             <mo>-</mo>
-                            <mn>8</mn>
+                            <mn mathvariant="normal">8</mn>
                             <mi>π</mi>
                           </mrow>
                         </msubsup>
                         <mrow>
-                          <mn>1</mn>
+                          <mn mathvariant="normal">1</mn>
                           <mo>+</mo>
                           <mi>…</mi>
                         </mrow>
@@ -1431,14 +1431,14 @@
             <mrow>
               <mi>k</mi>
               <mo>=</mo>
-              <mn>1</mn>
+              <mn mathvariant="normal">1</mn>
             </mrow>
             <mi>∞</mi>
           </munderover>
           <mfrac>
-            <mn>1</mn>
+            <mn mathvariant="normal">1</mn>
             <msubsup>
-              <mn>2</mn>
+              <mn mathvariant="normal">2</mn>
               <mrow />
               <mrow>
                 <mo stretchy="false" form="prefix">⌊</mo>
@@ -1452,21 +1452,21 @@
           </mfrac>
           <mo>=</mo>
           <mfrac>
-            <mn>1</mn>
+            <mn mathvariant="normal">1</mn>
             <mrow>
               <msubsup>
-                <mn>2</mn>
+                <mn mathvariant="normal">2</mn>
                 <mrow />
-                <mn>0</mn>
+                <mn mathvariant="normal">0</mn>
               </msubsup>
               <mo>+</mo>
               <mfrac>
-                <mn>1</mn>
+                <mn mathvariant="normal">1</mn>
                 <mrow>
                   <msubsup>
-                    <mn>2</mn>
+                    <mn mathvariant="normal">2</mn>
                     <mrow />
-                    <mn>1</mn>
+                    <mn mathvariant="normal">1</mn>
                   </msubsup>
                   <mo>+</mo>
                   <mi>⋯</mi>
@@ -1483,7 +1483,7 @@
       </mtd>
       <mtd columnalign="center" style="text-align: center">
         <mrow>
-          <mn>1</mn>
+          <mn mathvariant="normal">1</mn>
           <mo>+</mo>
           <mrow>
             <munderover>
@@ -1491,7 +1491,7 @@
               <mrow>
                 <mi>k</mi>
                 <mo>=</mo>
-                <mn>1</mn>
+                <mn mathvariant="normal">1</mn>
               </mrow>
               <mi>∞</mi>
             </munderover>
@@ -1503,7 +1503,7 @@
                   <msubsup>
                     <mi>k</mi>
                     <mrow />
-                    <mn>2</mn>
+                    <mn mathvariant="normal">2</mn>
                   </msubsup>
                   <mo>+</mo>
                   <mi>k</mi>
@@ -1511,22 +1511,22 @@
               </msubsup>
               <mrow>
                 <mo stretchy="false" form="prefix">(</mo>
-                <mn>1</mn>
+                <mn mathvariant="normal">1</mn>
                 <mo>-</mo>
                 <mi>q</mi>
                 <mo stretchy="false" form="postfix">)</mo>
                 <mo stretchy="false" form="prefix">(</mo>
-                <mn>1</mn>
+                <mn mathvariant="normal">1</mn>
                 <mo>-</mo>
                 <msubsup>
                   <mi>q</mi>
                   <mrow />
-                  <mn>2</mn>
+                  <mn mathvariant="normal">2</mn>
                 </msubsup>
                 <mo stretchy="false" form="postfix">)</mo>
                 <mi>⋯</mi>
                 <mo stretchy="false" form="prefix">(</mo>
-                <mn>1</mn>
+                <mn mathvariant="normal">1</mn>
                 <mo>-</mo>
                 <msubsup>
                   <mi>q</mi>
@@ -1544,38 +1544,38 @@
               <mrow>
                 <mi>j</mi>
                 <mo>=</mo>
-                <mn>0</mn>
+                <mn mathvariant="normal">0</mn>
               </mrow>
               <mi>∞</mi>
             </munderover>
             <mfrac>
-              <mn>1</mn>
+              <mn mathvariant="normal">1</mn>
               <mrow>
                 <mo stretchy="false" form="prefix">(</mo>
-                <mn>1</mn>
+                <mn mathvariant="normal">1</mn>
                 <mo>-</mo>
                 <msubsup>
                   <mi>q</mi>
                   <mrow />
                   <mrow>
-                    <mn>5</mn>
+                    <mn mathvariant="normal">5</mn>
                     <mi>j</mi>
                     <mo>+</mo>
-                    <mn>2</mn>
+                    <mn mathvariant="normal">2</mn>
                   </mrow>
                 </msubsup>
                 <mo stretchy="false" form="postfix">)</mo>
                 <mo stretchy="false" form="prefix">(</mo>
-                <mn>1</mn>
+                <mn mathvariant="normal">1</mn>
                 <mo>-</mo>
                 <msubsup>
                   <mi>q</mi>
                   <mrow />
                   <mrow>
-                    <mn>5</mn>
+                    <mn mathvariant="normal">5</mn>
                     <mi>j</mi>
                     <mo>+</mo>
-                    <mn>3</mn>
+                    <mn mathvariant="normal">3</mn>
                   </mrow>
                 </msubsup>
                 <mo stretchy="false" form="postfix">)</mo>
@@ -1595,7 +1595,7 @@
           <mi>q</mi>
           <mo>|</mo>
           <mo>&lt;</mo>
-          <mn>1</mn>
+          <mn mathvariant="normal">1</mn>
           <mi>.</mi>
         </mrow>
       </mtd>

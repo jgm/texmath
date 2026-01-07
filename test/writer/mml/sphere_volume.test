@@ -132,22 +132,22 @@
     <mi>S</mi>
     <mo>=</mo>
     <mo stretchy="false" form="prefix">{</mo>
-    <mn>0</mn>
+    <mn mathvariant="normal">0</mn>
     <mo>≤</mo>
     <mi>ϕ</mi>
     <mo>≤</mo>
-    <mn>2</mn>
+    <mn mathvariant="normal">2</mn>
     <mi>π</mi>
     <mo>,</mo>
     <mspace width="0.222em" />
-    <mn>0</mn>
+    <mn mathvariant="normal">0</mn>
     <mo>≤</mo>
     <mi>θ</mi>
     <mo>≤</mo>
     <mi>π</mi>
     <mo>,</mo>
     <mspace width="0.222em" />
-    <mn>0</mn>
+    <mn mathvariant="normal">0</mn>
     <mo>≤</mo>
     <mi>ρ</mi>
     <mo>≤</mo>
@@ -174,7 +174,7 @@
           <mspace width="-0.167em" />
           <msup>
             <mi>ρ</mi>
-            <mn>2</mn>
+            <mn mathvariant="normal">2</mn>
           </msup>
           <mrow>
             <mi mathvariant="normal">sin</mi>
@@ -198,9 +198,9 @@
           <mo>=</mo>
           <msubsup>
             <mo>∫</mo>
-            <mn>0</mn>
+            <mn mathvariant="normal">0</mn>
             <mrow>
-              <mn>2</mn>
+              <mn mathvariant="normal">2</mn>
               <mi>π</mi>
             </mrow>
           </msubsup>
@@ -210,7 +210,7 @@
           <mspace width="0.167em" />
           <msubsup>
             <mo>∫</mo>
-            <mn>0</mn>
+            <mn mathvariant="normal">0</mn>
             <mi>π</mi>
           </msubsup>
           <mspace width="-0.167em" />
@@ -225,13 +225,13 @@
           <mspace width="0.167em" />
           <msubsup>
             <mo>∫</mo>
-            <mn>0</mn>
+            <mn mathvariant="normal">0</mn>
             <mi>R</mi>
           </msubsup>
           <mspace width="-0.167em" />
           <msup>
             <mi>ρ</mi>
-            <mn>2</mn>
+            <mn mathvariant="normal">2</mn>
           </msup>
           <mi mathvariant="normal">d</mi>
           <mi>ρ</mi>
@@ -244,9 +244,9 @@
           <mi>ϕ</mi>
           <msubsup>
             <mo minsize="180%" maxsize="180%" stretchy="true" form="prefix">|</mo>
-            <mn>0</mn>
+            <mn mathvariant="normal">0</mn>
             <mrow>
-              <mn>2</mn>
+              <mn mathvariant="normal">2</mn>
               <mi>π</mi>
             </mrow>
           </msubsup>
@@ -260,23 +260,23 @@
           </mrow>
           <msubsup>
             <mo minsize="180%" maxsize="180%" stretchy="true" form="prefix">|</mo>
-            <mn>0</mn>
+            <mn mathvariant="normal">0</mn>
             <mi>π</mi>
           </msubsup>
           <mspace width="0.222em" />
           <mstyle displaystyle="false">
             <mfrac>
-              <mn>1</mn>
-              <mn>3</mn>
+              <mn mathvariant="normal">1</mn>
+              <mn mathvariant="normal">3</mn>
             </mfrac>
           </mstyle>
           <msup>
             <mi>ρ</mi>
-            <mn>3</mn>
+            <mn mathvariant="normal">3</mn>
           </msup>
           <msubsup>
             <mo minsize="180%" maxsize="180%" stretchy="true" form="prefix">|</mo>
-            <mn>0</mn>
+            <mn mathvariant="normal">0</mn>
             <mi>R</mi>
           </msubsup>
         </mtd>
@@ -285,20 +285,20 @@
         <mtd columnalign="right" style="text-align: right; padding-right: 0" />
         <mtd columnalign="left" style="text-align: left; padding-left: 0">
           <mo>=</mo>
-          <mn>2</mn>
+          <mn mathvariant="normal">2</mn>
           <mi>π</mi>
           <mo>×</mo>
-          <mn>2</mn>
+          <mn mathvariant="normal">2</mn>
           <mo>×</mo>
           <mstyle displaystyle="false">
             <mfrac>
-              <mn>1</mn>
-              <mn>3</mn>
+              <mn mathvariant="normal">1</mn>
+              <mn mathvariant="normal">3</mn>
             </mfrac>
           </mstyle>
           <msup>
             <mi>R</mi>
-            <mn>3</mn>
+            <mn mathvariant="normal">3</mn>
           </msup>
         </mtd>
       </mtr>
@@ -308,14 +308,14 @@
           <mo>=</mo>
           <mstyle displaystyle="false">
             <mfrac>
-              <mn>4</mn>
-              <mn>3</mn>
+              <mn mathvariant="normal">4</mn>
+              <mn mathvariant="normal">3</mn>
             </mfrac>
           </mstyle>
           <mi>π</mi>
           <msup>
             <mi>R</mi>
-            <mn>3</mn>
+            <mn mathvariant="normal">3</mn>
           </msup>
         </mtd>
       </mtr>

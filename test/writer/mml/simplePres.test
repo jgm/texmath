@@ -42,8 +42,8 @@
       <mo stretchy="true" form="prefix">{</mo>
       <mrow>
         <mfrac>
-          <mn>1</mn>
-          <mn>78</mn>
+          <mn mathvariant="normal">1</mn>
+          <mn mathvariant="normal">78</mn>
         </mfrac>
         <mo>,</mo>
         <mrow>
@@ -62,41 +62,41 @@
     <msup>
       <mi>𝔞</mi>
       <mrow>
-        <mn>2</mn>
+        <mn mathvariant="normal">2</mn>
         <mi>x</mi>
       </mrow>
     </msup>
     <mo>+</mo>
     <msub>
-      <mn>2</mn>
+      <mn mathvariant="normal">2</mn>
       <mi>j</mi>
     </msub>
     <mi>x</mi>
     <mo>+</mo>
     <mfrac>
-      <mn>45</mn>
+      <mn mathvariant="normal">45</mn>
       <mfrac>
-        <mn>1</mn>
-        <mn>78</mn>
+        <mn mathvariant="normal">1</mn>
+        <mn mathvariant="normal">78</mn>
       </mfrac>
     </mfrac>
     <mi>*</mi>
     <msubsup>
       <mi>x</mi>
-      <mn>2</mn>
-      <mn>3</mn>
+      <mn mathvariant="normal">2</mn>
+      <mn mathvariant="normal">3</mn>
     </msubsup>
     <mo>=</mo>
     <mroot>
       <mfrac>
-        <mn>1</mn>
+        <mn mathvariant="normal">1</mn>
         <mrow>
-          <mn>23</mn>
+          <mn mathvariant="normal">23</mn>
           <mo>+</mo>
-          <mn>β</mn>
+          <mn mathvariant="normal">β</mn>
         </mrow>
       </mfrac>
-      <mn>3</mn>
+      <mn mathvariant="normal">3</mn>
     </mroot>
     <mtext mathvariant="normal">#This is my string!&#39;</mtext>
   </mrow>

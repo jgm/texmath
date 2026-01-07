@@ -10,16 +10,16 @@
 <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
     <menclose notation="box">
-      <mn>0</mn>
+      <mn mathvariant="normal">0</mn>
     </menclose>
     <menclose notation="updiagonalstrike">
-      <mn>1</mn>
+      <mn mathvariant="normal">1</mn>
     </menclose>
     <menclose notation="downdiagonalstrike">
-      <mn>2</mn>
+      <mn mathvariant="normal">2</mn>
     </menclose>
     <menclose notation="updiagonalstrike downdiagonalstrike">
-      <mn>3</mn>
+      <mn mathvariant="normal">3</mn>
     </menclose>
   </mrow>
 </math>

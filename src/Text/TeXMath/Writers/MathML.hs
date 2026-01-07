@@ -196,7 +196,7 @@ showExp tt e =
      vnode elname t
        = case tt of
            Nothing ->
-             if isUppercaseGreek t -- see #255
+             if elname == "mn" || isUppercaseGreek t -- see #255
                 then withAttribute "mathvariant" "normal" $ tunode elname t
                 else tunode elname t
            Just TextNormal -> withAttribute "mathvariant" "normal" $
