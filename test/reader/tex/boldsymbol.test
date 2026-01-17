@@ -1,0 +1,17 @@
+<<< tex
+\boldsymbol{\alpha + b = \Gamma \div D} + \bm{y}
+
+
+>>> native
+[ EGrouped
+    [ EStyled TextBoldItalic [ EIdentifier "\945" ]
+    , EStyled TextBoldItalic [ ESymbol Ord "+" ]
+    , EStyled TextBoldItalic [ EIdentifier "b" ]
+    , EStyled TextBoldItalic [ ESymbol Rel "=" ]
+    , EStyled TextBold [ EIdentifier "\915" ]
+    , EStyled TextBoldItalic [ ESymbol Ord "\247" ]
+    , EStyled TextBoldItalic [ EIdentifier "D" ]
+    ]
+, ESymbol Bin "+"
+, EStyled TextBoldItalic [ EIdentifier "y" ]
+]

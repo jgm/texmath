@@ -716,7 +716,40 @@ styled c = do
          return $ case x of
                        EGrouped xs -> f xs
                        _           -> f [x]
-       Nothing  -> mzero
+       Nothing
+         | c == "\\boldsymbol" || c == "\\bm" -> do
+             x <- texSymbol <|> inbraces <|> texChar
+             return $ applyBoldsymbol x
+         | otherwise -> mzero
+
+-- | Apply \boldsymbol style: use TextBoldItalic for content that is
+-- normally italic (latin letters, lowercase greek), and TextBold for
+-- content that is normally upright (uppercase greek, numbers).
+applyBoldsymbol :: Exp -> Exp
+applyBoldsymbol e =
+  case e of
+    EGrouped xs -> EGrouped (map applyBoldsymbol xs)
+    EIdentifier t
+      | T.all isDefaultUpright t -> EStyled TextBold [e]
+      | otherwise                -> EStyled TextBoldItalic [e]
+    ENumber _ -> EStyled TextBold [e]
+    ESymbol _ t
+      | T.all isDefaultUpright t -> EStyled TextBold [e]
+      | otherwise                -> EStyled TextBoldItalic [e]
+    EStyled TextNormal xs -> EStyled TextBold xs
+    EStyled TextItalic xs -> EStyled TextBoldItalic xs
+    EStyled TextBold xs -> EStyled TextBold xs
+    EStyled TextBoldItalic xs -> EStyled TextBoldItalic xs
+    _ -> EStyled TextBoldItalic [e]
+
+-- | Returns True if a character is normally rendered upright in math mode.
+-- This includes uppercase Greek letters.
+isDefaultUpright :: Char -> Bool
+isDefaultUpright c =
+  -- Uppercase Greek letters (Α-Ω, excluding lowercase range)
+  (c >= '\x0391' && c <= '\x03A9') ||
+  -- Also handle digits
+  (c >= '0' && c <= '9')
 
 colored :: Text -> TP Exp
 colored "\\color" = do
