@@ -133,7 +133,10 @@ makeArray tt as ls = unode "mtable" $
 
 -- Kept as String for Text.XML.Light
 withAttribute :: String -> T.Text -> Element -> Element
-withAttribute a = add_attr . Attr (unqual a) . T.unpack
+withAttribute "mathvariant" "bold" e
+   | elName e == unqual "mi" -- special case see #280
+   = add_attr (Attr (unqual "mathvariant") "bold-italic") e
+withAttribute a b e = add_attr (Attr (unqual a) (T.unpack b)) e
 
 -- Preserves the order of any existing attributes
 setAttribute :: String -> T.Text -> Element -> Element
