@@ -26,7 +26,6 @@ where
 
 import Text.XML.Light
 import Text.TeXMath.Types
-import Text.TeXMath.Unicode.ToUnicode
 import Data.Generics (everywhere, mkT)
 import Text.TeXMath.Shared (getMMLType, handleDownup,
                             isUppercaseGreek, isRLSequence)
@@ -196,6 +195,11 @@ showExp tt e =
                 else tunode elname t
            Just TextNormal -> withAttribute "mathvariant" "normal" $
                                 tunode elname t
+           Just TextBold
+             | elname == "mi" && not (isUppercaseGreek t) -- #255, #280
+               -> withAttribute "mathvariant" "bold-italic" $ tunode elname t
+             | otherwise
+               -> withAttribute "mathvariant" "bold" $ tunode elname t
            Just textStyle -> withAttribute "mathvariant" (getMMLType textStyle) $
                               tunode elname t
   in case e of
