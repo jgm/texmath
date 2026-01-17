@@ -255,7 +255,7 @@
   <mtable>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚝𝚎𝚡𝚝𝚛𝚖</mtext>
+        <mtext mathvariant="monospace">textrm</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mtext mathvariant="normal">ABCabc</mtext>
@@ -263,7 +263,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚊𝚝𝚑𝚛𝚖</mtext>
+        <mtext mathvariant="monospace">mathrm</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
@@ -278,7 +278,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚊𝚝𝚑𝚞𝚙</mtext>
+        <mtext mathvariant="monospace">mathup</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
@@ -293,7 +293,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚝𝚎𝚡𝚝</mtext>
+        <mtext mathvariant="monospace">text</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mtext mathvariant="normal">ABCabc</mtext>
@@ -301,7 +301,7 @@
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚋𝚘𝚡</mtext>
+        <mtext mathvariant="monospace">mbox</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mtext mathvariant="normal">ABCabc</mtext>
@@ -309,280 +309,280 @@
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚊𝚝𝚑𝚋𝚏</mtext>
+        <mtext mathvariant="monospace">mathbf</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
-          <mi>𝐀</mi>
-          <mi>𝐁</mi>
-          <mi>𝐂</mi>
-          <mi>𝐚</mi>
-          <mi>𝐛</mi>
-          <mi>𝐜</mi>
+          <mi mathvariant="bold">A</mi>
+          <mi mathvariant="bold">B</mi>
+          <mi mathvariant="bold">C</mi>
+          <mi mathvariant="bold">a</mi>
+          <mi mathvariant="bold">b</mi>
+          <mi mathvariant="bold">c</mi>
         </mrow>
       </mtd>
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚊𝚝𝚑𝚋𝚏𝚞𝚙</mtext>
+        <mtext mathvariant="monospace">mathbfup</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
-          <mi>𝐀</mi>
-          <mi>𝐁</mi>
-          <mi>𝐂</mi>
-          <mi>𝐚</mi>
-          <mi>𝐛</mi>
-          <mi>𝐜</mi>
+          <mi mathvariant="bold">A</mi>
+          <mi mathvariant="bold">B</mi>
+          <mi mathvariant="bold">C</mi>
+          <mi mathvariant="bold">a</mi>
+          <mi mathvariant="bold">b</mi>
+          <mi mathvariant="bold">c</mi>
         </mrow>
       </mtd>
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚝𝚎𝚡𝚝𝚋𝚏</mtext>
+        <mtext mathvariant="monospace">textbf</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="bold">𝐀𝐁𝐂𝐚𝐛𝐜</mtext>
+        <mtext mathvariant="bold">ABCabc</mtext>
       </mtd>
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚊𝚝𝚑𝚒𝚝</mtext>
+        <mtext mathvariant="monospace">mathit</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
-          <mi>𝐴</mi>
-          <mi>𝐵</mi>
-          <mi>𝐶</mi>
-          <mi>𝑎</mi>
-          <mi>𝑏</mi>
-          <mi>𝑐</mi>
+          <mi mathvariant="italic">A</mi>
+          <mi mathvariant="italic">B</mi>
+          <mi mathvariant="italic">C</mi>
+          <mi mathvariant="italic">a</mi>
+          <mi mathvariant="italic">b</mi>
+          <mi mathvariant="italic">c</mi>
         </mrow>
       </mtd>
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚝𝚎𝚡𝚝𝚒𝚝</mtext>
+        <mtext mathvariant="monospace">textit</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="italic">𝐴𝐵𝐶𝑎𝑏𝑐</mtext>
+        <mtext mathvariant="italic">ABCabc</mtext>
       </mtd>
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚊𝚝𝚑𝚝𝚝</mtext>
+        <mtext mathvariant="monospace">mathtt</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
-          <mi>𝙰</mi>
-          <mi>𝙱</mi>
-          <mi>𝙲</mi>
-          <mi>𝚊</mi>
-          <mi>𝚋</mi>
-          <mi>𝚌</mi>
+          <mi mathvariant="monospace">A</mi>
+          <mi mathvariant="monospace">B</mi>
+          <mi mathvariant="monospace">C</mi>
+          <mi mathvariant="monospace">a</mi>
+          <mi mathvariant="monospace">b</mi>
+          <mi mathvariant="monospace">c</mi>
         </mrow>
       </mtd>
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚝𝚎𝚡𝚝𝚝𝚝</mtext>
+        <mtext mathvariant="monospace">texttt</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝙰𝙱𝙲𝚊𝚋𝚌</mtext>
+        <mtext mathvariant="monospace">ABCabc</mtext>
       </mtd>
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚊𝚝𝚑𝚜𝚏</mtext>
+        <mtext mathvariant="monospace">mathsf</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
-          <mi>𝖠</mi>
-          <mi>𝖡</mi>
-          <mi>𝖢</mi>
-          <mi>𝖺</mi>
-          <mi>𝖻</mi>
-          <mi>𝖼</mi>
+          <mi mathvariant="sans-serif">A</mi>
+          <mi mathvariant="sans-serif">B</mi>
+          <mi mathvariant="sans-serif">C</mi>
+          <mi mathvariant="sans-serif">a</mi>
+          <mi mathvariant="sans-serif">b</mi>
+          <mi mathvariant="sans-serif">c</mi>
         </mrow>
       </mtd>
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚊𝚝𝚑𝚜𝚏𝚞𝚙</mtext>
+        <mtext mathvariant="monospace">mathsfup</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
-          <mi>𝖠</mi>
-          <mi>𝖡</mi>
-          <mi>𝖢</mi>
-          <mi>𝖺</mi>
-          <mi>𝖻</mi>
-          <mi>𝖼</mi>
+          <mi mathvariant="sans-serif">A</mi>
+          <mi mathvariant="sans-serif">B</mi>
+          <mi mathvariant="sans-serif">C</mi>
+          <mi mathvariant="sans-serif">a</mi>
+          <mi mathvariant="sans-serif">b</mi>
+          <mi mathvariant="sans-serif">c</mi>
         </mrow>
       </mtd>
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚊𝚝𝚑𝚋𝚋</mtext>
+        <mtext mathvariant="monospace">mathbb</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
-          <mi>𝔸</mi>
-          <mi>𝔹</mi>
-          <mi>ℂ</mi>
-          <mi>𝕒</mi>
-          <mi>𝕓</mi>
-          <mi>𝕔</mi>
+          <mi mathvariant="double-struck">A</mi>
+          <mi mathvariant="double-struck">B</mi>
+          <mi mathvariant="double-struck">C</mi>
+          <mi mathvariant="double-struck">a</mi>
+          <mi mathvariant="double-struck">b</mi>
+          <mi mathvariant="double-struck">c</mi>
         </mrow>
       </mtd>
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚊𝚝𝚑𝚌𝚊𝚕</mtext>
+        <mtext mathvariant="monospace">mathcal</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
-          <mi>𝒜</mi>
-          <mi>ℬ</mi>
-          <mi>𝒞</mi>
-          <mi>𝒶</mi>
-          <mi>𝒷</mi>
-          <mi>𝒸</mi>
+          <mi mathvariant="script">A</mi>
+          <mi mathvariant="script">B</mi>
+          <mi mathvariant="script">C</mi>
+          <mi mathvariant="script">a</mi>
+          <mi mathvariant="script">b</mi>
+          <mi mathvariant="script">c</mi>
         </mrow>
       </mtd>
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚊𝚝𝚑𝚜𝚌𝚛</mtext>
+        <mtext mathvariant="monospace">mathscr</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
-          <mi>𝒜</mi>
-          <mi>ℬ</mi>
-          <mi>𝒞</mi>
-          <mi>𝒶</mi>
-          <mi>𝒷</mi>
-          <mi>𝒸</mi>
+          <mi mathvariant="script">A</mi>
+          <mi mathvariant="script">B</mi>
+          <mi mathvariant="script">C</mi>
+          <mi mathvariant="script">a</mi>
+          <mi mathvariant="script">b</mi>
+          <mi mathvariant="script">c</mi>
         </mrow>
       </mtd>
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚊𝚝𝚑𝚏𝚛𝚊𝚔</mtext>
+        <mtext mathvariant="monospace">mathfrak</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
-          <mi>𝔄</mi>
-          <mi>𝔅</mi>
-          <mi>ℭ</mi>
-          <mi>𝔞</mi>
-          <mi>𝔟</mi>
-          <mi>𝔠</mi>
+          <mi mathvariant="fraktur">A</mi>
+          <mi mathvariant="fraktur">B</mi>
+          <mi mathvariant="fraktur">C</mi>
+          <mi mathvariant="fraktur">a</mi>
+          <mi mathvariant="fraktur">b</mi>
+          <mi mathvariant="fraktur">c</mi>
         </mrow>
       </mtd>
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚊𝚝𝚑𝚋𝚏𝚒𝚝</mtext>
+        <mtext mathvariant="monospace">mathbfit</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
-          <mi>𝑨</mi>
-          <mi>𝑩</mi>
-          <mi>𝑪</mi>
-          <mi>𝒂</mi>
-          <mi>𝒃</mi>
-          <mi>𝒄</mi>
+          <mi mathvariant="bold-italic">A</mi>
+          <mi mathvariant="bold-italic">B</mi>
+          <mi mathvariant="bold-italic">C</mi>
+          <mi mathvariant="bold-italic">a</mi>
+          <mi mathvariant="bold-italic">b</mi>
+          <mi mathvariant="bold-italic">c</mi>
         </mrow>
       </mtd>
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚊𝚝𝚑𝚋𝚏𝚜𝚏𝚞𝚙</mtext>
+        <mtext mathvariant="monospace">mathbfsfup</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
-          <mi>𝗔</mi>
-          <mi>𝗕</mi>
-          <mi>𝗖</mi>
-          <mi>𝗮</mi>
-          <mi>𝗯</mi>
-          <mi>𝗰</mi>
+          <mi mathvariant="bold-sans-serif">A</mi>
+          <mi mathvariant="bold-sans-serif">B</mi>
+          <mi mathvariant="bold-sans-serif">C</mi>
+          <mi mathvariant="bold-sans-serif">a</mi>
+          <mi mathvariant="bold-sans-serif">b</mi>
+          <mi mathvariant="bold-sans-serif">c</mi>
         </mrow>
       </mtd>
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚊𝚝𝚑𝚋𝚏𝚜𝚏𝚒𝚝</mtext>
+        <mtext mathvariant="monospace">mathbfsfit</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
-          <mi>𝘼</mi>
-          <mi>𝘽</mi>
-          <mi>𝘾</mi>
-          <mi>𝙖</mi>
-          <mi>𝙗</mi>
-          <mi>𝙘</mi>
+          <mi mathvariant="sans-serif-bold-italic">A</mi>
+          <mi mathvariant="sans-serif-bold-italic">B</mi>
+          <mi mathvariant="sans-serif-bold-italic">C</mi>
+          <mi mathvariant="sans-serif-bold-italic">a</mi>
+          <mi mathvariant="sans-serif-bold-italic">b</mi>
+          <mi mathvariant="sans-serif-bold-italic">c</mi>
         </mrow>
       </mtd>
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚊𝚝𝚑𝚋𝚏𝚜𝚌𝚛</mtext>
+        <mtext mathvariant="monospace">mathbfscr</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
-          <mi>𝓐</mi>
-          <mi>𝓑</mi>
-          <mi>𝓒</mi>
-          <mi>𝓪</mi>
-          <mi>𝓫</mi>
-          <mi>𝓬</mi>
+          <mi mathvariant="bold-script">A</mi>
+          <mi mathvariant="bold-script">B</mi>
+          <mi mathvariant="bold-script">C</mi>
+          <mi mathvariant="bold-script">a</mi>
+          <mi mathvariant="bold-script">b</mi>
+          <mi mathvariant="bold-script">c</mi>
         </mrow>
       </mtd>
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚊𝚝𝚑𝚋𝚏𝚏𝚛𝚊𝚔</mtext>
+        <mtext mathvariant="monospace">mathbffrak</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
-          <mi>𝕬</mi>
-          <mi>𝕭</mi>
-          <mi>𝕮</mi>
-          <mi>𝖆</mi>
-          <mi>𝖇</mi>
-          <mi>𝖈</mi>
+          <mi mathvariant="bold-fraktur">A</mi>
+          <mi mathvariant="bold-fraktur">B</mi>
+          <mi mathvariant="bold-fraktur">C</mi>
+          <mi mathvariant="bold-fraktur">a</mi>
+          <mi mathvariant="bold-fraktur">b</mi>
+          <mi mathvariant="bold-fraktur">c</mi>
         </mrow>
       </mtd>
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚊𝚝𝚑𝚋𝚏𝚌𝚊𝚕</mtext>
+        <mtext mathvariant="monospace">mathbfcal</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
-          <mi>𝓐</mi>
-          <mi>𝓑</mi>
-          <mi>𝓒</mi>
-          <mi>𝓪</mi>
-          <mi>𝓫</mi>
-          <mi>𝓬</mi>
+          <mi mathvariant="bold-script">A</mi>
+          <mi mathvariant="bold-script">B</mi>
+          <mi mathvariant="bold-script">C</mi>
+          <mi mathvariant="bold-script">a</mi>
+          <mi mathvariant="bold-script">b</mi>
+          <mi mathvariant="bold-script">c</mi>
         </mrow>
       </mtd>
     </mtr>
     <mtr>
       <mtd columnalign="left" style="text-align: left">
-        <mtext mathvariant="monospace">𝚖𝚊𝚝𝚑𝚜𝚏𝚒𝚝</mtext>
+        <mtext mathvariant="monospace">mathsfit</mtext>
       </mtd>
       <mtd columnalign="left" style="text-align: left">
         <mrow>
-          <mi>𝘈</mi>
-          <mi>𝘉</mi>
-          <mi>𝘊</mi>
-          <mi>𝘢</mi>
-          <mi>𝘣</mi>
-          <mi>𝘤</mi>
+          <mi mathvariant="sans-serif-italic">A</mi>
+          <mi mathvariant="sans-serif-italic">B</mi>
+          <mi mathvariant="sans-serif-italic">C</mi>
+          <mi mathvariant="sans-serif-italic">a</mi>
+          <mi mathvariant="sans-serif-italic">b</mi>
+          <mi mathvariant="sans-serif-italic">c</mi>
         </mrow>
       </mtd>
     </mtr>

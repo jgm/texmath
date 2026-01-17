@@ -11336,7 +11336,7 @@
                   </msub>
                   <mo>=</mo>
                   <mrow>
-                    <mi>𝒩</mi>
+                    <mi mathvariant="script">N</mi>
                     <mo>&#8289;</mo>
                     <mrow>
                       <mo stretchy="false" form="prefix">(</mo>
@@ -11695,12 +11695,12 @@
       <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mrow>
-            <mi>𝐚</mi>
+            <mi mathvariant="bold">a</mi>
             <mo>+</mo>
-            <mi>𝐛</mi>
+            <mi mathvariant="bold">b</mi>
           </mrow>
           <mo>=</mo>
-          <mi>𝐜</mi>
+          <mi mathvariant="bold">c</mi>
         </mrow>
       </mtd>
       <mtd columnalign="center" style="text-align: center" />
@@ -11726,7 +11726,7 @@
               <mo>&#8289;</mo>
               <mrow>
                 <mo stretchy="false" form="prefix">(</mo>
-                <mi>𝐱</mi>
+                <mi mathvariant="bold">x</mi>
                 <mo stretchy="false" form="postfix">)</mo>
               </mrow>
             </mrow>
@@ -11743,21 +11743,21 @@
       <mtd columnalign="center" style="text-align: center">
         <mrow>
           <mrow>
-            <mi>𝑇</mi>
+            <mi mathvariant="italic">T</mi>
             <mi>&#8290;</mi>
-            <mi>ℎ</mi>
+            <mi mathvariant="italic">h</mi>
             <mi>&#8290;</mi>
-            <mi>𝑒</mi>
+            <mi mathvariant="italic">e</mi>
             <mi>&#8290;</mi>
-            <mi>𝑞</mi>
+            <mi mathvariant="italic">q</mi>
             <mi>&#8290;</mi>
-            <mi>𝑢</mi>
+            <mi mathvariant="italic">u</mi>
             <mi>&#8290;</mi>
-            <mi>𝑖</mi>
+            <mi mathvariant="italic">i</mi>
             <mi>&#8290;</mi>
-            <mi>𝑐</mi>
+            <mi mathvariant="italic">c</mi>
             <mi>&#8290;</mi>
-            <mi>𝑘</mi>
+            <mi mathvariant="italic">k</mi>
             <mi>&#8290;</mi>
             <mi>b</mi>
             <mi>&#8290;</mi>
@@ -11785,13 +11785,13 @@
             <mi>&#8290;</mi>
             <mi>s</mi>
             <mi>&#8290;</mi>
-            <mi>𝐨</mi>
+            <mi mathvariant="bold">o</mi>
             <mi>&#8290;</mi>
-            <mi>𝐯</mi>
+            <mi mathvariant="bold">v</mi>
             <mi>&#8290;</mi>
-            <mi>𝐞</mi>
+            <mi mathvariant="bold">e</mi>
             <mi>&#8290;</mi>
-            <mi>𝐫</mi>
+            <mi mathvariant="bold">r</mi>
             <mi>&#8290;</mi>
             <mi>t</mi>
             <mi>&#8290;</mi>
@@ -11799,19 +11799,19 @@
             <mi>&#8290;</mi>
             <mi>e</mi>
             <mi>&#8290;</mi>
-            <mi>𝗅</mi>
+            <mi mathvariant="sans-serif">l</mi>
             <mi>&#8290;</mi>
-            <mi>𝖺</mi>
+            <mi mathvariant="sans-serif">a</mi>
             <mi>&#8290;</mi>
-            <mi>𝗓</mi>
+            <mi mathvariant="sans-serif">z</mi>
             <mi>&#8290;</mi>
-            <mi>𝗒</mi>
+            <mi mathvariant="sans-serif">y</mi>
             <mi>&#8290;</mi>
-            <mi>𝚍</mi>
+            <mi mathvariant="monospace">d</mi>
             <mi>&#8290;</mi>
-            <mi>𝚘</mi>
+            <mi mathvariant="monospace">o</mi>
             <mi>&#8290;</mi>
-            <mi>𝚐</mi>
+            <mi mathvariant="monospace">g</mi>
           </mrow>
           <mtext mathvariant="normal">.</mtext>
           <mrow>
@@ -12085,7 +12085,7 @@
                     </mrow>
                   </mrow>
                   <mo>⋅</mo>
-                  <mi>𝐮</mi>
+                  <mi mathvariant="bold">u</mi>
                 </mrow>
               </mrow>
             </mtd>
@@ -14254,7 +14254,7 @@
             </mrow>
             <mrow>
               <mo stretchy="false" form="prefix">(</mo>
-              <mi>𝐈</mi>
+              <mi mathvariant="bold">I</mi>
               <mo stretchy="false" form="postfix">)</mo>
             </mrow>
           </mrow>
@@ -16898,7 +16898,7 @@
             <msub>
               <mrow />
               <msup>
-                <mi>𝐑</mi>
+                <mi mathvariant="bold">R</mi>
                 <mn>3</mn>
               </msup>
             </msub>
@@ -16979,12 +16979,12 @@
                   <mi mathvariant="normal">∇×</mi>
                   <mo>&#8289;</mo>
                 </mrow>
-                <mi>𝐅</mi>
+                <mi mathvariant="bold">F</mi>
               </mrow>
               <mo stretchy="true" form="postfix">)</mo>
             </mrow>
             <mo>⋅</mo>
-            <mi>𝐤</mi>
+            <mi mathvariant="bold">k</mi>
           </mrow>
           <mo>=</mo>
           <mrow>

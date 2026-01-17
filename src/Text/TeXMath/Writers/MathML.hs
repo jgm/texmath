@@ -94,7 +94,6 @@ dropTrailing0s t = case T.unsnoc t of -- T.spanEnd does not exist
       Just (_, '.') -> T.snoc x '0'
       _ -> x
 
--- Note: Converts strings to unicode directly, as few renderers support those mathvariants.
 makeText :: TextType -> T.Text -> Element
 makeText a s = case (leadingSp, trailingSp) of
                    (False, False) -> s'
@@ -102,14 +101,13 @@ makeText a s = case (leadingSp, trailingSp) of
                    (False, True)  -> mrow [s', sp]
                    (True,  True)  -> mrow [sp, s', sp]
   where sp = spaceWidth (1/3)
-        s' = withAttribute "mathvariant" attr $ tunode "mtext" $ toUnicode a s
+        s' = withAttribute "mathvariant" (getMMLType a) $ tunode "mtext" s
         trailingSp = case T.unsnoc s of
           Just (_, c) -> T.any (== c) " \t"
           _           -> False
         leadingSp  = case T.uncons s of
           Just (c, _) -> T.any (== c) " \t"
           _           -> False
-        attr = getMMLType a
 
 makeArray :: Maybe TextType -> [Alignment] -> [ArrayLine] -> Element
 makeArray tt as ls = unode "mtable" $
@@ -187,10 +185,7 @@ insertFunctionApps es' = go es'
 
 showExp :: Maybe TextType -> Exp -> Element
 showExp tt e =
- let toUnicodeMaybe :: TextType -> T.Text -> Maybe T.Text
-     toUnicodeMaybe textStyle t =
-       T.pack <$> mapM (toUnicodeChar . (textStyle,)) (T.unpack t)
-     -- variant node: tries to convert text to appropriate unicode
+ let -- variant node: tries to convert text to appropriate unicode
      -- characters depending on style
      vnode :: String -> T.Text -> Element
      vnode elname t
@@ -201,12 +196,8 @@ showExp tt e =
                 else tunode elname t
            Just TextNormal -> withAttribute "mathvariant" "normal" $
                                 tunode elname t
-           Just textStyle ->
-             case toUnicodeMaybe textStyle t of
-               -- if we can't find unicode equivalents, rely on mathvariant:
-               Nothing -> withAttribute "mathvariant" (getMMLType textStyle) $
-                             tunode elname t
-               Just t' -> tunode elname t'
+           Just textStyle -> withAttribute "mathvariant" (getMMLType textStyle) $
+                              tunode elname t
   in case e of
    ENumber x        -> vnode "mn" x
    EGrouped [x]     -> showExp tt x
