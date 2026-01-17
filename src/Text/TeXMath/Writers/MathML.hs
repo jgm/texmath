@@ -80,7 +80,7 @@ fromForm FPostfix = "postfix"
 fromForm FPrefix  = "prefix"
 
 makeScaled :: Rational -> Element -> Element
-makeScaled x = withAttribute "minsize" p . withAttribute "maxsize" p 
+makeScaled x = withAttribute "minsize" p . withAttribute "maxsize" p
                . setAttribute "stretchy" "true"
   where p = T.pack $ printf "%d%%" (round (100*x) :: Int)
 
@@ -142,11 +142,11 @@ setAttribute a v e = e { elAttribs = update (elAttribs e) }
     newAttr = Attr (unqual a) (T.unpack v)
     update [] = [newAttr]
     update (x:xs)
-        | qName (attrKey x) == a = 
+        | qName (attrKey x) == a =
             newAttr : xs
-        | otherwise = 
+        | otherwise =
             x : update xs
-            
+
 accent :: T.Text -> Element
 accent = add_attr (Attr (unqual "accent") "true") .
            tunode "mo"
