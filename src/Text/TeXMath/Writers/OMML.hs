@@ -233,6 +233,10 @@ showExp props e =
    EIdentifier x
      | isUppercaseGreek x
      , null props -> [str [mnodeA "sty" "p" ()] x]
+     | not (isUppercaseGreek x)
+     , [Element{ elName = QName "sty" _ _
+              , elAttribs = [Attr (QName "val" Nothing (Just "m")) "b"] }] <- props
+      -> [str [mnodeA "sty" "bi" ()] x] -- #280
      | otherwise  -> [str props x]
    EMathOperator x  -> [str (mnodeA "sty" "p" () : props) x]
    ESymbol ty xs
