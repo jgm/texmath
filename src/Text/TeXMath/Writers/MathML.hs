@@ -27,6 +27,7 @@ where
 import Text.XML.Light
 import Text.TeXMath.Types
 import Data.Generics (everywhere, mkT)
+import Text.TeXMath.Unicode.ToUnicode (toUnicode)
 import Text.TeXMath.Shared (getMMLType, handleDownup,
                             isUppercaseGreek, isRLSequence)
 import Text.TeXMath.Readers.MathML.MMLDict (getMathMLOperator)
@@ -100,7 +101,9 @@ makeText a s = case (leadingSp, trailingSp) of
                    (False, True)  -> mrow [s', sp]
                    (True,  True)  -> mrow [sp, s', sp]
   where sp = spaceWidth (1/3)
-        s' = withAttribute "mathvariant" (getMMLType a) $ tunode "mtext" s
+        s' = withAttribute "mathvariant" (getMMLType a) $
+               -- use Unicode characters as few browsers support the mathvariants
+               tunode "mtext" $ toUnicode a s
         trailingSp = case T.unsnoc s of
           Just (_, c) -> T.any (== c) " \t"
           _           -> False
@@ -197,11 +200,15 @@ showExp tt e =
                                 tunode elname t
            Just TextBold
              | elname == "mi" && not (isUppercaseGreek t) -- #255, #280
-               -> withAttribute "mathvariant" "bold-italic" $ tunode elname t
+               -> withAttribute "mathvariant" "bold-italic" $
+                     tunode elname (toUnicode TextBoldItalic t)
              | otherwise
-               -> withAttribute "mathvariant" "bold" $ tunode elname t
+               -> withAttribute "mathvariant" "bold" $
+                     tunode elname (toUnicode TextBold t)
            Just textStyle -> withAttribute "mathvariant" (getMMLType textStyle) $
-                              tunode elname t
+                              -- we use unicode chars because browsers don't
+                              -- completely support mathvariant:
+                              tunode elname (toUnicode textStyle t)
   in case e of
    ENumber x        -> vnode "mn" x
    EGrouped [x]     -> showExp tt x
