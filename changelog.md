@@ -1,3 +1,24 @@
+texmath (0.13.1)
+
+  * MathML writer: Keep mathvariant attribute in addition to finding
+    unicode substitutes (#280). Previously, renderers didn't support
+    mathvariant consistently, so we omitted this attribute. Tested in
+    Safari, Firefox, and Chrome.
+
+  * OMML writer: properly handle bold/italics on identifiers (#280).
+    Identifiers marked as bold need to be marked as bold-italic.
+    Special exception for uppercase Greek.
+
+  * MathML writer: fix handling of italic (#280).
+
+  * OMML reader: handle w:ins elements in math (#278).
+    Previously we skipped these, which meant that content
+    would disappear.
+
+  * TeX reader: handle space commands in `\text{..}` (#277).
+
+  * TeX reader: Allow text operators to take an unbracketed argument (#276).
+
 texmath (0.13.0.2)
 
   * Escape ; in typst output (#275).
