@@ -1,2 +1,3 @@
 packages: .
 flags: +executable +server
+allow-newer: servant-server:wai-app-static
