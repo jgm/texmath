@@ -48,9 +48,9 @@ jobs:
     - name: Install dependencies
       run: |
           cabal v2-update
-          cabal v2-build --dependencies-only --enable-tests --disable-optimization -fexecutable all
-          cabal freeze
+          cabal freeze --dependencies-only --enable-tests --disable-optimization -fexecutable all
           cat cabal.project.freeze
+          cabal v2-build --dependencies-only --enable-tests --disable-optimization -fexecutable all
     - name: Build and test
       run: |
           cabal v2-build --enable-tests --disable-optimization -fexecutable all
