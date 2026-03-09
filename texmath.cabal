@@ -67,10 +67,12 @@ Source-repository head
 Flag executable
   description:       Compile test executable.
   default:           False
+  manual:            True
 
 Flag server
   description:       Compile webserver.
   default:           False
+  manual:            True
 
 Library
     Build-depends:       base >= 4.11 && < 5,
