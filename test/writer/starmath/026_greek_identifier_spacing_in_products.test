@@ -1,0 +1,4 @@
+<<< tex
+E_{k+1}=E_{k+\frac12}-\frac{\dot{Q}_{\text{dis},k}\Delta t}{\eta_{\text{dis}}},
+>>> starmath
+E_{{k + 1}} = E_{{k + {1 over 2}}} - {{{dot Q}_{{"dis", k}} %DELTA t} over %ieta_"dis"},

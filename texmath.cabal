@@ -43,6 +43,7 @@ Extra-source-files:  README.md
                      test/writer/mml/*.test
                      test/writer/omml/*.test
                      test/writer/tex/*.test
+                     test/writer/starmath/*.test
                      test/writer/typst/*.test
                      test/writer/eqn/*.test
                      test/reader/mml/*.test
@@ -96,6 +97,7 @@ Library
                          Text.TeXMath.Writers.OMML,
                          Text.TeXMath.Writers.Pandoc,
                          Text.TeXMath.Writers.TeX,
+                         Text.TeXMath.Writers.StarMath,
                          Text.TeXMath.Writers.Typst,
                          Text.TeXMath.Writers.Eqn,
                          Text.TeXMath.Unicode.ToUnicode,

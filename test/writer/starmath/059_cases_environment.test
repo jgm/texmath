@@ -1,0 +1,4 @@
+<<< tex
+\begin{cases}a, & x>0\\ b, & x\le 0\end{cases}
+>>> starmath
+left lbrace matrix { alignl a, # alignl x>0 ## alignl b, # alignl x <= 0 } right none
