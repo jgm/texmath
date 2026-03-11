@@ -35,7 +35,7 @@ data Params = Params
   } deriving (Show)
 
 data Format =
-  TeX | MathML | Eqn | OMML | Typst
+  TeX | MathML | Eqn | OMML | Typst | StarMath
   deriving (Show, Ord, Eq)
 
 instance FromJSON Format where
@@ -46,6 +46,7 @@ instance FromJSON Format where
                  "eqn" -> pure Eqn
                  "typst" -> pure Typst
                  "omml" -> pure OMML
+                 "starmath" -> pure StarMath
                  _ -> fail $ "Unknown format " <> T.unpack s
    parseJSON _ = fail "Expecting string format"
 
@@ -60,6 +61,7 @@ instance FromHttpApiData Format where
                  "eqn" -> pure Eqn
                  "typst" -> pure Typst
                  "omml" -> pure OMML
+                 "starmath" -> pure StarMath
                  _ -> Left $ "Unknown format " <> t
 
 -- Automatically derive code to convert to/from JSON.
@@ -132,12 +134,14 @@ server = convert
                      MathML -> readMathML
                      Eqn -> \_ -> Left "eqn reader not implemented"
                      Typst -> \_ -> Left "typst reader not implemented"
+                     StarMath -> \_ -> Left "StarMath reader not implemented"
           writer = case to params of
                      Eqn -> writeEqn dt
                      Typst -> writeTypst dt
                      OMML -> T.pack . ppElement . writeOMML dt
                      TeX -> writeTeX
                      MathML -> T.pack . ppElement . writeMathML dt
+                     StarMath -> writeStarMath dt
       in  handleErr $ writer <$> reader txt
 
   handleErr (Right t) = return t

@@ -1,0 +1,4 @@
+<<< tex
+\begin{array}{l}\frac{AAA}{B}\end{array}
+>>> starmath
+matrix { alignl {{alignc {AAA}} over {alignc B}} }

@@ -1,0 +1,4 @@
+<<< tex
+\begin{vmatrix}a&b\\c&d\end{vmatrix}
+>>> starmath
+left lline matrix { a # b ## c # d } right rline
