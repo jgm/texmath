@@ -62,6 +62,7 @@ writers = [
   , ("omml",  XMLWriter writeOMML)
   , ("xhtml",   XMLWriter (\dt e -> inHtml (writeMathML dt e)))
   , ("mathml",   XMLWriter writeMathML)
+  , ("starmath", StringWriter writeStarMath)
   , ("pandoc", PandocWriter writePandoc)]
 
 data Options = Options {
