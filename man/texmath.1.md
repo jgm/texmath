@@ -33,8 +33,8 @@ expect query parameters for `from`, `to`, `input`, and optionally
     Defaults to `tex`.
 
 `-t` *FORMAT*
-:   Specify output ("to") format:  `tex`, `omml`,
-    `xhtml`, `mathml`, `pandoc`, `native`.  Defaults to `mathml`.
+:   Specify output ("to") format:  `tex`, `omml`, `xhtml`, `mathml`,
+    `typst`, `eqn`, `starmath`, `pandoc`, `native`.  Defaults to `mathml`.
 
 `--inline`
 :   Use the inline display style.
