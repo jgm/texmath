@@ -393,16 +393,16 @@
 >>> typst
 upright("Quadratic Equation") & x = frac(- b plus.minus sqrt(b_()^2 - 4 a c), 2 a)\
 upright("DisplayQuadratic Equation") & x = frac(- b plus.minus sqrt(b_()^2 - 4 a c), 2 a)\
-upright("Rational Function") & f \( x \) = frac(1 - x_()^2, 1 - x_()^3)\
-upright("Rational Function") & f \( x \) = frac(\( 1 - x_()^2 \) x_()^3, 1 - x_()^3)\
-upright("Rational Function") & f \( x \) = frac(\( 1 - x_()^2 \) \( x_()^3 - 5 x \), 1 - x_()^3)\
-upright("Parametrize Rational Function") & f \( x \) = frac(\( a_i^() - x_()^2 \)_()^5, 1 - x_()^3)\
-upright("Stacked exponents") & g \( z \) = e_()^(- x_()^2)\
-upright("Stacked exponents") & g \( z \) = e_()^(- \( z - a \)_()^2)\
-upright("Stacked exponents") & g \( z \) = e_()^(- sum_(i = 0)^oo z_i^2)\
-upright("Stacked exponents") & g \( y \) = e_()^(- sum_(i = 0)^oo y_i^2)\
-upright("Stacked exponents") & g \( z \) = e_()^(- sum_(i = 0)^oo z_()^(frac(2, a - i)))\
+upright("Rational Function") & f\(x\)= frac(1 - x_()^2, 1 - x_()^3)\
+upright("Rational Function") & f\(x\)= frac(\(1 - x_()^2\)x_()^3, 1 - x_()^3)\
+upright("Rational Function") & f\(x\)= frac(\(1 - x_()^2\)\(x_()^3 - 5 x\), 1 - x_()^3)\
+upright("Parametrize Rational Function") & f\(x\)= frac(\(a_i^() - x_()^2\)_()^5, 1 - x_()^3)\
+upright("Stacked exponents") & g\(z\)= e_()^(- x_()^2)\
+upright("Stacked exponents") & g\(z\)= e_()^(-\(z - a\)_()^2)\
+upright("Stacked exponents") & g\(z\)= e_()^(- sum_(i = 0)^oo z_i^2)\
+upright("Stacked exponents") & g\(y\)= e_()^(- sum_(i = 0)^oo y_i^2)\
+upright("Stacked exponents") & g\(z\)= e_()^(- sum_(i = 0)^oo z_()^(frac(2, a - i)))\
 upright("Cross Product") & frac(x_1^() - x_2^(), x_3^() - x_4^()) frac(x_1^() - x_4^(), x_2^() - x_3^())\
-upright("Cross Product") & \( frac(x_1^() - x_2^(), x_3^() - x_4^()) \) \( frac(x_1^() - x_4^(), x_2^() - x_3^()) \)\
+upright("Cross Product") & \(frac(x_1^() - x_2^(), x_3^() - x_4^())\)\(frac(x_1^() - x_4^(), x_2^() - x_3^())\)\
 upright("Cross Product") & (frac(x_1^() - x_2^(), x_3^() - x_4^())) (frac(x_1^() - x_4^(), x_2^() - x_3^()))\
-upright("Cross Product") & frac(\( x_1^() - x_2^() \) \( x_3^() - x_4^() \), \( x_1^() - x_4^() \) \( x_2^() - x_3^() \))
+upright("Cross Product") & frac(\(x_1^() - x_2^()\)\(x_3^() - x_4^()\), \(x_1^() - x_4^()\)\(x_2^() - x_3^()\))

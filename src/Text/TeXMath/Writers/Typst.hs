@@ -43,7 +43,11 @@ writeExps :: [Exp] -> Text
 writeExps = go . map writeExp
  where
    go (a : b : es)
-    | T.take 1 b == "'" -- avoid space before a prime #239
+    | Just (bstart, _) <- T.uncons b
+    , Just (astart, _) <- T.uncons a
+    , Just (_, aend) <- T.unsnoc a
+    , bstart == '\'' -- avoid space before a prime #239
+      || bstart == '|' || aend == '|' || bstart == '\\' || astart == '\\' -- #286
      = a <> go (b:es)
    go (a : as)
      = a <> if null as
