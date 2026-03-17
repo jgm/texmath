@@ -37,6 +37,7 @@ main = do
   mmlWriterTests <- getFiles "test/writer/mml"
   ommlWriterTests <- getFiles "test/writer/omml"
   eqnWriterTests <- getFiles "test/writer/eqn"
+  starmathWriterTests <- getFiles "test/writer/starmath"
   typstWriterTests <- getFiles "test/writer/typst"
   regressionTests <- getFiles "test/regression"
   roundtripTests <- getFiles "test/roundtrip"
@@ -63,6 +64,7 @@ main = do
              , testGroup "mml" $ map toGoldenTest mmlWriterTests
              , testGroup "omml" $ map toGoldenTest ommlWriterTests
              , testGroup "eqn" $ map toGoldenTest eqnWriterTests
+             , testGroup "starmath" $ map toGoldenTest starmathWriterTests
              , testGroup "typst" $ map toGoldenTest typstWriterTests
              ],
              testGroup "regression" $ map toGoldenTest regressionTests
@@ -148,6 +150,7 @@ writers = [ ("mml", T.pack . ppTopElement . writeMathML DisplayBlock)
           , ("tex", writeTeX)
           , ("omml", T.pack . ppTopElement . writeOMML DisplayBlock)
           , ("eqn", writeEqn DisplayBlock)
+          , ("starmath", writeStarMath DisplayBlock)
           , ("typst", writeTypst DisplayBlock)
           , ("native", T.pack . ppShow)
           , ("pandoc", maybe "" (T.pack . ppShow) . writePandoc DisplayBlock)
