@@ -308,9 +308,13 @@ tshow :: Show a => a -> Text
 tshow = T.pack . show
 
 typstSymbolMap :: M.Map Text Text
-typstSymbolMap = M.fromList $
-  ("\776", "dot.double") -- see #231
-  : [(s,name) | (name, _, s) <- typstSymbols]
+typstSymbolMap =
+  -- prefer inter names for typst-symbols (sect is deprecated)
+  M.insert "\x22C2" "inter.big" $
+  M.insert "\x2229" "inter" $
+  M.fromList $
+    ("\776", "dot.double") -- see #231
+    : [(s,name) | (name, _, s) <- typstSymbols]
 
 getAccentCommand :: Text -> Maybe Text
 getAccentCommand ac = do
