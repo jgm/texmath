@@ -25,7 +25,7 @@ import qualified Data.Map as M
 import qualified Data.Text as T
 import Text.TeXMath.Types
 import qualified Text.TeXMath.Shared as S
-import Typst.Symbols (typstSymbols)
+import qualified Typst.Symbols as TS
 import Data.Generics (everywhere, mkT)
 import Data.Text (Text)
 import Data.Char (isDigit, isAlpha, isAscii)
@@ -310,7 +310,7 @@ tshow = T.pack . show
 typstSymbolMap :: M.Map Text Text
 typstSymbolMap = M.fromList $
   ("\776", "dot.double") -- see #231
-  : [(s,name) | (name, _, s) <- typstSymbols]
+  : [(s,name) | TS.Sym { TS.symName = name, TS.symText = s } <- TS.typstSymbols]
 
 getAccentCommand :: Text -> Maybe Text
 getAccentCommand ac = do
