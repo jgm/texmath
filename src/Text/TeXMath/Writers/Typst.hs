@@ -310,7 +310,10 @@ tshow = T.pack . show
 typstSymbolMap :: M.Map Text Text
 typstSymbolMap = M.fromList $
   ("\776", "dot.double") -- see #231
-  : [(s,name) | TS.Sym { TS.symName = name, TS.symText = s } <- TS.typstSymbols]
+  : [(s,name) | TS.Sym { TS.symName = name
+                       , TS.symText = s
+                       , TS.symDeprecation = Nothing
+                       } <- TS.typstSymbols]
 
 getAccentCommand :: Text -> Maybe Text
 getAccentCommand ac = do
