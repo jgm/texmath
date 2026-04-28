@@ -1,0 +1,7 @@
+<<< native
+[ ESub (EIdentifier "u") (EIdentifier "n")
+, EOver False (ESymbol Rel "\8594") (EIdentifier "w")
+, EIdentifier "u"
+]
+>>> starmath
+u_{n}\overset{w}{\rightarrow}u

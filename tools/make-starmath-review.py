@@ -1,0 +1,382 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import argparse
+import html
+import re
+import shutil
+import subprocess
+import textwrap
+import zipfile
+from pathlib import Path
+from typing import Optional
+
+ROOT = Path('/home/john/pandoc/texmath')
+READER_TEX = ROOT / 'test' / 'reader' / 'tex'
+WRITER_TEX = ROOT / 'test' / 'writer' / 'tex'
+WRITER_STARMATH = ROOT / 'test' / 'writer' / 'starmath'
+REVIEW_STATUS_TSV = ROOT / 'test' / 'writer' / 'starmath-review-status.tsv'
+REGENERATED_TEX_HELPER = ROOT / 'tools' / 'dump-native-tex.hs'
+
+
+def parse_test(path: Path):
+    s = path.read_text(encoding='utf-8')
+    m = re.search(r'^<<<\s*(\w+)\n(.*?)^>>>\s*(\w+)\n(.*)\Z', s, re.S | re.M)
+    if not m:
+        raise ValueError(f'Could not parse {path}')
+    return m.group(1), m.group(2).strip(), m.group(3), m.group(4).strip()
+
+
+def shell(cmd, cwd: Optional[Path] = None):
+    return subprocess.run(cmd, cwd=str(cwd) if cwd else None, text=True,
+                          capture_output=True, check=False)
+
+
+def render_reference_image(stem: str, tex_source: str, out_png: Path, build_dir: Path) -> Optional[str]:
+    case_dir = build_dir / stem
+    case_dir.mkdir(parents=True, exist_ok=True)
+    tex_file = case_dir / f'{stem}.tex'
+    pdf_file = case_dir / f'{stem}.pdf'
+    tex_doc = textwrap.dedent(f"""\
+    \\documentclass[border=4pt,varwidth]{{standalone}}
+    \\usepackage{{amsmath,amssymb,amsfonts,mathtools,cancel}}
+    \\begin{{document}}
+    \\[
+    {tex_source}
+    \\]
+    \\end{{document}}
+    """)
+    tex_file.write_text(tex_doc, encoding='utf-8')
+
+    r1 = shell(['pdflatex', '-interaction=nonstopmode', '-halt-on-error', tex_file.name], cwd=case_dir)
+    if r1.returncode != 0 or not pdf_file.exists():
+        return (r1.stdout + '\n' + r1.stderr).strip()
+
+    out_png.parent.mkdir(parents=True, exist_ok=True)
+    out_base = out_png.with_suffix('')
+    r2 = shell(['pdftocairo', '-png', '-singlefile', pdf_file.name, out_base.name], cwd=case_dir)
+    if r2.returncode != 0:
+        return (r2.stdout + '\n' + r2.stderr).strip()
+
+    generated = case_dir / (out_base.name + '.png')
+    if not generated.exists():
+        return 'pdftocairo did not produce a PNG file'
+
+    shutil.copyfile(generated, out_png)
+    return None
+
+
+def fenced(lang: str, body: str) -> str:
+    return f"```{lang}\n{body.rstrip()}\n```\n"
+
+
+def center_images_in_odt(odt_path: Path) -> None:
+    with zipfile.ZipFile(odt_path, 'r') as zin:
+        files = {name: zin.read(name) for name in zin.namelist()}
+
+    content = files['content.xml'].decode('utf-8')
+    content = re.sub(
+        r'<draw:frame draw:name="(img\d+)" svg:width=',
+        r'<draw:frame draw:style-name="fr2" text:anchor-type="paragraph" draw:name="\1" svg:width=',
+        content,
+    )
+    content = re.sub(
+        r'(<text:p text:style-name=")([^"]+)(">)Review comment:',
+        r'\1ReviewComment\3Review comment:',
+        content,
+    )
+    files['content.xml'] = content.encode('utf-8')
+
+    styles = files['styles.xml'].decode('utf-8')
+    review_style = (
+        '<style:style style:name="ReviewComment" style:family="paragraph" '
+        'style:parent-style-name="Text_20_body">'
+        '<style:text-properties fo:color="#0066cc"/></style:style>'
+    )
+    if 'style:name="ReviewComment"' not in styles:
+        styles = styles.replace('</office:styles>', review_style + '</office:styles>')
+    files['styles.xml'] = styles.encode('utf-8')
+
+    tmp_path = odt_path.with_suffix('.tmp.odt')
+    with zipfile.ZipFile(tmp_path, 'w') as zout:
+        for name, data in files.items():
+            info = zipfile.ZipInfo(name)
+            if name == 'mimetype':
+                info.compress_type = zipfile.ZIP_STORED
+            else:
+                info.compress_type = zipfile.ZIP_DEFLATED
+            zout.writestr(info, data)
+    tmp_path.replace(odt_path)
+
+
+def regenerate_tex_fixtures(input_dir: Path, output_dir: Path) -> None:
+    output_dir.mkdir(parents=True, exist_ok=True)
+    cmd = [
+        'bash', '-lc',
+        f'cd {ROOT} && STACK_ROOT=/home/john/pandoc/.stack-root stack exec -- '
+        f'runghc {REGENERATED_TEX_HELPER} {input_dir} {output_dir}'
+    ]
+    r = shell(cmd)
+    if r.returncode != 0:
+        raise SystemExit('native->tex regeneration failed:\n' + r.stdout + '\n' + r.stderr)
+
+
+def load_review_statuses(path: Path):
+    lines = path.read_text(encoding='utf-8', errors='replace').splitlines()
+    if not lines:
+        raise SystemExit(f'Empty review status file: {path}')
+    header = lines[0].split('\t')
+    if len(header) < 2 or header[0].strip() != 'test' or header[1].strip() != 'status':
+        raise SystemExit(f'Invalid review status file header in {path}')
+    statuses = {}
+    order = []
+    allowed = {'', 'A', 'B', 'C'}
+    for line in lines[1:]:
+        if not line.strip():
+            continue
+        parts = line.split('\t')
+        if len(parts) < 2:
+            raise SystemExit(f'Invalid review status row in {path}: {line!r}')
+        stem = canonical_stem(parts[0].strip())
+        status = parts[1].strip().upper()
+        comment = parts[2].strip() if len(parts) >= 3 else ''
+        if status not in allowed:
+            raise SystemExit(f'Invalid review status {status!r} for {stem} in {path}')
+        if stem in statuses:
+            raise SystemExit(f'Duplicate review status entry for {stem} in {path}')
+        statuses[stem] = {'status': status, 'comment': comment}
+        order.append(stem)
+    return statuses, order
+
+
+def status_bucket(status: str) -> str:
+    return status if status else 'unreviewed'
+
+
+def status_sort_key(status: str) -> int:
+    order = {'': 0, 'C': 1, 'B': 2, 'A': 3}
+    return order[status]
+
+
+def canonical_stem(stem: str) -> str:
+    if re.fullmatch(r'\d+', stem):
+        return str(int(stem))
+    return stem
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--output-dir', default='/tmp/starmath-review')
+    args = ap.parse_args()
+
+    out_dir = Path(args.output_dir)
+    images_dir = out_dir / 'images'
+    build_dir = out_dir / '_build'
+    out_dir.mkdir(parents=True, exist_ok=True)
+    images_dir.mkdir(parents=True, exist_ok=True)
+    build_dir.mkdir(parents=True, exist_ok=True)
+
+    review_statuses, review_order = load_review_statuses(REVIEW_STATUS_TSV)
+    review_order_index = {canonical_stem(stem): idx for idx, stem in enumerate(review_order)}
+
+    cases = []
+    writer_tex_native_mismatches = []
+    reader_stems = {p.stem for p in READER_TEX.glob('*.test')}
+    all_starmath = sorted(WRITER_STARMATH.glob('*.test'))
+    for starmath_path in all_starmath:
+        stem = starmath_path.stem
+        starmath_in_fmt, starmath_in_text, _, starmath = parse_test(starmath_path)
+
+        if stem in reader_stems:
+            reader_path = READER_TEX / f'{stem}.test'
+            in_fmt, original_tex, out_fmt, native_text = parse_test(reader_path)
+            if in_fmt != 'tex' or out_fmt != 'native':
+                raise ValueError(f'Unexpected formats in {reader_path}')
+            if starmath_in_fmt != 'native' or starmath_in_text.strip() != native_text.strip():
+                raise ValueError(f'Native mismatch between {reader_path} and {starmath_path}')
+            tex_label = 'Original TeX'
+            tex_provenance = 'reader/tex'
+
+            writer_tex_path = WRITER_TEX / f'{stem}.test'
+            if writer_tex_path.exists():
+                _, native_tex_in, _, render_tex = parse_test(writer_tex_path)
+                if native_tex_in.strip() != native_text.strip():
+                    writer_tex_native_mismatches.append(stem)
+                render_source = 'writer/tex'
+            else:
+                render_tex = original_tex
+                render_source = 'reader/tex'
+        else:
+            if starmath_in_fmt == 'tex':
+                original_tex = starmath_in_text
+                tex_label = 'Original TeX'
+                tex_provenance = 'writer/starmath'
+                render_tex = original_tex
+                render_source = 'writer/starmath'
+            elif starmath_in_fmt == 'native':
+                regenerated_dir = out_dir / '_regenerated_tex'
+                regenerate_tex_fixtures(WRITER_STARMATH, regenerated_dir)
+                original_tex = (regenerated_dir / f'{stem}.tex').read_text(encoding='utf-8').strip()
+                tex_label = 'Regenerated TeX'
+                tex_provenance = 'native -> writeTeX'
+                render_tex = original_tex
+                render_source = 'regenerated'
+            else:
+                raise ValueError(f'Unexpected input format in {starmath_path}: {starmath_in_fmt}')
+
+        image_path = images_dir / f'{stem}.png'
+        render_error = render_reference_image(stem, render_tex, image_path, build_dir)
+
+        cases.append({
+            'stem': stem,
+            'is_reader_case': stem in reader_stems,
+            'tex_label': tex_label,
+            'tex_provenance': tex_provenance,
+            'original_tex': original_tex,
+            'render_tex': render_tex,
+            'render_source': render_source,
+            'starmath': starmath,
+            'image_path': image_path,
+            'render_error': render_error,
+            'review_status': review_statuses[canonical_stem(stem)]['status'],
+            'review_comment': review_statuses[canonical_stem(stem)]['comment'],
+        })
+
+    stems_in_cases = {c['stem'] for c in cases}
+    stems_in_cases_canonical = {canonical_stem(stem) for stem in stems_in_cases}
+    missing_status_entries = sorted(stems_in_cases_canonical - set(review_statuses))
+    extra_status_entries = sorted(set(review_statuses) - stems_in_cases_canonical)
+    if missing_status_entries:
+        raise SystemExit('Missing review status entries for: ' + ', '.join(missing_status_entries))
+    if extra_status_entries:
+        raise SystemExit('Review status entries with no corresponding case: ' + ', '.join(extra_status_entries))
+
+    cases.sort(key=lambda c: (status_sort_key(c['review_status']), review_order_index[canonical_stem(c['stem'])]))
+
+    md = []
+    md.append('% StarMath LibreOffice Review')
+    md.append('% Generated from `test/writer/starmath` with review ordering from `test/writer/starmath-review-status.tsv`')
+    md.append('% ')
+    md.append('')
+    md.append('This document is for manual LibreOffice review of the full current StarMath writer corpus.')
+    md.append('')
+    md.append('Notes')
+    md.append('')
+    md.append('- `Original TeX` means the source came from `test/reader/tex`.')
+    md.append('- `Regenerated TeX` means the TeX was produced from the `native` AST via `writeTeX`.')
+    md.append('- For legacy bespoke StarMath regressions, `Original TeX` comes from the `writer/starmath` fixture itself.')
+    md.append('- `StarMath` is the expected writer output from `test/writer/starmath`.')
+    md.append('- `Reference` images are rendered from `writer/tex` output when available, otherwise from the TeX shown in that section.')
+    md.append('- `LibreOffice formula` is a live formula object generated by Pandoc from the rendered TeX source below.')
+    md.append('- Review ordering is: unreviewed first, then `C`, then `B`, then `A`.')
+    md.append('- Review status `A`: excellent match.')
+    md.append('- Review status `B`: some minor issues.')
+    md.append('- Review status `C`: substantially wrong.')
+    md.append('')
+    failures = []
+    for label in ['unreviewed', 'C', 'B', 'A']:
+        heading = {
+            'unreviewed': '# Unreviewed',
+            'C': '# Review Status C',
+            'B': '# Review Status B',
+            'A': '# Review Status A',
+        }[label]
+        md.append(heading)
+        md.append('')
+        for case in [c for c in cases if status_bucket(c['review_status']) == label]:
+            stem = case['stem']
+            md.append(f'## {stem}')
+            md.append('')
+            if case['review_comment']:
+                md.append(
+                    f'<span style="color: #0066cc;">'
+                    f'Review comment: {html.escape(case["review_comment"])}'
+                    f'</span>'
+                )
+                md.append('')
+            md.append(case['tex_label'])
+            md.append('')
+            md.append(fenced('tex', case['original_tex']))
+            md.append(f"TeX provenance: `{case['tex_provenance']}`")
+            md.append('')
+            md.append(f'Reference render source: `{case["render_source"]}`')
+            md.append('')
+            if case['render_tex'].strip() != case['original_tex'].strip():
+                md.append('Rendered TeX')
+                md.append('')
+                md.append(fenced('tex', case['render_tex']))
+            md.append('StarMath')
+            md.append('')
+            md.append(fenced('text', case['starmath']))
+            md.append('Reference')
+            md.append('')
+            if case['render_error'] is None:
+                rel_image = case['image_path'].relative_to(out_dir)
+                md.append(f'![]({rel_image.as_posix()})')
+            else:
+                failures.append((stem, case['render_error']))
+                md.append('Reference render failed.')
+                md.append('')
+                md.append(fenced('text', case['render_error']))
+            md.append('')
+            md.append('LibreOffice formula')
+            md.append('')
+            md.append('$$')
+            md.append(case['render_tex'])
+            md.append('$$')
+            md.append('')
+    review_md = out_dir / 'starmath-review.md'
+    review_md.write_text('\n'.join(md), encoding='utf-8')
+
+    failures_txt = out_dir / 'reference-render-failures.txt'
+    if failures:
+        failures_txt.write_text('\n\n'.join(f'{stem}\n{err}' for stem, err in failures), encoding='utf-8')
+    else:
+        failures_txt.write_text('', encoding='utf-8')
+
+    review_odt = out_dir / 'starmath-review.odt'
+    pandoc_cmd = [
+        '/home/john/.local/bin/pandoc',
+        str(review_md),
+        '-f', 'markdown+tex_math_dollars',
+        '--resource-path', str(out_dir),
+        '--toc',
+        '-t', 'odt',
+        '-o', str(review_odt),
+    ]
+    r_pandoc = shell(pandoc_cmd)
+    if r_pandoc.returncode != 0:
+        raise SystemExit('pandoc ODT generation failed:\n' + r_pandoc.stdout + '\n' + r_pandoc.stderr)
+
+    center_images_in_odt(review_odt)
+
+    r_pdf = shell(['soffice', '--headless', '--convert-to', 'pdf', '--outdir', str(out_dir), str(review_odt)])
+    if r_pdf.returncode != 0:
+        raise SystemExit('LibreOffice PDF export failed:\n' + r_pdf.stdout + '\n' + r_pdf.stderr)
+
+    summary = textwrap.dedent(f'''\
+    Cases: {len(cases)}
+    Reader/tex cases: {sum(1 for c in cases if c['is_reader_case'])}
+    Additional StarMath-only cases: {sum(1 for c in cases if not c['is_reader_case'])}
+    Unreviewed cases: {sum(1 for c in cases if c['review_status'] == '')}
+    Review status C cases: {sum(1 for c in cases if c['review_status'] == 'C')}
+    Review status B cases: {sum(1 for c in cases if c['review_status'] == 'B')}
+    Review status A cases: {sum(1 for c in cases if c['review_status'] == 'A')}
+    Reference render failures: {len(failures)}
+    writer/tex native mismatches by stem: {len(writer_tex_native_mismatches)}
+    Review status file: {REVIEW_STATUS_TSV}
+    Markdown: {review_md}
+    ODT: {review_odt}
+    PDF: {out_dir / 'starmath-review.pdf'}
+    Failure log: {failures_txt}
+    ''')
+    (out_dir / 'summary.txt').write_text(summary, encoding='utf-8')
+    if writer_tex_native_mismatches:
+        (out_dir / 'writer-tex-native-mismatches.txt').write_text(
+            '\n'.join(writer_tex_native_mismatches) + '\n', encoding='utf-8'
+        )
+    print(summary)
+
+
+if __name__ == '__main__':
+    main()
