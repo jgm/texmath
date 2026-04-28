@@ -1,0 +1,7 @@
+<<< native
+[ EIdentifier "a"
+, ESub (ESymbol Rel "\8829") (EIdentifier "i")
+, EIdentifier "b"
+]
+>>> starmath
+a≽_i b

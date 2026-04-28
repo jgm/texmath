@@ -1,0 +1,22 @@
+<<< native
+[ EIdentifier "x"
+, ESymbol Rel "="
+, EFraction
+    NormalFrac
+    (EGrouped
+       [ ESymbol Ord "\8722"
+       , EIdentifier "b"
+       , ESymbol Bin "\177"
+       , ESqrt
+           (EGrouped
+              [ ESuper (EIdentifier "b") (ENumber "2")
+              , ESymbol Bin "\8722"
+              , ENumber "4"
+              , EIdentifier "a"
+              , EIdentifier "c"
+              ])
+       ])
+    (EGrouped [ ENumber "2" , EIdentifier "a" ])
+]
+>>> starmath
+x = {{- b plusminus sqrt {{b^2 - 4ac}}} over {2a}}

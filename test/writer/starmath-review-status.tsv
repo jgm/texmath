@@ -1,0 +1,120 @@
+test	status	
+1	A	
+2	A	
+3	A	
+4	A	
+5	B	
+6	A	
+7	B	
+8	C	
+9	A	
+10	C	
+11	B	<< symbol is not 'correct'
+12	B	font size of ½
+13	B	position of ? in LHS?
+14	B	second fraction is not smaller
+15	A	
+16	A	
+17	A	
+18	A	
+19	C	multiple issues
+20	C	issues with both latex and LO!
+21	A	
+22	C	unable to render BB, Cal.
+23	A	
+axiom_of_power_set	A	
+binomial_coefficient	C	binomial isn't right
+boxed	C	no box!
+cancel	C	not supported
+choose	C	
+complex_number	C	
+cospan	C	spacing around operator
+deMorgans_law	C	spacing around operator
+differentiable_manifold	B	subsidiary text size
+divergence	C	spacing around operator
+ensuremath	A	
+genfrac	C	not stacked as it should be
+issue109	C	needs space around 'or'
+issue204	B	slight difference in operator rendering?
+issue229		unclear test purpose
+labels	A	what happens to the label?
+macros		not sure if it's working
+math-in-text	C	boldface was lost 'is less than'
+moore_determinant	A	bracket scaling in LO is dodgy
+notin	C	spacing around operator
+operatorname	C	
+phantom	C	
+quadratic_formula	A	
+schwinger_dyson	B	missing mathcal
+simple_sum_formula	A	
+sophomores_dream	B	location of integral limits
+span	C	
+sphere_volume	C	
+stackrel	C	
+substack	A	
+subsup	C	
+text	C	lost itals
+tokens	C	space around sqrt?
+unicode	B	rendering of rightarrow
+001_dot_text_subscript	A	
+002_common_accents	B	tilde is too large?
+003_fraction	A	
+004_square_root	A	
+005_nth_root	A	
+006_subscript_and_superscript	A	
+007_superscript_with_grouped_base	A	
+008_delimited_fraction	A	
+009_delimited_braces	A	
+010_absolute_value_bars_normalize_to_delimiters	B	varepsilon?
+011_double_bars_normalize_to_norm_delimiters	A	
+012_one_sided_delimiter_uses_none	A	
+013_middle_delimiter_uses_mline	A	
+014_operator_mapping_cdot	A	
+015_binomial_nolinefrac	C	
+016_integral_without_limits	A	
+017_integral_with_lower_and_upper_limits	B	integral limits
+018_integral_with_infinite_upper_limit	B	integral limits
+019_sum_with_lower_and_upper_limits	A	
+020_sum_with_symbolic_term	A	
+021_greek_letter_mapping	A	
+022_greek_variant_mapping	C	varepsilon is reversed?
+023_arrow_mapping	A	
+024_set_and_relation_symbol_mapping	A	
+025_logic_and_calculus_symbol_mapping	A	
+026_greek_identifier_spacing_in_products	A	
+027_math_operators_rendered_as_functions	C	min and max show in italics (or is that ok?)
+028_nested_function_with_left_delimiter_spacing	C	min and max show in italics (or is that ok?)
+029_quad_spacing_command	B	maybe not quite enough space?
+030_qquad_spacing_command	B	
+031_greek_token_separator_before_scripted_identifier	A	
+032_mathrm_text_in_subscripts_stays_quoted	B	tex test is wrong?
+033_escaped_underscore_in_mathrm_stays_literal	A	
+034_numeric_chemistry_subscripts_in_mathrm_stay_structural	A	
+035_circ_operator_maps_to_starmath_command	B	^circ is a bit small
+036_min_with_bold_limit_variable_uses_operator_limits	A	
+037_identifier_before_function_gets_separator	A	
+038_greek_identifier_before_punctuation_gets_separator	A	
+039_greek_identifier_before_punctuation_in_larger_expression	A	
+040_bare_recognized_math_operators_omit_func_and_keep_spacing	C	min and max are wrong
+041_ordinary_function_with_subscript_keeps_ordinary_script_syntax	A	
+042_adjacent_bold_terms_get_separator	B	unsure if test is right
+043_mathcal_styled_token_before_left_delimiter	B	missing mathcal
+044_leading_binary_operator_gets_neutral_lhs	A	
+045_standalone_binary_operator_gets_neutral_operands	A	
+046_trailing_binary_operator_gets_neutral_rhs	A	
+047_standalone_relation_gets_neutral_operands	A	
+048_standalone_arrow_gets_neutral_operands	A	
+049_subscript_only_fragment_gets_neutral_base	A	
+050_superscript_only_fragment_gets_neutral_base	C	'+' needs to be {}+{}
+051_grouped_subscript_only_fragment_gets_neutral_base	A	
+052_matrix_environment	A	
+053_pmatrix_environment	A	
+054_bmatrix_environment	A	
+055_vmatrix_environment	A	
+056_vmatrix_environment	A	
+057_array_with_left_right_alignment		
+058_aligned_array_keeps_fractions_centered	A	
+059_cases_environment	A	
+060_cases_with_negative_log_fraction	A	
+061_fallback_to_tex_for_unsupported_forms	C	well, it's supposed to be unsupported?
+062_fallback_to_tex_for_under_over_constructs	C	
