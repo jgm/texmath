@@ -32,4 +32,4 @@
     ]
 ]
 >>> starmath
-f(x) = left lbrace matrix { alignl 1 # alignl - 1 <= x<0 ## alignl {{alignc 1} over {alignc 2}} # alignl x = 0 ## alignl 1 - x^2 # alignl "otherwise" } right none
+f(x) = left lbrace matrix { alignl 1 # alignl - 1 <= x < 0 ## alignl {{alignc 1} over {alignc 2}} # alignl x = 0 ## alignl 1 - x^2 # alignl "otherwise" } right none

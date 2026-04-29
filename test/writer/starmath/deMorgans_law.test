@@ -38,4 +38,4 @@
     (ESymbol TOver "\175")
 ]
 >>> starmath
-neg(pandq) dlrarrow (negp)or(negq)bar {{⋃_{{i = 1}}^nA_i}} = ⋂_{{i = 1}}^nbar {A_i}
+neg (p and q) dlrarrow (neg p) or (neg q) overline {{oper ∪ from i = 1 to n A_i}} = oper ∩ from i = 1 to n overline {A_i}

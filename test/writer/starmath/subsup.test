@@ -65,4 +65,4 @@
 , ESubsup (ESpace (1 % 1)) (EIdentifier "x") (ENumber "3")
 ]
 >>> starmath
-x_{b}^{a}\quad x_{b}^{a}\quad\min_{A}\quad\max_{B}\quad\det_{C}\quad\Pr_{A}\quad\gcd_{A}\quad{\dot{u}}^{2}\quad{\overline{u}}_{\varepsilon}\quad{\underline{u}}_{b}^{a}\quad\overset{\text{term}}{\overbrace{a + b}}\quad\overset{c}{\overbracket{a + b}}\quad\underset{c}{\underbrace{a + b}}\quad\underset{c}{\underbracket{a + b}}\quad^{H}e3\quad_{x}A\quad_{x}^{3}
+x_b^a ~ x_b^a ~ {func min} csub {A}~ {func max} csub {B}~ {func det} csub {C}~ {func Pr} csub {A}~ {func gcd} csub {A}~ {dot u}^2 ~ {overline u}_%ivarepsilon ~ {underline u}_b^a ~ {a + b} overbrace "term"~ {a + b} overbrace c~ {a + b} underbrace c~ {a + b} underbrace c{~}^H e3{~}_x A{~}_x^3

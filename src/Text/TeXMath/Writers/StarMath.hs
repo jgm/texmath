@@ -3,6 +3,7 @@ module Text.TeXMath.Writers.StarMath
   ( writeStarMath
   ) where
 
+import Data.Char (chr, isLetter, ord)
 import qualified Data.List as List
 import qualified Data.Text as T
 import Text.TeXMath.Types
@@ -30,7 +31,12 @@ renderExps :: [Exp] -> Maybe T.Text
 renderExps = renderExpsIn AlignDefault
 
 normalizeExps :: [Exp] -> [Exp]
-normalizeExps = normalizeBareBars . map normalizeExp
+normalizeExps =
+  normalizeBareBars
+  . normalizeEvaluationBars
+  . mergeAdjacentUnicodeSerifStyled
+  . normalizeBareBraces
+  . map normalizeExp
 
 normalizeExp :: Exp -> Exp
 normalizeExp e =
@@ -61,12 +67,118 @@ normalizeBareBars :: [Exp] -> [Exp]
 normalizeBareBars [] = []
 normalizeBareBars (x : xs)
   | Just sym <- bareBarSymbol x =
-      case break (matchesBareBar sym) xs of
-        (mid, y : rest) | matchesBareBar sym y ->
-          EDelimited sym sym (map Right mid) : normalizeBareBars rest
+      case collectBareDelimited sym [] xs of
+        Just (mid, trailingScript, rest) ->
+          let delimited = EDelimited sym sym (map Right mid)
+              scripted = maybe delimited ($ delimited) trailingScript
+          in scripted : normalizeBareBars rest
         _ ->
           x : normalizeBareBars xs
 normalizeBareBars (x:xs) = x : normalizeBareBars xs
+
+normalizeBareBraces :: [Exp] -> [Exp]
+normalizeBareBraces [] = []
+normalizeBareBraces (ESymbol Open "{" : xs) =
+  case collectBareBraces [] xs of
+    Just (mid, rest) -> EDelimited "{" "}" (map Right mid) : normalizeBareBraces rest
+    Nothing          -> ESymbol Open "{" : normalizeBareBraces xs
+normalizeBareBraces (x:xs) = x : normalizeBareBraces xs
+
+mergeAdjacentUnicodeSerifStyled :: [Exp] -> [Exp]
+mergeAdjacentUnicodeSerifStyled [] = []
+mergeAdjacentUnicodeSerifStyled (EStyled sty xs : EStyled sty' ys : rest)
+  | sty == sty' && isUnicodeSerifStyle sty =
+      mergeAdjacentUnicodeSerifStyled (EStyled sty (xs <> ys) : rest)
+mergeAdjacentUnicodeSerifStyled (x:xs) = x : mergeAdjacentUnicodeSerifStyled xs
+
+isUnicodeSerifStyle :: TextType -> Bool
+isUnicodeSerifStyle sty =
+  sty `elem`
+    [ TextScript
+    , TextFraktur
+    , TextDoubleStruck
+    , TextBoldScript
+    , TextBoldFraktur
+    ]
+
+normalizeEvaluationBars :: [Exp] -> [Exp]
+normalizeEvaluationBars = reverse . go []
+ where
+  go acc [] = acc
+  go acc (cur : xs)
+    | Just script <- evaluationBarScript cur
+    , Just (rest, target) <- takeEvaluationTarget acc =
+        go (script target : rest) xs
+    | otherwise =
+        go (cur : acc) xs
+
+evaluationBarScript :: Exp -> Maybe (Exp -> Exp)
+evaluationBarScript cur =
+  case cur of
+    ESub base sub
+      | isEvaluationBarBase base ->
+          Just (\target -> ESub (EDelimited "." "|" [Right target]) sub)
+    ESuper base sup
+      | isEvaluationBarBase base ->
+          Just (\target -> ESuper (EDelimited "." "|" [Right target]) sup)
+    ESubsup base sub sup
+      | isEvaluationBarBase base ->
+          Just (\target -> ESubsup (EDelimited "." "|" [Right target]) sub sup)
+    _ -> Nothing
+
+takeEvaluationTarget :: [Exp] -> Maybe ([Exp], Exp)
+takeEvaluationTarget [] = Nothing
+takeEvaluationTarget (e : rest) =
+  case e of
+    EDelimited{} -> Just (rest, e)
+    ESymbol Close c
+      | Just (rest', target) <- takeDelimitedTarget c rest ->
+          Just (rest', target)
+    _ -> Just (rest, e)
+
+takeDelimitedTarget :: T.Text -> [Exp] -> Maybe ([Exp], Exp)
+takeDelimitedTarget closeTxt = go 0 []
+ where
+  openTxt =
+    case closeTxt of
+      ")" -> Just "("
+      "]" -> Just "["
+      "}" -> Just "{"
+      _   -> Nothing
+
+  go _ _ [] = Nothing
+  go depth inner (e : rest) =
+    case (openTxt, e) of
+      (Just open, ESymbol Close c)
+        | c == closeTxt ->
+            go (depth + 1) (e : inner) rest
+      (Just open, ESymbol Open o)
+        | o == open ->
+            if depth == 0
+               then Just (rest, EDelimited open closeTxt (map Right inner))
+               else go (depth - 1) (e : inner) rest
+      _ ->
+        go depth (e : inner) rest
+
+isEvaluationBarBase :: Exp -> Bool
+isEvaluationBarBase e =
+  case e of
+    EScaled _ (ESymbol Open "|")  -> True
+    EScaled _ (ESymbol Close "|") -> True
+    _                             -> False
+
+collectBareBraces :: [Exp] -> [Exp] -> Maybe ([Exp], [Exp])
+collectBareBraces _ [] = Nothing
+collectBareBraces acc (ESymbol Close "}" : xs) = Just (reverse acc, xs)
+collectBareBraces acc (x:xs) = collectBareBraces (x:acc) xs
+
+collectBareDelimited :: T.Text -> [Exp] -> [Exp]
+                     -> Maybe ([Exp], Maybe (Exp -> Exp), [Exp])
+collectBareDelimited _ acc [] = Nothing
+collectBareDelimited sym acc (y:ys)
+  | matchesBareBar sym y = Just (reverse acc, Nothing, ys)
+  | Just apply <- scriptedBareBar sym y = Just (reverse acc, Just apply, ys)
+  | otherwise = collectBareDelimited sym (y:acc) ys
 
 bareBarSymbol :: Exp -> Maybe T.Text
 bareBarSymbol e =
@@ -81,6 +193,17 @@ matchesBareBar sym e =
   case bareBarSymbol e of
     Just sym' -> sym == sym'
     Nothing   -> False
+
+scriptedBareBar :: T.Text -> Exp -> Maybe (Exp -> Exp)
+scriptedBareBar sym e =
+  case e of
+    ESub base sub
+      | matchesBareBar sym base -> Just (\del -> ESub del sub)
+    ESuper base sup
+      | matchesBareBar sym base -> Just (\del -> ESuper del sup)
+    ESubsup base sub sup
+      | matchesBareBar sym base -> Just (\del -> ESubsup del sub sup)
+    _ -> Nothing
 
 renderExpsIn :: AlignContext -> [Exp] -> Maybe T.Text
 renderExpsIn ctx exps = do
@@ -103,25 +226,70 @@ mergePieces ((e0, t0) : rest) = snd $ List.foldl' step (e0, t0) rest
     if T.null curT
        then (prevE, acc)
        else
-         let sep = if needsSeparator prevE curE then " " else ""
-         in (curE, acc <> sep <> curT)
+         (curE, appendRendered (needsSeparator prevE curE) acc curT)
+
+appendRendered :: Bool -> T.Text -> T.Text -> T.Text
+appendRendered needSep left right
+  | T.null left = T.stripStart right
+  | T.null right = T.stripEnd left
+  | otherwise =
+      let leftHadWs = endsWithAsciiSpace left
+          rightHadWs = startsWithAsciiSpace right
+          left' = T.dropWhileEnd isAsciiSpaceChar left
+          right' = T.dropWhile isAsciiSpaceChar right
+          sep = if leftHadWs || rightHadWs || needSep then " " else ""
+      in left' <> sep <> right'
+
+startsWithAsciiSpace :: T.Text -> Bool
+startsWithAsciiSpace t =
+  case T.uncons t of
+    Just (c, _) -> isAsciiSpaceChar c
+    Nothing     -> False
+
+endsWithAsciiSpace :: T.Text -> Bool
+endsWithAsciiSpace t =
+  case T.unsnoc t of
+    Just (_, c) -> isAsciiSpaceChar c
+    Nothing     -> False
+
+isAsciiSpaceChar :: Char -> Bool
+isAsciiSpaceChar c = c == ' ' || c == '\t' || c == '\n'
 
 needsSeparator :: Exp -> Exp -> Bool
 needsSeparator prevE curE
   | isGreekIdentifierExp prevE && isIdentifierLike curE = True
+  | isGreekIdentifierExp prevE && isRootLike curE        = True
   | isGreekIdentifierExp prevE && isTerminatingPunctuation curE = True
   | isWordSymbolLike prevE && isIdentifierLike curE      = True
+  | isWordSymbolLike prevE && isOpenLike curE            = True
   | isWordStyledExp prevE && isIdentifierLike curE       = True
+  | isAccentCommandExp prevE && isIdentifierLike curE    = True
+  | isAccentCommandExp prevE && isOpenLike curE          = True
+  | isAccentCommandExp prevE && isRootLike curE          = True
   | isMathOperatorExp prevE && isIdentifierLike curE     = True
   | isUnaryMinusSymbol prevE && isIdentifierLike curE    = True
   | isIdentifierLike prevE && isMathOperatorExp curE     = True
-  | isScripted prevE && not (isLargeOpScripted prevE) &&
-      isIdentifierLike curE                             = True
+  | isIdentifierLike prevE && isRootLike curE            = True
+  | isIdentifierLike prevE && isArrowScriptedExp curE    = True
+  | isIdentifierLike prevE && isScriptedMathOperatorExp curE = True
+  | isIdentifierLike prevE && isWordSymbolLike curE      = True
+  | isLargeOpScriptedExp prevE && isIdentifierLike curE  = True
+  | isLargeOpScriptedExp prevE && isAccentCommandExp curE = True
+  | isScripted prevE && isIdentifierLike curE           = True
+  | isArrowScriptedExp prevE && isIdentifierLike curE   = True
+  | isScriptedMathOperatorExp prevE && isIdentifierLike curE = True
+  | isDelimited prevE && isDelimited curE               = True
   | isCloseLike prevE && isIdentifierLike curE          = True
-  | isIdentifierLike prevE && isWordSymbolLike curE     = True
+  | isCloseLike prevE && isWordSymbolLike curE          = True
+  | isCloseLike prevE && isAccentCommandExp curE        = True
+  | isCloseLike prevE && isArrayLike curE               = True
   | isIdentifierLike prevE && isWordStyledExp curE      = True
+  | isIdentifierLike prevE && isUprightMathTextExp curE = True
+  | isIdentifierLike prevE && isAccentCommandExp curE   = True
   | isIdentifierLike prevE && isWideSpace curE          = True
   | isIdentifierLike prevE && isDelimited curE          = True
+  | isIdentifierLike prevE && isNonNormalTextExp curE   = True
+  | isQuotedTextExp prevE && isItalicTextExp curE       = True
   | otherwise                                            = False
 
 isGreekIdentifierExp :: Exp -> Bool
@@ -154,6 +322,12 @@ isDelimited e =
     EDelimited{} -> True
     _            -> False
 
+isArrayLike :: Exp -> Bool
+isArrayLike e =
+  case e of
+    EArray{} -> True
+    _        -> False
+
 isWideSpace :: Exp -> Bool
 isWideSpace e =
   case e of
@@ -166,7 +340,26 @@ isWordSymbolLike e =
     ESymbol _ "∀" -> True
     ESymbol _ "∃" -> True
     ESymbol _ "∇" -> True
+    ESymbol _ "∂" -> True
+    ESymbol _ "¬" -> True
+    ESymbol _ "∧" -> True
+    ESymbol _ "∨" -> True
+    ESymbol _ "and" -> True
+    ESymbol _ "or" -> True
     _             -> False
+
+isOpenLike :: Exp -> Bool
+isOpenLike e =
+  case e of
+    ESymbol Open _ -> True
+    _              -> False
+
+isRootLike :: Exp -> Bool
+isRootLike e =
+  case e of
+    ESqrt{} -> True
+    ERoot{} -> True
+    _       -> False
 
 isWordStyledExp :: Exp -> Bool
 isWordStyledExp e =
@@ -178,6 +371,36 @@ isWordStyledExp e =
     EStyled TextFraktur _      -> True
     EStyled TextDoubleStruck _ -> True
     _                          -> False
+
+isUprightMathTextExp :: Exp -> Bool
+isUprightMathTextExp e =
+  case e of
+    EStyled TextNormal [EIdentifier _] -> True
+    _                                  -> False
+
+isItalicTextExp :: Exp -> Bool
+isItalicTextExp e =
+  case e of
+    EText TextItalic _ -> True
+    _                  -> False
+
+isQuotedTextExp :: Exp -> Bool
+isQuotedTextExp e =
+  case e of
+    EText TextNormal _ -> True
+    _                  -> False
+
+isNonNormalTextExp :: Exp -> Bool
+isNonNormalTextExp e =
+  case e of
+    EText sty _ -> sty /= TextNormal
+    _           -> False
+
+isAccentCommandExp :: Exp -> Bool
+isAccentCommandExp e =
+  case e of
+    EOver _ _ over -> accentName over /= Nothing
+    _              -> False
 
 isTerminatingPunctuation :: Exp -> Bool
 isTerminatingPunctuation e =
@@ -203,6 +426,40 @@ isScripted e =
     ESubsup{} -> True
     _         -> False
 
+isArrowScriptedExp :: Exp -> Bool
+isArrowScriptedExp e =
+  case e of
+    EUnder _ base _       -> isArrowBase base
+    EOver _ base _        -> isArrowBase base
+    EUnderover _ base _ _ -> isArrowBase base
+    ESub base _           -> isArrowBase base
+    ESuper base _         -> isArrowBase base
+    ESubsup base _ _      -> isArrowBase base
+    _                     -> False
+
+isScriptedMathOperatorExp :: Exp -> Bool
+isScriptedMathOperatorExp e =
+  case e of
+    ESub base _           -> isMathOperatorExp base
+    ESuper base _         -> isMathOperatorExp base
+    ESubsup base _ _      -> isMathOperatorExp base
+    EUnder _ base _       -> isMathOperatorExp base
+    EOver _ base _        -> isMathOperatorExp base
+    EUnderover _ base _ _ -> isMathOperatorExp base
+    _                     -> False
+
+isArrowBase :: Exp -> Bool
+isArrowBase e =
+  case e of
+    ESymbol _ "←" -> True
+    ESymbol _ "→" -> True
+    ESymbol _ "↔" -> True
+    ESymbol _ "⇐" -> True
+    ESymbol _ "⇒" -> True
+    ESymbol _ "⇔" -> True
+    ESymbol _ "↦" -> True
+    _             -> False
+
 isUnaryMinusSymbol :: Exp -> Bool
 isUnaryMinusSymbol e =
   case e of
@@ -210,9 +467,12 @@ isUnaryMinusSymbol e =
     ESymbol t "−" -> t /= Bin
     _             -> False
 
-isLargeOpScripted :: Exp -> Bool
-isLargeOpScripted e =
+isLargeOpScriptedExp :: Exp -> Bool
+isLargeOpScriptedExp e =
   case e of
+    EUnder _ base _       -> largeOpName base /= Nothing
+    EOver _ base _        -> largeOpName base /= Nothing
+    EUnderover _ base _ _ -> largeOpName base /= Nothing
     ESub base _      -> largeOpName base /= Nothing
     ESuper base _    -> largeOpName base /= Nothing
     ESubsup base _ _ -> largeOpName base /= Nothing
@@ -235,6 +495,13 @@ needsNeutralLhs = isInfixLikeExp
 
 needsNeutralRhs :: Exp -> Bool
 needsNeutralRhs = isInfixLikeExp
+
+needsNeutralScriptOperands :: Exp -> Bool
+needsNeutralScriptOperands e =
+  case e of
+    ESymbol Bin "+" -> True
+    ESymbol Bin "＋" -> True
+    _               -> False
 
 isInfixLikeExp :: Exp -> Bool
 isInfixLikeExp e =
@@ -261,7 +528,7 @@ renderExpIn ctx e =
     EIdentifier t   -> Just (renderIdentifier t)
     EMathOperator t -> Just (renderMathOperator t)
     ESymbol t s     -> Just (renderSymbol t s)
-    EText _ t       -> Just (quoteText t)
+    EText sty t     -> Just (renderTextAtom sty t)
     ESpace w        -> Just (renderSpace w)
     EGrouped xs     -> ("{" <>) . (<> "}") <$> renderExpsIn ctx xs
     EStyled sty xs  -> renderStyled ctx sty xs
@@ -272,7 +539,7 @@ renderExpIn ctx e =
       let num'' = maybeCenterFractionArg ctx num'
       let den'' = maybeCenterFractionArg ctx den'
       pure $ case frac of
-        NoLineFrac -> "{" <> num'' <> " / " <> den'' <> "}"
+        NoLineFrac -> "binom" <> asDelimitedArg num'' <> asDelimitedArg den''
         _          -> "{" <> num'' <> " over " <> den'' <> "}"
 
     ESqrt x -> ("sqrt {" <>) . (<> "}") <$> renderExpIn ctx x
@@ -280,6 +547,13 @@ renderExpIn ctx e =
       idx' <- renderExpIn ctx idx
       rad' <- renderExpIn ctx rad
       pure $ "nroot {" <> idx' <> "} {" <> rad' <> "}"
+
+    EScaled _ (ESymbol Open "|") ->
+      Just "mline"
+    EScaled _ (ESymbol Close "|") ->
+      Just "mline"
+    EScaled _ x ->
+      renderExpIn ctx x
 
     EDelimited op cl xs -> do
       body <- renderDelimitedBody ctx xs
@@ -304,8 +578,12 @@ renderExpIn ctx e =
           pure $ op <> " to " <> sup' <> " "
         Nothing -> do
           base' <- renderExpIn ctx base
-          sup'  <- renderScriptArg ctx sup
-          pure $ renderScriptBase base base' <> "^" <> sup'
+          case renderPrimeSuffix sup of
+            Just primes ->
+              pure $ renderScriptBase base base' <> primes
+            Nothing -> do
+              sup'  <- renderScriptArg ctx sup
+              pure $ renderScriptBase base base' <> "^" <> sup'
 
     ESubsup base sub sup -> do
       case limitOpName base of
@@ -316,49 +594,114 @@ renderExpIn ctx e =
         Nothing -> do
           base' <- renderExpIn ctx base
           sub'  <- renderScriptArg ctx sub
-          sup'  <- renderScriptArg ctx sup
-          pure $ renderScriptBase base base' <> "_" <> sub' <> "^" <> sup'
+          case renderPrimeSuffix sup of
+            Just primes ->
+              pure $ renderScriptBase base base' <> "_" <> sub' <> primes
+            Nothing -> do
+              sup'  <- renderScriptArg ctx sup
+              pure $ renderScriptBase base base' <> "_" <> sub' <> "^" <> sup'
 
     EOver _ base over
+      | Just arrow <- arrowScriptOpName base -> do
+          if isEmptyScriptArg over
+             then pure arrow
+             else do
+               over' <- renderScriptArg ctx over
+               pure $ arrow <> " csup " <> centerScriptArg over'
+      | Just op <- centeredScriptOpName base -> do
+          over' <- renderScriptArg ctx over
+          pure $ "{" <> op <> "} csup " <> centerScriptArg over'
+      | Just brace <- braceAnnotationName over -> do
+          base' <- renderExpIn ctx base
+          pure $ renderScriptBase base base' <> " " <> brace
+      | isBraceAnnotatedExp base -> do
+          base' <- renderExpIn ctx base
+          over' <- renderBraceLabel ctx over
+          pure $ base' <> " " <> over'
       | Just accent <- accentName over -> do
           base' <- renderExpIn ctx base
           pure $ accent <> " " <> renderAccentArg base base'
+      | Just op <- limitOpName base -> do
+          over' <- renderLimitArg ctx over
+          pure $ op <> " to " <> over' <> " "
       | otherwise -> Nothing
 
     EUnder _ base under ->
-      case centeredScriptOpName base of
-        Just op -> do
-          under' <- renderScriptArg ctx under
-          pure $ "{" <> op <> "} csub " <> centerScriptArg under'
+      case arrowScriptOpName base of
+        Just arrow ->
+          if isEmptyScriptArg under
+             then pure arrow
+             else do
+               under' <- renderScriptArg ctx under
+               pure $ arrow <> " csub " <> centerScriptArg under'
         Nothing ->
-          case limitOpName base of
-            Just op -> do
-              under' <- renderLimitArg ctx under
-              pure $ op <> " from " <> under' <> " "
-            Nothing -> do
+          case underlineMarkerName under of
+            Just marker -> do
               base' <- renderExpIn ctx base
-              under' <- renderScriptArg ctx under
-              pure $ renderScriptBase base base' <> "_" <> under'
+              pure $ marker <> " " <> renderAccentArg base base'
+            Nothing ->
+              case braceAnnotationName under of
+                Just brace -> do
+                  base' <- renderExpIn ctx base
+                  pure $ renderScriptBase base base' <> " " <> brace
+                Nothing ->
+                  if isBraceAnnotatedExp base
+                     then do
+                       base' <- renderExpIn ctx base
+                       under' <- renderBraceLabel ctx under
+                       pure $ base' <> " " <> under'
+                     else
+                       case centeredScriptOpName base of
+                         Just op -> do
+                           under' <- renderScriptArg ctx under
+                           pure $ "{" <> op <> "} csub " <> centerScriptArg under'
+                         Nothing ->
+                           case limitOpName base of
+                             Just op -> do
+                               under' <- renderLimitArg ctx under
+                               pure $ op <> " from " <> under' <> " "
+                             Nothing -> do
+                               base' <- renderExpIn ctx base
+                               under' <- renderScriptArg ctx under
+                               pure $ renderScriptBase base base' <> "_" <> under'
     EUnderover _ base under over ->
-      case centeredScriptOpName base of
-        Just op -> do
-          under' <- renderScriptArg ctx under
-          over' <- renderScriptArg ctx over
-          pure $ "{" <> op <> "} csub " <> centerScriptArg under'
-              <> " csup " <> centerScriptArg over'
-        Nothing ->
-          case limitOpName base of
-            Just op -> do
-              under' <- renderLimitArg ctx under
-              over'  <- renderLimitArg ctx over
-              pure $ op <> " from " <> under' <> " to " <> over' <> " "
-            Nothing -> do
-              base' <- renderExpIn ctx base
+      case arrowScriptOpName base of
+        Just arrow ->
+          case (isEmptyScriptArg under, isEmptyScriptArg over) of
+            (True, True) -> pure arrow
+            (False, True) -> do
+              under' <- renderScriptArg ctx under
+              pure $ arrow <> " csub " <> centerScriptArg under'
+            (True, False) -> do
+              over' <- renderScriptArg ctx over
+              pure $ arrow <> " csup " <> centerScriptArg over'
+            (False, False) -> do
               under' <- renderScriptArg ctx under
               over' <- renderScriptArg ctx over
-              pure $ renderScriptBase base base' <> "_" <> under' <> "^" <> over'
+              pure $ arrow <> " csub " <> centerScriptArg under'
+                  <> " csup " <> centerScriptArg over'
+        Nothing ->
+          case centeredScriptOpName base of
+            Just op -> do
+              under' <- renderScriptArg ctx under
+              over' <- renderScriptArg ctx over
+              pure $ "{" <> op <> "} csub " <> centerScriptArg under'
+                  <> " csup " <> centerScriptArg over'
+            Nothing ->
+              case limitOpName base of
+                Just op -> do
+                  under' <- renderLimitArg ctx under
+                  over'  <- renderLimitArg ctx over
+                  pure $ op <> " from " <> under' <> " to " <> over' <> " "
+                Nothing -> do
+                  base' <- renderExpIn ctx base
+                  under' <- renderScriptArg ctx under
+                  over' <- renderScriptArg ctx over
+                  pure $ renderScriptBase base base' <> "_" <> under' <> "^" <> over'
     EArray aligns rows -> renderMatrix aligns rows
-    EPhantom{}         -> Nothing
+    EPhantom x         -> do
+      x' <- renderExpIn ctx x
+      pure $ "phantom " <> renderPhantomArg x x'
     _                  -> Nothing
 
 renderDelimitedBody :: AlignContext -> [Either T.Text Exp] -> Maybe T.Text
@@ -382,12 +725,12 @@ mergeDelimitedChunks (c0:cs) = snd $ List.foldl' step (chunkExp c0, chunkText c0
     | T.null curText = (prevExp, acc)
     | otherwise =
         case cur of
-          DelimRaw _ -> (Nothing, acc <> curText)
+          DelimRaw _ -> (Nothing, appendRendered False acc curText)
           DelimExp curExp _ ->
-            let sep = case prevExp of
-                        Just pe -> if needsSeparator pe curExp then " " else ""
-                        Nothing -> ""
-            in (Just curExp, acc <> sep <> curText)
+            let needSep = case prevExp of
+                            Just pe -> needsSeparator pe curExp
+                            Nothing -> False
+            in (Just curExp, appendRendered needSep acc curText)
    where
     curText = chunkText cur
 
@@ -408,9 +751,12 @@ renderMatrix aligns rows = do
 
 renderMatrixRow :: [Alignment] -> [[Exp]] -> Maybe T.Text
 renderMatrixRow aligns cells = do
+  let explicitCenter = any (/= AlignCenter) aligns
+  let columnCount = max (length aligns) (length cells)
+  let paddedCells = take columnCount (cells ++ repeat [])
   cells' <- sequence
-    [ renderMatrixCellWithAlign (columnAlign aligns i) c
-    | (i, c) <- zip [(0 :: Int) ..] cells
+    [ renderMatrixCellWithAlign explicitCenter (columnAlign aligns i) c
+    | (i, c) <- zip [(0 :: Int) ..] paddedCells
     ]
   pure $ T.intercalate " # " cells'
 
@@ -421,13 +767,14 @@ renderMatrixCell ctx xs = do
   let stripped = T.strip rendered
   pure $ if T.null stripped then "{}" else stripped
 
-renderMatrixCellWithAlign :: Alignment -> [Exp] -> Maybe T.Text
-renderMatrixCellWithAlign align xs = do
+renderMatrixCellWithAlign :: Bool -> Alignment -> [Exp] -> Maybe T.Text
+renderMatrixCellWithAlign explicitCenter align xs = do
   cell <- renderMatrixCell (alignmentContext align) xs
   pure $ case align of
     AlignLeft  -> "alignl " <> cell
     AlignRight -> "alignr " <> cell
-    _          -> cell
+    AlignCenter | explicitCenter -> "alignc " <> cell
+    _                            -> cell
 
 columnAlign :: [Alignment] -> Int -> Alignment
 columnAlign aligns i =
@@ -439,22 +786,197 @@ renderStyled :: AlignContext -> TextType -> [Exp] -> Maybe T.Text
 renderStyled ctx sty xs = do
   body <- renderExpsIn ctx xs
   pure $ case sty of
+    _
+      | Just unicodeBody <- renderUnicodeSerifStyled sty xs ->
+          "font serif " <> quoteText unicodeBody
     TextNormal
+      | Just ident <- singleUprightIdentifier xs -> "nitalic " <> renderIdentifier ident
       | Just txt <- styledText xs -> quoteText txt
       | Just txt <- renderTextNormalStyled xs
       , shouldForceUprightTextNormal xs -> "nitalic{" <> txt <> "}"
       | Just txt <- renderTextNormalStyled xs -> txt
     TextItalic       -> "ital " <> styleArg body
-    TextBold         -> "bold " <> styleArg body
+    TextBold
+      | shouldForceUprightBold xs -> "bold nitalic " <> styleArg body
+      | otherwise -> "bold " <> styleArg body
+    TextBoldItalic   -> "bold " <> styleArg ("ital " <> styleArg body)
+    TextMonospace    -> "font fixed nitalic " <> styleArg body
+    TextSansSerif    -> "font sans nitalic " <> styleArg body
+    TextSansSerifBold -> "bold " <> styleArg ("font sans nitalic " <> styleArg body)
+    TextSansSerifBoldItalic -> "bold " <> styleArg ("font sans ital " <> styleArg body)
+    TextSansSerifItalic -> "font sans ital " <> styleArg body
     TextScript       -> "ital " <> styleArg body
-    TextFraktur      -> "ital " <> styleArg body
-    TextDoubleStruck -> "ital " <> styleArg body
+    TextFraktur      -> "bold " <> styleArg body
+    TextDoubleStruck -> "bold nitalic " <> styleArg body
     _                -> body
  where
   styleArg t
     | T.null t       = "{}"
     | T.length t == 1 = t
     | otherwise      = "{" <> t <> "}"
+
+renderUnicodeSerifStyled :: TextType -> [Exp] -> Maybe T.Text
+renderUnicodeSerifStyled sty xs =
+  case sty of
+    TextScript       -> styledUnicodeText scriptChar xs
+    TextFraktur      -> styledUnicodeText frakturChar xs
+    TextDoubleStruck -> styledUnicodeText doubleStruckChar xs
+    TextBoldScript   -> styledUnicodeText boldScriptChar xs
+    TextBoldFraktur  -> styledUnicodeText boldFrakturChar xs
+    _                -> Nothing
+
+styledUnicodeText :: (Char -> Maybe Char) -> [Exp] -> Maybe T.Text
+styledUnicodeText f = fmap T.concat . mapM (styledUnicodeExp f)
+
+styledUnicodeExp :: (Char -> Maybe Char) -> Exp -> Maybe T.Text
+styledUnicodeExp f e =
+  case e of
+    EIdentifier t        -> mapStyledUnicode f t
+    ENumber t            -> mapStyledUnicode f t
+    EGrouped xs          -> styledUnicodeText f xs
+    EStyled TextNormal xs -> styledUnicodeText f xs
+    ESpace w
+      | w <= 0          -> Just ""
+      | w >= 2          -> Just "  "
+      | otherwise       -> Just " "
+    _                   -> Nothing
+
+mapStyledUnicode :: (Char -> Maybe Char) -> T.Text -> Maybe T.Text
+mapStyledUnicode f t = T.pack <$> mapM f (T.unpack t)
+
+scriptChar :: Char -> Maybe Char
+scriptChar c =
+  case c of
+    'A' -> Just '\x1D49C'
+    'B' -> Just '\x212C'
+    'C' -> Just '\x1D49E'
+    'D' -> Just '\x1D49F'
+    'E' -> Just '\x2130'
+    'F' -> Just '\x2131'
+    'G' -> Just '\x1D4A2'
+    'H' -> Just '\x210B'
+    'I' -> Just '\x2110'
+    'J' -> Just '\x1D4A5'
+    'K' -> Just '\x1D4A6'
+    'L' -> Just '\x2112'
+    'M' -> Just '\x2133'
+    'N' -> Just '\x1D4A9'
+    'O' -> Just '\x1D4AA'
+    'P' -> Just '\x1D4AB'
+    'Q' -> Just '\x1D4AC'
+    'R' -> Just '\x211B'
+    'S' -> Just '\x1D4AE'
+    'T' -> Just '\x1D4AF'
+    'U' -> Just '\x1D4B0'
+    'V' -> Just '\x1D4B1'
+    'W' -> Just '\x1D4B2'
+    'X' -> Just '\x1D4B3'
+    'Y' -> Just '\x1D4B4'
+    'Z' -> Just '\x1D4B5'
+    'a' -> Just '\x1D4B6'
+    'b' -> Just '\x1D4B7'
+    'c' -> Just '\x1D4B8'
+    'd' -> Just '\x1D4B9'
+    'e' -> Just '\x212F'
+    'f' -> Just '\x1D4BB'
+    'g' -> Just '\x210A'
+    'h' -> Just '\x1D4BD'
+    'i' -> Just '\x1D4BE'
+    'j' -> Just '\x1D4BF'
+    'k' -> Just '\x1D4C0'
+    'l' -> Just '\x1D4C1'
+    'm' -> Just '\x1D4C2'
+    'n' -> Just '\x1D4C3'
+    'o' -> Just '\x2134'
+    'p' -> Just '\x1D4C5'
+    'q' -> Just '\x1D4C6'
+    'r' -> Just '\x1D4C7'
+    's' -> Just '\x1D4C8'
+    't' -> Just '\x1D4C9'
+    'u' -> Just '\x1D4CA'
+    'v' -> Just '\x1D4CB'
+    'w' -> Just '\x1D4CC'
+    'x' -> Just '\x1D4CD'
+    'y' -> Just '\x1D4CE'
+    'z' -> Just '\x1D4CF'
+    _   -> Nothing
+
+frakturChar :: Char -> Maybe Char
+frakturChar c =
+  case c of
+    'A' -> Just '\x1D504'
+    'B' -> Just '\x1D505'
+    'C' -> Just '\x212D'
+    'D' -> Just '\x1D507'
+    'E' -> Just '\x1D508'
+    'F' -> Just '\x1D509'
+    'G' -> Just '\x1D50A'
+    'H' -> Just '\x210C'
+    'I' -> Just '\x2111'
+    'J' -> Just '\x1D50D'
+    'K' -> Just '\x1D50E'
+    'L' -> Just '\x1D50F'
+    'M' -> Just '\x1D510'
+    'N' -> Just '\x1D511'
+    'O' -> Just '\x1D512'
+    'P' -> Just '\x1D513'
+    'Q' -> Just '\x1D514'
+    'R' -> Just '\x211C'
+    'S' -> Just '\x1D516'
+    'T' -> Just '\x1D517'
+    'U' -> Just '\x1D518'
+    'V' -> Just '\x1D519'
+    'W' -> Just '\x1D51A'
+    'X' -> Just '\x1D51B'
+    'Y' -> Just '\x1D51C'
+    'Z' -> Just '\x2128'
+    _ | 'a' <= c && c <= 'z' -> Just (chr (0x1D51E + ord c - ord 'a'))
+      | otherwise -> Nothing
+
+doubleStruckChar :: Char -> Maybe Char
+doubleStruckChar c =
+  case c of
+    'A' -> Just '\x1D538'
+    'B' -> Just '\x1D539'
+    'C' -> Just '\x2102'
+    'D' -> Just '\x1D53B'
+    'E' -> Just '\x1D53C'
+    'F' -> Just '\x1D53D'
+    'G' -> Just '\x1D53E'
+    'H' -> Just '\x210D'
+    'I' -> Just '\x1D540'
+    'J' -> Just '\x1D541'
+    'K' -> Just '\x1D542'
+    'L' -> Just '\x1D543'
+    'M' -> Just '\x1D544'
+    'N' -> Just '\x2115'
+    'O' -> Just '\x1D546'
+    'P' -> Just '\x2119'
+    'Q' -> Just '\x211A'
+    'R' -> Just '\x211D'
+    'S' -> Just '\x1D54A'
+    'T' -> Just '\x1D54B'
+    'U' -> Just '\x1D54C'
+    'V' -> Just '\x1D54D'
+    'W' -> Just '\x1D54E'
+    'X' -> Just '\x1D54F'
+    'Y' -> Just '\x1D550'
+    'Z' -> Just '\x2124'
+    _ | 'a' <= c && c <= 'z' -> Just (chr (0x1D552 + ord c - ord 'a'))
+      | '0' <= c && c <= '9' -> Just (chr (0x1D7D8 + ord c - ord '0'))
+      | otherwise -> Nothing
+
+boldScriptChar :: Char -> Maybe Char
+boldScriptChar c
+  | 'A' <= c && c <= 'Z' = Just (chr (0x1D4D0 + ord c - ord 'A'))
+  | 'a' <= c && c <= 'z' = Just (chr (0x1D4EA + ord c - ord 'a'))
+  | otherwise            = Nothing
+
+boldFrakturChar :: Char -> Maybe Char
+boldFrakturChar c
+  | 'A' <= c && c <= 'Z' = Just (chr (0x1D56C + ord c - ord 'A'))
+  | 'a' <= c && c <= 'z' = Just (chr (0x1D586 + ord c - ord 'a'))
+  | otherwise            = Nothing
 
 styledText :: [Exp] -> Maybe T.Text
 styledText = fmap T.concat . mapM styledTextExp
@@ -515,7 +1037,7 @@ renderTextNormalExp e =
   case e of
     ENumber t       -> Just t
     EIdentifier t   -> Just (renderIdentifier t)
-    EText _ t       -> Just (quoteText t)
+    EText sty t     -> Just (renderTextAtom sty t)
     ESpace w        -> Just (renderSpace w)
     EGrouped xs     -> renderTextNormalStyled xs
     EStyled TextNormal xs -> renderTextNormalStyled xs
@@ -542,6 +1064,26 @@ renderTextNormalExp e =
 shouldForceUprightTextNormal :: [Exp] -> Bool
 shouldForceUprightTextNormal = all isUprightTextNormalExp
 
+shouldForceUprightBold :: [Exp] -> Bool
+shouldForceUprightBold = all isUprightBoldExp
+
+isUprightBoldExp :: Exp -> Bool
+isUprightBoldExp e =
+  case e of
+    ENumber{}            -> True
+    EIdentifier t        -> T.all isAsciiAlphaNum t
+    EText{}              -> True
+    ESpace{}             -> True
+    ESymbol _ s          -> isPlainTextSymbol s
+    EGrouped xs          -> shouldForceUprightBold xs
+    EStyled TextNormal xs -> shouldForceUprightBold xs
+    ESub base sub        -> isUprightBoldExp base && isUprightBoldExp sub
+    ESuper base sup      -> isUprightBoldExp base && isUprightBoldExp sup
+    ESubsup base sub sup -> isUprightBoldExp base
+                         && isUprightBoldExp sub
+                         && isUprightBoldExp sup
+    _                    -> False
+
 isUprightTextNormalExp :: Exp -> Bool
 isUprightTextNormalExp e =
   case e of
@@ -559,11 +1101,23 @@ isUprightTextNormalExp e =
                            && isUprightTextNormalExp sup
     _                      -> False
 
+isAsciiAlphaNum :: Char -> Bool
+isAsciiAlphaNum c =
+  (c >= 'A' && c <= 'Z') ||
+  (c >= 'a' && c <= 'z') ||
+  (c >= '0' && c <= '9')
+
 styleArg :: T.Text -> T.Text
 styleArg t
   | T.null t        = "{}"
   | T.length t == 1 = t
   | otherwise       = "{" <> t <> "}"
+
+singleUprightIdentifier :: [Exp] -> Maybe T.Text
+singleUprightIdentifier xs =
+  case xs of
+    [EIdentifier t] -> Just t
+    _               -> Nothing
 
 alignmentContext :: Alignment -> AlignContext
 alignmentContext a =
@@ -583,9 +1137,18 @@ maybeCenterFractionArg ctx t
           then "{}"
           else if T.length s == 1
                   then s
-                  else if T.head s == '{' && T.last s == '}'
+          else if T.head s == '{' && T.last s == '}'
                           then s
                           else "{" <> s <> "}"
+
+asDelimitedArg :: T.Text -> T.Text
+asDelimitedArg t =
+  let s = T.strip t
+  in if T.null s
+        then "{}"
+        else if T.head s == '{' && T.last s == '}'
+                then s
+                else "{" <> s <> "}"
 
 renderSpace :: Rational -> T.Text
 renderSpace w
@@ -604,8 +1167,11 @@ renderIdentifier ident =
 
 renderMathOperator :: T.Text -> T.Text
 renderMathOperator t
+  | t == "min" = "func min"
+  | t == "max" = "func max"
   | isBareMathOperator t = t
-  | otherwise            = "func " <> t
+  | shouldQuoteMathOperator t = "func " <> quoteText t
+  | otherwise                 = "func " <> t
 
 isBareMathOperator :: T.Text -> Bool
 isBareMathOperator t =
@@ -613,6 +1179,9 @@ isBareMathOperator t =
     [ "min", "max", "log", "sin", "cos", "cosh", "sinh"
     , "cot", "ln", "exp"
     ]
+
+shouldQuoteMathOperator :: T.Text -> Bool
+shouldQuoteMathOperator = not . T.all isLetter
 
 shouldItalicizeGreek :: T.Text -> Bool
 shouldItalicizeGreek ident =
@@ -658,8 +1227,8 @@ greekName ident =
     "β" -> Just "beta"
     "γ" -> Just "gamma"
     "δ" -> Just "delta"
-    "ϵ" -> Just "varepsilon"
-    "ε" -> Just "epsilon"
+    "ϵ" -> Just "epsilon"
+    "ε" -> Just "varepsilon"
     "ζ" -> Just "zeta"
     "η" -> Just "eta"
     "θ" -> Just "theta"
@@ -704,23 +1273,57 @@ renderScriptBase e rendered0 =
   let rendered = T.strip rendered0
   in if isEmptyScriptBase e || T.null rendered
         then "{}"
+        else if isWrapped rendered
+        then rendered
         else if isAtomic e
         then rendered
         else "{" <> rendered <> "}"
 
 renderScriptArg :: AlignContext -> Exp -> Maybe T.Text
 renderScriptArg ctx e = do
-  rendered0 <- renderExpIn ctx e
+  rendered0 <-
+    if needsNeutralScriptOperands e
+       then renderExpsIn ctx [e]
+       else renderExpIn ctx e
   let rendered = T.strip rendered0
-  pure $ if isAtomic e || isQuotedText rendered
+  pure $ if (isAtomic e && not (needsNeutralScriptOperands e)) || isQuotedText rendered
             then rendered
             else "{" <> rendered <> "}"
+
+renderPrimeSuffix :: Exp -> Maybe T.Text
+renderPrimeSuffix e =
+  case e of
+    ESymbol Pun "'"  -> Just "'"
+    ESymbol Pun "′"  -> Just "'"
+    ESymbol Pun "″"  -> Just "''"
+    ESymbol Pun "‴"  -> Just "'''"
+    _                -> Nothing
 
 renderLimitArg :: AlignContext -> Exp -> Maybe T.Text
 renderLimitArg ctx e =
   case e of
-    EGrouped xs -> renderExpsIn ctx xs
+    EGrouped xs -> do
+      rendered <- renderExpsIn ctx xs
+      let stripped = T.strip rendered
+      pure $
+        if T.null stripped
+           then "{}"
+           else if containsRelationLike xs
+                   then stripped
+           else if isQuotedText stripped || isWrapped stripped || T.length stripped == 1
+                   then stripped
+                   else "{" <> stripped <> "}"
     _           -> T.strip <$> renderExpIn ctx e
+
+containsRelationLike :: [Exp] -> Bool
+containsRelationLike = any isRelationLike
+ where
+  isRelationLike expn =
+    case expn of
+      ESymbol Rel _ -> True
+      ESymbol Bin _ -> True
+      EGrouped ys   -> containsRelationLike ys
+      _             -> False
 
 renderAccentArg :: Exp -> T.Text -> T.Text
 renderAccentArg e rendered0 =
@@ -729,12 +1332,22 @@ renderAccentArg e rendered0 =
         then rendered
         else "{" <> rendered <> "}"
 
+renderPhantomArg :: Exp -> T.Text -> T.Text
+renderPhantomArg e rendered0 =
+  let rendered = T.strip rendered0
+  in if isAtomic e
+        then rendered
+        else if isWrapped rendered
+        then rendered
+        else "{" <> rendered <> "}"
+
 centerScriptArg :: T.Text -> T.Text
 centerScriptArg rendered
   | isWrapped rendered = rendered
   | otherwise          = "{" <> rendered <> "}"
- where
-  isWrapped t = T.length t >= 2 && T.head t == '{' && T.last t == '}'
+
+isWrapped :: T.Text -> Bool
+isWrapped t = T.length t >= 2 && T.head t == '{' && T.last t == '}'
 
 isAtomic :: Exp -> Bool
 isAtomic e =
@@ -752,12 +1365,72 @@ isEmptyScriptBase e =
     EIdentifier t -> T.null t
     _             -> False
 
+isEmptyScriptArg :: Exp -> Bool
+isEmptyScriptArg e =
+  case e of
+    EGrouped []   -> True
+    EIdentifier t -> T.null t
+    _             -> False
+
+isBraceAnnotatedExp :: Exp -> Bool
+isBraceAnnotatedExp e =
+  case e of
+    EOver _ _ over  -> braceAnnotationName over /= Nothing
+    EUnder _ _ under -> braceAnnotationName under /= Nothing
+    _               -> False
+
+braceAnnotationName :: Exp -> Maybe T.Text
+braceAnnotationName e =
+  case e of
+    ESymbol TOver "\9182"  -> Just "overbrace"
+    ESymbol TOver "\9140"  -> Just "overbrace"
+    ESymbol TUnder "\9183" -> Just "underbrace"
+    ESymbol TUnder "\9141" -> Just "underbrace"
+    _                       -> Nothing
+
+underlineMarkerName :: Exp -> Maybe T.Text
+underlineMarkerName e =
+  case e of
+    ESymbol TUnder "_" -> Just "underline"
+    _                  -> Nothing
+
+renderBraceLabel :: AlignContext -> Exp -> Maybe T.Text
+renderBraceLabel ctx e = do
+  rendered0 <- renderExpIn ctx e
+  let rendered = T.strip rendered0
+  pure $ if isQuotedText rendered || isAtomic e
+            then rendered
+            else "{" <> rendered <> "}"
+
+arrowScriptOpName :: Exp -> Maybe T.Text
+arrowScriptOpName e =
+  case e of
+    ESymbol _ "←" -> Just "leftarrow"
+    ESymbol _ "→" -> Just "toward"
+    ESymbol _ "↔" -> Just "leftrightarrow"
+    ESymbol _ "⇐" -> Just "dlarrow"
+    ESymbol _ "⇒" -> Just "drarrow"
+    ESymbol _ "⇔" -> Just "dlrarrow"
+    ESymbol _ "↦" -> Just "mapsto"
+    ESymbol _ "↑" -> Just "uparrow"
+    ESymbol _ "↓" -> Just "downarrow"
+    _             -> Nothing
+
 accentName :: Exp -> Maybe T.Text
 accentName e =
   case e of
     ESymbol Accent s -> accentFromChar s
+    ESymbol TOver s  -> overAccentFromChar s
     ESymbol _ s      -> accentFromChar s
     _                -> Nothing
+
+overAccentFromChar :: T.Text -> Maybe T.Text
+overAccentFromChar s =
+  case s of
+    "\772"  -> Just "overline"
+    "\8254" -> Just "overline"
+    "¯"     -> Just "overline"
+    _       -> accentFromChar s
 
 accentFromChar :: T.Text -> Maybe T.Text
 accentFromChar s =
@@ -836,8 +1509,11 @@ renderSymbol t s =
     "↑" -> " uparrow "
     "↓" -> " downarrow "
     "↦" -> " mapsto "
-    "… " -> " dotsaxis "
-    "…" -> " dotsaxis "
+    "\8230 " -> " dotslow "
+    "… " -> " dotslow "
+    "\8230" -> " dotslow "
+    "…" -> " dotslow "
+    "\8943" -> " dotsaxis "
     "⋯" -> " dotsaxis "
     "⋮" -> " dotsvert "
     "⋱" -> " dotsdown "
@@ -856,6 +1532,10 @@ renderSymbol t s =
     "≠" -> " <> "
     "≈" -> " approx "
     "≡" -> " equiv "
+    "\8810" -> " ll "
+    "≪" -> " ll "
+    "\8811" -> " gg "
+    "≫" -> " gg "
     "∝" -> " prop "
     "∥" -> " parallel "
     "⊥" -> " ortho "
@@ -880,14 +1560,29 @@ renderSymbol t s =
     "-"             -> "-"
     "−" | t == Bin  -> " - "
     "−"             -> "-"
+    "<" -> " < "
+    ">" -> " > "
     "=" -> " = "
     "," -> ", "
     ";" -> "; "
     ":" -> " : "
     "!" -> " ! "
-    "'" -> "′"
-    "′" -> "′"
-    _   -> s
+    "'" -> "'"
+    "′" -> "'"
+    "″" -> "''"
+    "‴" -> "'''"
+    _   | isWordLiteralSymbol s -> quoteText s
+        | otherwise             -> s
+
+isWordLiteralSymbol :: T.Text -> Bool
+isWordLiteralSymbol s =
+  not (T.null s) && T.all isWordLiteralChar s
+
+isWordLiteralChar :: Char -> Bool
+isWordLiteralChar c =
+  (c >= 'A' && c <= 'Z') ||
+  (c >= 'a' && c <= 'z') ||
+  c == ' ' || c == '-'
 
 quoteText :: T.Text -> T.Text
 quoteText t = "\"" <> escapeQuotes t <> "\""
@@ -903,11 +1598,17 @@ largeOpName :: Exp -> Maybe T.Text
 largeOpName e =
   case e of
     ESymbol Op "\8747" -> Just "int"
+    ESymbol Op "\8751" -> Just "iiint"
     ESymbol Op "\8721" -> Just "sum"
     ESymbol Op "\8719" -> Just "prod"
+    ESymbol Op "\8899" -> Just "oper ∪"
+    ESymbol Op "\8898" -> Just "oper ∩"
     ESymbol Op "∫"     -> Just "int"
+    ESymbol Op "∭"     -> Just "iiint"
     ESymbol Op "∑"     -> Just "sum"
     ESymbol Op "∏"     -> Just "prod"
+    ESymbol Op "⋃"     -> Just "oper ∪"
+    ESymbol Op "⋂"     -> Just "oper ∩"
     _                  -> Nothing
 
 limitOpName :: Exp -> Maybe T.Text
@@ -928,4 +1629,19 @@ centeredScriptOpName e =
   case e of
     EMathOperator "min" -> Just "func min"
     EMathOperator "max" -> Just "func max"
+    EMathOperator "det" -> Just "func det"
+    EMathOperator "Pr"  -> Just "func Pr"
+    EMathOperator "gcd" -> Just "func gcd"
+    EMathOperator "lim" -> Nothing
+    EMathOperator "liminf" -> Nothing
+    EMathOperator "limsup" -> Nothing
+    EMathOperator t     -> Just (renderMathOperator t)
     _                   -> Nothing
+renderTextAtom :: TextType -> T.Text -> T.Text
+renderTextAtom sty t =
+  case sty of
+    TextItalic    -> "ital " <> styleArg t
+    TextBold      -> "bold " <> styleArg (quoteText t)
+    TextMonospace -> "font fixed " <> quoteText t
+    TextSansSerif -> "font sans " <> quoteText t
+    _             -> quoteText t

@@ -25,4 +25,4 @@
     NormalFrac (ENumber "1") (ESub (EIdentifier "l") (ENumber "0"))
 ]
 >>> starmath
-%iphi_n(%ikappa) = 0.033C_n^2 %ikappa^{{- 11 / 3}}, ~ {1 over L_0}≪%ikappa≪{1 over l_0}
+%iphi_n(%ikappa) = 0.033C_n^2 %ikappa^{{- 11 / 3}}, ~ {1 over L_0} ll %ikappa ll {1 over l_0}

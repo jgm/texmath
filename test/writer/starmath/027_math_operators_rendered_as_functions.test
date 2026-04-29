@@ -1,4 +1,4 @@
 <<< tex
 E_{k+1}\leftarrow\min\!\left(E^{\text{cap}}_{\text{s}},\max(0,E_{k+1})\right).
 >>> starmath
-E_{{k + 1}} leftarrow min left ( E_"s"^"cap", max(0, E_{{k + 1}}) right ).
+E_{{k + 1}} leftarrow func min left ( E_"s"^"cap", func max(0, E_{{k + 1}}) right ).

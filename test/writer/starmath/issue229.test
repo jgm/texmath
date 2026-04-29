@@ -10,4 +10,4 @@
     ]
 ]
 >>> starmath
-matrix { alignl 1 # alignr 2 # 3 # alignr 4 # 5 }
+matrix { alignl 1 # alignr 2 # alignc 3 # alignr 4 # alignc 5 }

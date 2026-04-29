@@ -18,4 +18,4 @@
     ]
 ]
 >>> starmath
-left ( {a / left lbrace {b / {c + 2}} right rbrace} right )
+left ( binom{a}{left lbrace binom{b}{c + 2} right rbrace} right )

@@ -38,4 +38,4 @@
        ])
 ]
 >>> starmath
-bold nitalic C(n, k) = {bold nitalic C}_k^n = {{}}_n {bold nitalic C}_k = left ( {n / k} right ) = {{n ! } over {k !  (n - k) ! }}
+bold nitalic C(n, k) = {bold nitalic C}_k^n = {}_n {bold nitalic C}_k = left ( binom{n}{k} right ) = {{n ! } over {k ! (n - k) ! }}

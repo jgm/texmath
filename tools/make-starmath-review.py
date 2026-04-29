@@ -8,6 +8,7 @@ import shutil
 import subprocess
 import textwrap
 import zipfile
+from xml.sax.saxutils import escape
 from pathlib import Path
 from typing import Optional
 
@@ -32,18 +33,153 @@ def shell(cmd, cwd: Optional[Path] = None):
                           capture_output=True, check=False)
 
 
+DISPLAY_MATH_ENVS = {
+    'align', 'align*', 'equation', 'equation*', 'gather', 'gather*',
+    'multline', 'multline*', 'flalign', 'flalign*'
+}
+
+MATH_SUB_ENVS = {
+    'array', 'matrix', 'pmatrix', 'bmatrix', 'Bmatrix', 'vmatrix',
+    'Vmatrix', 'smallmatrix', 'cases', 'aligned', 'alignedat',
+    'gathered', 'split'
+}
+
+PREAMBLE_COMMAND_PREFIXES = (
+    '\\newcommand', '\\renewcommand', '\\newenvironment',
+    '\\renewenvironment', '\\DeclareMathOperator'
+)
+
+
+def extract_environment_name(line: str) -> Optional[str]:
+    m = re.match(r'\s*\\begin\{([^}]+)\}', line)
+    return m.group(1) if m else None
+
+
+def wrap_display_math(src: str) -> str:
+    return '\\[\n' + src.strip() + '\n\\]'
+
+
+def starts_preamble_command(line: str) -> bool:
+    stripped = line.strip()
+    return any(stripped.startswith(prefix) for prefix in PREAMBLE_COMMAND_PREFIXES)
+
+
+def strip_tex_comment(line: str) -> str:
+    out = []
+    escaped = False
+    for ch in line:
+        if ch == '%' and not escaped:
+            break
+        out.append(ch)
+        escaped = (ch == '\\' and not escaped)
+        if ch != '\\':
+            escaped = False
+    return ''.join(out)
+
+
+def brace_delta(line: str) -> int:
+    raw = strip_tex_comment(line)
+    return raw.count('{') - raw.count('}')
+
+
+def split_preamble_and_body(tex_source: str):
+    preamble_lines = []
+    body_lines = []
+    lines = tex_source.splitlines()
+    i = 0
+    while i < len(lines):
+        line = lines[i]
+        if starts_preamble_command(line):
+            block = [line]
+            balance = brace_delta(line)
+            i += 1
+            while i < len(lines):
+                next_line = lines[i]
+                next_stripped = next_line.strip()
+                if balance <= 0 and not next_stripped.startswith('{'):
+                    break
+                block.append(next_line)
+                balance += brace_delta(next_line)
+                i += 1
+            preamble_lines.extend(block)
+        else:
+            body_lines.append(line)
+            i += 1
+    return '\n'.join(preamble_lines).strip(), body_lines
+
+
+def build_reference_parts(tex_source: str):
+    stripped_source = tex_source.strip()
+    if not stripped_source:
+        return '', ''
+    preamble_tex, body_lines = split_preamble_and_body(tex_source)
+    simple_math = (
+        not preamble_tex
+        and '\\begin{' not in stripped_source
+        and '\\end{' not in stripped_source
+    )
+    if simple_math:
+        body = wrap_display_math(stripped_source)
+    else:
+        chunks: list[str] = []
+        i = 0
+        while i < len(body_lines):
+            line = body_lines[i]
+            stripped = line.strip()
+            if not stripped:
+                i += 1
+                continue
+            if stripped.startswith('%'):
+                chunks.append(line)
+                i += 1
+                continue
+            env = extract_environment_name(line)
+            if env is not None:
+                block_lines = [line]
+                i += 1
+                end_pat = f'\\end{{{env}}}'
+                while i < len(body_lines):
+                    block_lines.append(body_lines[i])
+                    if end_pat in body_lines[i]:
+                        i += 1
+                        break
+                    i += 1
+                block = '\n'.join(block_lines).strip()
+                if env in DISPLAY_MATH_ENVS:
+                    chunks.append(block)
+                elif env in MATH_SUB_ENVS:
+                    chunks.append(wrap_display_math(block))
+                else:
+                    chunks.append(wrap_display_math(block))
+                continue
+
+            expr_lines = [line]
+            i += 1
+            while i < len(body_lines):
+                next_line = body_lines[i]
+                next_stripped = next_line.strip()
+                if not next_stripped or next_stripped.startswith('%') or extract_environment_name(next_line) is not None:
+                    break
+                expr_lines.append(next_line)
+                i += 1
+            chunks.append(wrap_display_math('\n'.join(expr_lines).strip()))
+        body = '\n\n'.join(c for c in chunks if c.strip())
+
+    return preamble_tex, body
+
+
 def render_reference_image(stem: str, tex_source: str, out_png: Path, build_dir: Path) -> Optional[str]:
     case_dir = build_dir / stem
     case_dir.mkdir(parents=True, exist_ok=True)
     tex_file = case_dir / f'{stem}.tex'
     pdf_file = case_dir / f'{stem}.pdf'
+    preamble_tex, body = build_reference_parts(tex_source)
     tex_doc = textwrap.dedent(f"""\
     \\documentclass[border=4pt,varwidth]{{standalone}}
     \\usepackage{{amsmath,amssymb,amsfonts,mathtools,cancel}}
+    {preamble_tex}
     \\begin{{document}}
-    \\[
-    {tex_source}
-    \\]
+    {body}
     \\end{{document}}
     """)
     tex_file.write_text(tex_doc, encoding='utf-8')
@@ -96,6 +232,58 @@ def center_images_in_odt(odt_path: Path) -> None:
     if 'style:name="ReviewComment"' not in styles:
         styles = styles.replace('</office:styles>', review_style + '</office:styles>')
     files['styles.xml'] = styles.encode('utf-8')
+
+    tmp_path = odt_path.with_suffix('.tmp.odt')
+    with zipfile.ZipFile(tmp_path, 'w') as zout:
+        for name, data in files.items():
+            info = zipfile.ZipInfo(name)
+            if name == 'mimetype':
+                info.compress_type = zipfile.ZIP_STORED
+            else:
+                info.compress_type = zipfile.ZIP_DEFLATED
+            zout.writestr(info, data)
+    tmp_path.replace(odt_path)
+
+
+def formula_annotation_text(case: dict) -> str:
+    commented_tex = '\n'.join('%% ' + line for line in case['render_tex'].splitlines())
+    return (
+        case['starmath']
+        + "\n%% please ensure custom font 'serif' is set to 'Latin Modern Math' https://is.gd/4hxfcB"
+        + '\n%% TeX:\n'
+        + commented_tex
+    )
+
+
+def rewrite_formula_objects_from_starmath(odt_path: Path, cases: list[dict]) -> None:
+    with zipfile.ZipFile(odt_path, 'r') as zin:
+        files = {name: zin.read(name) for name in zin.namelist()}
+
+    content = files['content.xml'].decode('utf-8')
+    formula_refs = re.findall(r'xlink:href="(Formula-\d+/)"', content)
+    if len(formula_refs) != len(cases):
+        raise SystemExit(
+            f'Expected {len(cases)} formula objects in {odt_path}, found {len(formula_refs)}'
+        )
+
+    for ref, case in zip(formula_refs, cases):
+        formula_path = ref + 'content.xml'
+        if formula_path not in files:
+            raise SystemExit(f'Missing formula object content: {formula_path}')
+        formula_xml = files[formula_path].decode('utf-8')
+        annotation = escape(formula_annotation_text(case))
+        def repl(m):
+            return m.group(1) + annotation + m.group(3)
+
+        formula_xml_new, n = re.subn(
+            r'(<annotation encoding="StarMath 5\.0">)(.*?)(</annotation>)',
+            repl,
+            formula_xml,
+            flags=re.S,
+        )
+        if n != 1:
+            raise SystemExit(f'Could not rewrite StarMath annotation in {formula_path}')
+        files[formula_path] = formula_xml_new.encode('utf-8')
 
     tmp_path = odt_path.with_suffix('.tmp.odt')
     with zipfile.ZipFile(tmp_path, 'w') as zout:
@@ -196,16 +384,20 @@ def main():
                 raise ValueError(f'Native mismatch between {reader_path} and {starmath_path}')
             tex_label = 'Original TeX'
             tex_provenance = 'reader/tex'
+            render_tex = original_tex
+            render_source = 'reader/tex'
+            formula_seed_tex = original_tex
+            fallback_render_tex = None
+            fallback_render_source = None
 
             writer_tex_path = WRITER_TEX / f'{stem}.test'
             if writer_tex_path.exists():
-                _, native_tex_in, _, render_tex = parse_test(writer_tex_path)
+                _, native_tex_in, _, writer_tex = parse_test(writer_tex_path)
                 if native_tex_in.strip() != native_text.strip():
                     writer_tex_native_mismatches.append(stem)
-                render_source = 'writer/tex'
-            else:
-                render_tex = original_tex
-                render_source = 'reader/tex'
+                formula_seed_tex = writer_tex
+                fallback_render_tex = writer_tex
+                fallback_render_source = 'writer/tex fallback'
         else:
             if starmath_in_fmt == 'tex':
                 original_tex = starmath_in_text
@@ -213,6 +405,9 @@ def main():
                 tex_provenance = 'writer/starmath'
                 render_tex = original_tex
                 render_source = 'writer/starmath'
+                formula_seed_tex = original_tex
+                fallback_render_tex = None
+                fallback_render_source = None
             elif starmath_in_fmt == 'native':
                 regenerated_dir = out_dir / '_regenerated_tex'
                 regenerate_tex_fixtures(WRITER_STARMATH, regenerated_dir)
@@ -221,11 +416,26 @@ def main():
                 tex_provenance = 'native -> writeTeX'
                 render_tex = original_tex
                 render_source = 'regenerated'
+                formula_seed_tex = original_tex
+                fallback_render_tex = None
+                fallback_render_source = None
             else:
                 raise ValueError(f'Unexpected input format in {starmath_path}: {starmath_in_fmt}')
 
         image_path = images_dir / f'{stem}.png'
         render_error = render_reference_image(stem, render_tex, image_path, build_dir)
+        if (
+            render_error is not None
+            and fallback_render_tex
+            and fallback_render_tex.strip() != render_tex.strip()
+        ):
+            fallback_error = render_reference_image(
+                stem, fallback_render_tex, image_path, build_dir
+            )
+            if fallback_error is None:
+                render_tex = fallback_render_tex
+                render_source = fallback_render_source
+                render_error = None
 
         cases.append({
             'stem': stem,
@@ -235,6 +445,7 @@ def main():
             'original_tex': original_tex,
             'render_tex': render_tex,
             'render_source': render_source,
+            'formula_seed_tex': formula_seed_tex,
             'starmath': starmath,
             'image_path': image_path,
             'render_error': render_error,
@@ -267,7 +478,7 @@ def main():
     md.append('- For legacy bespoke StarMath regressions, `Original TeX` comes from the `writer/starmath` fixture itself.')
     md.append('- `StarMath` is the expected writer output from `test/writer/starmath`.')
     md.append('- `Reference` images are rendered from `writer/tex` output when available, otherwise from the TeX shown in that section.')
-    md.append('- `LibreOffice formula` is a live formula object generated by Pandoc from the rendered TeX source below.')
+    md.append('- `LibreOffice formula` is a live formula object whose embedded StarMath source is rewritten from the expected fixture output.')
     md.append('- Review ordering is: unreviewed first, then `C`, then `B`, then `A`.')
     md.append('- Review status `A`: excellent match.')
     md.append('- Review status `B`: some minor issues.')
@@ -301,7 +512,8 @@ def main():
             md.append('')
             md.append(f'Reference render source: `{case["render_source"]}`')
             md.append('')
-            if case['render_tex'].strip() != case['original_tex'].strip():
+            if case['render_source'] not in {'reader/tex', 'writer/starmath'} and \
+               case['render_tex'].strip() != case['original_tex'].strip():
                 md.append('Rendered TeX')
                 md.append('')
                 md.append(fenced('tex', case['render_tex']))
@@ -322,7 +534,7 @@ def main():
             md.append('LibreOffice formula')
             md.append('')
             md.append('$$')
-            md.append(case['render_tex'])
+            md.append(case['formula_seed_tex'])
             md.append('$$')
             md.append('')
     review_md = out_dir / 'starmath-review.md'
@@ -348,6 +560,7 @@ def main():
     if r_pandoc.returncode != 0:
         raise SystemExit('pandoc ODT generation failed:\n' + r_pandoc.stdout + '\n' + r_pandoc.stderr)
 
+    rewrite_formula_objects_from_starmath(review_odt, cases)
     center_images_in_odt(review_odt)
 
     r_pdf = shell(['soffice', '--headless', '--convert-to', 'pdf', '--outdir', str(out_dir), str(review_odt)])

@@ -80,4 +80,4 @@
     ]
 ]
 >>> starmath
-left [ matrix { {{partialx_1} over {partialy_1}} # {{partialx_2} over {partialy_1}} ## {} ## {{partialx_1} over {partialy_2}} # {{partialx_2} over {partialy_2}} } right ]left ( matrix { 1 # 2 ## 3 # 4 } right )left lbrace matrix { 1 # 2 ## 3 # 4 } right rbraceleft lline matrix { 1 # 2 ## 3 # 4 } right rlineleft ldline matrix { 1 # 2 ## 3 # 4 } right rdline
+left [ matrix { {{partial x_1} over {partial y_1}} # {{partial x_2} over {partial y_1}} ## {} # {} ## {{partial x_1} over {partial y_2}} # {{partial x_2} over {partial y_2}} } right ] left ( matrix { 1 # 2 ## 3 # 4 } right ) left lbrace matrix { 1 # 2 ## 3 # 4 } right rbrace left lline matrix { 1 # 2 ## 3 # 4 } right rline left ldline matrix { 1 # 2 ## 3 # 4 } right rdline

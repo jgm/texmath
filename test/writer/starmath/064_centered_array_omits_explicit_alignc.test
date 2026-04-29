@@ -1,0 +1,13 @@
+<<< native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EIdentifier "a" ]
+      , [ EIdentifier "b" ]
+      ]
+    , [ [ EIdentifier "c" ]
+      , [ EIdentifier "d" ]
+      ]
+    ]
+]
+>>> starmath
+matrix { a # b ## c # d }
