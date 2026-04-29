@@ -6,4 +6,4 @@
 , EIdentifier "Z"
 ]
 >>> starmath
-Y\xleftarrow{f}X\xrightarrow{g}Z
+Y leftarrow csup {f} X toward csup {g} Z

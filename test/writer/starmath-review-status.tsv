@@ -3,58 +3,58 @@ test	status
 2	A	
 3	A	
 4	A	
-5	B	
+5	A	
 6	A	
-7	B	
-8	C	
+7	B	handling of ‘prime’ in starmath is unsatisfactory, no good solution exists.
+8	A	
 9	A	
-10	C	
-11	B	<< symbol is not 'correct'
-12	B	font size of �
-13	B	position of ? in LHS?
+10	A	
+11	A	
+12	A	
+13	A	
 14	B	second fraction is not smaller
 15	A	
 16	A	
 17	A	
 18	A	
-19	C	multiple issues
-20	C	issues with both latex and LO!
+19	A	
+20	B	font metric issues with lowercase \mathcal, otherwise fine.
 21	A	
-22	C	unable to render BB, Cal.
+22		unable to render BB, Cal. (reverted to unreviewed); sf series mapping; reverted to unreviewed
 23	A	
 axiom_of_power_set	A	
-binomial_coefficient	C	binomial isn't right
+binomial_coefficient	A	correct, although LO doesn’t used reducing text sizes
 boxed	C	no box!
 cancel	C	not supported
-choose	C	
-complex_number	C	
-cospan	C	spacing around operator
-deMorgans_law	C	spacing around operator
+choose	A	
+complex_number	A	
+cospan	A	
+deMorgans_law	A	
 differentiable_manifold	B	subsidiary text size
-divergence	C	spacing around operator
+divergence	A	
 ensuremath	A	
-genfrac	C	not stacked as it should be
-issue109	C	needs space around 'or'
+genfrac	A	
+issue109	A	
 issue204	B	slight difference in operator rendering?
-issue229		unclear test purpose
+issue229	A	
 labels	A	what happens to the label?
-macros		not sure if it's working
-math-in-text	C	boldface was lost 'is less than'
+macros	A	
+math-in-text	A	
 moore_determinant	A	bracket scaling in LO is dodgy
-notin	C	spacing around operator
-operatorname	C	
-phantom	C	
+notin	A	
+operatorname	A	
+phantom	A	
 quadratic_formula	A	
 schwinger_dyson	B	missing mathcal
 simple_sum_formula	A	
 sophomores_dream	B	location of integral limits
-span	C	
-sphere_volume	C	
-stackrel	C	
+span	A	
+sphere_volume	B	
+stackrel	A	
 substack	A	
-subsup	C	
-text	C	lost itals
-tokens	C	space around sqrt?
+subsup	B	overbracket and underbracket approximated via overbrace and underbrace (limitations of starmath)
+text	A	
+tokens	A	
 unicode	B	rendering of rightarrow
 001_dot_text_subscript	A	
 002_common_accents	B	tilde is too large?
@@ -70,20 +70,20 @@ unicode	B	rendering of rightarrow
 012_one_sided_delimiter_uses_none	A	
 013_middle_delimiter_uses_mline	A	
 014_operator_mapping_cdot	A	
-015_binomial_nolinefrac	C	
+015_binomial_nolinefrac	A	
 016_integral_without_limits	A	
 017_integral_with_lower_and_upper_limits	B	integral limits
 018_integral_with_infinite_upper_limit	B	integral limits
 019_sum_with_lower_and_upper_limits	A	
 020_sum_with_symbolic_term	A	
 021_greek_letter_mapping	A	
-022_greek_variant_mapping	C	varepsilon is reversed?
+022_greek_variant_mapping	A	
 023_arrow_mapping	A	
 024_set_and_relation_symbol_mapping	A	
 025_logic_and_calculus_symbol_mapping	A	
 026_greek_identifier_spacing_in_products	A	
-027_math_operators_rendered_as_functions	C	min and max show in italics (or is that ok?)
-028_nested_function_with_left_delimiter_spacing	C	min and max show in italics (or is that ok?)
+027_math_operators_rendered_as_functions	A	
+028_nested_function_with_left_delimiter_spacing	B	poor sizing of dash
 029_quad_spacing_command	B	maybe not quite enough space?
 030_qquad_spacing_command	B	
 031_greek_token_separator_before_scripted_identifier	A	
@@ -95,7 +95,7 @@ unicode	B	rendering of rightarrow
 037_identifier_before_function_gets_separator	A	
 038_greek_identifier_before_punctuation_gets_separator	A	
 039_greek_identifier_before_punctuation_in_larger_expression	A	
-040_bare_recognized_math_operators_omit_func_and_keep_spacing	C	min and max are wrong
+040_bare_recognized_math_operators_omit_func_and_keep_spacing	A	
 041_ordinary_function_with_subscript_keeps_ordinary_script_syntax	A	
 042_adjacent_bold_terms_get_separator	B	unsure if test is right
 043_mathcal_styled_token_before_left_delimiter	B	missing mathcal
@@ -105,16 +105,18 @@ unicode	B	rendering of rightarrow
 047_standalone_relation_gets_neutral_operands	A	
 048_standalone_arrow_gets_neutral_operands	A	
 049_subscript_only_fragment_gets_neutral_base	A	
-050_superscript_only_fragment_gets_neutral_base	C	'+' needs to be {}+{}
+050_superscript_only_fragment_gets_neutral_base	A	
 051_grouped_subscript_only_fragment_gets_neutral_base	A	
 052_matrix_environment	A	
 053_pmatrix_environment	A	
 054_bmatrix_environment	A	
 055_vmatrix_environment	A	
 056_vmatrix_environment	A	
-057_array_with_left_right_alignment		
+057_array_with_left_right_alignment	A	
 058_aligned_array_keeps_fractions_centered	A	
 059_cases_environment	A	
 060_cases_with_negative_log_fraction	A	
-061_fallback_to_tex_for_unsupported_forms	C	well, it's supposed to be unsupported?
-062_fallback_to_tex_for_under_over_constructs	C	
+061_phantom_alignment	A	
+062_fallback_to_tex_for_under_over_constructs	A	
+063_extensible_arrows_use_centered_scripts	A	TeXmath error: regenerated TeX is invalid in this case
+064_centered_array_omits_explicit_alignc	A	

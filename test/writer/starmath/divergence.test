@@ -22,4 +22,4 @@
     (EGrouped [ ESymbol Ord "\8706" , EIdentifier "z" ])
 ]
 >>> starmath
-nabla cdot vec v = {{partialv_x} over {partialx}} + {{partialv_y} over {partialy}} + {{partialv_z} over {partialz}}
+nabla cdot vec v = {{partial v_x} over {partial x}} + {{partial v_y} over {partial y}} + {{partial v_z} over {partial z}}

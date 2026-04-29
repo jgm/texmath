@@ -48,4 +48,4 @@
     (EGrouped [ EIdentifier "n" , ESymbol Ord "!" ])
 ]
 >>> starmath
-{{}}_p F_q(a_1,  dotsaxis , a_p; c_1,  dotsaxis , c_q; z) = sum from n = 0 to infinity {{(a_1 )_n dotsaxis (a_p )_n} over {(c_1 )_n dotsaxis (c_q )_n}}{z^n over {n ! }}
+{}_p F_q(a_1, dotslow , a_p; c_1, dotslow , c_q; z) = sum from n = 0 to infinity {{(a_1 )_n dotsaxis (a_p )_n} over {(c_1 )_n dotsaxis (c_q )_n}}{z^n over {n ! }}

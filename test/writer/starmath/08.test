@@ -29,4 +29,4 @@
 , ESymbol Close ")"
 ]
 >>> starmath
-left lline bar z right rline = left lline z right rline, left lline (bar z)^n right rline = |z|^n, func arg(z^n) = n func arg(z)
+left lline bar z right rline = left lline z right rline, left lline (bar z )^n right rline = {left lline z right rline}^n, func arg(z^n) = n func arg(z)

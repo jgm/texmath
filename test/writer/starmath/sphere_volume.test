@@ -124,10 +124,4 @@
     ]
 ]
 >>> starmath
-S = \{ 0 \leq \phi \leq 2\pi,\ 0 \leq \theta \leq \pi,\ 0 \leq \rho \leq R\}\begin{aligned}
-\mathrm{Volume} & = \iiint\limits_{S}\!\rho^{2}\sin\theta\,\mathrm{d}\rho\,\mathrm{d}\theta\,\mathrm{d}\phi \\
- & = \int_{0}^{2\pi}\!\mathrm{d}\phi\,\int_{0}^{\pi}\!\sin\theta\,\mathrm{d}\theta\,\int_{0}^{R}\!\rho^{2}\mathrm{d}\rho \\
- & = \phi\Big|_{0}^{2\pi}\ (-\cos\theta)\Big|_{0}^{\pi}\ \tfrac{1}{3}\rho^{3}\Big|_{0}^{R} \\
- & = 2\pi \times 2 \times \tfrac{1}{3}R^{3} \\
- & = \tfrac{4}{3}\pi R^{3}
-\end{aligned}
+S = left lbrace 0 <= %iphi <= 2%ipi , 0 <= %itheta <= %ipi , 0 <= %irho <= R right rbrace matrix { alignr "Volume" # alignl {} = iiint from S %irho^2 sin %itheta nitalic d%irho nitalic d%itheta nitalic d%iphi ## alignr {} # alignl {} = int from 0 to {2%ipi} nitalic d%iphi int from 0 to %ipi sin %itheta nitalic d%itheta int from 0 to R %irho^2 nitalic d%irho ## alignr {} # alignl {} = {left none %iphi right rline}_0^{{2%ipi}} {left none left ( - cos %itheta right ) right rline}_0^%ipi {{alignc 1} over {alignc 3}}{left none %irho^3 right rline}_0^R ## alignr {} # alignl {} = 2%ipi times 2 times {{alignc 1} over {alignc 3}}R^3 ## alignr {} # alignl {} = {{alignc 4} over {alignc 3}}%ipi R^3 }

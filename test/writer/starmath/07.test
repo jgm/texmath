@@ -24,4 +24,4 @@
 , EIdentifier "a"
 ]
 >>> starmath
-u^″ + p(x) u^′ + q(x) u = f(x), ~ x>a
+u'' + p(x) u' + q(x) u = f(x), ~ x > a

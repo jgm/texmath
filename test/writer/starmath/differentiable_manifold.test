@@ -67,4 +67,4 @@
     ]
 ]
 >>> starmath
-%igamma_1 equiv %igamma_2 dlrarrow left lbrace matrix { alignl %igamma_1(0) = %igamma_2(0) = p, " and " ## alignl {left none {{alignc {"d"}} over {alignc {"d"t}}}%iphi circ %igamma_1(t) right rline}_{{t = 0}} = {left none {{alignc {"d"}} over {alignc {"d"t}}}%iphi circ %igamma_2(t) right rline}_{{t = 0}} } right none
+%igamma_1 equiv %igamma_2 dlrarrow left lbrace matrix { alignl %igamma_1(0) = %igamma_2(0) = p, " and " ## alignl {left none {{alignc {nitalic d}} over {alignc {nitalic dt}}}%iphi circ %igamma_1(t) right rline}_{{t = 0}} = {left none {{alignc {nitalic d}} over {alignc {nitalic dt}}}%iphi circ %igamma_2(t) right rline}_{{t = 0}} } right none

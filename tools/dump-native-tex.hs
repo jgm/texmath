@@ -28,11 +28,14 @@ dumpOne inputDir outputDir file = do
   let src = inputDir </> file
       dst = outputDir </> (takeBaseName file <> ".tex")
   (inFormat, inText, _, _) <- parseGoldenTest src
-  if inFormat /= "native"
-     then error $ src <> ": expected <<< native"
-     else do
-       let exps = readNative inText
-       TIO.writeFile dst (writeTeX exps <> "\n")
+  case inFormat of
+    "native" -> do
+      let exps = readNative inText
+      TIO.writeFile dst (writeTeX exps <> "\n")
+    "tex" ->
+      TIO.writeFile dst (T.stripEnd inText <> "\n")
+    _ ->
+      error $ src <> ": expected <<< native or <<< tex"
 
 parseGoldenTest :: FilePath -> IO (Text, Text, Text, Text)
 parseGoldenTest fp = do
