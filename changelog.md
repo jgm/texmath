@@ -1,3 +1,8 @@
+texmath (0.13.1.1)
+
+  * Typst writer: don't add extra spaces around `|` or escaped
+    symbols (#286).
+
 texmath (0.13.1)
 
   * MathML writer: Keep mathvariant attribute in addition to finding

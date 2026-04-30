@@ -25,7 +25,7 @@ import qualified Data.Map as M
 import qualified Data.Text as T
 import Text.TeXMath.Types
 import qualified Text.TeXMath.Shared as S
-import Typst.Symbols (typstSymbols)
+import qualified Typst.Symbols as TS
 import Data.Generics (everywhere, mkT)
 import Data.Text (Text)
 import Data.Char (isDigit, isAlpha, isAscii)
@@ -43,7 +43,11 @@ writeExps :: [Exp] -> Text
 writeExps = go . map writeExp
  where
    go (a : b : es)
-    | T.take 1 b == "'" -- avoid space before a prime #239
+    | Just (bstart, _) <- T.uncons b
+    , Just (astart, _) <- T.uncons a
+    , Just (_, aend) <- T.unsnoc a
+    , bstart == '\'' -- avoid space before a prime #239
+      || bstart == '|' || aend == '|' || bstart == '\\' || astart == '\\' -- #286
      = a <> go (b:es)
    go (a : as)
      = a <> if null as
@@ -306,7 +310,10 @@ tshow = T.pack . show
 typstSymbolMap :: M.Map Text Text
 typstSymbolMap = M.fromList $
   ("\776", "dot.double") -- see #231
-  : [(s,name) | (name, _, s) <- typstSymbols]
+  : [(s,name) | TS.Sym { TS.symName = name
+                       , TS.symText = s
+                       , TS.symDeprecation = Nothing
+                       } <- TS.typstSymbols]
 
 getAccentCommand :: Text -> Maybe Text
 getAccentCommand ac = do
