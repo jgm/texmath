@@ -249,7 +249,6 @@ def formula_annotation_text(case: dict) -> str:
     commented_tex = '\n'.join('%% ' + line for line in case['render_tex'].splitlines())
     return (
         case['starmath']
-        + "\n%% please ensure custom font 'serif' is set to 'Latin Modern Math' https://is.gd/4hxfcB"
         + '\n%% TeX:\n'
         + commented_tex
     )

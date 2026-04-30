@@ -18,9 +18,9 @@ test	status
 17	A	
 18	A	
 19	A	
-20	B	font metric issues with lowercase \mathcal, otherwise fine.
+20	B	slight spacing discrepancy vs Latex, but not texmath's job to fix.
 21	A	
-22	A	as good as it can be, albeit with font metric issues
+22	A	
 23	A	
 axiom_of_power_set	A	
 binomial_coefficient	A	correct, although LO doesn’t used reducing text sizes

@@ -88,7 +88,7 @@ mergeAdjacentUnicodeSerifStyled :: [Exp] -> [Exp]
 mergeAdjacentUnicodeSerifStyled [] = []
 mergeAdjacentUnicodeSerifStyled (EStyled sty xs : EStyled sty' ys : rest)
   | sty == sty' && isUnicodeSerifStyle sty =
-      mergeAdjacentUnicodeSerifStyled (EStyled sty (xs <> ys) : rest)
+      mergeAdjacentUnicodeSerifStyled (EStyled sty (xs <> [ESpace 1] <> ys) : rest)
 mergeAdjacentUnicodeSerifStyled (x:xs) = x : mergeAdjacentUnicodeSerifStyled xs
 
 isUnicodeSerifStyle :: TextType -> Bool
@@ -788,7 +788,7 @@ renderStyled ctx sty xs = do
   pure $ case sty of
     _
       | Just unicodeBody <- renderUnicodeSerifStyled sty xs ->
-          "font serif " <> quoteText unicodeBody
+          "nitalic " <> styleArg unicodeBody
     TextNormal
       | Just ident <- singleUprightIdentifier xs -> "nitalic " <> renderIdentifier ident
       | Just txt <- styledText xs -> quoteText txt
