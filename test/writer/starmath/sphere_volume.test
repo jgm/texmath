@@ -1,0 +1,127 @@
+<<< native
+[ EIdentifier "S"
+, ESymbol Rel "="
+, ESymbol Open "{"
+, ENumber "0"
+, ESymbol Rel "\8804"
+, EIdentifier "\981"
+, ESymbol Rel "\8804"
+, ENumber "2"
+, EIdentifier "\960"
+, ESymbol Pun ","
+, ESpace (2 % 9)
+, ENumber "0"
+, ESymbol Rel "\8804"
+, EIdentifier "\952"
+, ESymbol Rel "\8804"
+, EIdentifier "\960"
+, ESymbol Pun ","
+, ESpace (2 % 9)
+, ENumber "0"
+, ESymbol Rel "\8804"
+, EIdentifier "\961"
+, ESymbol Rel "\8804"
+, EIdentifier "R"
+, ESymbol Close "}"
+, EArray
+    [ AlignRight , AlignLeft ]
+    [ [ [ EStyled
+            TextNormal
+            [ EIdentifier "V"
+            , EIdentifier "o"
+            , EIdentifier "l"
+            , EIdentifier "u"
+            , EIdentifier "m"
+            , EIdentifier "e"
+            ]
+        ]
+      , [ ESymbol Rel "="
+        , EUnder False (ESymbol Op "\8749") (EIdentifier "S")
+        , ESpace ((-1) % 6)
+        , ESuper (EIdentifier "\961") (ENumber "2")
+        , EMathOperator "sin"
+        , EIdentifier "\952"
+        , ESpace (1 % 6)
+        , EStyled TextNormal [ EIdentifier "d" ]
+        , EIdentifier "\961"
+        , ESpace (1 % 6)
+        , EStyled TextNormal [ EIdentifier "d" ]
+        , EIdentifier "\952"
+        , ESpace (1 % 6)
+        , EStyled TextNormal [ EIdentifier "d" ]
+        , EIdentifier "\981"
+        ]
+      ]
+    , [ []
+      , [ ESymbol Rel "="
+        , ESubsup
+            (ESymbol Op "\8747")
+            (ENumber "0")
+            (EGrouped [ ENumber "2" , EIdentifier "\960" ])
+        , ESpace ((-1) % 6)
+        , EStyled TextNormal [ EIdentifier "d" ]
+        , EIdentifier "\981"
+        , ESpace (1 % 6)
+        , ESubsup (ESymbol Op "\8747") (ENumber "0") (EIdentifier "\960")
+        , ESpace ((-1) % 6)
+        , EMathOperator "sin"
+        , EIdentifier "\952"
+        , ESpace (1 % 6)
+        , EStyled TextNormal [ EIdentifier "d" ]
+        , EIdentifier "\952"
+        , ESpace (1 % 6)
+        , ESubsup (ESymbol Op "\8747") (ENumber "0") (EIdentifier "R")
+        , ESpace ((-1) % 6)
+        , ESuper (EIdentifier "\961") (ENumber "2")
+        , EStyled TextNormal [ EIdentifier "d" ]
+        , EIdentifier "\961"
+        ]
+      ]
+    , [ []
+      , [ ESymbol Rel "="
+        , EIdentifier "\981"
+        , ESubsup
+            (EScaled (9 % 5) (ESymbol Open "|"))
+            (ENumber "0")
+            (EGrouped [ ENumber "2" , EIdentifier "\960" ])
+        , ESpace (2 % 9)
+        , ESymbol Open "("
+        , ESymbol Ord "\8722"
+        , EMathOperator "cos"
+        , EIdentifier "\952"
+        , ESymbol Close ")"
+        , ESubsup
+            (EScaled (9 % 5) (ESymbol Open "|"))
+            (ENumber "0")
+            (EIdentifier "\960")
+        , ESpace (2 % 9)
+        , EFraction InlineFrac (ENumber "1") (ENumber "3")
+        , ESuper (EIdentifier "\961") (ENumber "3")
+        , ESubsup
+            (EScaled (9 % 5) (ESymbol Open "|"))
+            (ENumber "0")
+            (EIdentifier "R")
+        ]
+      ]
+    , [ []
+      , [ ESymbol Rel "="
+        , ENumber "2"
+        , EIdentifier "\960"
+        , ESymbol Bin "\215"
+        , ENumber "2"
+        , ESymbol Bin "\215"
+        , EFraction InlineFrac (ENumber "1") (ENumber "3")
+        , ESuper (EIdentifier "R") (ENumber "3")
+        ]
+      ]
+    , [ []
+      , [ ESymbol Rel "="
+        , EFraction InlineFrac (ENumber "4") (ENumber "3")
+        , EIdentifier "\960"
+        , ESuper (EIdentifier "R") (ENumber "3")
+        ]
+      ]
+    ]
+]
+>>> starmath
+S = left lbrace 0 <= %iphi <= 2%ipi , 0 <= %itheta <= %ipi , 0 <= %irho <= R right rbrace matrix { alignr "Volume" # alignl {} = iiint from S %irho^2 sin %itheta nitalic d%irho nitalic d%itheta nitalic d%iphi ## alignr {} # alignl {} = int from 0 to {2%ipi} nitalic d%iphi int from 0 to %ipi sin %itheta nitalic d%itheta int from 0 to R %irho^2 nitalic d%irho ## alignr {} # alignl {} = {left none %iphi right rline}_0^{{2%ipi}} {left none left ( - cos %itheta right ) right rline}_0^%ipi {{alignc 1} over {alignc 3}}{left none %irho^3 right rline}_0^R ## alignr {} # alignl {} = 2%ipi times 2 times {{alignc 1} over {alignc 3}}R^3 ## alignr {} # alignl {} = {{alignc 4} over {alignc 3}}%ipi R^3 }

@@ -1,0 +1,7 @@
+<<< tex
+\begin{gathered}
+x + y = 2x + y - x \\
+\phantom{x+y} = 3x + y - 2x
+\end{gathered}
+>>> starmath
+matrix { x + y = 2x + y - x ## phantom {x + y} = 3x + y - 2x }

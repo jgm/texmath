@@ -1,0 +1,68 @@
+<<< native
+[ ESubsup (EIdentifier "x") (EIdentifier "b") (EIdentifier "a")
+, ESpace (1 % 1)
+, ESubsup (EIdentifier "x") (EIdentifier "b") (EIdentifier "a")
+, ESpace (1 % 1)
+, EUnder True (EMathOperator "min") (EIdentifier "A")
+, ESpace (1 % 1)
+, EUnder True (EMathOperator "max") (EIdentifier "B")
+, ESpace (1 % 1)
+, EUnder True (EMathOperator "det") (EIdentifier "C")
+, ESpace (1 % 1)
+, EUnder True (EMathOperator "Pr") (EIdentifier "A")
+, ESpace (1 % 1)
+, EUnder True (EMathOperator "gcd") (EIdentifier "A")
+, ESpace (1 % 1)
+, ESuper
+    (EOver False (EIdentifier "u") (ESymbol Accent "\775"))
+    (ENumber "2")
+, ESpace (1 % 1)
+, ESub
+    (EOver False (EIdentifier "u") (ESymbol TOver "\175"))
+    (EIdentifier "\949")
+, ESpace (1 % 1)
+, ESubsup
+    (EUnder False (EIdentifier "u") (ESymbol TUnder "_"))
+    (EIdentifier "b")
+    (EIdentifier "a")
+, ESpace (1 % 1)
+, EOver
+    False
+    (EOver
+       False
+       (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+       (ESymbol TOver "\9182"))
+    (EText TextNormal "term")
+, ESpace (1 % 1)
+, EOver
+    False
+    (EOver
+       False
+       (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+       (ESymbol TOver "\9140"))
+    (EIdentifier "c")
+, ESpace (1 % 1)
+, EUnder
+    False
+    (EUnder
+       False
+       (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+       (ESymbol TUnder "\9183"))
+    (EIdentifier "c")
+, ESpace (1 % 1)
+, EUnder
+    False
+    (EUnder
+       False
+       (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+       (ESymbol TUnder "\9141"))
+    (EIdentifier "c")
+, ESuper (ESpace (1 % 1)) (EIdentifier "H")
+, EIdentifier "e"
+, ENumber "3"
+, ESub (ESpace (1 % 1)) (EIdentifier "x")
+, EIdentifier "A"
+, ESubsup (ESpace (1 % 1)) (EIdentifier "x") (ENumber "3")
+]
+>>> starmath
+x_b^a ~ x_b^a ~ {func min} csub {A}~ {func max} csub {B}~ {func det} csub {C}~ {func Pr} csub {A}~ {func gcd} csub {A}~ {dot u}^2 ~ {overline u}_%ivarepsilon ~ {underline u}_b^a ~ {a + b} overbrace "term"~ {a + b} overbrace c~ {a + b} underbrace c~ {a + b} underbrace c{~}^H e3{~}_x A{~}_x^3

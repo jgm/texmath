@@ -1,0 +1,15 @@
+<<< native
+[ ENumber "2"
+, ENumber "5"
+, EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ]
+, EGrouped [ EIdentifier "x" , ESymbol Bin "+" , ENumber "3" ]
+, EGrouped
+    [ EIdentifier "x" , ESymbol Bin "+" , EIdentifier "\945" ]
+, EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ ENumber "2" ] , [ ENumber "3" ] ]
+    , [ [ ENumber "4" ] , [ ENumber "5" ] ]
+    ]
+]
+>>> starmath
+25{y + 3}{x + 3}{x + %ialpha}matrix { 2 # 3 ## 4 # 5 }

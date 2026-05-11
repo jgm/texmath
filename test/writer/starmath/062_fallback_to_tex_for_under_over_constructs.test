@@ -1,0 +1,4 @@
+<<< tex
+\underbrace{x+y}_{z}+\overbrace{x+y}^{z}
+>>> starmath
+{x + y} underbrace z + {x + y} overbrace z

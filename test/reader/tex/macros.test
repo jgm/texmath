@@ -9,9 +9,9 @@
 \theta%
 }
 % comment
-\newcommand{\aaa}{\b{2}}
+\newcommand{\aaa}{\bb{2}}
 \renewcommand{\phi}{\aaa}
-\newcommand{\b}[1]{#1}
+\newcommand{\bb}[1]{#1}
 
 \newenvironment{ary}
 {\begin{array}{cc}
