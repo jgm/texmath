@@ -1,0 +1,4 @@
+<<< tex
+t_{\text{pb,disc}}=\begin{cases}\dfrac{C_{\text{tot}}}{B}, & r=0,\\\dfrac{-\ln\!\left(1-rC_{\text{tot}}/B\right)}{\ln(1+r)}, & r>0\text{ and }1-rC_{\text{tot}}/B>0,\\\infty, & \text{otherwise}.\end{cases}
+>>> starmath
+t_"pb,disc" = left lbrace matrix { alignl {{alignc {C_"tot"}} over {alignc B}}, # alignl r = 0, ## alignl {{alignc {- ln left ( 1 - rC_"tot" / B right )}} over {alignc {ln(1 + r)}}}, # alignl r>0" and "1 - rC_"tot" / B>0, ## alignl infinity, # alignl "otherwise". } right none

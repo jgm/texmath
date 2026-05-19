@@ -1,0 +1,4 @@
+<<< tex
+P_{\text{ch}, k}=\max\!\left(0,\min\!\left(P'_{\text{pv}, k},\,P^{\text{cap}}_{\text{ch}},\,P_{\text{ch,head}, k}\right)\right).
+>>> starmath
+P_{{"ch", k}} = max left ( 0, min left ( P_{{"pv", k}}^′,  P_"ch"^"cap",  P_{{"ch,head", k}} right ) right ).

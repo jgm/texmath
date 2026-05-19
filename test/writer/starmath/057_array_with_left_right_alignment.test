@@ -1,0 +1,4 @@
+<<< tex
+\begin{array}{lr}a&b\\c&d\end{array}
+>>> starmath
+matrix { alignl a # alignr b ## alignl c # alignr d }
