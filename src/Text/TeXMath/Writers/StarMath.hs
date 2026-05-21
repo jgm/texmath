@@ -497,11 +497,7 @@ needsNeutralRhs :: Exp -> Bool
 needsNeutralRhs = isInfixLikeExp
 
 needsNeutralScriptOperands :: Exp -> Bool
-needsNeutralScriptOperands e =
-  case e of
-    ESymbol Bin "+" -> True
-    ESymbol Bin "＋" -> True
-    _               -> False
+needsNeutralScriptOperands = isInfixLikeExp
 
 isInfixLikeExp :: Exp -> Bool
 isInfixLikeExp e =
@@ -790,7 +786,8 @@ renderStyled ctx sty xs = do
       | Just unicodeBody <- renderUnicodeSerifStyled sty xs ->
           "nitalic " <> styleArg unicodeBody
     TextNormal
-      | Just ident <- singleUprightIdentifier xs -> "nitalic " <> renderIdentifier ident
+      | Just ident <- singleUprightIdentifier xs ->
+          "nitalic " <> renderTextNormalIdentifier ident
       | Just txt <- styledText xs -> quoteText txt
       | Just txt <- renderTextNormalStyled xs
       , shouldForceUprightTextNormal xs -> "nitalic{" <> txt <> "}"
@@ -1029,8 +1026,33 @@ isPlainTextSymbol s =
 
 renderTextNormalStyled :: [Exp] -> Maybe T.Text
 renderTextNormalStyled xs = do
-  rendered <- mapM renderTextNormalExp xs
-  pure $ mergePieces (zip xs rendered)
+  let xs' = quoteStarMathKeywordRuns xs
+  rendered <- mapM renderTextNormalExp xs'
+  pure $ mergePieces (zip xs' rendered)
+
+quoteStarMathKeywordRuns :: [Exp] -> [Exp]
+quoteStarMathKeywordRuns [] = []
+quoteStarMathKeywordRuns xs@(x : rest)
+  | Just _ <- asciiIdentifierWord x =
+      let (word, wordExps, rest') = takeIdentifierWordRun xs
+      in if isStarMathReservedWord word
+            then EText TextNormal word : quoteStarMathKeywordRuns rest'
+            else wordExps <> quoteStarMathKeywordRuns rest'
+  | otherwise = x : quoteStarMathKeywordRuns rest
+
+takeIdentifierWordRun :: [Exp] -> (T.Text, [Exp], [Exp])
+takeIdentifierWordRun = go [] []
+ where
+  go pieces exps (e : rest)
+    | Just piece <- asciiIdentifierWord e = go (piece : pieces) (e : exps) rest
+  go pieces exps rest = (T.concat (reverse pieces), reverse exps, rest)
+
+asciiIdentifierWord :: Exp -> Maybe T.Text
+asciiIdentifierWord e =
+  case e of
+    EIdentifier t
+      | not (T.null t) && T.all isAsciiAlpha t -> Just t
+    _ -> Nothing
 
 renderTextNormalExp :: Exp -> Maybe T.Text
 renderTextNormalExp e =
@@ -1101,10 +1123,14 @@ isUprightTextNormalExp e =
                            && isUprightTextNormalExp sup
     _                      -> False
 
+isAsciiAlpha :: Char -> Bool
+isAsciiAlpha c =
+  (c >= 'A' && c <= 'Z') ||
+  (c >= 'a' && c <= 'z')
+
 isAsciiAlphaNum :: Char -> Bool
 isAsciiAlphaNum c =
-  (c >= 'A' && c <= 'Z') ||
-  (c >= 'a' && c <= 'z') ||
+  isAsciiAlpha c ||
   (c >= '0' && c <= '9')
 
 styleArg :: T.Text -> T.Text
@@ -1164,6 +1190,44 @@ renderIdentifier ident =
       | shouldItalicizeGreek ident -> "%i" <> name
       | otherwise                  -> "%" <> name
     Nothing -> ident
+
+renderTextNormalIdentifier :: T.Text -> T.Text
+renderTextNormalIdentifier ident =
+  case greekName ident of
+    Just{}  -> renderIdentifier ident
+    Nothing
+      | isStarMathReservedWord ident -> quoteText ident
+      | otherwise                    -> ident
+
+isStarMathReservedWord :: T.Text -> Bool
+isStarMathReservedWord t =
+  t `elem`
+    [ "alignc", "alignl", "alignr"
+    , "and", "approx"
+    , "bar", "binom", "bold", "breve"
+    , "cdot", "check", "circ", "cos", "cosh", "cot", "csub", "csup"
+    , "dlarrow", "dlrarrow", "dot", "dotsaxis", "dotsdown", "dotslow"
+    , "dotsup", "dotsvert", "downarrow", "drarrow"
+    , "emptyset", "equiv", "exists", "exp"
+    , "fixed", "font", "forall", "from", "func"
+    , "gg"
+    , "hat"
+    , "in", "infinity", "int", "intersection", "ital", "iiint"
+    , "langle", "lbrace", "lceil", "ldbracket", "ldline", "left"
+    , "leftarrow", "leftrightarrow", "lfloor", "lim", "liminf"
+    , "limsup", "ll", "lline", "ln", "log"
+    , "mapsto", "matrix", "max", "min", "minusplus", "mline"
+    , "nabla", "neg", "none", "notin", "nitalic", "nroot"
+    , "or", "ortho", "over", "overbrace", "overline", "owns"
+    , "parallel", "phantom", "plusminus", "partial", "prod", "prop"
+    , "rangle", "rbrace", "rceil", "rdbracket", "rdline", "rfloor"
+    , "right", "rline"
+    , "sans", "sin", "sinh", "sqrt", "subset", "subseteq", "sum"
+    , "supset", "supseteq"
+    , "tilde", "times", "to", "toward"
+    , "underbrace", "underline", "union", "uparrow"
+    , "vec"
+    ]
 
 renderMathOperator :: T.Text -> T.Text
 renderMathOperator t
