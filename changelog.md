@@ -1,3 +1,8 @@
+texmath (0.13.1.2)
+
+  * Typst writer: Avoid using deprecated symbols (#287).
+    This requires depending on typst-symbols 0.2.*.
+
 texmath (0.13.1.1)
 
   * Typst writer: don't add extra spaces around `|` or escaped
