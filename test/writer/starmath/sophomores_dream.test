@@ -24,4 +24,4 @@
     ]
 ]
 >>> starmath
-int from 0 to 1 x^x nitalic dx = sum from n = 1 to infinity {(- 1)^{{n + 1}} n^{{- n}}}
+int_0^1 x^x nitalic dx = sum from n = 1 to infinity {(- 1)^{{n + 1}} n^{{- n}}}

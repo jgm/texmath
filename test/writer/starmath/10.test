@@ -48,4 +48,4 @@
 , EIdentifier "R"
 ]
 >>> starmath
-%iphi_n(%ikappa) = {1 over {4%ipi^2 %ikappa^2}}int from 0 to infinity {{sin(%ikappa R)} over {%ikappa R}}{partial over {partial R}}left [ R^2{{partial D_n(R)} over {partial R}} right ] dR
+%iphi_n(%ikappa) = {1 over {4%ipi^2 %ikappa^2}}int_0^infinity {{sin(%ikappa R)} over {%ikappa R}}{partial over {partial R}}left [ R^2{{partial D_n(R)} over {partial R}} right ] dR

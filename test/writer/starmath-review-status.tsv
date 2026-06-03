@@ -12,7 +12,7 @@ test	status
 11	A	
 12	A	
 13	A	
-14	B	second fraction is not smaller
+14	A
 15	A	
 16	A	
 17	A	
@@ -47,7 +47,7 @@ phantom	A
 quadratic_formula	A	
 schwinger_dyson	B	missing mathcal
 simple_sum_formula	A	
-sophomores_dream	B	location of integral limits
+sophomores_dream	A
 span	A	
 sphere_volume	B	
 stackrel	A	
@@ -72,8 +72,8 @@ unicode	B	rendering of rightarrow
 014_operator_mapping_cdot	A	
 015_binomial_nolinefrac	A	
 016_integral_without_limits	A	
-017_integral_with_lower_and_upper_limits	B	integral limits
-018_integral_with_infinite_upper_limit	B	integral limits
+017_integral_with_lower_and_upper_limits	A
+018_integral_with_infinite_upper_limit	A
 019_sum_with_lower_and_upper_limits	A	
 020_sum_with_symbolic_term	A	
 021_greek_letter_mapping	A	
@@ -122,3 +122,7 @@ unicode	B	rendering of rightarrow
 064_centered_array_omits_explicit_alignc	A	
 065_reserved_word_in_uptext_subscript_is_quoted	A	
 066_standalone_plus_minus_scripts_get_neutral_operands	A	
+067_integral_default_limits_use_scripts	A
+068_integral_limits_use_from_to	A
+069_integral_nolimits_use_scripts	A
+070_normal_fraction_display_inline_uses_inline_size	A

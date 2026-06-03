@@ -30,4 +30,4 @@
 , EIdentifier "y"
 ]
 >>> starmath
-int from a to x int from a to s f(y) dy ds = int from a to x f(y)(x - y) dy
+int_a^x int_a^s f(y) dy ds = int_a^x f(y)(x - y) dy

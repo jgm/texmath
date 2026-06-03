@@ -4,4 +4,4 @@
 , EFraction InlineFrac (EIdentifier "a") (EIdentifier "b")
 ]
 >>> starmath
-{a over b} {a over b}
+{a over b} size*0.7 {a over b}

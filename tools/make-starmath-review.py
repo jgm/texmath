@@ -12,25 +12,29 @@ from xml.sax.saxutils import escape
 from pathlib import Path
 from typing import Optional
 
-ROOT = Path('/home/john/pandoc/texmath')
+ROOT = Path(__file__).resolve().parents[1]
 READER_TEX = ROOT / 'test' / 'reader' / 'tex'
 WRITER_TEX = ROOT / 'test' / 'writer' / 'tex'
 WRITER_STARMATH = ROOT / 'test' / 'writer' / 'starmath'
 REVIEW_STATUS_TSV = ROOT / 'test' / 'writer' / 'starmath-review-status.tsv'
 REGENERATED_TEX_HELPER = ROOT / 'tools' / 'dump-native-tex.hs'
+STARMATH_VARIANTS_HELPER = ROOT / 'tools' / 'dump-starmath-variants.hs'
 
 
 def parse_test(path: Path):
     s = path.read_text(encoding='utf-8')
-    m = re.search(r'^<<<\s*(\w+)\n(.*?)^>>>\s*(\w+)\n(.*)\Z', s, re.S | re.M)
+    m = re.search(r'^<<<\s*([\w-]+)\n(.*?)^>>>\s*([\w-]+)\n(.*)\Z', s, re.S | re.M)
     if not m:
         raise ValueError(f'Could not parse {path}')
     return m.group(1), m.group(2).strip(), m.group(3), m.group(4).strip()
 
 
 def shell(cmd, cwd: Optional[Path] = None):
-    return subprocess.run(cmd, cwd=str(cwd) if cwd else None, text=True,
-                          capture_output=True, check=False)
+    try:
+        return subprocess.run(cmd, cwd=str(cwd) if cwd else None, text=True,
+                              capture_output=True, check=False)
+    except FileNotFoundError as e:
+        raise SystemExit(f"Required command not found: {cmd[0]}") from e
 
 
 DISPLAY_MATH_ENVS = {
@@ -57,6 +61,10 @@ def extract_environment_name(line: str) -> Optional[str]:
 
 def wrap_display_math(src: str) -> str:
     return '\\[\n' + src.strip() + '\n\\]'
+
+
+def wrap_inline_math(src: str) -> str:
+    return '\\(' + src.strip().replace('\n', ' ') + '\\)'
 
 
 def starts_preamble_command(line: str) -> bool:
@@ -108,7 +116,7 @@ def split_preamble_and_body(tex_source: str):
     return '\n'.join(preamble_lines).strip(), body_lines
 
 
-def build_reference_parts(tex_source: str):
+def build_reference_parts(tex_source: str, display_mode: str):
     stripped_source = tex_source.strip()
     if not stripped_source:
         return '', ''
@@ -119,7 +127,7 @@ def build_reference_parts(tex_source: str):
         and '\\end{' not in stripped_source
     )
     if simple_math:
-        body = wrap_display_math(stripped_source)
+        body = wrap_display_math(stripped_source) if display_mode == 'display' else wrap_inline_math(stripped_source)
     else:
         chunks: list[str] = []
         i = 0
@@ -148,9 +156,9 @@ def build_reference_parts(tex_source: str):
                 if env in DISPLAY_MATH_ENVS:
                     chunks.append(block)
                 elif env in MATH_SUB_ENVS:
-                    chunks.append(wrap_display_math(block))
+                    chunks.append(wrap_display_math(block) if display_mode == 'display' else wrap_inline_math(block))
                 else:
-                    chunks.append(wrap_display_math(block))
+                    chunks.append(wrap_display_math(block) if display_mode == 'display' else wrap_inline_math(block))
                 continue
 
             expr_lines = [line]
@@ -162,18 +170,19 @@ def build_reference_parts(tex_source: str):
                     break
                 expr_lines.append(next_line)
                 i += 1
-            chunks.append(wrap_display_math('\n'.join(expr_lines).strip()))
+            expr = '\n'.join(expr_lines).strip()
+            chunks.append(wrap_display_math(expr) if display_mode == 'display' else wrap_inline_math(expr))
         body = '\n\n'.join(c for c in chunks if c.strip())
 
     return preamble_tex, body
 
 
-def render_reference_image(stem: str, tex_source: str, out_png: Path, build_dir: Path) -> Optional[str]:
+def render_reference_image(stem: str, tex_source: str, display_mode: str, out_png: Path, build_dir: Path) -> Optional[str]:
     case_dir = build_dir / stem
     case_dir.mkdir(parents=True, exist_ok=True)
     tex_file = case_dir / f'{stem}.tex'
     pdf_file = case_dir / f'{stem}.pdf'
-    preamble_tex, body = build_reference_parts(tex_source)
+    preamble_tex, body = build_reference_parts(tex_source, display_mode)
     tex_doc = textwrap.dedent(f"""\
     \\documentclass[border=4pt,varwidth]{{standalone}}
     \\usepackage{{amsmath,amssymb,amsfonts,mathtools,cancel}}
@@ -245,32 +254,34 @@ def center_images_in_odt(odt_path: Path) -> None:
     tmp_path.replace(odt_path)
 
 
-def formula_annotation_text(case: dict) -> str:
-    commented_tex = '\n'.join('%% ' + line for line in case['render_tex'].splitlines())
+def formula_annotation_text(annotation: dict) -> str:
+    commented_tex = '\n'.join('%% ' + line for line in annotation['tex'].splitlines())
     return (
-        case['starmath']
-        + '\n%% TeX:\n'
+        annotation['starmath']
+        + '\n%% TeX '
+        + annotation['mode']
+        + ':\n'
         + commented_tex
     )
 
 
-def rewrite_formula_objects_from_starmath(odt_path: Path, cases: list[dict]) -> None:
+def rewrite_formula_objects_from_starmath(odt_path: Path, annotations: list[dict]) -> None:
     with zipfile.ZipFile(odt_path, 'r') as zin:
         files = {name: zin.read(name) for name in zin.namelist()}
 
     content = files['content.xml'].decode('utf-8')
     formula_refs = re.findall(r'xlink:href="(Formula-\d+/)"', content)
-    if len(formula_refs) != len(cases):
+    if len(formula_refs) != len(annotations):
         raise SystemExit(
-            f'Expected {len(cases)} formula objects in {odt_path}, found {len(formula_refs)}'
+            f'Expected {len(annotations)} formula objects in {odt_path}, found {len(formula_refs)}'
         )
 
-    for ref, case in zip(formula_refs, cases):
+    for ref, annotation in zip(formula_refs, annotations):
         formula_path = ref + 'content.xml'
         if formula_path not in files:
             raise SystemExit(f'Missing formula object content: {formula_path}')
         formula_xml = files[formula_path].decode('utf-8')
-        annotation = escape(formula_annotation_text(case))
+        annotation = escape(formula_annotation_text(annotation))
         def repl(m):
             return m.group(1) + annotation + m.group(3)
 
@@ -299,13 +310,67 @@ def rewrite_formula_objects_from_starmath(odt_path: Path, cases: list[dict]) -> 
 def regenerate_tex_fixtures(input_dir: Path, output_dir: Path) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     cmd = [
-        'bash', '-lc',
-        f'cd {ROOT} && STACK_ROOT=/home/john/pandoc/.stack-root stack exec -- '
-        f'runghc {REGENERATED_TEX_HELPER} {input_dir} {output_dir}'
+        'cabal', 'v2-exec', '--', 'runghc', '-package=texmath',
+        str(REGENERATED_TEX_HELPER), str(input_dir), str(output_dir)
     ]
-    r = shell(cmd)
+    r = shell(cmd, cwd=ROOT)
     if r.returncode != 0:
         raise SystemExit('native->tex regeneration failed:\n' + r.stdout + '\n' + r.stderr)
+
+
+def regenerate_starmath_variants(input_dir: Path, output_dir: Path) -> None:
+    output_dir.mkdir(parents=True, exist_ok=True)
+    cmd = [
+        'cabal', 'v2-exec', '--', 'runghc', '-package=texmath',
+        str(STARMATH_VARIANTS_HELPER), str(input_dir), str(output_dir)
+    ]
+    r = shell(cmd, cwd=ROOT)
+    if r.returncode != 0:
+        raise SystemExit('StarMath variant regeneration failed:\n' + r.stdout + '\n' + r.stderr)
+
+
+def load_starmath_variants(stem: str, output_dir: Path) -> dict:
+    return {
+        'display': (output_dir / f'{stem}.display.starmath').read_text(encoding='utf-8').strip(),
+        'inline': (output_dir / f'{stem}.inline.starmath').read_text(encoding='utf-8').strip(),
+    }
+
+
+def render_reference_variant(
+    stem: str,
+    mode: str,
+    tex_source: str,
+    render_source: str,
+    fallback_tex: Optional[str],
+    fallback_source: Optional[str],
+    images_dir: Path,
+    build_dir: Path,
+) -> dict:
+    image_path = images_dir / f'{stem}-latex-{mode}.png'
+    active_tex = tex_source
+    active_source = render_source
+    render_error = render_reference_image(
+        f'{stem}-latex-{mode}', active_tex, mode, image_path, build_dir
+    )
+    if (
+        render_error is not None
+        and fallback_tex
+        and fallback_tex.strip() != active_tex.strip()
+    ):
+        fallback_error = render_reference_image(
+            f'{stem}-latex-{mode}', fallback_tex, mode, image_path, build_dir
+        )
+        if fallback_error is None:
+            active_tex = fallback_tex
+            active_source = fallback_source or render_source
+            render_error = None
+    return {
+        'mode': mode,
+        'tex': active_tex,
+        'source': active_source,
+        'image_path': image_path,
+        'error': render_error,
+    }
 
 
 def load_review_statuses(path: Path):
@@ -354,14 +419,19 @@ def canonical_stem(stem: str) -> str:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--output-dir', default='/tmp/starmath-review')
+    ap.add_argument('--pandoc', default='pandoc',
+                    help='pandoc executable to use for ODT generation')
     args = ap.parse_args()
 
     out_dir = Path(args.output_dir)
     images_dir = out_dir / 'images'
     build_dir = out_dir / '_build'
+    starmath_variants_dir = out_dir / '_starmath_variants'
     out_dir.mkdir(parents=True, exist_ok=True)
     images_dir.mkdir(parents=True, exist_ok=True)
     build_dir.mkdir(parents=True, exist_ok=True)
+
+    regenerate_starmath_variants(WRITER_STARMATH, starmath_variants_dir)
 
     review_statuses, review_order = load_review_statuses(REVIEW_STATUS_TSV)
     review_order_index = {canonical_stem(stem): idx for idx, stem in enumerate(review_order)}
@@ -421,20 +491,20 @@ def main():
             else:
                 raise ValueError(f'Unexpected input format in {starmath_path}: {starmath_in_fmt}')
 
-        image_path = images_dir / f'{stem}.png'
-        render_error = render_reference_image(stem, render_tex, image_path, build_dir)
-        if (
-            render_error is not None
-            and fallback_render_tex
-            and fallback_render_tex.strip() != render_tex.strip()
-        ):
-            fallback_error = render_reference_image(
-                stem, fallback_render_tex, image_path, build_dir
+        reference_renders = {
+            mode: render_reference_variant(
+                stem,
+                mode,
+                render_tex,
+                render_source,
+                fallback_render_tex,
+                fallback_render_source,
+                images_dir,
+                build_dir,
             )
-            if fallback_error is None:
-                render_tex = fallback_render_tex
-                render_source = fallback_render_source
-                render_error = None
+            for mode in ['display', 'inline']
+        }
+        starmath_variants = load_starmath_variants(stem, starmath_variants_dir)
 
         cases.append({
             'stem': stem,
@@ -444,10 +514,10 @@ def main():
             'original_tex': original_tex,
             'render_tex': render_tex,
             'render_source': render_source,
+            'reference_renders': reference_renders,
             'formula_seed_tex': formula_seed_tex,
-            'starmath': starmath,
-            'image_path': image_path,
-            'render_error': render_error,
+            'fixture_starmath': starmath,
+            'starmath_variants': starmath_variants,
             'review_status': review_statuses[canonical_stem(stem)]['status'],
             'review_comment': review_statuses[canonical_stem(stem)]['comment'],
         })
@@ -475,15 +545,17 @@ def main():
     md.append('- `Original TeX` means the source came from `test/reader/tex`.')
     md.append('- `Regenerated TeX` means the TeX was produced from the `native` AST via `writeTeX`.')
     md.append('- For legacy bespoke StarMath regressions, `Original TeX` comes from the `writer/starmath` fixture itself.')
-    md.append('- `StarMath` is the expected writer output from `test/writer/starmath`.')
-    md.append('- `Reference` images are rendered from `writer/tex` output when available, otherwise from the TeX shown in that section.')
-    md.append('- `LibreOffice formula` is a live formula object whose embedded StarMath source is rewritten from the expected fixture output.')
+    md.append('- `Fixture StarMath` is the expected writer output stored in `test/writer/starmath`.')
+    md.append('- `Display StarMath` and `Inline StarMath` are regenerated from the fixture input using `writeStarMath DisplayBlock` and `writeStarMath DisplayInline`.')
+    md.append('- `LaTeX reference` images are rendered in both display and inline math contexts, using `writer/tex` output when available, otherwise from the TeX shown in that section.')
+    md.append('- `LibreOffice formula` entries are live formula objects whose embedded StarMath source is rewritten from the corresponding display or inline translation.')
     md.append('- Review ordering is: unreviewed first, then `C`, then `B`, then `A`.')
     md.append('- Review status `A`: excellent match.')
     md.append('- Review status `B`: some minor issues.')
     md.append('- Review status `C`: substantially wrong.')
     md.append('')
     failures = []
+    formula_annotations = []
     for label in ['unreviewed', 'C', 'B', 'A']:
         heading = {
             'unreviewed': '# Unreviewed',
@@ -509,45 +581,56 @@ def main():
             md.append(fenced('tex', case['original_tex']))
             md.append(f"TeX provenance: `{case['tex_provenance']}`")
             md.append('')
-            md.append(f'Reference render source: `{case["render_source"]}`')
+            md.append('Fixture StarMath')
             md.append('')
-            if case['render_source'] not in {'reader/tex', 'writer/starmath'} and \
-               case['render_tex'].strip() != case['original_tex'].strip():
-                md.append('Rendered TeX')
+            md.append(fenced('text', case['fixture_starmath']))
+            for mode in ['display', 'inline']:
+                title = mode.capitalize()
+                render = case['reference_renders'][mode]
+                md.append(f'{title} StarMath')
                 md.append('')
-                md.append(fenced('tex', case['render_tex']))
-            md.append('StarMath')
-            md.append('')
-            md.append(fenced('text', case['starmath']))
-            md.append('Reference')
-            md.append('')
-            if case['render_error'] is None:
-                rel_image = case['image_path'].relative_to(out_dir)
-                md.append(f'![]({rel_image.as_posix()})')
-            else:
-                failures.append((stem, case['render_error']))
-                md.append('Reference render failed.')
+                md.append(fenced('text', case['starmath_variants'][mode]))
+                md.append(f'{title} LaTeX reference render')
                 md.append('')
-                md.append(fenced('text', case['render_error']))
-            md.append('')
-            md.append('LibreOffice formula')
-            md.append('')
-            md.append('$$')
-            md.append(case['formula_seed_tex'])
-            md.append('$$')
-            md.append('')
+                md.append(f'Reference render source: `{render["source"]}`')
+                md.append('')
+                if render['source'] not in {'reader/tex', 'writer/starmath'} and \
+                   render['tex'].strip() != case['original_tex'].strip():
+                    md.append(f'{title} rendered TeX')
+                    md.append('')
+                    md.append(fenced('tex', render['tex']))
+                if render['error'] is None:
+                    rel_image = render['image_path'].relative_to(out_dir)
+                    md.append(f'![]({rel_image.as_posix()})')
+                else:
+                    failures.append((stem, mode, render['error']))
+                    md.append(f'{title} reference render failed.')
+                    md.append('')
+                    md.append(fenced('text', render['error']))
+                md.append('')
+                md.append(f'LibreOffice formula ({mode} StarMath)')
+                md.append('')
+                md.append('$$')
+                md.append(case['formula_seed_tex'])
+                md.append('$$')
+                md.append('')
+                formula_annotations.append({
+                    'mode': mode,
+                    'starmath': case['starmath_variants'][mode],
+                    'tex': render['tex'],
+                })
     review_md = out_dir / 'starmath-review.md'
     review_md.write_text('\n'.join(md), encoding='utf-8')
 
     failures_txt = out_dir / 'reference-render-failures.txt'
     if failures:
-        failures_txt.write_text('\n\n'.join(f'{stem}\n{err}' for stem, err in failures), encoding='utf-8')
+        failures_txt.write_text('\n\n'.join(f'{stem} ({mode})\n{err}' for stem, mode, err in failures), encoding='utf-8')
     else:
         failures_txt.write_text('', encoding='utf-8')
 
     review_odt = out_dir / 'starmath-review.odt'
     pandoc_cmd = [
-        '/home/john/.local/bin/pandoc',
+        args.pandoc,
         str(review_md),
         '-f', 'markdown+tex_math_dollars',
         '--resource-path', str(out_dir),
@@ -559,7 +642,7 @@ def main():
     if r_pandoc.returncode != 0:
         raise SystemExit('pandoc ODT generation failed:\n' + r_pandoc.stdout + '\n' + r_pandoc.stderr)
 
-    rewrite_formula_objects_from_starmath(review_odt, cases)
+    rewrite_formula_objects_from_starmath(review_odt, formula_annotations)
     center_images_in_odt(review_odt)
 
     r_pdf = shell(['soffice', '--headless', '--convert-to', 'pdf', '--outdir', str(out_dir), str(review_odt)])
