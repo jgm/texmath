@@ -497,7 +497,14 @@ needsNeutralRhs :: Exp -> Bool
 needsNeutralRhs = isInfixLikeExp
 
 needsNeutralScriptOperands :: Exp -> Bool
-needsNeutralScriptOperands = isInfixLikeExp
+needsNeutralScriptOperands e =
+  isInfixLikeExp e && not (isAtomicScriptOperator e)
+
+isAtomicScriptOperator :: Exp -> Bool
+isAtomicScriptOperator e =
+  case e of
+    ESymbol _ "∘" -> True
+    _             -> False
 
 isInfixLikeExp :: Exp -> Bool
 isInfixLikeExp e =
