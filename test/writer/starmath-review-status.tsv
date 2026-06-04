@@ -1,128 +1,129 @@
-test	status	
-1	A	
-2	A	
-3	A	
-4	A	
-5	A	
-6	A	
+test	status
+1	A
+2	A
+3	A
+4	A
+5	A
+6	A
 7	B	handling of ‘prime’ in starmath is unsatisfactory, no good solution exists.
-8	A	
-9	A	
-10	A	
-11	A	
-12	A	
-13	A	
+8	A
+9	A
+10	A
+11	A
+12	A
+13	A
 14	A
-15	A	
-16	A	
-17	A	
-18	A	
-19	A	
+15	A
+16	A
+17	A
+18	A
+19	A
 20	B	slight spacing discrepancy vs Latex, but not texmath's job to fix.
-21	A	
-22	A	
-23	A	
-axiom_of_power_set	A	
+21	A
+22	A
+23	A
+axiom_of_power_set	A
 binomial_coefficient	A	correct, although LO doesn’t used reducing text sizes
 boxed	C	no box!
 cancel	C	not supported
-choose	A	
-complex_number	A	
-cospan	A	
-deMorgans_law	A	
+choose	A
+complex_number	A
+cospan	A
+deMorgans_law	A
 differentiable_manifold	B	subsidiary text size
-divergence	A	
-ensuremath	A	
-genfrac	A	
-issue109	A	
+divergence	A
+ensuremath	A
+genfrac	A
+issue109	A
 issue204	B	slight difference in operator rendering?
-issue229	A	
+issue229	A
 labels	A	what happens to the label?
-macros	A	
-math-in-text	A	
+macros	A
+math-in-text	A
 moore_determinant	A	bracket scaling in LO is dodgy
-notin	A	
-operatorname	A	
-phantom	A	
-quadratic_formula	A	
+notin	A
+operatorname	A
+phantom	A
+quadratic_formula	A
 schwinger_dyson	B	missing mathcal
-simple_sum_formula	A	
+simple_sum_formula	A
 sophomores_dream	A
-span	A	
-sphere_volume	B	
-stackrel	A	
-substack	A	
+span	A
+sphere_volume	B
+stackrel	A
+substack	A
 subsup	B	overbracket and underbracket approximated via overbrace and underbrace (limitations of starmath)
-text	A	
-tokens	A	
+text	A
+tokens	A
 unicode	B	rendering of rightarrow
-001_dot_text_subscript	A	
+001_dot_text_subscript	A
 002_common_accents	B	tilde is too large?
-003_fraction	A	
-004_square_root	A	
-005_nth_root	A	
-006_subscript_and_superscript	A	
-007_superscript_with_grouped_base	A	
-008_delimited_fraction	A	
-009_delimited_braces	A	
+003_fraction	A
+004_square_root	A
+005_nth_root	A
+006_subscript_and_superscript	A
+007_superscript_with_grouped_base	A
+008_delimited_fraction	A
+009_delimited_braces	A
 010_absolute_value_bars_normalize_to_delimiters	B	varepsilon?
-011_double_bars_normalize_to_norm_delimiters	A	
-012_one_sided_delimiter_uses_none	A	
-013_middle_delimiter_uses_mline	A	
-014_operator_mapping_cdot	A	
-015_binomial_nolinefrac	A	
-016_integral_without_limits	A	
+011_double_bars_normalize_to_norm_delimiters	A
+012_one_sided_delimiter_uses_none	A
+013_middle_delimiter_uses_mline	A
+014_operator_mapping_cdot	A
+015_binomial_nolinefrac	A
+016_integral_without_limits	A
 017_integral_with_lower_and_upper_limits	A
 018_integral_with_infinite_upper_limit	A
-019_sum_with_lower_and_upper_limits	A	
-020_sum_with_symbolic_term	A	
-021_greek_letter_mapping	A	
-022_greek_variant_mapping	A	
-023_arrow_mapping	A	
-024_set_and_relation_symbol_mapping	A	
-025_logic_and_calculus_symbol_mapping	A	
-026_greek_identifier_spacing_in_products	A	
-027_math_operators_rendered_as_functions	A	
+019_sum_with_lower_and_upper_limits	A
+020_sum_with_symbolic_term	A
+021_greek_letter_mapping	A
+022_greek_variant_mapping	A
+023_arrow_mapping	A
+024_set_and_relation_symbol_mapping	A
+025_logic_and_calculus_symbol_mapping	A
+026_greek_identifier_spacing_in_products	A
+027_math_operators_rendered_as_functions	A
 028_nested_function_with_left_delimiter_spacing	B	poor sizing of dash
 029_quad_spacing_command	B	maybe not quite enough space?
-030_qquad_spacing_command	B	
-031_greek_token_separator_before_scripted_identifier	A	
-032_mathrm_text_in_subscripts_stays_quoted	C	tex test is wrong?
-033_escaped_underscore_in_mathrm_stays_literal	A	
-034_numeric_chemistry_subscripts_in_mathrm_stay_structural	A	
+030_qquad_spacing_command	B
+031_greek_token_separator_before_scripted_identifier	A
+032_mathrm_text_in_subscripts_stays_quoted	A
+033_escaped_underscore_in_mathrm_stays_literal	A
+034_numeric_chemistry_subscripts_in_mathrm_stay_structural	A
 035_circ_operator_maps_to_starmath_command	B	^circ is a bit small
-036_min_with_bold_limit_variable_uses_operator_limits	A	
-037_identifier_before_function_gets_separator	A	
-038_greek_identifier_before_punctuation_gets_separator	A	
-039_greek_identifier_before_punctuation_in_larger_expression	A	
-040_bare_recognized_math_operators_omit_func_and_keep_spacing	A	
-041_ordinary_function_with_subscript_keeps_ordinary_script_syntax	A	
+036_min_with_bold_limit_variable_uses_operator_limits	A
+037_identifier_before_function_gets_separator	A
+038_greek_identifier_before_punctuation_gets_separator	A
+039_greek_identifier_before_punctuation_in_larger_expression	A
+040_bare_recognized_math_operators_omit_func_and_keep_spacing	A
+041_ordinary_function_with_subscript_keeps_ordinary_script_syntax	A
 042_adjacent_bold_terms_get_separator	B	unsure if test is right
 043_mathcal_styled_token_before_left_delimiter	B	missing mathcal
-044_leading_binary_operator_gets_neutral_lhs	A	
-045_standalone_binary_operator_gets_neutral_operands	A	
-046_trailing_binary_operator_gets_neutral_rhs	A	
-047_standalone_relation_gets_neutral_operands	A	
-048_standalone_arrow_gets_neutral_operands	A	
-049_subscript_only_fragment_gets_neutral_base	A	
-050_superscript_only_fragment_gets_neutral_base	A	
-051_grouped_subscript_only_fragment_gets_neutral_base	A	
-052_matrix_environment	A	
-053_pmatrix_environment	A	
-054_bmatrix_environment	A	
-055_vmatrix_environment	A	
-056_vmatrix_environment	A	
-057_array_with_left_right_alignment	A	
-058_aligned_array_keeps_fractions_centered	A	
-059_cases_environment	A	
-060_cases_with_negative_log_fraction	A	
-061_phantom_alignment	A	
-062_fallback_to_tex_for_under_over_constructs	A	
-063_extensible_arrows_use_centered_scripts	A	TeXmath error: regenerated TeX is invalid in this case
-064_centered_array_omits_explicit_alignc	A	
-065_reserved_word_in_uptext_subscript_is_quoted	A	
-066_standalone_plus_minus_scripts_get_neutral_operands	A	
+044_leading_binary_operator_gets_neutral_lhs	A
+045_standalone_binary_operator_gets_neutral_operands	A
+046_trailing_binary_operator_gets_neutral_rhs	A
+047_standalone_relation_gets_neutral_operands	A
+048_standalone_arrow_gets_neutral_operands	A
+049_subscript_only_fragment_gets_neutral_base	A
+050_superscript_only_fragment_gets_neutral_base	A
+051_grouped_subscript_only_fragment_gets_neutral_base	A
+052_matrix_environment	A
+053_pmatrix_environment	A
+054_bmatrix_environment	A
+055_vmatrix_environment	A
+056_vmatrix_environment	A
+057_array_with_left_right_alignment	A
+058_aligned_array_keeps_fractions_centered	A
+059_cases_environment	A
+060_cases_with_negative_log_fraction	A
+061_phantom_alignment	A
+062_fallback_to_tex_for_under_over_constructs	A
+063_extensible_arrows_use_centered_scripts	C	TeXmath error: regenerated TeX is invalid in this case
+064_centered_array_omits_explicit_alignc	A
+065_reserved_word_in_uptext_subscript_is_quoted	A
+066_standalone_plus_minus_scripts_get_neutral_operands	A
 067_integral_default_limits_use_scripts	A
 068_integral_limits_use_from_to	A
 069_integral_nolimits_use_scripts	A
 070_normal_fraction_display_inline_uses_inline_size	A
+071_grouped_mathrm_alpha_subscripts_stay_structural	A
