@@ -1,4 +1,4 @@
 <<< tex
-\begin{array}{lr}a&b\\c&d\end{array}
+\begin{array}{lr}a&bbb\\ccc&d\end{array}
 >>> starmath
-matrix { alignl a # alignr b ## alignl c # alignr d }
+matrix { alignl a # alignr bbb ## alignl ccc # alignr d }
