@@ -87,7 +87,7 @@ unicode	B	rendering of rightarrow
 029_quad_spacing_command	B	maybe not quite enough space?
 030_qquad_spacing_command	B	
 031_greek_token_separator_before_scripted_identifier	A	
-032_mathrm_text_in_subscripts_stays_quoted	B	tex test is wrong?
+032_mathrm_text_in_subscripts_stays_quoted	C	tex test is wrong?
 033_escaped_underscore_in_mathrm_stays_literal	A	
 034_numeric_chemistry_subscripts_in_mathrm_stay_structural	A	
 035_circ_operator_maps_to_starmath_command	B	^circ is a bit small

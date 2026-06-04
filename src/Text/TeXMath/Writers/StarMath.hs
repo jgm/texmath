@@ -3,11 +3,12 @@ module Text.TeXMath.Writers.StarMath
   ( writeStarMath
   ) where
 
-import Data.Char (chr, isLetter, ord)
+import Data.Char (isLetter)
 import Data.Generics (everywhere, mkT)
 import qualified Data.List as List
 import qualified Data.Text as T
 import qualified Text.TeXMath.Shared as S
+import Text.TeXMath.Unicode.ToUnicode (toUnicodeChar)
 import Text.TeXMath.Types
   ( Alignment(..)
   , DisplayType(..)
@@ -818,165 +819,31 @@ renderStyled dt ctx sty xs = do
 renderUnicodeSerifStyled :: TextType -> [Exp] -> Maybe T.Text
 renderUnicodeSerifStyled sty xs =
   case sty of
-    TextScript       -> styledUnicodeText scriptChar xs
-    TextFraktur      -> styledUnicodeText frakturChar xs
-    TextDoubleStruck -> styledUnicodeText doubleStruckChar xs
-    TextBoldScript   -> styledUnicodeText boldScriptChar xs
-    TextBoldFraktur  -> styledUnicodeText boldFrakturChar xs
+    TextScript       -> styledUnicodeText sty xs
+    TextFraktur      -> styledUnicodeText sty xs
+    TextDoubleStruck -> styledUnicodeText sty xs
+    TextBoldScript   -> styledUnicodeText sty xs
+    TextBoldFraktur  -> styledUnicodeText sty xs
     _                -> Nothing
 
-styledUnicodeText :: (Char -> Maybe Char) -> [Exp] -> Maybe T.Text
-styledUnicodeText f = fmap T.concat . mapM (styledUnicodeExp f)
+styledUnicodeText :: TextType -> [Exp] -> Maybe T.Text
+styledUnicodeText sty = fmap T.concat . mapM (styledUnicodeExp sty)
 
-styledUnicodeExp :: (Char -> Maybe Char) -> Exp -> Maybe T.Text
-styledUnicodeExp f e =
+styledUnicodeExp :: TextType -> Exp -> Maybe T.Text
+styledUnicodeExp sty e =
   case e of
-    EIdentifier t        -> mapStyledUnicode f t
-    ENumber t            -> mapStyledUnicode f t
-    EGrouped xs          -> styledUnicodeText f xs
-    EStyled TextNormal xs -> styledUnicodeText f xs
+    EIdentifier t        -> mapStyledUnicode sty t
+    ENumber t            -> mapStyledUnicode sty t
+    EGrouped xs          -> styledUnicodeText sty xs
+    EStyled TextNormal xs -> styledUnicodeText sty xs
     ESpace w
       | w <= 0          -> Just ""
       | w >= 2          -> Just "  "
       | otherwise       -> Just " "
     _                   -> Nothing
 
-mapStyledUnicode :: (Char -> Maybe Char) -> T.Text -> Maybe T.Text
-mapStyledUnicode f t = T.pack <$> mapM f (T.unpack t)
-
-scriptChar :: Char -> Maybe Char
-scriptChar c =
-  case c of
-    'A' -> Just '\x1D49C'
-    'B' -> Just '\x212C'
-    'C' -> Just '\x1D49E'
-    'D' -> Just '\x1D49F'
-    'E' -> Just '\x2130'
-    'F' -> Just '\x2131'
-    'G' -> Just '\x1D4A2'
-    'H' -> Just '\x210B'
-    'I' -> Just '\x2110'
-    'J' -> Just '\x1D4A5'
-    'K' -> Just '\x1D4A6'
-    'L' -> Just '\x2112'
-    'M' -> Just '\x2133'
-    'N' -> Just '\x1D4A9'
-    'O' -> Just '\x1D4AA'
-    'P' -> Just '\x1D4AB'
-    'Q' -> Just '\x1D4AC'
-    'R' -> Just '\x211B'
-    'S' -> Just '\x1D4AE'
-    'T' -> Just '\x1D4AF'
-    'U' -> Just '\x1D4B0'
-    'V' -> Just '\x1D4B1'
-    'W' -> Just '\x1D4B2'
-    'X' -> Just '\x1D4B3'
-    'Y' -> Just '\x1D4B4'
-    'Z' -> Just '\x1D4B5'
-    'a' -> Just '\x1D4B6'
-    'b' -> Just '\x1D4B7'
-    'c' -> Just '\x1D4B8'
-    'd' -> Just '\x1D4B9'
-    'e' -> Just '\x212F'
-    'f' -> Just '\x1D4BB'
-    'g' -> Just '\x210A'
-    'h' -> Just '\x1D4BD'
-    'i' -> Just '\x1D4BE'
-    'j' -> Just '\x1D4BF'
-    'k' -> Just '\x1D4C0'
-    'l' -> Just '\x1D4C1'
-    'm' -> Just '\x1D4C2'
-    'n' -> Just '\x1D4C3'
-    'o' -> Just '\x2134'
-    'p' -> Just '\x1D4C5'
-    'q' -> Just '\x1D4C6'
-    'r' -> Just '\x1D4C7'
-    's' -> Just '\x1D4C8'
-    't' -> Just '\x1D4C9'
-    'u' -> Just '\x1D4CA'
-    'v' -> Just '\x1D4CB'
-    'w' -> Just '\x1D4CC'
-    'x' -> Just '\x1D4CD'
-    'y' -> Just '\x1D4CE'
-    'z' -> Just '\x1D4CF'
-    _   -> Nothing
-
-frakturChar :: Char -> Maybe Char
-frakturChar c =
-  case c of
-    'A' -> Just '\x1D504'
-    'B' -> Just '\x1D505'
-    'C' -> Just '\x212D'
-    'D' -> Just '\x1D507'
-    'E' -> Just '\x1D508'
-    'F' -> Just '\x1D509'
-    'G' -> Just '\x1D50A'
-    'H' -> Just '\x210C'
-    'I' -> Just '\x2111'
-    'J' -> Just '\x1D50D'
-    'K' -> Just '\x1D50E'
-    'L' -> Just '\x1D50F'
-    'M' -> Just '\x1D510'
-    'N' -> Just '\x1D511'
-    'O' -> Just '\x1D512'
-    'P' -> Just '\x1D513'
-    'Q' -> Just '\x1D514'
-    'R' -> Just '\x211C'
-    'S' -> Just '\x1D516'
-    'T' -> Just '\x1D517'
-    'U' -> Just '\x1D518'
-    'V' -> Just '\x1D519'
-    'W' -> Just '\x1D51A'
-    'X' -> Just '\x1D51B'
-    'Y' -> Just '\x1D51C'
-    'Z' -> Just '\x2128'
-    _ | 'a' <= c && c <= 'z' -> Just (chr (0x1D51E + ord c - ord 'a'))
-      | otherwise -> Nothing
-
-doubleStruckChar :: Char -> Maybe Char
-doubleStruckChar c =
-  case c of
-    'A' -> Just '\x1D538'
-    'B' -> Just '\x1D539'
-    'C' -> Just '\x2102'
-    'D' -> Just '\x1D53B'
-    'E' -> Just '\x1D53C'
-    'F' -> Just '\x1D53D'
-    'G' -> Just '\x1D53E'
-    'H' -> Just '\x210D'
-    'I' -> Just '\x1D540'
-    'J' -> Just '\x1D541'
-    'K' -> Just '\x1D542'
-    'L' -> Just '\x1D543'
-    'M' -> Just '\x1D544'
-    'N' -> Just '\x2115'
-    'O' -> Just '\x1D546'
-    'P' -> Just '\x2119'
-    'Q' -> Just '\x211A'
-    'R' -> Just '\x211D'
-    'S' -> Just '\x1D54A'
-    'T' -> Just '\x1D54B'
-    'U' -> Just '\x1D54C'
-    'V' -> Just '\x1D54D'
-    'W' -> Just '\x1D54E'
-    'X' -> Just '\x1D54F'
-    'Y' -> Just '\x1D550'
-    'Z' -> Just '\x2124'
-    _ | 'a' <= c && c <= 'z' -> Just (chr (0x1D552 + ord c - ord 'a'))
-      | '0' <= c && c <= '9' -> Just (chr (0x1D7D8 + ord c - ord '0'))
-      | otherwise -> Nothing
-
-boldScriptChar :: Char -> Maybe Char
-boldScriptChar c
-  | 'A' <= c && c <= 'Z' = Just (chr (0x1D4D0 + ord c - ord 'A'))
-  | 'a' <= c && c <= 'z' = Just (chr (0x1D4EA + ord c - ord 'a'))
-  | otherwise            = Nothing
-
-boldFrakturChar :: Char -> Maybe Char
-boldFrakturChar c
-  | 'A' <= c && c <= 'Z' = Just (chr (0x1D56C + ord c - ord 'A'))
-  | 'a' <= c && c <= 'z' = Just (chr (0x1D586 + ord c - ord 'a'))
-  | otherwise            = Nothing
+mapStyledUnicode :: TextType -> T.Text -> Maybe T.Text
+mapStyledUnicode sty t = T.pack <$> mapM (\c -> toUnicodeChar (sty, c)) (T.unpack t)
 
 styledText :: [Exp] -> Maybe T.Text
 styledText = fmap T.concat . mapM styledTextExp
