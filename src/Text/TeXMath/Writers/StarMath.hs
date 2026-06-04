@@ -792,7 +792,8 @@ renderStyled dt ctx sty xs = do
     TextNormal
       | Just ident <- singleUprightIdentifier xs ->
           "nitalic " <> renderTextNormalIdentifier ident
-      | Just txt <- styledText xs -> quoteText txt
+      | not (hasStructuralScript xs)
+      , Just txt <- styledText xs -> quoteText txt
       | Just txt <- renderTextNormalStyled dt xs
       , shouldForceUprightTextNormal xs -> "nitalic{" <> txt <> "}"
       | Just txt <- renderTextNormalStyled dt xs -> txt
@@ -844,6 +845,18 @@ styledUnicodeExp sty e =
 
 mapStyledUnicode :: TextType -> T.Text -> Maybe T.Text
 mapStyledUnicode sty t = T.pack <$> mapM (\c -> toUnicodeChar (sty, c)) (T.unpack t)
+
+hasStructuralScript :: [Exp] -> Bool
+hasStructuralScript = any go
+ where
+  go e =
+    case e of
+      ESub{}                 -> True
+      ESuper{}               -> True
+      ESubsup{}              -> True
+      EGrouped xs            -> hasStructuralScript xs
+      EStyled TextNormal xs  -> hasStructuralScript xs
+      _                      -> False
 
 styledText :: [Exp] -> Maybe T.Text
 styledText = fmap T.concat . mapM styledTextExp
