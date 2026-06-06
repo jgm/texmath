@@ -7,7 +7,8 @@ import qualified Data.Text.IO as TIO
 import System.Directory (createDirectoryIfMissing, listDirectory)
 import System.Environment (getArgs)
 import System.FilePath ((</>), takeBaseName, takeExtension)
-import Text.TeXMath (DisplayType(..), Exp, readTeX, writeStarMath)
+import Text.TeXMath (DisplayType(..), Exp, readTeX, writeMathML, writeStarMath)
+import Text.XML.Light.Output (ppTopElement)
 
 main :: IO ()
 main = do
@@ -33,6 +34,10 @@ dumpOne inputDir outputDir file = do
     writeStarMath DisplayBlock exps <> "\n"
   TIO.writeFile (outputDir </> (base <> ".inline.starmath")) $
     writeStarMath DisplayInline exps <> "\n"
+  TIO.writeFile (outputDir </> (base <> ".display.mathml")) $
+    T.pack (ppTopElement $ writeMathML DisplayBlock exps) <> "\n"
+  TIO.writeFile (outputDir </> (base <> ".inline.mathml")) $
+    T.pack (ppTopElement $ writeMathML DisplayInline exps) <> "\n"
 
 parseGoldenTest :: FilePath -> IO (Text, Text, Text, Text)
 parseGoldenTest fp = do

@@ -265,7 +265,36 @@ def formula_annotation_text(annotation: dict) -> str:
     )
 
 
-def rewrite_formula_objects_from_starmath(odt_path: Path, annotations: list[dict]) -> None:
+def mathml_formula_text(annotation: dict) -> str:
+    mathml = annotation['mathml'].strip()
+    if mathml.startswith('<?xml'):
+        return mathml + '\n'
+    return "<?xml version='1.0' ?>\n" + mathml + '\n'
+
+
+def rewrite_formula_object_from_starmath(files: dict[str, bytes], formula_path: str, annotation: dict) -> None:
+    formula_xml = files[formula_path].decode('utf-8')
+    annotation_text = escape(formula_annotation_text(annotation))
+
+    def repl(m):
+        return m.group(1) + annotation_text + m.group(3)
+
+    formula_xml_new, n = re.subn(
+        r'(<annotation encoding="StarMath 5\.0">)(.*?)(</annotation>)',
+        repl,
+        formula_xml,
+        flags=re.S,
+    )
+    if n != 1:
+        raise SystemExit(f'Could not rewrite StarMath annotation in {formula_path}')
+    files[formula_path] = formula_xml_new.encode('utf-8')
+
+
+def rewrite_formula_object_from_mathml(files: dict[str, bytes], formula_path: str, annotation: dict) -> None:
+    files[formula_path] = mathml_formula_text(annotation).encode('utf-8')
+
+
+def rewrite_formula_objects(odt_path: Path, annotations: list[dict]) -> None:
     with zipfile.ZipFile(odt_path, 'r') as zin:
         files = {name: zin.read(name) for name in zin.namelist()}
 
@@ -280,20 +309,12 @@ def rewrite_formula_objects_from_starmath(odt_path: Path, annotations: list[dict
         formula_path = ref + 'content.xml'
         if formula_path not in files:
             raise SystemExit(f'Missing formula object content: {formula_path}')
-        formula_xml = files[formula_path].decode('utf-8')
-        annotation = escape(formula_annotation_text(annotation))
-        def repl(m):
-            return m.group(1) + annotation + m.group(3)
-
-        formula_xml_new, n = re.subn(
-            r'(<annotation encoding="StarMath 5\.0">)(.*?)(</annotation>)',
-            repl,
-            formula_xml,
-            flags=re.S,
-        )
-        if n != 1:
-            raise SystemExit(f'Could not rewrite StarMath annotation in {formula_path}')
-        files[formula_path] = formula_xml_new.encode('utf-8')
+        if annotation['kind'] == 'starmath':
+            rewrite_formula_object_from_starmath(files, formula_path, annotation)
+        elif annotation['kind'] == 'mathml':
+            rewrite_formula_object_from_mathml(files, formula_path, annotation)
+        else:
+            raise SystemExit(f'Unknown formula annotation kind: {annotation["kind"]}')
 
     tmp_path = odt_path.with_suffix('.tmp.odt')
     with zipfile.ZipFile(tmp_path, 'w') as zout:
@@ -333,6 +354,13 @@ def load_starmath_variants(stem: str, output_dir: Path) -> dict:
     return {
         'display': (output_dir / f'{stem}.display.starmath').read_text(encoding='utf-8').strip(),
         'inline': (output_dir / f'{stem}.inline.starmath').read_text(encoding='utf-8').strip(),
+    }
+
+
+def load_mathml_variants(stem: str, output_dir: Path) -> dict:
+    return {
+        'display': (output_dir / f'{stem}.display.mathml').read_text(encoding='utf-8').strip(),
+        'inline': (output_dir / f'{stem}.inline.mathml').read_text(encoding='utf-8').strip(),
     }
 
 
@@ -505,6 +533,7 @@ def main():
             for mode in ['display', 'inline']
         }
         starmath_variants = load_starmath_variants(stem, starmath_variants_dir)
+        mathml_variants = load_mathml_variants(stem, starmath_variants_dir)
 
         cases.append({
             'stem': stem,
@@ -518,6 +547,7 @@ def main():
             'formula_seed_tex': formula_seed_tex,
             'fixture_starmath': starmath,
             'starmath_variants': starmath_variants,
+            'mathml_variants': mathml_variants,
             'review_status': review_statuses[canonical_stem(stem)]['status'],
             'review_comment': review_statuses[canonical_stem(stem)]['comment'],
         })
@@ -547,8 +577,10 @@ def main():
     md.append('- For legacy bespoke StarMath regressions, `Original TeX` comes from the `writer/starmath` fixture itself.')
     md.append('- `Fixture StarMath` is the expected writer output stored in `test/writer/starmath`.')
     md.append('- `Display StarMath` and `Inline StarMath` are regenerated from the fixture input using `writeStarMath DisplayBlock` and `writeStarMath DisplayInline`.')
+    md.append('- `Display MathML` and `Inline MathML` are regenerated from the fixture input using `writeMathML DisplayBlock` and `writeMathML DisplayInline`.')
     md.append('- `LaTeX reference` images are rendered in both display and inline math contexts, using `writer/tex` output when available, otherwise from the TeX shown in that section.')
     md.append('- `LibreOffice formula` entries are live formula objects whose embedded StarMath source is rewritten from the corresponding display or inline translation.')
+    md.append('- `LibreOffice formula (MathML)` entries are live formula objects whose embedded object XML is rewritten to the corresponding MathML without a StarMath annotation.')
     md.append('- Review ordering is: unreviewed first, then `C`, then `B`, then `A`.')
     md.append('- Review status `A`: excellent match.')
     md.append('- Review status `B`: some minor issues.')
@@ -615,8 +647,24 @@ def main():
                 md.append('$$')
                 md.append('')
                 formula_annotations.append({
+                    'kind': 'starmath',
                     'mode': mode,
                     'starmath': case['starmath_variants'][mode],
+                    'tex': render['tex'],
+                })
+                md.append(f'{title} MathML')
+                md.append('')
+                md.append(fenced('xml', case['mathml_variants'][mode]))
+                md.append(f'LibreOffice formula ({mode} MathML)')
+                md.append('')
+                md.append('$$')
+                md.append(case['formula_seed_tex'])
+                md.append('$$')
+                md.append('')
+                formula_annotations.append({
+                    'kind': 'mathml',
+                    'mode': mode,
+                    'mathml': case['mathml_variants'][mode],
                     'tex': render['tex'],
                 })
     review_md = out_dir / 'starmath-review.md'
@@ -642,7 +690,7 @@ def main():
     if r_pandoc.returncode != 0:
         raise SystemExit('pandoc ODT generation failed:\n' + r_pandoc.stdout + '\n' + r_pandoc.stderr)
 
-    rewrite_formula_objects_from_starmath(review_odt, formula_annotations)
+    rewrite_formula_objects(review_odt, formula_annotations)
     center_images_in_odt(review_odt)
 
     r_pdf = shell(['soffice', '--headless', '--convert-to', 'pdf', '--outdir', str(out_dir), str(review_odt)])
