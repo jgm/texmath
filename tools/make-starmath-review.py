@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""
+visual review tooling - see README.md in this folder
+"""
+
 from __future__ import annotations
 
 import argparse
@@ -13,7 +17,6 @@ from pathlib import Path
 from typing import Optional
 
 ROOT = Path(__file__).resolve().parents[1]
-# visual review tooling - see README.md in this folder
 READER_TEX = ROOT / 'test' / 'reader' / 'tex'
 WRITER_TEX = ROOT / 'test' / 'writer' / 'tex'
 WRITER_STARMATH = ROOT / 'test' / 'writer' / 'starmath'
