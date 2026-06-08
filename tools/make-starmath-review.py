@@ -13,6 +13,7 @@ from pathlib import Path
 from typing import Optional
 
 ROOT = Path(__file__).resolve().parents[1]
+# visual review tooling - see README.md in this folder
 READER_TEX = ROOT / 'test' / 'reader' / 'tex'
 WRITER_TEX = ROOT / 'test' / 'writer' / 'tex'
 WRITER_STARMATH = ROOT / 'test' / 'writer' / 'starmath'

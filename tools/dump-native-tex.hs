@@ -1,5 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+-- visual review tooling - see README.md in this folder
 import Data.List (sort)
 import Data.Text (Text)
 import qualified Data.Text as T
