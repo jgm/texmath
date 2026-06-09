@@ -1,0 +1,27 @@
+<<< native
+[ ESuper (EIdentifier "u") (ESymbol Pun "\8243")
+, ESymbol Bin "+"
+, EIdentifier "p"
+, ESymbol Open "("
+, EIdentifier "x"
+, ESymbol Close ")"
+, ESuper (EIdentifier "u") (ESymbol Pun "\8242")
+, ESymbol Bin "+"
+, EIdentifier "q"
+, ESymbol Open "("
+, EIdentifier "x"
+, ESymbol Close ")"
+, EIdentifier "u"
+, ESymbol Rel "="
+, EIdentifier "f"
+, ESymbol Open "("
+, EIdentifier "x"
+, ESymbol Close ")"
+, ESymbol Pun ","
+, ESpace (1 % 1)
+, EIdentifier "x"
+, ESymbol Rel ">"
+, EIdentifier "a"
+]
+>>> starmath
+u'' + p(x) u' + q(x) u = f(x), ~ x > a

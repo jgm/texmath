@@ -1,0 +1,256 @@
+<<< native
+[ EArray
+    [ AlignLeft , AlignLeft ]
+    [ [ [ EText TextMonospace "textrm" ]
+      , [ EText TextNormal "ABCabc" ]
+      ]
+    , [ [ EText TextMonospace "mathrm" ]
+      , [ EStyled
+            TextNormal
+            [ EIdentifier "A"
+            , EIdentifier "B"
+            , EIdentifier "C"
+            , EIdentifier "a"
+            , EIdentifier "b"
+            , EIdentifier "c"
+            ]
+        ]
+      ]
+    , [ [ EText TextMonospace "mathup" ]
+      , [ EStyled
+            TextNormal
+            [ EIdentifier "A"
+            , EIdentifier "B"
+            , EIdentifier "C"
+            , EIdentifier "a"
+            , EIdentifier "b"
+            , EIdentifier "c"
+            ]
+        ]
+      ]
+    , [ [ EText TextMonospace "text" ]
+      , [ EText TextNormal "ABCabc" ]
+      ]
+    , [ [ EText TextMonospace "mbox" ]
+      , [ EText TextNormal "ABCabc" ]
+      ]
+    , [ [ EText TextMonospace "mathbf" ]
+      , [ EStyled
+            TextNormal
+            [ EStyled
+                TextBold
+                [ EIdentifier "A"
+                , EIdentifier "B"
+                , EIdentifier "C"
+                , EIdentifier "a"
+                , EIdentifier "b"
+                , EIdentifier "c"
+                ]
+            ]
+        ]
+      ]
+    , [ [ EText TextMonospace "mathbfup" ]
+      , [ EStyled
+            TextBold
+            [ EIdentifier "A"
+            , EIdentifier "B"
+            , EIdentifier "C"
+            , EIdentifier "a"
+            , EIdentifier "b"
+            , EIdentifier "c"
+            ]
+        ]
+      ]
+    , [ [ EText TextMonospace "textbf" ]
+      , [ EText TextBold "ABCabc" ]
+      ]
+    , [ [ EText TextMonospace "mathit" ]
+      , [ EStyled
+            TextItalic
+            [ EIdentifier "A"
+            , EIdentifier "B"
+            , EIdentifier "C"
+            , EIdentifier "a"
+            , EIdentifier "b"
+            , EIdentifier "c"
+            ]
+        ]
+      ]
+    , [ [ EText TextMonospace "textit" ]
+      , [ EText TextItalic "ABCabc" ]
+      ]
+    , [ [ EText TextMonospace "mathtt" ]
+      , [ EStyled
+            TextMonospace
+            [ EIdentifier "A"
+            , EIdentifier "B"
+            , EIdentifier "C"
+            , EIdentifier "a"
+            , EIdentifier "b"
+            , EIdentifier "c"
+            ]
+        ]
+      ]
+    , [ [ EText TextMonospace "texttt" ]
+      , [ EText TextMonospace "ABCabc" ]
+      ]
+    , [ [ EText TextMonospace "mathsf" ]
+      , [ EStyled
+            TextSansSerif
+            [ EIdentifier "A"
+            , EIdentifier "B"
+            , EIdentifier "C"
+            , EIdentifier "a"
+            , EIdentifier "b"
+            , EIdentifier "c"
+            ]
+        ]
+      ]
+    , [ [ EText TextMonospace "mathsfup" ]
+      , [ EStyled
+            TextSansSerif
+            [ EIdentifier "A"
+            , EIdentifier "B"
+            , EIdentifier "C"
+            , EIdentifier "a"
+            , EIdentifier "b"
+            , EIdentifier "c"
+            ]
+        ]
+      ]
+    , [ [ EText TextMonospace "mathbb" ]
+      , [ EStyled
+            TextDoubleStruck
+            [ EIdentifier "A"
+            , EIdentifier "B"
+            , EIdentifier "C"
+            , EIdentifier "a"
+            , EIdentifier "b"
+            , EIdentifier "c"
+            ]
+        ]
+      ]
+    , [ [ EText TextMonospace "mathcal" ]
+      , [ EStyled
+            TextScript
+            [ EIdentifier "A"
+            , EIdentifier "B"
+            , EIdentifier "C"
+            , EIdentifier "a"
+            , EIdentifier "b"
+            , EIdentifier "c"
+            ]
+        ]
+      ]
+    , [ [ EText TextMonospace "mathscr" ]
+      , [ EStyled
+            TextScript
+            [ EIdentifier "A"
+            , EIdentifier "B"
+            , EIdentifier "C"
+            , EIdentifier "a"
+            , EIdentifier "b"
+            , EIdentifier "c"
+            ]
+        ]
+      ]
+    , [ [ EText TextMonospace "mathfrak" ]
+      , [ EStyled
+            TextFraktur
+            [ EIdentifier "A"
+            , EIdentifier "B"
+            , EIdentifier "C"
+            , EIdentifier "a"
+            , EIdentifier "b"
+            , EIdentifier "c"
+            ]
+        ]
+      ]
+    , [ [ EText TextMonospace "mathbfit" ]
+      , [ EStyled
+            TextBoldItalic
+            [ EIdentifier "A"
+            , EIdentifier "B"
+            , EIdentifier "C"
+            , EIdentifier "a"
+            , EIdentifier "b"
+            , EIdentifier "c"
+            ]
+        ]
+      ]
+    , [ [ EText TextMonospace "mathbfsfup" ]
+      , [ EStyled
+            TextSansSerifBold
+            [ EIdentifier "A"
+            , EIdentifier "B"
+            , EIdentifier "C"
+            , EIdentifier "a"
+            , EIdentifier "b"
+            , EIdentifier "c"
+            ]
+        ]
+      ]
+    , [ [ EText TextMonospace "mathbfsfit" ]
+      , [ EStyled
+            TextSansSerifBoldItalic
+            [ EIdentifier "A"
+            , EIdentifier "B"
+            , EIdentifier "C"
+            , EIdentifier "a"
+            , EIdentifier "b"
+            , EIdentifier "c"
+            ]
+        ]
+      ]
+    , [ [ EText TextMonospace "mathbfscr" ]
+      , [ EStyled
+            TextBoldScript
+            [ EIdentifier "A"
+            , EIdentifier "B"
+            , EIdentifier "C"
+            , EIdentifier "a"
+            , EIdentifier "b"
+            , EIdentifier "c"
+            ]
+        ]
+      ]
+    , [ [ EText TextMonospace "mathbffrak" ]
+      , [ EStyled
+            TextBoldFraktur
+            [ EIdentifier "A"
+            , EIdentifier "B"
+            , EIdentifier "C"
+            , EIdentifier "a"
+            , EIdentifier "b"
+            , EIdentifier "c"
+            ]
+        ]
+      ]
+    , [ [ EText TextMonospace "mathbfcal" ]
+      , [ EStyled
+            TextBoldScript
+            [ EIdentifier "A"
+            , EIdentifier "B"
+            , EIdentifier "C"
+            , EIdentifier "a"
+            , EIdentifier "b"
+            , EIdentifier "c"
+            ]
+        ]
+      ]
+    , [ [ EText TextMonospace "mathsfit" ]
+      , [ EStyled
+            TextSansSerifItalic
+            [ EIdentifier "A"
+            , EIdentifier "B"
+            , EIdentifier "C"
+            , EIdentifier "a"
+            , EIdentifier "b"
+            , EIdentifier "c"
+            ]
+        ]
+      ]
+    ]
+]
+>>> starmath
+matrix { alignl font fixed "textrm" # alignl "ABCabc" ## alignl font fixed "mathrm" # alignl "ABCabc" ## alignl font fixed "mathup" # alignl "ABCabc" ## alignl font fixed "text" # alignl "ABCabc" ## alignl font fixed "mbox" # alignl "ABCabc" ## alignl font fixed "mathbf" # alignl bold nitalic {ABCabc} ## alignl font fixed "mathbfup" # alignl bold nitalic {ABCabc} ## alignl font fixed "textbf" # alignl bold {"ABCabc"} ## alignl font fixed "mathit" # alignl ital {ABCabc} ## alignl font fixed "textit" # alignl ital {ABCabc} ## alignl font fixed "mathtt" # alignl font fixed nitalic {ABCabc} ## alignl font fixed "texttt" # alignl font fixed "ABCabc" ## alignl font fixed "mathsf" # alignl font sans nitalic {ABCabc} ## alignl font fixed "mathsfup" # alignl font sans nitalic {ABCabc} ## alignl font fixed "mathbb" # alignl nitalic {𝔸𝔹ℂ𝕒𝕓𝕔} ## alignl font fixed "mathcal" # alignl nitalic {𝒜ℬ𝒞𝒶𝒷𝒸} ## alignl font fixed "mathscr" # alignl nitalic {𝒜ℬ𝒞𝒶𝒷𝒸} ## alignl font fixed "mathfrak" # alignl nitalic {𝔄𝔅ℭ𝔞𝔟𝔠} ## alignl font fixed "mathbfit" # alignl bold {ital {ABCabc}} ## alignl font fixed "mathbfsfup" # alignl bold {font sans nitalic {ABCabc}} ## alignl font fixed "mathbfsfit" # alignl bold {font sans ital {ABCabc}} ## alignl font fixed "mathbfscr" # alignl nitalic {𝓐𝓑𝓒𝓪𝓫𝓬} ## alignl font fixed "mathbffrak" # alignl nitalic {𝕬𝕭𝕮𝖆𝖇𝖈} ## alignl font fixed "mathbfcal" # alignl nitalic {𝓐𝓑𝓒𝓪𝓫𝓬} ## alignl font fixed "mathsfit" # alignl font sans ital {ABCabc} }

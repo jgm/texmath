@@ -1,0 +1,10 @@
+<<< native
+[ EIdentifier "X"
+, EOver False (ESymbol Op "\8660") (EIdentifier "h")
+, EIdentifier "Y"
+, EUnderover
+    False (ESymbol Op "\8658") (EIdentifier "k") (EGrouped [])
+, EIdentifier "Z"
+]
+>>> starmath
+X dlrarrow csup {h} Y drarrow csub {k} Z

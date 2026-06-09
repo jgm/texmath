@@ -1,0 +1,9 @@
+<<< native
+[ EDelimited
+    "{"
+    "}"
+    [ Right (EFraction NoLineFrac (EIdentifier "x") (EIdentifier "y"))
+    ]
+]
+>>> starmath
+left lbrace binom{x}{y} right rbrace

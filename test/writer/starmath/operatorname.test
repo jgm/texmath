@@ -1,0 +1,71 @@
+<<< native
+[ EDelimited
+    "{"
+    ""
+    [ Right
+        (EArray
+           [ AlignLeft , AlignLeft ]
+           [ [ [ ESub (EMathOperator "div") (EIdentifier "x")
+               , EIdentifier "u"
+               , ESuper (EMathOperator "div") (EIdentifier "x")
+               , EIdentifier "u"
+               , ESubsup (EMathOperator "div") (EIdentifier "x") (EIdentifier "y")
+               , EIdentifier "u"
+               , ESubsup (EMathOperator "div") (EIdentifier "x") (EIdentifier "y")
+               , EIdentifier "u"
+               ]
+             , [ EText TextNormal "operatorname" ]
+             ]
+           , [ [ EUnder
+                   True
+                   (EMathOperator "\8902-lim'sup")
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+               , EIdentifier "u"
+               , EOver True (EMathOperator "\8902-lim'sup") (EIdentifier "w")
+               , EIdentifier "u"
+               , EUnderover
+                   True
+                   (EMathOperator "\8902-lim'sup")
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+                   (EIdentifier "w")
+               , EIdentifier "u"
+               , EUnderover
+                   True
+                   (EMathOperator "\8902-lim'sup")
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+                   (EIdentifier "w")
+               , EIdentifier "u"
+               ]
+             , [ EText TextNormal "operatorname*" ]
+             ]
+           , [ [ ESub
+                   (EMathOperator "\8902-lim'sup")
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+               , EIdentifier "u"
+               , ESuper (EMathOperator "\8902-lim'sup") (EIdentifier "w")
+               , EIdentifier "u"
+               , ESubsup
+                   (EMathOperator "\8902-lim'sup")
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+                   (EIdentifier "w")
+               , EIdentifier "u"
+               , ESubsup
+                   (EMathOperator "\8902-lim'sup")
+                   (EGrouped [ EIdentifier "x" , ESymbol Rel "\8594" , ENumber "0" ])
+                   (EIdentifier "w")
+               , EIdentifier "u"
+               ]
+             , [ EText TextNormal "operatorname*:nolimits" ]
+             ]
+           , [ [ ESub (EMathOperator "curl") (EIdentifier "x")
+               , EIdentifier "v"
+               , EUnder True (EMathOperator "argmax") (EIdentifier "K")
+               , EIdentifier "u"
+               ]
+             , [ EText TextNormal "DeclareMathOperator" ]
+             ]
+           ])
+    ]
+]
+>>> starmath
+left lbrace matrix { alignl func div_x u func div^x u func div_x^y u func div_x^y u # alignl "operatorname" ## alignl {func "⋆-lim'sup"} csub {{x toward 0}} u {func "⋆-lim'sup"} csup {w} u {func "⋆-lim'sup"} csub {{x toward 0}} csup {w} u {func "⋆-lim'sup"} csub {{x toward 0}} csup {w} u # alignl "operatorname*" ## alignl func "⋆-lim'sup"_{{x toward 0}} u func "⋆-lim'sup"^w u func "⋆-lim'sup"_{{x toward 0}}^w u func "⋆-lim'sup"_{{x toward 0}}^w u # alignl "operatorname*:nolimits" ## alignl func curl_x v {func argmax} csub {K} u # alignl "DeclareMathOperator" } right none

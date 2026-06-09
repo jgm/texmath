@@ -46,9 +46,8 @@ jobs:
     - name: Install dependencies
       run: |
           cabal v2-update
-          cabal v2-build --dependencies-only --enable-tests --disable-optimization -fexecutable all
+          cabal v2-build --dependencies-only --enable-tests --disable-optimization -fexecutable -f-server all
     - name: Build and test
       run: |
-          cabal v2-build --enable-tests --disable-optimization -fexecutable all
-          cabal v2-test --disable-optimization all
-
+          cabal v2-build --enable-tests --disable-optimization -fexecutable -f-server all
+          cabal v2-test --disable-optimization -fexecutable -f-server all

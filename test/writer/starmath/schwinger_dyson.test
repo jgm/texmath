@@ -1,0 +1,63 @@
+<<< native
+[ EDelimited
+    "\10216"
+    "\10217"
+    [ Right (EIdentifier "\968")
+    , Right
+        (EDelimited
+           "|"
+           "|"
+           [ Right (EStyled TextScript [ EIdentifier "T" ])
+           , Right
+               (EDelimited
+                  "{"
+                  "}"
+                  [ Right
+                      (EFraction
+                         NormalFrac
+                         (EIdentifier "\948")
+                         (EGrouped [ EIdentifier "\948" , EIdentifier "\981" ]))
+                  , Right (EIdentifier "F")
+                  , Right (ESymbol Open "[")
+                  , Right (EIdentifier "\981")
+                  , Right (ESymbol Close "]")
+                  ])
+           ])
+    , Right (EIdentifier "\968")
+    ]
+, ESymbol Rel "="
+, ESymbol Ord "\8722"
+, EStyled TextNormal [ EIdentifier "i" ]
+, EDelimited
+    "\10216"
+    "\10217"
+    [ Right (EIdentifier "\968")
+    , Right
+        (EDelimited
+           "|"
+           "|"
+           [ Right (EStyled TextScript [ EIdentifier "T" ])
+           , Right
+               (EDelimited
+                  "{"
+                  "}"
+                  [ Right (EIdentifier "F")
+                  , Right (ESymbol Open "[")
+                  , Right (EIdentifier "\981")
+                  , Right (ESymbol Close "]")
+                  , Right
+                      (EFraction
+                         NormalFrac
+                         (EIdentifier "\948")
+                         (EGrouped [ EIdentifier "\948" , EIdentifier "\981" ]))
+                  , Right (EIdentifier "S")
+                  , Right (ESymbol Open "[")
+                  , Right (EIdentifier "\981")
+                  , Right (ESymbol Close "]")
+                  ])
+           ])
+    , Right (EIdentifier "\968")
+    ]
+]
+>>> starmath
+left langle %ipsi left lline nitalic 𝒯 left lbrace {%idelta over {%idelta %iphi}}F[%iphi] right rbrace right rline %ipsi right rangle = - nitalic i left langle %ipsi left lline nitalic 𝒯 left lbrace F[%iphi]{%idelta over {%idelta %iphi}}S[%iphi] right rbrace right rline %ipsi right rangle

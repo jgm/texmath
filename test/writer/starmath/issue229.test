@@ -1,0 +1,13 @@
+<<< native
+[ EArray
+    [ AlignLeft , AlignRight , AlignCenter , AlignRight , AlignCenter ]
+    [ [ [ ENumber "1" ]
+      , [ ENumber "2" ]
+      , [ ENumber "3" ]
+      , [ ENumber "4" ]
+      , [ ENumber "5" ]
+      ]
+    ]
+]
+>>> starmath
+matrix { alignl 1 # alignr 2 # alignc 3 # alignr 4 # alignc 5 }
