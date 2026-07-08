@@ -84,7 +84,7 @@ Library
                          pandoc-types >= 1.20 && < 1.24,
                          mtl >= 2.2.1,
                          text,
-                         typst-symbols >= 0.2 && < 0.2.1,
+                         typst-symbols >= 0.2 && < 0.3.1,
                          split
 
     Exposed-modules:     Text.TeXMath,
