@@ -1,0 +1,4 @@
+<<< tex
+\mathcal G=\langle\mathcal N,(\mathcal A_i)_i,(u_i)_i\rangle\qquad (x)^\top\mathbf A
+>>> typst
+cal(G) = chevron.l cal(N)\,\(cal(A)_i\)_i\,\(u_i\)_i chevron.r #h(2em)\(x\)^top upright(bold(A))
