@@ -47,7 +47,7 @@ writeExps = go . map writeExp
     , Just (_, aend) <- T.unsnoc a
     , bstart == '\'' -- avoid space before a prime #239
       || bstart == '|' || aend == '|'
-      || bstart == '\\' || isEscapedSymbol a -- #286
+      || bstart == '\\' || isStandaloneEscape a -- #291, #286
      = a <> go (b:es)
    go (a : as)
      = a <> if null as
@@ -55,11 +55,9 @@ writeExps = go . map writeExp
                else " " <> go as
    go [] = mempty
 
-   -- A compound expression may start with an escape but end in an identifier.
-   -- Only a standalone escape suppresses the following space (#291).
-   isEscapedSymbol t =
-     case T.unpack t of
-       ['\\', _] -> True
+   isStandaloneEscape t =
+     case T.uncons t of
+       Just ('\\', rest) -> T.length rest == 1
        _ -> False
 
 inParens :: Text -> Text
