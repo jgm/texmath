@@ -55,6 +55,8 @@ writeExps = go . map writeExp
                else " " <> go as
    go [] = mempty
 
+   -- A compound expression may start with an escape but end in an identifier.
+   -- Only a standalone escape suppresses the following space (#291).
    isStandaloneEscape t =
      case T.uncons t of
        Just ('\\', rest) -> T.length rest == 1
