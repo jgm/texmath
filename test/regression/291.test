@@ -1,0 +1,6 @@
+<<< tex
+)^n k \qquad
+(\mathbf x)^\top\mathbf A \qquad
+\mathcal G=\langle\mathcal N,(\mathcal A_i)_i,(u_i)_i\rangle
+>>> typst
+\)^n k #h(2em)\(upright(bold(x))\)^top upright(bold(A)) #h(2em) cal(G) = chevron.l cal(N)\,\(cal(A)_i\)_i\,\(u_i\)_i chevron.r
