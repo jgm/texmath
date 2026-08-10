@@ -77,7 +77,7 @@ expr1 = choice
           , enclosure
           , hyperref
           , command
-          ]
+          ] <* ignorable
 
 -- | Parse a formula, returning a list of 'Exp'.
 readTeX :: Text -> Either Text [Exp]
