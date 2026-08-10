@@ -149,10 +149,11 @@ takeDelimitedTarget closeTxt = go 0 []
       "}" -> Just "{"
       _   -> Nothing
 
+  go :: Int -> [Exp] -> [Exp] -> Maybe ([Exp], Exp)
   go _ _ [] = Nothing
   go depth inner (e : rest) =
     case (openTxt, e) of
-      (Just open, ESymbol Close c)
+      (Just _, ESymbol Close c)
         | c == closeTxt ->
             go (depth + 1) (e : inner) rest
       (Just open, ESymbol Open o)
@@ -177,7 +178,7 @@ collectBareBraces acc (x:xs) = collectBareBraces (x:acc) xs
 
 collectBareDelimited :: T.Text -> [Exp] -> [Exp]
                      -> Maybe ([Exp], Maybe (Exp -> Exp), [Exp])
-collectBareDelimited _ acc [] = Nothing
+collectBareDelimited _ _ [] = Nothing
 collectBareDelimited sym acc (y:ys)
   | matchesBareBar sym y = Just (reverse acc, Nothing, ys)
   | Just apply <- scriptedBareBar sym y = Just (reverse acc, Just apply, ys)
@@ -811,11 +812,6 @@ renderStyled dt ctx sty xs = do
     TextFraktur      -> "bold " <> styleArg body
     TextDoubleStruck -> "bold nitalic " <> styleArg body
     _                -> body
- where
-  styleArg t
-    | T.null t       = "{}"
-    | T.length t == 1 = t
-    | otherwise      = "{" <> t <> "}"
 
 renderUnicodeSerifStyled :: TextType -> [Exp] -> Maybe T.Text
 renderUnicodeSerifStyled sty xs =
@@ -1460,12 +1456,8 @@ renderSymbol t s =
     "↑" -> " uparrow "
     "↓" -> " downarrow "
     "↦" -> " mapsto "
-    "\8230 " -> " dotslow "
-    "… " -> " dotslow "
     "\8230" -> " dotslow "
-    "…" -> " dotslow "
     "\8943" -> " dotsaxis "
-    "⋯" -> " dotsaxis "
     "⋮" -> " dotsvert "
     "⋱" -> " dotsdown "
     "⋰" -> " dotsup "
@@ -1484,9 +1476,7 @@ renderSymbol t s =
     "≈" -> " approx "
     "≡" -> " equiv "
     "\8810" -> " ll "
-    "≪" -> " ll "
     "\8811" -> " gg "
-    "≫" -> " gg "
     "∝" -> " prop "
     "∥" -> " parallel "
     "⊥" -> " ortho "
@@ -1554,12 +1544,7 @@ largeOpName e =
     ESymbol Op "\8719" -> Just "prod"
     ESymbol Op "\8899" -> Just "oper ∪"
     ESymbol Op "\8898" -> Just "oper ∩"
-    ESymbol Op "∫"     -> Just "int"
-    ESymbol Op "∭"     -> Just "iiint"
-    ESymbol Op "∑"     -> Just "sum"
-    ESymbol Op "∏"     -> Just "prod"
-    ESymbol Op "⋃"     -> Just "oper ∪"
-    ESymbol Op "⋂"     -> Just "oper ∩"
+    ESymbol Op "\8749" -> Just "iiint"
     _                  -> Nothing
 
 limitOpName :: Exp -> Maybe T.Text
