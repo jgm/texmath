@@ -1,3 +1,15 @@
+texmath (0.13.2.1)
+
+  * Speed up test suite by running tests in parallel.
+
+  * Fix regression in TeX parsing from 1.13.0.1 (#293).
+    The changes introduced by commit 804490e led to failures parsing
+    some "ignorable" content -- e.g., `\tag`, `\label`, and comments.
+
+  * StarMath writer: fix compiler warnings.
+
+  * Typst writer: Fix spacing after escaped expressions (#291, Filip V.)
+
 texmath (0.13.2)
 
   * Require typst-symbols 0.3
