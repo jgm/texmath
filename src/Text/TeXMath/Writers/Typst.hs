@@ -30,6 +30,7 @@ import Data.Generics (everywhere, mkT)
 import Data.Text (Text)
 import Data.Char (isDigit, isAlpha, isAscii)
 import Data.Maybe (fromMaybe)
+import Numeric (showFFloat)
 
 -- import Debug.Trace
 -- tr' x = trace (show x) x
@@ -198,9 +199,10 @@ writeExp (ESpace width) =
     0 -> "zws"
     3 -> "thin"
     4 -> "med"
-    6 -> "thick"
+    5 -> "thick"
     18 -> "quad"
-    n -> "#h(" <> tshow (n `div` 18) <> "em)"
+    _ -> "#h(" <> T.pack (removePointZero $ showFFloat (Just 3)
+                          (fromRational width :: Double) $ "") <> "em)"
 writeExp (EText ttype s) =
   case ttype of
        TextNormal -> "upright" <> inParens (inQuotes s)
@@ -363,3 +365,10 @@ getAccentCommand ac = do
 isGrouped :: Exp -> Bool
 isGrouped (EGrouped _) = True
 isGrouped _ = False
+
+removePointZero :: String -> String
+removePointZero s =
+  let (as,bs) = break (=='.') s
+  in case bs of
+       '.':xs | all (=='0') xs -> as
+       _ -> s
