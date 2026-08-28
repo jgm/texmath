@@ -1,3 +1,7 @@
+texmath (0.13.2.2)
+
+  * Typst writer: fix spacing commands (#295).
+
 texmath (0.13.2.1)
 
   * Speed up test suite by running tests in parallel.
