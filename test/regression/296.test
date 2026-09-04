@@ -1,0 +1,16 @@
+<<< tex
+a`b x\"y p``q
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi>a</mi>
+    <mtext mathvariant="normal">‘</mtext>
+    <mi>b</mi>
+    <mi>x</mi>
+    <mtext mathvariant="normal">ÿ</mtext>
+    <mi>p</mi>
+    <mtext mathvariant="normal">“</mtext>
+    <mi>q</mi>
+  </mrow>
+</math>

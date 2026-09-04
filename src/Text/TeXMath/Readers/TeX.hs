@@ -71,12 +71,13 @@ expr1 = choice
           [ inbraces
           , variable
           , number
-          , unicode
           , operator
           , bareSubSup
           , enclosure
           , hyperref
           , command
+          , unicode
+          , special
           ] <* ignorable
 
 -- | Parse a formula, returning a list of 'Exp'.
@@ -642,6 +643,11 @@ unicode = lexeme $
     c <- satisfy (not . isAscii)
     return (ESymbol (getSymbolType c) $ T.singleton c)
 
+-- special is to catch some things that otherwise cause parse errors,
+-- e.g. $\"y$ or $`x$ -- see #296
+special :: TP Exp
+special = EText TextNormal <$> (quote <|> textCommand)
+
 ensuremath :: Text -> TP Exp
 ensuremath "\\ensuremath" = inbraces
 ensuremath _ = mzero
@@ -974,7 +980,10 @@ ligature :: TP Text
 ligature = try ("\x2014" <$ string "---")
        <|> try ("\x2013" <$ string "--")
        <|> try (textStr "-")
-       <|> try ("\x201C" <$ string "``")
+       <|> quote
+
+quote :: TP Text
+quote =    try ("\x201C" <$ string "``")
        <|> try ("\x201D" <$ string "''")
        <|> try ("\x2019" <$ string "'")
        <|> try ("\x2018" <$ string "`")
@@ -1127,6 +1136,7 @@ umlaut 'e' = "ë"
 umlaut 'i' = "ï"
 umlaut 'o' = "ö"
 umlaut 'u' = "ü"
+umlaut 'y' = "ÿ"
 umlaut c   = T.singleton c
 
 dot :: Char -> Text
