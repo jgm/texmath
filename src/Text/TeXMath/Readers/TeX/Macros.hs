@@ -285,7 +285,7 @@ inbraces :: (Monad m, Stream s m Char)
 inbraces = try $ do
   char '{'
   res <- manyTill (skipComment >>
-            (inbraces' <|> count 1 anyChar <|> escaped "{}"))
+            (inbraces' <|> escaped "{}" <|> count 1 anyChar))
     (try $ skipComment >> char '}')
   return $ concat res
 
