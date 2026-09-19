@@ -165,7 +165,7 @@ elemToOMathRunElem element
     || isElem "w" "delText" element = Just $ TextRun $ T.pack $ strContent element
   | isElem "w" "br" element = Just LnBrk
   | isElem "w" "tab" element = Just Tab
-  | isElem "w" "sym" element = Just $ TextRun $ getSymChar element
+  | isElem "w" "sym" element = TextRun <$> getSymChar element
   | isElem "w" "ins" element = Just $ Inserted $ mapMaybe elemToOMathRunElem (elChildren element)
   | otherwise = Nothing
 
@@ -500,6 +500,7 @@ interpretChar c = case getSymbolType c of
 
 interpretText :: T.Text -> [Exp]
 interpretText s
+  | T.null s = []
   | Just (c, xs) <- T.uncons s
   , T.null xs = [interpretChar c]
   | T.all isDigit s         = [ENumber s]
@@ -508,16 +509,17 @@ interpretText s
   | otherwise             = map interpretChar (T.unpack s)
 
 -- The char attribute is a hex string
-getSymChar :: Element -> T.Text
-getSymChar element
-  | Just s <- lowerFromPrivate <$> getCodepoint
-  , Just font <- getFont =
+getSymChar :: Element -> Maybe T.Text
+getSymChar element = do
+  s <- lowerFromPrivate <$> getCodepoint
+  font <- getFont
   case readLitChar ("\\x" ++ s) of
-     [(char, _)] -> maybe "" T.singleton $ getUnicode font char
-     _ -> ""
+     [(char, _)] -> T.singleton <$> getUnicode font char
+     _ -> Nothing
   where
     getCodepoint = findAttrBy (hasElemName "w" "char") element
     getFont = (textToFont . T.pack) =<< findAttrBy (hasElemName "w" "font") element
-    lowerFromPrivate ('F':xs) = '0':xs
+    -- Symbol fonts store codepoints in the private use area
+    -- (F000-F0FF); subtract 0xF000 to get the character code.
+    lowerFromPrivate (c:xs) | c == 'F' || c == 'f' = '0':xs
     lowerFromPrivate xs = xs
-getSymChar _ = ""
