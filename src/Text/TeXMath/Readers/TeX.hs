@@ -467,10 +467,12 @@ arrayLine =
 arrayAlignments :: TP [Alignment]
 arrayAlignments = mconcat <$>
   braces (many (
-                ((:[]) . letterToAlignment <$> letter)
+                ((:[]) <$> try (AlignLeft <$ oneOf "pmb" <* skipBraces))
+            <|> ((:[]) . letterToAlignment <$> letter)
             <|> ([] <$ char '|')
             <|> ([] <$ oneOf " \t")
             <|> ([] <$ ((char '@' <|> char '!') <* inbraces))
+            <|> ([] <$ ((char '>' <|> char '<') <* skipBraces))
             <|> (do char '*'
                     num <- T.pack <$> braces (many1 digit)
                     cols <- arrayAlignments
@@ -484,6 +486,11 @@ arrayAlignments = mconcat <$>
    letterToAlignment 'c' = AlignCenter
    letterToAlignment 'r' = AlignRight
    letterToAlignment _   = AlignCenter
+   -- Column widths (p{...}, m{...}, b{...}) and inserted material
+   -- (>{...}, <{...}) can't be represented in the AST, so we parse
+   -- and ignore the contents of the brace group.
+   skipBraces = () <$ (char '{' *> manyTill (skipBraces <|> () <$ noneOf "}")
+                                            (char '}'))
 
 environment :: Text -> TP Exp
 environment "\\begin" = do
