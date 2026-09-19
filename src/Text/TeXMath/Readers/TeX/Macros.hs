@@ -97,8 +97,11 @@ iterateToFixedPoint limit f x =
 
 applyMacrosOnce :: [Macro] -> T.Text -> Maybe T.Text
 applyMacrosOnce ms s =
-  case parse (many tok) "input" s of
-       Right r -> Just $ T.concat r
+  -- The unconsumed rest of the input (in case a token fails to parse,
+  -- e.g. on a trailing comment or backslash) is passed through
+  -- unchanged rather than dropped.
+  case parse ((,) <$> many tok <*> getInput) "input" s of
+       Right (r, rest) -> Just $ T.concat r <> rest
        Left _  -> Nothing
     where tok = try $ do
                   skipComment
