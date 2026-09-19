@@ -95,11 +95,15 @@ getTextType s = fromMaybe TextNormal (M.lookup s revTextTypesMap)
 -- | Maps a LaTeX scaling command to the percentage scaling
 getScalerCommand :: Rational -> Maybe T.Text
 getScalerCommand width =
-  case sort [ (w, cmd) | (cmd, w) <- scalers, w >= width ] of
-       ((_,cmd):_) -> Just cmd
-       _           -> Nothing
-  -- note, we don't use a Map here because we need the first
-  -- match:  \Big, not \Bigr
+  case [ cmd | (w, cmd) <- sortedScalers, w >= width ] of
+       (cmd:_) -> Just cmd
+       _       -> Nothing
+
+-- Scalers sorted by increasing width (then command name), so the
+-- first command with sufficient width is the preferred one:
+-- \Big, not \Bigr.  (We don't use a Map because of this tie-break.)
+sortedScalers :: [(Rational, T.Text)]
+sortedScalers = sort [ (w, cmd) | (cmd, w) <- scalers ]
 
 -- | Gets percentage scaling from LaTeX scaling command
 getScalerValue :: T.Text -> Maybe Rational
@@ -332,17 +336,18 @@ diacriticals =
 -- (em length per unit, assuming 1em = 10pt)
 unitToMultiplier :: T.Text -> Maybe Rational
 unitToMultiplier s = M.lookup s units
-  where
-    units = M.fromList  [ ( "pt" , (1/10))
-                        , ( "mm" , (2845/10000))   -- 1mm = 72.27/25.4 pt
-                        , ( "cm" , (2845/1000))
-                        , ( "in" , (7227/1000))    -- 1in = 72.27pt
-                        , ( "ex" , (43/100))       -- 1ex ~ 4.3pt (cmr10)
-                        , ( "em" , 1)
-                        , ( "mu" , (1/18))         -- 18mu = 1em
-                        , ( "dd" , (107/1000))     -- 1dd = 1238/1157 pt
-                        , ( "bp" , (1004/10000))   -- 1bp = 72.27/72 pt
-                        , ( "pc" , (12/10)) ]      -- 1pc = 12pt
+
+units :: M.Map T.Text Rational
+units = M.fromList  [ ( "pt" , (1/10))
+                    , ( "mm" , (2845/10000))   -- 1mm = 72.27/25.4 pt
+                    , ( "cm" , (2845/1000))
+                    , ( "in" , (7227/1000))    -- 1in = 72.27pt
+                    , ( "ex" , (43/100))       -- 1ex ~ 4.3pt (cmr10)
+                    , ( "em" , 1)
+                    , ( "mu" , (1/18))         -- 18mu = 1em
+                    , ( "dd" , (107/1000))     -- 1dd = 1238/1157 pt
+                    , ( "bp" , (1004/10000))   -- 1bp = 72.27/72 pt
+                    , ( "pc" , (12/10)) ]      -- 1pc = 12pt
 
 handleDownup :: DisplayType -> Exp -> Exp
 handleDownup DisplayInline (EUnder True x y)       = ESub x y
