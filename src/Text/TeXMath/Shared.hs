@@ -47,7 +47,6 @@ import qualified Data.Text as T
 import Data.Maybe (fromMaybe)
 import Data.Ratio ((%))
 import Data.List (sort)
-import Control.Monad (guard)
 import Text.Parsec (Parsec, parse, getInput, digit, char, many1, option)
 import Data.Generics (everywhere, mkT)
 
@@ -114,8 +113,9 @@ getDiacriticalCommand pos symbol = do
   case pos of
     Under -> if below then Just command else Nothing
     Over -> if not below then Just command else Nothing
-  where
-    diaMap = M.fromList diacriticals
+
+diaMap :: M.Map T.Text T.Text
+diaMap = M.fromList diacriticals
 
 -- Operator Table
 
@@ -305,14 +305,12 @@ diacriticals =
                , ("\x20DC", "\\ddddot")
                , ("\x00B0", "\\mathring")
                , ("\x030A", "\\mathring")
-               , ("\x20D7", "\\vec")
                , ("\x20D7", "\\overrightarrow")
                , ("\x20D6", "\\overleftarrow")
                , ("\x005E", "\\hat")
                , ("\x02C6", "\\widehat")
                , ("\x0302", "\\widehat")
                , ("\x02DC", "\\widetilde")
-               , ("\x0303", "\\tilde")
                , ("\x0303", "\\widetilde")
                , ("\x0304", "\\bar")
                , ("\x203E", "\\bar")

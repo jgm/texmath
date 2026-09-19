@@ -350,7 +350,8 @@ writeScript pos convertible b e1 = do
   let diacmd = case e1 of
                     ESymbol stype a
                       | stype `elem` [Accent, TOver, TUnder]
-                      -> S.getDiacriticalCommand pos a
+                      -> (if isNarrow b then narrowDiacritical else id)
+                           <$> S.getDiacriticalCommand pos a
                     _ -> Nothing
   case diacmd of
        Just cmd -> do
@@ -458,6 +459,25 @@ isOperator :: Exp -> Bool
 isOperator (EMathOperator _) = True
 isOperator (ESymbol Op _)    = True
 isOperator _                 = False
+
+-- | True if the expression is a single character wide, so that
+-- narrow accent commands like \vec are preferable to wide ones
+-- like \overrightarrow.
+isNarrow :: Exp -> Bool
+isNarrow (EIdentifier t) = T.length t == 1
+isNarrow (ENumber t)     = T.length t == 1
+isNarrow (ESymbol _ t)   = T.length t == 1
+isNarrow (EGrouped [x])  = isNarrow x
+isNarrow (EStyled _ [x]) = isNarrow x
+isNarrow _               = False
+
+-- | Preferred variants of wide accent commands for single-character
+-- bases.
+narrowDiacritical :: T.Text -> T.Text
+narrowDiacritical "\\overrightarrow" = "\\vec"
+narrowDiacritical "\\widetilde"      = "\\tilde"
+narrowDiacritical "\\widehat"        = "\\hat"
+narrowDiacritical cmd                = cmd
 
 removeOuterGroup :: [Exp] -> [Exp]
 removeOuterGroup [EGrouped es] = es

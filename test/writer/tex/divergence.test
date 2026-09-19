@@ -22,4 +22,4 @@
     (EGrouped [ ESymbol Ord "\8706" , EIdentifier "z" ])
 ]
 >>> tex
-\nabla \cdot \overrightarrow{v} = \frac{\partial v_{x}}{\partial x} + \frac{\partial v_{y}}{\partial y} + \frac{\partial v_{z}}{\partial z}
+\nabla \cdot \vec{v} = \frac{\partial v_{x}}{\partial x} + \frac{\partial v_{y}}{\partial y} + \frac{\partial v_{z}}{\partial z}

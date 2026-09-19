@@ -8,4 +8,4 @@
 , EOver False (EIdentifier "x") (ESymbol Alpha "\710")
 ]
 >>> tex
-\widehat{x} \neq \overset{\hat{}}{x} = \overset{\hat{}}{x} = \overset{\hat{}}{x}
+\hat{x} \neq \overset{\hat{}}{x} = \overset{\hat{}}{x} = \overset{\hat{}}{x}
