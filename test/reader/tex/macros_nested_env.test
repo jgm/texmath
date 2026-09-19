@@ -1,0 +1,20 @@
+<<< tex
+\newenvironment{brak}[1]{\langle #1:}{:#1\rangle}
+\begin{brak}{a} x \begin{brak}{b} y \end{brak} z \end{brak}
+>>> native
+[ ESymbol Open "\10216"
+, EIdentifier "a"
+, ESymbol Rel ":"
+, EIdentifier "x"
+, ESymbol Open "\10216"
+, EIdentifier "b"
+, ESymbol Rel ":"
+, EIdentifier "y"
+, ESymbol Rel ":"
+, EIdentifier "b"
+, ESymbol Close "\10217"
+, EIdentifier "z"
+, ESymbol Rel ":"
+, EIdentifier "a"
+, ESymbol Close "\10217"
+]

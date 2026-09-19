@@ -184,30 +184,35 @@ newenvironment = try $ do
              (if numargs > 0 then ("[" ++ show numargs ++ "]") else "") ++
              case optarg of { Nothing -> ""; Just x -> "[" ++ x ++ "]"} ++
              "%\n{" ++ opener ++ "}%\n" ++ "{" ++ closer ++ "}"
-  return $ Macro (T.pack defn) $ fmap T.pack $ try $ do
-    string "\\begin"
-    pSkipSpaceComments
-    char '{'
-    string name
-    pSkipSpaceComments
-    char '}'
-    opt <- case optarg of
-                Nothing  -> return Nothing
-                Just _   -> liftM (`mplus` optarg) optArg
-    args <- count numargs' (pSkipSpaceComments >>
-                  (inbraces <|> ctrlseq <|> count 1 anyChar))
-    let args' = case opt of
-                     Just x  -> x : args
-                     Nothing -> args
-    let ender = try $ do
-                      string "\\end"
-                      pSkipSpaceComments
-                      char '{'
-                      string name
-                      char '}'
-    body <- manyTill anyChar ender
-    return $ apply args'
-           $ opener ++ body ++ closer
+  return $ Macro (T.pack defn) $ fmap T.pack $
+    let pEnv = try $ do
+          string "\\begin"
+          pSkipSpaceComments
+          char '{'
+          string name
+          pSkipSpaceComments
+          char '}'
+          opt <- case optarg of
+                      Nothing  -> return Nothing
+                      Just _   -> liftM (`mplus` optarg) optArg
+          args <- count numargs' (pSkipSpaceComments >>
+                        (inbraces <|> ctrlseq <|> count 1 anyChar))
+          let args' = case opt of
+                           Just x  -> x : args
+                           Nothing -> args
+          body <- pBody
+          return $ apply args'
+                 $ opener ++ body ++ closer
+        ender = try $ do
+          string "\\end"
+          pSkipSpaceComments
+          char '{'
+          string name
+          char '}'
+        -- Expand nested environments with the same name recursively,
+        -- so that the body isn't ended at a nested \end.
+        pBody = concat <$> manyTill (pEnv <|> count 1 anyChar) ender
+    in  pEnv
 
 -- | Parser for \DeclareMathOperator(*) command.
 declareMathOperator :: (Monad m, Stream s m Char)
