@@ -53,6 +53,7 @@ import Data.List (transpose)
 import Control.Applicative ((<|>))
 import qualified Data.Text as T
 import Control.Monad (filterM, mzero)
+import Text.Read (readMaybe)
 import Control.Monad.Reader (ReaderT, runReaderT, asks, local)
 import Data.Either (rights)
 
@@ -399,7 +400,8 @@ enclosed e = do
 
 action :: Element -> MML Exp
 action e = do
-  selection <-  maybe 1 (read . T.unpack) <$> (findAttrQ "selection" e)  -- 1-indexing
+  selection <-  maybe 1 (fromMaybe 1 . readMaybe . T.unpack)
+                  <$> (findAttrQ "selection" e)  -- 1-indexing, defaults to 1
   safeExpr =<< maybeToEither ("Selection out of range")
             (listToMaybe $ drop (selection - 1) (elChildren e))
 

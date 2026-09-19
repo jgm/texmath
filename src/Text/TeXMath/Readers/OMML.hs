@@ -319,7 +319,7 @@ elemToExps' element | isElem "m" "d" element =
 elemToExps' element | isElem "m" "eqArr" element =
   let expLst = mapMaybe elemToBases (elChildren element)
       expLst' = map breakOnAmpersand expLst
-      cols = maximum (map length expLst')
+      cols = foldr max 0 (map length expLst')
       colspecs = take cols $ cycle [AlignRight , AlignLeft]
   in
    return [EArray colspecs expLst']
