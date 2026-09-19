@@ -31,7 +31,8 @@
 >>> native
 [ EFraction
     NormalFrac
-    (EGrouped [ EIdentifier "x" , ESpace (7 % 20) , EIdentifier "y" ])
+    (EGrouped
+       [ EIdentifier "x" , ESpace (569 % 200) , EIdentifier "y" ])
     (ENumber "2")
 , ESymbol Bin "+"
 , EFraction

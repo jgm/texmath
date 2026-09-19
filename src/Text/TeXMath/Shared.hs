@@ -331,19 +331,20 @@ diacriticals =
 
 
 -- Converts unit to multiplier to reach em
+-- (em length per unit, assuming 1em = 10pt)
 unitToMultiplier :: T.Text -> Maybe Rational
 unitToMultiplier s = M.lookup s units
   where
-    units = M.fromList  [ ( "pt" , 10)
-                        , ( "mm" , (351/10))
-                        , ( "cm" , (35/100))
-                        , ( "in" , (14/100))
-                        , ( "ex" , (232/100))
+    units = M.fromList  [ ( "pt" , (1/10))
+                        , ( "mm" , (2845/10000))   -- 1mm = 72.27/25.4 pt
+                        , ( "cm" , (2845/1000))
+                        , ( "in" , (7227/1000))    -- 1in = 72.27pt
+                        , ( "ex" , (43/100))       -- 1ex ~ 4.3pt (cmr10)
                         , ( "em" , 1)
-                        , ( "mu" , 18)
-                        , ( "dd" , (93/100))
-                        , ( "bp" , (996/1000))
-                        , ( "pc" , (83/100)) ]
+                        , ( "mu" , (1/18))         -- 18mu = 1em
+                        , ( "dd" , (107/1000))     -- 1dd = 1238/1157 pt
+                        , ( "bp" , (1004/10000))   -- 1bp = 72.27/72 pt
+                        , ( "pc" , (12/10)) ]      -- 1pc = 12pt
 
 handleDownup :: DisplayType -> Exp -> Exp
 handleDownup DisplayInline (EUnder True x y)       = ESub x y
