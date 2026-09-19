@@ -132,10 +132,13 @@ setProps tt =
    where sty x = mnodeA "sty" x ()
          scr x = mnodeA "scr" x ()
 
+-- OMML cannot represent a numeric scale factor for delimiters, so
+-- render a pair of scaled delimiters as an m:d, which grows the
+-- delimiters to fit their content.
 handleScaledDelims :: [Exp] -> [Exp]
-handleScaledDelims (x@(EScaled scale (ESymbol Open op)) : xs) =
+handleScaledDelims (x@(EScaled _ (ESymbol Open op)) : xs) =
   case break isCloser xs of
-    (ys, EScaled scale' (ESymbol Close cl) : zs) | scale' == scale ->
+    (ys, EScaled _ (ESymbol Close cl) : zs) ->
       EDelimited op cl (map Right ys) : zs
     _ -> x:xs
  where
