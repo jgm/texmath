@@ -196,8 +196,11 @@ formula = unGrouped <$> (ignorable *> manyExp expr <* eof)
 
 expr :: TP Exp
 expr = do
-  optional (ctrlseq "displaystyle" <|> ctrlseq "textstyle" <|>
-            ctrlseq "scriptstyle" <|> ctrlseq "scriptscriptstyle")
+  -- the lookAhead is just an optimization: it lets us skip the four
+  -- ctrlseq attempts with a one-character test on most input
+  optional (lookAhead (char '\\') *>
+             (ctrlseq "displaystyle" <|> ctrlseq "textstyle" <|>
+              ctrlseq "scriptstyle" <|> ctrlseq "scriptscriptstyle"))
   (a, convertible) <- try (braces operatorname) -- needed because macros add {}
                  <|> operatorname
                  <|> ((,False) <$> expr1)
@@ -290,7 +293,10 @@ limitsIndicator =
   <|> return Nothing
 
 binomCmd :: TP Text
-binomCmd = oneOfCommands (M.keys binomCmds)
+binomCmd = lookAhead (char '\\') *> oneOfCommands (M.keys binomCmds)
+  -- the lookAhead is just an optimization: this parser is run (via
+  -- notFollowedBy) before every token in manyExp', and the quick
+  -- one-character test lets it fail cheaply on most input.
 
 binomCmds :: M.Map Text (Exp -> Exp -> Exp)
 binomCmds = M.fromList
