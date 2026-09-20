@@ -25,14 +25,14 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 module Text.TeXMath.Readers.TeX (readTeX)
 where
 
-import Data.List (intercalate, intersperse, find, foldl')
+import Data.List (intercalate, intersperse, foldl')
 import Control.Monad
 import Data.Char (isDigit, isAscii, isLetter)
 import qualified Data.Map as M
 import qualified Data.Text as T
 import Data.Text (Text)
 import Data.Ratio ((%))
-import Data.Maybe (catMaybes, fromJust, mapMaybe)
+import Data.Maybe (catMaybes, fromJust, fromMaybe, mapMaybe)
 import Text.Parsec hiding (label)
 import Text.Parsec.Error
 import Text.Parsec.Text
@@ -500,7 +500,7 @@ arrayAlignments = mconcat <$>
 
 environment :: Text -> TP Exp
 environment "\\begin" = do
-  name <- braces (oneOfStrings (M.keys environments) <* optional (char '*'))
+  name <- environmentName
   spaces
   case M.lookup name environments of
         Just env -> do
@@ -512,6 +512,11 @@ environment "\\begin" = do
           return result
         Nothing  -> mzero  -- should not happen
 environment _ = mzero
+
+-- A top-level binding, so that the underlying trie is built only once.
+environmentName :: TP Text
+environmentName =
+  braces (oneOfStrings (M.keys environments) <* optional (char '*'))
 
 environments :: M.Map Text (TP Exp)
 environments = M.fromList
@@ -894,25 +899,41 @@ oneOfCommands cmds = try $ do
   spaces
   return cmd
 
-oneOfStrings' :: (Char -> Char -> Bool) -> [(String, Text)] -> TP Text
-oneOfStrings' _ [] = mzero
-oneOfStrings' matches strs = try $ do
-    c <- anyChar
-    let strs' = [(xs, t) | ((x:xs), t) <- strs, x `matches` c]
-    case strs' of
-      []  -> mzero
-      _   -> oneOfStrings' matches strs'
-             <|> case find (null . fst) strs' of
-                   Just (_, t) -> return t
-                   Nothing     -> mzero
+-- A prefix trie over the characters of a fixed set of strings; the
+-- value at a node is the string spelled out by the path to it, if
+-- that string is in the set.
+data Trie = Trie (Maybe Text) (M.Map Char Trie)
+
+buildTrie :: [Text] -> Trie
+buildTrie = foldr insertStr (Trie Nothing M.empty) . filter (not . T.null)
+  where
+    insertStr t = go (T.unpack t)
+      where
+        go [] (Trie _ cs) = Trie (Just t) cs
+        go (c:rest) (Trie v cs) = Trie v $
+          M.alter (Just . go rest . fromMaybe (Trie Nothing M.empty)) c cs
+
+-- Longest match: try to descend on the next character, and fall
+-- back to the match ending at the current node.
+trieParser :: Trie -> TP Text
+trieParser (Trie val children) =
+  (if M.null children
+      then mzero
+      else try $ do
+             c <- anyChar
+             case M.lookup c children of
+               Just subtrie -> trieParser subtrie
+               Nothing      -> mzero)
+  <|> maybe mzero return val
 
 -- | Parses one of a list of strings.  If the list contains
 -- two strings one of which is a prefix of the other, the longer
--- string will be matched if possible.
+-- string will be matched if possible.  The trie is built only once
+-- when the resulting parser is shared, so prefer binding the result
+-- to a name over calling this repeatedly with the same list.
 oneOfStrings :: [Text] -> TP Text
-oneOfStrings strs = oneOfStrings' (==) strs' <??> (intercalate ", " $ map show strs)
-  where
-    strs' = map (\x -> (T.unpack x, x)) strs
+oneOfStrings strs =
+  trieParser (buildTrie strs) <??> (intercalate ", " $ map show strs)
 
 -- | Like '(<?>)', but moves position back to the beginning of the parse
 -- before reporting the error.
