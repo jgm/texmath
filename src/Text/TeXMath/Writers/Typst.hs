@@ -26,7 +26,6 @@ import qualified Data.Text as T
 import Text.TeXMath.Types
 import qualified Text.TeXMath.Shared as S
 import qualified Typst.Symbols as TS
-import Data.Generics (everywhere, mkT)
 import Data.Text (Text)
 import Data.Char (isDigit, isAlpha, isAscii)
 import Data.Maybe (fromMaybe)
@@ -38,7 +37,7 @@ import Numeric (showFFloat)
 -- | Transforms an expression tree to equivalent Typst
 writeTypst :: DisplayType -> [Exp] -> Text
 writeTypst dt exprs =
-  writeExps $ everywhere (mkT $ S.handleDownup dt) exprs
+  writeExps $ map (S.everywhereExp (S.handleDownup dt)) exprs
 
 writeExps :: [Exp] -> Text
 writeExps = go . map writeExp

@@ -4,7 +4,6 @@ module Text.TeXMath.Writers.StarMath
   ) where
 
 import Data.Char (isLetter)
-import Data.Generics (everywhere, mkT)
 import qualified Data.List as List
 import qualified Data.Text as T
 import qualified Text.TeXMath.Shared as S
@@ -23,7 +22,7 @@ import Text.TeXMath.Writers.TeX (writeTeX)
 -- Falls back to TeX output for expressions that are not yet supported.
 writeStarMath :: DisplayType -> [Exp] -> T.Text
 writeStarMath dt exps =
-  case renderExps dt (normalizeExps (everywhere (mkT $ S.handleDownup dt) exps)) of
+  case renderExps dt (normalizeExps (map (S.everywhereExp (S.handleDownup dt)) exps)) of
     Just rendered -> T.strip rendered
     Nothing       -> writeTeX exps
 

@@ -43,7 +43,6 @@ import Text.TeXMath.Readers.TeX.Macros (applyMacros, parseMacroDefinitions)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Text.TeXMath.Unicode.ToUnicode (toUnicode)
 import Text.TeXMath.Shared (getSpaceChars)
-import Data.Generics (everywhere, mkT)
 import Text.TeXMath.Readers.TeX.Commands ( styleOps, textOps, enclosures,
                                            operators, symbols, siUnitMap )
 import Data.Text.Read (decimal)
@@ -90,7 +89,7 @@ readTeX inp =
   -- | Convert Bin symbol type in certain contexts (#176, #234).
   fixBinList :: [Exp] -> [Exp]
   fixBinList =
-    reverse . foldl' goExp [] . everywhere (mkT fixBins)
+    reverse . foldl' goExp [] . map (S.everywhereExp fixBins)
 
   -- TeXBook:
   -- 5. If the current item is a Bin atom, and if this was the first

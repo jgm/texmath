@@ -26,8 +26,8 @@ where
 
 import Text.XML.Light
 import Text.TeXMath.Types
-import Text.TeXMath.Shared (isUppercaseGreek, isRLSequence)
-import Data.Generics (everywhere, mkT)
+import Text.TeXMath.Shared (isUppercaseGreek, isRLSequence,
+                            everywhereExpList, mapExpChildren)
 import Data.Char (isSymbol, isPunctuation)
 import Data.Either (lefts, isLeft, rights)
 import qualified Data.Text as T
@@ -37,9 +37,9 @@ import Data.List (intercalate)
 -- | Transforms an expression tree to an OMML XML Tree
 writeOMML :: DisplayType -> [Exp] -> Element
 writeOMML dt = container . concatMap (showExp [])
-            . everywhere (mkT $ handleDownup dt)
-            . everywhere (mkT $ handleDownup' dt)
-            . everywhere (mkT $ handleScaledDelims)
+            . everywhereExpList (handleDownup dt)
+            . handleDownupDelims dt
+            . everywhereExpList handleScaledDelims
     where container = case dt of
                   DisplayBlock  -> \x -> mnode "oMathPara"
                                     [ mnode "oMathParaPr"
@@ -174,6 +174,17 @@ handleDownup dt (exp' : xs) =
                               []     -> (emptyGroup, [])
           emptyGroup = EGrouped []
 handleDownup _ []            = []
+
+-- | Apply @handleDownup' dt@ to every delimited-expression list,
+-- bottom up, including every tail of every list (the same traversal
+-- the SYB @everywhere@ it replaces performed).
+handleDownupDelims :: DisplayType -> [Exp] -> [Exp]
+handleDownupDelims dt = map goE
+  where
+    goE (EDelimited o c ds) = EDelimited o c (goDs ds)
+    goE e = mapExpChildren goE (map goE) e
+    goDs = foldr (\d acc -> f (fmap goE d : acc)) (f [])
+    f = handleDownup' dt
 
 -- TODO This duplication is ugly and inefficient.  See #92.
 handleDownup' :: DisplayType -> [InEDelimited] -> [InEDelimited]

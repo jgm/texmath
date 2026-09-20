@@ -27,7 +27,6 @@ import qualified Data.Text as T
 import Text.Printf (printf)
 import Text.TeXMath.Types
 import qualified Text.TeXMath.Shared as S
-import Data.Generics (everywhere, mkT)
 import Data.Ratio ((%))
 import Data.Text (Text)
 
@@ -37,7 +36,7 @@ import Data.Text (Text)
 -- | Transforms an expression tree to equivalent Eqn
 writeEqn :: DisplayType -> [Exp] -> T.Text
 writeEqn dt exprs =
-  T.unwords $ map writeExp $ everywhere (mkT $ S.handleDownup dt) exprs
+  T.unwords $ map (writeExp . S.everywhereExp (S.handleDownup dt)) exprs
 
 -- like writeExp but inserts {} if contents contain a space
 writeExp' :: Exp -> T.Text

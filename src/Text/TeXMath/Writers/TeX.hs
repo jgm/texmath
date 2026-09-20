@@ -25,7 +25,6 @@ import Text.TeXMath.Unicode.ToTeX (getTeXMath)
 import Text.TeXMath.Unicode.ToUnicode (fromUnicode)
 import qualified Text.TeXMath.Shared as S
 import qualified Data.Text as T
-import Data.Generics (everywhere, mkT)
 import Control.Monad (when, unless, foldM_)
 import Control.Monad.Reader (MonadReader, runReader, Reader, asks, local)
 import Control.Monad.Writer( MonadWriter, WriterT,
@@ -100,6 +99,22 @@ writeBinom cmd x y = do
        writeExp x
        tell [ControlSeq cmd]
        writeExp y
+
+-- | Replace styled unicode characters with their unstyled
+-- equivalents in every text field of an expression.
+fromUnicodeExp :: TextType -> Exp -> Exp
+fromUnicodeExp ttype = S.everywhereExp go
+  where
+    f = fromUnicode ttype
+    go e = case e of
+      ENumber t         -> ENumber (f t)
+      EIdentifier t     -> EIdentifier (f t)
+      EMathOperator t   -> EMathOperator (f t)
+      ESymbol ty t      -> ESymbol ty (f t)
+      EText tt t        -> EText tt (f t)
+      EDelimited o c ds -> EDelimited (f o) (f c)
+                             (map (either (Left . f) Right) ds)
+      _                 -> e
 
 writeExp :: Exp -> Math ()
 writeExp (ENumber s) = tell =<< getTeXMathM s
@@ -287,11 +302,11 @@ writeExp (EText ttype s) = do
        xs   -> tell $ txtcmd (Grouped xs)
 writeExp (EStyled TextNormal [EStyled TextBold es]) = do
   tell [ControlSeq "\\mathbf"]
-  tellGroup $ mapM_ writeExp $ everywhere (mkT (fromUnicode TextBold)) es
+  tellGroup $ mapM_ (writeExp . fromUnicodeExp TextBold) es
 writeExp (EStyled ttype es) = do
   txtcmd <- (flip S.getLaTeXTextCommand ttype) <$> asks mathEnv
   tell [ControlSeq txtcmd]
-  tellGroup (mapM_ writeExp $ everywhere (mkT (fromUnicode ttype)) es)
+  tellGroup (mapM_ (writeExp . fromUnicodeExp ttype) es)
 writeExp (EArray as rows)
   | S.isRLSequence as = do
   env <- asks mathEnv

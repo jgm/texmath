@@ -30,6 +30,9 @@ module Text.TeXMath.Shared
   , getOperator
   , readLength
   , fixTree
+  , everywhereExp
+  , everywhereExpList
+  , mapExpChildren
   , isEmpty
   , empty
   , handleDownup
@@ -48,7 +51,6 @@ import Data.Maybe (fromMaybe)
 import Data.Ratio ((%))
 import Data.List (sort)
 import Text.Parsec (Parsec, parse, getInput, digit, char, many1, option)
-import Data.Generics (everywhere, mkT)
 
 -- As we constuct from the bottom up, this situation can occur.
 removeNesting :: Exp -> Exp
@@ -73,7 +75,60 @@ isEmpty _ = False
 -- fixing delimited expressions with no delimiters and unnecessarily
 -- grouped expressions.
 fixTree :: Exp -> Exp
-fixTree = everywhere (mkT removeNesting) . everywhere (mkT removeEmpty)
+fixTree = everywhereExp removeNesting . goE
+  where
+    -- Remove empty expressions from every expression list, bottom up.
+    -- (Filtering each list once is equivalent to the per-tail
+    -- application 'everywhereExpList' would do, since removeEmpty is
+    -- an element-wise filter.)
+    goE = mapExpChildren goE (removeEmpty . map goE)
+
+-- | Apply a transformation to every subexpression, bottom up
+-- (equivalent to SYB's @everywhere (mkT f)@, but faster, since it
+-- involves no run-time type checks).
+everywhereExp :: (Exp -> Exp) -> Exp -> Exp
+everywhereExp f = go
+  where go = f . mapExpChildren go (map go)
+
+-- | Apply a transformation to every expression list in an expression
+-- list, bottom up.  Like SYB's @everywhere (mkT f)@, this applies the
+-- function to every /tail/ of every list (right to left), since each
+-- tail is itself a @[Exp]@ node; a rewrite can thus consume
+-- already-rewritten material to its right.
+everywhereExpList :: ([Exp] -> [Exp]) -> [Exp] -> [Exp]
+everywhereExpList f = goL
+  where goL = foldr (\x acc -> f (goE x : acc)) (f [])
+        goE = mapExpChildren goE goL
+
+-- | Apply @goE@ to each immediate subexpression of a node and @goL@
+-- to each immediate subexpression list.  A building block for
+-- expression traversals.
+mapExpChildren :: (Exp -> Exp) -> ([Exp] -> [Exp]) -> Exp -> Exp
+mapExpChildren goE goL e =
+  case e of
+    ENumber{}          -> e
+    EGrouped es        -> EGrouped (goL es)
+    EDelimited o c ds  -> EDelimited o c (map (fmap goE) ds)
+    EIdentifier{}      -> e
+    EMathOperator{}    -> e
+    ESymbol{}          -> e
+    ESpace{}           -> e
+    ESub a b           -> ESub (goE a) (goE b)
+    ESuper a b         -> ESuper (goE a) (goE b)
+    ESubsup a b c      -> ESubsup (goE a) (goE b) (goE c)
+    EOver conv a b     -> EOver conv (goE a) (goE b)
+    EUnder conv a b    -> EUnder conv (goE a) (goE b)
+    EUnderover conv a b c -> EUnderover conv (goE a) (goE b) (goE c)
+    EPhantom a         -> EPhantom (goE a)
+    EBoxed a           -> EBoxed (goE a)
+    ECancel st a       -> ECancel st (goE a)
+    EFraction ft a b   -> EFraction ft (goE a) (goE b)
+    ERoot a b          -> ERoot (goE a) (goE b)
+    ESqrt a            -> ESqrt (goE a)
+    EScaled r a        -> EScaled r (goE a)
+    EArray as rows     -> EArray as (map (map goL) rows)
+    EText{}            -> e
+    EStyled tt es      -> EStyled tt (goL es)
 
 -- | Maps TextType to the corresponding MathML mathvariant
 getMMLType :: TextType -> T.Text
