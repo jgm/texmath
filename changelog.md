@@ -1,3 +1,67 @@
+texmath (0.13.3)
+
+  * Replace SYB traversals with hand-written ones. Text.TeXMath.Shared
+    now provides `mapExpChildren`, `everywhereExp` and
+    `everywhereExpList` [API change]. These replicate the SYB
+    semantics but are much faster. These are now used instead of SYB
+    functions throughout the code base. This speeds up many functions
+    (in particular, `writeOMML` is 6x faster on our benchmark).
+
+  * TeX reader: Fix handling of ` and " in math mode (#296).
+
+  * TeX reader: gate hot-path command checks behind a one-char `lookAhead`.
+
+  * TeX reader: use a prefix trie in `oneOfStrings`.
+
+  * TeX reader: don't fail on `p{...}` and `>{...}` array column specs.
+    Column specs like `p{2cm}`, `m{0.4\textwidth}`, `b{1in}`, `>{\bf}`,
+    and `<{x}` caused the whole array environment to fail to parse.  The AST
+    cannot represent column widths or inserted material, so parse and
+    ignore them.
+
+  * TeX writer: use `\vec`, `\tilde`, `\hat` for single-character bases.
+    The diacriticals table in Shared contained dead duplicate entries
+    (`\vec` shadowed by `\overrightarrow`, `\tilde` by `\widetilde`),
+    so the TeX writer always emitted the wide accent commands, even for
+    single characters where `\vec{v}`, `\tilde{x}`, `\hat{H}` are canonical.
+
+ * `renderTeX`: use a lazy Text accumulator to avoid quadratic rendering.
+    This yields large performance gains on large outputs.
+
+  * eqn writer: escape `"` and `\` in quoted text. (#297, Dylan Pulver).
+    The writer wraps text in the double quotes eqn uses for literal text but
+    emitted the content unescaped, so a `"` ended the string early and a `\`
+    began a troff escape sequence.
+
+  * Shared: fix unit conversion in `readLength`/`unitToMultiplier`.
+
+  * Shared: hoist per-call table constructions to top-level CAFs.
+
+  * MathML/OMML readers: don't crash on malformed input.
+
+  * Macros: fix parsing of escaped braces in macro bodies.
+
+  * Macros: don't silently drop input in `applyMacros`.
+
+  * Macros: fix nested same-name environments in `newenvironment`.
+
+  * Macros: speed up `applyMacros`.
+
+  * OMML reader: fix `w:sym` private-use codepoints and empty-run junk.
+    `lowerFromPrivate` only matched uppercase 'F' prefixes, so lowercase
+    codepoints like `w:char="f062"` were not mapped down from the private
+    use area and silently produced no symbol. Match 'f' as well.
+    Also make `getSymChar` return Maybe instead of an empty string, so an
+    unresolvable `w:sym` (unknown font, missing attributes, out-of-range
+    codepoint) is dropped instead of becoming an empty text run, and fix
+    `interpretText` to return `[]` for empty input.
+
+  * OMML writer: don't require equal scales on delimiter pairs.
+    `handleScaledDelims` only converted a scaled open/close pair to an
+    m:d element when both delimiters had exactly the same scale factor,
+    so pairs like \bigl( x \Bigr) degraded to flat character runs with
+    no delimiter structure.
+
 texmath (0.13.2.2)
 
   * Typst writer: fix spacing commands (#295).
