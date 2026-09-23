@@ -109,6 +109,7 @@ Library
                          Text.TeXMath.Shared
     Other-modules:       Text.TeXMath.Readers.TeX.Commands
                          Paths_texmath
+    Autogen-modules:     Paths_texmath
     if impl(ghc >= 6.12)
       Ghc-Options:     -Wall -fno-warn-unused-do-bind
     else
@@ -121,6 +122,7 @@ Executable texmath
     Default-Language:    Haskell2010
     Main-is:             texmath.hs
     Other-Modules:       Paths_texmath
+    Autogen-modules:     Paths_texmath
     Hs-Source-Dirs:      extra
     if impl(ghc >= 6.12)
       Ghc-Options:     -Wall -fno-warn-unused-do-bind
