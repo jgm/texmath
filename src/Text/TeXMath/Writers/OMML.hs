@@ -98,8 +98,8 @@ makeArray props as rs = mnode "m" $ mProps : map toMr rs
         as'    = take (maximum' $ map length rs) $ as ++ repeat AlignCenter
         toMr r = mnode "mr" $ map (mnode "e" . concatMap (showExp props)) r
         toMc a = mnode "mc" $ mnode "mcPr"
-                            [ mnodeA "mcJc" (toAlign a) ()
-                            , mnodeA "count" "1" ()
+                            [ mnodeA "count" "1" ()
+                            , mnodeA "mcJc" (toAlign a) ()
                             ]
         toAlign AlignLeft    = "left"
         toAlign AlignRight   = "right"
