@@ -18,7 +18,6 @@
     <m:r>
       <m:rPr>
         <m:nor />
-        <m:sty m:val="p" />
       </m:rPr>
       <m:t>Inline, auto, normal line </m:t>
     </m:r>
@@ -52,7 +51,6 @@
     <m:r>
       <m:rPr>
         <m:nor />
-        <m:sty m:val="p" />
       </m:rPr>
       <m:t>, numerator and denominator should render script size.</m:t>
     </m:r>

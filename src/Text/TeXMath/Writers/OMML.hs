@@ -106,7 +106,8 @@ makeArray props as rs = mnode "m" $ mProps : map toMr rs
         toAlign AlignCenter  = "center"
 
 makeText :: TextType -> T.Text -> Element
-makeText a s = str (mnode "nor" () : setProps a) s
+makeText TextNormal s = str [mnode "nor" ()] s
+makeText a s = str (setProps a) s
 
 defaultTo :: TextType -> [Element] -> [Element]
 defaultTo tt [] = setProps tt
