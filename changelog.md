@@ -1,3 +1,10 @@
+texmath (0.13.3.1)
+
+  * OMML writer: omit `m:sty` when `m:nor` is used (#299).
+    They are incompatible.
+
+  * OMML writer: correctly order `mjCj` and `count` (#299).
+
 texmath (0.13.3)
 
   * Replace SYB traversals with hand-written ones. Text.TeXMath.Shared
