@@ -6,4 +6,4 @@
     ]
 ]
 >>> typst
-{x / y}
+{mat(delim: #none, x; y)}

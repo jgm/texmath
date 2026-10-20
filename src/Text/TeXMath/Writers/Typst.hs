@@ -144,6 +144,8 @@ writeExp (EMathOperator s)
     = s
   | otherwise = "\"" <> s <> "\""
 writeExp (EGrouped es) = writeExps es
+writeExp (EFraction NoLineFrac e1 e2) =
+  "mat(delim: #none, " <> mkArray [[[e1]], [[e2]]] <> ")"
 writeExp (EFraction _fractype e1 e2) =
   case (e1, e2) of
     (EGrouped _, _) -> "frac(" <> writeExp e1 <> ", " <> writeExp e2 <> ")"
