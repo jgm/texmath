@@ -1,0 +1,12 @@
+<<< tex
+{a + b \atop c} \over d + e
+
+>>> native
+[ EFraction
+    NormalFrac
+    (EFraction
+       NoLineFrac
+       (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+       (EIdentifier "c"))
+    (EGrouped [ EIdentifier "d" , ESymbol Bin "+" , EIdentifier "e" ])
+]
