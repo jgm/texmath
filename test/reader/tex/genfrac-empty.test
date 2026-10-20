@@ -1,0 +1,40 @@
+<<< tex
+\genfrac{}{}{0pt}{}{a}{b}
+\genfrac{}{}{1pt}{}{a}{b}
+\genfrac{}{}{1pt}{0}{a}{b}
+\genfrac{(}{}{0pt}{}{a}{b}
+\genfrac{}{)}{0pt}{}{a}{b}
+\genfrac(]{0pt}{2}{a}{b}
+
+>>> native
+[ EDelimited
+    ""
+    ""
+    [ Right (EFraction NoLineFrac (EIdentifier "a") (EIdentifier "b"))
+    ]
+, EDelimited
+    ""
+    ""
+    [ Right (EFraction NormalFrac (EIdentifier "a") (EIdentifier "b"))
+    ]
+, EDelimited
+    ""
+    ""
+    [ Right (EFraction DisplayFrac (EIdentifier "a") (EIdentifier "b"))
+    ]
+, EDelimited
+    "("
+    ""
+    [ Right (EFraction NoLineFrac (EIdentifier "a") (EIdentifier "b"))
+    ]
+, EDelimited
+    ""
+    ")"
+    [ Right (EFraction NoLineFrac (EIdentifier "a") (EIdentifier "b"))
+    ]
+, EDelimited
+    "("
+    "]"
+    [ Right (EFraction NoLineFrac (EIdentifier "a") (EIdentifier "b"))
+    ]
+]
