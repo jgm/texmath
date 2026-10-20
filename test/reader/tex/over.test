@@ -1,0 +1,11 @@
+<<< tex
+{{1} {2} \over {3} {4}} + {5}
+
+>>> native
+[ EFraction
+    NormalFrac
+    (EGrouped [ ENumber "1" , ENumber "2" ])
+    (EGrouped [ ENumber "3" , ENumber "4" ])
+, ESymbol Bin "+"
+, ENumber "5"
+]

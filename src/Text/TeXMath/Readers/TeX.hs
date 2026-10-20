@@ -299,7 +299,9 @@ binomCmd = lookAhead (char '\\') *> oneOfCommands (M.keys binomCmds)
 
 binomCmds :: M.Map Text (Exp -> Exp -> Exp)
 binomCmds = M.fromList
-            [ ("\\choose", \x y ->
+            [ ("\\over", EFraction NormalFrac)
+            , ("\\atop", EFraction NoLineFrac)
+            , ("\\choose", \x y ->
                 EDelimited "(" ")" [Right (EFraction NoLineFrac x y)])
             , ("\\brack", \x y ->
                 EDelimited "[" "]" [Right (EFraction NoLineFrac x y)])
