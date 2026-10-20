@@ -313,12 +313,10 @@ binomCmds = M.fromList
 
 genfrac :: Text -> TP Exp
 genfrac "\\genfrac" = do
-  let opener = option "" $
-                T.singleton <$> ((char '\\' >> anyChar) <|> anyChar)
-  let closer = option "" $
-                T.singleton <$> ((char '\\' >> anyChar) <|> anyChar)
-  openDelim <- braces opener <|> opener
-  closeDelim <- braces closer <|> closer
+  let delim = option "" $
+                T.singleton <$> ((char '\\' >> anyChar) <|> satisfy (/= '}'))
+  openDelim <- braces delim <|> delim
+  closeDelim <- braces delim <|> delim
   bar <- False <$ try (braces (string "0pt")) <|> True <$ texToken
   displayStyle <- True <$ try (braces (char '0')) <|> False <$ texToken
   x <- texToken
