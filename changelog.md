@@ -1,3 +1,11 @@
+texmath (0.13.3.2)
+
+  * Typst writer: preserve lineless fractions (#302, Don Yin).
+
+  * TeX reader: accept empty delimiters in \genfrac (#300, Don Yin).
+
+  * TeX reader: support \over and \atop (#116, Don Yin).
+
 texmath (0.13.3.1)
 
   * OMML writer: omit `m:sty` when `m:nor` is used (#299).
