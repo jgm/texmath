@@ -1,3 +1,8 @@
+texmath (0.13.3.3)
+
+  * Typst writer: add some needed `$` inside `[..]` content blocks.
+    This fixes bugs in scaling and phantom on typst (#303).
+
 texmath (0.13.3.2)
 
   * Typst writer: preserve lineless fractions (#302, Don Yin).
