@@ -614,10 +614,12 @@ renderExpIn dt ctx e =
       | Just brace <- braceAnnotationName over -> do
           base' <- renderExpIn dt ctx base
           pure $ renderScriptBase base base' <> " " <> brace
+      -- Brace operators bind to the surrounding expression in StarMath.
+      -- Group the complete annotated term so adjacent braces stay independent.
       | isBraceAnnotatedExp base -> do
           base' <- renderExpIn dt ctx base
           over' <- renderBraceLabel dt ctx over
-          pure $ base' <> " " <> over'
+          pure $ "{" <> base' <> " " <> over' <> "}"
       | Just accent <- accentName over -> do
           base' <- renderExpIn dt ctx base
           pure $ accent <> " " <> renderAccentArg base base'
@@ -649,7 +651,7 @@ renderExpIn dt ctx e =
                      then do
                        base' <- renderExpIn dt ctx base
                        under' <- renderBraceLabel dt ctx under
-                       pure $ base' <> " " <> under'
+                       pure $ "{" <> base' <> " " <> under' <> "}"
                      else
                        case centeredScriptOpName base of
                          Just op -> do

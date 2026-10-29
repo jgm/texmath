@@ -1,3 +1,8 @@
+texmath (unreleased)
+
+  * StarMath writer: group annotated underbraces and overbraces so adjacent
+    terms do not become part of an earlier brace in LibreOffice.
+
 texmath (0.13.3.3)
 
   * Typst writer: add some needed `$` inside `[..]` content blocks.

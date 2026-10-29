@@ -1,0 +1,7 @@
+<<< tex
+\text{rate contribution}
+=\underbrace{A_j\exp\!\left(-\frac{E_j}{R_{\mathrm u}T}\right)}_{k_j(T):\ \text{Arrhenius coefficient}}
+\times\underbrace{\text{gas factor}}_{\text{local hydrogen/steam}}
+\times\underbrace{\text{solid factor}}_{\text{inventory, presence and access}}.
+>>> starmath
+"rate contribution" = {{A_j exp left ( -{E_j over {R_{nitalic u} T}} right )} underbrace {{k_j(T) : "Arrhenius coefficient"}}} times {"gas factor" underbrace "local hydrogen/steam"} times {"solid factor" underbrace "inventory, presence and access"}.
