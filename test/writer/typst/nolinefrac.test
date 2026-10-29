@@ -1,0 +1,9 @@
+<<< tex
+{a \atop b} \quad
+\genfrac{}{}{0pt}{}{a + b}{c + d} \quad
+\genfrac{[}{]}{0pt}{}{a}{b} \quad
+\genfrac{}{}{0pt}{}{}{b} \quad
+\genfrac{}{}{0pt}{}{a}{} \quad
+\binom{a}{b} \quad \frac{a}{b}
+>>> typst
+mat(delim: #none, a; b) quad mat(delim: #none, a + b; c + d) quad [mat(delim: #none, a; b)] quad mat(delim: #none, #none; b) quad mat(delim: #none, a; #none) quad binom(a, b) quad a / b

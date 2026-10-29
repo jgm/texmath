@@ -1,0 +1,20 @@
+<<< tex
+\begin{array}{p{2cm}|>{\bf}c<{x}m{0.4\textwidth}r}
+a & b & c & d \\
+e & f & g & h
+\end{array}
+>>> native
+[ EArray
+    [ AlignLeft , AlignCenter , AlignLeft , AlignRight ]
+    [ [ [ EIdentifier "a" ]
+      , [ EIdentifier "b" ]
+      , [ EIdentifier "c" ]
+      , [ EIdentifier "d" ]
+      ]
+    , [ [ EIdentifier "e" ]
+      , [ EIdentifier "f" ]
+      , [ EIdentifier "g" ]
+      , [ EIdentifier "h" ]
+      ]
+    ]
+]

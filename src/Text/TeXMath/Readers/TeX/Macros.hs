@@ -78,32 +78,40 @@ pSkipSpaceComments = spaces >> skipMany (comment >> spaces)
 -- same name, earlier ones will shadow later ones.
 applyMacros :: [Macro] -> T.Text -> T.Text
 applyMacros [] s = s
-applyMacros ms s =
-  maybe s id $ iterateToFixedPoint ((2 * length ms) + 1)
-    (applyMacrosOnce ms) s
+applyMacros ms s = maybe s id $ go ((2 * length ms) + 1) s
+  where
+    -- The limit caps the number of rewriting passes, in case of a
+    -- loop in the macros.
+    go :: Int -> T.Text -> Maybe T.Text
+    go 0 _ = Nothing
+    go limit x =
+      case applyMacrosOnce ms x of
+           Nothing -> Nothing
+           Just (y, expanded)
+             | expanded  -> go (limit - 1) y
+             | otherwise -> Just y  -- no macro fired: y is a fixed point
 
 ------------------------------------------------------------------------------
 
-iterateToFixedPoint :: Eq a => Int -> (a -> Maybe a) -> a -> Maybe a
-iterateToFixedPoint 0     _ _ = Nothing
-  -- Macro application did not terminate in a reasonable time, possibly
-  -- because of a loop in the macro.
-iterateToFixedPoint limit f x =
-  case f x of
-       Nothing       -> Nothing
-       Just y
-         | y == x    -> Just y
-         | otherwise -> iterateToFixedPoint (limit - 1) f y
-
-applyMacrosOnce :: [Macro] -> T.Text -> Maybe T.Text
+-- Returns the rewritten text and whether any macro was expanded.
+applyMacrosOnce :: [Macro] -> T.Text -> Maybe (T.Text, Bool)
 applyMacrosOnce ms s =
-  case parse (many tok) "input" s of
-       Right r -> Just $ T.concat r
+  -- The unconsumed rest of the input (in case a token fails to parse,
+  -- e.g. on a trailing comment or backslash) is passed through
+  -- unchanged rather than dropped.
+  case runParser ((,,) <$> many tok <*> getInput <*> getState)
+         False "input" s of
+       Right (r, rest, expanded) -> Just (T.concat r <> rest, expanded)
        Left _  -> Nothing
     where tok = try $ do
                   skipComment
                   choice [ choice (map (\m -> macroParser m) ms)
+                             <* putState True
                          , T.pack <$> ctrlseq
+                           -- Macros only match at '\\' and comments
+                           -- only at '%', so anything else can be
+                           -- consumed as a single chunk.
+                         , T.pack <$> many1 (noneOf "\\%")
                          , T.pack <$> count 1 anyChar ]
 
 ctrlseq :: (Monad m, Stream s m Char)
@@ -181,30 +189,35 @@ newenvironment = try $ do
              (if numargs > 0 then ("[" ++ show numargs ++ "]") else "") ++
              case optarg of { Nothing -> ""; Just x -> "[" ++ x ++ "]"} ++
              "%\n{" ++ opener ++ "}%\n" ++ "{" ++ closer ++ "}"
-  return $ Macro (T.pack defn) $ fmap T.pack $ try $ do
-    string "\\begin"
-    pSkipSpaceComments
-    char '{'
-    string name
-    pSkipSpaceComments
-    char '}'
-    opt <- case optarg of
-                Nothing  -> return Nothing
-                Just _   -> liftM (`mplus` optarg) optArg
-    args <- count numargs' (pSkipSpaceComments >>
-                  (inbraces <|> ctrlseq <|> count 1 anyChar))
-    let args' = case opt of
-                     Just x  -> x : args
-                     Nothing -> args
-    let ender = try $ do
-                      string "\\end"
-                      pSkipSpaceComments
-                      char '{'
-                      string name
-                      char '}'
-    body <- manyTill anyChar ender
-    return $ apply args'
-           $ opener ++ body ++ closer
+  return $ Macro (T.pack defn) $ fmap T.pack $
+    let pEnv = try $ do
+          string "\\begin"
+          pSkipSpaceComments
+          char '{'
+          string name
+          pSkipSpaceComments
+          char '}'
+          opt <- case optarg of
+                      Nothing  -> return Nothing
+                      Just _   -> liftM (`mplus` optarg) optArg
+          args <- count numargs' (pSkipSpaceComments >>
+                        (inbraces <|> ctrlseq <|> count 1 anyChar))
+          let args' = case opt of
+                           Just x  -> x : args
+                           Nothing -> args
+          body <- pBody
+          return $ apply args'
+                 $ opener ++ body ++ closer
+        ender = try $ do
+          string "\\end"
+          pSkipSpaceComments
+          char '{'
+          string name
+          char '}'
+        -- Expand nested environments with the same name recursively,
+        -- so that the body isn't ended at a nested \end.
+        pBody = concat <$> manyTill (pEnv <|> count 1 anyChar) ender
+    in  pEnv
 
 -- | Parser for \DeclareMathOperator(*) command.
 declareMathOperator :: (Monad m, Stream s m Char)
@@ -285,7 +298,7 @@ inbraces :: (Monad m, Stream s m Char)
 inbraces = try $ do
   char '{'
   res <- manyTill (skipComment >>
-            (inbraces' <|> count 1 anyChar <|> escaped "{}"))
+            (inbraces' <|> escaped "{}" <|> count 1 anyChar))
     (try $ skipComment >> char '}')
   return $ concat res
 

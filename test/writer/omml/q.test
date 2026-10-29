@@ -32,14 +32,14 @@
         <m:mcs>
           <m:mc>
             <m:mcPr>
-              <m:mcJc m:val="center" />
               <m:count m:val="1" />
+              <m:mcJc m:val="center" />
             </m:mcPr>
           </m:mc>
           <m:mc>
             <m:mcPr>
-              <m:mcJc m:val="center" />
               <m:count m:val="1" />
+              <m:mcJc m:val="center" />
             </m:mcPr>
           </m:mc>
         </m:mcs>
@@ -49,7 +49,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>qfr</m:t>
           </m:r>
@@ -68,7 +67,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Qfr</m:t>
           </m:r>
@@ -87,7 +85,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>qint</m:t>
           </m:r>
@@ -106,7 +103,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>qopf</m:t>
           </m:r>
@@ -125,7 +121,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Qopf</m:t>
           </m:r>
@@ -144,7 +139,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>qprime</m:t>
           </m:r>
@@ -163,7 +157,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>qscr</m:t>
           </m:r>
@@ -182,7 +175,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Qscr</m:t>
           </m:r>
@@ -201,7 +193,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>quaternions</m:t>
           </m:r>
@@ -220,7 +211,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>quatint</m:t>
           </m:r>
@@ -239,7 +229,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>quest</m:t>
           </m:r>
@@ -258,7 +247,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>questeq</m:t>
           </m:r>
@@ -277,7 +265,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>quot</m:t>
           </m:r>

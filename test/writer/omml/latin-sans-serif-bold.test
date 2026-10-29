@@ -27,8 +27,8 @@
         <m:mcs>
           <m:mc>
             <m:mcPr>
-              <m:mcJc m:val="left" />
               <m:count m:val="1" />
+              <m:mcJc m:val="left" />
             </m:mcPr>
           </m:mc>
         </m:mcs>
@@ -38,7 +38,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭</m:t>
           </m:r>
@@ -49,7 +48,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇</m:t>
           </m:r>

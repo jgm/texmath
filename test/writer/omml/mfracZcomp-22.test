@@ -21,7 +21,6 @@
     <m:r>
       <m:rPr>
         <m:nor />
-        <m:sty m:val="p" />
       </m:rPr>
       <m:t>Inline, styles auto, display and text </m:t>
     </m:r>
@@ -85,7 +84,6 @@
     <m:r>
       <m:rPr>
         <m:nor />
-        <m:sty m:val="p" />
       </m:rPr>
       <m:t>, the rendering should be script-size, normal-size and script-size in this example. Fraction lines should align vertically with the math axis.</m:t>
     </m:r>

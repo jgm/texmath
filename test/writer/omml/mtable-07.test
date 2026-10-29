@@ -51,14 +51,14 @@
         <m:mcs>
           <m:mc>
             <m:mcPr>
-              <m:mcJc m:val="right" />
               <m:count m:val="1" />
+              <m:mcJc m:val="right" />
             </m:mcPr>
           </m:mc>
           <m:mc>
             <m:mcPr>
-              <m:mcJc m:val="right" />
               <m:count m:val="1" />
+              <m:mcJc m:val="right" />
             </m:mcPr>
           </m:mc>
         </m:mcs>
@@ -73,7 +73,6 @@
               <m:r>
                 <m:rPr>
                   <m:nor />
-                  <m:sty m:val="p" />
                 </m:rPr>
                 <m:t>fail</m:t>
               </m:r>
@@ -99,7 +98,6 @@
               <m:r>
                 <m:rPr>
                   <m:nor />
-                  <m:sty m:val="p" />
                 </m:rPr>
                 <m:t>fail</m:t>
               </m:r>
@@ -125,7 +123,6 @@
               <m:r>
                 <m:rPr>
                   <m:nor />
-                  <m:sty m:val="p" />
                 </m:rPr>
                 <m:t>fail</m:t>
               </m:r>
@@ -155,14 +152,14 @@
         <m:mcs>
           <m:mc>
             <m:mcPr>
-              <m:mcJc m:val="left" />
               <m:count m:val="1" />
+              <m:mcJc m:val="left" />
             </m:mcPr>
           </m:mc>
           <m:mc>
             <m:mcPr>
-              <m:mcJc m:val="left" />
               <m:count m:val="1" />
+              <m:mcJc m:val="left" />
             </m:mcPr>
           </m:mc>
         </m:mcs>
@@ -185,7 +182,6 @@
               <m:r>
                 <m:rPr>
                   <m:nor />
-                  <m:sty m:val="p" />
                 </m:rPr>
                 <m:t>fail</m:t>
               </m:r>
@@ -211,7 +207,6 @@
               <m:r>
                 <m:rPr>
                   <m:nor />
-                  <m:sty m:val="p" />
                 </m:rPr>
                 <m:t>fail</m:t>
               </m:r>
@@ -237,7 +232,6 @@
               <m:r>
                 <m:rPr>
                   <m:nor />
-                  <m:sty m:val="p" />
                 </m:rPr>
                 <m:t>fail</m:t>
               </m:r>

@@ -25,14 +25,14 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 module Text.TeXMath.Readers.TeX (readTeX)
 where
 
-import Data.List (intercalate, intersperse, find, foldl')
+import Data.List (intercalate, intersperse, foldl')
 import Control.Monad
 import Data.Char (isDigit, isAscii, isLetter)
 import qualified Data.Map as M
 import qualified Data.Text as T
 import Data.Text (Text)
 import Data.Ratio ((%))
-import Data.Maybe (catMaybes, fromJust, mapMaybe)
+import Data.Maybe (catMaybes, fromJust, fromMaybe, mapMaybe)
 import Text.Parsec hiding (label)
 import Text.Parsec.Error
 import Text.Parsec.Text
@@ -43,7 +43,6 @@ import Text.TeXMath.Readers.TeX.Macros (applyMacros, parseMacroDefinitions)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Text.TeXMath.Unicode.ToUnicode (toUnicode)
 import Text.TeXMath.Shared (getSpaceChars)
-import Data.Generics (everywhere, mkT)
 import Text.TeXMath.Readers.TeX.Commands ( styleOps, textOps, enclosures,
                                            operators, symbols, siUnitMap )
 import Data.Text.Read (decimal)
@@ -71,13 +70,14 @@ expr1 = choice
           [ inbraces
           , variable
           , number
-          , unicode
           , operator
           , bareSubSup
           , enclosure
           , hyperref
           , command
-          ]
+          , unicode
+          , special
+          ] <* ignorable
 
 -- | Parse a formula, returning a list of 'Exp'.
 readTeX :: Text -> Either Text [Exp]
@@ -89,7 +89,7 @@ readTeX inp =
   -- | Convert Bin symbol type in certain contexts (#176, #234).
   fixBinList :: [Exp] -> [Exp]
   fixBinList =
-    reverse . foldl' goExp [] . everywhere (mkT fixBins)
+    reverse . foldl' goExp [] . map (S.everywhereExp fixBins)
 
   -- TeXBook:
   -- 5. If the current item is a Bin atom, and if this was the first
@@ -195,8 +195,11 @@ formula = unGrouped <$> (ignorable *> manyExp expr <* eof)
 
 expr :: TP Exp
 expr = do
-  optional (ctrlseq "displaystyle" <|> ctrlseq "textstyle" <|>
-            ctrlseq "scriptstyle" <|> ctrlseq "scriptscriptstyle")
+  -- the lookAhead is just an optimization: it lets us skip the four
+  -- ctrlseq attempts with a one-character test on most input
+  optional (lookAhead (char '\\') *>
+             (ctrlseq "displaystyle" <|> ctrlseq "textstyle" <|>
+              ctrlseq "scriptstyle" <|> ctrlseq "scriptscriptstyle"))
   (a, convertible) <- try (braces operatorname) -- needed because macros add {}
                  <|> operatorname
                  <|> ((,False) <$> expr1)
@@ -289,11 +292,16 @@ limitsIndicator =
   <|> return Nothing
 
 binomCmd :: TP Text
-binomCmd = oneOfCommands (M.keys binomCmds)
+binomCmd = lookAhead (char '\\') *> oneOfCommands (M.keys binomCmds)
+  -- the lookAhead is just an optimization: this parser is run (via
+  -- notFollowedBy) before every token in manyExp', and the quick
+  -- one-character test lets it fail cheaply on most input.
 
 binomCmds :: M.Map Text (Exp -> Exp -> Exp)
 binomCmds = M.fromList
-            [ ("\\choose", \x y ->
+            [ ("\\over", EFraction NormalFrac)
+            , ("\\atop", EFraction NoLineFrac)
+            , ("\\choose", \x y ->
                 EDelimited "(" ")" [Right (EFraction NoLineFrac x y)])
             , ("\\brack", \x y ->
                 EDelimited "[" "]" [Right (EFraction NoLineFrac x y)])
@@ -305,12 +313,10 @@ binomCmds = M.fromList
 
 genfrac :: Text -> TP Exp
 genfrac "\\genfrac" = do
-  let opener = option "" $
-                T.singleton <$> ((char '\\' >> anyChar) <|> anyChar)
-  let closer = option "" $
-                T.singleton <$> ((char '\\' >> anyChar) <|> anyChar)
-  openDelim <- braces opener <|> opener
-  closeDelim <- braces closer <|> closer
+  let delim = option "" $
+                T.singleton <$> ((char '\\' >> anyChar) <|> satisfy (/= '}'))
+  openDelim <- braces delim <|> delim
+  closeDelim <- braces delim <|> delim
   bar <- False <$ try (braces (string "0pt")) <|> True <$ texToken
   displayStyle <- True <$ try (braces (char '0')) <|> False <$ texToken
   x <- texToken
@@ -466,10 +472,12 @@ arrayLine =
 arrayAlignments :: TP [Alignment]
 arrayAlignments = mconcat <$>
   braces (many (
-                ((:[]) . letterToAlignment <$> letter)
+                ((:[]) <$> try (AlignLeft <$ oneOf "pmb" <* skipBraces))
+            <|> ((:[]) . letterToAlignment <$> letter)
             <|> ([] <$ char '|')
             <|> ([] <$ oneOf " \t")
             <|> ([] <$ ((char '@' <|> char '!') <* inbraces))
+            <|> ([] <$ ((char '>' <|> char '<') <* skipBraces))
             <|> (do char '*'
                     num <- T.pack <$> braces (many1 digit)
                     cols <- arrayAlignments
@@ -483,10 +491,15 @@ arrayAlignments = mconcat <$>
    letterToAlignment 'c' = AlignCenter
    letterToAlignment 'r' = AlignRight
    letterToAlignment _   = AlignCenter
+   -- Column widths (p{...}, m{...}, b{...}) and inserted material
+   -- (>{...}, <{...}) can't be represented in the AST, so we parse
+   -- and ignore the contents of the brace group.
+   skipBraces = () <$ (char '{' *> manyTill (skipBraces <|> () <$ noneOf "}")
+                                            (char '}'))
 
 environment :: Text -> TP Exp
 environment "\\begin" = do
-  name <- braces (oneOfStrings (M.keys environments) <* optional (char '*'))
+  name <- environmentName
   spaces
   case M.lookup name environments of
         Just env -> do
@@ -498,6 +511,11 @@ environment "\\begin" = do
           return result
         Nothing  -> mzero  -- should not happen
 environment _ = mzero
+
+-- A top-level binding, so that the underlying trie is built only once.
+environmentName :: TP Text
+environmentName =
+  braces (oneOfStrings (M.keys environments) <* optional (char '*'))
 
 environments :: M.Map Text (TP Exp)
 environments = M.fromList
@@ -641,6 +659,11 @@ unicode = lexeme $
   do
     c <- satisfy (not . isAscii)
     return (ESymbol (getSymbolType c) $ T.singleton c)
+
+-- special is to catch some things that otherwise cause parse errors,
+-- e.g. $\"y$ or $`x$ -- see #296
+special :: TP Exp
+special = EText TextNormal <$> (quote <|> textCommand)
 
 ensuremath :: Text -> TP Exp
 ensuremath "\\ensuremath" = inbraces
@@ -875,25 +898,41 @@ oneOfCommands cmds = try $ do
   spaces
   return cmd
 
-oneOfStrings' :: (Char -> Char -> Bool) -> [(String, Text)] -> TP Text
-oneOfStrings' _ [] = mzero
-oneOfStrings' matches strs = try $ do
-    c <- anyChar
-    let strs' = [(xs, t) | ((x:xs), t) <- strs, x `matches` c]
-    case strs' of
-      []  -> mzero
-      _   -> oneOfStrings' matches strs'
-             <|> case find (null . fst) strs' of
-                   Just (_, t) -> return t
-                   Nothing     -> mzero
+-- A prefix trie over the characters of a fixed set of strings; the
+-- value at a node is the string spelled out by the path to it, if
+-- that string is in the set.
+data Trie = Trie (Maybe Text) (M.Map Char Trie)
+
+buildTrie :: [Text] -> Trie
+buildTrie = foldr insertStr (Trie Nothing M.empty) . filter (not . T.null)
+  where
+    insertStr t = go (T.unpack t)
+      where
+        go [] (Trie _ cs) = Trie (Just t) cs
+        go (c:rest) (Trie v cs) = Trie v $
+          M.alter (Just . go rest . fromMaybe (Trie Nothing M.empty)) c cs
+
+-- Longest match: try to descend on the next character, and fall
+-- back to the match ending at the current node.
+trieParser :: Trie -> TP Text
+trieParser (Trie val children) =
+  (if M.null children
+      then mzero
+      else try $ do
+             c <- anyChar
+             case M.lookup c children of
+               Just subtrie -> trieParser subtrie
+               Nothing      -> mzero)
+  <|> maybe mzero return val
 
 -- | Parses one of a list of strings.  If the list contains
 -- two strings one of which is a prefix of the other, the longer
--- string will be matched if possible.
+-- string will be matched if possible.  The trie is built only once
+-- when the resulting parser is shared, so prefer binding the result
+-- to a name over calling this repeatedly with the same list.
 oneOfStrings :: [Text] -> TP Text
-oneOfStrings strs = oneOfStrings' (==) strs' <??> (intercalate ", " $ map show strs)
-  where
-    strs' = map (\x -> (T.unpack x, x)) strs
+oneOfStrings strs =
+  trieParser (buildTrie strs) <??> (intercalate ", " $ map show strs)
 
 -- | Like '(<?>)', but moves position back to the beginning of the parse
 -- before reporting the error.
@@ -974,7 +1013,10 @@ ligature :: TP Text
 ligature = try ("\x2014" <$ string "---")
        <|> try ("\x2013" <$ string "--")
        <|> try (textStr "-")
-       <|> try ("\x201C" <$ string "``")
+       <|> quote
+
+quote :: TP Text
+quote =    try ("\x201C" <$ string "``")
        <|> try ("\x201D" <$ string "''")
        <|> try ("\x2019" <$ string "'")
        <|> try ("\x2018" <$ string "`")
@@ -1127,6 +1169,7 @@ umlaut 'e' = "ë"
 umlaut 'i' = "ï"
 umlaut 'o' = "ö"
 umlaut 'u' = "ü"
+umlaut 'y' = "ÿ"
 umlaut c   = T.singleton c
 
 dot :: Char -> Text

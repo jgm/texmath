@@ -404,14 +404,14 @@
         <m:mcs>
           <m:mc>
             <m:mcPr>
-              <m:mcJc m:val="center" />
               <m:count m:val="1" />
+              <m:mcJc m:val="center" />
             </m:mcPr>
           </m:mc>
           <m:mc>
             <m:mcPr>
-              <m:mcJc m:val="center" />
               <m:count m:val="1" />
+              <m:mcJc m:val="center" />
             </m:mcPr>
           </m:mc>
         </m:mcs>
@@ -421,7 +421,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Quadratic Equation</m:t>
           </m:r>
@@ -513,7 +512,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>DisplayQuadratic Equation</m:t>
           </m:r>
@@ -605,7 +603,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Rational Function</m:t>
           </m:r>
@@ -703,7 +700,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Rational Function</m:t>
           </m:r>
@@ -830,7 +826,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Rational Function</m:t>
           </m:r>
@@ -981,7 +976,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Parametrize Rational Function</m:t>
           </m:r>
@@ -1119,7 +1113,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Stacked exponents</m:t>
           </m:r>
@@ -1193,7 +1186,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Stacked exponents</m:t>
           </m:r>
@@ -1288,7 +1280,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Stacked exponents</m:t>
           </m:r>
@@ -1391,7 +1382,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Stacked exponents</m:t>
           </m:r>
@@ -1494,7 +1484,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Stacked exponents</m:t>
           </m:r>
@@ -1618,7 +1607,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Cross Product</m:t>
           </m:r>
@@ -1809,7 +1797,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Cross Product</m:t>
           </m:r>
@@ -2024,7 +2011,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Cross Product</m:t>
           </m:r>
@@ -2235,7 +2221,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Cross Product</m:t>
           </m:r>

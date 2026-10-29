@@ -19392,9 +19392,9 @@
       ]
     , [ [ EGrouped
             [ ENumber "5"
-            , ESpace (7 % 100)
+            , ESpace (7227 % 2000)
             , EGrouped [ ENumber "24" , ESymbol Pun "!" ]
-            , ESpace (7 % 100)
+            , ESpace (7227 % 2000)
             , ESuper (EIdentifier "x") (ENumber "6")
             ]
         ]

@@ -321,14 +321,14 @@
         <m:mcs>
           <m:mc>
             <m:mcPr>
-              <m:mcJc m:val="center" />
               <m:count m:val="1" />
+              <m:mcJc m:val="center" />
             </m:mcPr>
           </m:mc>
           <m:mc>
             <m:mcPr>
-              <m:mcJc m:val="center" />
               <m:count m:val="1" />
+              <m:mcJc m:val="center" />
             </m:mcPr>
           </m:mc>
         </m:mcs>
@@ -338,7 +338,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lAarr</m:t>
           </m:r>
@@ -357,7 +356,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lacute</m:t>
           </m:r>
@@ -376,7 +374,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Lacute</m:t>
           </m:r>
@@ -395,7 +392,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>laemptyv</m:t>
           </m:r>
@@ -414,7 +410,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lagran</m:t>
           </m:r>
@@ -433,7 +428,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lambda</m:t>
           </m:r>
@@ -452,7 +446,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Lambda</m:t>
           </m:r>
@@ -471,7 +464,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lang</m:t>
           </m:r>
@@ -490,7 +482,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Lang</m:t>
           </m:r>
@@ -509,7 +500,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>langd</m:t>
           </m:r>
@@ -528,7 +518,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>langle</m:t>
           </m:r>
@@ -547,7 +536,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lap</m:t>
           </m:r>
@@ -566,7 +554,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Laplacetrf</m:t>
           </m:r>
@@ -585,7 +572,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>laquo</m:t>
           </m:r>
@@ -604,7 +590,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>larr</m:t>
           </m:r>
@@ -623,7 +608,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lArr</m:t>
           </m:r>
@@ -642,7 +626,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Larr</m:t>
           </m:r>
@@ -661,7 +644,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>larrb</m:t>
           </m:r>
@@ -680,7 +662,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>larrbfs</m:t>
           </m:r>
@@ -699,7 +680,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>larrfs</m:t>
           </m:r>
@@ -718,7 +698,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>larrhk</m:t>
           </m:r>
@@ -737,7 +716,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>larrlp</m:t>
           </m:r>
@@ -756,7 +734,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>larrpl</m:t>
           </m:r>
@@ -775,7 +752,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>larrsim</m:t>
           </m:r>
@@ -794,7 +770,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>larrtl</m:t>
           </m:r>
@@ -813,7 +788,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lat</m:t>
           </m:r>
@@ -832,7 +806,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>latail</m:t>
           </m:r>
@@ -851,7 +824,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lAtail</m:t>
           </m:r>
@@ -870,7 +842,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>late</m:t>
           </m:r>
@@ -889,7 +860,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lates</m:t>
           </m:r>
@@ -908,7 +878,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lbarr</m:t>
           </m:r>
@@ -927,7 +896,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lBarr</m:t>
           </m:r>
@@ -946,7 +914,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lbbrk</m:t>
           </m:r>
@@ -965,7 +932,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lbrace</m:t>
           </m:r>
@@ -984,7 +950,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lbrack</m:t>
           </m:r>
@@ -1003,7 +968,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lbrke</m:t>
           </m:r>
@@ -1022,7 +986,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lbrksld</m:t>
           </m:r>
@@ -1041,7 +1004,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lbrkslu</m:t>
           </m:r>
@@ -1060,7 +1022,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lcaron</m:t>
           </m:r>
@@ -1079,7 +1040,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Lcaron</m:t>
           </m:r>
@@ -1098,7 +1058,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lcedil</m:t>
           </m:r>
@@ -1117,7 +1076,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Lcedil</m:t>
           </m:r>
@@ -1136,7 +1094,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lceil</m:t>
           </m:r>
@@ -1155,7 +1112,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lcub</m:t>
           </m:r>
@@ -1174,7 +1130,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lcy</m:t>
           </m:r>
@@ -1193,7 +1148,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Lcy</m:t>
           </m:r>
@@ -1212,7 +1166,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>ldca</m:t>
           </m:r>
@@ -1231,7 +1184,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>ldquo</m:t>
           </m:r>
@@ -1250,7 +1202,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>ldquor</m:t>
           </m:r>
@@ -1269,7 +1220,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>ldrdhar</m:t>
           </m:r>
@@ -1288,7 +1238,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>ldrushar</m:t>
           </m:r>
@@ -1307,7 +1256,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>ldsh</m:t>
           </m:r>
@@ -1326,7 +1274,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>le</m:t>
           </m:r>
@@ -1345,7 +1292,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lE</m:t>
           </m:r>
@@ -1364,7 +1310,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftAngleBracket</m:t>
           </m:r>
@@ -1383,7 +1328,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>leftarrow</m:t>
           </m:r>
@@ -1402,7 +1346,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Leftarrow</m:t>
           </m:r>
@@ -1421,7 +1364,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftArrow</m:t>
           </m:r>
@@ -1440,7 +1382,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftArrowBar</m:t>
           </m:r>
@@ -1459,7 +1400,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftArrowRightArrow</m:t>
           </m:r>
@@ -1478,7 +1418,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>leftarrowtail</m:t>
           </m:r>
@@ -1497,7 +1436,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftCeiling</m:t>
           </m:r>
@@ -1516,7 +1454,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftDoubleBracket</m:t>
           </m:r>
@@ -1535,7 +1472,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftDownTeeVector</m:t>
           </m:r>
@@ -1554,7 +1490,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftDownVector</m:t>
           </m:r>
@@ -1573,7 +1508,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftDownVectorBar</m:t>
           </m:r>
@@ -1592,7 +1526,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftFloor</m:t>
           </m:r>
@@ -1611,7 +1544,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>leftharpoondown</m:t>
           </m:r>
@@ -1630,7 +1562,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>leftharpoonup</m:t>
           </m:r>
@@ -1649,7 +1580,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>leftleftarrows</m:t>
           </m:r>
@@ -1668,7 +1598,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>leftrightarrow</m:t>
           </m:r>
@@ -1687,7 +1616,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Leftrightarrow</m:t>
           </m:r>
@@ -1706,7 +1634,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftRightArrow</m:t>
           </m:r>
@@ -1725,7 +1652,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>leftrightarrows</m:t>
           </m:r>
@@ -1744,7 +1670,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>leftrightharpoons</m:t>
           </m:r>
@@ -1763,7 +1688,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>leftrightsquigarrow</m:t>
           </m:r>
@@ -1782,7 +1706,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftRightVector</m:t>
           </m:r>
@@ -1801,7 +1724,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftTee</m:t>
           </m:r>
@@ -1820,7 +1742,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftTeeArrow</m:t>
           </m:r>
@@ -1839,7 +1760,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftTeeVector</m:t>
           </m:r>
@@ -1858,7 +1778,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>leftthreetimes</m:t>
           </m:r>
@@ -1877,7 +1796,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftTriangle</m:t>
           </m:r>
@@ -1896,7 +1814,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftTriangleBar</m:t>
           </m:r>
@@ -1915,7 +1832,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftTriangleEqual</m:t>
           </m:r>
@@ -1934,7 +1850,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftUpDownVector</m:t>
           </m:r>
@@ -1953,7 +1868,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftUpTeeVector</m:t>
           </m:r>
@@ -1972,7 +1886,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftUpVector</m:t>
           </m:r>
@@ -1991,7 +1904,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftUpVectorBar</m:t>
           </m:r>
@@ -2010,7 +1922,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftVector</m:t>
           </m:r>
@@ -2029,7 +1940,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LeftVectorBar</m:t>
           </m:r>
@@ -2048,7 +1958,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>leg</m:t>
           </m:r>
@@ -2067,7 +1976,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lEg</m:t>
           </m:r>
@@ -2086,7 +1994,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>leq</m:t>
           </m:r>
@@ -2105,7 +2012,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>leqq</m:t>
           </m:r>
@@ -2124,7 +2030,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>leqslant</m:t>
           </m:r>
@@ -2143,7 +2048,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>les</m:t>
           </m:r>
@@ -2162,7 +2066,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lescc</m:t>
           </m:r>
@@ -2181,7 +2084,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lesdot</m:t>
           </m:r>
@@ -2200,7 +2102,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lesdoto</m:t>
           </m:r>
@@ -2219,7 +2120,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lesdotor</m:t>
           </m:r>
@@ -2238,7 +2138,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lesg</m:t>
           </m:r>
@@ -2257,7 +2156,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lesges</m:t>
           </m:r>
@@ -2276,7 +2174,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lessapprox</m:t>
           </m:r>
@@ -2295,7 +2192,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lessdot</m:t>
           </m:r>
@@ -2314,7 +2210,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lesseqgtr</m:t>
           </m:r>
@@ -2333,7 +2228,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lesseqqgtr</m:t>
           </m:r>
@@ -2352,7 +2246,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LessEqualGreater</m:t>
           </m:r>
@@ -2371,7 +2264,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LessFullEqual</m:t>
           </m:r>
@@ -2390,7 +2282,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LessGreater</m:t>
           </m:r>
@@ -2409,7 +2300,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lessgtr</m:t>
           </m:r>
@@ -2428,7 +2318,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LessLess</m:t>
           </m:r>
@@ -2447,7 +2336,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lesssim</m:t>
           </m:r>
@@ -2466,7 +2354,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LessSlantEqual</m:t>
           </m:r>
@@ -2485,7 +2372,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LessTilde</m:t>
           </m:r>
@@ -2504,7 +2390,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lfisht</m:t>
           </m:r>
@@ -2523,7 +2408,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lfloor</m:t>
           </m:r>
@@ -2542,7 +2426,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lfr</m:t>
           </m:r>
@@ -2561,7 +2444,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Lfr</m:t>
           </m:r>
@@ -2580,7 +2462,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lg</m:t>
           </m:r>
@@ -2599,7 +2480,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lgE</m:t>
           </m:r>
@@ -2618,7 +2498,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lHar</m:t>
           </m:r>
@@ -2637,7 +2516,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lhard</m:t>
           </m:r>
@@ -2656,7 +2534,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lharu</m:t>
           </m:r>
@@ -2675,7 +2552,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lharul</m:t>
           </m:r>
@@ -2694,7 +2570,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lhblk</m:t>
           </m:r>
@@ -2713,7 +2588,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>ljcy</m:t>
           </m:r>
@@ -2732,7 +2606,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LJcy</m:t>
           </m:r>
@@ -2751,7 +2624,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>ll</m:t>
           </m:r>
@@ -2770,7 +2642,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Ll</m:t>
           </m:r>
@@ -2789,7 +2660,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>llarr</m:t>
           </m:r>
@@ -2808,7 +2678,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>llcorner</m:t>
           </m:r>
@@ -2827,7 +2696,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Lleftarrow</m:t>
           </m:r>
@@ -2846,7 +2714,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>llhard</m:t>
           </m:r>
@@ -2865,7 +2732,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lltri</m:t>
           </m:r>
@@ -2884,7 +2750,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lmidot</m:t>
           </m:r>
@@ -2903,7 +2768,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Lmidot</m:t>
           </m:r>
@@ -2922,7 +2786,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lmoust</m:t>
           </m:r>
@@ -2941,7 +2804,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lmoustache</m:t>
           </m:r>
@@ -2960,7 +2822,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lnap</m:t>
           </m:r>
@@ -2979,7 +2840,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lnapprox</m:t>
           </m:r>
@@ -2998,7 +2858,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lne</m:t>
           </m:r>
@@ -3017,7 +2876,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lnE</m:t>
           </m:r>
@@ -3036,7 +2894,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lneq</m:t>
           </m:r>
@@ -3055,7 +2912,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lneqq</m:t>
           </m:r>
@@ -3074,7 +2930,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lnsim</m:t>
           </m:r>
@@ -3093,7 +2948,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>loang</m:t>
           </m:r>
@@ -3112,7 +2966,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>loarr</m:t>
           </m:r>
@@ -3131,7 +2984,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lobrk</m:t>
           </m:r>
@@ -3150,7 +3002,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>longleftarrow</m:t>
           </m:r>
@@ -3169,7 +3020,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Longleftarrow</m:t>
           </m:r>
@@ -3188,7 +3038,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LongLeftArrow</m:t>
           </m:r>
@@ -3207,7 +3056,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>longleftrightarrow</m:t>
           </m:r>
@@ -3226,7 +3074,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Longleftrightarrow</m:t>
           </m:r>
@@ -3245,7 +3092,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LongLeftRightArrow</m:t>
           </m:r>
@@ -3264,7 +3110,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>longmapsto</m:t>
           </m:r>
@@ -3283,7 +3128,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>longrightarrow</m:t>
           </m:r>
@@ -3302,7 +3146,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Longrightarrow</m:t>
           </m:r>
@@ -3321,7 +3164,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LongRightArrow</m:t>
           </m:r>
@@ -3340,7 +3182,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>looparrowleft</m:t>
           </m:r>
@@ -3359,7 +3200,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>looparrowright</m:t>
           </m:r>
@@ -3378,7 +3218,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lopar</m:t>
           </m:r>
@@ -3397,7 +3236,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lopf</m:t>
           </m:r>
@@ -3416,7 +3254,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Lopf</m:t>
           </m:r>
@@ -3435,7 +3272,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>loplus</m:t>
           </m:r>
@@ -3454,7 +3290,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lotimes</m:t>
           </m:r>
@@ -3473,7 +3308,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lowast</m:t>
           </m:r>
@@ -3492,7 +3326,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lowbar</m:t>
           </m:r>
@@ -3511,7 +3344,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LowerLeftArrow</m:t>
           </m:r>
@@ -3530,7 +3362,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>LowerRightArrow</m:t>
           </m:r>
@@ -3549,7 +3380,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>loz</m:t>
           </m:r>
@@ -3568,7 +3398,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lozenge</m:t>
           </m:r>
@@ -3587,7 +3416,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lozf</m:t>
           </m:r>
@@ -3606,7 +3434,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lpar</m:t>
           </m:r>
@@ -3625,7 +3452,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lparlt</m:t>
           </m:r>
@@ -3644,7 +3470,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lrarr</m:t>
           </m:r>
@@ -3663,7 +3488,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lrcorner</m:t>
           </m:r>
@@ -3682,7 +3506,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lrhar</m:t>
           </m:r>
@@ -3701,7 +3524,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lrhard</m:t>
           </m:r>
@@ -3720,7 +3542,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lrtri</m:t>
           </m:r>
@@ -3739,7 +3560,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lscr</m:t>
           </m:r>
@@ -3758,7 +3578,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Lscr</m:t>
           </m:r>
@@ -3777,7 +3596,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lsh</m:t>
           </m:r>
@@ -3796,7 +3614,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Lsh</m:t>
           </m:r>
@@ -3815,7 +3632,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lsim</m:t>
           </m:r>
@@ -3834,7 +3650,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lsime</m:t>
           </m:r>
@@ -3853,7 +3668,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lsimg</m:t>
           </m:r>
@@ -3872,7 +3686,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lsqb</m:t>
           </m:r>
@@ -3891,7 +3704,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lsquo</m:t>
           </m:r>
@@ -3910,7 +3722,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lsquor</m:t>
           </m:r>
@@ -3929,7 +3740,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lstrok</m:t>
           </m:r>
@@ -3948,7 +3758,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Lstrok</m:t>
           </m:r>
@@ -3967,7 +3776,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lt</m:t>
           </m:r>
@@ -3986,7 +3794,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Lt</m:t>
           </m:r>
@@ -4005,7 +3812,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>ltcc</m:t>
           </m:r>
@@ -4024,7 +3830,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>ltcir</m:t>
           </m:r>
@@ -4043,7 +3848,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>ltdot</m:t>
           </m:r>
@@ -4062,7 +3866,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lthree</m:t>
           </m:r>
@@ -4081,7 +3884,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>ltimes</m:t>
           </m:r>
@@ -4100,7 +3902,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>ltlarr</m:t>
           </m:r>
@@ -4119,7 +3920,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>ltquest</m:t>
           </m:r>
@@ -4138,7 +3938,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>ltri</m:t>
           </m:r>
@@ -4157,7 +3956,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>ltrie</m:t>
           </m:r>
@@ -4176,7 +3974,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>ltrif</m:t>
           </m:r>
@@ -4195,7 +3992,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>ltrPar</m:t>
           </m:r>
@@ -4214,7 +4010,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lurdshar</m:t>
           </m:r>
@@ -4233,7 +4028,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>luruhar</m:t>
           </m:r>
@@ -4252,7 +4046,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lvertneqq</m:t>
           </m:r>
@@ -4271,7 +4064,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>lvnE</m:t>
           </m:r>

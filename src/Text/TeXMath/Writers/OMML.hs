@@ -26,8 +26,8 @@ where
 
 import Text.XML.Light
 import Text.TeXMath.Types
-import Text.TeXMath.Shared (isUppercaseGreek, isRLSequence)
-import Data.Generics (everywhere, mkT)
+import Text.TeXMath.Shared (isUppercaseGreek, isRLSequence,
+                            everywhereExpList, mapExpChildren)
 import Data.Char (isSymbol, isPunctuation)
 import Data.Either (lefts, isLeft, rights)
 import qualified Data.Text as T
@@ -37,9 +37,9 @@ import Data.List (intercalate)
 -- | Transforms an expression tree to an OMML XML Tree
 writeOMML :: DisplayType -> [Exp] -> Element
 writeOMML dt = container . concatMap (showExp [])
-            . everywhere (mkT $ handleDownup dt)
-            . everywhere (mkT $ handleDownup' dt)
-            . everywhere (mkT $ handleScaledDelims)
+            . everywhereExpList (handleDownup dt)
+            . handleDownupDelims dt
+            . everywhereExpList handleScaledDelims
     where container = case dt of
                   DisplayBlock  -> \x -> mnode "oMathPara"
                                     [ mnode "oMathParaPr"
@@ -98,15 +98,16 @@ makeArray props as rs = mnode "m" $ mProps : map toMr rs
         as'    = take (maximum' $ map length rs) $ as ++ repeat AlignCenter
         toMr r = mnode "mr" $ map (mnode "e" . concatMap (showExp props)) r
         toMc a = mnode "mc" $ mnode "mcPr"
-                            [ mnodeA "mcJc" (toAlign a) ()
-                            , mnodeA "count" "1" ()
+                            [ mnodeA "count" "1" ()
+                            , mnodeA "mcJc" (toAlign a) ()
                             ]
         toAlign AlignLeft    = "left"
         toAlign AlignRight   = "right"
         toAlign AlignCenter  = "center"
 
 makeText :: TextType -> T.Text -> Element
-makeText a s = str (mnode "nor" () : setProps a) s
+makeText TextNormal s = str [mnode "nor" ()] s
+makeText a s = str (setProps a) s
 
 defaultTo :: TextType -> [Element] -> [Element]
 defaultTo tt [] = setProps tt
@@ -132,10 +133,13 @@ setProps tt =
    where sty x = mnodeA "sty" x ()
          scr x = mnodeA "scr" x ()
 
+-- OMML cannot represent a numeric scale factor for delimiters, so
+-- render a pair of scaled delimiters as an m:d, which grows the
+-- delimiters to fit their content.
 handleScaledDelims :: [Exp] -> [Exp]
-handleScaledDelims (x@(EScaled scale (ESymbol Open op)) : xs) =
+handleScaledDelims (x@(EScaled _ (ESymbol Open op)) : xs) =
   case break isCloser xs of
-    (ys, EScaled scale' (ESymbol Close cl) : zs) | scale' == scale ->
+    (ys, EScaled _ (ESymbol Close cl) : zs) ->
       EDelimited op cl (map Right ys) : zs
     _ -> x:xs
  where
@@ -171,6 +175,17 @@ handleDownup dt (exp' : xs) =
                               []     -> (emptyGroup, [])
           emptyGroup = EGrouped []
 handleDownup _ []            = []
+
+-- | Apply @handleDownup' dt@ to every delimited-expression list,
+-- bottom up, including every tail of every list (the same traversal
+-- the SYB @everywhere@ it replaces performed).
+handleDownupDelims :: DisplayType -> [Exp] -> [Exp]
+handleDownupDelims dt = map goE
+  where
+    goE (EDelimited o c ds) = EDelimited o c (goDs ds)
+    goE e = mapExpChildren goE (map goE) e
+    goDs = foldr (\d acc -> f (fmap goE d : acc)) (f [])
+    f = handleDownup' dt
 
 -- TODO This duplication is ugly and inefficient.  See #92.
 handleDownup' :: DisplayType -> [InEDelimited] -> [InEDelimited]

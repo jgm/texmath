@@ -1,0 +1,13 @@
+<<< tex
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\lbr}{\{}
+\newcommand{\abc}{5}
+
+\set{a} + \lbr \abc
+>>> native
+[ EGrouped
+    [ ESymbol Open "{" , EIdentifier "a" , ESymbol Close "}" ]
+, ESymbol Bin "+"
+, ESymbol Open "{"
+, ENumber "5"
+]

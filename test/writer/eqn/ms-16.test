@@ -4,4 +4,4 @@
 , EText TextNormal "\8220string\8221"
 ]
 >>> eqn
-roman ""string"" = roman "“string”"
+roman "\"string\"" = roman "“string”"

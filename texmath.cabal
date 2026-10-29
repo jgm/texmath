@@ -1,16 +1,17 @@
 Name:                texmath
-Version:             0.13.1.2
-Cabal-Version:       >= 1.10
+Version:             0.13.3.3
+Cabal-Version:       2.0
 Build-type:          Simple
 Synopsis:            Conversion between math formats.
 Description:         The texmath library provides functions to read
-  and write TeX math, presentation MathML, and OMML (Office
-  Math Markup Language, used in Microsoft Office).  Support is also
-  included for converting math formats to Gnu eqn, typst, and pandoc's
-  native format (allowing conversion, via pandoc, to a variety of
-  different markup formats).  The TeX reader supports basic LaTeX
-  and AMS extensions, and it can parse and apply LaTeX macros.
-  (See <https://johnmacfarlane.net/texmath here> for a live demo of
+  and write TeX math, presentation MathML, and OMML (Office Math
+  Markup Language, used in Microsoft Office). Support is also
+  included for converting math formats to Gnu eqn, typst,
+  StarMath, and pandoc's native format (allowing conversion, via
+  pandoc, to a variety of different markup formats). The TeX
+  reader supports basic LaTeX and AMS extensions, and it can
+  parse and apply LaTeX macros. (See
+  <https://johnmacfarlane.net/texmath here> for a live demo of
   bidirectional conversion between LaTeX and MathML.)
   .
   The package also includes several utility modules which may be
@@ -34,11 +35,11 @@ License-File:        LICENSE
 Author:              John MacFarlane, Matthew Pickering
 Maintainer:          jgm@berkeley.edu
 Homepage:            http://github.com/jgm/texmath
-Extra-source-files:  README.md
+Extra-doc-files:     README.md
                      changelog.md
-                     man/texmath.1.md
-                     man/Makefile
                      man/man1/texmath.1
+Extra-source-files:  man/texmath.1.md
+                     man/Makefile
                      server/texmath.html
                      test/writer/mml/*.test
                      test/writer/omml/*.test
@@ -83,7 +84,7 @@ Library
                          pandoc-types >= 1.20 && < 1.24,
                          mtl >= 2.2.1,
                          text,
-                         typst-symbols >= 0.2 && < 0.2.1,
+                         typst-symbols >= 0.3 && < 0.3.1,
                          split
 
     Exposed-modules:     Text.TeXMath,
@@ -108,6 +109,7 @@ Library
                          Text.TeXMath.Shared
     Other-modules:       Text.TeXMath.Readers.TeX.Commands
                          Paths_texmath
+    Autogen-modules:     Paths_texmath
     if impl(ghc >= 6.12)
       Ghc-Options:     -Wall -fno-warn-unused-do-bind
     else
@@ -120,6 +122,7 @@ Executable texmath
     Default-Language:    Haskell2010
     Main-is:             texmath.hs
     Other-Modules:       Paths_texmath
+    Autogen-modules:     Paths_texmath
     Hs-Source-Dirs:      extra
     if impl(ghc >= 6.12)
       Ghc-Options:     -Wall -fno-warn-unused-do-bind
@@ -183,4 +186,4 @@ Test-Suite test-texmath
                          tasty-golden,
                          tagged
     Default-Language:    Haskell2010
-    Ghc-Options:         -Wall -threaded
+    Ghc-Options:         -Wall -threaded -rtsopts "-with-rtsopts=-N -A64m"

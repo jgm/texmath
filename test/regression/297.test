@@ -1,0 +1,4 @@
+<<< tex
+\text{say "hi"} + \text{a\textbackslash b}
+>>> eqn
+roman "say \"hi\"" + roman "a\[rs]b"

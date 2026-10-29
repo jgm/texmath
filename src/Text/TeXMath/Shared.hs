@@ -30,6 +30,9 @@ module Text.TeXMath.Shared
   , getOperator
   , readLength
   , fixTree
+  , everywhereExp
+  , everywhereExpList
+  , mapExpChildren
   , isEmpty
   , empty
   , handleDownup
@@ -47,9 +50,7 @@ import qualified Data.Text as T
 import Data.Maybe (fromMaybe)
 import Data.Ratio ((%))
 import Data.List (sort)
-import Control.Monad (guard)
 import Text.Parsec (Parsec, parse, getInput, digit, char, many1, option)
-import Data.Generics (everywhere, mkT)
 
 -- As we constuct from the bottom up, this situation can occur.
 removeNesting :: Exp -> Exp
@@ -74,7 +75,60 @@ isEmpty _ = False
 -- fixing delimited expressions with no delimiters and unnecessarily
 -- grouped expressions.
 fixTree :: Exp -> Exp
-fixTree = everywhere (mkT removeNesting) . everywhere (mkT removeEmpty)
+fixTree = everywhereExp removeNesting . goE
+  where
+    -- Remove empty expressions from every expression list, bottom up.
+    -- (Filtering each list once is equivalent to the per-tail
+    -- application 'everywhereExpList' would do, since removeEmpty is
+    -- an element-wise filter.)
+    goE = mapExpChildren goE (removeEmpty . map goE)
+
+-- | Apply a transformation to every subexpression, bottom up
+-- (equivalent to SYB's @everywhere (mkT f)@, but faster, since it
+-- involves no run-time type checks).
+everywhereExp :: (Exp -> Exp) -> Exp -> Exp
+everywhereExp f = go
+  where go = f . mapExpChildren go (map go)
+
+-- | Apply a transformation to every expression list in an expression
+-- list, bottom up.  Like SYB's @everywhere (mkT f)@, this applies the
+-- function to every /tail/ of every list (right to left), since each
+-- tail is itself a @[Exp]@ node; a rewrite can thus consume
+-- already-rewritten material to its right.
+everywhereExpList :: ([Exp] -> [Exp]) -> [Exp] -> [Exp]
+everywhereExpList f = goL
+  where goL = foldr (\x acc -> f (goE x : acc)) (f [])
+        goE = mapExpChildren goE goL
+
+-- | Apply @goE@ to each immediate subexpression of a node and @goL@
+-- to each immediate subexpression list.  A building block for
+-- expression traversals.
+mapExpChildren :: (Exp -> Exp) -> ([Exp] -> [Exp]) -> Exp -> Exp
+mapExpChildren goE goL e =
+  case e of
+    ENumber{}          -> e
+    EGrouped es        -> EGrouped (goL es)
+    EDelimited o c ds  -> EDelimited o c (map (fmap goE) ds)
+    EIdentifier{}      -> e
+    EMathOperator{}    -> e
+    ESymbol{}          -> e
+    ESpace{}           -> e
+    ESub a b           -> ESub (goE a) (goE b)
+    ESuper a b         -> ESuper (goE a) (goE b)
+    ESubsup a b c      -> ESubsup (goE a) (goE b) (goE c)
+    EOver conv a b     -> EOver conv (goE a) (goE b)
+    EUnder conv a b    -> EUnder conv (goE a) (goE b)
+    EUnderover conv a b c -> EUnderover conv (goE a) (goE b) (goE c)
+    EPhantom a         -> EPhantom (goE a)
+    EBoxed a           -> EBoxed (goE a)
+    ECancel st a       -> ECancel st (goE a)
+    EFraction ft a b   -> EFraction ft (goE a) (goE b)
+    ERoot a b          -> ERoot (goE a) (goE b)
+    ESqrt a            -> ESqrt (goE a)
+    EScaled r a        -> EScaled r (goE a)
+    EArray as rows     -> EArray as (map (map goL) rows)
+    EText{}            -> e
+    EStyled tt es      -> EStyled tt (goL es)
 
 -- | Maps TextType to the corresponding MathML mathvariant
 getMMLType :: TextType -> T.Text
@@ -96,11 +150,15 @@ getTextType s = fromMaybe TextNormal (M.lookup s revTextTypesMap)
 -- | Maps a LaTeX scaling command to the percentage scaling
 getScalerCommand :: Rational -> Maybe T.Text
 getScalerCommand width =
-  case sort [ (w, cmd) | (cmd, w) <- scalers, w >= width ] of
-       ((_,cmd):_) -> Just cmd
-       _           -> Nothing
-  -- note, we don't use a Map here because we need the first
-  -- match:  \Big, not \Bigr
+  case [ cmd | (w, cmd) <- sortedScalers, w >= width ] of
+       (cmd:_) -> Just cmd
+       _       -> Nothing
+
+-- Scalers sorted by increasing width (then command name), so the
+-- first command with sufficient width is the preferred one:
+-- \Big, not \Bigr.  (We don't use a Map because of this tie-break.)
+sortedScalers :: [(Rational, T.Text)]
+sortedScalers = sort [ (w, cmd) | (cmd, w) <- scalers ]
 
 -- | Gets percentage scaling from LaTeX scaling command
 getScalerValue :: T.Text -> Maybe Rational
@@ -114,8 +172,9 @@ getDiacriticalCommand pos symbol = do
   case pos of
     Under -> if below then Just command else Nothing
     Over -> if not below then Just command else Nothing
-  where
-    diaMap = M.fromList diacriticals
+
+diaMap :: M.Map T.Text T.Text
+diaMap = M.fromList diacriticals
 
 -- Operator Table
 
@@ -305,14 +364,12 @@ diacriticals =
                , ("\x20DC", "\\ddddot")
                , ("\x00B0", "\\mathring")
                , ("\x030A", "\\mathring")
-               , ("\x20D7", "\\vec")
                , ("\x20D7", "\\overrightarrow")
                , ("\x20D6", "\\overleftarrow")
                , ("\x005E", "\\hat")
                , ("\x02C6", "\\widehat")
                , ("\x0302", "\\widehat")
                , ("\x02DC", "\\widetilde")
-               , ("\x0303", "\\tilde")
                , ("\x0303", "\\widetilde")
                , ("\x0304", "\\bar")
                , ("\x203E", "\\bar")
@@ -331,19 +388,21 @@ diacriticals =
 
 
 -- Converts unit to multiplier to reach em
+-- (em length per unit, assuming 1em = 10pt)
 unitToMultiplier :: T.Text -> Maybe Rational
 unitToMultiplier s = M.lookup s units
-  where
-    units = M.fromList  [ ( "pt" , 10)
-                        , ( "mm" , (351/10))
-                        , ( "cm" , (35/100))
-                        , ( "in" , (14/100))
-                        , ( "ex" , (232/100))
-                        , ( "em" , 1)
-                        , ( "mu" , 18)
-                        , ( "dd" , (93/100))
-                        , ( "bp" , (996/1000))
-                        , ( "pc" , (83/100)) ]
+
+units :: M.Map T.Text Rational
+units = M.fromList  [ ( "pt" , (1/10))
+                    , ( "mm" , (2845/10000))   -- 1mm = 72.27/25.4 pt
+                    , ( "cm" , (2845/1000))
+                    , ( "in" , (7227/1000))    -- 1in = 72.27pt
+                    , ( "ex" , (43/100))       -- 1ex ~ 4.3pt (cmr10)
+                    , ( "em" , 1)
+                    , ( "mu" , (1/18))         -- 18mu = 1em
+                    , ( "dd" , (107/1000))     -- 1dd = 1238/1157 pt
+                    , ( "bp" , (1004/10000))   -- 1bp = 72.27/72 pt
+                    , ( "pc" , (12/10)) ]      -- 1pc = 12pt
 
 handleDownup :: DisplayType -> Exp -> Exp
 handleDownup DisplayInline (EUnder True x y)       = ESub x y

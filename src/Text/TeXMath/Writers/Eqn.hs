@@ -27,7 +27,6 @@ import qualified Data.Text as T
 import Text.Printf (printf)
 import Text.TeXMath.Types
 import qualified Text.TeXMath.Shared as S
-import Data.Generics (everywhere, mkT)
 import Data.Ratio ((%))
 import Data.Text (Text)
 
@@ -37,7 +36,7 @@ import Data.Text (Text)
 -- | Transforms an expression tree to equivalent Eqn
 writeEqn :: DisplayType -> [Exp] -> T.Text
 writeEqn dt exprs =
-  T.unwords $ map writeExp $ everywhere (mkT $ S.handleDownup dt) exprs
+  T.unwords $ map (writeExp . S.everywhereExp (S.handleDownup dt)) exprs
 
 -- like writeExp but inserts {} if contents contain a space
 writeExp' :: Exp -> T.Text
@@ -54,13 +53,23 @@ asgroup :: Text -> Text
 asgroup "" = "{\"\"}"  -- see #198
 asgroup t = "{" <> t <> "}"
 
+-- Put text in the double quotes eqn uses to delimit literal text,
+-- escaping the two characters that are special inside them: an
+-- unescaped @"@ ends the string, and a backslash begins a troff
+-- escape sequence.
+quoteText :: Text -> Text
+quoteText t = "\"" <> T.concatMap escapeChar t <> "\""
+  where escapeChar '"'  = "\\\""
+        escapeChar '\\' = "\\[rs]"
+        escapeChar c    = T.singleton c
+
 writeExp :: Exp -> T.Text
 writeExp (ENumber s) = s
 writeExp (EGrouped es) = asgroup $ writeExps es
 writeExp (EDelimited open close es) =
   "left " <> mbQuote open <> " " <> T.intercalate " " (map fromDelimited es) <>
   " right " <> mbQuote close
-  where fromDelimited (Left e)  = "\"" <> e <> "\""
+  where fromDelimited (Left e)  = quoteText e
         fromDelimited (Right e) = writeExp e
         mbQuote "" = "\"\""
         mbQuote s  = s
@@ -69,7 +78,7 @@ writeExp (EMathOperator s) =
                "tanh", "arc", "max", "min", "lim",
                "log", "ln", "exp"]
      then s
-     else "\"" <> s <> "\""
+     else quoteText s
 writeExp (ESymbol Ord (T.unpack -> [c]))  -- do not render "invisible operators"
   | c `elem` ['\x2061'..'\x2064'] = "" -- see 3.2.5.5 of mathml spec
 writeExp (EIdentifier s) = writeExp (ESymbol Ord s)
@@ -190,7 +199,7 @@ writeExp (EBoxed e) = writeExp e -- TODO: any way to do this?
 writeExp (ECancel _ e) = writeExp e -- TODO 
 writeExp (EScaled _size e) = writeExp e -- TODO: any way?
 writeExp (EText ttype s) =
-  let quoted = "\"" <> s <> "\""
+  let quoted = quoteText s
   in case ttype of
        TextNormal -> "roman " <> quoted
        TextItalic -> quoted

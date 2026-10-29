@@ -102,14 +102,14 @@
         <m:mcs>
           <m:mc>
             <m:mcPr>
-              <m:mcJc m:val="center" />
               <m:count m:val="1" />
+              <m:mcJc m:val="center" />
             </m:mcPr>
           </m:mc>
           <m:mc>
             <m:mcPr>
-              <m:mcJc m:val="center" />
               <m:count m:val="1" />
+              <m:mcJc m:val="center" />
             </m:mcPr>
           </m:mc>
         </m:mcs>
@@ -119,7 +119,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vangrt</m:t>
           </m:r>
@@ -138,7 +137,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>varepsilon</m:t>
           </m:r>
@@ -157,7 +155,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>varkappa</m:t>
           </m:r>
@@ -176,7 +173,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>varnothing</m:t>
           </m:r>
@@ -195,7 +191,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>varphi</m:t>
           </m:r>
@@ -214,7 +209,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>varpi</m:t>
           </m:r>
@@ -233,7 +227,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>varpropto</m:t>
           </m:r>
@@ -252,7 +245,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>varr</m:t>
           </m:r>
@@ -271,7 +263,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vArr</m:t>
           </m:r>
@@ -290,7 +281,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>varrho</m:t>
           </m:r>
@@ -309,7 +299,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>varsigma</m:t>
           </m:r>
@@ -328,7 +317,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>varsubsetneq</m:t>
           </m:r>
@@ -347,7 +335,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>varsubsetneqq</m:t>
           </m:r>
@@ -366,7 +353,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>varsupsetneq</m:t>
           </m:r>
@@ -385,7 +371,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>varsupsetneqq</m:t>
           </m:r>
@@ -404,7 +389,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vartheta</m:t>
           </m:r>
@@ -423,7 +407,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vartriangleleft</m:t>
           </m:r>
@@ -442,7 +425,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vartriangleright</m:t>
           </m:r>
@@ -461,7 +443,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vBar</m:t>
           </m:r>
@@ -480,7 +461,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Vbar</m:t>
           </m:r>
@@ -499,7 +479,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vBarv</m:t>
           </m:r>
@@ -518,7 +497,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vcy</m:t>
           </m:r>
@@ -537,7 +515,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Vcy</m:t>
           </m:r>
@@ -556,7 +533,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vdash</m:t>
           </m:r>
@@ -575,7 +551,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vDash</m:t>
           </m:r>
@@ -594,7 +569,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Vdash</m:t>
           </m:r>
@@ -613,7 +587,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>VDash</m:t>
           </m:r>
@@ -632,7 +605,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Vdashl</m:t>
           </m:r>
@@ -651,7 +623,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vee</m:t>
           </m:r>
@@ -670,7 +641,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Vee</m:t>
           </m:r>
@@ -689,7 +659,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>veebar</m:t>
           </m:r>
@@ -708,7 +677,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>veeeq</m:t>
           </m:r>
@@ -727,7 +695,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vellip</m:t>
           </m:r>
@@ -746,7 +713,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>verbar</m:t>
           </m:r>
@@ -765,7 +731,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Verbar</m:t>
           </m:r>
@@ -784,7 +749,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vert</m:t>
           </m:r>
@@ -803,7 +767,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Vert</m:t>
           </m:r>
@@ -822,7 +785,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>VerticalBar</m:t>
           </m:r>
@@ -841,7 +803,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>VerticalLine</m:t>
           </m:r>
@@ -860,7 +821,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>VerticalSeparator</m:t>
           </m:r>
@@ -879,7 +839,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>VerticalTilde</m:t>
           </m:r>
@@ -898,7 +857,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>VeryThinSpace</m:t>
           </m:r>
@@ -917,7 +875,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vfr</m:t>
           </m:r>
@@ -936,7 +893,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Vfr</m:t>
           </m:r>
@@ -955,7 +911,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vltri</m:t>
           </m:r>
@@ -974,7 +929,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vnsub</m:t>
           </m:r>
@@ -993,7 +947,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vnsup</m:t>
           </m:r>
@@ -1012,7 +965,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vopf</m:t>
           </m:r>
@@ -1031,7 +983,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Vopf</m:t>
           </m:r>
@@ -1050,7 +1001,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vprop</m:t>
           </m:r>
@@ -1069,7 +1019,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vrtri</m:t>
           </m:r>
@@ -1088,7 +1037,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vscr</m:t>
           </m:r>
@@ -1107,7 +1055,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Vscr</m:t>
           </m:r>
@@ -1126,7 +1073,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vsubne</m:t>
           </m:r>
@@ -1145,7 +1091,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vsubnE</m:t>
           </m:r>
@@ -1164,7 +1109,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vsupne</m:t>
           </m:r>
@@ -1183,7 +1127,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vsupnE</m:t>
           </m:r>
@@ -1202,7 +1145,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>Vvdash</m:t>
           </m:r>
@@ -1221,7 +1163,6 @@
           <m:r>
             <m:rPr>
               <m:nor />
-              <m:sty m:val="p" />
             </m:rPr>
             <m:t>vzigzag</m:t>
           </m:r>

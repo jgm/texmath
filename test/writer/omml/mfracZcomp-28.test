@@ -47,7 +47,6 @@
     <m:r>
       <m:rPr>
         <m:nor />
-        <m:sty m:val="p" />
       </m:rPr>
       <m:t>Inline nested fracs </m:t>
     </m:r>
@@ -219,7 +218,6 @@
     <m:r>
       <m:rPr>
         <m:nor />
-        <m:sty m:val="p" />
       </m:rPr>
       <m:t> are script size at the first level and decrease to script script size for all more nested levels.</m:t>
     </m:r>

@@ -26,9 +26,8 @@ where
 
 import Text.XML.Light
 import Text.TeXMath.Types
-import Data.Generics (everywhere, mkT)
 import Text.TeXMath.Unicode.ToUnicode (toUnicode)
-import Text.TeXMath.Shared (getMMLType, handleDownup,
+import Text.TeXMath.Shared (getMMLType, handleDownup, everywhereExp,
                             isUppercaseGreek, isRLSequence)
 import Text.TeXMath.Readers.MathML.MMLDict (getMathMLOperator)
 import qualified Data.Text as T
@@ -38,7 +37,7 @@ import Text.Printf
 writeMathML :: DisplayType -> [Exp] -> Element
 writeMathML dt exprs =
   add_attr dtattr $ math $ showExp Nothing $ EGrouped
-  $ everywhere (mkT $ handleDownup dt) exprs
+  $ map (everywhereExp (handleDownup dt)) exprs
     where dtattr = Attr (unqual "display") dt'
           dt' =  case dt of
                       DisplayBlock  -> "block"

@@ -26,10 +26,10 @@ import qualified Data.Text as T
 import Text.TeXMath.Types
 import qualified Text.TeXMath.Shared as S
 import qualified Typst.Symbols as TS
-import Data.Generics (everywhere, mkT)
 import Data.Text (Text)
 import Data.Char (isDigit, isAlpha, isAscii)
 import Data.Maybe (fromMaybe)
+import Numeric (showFFloat)
 
 -- import Debug.Trace
 -- tr' x = trace (show x) x
@@ -37,23 +37,30 @@ import Data.Maybe (fromMaybe)
 -- | Transforms an expression tree to equivalent Typst
 writeTypst :: DisplayType -> [Exp] -> Text
 writeTypst dt exprs =
-  writeExps $ everywhere (mkT $ S.handleDownup dt) exprs
+  writeExps $ map (S.everywhereExp (S.handleDownup dt)) exprs
 
 writeExps :: [Exp] -> Text
 writeExps = go . map writeExp
  where
    go (a : b : es)
     | Just (bstart, _) <- T.uncons b
-    , Just (astart, _) <- T.uncons a
     , Just (_, aend) <- T.unsnoc a
     , bstart == '\'' -- avoid space before a prime #239
-      || bstart == '|' || aend == '|' || bstart == '\\' || astart == '\\' -- #286
+      || bstart == '|' || aend == '|'
+      || bstart == '\\' || isStandaloneEscape a -- #291, #286
      = a <> go (b:es)
    go (a : as)
      = a <> if null as
                then mempty
                else " " <> go as
    go [] = mempty
+
+   -- A compound expression may start with an escape but end in an identifier.
+   -- Only a standalone escape suppresses the following space (#291).
+   isStandaloneEscape t =
+     case T.uncons t of
+       Just ('\\', rest) -> T.length rest == 1
+       _ -> False
 
 inParens :: Text -> Text
 inParens s = "(" <> s <> ")"
@@ -137,6 +144,8 @@ writeExp (EMathOperator s)
     = s
   | otherwise = "\"" <> s <> "\""
 writeExp (EGrouped es) = writeExps es
+writeExp (EFraction NoLineFrac e1 e2) =
+  "mat(delim: #none, " <> mkArray [[[e1]], [[e2]]] <> ")"
 writeExp (EFraction _fractype e1 e2) =
   case (e1, e2) of
     (EGrouped _, _) -> "frac(" <> writeExp e1 <> ", " <> writeExp e2 <> ")"
@@ -191,9 +200,10 @@ writeExp (ESpace width) =
     0 -> "zws"
     3 -> "thin"
     4 -> "med"
-    6 -> "thick"
+    5 -> "thick"
     18 -> "quad"
-    n -> "#h(" <> tshow (n `div` 18) <> "em)"
+    _ -> "#h(" <> T.pack (removePointZero $ showFFloat (Just 3)
+                          (fromRational width :: Double) $ "") <> "em)"
 writeExp (EText ttype s) =
   case ttype of
        TextNormal -> "upright" <> inParens (inQuotes s)
@@ -234,11 +244,11 @@ writeExp (EBoxed e) = "#box(stroke: black, inset: 3pt, [$ " <> writeExp e <> " $
 writeExp (ECancel ForwardSlash e) = "cancel(" <> writeExp e <> ")"
 writeExp (ECancel BackSlash e) = "cancel(" <> writeExp e <> ", inverted: #true)"
 writeExp (ECancel XSlash e) = "cancel(" <> writeExp e <> ", cross: #true)"
-writeExp (EPhantom e) = "#hide[" <> writeExp e <> "]"
+writeExp (EPhantom e) = "#hide[$" <> writeExp e <> "$]"
 writeExp (EScaled size e) =
   "#scale(x: " <> tshow (floor (100 * size) :: Int) <>
           "%, y: " <> tshow (floor (100 * size) :: Int) <>
-          "%)[" <> writeExp e <> "]"
+          "%)[$" <> writeExp e <> "$]"
 writeExp (EDelimited "(" ")" [ Right (EFraction NoLineFrac x y) ]) =
   "binom(" <> writeExp x <> ", " <> writeExp y <> ")"
 writeExp (EDelimited "(" ")" [Right (EArray _aligns rows)])
@@ -356,3 +366,10 @@ getAccentCommand ac = do
 isGrouped :: Exp -> Bool
 isGrouped (EGrouped _) = True
 isGrouped _ = False
+
+removePointZero :: String -> String
+removePointZero s =
+  let (as,bs) = break (=='.') s
+  in case bs of
+       '.':xs | all (=='0') xs -> as
+       _ -> s
