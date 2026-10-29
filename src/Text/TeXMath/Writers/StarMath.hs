@@ -504,7 +504,12 @@ needsNeutralLhs :: Exp -> Bool
 needsNeutralLhs = isInfixLikeExp
 
 needsNeutralRhs :: Exp -> Bool
-needsNeutralRhs = isInfixLikeExp
+-- TeX demotes a trailing binary sign to Ord (for example in r_{j,+}).
+-- StarMath still parses it as an operator and requires a right operand.
+needsNeutralRhs e =
+  isInfixLikeExp e || case e of
+    ESymbol _ s -> s `elem` ["+", "-", "−"]
+    _           -> False
 
 needsNeutralScriptOperands :: Exp -> Bool
 needsNeutralScriptOperands e =
