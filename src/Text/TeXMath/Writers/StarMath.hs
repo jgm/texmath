@@ -217,9 +217,10 @@ renderExpsIn dt ctx exps = do
         if startsWithInfixNeedingLhs exps
            then "{} " <> T.stripStart merged
            else merged
-  pure $ if endsWithInfixNeedingRhs exps
-            then T.stripEnd withLhs <> " {}"
-            else withLhs
+  pure $ case reverse exps of
+    e : _ | needsNeutralRhs e ->
+      T.stripEnd withLhs <> (if isPlusMinusSign e then "{}" else " {}")
+    _ -> withLhs
 
 mergePieces :: [(Exp, T.Text)] -> T.Text
 mergePieces [] = ""
@@ -494,20 +495,17 @@ startsWithInfixNeedingLhs exps =
     (e : _) -> needsNeutralLhs e
     _                 -> False
 
-endsWithInfixNeedingRhs :: [Exp] -> Bool
-endsWithInfixNeedingRhs exps =
-  case reverse exps of
-    (e : _) -> needsNeutralRhs e
-    _       -> False
-
 needsNeutralLhs :: Exp -> Bool
 needsNeutralLhs = isInfixLikeExp
 
 needsNeutralRhs :: Exp -> Bool
 -- TeX demotes a trailing binary sign to Ord (for example in r_{j,+}).
 -- StarMath still parses it as an operator and requires a right operand.
-needsNeutralRhs e =
-  isInfixLikeExp e || case e of
+needsNeutralRhs e = isInfixLikeExp e || isPlusMinusSign e
+
+isPlusMinusSign :: Exp -> Bool
+isPlusMinusSign e =
+  case e of
     ESymbol _ s -> s `elem` ["+", "-", "−"]
     _           -> False
 

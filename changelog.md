@@ -2,6 +2,7 @@ texmath (unreleased)
 
   * StarMath writer: supply the missing operand for trailing plus/minus
     signs demoted to ordinary symbols by TeX, as in `r_{j,+}` and `r_{j,-}`.
+    Emit the compact forms `+{}` and `-{}` without an intervening space.
 
   * StarMath writer: group annotated underbraces and overbraces so adjacent
     terms do not become part of an earlier brace in LibreOffice.

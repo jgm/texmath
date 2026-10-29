@@ -7,4 +7,4 @@ r_{j,\pm}^{0}
 r_j^0&=r_{j,+}^{0}-r_{j,-}^{0}.
 \end{aligned}
 >>> starmath
-matrix { alignr r_{{j, plusminus {}}}^0 # alignl {} = {{A_j exp left ( -{{alignc {E_j}} over {alignc {R_{nitalic u} T}}} right )} underbrace {{k_j(T) : "Arrhenius coefficient"}}} times {{("gas factor")_{{j, plusminus {}}}} underbrace "local hydrogen/steam"} times {{("solid factor")_{{j, plusminus {}}}} underbrace "inventory, presence and access"}, ## alignr r_j^0 # alignl {} = r_{{j, + {}}}^0 - r_{{j, - {}}}^0. }
+matrix { alignr r_{{j, plusminus {}}}^0 # alignl {} = {{A_j exp left ( -{{alignc {E_j}} over {alignc {R_{nitalic u} T}}} right )} underbrace {{k_j(T) : "Arrhenius coefficient"}}} times {{("gas factor")_{{j, plusminus {}}}} underbrace "local hydrogen/steam"} times {{("solid factor")_{{j, plusminus {}}}} underbrace "inventory, presence and access"}, ## alignr r_j^0 # alignl {} = r_{{j, +{}}}^0 - r_{{j, -{}}}^0. }
