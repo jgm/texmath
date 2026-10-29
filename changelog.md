@@ -1,5 +1,8 @@
 texmath (unreleased)
 
+  * StarMath writer: separate upright letters from following identifiers
+    so `\mathrm d n` keeps only the differential upright, without extra braces.
+
   * StarMath writer: supply the missing operand for trailing plus/minus
     signs demoted to ordinary symbols by TeX, as in `r_{j,+}` and `r_{j,-}`.
     Emit the compact forms `+{}` and `-{}` without an intervening space.

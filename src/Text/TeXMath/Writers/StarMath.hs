@@ -289,6 +289,8 @@ needsSeparator prevE curE
   | isCloseLike prevE && isAccentCommandExp curE        = True
   | isCloseLike prevE && isArrayLike curE               = True
   | isIdentifierLike prevE && isWordStyledExp curE      = True
+  -- Keep an upright letter from merging with the following identifier token.
+  | isUprightMathTextExp prevE && isIdentifierLike curE = True
   | isIdentifierLike prevE && isUprightMathTextExp curE = True
   | isIdentifierLike prevE && isAccentCommandExp curE   = True
   | isIdentifierLike prevE && isWideSpace curE          = True
