@@ -1,0 +1,10 @@
+<<< tex
+\begin{aligned}
+r_{j,\pm}^{0}
+&=\underbrace{A_j\exp\!\left(-\frac{E_j}{R_{\mathrm u}T}\right)}_{k_j(T):\ \text{Arrhenius coefficient}}
+\times\underbrace{(\text{gas factor})_{j,\pm}}_{\text{local hydrogen/steam}}
+\times\underbrace{(\text{solid factor})_{j,\pm}}_{\text{inventory, presence and access}},\\
+r_j^0&=r_{j,+}^{0}-r_{j,-}^{0}.
+\end{aligned}
+>>> starmath
+matrix { alignr r_{{j, plusminus {}}}^0 # alignl {} = {{A_j exp left ( -{{alignc {E_j}} over {alignc {R_{nitalic u} T}}} right )} underbrace {{k_j(T) : "Arrhenius coefficient"}}} times {{("gas factor")_{{j, plusminus {}}}} underbrace "local hydrogen/steam"} times {{("solid factor")_{{j, plusminus {}}}} underbrace "inventory, presence and access"}, ## alignr r_j^0 # alignl {} = r_{{j, +{}}}^0 - r_{{j, -{}}}^0. }

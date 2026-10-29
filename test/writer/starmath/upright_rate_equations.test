@@ -1,0 +1,9 @@
+<<< tex
+\frac{\mathrm d n_i}{\mathrm d t}=n_*\sum_{j\in\{1,2,3,Q,F\}}\nu_{ij}r_j,
+\qquad
+\begin{aligned}
+\frac{\mathrm d n_W}{\mathrm d t}&=n_*(3r_2-r_3-2r_Q),\\
+\frac{\mathrm d n_F}{\mathrm d t}&=n_*(r_Q-r_F).
+\end{aligned}
+>>> starmath
+{{nitalic d n_i} over {nitalic d t}} = n_{{} * {}}sum from j in left lbrace 1, 2, 3, Q, F right rbrace %inu_{{ij}} r_j, ~~ matrix { alignr {{alignc {nitalic d n_W}} over {alignc {nitalic d t}}} # alignl {} = n_{{} * {}}(3r_2 - r_3 - 2r_Q), ## alignr {{alignc {nitalic d n_F}} over {alignc {nitalic d t}}} # alignl {} = n_{{} * {}}(r_Q - r_F). }
