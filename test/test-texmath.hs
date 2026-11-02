@@ -14,11 +14,10 @@ import Test.Tasty.Options
 import Data.Text.Lazy.Encoding (encodeUtf8)
 import Data.Text.Encoding as TE (decodeUtf8)
 import Data.List (sort)
-import Data.Typeable (Typeable)
 import Data.Proxy
 
 newtype RoundTrip = RoundTrip Bool
-  deriving (Eq, Ord, Typeable)
+  deriving (Eq, Ord)
 
 instance IsOption RoundTrip where
   defaultValue = RoundTrip False
