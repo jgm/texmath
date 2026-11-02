@@ -1,6 +1,7 @@
 {-# LANGUAGE TupleSections #-}
 {-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE CPP #-}
 {-
 Copyright (C) 2009 John MacFarlane <jgm@berkeley.edu>
 
@@ -25,7 +26,11 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 module Text.TeXMath.Readers.TeX (readTeX)
 where
 
+#if MIN_VERSION_base(4,20,0)
+import Data.List (intercalate, intersperse)
+#else
 import Data.List (intercalate, intersperse, foldl')
+#endif
 import Control.Monad
 import Data.Char (isDigit, isAscii, isLetter)
 import qualified Data.Map as M
