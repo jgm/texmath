@@ -1,0 +1,14 @@
+<<< tex
+x_1'+x_12'+x_{1'}+x^12'
+>>> native
+[ ESubsup (EIdentifier "x") (ENumber "1") (ESymbol Pun "\8242")
+, ESymbol Bin "+"
+, ESub (EIdentifier "x") (ENumber "1")
+, ESuper (ENumber "2") (ESymbol Pun "\8242")
+, ESymbol Bin "+"
+, ESub
+    (EIdentifier "x") (ESuper (ENumber "1") (ESymbol Pun "\8242"))
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "1")
+, ESuper (ENumber "2") (ESymbol Pun "\8242")
+]

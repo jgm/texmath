@@ -1,0 +1,15 @@
+<<< tex
+x_1^23+x^1_23+x_12^3+x^12_3
+>>> native
+[ ESubsup (EIdentifier "x") (ENumber "1") (ENumber "2")
+, ENumber "3"
+, ESymbol Bin "+"
+, ESubsup (EIdentifier "x") (ENumber "2") (ENumber "1")
+, ENumber "3"
+, ESymbol Bin "+"
+, ESub (EIdentifier "x") (ENumber "1")
+, ESuper (ENumber "2") (ENumber "3")
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "1")
+, ESub (ENumber "2") (ENumber "3")
+]

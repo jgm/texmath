@@ -1,0 +1,19 @@
+<<< tex
+x^1.2+x^.5+x^{1.2}+x_1.2+x_.5+x_{1.2}
+>>> native
+[ ESuper (EIdentifier "x") (ENumber "1")
+, ENumber ".2"
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ESymbol Ord ".")
+, ENumber "5"
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "1.2")
+, ESymbol Bin "+"
+, ESub (EIdentifier "x") (ENumber "1")
+, ENumber ".2"
+, ESymbol Bin "+"
+, ESub (EIdentifier "x") (ESymbol Ord ".")
+, ENumber "5"
+, ESymbol Bin "+"
+, ESub (EIdentifier "x") (ENumber "1.2")
+]

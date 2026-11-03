@@ -1,3 +1,9 @@
+texmath (unreleased)
+
+  * TeX reader: consume a single token for unbraced script arguments.
+    For example, `x^12` and `x_12` now mean `x^{1}2` and `x_{1}2`,
+    while braced multi-digit and decimal arguments remain intact.
+
 texmath (0.13.3.3)
 
   * Typst writer: add some needed `$` inside `[..]` content blocks.
