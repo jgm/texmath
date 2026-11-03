@@ -450,19 +450,19 @@ scaled cmd = do
        Nothing -> mzero
 
 endLine :: TP Char
-endLine = try $ do
+endLine = try (do
   symbol "\\\\"
   optional inbrackets  -- can contain e.g. [1.0in] for a line height, not yet supported
-  return '\n'
+  return '\n') <|> ('\n' <$ ctrlseq "cr")
 
 -- Within environments provided by AMSmath, spaces are not allowed between
 -- the double-backslash command and its optional argument.
 endLineAMS :: TP Char
-endLineAMS = lexeme $ try $ do
+endLineAMS = lexeme (try $ do
   string "\\\\"
   skipMany comment
   optional inbrackets  -- can contain e.g. [1.0in] for a line height, not yet supported
-  return '\n'
+  return '\n') <|> ('\n' <$ ctrlseq "cr")
 
 arrayLine :: TP ArrayLine
 arrayLine =
