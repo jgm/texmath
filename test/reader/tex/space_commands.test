@@ -1,0 +1,16 @@
+<<< tex
+a\thinspace b\negthinspace c\thickspace d\negthickspace e\negmedspace f
+
+>>> native
+[ EIdentifier "a"
+, ESpace (1 % 6)
+, EIdentifier "b"
+, ESpace ((-1) % 6)
+, EIdentifier "c"
+, ESpace (5 % 18)
+, EIdentifier "d"
+, ESpace ((-5) % 18)
+, EIdentifier "e"
+, ESpace ((-2) % 9)
+, EIdentifier "f"
+]

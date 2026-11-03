@@ -1,0 +1,18 @@
+<<< tex
+\begin{cases} a \cr b \end{cases} \begin{matrix} 1 & 2 \cr 3 & 4 \end{matrix}
+
+>>> native
+[ EDelimited
+    "{"
+    ""
+    [ Right
+        (EArray
+           [ AlignLeft ]
+           [ [ [ EIdentifier "a" ] ] , [ [ EIdentifier "b" ] ] ])
+    ]
+, EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ ENumber "1" ] , [ ENumber "2" ] ]
+    , [ [ ENumber "3" ] , [ ENumber "4" ] ]
+    ]
+]
