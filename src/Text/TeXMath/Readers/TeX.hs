@@ -71,10 +71,13 @@ getPrimes cs =
     _ -> "\x2057" <> getPrimes (drop 4 cs)
 
 expr1 :: TP Exp
-expr1 = choice
+expr1 = expr1With number
+
+expr1With :: TP Exp -> TP Exp
+expr1With numberParser = choice
           [ inbraces
           , variable
-          , number
+          , numberParser
           , operator
           , bareSubSup
           , enclosure
@@ -628,10 +631,16 @@ isUnderover (EUnder _ _ (ESymbol TUnder "\x23B5")) = True  -- \underbracket
 isUnderover (EUnder _  _ (ESymbol TUnder "\x23DF")) = True  -- \underbrace
 isUnderover _ = False
 
+-- Unbraced scripts take one token, so x^12 means x^{1}2. Braced groups
+-- still use the normal expression parser, including multi-digit numbers.
+scriptArg :: TP Exp
+scriptArg = (fst <$> operatorname)
+        <|> expr1With (lexeme $ ENumber . T.singleton <$> digit)
+
 subSup :: Maybe Bool -> Bool -> Exp -> TP Exp
 subSup limits convertible a = try $ do
-  let sub1 = symbol "_" >> expr1  -- see #273
-  let sup1 = (symbol "^" >> expr1) <|> primes
+  let sub1 = symbol "_" >> scriptArg  -- see #273
+  let sup1 = (symbol "^" >> scriptArg) <|> primes
   (b,c) <- try (do {m <- sub1; n <- sup1; return (m,n)})
        <|> (do {n <- sup1; m <- sub1; return (m,n)})
   return $ case limits of
@@ -642,7 +651,7 @@ subSup limits convertible a = try $ do
 
 superOrSubscripted :: Maybe Bool -> Bool -> Exp -> TP Exp
 superOrSubscripted limits convertible a = try $ do
-  (c,b) <- ((,) <$> oneOf "^_" <*> (spaces >> expr))
+  (c,b) <- ((,) <$> oneOf "^_" <*> (ignorable >> scriptArg))
           <|> (('^',) <$> primes)
   case c of
        '^' -> return $ case limits of

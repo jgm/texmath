@@ -1,5 +1,5 @@
 <<< tex
-\sum_{i=1}^100 x = \frac{100*101}{2}
+\sum_{i=1}^{100} x = \frac{100*101}{2}
 
 >>> native
 [ EUnderover

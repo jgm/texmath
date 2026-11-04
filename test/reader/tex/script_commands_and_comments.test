@@ -1,0 +1,20 @@
+<<< tex
+x_\alpha^12+x^\mathrm{12}3+x^\operatorname{foo}3+x^% comment
+12+x_% comment
+1^23
+>>> native
+[ ESubsup (EIdentifier "x") (EIdentifier "\945") (ENumber "1")
+, ENumber "2"
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (EStyled TextNormal [ ENumber "12" ])
+, ENumber "3"
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (EMathOperator "foo")
+, ENumber "3"
+, ESymbol Bin "+"
+, ESuper (EIdentifier "x") (ENumber "1")
+, ENumber "2"
+, ESymbol Bin "+"
+, ESubsup (EIdentifier "x") (ENumber "1") (ENumber "2")
+, ENumber "3"
+]
