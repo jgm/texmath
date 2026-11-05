@@ -213,13 +213,14 @@ renderExpsIn dt ctx exps = do
   rendered <- mapM (renderExpIn dt ctx) exps
   let pieces = zip exps rendered
   let merged = mergePieces pieces
-  let withLhs =
-        if startsWithInfixNeedingLhs exps
-           then "{} " <> T.stripStart merged
-           else merged
-  pure $ if endsWithInfixNeedingRhs exps
-            then T.stripEnd withLhs <> " {}"
-            else withLhs
+  let withLhs = case exps of
+        e : _ | needsNeutralLhs e ->
+          (if isPlusMinusSign e then "{}" else "{} ") <> T.stripStart merged
+        _ -> merged
+  pure $ case reverse exps of
+    e : _ | needsNeutralRhs e ->
+      T.stripEnd withLhs <> (if isPlusMinusSign e then "{}" else " {}")
+    _ -> withLhs
 
 mergePieces :: [(Exp, T.Text)] -> T.Text
 mergePieces [] = ""
@@ -288,6 +289,8 @@ needsSeparator prevE curE
   | isCloseLike prevE && isAccentCommandExp curE        = True
   | isCloseLike prevE && isArrayLike curE               = True
   | isIdentifierLike prevE && isWordStyledExp curE      = True
+  -- Keep an upright letter from merging with the following identifier token.
+  | isUprightMathTextExp prevE && isIdentifierLike curE = True
   | isIdentifierLike prevE && isUprightMathTextExp curE = True
   | isIdentifierLike prevE && isAccentCommandExp curE   = True
   | isIdentifierLike prevE && isWideSpace curE          = True
@@ -488,23 +491,19 @@ isLargeOpScriptedExp e =
     ESubsup base _ _ -> largeOpName base /= Nothing
     _                -> False
 
-startsWithInfixNeedingLhs :: [Exp] -> Bool
-startsWithInfixNeedingLhs exps =
-  case exps of
-    (e : _) -> needsNeutralLhs e
-    _                 -> False
-
-endsWithInfixNeedingRhs :: [Exp] -> Bool
-endsWithInfixNeedingRhs exps =
-  case reverse exps of
-    (e : _) -> needsNeutralRhs e
-    _       -> False
-
 needsNeutralLhs :: Exp -> Bool
 needsNeutralLhs = isInfixLikeExp
 
 needsNeutralRhs :: Exp -> Bool
-needsNeutralRhs = isInfixLikeExp
+-- TeX demotes a trailing binary sign to Ord (for example in r_{j,+}).
+-- StarMath still parses it as an operator and requires a right operand.
+needsNeutralRhs e = isInfixLikeExp e || isPlusMinusSign e
+
+isPlusMinusSign :: Exp -> Bool
+isPlusMinusSign e =
+  case e of
+    ESymbol _ s -> s == "+" || s == "-" || s == "−"
+    _           -> False
 
 needsNeutralScriptOperands :: Exp -> Bool
 needsNeutralScriptOperands e =
@@ -547,8 +546,8 @@ renderExpIn dt ctx e =
     EStyled sty xs  -> renderStyled dt ctx sty xs
 
     EFraction frac num den -> do
-      num' <- renderExpIn dt AlignDefault num
-      den' <- renderExpIn dt AlignDefault den
+      num' <- renderFractionArg dt num
+      den' <- renderFractionArg dt den
       let num'' = maybeCenterFractionArg ctx num'
       let den'' = maybeCenterFractionArg ctx den'
       pure $ case frac of
@@ -558,11 +557,11 @@ renderExpIn dt ctx e =
           | dt == DisplayInline -> renderInlineFraction num'' den''
         _          -> "{" <> num'' <> " over " <> den'' <> "}"
 
-    ESqrt x -> ("sqrt {" <>) . (<> "}") <$> renderExpIn dt ctx x
+    ESqrt x -> ("sqrt " <>) . groupArg dt x <$> renderExpIn dt ctx x
     ERoot idx rad -> do
       idx' <- renderExpIn dt ctx idx
       rad' <- renderExpIn dt ctx rad
-      pure $ "nroot {" <> idx' <> "} {" <> rad' <> "}"
+      pure $ "nroot " <> groupArg dt idx idx' <> " " <> groupArg dt rad rad'
 
     EScaled _ (ESymbol Open "|") ->
       Just "mline"
@@ -601,6 +600,10 @@ renderExpIn dt ctx e =
           supRendered <- renderScriptArg dt ctx sup
           pure $ renderScriptBase base baseRendered <> "_" <> subRendered <> "^" <> supRendered
 
+    EOver _ (EOver _ base marker) over
+      | Nothing <- braceAnnotationName over
+      , Just brace <- braceAnnotationName marker ->
+          renderBrace dt ctx base brace over
     EOver _ base over
       | Just arrow <- arrowScriptOpName base -> do
           if isEmptyScriptArg over
@@ -611,21 +614,24 @@ renderExpIn dt ctx e =
       | Just op <- centeredScriptOpName base -> do
           over' <- renderScriptArg dt ctx over
           pure $ "{" <> op <> "} csup " <> centerScriptArg over'
-      | Just brace <- braceAnnotationName over -> do
-          base' <- renderExpIn dt ctx base
-          pure $ renderScriptBase base base' <> " " <> brace
+      | Just brace <- braceAnnotationName over ->
+          renderBrace dt ctx base brace (EGrouped [])
       | isBraceAnnotatedExp base -> do
           base' <- renderExpIn dt ctx base
-          over' <- renderBraceLabel dt ctx over
-          pure $ base' <> " " <> over'
+          over' <- renderScriptArg dt ctx over
+          pure $ base' <> " csup " <> centerScriptArg over'
       | Just accent <- accentName over -> do
           base' <- renderExpIn dt ctx base
-          pure $ accent <> " " <> renderAccentArg base base'
+          pure $ accent <> " " <> renderAccentArg dt base base'
       | Just op <- limitOpName base -> do
           over' <- renderLimitArg dt ctx over
           pure $ op <> " to " <> over' <> " "
       | otherwise -> Nothing
 
+    EUnder _ (EUnder _ base marker) under
+      | Nothing <- braceAnnotationName under
+      , Just brace <- braceAnnotationName marker ->
+          renderBrace dt ctx base brace under
     EUnder _ base under ->
       case arrowScriptOpName base of
         Just arrow ->
@@ -638,18 +644,17 @@ renderExpIn dt ctx e =
           case underlineMarkerName under of
             Just marker -> do
               base' <- renderExpIn dt ctx base
-              pure $ marker <> " " <> renderAccentArg base base'
+              pure $ marker <> " " <> renderAccentArg dt base base'
             Nothing ->
               case braceAnnotationName under of
-                Just brace -> do
-                  base' <- renderExpIn dt ctx base
-                  pure $ renderScriptBase base base' <> " " <> brace
+                Just brace ->
+                  renderBrace dt ctx base brace (EGrouped [])
                 Nothing ->
                   if isBraceAnnotatedExp base
                      then do
                        base' <- renderExpIn dt ctx base
-                       under' <- renderBraceLabel dt ctx under
-                       pure $ base' <> " " <> under'
+                       under' <- renderScriptArg dt ctx under
+                       pure $ base' <> " csub " <> centerScriptArg under'
                      else
                        case centeredScriptOpName base of
                          Just op -> do
@@ -664,6 +669,16 @@ renderExpIn dt ctx e =
                                base' <- renderExpIn dt ctx base
                                under' <- renderScriptArg dt ctx under
                                pure $ renderScriptBase base base' <> "_" <> under'
+    EUnderover _ (EUnder _ base marker) under over
+      | Just brace <- braceAnnotationName marker -> do
+          base' <- renderBrace dt ctx base brace under
+          over' <- renderScriptArg dt ctx over
+          pure $ base' <> " csup " <> centerScriptArg over'
+    EUnderover _ (EOver _ base marker) under over
+      | Just brace <- braceAnnotationName marker -> do
+          base' <- renderBrace dt ctx base brace over
+          under' <- renderScriptArg dt ctx under
+          pure $ base' <> " csub " <> centerScriptArg under'
     EUnderover _ base under over ->
       case arrowScriptOpName base of
         Just arrow ->
@@ -1054,6 +1069,14 @@ asDelimitedArg t =
                 then s
                 else "{" <> s <> "}"
 
+-- A single operator can be a fraction argument without an EGrouped wrapper.
+-- Supply its missing operands within the argument, not around the fraction.
+renderFractionArg :: DisplayType -> Exp -> Maybe T.Text
+renderFractionArg dt e
+  | needsNeutralLhs e || needsNeutralRhs e =
+      ("{" <>) . (<> "}") <$> renderExpsIn dt AlignDefault [e]
+  | otherwise = renderExpIn dt AlignDefault e
+
 renderInlineFraction :: T.Text -> T.Text -> T.Text
 renderInlineFraction num den =
   "size*0.7 {" <> num <> " over " <> den <> "}"
@@ -1225,6 +1248,16 @@ renderScriptBase e rendered0 =
         then rendered
         else "{" <> rendered <> "}"
 
+-- These constructors already render as one complete group. Other expressions
+-- can start and end with braces without being grouped, e.g. {x} csub {a}.
+groupArg :: DisplayType -> Exp -> T.Text -> T.Text
+groupArg dt e rendered =
+  case e of
+    EGrouped{} -> rendered
+    EFraction DisplayFrac _ _ -> rendered
+    EFraction NormalFrac _ _ | dt == DisplayBlock -> rendered
+    _ -> "{" <> rendered <> "}"
+
 renderScriptArg :: DisplayType -> AlignContext -> Exp -> Maybe T.Text
 renderScriptArg dt ctx e = do
   rendered0 <-
@@ -1234,7 +1267,7 @@ renderScriptArg dt ctx e = do
   let rendered = T.strip rendered0
   pure $ if (isAtomic e && not (needsNeutralScriptOperands e)) || isQuotedText rendered
             then rendered
-            else "{" <> rendered <> "}"
+            else groupArg dt e rendered
 
 renderPrimeSuffix :: Exp -> Maybe T.Text
 renderPrimeSuffix e =
@@ -1271,12 +1304,12 @@ containsRelationLike = any isRelationLike
       EGrouped ys   -> containsRelationLike ys
       _             -> False
 
-renderAccentArg :: Exp -> T.Text -> T.Text
-renderAccentArg e rendered0 =
+renderAccentArg :: DisplayType -> Exp -> T.Text -> T.Text
+renderAccentArg dt e rendered0 =
   let rendered = T.strip rendered0
   in if isAtomic e
         then rendered
-        else "{" <> rendered <> "}"
+        else groupArg dt e rendered
 
 renderPhantomArg :: Exp -> T.Text -> T.Text
 renderPhantomArg e rendered0 =
@@ -1340,13 +1373,24 @@ underlineMarkerName e =
     ESymbol TUnder "_" -> Just "underline"
     _                  -> Nothing
 
+-- StarMath braces require a label operand, even for an unannotated TeX brace.
+-- Group the complete term so neither operand absorbs adjacent expressions.
+renderBrace :: DisplayType -> AlignContext -> Exp -> T.Text -> Exp
+            -> Maybe T.Text
+renderBrace dt ctx base brace label = do
+  base' <- renderExpIn dt ctx base
+  label' <- if isEmptyScriptArg label
+               then pure "{}"
+               else renderBraceLabel dt ctx label
+  pure $ "{" <> renderScriptBase base base' <> " " <> brace <> " " <> label' <> "}"
+
 renderBraceLabel :: DisplayType -> AlignContext -> Exp -> Maybe T.Text
 renderBraceLabel dt ctx e = do
   rendered0 <- renderExpIn dt ctx e
   let rendered = T.strip rendered0
   pure $ if isQuotedText rendered || isAtomic e
             then rendered
-            else "{" <> rendered <> "}"
+            else groupArg dt e rendered
 
 arrowScriptOpName :: Exp -> Maybe T.Text
 arrowScriptOpName e =

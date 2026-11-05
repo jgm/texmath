@@ -1,0 +1,4 @@
+<<< tex
+\sqrt{\frac{a}{b}}+\sqrt{\tfrac{a}{b}}+\sqrt{\dfrac{a}{b}}+\sqrt{\binom{a}{b}}+x^{\frac{a}{b}}+\underbrace{x}_{\frac{a}{b}}
+>>> starmath-inline
+sqrt {size*0.7 {a over b}} + sqrt {size*0.7 {a over b}} + sqrt {a over b} + sqrt {left ( binom{a}{b} right )} + x^{size*0.7 {a over b}} + {x underbrace {size*0.7 {a over b}}}

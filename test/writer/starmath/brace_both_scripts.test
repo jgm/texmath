@@ -1,0 +1,4 @@
+<<< tex
+\underbrace{x}_{a}^2+\overbrace{y}_{b}^{c}
+>>> starmath
+{x underbrace a} csup {2} + {y overbrace c} csub {b}

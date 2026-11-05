@@ -1,0 +1,4 @@
+<<< tex
+\frac{a}{-}+\frac{a}{+}+\frac{-}{a}+\frac{a}{\pm}+\frac{a}{-b}+\frac{a}{b-c}
+>>> starmath
+{a over {{}-{}}} + {a over {{}+{}}} + {{{}-{}} over a} + {a over {{} plusminus {}}} + {a over {- b}} + {a over {b - c}}

@@ -68,4 +68,4 @@
     ]
 ]
 >>> starmath
-left lbrace matrix { alignl func div_x u func div^x u func div_x^y u func div_x^y u # alignl "operatorname" ## alignl {func "⋆-lim'sup"} csub {{x toward 0}} u {func "⋆-lim'sup"} csup {w} u {func "⋆-lim'sup"} csub {{x toward 0}} csup {w} u {func "⋆-lim'sup"} csub {{x toward 0}} csup {w} u # alignl "operatorname*" ## alignl func "⋆-lim'sup"_{{x toward 0}} u func "⋆-lim'sup"^w u func "⋆-lim'sup"_{{x toward 0}}^w u func "⋆-lim'sup"_{{x toward 0}}^w u # alignl "operatorname*:nolimits" ## alignl func curl_x v {func argmax} csub {K} u # alignl "DeclareMathOperator" } right none
+left lbrace matrix { alignl func div_x u func div^x u func div_x^y u func div_x^y u # alignl "operatorname" ## alignl {func "⋆-lim'sup"} csub {x toward 0} u {func "⋆-lim'sup"} csup {w} u {func "⋆-lim'sup"} csub {x toward 0} csup {w} u {func "⋆-lim'sup"} csub {x toward 0} csup {w} u # alignl "operatorname*" ## alignl func "⋆-lim'sup"_{x toward 0} u func "⋆-lim'sup"^w u func "⋆-lim'sup"_{x toward 0}^w u func "⋆-lim'sup"_{x toward 0}^w u # alignl "operatorname*:nolimits" ## alignl func curl_x v {func argmax} csub {K} u # alignl "DeclareMathOperator" } right none

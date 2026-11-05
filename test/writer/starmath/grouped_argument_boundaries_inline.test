@@ -1,0 +1,4 @@
+<<< tex
+\sqrt{x}y+\sqrt{x+y}z+x^{a+b}c+\sqrt{\underbrace{x}_{a}^2}+\hat{\overbrace{x}_{a}}+y^{\overbrace{x}_{a}}
+>>> starmath-inline
+sqrt {x}y + sqrt {x + y}z + x^{a + b} c + sqrt {{x underbrace a} csup {2}} + hat {{x overbrace {}} csub {a}} + y^{{x overbrace {}} csub {a}}
