@@ -1,0 +1,4 @@
+<<< tex
+1+\underbrace{x}_{a}+\underbrace{y}_{b}=\overbrace{x}^{c}+\overbrace{y}^{d}.
+>>> starmath
+1 + {x underbrace a} + {y underbrace b} = {x overbrace c} + {y overbrace d}.

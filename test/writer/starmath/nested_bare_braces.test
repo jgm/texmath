@@ -1,0 +1,4 @@
+<<< tex
+\overbrace{\overbrace{x}}+\underbrace{\underbrace{y}}+\overbrace{\underbrace{z}_{a}}^{b}
+>>> starmath
+{{x overbrace {}} overbrace {}} + {{y underbrace {}} underbrace {}} + {{z underbrace a} overbrace b}

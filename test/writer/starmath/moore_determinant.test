@@ -51,4 +51,4 @@
     ]
 ]
 >>> starmath
-M = left [ matrix { %ialpha_1 # %ialpha_1^q # dotsaxis # %ialpha_1^{q^{{n - 1}}} ## %ialpha_2 # %ialpha_2^q # dotsaxis # %ialpha_2^{q^{{n - 1}}} ## dotsvert # dotsvert # {} dotsdown {} # dotsvert ## %ialpha_m # %ialpha_m^q # dotsaxis # %ialpha_m^{q^{{n - 1}}} } right ]
+M = left [ matrix { %ialpha_1 # %ialpha_1^q # dotsaxis # %ialpha_1^{q^{n - 1}} ## %ialpha_2 # %ialpha_2^q # dotsaxis # %ialpha_2^{q^{n - 1}} ## dotsvert # dotsvert # {} dotsdown {} # dotsvert ## %ialpha_m # %ialpha_m^q # dotsaxis # %ialpha_m^{q^{n - 1}} } right ]

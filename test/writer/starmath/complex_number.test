@@ -24,4 +24,4 @@
     (EText TextNormal "complex number")
 ]
 >>> starmath
-c = {a underbrace "real" + {b nitalic i} underbrace "imaginary"} overbrace "complex number"
+c = {{{a underbrace "real"} + {{b nitalic i} underbrace "imaginary"}} overbrace "complex number"}

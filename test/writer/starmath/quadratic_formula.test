@@ -19,4 +19,4 @@
     (EGrouped [ ENumber "2" , EIdentifier "a" ])
 ]
 >>> starmath
-x = {{- b plusminus sqrt {{b^2 - 4ac}}} over {2a}}
+x = {{- b plusminus sqrt {b^2 - 4ac}} over {2a}}

@@ -1,5 +1,22 @@
 texmath (unreleased)
 
+  * StarMath writer: avoid duplicate grouping braces in script arguments,
+    roots, accents, and brace labels. Reuse complete groups while preserving
+    grouping around inline fraction commands and compound expressions.
+
+  * StarMath writer: separate upright letters from following identifiers
+    so `\mathrm d n` keeps only the differential upright, without extra braces.
+
+  * StarMath writer: supply the missing operand for trailing plus/minus
+    signs demoted to ordinary symbols by TeX, as in `r_{j,+}` and `r_{j,-}`.
+    Use compact empty operands on both sides of plus/minus signs, and
+    handle standalone operators in fraction numerators and denominators.
+
+  * StarMath writer: group annotated underbraces and overbraces so adjacent
+    terms do not become part of an earlier brace in LibreOffice.
+    Supply empty labels for bare braces and preserve centered scripts on
+    the opposite side of a brace, including `\underbrace{x}_{a}^2`.
+
   * TeX reader: consume a single token for unbraced script arguments.
     For example, `x^12` and `x_12` now mean `x^{1}2` and `x_{1}2`,
     while braced multi-digit and decimal arguments remain intact.

@@ -1,0 +1,4 @@
+<<< tex
+x^{a+b}+x_{i,j}+\sqrt{x+y}+\sqrt[1+k]{x+y}+\hat{x+y}+\underbrace{x}_{a+b}
+>>> starmath
+x^{a + b} + x_{i, j} + sqrt {x + y} + nroot {1 + k} {x + y} + hat {x + y} + {x underbrace {a + b}}
