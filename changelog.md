@@ -1,3 +1,7 @@
+texmath (0.13.3.5)
+
+  * Fix packaging error in 0.13.3.4 (uncommitted file in tests).
+
 texmath (0.13.3.4)
 
   * StarMath writer: fix braces, operator operands, and upright spacing (#304,
