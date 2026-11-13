@@ -34,7 +34,6 @@ import qualified Data.Text as T
 import Data.List.Split  (splitWhen)
 import qualified Data.List as List
 import qualified Data.Set as Set
-import Debug.Trace
 
 -- | Transforms an expression tree to an OMML XML Tree
 writeOMML :: DisplayType -> [Exp] -> Element
