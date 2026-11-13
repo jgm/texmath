@@ -1,4 +1,4 @@
 <<< tex
 \mathbf{A}
 >>> typst
-upright(bold(A))
+bold(upright(A))

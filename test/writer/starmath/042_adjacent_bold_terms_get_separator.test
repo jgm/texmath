@@ -1,4 +1,4 @@
 <<< tex
 \mathcal{L}(\mathbf{n},\boldsymbol\lambda,\mathbf{s}) = G(\mathbf{n}) + \boldsymbol\lambda^T(\mathbf{A}\mathbf{n}-\mathbf{b}) - \mathbf{s}^T\mathbf{n}.
 >>> starmath
-nitalic ℒ(bold nitalic n, bold {%ilambda}, bold nitalic s) = G(bold nitalic n) + {bold {%ilambda}}^T(bold nitalic A bold nitalic n - bold nitalic b) - {bold nitalic s}^T bold nitalic n.
+nitalic ℒ(bold nitalic {nitalic n}, bold {%ilambda}, bold nitalic {nitalic s}) = G(bold nitalic {nitalic n}) + {bold {%ilambda}}^T(bold nitalic {nitalic A} bold nitalic {nitalic n} - bold nitalic {nitalic b}) - {bold nitalic {nitalic s}}^T bold nitalic {nitalic n}.

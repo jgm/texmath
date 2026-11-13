@@ -32,7 +32,9 @@ import Data.Char (isSymbol, isPunctuation)
 import Data.Either (lefts, isLeft, rights)
 import qualified Data.Text as T
 import Data.List.Split  (splitWhen)
-import Data.List (intercalate)
+import qualified Data.List as List
+import qualified Data.Set as Set
+import Debug.Trace
 
 -- | Transforms an expression tree to an OMML XML Tree
 writeOMML :: DisplayType -> [Exp] -> Element
@@ -55,12 +57,12 @@ mnode s = node (QName s Nothing (Just "m"))
 mnodeA :: Node t => String -> String -> t -> Element
 mnodeA s v = add_attr (Attr (QName "val" Nothing (Just "m")) v) . mnode s
 
-str :: [Element] -> T.Text -> Element
+str :: [TextType] -> T.Text -> Element
 str []    s = mnode "r" [ mnode "t" $ T.unpack s ]
-str props s = mnode "r" [ mnode "rPr" props
+str props s = mnode "r" [ mnode "rPr" (setProps props)
                         , mnode "t" $ T.unpack s ]
 
-showFraction :: [Element] -> FractionType -> Exp -> Exp -> Element
+showFraction :: [TextType] -> FractionType -> Exp -> Exp -> Element
 showFraction props ft x y =
   case ft of
        NormalFrac -> mnode "f" [ mnode "fPr" $
@@ -84,10 +86,10 @@ maximum' :: [Int] -> Int
 maximum' [] = 0
 maximum' xs = maximum xs
 
-makeArray :: [Element] -> [Alignment] -> [ArrayLine] -> Element
+makeArray :: [TextType] -> [Alignment] -> [ArrayLine] -> Element
 makeArray props as rs
   | isRLSequence as = mnode "eqArr" $ map toE rs
-  where toE r = mnode "e" (intercalate ampersand
+  where toE r = mnode "e" (List.intercalate ampersand
                             (map (concatMap (showExp props)) r))
         ampersand = [mnode "r" [ mnode "t" ("&" :: String) ]]
 makeArray props as rs = mnode "m" $ mProps : map toMr rs
@@ -106,32 +108,44 @@ makeArray props as rs = mnode "m" $ mProps : map toMr rs
         toAlign AlignCenter  = "center"
 
 makeText :: TextType -> T.Text -> Element
-makeText TextNormal s = str [mnode "nor" ()] s
-makeText a s = str (setProps a) s
+makeText TextNormal s =
+  mnode "r" [ mnode "rPr" [mnode "nor" ()]
+            , mnode "t" $ T.unpack s ]
+makeText a s = str [a] s
 
-defaultTo :: TextType -> [Element] -> [Element]
-defaultTo tt [] = setProps tt
-defaultTo _  ps = ps
+defaultTo :: TextType -> [TextType] -> [TextType]
+defaultTo tt []  = [tt]
+defaultTo _  tts = tts
 
-setProps :: TextType -> [Element]
-setProps tt =
-  case tt of
-       TextNormal       -> [sty "p"]
-       TextBold         -> [sty "b"]
-       TextItalic       -> [sty "i"]
-       TextMonospace    -> [scr "monospace", sty "p"]
-       TextSansSerif    -> [scr "sans-serif", sty "p"]
-       TextDoubleStruck -> [scr "double-struck", sty "p"]
-       TextScript       -> [scr "script", sty "p"]
-       TextFraktur      -> [scr "fraktur", sty "p"]
-       TextBoldItalic    -> [sty "bi"]
-       TextSansSerifBold -> [scr "sans-serif", sty "b"]
-       TextBoldScript    -> [scr "script", sty "b"]
-       TextBoldFraktur   -> [scr "fraktur", sty "b"]
-       TextSansSerifItalic -> [scr "sans-serif", sty "i"]
-       TextSansSerifBoldItalic -> [scr "sans-serif", sty "bi"]
-   where sty x = mnodeA "sty" x ()
-         scr x = mnodeA "scr" x ()
+setProps :: [TextType] -> [Element]
+setProps tts =
+  let (stymarks, scriptmark) = List.foldl' go (mempty,"") tts
+  in [scr scriptmark | not (null scriptmark)] ++
+     [sty stymarks | not (null stymarks)]
+ where
+   go (stymarks, script) tt =
+    case tt of
+       TextNormal       -> (Set.singleton 'p', script)
+       TextBold         -> (Set.insert 'b' stymarks, script)
+       TextItalic       -> (Set.insert 'i' stymarks, script)
+       TextMonospace    -> (Set.singleton 'p', "monospace")
+       TextSansSerif    -> (Set.singleton 'p', "sans-serif")
+       TextDoubleStruck -> (Set.singleton 'p', "double-struck")
+       TextScript       -> (Set.singleton 'p', "script")
+       TextFraktur      -> (Set.singleton 'p', "fraktur")
+       TextBoldItalic    -> (Set.insert 'b' . Set.insert 'i' $ stymarks, script)
+       TextSansSerifBold -> (Set.insert 'b' stymarks, "sans-serif")
+       TextBoldScript    -> (Set.insert 'b' stymarks, "script")
+       TextBoldFraktur   -> (Set.insert 'b' stymarks, "fraktur")
+       TextSansSerifItalic -> (Set.insert 'i' stymarks, "sans-serif")
+       TextSansSerifBoldItalic -> (Set.insert 'b' . Set.insert 'i' $ stymarks, "sans-serif")
+   sty x = mnodeA "sty" (toStyList x) ()
+   scr x = mnodeA "scr" x ()
+   toStyList x = Set.toList $
+                 if 'b' `Set.member` x || 'i' `Set.member` x
+                    then Set.filter (/='p') x
+                          -- possible values for m:sty are b, i, bi, and p.
+                    else x
 
 -- OMML cannot represent a numeric scale factor for delimiters, so
 -- render a pair of scaled delimiters as an m:d, which grows the
@@ -218,7 +232,7 @@ handleDownup' dt ((Right exp') : xs) =
           emptyGroup = EGrouped []
 handleDownup' _ xs = xs
 
-showExp :: [Element] -> Exp -> [Element]
+showExp :: [TextType] -> Exp -> [Element]
 showExp props e =
  case e of
    ENumber x        -> [str props x]
@@ -247,13 +261,12 @@ showExp props e =
                        -- to avoid the dashed box we get otherwise; see #118
    EIdentifier x
      | isUppercaseGreek x
-     , null props -> [str [mnodeA "sty" "p" ()] x]
+     , null props -> [str [TextNormal] x]
      | not (isUppercaseGreek x)
-     , [Element{ elName = QName "sty" _ _
-              , elAttribs = [Attr (QName "val" Nothing (Just "m")) "b"] }] <- props
-      -> [str [mnodeA "sty" "bi" ()] x] -- #280
+     , TextBold `elem` props
+      -> [str (TextBold : TextItalic : props) x] -- #280
      | otherwise  -> [str props x]
-   EMathOperator x  -> [str (mnodeA "sty" "p" () : props) x]
+   EMathOperator x  -> [str (TextNormal : props) x]
    ESymbol ty xs
     | Just (c, xs') <- T.uncons xs
     , T.null xs'
@@ -323,7 +336,7 @@ showExp props e =
    EScaled _ x      -> showExp props x -- no support for scaler?
    EArray as ls     -> [makeArray props as ls]
    EText a s        -> [makeText a s]
-   EStyled a es     -> concatMap (showExp (setProps a)) es
+   EStyled a es     -> concatMap (showExp (a : props)) es
 
 isBarChar :: Char -> Bool
 isBarChar c = c == '\x203E' || c == '\x00AF' ||
@@ -348,7 +361,7 @@ isNary (ESymbol Op s) = case s of
 isNary _ = False
 
 -- Kept as String for Text.XML.Light
-makeNary :: [Element] -> String -> T.Text -> Exp -> Exp -> Exp -> Element
+makeNary :: [TextType] -> String -> T.Text -> Exp -> Exp -> Exp -> Element
 makeNary props t s y z w =
   mnode "nary" [ mnode "naryPr"
                  [ mnodeA "chr" (T.unpack s) ()
@@ -362,7 +375,7 @@ makeNary props t s y z w =
                , mnode "sup" $ showExp props z
                , mnode "e" $ showExp props w ]
 
-makeCancel :: [Element] -> StrokeType -> Exp -> Element
+makeCancel :: [TextType] -> StrokeType -> Exp -> Element
 makeCancel props st x = do
   let sn = case st of
              ForwardSlash -> [ mnodeA "strikeBLTR" "1" () ]

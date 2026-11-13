@@ -66,9 +66,9 @@
       ]
     , [ [ EText TextMonospace "mathbf" ]
       , [ EStyled
-            TextNormal
+            TextBold
             [ EStyled
-                TextBold
+                TextNormal
                 [ EIdentifier "A"
                 , EIdentifier "B"
                 , EIdentifier "C"

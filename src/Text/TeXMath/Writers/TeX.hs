@@ -300,7 +300,7 @@ writeExp (EText ttype s) = do
   case map (fixSpace . escapeLaTeX) (T.unpack s) of
        []   -> return ()
        xs   -> tell $ txtcmd (Grouped xs)
-writeExp (EStyled TextNormal [EStyled TextBold es]) = do
+writeExp (EStyled TextBold [EStyled TextNormal es]) = do
   tell [ControlSeq "\\mathbf"]
   tellGroup $ mapM_ (writeExp . fromUnicodeExp TextBold) es
 writeExp (EStyled ttype es) = do
