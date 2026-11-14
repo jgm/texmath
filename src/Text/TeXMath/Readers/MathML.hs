@@ -426,7 +426,7 @@ reorderScripts e subs c = do
     case baseExpr of
       [s@(Stretchy Open _ _)] -> [s, E $ c empty subExpr]  -- Open
       [s@(Stretchy Close _ _)] -> [Trailing c subExpr, s] -- Close
-      [s@(Stretchy _ _ _)] -> [s, E $ ESub empty subExpr] -- Middle
+      [s@(Stretchy _ _ _)] -> [s, E $ c empty subExpr] -- Middle
       _ -> [E $ c (mkExp baseExpr) subExpr] -- No stretch
 
 sup :: Element -> MML [IR Exp]
