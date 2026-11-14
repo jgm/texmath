@@ -1,0 +1,18 @@
+<<< tex
+\newcommand{\a}{\a\a}
+\newcommand{\b}{b}
+\newcommand{\c}{c}
+\newcommand{\d}{d}
+\newcommand{\e}{e}
+\newcommand{\f}{f}
+\newcommand{\g}{g}
+\newcommand{\h}{h}
+\newcommand{\i}{i}
+\newcommand{\j}{j}
+\newcommand{\k}{k}
+\a
+>>> native
+\newcommand{\b}{b}
+^
+unexpected control sequence \a
+expecting "%", "\\label", "\\tag", "\\nonumber", whitespace or "\\allowbreak"

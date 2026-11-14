@@ -81,13 +81,17 @@ applyMacros [] s = s
 applyMacros ms s = maybe s id $ go ((2 * length ms) + 1) s
   where
     -- The limit caps the number of rewriting passes, in case of a
-    -- loop in the macros.
+    -- loop in the macros.  We also cap the size of the expansion,
+    -- since a macro like \newcommand{\a}{\a\a} doubles the text on
+    -- each pass.
+    maxLength = 100 * T.length s + 10000
     go :: Int -> T.Text -> Maybe T.Text
     go 0 _ = Nothing
     go limit x =
       case applyMacrosOnce ms x of
            Nothing -> Nothing
            Just (y, expanded)
+             | T.length y > maxLength -> Nothing
              | expanded  -> go (limit - 1) y
              | otherwise -> Just y  -- no macro fired: y is a fixed point
 
