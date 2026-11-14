@@ -214,7 +214,7 @@ expr = do
                  <|> operatorname
                  <|> ((,False) <$> expr1)
   limits <- limitsIndicator
-  subSup limits convertible a <|> superOrSubscripted limits convertible a <|> return a
+  scripted limits convertible a <|> return a
 
 hyperref :: TP Exp
 hyperref = do
@@ -292,8 +292,7 @@ expToOperatorName e = case e of
           toStr _   _                   = mzero
 
 bareSubSup :: TP Exp
-bareSubSup = subSup Nothing False (EIdentifier "")
-  <|> superOrSubscripted Nothing False (EIdentifier "")
+bareSubSup = scripted Nothing False (EIdentifier "")
 
 limitsIndicator :: TP (Maybe Bool)
 limitsIndicator =
@@ -639,36 +638,35 @@ scriptArg :: TP Exp
 scriptArg = (fst <$> operatorname)
         <|> expr1With (lexeme $ ENumber . T.singleton <$> digit)
 
-subSup :: Maybe Bool -> Bool -> Exp -> TP Exp
-subSup limits convertible a = try $ do
+-- Parse a subscript and/or superscript (in either order) attached to @a@.
+-- Each script is parsed only once: parsing it, failing to find the
+-- other script, and then reparsing it would take time exponential in
+-- the nesting depth.
+scripted :: Maybe Bool -> Bool -> Exp -> TP Exp
+scripted limits convertible a = try $ do
   let sub1 = symbol "_" >> scriptArg  -- see #273
   let sup1 = (symbol "^" >> scriptArg) <|> primes
-  (b,c) <- try (do {m <- sub1; n <- sup1; return (m,n)})
-       <|> (do {n <- sup1; m <- sub1; return (m,n)})
-  return $ case limits of
-            Just True  -> EUnderover False a b c
-            Nothing | convertible || isConvertible a -> EUnderover True a b c
-                    | isUnderover a -> EUnderover False a b c
-            _          -> ESubsup a b c
-
-superOrSubscripted :: Maybe Bool -> Bool -> Exp -> TP Exp
-superOrSubscripted limits convertible a = try $ do
-  (c,b) <- ((,) <$> oneOf "^_" <*> (ignorable >> scriptArg))
-          <|> (('^',) <$> primes)
-  case c of
-       '^' -> return $ case limits of
-                        Just True  -> EOver False a b
-                        Nothing
-                          | convertible || isConvertible a -> EOver True a b
-                          | isUnderover a -> EOver False a b
-                        _          -> ESuper a b
-       '_' -> return $ case limits of
-                        Just True  -> EUnder False a b
-                        Nothing
-                          | convertible || isConvertible a -> EUnder True a b
-                          | isUnderover a -> EUnder False a b
-                        _          -> ESub a b
-       _   -> mzero
+  scripts <- (do m <- sub1
+                 n <- optionMaybe sup1
+                 return (Just m, n))
+         <|> (do n <- sup1
+                 m <- optionMaybe sub1
+                 return (m, Just n))
+  let useLimits = limits == Just True ||
+                  (limits == Nothing &&
+                    (convertible || isConvertible a || isUnderover a))
+  let movable = limits == Nothing && (convertible || isConvertible a)
+  return $ case scripts of
+    (Just b, Just c)
+      | useLimits -> EUnderover movable a b c
+      | otherwise -> ESubsup a b c
+    (Just b, Nothing)
+      | useLimits -> EUnder movable a b
+      | otherwise -> ESub a b
+    (Nothing, Just c)
+      | useLimits -> EOver movable a c
+      | otherwise -> ESuper a c
+    (Nothing, Nothing) -> a
 
 unicode :: TP Exp
 unicode = lexeme $
