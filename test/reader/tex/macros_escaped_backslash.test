@@ -1,0 +1,9 @@
+<<< tex
+\newcommand{\nl}{\\}
+\newcommand{\pct}{50\%}
+x = \pct
+>>> native
+[ EIdentifier "x"
+, ESymbol Rel "="
+, EGrouped [ ENumber "50" , ESymbol Ord "%" ]
+]

@@ -293,7 +293,7 @@ inBrackets :: (Monad m, Stream s m Char)
 inBrackets = try $ do
   char '['
   pSkipSpaceComments
-  res <- manyTill (skipComment >> (escaped "[]" <|> count 1 anyChar))
+  res <- manyTill (skipComment >> (escaped "[]\\%" <|> count 1 anyChar))
           (try $ pSkipSpaceComments >> char ']')
   return $ concat res
 
@@ -302,7 +302,10 @@ inbraces :: (Monad m, Stream s m Char)
 inbraces = try $ do
   char '{'
   res <- manyTill (skipComment >>
-            (inbraces' <|> escaped "{}" <|> count 1 anyChar))
+            -- \\ and \% must be consumed as pairs, so that in e.g.
+            -- {\\} the } isn't taken as escaped, and in {\%} the %
+            -- isn't taken as a comment
+            (inbraces' <|> escaped "{}\\%" <|> count 1 anyChar))
     (try $ skipComment >> char '}')
   return $ concat res
 
