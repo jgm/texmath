@@ -1444,9 +1444,9 @@ siNum = asGroup . mconcat <$> many parseNumPart
 
 parseNumPart :: TP [Exp]
 parseNumPart =
+  parsePlusMinus <|>  -- must come before parseDecimalNum, which takes +
   parseDecimalNum <|>
   parseComma <|>
-  parsePlusMinus <|>
   parseI <|>
   parseExp <|>
   parseX <|>
@@ -1478,7 +1478,7 @@ parseNumPart =
   parseI = [EIdentifier "i"] <$ char 'i'
   parseX = [ESymbol Rel "\xa0\xd7\xa0"] <$ char 'x'
   parseExp = do
-    n <- asGroup <$> (char 'e' *> parseDecimalNum)
+    n <- asGroup <$> (oneOf "eE" *> parseDecimalNum)
     return $ [ESymbol Rel "\xa0\xd7\xa0", ESuper (ENumber "10") n ]
   parseSpace = mempty <$ skipMany1 (char ' ')
 

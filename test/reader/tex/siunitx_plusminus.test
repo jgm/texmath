@@ -1,0 +1,12 @@
+<<< tex
+\num{1.5+-0.1} \num{1E3} \num{+5}
+>>> native
+[ EGrouped
+    [ ENumber "1.5" , EText TextNormal "\160\177\160" , ENumber "0.1" ]
+, EGrouped
+    [ ENumber "1"
+    , ESymbol Rel "\160\215\160"
+    , ESuper (ENumber "10") (ENumber "3")
+    ]
+, ENumber "5"
+]
