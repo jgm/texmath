@@ -10,4 +10,4 @@
     (EPhantom (EIdentifier "over"))
 ]
 >>> eqn
-BASE to {over script} = {{BASE to {over script}} to {hphantom over}} to {hphantom over}
+BASE to {"over script"} = {{BASE to {"over script"}} to {hphantom "over"}} to {hphantom "over"}

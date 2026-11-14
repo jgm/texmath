@@ -20,4 +20,4 @@
     (EIdentifier "first overscript")
 ]
 >>> eqn
-{BASE from {first under script} to {second overscript}} from {second one} to {first overscript} = {{BASE from {first under script}} to {second overscript}} from {second one} to {first overscript}
+{BASE from {"first under script"} to {"second overscript"}} from {"second one"} to {"first overscript"} = {{BASE from {"first under script"}} to {"second overscript"}} from {"second one"} to {"first overscript"}

@@ -11,4 +11,4 @@
     (EIdentifier "long under script")
 ]
 >>> eqn
-B from {long under script} = {hphantom {roman "x"} B hphantom {roman "x"}} from {long under script}
+B from {"long under script"} = {hphantom {roman "x"} B hphantom {roman "x"}} from {"long under script"}

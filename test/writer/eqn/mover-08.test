@@ -9,4 +9,4 @@
     (EIdentifier "over script")
 ]
 >>> eqn
-{_ baseline _} to {over script} = {{_ baseline _} from {hphantom fail}} to {over script}
+{"_ baseline _"} to {"over script"} = {{"_ baseline _"} from {hphantom fail}} to {"over script"}

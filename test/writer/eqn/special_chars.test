@@ -1,0 +1,12 @@
+<<< native
+[ EIdentifier "over"
+, ESymbol Ord "\""
+, ESymbol Ord "\\"
+, ESymbol Ord "~"
+, ESymbol Ord "^"
+, EIdentifier "alpha"
+, EIdentifier "x"
+, ESymbol Rel "\"="
+]
+>>> eqn
+"over" "\"" "\[rs]" "~" "^" "alpha" x roman{" \"= "}

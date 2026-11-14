@@ -8,4 +8,4 @@
 , EIdentifier "_ baseline _"
 ]
 >>> eqn
-{_ baseline _} from {hphantom fail} to {hphantom fail} = _ baseline _
+{"_ baseline _"} from {hphantom fail} to {hphantom fail} = "_ baseline _"

@@ -10,4 +10,4 @@
     (EPhantom (EIdentifier "fail"))
 ]
 >>> eqn
-BASE from {under script} = {{BASE from {under script}} from {hphantom fail}} from {hphantom fail}
+BASE from {"under script"} = {{BASE from {"under script"}} from {hphantom fail}} from {hphantom fail}

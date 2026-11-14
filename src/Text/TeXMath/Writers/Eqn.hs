@@ -58,10 +58,42 @@ asgroup t = "{" <> t <> "}"
 -- unescaped @"@ ends the string, and a backslash begins a troff
 -- escape sequence.
 quoteText :: Text -> Text
-quoteText t = "\"" <> T.concatMap escapeChar t <> "\""
+quoteText t = "\"" <> escapeInQuotes t <> "\""
+
+escapeInQuotes :: Text -> Text
+escapeInQuotes = T.concatMap escapeChar
   where escapeChar '"'  = "\\\""
         escapeChar '\\' = "\\[rs]"
         escapeChar c    = T.singleton c
+
+-- | Does this (ASCII) text need to be quoted to be read literally?
+-- That's the case for eqn keywords and predefined names (e.g. @over@,
+-- @alpha@), and for text containing characters that are special to
+-- eqn: @"@ and @\\@ (see 'quoteText'), @~@ and @^@ (spaces), braces,
+-- and whitespace (which eqn would otherwise ignore).
+needsQuoting :: Text -> Bool
+needsQuoting s = any (`elem` eqnWords) (T.words s) ||
+                 T.any (`elem` ("\"\\~^{} \t" :: String)) s
+
+eqnWords :: [Text]
+eqnWords =
+  [ -- keywords
+    "above", "accent", "back", "bar", "bold", "ccol", "col", "cpile"
+  , "define", "delim", "dot", "dotdot", "down", "dyad", "fat", "font"
+  , "from", "fwd", "gbfont", "gfont", "gifont", "grfont", "gsize", "hat"
+  , "ifdef", "include", "italic", "lcol", "left", "lineup", "lpile", "mark"
+  , "matrix", "ndefine", "nosplit", "over", "pile", "rcol", "right", "roman"
+  , "rpile", "sdefine", "set", "size", "smallover", "special", "split"
+  , "sqrt", "sub", "sup", "tdefine", "tilde", "to", "type", "uaccent"
+  , "under", "undef", "up", "utilde", "vcenter", "vec"
+    -- predefined names
+  , "approx", "cdot", "cdots", "del", "grad", "half", "inf", "int", "inter"
+  , "nothing", "partial", "prime", "prod", "sum", "times", "union"
+  , "alpha", "beta", "chi", "delta", "epsilon", "eta", "gamma", "iota"
+  , "kappa", "lambda", "mu", "nu", "omega", "omicron", "phi", "pi", "psi"
+  , "rho", "sigma", "tau", "theta", "upsilon", "xi", "zeta", "varphi"
+  , "DELTA", "GAMMA", "LAMBDA", "OMEGA", "PHI", "PI", "PSI", "SIGMA"
+  , "THETA", "UPSILON", "XI" ]
 
 writeExp :: Exp -> T.Text
 writeExp (ENumber s) = s
@@ -155,12 +187,16 @@ writeExp (ESymbol t s) =
                           (if t == Rel || t == Bin
                               then " "
                               else "") <>
-                          s' <>
+                          (if T.all isAscii s
+                              then escapeInQuotes s
+                              else s') <>
                           (if t == Rel || t == Bin || t == Op
                               then " "
                               else "") <>
                           "\"}"
-                     else s'
+                     else if T.all isAscii s && needsQuoting s
+                             then quoteText s
+                             else s'
 
 writeExp (ESpace d) =
   case d of

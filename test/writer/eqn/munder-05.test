@@ -5,4 +5,4 @@
     False (EIdentifier "_ baseline _") (EPhantom (EIdentifier "fail"))
 ]
 >>> eqn
-_ baseline _ = {_ baseline _} from {hphantom fail}
+"_ baseline _" = {"_ baseline _"} from {hphantom fail}

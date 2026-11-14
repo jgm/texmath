@@ -8,4 +8,4 @@
     (EPhantom (EIdentifier "fail"))
 ]
 >>> eqn
-- middle - = {{- middle -} from {hphantom fail}} from {hphantom fail}
+"- middle -" = {{"- middle -"} from {hphantom fail}} from {hphantom fail}

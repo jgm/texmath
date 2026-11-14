@@ -19,4 +19,4 @@
     (EPhantom (EIdentifier "fail"))
 ]
 >>> eqn
-BASE from {{first under script} over {second one}} = {BASE from {{first under script} over {second one}}} from {hphantom fail}
+BASE from {{"first under script"} over {"second one"}} = {BASE from {{"first under script"} over {"second one"}}} from {hphantom fail}

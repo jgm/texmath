@@ -14,4 +14,4 @@
     (EPhantom (EIdentifier "over"))
 ]
 >>> eqn
-BASE to {first over second} = {BASE to {first over second}} to {hphantom over}
+BASE to {first over second} = {BASE to {first over second}} to {hphantom "over"}

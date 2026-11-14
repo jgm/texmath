@@ -7,4 +7,4 @@
     (EPhantom (EIdentifier "under"))
 ]
 >>> eqn
-BASE from under = {BASE from under} from {hphantom under}
+BASE from "under" = {BASE from "under"} from {hphantom "under"}

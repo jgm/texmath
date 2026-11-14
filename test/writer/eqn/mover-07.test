@@ -13,4 +13,4 @@
     (EPhantom (EIdentifier "fail"))
 ]
 >>> eqn
-{mover baseline} to {mover over script} = {{mover baseline} to {mover over script}} to {hphantom fail}
+{"mover baseline"} to {"mover over script"} = {{"mover baseline"} to {"mover over script"}} to {hphantom fail}
