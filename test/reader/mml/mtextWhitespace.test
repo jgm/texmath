@@ -1,0 +1,7 @@
+<<< mml
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtext>  a   b
+    c&#xA0;&#xA0;d  </mtext>
+</math>
+>>> native
+[ EText TextNormal "a b c\160\160d" ]

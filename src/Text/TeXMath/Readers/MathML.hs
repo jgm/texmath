@@ -671,8 +671,10 @@ name (elName -> (QName n _ _)) = T.toLower $ T.pack n
 tunode :: String -> T.Text -> Element
 tunode s = unode s . T.unpack
 
+-- | Trim whitespace and collapse internal runs of whitespace to a
+-- single space, as MathML specifies for token element content.
 stripSpaces :: T.Text -> T.Text
-stripSpaces = T.dropAround isSpace
+stripSpaces = T.intercalate " " . filter (not . T.null) . T.split isSpace
 
 toAlignment :: T.Text -> Alignment
 toAlignment "left" = AlignLeft
@@ -709,6 +711,7 @@ isSpace :: Char -> Bool
 isSpace ' '  = True
 isSpace '\t' = True
 isSpace '\n' = True
+isSpace '\r' = True
 isSpace _    = False
 
 spacelikeElems, cSpacelikeElems :: [T.Text]
