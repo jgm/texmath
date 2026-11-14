@@ -1523,7 +1523,7 @@
       ]
     , [ [ EText TextNormal "Lorenz Equations" ]
       , [ EArray
-            [ AlignCenter , AlignCenter , AlignCenter ]
+            [ AlignRight , AlignCenter , AlignLeft ]
             [ [ [ EUnderover
                     False (EIdentifier "x") (EGrouped []) (ESymbol Accent "\729")
                 ]
@@ -1576,7 +1576,7 @@
             ""
             [ Right
                 (EArray
-                   [ AlignCenter , AlignCenter , AlignCenter ]
+                   [ AlignRight , AlignCenter , AlignLeft ]
                    [ [ [ EGrouped
                            [ ESymbol Ord "\8711"
                            , ESpace (0 % 1)

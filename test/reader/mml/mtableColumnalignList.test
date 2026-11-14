@@ -1,0 +1,23 @@
+<<< mml
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mtable columnalign="left right">
+    <mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd><mtd><mi>c</mi></mtd></mtr>
+  </mtable>
+  <mtable>
+    <mtr columnalign="right left">
+      <mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd>
+    </mtr>
+  </mtable>
+</math>
+>>> native
+[ EArray
+    [ AlignLeft , AlignRight , AlignRight ]
+    [ [ [ EIdentifier "a" ]
+      , [ EIdentifier "b" ]
+      , [ EIdentifier "c" ]
+      ]
+    ]
+, EArray
+    [ AlignRight , AlignLeft ]
+    [ [ [ EIdentifier "a" ] , [ EIdentifier "b" ] ] ]
+]

@@ -61,7 +61,7 @@
   </mtable> </math>
 >>> native
 [ EArray
-    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ AlignLeft , AlignRight , AlignRight ]
     [ [ [ EFraction
             NormalFrac
             (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , ENumber "1" ])

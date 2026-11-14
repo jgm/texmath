@@ -52,7 +52,7 @@ import Data.Monoid (First(..), getFirst)
 import Data.List (transpose)
 import Control.Applicative ((<|>))
 import qualified Data.Text as T
-import Control.Monad (filterM, mzero)
+import Control.Monad (filterM, mzero, zipWithM)
 import Text.Read (readMaybe)
 import Control.Monad.Reader (ReaderT, runReaderT, asks, local)
 import Data.Either (rights)
@@ -537,8 +537,9 @@ multiscripts e = do
 
 table :: Element -> MML Exp
 table e = do
-  defAlign <- maybe AlignCenter toAlignment <$> (findAttrQ "columnalign" e)
-  rs <- mapM (tableRow defAlign) (elChildren e)
+  defAligns <- maybe (repeat AlignCenter) toAlignments
+                 <$> (findAttrQ "columnalign" e)
+  rs <- mapM (tableRow defAligns) (elChildren e)
   let (onlyAligns, exprs) = (map .map) fst &&& (map . map) snd $ rs
   let rs' = map (pad (maximum (map length rs))) exprs
   let aligns = map findAlign (transpose onlyAligns)
@@ -548,12 +549,12 @@ table e = do
                     else foldl1 combine xs
     combine x y = if x == y then x else AlignCenter
 
-tableRow :: Alignment -> Element -> MML [(Alignment, [Exp])]
-tableRow a e = do
-  align <- maybe a toAlignment <$> (findAttrQ "columnalign" e)
+tableRow :: [Alignment] -> Element -> MML [(Alignment, [Exp])]
+tableRow as e = do
+  aligns <- maybe as toAlignments <$> (findAttrQ "columnalign" e)
   case name e of
-    "mtr" -> mapM (tableCell align) (elChildren e)
-    "mlabeledtr" -> mapM (tableCell align) (drop 1 $ elChildren e)
+    "mtr" -> zipWithM tableCell aligns (elChildren e)
+    "mlabeledtr" -> zipWithM tableCell aligns (drop 1 $ elChildren e)
     _ -> throwError $ "Invalid Element: Only expecting mtr elements " <> err e
 
 tableCell :: Alignment -> Element -> MML (Alignment, [Exp])
@@ -669,6 +670,15 @@ toAlignment "left" = AlignLeft
 toAlignment "center" = AlignCenter
 toAlignment "right" = AlignRight
 toAlignment _ = AlignCenter
+
+-- | Parse a whitespace-separated list of column alignments, as in
+-- the @columnalign@ attribute of @mtable@ and @mtr@. The last value
+-- is repeated for any further columns.
+toAlignments :: T.Text -> [Alignment]
+toAlignments t =
+  case map toAlignment (T.words t) of
+    [] -> repeat AlignCenter
+    xs -> xs ++ repeat (last xs)
 
 getPosition :: FormType -> TeXSymbolType
 getPosition (FPrefix) = Open

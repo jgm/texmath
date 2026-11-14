@@ -39,7 +39,7 @@
   </mtable> </math>
 >>> native
 [ EArray
-    [ AlignCenter , AlignCenter , AlignCenter ]
+    [ AlignLeft , AlignRight , AlignRight ]
     [ [ [ EIdentifier "a" ]
       , [ EIdentifier "b" ]
       , [ EIdentifier "c" ]

@@ -14488,7 +14488,7 @@
                 ""
                 [ Right
                     (EArray
-                       [ AlignCenter , AlignCenter , AlignCenter ]
+                       [ AlignRight , AlignLeft , AlignLeft ]
                        [ [ [ EIdentifier "a" ]
                          , [ EText TextNormal "if" ]
                          , [ EGrouped
@@ -15231,7 +15231,7 @@
       , []
       ]
     , [ [ EArray
-            [ AlignCenter , AlignCenter , AlignCenter , AlignCenter ]
+            [ AlignRight , AlignRight , AlignRight , AlignRight ]
             [ [ [ EIdentifier "t" ]
               , [ EIdentifier "x" ]
               , [ EIdentifier "y" ]
@@ -15448,7 +15448,7 @@
       , []
       ]
     , [ [ EArray
-            [ AlignCenter , AlignCenter , AlignCenter ]
+            [ AlignLeft , AlignCenter , AlignRight ]
             [ [ [ ENumber "1" ] , [ ENumber "2" ] , [ ENumber "3" ] ]
             , [ [ ENumber "4" ] , [ ENumber "5" ] , [ ENumber "6" ] ]
             ]
@@ -16420,7 +16420,7 @@
                     "]"
                     [ Right
                         (EArray
-                           [ AlignCenter , AlignCenter ]
+                           [ AlignRight , AlignRight ]
                            [ [ [ EGrouped
                                    [ EMathOperator "cos"
                                    , ESymbol Ord "\8289"
@@ -16458,7 +16458,7 @@
                     "]"
                     [ Right
                         (EArray
-                           [ AlignCenter , AlignCenter ]
+                           [ AlignRight , AlignRight ]
                            [ [ [ EGrouped
                                    [ EMathOperator "cos"
                                    , ESymbol Ord "\8289"
@@ -18137,7 +18137,7 @@
       , []
       ]
     , [ [ EArray
-            [ AlignCenter , AlignCenter , AlignCenter ]
+            [ AlignRight , AlignCenter , AlignLeft ]
             [ [ [ ESymbol Bin "+" ] , [ ENumber "0" ] , [ ENumber "1" ] ]
             , [ [ ENumber "000" ] , [ ENumber "000" ] , [ ENumber "111" ] ]
             , [ [ ENumber "1" ] , [ ENumber "1" ] , [ ENumber "0" ] ]
@@ -18341,12 +18341,12 @@
                 "|"
                 [ Right
                     (EArray
-                       [ AlignCenter
-                       , AlignCenter
-                       , AlignCenter
-                       , AlignCenter
-                       , AlignCenter
-                       , AlignCenter
+                       [ AlignLeft
+                       , AlignLeft
+                       , AlignLeft
+                       , AlignLeft
+                       , AlignLeft
+                       , AlignLeft
                        ]
                        [ [ [ ESub
                                (EIdentifier "a")
@@ -18659,7 +18659,7 @@
             [ EIdentifier "x"
             , ESymbol Ord "\8290"
             , EArray
-                [ AlignCenter , AlignCenter ]
+                [ AlignLeft , AlignLeft ]
                 [ [ [ EIdentifier "x" ] , [ EIdentifier "x" ] ]
                 , [ [ EIdentifier "x" ] , [ EIdentifier "x" ] ]
                 ]
@@ -19617,7 +19617,7 @@
       , []
       ]
     , [ [ EArray
-            [ AlignCenter , AlignCenter , AlignCenter ]
+            [ AlignLeft , AlignLeft , AlignLeft ]
             [ [ [ EGrouped [ EIdentifier "x" , ESymbol Rel "=" , ENumber "1" ]
                 ]
               , [ EText TextNormal "not" ]
@@ -20041,7 +20041,7 @@
       , []
       ]
     , [ [ EArray
-            [ AlignCenter , AlignCenter ]
+            [ AlignLeft , AlignLeft ]
             [ [ [ EText TextNormal "Vertex" ]
               , [ EGrouped
                     [ EIdentifier "V"
