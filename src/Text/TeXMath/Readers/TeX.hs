@@ -482,6 +482,15 @@ arrayLine =
   where ignorable' = ignorable >> optional (try (ctrlseq "hline" >> ignorable'))
   -- we don't represent the line, but it shouldn't crash parsing
 
+-- | Parse the rows of an array-like environment, separated by @sep@.
+-- A trailing row separator (e.g. @a \\\\ b \\\\@) doesn't create an
+-- extra empty row.
+arrayLines :: TP Char -> TP [ArrayLine]
+arrayLines sep = dropFinalEmpty <$> sepEndBy1 arrayLine sep
+  where dropFinalEmpty rs
+          | length rs > 1, last rs == [[]] = init rs
+          | otherwise = rs
+
 arrayAlignments :: TP [Alignment]
 arrayAlignments = mconcat <$>
   braces (many (
@@ -562,7 +571,7 @@ alignsFromRows defaultAlignment (r:_) = replicate (length r) defaultAlignment
 
 matrixWith :: Text -> Text -> TP Exp
 matrixWith opendelim closedelim = do
-  lines' <- sepEndBy arrayLine endLineAMS
+  lines' <- arrayLines endLineAMS
   let aligns = alignsFromRows AlignCenter lines'
   return $ if T.null opendelim && T.null closedelim
               then EArray aligns lines'
@@ -572,12 +581,12 @@ matrixWith opendelim closedelim = do
 stdarray :: TP Exp
 stdarray = do
   aligns <- arrayAlignments
-  lines' <- sepEndBy1 arrayLine endLine
+  lines' <- arrayLines endLine
   return $ EArray aligns lines'
 
 gather :: TP Exp
 gather = do
-  rows <- sepEndBy arrayLine endLineAMS
+  rows <- arrayLines endLineAMS
   return $ EArray (alignsFromRows AlignCenter rows) rows
 
 equation :: TP Exp
@@ -587,25 +596,25 @@ equation = do
 
 eqnarray :: TP Exp
 eqnarray = do
-  rows <- sepEndBy1 arrayLine endLine
+  rows <- arrayLines endLine
   let n = maximum $ map length rows
   return $ EArray (take n $ cycle [AlignRight, AlignCenter, AlignLeft]) rows
 
 align :: TP Exp
 align = do
-  rows <- sepEndBy1 arrayLine endLineAMS
+  rows <- arrayLines endLineAMS
   let n = maximum $ map length rows
   return $ EArray (take n $ cycle [AlignRight, AlignLeft]) rows
 
 flalign :: TP Exp
 flalign = do
-  rows <- sepEndBy1 arrayLine endLineAMS
+  rows <- arrayLines endLineAMS
   let n = maximum $ map length rows
   return $ EArray (take n $ cycle [AlignLeft, AlignRight]) rows
 
 cases :: TP Exp
 cases = do
-  rs <- sepEndBy1 arrayLine endLineAMS
+  rs <- arrayLines endLineAMS
   return $ EDelimited "{" "" [Right $ EArray (alignsFromRows AlignLeft rs) rs]
 
 variable :: TP Exp

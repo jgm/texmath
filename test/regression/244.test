@@ -8,6 +8,5 @@
     [ AlignLeft , AlignCenter , AlignRight ]
     [ [ [ ENumber "1" ] , [ ENumber "2" ] , [ ENumber "3" ] ]
     , [ [] , [ ENumber "5" ] , [ ENumber "6" ] ]
-    , [ [] ]
     ]
 ]

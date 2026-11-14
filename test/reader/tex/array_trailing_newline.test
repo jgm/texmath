@@ -1,0 +1,33 @@
+<<< tex
+\begin{pmatrix} a & b \\ c & d \\ \end{pmatrix}
+\begin{array}{cc} a & b \\ c & d \\ \hline \end{array}
+\begin{cases} a \\ b \\ \\ c \end{cases}
+>>> native
+[ EDelimited
+    "("
+    ")"
+    [ Right
+        (EArray
+           [ AlignCenter , AlignCenter ]
+           [ [ [ EIdentifier "a" ] , [ EIdentifier "b" ] ]
+           , [ [ EIdentifier "c" ] , [ EIdentifier "d" ] ]
+           ])
+    ]
+, EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EIdentifier "a" ] , [ EIdentifier "b" ] ]
+    , [ [ EIdentifier "c" ] , [ EIdentifier "d" ] ]
+    ]
+, EDelimited
+    "{"
+    ""
+    [ Right
+        (EArray
+           [ AlignLeft ]
+           [ [ [ EIdentifier "a" ] ]
+           , [ [ EIdentifier "b" ] ]
+           , [ [] ]
+           , [ [ EIdentifier "c" ] ]
+           ])
+    ]
+]
