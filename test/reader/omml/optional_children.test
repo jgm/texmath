@@ -1,0 +1,24 @@
+<<< omml
+<m:oMath xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math">
+  <m:rad><m:e><m:r><m:t>y</m:t></m:r></m:e></m:rad>
+  <m:nary>
+    <m:naryPr><m:chr m:val="&#x2211;"/></m:naryPr>
+    <m:e><m:r><m:t>z</m:t></m:r></m:e>
+  </m:nary>
+  <m:nary>
+    <m:naryPr><m:chr m:val="&#x2211;"/><m:limLoc m:val="undOvr"/></m:naryPr>
+    <m:sub><m:r><m:t>i</m:t></m:r></m:sub>
+    <m:e><m:r><m:t>w</m:t></m:r></m:e>
+  </m:nary>
+  <m:sSup>
+    <m:e><m:r><m:t>v</m:t></m:r></m:e>
+  </m:sSup>
+</m:oMath>
+>>> native
+[ ESqrt (EIdentifier "y")
+, ESymbol Op "\8721"
+, EIdentifier "z"
+, EUnder True (ESymbol Op "\8721") (EIdentifier "i")
+, EIdentifier "w"
+, ESuper (EIdentifier "v") (EGrouped [])
+]

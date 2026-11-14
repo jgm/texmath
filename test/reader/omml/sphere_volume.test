@@ -864,8 +864,7 @@
         , EIdentifier "e"
         ]
       , [ ESymbol Rel "="
-        , EUnderover
-            True (ESymbol Op "\8749") (EGrouped []) (EIdentifier "S")
+        , EOver True (ESymbol Op "\8749") (EIdentifier "S")
         , ESuper (EIdentifier "\961") (ENumber "2")
         , EMathOperator "sin"
         , EIdentifier "\952"

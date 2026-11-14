@@ -236,6 +236,12 @@ mergeExps (x:xs) = x : mergeExps xs
 elemsToExps :: [Element] -> [Exp]
 elemsToExps = mergeExps . concat . mapMaybe elemToExps
 
+-- | Contents of an optional child element (e.g. m:sub, m:deg), or
+-- the empty list if it is absent.
+optionalChildExps :: String -> Element -> [Exp]
+optionalChildExps name =
+  maybe [] (elemsToExps . elChildren) . filterChildName (hasElemName "m" name)
+
 elemToExps :: Element -> Maybe [Exp]
 elemToExps element = unGroup <$> elemToExps' element
 
@@ -408,41 +414,41 @@ elemToExps' element | isElem "m" "nary" element = do
       limLoc = naryPr >>=
                filterChildName (hasElemName "m" "limLoc") >>=
                findAttrBy (hasElemName "m" "val")
-  subExps <- filterChildName (hasElemName "m" "sub") element >>=
-         return . elemsToExps . elChildren
-  supExps <- filterChildName (hasElemName "m" "sup") element >>=
-         return . elemsToExps . elChildren
+  let subExps = optionalChildExps "sub" element
+      supExps = optionalChildExps "sup" element
   let baseExp = maybeToList $
         filterChildName (hasElemName "m" "e") element >>= elemToBase
-  case limLoc of
-    Just "undOvr" -> return $ EUnderover True
-                              (ESymbol Op opChr)
-                              (EGrouped subExps)
-                              (EGrouped supExps)
-                            : baseExp
-    _             -> return $ ESubsup
-                              (ESymbol Op opChr)
-                              (EGrouped subExps)
-                              (EGrouped supExps)
-                            : baseExp
+  let op = ESymbol Op opChr
+  let undOvr = limLoc == Just "undOvr"
+  return $ (case (subExps, supExps) of
+              ([], []) -> op
+              (_, [])
+                | undOvr    -> EUnder True op (EGrouped subExps)
+                | otherwise -> ESub op (EGrouped subExps)
+              ([], _)
+                | undOvr    -> EOver True op (EGrouped supExps)
+                | otherwise -> ESuper op (EGrouped supExps)
+              _
+                | undOvr    -> EUnderover True op (EGrouped subExps)
+                                                  (EGrouped supExps)
+                | otherwise -> ESubsup op (EGrouped subExps)
+                                          (EGrouped supExps))
+           : baseExp
 
 elemToExps' element | isElem "m" "phant" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   return [EPhantom baseExp]
 elemToExps' element | isElem "m" "rad" element = do
-  degExps <- filterChildName (hasElemName "m" "deg") element >>=
-              return . elemsToExps . elChildren
+  let degExps = optionalChildExps "deg" element
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   return $ case degExps of
     [] -> [ESqrt baseExp]
     ds -> [ERoot (EGrouped ds) baseExp]
 elemToExps' element | isElem "m" "sPre" element = do
-  subExps <- filterChildName (hasElemName "m" "sub") element >>=
-            return . elemsToExps . elChildren
-  supExps <- filterChildName (hasElemName "m" "sup") element >>=
-            return . elemsToExps . elChildren
+  let subExps = optionalChildExps "sub" element
+      supExps = optionalChildExps "sup" element
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
   return [ESubsup
@@ -453,22 +459,18 @@ elemToExps' element | isElem "m" "sPre" element = do
 elemToExps' element | isElem "m" "sSub" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
-  subExps <- filterChildName (hasElemName "m" "sub") element >>=
-            return . elemsToExps . elChildren
+  let subExps = optionalChildExps "sub" element
   return [ESub baseExp (EGrouped subExps)]
 elemToExps' element | isElem "m" "sSubSup" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
-  subExps <- filterChildName (hasElemName "m" "sub") element >>=
-             return . elemsToExps . elChildren
-  supExps <- filterChildName (hasElemName "m" "sup") element >>=
-             return . elemsToExps . elChildren
+  let subExps = optionalChildExps "sub" element
+      supExps = optionalChildExps "sup" element
   return [ESubsup baseExp (EGrouped subExps) (EGrouped supExps)]
 elemToExps' element | isElem "m" "sSup" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element >>=
              elemToBase
-  supExps <- filterChildName (hasElemName "m" "sup") element >>=
-            return . elemsToExps . elChildren
+  let supExps = optionalChildExps "sup" element
   return [ESuper baseExp (EGrouped supExps)]
 elemToExps' element | isElem "m" "r" element = do
   let mrPr = filterChildName (hasElemName "m" "rPr") element

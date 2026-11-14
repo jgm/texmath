@@ -144,10 +144,9 @@
 </m:oMathPara>
 
 >>> native
-[ EUnderover
+[ EOver
     True
     (ESymbol Op "\8721")
-    (EGrouped [])
     (EArray
        [ AlignCenter ]
        [ [ [ ENumber "0"
