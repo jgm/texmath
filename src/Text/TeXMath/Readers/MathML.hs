@@ -52,7 +52,7 @@ import Data.Monoid (First(..), getFirst)
 import Data.List (transpose)
 import Control.Applicative ((<|>))
 import qualified Data.Text as T
-import Control.Monad (filterM, mzero, zipWithM)
+import Control.Monad (filterM, zipWithM)
 import Text.Read (readMaybe)
 import Control.Monad.Reader (ReaderT, runReaderT, asks, local)
 import Data.Either (rights)
@@ -488,7 +488,7 @@ scriptExpr attrname parent child =
 semantics :: Element -> MML Exp
 semantics e =
   case elChildren e of
-    [] -> mzero
+    [] -> return empty
     (c:cs) -> do
       first <- safeExpr c
       if isEmpty first
