@@ -1,0 +1,10 @@
+<<< omml
+<m:oMath xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math">
+  <m:groupChr><m:e><m:r><m:t>a</m:t></m:r></m:e></m:groupChr>
+  <m:groupChr>
+    <m:groupChrPr><m:pos m:val="top"/></m:groupChrPr>
+    <m:e><m:r><m:t>b</m:t></m:r></m:e>
+  </m:groupChr>
+</m:oMath>
+>>> tex
+\underbrace{a}\overbrace{b}

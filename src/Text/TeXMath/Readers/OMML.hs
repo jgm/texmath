@@ -352,21 +352,30 @@ elemToExps' element | isElem "m" "groupChr" element = do
     Just "top" ->
       let chr' = case chr of
             Just (c:_) -> T.singleton c
-            _           -> "\65079"   -- default to overbrace
+            _           -> "\x23DE"   -- default to overbrace
       in
        return $
          case justif of
-           Just "top" -> [EUnder False (ESymbol TOver chr') baseExp]
+           Just "top" | not (isHorizBracket chr')
+                      -> [EUnder False (ESymbol TOver chr') baseExp]
            _ -> [EOver False baseExp (ESymbol TOver chr')]
     _ -> -- bot is default
       let chr' = case chr of
             Just (c:_) -> T.singleton c
-            _           -> "\65080"   -- default to underbrace
+            _           -> "\x23DF"   -- default to underbrace
       in
        return $
          case justif of
+           _ | isHorizBracket chr' -- e.g. underbrace
+             -> [EUnder False baseExp (ESymbol TUnder chr')]
            Just "top" -> [EUnder False baseExp (ESymbol TUnder chr')]
            _ -> [EOver False (ESymbol TUnder chr') baseExp]
+  where
+    -- horizontal brackets (e.g. underbrace) decorate the base,
+    -- unlike e.g. arrows, which carry text above or below them
+    isHorizBracket c = c `elem` [ "\x23DC", "\x23DD", "\x23DE", "\x23DF"
+                                , "\x23B4", "\x23B5"
+                                , "\xFE35", "\xFE36", "\xFE37", "\xFE38" ]
 elemToExps' element | isElem "m" "limLow" element = do
   baseExp <- filterChildName (hasElemName "m" "e") element
           >>= elemToBase
