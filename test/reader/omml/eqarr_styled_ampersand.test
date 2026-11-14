@@ -1,0 +1,19 @@
+<<< omml
+<m:oMath xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math">
+  <m:eqArr>
+    <m:e>
+      <m:r><m:t>x</m:t></m:r>
+      <m:r><m:t>&amp;=</m:t></m:r>
+      <m:r><m:t>1</m:t></m:r>
+    </m:e>
+    <m:e>
+      <m:r><m:rPr><m:sty m:val="b"/></m:rPr><m:t>y&amp;</m:t></m:r>
+      <m:r><m:t>=2</m:t></m:r>
+    </m:e>
+  </m:eqArr>
+</m:oMath>
+>>> tex
+\begin{aligned}
+x & = 1 \\
+\mathbf{y} & = 2
+\end{aligned}

@@ -480,7 +480,12 @@ elemToExps' element | isElem "m" "r" element = do
               Nothing ->
                 interpretText $ oMathRunElemsToText mrElems
               Just textSty ->
-                [EStyled textSty $ interpretText $ oMathRunElemsToText mrElems]
+                -- keep & outside of the styled group, so that it
+                -- can be recognized as an alignment point in m:eqArr
+                intercalate [ESymbol Ord "&"] $
+                  map (\xs -> [EStyled textSty xs | not (null xs)]) $
+                  breakOnAmpersand $ interpretText $
+                  oMathRunElemsToText mrElems
        else [EText (fromMaybe TextNormal txtSty) $ oMathRunElemsToText mrElems]
 elemToExps' _ = Nothing
 
