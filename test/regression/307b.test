@@ -1,0 +1,13 @@
+<<< tex
+\mathbf{H}
+\mathbf{\mathit{H}}
+\mathit{\mathbf{H}}
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi mathvariant="bold">𝐇</mi>
+    <mi mathvariant="bold">𝐇</mi>
+    <mi mathvariant="bold-italic">𝑯</mi>
+  </mrow>
+</math>

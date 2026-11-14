@@ -36,7 +36,7 @@ import Text.Printf
 -- | Transforms an expression tree to a MathML XML tree
 writeMathML :: DisplayType -> [Exp] -> Element
 writeMathML dt exprs =
-  add_attr dtattr $ math $ showExp Nothing $ EGrouped
+  add_attr dtattr $ math $ showExp [] $ EGrouped
   $ map (everywhereExp (handleDownup dt)) exprs
     where dtattr = Attr (unqual "display") dt'
           dt' =  case dt of
@@ -49,7 +49,7 @@ math = add_attr (Attr (unqual "xmlns") "http://www.w3.org/1998/Math/MathML") . u
 mrow :: [Element] -> Element
 mrow = unode "mrow"
 
-showFraction :: Maybe TextType -> FractionType -> Exp -> Exp -> Element
+showFraction :: [TextType] -> FractionType -> Exp -> Exp -> Element
 showFraction tt ft x y =
   case ft of
        NormalFrac   -> unode "mfrac" [x', y']
@@ -110,7 +110,7 @@ makeText a s = case (leadingSp, trailingSp) of
           Just (c, _) -> T.any (== c) " \t"
           _           -> False
 
-makeArray :: Maybe TextType -> [Alignment] -> [ArrayLine] -> Element
+makeArray :: [TextType] -> [Alignment] -> [ArrayLine] -> Element
 makeArray tt as ls = unode "mtable" $
   map (unode "mtr" .
     zipWith (\a -> setAlignment a .  unode "mtd". showExps tt) as') ls
@@ -155,7 +155,7 @@ accent = add_attr (Attr (unqual "accent") "true") .
 makeFence :: FormType -> Element -> Element
 makeFence (fromForm -> t) = withAttribute "stretchy" "false" . withAttribute "form" t
 
-showExp' :: Maybe TextType -> Exp -> Element
+showExp' :: [TextType] -> Exp -> Element
 showExp' tt e =
   case e of
     ESymbol Accent x -> accent x
@@ -167,7 +167,7 @@ showExp' tt e =
       in  withAttribute "accent" isaccent $ tunode "mo" x
     _                -> showExp tt e
 
-showExps :: Maybe TextType -> [Exp] -> [Element]
+showExps :: [TextType] -> [Exp] -> [Element]
 showExps tt = map (showExp tt) . insertFunctionApps
 
 insertFunctionApps :: [Exp] -> [Exp]
@@ -184,30 +184,65 @@ insertFunctionApps es' = go es'
     EGrouped [e, ESymbol Pun "\x2061"] : go es
   go (e:es) = e : go es
 
-showExp :: Maybe TextType -> Exp -> Element
+-- | Combine a stack of nested styles (innermost first) into a single
+-- style, following the same logic as the OMML writer: styles are applied
+-- from the innermost outward, so e.g. TextBold over TextNormal gives
+-- (upright) TextBold.  Returns Nothing if no style applies.
+combineStyles :: [TextType] -> Maybe TextType
+combineStyles [] = Nothing
+combineStyles tts = Just $ toStyle $ foldl go (False, False, Nothing) tts
+ where
+   go (b, i, fam) tt =
+    case tt of
+       TextNormal       -> (False, False, fam)
+       TextBold         -> (True, i, fam)
+       TextItalic       -> (b, True, fam)
+       TextMonospace    -> (False, False, Just TextMonospace)
+       TextSansSerif    -> (False, False, Just TextSansSerif)
+       TextDoubleStruck -> (False, False, Just TextDoubleStruck)
+       TextScript       -> (False, False, Just TextScript)
+       TextFraktur      -> (False, False, Just TextFraktur)
+       TextBoldItalic    -> (True, True, fam)
+       TextSansSerifBold -> (True, i, Just TextSansSerif)
+       TextBoldScript    -> (True, i, Just TextScript)
+       TextBoldFraktur   -> (True, i, Just TextFraktur)
+       TextSansSerifItalic -> (b, True, Just TextSansSerif)
+       TextSansSerifBoldItalic -> (True, True, Just TextSansSerif)
+   toStyle (b, i, fam) =
+    case (fam, b, i) of
+       (Nothing, True, True)   -> TextBoldItalic
+       (Nothing, True, False)  -> TextBold
+       (Nothing, False, True)  -> TextItalic
+       (Nothing, False, False) -> TextNormal
+       (Just TextSansSerif, True, True)  -> TextSansSerifBoldItalic
+       (Just TextSansSerif, True, False) -> TextSansSerifBold
+       (Just TextSansSerif, False, True) -> TextSansSerifItalic
+       (Just TextScript, True, _)        -> TextBoldScript
+       (Just TextFraktur, True, _)       -> TextBoldFraktur
+       (Just f, _, _)                    -> f
+
+showExp :: [TextType] -> Exp -> Element
 showExp tt e =
  let -- variant node: tries to convert text to appropriate unicode
      -- characters depending on style
      vnode :: String -> T.Text -> Element
      vnode elname t
-       = case tt of
+       = case combineStyles tt' of
            Nothing ->
              if isUppercaseGreek t -- see #255
                 then withAttribute "mathvariant" "normal" $ tunode elname t
                 else tunode elname t
            Just TextNormal -> withAttribute "mathvariant" "normal" $
                                 tunode elname t
-           Just TextBold
-             | elname == "mi" && not (isUppercaseGreek t) -- #255, #280
-               -> withAttribute "mathvariant" "bold-italic" $
-                     tunode elname (toUnicode TextBoldItalic t)
-             | otherwise
-               -> withAttribute "mathvariant" "bold" $
-                     tunode elname (toUnicode TextBold t)
            Just textStyle -> withAttribute "mathvariant" (getMMLType textStyle) $
                               -- we use unicode chars because browsers don't
                               -- completely support mathvariant:
                               tunode elname (toUnicode textStyle t)
+       where
+         tt' | elname == "mi"
+             , not (isUppercaseGreek t) -- #255
+             , TextBold `elem` tt = TextBold : TextItalic : tt -- #280
+             | otherwise = tt
   in case e of
    ENumber x        -> vnode "mn" x
    EGrouped [x]     -> showExp tt x
@@ -219,9 +254,7 @@ showExp tt e =
         | not (T.null end) ]
    EIdentifier x    -> vnode "mi" x
    EMathOperator x  -> -- see #257, #270
-     case tt of
-       Nothing -> withAttribute "mathvariant" "normal" $ tunode "mi" x
-       _ -> vnode "mi" x
+     showExp (TextNormal : tt) (EIdentifier x)
    ESymbol Open x   -> makeFence FPrefix $ vnode "mo" x
    ESymbol Close x  -> makeFence FPostfix $ vnode "mo" x
    ESymbol Ord x
@@ -252,10 +285,10 @@ showExp tt e =
    ERoot i x        -> unode "mroot" [showExp tt x, showExp tt i]
    EScaled s x      -> makeScaled s $ showExp tt x
    EArray as ls     -> makeArray tt as ls
-   EText a s        -> case (tt, a) of
+   EText a s        -> case (combineStyles tt, a) of
                          (Just ty, TextNormal) -> makeText ty s
                          _ -> makeText a s
-   EStyled a es     -> showExp (Just a) (EGrouped es)
+   EStyled a es     -> showExp (a : tt) (EGrouped es)
    -- see https://developer.mozilla.org/en-US/docs/Web/MathML/Element/mstyle
    -- Historically, this element accepted almost all the MathML attributes and
    -- it was used to override the default attribute values of its descendants.
