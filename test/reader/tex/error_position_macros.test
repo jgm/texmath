@@ -1,0 +1,9 @@
+<<< tex
+\newcommand{\foo}{x}
+\newcommand{\bar}{y}
+a + \foo + \undefinedthing
+>>> native
+x}+ \undefinedthing
+                   ^
+unexpected control sequence \undefinedthing
+expecting "%", "\\label", "\\tag", "\\nonumber", whitespace or "\\allowbreak"

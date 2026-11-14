@@ -92,9 +92,13 @@ expr1With numberParser = choice
 -- | Parse a formula, returning a list of 'Exp'.
 readTeX :: Text -> Either Text [Exp]
 readTeX inp =
-  let (ms, rest) = parseMacroDefinitions inp in
-  either (Left . showParseError inp) (Right . fixBinList)
-    $ parse formula "formula" $ applyMacros ms rest
+  let (ms, rest) = parseMacroDefinitions inp
+      -- trailing whitespace is ignored anyway; stripping it means that
+      -- an error at the end isn't reported on an empty line after it
+      expanded = T.stripEnd $ applyMacros ms rest
+  -- error positions refer to the expanded text, so show a snippet of it
+  in either (Left . showParseError expanded) (Right . fixBinList)
+       $ parse formula "formula" expanded
  where
   -- | Convert Bin symbol type in certain contexts (#176, #234).
   fixBinList :: [Exp] -> [Exp]
