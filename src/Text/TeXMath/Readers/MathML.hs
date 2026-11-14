@@ -92,7 +92,12 @@ parseMathML e@(name -> "math") = do
 parseMathML _ = throwError "Root must be math element"
 
 expr :: Element -> MML [IR Exp]
-expr e = local (addAttrs (elAttribs e)) (expr' e)
+expr e = local (addAttrs inherited) (expr' e)
+  where
+    -- only mstyle attributes are inherited by descendants; other
+    -- elements' attributes apply only to the element itself
+    inherited | name e == "mstyle" = elAttribs e
+              | otherwise          = []
 
 expr' :: Element -> MML [IR Exp]
 expr' e =
@@ -438,18 +443,27 @@ subsup e = do
 under :: Element -> MML Exp
 under e = do
   (base, below) <- checkArgs2 e
-  EUnder False <$> safeExpr base <*> postfixExpr below
+  EUnder False <$> safeExpr base <*> scriptExpr "accentunder" e below
 
 over :: Element -> MML Exp
 over e = do
   (base, above) <- checkArgs2 e
-  EOver False <$> safeExpr base <*> postfixExpr above
+  EOver False <$> safeExpr base <*> scriptExpr "accent" e above
 
 underover :: Element -> MML Exp
 underover e = do
   (base, below, above) <- checkArgs3 e
-  EUnderover False <$> safeExpr base  <*> (postfixExpr below)
-                                      <*> (postfixExpr above)
+  EUnderover False <$> safeExpr base
+                   <*> scriptExpr "accentunder" e below
+                   <*> scriptExpr "accent" e above
+
+-- | Parse an under- or overscript, passing the parent's @accent@
+-- (or @accentunder@) attribute down to it as @accent@.
+scriptExpr :: String -> Element -> Element -> MML Exp
+scriptExpr attrname parent child =
+  local (addAttrs accentAttr) (postfixExpr child)
+  where accentAttr = [ Attr (unqual "accent") v
+                     | Just v <- [findAttr (unqual attrname) parent] ]
 
 -- Other
 

@@ -1,0 +1,35 @@
+<<< mml
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac linethickness="0pt">
+    <mfrac><mn>1</mn><mn>2</mn></mfrac>
+    <mn>3</mn>
+  </mfrac>
+  <mover accent="true">
+    <mrow><mo>&#x2211;</mo><mi>x</mi></mrow>
+    <mo>^</mo>
+  </mover>
+  <mtable columnalign="left">
+    <mtr><mtd>
+      <mtable><mtr><mtd><mi>a</mi></mtd></mtr></mtable>
+    </mtd></mtr>
+  </mtable>
+  <mstyle mathvariant="bold">
+    <mfrac><mi>a</mi><mi>b</mi></mfrac>
+  </mstyle>
+</math>
+>>> native
+[ EFraction
+    NoLineFrac
+    (EFraction NormalFrac (ENumber "1") (ENumber "2"))
+    (ENumber "3")
+, EOver
+    False
+    (EGrouped [ ESymbol Op "\8721" , EIdentifier "x" ])
+    (ESymbol Accent "^")
+, EArray
+    [ AlignLeft ]
+    [ [ [ EArray [ AlignCenter ] [ [ [ EIdentifier "a" ] ] ] ] ] ]
+, EStyled
+    TextBold
+    [ EFraction NormalFrac (EIdentifier "a") (EIdentifier "b") ]
+]

@@ -38,7 +38,7 @@
 , ESymbol Bin "+"
 , EOver
     False
-    (EGrouped [ EIdentifier "G" , ESymbol Accent "-" , ENumber "1" ])
+    (EGrouped [ EIdentifier "G" , ESymbol Bin "-" , ENumber "1" ])
     (ESymbol Ord "\8254")
 , ESymbol Accent "+"
 , EOver
