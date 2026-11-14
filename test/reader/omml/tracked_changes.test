@@ -1,0 +1,15 @@
+<<< omml
+<m:oMath xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <m:sSup>
+    <m:e><w:ins w:id="1" w:author="a"><m:r><m:t>x</m:t></m:r></w:ins></m:e>
+    <m:sup><m:r><m:t>2</m:t></m:r></m:sup>
+  </m:sSup>
+  <w:del w:id="2" w:author="a"><m:r><w:delText>q</w:delText></m:r></w:del>
+  <m:r><m:t>+</m:t></m:r>
+  <w:ins w:id="3" w:author="a"><m:r><m:t>y</m:t></m:r></w:ins>
+</m:oMath>
+>>> native
+[ ESuper (EIdentifier "x") (ENumber "2")
+, ESymbol Bin "+"
+, EIdentifier "y"
+]

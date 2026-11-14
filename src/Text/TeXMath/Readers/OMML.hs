@@ -63,18 +63,22 @@ elemToOMML element  | isElem "m" "oMathPara" element = do
                    [x] -> x
                    xs -> EGrouped xs) expList
 elemToOMML element  | isElem "m" "oMath" element =
-  Just $ elemsToExps $ unwrapWTags $ elChildren element
+  Just $ elemsToExps $ elChildren element
 elemToOMML _ = Nothing
 
 -- oMath can contain w:hyperlink, w:sdt, etc. I can't find a complete
--- documentation of this, so we just unwrap any w:tag immediately
--- beneath oMath. Note that this shouldn't affect the "w" tags in
--- elemToOMathRunElem(s) because, those are underneath an "m:r" tag.
+-- documentation of this, so we just unwrap any w:tag among the children
+-- of a math element, except w:r (handled as a run) and w:del (tracked
+-- deletions, which are dropped). Note that this shouldn't affect the "w"
+-- tags in elemToOMathRunElem(s) because, those are underneath an "m:r" tag.
 unwrapWTags :: [Element] -> [Element]
 unwrapWTags elements = concatMap unwrapChild elements
-  where unwrapChild element = case qPrefix $ elName element of
-                                Just "w" -> elChildren element
-                                _        -> [element]
+  where unwrapChild element
+          | isElem "w" "del" element = []
+          | isElem "w" "r" element = [element]
+          | qPrefix (elName element) == Just "w"
+            = unwrapWTags (elChildren element)
+          | otherwise = [element]
 
 -- Kept as String because of Text.XML.Light
 isElem :: String -> String -> Element -> Bool
@@ -221,7 +225,7 @@ mergeExps (EText tt x : EText tt' x' : rest)
 mergeExps (x:xs) = x : mergeExps xs
 
 elemsToExps :: [Element] -> [Exp]
-elemsToExps = mergeExps . concat . mapMaybe elemToExps
+elemsToExps = mergeExps . concat . mapMaybe elemToExps . unwrapWTags
 
 -- | Contents of an optional child element (e.g. m:sub, m:deg), or
 -- the empty list if it is absent.
@@ -242,7 +246,7 @@ elemToBase _ = Nothing
 
 elemToBases :: Element -> Maybe [Exp]
 elemToBases element | isElem "m" "e" element =
-  return $ concat $ mapMaybe elemToExps' (elChildren element)
+  return $ concat $ mapMaybe elemToExps' (unwrapWTags (elChildren element))
 elemToBases _ = Nothing
 
 
