@@ -1,0 +1,8 @@
+<<< tex
+\text{if $$x$$ and $y$}
+>>> native
+[ EText TextNormal "if "
+, EIdentifier "x"
+, EText TextNormal " and "
+, EIdentifier "y"
+]

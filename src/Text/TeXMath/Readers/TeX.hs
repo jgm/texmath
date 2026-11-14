@@ -749,7 +749,8 @@ text c = do
 
 innermath :: TP Exp
 innermath = choice $ map innerMathWith
-              [("$","$"),("$$","$$"),("\\(","\\)"),("\\[","\\]")]
+              -- "$$" must come before "$"
+              [("$$","$$"),("$","$"),("\\(","\\)"),("\\[","\\]")]
 
 innerMathWith :: (String, String) -> TP Exp
 innerMathWith (opener, closer) = do
