@@ -1,0 +1,17 @@
+<<< tex
+a\hspace{2mm}b\hspace{1ex}c\hspace*{1em}d\mspace{-3mu}e\mspace{1.5mu}f\hspace{12pt}g
+>>> native
+[ EIdentifier "a"
+, ESpace (10 % 21)
+, EIdentifier "b"
+, ESpace (43 % 100)
+, EIdentifier "c"
+, ESpace (1 % 1)
+, EIdentifier "d"
+, ESpace ((-1) % 6)
+, EIdentifier "e"
+, ESpace (1 % 12)
+, EIdentifier "f"
+, ESpace (1 % 1)
+, EIdentifier "g"
+]

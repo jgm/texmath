@@ -809,28 +809,40 @@ xspace :: Text -> TP Exp
 xspace "\\enspace" = return $ ESpace (1/2)
 xspace "\\mspace" =
   braces $ do
-    len <- many1 digit
+    n <- spaceNumber
     lexeme $ string "mu"
-    case reads len of
-       ((n :: Integer,[]):_) -> return $ ESpace (fromIntegral n/18)
-       _                     -> mzero
+    return $ ESpace (n / 18)
 xspace "\\hspace" = do
+  optional (lexeme (char '*'))
   braces $ do
-    neg <- option 1 $ (-1) <$ char '-'
-    as <- option "" $ many1 digit
-    bs <- option "" $ char '.' *> many1 digit
-    let denominator = 10^(length bs)
-    as' <- if null as then pure 0 else stringToInteger as
-    bs' <- if null bs then pure 0 else stringToInteger bs
-    let numerator = (as' * denominator) + bs'
-    let n = neg * (numerator % denominator)
-    scaleFactor <- lexeme $
-           1      <$ (string "em")
-      <|> (1/12)  <$ (string "pt")
-      <|> 6       <$ (string "in")
-      <|> (50/21) <$ (string "cm")
+    n <- spaceNumber
+    scaleFactor <- lexeme $ choice $ map (\(u, f) -> f <$ try (string u))
+      [ ("em", 1)
+      , ("pt", 1/12)
+      , ("in", 6)
+      , ("cm", 50/21)
+      , ("mm", 5/21)
+      , ("ex", 43/100)
+      , ("mu", 1/18)
+      , ("pc", 1)      -- 1pc = 12pt
+      , ("bp", 1/12)   -- 1bp ~ 1pt
+      ]
     return $ ESpace (n * scaleFactor)
 xspace _ = mzero
+
+-- | A signed decimal number, as in the argument of @\\hspace@.
+spaceNumber :: TP Rational
+spaceNumber = do
+  neg <- option 1 $ (-1) <$ lexeme (char '-')
+  as <- option "" $ many1 digit
+  bs <- option "" $ char '.' *> many1 digit
+  when (null as && null bs) $ fail "expected a number"
+  let denominator = 10^(length bs)
+  as' <- if null as then pure 0 else stringToInteger as
+  bs' <- if null bs then pure 0 else stringToInteger bs
+  let numerator = (as' * denominator) + bs'
+  spaces
+  return $ neg * (numerator % denominator)
 
 stringToInteger :: String -> TP Integer
 stringToInteger s =
