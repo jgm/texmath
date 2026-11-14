@@ -1,0 +1,10 @@
+<<< tex
+\mathop{\frac{a}{b}}\limits_{x} \mathop{x_1} \mathop{lcm}
+>>> native
+[ EUnder
+    False
+    (EFraction NormalFrac (EIdentifier "a") (EIdentifier "b"))
+    (EIdentifier "x")
+, ESub (EIdentifier "x") (ENumber "1")
+, EMathOperator "lcm"
+]

@@ -37,7 +37,7 @@ import qualified Data.Map as M
 import qualified Data.Text as T
 import Data.Text (Text)
 import Data.Ratio ((%))
-import Data.Maybe (catMaybes, fromJust, fromMaybe, mapMaybe)
+import Data.Maybe (catMaybes, fromJust, fromMaybe)
 import Text.Parsec hiding (label)
 import Text.Parsec.Error
 import Text.Parsec.Text
@@ -861,9 +861,14 @@ mathopWith ty = do
      [EIdentifier x] -> return $ ESymbol ty x
      [EText TextNormal x] -> return $ ESymbol ty x
      [EText sty x] -> return $ EStyled sty [ESymbol ty x]
-     xs | ty == Op  -> return $ EMathOperator $
-                         T.concat $ mapMaybe expToOperatorName xs
-        | otherwise -> return $ EGrouped xs
+     xs | ty == Op
+        -- if we can't convert everything to an operator name,
+        -- keep the content rather than dropping parts of it
+        , Just names <- traverse expToOperatorName xs
+                    -> return $ EMathOperator $ T.concat names
+        | otherwise -> return $ case xs of
+                                  [x] -> x
+                                  _   -> EGrouped xs
 
 binary :: Text -> TP Exp
 binary c = do
