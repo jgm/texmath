@@ -28,7 +28,7 @@ import Text.XML.Light
 import Text.TeXMath.Types
 import Text.TeXMath.Unicode.ToUnicode (toUnicode)
 import Text.TeXMath.Shared (getMMLType, handleDownup, everywhereExp,
-                            isUppercaseGreek, isRLSequence)
+                            isUppercaseGreek, isRLSequence, combineStyles)
 import Text.TeXMath.Readers.MathML.MMLDict (getMathMLOperator)
 import qualified Data.Text as T
 import Text.Printf
@@ -183,43 +183,6 @@ insertFunctionApps es' = go es'
   go (e@EMathOperator{} : es@(_:_)) =
     EGrouped [e, ESymbol Pun "\x2061"] : go es
   go (e:es) = e : go es
-
--- | Combine a stack of nested styles (innermost first) into a single
--- style, following the same logic as the OMML writer: styles are applied
--- from the innermost outward, so e.g. TextBold over TextNormal gives
--- (upright) TextBold.  Returns Nothing if no style applies.
-combineStyles :: [TextType] -> Maybe TextType
-combineStyles [] = Nothing
-combineStyles tts = Just $ toStyle $ foldl go (False, False, Nothing) tts
- where
-   go (b, i, fam) tt =
-    case tt of
-       TextNormal       -> (False, False, fam)
-       TextBold         -> (True, i, fam)
-       TextItalic       -> (b, True, fam)
-       TextMonospace    -> (False, False, Just TextMonospace)
-       TextSansSerif    -> (False, False, Just TextSansSerif)
-       TextDoubleStruck -> (False, False, Just TextDoubleStruck)
-       TextScript       -> (False, False, Just TextScript)
-       TextFraktur      -> (False, False, Just TextFraktur)
-       TextBoldItalic    -> (True, True, fam)
-       TextSansSerifBold -> (True, i, Just TextSansSerif)
-       TextBoldScript    -> (True, i, Just TextScript)
-       TextBoldFraktur   -> (True, i, Just TextFraktur)
-       TextSansSerifItalic -> (b, True, Just TextSansSerif)
-       TextSansSerifBoldItalic -> (True, True, Just TextSansSerif)
-   toStyle (b, i, fam) =
-    case (fam, b, i) of
-       (Nothing, True, True)   -> TextBoldItalic
-       (Nothing, True, False)  -> TextBold
-       (Nothing, False, True)  -> TextItalic
-       (Nothing, False, False) -> TextNormal
-       (Just TextSansSerif, True, True)  -> TextSansSerifBoldItalic
-       (Just TextSansSerif, True, False) -> TextSansSerifBold
-       (Just TextSansSerif, False, True) -> TextSansSerifItalic
-       (Just TextScript, True, _)        -> TextBoldScript
-       (Just TextFraktur, True, _)       -> TextBoldFraktur
-       (Just f, _, _)                    -> f
 
 showExp :: [TextType] -> Exp -> Element
 showExp tt e =

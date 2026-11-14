@@ -27,13 +27,13 @@ where
 import Text.XML.Light
 import Text.TeXMath.Types
 import Text.TeXMath.Shared (isUppercaseGreek, isRLSequence,
-                            everywhereExpList, mapExpChildren)
+                            everywhereExpList, mapExpChildren,
+                            combineStyles)
 import Data.Char (isSymbol, isPunctuation)
 import Data.Either (lefts, isLeft, rights)
 import qualified Data.Text as T
 import Data.List.Split  (splitWhen)
 import qualified Data.List as List
-import qualified Data.Set as Set
 
 -- | Transforms an expression tree to an OMML XML Tree
 writeOMML :: DisplayType -> [Exp] -> Element
@@ -118,33 +118,24 @@ defaultTo _  tts = tts
 
 setProps :: [TextType] -> [Element]
 setProps tts =
-  let (stymarks, scriptmark) = List.foldl' go (mempty,"") tts
-  in [scr scriptmark | not (null scriptmark)] ++
-     [sty stymarks | not (null stymarks)]
- where
-   go (stymarks, script) tt =
-    case tt of
-       TextNormal       -> (Set.singleton 'p', script)
-       TextBold         -> (Set.insert 'b' stymarks, script)
-       TextItalic       -> (Set.insert 'i' stymarks, script)
-       TextMonospace    -> (Set.singleton 'p', "monospace")
-       TextSansSerif    -> (Set.singleton 'p', "sans-serif")
-       TextDoubleStruck -> (Set.singleton 'p', "double-struck")
-       TextScript       -> (Set.singleton 'p', "script")
-       TextFraktur      -> (Set.singleton 'p', "fraktur")
-       TextBoldItalic    -> (Set.insert 'b' . Set.insert 'i' $ stymarks, script)
-       TextSansSerifBold -> (Set.insert 'b' stymarks, "sans-serif")
-       TextBoldScript    -> (Set.insert 'b' stymarks, "script")
-       TextBoldFraktur   -> (Set.insert 'b' stymarks, "fraktur")
-       TextSansSerifItalic -> (Set.insert 'i' stymarks, "sans-serif")
-       TextSansSerifBoldItalic -> (Set.insert 'b' . Set.insert 'i' $ stymarks, "sans-serif")
-   sty x = mnodeA "sty" (toStyList x) ()
-   scr x = mnodeA "scr" x ()
-   toStyList x = Set.toList $
-                 if 'b' `Set.member` x || 'i' `Set.member` x
-                    then Set.filter (/='p') x
-                          -- possible values for m:sty are b, i, bi, and p.
-                    else x
+  case combineStyles tts of
+       Nothing               -> []
+       Just TextNormal       -> [sty "p"]
+       Just TextBold         -> [sty "b"]
+       Just TextItalic       -> [sty "i"]
+       Just TextMonospace    -> [scr "monospace", sty "p"]
+       Just TextSansSerif    -> [scr "sans-serif", sty "p"]
+       Just TextDoubleStruck -> [scr "double-struck", sty "p"]
+       Just TextScript       -> [scr "script", sty "p"]
+       Just TextFraktur      -> [scr "fraktur", sty "p"]
+       Just TextBoldItalic    -> [sty "bi"]
+       Just TextSansSerifBold -> [scr "sans-serif", sty "b"]
+       Just TextBoldScript    -> [scr "script", sty "b"]
+       Just TextBoldFraktur   -> [scr "fraktur", sty "b"]
+       Just TextSansSerifItalic -> [scr "sans-serif", sty "i"]
+       Just TextSansSerifBoldItalic -> [scr "sans-serif", sty "bi"]
+   where sty x = mnodeA "sty" x ()
+         scr x = mnodeA "scr" x ()
 
 -- OMML cannot represent a numeric scale factor for delimiters, so
 -- render a pair of scaled delimiters as an m:d, which grows the

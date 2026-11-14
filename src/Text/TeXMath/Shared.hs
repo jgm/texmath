@@ -39,6 +39,7 @@ module Text.TeXMath.Shared
   , isUppercaseGreek
   , toPrimes
   , isRLSequence
+  , combineStyles
   ) where
 
 
@@ -417,6 +418,43 @@ isUppercaseGreek :: T.Text -> Bool
 isUppercaseGreek t = not (T.null t) && T.all isUGreek t
  where
   isUGreek c = c >= '\x0391' && c <= '\x03A9'
+
+-- | Combine a stack of nested styles (innermost first) into a single
+-- style. Styles are applied from the innermost outward, so e.g.
+-- TextBold over TextNormal gives (upright) TextBold.
+-- Returns Nothing if no style applies.
+combineStyles :: [TextType] -> Maybe TextType
+combineStyles [] = Nothing
+combineStyles tts = Just $ toStyle $ foldl go (False, False, Nothing) tts
+ where
+   go (b, i, fam) tt =
+    case tt of
+       TextNormal       -> (False, False, fam)
+       TextBold         -> (True, i, fam)
+       TextItalic       -> (b, True, fam)
+       TextMonospace    -> (False, False, Just TextMonospace)
+       TextSansSerif    -> (False, False, Just TextSansSerif)
+       TextDoubleStruck -> (False, False, Just TextDoubleStruck)
+       TextScript       -> (False, False, Just TextScript)
+       TextFraktur      -> (False, False, Just TextFraktur)
+       TextBoldItalic    -> (True, True, fam)
+       TextSansSerifBold -> (True, i, Just TextSansSerif)
+       TextBoldScript    -> (True, i, Just TextScript)
+       TextBoldFraktur   -> (True, i, Just TextFraktur)
+       TextSansSerifItalic -> (b, True, Just TextSansSerif)
+       TextSansSerifBoldItalic -> (True, True, Just TextSansSerif)
+   toStyle (b, i, fam) =
+    case (fam, b, i) of
+       (Nothing, True, True)   -> TextBoldItalic
+       (Nothing, True, False)  -> TextBold
+       (Nothing, False, True)  -> TextItalic
+       (Nothing, False, False) -> TextNormal
+       (Just TextSansSerif, True, True)  -> TextSansSerifBoldItalic
+       (Just TextSansSerif, True, False) -> TextSansSerifBold
+       (Just TextSansSerif, False, True) -> TextSansSerifItalic
+       (Just TextScript, True, _)        -> TextBoldScript
+       (Just TextFraktur, True, _)       -> TextBoldFraktur
+       (Just f, _, _)                    -> f
 
 toPrimes :: Exp -> Maybe T.Text
 toPrimes (ESymbol ty s) | ty == Pun || ty == Ord = go s
