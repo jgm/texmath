@@ -218,8 +218,9 @@ space e = do
 
 style :: Element -> MML Exp
 style e = do
-  tt <- maybe TextNormal getTextType <$> findAttrQ "mathvariant" e
   curstyle <- asks curStyle
+  -- without a mathvariant, keep the enclosing style
+  tt <- maybe curstyle getTextType <$> findAttrQ "mathvariant" e
   -- We do not want to propagate the mathvariant else
   -- we end up with nested EStyled applying the same
   -- style

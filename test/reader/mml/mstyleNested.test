@@ -1,0 +1,10 @@
+<<< mml
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle mathvariant="bold">
+    <mstyle displaystyle="true">
+      <mi>x</mi>
+    </mstyle>
+  </mstyle>
+</math>
+>>> native
+[ EStyled TextBold [ EIdentifier "x" ] ]
