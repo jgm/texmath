@@ -48,8 +48,10 @@ import Text.TeXMath.Readers.TeX.Macros (applyMacros, parseMacroDefinitions)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Text.TeXMath.Unicode.ToUnicode (toUnicode)
 import Text.TeXMath.Shared (getSpaceChars)
-import Text.TeXMath.Readers.TeX.Commands ( styleOps, textOps, enclosures,
-                                           operators, symbols, siUnitMap )
+import Text.TeXMath.Readers.TeX.Commands ( styleOps, alphabetOps, textOps,
+                                           enclosures, operators, symbols,
+                                           siUnitMap )
+import qualified Data.Set as Set
 import Data.Text.Read (decimal)
 
 type TP = Parser
@@ -750,9 +752,32 @@ styled c = do
   case M.lookup c styleOps of
        Just f   -> do
          x <- texSymbol <|> inbraces <|> texChar
-         return $ case x of
-                       EGrouped xs -> f xs
-                       _           -> f [x]
+         let xs = case x of
+                       EGrouped ys -> ys
+                       _           -> [x]
+         return $
+           if c `Set.member` alphabetOps
+              then case map applyStyle (groupRuns xs) of
+                     [y] -> y
+                     ys  -> EGrouped ys
+              else f xs
+          where
+            -- An alphabet command doesn't apply to subexpressions
+            -- already styled by an inner alphabet command (#307).
+            applyStyle (Left y)   = y
+            applyStyle (Right ys) = f ys
+            groupRuns [] = []
+            groupRuns (y:ys)
+              | hasAlphabet y = Left y : groupRuns ys
+              | otherwise = case groupRuns ys of
+                              Right zs : rest -> Right (y:zs) : rest
+                              rest            -> Right [y] : rest
+            -- A bare TextBold comes from an additive command like
+            -- \boldsymbol; TextBold over TextNormal comes from \mathbf.
+            hasAlphabet (EStyled TextBold [EStyled TextNormal _]) = True
+            hasAlphabet (EStyled TextBold _) = False
+            hasAlphabet (EStyled _ _) = True
+            hasAlphabet _ = False
        Nothing  -> mzero
 
 colored :: Text -> TP Exp

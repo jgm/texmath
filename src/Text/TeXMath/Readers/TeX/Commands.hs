@@ -22,6 +22,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 module Text.TeXMath.Readers.TeX.Commands
   ( styleOps
+  , alphabetOps
   , textOps
   , enclosures
   , operators
@@ -31,6 +32,7 @@ module Text.TeXMath.Readers.TeX.Commands
 where
 
 import qualified Data.Map as M
+import qualified Data.Set as Set
 import Text.TeXMath.Types
 import Text.TeXMath.Unicode.ToTeX (symbolMap)
 import Data.Text (Text)
@@ -65,6 +67,18 @@ styleOps = M.fromList
           , ("\\mathbffrak", EStyled TextBoldFraktur)
           , ("\\mathbfcal",  EStyled TextBoldScript)
           , ("\\mathsfit",   EStyled TextSansSerifItalic)
+          ]
+
+-- | Style commands that select a math alphabet. Unlike additive
+-- commands such as @\\boldsymbol@, these replace any enclosing
+-- alphabet, so in @\\mathbf{\\mathit{H}}@ the @H@ is just italic (#307).
+alphabetOps :: Set.Set Text
+alphabetOps = Set.fromList
+          [ "\\mathrm", "\\mathup", "\\mathbf", "\\symbf", "\\mathbold"
+          , "\\mathbfup", "\\mathit", "\\mathtt", "\\mathsf", "\\mathsfup"
+          , "\\mathbb", "\\mathds", "\\mathcal", "\\mathscr", "\\mathfrak"
+          , "\\mathbfit", "\\mathbfsfup", "\\mathbfsfit", "\\mathbfscr"
+          , "\\mathbffrak", "\\mathbfcal", "\\mathsfit"
           ]
 
 textOps :: M.Map Text (Text -> Exp)
