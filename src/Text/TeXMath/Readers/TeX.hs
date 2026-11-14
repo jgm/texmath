@@ -719,6 +719,12 @@ textContents op = char '{' *> manyTill chunk (char '}')
             <|> textSpaceCommand
             <|> (char '{' *> (asGroup <$> manyTill chunk (char '}')))
             <|> innermath
+            <|> nestedText
+   -- e.g. \textbf{...} inside \text{...}
+   nestedText = try $ do
+     c <- anyCtrlSeq
+     op' <- maybe mzero return $ M.lookup c textOps
+     asGroup <$> textContents op'
 
 textSpaceCommand :: TP Exp
 textSpaceCommand = try $ do

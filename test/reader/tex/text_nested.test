@@ -1,0 +1,7 @@
+<<< tex
+\text{foo \textbf{bar} baz}
+>>> native
+[ EText TextNormal "foo "
+, EText TextBold "bar"
+, EText TextNormal " baz"
+]
