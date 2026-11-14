@@ -1,0 +1,19 @@
+<<< tex
+\left/ x \right\backslash
+\left\uparrow y \right\Downarrow
+\genfrac{\langle}{\rangle}{0pt}{}{a}{b}
+\genfrac(]{}{}{c}{d}
+>>> native
+[ EDelimited "/" "\\" [ Right (EIdentifier "x") ]
+, EDelimited "\8593" "\8659" [ Right (EIdentifier "y") ]
+, EDelimited
+    "\10216"
+    "\10217"
+    [ Right (EFraction NoLineFrac (EIdentifier "a") (EIdentifier "b"))
+    ]
+, EDelimited
+    "("
+    "]"
+    [ Right (EFraction NormalFrac (EIdentifier "c") (EIdentifier "d"))
+    ]
+]

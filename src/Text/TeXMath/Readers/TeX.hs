@@ -327,7 +327,12 @@ binomCmds = M.fromList
 genfrac :: Text -> TP Exp
 genfrac "\\genfrac" = do
   let delim = option "" $
-                T.singleton <$> ((char '\\' >> anyChar) <|> satisfy (/= '}'))
+                -- e.g. \langle, \{, (
+                (do e <- basicEnclosure
+                    case e of
+                      ESymbol _ t -> return t
+                      _           -> mzero)
+                <|> T.singleton <$> ((char '\\' >> anyChar) <|> satisfy (/= '}'))
   openDelim <- braces delim <|> delim
   closeDelim <- braces delim <|> delim
   bar <- False <$ try (braces (string "0pt")) <|> True <$ texToken
@@ -419,7 +424,18 @@ fence cmd = do
         [ ESymbol Open "\x27E8" <$ symbol "<"
         , ESymbol Close "\x27E9" <$ symbol ">"
         ]
-  enc <- basicEnclosure <|> nullDelim <|> angleDelim
+      -- other symbols that can be used as delimiters with \left etc.
+      otherDelim = try $ choice
+        [ ESymbol Open "/" <$ symbol "/"
+        , ESymbol Open "\\" <$ ctrlseq "backslash"
+        , ESymbol Open "\x2191" <$ ctrlseq "uparrow"
+        , ESymbol Open "\x2193" <$ ctrlseq "downarrow"
+        , ESymbol Open "\x2195" <$ ctrlseq "updownarrow"
+        , ESymbol Open "\x21D1" <$ ctrlseq "Uparrow"
+        , ESymbol Open "\x21D3" <$ ctrlseq "Downarrow"
+        , ESymbol Open "\x21D5" <$ ctrlseq "Updownarrow"
+        ]
+  enc <- basicEnclosure <|> nullDelim <|> angleDelim <|> otherDelim
   case enc of
        ESymbol Open x  -> return x
        ESymbol Close x -> return x
