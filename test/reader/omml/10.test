@@ -8,17 +8,11 @@
     <m:sSub>
       <m:e>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
           <m:t>ϕ</m:t>
         </m:r>
       </m:e>
       <m:sub>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
           <m:t>n</m:t>
         </m:r>
       </m:sub>
@@ -30,9 +24,6 @@
       <m:t>(</m:t>
     </m:r>
     <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
       <m:t>κ</m:t>
     </m:r>
     <m:r>
@@ -69,9 +60,6 @@
         <m:sSup>
           <m:e>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
               <m:t>π</m:t>
             </m:r>
           </m:e>
@@ -87,9 +75,6 @@
         <m:sSup>
           <m:e>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
               <m:t>κ</m:t>
             </m:r>
           </m:e>
@@ -118,9 +103,6 @@
           </m:fPr>
           <m:num>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
               <m:t>sin</m:t>
             </m:r>
             <m:r>
@@ -130,15 +112,9 @@
               <m:t>(</m:t>
             </m:r>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
               <m:t>κ</m:t>
             </m:r>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
               <m:t>R</m:t>
             </m:r>
             <m:r>
@@ -150,15 +126,9 @@
           </m:num>
           <m:den>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
               <m:t>κ</m:t>
             </m:r>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
               <m:t>R</m:t>
             </m:r>
           </m:den>
@@ -201,9 +171,6 @@
           <m:t>∂</m:t>
         </m:r>
         <m:r>
-          <m:rPr>
-            <m:sty m:val="p" />
-          </m:rPr>
           <m:t>R</m:t>
         </m:r>
       </m:den>
@@ -218,9 +185,6 @@
         <m:sSup>
           <m:e>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
               <m:t>R</m:t>
             </m:r>
           </m:e>
@@ -247,17 +211,11 @@
             <m:sSub>
               <m:e>
                 <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
                   <m:t>D</m:t>
                 </m:r>
               </m:e>
               <m:sub>
                 <m:r>
-                  <m:rPr>
-                    <m:sty m:val="p" />
-                  </m:rPr>
                   <m:t>n</m:t>
                 </m:r>
               </m:sub>
@@ -269,9 +227,6 @@
               <m:t>(</m:t>
             </m:r>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
               <m:t>R</m:t>
             </m:r>
             <m:r>
@@ -289,9 +244,6 @@
               <m:t>∂</m:t>
             </m:r>
             <m:r>
-              <m:rPr>
-                <m:sty m:val="p" />
-              </m:rPr>
               <m:t>R</m:t>
             </m:r>
           </m:den>
@@ -305,15 +257,9 @@
       <m:t> </m:t>
     </m:r>
     <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
       <m:t>d</m:t>
     </m:r>
     <m:r>
-      <m:rPr>
-        <m:sty m:val="p" />
-      </m:rPr>
       <m:t>R</m:t>
     </m:r>
   </m:oMath>

@@ -1,0 +1,17 @@
+<<< omml
+<m:oMath xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math">
+  <m:r><m:rPr><m:sty m:val="p" /></m:rPr><m:t>∫</m:t></m:r>
+  <m:r><m:t>f</m:t></m:r>
+  <m:r><m:rPr><m:sty m:val="p" /></m:rPr><m:t>(</m:t></m:r>
+  <m:r><m:t>x</m:t></m:r>
+  <m:r><m:rPr><m:sty m:val="p" /></m:rPr><m:t>)</m:t></m:r>
+  <m:r><m:t> </m:t></m:r>
+  <m:r><m:rPr><m:sty m:val="p" /></m:rPr><m:t>d</m:t></m:r>
+  <m:r><m:t>x</m:t></m:r>
+  <m:r><m:rPr><m:sty m:val="p" /></m:rPr><m:t>+</m:t></m:r>
+  <m:r><m:rPr><m:sty m:val="p" /></m:rPr><m:t>sin</m:t></m:r>
+  <m:r><m:rPr><m:sty m:val="p" /></m:rPr><m:t>Γ</m:t></m:r>
+  <m:r><m:rPr><m:sty m:val="p" /></m:rPr><m:t>2</m:t></m:r>
+</m:oMath>
+>>> tex
+\int f(x)\ \mathrm{d}x + \sin\Gamma 2

@@ -37,10 +37,11 @@ module Text.TeXMath.Readers.OMML (readOMML) where
 import Text.XML.Light
 import Data.Maybe (isJust, mapMaybe, fromMaybe, maybeToList)
 import Data.List (intercalate)
-import Data.Char (isDigit, readLitChar)
+import Data.Char (isDigit, isLetter, readLitChar)
 import qualified Data.Text as T
 import Text.TeXMath.Types
-import Text.TeXMath.Shared (fixTree, getSpaceWidth, getOperator)
+import Text.TeXMath.Shared (fixTree, getSpaceWidth, getOperator,
+                            isUppercaseGreek)
 import Text.TeXMath.Unicode.ToTeX (getSymbolType)
 import Text.TeXMath.Unicode.Fonts (getUnicode, textToFont)
 import Data.List.Split (splitWhen)
@@ -206,9 +207,7 @@ oMathRunTextStyleToTextType (Styled scr sty) =
     Just ODoubleStruck -> Just TextDoubleStruck
     Just OMonospace -> Just TextMonospace
     _               -> case sty of  -- roman or no script
-                         -- sty=p has always been ignored here; mapping
-                         -- it to TextNormal would change a lot of output
-                         Just OPlain      -> Nothing
+                         Just OPlain      -> Just TextNormal
                          Just OBold       -> Just TextBold
                          Just OItalic     -> Just TextItalic
                          Just OBoldItalic -> Just TextBoldItalic
@@ -478,6 +477,17 @@ elemToExps' element | isElem "m" "r" element = do
     if null lit && null nor
        then case txtSty of
               Nothing ->
+                interpretText $ oMathRunElemsToText mrElems
+              -- plain style only matters for identifiers, which are
+              -- otherwise italic; numbers, symbols, and operator
+              -- names are upright anyway
+              Just TextNormal ->
+                map (\x -> case x of
+                             EIdentifier t
+                               | T.any isLetter t
+                               , not (isUppercaseGreek t)
+                               -> EStyled TextNormal [x]
+                             _             -> x) $
                 interpretText $ oMathRunElemsToText mrElems
               Just textSty ->
                 -- keep & outside of the styled group, so that it
