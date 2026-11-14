@@ -504,7 +504,21 @@ interpretText s
   | T.all isDigit s         = [ENumber s]
   | isJust (getOperator (EMathOperator s))
                           = [EMathOperator s]
-  | otherwise             = map interpretChar (T.unpack s)
+  | otherwise             = go s
+  where
+    -- keep numbers like 12.5 together
+    go t = case T.uncons t of
+      Nothing -> []
+      Just (c, rest)
+        | isDigit c ->
+          let (ds, rest') = T.span isDigit t
+          in case T.uncons rest' of
+               Just ('.', rest'')
+                 | (ds', rest''') <- T.span isDigit rest''
+                 , not (T.null ds')
+                 -> ENumber (ds <> "." <> ds') : go rest'''
+               _ -> ENumber ds : go rest'
+        | otherwise -> interpretChar c : go rest
 
 -- The char attribute is a hex string
 getSymChar :: Element -> Maybe T.Text

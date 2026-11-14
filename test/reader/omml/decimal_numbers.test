@@ -1,0 +1,15 @@
+<<< omml
+<m:oMath xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math">
+  <m:r><m:t>12.5</m:t></m:r>
+  <m:r><m:t>+x12</m:t></m:r>
+  <m:r><m:t>-3.</m:t></m:r>
+</m:oMath>
+>>> native
+[ ENumber "12.5"
+, ESymbol Bin "+"
+, EIdentifier "x"
+, ENumber "12"
+, ESymbol Bin "-"
+, ENumber "3"
+, EIdentifier "."
+]
