@@ -1,0 +1,17 @@
+<<< omml
+<m:oMath xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math">
+  <m:r><m:rPr><m:scr m:val="double-struck"/><m:sty m:val="i"/></m:rPr><m:t>R</m:t></m:r>
+  <m:r><m:rPr><m:scr m:val="script"/><m:sty m:val="bi"/></m:rPr><m:t>L</m:t></m:r>
+  <m:r><m:rPr><m:scr m:val="fraktur"/><m:sty m:val="bi"/></m:rPr><m:t>g</m:t></m:r>
+  <m:r><m:rPr><m:scr m:val="monospace"/><m:sty m:val="b"/></m:rPr><m:t>m</m:t></m:r>
+  <m:r><m:rPr><m:scr m:val="sans-serif"/><m:sty m:val="p"/></m:rPr><m:t>s</m:t></m:r>
+  <m:r><m:rPr><m:sty m:val="bi"/></m:rPr><m:t>v</m:t></m:r>
+</m:oMath>
+>>> native
+[ EStyled TextDoubleStruck [ EIdentifier "R" ]
+, EStyled TextBoldScript [ EIdentifier "L" ]
+, EStyled TextBoldFraktur [ EIdentifier "g" ]
+, EStyled TextMonospace [ EIdentifier "m" ]
+, EStyled TextSansSerif [ EIdentifier "s" ]
+, EStyled TextBoldItalic [ EIdentifier "v" ]
+]

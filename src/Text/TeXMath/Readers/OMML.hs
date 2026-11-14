@@ -190,39 +190,26 @@ oMathRunElemsToText = T.concat . map oMathRunElemToText
 oMathRunTextStyleToTextType :: OMathRunTextStyle -> Maybe TextType
 oMathRunTextStyleToTextType (Normal) = Just $ TextNormal
 oMathRunTextStyleToTextType (NoStyle) = Nothing
-oMathRunTextStyleToTextType (Styled scr sty)
-  | Just OBold <- sty
-  , Just OSansSerif <- scr =
-    Just $ TextSansSerifBold
-  | Just OBoldItalic <- sty
-  , Just OSansSerif <- scr =
-    Just $ TextSansSerifBoldItalic
-  | Just OBold <- sty
-  , Just OScript <- scr =
-    Just $ TextBoldScript
-  | Just OBold <- sty
-  , Just OFraktur <- scr =
-    Just $ TextBoldFraktur
-  | Just OItalic <- sty
-  , Just OSansSerif <- scr =
-    Just $ TextSansSerifItalic
-  | Just OBold <- sty =
-    Just $ TextBold
-  | Just OItalic <- sty =
-    Just $ TextItalic
-  | Just OMonospace <- scr =
-    Just $ TextMonospace
-  | Just OSansSerif <- scr =
-    Just $ TextSansSerif
-  | Just ODoubleStruck <- scr =
-    Just $ TextDoubleStruck
-  | Just OScript <- scr =
-    Just $ TextScript
-  | Just OFraktur <- scr =
-    Just $ TextFraktur
-  | Just OBoldItalic <- sty =
-    Just $ TextBoldItalic
-  | otherwise = Nothing
+oMathRunTextStyleToTextType (Styled scr sty) =
+  case scr of
+    Just OSansSerif -> Just $ case sty of
+                         Just OBold       -> TextSansSerifBold
+                         Just OBoldItalic -> TextSansSerifBoldItalic
+                         Just OItalic     -> TextSansSerifItalic
+                         _                -> TextSansSerif
+    Just OScript    -> Just $ if isBold then TextBoldScript else TextScript
+    Just OFraktur   -> Just $ if isBold then TextBoldFraktur else TextFraktur
+    Just ODoubleStruck -> Just TextDoubleStruck
+    Just OMonospace -> Just TextMonospace
+    _               -> case sty of  -- roman or no script
+                         -- sty=p has always been ignored here; mapping
+                         -- it to TextNormal would change a lot of output
+                         Just OPlain      -> Nothing
+                         Just OBold       -> Just TextBold
+                         Just OItalic     -> Just TextItalic
+                         Just OBoldItalic -> Just TextBoldItalic
+                         Nothing          -> Nothing
+  where isBold = sty == Just OBold || sty == Just OBoldItalic
 
 -- merge adjacent Exps with same style; see jgm/pandoc#10560:
 mergeExps :: [Exp] -> [Exp]
