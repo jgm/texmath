@@ -112,7 +112,10 @@
 [ EArray
     [ AlignCenter ]
     [ [ [ EGrouped
-            [ EIdentifier "A" , ESymbol Rel "=" , EIdentifier "A" ]
+            [ EIdentifier "A"
+            , ESymbol Rel "="
+            , EStyled TextNormal [ EIdentifier "A" ]
+            ]
         ]
       ]
     , [ [ EGrouped

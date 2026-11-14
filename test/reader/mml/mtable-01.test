@@ -17,15 +17,15 @@
 >>> native
 [ EArray
     [ AlignCenter ]
-    [ [ [ EIdentifier "H" ] ]
-    , [ [ EIdentifier "T" ] ]
-    , [ [ EIdentifier "U" ] ]
+    [ [ [ EStyled TextNormal [ EIdentifier "H" ] ] ]
+    , [ [ EStyled TextNormal [ EIdentifier "T" ] ] ]
+    , [ [ EStyled TextNormal [ EIdentifier "U" ] ] ]
     ]
 , ESymbol Rel "="
 , EArray
     [ AlignCenter ]
-    [ [ [ EIdentifier "H" ] ]
-    , [ [ EIdentifier "T" ] ]
-    , [ [ EIdentifier "U" ] ]
+    [ [ [ EStyled TextNormal [ EIdentifier "H" ] ] ]
+    , [ [ EStyled TextNormal [ EIdentifier "T" ] ] ]
+    , [ [ EStyled TextNormal [ EIdentifier "U" ] ] ]
     ]
 ]

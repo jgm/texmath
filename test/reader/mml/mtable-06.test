@@ -69,37 +69,49 @@
 [ EArray
     [ AlignRight , AlignRight ]
     [ [ [ EGrouped
-            [ EPhantom (EText TextNormal "fail") , EIdentifier "H" ]
+            [ EPhantom (EText TextNormal "fail")
+            , EStyled TextNormal [ EIdentifier "H" ]
+            ]
         ]
-      , [ EIdentifier "A" ]
+      , [ EStyled TextNormal [ EIdentifier "A" ] ]
       ]
     , [ [ EGrouped
-            [ EPhantom (EText TextNormal "fail") , EIdentifier "T" ]
+            [ EPhantom (EText TextNormal "fail")
+            , EStyled TextNormal [ EIdentifier "T" ]
+            ]
         ]
-      , [ EIdentifier "I" ]
+      , [ EStyled TextNormal [ EIdentifier "I" ] ]
       ]
     , [ [ EGrouped
-            [ EPhantom (EText TextNormal "fail") , EIdentifier "U" ]
+            [ EPhantom (EText TextNormal "fail")
+            , EStyled TextNormal [ EIdentifier "U" ]
+            ]
         ]
-      , [ EIdentifier "Y" ]
+      , [ EStyled TextNormal [ EIdentifier "Y" ] ]
       ]
     ]
 , ESymbol Rel "="
 , EArray
     [ AlignLeft , AlignLeft ]
-    [ [ [ EIdentifier "A" ]
+    [ [ [ EStyled TextNormal [ EIdentifier "A" ] ]
       , [ EGrouped
-            [ EIdentifier "H" , EPhantom (EText TextNormal "fail") ]
+            [ EStyled TextNormal [ EIdentifier "H" ]
+            , EPhantom (EText TextNormal "fail")
+            ]
         ]
       ]
-    , [ [ EIdentifier "I" ]
+    , [ [ EStyled TextNormal [ EIdentifier "I" ] ]
       , [ EGrouped
-            [ EIdentifier "T" , EPhantom (EText TextNormal "fail") ]
+            [ EStyled TextNormal [ EIdentifier "T" ]
+            , EPhantom (EText TextNormal "fail")
+            ]
         ]
       ]
-    , [ [ EIdentifier "Y" ]
+    , [ [ EStyled TextNormal [ EIdentifier "Y" ] ]
       , [ EGrouped
-            [ EIdentifier "U" , EPhantom (EText TextNormal "fail") ]
+            [ EStyled TextNormal [ EIdentifier "U" ]
+            , EPhantom (EText TextNormal "fail")
+            ]
         ]
       ]
     ]

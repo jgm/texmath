@@ -11,7 +11,7 @@
 >>> native
 [ EUnderover
     False
-    (EIdentifier "B")
+    (EStyled TextNormal [ EIdentifier "B" ])
     (EIdentifier "underscript")
     (EIdentifier "overscript")
 , ESymbol Rel "="
@@ -21,7 +21,7 @@
        False
        (EGrouped
           [ EPhantom (ENumber "1")
-          , EIdentifier "B"
+          , EStyled TextNormal [ EIdentifier "B" ]
           , EPhantom (ENumber "1")
           ])
        (EIdentifier "underscript"))

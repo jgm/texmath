@@ -31,22 +31,22 @@
     [ AlignCenter ]
     [ [ [ EGrouped
             [ EPhantom (EText TextNormal "fail")
-            , EIdentifier "H"
+            , EStyled TextNormal [ EIdentifier "H" ]
             , EPhantom (EText TextNormal "fail")
             ]
         ]
       ]
-    , [ [ EIdentifier "T" ] ]
-    , [ [ EIdentifier "U" ] ]
+    , [ [ EStyled TextNormal [ EIdentifier "T" ] ] ]
+    , [ [ EStyled TextNormal [ EIdentifier "U" ] ] ]
     ]
 , ESymbol Rel "="
 , EArray
     [ AlignCenter ]
-    [ [ [ EIdentifier "H" ] ]
-    , [ [ EIdentifier "T" ] ]
+    [ [ [ EStyled TextNormal [ EIdentifier "H" ] ] ]
+    , [ [ EStyled TextNormal [ EIdentifier "T" ] ] ]
     , [ [ EGrouped
             [ EPhantom (EText TextNormal "fail")
-            , EIdentifier "U"
+            , EStyled TextNormal [ EIdentifier "U" ]
             , EPhantom (EText TextNormal "fail")
             ]
         ]

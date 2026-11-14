@@ -9,13 +9,16 @@
       </mphantom>
     </mrow>     <mi mathvariant="normal">overscript</mi>   </mover> </math>
 >>> native
-[ EOver False (EIdentifier "B") (EIdentifier "overscript")
+[ EOver
+    False
+    (EStyled TextNormal [ EIdentifier "B" ])
+    (EIdentifier "overscript")
 , ESymbol Rel "="
 , EOver
     False
     (EGrouped
        [ EPhantom (ENumber "1")
-       , EIdentifier "B"
+       , EStyled TextNormal [ EIdentifier "B" ]
        , EPhantom (ENumber "1")
        ])
     (EIdentifier "overscript")

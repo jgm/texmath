@@ -10,13 +10,16 @@
     </mrow>     <mrow>      <mi mathvariant="normal">long under script</mi>
     </mrow>   </munder> </math>
 >>> native
-[ EUnder False (EIdentifier "B") (EIdentifier "long under script")
+[ EUnder
+    False
+    (EStyled TextNormal [ EIdentifier "B" ])
+    (EIdentifier "long under script")
 , ESymbol Rel "="
 , EUnder
     False
     (EGrouped
        [ EPhantom (EText TextNormal "x")
-       , EIdentifier "B"
+       , EStyled TextNormal [ EIdentifier "B" ]
        , EPhantom (EText TextNormal "x")
        ])
     (EIdentifier "long under script")

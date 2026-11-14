@@ -1,0 +1,9 @@
+<<< mml
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi mathvariant="normal">x</mi>
+  <mi mathvariant="normal">d</mi>
+  <mi mathvariant="normal">sin</mi>
+  <mi>y</mi>
+</math>
+>>> tex
+\mathrm{x}\mathrm{d}\sin y

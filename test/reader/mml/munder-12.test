@@ -9,13 +9,16 @@
       </mphantom>
     </mrow>     <mi mathvariant="normal">underscript</mi>   </munder> </math>
 >>> native
-[ EUnder False (EIdentifier "B") (EIdentifier "underscript")
+[ EUnder
+    False
+    (EStyled TextNormal [ EIdentifier "B" ])
+    (EIdentifier "underscript")
 , ESymbol Rel "="
 , EUnder
     False
     (EGrouped
        [ EPhantom (ENumber "1")
-       , EIdentifier "B"
+       , EStyled TextNormal [ EIdentifier "B" ]
        , EPhantom (ENumber "1")
        ])
     (EIdentifier "underscript")

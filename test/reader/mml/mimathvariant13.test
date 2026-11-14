@@ -124,7 +124,7 @@
     , AlignCenter
     ]
     [ [ [ EIdentifier "a" ]
-      , [ EIdentifier "a" ]
+      , [ EStyled TextNormal [ EIdentifier "a" ] ]
       , [ EStyled TextBold [ EIdentifier "a" ] ]
       , [ EStyled TextItalic [ EIdentifier "a" ] ]
       , [ EStyled TextBoldItalic [ EIdentifier "a" ] ]
@@ -141,7 +141,7 @@
       , [ EStyled TextBold [ EIdentifier "ab" ] ]
       ]
     , [ [ EIdentifier "A" ]
-      , [ EIdentifier "A" ]
+      , [ EStyled TextNormal [ EIdentifier "A" ] ]
       , [ EStyled TextBold [ EIdentifier "A" ] ]
       , [ EStyled TextItalic [ EIdentifier "A" ] ]
       , [ EStyled TextBoldItalic [ EIdentifier "A" ] ]

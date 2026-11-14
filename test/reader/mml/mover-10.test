@@ -5,7 +5,13 @@
     </mrow>     <mrow>      <mi mathvariant="normal">long over script</mi>
     </mrow>   </mover> </math>
 >>> native
-[ EOver False (EIdentifier "B") (EIdentifier "long over script")
+[ EOver
+    False
+    (EStyled TextNormal [ EIdentifier "B" ])
+    (EIdentifier "long over script")
 , ESymbol Rel "="
-, EOver False (EIdentifier "B") (EIdentifier "long over script")
+, EOver
+    False
+    (EStyled TextNormal [ EIdentifier "B" ])
+    (EIdentifier "long over script")
 ]

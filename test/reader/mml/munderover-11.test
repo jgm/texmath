@@ -16,19 +16,22 @@
     </mrow>   </munderover> </math>
 >>> native
 [ EUnderover
-    False (EIdentifier "BASE") (EIdentifier "s") (EIdentifier "t")
+    False
+    (EIdentifier "BASE")
+    (EStyled TextNormal [ EIdentifier "s" ])
+    (EStyled TextNormal [ EIdentifier "t" ])
 , ESymbol Rel "="
 , EUnderover
     False
     (EIdentifier "BASE")
     (EGrouped
        [ EPhantom (ENumber "1")
-       , EIdentifier "s"
+       , EStyled TextNormal [ EIdentifier "s" ]
        , EPhantom (ENumber "1")
        ])
     (EGrouped
        [ EPhantom (ENumber "1")
-       , EIdentifier "t"
+       , EStyled TextNormal [ EIdentifier "t" ]
        , EPhantom (ENumber "1")
        ])
 ]

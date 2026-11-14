@@ -67,7 +67,9 @@ readMathML inp = map fixTree <$>
 data MMLState = MMLState { attrs :: [Attr]
                          , position :: Maybe FormType
                          , inAccent :: Bool
-                         , curStyle :: TextType }
+                         , curStyle :: Maybe TextType
+                           -- ^ style set by an enclosing mstyle, if any
+                         }
 
 type MML = ReaderT MMLState (Except T.Text)
 
@@ -146,11 +148,14 @@ ident e =  do
                    Nothing  -> EIdentifier s
   mbVariant <- findAttrQ "mathvariant" e
   curstyle <- asks curStyle
-  case mbVariant of
+  case getTextType <$> mbVariant of
        Nothing  -> return base
-       Just v
-         | curstyle == getTextType v -> return base
-         | otherwise  -> return $ EStyled (getTextType v) [base]
+       Just tt
+         | curstyle == Just tt -> return base
+         -- multi-character identifiers are upright by default
+         | curstyle == Nothing, tt == TextNormal, T.length s > 1
+           -> return base
+         | otherwise  -> return $ EStyled tt [base]
 
 number :: Element -> MML Exp
 number e = ENumber <$> getString e
@@ -219,15 +224,18 @@ space e = do
 style :: Element -> MML Exp
 style e = do
   curstyle <- asks curStyle
-  -- without a mathvariant, keep the enclosing style
-  tt <- maybe curstyle getTextType <$> findAttrQ "mathvariant" e
+  mbtt <- fmap getTextType <$> findAttrQ "mathvariant" e
   -- We do not want to propagate the mathvariant else
   -- we end up with nested EStyled applying the same
   -- style
-  result <- local (filterMathVariant . enterStyled tt) (row e)
-  return $ if curstyle == tt
-              then result
-              else EStyled tt [result]
+  case mbtt of
+    -- without a mathvariant, keep the enclosing style
+    Nothing -> local filterMathVariant (row e)
+    Just tt -> do
+      result <- local (filterMathVariant . enterStyled tt) (row e)
+      return $ if curstyle == Just tt
+                  then result
+                  else EStyled tt [result]
 
 row :: Element -> MML Exp
 row e = mkExp <$> group e
@@ -571,7 +579,7 @@ fInterleave (x:xs) ys = x : fInterleave ys xs
 -- MMLState helper functions
 
 defaultState :: MMLState
-defaultState = MMLState [] Nothing False TextNormal
+defaultState = MMLState [] Nothing False Nothing
 
 addAttrs :: [Attr] -> MMLState -> MMLState
 addAttrs as s = s {attrs = (map renameAttr as) ++ attrs s }
@@ -595,13 +603,13 @@ enterAccent :: MMLState -> MMLState
 enterAccent s = s{ inAccent = True }
 
 enterStyled :: TextType -> MMLState -> MMLState
-enterStyled tt s = s{ curStyle = tt }
+enterStyled tt s = s{ curStyle = Just tt }
 
 -- Utility
 
 getString :: Element -> MML T.Text
 getString e = do
-  tt <- asks curStyle
+  tt <- fromMaybe TextNormal <$> asks curStyle
   return $ fromUnicode tt $ stripSpaces $ T.pack $ concatMap cdData
          $ onlyText $ elContent $ e
 

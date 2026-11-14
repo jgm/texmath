@@ -7,8 +7,11 @@
     </mrow>     <mn>2</mn>   </msup>   <mo>=</mo>   <msup>    <mi mathvariant="normal">k</mi>     <mn>2</mn>   </msup> </math>
 >>> native
 [ ESuper
-    (EGrouped [ EPhantom (EIdentifier "fail") , EIdentifier "k" ])
+    (EGrouped
+       [ EPhantom (EIdentifier "fail")
+       , EStyled TextNormal [ EIdentifier "k" ]
+       ])
     (ENumber "2")
 , ESymbol Rel "="
-, ESuper (EIdentifier "k") (ENumber "2")
+, ESuper (EStyled TextNormal [ EIdentifier "k" ]) (ENumber "2")
 ]

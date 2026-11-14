@@ -9,14 +9,15 @@
       </mphantom>
     </mrow>   </mover> </math>
 >>> native
-[ EOver False (EIdentifier "BASE") (EIdentifier "x")
+[ EOver
+    False (EIdentifier "BASE") (EStyled TextNormal [ EIdentifier "x" ])
 , ESymbol Rel "="
 , EOver
     False
     (EIdentifier "BASE")
     (EGrouped
        [ EPhantom (ENumber "1")
-       , EIdentifier "x"
+       , EStyled TextNormal [ EIdentifier "x" ]
        , EPhantom (ENumber "1")
        ])
 ]
