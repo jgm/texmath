@@ -29,7 +29,7 @@
     ")"
     [ Right
         (EFraction
-           NormalFrac
+           NoLineFrac
            (EGrouped
               [ EMathOperator "log" , ESymbol Ord "\8289" , EIdentifier "x" ])
            (EIdentifier "y"))

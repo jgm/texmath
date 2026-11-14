@@ -707,7 +707,11 @@ thicknessToNum s =
        "thin" -> (3/18)
        "medium" -> (1/2)
        "thick" -> 1
-       v -> fromMaybe 0.5 (readLength v)
+       -- if there is no unit (e.g. "0") or an unknown one (e.g. "0px",
+       -- "0%"), just use the number, so that zero is recognized
+       v -> fromMaybe 0.5 (readLength v <|>
+                           readLength (T.takeWhile (`elem` ("-.0123456789" :: String)) v
+                                         <> "em"))
 
 postfixExpr :: Element -> MML Exp
 postfixExpr e = local (setPosition FPostfix . enterAccent) (safeExpr e)

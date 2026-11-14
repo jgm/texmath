@@ -25,7 +25,7 @@
     "|"
     [ Right
         (EFraction
-           NormalFrac
+           NoLineFrac
            (EGrouped
               [ EMathOperator "sin" , ESymbol Ord "\8289" , EIdentifier "\952" ])
            (EIdentifier "M"))

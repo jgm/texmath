@@ -24,7 +24,7 @@
 >>> native
 [ EText TextNormal "Inline, text style, no line\160"
 , EFraction
-    NormalFrac
+    NoLineFrac
     (EGrouped
        [ ESuper (EIdentifier "x") (ENumber "2")
        , ESymbol Bin "+"

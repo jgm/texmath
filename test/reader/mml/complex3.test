@@ -14331,17 +14331,17 @@
             [ EDelimited
                 "("
                 ")"
-                [ Right (EFraction NormalFrac (ENumber "1") (ENumber "2")) ]
+                [ Right (EFraction NoLineFrac (ENumber "1") (ENumber "2")) ]
             , ESymbol Ord "\8290"
             , EDelimited
                 "("
                 ")"
-                [ Right (EFraction NormalFrac (ENumber "1") (ENumber "2")) ]
+                [ Right (EFraction NoLineFrac (ENumber "1") (ENumber "2")) ]
             , ESymbol Ord "\8290"
             , EDelimited
                 "("
                 ")"
-                [ Right (EFraction NormalFrac (ENumber "1") (ENumber "2")) ]
+                [ Right (EFraction NoLineFrac (ENumber "1") (ENumber "2")) ]
             ]
         ]
       , []
@@ -14350,17 +14350,17 @@
             [ EDelimited
                 "["
                 "]"
-                [ Right (EFraction NormalFrac (ENumber "1") (ENumber "2")) ]
+                [ Right (EFraction NoLineFrac (ENumber "1") (ENumber "2")) ]
             , ESymbol Ord "\8290"
             , EDelimited
                 "("
                 ")"
-                [ Right (EFraction NormalFrac (ENumber "1") (ENumber "2")) ]
+                [ Right (EFraction NoLineFrac (ENumber "1") (ENumber "2")) ]
             , ESymbol Ord "\8290"
             , EDelimited
                 "{"
                 "}"
-                [ Right (EFraction NormalFrac (ENumber "1") (ENumber "2")) ]
+                [ Right (EFraction NoLineFrac (ENumber "1") (ENumber "2")) ]
             ]
         ]
       , []
@@ -14433,11 +14433,11 @@
       , []
       ]
     , [ [ EGrouped
-            [ EFraction NormalFrac (ENumber "1") (ENumber "2")
+            [ EFraction NoLineFrac (ENumber "1") (ENumber "2")
             , ESymbol Ord "\8290"
-            , EFraction NormalFrac (ENumber "1") (ENumber "2")
+            , EFraction NoLineFrac (ENumber "1") (ENumber "2")
             , ESymbol Ord "\8290"
-            , EFraction NormalFrac (ENumber "1") (ENumber "2")
+            , EFraction NoLineFrac (ENumber "1") (ENumber "2")
             ]
         ]
       , []
@@ -18201,7 +18201,7 @@
                     [ EDelimited
                         "("
                         ")"
-                        [ Right (EFraction NormalFrac (EIdentifier "n") (EIdentifier "k"))
+                        [ Right (EFraction NoLineFrac (EIdentifier "n") (EIdentifier "k"))
                         ]
                     , ESymbol Ord "\8290"
                     , ESuper (EIdentifier "p") (EIdentifier "k")
@@ -21023,7 +21023,7 @@
             "\8971"
             [ Right
                 (EFraction
-                   NormalFrac
+                   NoLineFrac
                    (EGrouped
                       [ EMathOperator "sin" , ESymbol Ord "\8289" , EIdentifier "\952" ])
                    (EIdentifier "M"))
@@ -21036,7 +21036,7 @@
             "\8971"
             [ Right
                 (EFraction
-                   NormalFrac
+                   NoLineFrac
                    (EGrouped
                       [ EMathOperator "sin" , ESymbol Ord "\8289" , EIdentifier "\952" ])
                    (EIdentifier "M"))
@@ -21049,7 +21049,7 @@
             "\8971"
             [ Right
                 (EFraction
-                   NormalFrac
+                   NoLineFrac
                    (EGrouped
                       [ EMathOperator "sin" , ESymbol Ord "\8289" , EIdentifier "\952" ])
                    (EIdentifier "M"))
@@ -21136,7 +21136,7 @@
       , []
       ]
     , [ [ EFraction
-            NormalFrac
+            NoLineFrac
             (EGrouped
                [ EMathOperator "sin" , ESymbol Ord "\8289" , EIdentifier "\952" ])
             (EIdentifier "M")
@@ -21144,7 +21144,7 @@
       , []
       ]
     , [ [ EFraction
-            NormalFrac
+            NoLineFrac
             (EGrouped
                [ EMathOperator "sin" , ESymbol Ord "\8289" , EIdentifier "\952" ])
             (EIdentifier "M")
@@ -21152,7 +21152,7 @@
       , []
       ]
     , [ [ EFraction
-            NormalFrac
+            NoLineFrac
             (EGrouped
                [ EMathOperator "sin" , ESymbol Ord "\8289" , EIdentifier "\952" ])
             (EIdentifier "M")

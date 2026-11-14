@@ -11,11 +11,11 @@
 , ESymbol Rel "="
 , EFraction NormalFrac (ENumber "9") (ENumber "14")
 , EFraction
-    NormalFrac
+    NoLineFrac
     (EPhantom
        (EFraction
-          NormalFrac (EPhantom (ENumber "1")) (EPhantom (ENumber "2"))))
+          NoLineFrac (EPhantom (ENumber "1")) (EPhantom (ENumber "2"))))
     (EPhantom
        (EFraction
-          NormalFrac (EPhantom (ENumber "1")) (EPhantom (ENumber "2"))))
+          NoLineFrac (EPhantom (ENumber "1")) (EPhantom (ENumber "2"))))
 ]

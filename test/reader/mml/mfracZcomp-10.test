@@ -19,6 +19,6 @@
 , EDelimited
     "("
     ")"
-    [ Right (EFraction NormalFrac (ENumber "5") (ENumber "8")) ]
+    [ Right (EFraction NoLineFrac (ENumber "5") (ENumber "8")) ]
 , EText TextNormal "\160the end."
 ]

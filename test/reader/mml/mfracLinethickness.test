@@ -1,0 +1,19 @@
+<<< mml
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mfrac linethickness="0"><mn>1</mn><mn>2</mn></mfrac>
+  <mfrac linethickness="0px"><mn>1</mn><mn>2</mn></mfrac>
+  <mfrac linethickness="0%"><mn>1</mn><mn>2</mn></mfrac>
+  <mfrac linethickness="0.0"><mn>1</mn><mn>2</mn></mfrac>
+  <mfrac linethickness="2"><mn>1</mn><mn>2</mn></mfrac>
+  <mfrac linethickness="1px"><mn>1</mn><mn>2</mn></mfrac>
+  <mfrac linethickness="thick"><mn>1</mn><mn>2</mn></mfrac>
+</math>
+>>> native
+[ EFraction NoLineFrac (ENumber "1") (ENumber "2")
+, EFraction NoLineFrac (ENumber "1") (ENumber "2")
+, EFraction NoLineFrac (ENumber "1") (ENumber "2")
+, EFraction NoLineFrac (ENumber "1") (ENumber "2")
+, EFraction NormalFrac (ENumber "1") (ENumber "2")
+, EFraction NormalFrac (ENumber "1") (ENumber "2")
+, EFraction NormalFrac (ENumber "1") (ENumber "2")
+]

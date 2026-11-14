@@ -8,7 +8,7 @@
     False
     (EIdentifier "BASE")
     (EFraction
-       NormalFrac
+       NoLineFrac
        (EIdentifier "first under script")
        (EIdentifier "second one"))
 , ESymbol Rel "="
@@ -18,7 +18,7 @@
        False
        (EIdentifier "BASE")
        (EFraction
-          NormalFrac
+          NoLineFrac
           (EIdentifier "first under script")
           (EIdentifier "second one")))
     (EPhantom (EIdentifier "fail"))

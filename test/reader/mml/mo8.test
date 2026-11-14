@@ -14,6 +14,6 @@
 [ EDelimited
     "("
     ")"
-    [ Right (EFraction NormalFrac (EIdentifier "a") (EIdentifier "b"))
+    [ Right (EFraction NoLineFrac (EIdentifier "a") (EIdentifier "b"))
     ]
 ]

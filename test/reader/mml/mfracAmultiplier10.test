@@ -38,7 +38,7 @@
   </mrow> </math>
 >>> native
 [ EFraction
-    NormalFrac
+    NoLineFrac
     (ENumber "1")
     (EGrouped [ EIdentifier "y" , ESymbol Bin "+" , ENumber "3" ])
 , EFraction

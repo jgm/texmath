@@ -29,7 +29,7 @@
     ")"
     [ Right
         (EFraction
-           NormalFrac
+           NoLineFrac
            (EGrouped [ EIdentifier "n" , ESymbol Bin "-" , EIdentifier "k" ])
            (EIdentifier "n"))
     ]

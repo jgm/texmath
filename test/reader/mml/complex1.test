@@ -1313,7 +1313,7 @@
             , EDelimited
                 "("
                 ")"
-                [ Right (EFraction NormalFrac (EIdentifier "n") (EIdentifier "k"))
+                [ Right (EFraction NoLineFrac (EIdentifier "n") (EIdentifier "k"))
                 ]
             , ESubsup (EIdentifier "p") (EGrouped []) (EIdentifier "k")
             , ESubsup

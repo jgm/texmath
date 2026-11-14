@@ -7,7 +7,7 @@
 [ EOver
     False
     (EIdentifier "BASE")
-    (EFraction NormalFrac (EIdentifier "first") (EIdentifier "second"))
+    (EFraction NoLineFrac (EIdentifier "first") (EIdentifier "second"))
 , ESymbol Rel "="
 , EOver
     False
@@ -15,6 +15,6 @@
        False
        (EIdentifier "BASE")
        (EFraction
-          NormalFrac (EIdentifier "first") (EIdentifier "second")))
+          NoLineFrac (EIdentifier "first") (EIdentifier "second")))
     (EPhantom (EIdentifier "over"))
 ]

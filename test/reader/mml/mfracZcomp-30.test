@@ -106,7 +106,7 @@
            [ EDelimited
                "("
                ")"
-               [ Right (EFraction NormalFrac (EIdentifier "K") (EIdentifier "k"))
+               [ Right (EFraction NoLineFrac (EIdentifier "K") (EIdentifier "k"))
                ]
            , ESymbol Ord "\8290"
            , EDelimited
@@ -114,7 +114,7 @@
                ")"
                [ Right
                    (EFraction
-                      NormalFrac
+                      NoLineFrac
                       (EGrouped [ EIdentifier "M" , ESymbol Bin "-" , EIdentifier "K" ])
                       (EGrouped [ EIdentifier "n" , ESymbol Bin "-" , EIdentifier "k" ]))
                ]
@@ -122,7 +122,7 @@
         (EDelimited
            "("
            ")"
-           [ Right (EFraction NormalFrac (EIdentifier "M") (EIdentifier "n"))
+           [ Right (EFraction NoLineFrac (EIdentifier "M") (EIdentifier "n"))
            ])
     ]
 ]
