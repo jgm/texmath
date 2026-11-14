@@ -455,7 +455,9 @@ delimiters = do
     env <- asks mathEnv
     let commands' = [ ".", "(", ")", "[", "]", "|", "\x2016", "{", "}"
                     , "\x2309", "\x2308", "\x2329", "\x232A"
-                    , "\x230B", "\x230A", "\x231C", "\x231D"]
+                    , "\x230B", "\x230A", "\x231C", "\x231D"
+                    , "\x27E8", "\x27E9", "/", "\\"
+                    , "\x2191", "\x2193", "\x2195", "\x21D1", "\x21D3", "\x21D5"]
     return $ filter (not . null) (map (flip getTeXMath env) commands')
 
 isFancy :: Exp -> Bool

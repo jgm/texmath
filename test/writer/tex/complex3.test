@@ -7728,7 +7728,7 @@ x^{'3} & \\
 {\left( \frac{1}{2} \right)\left( \frac{1}{2} \right)\left( \frac{1}{2} \right)} & \\
 {\left\lbrack \frac{1}{2} \right\rbrack\left( \frac{1}{2} \right)\left\{ \frac{1}{2} \right\}} & \\
 {\left\langle \frac{1}{2} \right\rangle\left\lfloor \frac{1}{2} \right\rfloor\left\lceil \frac{1}{2} \right\rceil} & \\
-{\left. \uparrow\frac{1}{2}\uparrow \right.\left. \downarrow\frac{1}{2}\downarrow \right.\left. \updownarrow\frac{1}{2}\updownarrow \right.} & \\
+{\left. \middle\uparrow \frac{1}{2} \middle\uparrow \right.\left. \middle\downarrow \frac{1}{2} \middle\downarrow \right.\left. \middle\updownarrow \frac{1}{2} \middle\updownarrow \right.} & \\
 {\frac{1}{2}\frac{1}{2}\frac{1}{2}} & \\
 {\frac{1}{2}\frac{1}{2}\frac{1}{2}} & \\
 {\frac{1}{2}\frac{1}{2}\frac{1}{2}} & \\
@@ -8022,7 +8022,7 @@ a_{n\hspace{0pt}1} & a_{n\hspace{0pt}2} & \cdot & \cdot & \cdot & a_{n\hspace{0p
 {{x = 1}{(\text{jbm})}} & \\
  & \\
 {{{f{(x)}}g{\lbrack y\rbrack}h{\{ z\}}} + {{\lfloor a\rfloor}{\lceil b\rceil}{\langle c\rangle}}} & \\
-{\left. \frac{123}{\frac{456}{A}} \right|\left. \parallel\frac{A}{\frac{B}{A}} \right.{\left. /\frac{1}{\frac{2}{A}}/ \right.\left( \frac{3}{\frac{4}{A}} \right)}\left. \updownarrow\frac{5}{\frac{6}{A}}\updownarrow \right.\frac{7}{\frac{8}{A}}\left. \Updownarrow\frac{\frac{9}{20}}{\frac{10}{A}}\Updownarrow \right.{\left. \uparrow\frac{11}{\frac{12}{A}}\uparrow \right.\left. \Uparrow\frac{13}{\frac{14}{A}}\Uparrow \right.}\left. \downarrow\frac{15}{\frac{16}{A}}\downarrow \right.\left. \Downarrow\frac{17}{\frac{18}{A}}\Downarrow \right.} & \\
+{\left. \frac{123}{\frac{456}{A}} \right|\left. \parallel\frac{A}{\frac{B}{A}} \right.{\left. \middle/ \frac{1}{\frac{2}{A}} \middle/ \right.\left( \frac{3}{\frac{4}{A}} \right)}\left. \middle\updownarrow \frac{5}{\frac{6}{A}} \middle\updownarrow \right.\frac{7}{\frac{8}{A}}\left. \middle\Updownarrow \frac{\frac{9}{20}}{\frac{10}{A}} \middle\Updownarrow \right.{\left. \middle\uparrow \frac{11}{\frac{12}{A}} \middle\uparrow \right.\left. \middle\Uparrow \frac{13}{\frac{14}{A}} \middle\Uparrow \right.}\left. \middle\downarrow \frac{15}{\frac{16}{A}} \middle\downarrow \right.\left. \middle\Downarrow \frac{17}{\frac{18}{A}} \middle\Downarrow \right.} & \\
 {x\begin{matrix}
 x & x \\
 x & x
@@ -8171,22 +8171,22 @@ x^{2} & \text{merged} & y_{1} \\
 \text{Brooks/Cole Publishing Company} \\
 \text{An International Thomson Publishing Company}
 \end{array}\;} & \\
-\left\{ \frac{\frac{1}{2}}{\frac{1}{2}}\uparrow\sum\limits_{1}^{2} \right\} & \\
+\left\{ \frac{\frac{1}{2}}{\frac{1}{2}} \middle\uparrow \sum\limits_{1}^{2} \right\} & \\
 \left\langle \frac{\frac{1}{2}}{\frac{1}{2}} \middle| \sum\limits_{1}^{2} \right\rangle & \\
 \left\lceil \frac{\frac{1}{2}}{\frac{1}{2}} \middle| \sum\limits_{1}^{2} \right\rceil & \\
-\left. \Downarrow\left. \frac{\frac{1}{2}}{\frac{1}{2}}\updownarrow\sum\limits_{1}^{2} \right.\Downarrow \right. & \\
+\left. \middle\Downarrow \left. \frac{\frac{1}{2}}{\frac{1}{2}} \middle\updownarrow \sum\limits_{1}^{2} \right. \middle\Downarrow \right. & \\
 \left\lbrack \frac{\frac{1}{2}}{\frac{1}{2}} \right\rbrack & \\
 \left( \frac{\frac{1}{2}}{\frac{1}{2}} \right) & \\
 \left\{ \frac{\frac{1}{2}}{\frac{1}{2}} \right\} & \\
 \left\langle \frac{\frac{1}{2}}{\frac{1}{2}} \right\rangle & \\
 \left\lfloor \frac{\frac{1}{2}}{\frac{1}{2}} \right\rfloor & \\
 \left\lceil \frac{\frac{1}{2}}{\frac{1}{2}} \right\rceil & \\
-\left. \uparrow\frac{\frac{1}{2}}{\frac{1}{2}}\uparrow \right. & \\
-\left. \downarrow\frac{\frac{1}{2}}{\frac{1}{2}}\downarrow \right. & \\
-\left. \updownarrow\frac{\frac{1}{2}}{\frac{1}{2}}\updownarrow \right. & \\
-\left. \Uparrow\frac{\frac{1}{2}}{\frac{1}{2}}\Uparrow \right. & \\
-\left. \Downarrow\frac{\frac{1}{2}}{\frac{1}{2}}\Downarrow \right. & \\
-\left. \Updownarrow\frac{\frac{1}{2}}{\frac{1}{2}}\Updownarrow \right. & \\
+\left. \middle\uparrow \frac{\frac{1}{2}}{\frac{1}{2}} \middle\uparrow \right. & \\
+\left. \middle\downarrow \frac{\frac{1}{2}}{\frac{1}{2}} \middle\downarrow \right. & \\
+\left. \middle\updownarrow \frac{\frac{1}{2}}{\frac{1}{2}} \middle\updownarrow \right. & \\
+\left. \middle\Uparrow \frac{\frac{1}{2}}{\frac{1}{2}} \middle\Uparrow \right. & \\
+\left. \middle\Downarrow \frac{\frac{1}{2}}{\frac{1}{2}} \middle\Downarrow \right. & \\
+\left. \middle\Updownarrow \frac{\frac{1}{2}}{\frac{1}{2}} \middle\Updownarrow \right. & \\
 \frac{\frac{1}{2}}{\frac{1}{2}} & \\
 \left. \backslash arrowvert\frac{\frac{1}{2}}{\frac{1}{2}} \right.\backslash arrowvert & \\
 \left. \backslash Arrowvert\frac{\frac{1}{2}}{\frac{1}{2}} \right.\backslash Arrowvert & \\
@@ -8196,8 +8196,8 @@ x^{2} & \text{merged} & y_{1} \\
 \left| \frac{\frac{1}{2}}{\frac{1}{2}} \right| & \\
 \left. \parallel\frac{\frac{1}{2}}{\frac{1}{2}}\parallel \right. & \\
 \left. \parallel\frac{\frac{1}{2}}{\frac{1}{2}}\parallel \right. & \\
-\left. /\frac{\frac{1}{2}}{\frac{1}{2}}/ \right. & \\
-\left. \backslash\frac{\frac{1}{2}}{\frac{1}{2}}\backslash \right. & \\
+\left. \middle/ \frac{\frac{1}{2}}{\frac{1}{2}} \middle/ \right. & \\
+\left. \middle\backslash \frac{\frac{1}{2}}{\frac{1}{2}} \middle\backslash \right. & \\
 \left. ⎱\frac{\frac{1}{2}}{\frac{1}{2}} \right.⎰ & \\
 \left. \backslash lgroup\frac{\frac{1}{2}}{\frac{1}{2}} \right.\backslash rgroup & \\
 \left. ⌞\frac{\frac{1}{2}}{\frac{1}{2}} \right.⌟ & \\

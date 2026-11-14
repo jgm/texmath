@@ -1,0 +1,7 @@
+<<< native
+[ EDelimited "/" "\\" [ Right (EIdentifier "x") ]
+, EDelimited "\8593" "\8659" [ Right (EIdentifier "y") ]
+, EDelimited "\10216" "\10217" [ Right (EIdentifier "z") ]
+]
+>>> tex
+\left/ x \right\backslash\left\uparrow y \right\Downarrow\left\langle z \right\rangle
