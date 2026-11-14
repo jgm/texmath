@@ -21,8 +21,8 @@
     TextScript
     [ EArray
         [ AlignLeft ]
-        [ [ [ EText TextNormal "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ] ]
-        , [ [ EText TextNormal "abcdefghijklmnopqrstuvwxyz" ] ]
+        [ [ [ EText TextScript "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ] ]
+        , [ [ EText TextScript "abcdefghijklmnopqrstuvwxyz" ] ]
         ]
     ]
 ]

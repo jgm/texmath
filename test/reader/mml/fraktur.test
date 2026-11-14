@@ -21,8 +21,8 @@
     TextFraktur
     [ EArray
         [ AlignLeft ]
-        [ [ [ EText TextNormal "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ] ]
-        , [ [ EText TextNormal "abcdefghijklmnopqrstuvwxyz" ] ]
+        [ [ [ EText TextFraktur "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ] ]
+        , [ [ EText TextFraktur "abcdefghijklmnopqrstuvwxyz" ] ]
         ]
     ]
 ]

@@ -193,12 +193,12 @@ op e = do
 
 text :: Element -> MML Exp
 text e = do
-  textStyle <- maybe TextNormal getTextType
-                <$> (findAttrQ "mathvariant" e)
+  mbStyle <- fmap getTextType <$> findAttrQ "mathvariant" e
+  textStyle <- textStyleFor e
   s <- getString e
   -- mathml seems to use mtext for spacing often; we get
   -- more idiomatic math if we replace these with ESpace:
-  return $ case (textStyle, T.unpack s) of
+  return $ case (fromMaybe TextNormal mbStyle, T.unpack s) of
        (TextNormal, [c]) ->
          case getSpaceWidth c of
               Just w  -> ESpace w
@@ -209,10 +209,17 @@ literal :: Element -> MML Exp
 literal e = do
   lquote <- fromMaybe "\x201C" <$> findAttrQ "lquote" e
   rquote <- fromMaybe "\x201D" <$> findAttrQ "rquote" e
-  textStyle <- maybe TextNormal getTextType
-                <$> (findAttrQ "mathvariant" e)
+  textStyle <- textStyleFor e
   s <- getString e
   return $ EText textStyle $ lquote <> s <> rquote
+
+-- | The style of a text element (mtext, ms): its own mathvariant,
+-- or else the style of the enclosing mstyle.
+textStyleFor :: Element -> MML TextType
+textStyleFor e = do
+  curstyle <- asks curStyle
+  maybe (fromMaybe TextNormal curstyle) getTextType
+    <$> findAttrQ "mathvariant" e
 
 space :: Element -> MML Exp
 space e = do
