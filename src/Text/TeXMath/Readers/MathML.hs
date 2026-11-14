@@ -388,7 +388,9 @@ fenced :: Element -> MML Exp
 fenced e = do
   open  <- fromMaybe "(" <$> (findAttrQ "open" e)
   close <- fromMaybe ")" <$> (findAttrQ "close" e)
-  sep  <- fromMaybe "," <$> (findAttrQ "separators" e)
+  -- whitespace in separators is ignored
+  sep  <- T.filter (not . isSpace) . fromMaybe ","
+            <$> (findAttrQ "separators" e)
   let expanded =
         case sep of
           "" -> elChildren e
