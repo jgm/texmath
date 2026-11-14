@@ -261,7 +261,7 @@
 , ESymbol Rel "="
 , EDelimited
     "{"
-    " "
+    ""
     [ Right
         (EArray
            [ AlignCenter ]

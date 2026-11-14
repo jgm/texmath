@@ -422,7 +422,7 @@
 , ESymbol Rel "\8660"
 , EDelimited
     "{"
-    " "
+    ""
     [ Right
         (EArray
            [ AlignCenter ]
@@ -447,7 +447,7 @@
              ]
            , [ [ ESub
                    (EDelimited
-                      " "
+                      ""
                       "|"
                       [ Right
                           (EFraction
@@ -465,7 +465,7 @@
                , ESymbol Rel "="
                , ESub
                    (EDelimited
-                      " "
+                      ""
                       "|"
                       [ Right
                           (EFraction

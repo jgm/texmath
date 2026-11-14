@@ -296,21 +296,17 @@ elemToExps' element | isElem "m" "d" element =
                   (elChildren element)
       inDelimExps = map (map Right) baseExps
       dPr = filterChildName (hasElemName "m" "dPr") element
-      headOrSpace [] = Just ' '
-      headOrSpace (c:_) = Just c
-      begChr = dPr >>=
-               filterChildName (hasElemName "m" "begChr") >>=
-               findAttrBy (hasElemName "m" "val") >>= headOrSpace
-      sepChr = dPr >>=
-               filterChildName (hasElemName "m" "sepChr") >>=
-               findAttrBy (hasElemName "m" "val") >>= headOrSpace
-      endChr = dPr >>=
-               filterChildName (hasElemName "m" "endChr") >>=
-               findAttrBy (hasElemName "m" "val") >>= headOrSpace
-      beg = maybe "(" T.singleton begChr
-      end = maybe ")" T.singleton endChr
-      sep = maybe "|" T.singleton sepChr
-      exps = intercalate [Left sep] inDelimExps
+      -- an empty value means no delimiter
+      firstChar = T.take 1 . T.pack
+      getChr name = dPr >>=
+               filterChildName (hasElemName "m" name) >>=
+               findAttrBy (hasElemName "m" "val")
+      beg = maybe "(" firstChar (getChr "begChr")
+      end = maybe ")" firstChar (getChr "endChr")
+      sep = maybe "|" firstChar (getChr "sepChr")
+      exps = if T.null sep
+                then concat inDelimExps
+                else intercalate [Left sep] inDelimExps
   in
    Just [EDelimited beg end exps]
 elemToExps' element | isElem "m" "eqArr" element =

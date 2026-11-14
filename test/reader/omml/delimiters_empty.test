@@ -1,0 +1,17 @@
+<<< omml
+<m:oMath xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math">
+  <m:d>
+    <m:dPr><m:begChr m:val=""/><m:endChr m:val="|"/></m:dPr>
+    <m:e><m:r><m:t>x</m:t></m:r></m:e>
+  </m:d>
+  <m:d>
+    <m:dPr><m:sepChr m:val=""/></m:dPr>
+    <m:e><m:r><m:t>a</m:t></m:r></m:e>
+    <m:e><m:r><m:t>b</m:t></m:r></m:e>
+  </m:d>
+</m:oMath>
+>>> native
+[ EDelimited "" "|" [ Right (EIdentifier "x") ]
+, EDelimited
+    "(" ")" [ Right (EIdentifier "a") , Right (EIdentifier "b") ]
+]
