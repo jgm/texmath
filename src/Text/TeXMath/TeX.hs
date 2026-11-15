@@ -83,6 +83,13 @@ escapeLaTeX c =
        '\x2004' -> Literal "\\;"
        '\x2001' -> ControlSeq "\\quad"
        '\x2003' -> ControlSeq "\\quad"
+       '\x2000' -> ControlSeq "\\enspace"
+       '\x2002' -> ControlSeq "\\enspace"
+       '\x2007' -> ControlSeq "\\enspace"  -- figure space
+       '\x2008' -> Literal "\\,"           -- punctuation space
+       '\x2009' -> Literal "\\,"
+       '\x202F' -> Literal "\\,"           -- narrow no-break space
+       '\x205F' -> Literal "\\:"
        '\x2032' -> Literal "'"
        '\x2033' -> Literal "''"
        '\x2034' -> Literal "'''"

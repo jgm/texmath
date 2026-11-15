@@ -1,0 +1,4 @@
+<<< native
+[ EText TextNormal "a\8192b\8194c\8199d\8200e\8201f\8239g\8287h" ]
+>>> tex
+\text{a\enspace{}b\enspace{}c\enspace{}d\,e\,f\,g\:h}
