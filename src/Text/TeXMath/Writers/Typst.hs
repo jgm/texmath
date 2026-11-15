@@ -197,9 +197,8 @@ writeExp (EOver _ (EOver _ b (ESymbol TOver "\9140")) e1) =
   "overbracket(" <> writeExp b <> ", " <> writeExp e1 <> ")"
 writeExp (EOver _convertible b (ESymbol Accent ac))
   = case getAccentCommand ac of
-     Just accCommand
-       | not (isGrouped b) -> accCommand <> inParens (writeExp b)
-     _ -> "accent" <> inParens (writeExp b <> ", " <> ac)
+     Just accCommand -> accCommand <> inParens (writeExp b)
+     Nothing -> "accent" <> inParens (writeExp b <> ", " <> esc ac)
 writeExp (EOver _convertible b e1) =
   case e1 of
     ESymbol TOver "\9182" -> "overbrace" <> inParens (writeExp b)
@@ -393,9 +392,6 @@ getAccentCommand ac = do
     "\8417" -> Just "arrow.l.r"
     _ -> Nothing
 
-isGrouped :: Exp -> Bool
-isGrouped (EGrouped _) = True
-isGrouped _ = False
 
 removePointZero :: String -> String
 removePointZero s =

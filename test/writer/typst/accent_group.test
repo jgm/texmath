@@ -1,0 +1,7 @@
+<<< mml
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mover accent="true"><mrow><mi>a</mi><mi>b</mi></mrow><mo>^</mo></mover>
+  <mover accent="true"><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>~</mo></mover>
+</math>
+>>> typst
+hat(a b) tilde(x + y)
