@@ -330,12 +330,13 @@ getSpaceWidth _        = Nothing
 -- specified width.
 getSpaceChars :: Rational -> T.Text
 getSpaceChars r
-  | n < 0 = "\x200B" -- no negative space chars in unicode
+  | r <= 0 = "\x200B" -- no zero-width or negative space chars in unicode
   | otherwise = fracSpaces f <> emQuads n
   where
     (n, f) = properFraction r
     emQuads x = T.replicate x "\x2001"
     fracSpaces x
+      | x == 0    = ""          -- whole number of ems
       | x <= 2/18 = "\x200A"
       | x <= 3/18 = "\x2006"
       | x <= 4/18 = "\xA0"   -- could also be "\x2005"

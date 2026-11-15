@@ -1,0 +1,13 @@
+<<< tex
+a\quad b\qquad c\!d\,e
+>>> pandoc
+[ Emph [ Str "a" ]
+, Str "\8193"
+, Emph [ Str "b" ]
+, Str "\8193\8193"
+, Emph [ Str "c" ]
+, Str "\8203"
+, Emph [ Str "d" ]
+, Str "\8198"
+, Emph [ Str "e" ]
+]
