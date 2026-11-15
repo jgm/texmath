@@ -1,0 +1,7 @@
+<<< mml
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mover accent="true"><mi>x</mi><mo>→</mo></mover>
+  <mover accent="true"><mi>y</mi><mo>←</mo></mover>
+</math>
+>>> typst
+arrow(x) arrow.l(y)
