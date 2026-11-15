@@ -1,0 +1,4 @@
+<<< tex
+\underbracket{x} \underbracket{a+b}_{n} \overbracket{y} \overbracket{a+b}^{n}
+>>> typst
+underbracket(x) underbracket(a + b, n) overbracket(y) overbracket(a + b, n)
