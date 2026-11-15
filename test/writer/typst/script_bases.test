@@ -1,0 +1,4 @@
+<<< tex
+\frac{a}{b}^2 + {a+b}_2 + {x^2}^3 + {a+b}_i^{n} + x_1^2
+>>> typst
+frac(a, b)^2 + attach(a + b, b: 2) + attach(x^2, t: 3) + attach(a + b, b: i, t: n) + x_1^2

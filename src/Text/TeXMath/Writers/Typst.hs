@@ -121,6 +121,37 @@ writeExpB e =
     "" -> "zws"
     t -> t
 
+-- | Write a base with an optional subscript and superscript.
+-- A base that wouldn't otherwise be a single unit (e.g. a+b, or
+-- x^2) uses attach(), since parentheses would be displayed;
+-- a fraction uses the frac() form rather than a / b.
+writeScripted :: Exp -> Maybe Exp -> Maybe Exp -> Text
+writeScripted b msub msup =
+  case b of
+    EFraction ft e1 e2 | ft /= NoLineFrac ->
+      "frac(" <> writeExp e1 <> ", " <> writeExp e2 <> ")" <> scripts
+    EGrouped (_:_:_) -> attach
+    ESub{} -> attach
+    ESuper{} -> attach
+    ESubsup{} -> attach
+    _ -> writeExpB b <> scripts
+ where
+  scripts =
+    case (msub, msup) of
+      (Just e1, Just e2)
+        | Just ps <- S.toPrimes e2 -> ps <> "_" <> writeExpS e1
+        | otherwise -> "_" <> writeExpS e1 <> "^" <> writeExpS e2
+      (Just e1, Nothing) -> "_" <> writeExpS e1
+      (Nothing, Just e2)
+        | Just ps <- S.toPrimes e2 -> ps
+        | otherwise -> "^" <> writeExpS e2
+      (Nothing, Nothing) -> mempty
+  attach = "attach(" <> writeExp b <> arg "b" msub <> arg "t" msup <> ")"
+  -- empty scripts are omitted
+  arg name me = case writeExp <$> me of
+                  Just t | not (T.null t) -> ", " <> name <> ": " <> t
+                  _ -> mempty
+
 writeExp :: Exp -> Text
 writeExp (ENumber s) = s
 writeExp (ESymbol _t s)
@@ -151,16 +182,9 @@ writeExp (EFraction _fractype e1 e2) =
     (EGrouped _, _) -> "frac(" <> writeExp e1 <> ", " <> writeExp e2 <> ")"
     (_, EGrouped _) -> "frac(" <> writeExp e1 <> ", " <> writeExp e2 <> ")"
     _ -> writeExp e1 <> " / " <> writeExp e2
-writeExp (ESub b e1) = writeExpB b <> "_" <> writeExpS e1
-writeExp (ESuper b e1) = writeExpB b <>
-  case S.toPrimes e1 of
-    Just ps -> ps
-    Nothing -> "^" <> writeExpS e1
-writeExp (ESubsup b e1 e2) =
-  writeExpB b <>
-    case S.toPrimes e2 of
-      Just ps -> ps <> "_" <> writeExpS e1
-      Nothing -> "_" <> writeExpS e1 <> "^" <> writeExpS e2
+writeExp (ESub b e1) = writeScripted b (Just e1) Nothing
+writeExp (ESuper b e1) = writeScripted b Nothing (Just e1)
+writeExp (ESubsup b e1 e2) = writeScripted b (Just e1) (Just e2)
 writeExp (EOver _ (EOver _ b (ESymbol TOver "\9182")) e1) =
   "overbrace(" <> writeExp b <> ", " <> writeExp e1 <> ")"
 writeExp (EOver _ (EOver _ b (ESymbol TOver "\9140")) e1) =

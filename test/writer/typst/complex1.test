@@ -601,7 +601,7 @@
     ]
 ]
 >>> typst
-upright("Bernoulli Trials") & P\(E\) = (n / k) p_()^k\(1 - p\)_()^(n - k)\
+upright("Bernoulli Trials") & P\(E\) = (n / k) p_()^k attach(\(1 - p\), t: n - k)\
 upright("Cauchy-Schwarz Inequality") & (sum_(k = 1)^n a_k^() b_k^())_()^2 lt.eq (sum_(k = 1)^n a_k^2) (sum_(k = 1)^n b_k^2)\
 upright("Cauchy Formula") & f\(z\)thin dot.c "Ind"_gamma^()\(z\)= frac(1, 2 pi i) integral.cont_gamma^() frac(f\(xi\), xi - z) thin d xi\
 upright("Cross Product") & V_1^() times V_2^() = mat(delim: "|", i, j, k; frac(partial X, partial u), frac(partial Y, partial u), 0; frac(partial X, partial v), frac(partial Y, partial v), 0)\
