@@ -68,4 +68,4 @@
     ]
 ]
 >>> typst
-cases(delim: "{", "div"_x u "div"^x u "div"_x^y u "div"_x^y u & upright("operatorname"), "⋆-lim'sup"_(x arrow.r 0) u "⋆-lim'sup"^w u "⋆-lim'sup"_(x arrow.r 0)^w u "⋆-lim'sup"_(x arrow.r 0)^w u & upright("operatorname*"), "⋆-lim'sup"_(x arrow.r 0) u "⋆-lim'sup"^w u "⋆-lim'sup"_(x arrow.r 0)^w u "⋆-lim'sup"_(x arrow.r 0)^w u & upright("operatorname*:nolimits"), "curl"_x v "argmax"_K u & upright("DeclareMathOperator"))
+cases(delim: "{", "div"_x u "div"^x u "div"_x^y u "div"_x^y u & upright("operatorname"), limits("⋆-lim'sup")_(x arrow.r 0) u limits("⋆-lim'sup")^w u limits("⋆-lim'sup")_(x arrow.r 0)^w u limits("⋆-lim'sup")_(x arrow.r 0)^w u & upright("operatorname*"), "⋆-lim'sup"_(x arrow.r 0) u "⋆-lim'sup"^w u "⋆-lim'sup"_(x arrow.r 0)^w u "⋆-lim'sup"_(x arrow.r 0)^w u & upright("operatorname*:nolimits"), "curl"_x v limits("argmax")_K u & upright("DeclareMathOperator"))

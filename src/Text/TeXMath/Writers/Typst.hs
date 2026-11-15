@@ -137,21 +137,49 @@ writeScripted b msub msup =
     ESubsup{} -> attach
     _ -> writeExpB b <> scripts
  where
-  scripts =
-    case (msub, msup) of
-      (Just e1, Just e2)
-        | Just ps <- S.toPrimes e2 -> ps <> "_" <> writeExpS e1
-        | otherwise -> "_" <> writeExpS e1 <> "^" <> writeExpS e2
-      (Just e1, Nothing) -> "_" <> writeExpS e1
-      (Nothing, Just e2)
-        | Just ps <- S.toPrimes e2 -> ps
-        | otherwise -> "^" <> writeExpS e2
-      (Nothing, Nothing) -> mempty
+  scripts = writeScripts msub msup
   attach = "attach(" <> writeExp b <> arg "b" msub <> arg "t" msup <> ")"
   -- empty scripts are omitted
   arg name me = case writeExp <$> me of
                   Just t | not (T.null t) -> ", " <> name <> ": " <> t
                   _ -> mempty
+
+-- | Subscript and/or superscript, to follow a base.
+writeScripts :: Maybe Exp -> Maybe Exp -> Text
+writeScripts msub msup =
+  case (msub, msup) of
+    (Just e1, Just e2)
+      | Just ps <- S.toPrimes e2 -> ps <> "_" <> writeExpS e1
+      | otherwise -> "_" <> writeExpS e1 <> "^" <> writeExpS e2
+    (Just e1, Nothing) -> "_" <> writeExpS e1
+    (Nothing, Just e2)
+      | Just ps <- S.toPrimes e2 -> ps
+      | otherwise -> "^" <> writeExpS e2
+    (Nothing, Nothing) -> mempty
+
+-- | Write a base with something under and/or over it. Unless the
+-- placement may vary (convertible) or Typst already puts limits
+-- above/below the base (large operators, lim, max, ...), wrap the
+-- base in limits(), which also keeps a base like a+b together.
+writeUnderOver :: Bool -> Exp -> Maybe Exp -> Maybe Exp -> Text
+writeUnderOver convertible b munder mover =
+  case (nonEmpty munder, nonEmpty mover) of
+    (Nothing, Nothing) -> writeExp b
+    (munder', mover')
+      | convertible || hasLimits b -> writeScripted b munder' mover'
+      | otherwise -> "limits" <> inParens (writeExp b)
+                       <> writeScripts munder' mover'
+  where
+    nonEmpty (Just e) | not (T.null (writeExp e)) = Just e
+    nonEmpty _ = Nothing
+    -- Typst already places attachments of large operators and
+    -- relations above and below
+    hasLimits (ESymbol Op _) = True
+    hasLimits (ESymbol Rel _) = True
+    hasLimits (EMathOperator s) =
+      s `elem` ["det", "gcd", "lcm", "inf", "lim", "liminf", "limsup",
+                "max", "min", "Pr", "sup"]
+    hasLimits _ = False
 
 writeExp :: Exp -> Text
 writeExp (ENumber s) = esc s  -- e.g. 1,5 must not split arguments
@@ -199,29 +227,29 @@ writeExp (EOver _convertible b (ESymbol Accent ac))
   = case getAccentCommand ac of
      Just accCommand -> accCommand <> inParens (writeExp b)
      Nothing -> "accent" <> inParens (writeExp b <> ", " <> esc ac)
-writeExp (EOver _convertible b e1) =
+writeExp (EOver convertible b e1) =
   case e1 of
     ESymbol TOver "\9182" -> "overbrace" <> inParens (writeExp b)
     ESymbol TOver "\9140" -> "overbracket" <> inParens (writeExp b)
     ESymbol TOver "\175" -> "overline" <> inParens (writeExp b)
-    _ -> writeExpB b <> "^" <> writeExpS e1
+    _ -> writeUnderOver convertible b Nothing (Just e1)
 writeExp (EUnder _ (EUnder _ b (ESymbol TUnder "\9183")) e1) =
   "underbrace(" <> writeExp b <> ", " <> writeExp e1 <> ")"
 writeExp (EUnder _ (EUnder _ b (ESymbol TUnder "\9141")) e1) =
   "underbracket(" <> writeExp b <> ", " <> writeExp e1 <> ")"
-writeExp (EUnder _convertible b e1) =
+writeExp (EUnder convertible b e1) =
   case e1 of
     ESymbol TUnder "_" -> "underline(" <> writeExp b <> ")"
     ESymbol TUnder "\817" -> "underline(" <> writeExp b <> ")"
     ESymbol TUnder "\9183" -> "underbrace(" <> writeExp b <> ")"
     ESymbol TUnder "\9141" -> "underbracket(" <> writeExp b <> ")"
-    _ -> writeExpB b <> "_" <> writeExpS e1
+    _ -> writeUnderOver convertible b (Just e1) Nothing
 writeExp (EUnderover convertible b e1 e2) =
   case (e1, e2) of
     (_, ESymbol Accent _) -> writeExp (EUnder convertible (EOver False b e2) e1)
     (_, ESymbol TOver _) -> writeExp (EUnder convertible (EOver False b e2) e1)
     (ESymbol TUnder _, _) -> writeExp (EOver convertible (EUnder False b e1) e2)
-    _ -> writeExpB b <> "_" <> writeExpS e1 <> "^" <> writeExpS e2
+    _ -> writeUnderOver convertible b (Just e1) (Just e2)
 writeExp (ESqrt e) = "sqrt(" <> writeExp e <> ")"
 writeExp (ERoot i e) = "root(" <> writeExp i <> ", " <> writeExp e <> ")"
 writeExp (ESpace width) =

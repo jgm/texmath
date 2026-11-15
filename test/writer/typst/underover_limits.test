@@ -1,0 +1,4 @@
+<<< tex
+\underset{x}{a+b} \overset{n}{a+b} \underset{i}{x} \overset{a}{\underset{b}{c+d}} \overset{!}{=} \sum_{i=1}^n
+>>> typst
+limits(a + b)_x limits(a + b)^n limits(x)_i limits(limits(c + d)_b)^a =^(!) sum_(i = 1)^n
