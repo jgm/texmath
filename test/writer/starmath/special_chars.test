@@ -1,0 +1,4 @@
+<<< tex
+50\% + \# + \& + \{ a \quad \textit{a over b} \quad \left( a \middle\{ b \right) \operatorname{over}(x)
+>>> starmath
+50"%" + "#" + "&" + "{"a ~ ital {"a over b"}~ left ( a "{" b right ) func "over"(x)

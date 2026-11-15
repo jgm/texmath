@@ -1150,7 +1150,7 @@ isBareMathOperator t =
     ]
 
 shouldQuoteMathOperator :: T.Text -> Bool
-shouldQuoteMathOperator = not . T.all isLetter
+shouldQuoteMathOperator t = not (T.all isLetter t) || isStarMathReservedWord t
 
 shouldItalicizeGreek :: T.Text -> Bool
 shouldItalicizeGreek ident =
@@ -1458,11 +1458,11 @@ delimToken side raw =
     "{" -> case side of
       DelimLeft   -> "lbrace"
       DelimRight  -> "rbrace"
-      DelimMiddle -> "{"
+      DelimMiddle -> "\"{\""  -- a bare { would start a group
     "}" -> case side of
       DelimLeft   -> "lbrace"
       DelimRight  -> "rbrace"
-      DelimMiddle -> "}"
+      DelimMiddle -> "\"}\""
     "|" -> case side of
       DelimLeft   -> "lline"
       DelimRight  -> "rline"
@@ -1556,7 +1556,15 @@ renderSymbol t s =
     "″" -> "''"
     "‴" -> "'''"
     _   | isWordLiteralSymbol s -> quoteText s
+        | T.any isStarMathSpecialChar s -> quoteText s
         | otherwise             -> s
+
+-- | Characters with a special meaning in StarMath: @%@ starts a
+-- symbol name, @#@ separates columns, @&@ is logical and, braces
+-- group, @"@ quotes, @^@ and @_@ attach scripts, and @~@ and @`@
+-- are spaces.
+isStarMathSpecialChar :: Char -> Bool
+isStarMathSpecialChar c = c `elem` ("%#&{}\"^_~`" :: String)
 
 isWordLiteralSymbol :: T.Text -> Bool
 isWordLiteralSymbol s =
@@ -1619,7 +1627,7 @@ centeredScriptOpName e =
 renderTextAtom :: TextType -> T.Text -> T.Text
 renderTextAtom sty t =
   case sty of
-    TextItalic    -> "ital " <> styleArg t
+    TextItalic    -> "ital " <> styleArg (quoteText t)
     TextBold      -> "bold " <> styleArg (quoteText t)
     TextMonospace -> "font fixed " <> quoteText t
     TextSansSerif -> "font sans " <> quoteText t
