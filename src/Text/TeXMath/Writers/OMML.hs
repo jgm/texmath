@@ -283,6 +283,13 @@ showExp props e =
                        [mnode "bar" [ mnode "barPr" $
                                         mnodeA "pos" "bot" ()
                                     , mnode "e" $ showExp props x ]]
+   -- e.g. \underbrace, \underbracket: a stretchy character below
+   EUnder _ x (ESymbol TUnder (T.unpack -> y)) ->
+                       [mnode "groupChr" [ mnode "groupChrPr"
+                                           [ mnodeA "chr" y ()
+                                           , mnodeA "pos" "bot" ()
+                                           , mnodeA "vertJc" "top" () ]
+                                         , mnode "e" $ showExp props x ]]
    EOver _ x (ESymbol TOver t) | T.all isBarChar t ->
                        [mnode "bar" [ mnode "barPr" $
                                         mnodeA "pos" "top" ()
