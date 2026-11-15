@@ -1,0 +1,4 @@
+<<< tex
+\frac{a}{\frac{b}{c}} + \frac{\frac{a}{b}}{c} + \frac{\left(a+b\right)}{c} + \frac{x_1}{y^2}
+>>> typst
+frac(a, b / c) + frac(a / b, c) + frac((a + b), c) + x_1 / y^2

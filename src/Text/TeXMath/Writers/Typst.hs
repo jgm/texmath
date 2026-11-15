@@ -177,11 +177,16 @@ writeExp (EMathOperator s)
 writeExp (EGrouped es) = writeExps es
 writeExp (EFraction NoLineFrac e1 e2) =
   "mat(delim: #none, " <> mkArray [[[e1]], [[e2]]] <> ")"
-writeExp (EFraction _fractype e1 e2) =
-  case (e1, e2) of
-    (EGrouped _, _) -> "frac(" <> writeExp e1 <> ", " <> writeExp e2 <> ")"
-    (_, EGrouped _) -> "frac(" <> writeExp e1 <> ", " <> writeExp e2 <> ")"
-    _ -> writeExp e1 <> " / " <> writeExp e2
+writeExp (EFraction _fractype e1 e2)
+  | simple e1 && simple e2 = writeExp e1 <> " / " <> writeExp e2
+  | otherwise = "frac(" <> writeExp e1 <> ", " <> writeExp e2 <> ")"
+  where
+    -- a / b is only safe for simple operands: a / b / c is read as
+    -- (a / b) / c, and parentheses around an operand are dropped
+    simple EGrouped{} = False
+    simple EFraction{} = False
+    simple EDelimited{} = False
+    simple _ = True
 writeExp (ESub b e1) = writeScripted b (Just e1) Nothing
 writeExp (ESuper b e1) = writeScripted b Nothing (Just e1)
 writeExp (ESubsup b e1 e2) = writeScripted b (Just e1) (Just e2)
