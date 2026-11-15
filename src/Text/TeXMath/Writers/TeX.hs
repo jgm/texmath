@@ -201,7 +201,11 @@ writeExp (ESymbol t s) = do
   when (t == Bin || t == Rel) $ tell [Space]
   if T.length s > 1 && (t == Bin || t == Rel || t == Op)
      then tell [ControlSeq ("\\math" <> T.toLower (tshow t)),
-                 Grouped [ControlSeq "\\text", Grouped s']]
+                 -- \text keeps a word upright, but the converted
+                 -- symbols may contain math-only commands like \leq
+                 if T.all isLetter s
+                    then Grouped [ControlSeq "\\text", Grouped s']
+                    else Grouped s']
      else tell s'
   when (t == Bin || t == Rel) $ tell [Space]
 writeExp (ESpace width) = do

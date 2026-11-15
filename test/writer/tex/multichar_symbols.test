@@ -1,0 +1,7 @@
+<<< native
+[ EIdentifier "a" , ESymbol Rel "\8804\8805" , EIdentifier "b"
+, ESymbol Bin "\8722\8722" , EIdentifier "c"
+, ESymbol Rel "iff" , EIdentifier "d"
+]
+>>> tex
+a \mathrel{\leq\geq} b \mathbin{--} c \mathrel{\text{iff}} d
