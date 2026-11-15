@@ -238,13 +238,23 @@ showExp props e =
                                , mnodeA "sepChr" (T.unpack sepchr) ()
                                , mnodeA "endChr" (T.unpack end) ()
                                , mnode "grow" () ]
-                              : map (mnode "e" . concatMap (showExp props)) es
+                              : elements
                   ]
       where
        seps = lefts xs
+       -- m:d allows only one separator character; if the separators
+       -- differ, write them as ordinary (non-stretching) characters
+       -- in a single m:e rather than losing all but the first
+       sameSeps = case seps of
+                    []     -> True
+                    (s:ss) -> all (== s) ss
        sepchr = case seps of
-                  []    -> ""
-                  (s:_) -> s
+                  (s:_) | sameSeps -> s
+                  _ -> ""
+       elements
+         | sameSeps = map (mnode "e" . concatMap (showExp props)) es
+         | otherwise = [mnode "e" $ concatMap
+                          (either (\s -> [str props s]) (showExp props)) xs]
        es   = map rights $ splitWhen isLeft xs
 
    EIdentifier ""   -> [str props "\x200B"]  -- 0-width space
