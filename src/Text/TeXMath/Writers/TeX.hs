@@ -75,6 +75,14 @@ getTeXMathM s = getTeXMath s <$> asks mathEnv
 tellGroup :: Math () -> Math ()
 tellGroup = censor ((:[]) . Grouped)
 
+-- | Write the base of a sub- or superscript. If the base produces
+-- no output (e.g. an empty identifier), write {} so that the script
+-- doesn't attach to whatever precedes it.
+writeBase :: Exp -> Math ()
+writeBase b =
+  censor (\ts -> if all (== Space) ts then [Grouped []] else ts) $
+  (if isFancy b then tellGroup else id) $ writeExp b
+
 tellGenFrac :: T.Text -> T.Text -> Math ()
 tellGenFrac open close =
   tell [ ControlSeq "\\genfrac"
@@ -210,17 +218,17 @@ writeExp (EFraction fractype e1 e2) = do
   tellGroup (writeExp e1)
   tellGroup (writeExp e2)
 writeExp (ESub b e1) = do
-  (if isFancy b then tellGroup else id) $ writeExp b
+  writeBase b
   tell [Token '_']
   tellGroup (writeExp e1)
 writeExp (ESuper b e1) = do
-  (if isFancy b then tellGroup else id) $ writeExp b
+  writeBase b
   case S.toPrimes e1 of
     Just ps -> tell (replicate (T.length ps) (Token '\''))
     _ -> do tell [Token '^']
             tellGroup (writeExp e1)
 writeExp (ESubsup b e1 e2) = do
-  (if isFancy b then tellGroup else id) $ writeExp b
+  writeBase b
   tell [Token '_']
   tellGroup (writeExp e1)
   case S.toPrimes e2 of

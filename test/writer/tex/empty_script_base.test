@@ -1,0 +1,8 @@
+<<< native
+[ EIdentifier "a" , ESub (EIdentifier "") (EIdentifier "x")
+, EIdentifier "b" , ESuper (EGrouped []) (EIdentifier "y")
+, EIdentifier "c" , ESubsup (EText TextNormal "") (EIdentifier "i") (EIdentifier "j")
+, EIdentifier "d" , ESub (ESymbol Ord "") (EIdentifier "z")
+]
+>>> tex
+a{}_{x}b{}^{y}c{}_{i}^{j}d{}_{z}
