@@ -8,4 +8,4 @@
 , EUnder False (EIdentifier "x") (ESymbol Ord "\732")
 ]
 >>> eqn
-x from \[u02DC] != x from \[u02DC] = x from \[u02DC] = x from \[u02DC]
+x utilde != x from \[u02DC] = x from \[u02DC] = x from \[u02DC]

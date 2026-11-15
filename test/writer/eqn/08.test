@@ -30,4 +30,4 @@
 , EDelimited "(" ")" [ Right (EIdentifier "z") ]
 ]
 >>> eqn
-left | z to \[u203E] right | = left | z right | , left | {left ( z to \[u203E] right )} sup n right | = {left | z right |} sup n , "arg" left ( z sup n right ) = n "arg" left ( z right )
+left | z bar right | = left | z right | , left | {left ( z bar right )} sup n right | = {left | z right |} sup n , "arg" left ( z sup n right ) = n "arg" left ( z right )

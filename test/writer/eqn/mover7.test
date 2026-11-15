@@ -8,4 +8,4 @@
 , EOver False (EIdentifier "x") (ESymbol Ord "\168")
 ]
 >>> eqn
-x to \[u00A8] != x to \[u00A8] = x to \[u00A8] = x to \[u00A8]
+x dotdot != x to \[u00A8] = x to \[u00A8] = x to \[u00A8]

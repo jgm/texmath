@@ -613,7 +613,7 @@ ccol{ 1 above {v sub 2 sup {""}} above {v sub 2 sup 2} above \[u22EE] above {v s
 ccol{ cdots above cdots above cdots above \[u22F1] above cdots }
 ccol{ 1 above {v sub n sup {""}} above {v sub n sup 2} above \[u22EE] above {v sub n sup {n - 1}} }
 } right | = prod from {1 <= i < j <= n} to {""} ( v sub j sup {""} - v sub i sup {""} )} above {matrix{
-ccol{ {{x from {""}} to \[u02D9]} above {{y from {""}} to \[u02D9]} above {{z from {""}} to \[u02D9]} }
+ccol{ {{x from {""}} dot} above {{y from {""}} dot} above {{z from {""}} dot} }
 ccol{ = above = above = }
 ccol{ {sigma ( y - x )} above {rho x - y - x z} above {- beta z + x y} }
 }} above {left { matrix{

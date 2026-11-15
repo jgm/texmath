@@ -218,8 +218,16 @@ writeExp (ESubsup b e1 e2) =
   case toPrimes e2 of
     Just ps -> ps
     _ -> " sup " <> writeExp' e2
+writeExp (EOver _convertible b (ESymbol t s))
+  | t `elem` [Accent, TOver]
+  , Just kw <- lookup s overAccents
+  = writeExp' b <> " " <> kw
 writeExp (EOver _convertible b e1) =
   writeExp' b <> " to " <> writeExp' e1
+writeExp (EUnder _convertible b (ESymbol t s))
+  | t `elem` [Accent, TUnder]
+  , Just kw <- lookup s underAccents
+  = writeExp' b <> " " <> kw
 writeExp (EUnder _convertible b e1) =
   writeExp' b <> " from " <> writeExp' e1
 writeExp (EUnderover convertible b e1@(ESymbol Accent _) e2) =
@@ -261,6 +269,27 @@ writeExp (EArray aligns rows) =
             "{ " <> T.intercalate " above " (map tocell cs) <> " }\n"
         tocell [e] = writeExp' e
         tocell es  = writeExp (EGrouped es)
+
+-- | Accents that eqn can put over a base, with its postfix keyword.
+overAccents :: [(Text, Text)]
+overAccents =
+  [ ("^", "hat"), ("\x0302", "hat"), ("\x02C6", "hat")
+  , ("~", "tilde"), ("\x0303", "tilde"), ("\x02DC", "tilde")
+  , (".", "dot"), ("\x0307", "dot"), ("\x02D9", "dot")
+  , ("\x0308", "dotdot"), ("\x00A8", "dotdot")
+  , ("\x20D7", "vec"), ("\x2192", "vec")
+  , ("\x20E1", "dyad"), ("\x2194", "dyad")
+  , ("\x0304", "bar"), ("\x00AF", "bar"), ("\x0305", "bar")
+  , ("\x203E", "bar")
+  ]
+
+-- | Accents that eqn can put under a base, with its postfix keyword.
+underAccents :: [(Text, Text)]
+underAccents =
+  [ ("_", "under"), ("\x0332", "under"), ("\x0331", "under")
+  , ("\x00AF", "under"), ("\x203E", "under")
+  , ("~", "utilde"), ("\x0330", "utilde"), ("\x02DC", "utilde")
+  ]
 
 tshow :: Show a => a -> T.Text
 tshow = T.pack . show

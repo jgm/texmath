@@ -22,4 +22,4 @@
     (EGrouped [ ESymbol Ord "\8706" , EIdentifier "z" ])
 ]
 >>> eqn
-grad \[u22C5] v to \[u20D7] = {partial v sub x} over {partial x} + {partial v sub y} over {partial y} + {partial v sub z} over {partial z}
+grad \[u22C5] v vec = {partial v sub x} over {partial x} + {partial v sub y} over {partial y} + {partial v sub z} over {partial z}

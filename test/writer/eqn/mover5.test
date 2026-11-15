@@ -8,4 +8,4 @@
 , EOver False (EIdentifier "x") (ESymbol Ord "\732")
 ]
 >>> eqn
-x to \[u02DC] != x to \[u02DC] = x to \[u02DC] = x to \[u02DC]
+x tilde != x to \[u02DC] = x to \[u02DC] = x to \[u02DC]
