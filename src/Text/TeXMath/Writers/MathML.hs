@@ -252,9 +252,9 @@ showExp tt e =
    ERoot i x        -> unode "mroot" [showExp tt x, showExp tt i]
    EScaled s x      -> makeScaled s $ showExp tt x
    EArray as ls     -> makeArray tt as ls
-   EText a s        -> case (combineStyles tt, a) of
-                         (Just ty, TextNormal) -> makeText ty s
-                         _ -> makeText a s
+   -- as in TeX, where \mathbf{\text{a}} is not bold, enclosing
+   -- math styles don't apply to text
+   EText a s        -> makeText a s
    EStyled a es     -> showExp (a : tt) (EGrouped es)
    -- see https://developer.mozilla.org/en-US/docs/Web/MathML/Element/mstyle
    -- Historically, this element accepted almost all the MathML attributes and

@@ -3,8 +3,8 @@
     TextBoldScript
     [ EArray
         [ AlignLeft ]
-        [ [ [ EText TextNormal "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ] ]
-        , [ [ EText TextNormal "abcdefghijklmnopqrstuvwxyz" ] ]
+        [ [ [ EText TextBoldScript "ABCDEFGHIJKLMNOPQRSTUVWXYZ" ] ]
+        , [ [ EText TextBoldScript "abcdefghijklmnopqrstuvwxyz" ] ]
         ]
     ]
 ]
