@@ -1,0 +1,4 @@
+<<< tex
+\begin{aligned} a \& b &= c \end{aligned}
+>>> typst
+a\&b & = c

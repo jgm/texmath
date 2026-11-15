@@ -91,6 +91,7 @@ esc t =
     needsEscape '\\' = True
     needsEscape ',' = True -- #242
     needsEscape ';' = True -- #275
+    needsEscape '&' = True -- alignment point
     needsEscape _ = False
 
 escInQuotes :: Text -> Text
