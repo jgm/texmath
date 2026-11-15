@@ -224,25 +224,42 @@ renderExpsIn dt ctx exps = do
 
 mergePieces :: [(Exp, T.Text)] -> T.Text
 mergePieces [] = ""
-mergePieces ((e0, t0) : rest) = snd $ List.foldl' step (e0, t0) rest
+mergePieces ((e0, t0) : rest) =
+  T.concat $ reverse $ snd $ List.foldl' step (e0, chunk t0) rest
  where
+  -- The accumulated text is kept as a reversed list of non-empty
+  -- chunks, so that appending doesn't copy everything so far
+  -- (which made this quadratic).
   step (prevE, acc) (curE, curT) =
     if T.null curT
        then (prevE, acc)
        else
          (curE, appendRendered (needsSeparator prevE curE) acc curT)
+  chunk t = [t | not (T.null t)]
 
-appendRendered :: Bool -> T.Text -> T.Text -> T.Text
+-- | Append rendered text to the accumulated chunks (in reverse
+-- order), normalizing the whitespace at the join to a single space
+-- (if there was whitespace or a separator is needed) or none.
+appendRendered :: Bool -> [T.Text] -> T.Text -> [T.Text]
 appendRendered needSep left right
-  | T.null left = T.stripStart right
-  | T.null right = T.stripEnd left
+  | null left = chunk (T.stripStart right)
+  | T.null right = stripEndChunks left
   | otherwise =
-      let leftHadWs = endsWithAsciiSpace left
+      let leftHadWs = case left of
+                        (c:_) -> endsWithAsciiSpace c
+                        [] -> False
           rightHadWs = startsWithAsciiSpace right
-          left' = T.dropWhileEnd isAsciiSpaceChar left
+          left' = stripEndChunks left
           right' = T.dropWhile isAsciiSpaceChar right
           sep = if leftHadWs || rightHadWs || needSep then " " else ""
-      in left' <> sep <> right'
+      in chunk right' ++ chunk sep ++ left'
+  where
+    chunk t = [t | not (T.null t)]
+    -- strip trailing whitespace, dropping chunks that become empty
+    stripEndChunks (c:cs) =
+      let c' = T.dropWhileEnd isAsciiSpaceChar c
+      in if T.null c' then stripEndChunks cs else c' : cs
+    stripEndChunks [] = []
 
 startsWithAsciiSpace :: T.Text -> Bool
 startsWithAsciiSpace t =
@@ -734,8 +751,11 @@ renderDelimitedChunk dt ctx p =
 
 mergeDelimitedChunks :: [DelimitedChunk] -> T.Text
 mergeDelimitedChunks [] = ""
-mergeDelimitedChunks (c0:cs) = snd $ List.foldl' step (chunkExp c0, chunkText c0) cs
+mergeDelimitedChunks (c0:cs) =
+  T.concat $ reverse $ snd $
+    List.foldl' step (chunkExp c0, [t0 | not (T.null t0)]) cs
  where
+  t0 = chunkText c0
   step (prevExp, acc) cur
     | T.null curText = (prevExp, acc)
     | otherwise =

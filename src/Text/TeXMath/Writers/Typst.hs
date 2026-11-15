@@ -40,7 +40,7 @@ writeTypst dt exprs =
   writeExps $ map (S.everywhereExp (S.handleDownup dt)) exprs
 
 writeExps :: [Exp] -> Text
-writeExps = go . map writeExp
+writeExps = T.concat . go . map writeExp  -- concat once: linear time
  where
    go (a : b : es)
     | Just (bstart, _) <- T.uncons b
@@ -48,12 +48,12 @@ writeExps = go . map writeExp
     , bstart == '\'' -- avoid space before a prime #239
       || bstart == '|' || aend == '|'
       || bstart == '\\' || isStandaloneEscape a -- #291, #286
-     = a <> go (b:es)
+     = a : go (b:es)
    go (a : as)
-     = a <> if null as
-               then mempty
-               else " " <> go as
-   go [] = mempty
+     = a : if null as
+              then []
+              else " " : go as
+   go [] = []
 
    -- A compound expression may start with an escape but end in an identifier.
    -- Only a standalone escape suppresses the following space (#291).
