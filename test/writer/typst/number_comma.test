@@ -1,0 +1,10 @@
+<<< native
+[ EDelimited
+    "(" ")"
+    [ Right (EArray [ AlignCenter , AlignCenter ]
+               [ [ [ ENumber "1,5" ] , [ ENumber "2" ] ] ])
+    ]
+, EFraction NormalFrac (ENumber "1,5") (EGrouped [ ENumber "2" , ESymbol Bin "+" , EIdentifier "x" ])
+]
+>>> typst
+mat(delim: "(", 1\,5, 2) frac(1\,5, 2 + x)

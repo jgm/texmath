@@ -154,7 +154,7 @@ writeScripted b msub msup =
                   _ -> mempty
 
 writeExp :: Exp -> Text
-writeExp (ENumber s) = s
+writeExp (ENumber s) = esc s  -- e.g. 1,5 must not split arguments
 writeExp (ESymbol _t s)
   | T.all isAscii s = esc s  -- use '+' not 'plus'
   | s == "\x2212" = "-" -- use '-' not 'minus'
