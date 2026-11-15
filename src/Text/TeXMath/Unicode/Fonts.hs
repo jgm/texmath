@@ -46,11 +46,13 @@ textToFont _ = Nothing
 getUnicode :: Font -> Char -> Maybe Char
 getUnicode Symbol c = M.lookup c symbol
 
--- Generated from lib/fonts/symbol.txt
+-- Generated from lib/fonts/symbol.txt. Where several Unicode
+-- characters mapped to the same code, only the preferred one is kept
+-- (e.g. Greek capital delta rather than INCREMENT for D), since
+-- with M.fromList the last duplicate would win.
 symbol :: M.Map Char Char
 symbol = M.fromList
   [ (' ',' ')
-  , (' ','\160')
   , ('!','!')
   , ('"','\8704')
   , ('#','#')
@@ -87,7 +89,6 @@ symbol = M.fromList
   , ('B','\914')
   , ('C','\935')
   , ('D','\916')
-  , ('D','\8710')
   , ('E','\917')
   , ('F','\934')
   , ('G','\915')
@@ -107,7 +108,6 @@ symbol = M.fromList
   , ('U','\933')
   , ('V','\962')
   , ('W','\937')
-  , ('W','\8486')
   , ('X','\926')
   , ('Y','\936')
   , ('Z','\918')
@@ -129,7 +129,6 @@ symbol = M.fromList
   , ('j','\981')
   , ('k','\954')
   , ('l','\955')
-  , ('m','\181')
   , ('m','\956')
   , ('n','\957')
   , ('o','\959')
@@ -153,7 +152,6 @@ symbol = M.fromList
   , ('\162','\8242')
   , ('\163','\8804')
   , ('\164','\8260')
-  , ('\164','\8725')
   , ('\165','\8734')
   , ('\166','\402')
   , ('\167','\9827')

@@ -1,0 +1,13 @@
+<<< omml
+<m:oMath xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <m:r><w:sym w:font="Symbol" w:char="F044"/></m:r>
+  <m:r><w:sym w:font="Symbol" w:char="F057"/></m:r>
+  <m:r><w:sym w:font="Symbol" w:char="F06D"/></m:r>
+  <m:r><w:sym w:font="Symbol" w:char="F0A4"/></m:r>
+</m:oMath>
+>>> native
+[ EIdentifier "\916"
+, EIdentifier "\937"
+, EIdentifier "\956"
+, ESymbol Bin "\8260"
+]
