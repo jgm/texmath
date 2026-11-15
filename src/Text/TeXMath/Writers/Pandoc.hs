@@ -28,7 +28,7 @@ import Text.Pandoc.Definition
 import qualified Data.Text as T
 import Text.TeXMath.Unicode.ToUnicode
 import Text.TeXMath.Types
-import Text.TeXMath.Shared (getSpaceChars)
+import Text.TeXMath.Shared (getSpaceChars, combineStyles)
 
 -- | Attempts to convert a formula to a list of 'Pandoc' inlines.
 writePandoc :: DisplayType
@@ -102,7 +102,10 @@ expToInlines tt (EDelimited start end xs) = do
   xs' <- expsToInlines tt $ map (either (ESymbol Ord) id) xs
   return $ renderStr tt start ++ xs' ++ renderStr tt end
 expToInlines tt (EGrouped xs)    = expsToInlines tt xs
-expToInlines _ (EStyled tt' xs)  = expsToInlines (Just tt') xs
+-- combine with the enclosing style, e.g. \mathbf{x} is TextBold
+-- over TextNormal, which should be bold
+expToInlines tt (EStyled tt' xs) =
+  expsToInlines (combineStyles (tt' : maybe [] (:[]) tt)) xs
 expToInlines _ (ESpace n)        = Just [Str $ getSpaceChars n]
 expToInlines _ (ESqrt _)         = Nothing
 expToInlines _ (ERoot _ _)       = Nothing

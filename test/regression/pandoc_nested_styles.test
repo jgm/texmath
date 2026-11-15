@@ -1,0 +1,4 @@
+<<< tex
+\mathbf{x} \boldsymbol{\mathit{y}} \mathbf{\mathsf{z}}
+>>> pandoc
+[ Strong [ Str "x" ] , Strong [ Emph [ Str "y" ] ] , Str "z" ]
