@@ -172,7 +172,7 @@ writeExp (EMathOperator s)
               "cot", "ctg", "coth", "csc", "deg", "det", "dim", "exp",
               "gcd", "hom", "mod", "inf", "ker", "lg", "lim", "ln",
               "log", "max", "min", "Pr", "sec", "sin", "sinh", "sup",
-              "tan", "tg", "tanh", "liminf", "and", "limsup"]
+              "tan", "tg", "tanh", "liminf", "limsup"]
     = s
   | otherwise = "\"" <> s <> "\""
 writeExp (EGrouped es) = writeExps es
