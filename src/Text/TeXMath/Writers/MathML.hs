@@ -80,8 +80,12 @@ fromForm FPrefix  = "prefix"
 
 makeScaled :: Rational -> Element -> Element
 makeScaled x = withAttribute "minsize" p . withAttribute "maxsize" p
+               . removeSizes  -- if nested, the outer scale wins
                . setAttribute "stretchy" "true"
   where p = T.pack $ printf "%d%%" (round (100*x) :: Int)
+        removeSizes e = e { elAttribs = filter
+                              ((`notElem` ["minsize", "maxsize"]) . qName . attrKey)
+                              (elAttribs e) }
 
 
 dropTrailing0s :: T.Text -> T.Text
