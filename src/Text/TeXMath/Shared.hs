@@ -430,7 +430,7 @@ combineStyles tts = Just $ toStyle $ foldl go (False, False, Nothing) tts
  where
    go (b, i, fam) tt =
     case tt of
-       TextNormal       -> (False, False, fam)
+       TextNormal       -> (b, False, fam)  -- upright, but keep bold
        TextBold         -> (True, i, fam)
        TextItalic       -> (b, True, fam)
        TextMonospace    -> (False, False, Just TextMonospace)

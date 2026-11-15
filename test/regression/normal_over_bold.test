@@ -1,0 +1,12 @@
+<<< mml
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle mathvariant="normal"><mi mathvariant="bold">x</mi><mi>y</mi></mstyle>
+</math>
+>>> mml
+<?xml version='1.0' ?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mi mathvariant="bold">𝐱</mi>
+    <mi mathvariant="normal">y</mi>
+  </mrow>
+</math>
