@@ -1,0 +1,25 @@
+<<< tex
+\newcommand{\nl}{\\}
+\newcommand{\hl}{\\ \hline}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+\newcommand{\bm}{\begin{matrix}}
+\newcommand{\vecx}{a + b}
+\bm a & b \nl c & d \hl e & f \end{matrix} \lp \frac{a}{b} \rp \hat\vecx
+>>> native
+[ EArray
+    [ AlignCenter , AlignCenter ]
+    [ [ [ EIdentifier "a" ] , [ EIdentifier "b" ] ]
+    , [ [ EIdentifier "c" ] , [ EIdentifier "d" ] ]
+    , [ [ EIdentifier "e" ] , [ EIdentifier "f" ] ]
+    ]
+, EDelimited
+    "("
+    ")"
+    [ Right (EFraction NormalFrac (EIdentifier "a") (EIdentifier "b"))
+    ]
+, EOver
+    False
+    (EGrouped [ EIdentifier "a" , ESymbol Bin "+" , EIdentifier "b" ])
+    (ESymbol Accent "\770")
+]

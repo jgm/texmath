@@ -166,7 +166,42 @@ newcommand = try $ do
     let args' = case opt of
                      Just x  -> x : args
                      Nothing -> args
-    return $ apply args' $ "{" ++ body ++ "}"
+    return $ wrapExpansion body $ apply args' body
+
+-- | Put braces around a macro expansion, so that e.g. with
+-- \newcommand{\vecx}{a + b}, \hat\vecx gives \hat{a + b} rather
+-- than \hata + b (#7). But don't group bodies containing structural
+-- commands like \\, &, \left or \begin, which would break if
+-- grouped; just keep them separate from the surrounding tokens.
+wrapExpansion :: String -> String -> String
+wrapExpansion body expanded
+  | isStructural body = leading ++ expanded ++ trailing
+  | otherwise = "{" ++ expanded ++ "}"
+  where
+    leading = case expanded of
+                (c:_) | isLetter c -> " "
+                _ -> ""
+    trailing = if endsWithControlWord expanded then " " else ""
+    endsWithControlWord s =
+      case span isLetter (reverse s) of
+        (_:_, '\\':_) -> True
+        _ -> False
+
+-- | Does the macro body contain commands that must not be put
+-- in a group: \\, unescaped &, \cr, \left, \right, \middle,
+-- \begin, \end?
+isStructural :: String -> Bool
+isStructural ('\\':'\\':_) = True
+isStructural ('\\':xs) =
+  case span isLetter xs of
+    ([], _:rest) -> isStructural rest  -- e.g. \&, \{
+    ([], [])     -> False
+    (name, rest) -> name `elem` ["cr", "left", "right", "middle",
+                                 "begin", "end"]
+                    || isStructural rest
+isStructural ('&':_) = True
+isStructural (_:xs) = isStructural xs
+isStructural [] = False
 
 newenvironment :: (Monad m, Stream s m Char)
                => ParsecT s st m Macro
