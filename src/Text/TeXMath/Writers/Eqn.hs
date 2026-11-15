@@ -260,7 +260,13 @@ writeExp (EStyled ttype es) =
        _   -> contents
 writeExp (EArray aligns rows) =
   "matrix{\n" <> T.concat cols <> "}"
-  where cols = zipWith tocol aligns (transpose rows)
+  where -- eqn's matrix is a list of columns, so pad rows to the same
+        -- length (transpose would shift cells in ragged rows) and
+        -- supply an alignment for every column
+        ncols = maximum (0 : map length rows)
+        rows' = map (\r -> take ncols (r ++ repeat [])) rows
+        aligns' = take ncols (aligns ++ repeat AlignCenter)
+        cols = zipWith tocol aligns' (transpose rows')
         tocol al cs =
           (case al of
                AlignLeft -> "lcol"
