@@ -31,6 +31,7 @@ import Control.Monad.Writer( MonadWriter, WriterT,
                              execWriterT, tell, censor)
 import Text.TeXMath.TeX
 import Data.Either (isRight)
+import Data.Char (isLetter)
 
 -- import Debug.Trace
 -- tr' x = trace (show x) x
@@ -297,7 +298,15 @@ writeExp (EText ttype s) = do
   let txtcmd = getTextCommand ttype
   let fixSpace (Literal "\\ ") = Literal " "
       fixSpace x = x
-  case map (fixSpace . escapeLaTeX) (T.unpack s) of
+      -- in text, a space after a control word would be swallowed,
+      -- so terminate control words with {}
+      endWord (ControlSeq cs) | isWord cs = Literal (cs <> "{}")
+      endWord (Literal cs)    | isWord cs = Literal (cs <> "{}")
+      endWord x = x
+      isWord cs = case T.uncons cs of
+                    Just ('\\', rest) -> not (T.null rest) && T.all isLetter rest
+                    _ -> False
+  case map (endWord . fixSpace . escapeLaTeX) (T.unpack s) of
        []   -> return ()
        xs   -> tell $ txtcmd (Grouped xs)
 writeExp (EStyled TextBold [EStyled TextNormal es]) = do

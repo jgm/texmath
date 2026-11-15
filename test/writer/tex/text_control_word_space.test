@@ -1,0 +1,4 @@
+<<< native
+[ EText TextNormal "a~ b\\ c^ d\8195e~f" ]
+>>> tex
+\text{a\textasciitilde{} b\textbackslash{} c\textasciicircum{} d\quad{}e\textasciitilde{}f}
