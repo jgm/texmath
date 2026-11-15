@@ -1,0 +1,4 @@
+<<< native
+[ EMathOperator "a\"b" , EIdentifier "x" , EMathOperator "c\\d" ]
+>>> typst
+"a\"b" x "c\\d"

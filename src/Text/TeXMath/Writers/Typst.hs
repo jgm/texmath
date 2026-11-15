@@ -174,7 +174,7 @@ writeExp (EMathOperator s)
               "log", "max", "min", "Pr", "sec", "sin", "sinh", "sup",
               "tan", "tg", "tanh", "liminf", "limsup"]
     = s
-  | otherwise = "\"" <> s <> "\""
+  | otherwise = inQuotes s
 writeExp (EGrouped es) = writeExps es
 writeExp (EFraction NoLineFrac e1 e2) =
   "mat(delim: #none, " <> mkArray [[[e1]], [[e2]]] <> ")"
