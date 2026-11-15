@@ -1,0 +1,4 @@
+<<< tex
+\text{a\quad b\qquad c}
+>>> native
+[ EText TextNormal "a\8195b\8195\8195c" ]
