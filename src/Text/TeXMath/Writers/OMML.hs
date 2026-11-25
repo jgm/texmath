@@ -374,13 +374,21 @@ makeNary props t s y z w =
                  [ mnodeA "chr" (T.unpack s) ()
                  , mnodeA "limLoc" t ()
                  , mnodeA "subHide"
-                    (if y == EGrouped [] then "on" else "off") ()
+                    (if isEmptySub then "on" else "off") ()
                  , mnodeA "supHide"
-                    (if z == EGrouped [] then "on" else "off") ()
+                    (if isEmptySup then "on" else "off") ()
                  ]
-               , mnode "sub" $ showExp props y
-               , mnode "sup" $ showExp props z
+               , mnode "sub" (if isEmptySub then [] else showExp props y)
+               , mnode "sup" (if isEmptySup then [] else showExp props z)
                , mnode "e" $ showExp props w ]
+  where isEmptySub = y == EGrouped []
+        isEmptySup = z == EGrouped []
+        -- An empty sub/sup is already hidden from Word via the
+        -- subHide/supHide flags set above, so there is no dashed
+        -- box to avoid here and the ZWSP that showExp would inject
+        -- for the empty group is pure noise: it leaks U+200B into
+        -- docx roundtrips and breaks LaTeX.  Emit an empty
+        -- <m:sub/> / <m:sup/> instead (cf. #118).
 
 makeCancel :: [TextType] -> StrokeType -> Exp -> Element
 makeCancel props st x = do
