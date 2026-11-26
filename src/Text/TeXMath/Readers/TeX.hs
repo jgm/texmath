@@ -672,7 +672,7 @@ scriptArg = (fst <$> operatorname)
 -- other script, and then reparsing it would take time exponential in
 -- the nesting depth.
 scripted :: Maybe Bool -> Bool -> Exp -> TP Exp
-scripted limits convertible a = try $ do
+scripted limits convertible a = do
   let sub1 = symbol "_" >> scriptArg  -- see #273
   let sup1 = (symbol "^" >> scriptArg) <|> primes
   scripts <- (do m <- sub1
