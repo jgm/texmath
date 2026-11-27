@@ -95,11 +95,19 @@ readTeX inp =
   let (ms, rest) = parseMacroDefinitions inp
       -- trailing whitespace is ignored anyway; stripping it means that
       -- an error at the end isn't reported on an empty line after it
-      expanded = T.stripEnd $ applyMacros ms rest
+      expanded = stripEndKeepingControlSpace $ applyMacros ms rest
   -- error positions refer to the expanded text, so show a snippet of it
   in either (Left . showParseError expanded) (Right . fixBinList)
        $ parse formula "formula" expanded
  where
+  -- | Like 'T.stripEnd', but keeps the space of a final control space
+  -- (@\\ @), which would otherwise leave a lone backslash.
+  stripEndKeepingControlSpace t =
+    let t' = T.stripEnd t
+    in if odd (T.length (T.takeWhileEnd (== '\\') t'))
+          then T.take (T.length t' + 1) t
+          else t'
+
   -- | Convert Bin symbol type in certain contexts (#176, #234).
   fixBinList :: [Exp] -> [Exp]
   fixBinList =
