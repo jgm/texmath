@@ -1495,6 +1495,10 @@ delimToken side raw =
       DelimLeft   -> "ldline"
       DelimRight  -> "rdline"
       DelimMiddle -> "mline"
+    "‖" -> case side of
+      DelimLeft   -> "ldline"
+      DelimRight  -> "rdline"
+      DelimMiddle -> "mline"
     "⟨" -> "langle"
     "⟩" -> "rangle"
     "⌊" -> "lfloor"
